@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-sf6-shifter-gallery",
   "platform_id": "sava-gelaro-sf",
-  "variant_ids": ["sava-gelaro-sf6-cues"],
+  "variant_ids": [
+    "sava-gelaro-sf6-cues"
+  ],
   "role": "gallery",
   "sort_order": 8,
   "label": "CUES shifter detail",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/shifter_lever-gelaro_sf6_f12cb10a-ab6c-4751-ba5b-f542088fe0d7.jpg?v=1755591748&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-sf6-shifter-gallery/6e2141898555f31b-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-shifter-gallery/5bb103f6b16a57ab-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 10554,
+        "sha256": "5bb103f6b16a57ab96b6ed06e6232e578ca8c4c03450eee40185400c4841d2c2",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-shifter-gallery/6e2141898555f31b-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 53302,
+        "sha256": "6e2141898555f31bca40c1d7579e72543a4180cf41edd7ce1a657601b48d21d4",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-sf6-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Component detail © SAVA",
   "alt": "SAVA Gelaro SF6 Shimano CUES flat-bar shifter detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/shifter_lever-gelaro_sf6_f12cb10a-ab6c-4751-ba5b-f542088fe0d7.jpg?v=1755591748&width=1080",
+  "source_media_sha256": "9f87e6fc847a5219989e244838b672a1c174e12e75945fba7d42bb23b8894fb2",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

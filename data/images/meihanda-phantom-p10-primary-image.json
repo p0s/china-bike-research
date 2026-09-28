@@ -5,17 +5,56 @@
   "subject_accuracy": "same-model-different-market-build",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://meihanda.com/wp-content/uploads/2026/06/%E7%99%BD%E5%BA%95%E5%87%B8%E6%98%BE%E7%99%BD%E8%89%B2%E6%B1%BD%E8%BD%A6%E8%83%8C%E6%99%AF-6-1024x1024.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/meihanda-phantom-p10-primary-image/5c172e53086a9252-detail-w1024.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/meihanda-phantom-p10-primary-image/217908c925d93661-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 24202,
+        "sha256": "217908c925d9366191ac843887e21873b593a15bc769b35778b23f426509098f",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/meihanda-phantom-p10-primary-image/5c172e53086a9252-detail-w1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 76136,
+        "sha256": "5c172e53086a925220a4e8537003b30a238c5dbbcb8276aa05e0bc18703b9aef",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "meihanda-phantom-p10-product-page-2026-09-01",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Meihanda",
-    "usage_note": "Remote embed from the cited manufacturer product page; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Meihanda",
   "alt": "Meihanda Xtreme Phantom P10 flat-bar gravel bike on a white background",
   "reviewed_at": "2026-09-01",
-  "display_note": "Official exact-model photo; the retained mainland listing's selected build remains unresolved."
+  "display_note": "Official exact-model photo; the retained mainland listing's selected build remains unresolved.",
+  "source_media_url": "https://meihanda.com/wp-content/uploads/2026/06/%E7%99%BD%E5%BA%95%E5%87%B8%E6%98%BE%E7%99%BD%E8%89%B2%E6%B1%BD%E8%BD%A6%E8%83%8C%E6%99%AF-6-1024x1024.png",
+  "source_media_sha256": "29ad8078810559cae6c70f13c76b3fff24e02e459d7db725de21209c7840ad02",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

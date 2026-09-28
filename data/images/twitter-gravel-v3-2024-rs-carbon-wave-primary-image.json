@@ -7,18 +7,57 @@
   "subject_accuracy": "exact-platform",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://img.alicdn.com/i3/3021506430/O1CN01M9kcvq1xMzRGJeuHT_%21%213021506430.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/twitter-gravel-v3-2024-rs-carbon-wave-primary-image/dfb9d8c3239a42a6-detail-w800.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/twitter-gravel-v3-2024-rs-carbon-wave-primary-image/30bb78c733d5cacf-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 22572,
+        "sha256": "30bb78c733d5cacf0ca1d305231704dc8b04cfbfeb6550d979f2fc8390f31df6",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/twitter-gravel-v3-2024-rs-carbon-wave-primary-image/dfb9d8c3239a42a6-detail-w800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 53944,
+        "sha256": "dfb9d8c3239a42a642afe91ff013d47868df64bed450d2310596470156f3887b",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "fallback_local_path": "/assets/images/placeholders/complete-bike.svg",
   "source_id": "twitter-gravel-v3-2024-public-listing-image-2026-08-21",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Original marketplace image owner; identity not independently confirmed",
-    "usage_note": "Remote embed from the cited public marketplace mirror. Copyright remains with the original image owner; no redistribution license is asserted and the file is not stored by the project."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image via public marketplace listing mirror",
   "alt": "Silver TWITTER Gravel V3 complete bike, shown from the drive side",
   "display_note": "The image matches the older Gravel V3 frame family. It does not establish the wheel material, wheel selection, or exact RS/Sensah production batch. If the remote image fails, the image region is omitted.",
-  "reviewed_at": "2026-08-24"
+  "reviewed_at": "2026-08-24",
+  "source_media_url": "https://img.alicdn.com/i3/3021506430/O1CN01M9kcvq1xMzRGJeuHT_%21%213021506430.jpg",
+  "source_media_sha256": "872e896718c61a9ba65d6510349841246aed8e9d32c25de510260d0c621b04ee",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

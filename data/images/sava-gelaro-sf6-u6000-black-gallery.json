@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-sf6-u6000-black-gallery",
   "platform_id": "sava-gelaro-sf",
-  "variant_ids": ["sava-gelaro-sf6-cues"],
+  "variant_ids": [
+    "sava-gelaro-sf6-cues"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "U6000 Classic Black",
   "subject_accuracy": "same-model-different-color",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6000-Black.png?v=1755591748&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-sf6-u6000-black-gallery/300d6ea6921551be-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-u6000-black-gallery/757a71851f0eeb36-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 40336,
+        "sha256": "757a71851f0eeb369aa56e19273f31b206bac1c7e654eea62acaf4a7580cfa76",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-u6000-black-gallery/300d6ea6921551be-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 154428,
+        "sha256": "300d6ea6921551beafe6de72a4de342584428c3e21eb074f26a3d4ad721bb158",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-sf6-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © SAVA",
   "alt": "SAVA Gelaro SF6 U6000 gravel bike in Classic Black",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6000-Black.png?v=1755591748&width=1080",
+  "source_media_sha256": "d1df65bd7de1ac18bc8ad267b756df94f07beab1ffa51d3dfd6a9fdc5d4de5a4",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

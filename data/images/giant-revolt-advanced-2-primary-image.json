@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://giant-images.oss-cn-shanghai.aliyuncs.com/product/images/20250813/1755045363257_2f2e6c04.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/giant-revolt-advanced-2-primary-image/69c6b3b6653229a7-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/giant-revolt-advanced-2-primary-image/1c73107f25ab3f1f-card-w480.webp",
+        "width": 480,
+        "height": 336,
+        "bytes": 17216,
+        "sha256": "1c73107f25ab3f1f5687cec7f58f52f2a32afd33743bea57e2de371cfc029975",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/giant-revolt-advanced-2-primary-image/69c6b3b6653229a7-detail-w1000.webp",
+        "width": 1000,
+        "height": 699,
+        "bytes": 54996,
+        "sha256": "69c6b3b6653229a78609ded05f4adf84947c54db73f53ddd1087b64c77842d72",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "giant-china-revolt-advanced-2-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Giant",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Giant",
   "alt": "Giant Revolt Advanced 2 gravel bike",
   "display_note": "Official exact-variant mainland product image; color availability may vary.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://giant-images.giant.com.cn/product/images/202401023/1729648002020_f7850b99.jpg@!giantWeb_Vehicle_Big.webp",
+  "source_media_sha256": "f606599414a4f4b4969af56277b7d480f299e2f285617fc3e92a6ed2e969915a",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

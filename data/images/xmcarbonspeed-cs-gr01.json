@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://ueeshop.ly200-cdn.com/u_file/UPBC/UPBC678/2407/30/products/27066bdad4.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/xmcarbonspeed-cs-gr01-primary-image/a00309c4ebe2f6c3-detail-w600.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/xmcarbonspeed-cs-gr01-primary-image/8e3a20dd214a6ee9-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 8754,
+        "sha256": "8e3a20dd214a6ee9308d6cedd08955de9f0574e3df154c84466f4d828c8f5750",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/xmcarbonspeed-cs-gr01-primary-image/a00309c4ebe2f6c3-detail-w600.webp",
+        "width": 600,
+        "height": 600,
+        "bytes": 13882,
+        "sha256": "a00309c4ebe2f6c3fd2808317868db5bec2c283a0e364626d02d53d2a9468cd1",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "xmcarbonspeed-gr01-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Generic",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Generic",
   "alt": "Generic CS-GR01 carbon gravel frameset",
   "reviewed_at": "2026-08-07",
+  "source_media_url": "https://ueeshop.ly200-cdn.com/u_file/UPBC/UPBC678/2407/30/products/27066bdad4.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000",
+  "source_media_sha256": "619c13c18c46cd2159838a8b759b568222336c110ec212818b4a709228ec0337",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

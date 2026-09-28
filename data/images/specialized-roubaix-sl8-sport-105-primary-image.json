@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://assets.specialized.com/i/specialized/94425-60_ROUBAIX-SPORT-105-CHAM-SMK_HERO-PDP?%24scom-pdp-gallery-image%24=&fmt=webp"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/specialized-roubaix-sl8-sport-105-primary-image/efd82f8ce169537e-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/specialized-roubaix-sl8-sport-105-primary-image/052f33f552fb9650-card-w480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 14414,
+        "sha256": "052f33f552fb9650e7dbff30c84fb79727ec7a476c7898758174dd3f3cab193e",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/specialized-roubaix-sl8-sport-105-primary-image/efd82f8ce169537e-detail-w1200.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 61686,
+        "sha256": "efd82f8ce169537eb573f6f1090772e5df9f9b680dec478fe3ae730c8f6868b5",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "specialized-roubaix-sl8-sport-105-official-2026-08-27",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Specialized",
-    "usage_note": "Remote embed from the cited manufacturer page; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Specialized",
   "alt": "Specialized Roubaix SL8 Sport Shimano 105 in Gloss Champagne and Smoke",
   "display_note": "Official exact global Product ID 221827 photo; current mainland stock and color availability remain unresolved.",
-  "reviewed_at": "2026-08-27"
+  "reviewed_at": "2026-08-27",
+  "source_media_url": "https://assets.specialized.com/i/specialized/94425-60_ROUBAIX-SPORT-105-CHAM-SMK_HERO-PDP?%24scom-pdp-gallery-image%24=&fmt=webp",
+  "source_media_sha256": "787b3cb1ef5e3703425270ca91e9c24ec0cbdbc4978114c77bc900a73bab36ab",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

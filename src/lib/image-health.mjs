@@ -38,14 +38,21 @@ export function validateImageHealthCheck(image) {
     errors.push(`image ${image.id}: health_check.resources must be an array`);
     return errors;
   }
-  const allowed = new Map(remoteImageResources(image).map((target) => [target.id, target.url]));
+  // Keep the last check as provenance after the exact remote file is copied
+  // locally. It is historical evidence, not a fresh health check of the local
+  // asset, and imageHealthIsFreshAndHealthy still applies only to remote media.
+  const historicalSource = image?.hosting?.mode === 'local'
+    ? check.resources.map((resource) => ({ id: image.id, url: resource?.url }))
+    : remoteImageResources(image);
+  const allowed = new Map(historicalSource.map((target) => [target.id, target.url]));
   const seen = new Set();
   for (const result of check.resources) {
     if (!result || typeof result !== 'object' || Array.isArray(result)) {
       errors.push(`image ${image.id}: invalid health-check resource`);
       continue;
     }
-    if (typeof result.target_id !== 'string' || !allowed.has(result.target_id) || allowed.get(result.target_id) !== result.url) {
+    if (typeof result.target_id !== 'string' || !allowed.has(result.target_id) || allowed.get(result.target_id) !== result.url
+      || (image?.hosting?.mode === 'local' && !result.url?.startsWith('https://'))) {
       errors.push(`image ${image.id}: health-check resource does not match a current remote URL`);
     }
     if (seen.has(result.target_id)) errors.push(`image ${image.id}: duplicate health-check target ${result.target_id}`);

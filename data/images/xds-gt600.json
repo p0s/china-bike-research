@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://img12.360buyimg.com/n1/s720x720_jfs/t1/176853/32/45112/66666/661918a5Fbca80158/9e2a4871ab778506.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/xds-gt600-primary-image/75610991f089ab9c-detail-w720.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/xds-gt600-primary-image/42eb1e4062ef2d76-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 24356,
+        "sha256": "42eb1e4062ef2d76f32d97ef65c9872376af00608a9c7711b3c312a306ebd7b9",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/xds-gt600-primary-image/75610991f089ab9c-detail-w720.webp",
+        "width": 720,
+        "height": 720,
+        "bytes": 48816,
+        "sha256": "75610991f089ab9c6daf08fe39eb9458dcf75f3dfae7007cf1debdb1ef1d4813",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "xds-gt600-jd",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "XDS / JD",
-    "usage_note": "Remote embed from the cited official flagship-store product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © XDS / JD",
   "alt": "Dark gray XDS GT600 carbon gravel bike shown from the drive side",
   "reviewed_at": "2026-08-07",
-  "display_note": "Exact-model retailer exact-model reference; it does not establish the candidate's unresolved trim, components, or current purchase conditions."
+  "display_note": "Exact-model retailer exact-model reference; it does not establish the candidate's unresolved trim, components, or current purchase conditions.",
+  "source_media_url": "https://img12.360buyimg.com/n1/s720x720_jfs/t1/176853/32/45112/66666/661918a5Fbca80158/9e2a4871ab778506.jpg",
+  "source_media_sha256": "70f35be6830e922c437257f663d8f8bc54df492b8b3e318a6a47e133432709f1",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

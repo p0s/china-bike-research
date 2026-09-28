@@ -5,17 +5,56 @@
   "subject_accuracy": "same-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://feltbicycles.com/cdn/shop/collections/FELT_IA_20_FRD_1.jpg?v=1772702347"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/felt-ia-2-primary-image/9ea1dd336f6ee624-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/felt-ia-2-primary-image/43d19ef92329dab4-card-w480.webp",
+        "width": 480,
+        "height": 481,
+        "bytes": 15574,
+        "sha256": "43d19ef92329dab495eeb8f64543bfdcf498d00c1fd3e25637c5b824dd9a8be0",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/felt-ia-2-primary-image/9ea1dd336f6ee624-detail-w1200.webp",
+        "width": 1200,
+        "height": 1201,
+        "bytes": 61280,
+        "sha256": "9ea1dd336f6ee62424b1d7ce97d3f4c347e008e6d05fa31142f5ea977db40133",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "felt-ia-2-official-2026-08-08",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Felt Bicycles",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Felt Bicycles",
   "alt": "Felt IA 2.0 triathlon bike shown from the drive side",
   "display_note": "Official IA 2.0 collection photo; the collection covers multiple component builds.",
-  "reviewed_at": "2026-08-08"
+  "reviewed_at": "2026-08-08",
+  "source_media_url": "https://feltbicycles.com/cdn/shop/collections/FELT_IA_20_FRD_1.jpg?v=1772702347",
+  "source_media_sha256": "a2e0e2aa79efb863707908735a4bc68e44bb437ce8347d949c4e2c4c07b9090e",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

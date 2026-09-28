@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://img.alicdn.com/bao/uploaded/i4/3021506430/O1CN01WtVbMNqbd6F2XrKe_!!4611686018427381630-2-item_pic.png_500x500q90"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/twitter-storm-knight-primary-image/0181f4ec1329ac22-detail-w500.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/twitter-storm-knight-primary-image/1cb050ee0ee70d92-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 39014,
+        "sha256": "1cb050ee0ee70d921beb823098b35009289a76e4c605135f2c576320ad247e4d",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/twitter-storm-knight-primary-image/0181f4ec1329ac22-detail-w500.webp",
+        "width": 500,
+        "height": 500,
+        "bytes": 52790,
+        "sha256": "0181f4ec1329ac22bc7a6397ddddf690faaa801138eeb37526827973fc19fd08",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "twitter-storm-knight-current-options-2026-08-30",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Not established; image published in the TWITTER marketplace listing",
-    "usage_note": "Remote embed from the cited marketplace listing mirror; no ownership or redistribution license is inferred."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image via the TWITTER marketplace listing",
   "alt": "TWITTER R10 Pro Storm Knight carbon road bike from the exact marketplace listing",
   "reviewed_at": "2026-09-02",
-  "display_note": "R10 Pro family image used by the exact Storm Knight listing; the R10PRO label is consistent with the corrected family identity, while unverified component details are not inferred."
+  "display_note": "R10 Pro family image used by the exact Storm Knight listing; the R10PRO label is consistent with the corrected family identity, while unverified component details are not inferred.",
+  "source_media_url": "https://img.alicdn.com/bao/uploaded/i4/3021506430/O1CN01WtVbMNqbd6F2XrKe_!!4611686018427381630-2-item_pic.png_500x500q90",
+  "source_media_sha256": "c5cf9d6aaa69857cb3177589b91c27006066fba1db16c9cbb82b0b8ab1d82211",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

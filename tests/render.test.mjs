@@ -148,7 +148,7 @@ test('candidate leads share the catalog without a separate research queue', () =
   assert.match(html, /Winspace SLC3\.0 frameset/);
   assert.match(html, /data-stage="candidate" data-default-visible="true" data-id="candidate-pardus-spark-sport-pes"/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
-  assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+alt="XDS GT350 gravel bike shown from the drive side"[^>]+referrerpolicy="no-referrer"/);
+  assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+src="\/china-bike-research\/assets\/images\/sourced\/retailer\/xds-gt350-primary-image\/[^\"]+"[^>]+alt="XDS GT350 gravel bike shown from the drive side"/);
   assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · 2026-08-08<\/span>/);
   assert.match(html, /href="\/china-bike-research\/models\/missing-china-price-winspace-slc3\/" data-model-link/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
@@ -536,8 +536,8 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   }, product);
   assert.match(detail, /<dt>Weight<\/dt><dd>9\.9 kg<\/dd>/);
   assert.match(detail, /Each source is labelled by what it supports/);
-  assert.match(detail, /Twitter Bikes · Manufacturer product page · Product facts · Image/);
-  assert.match(detail, /Product facts: Medium–high · Image: High/);
+  assert.match(detail, /Twitter Bike USA · Manufacturer storefront · Image/);
+  assert.match(detail, /Image: High/);
   assert.match(detail, /Archived evidence; no public link/);
   assert.match(detail, /<section class="model-story"[^>]*>[\s\S]*9\.9 kg complete bike/);
   assert.doesNotMatch(detail, /The short version/);
@@ -884,9 +884,9 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(privacy, /only after you choose to load/);
 
   const imagePolicy = renderImagePolicy(context);
-  assert.match(imagePolicy, /Selected XHS, Taobao, and Xianyu images/);
-  assert.match(imagePolicy, /identity-safe canonical source URL/);
-  assert.match(imagePolicy, /Share, referral, invite, tracking, session, and account parameters are removed/);
+  assert.match(imagePolicy, /Displayed product photos are optimized WebP copies served by this site/);
+  assert.match(imagePolicy, /When a source image is unavailable or its model cannot be verified, we leave the photo out/);
+  assert.match(imagePolicy, /Browse image sources and credits/);
 });
 
 test('candidate videos render as disclosed context with timestamp links', () => {

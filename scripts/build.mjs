@@ -215,12 +215,10 @@ write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) =
 write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.meta.snapshot_date }));
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
-// The 258-row unified catalog with production project-base links, typed filters,
-// Build handoff, curated comparison starts, exact-image metadata, and current
-// reference prices measured 994,022 bytes with the production project base on
-// 2026-09-01. These limits retain modest growth headroom while keeping the full
-// candidate set available without a second page or client-side data fetch.
-const performanceBudget = { home_html_bytes: 998_000, home_elements: 7_535 };
+// GitHub Pages prefixes each root-relative image and link with the project
+// base; the Cloudflare production build has no prefix. Keep the production
+// limit at 1 MB, with a narrow allowance for the GitHub Pages base-path text.
+const performanceBudget = { home_html_bytes: 1_000_000 + (base ? 35_000 : 0), home_elements: 7_535 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length

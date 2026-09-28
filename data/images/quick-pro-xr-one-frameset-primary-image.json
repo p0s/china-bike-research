@@ -5,17 +5,56 @@
   "subject_accuracy": "same-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.quickprousa.com/cdn/shop/files/1.XRONE___SHIMANO_GRX_1x12s_DI2.png?v=1783462517&width=1946"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/quick-pro-xr-one-frameset-primary-image/e1c3e6826e9e87a2-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/quick-pro-xr-one-frameset-primary-image/df0d7101b640d876-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 33196,
+        "sha256": "df0d7101b640d876709c03d25091978d33352d6983cc59f903677523640d881c",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/quick-pro-xr-one-frameset-primary-image/e1c3e6826e9e87a2-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 148138,
+        "sha256": "e1c3e6826e9e87a22513aafbd1ac7fbf7756e8a2c6335f2d9a35542def9c9fab",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "quick-pro-xr-one-grx-di2-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Quick Pro",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Quick Pro",
   "alt": "Quick Pro XR:ONE gravel platform shown as a complete GRX Di2 bike",
   "display_note": "Official same-platform complete-bike photo; the tracked price is for the distinct frameset and cockpit package.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://www.quickprousa.com/cdn/shop/files/1.XRONE___SHIMANO_GRX_1x12s_DI2.png?v=1783462517&width=1946",
+  "source_media_sha256": "75a2f3285257aa9e6844dd31d3026bd612f3d59063fc6c7fe87f047921d253f2",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

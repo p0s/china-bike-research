@@ -48,6 +48,23 @@ for (const entry of fs.readdirSync(path.join(root, 'data/images'))) {
     if (typeof value === 'string') referencedSourcedMedia.add(value.replace(/^\//, ''));
   }
 }
+for (const entry of fs.readdirSync(path.join(root, 'data/groupsets'))) {
+  if (!entry.endsWith('.json')) continue;
+  const image = JSON.parse(fs.readFileSync(path.join(root, 'data/groupsets', entry), 'utf8')).image;
+  if (image?.local_path) {
+    for (const value of [image.local_path, ...(image.variants ?? []).map((variant) => variant.url)]) {
+      if (typeof value === 'string') referencedSourcedMedia.add(value.replace(/^\//, ''));
+    }
+  }
+}
+for (const photo of JSON.parse(fs.readFileSync(path.join(root, 'content/blog-images.json'), 'utf8')).model_photos) {
+  const image = photo.external?.image;
+  if (image?.hosting?.mode === 'local') {
+    for (const value of [image.hosting.local_path, ...(image.hosting.variants ?? []).map((variant) => variant.url)]) {
+      if (typeof value === 'string') referencedSourcedMedia.add(value.replace(/^\//, ''));
+    }
+  }
+}
 
 const patterns = [
   ['working-container path', /\/(?:mnt\/data|home\/oai)(?:\/[^\s"'<>]*)?/g],
@@ -75,7 +92,7 @@ function walk(directory) {
         const isExactProjectAsset = expectedProjectHash
           ? crypto.createHash('sha256').update(fs.readFileSync(absolute)).digest('hex') === expectedProjectHash
           : false;
-        const validSourcedPath = /^assets\/images\/sourced\/(?:xhs|taobao|xianyu)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(?:card|detail)-w\d+\.webp$/.test(relative);
+        const validSourcedPath = /^assets\/images\/sourced\/(?:xhs|taobao|xianyu|official|retailer)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(?:card|detail)-w\d+\.webp$/.test(relative);
         if (!isExactProjectAsset && !(extension === '.webp' && validSourcedPath && referencedSourcedMedia.has(relative))) {
           findings.push(`${relative}: third-party media binary is outside the validated sourced-image contract`);
         }

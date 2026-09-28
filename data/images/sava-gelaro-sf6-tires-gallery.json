@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-sf6-tires-gallery",
   "platform_id": "sava-gelaro-sf",
-  "variant_ids": ["sava-gelaro-sf6-cues"],
+  "variant_ids": [
+    "sava-gelaro-sf6-cues"
+  ],
   "role": "gallery",
   "sort_order": 6,
   "label": "40C tire detail",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/40C_tires-gelaro_sf6.jpg?v=1755591748&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-sf6-tires-gallery/54160579297a128d-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-tires-gallery/ea7b35afed555054-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 12906,
+        "sha256": "ea7b35afed55505411e4885823724e6c65945c649e01211ac7ef8114958722e5",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-tires-gallery/54160579297a128d-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 53464,
+        "sha256": "54160579297a128d4da3b5df74d78c17ae8250078ee06b51b137e2a61eccd7c5",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-sf6-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Component detail © SAVA",
   "alt": "SAVA Gelaro SF6 700 by 40C gravel tire detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/40C_tires-gelaro_sf6.jpg?v=1755591748&width=1080",
+  "source_media_sha256": "26a6a83f4a3acb8f8375723ac145edda3848a8a5d93f0d80ea8a72e3bb1fdebd",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-sf6-u6000-white-gallery",
   "platform_id": "sava-gelaro-sf",
-  "variant_ids": ["sava-gelaro-sf6-cues"],
+  "variant_ids": [
+    "sava-gelaro-sf6-cues"
+  ],
   "role": "gallery",
   "sort_order": 4,
   "label": "U6000 Elegant White",
   "subject_accuracy": "same-model-different-color",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6000-White.jpg?v=1755591748&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-sf6-u6000-white-gallery/1277559e6743ae45-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-u6000-white-gallery/1e04e90be0cf0d15-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 15914,
+        "sha256": "1e04e90be0cf0d150f66993bab82e825b717bbf270657170de0bdc11678837a4",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-u6000-white-gallery/1277559e6743ae45-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 61296,
+        "sha256": "1277559e6743ae45b415cf96aeb1e3f35dcf828d051a729ce0347589f2272c56",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-sf6-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © SAVA",
   "alt": "SAVA Gelaro SF6 U6000 gravel bike in Elegant White",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6000-White.jpg?v=1755591748&width=1080",
+  "source_media_sha256": "ace2972051e3d83661c95eff175675b6af7cbb9c76fc00c31e707dc8fe1ea41b",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

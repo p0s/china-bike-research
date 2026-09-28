@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-s4-white-gallery",
   "platform_id": "sava-gelaro",
-  "variant_ids": ["sava-gelaro-s4-grx400"],
+  "variant_ids": [
+    "sava-gelaro-s4-grx400"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "Elegant White",
   "subject_accuracy": "same-model-different-color",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/SAVA_Gelaro_S4-GRX400_Carbon_Gravel_Bike-White.jpg?v=1752564844&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-s4-white-gallery/378f886b43f09c04-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-s4-white-gallery/5254b8982db6cf9e-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 16690,
+        "sha256": "5254b8982db6cf9e25beb17be6bad3ac0b3533b8c566c253fbcfe85e18d61880",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-s4-white-gallery/378f886b43f09c04-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 65316,
+        "sha256": "378f886b43f09c04628d0cab4092282e0c85d4d538f59bf8fd0e91a7e1f098c4",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-s4-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © SAVA",
   "alt": "SAVA Gelaro S4 GRX400 gravel bike in Elegant White",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/SAVA_Gelaro_S4-GRX400_Carbon_Gravel_Bike-White.jpg?v=1752564844&width=1080",
+  "source_media_sha256": "e3374f5d0d17c1475932fe833501bccd80921f8eec0736d8ecde40b6838f1ffe",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

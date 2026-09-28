@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-sf6-handlebar-gallery",
   "platform_id": "sava-gelaro-sf",
-  "variant_ids": ["sava-gelaro-sf6-cues"],
+  "variant_ids": [
+    "sava-gelaro-sf6-cues"
+  ],
   "role": "gallery",
   "sort_order": 5,
   "label": "Flat handlebar detail",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/handlebar-gelaor_sf6.jpg?v=1755591748&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-sf6-handlebar-gallery/8ab14ef467c0dc33-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-handlebar-gallery/34d3402a863b30de-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 9054,
+        "sha256": "34d3402a863b30de533925eec6d57e66969107bea6acf7c2cff5586e36ddf8d1",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-handlebar-gallery/8ab14ef467c0dc33-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 37824,
+        "sha256": "8ab14ef467c0dc337f947ad2471aa31176799a97bb51147155047272e9ee74b1",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-sf6-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Component detail © SAVA",
   "alt": "SAVA Gelaro SF6 flat aluminum handlebar detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/handlebar-gelaor_sf6.jpg?v=1755591748&width=1080",
+  "source_media_sha256": "6646d95d55d5ab0703047834c88621d13b93230a1db7b78a2ff1e9a9b9ca386d",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

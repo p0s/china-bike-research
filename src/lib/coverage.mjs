@@ -117,6 +117,7 @@ function imageTarget(image) {
 function imageSourceTier(image) {
   if (image.subject_accuracy === 'illustrative') return 0;
   const status = image.rights?.status;
+  if (status === 'source-attributed-rehost' && image.media_type === 'official-product-photo') return 2;
   if (['retailer-page-embed', 'public-post-embed', 'public-post-quotation', 'source-attributed-rehost'].includes(status)) return 1;
   if (status === 'official-page-embed') return 2;
   if (['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(status)) return 3;
@@ -146,6 +147,13 @@ function hasApprovedLocalSourcedDerivative(image) {
     && image.hosting.local_path.startsWith('/assets/images/sourced/')
     && Array.isArray(image.hosting.variants)
     && image.hosting.variants.length === 2;
+}
+
+function hasApprovedLocalGroupsetDerivative(groupset) {
+  return groupset?.image?.rights?.status === 'source-attributed-rehost'
+    && groupset.image.local_path?.startsWith('/assets/images/sourced/official/')
+    && Array.isArray(groupset.image.variants)
+    && groupset.image.variants.length === 2;
 }
 
 function preservesProtectedHosting(image) {
@@ -392,7 +400,11 @@ export function mergeCoverageBaseline(previous, current, updatedAt) {
     if (!before) imageTargets[target] = now;
     else if (!now) imageTargets[target] = before;
     else {
-      imageTargets[target] = preferredImageTargetProtection(before, now);
+      imageTargets[target] = {
+        minimum_accuracy_rank: Math.max(before.minimum_accuracy_rank, now.minimum_accuracy_rank),
+        minimum_source_tier: Math.max(before.minimum_source_tier, now.minimum_source_tier),
+        remote_required: Boolean(before.remote_required || now.remote_required)
+      };
     }
   }
 
@@ -699,6 +711,9 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
         if (collection === 'images'
           && field === 'hosting.remote_url'
           && hasApprovedLocalSourcedDerivative(currentRecords.get(id))) continue;
+        if (collection === 'groupsets'
+          && field === 'image.remote_url'
+          && hasApprovedLocalGroupsetDerivative(currentRecords.get(id))) continue;
         if (!retiredProtectedItems.has(`${collection}:${id}#field:${field}`)) errors.push(`${collection}:${id} lost protected field ${field}`);
       }
     }

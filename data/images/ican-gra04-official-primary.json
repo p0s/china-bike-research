@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.icanbikes.com/wp-content/uploads/2024/06/Full-Carbon-Racing-Gravel-Frame-with-UDH-GRA04-01.avif"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/ican-gra04-official-primary-image/b0133dd22e6c6b45-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/ican-gra04-official-primary-image/1746eac5de878f96-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 7640,
+        "sha256": "1746eac5de878f9614662687149fd74f57b88b4f8a39d144d9fac35341e8a017",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/ican-gra04-official-primary-image/b0133dd22e6c6b45-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 23750,
+        "sha256": "b0133dd22e6c6b4568b934eabbfafd6da2be28ebcf3e8ea33db0771700d4014d",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "ican-gra04-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "ICAN",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with ICAN; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © ICAN",
   "alt": "Black ICAN GRA04 carbon gravel frameset with integrated cockpit and seatpost",
   "reviewed_at": "2026-08-26",
+  "source_media_url": "https://www.icanbikes.com/wp-content/uploads/2024/06/Full-Carbon-Racing-Gravel-Frame-with-UDH-GRA04-01.avif",
+  "source_media_sha256": "b99009b08380763576821222e33953ced1db80eae9e06cf2c28bd256e919e61a",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

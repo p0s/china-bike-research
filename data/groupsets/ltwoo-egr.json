@@ -7,7 +7,11 @@
   "status": "current-official-family",
   "positioning": "The documented L-TWOO gravel option: 46T range, damped rear derailleur and hydraulic controls, but exact kit wiring and mainland package still need checking.",
   "variants": [
-    { "name": "eGR official 10-12-speed", "tier": "gravel", "max_rear_sprocket_teeth": 46 }
+    {
+      "name": "eGR official 10-12-speed",
+      "tier": "gravel",
+      "max_rear_sprocket_teeth": 46
+    }
   ],
   "shifting": {
     "chainrings": "1x",
@@ -16,8 +20,13 @@
     "max_rear_sprocket_teeth": 46
   },
   "architecture": "Electronic app-configurable shifting; confirm the exact battery and power-wire routing for the current package before ordering.",
-  "brake_options": ["Hydraulic disc"],
-  "weight": { "status": "official-component-weights", "note": "Official current page lists 333 g for the damped rear derailleur and 225 g per shift/brake lever; it does not give a normalized full-package total." },
+  "brake_options": [
+    "Hydraulic disc"
+  ],
+  "weight": {
+    "status": "official-component-weights",
+    "note": "Official current page lists 333 g for the damped rear derailleur and 225 g per shift/brake lever; it does not give a normalized full-package total."
+  },
   "battery": "Current public product page does not expose a sufficiently clear package-level battery specification.",
   "controls_and_app": "L-TWOO app supports speed selection, adjustment and firmware; rear derailleur includes a friction damping system.",
   "package_summary": "Confirm levers, rear derailleur, battery, wires/charger, both calipers and hoses; keep unverified OEM 13-speed fully wireless listings separate from this official 10-12-speed record.",
@@ -35,20 +44,63 @@
     "Use the specified L-TWOO mineral fluid and confirm local service support."
   ],
   "image": {
-    "remote_url": "https://oss.ltwoo.com/ltwoo3/Gravel/electricGravel/img10%20%E6%8B%B7%E8%B4%9D.png?image_process=quality%2CQ_80",
     "source_id": "ltwoo-egr-official-2026-08-24",
     "subject_accuracy": "exact-family",
-    "width": 2832,
-    "height": 2295,
+    "width": 1200,
+    "height": 973,
     "credit": "L-TWOO",
     "alt": "L-TWOO eGR electronic gravel groupset components",
     "rights": {
-      "status": "official-page-embed",
+      "status": "source-attributed-rehost",
       "copyright_holder": "L-TWOO",
-      "usage_note": "Remote embed from the cited manufacturer page; no redistribution license asserted."
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
     },
-    "reviewed_at": "2026-08-25"
+    "reviewed_at": "2026-08-25",
+    "local_path": "/assets/images/sourced/official/groupset-ltwoo-egr/e8151da7808b10ad-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/groupset-ltwoo-egr/d5913cf4f6beb17b-card-w480.webp",
+        "width": 480,
+        "height": 389,
+        "bytes": 12034,
+        "sha256": "d5913cf4f6beb17b580bf8d62a68174512153a2412b5f7f8b127764190f9733e",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/groupset-ltwoo-egr/e8151da7808b10ad-detail-w1200.webp",
+        "width": 1200,
+        "height": 973,
+        "bytes": 44452,
+        "sha256": "e8151da7808b10ad5a880bb791036b8d3ec7aca856d1349150216cdcfd039c5c",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ],
+    "source_media_url": "https://oss.ltwoo.com/ltwoo3/Gravel/electricGravel/img10%20%E6%8B%B7%E8%B4%9D.png?image_process=quality%2CQ_80",
+    "source_media_sha256": "5d6a1f7fca840e201f7302a1038daa6dca900aa1841eaa9eccf8acd9afc66781",
+    "editorial_quotation": {
+      "purpose": "editorial-identification-and-commentary",
+      "scope": "one-compressed-product-photo",
+      "source_link_required": true,
+      "no_license_asserted": true,
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-09-28",
+      "embedded_metadata": "stripped",
+      "faces": "none-visible",
+      "vehicle_registration": "none-visible",
+      "account_identifiers": "none-visible",
+      "location_identifiers": "none-visible"
+    }
   },
-  "source_ids": ["ltwoo-egr-official-2026-08-24", "ltwoo-disc-brake-fluid-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "source_ids": [
+    "ltwoo-egr-official-2026-08-24",
+    "ltwoo-disc-brake-fluid-official-2026-08-24",
+    "gpt-pro-electronic-groupsets-input-2026-08-24"
+  ],
   "reviewed_at": "2026-08-24"
 }

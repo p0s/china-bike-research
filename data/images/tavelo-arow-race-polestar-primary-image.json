@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2411/06/products/5a01dfe5a5.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/tavelo-arow-race-polestar-primary-image/b5b07901cc311e0d-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/tavelo-arow-race-polestar-primary-image/ebadb9634df8b096-card-w480.webp",
+        "width": 480,
+        "height": 369,
+        "bytes": 24932,
+        "sha256": "ebadb9634df8b096b7fdc3200747c832cb2b7ce445a13a0eb45be6305ed35da5",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/tavelo-arow-race-polestar-primary-image/b5b07901cc311e0d-detail-w1000.webp",
+        "width": 1000,
+        "height": 767,
+        "bytes": 64104,
+        "sha256": "b5b07901cc311e0d286ead49c7040cd3b89e64a623b57b9187afa46681717aa5",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "tavelo-arow-race-polestar-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Tavelo",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Tavelo",
   "alt": "Tavelo Arow Race Polestar carbon road frameset",
   "display_note": "Official exact-variant frameset image; mainland price and stock remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2411/06/products/5a01dfe5a5.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000",
+  "source_media_sha256": "fc3a9597f236eae96ecfc9db7d2d86380c42fa296a1928febcf995b97d6edf1a",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

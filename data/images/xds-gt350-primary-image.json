@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.bikecity.hk/cdn/shop/files/1_7eef2f38-d6e6-4626-aa82-1335542c6e62.jpg?v=1757664413&width=1445"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/xds-gt350-primary-image/5599d6cb75f58d38-detail-w800.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/xds-gt350-primary-image/c49b7360b8466bbe-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 24120,
+        "sha256": "c49b7360b8466bbe96e2b74785d9f416d39b892b2002024bff893c1133dffd38",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/xds-gt350-primary-image/5599d6cb75f58d38-detail-w800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 58510,
+        "sha256": "5599d6cb75f58d38d3fc366445664f7b7833af0737aa09677a00144bdc2bd3f2",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "xds-gt350-retailer-2026-08-08",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "XDS / BikeCity Hong Kong",
-    "usage_note": "Remote embed from the cited retailer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © XDS / BikeCity Hong Kong",
   "alt": "XDS GT350 gravel bike shown from the drive side",
   "display_note": "Exact-model retailer photo; it does not establish the mainland-China purchase route or price.",
-  "reviewed_at": "2026-08-08"
+  "reviewed_at": "2026-08-08",
+  "source_media_url": "https://www.bikecity.hk/cdn/shop/files/1_7eef2f38-d6e6-4626-aa82-1335542c6e62.jpg?v=1757664413&width=1445",
+  "source_media_sha256": "c820de9252fcdfd7f13cb780c8063805b9bcdaafb1c75af64948bc53d09679f8",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

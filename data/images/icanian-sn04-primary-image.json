@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.icanbikes.com/wp-content/uploads/2024/11/Carbon-Suspension-Fat-Frame-SN04-04.avif"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/icanian-sn04-primary-image/b2a34007f0d26e08-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/icanian-sn04-primary-image/aa75a3c1956890fa-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 9764,
+        "sha256": "aa75a3c1956890fa7c3d79739a8cc2e9315bcfd4b5de9b72e6579b4091af85e6",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/icanian-sn04-primary-image/b2a34007f0d26e08-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 30606,
+        "sha256": "b2a34007f0d26e08a3191771ecacad02dca4ecb660a7c5a7490b880ff45c9c2c",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "ican-sn04-official-2026-08-08",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "ICAN Bikes",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © ICAN Bikes",
   "alt": "ICAN SN04 full-suspension carbon fat-bike frameset",
   "reviewed_at": "2026-08-08",
-  "display_note": "Official exact-model frame reference; it does not establish the candidate's unresolved package contents, included suspension components, current price, or domestic purchase conditions."
+  "display_note": "Official exact-model frame reference; it does not establish the candidate's unresolved package contents, included suspension components, current price, or domestic purchase conditions.",
+  "source_media_url": "https://www.icanbikes.com/wp-content/uploads/2024/11/Carbon-Suspension-Fat-Frame-SN04-04.avif",
+  "source_media_sha256": "d36adeb3544dca928b87e42f1ab64a545a1ebf436506005b419af6bc1b7e1e14",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

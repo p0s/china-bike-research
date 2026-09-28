@@ -4,11 +4,57 @@
   "role": "primary",
   "subject_accuracy": "same-model-different-market-build",
   "media_type": "retailer-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://www.uaecycle.com/cdn/shop/files/20260730123853_66_23_535x.jpg?v=1785389123" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/pardus-super-sport-gen2-candidate-primary-image/dfad6ac867bc1c96-detail-w535.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/pardus-super-sport-gen2-candidate-primary-image/1ae25b56ac16ccb0-card-w480.webp",
+        "width": 480,
+        "height": 379,
+        "bytes": 16146,
+        "sha256": "1ae25b56ac16ccb01e32145ccf16517c940c35727e64d0b9827ca819fb343c69",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/pardus-super-sport-gen2-candidate-primary-image/dfad6ac867bc1c96-detail-w535.webp",
+        "width": 535,
+        "height": 422,
+        "bytes": 23424,
+        "sha256": "dfad6ac867bc1c96ccb058f64d08b812af9c514029ee5b2a0a706f12bfb53c91",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "pardus-super-sport-gen2-uaecycle-2026-08-17",
-  "rights": { "status": "retailer-page-embed", "copyright_holder": "PARDUS / UAE Cycle", "usage_note": "Remote embed from the cited authorized-retailer page; no redistribution license is asserted." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "PARDUS / UAE Cycle",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image via UAE Cycle",
   "alt": "PARDUS Super Sport Gen2 carbon road bike shown by an authorized retailer",
   "reviewed_at": "2026-08-17",
-  "display_note": "Gen2 family image; the pictured Shimano 105 trim differs from the reported low-price electronic configuration."
+  "display_note": "Gen2 family image; the pictured Shimano 105 trim differs from the reported low-price electronic configuration.",
+  "source_media_url": "https://www.uaecycle.com/cdn/shop/files/20260730123853_66_23_535x.jpg?v=1785389123",
+  "source_media_sha256": "0dcbc15efe3a733737727c529eb75a0b23fedc298e08e42d7f0ed50e7b08afe4",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

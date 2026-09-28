@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://cdn.shopify.com/s/files/1/0094/1142/8410/files/yoeleo-altera-g21-black-atisan-frame.webp?v=1773386351"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/yoeleo-altera-g21-primary-image/f4fd33b3fa9be498-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/yoeleo-altera-g21-primary-image/73b38a546b5ad755-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 17364,
+        "sha256": "73b38a546b5ad755b0c338438a845c54f8deed438a43128f82f621fde92cab4a",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/yoeleo-altera-g21-primary-image/f4fd33b3fa9be498-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 119846,
+        "sha256": "f4fd33b3fa9be4984544122eb420ef1a4e23d32f054886c9936c8ed7aae64d2a",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "yoeleo-altera-g21-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Yoeleo",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Yoeleo",
   "alt": "Yoeleo Altera G21 carbon gravel frameset in black",
   "reviewed_at": "2026-08-07",
+  "source_media_url": "https://cdn.shopify.com/s/files/1/0094/1142/8410/files/yoeleo-altera-g21-black-atisan-frame.webp?v=1773386351",
+  "source_media_sha256": "0c5e793c0e2d0e4e1c526ec30114ca678170bce1cb18c709cd3a1f09492c3b75",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

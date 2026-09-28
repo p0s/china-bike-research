@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://sava-official.com/1-small_default/sava-bike-2025-r21-gelaro-s6s4-gravel-bike.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-s4-primary-image/a253e6a4c7636ccb-detail-w98.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-s4-primary-image/89dabbf11e8d505f-card-w98.webp",
+        "width": 98,
+        "height": 98,
+        "bytes": 3156,
+        "sha256": "89dabbf11e8d505fbdd376e64aa2c800b22adad91a5ad514a67c1a224d6be53c",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-s4-primary-image/a253e6a4c7636ccb-detail-w98.webp",
+        "width": 98,
+        "height": 98,
+        "bytes": 3370,
+        "sha256": "a253e6a4c7636ccb5e0665e6a95c8261971b0acb9802a7ecb27ff162f348f8c7",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "sava-gelaro-s4-official-image-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "SAVA",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SAVA",
   "alt": "SAVA Gelaro S4 gravel bike",
   "display_note": "Official combined Gelaro S6/S4 family image; exact S4 configuration and mainland availability remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://sava-official.com/1-small_default/sava-bike-2025-r21-gelaro-s6s4-gravel-bike.jpg",
+  "source_media_sha256": "c3643ffd8ea3e69b9a55918b9811923cc66fbf8910d961b2b40343d6a4963625",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

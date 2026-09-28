@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.bikecity.hk/cdn/shop/files/001953249444f61d952d94bad7bb0e7e.png?v=1757664418&width=1445"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/xds-ad500-2025-primary-image/72579b885b209170-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/xds-ad500-2025-primary-image/d3f50c9cffbc041e-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 41604,
+        "sha256": "d3f50c9cffbc041e394cd4178195c3612226276eedd9de139f5c2fa4d17f18f9",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/xds-ad500-2025-primary-image/72579b885b209170-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 170964,
+        "sha256": "72579b885b2091707ea1bb46ea10960ebaf963f2c0dea21564eb0dfacec30f3a",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "xds-ad500-retailer-2026-08-08",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "XDS / BikeCity Hong Kong",
-    "usage_note": "Remote embed from the cited retailer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © XDS / BikeCity Hong Kong",
   "alt": "XDS AD500 2025 road bike shown from the drive side",
   "display_note": "Exact-model/year retailer photo; it does not establish the mainland-China purchase route or price.",
-  "reviewed_at": "2026-08-08"
+  "reviewed_at": "2026-08-08",
+  "source_media_url": "https://www.bikecity.hk/cdn/shop/files/001953249444f61d952d94bad7bb0e7e.png?v=1757664418&width=1445",
+  "source_media_sha256": "75672cb3dcc96c0f2302b68fa520874bb389739fc137bfcca9fc4a30b5fa4c01",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

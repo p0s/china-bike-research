@@ -7,8 +7,18 @@
   "status": "current-established",
   "positioning": "Wide-range wireless gravel: RX717 is the value version and RX827 the tougher premium version, both distinct from wired 2x RX825.",
   "variants": [
-    { "name": "RX717", "tier": "value-gravel", "cassette_speeds": "12", "max_rear_sprocket_teeth": 51 },
-    { "name": "RX827", "tier": "performance-gravel", "cassette_speeds": "12", "max_rear_sprocket_teeth": 51 }
+    {
+      "name": "RX717",
+      "tier": "value-gravel",
+      "cassette_speeds": "12",
+      "max_rear_sprocket_teeth": 51
+    },
+    {
+      "name": "RX827",
+      "tier": "performance-gravel",
+      "cassette_speeds": "12",
+      "max_rear_sprocket_teeth": 51
+    }
   ],
   "shifting": {
     "chainrings": "1x",
@@ -17,8 +27,13 @@
     "max_rear_sprocket_teeth": 51
   },
   "architecture": "Fully wireless shifting with a removable protected battery in the rear derailleur; no internal derailleur battery wiring.",
-  "brake_options": ["Hydraulic disc"],
-  "weight": { "status": "package-dependent", "note": "No normalized package total is recorded; RX717 and RX827 component weights must remain revision-specific." },
+  "brake_options": [
+    "Hydraulic disc"
+  ],
+  "weight": {
+    "status": "package-dependent",
+    "note": "No normalized package total is recorded; RX717 and RX827 component weights must remain revision-specific."
+  },
   "battery": "Removable rear-derailleur battery shared across the current RX717/RX827-compatible Shimano wireless family; lever controls use their own cells.",
   "controls_and_app": "Wireless Di2 control; Automatic Impact Recovery and SHADOW ES-style protection are part of the current rear-derailleur family.",
   "package_summary": "A usable conversion needs the matching right shift/brake lever, left brake lever, RD battery and charger, 10-51T cassette, chain, crank/chainring and hydraulic brakes.",
@@ -36,7 +51,6 @@
     "Do not label the normal-hanger RX827 as SRAM-style UDH Full Mount."
   ],
   "image": {
-    "remote_url": "https://productinfo.shimano.com/_next/image?url=https%3A%2F%2Fdassets.shimano.com%2Fcontent%2Fdam%2Fglobal%2Fcg1SHICCycling%2Ffinal%2Fproducts%2Fcg2SHICComponent%2Fcg3SHICRearDerailleur%2Fcg4SHICRearDerailleurDi2spec%2FRD-RX827-SGS-shic219-primary_1.jpg%2F_jcr_content%2Frenditions%2FRD-RX827-SGS-shic219-primary_1_310_310.jpeg&w=640&q=75",
     "source_id": "shimano-grx-rx827-official-2026-08-24",
     "subject_accuracy": "featured-variant",
     "featured_variant": "GRX RX827",
@@ -45,12 +59,57 @@
     "credit": "Shimano",
     "alt": "Shimano GRX RX827 wireless rear derailleur",
     "rights": {
-      "status": "official-page-embed",
+      "status": "source-attributed-rehost",
       "copyright_holder": "Shimano",
-      "usage_note": "Remote embed from the cited manufacturer page; no redistribution license asserted."
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
     },
-    "reviewed_at": "2026-08-25"
+    "reviewed_at": "2026-08-25",
+    "local_path": "/assets/images/sourced/official/groupset-shimano-grx-rx717-rx827/b3a1dc43e610a5a5-detail-w310.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/groupset-shimano-grx-rx717-rx827/116673d07742f128-card-w310.webp",
+        "width": 310,
+        "height": 310,
+        "bytes": 4336,
+        "sha256": "116673d07742f128a6a99b736e9a571b19935b87ca7e96d6cd86b8cd5413e9f0",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/groupset-shimano-grx-rx717-rx827/b3a1dc43e610a5a5-detail-w310.webp",
+        "width": 310,
+        "height": 310,
+        "bytes": 4658,
+        "sha256": "b3a1dc43e610a5a5ca45964e68dae6c4bb5624ab1c5179933120f6a85d8744e8",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ],
+    "source_media_url": "https://productinfo.shimano.com/_next/image?url=https%3A%2F%2Fdassets.shimano.com%2Fcontent%2Fdam%2Fglobal%2Fcg1SHICCycling%2Ffinal%2Fproducts%2Fcg2SHICComponent%2Fcg3SHICRearDerailleur%2Fcg4SHICRearDerailleurDi2spec%2FRD-RX827-SGS-shic219-primary_1.jpg%2F_jcr_content%2Frenditions%2FRD-RX827-SGS-shic219-primary_1_310_310.jpeg&w=640&q=75",
+    "source_media_sha256": "1fe9214815bd6b9a0d7149c8e142637387a3b2c99df95c90c06a0baf5532f88b",
+    "editorial_quotation": {
+      "purpose": "editorial-identification-and-commentary",
+      "scope": "one-compressed-product-photo",
+      "source_link_required": true,
+      "no_license_asserted": true,
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-09-28",
+      "embedded_metadata": "stripped",
+      "faces": "none-visible",
+      "vehicle_registration": "none-visible",
+      "account_identifiers": "none-visible",
+      "location_identifiers": "none-visible"
+    }
   },
-  "source_ids": ["shimano-grx-rx717-official-2026-08-24", "shimano-grx-rx827-official-2026-08-24", "shimano-productinfo-rd-rx827-sgs-2026-08-25", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "source_ids": [
+    "shimano-grx-rx717-official-2026-08-24",
+    "shimano-grx-rx827-official-2026-08-24",
+    "shimano-productinfo-rd-rx827-sgs-2026-08-25",
+    "gpt-pro-electronic-groupsets-input-2026-08-24"
+  ],
   "reviewed_at": "2026-08-24"
 }

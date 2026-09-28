@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://img.website.xin/contents/sitefiles10831/54155022/images/56494617.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/laget-discovery-one-flagship-official-primary-image/9032676a6d292256-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/laget-discovery-one-flagship-official-primary-image/224e42183e5a5db9-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 7848,
+        "sha256": "224e42183e5a5db94896276a7f7c3e61cfbc73ead11177c3ee96442c5f7a0aaf",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/laget-discovery-one-flagship-official-primary-image/9032676a6d292256-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 26846,
+        "sha256": "9032676a6d29225612dc2e0f1621e9fef8df13b052b11b1df31d742dcbcb6374",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "titanium-laget-discovery-one-flagship-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "LAGET",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Frameset image © LAGET",
   "alt": "LAGET Discovery ONE flagship titanium gravel frameset",
   "display_note": "Official exact-model frameset image.",
-  "reviewed_at": "2026-08-27"
+  "reviewed_at": "2026-08-27",
+  "source_media_url": "https://img.website.xin/contents/sitefiles10831/54155022/images/56494617.png",
+  "source_media_sha256": "e942f60d0c4c646f8ff0a030b04acdc8adb73decf6eac97747f63e62a2b99588",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_1200%2Cq_90%2Cw_1200/qpdtxyedf8alz3qnjhl5/MY26TCRAdvanced0-AXS_ColorAAlpineGreen.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/giant-tcr-advanced-primary-image/17c1e356f23a9de4-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/giant-tcr-advanced-primary-image/55e20ef3a259dd91-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 17290,
+        "sha256": "55e20ef3a259dd91842ec11f32a788ffffc8c3e072d41f71d31cceb5408510f5",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/giant-tcr-advanced-primary-image/17c1e356f23a9de4-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 74150,
+        "sha256": "17c1e356f23a9de4dfbf553a46dc6227809c7bf1cdc54f20b5b6d3432c8876ec",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "giant-tcr-advanced-0-axs-official-image-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Giant Bicycles",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Giant Bicycles",
   "alt": "Giant TCR Advanced 0 AXS carbon road bike",
   "display_note": "Official TCR Advanced family image; the mainland catalog record is TCR Advanced 3-GC, so trim and color may differ.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_1200%2Cq_90%2Cw_1200/qpdtxyedf8alz3qnjhl5/MY26TCRAdvanced0-AXS_ColorAAlpineGreen.jpg",
+  "source_media_sha256": "013ab3ddf0d6231db3345bbb0c20db66598f0efb8c627bb6cc9150a3cbccec72",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

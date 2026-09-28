@@ -1,16 +1,64 @@
 {
   "id": "ican-gra04-detail-04-gallery",
   "platform_id": "ican-gra04",
-  "variant_ids": ["ican-gra04-frameset"],
+  "variant_ids": [
+    "ican-gra04-frameset"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "Official frame detail 04",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://www.icanbikes.com/wp-content/uploads/2024/06/Full-Carbon-Racing-Gravel-Frame-with-UDH-GRA04-04.avif"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/ican-gra04-detail-04-gallery/00c5b9b02fcb60eb-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/ican-gra04-detail-04-gallery/0a3e0222b6bfca1f-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 8684,
+        "sha256": "0a3e0222b6bfca1f266e8d6ea32ffa8a8e04ac1489bc8026144ffd1a1e564193",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/ican-gra04-detail-04-gallery/00c5b9b02fcb60eb-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 26170,
+        "sha256": "00c5b9b02fcb60eb6e6cf9ff4bd0ba8f10de2a41b2f89503dab7be3ade452410",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "ican-gra04-official",
-  "rights": {"status": "official-page-embed", "copyright_holder": "ICAN", "usage_note": "Remote embed from the cited official product page. Copyright remains with ICAN; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "ICAN",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product detail © ICAN",
   "alt": "ICAN GRA04 carbon gravel frameset detail from the official product gallery",
-  "reviewed_at": "2026-08-26"
+  "reviewed_at": "2026-08-26",
+  "source_media_url": "https://www.icanbikes.com/wp-content/uploads/2024/06/Full-Carbon-Racing-Gravel-Frame-with-UDH-GRA04-04.avif",
+  "source_media_sha256": "3970ccb83a01212463f1a2042ded5507253a5b597fb47ea045ffe0ada6e2c257",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

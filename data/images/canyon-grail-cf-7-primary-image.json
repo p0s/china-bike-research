@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://dma.canyon.com/image/upload/w_1200%2Cc_fit/b_rgb%3AF2F2F2/f_auto/q_auto/v1746608774/2026_FULL_grail_cf-sl-7_4149_R119_P05_krb9qs"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/canyon-grail-cf-7-primary-image/9cb680670f51bf37-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/canyon-grail-cf-7-primary-image/ce67e8fa7844e390-card-w480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 16772,
+        "sha256": "ce67e8fa7844e3900b08eb30ad48e60bf01f290baa9aa9c8a15fb46670b2a1b6",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/canyon-grail-cf-7-primary-image/9cb680670f51bf37-detail-w1200.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 66328,
+        "sha256": "9cb680670f51bf37e9fe5ca83092ce9f6f7b79b737e4bda1e17f0510617c941a",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "canyon-grail-cf-7-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Canyon",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Canyon",
   "alt": "Canyon Grail CF 7 gravel bike",
   "display_note": "Official exact-variant global product image; mainland price, delivery and warranty remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://dma.canyon.com/image/upload/w_1200%2Cc_fit/b_rgb%3AF2F2F2/f_auto/q_auto/v1746608774/2026_FULL_grail_cf-sl-7_4149_R119_P05_krb9qs",
+  "source_media_sha256": "977210d3a41cf37570e5a5f84bb200b9942adffedf82646ccfd40e345fb22de9",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

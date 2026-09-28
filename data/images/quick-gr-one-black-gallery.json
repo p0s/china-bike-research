@@ -1,23 +1,64 @@
 {
   "id": "quick-gr-one-black-gallery",
   "platform_id": "quick-gr-one",
-  "variant_ids": ["quick-gr-one-frameset"],
+  "variant_ids": [
+    "quick-gr-one-frameset"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "Diamond Black",
   "subject_accuracy": "same-model-different-color",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.quickprousa.com/cdn/shop/files/GRONE_DiamondBlack.png?v=1781733750&width=1946"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/quick-gr-one-black-gallery/fded8ac1e8f4b445-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/quick-gr-one-black-gallery/e87b5e956f891669-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 16782,
+        "sha256": "e87b5e956f89166991e412c96696d79d21bea881334c19fd64643106e995be72",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/quick-gr-one-black-gallery/fded8ac1e8f4b445-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 70396,
+        "sha256": "fded8ac1e8f4b445cba22c803116ea1ca84de37716b9d28b9689e5d14417bd91",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "quick-gr-one-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Quick Pro",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with Quick Pro; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Quick Pro",
   "alt": "Quick Pro GR ONE gravel frameset in Diamond Black",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://www.quickprousa.com/cdn/shop/files/GRONE_DiamondBlack.png?v=1781733750&width=1946",
+  "source_media_sha256": "155d61cffd804d6fbee0c938f380e2683d275eccaff90df8d278b06465fc9859",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

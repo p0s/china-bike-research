@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-s4-detail-two-gallery",
   "platform_id": "sava-gelaro",
-  "variant_ids": ["sava-gelaro-s4-grx400"],
+  "variant_ids": [
+    "sava-gelaro-s4-grx400"
+  ],
   "role": "gallery",
   "sort_order": 4,
   "label": "Component detail",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/SAVA_Gelaro_S4_2.jpg?v=1752564844&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-s4-detail-two-gallery/bf2bba2187f3cecd-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-s4-detail-two-gallery/d90afe5134030dc3-card-w480.webp",
+        "width": 480,
+        "height": 271,
+        "bytes": 49646,
+        "sha256": "d90afe5134030dc3482d5df38d963a8f0549cb013947bb7bed352a7dfeaeb2ba",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-s4-detail-two-gallery/bf2bba2187f3cecd-detail-w1080.webp",
+        "width": 1080,
+        "height": 608,
+        "bytes": 214294,
+        "sha256": "bf2bba2187f3cecdbed689c85172386ed687540594ba24ef04626941527d3932",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-s4-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product detail © SAVA",
   "alt": "SAVA Gelaro S4 GRX400 gravel bike component detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/SAVA_Gelaro_S4_2.jpg?v=1752564844&width=1080",
+  "source_media_sha256": "aa2318cb506f14c1584c50c13e24f5dd3e99efa2aee03792b7d482c9786a158a",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

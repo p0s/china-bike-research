@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://js.merida.cn/uploads/20260731/02d7a023fc2aa8c6b4c59b320a382bdf.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/merida-reacto-6000-cn-27-primary-image/13d7f6781127b682-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/merida-reacto-6000-cn-27-primary-image/8dae56edde298996-card-w480.webp",
+        "width": 480,
+        "height": 288,
+        "bytes": 21526,
+        "sha256": "8dae56edde298996adfdb5c21fa41cd6e6459189305e5e951cc874324e437517",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/merida-reacto-6000-cn-27-primary-image/13d7f6781127b682-detail-w1200.webp",
+        "width": 1200,
+        "height": 719,
+        "bytes": 78928,
+        "sha256": "13d7f6781127b682cf1fd3525aa1c33e6b694242d129e155320bfa60b054593e",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "merida-china-reacto-6000-cn-27-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Merida",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Merida",
   "alt": "Merida REACTO 6000 CN 27 aero road bike",
   "display_note": "Official exact-variant mainland product image; specifications may vary by production batch.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://js.merida.cn/uploads/20260731/02d7a023fc2aa8c6b4c59b320a382bdf.jpg",
+  "source_media_sha256": "d3e7d18c11fa25ba9545aba279893ff761213c96b1391ed1568983af14f2d6f1",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

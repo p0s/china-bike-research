@@ -258,6 +258,7 @@ export function buildGapReport(data = loadDataset(), asOf = DEFAULT_AS_OF) {
   const published = joinProducts(data).map((product) => productGaps(product, asOf));
   const candidates = joinCatalogCandidates(data).map(candidateGaps);
   const gaps = attachResearchState([...published, ...candidates], data.researchAttempts ?? [])
+    .filter((record) => record.gaps.length > 0)
     .sort((a, b) => b.priority_score - a.priority_score || a.id.localeCompare(b.id));
   const gapCounts = {};
   const researchStatusCounts = {};

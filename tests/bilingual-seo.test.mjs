@@ -199,12 +199,12 @@ test('mascot cutouts and illustrated headers have provenance and immutable optim
     }
   }
 });
-test('every referenced model has an attributable remote photo and shared trims are explicit', () => {
+test('every referenced model has an attributable photo and shared trims are explicit', () => {
   for (const post of posts) {
     for (const photo of postPhotos(post)) {
       const resolved = resolveBlogPhoto(ctx, photo.id);
       assert.ok(photo.alt.en && photo.alt['zh-Hans'] && photo.note.en && photo.note['zh-Hans']);
-      assert.equal(resolved.image.hosting.mode, 'remote');
+      assert.equal(resolved.image.hosting.mode, 'local');
       const targetIds = resolved.image.candidate_id ? [resolved.image.candidate_id]
         : data.variants.filter((variant) => variant.platform_id === resolved.image.platform_id).map((variant) => variant.id);
       for (const id of photo.model_ids) assert.ok(targetIds.includes(id), 'Photo must match the actual model platform');
@@ -212,7 +212,7 @@ test('every referenced model has an attributable remote photo and shared trims a
   }
   const gravel = posts.find((post) => post.slug === 'gravel-bikes-around-5000-yuan');
   assert.equal(postPhotos(gravel).length, 2, 'One platform photo can identify both Twitter builds');
-  assert.match(blogPhotos.find((photo) => photo.id === 'twitter-gravel-v3').note.en, /pictured components differ/);
+  assert.match(blogPhotos.find((photo) => photo.id === 'twitter-gravel-v3').note.en, /pictured Shimano 105 components differ/);
   assert.match(blogPhotos.find((photo) => photo.id === 'pardus-super-sport-gen2').note.en, /Shimano 105.*eGR/);
   assert.throws(() => postPhotos({model_ids:['unmapped-model']}));
   assert.throws(() => resolveBlogPhoto({...ctx,data:{...data,images:[]}}, blogPhotos[0].id));

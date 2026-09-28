@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://js.merida.cn/uploads/20260210/de7475a6a04ebad234f6361e17d0a1f3.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/merida-silex-7000-25-primary-image/54ae16b0e4a6d299-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/merida-silex-7000-25-primary-image/5a7538408bb9673f-card-w480.webp",
+        "width": 480,
+        "height": 293,
+        "bytes": 21934,
+        "sha256": "5a7538408bb9673fb917933a9f03d4d7db9f57ca9a9e60e9f7c7d25fc76cf852",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/merida-silex-7000-25-primary-image/54ae16b0e4a6d299-detail-w1200.webp",
+        "width": 1200,
+        "height": 731,
+        "bytes": 94924,
+        "sha256": "54ae16b0e4a6d2998ea0d65cbb601e7f9698a0c857cf715da53afbde431692b2",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "merida-silex-7000-25-official-cny-reference-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Merida",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Merida",
   "alt": "Merida SILEX 7000 25 gravel bike",
   "display_note": "Official exact-variant product image from a non-mainland locale; mainland trim and availability remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://js.merida.cn/uploads/20260210/de7475a6a04ebad234f6361e17d0a1f3.jpg",
+  "source_media_sha256": "3667afa50499784b6247473fd88d09079315d2e57714bc76218f070abb8f762d",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

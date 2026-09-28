@@ -1,16 +1,64 @@
 {
   "id": "ican-gra04-geometry-gallery",
   "platform_id": "ican-gra04",
-  "variant_ids": ["ican-gra04-frameset"],
+  "variant_ids": [
+    "ican-gra04-frameset"
+  ],
   "role": "gallery",
   "sort_order": 8,
   "label": "Five-size geometry chart",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://www.icanbikes.com/wp-content/uploads/2024/06/ICAN-GRA04.png"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/ican-gra04-geometry-gallery/790b613ce50afe43-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/ican-gra04-geometry-gallery/f05ff236adbfa3bf-card-w480.webp",
+        "width": 480,
+        "height": 293,
+        "bytes": 18442,
+        "sha256": "f05ff236adbfa3bffbbc1ac9a4fe9dc2134fe0828bf3186917f648b0c0bb6b09",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/ican-gra04-geometry-gallery/790b613ce50afe43-detail-w1200.webp",
+        "width": 1200,
+        "height": 733,
+        "bytes": 65954,
+        "sha256": "790b613ce50afe43e74d27d07e187a61d16ddddfb3de96c00e9c07d54674a835",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "ican-gra04-official",
-  "rights": {"status": "official-page-embed", "copyright_holder": "ICAN", "usage_note": "Remote embed from the cited official product page. Copyright remains with ICAN; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "ICAN",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Geometry chart © ICAN",
   "alt": "ICAN GRA04 geometry diagram and five-size measurement table",
-  "reviewed_at": "2026-08-26"
+  "reviewed_at": "2026-08-26",
+  "source_media_url": "https://www.icanbikes.com/wp-content/uploads/2024/06/ICAN-GRA04.png",
+  "source_media_sha256": "204f942c0378cb0df2bb0fae8db03f123cfa3bae68cf0f227d0e4fce118d2cf5",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

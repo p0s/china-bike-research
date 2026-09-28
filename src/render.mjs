@@ -126,6 +126,14 @@ function responsiveAttributes(ctx, image, options) {
   };
 }
 
+function renderedImageAttributes(ctx, image, { hero = false } = {}) {
+  const card = !hero && image?.hosting.mode === 'local'
+    ? image.hosting.variants?.find((variant) => variant.purpose === 'card')
+    : null;
+  if (card) return { source: url(ctx.base, card.url), width: card.width, height: card.height, attributes: '' };
+  return { source: imageUrl(ctx, image), ...responsiveAttributes(ctx, image, { hero }) };
+}
+
 function comparisonImageFields(ctx, image) {
   const responsive = responsiveImage(ctx, image, { comparison: true });
   return responsive ? {
@@ -148,23 +156,23 @@ function accuracyLabel(accuracy) {
 }
 
 function imageElement(ctx, product, { hero = false, image = product.image, className = '', decorative = false, galleryHero = false } = {}) {
-  const source = imageUrl(ctx, image);
+  const responsive = renderedImageAttributes(ctx, image, { hero });
+  const source = responsive.source;
   if (!source) return '';
   const alt = decorative ? '' : image?.alt ?? `${product.brand.name} ${product.variant.name}`;
   const remote = image?.hosting.mode === 'remote';
-  const responsive = responsiveAttributes(ctx, image, { hero });
-  return `<img${className ? ` class="${escapeAttr(className)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''} data-product-image>`;
+  return `<img${className ? ` class="${escapeAttr(className)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high" decoding="async" data-product-image' : 'loading="lazy"'}${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''}>`;
 }
 
 function candidateImageElement(ctx, entry, { hero = false, image = entry.image, className = '', decorative = false, galleryHero = false } = {}) {
-  const source = imageUrl(ctx, image);
+  const responsive = renderedImageAttributes(ctx, image, { hero });
+  const source = responsive.source;
   if (!source) return '';
   const alt = decorative
     ? ''
     : image?.alt ?? `${entry.candidate.name} candidate image`;
   const remote = image?.hosting.mode === 'remote';
-  const responsive = responsiveAttributes(ctx, image, { hero });
-  return `<img${className ? ` class="${escapeAttr(className)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''} data-product-image>`;
+  return `<img${className ? ` class="${escapeAttr(className)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high" decoding="async" data-product-image' : 'loading="lazy"'}${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''}>`;
 }
 
 function candidateImage(ctx, entry) {
@@ -182,8 +190,9 @@ function candidateGalleryFigure(ctx, entry) {
   if (!primary) return '';
   const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
   const primarySource = entry.imageSource;
+  const primarySourceUrl = primary.source_media_page_url ?? primarySource?.url;
   if (images.length < 2) {
-    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
@@ -194,10 +203,11 @@ function candidateGalleryFigure(ctx, entry) {
   ].filter(Boolean).join(' · ');
   const thumbs = images.map((image, index) => {
     const source = imageSource(image);
+    const sourceUrl = image.source_media_page_url ?? source?.url;
     const accuracy = accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative');
-    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? entry.candidate.name)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(source?.url ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${candidateImageElement(ctx, entry, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
+    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? entry.candidate.name)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${candidateImageElement(ctx, entry, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
   }).join('');
-  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
+  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
 }
 
 function productGalleryFigure(ctx, product) {
@@ -206,8 +216,9 @@ function productGalleryFigure(ctx, product) {
   if (!primary) return '';
   const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
   const primarySource = product.imageSource;
+  const primarySourceUrl = primary.source_media_page_url ?? primarySource?.url;
   if (images.length < 2) {
-    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
@@ -218,10 +229,11 @@ function productGalleryFigure(ctx, product) {
   ].filter(Boolean).join(' · ');
   const thumbs = images.map((image, index) => {
     const source = imageSource(image);
+    const sourceUrl = image.source_media_page_url ?? source?.url;
     const accuracy = accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative');
-    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? `${product.brand.name} ${product.variant.name}`)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(source?.url ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${imageElement(ctx, product, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
+    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? `${product.brand.name} ${product.variant.name}`)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${imageElement(ctx, product, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
   }).join('');
-  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${imageElement(ctx, product, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
+  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${imageElement(ctx, product, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
 }
 
 function infoTip(label, lines, attributes = {}) {
@@ -1803,11 +1815,16 @@ function groupsetDiscipline(groupset) {
   return 'Road';
 }
 
-function groupsetImageHtml(groupset, sourcesById) {
+function groupsetImageHtml(ctx, groupset, sourcesById) {
   const image = groupset.image;
   if (!image) return '';
   const source = sourcesById.get(image.source_id);
-  const visual = `<img src="${escapeAttr(image.remote_url)}" alt="${escapeAttr(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-product-image>`;
+  const local = Boolean(image.local_path);
+  const imageSource = local ? url(ctx.base, image.local_path) : image.remote_url;
+  const srcset = local && image.variants?.length
+    ? ` srcset="${escapeAttr(image.variants.map((variant) => `${url(ctx.base, variant.url)} ${variant.width}w`).join(', '))}" sizes="(max-width: 720px) 120px, 156px"`
+    : '';
+  const visual = `<img src="${escapeAttr(imageSource)}"${srcset} alt="${escapeAttr(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-product-image>`;
   const linked = source?.url
     ? `<a href="${escapeAttr(source.url)}" rel="noreferrer" aria-label="View the official ${escapeAttr(image.credit)} product page">${visual}</a>`
     : visual;
@@ -1830,12 +1847,12 @@ function groupsetDetailPanel(groupset, sourcesById) {
   return `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><p class="groupset-use-case">${escapeHtml(groupset.use_case)}</p><div class="groupset-detail-grid"><section><h3>Fit</h3><dl><div><dt>Freehub</dt><dd>${escapeHtml(groupset.compatibility.freehub)}</dd></div><div><dt>Hanger</dt><dd>${escapeHtml(groupset.compatibility.hanger)}</dd></div><div><dt>Frame</dt><dd>${escapeHtml(groupset.compatibility.frame)}</dd></div><div><dt>Brake fluid</dt><dd>${escapeHtml(groupset.compatibility.brake_fluid)}</dd></div></dl></section><section><h3>Power & controls</h3><dl><div><dt>Architecture</dt><dd>${escapeHtml(groupset.architecture)}</dd></div><div><dt>Battery</dt><dd>${escapeHtml(groupset.battery)}</dd></div><div><dt>Controls</dt><dd>${escapeHtml(groupset.controls_and_app)}</dd></div></dl></section><section><h3>Package & weight</h3><dl><div><dt>Package</dt><dd>${escapeHtml(groupset.package_summary)}</dd></div><div><dt>Weight</dt><dd>${escapeHtml(groupset.weight.note)}</dd></div></dl></section></div><div class="groupset-detail-lower">${priceRecords}<section><h3>Confirm before buying</h3><ul>${groupset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(groupset.source_ids, sourcesById)}</span>${imageNote}</div></div></details>`;
 }
 
-function groupsetRows(groupset, sourcesById) {
+function groupsetRows(ctx, groupset, sourcesById) {
   const maxRear = Number.isFinite(groupset.shifting.max_rear_sprocket_teeth)
     ? `Up to ${groupset.shifting.max_rear_sprocket_teeth}T rear`
     : '';
   const price = groupsetPriceLabel(groupset);
-  const image = groupsetImageHtml(groupset, sourcesById);
+  const image = groupsetImageHtml(ctx, groupset, sourcesById);
   return `<tbody class="groupset-entry" id="${escapeAttr(groupset.id)}" data-groupset-entry><tr class="groupset-summary-row">
     <th scope="row"><div class="groupset-identity${image ? ' has-image' : ''}">${image}<span class="groupset-name"><strong>${escapeHtml(groupset.name)}</strong><span>${escapeHtml(groupset.maker)}</span></span></div></th>
     <td data-label="Use" data-column="best"><strong>${escapeHtml(groupsetDiscipline(groupset))}</strong><span>${escapeHtml(groupset.positioning)}</span></td>
@@ -1895,7 +1912,7 @@ export function renderElectronicGroupsets(ctx) {
   };
   const ordered = [...groupsets].sort((a, b) => orderOf(a) - orderOf(b) || a.name.localeCompare(b.name));
   const rows = [
-    ...ordered.map((groupset) => groupsetRows(groupset, sourcesById)),
+    ...ordered.map((groupset) => groupsetRows(ctx, groupset, sourcesById)),
     ...adjacentSources.map(adjacentRows)
   ].join('');
   const html = `<p class="groupset-table-note"><span>${ordered.length + adjacentSources.length} systems · reviewed 2026-08-25</span> Open a row for fit, batteries, package scope, weight evidence and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison"><caption class="sr-only">Electronic groupsets available in China</caption><thead><tr><th>System</th><th>Use</th><th>Gearing</th><th>Setup</th><th>China price</th></tr></thead>${rows}</table></div>
@@ -1958,13 +1975,13 @@ export function renderPrivacy(ctx) {
     <p>Page counts keep the public path, referring site, country, and estimated sessions. The collector briefly uses IP and User-Agent, then discards them. Comparison events do not include selected bikes; product-link actions send only a fixed action ID, without product or visitor details. Live data remains for 13 months; encrypted backups expire within 30 days of live removal.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress all counts. The only analytics cookie remembers your choice.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-out')}"><button class="primary-button" type="submit">Opt out of optional analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-in')}"><button class="text-button" type="submit">Opt in again</button></form></div>
-    <h2>External media</h2><p>Some credited product photos load from manufacturers or shops, which receive the image request. Selected marketplace evidence images may load from our separate media origin or this site. YouTube is contacted only after you choose to load its <code>youtube-nocookie.com</code> player.</p>
+    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Source links open the original publisher only when you select them. YouTube is contacted only after you choose to load its <code>youtube-nocookie.com</code> player.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
 }
 
 export function renderImagePolicy(ctx) {
-  const html = `<h2>Image use</h2><p>Manufacturer images are preferred. Selected XHS, Taobao, and Xianyu images may be shown when they identify an exact bicycle or expose useful geometry, size, clearance, weight, package, compatibility, or aero information. They normally stay remote; a small optimized WebP derivative may be stored with the site when a stable remote display is unavailable. Copyright remains with the original owner and the source stays visibly linked.</p><h2>Source and privacy</h2><p>Every community or marketplace image needs an identity-safe canonical source URL, owner or seller credit, exact-model mapping, alt text, content hashes, and a completed privacy review. Share, referral, invite, tracking, session, and account parameters are removed. Images are stripped of metadata and visible personal identifiers before hosting.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Failures and corrections</h2><p>Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
+  const html = `<h2>Product images</h2><p>Displayed product photos are optimized WebP copies served by this site. When a source image is unavailable or its model cannot be verified, we leave the photo out. Original sources and owners stay credited.</p><h2>Accuracy and privacy</h2><p>A photo may show a different color, region, or component build; the catalog labels material differences. Hosted copies have embedded metadata removed and are checked for visible personal identifiers.</p><h2>Corrections</h2><p>Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> for a broken image, credit correction, removal request, or better exact-model photo. Please keep private contact details out of public issues.</p><p><a href="${url(ctx.base, '/image-sources/')}">Browse image sources and credits.</a></p>`;
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 
@@ -1975,7 +1992,7 @@ export function renderImageSources(ctx) {
   const firstProductByPlatform = new Map();
   for (const product of ctx.products) if (!firstProductByPlatform.has(product.platform.id)) firstProductByPlatform.set(product.platform.id, product);
   const candidatesById = new Map(joinCatalogCandidates(ctx.data).map((entry) => [entry.candidate.id, entry]));
-  const entries = ctx.data.images.filter((image) => imageUrl(ctx, image)).map((image) => {
+  const entries = ctx.data.images.filter((image) => image.buyer_visibility !== 'omit' && imageUrl(ctx, image)).map((image) => {
     const source = sources.get(image.source_id);
     if (image.candidate_id) {
       const candidate = candidatesById.get(image.candidate_id);
@@ -1998,7 +2015,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

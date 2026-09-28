@@ -8,7 +8,9 @@ const repositoryRoot = path.resolve(import.meta.dirname, '..');
 const repositorySourcedRoots = [
   path.join(repositoryRoot, 'assets/images/sourced/xhs'),
   path.join(repositoryRoot, 'assets/images/sourced/taobao'),
-  path.join(repositoryRoot, 'assets/images/sourced/xianyu')
+  path.join(repositoryRoot, 'assets/images/sourced/xianyu'),
+  path.join(repositoryRoot, 'assets/images/sourced/official'),
+  path.join(repositoryRoot, 'assets/images/sourced/retailer')
 ];
 
 export const DEFAULT_VARIANTS = Object.freeze([
@@ -118,7 +120,7 @@ function verifyNoEmbeddedMetadata(file) {
 
 function encodeVariant({ input, temporaryDirectory, specification, sourceWidth }) {
   for (const width of widthSteps(specification.maxWidth, specification.minimumWidth, sourceWidth)) {
-    for (const quality of qualitySteps()) {
+    for (const quality of qualitySteps(specification.qualityStart ?? 72, specification.qualityMinimum ?? 40)) {
       const temporaryFile = path.join(temporaryDirectory, `.${specification.purpose}-w${width}-q${quality}.webp`);
       run('cwebp', [
         '-quiet', '-mt', '-m', '6', '-sharp_yuv', '-metadata', 'none',
@@ -207,7 +209,7 @@ function usage() {
 
 The source must be outside the repository. Repository-local output additionally requires
 --repository-local and must target assets/images/sourced/xhs, assets/images/sourced/taobao,
-or assets/images/sourced/xianyu.
+assets/images/sourced/xianyu, assets/images/sourced/official, or assets/images/sourced/retailer.
 The command creates immutable, metadata-free WebP card and detail variants plus a manifest.`;
 }
 

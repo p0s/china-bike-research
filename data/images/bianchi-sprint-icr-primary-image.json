@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.bianchi.com/wp-content/uploads/2026/05/YTBR6I-SI.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/bianchi-sprint-icr-primary-image/181b48365024a04f-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/bianchi-sprint-icr-primary-image/d650725b8fe69115-card-w480.webp",
+        "width": 480,
+        "height": 297,
+        "bytes": 14666,
+        "sha256": "d650725b8fe6911563308f2ae8de4a4546aab674a37c917b51d5312e3f562112",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/bianchi-sprint-icr-primary-image/181b48365024a04f-detail-w1200.webp",
+        "width": 1200,
+        "height": 742,
+        "bytes": 52496,
+        "sha256": "181b48365024a04f873f9eadb7375f17b0bc893baecfec29326aa2fad97cf9d9",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "bianchi-sprint-icr-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Bianchi",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Bianchi",
   "alt": "Bianchi Sprint ICR 105 Di2 YTBR6 in Celeste Metallic",
   "display_note": "Official exact-variant global product image; mainland price, stock and warranty remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://www.bianchi.com/wp-content/uploads/2026/05/YTBR6I-SI.jpg",
+  "source_media_sha256": "df83a80d3e71fbb55ab6b0d728576091eb8ed9074939651887be7f11279dcb26",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

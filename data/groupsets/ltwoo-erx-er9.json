@@ -7,8 +7,18 @@
   "status": "current-official-family",
   "positioning": "eRX is the carbon flagship; eR9 is the lower-cost aluminium entry system with separate calipers.",
   "variants": [
-    { "name": "eRX", "tier": "flagship", "lever_material": "carbon", "caliper_style": "integrated" },
-    { "name": "eR9", "tier": "entry", "lever_material": "aluminium", "caliper_style": "separate" }
+    {
+      "name": "eRX",
+      "tier": "flagship",
+      "lever_material": "carbon",
+      "caliper_style": "integrated"
+    },
+    {
+      "name": "eR9",
+      "tier": "entry",
+      "lever_material": "aluminium",
+      "caliper_style": "separate"
+    }
   ],
   "shifting": {
     "chainrings": "2×",
@@ -17,7 +27,9 @@
     "max_rear_sprocket_note": "The official 2024 catalog generation lists 11-32T, but the current upgraded eRX/eR9 maximum is not stated clearly enough to carry that number forward."
   },
   "architecture": "Semi-wireless: both levers send wireless commands; front and rear derailleurs draw power through wires from one seat-tube battery.",
-  "brake_options": ["Hydraulic disc"],
+  "brake_options": [
+    "Hydraulic disc"
+  ],
   "weight": {
     "status": "component-only-older-catalog",
     "note": "The official 2024 catalog lists 225 g per lever, 270 g rear derailleur, 135 g front derailleur and 118 g per caliper. It does not give a safe current-generation total."
@@ -33,15 +45,123 @@
   },
   "china_price_status": "User-supplied Taobao screenshots show a boxed alloy-labelled eR9 shift-and-brake kit at ¥3,480 plus separately priced service components. These are displayed options, not verified checkout totals.",
   "price_observations": [
-    { "amount": 3480, "currency": "CNY", "market": "Taobao seller option", "price_type": "listed-option", "observed_at": "2026-08-24", "conditions": "eR9 盒装铝合金版套件; boxed 2x road shift-and-brake kit, alloy seller label; checkout unverified; crank, cassette, chain, rotors and bottom bracket not visible as included.", "option_label_zh": "eR9 盒装铝合金版套件", "package_basis": "shift-brake", "checkout_verified": false, "headline": true, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 688, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "eR9 左手2速; left 2-speed lever.", "option_label_zh": "eR9 左手2速", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 688, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "eR9 右手10-12速; right 10-12-speed lever.", "option_label_zh": "eR9 右手10-12速", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 520, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "eR9 前拨 直装式; braze-on front derailleur.", "option_label_zh": "eR9 前拨 直装式", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 780, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "eR9 后拨; rear derailleur.", "option_label_zh": "eR9 后拨", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 319, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "eR9 前夹器（含油管）; front caliper with hose.", "option_label_zh": "eR9 前夹器（含油管）", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 319, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "eR9 后夹器（含油管）; rear caliper with hose.", "option_label_zh": "eR9 后夹器（含油管）", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 659, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "磁吸充电器+电源线X2+电池组; magnetic charger, two power cables and battery pack.", "option_label_zh": "磁吸充电器+电源线X2+电池组", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" },
-    { "amount": 119, "currency": "CNY", "market": "Taobao seller option", "price_type": "component-option", "observed_at": "2026-08-24", "conditions": "磁吸充电器; magnetic charger only.", "option_label_zh": "磁吸充电器", "package_basis": "component", "checkout_verified": false, "headline": false, "source_id": "taobao-ltwoo-er9-options-2026-08-24" }
+    {
+      "amount": 3480,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "eR9 盒装铝合金版套件; boxed 2x road shift-and-brake kit, alloy seller label; checkout unverified; crank, cassette, chain, rotors and bottom bracket not visible as included.",
+      "option_label_zh": "eR9 盒装铝合金版套件",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 688,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "eR9 左手2速; left 2-speed lever.",
+      "option_label_zh": "eR9 左手2速",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 688,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "eR9 右手10-12速; right 10-12-speed lever.",
+      "option_label_zh": "eR9 右手10-12速",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 520,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "eR9 前拨 直装式; braze-on front derailleur.",
+      "option_label_zh": "eR9 前拨 直装式",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 780,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "eR9 后拨; rear derailleur.",
+      "option_label_zh": "eR9 后拨",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 319,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "eR9 前夹器（含油管）; front caliper with hose.",
+      "option_label_zh": "eR9 前夹器（含油管）",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 319,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "eR9 后夹器（含油管）; rear caliper with hose.",
+      "option_label_zh": "eR9 后夹器（含油管）",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 659,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "磁吸充电器+电源线X2+电池组; magnetic charger, two power cables and battery pack.",
+      "option_label_zh": "磁吸充电器+电源线X2+电池组",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    },
+    {
+      "amount": 119,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "component-option",
+      "observed_at": "2026-08-24",
+      "conditions": "磁吸充电器; magnetic charger only.",
+      "option_label_zh": "磁吸充电器",
+      "package_basis": "component",
+      "checkout_verified": false,
+      "headline": false,
+      "source_id": "taobao-ltwoo-er9-options-2026-08-24"
+    }
   ],
   "caveats": [
     "Confirm the exact generation, maximum rear sprocket, rear-cage range and battery-mount fit before ordering.",
@@ -49,21 +169,65 @@
     "Use the specified L-TWOO mineral brake fluid rather than DOT fluid."
   ],
   "image": {
-    "remote_url": "https://oss.ltwoo.com/ltwoo3/ROAD/electricRoad/image%20%2833%29.png?image_process=quality%2CQ_80",
     "source_id": "ltwoo-erx-road-official-2026-08-24",
     "subject_accuracy": "featured-variant",
     "featured_variant": "eRX",
-    "width": 1393,
-    "height": 700,
+    "width": 1200,
+    "height": 604,
     "credit": "L-TWOO",
     "alt": "L-TWOO eRX electronic road shift levers on a handlebar",
     "rights": {
-      "status": "official-page-embed",
+      "status": "source-attributed-rehost",
       "copyright_holder": "L-TWOO",
-      "usage_note": "Remote embed from the cited manufacturer page; no redistribution license asserted."
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
     },
-    "reviewed_at": "2026-08-25"
+    "reviewed_at": "2026-08-25",
+    "local_path": "/assets/images/sourced/official/groupset-ltwoo-erx-er9/75a1eb9d61b0a362-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/groupset-ltwoo-erx-er9/1ef9a469c903bc45-card-w480.webp",
+        "width": 480,
+        "height": 242,
+        "bytes": 5574,
+        "sha256": "1ef9a469c903bc4570c749ee7cba8f3417cf507f7a774e209298e3a37122c04e",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/groupset-ltwoo-erx-er9/75a1eb9d61b0a362-detail-w1200.webp",
+        "width": 1200,
+        "height": 604,
+        "bytes": 16122,
+        "sha256": "75a1eb9d61b0a362b29e90418b8a942ba80b732a2863805dddfc2bccb0b1443f",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ],
+    "source_media_url": "https://oss.ltwoo.com/ltwoo3/ROAD/electricRoad/image%20%2833%29.png?image_process=quality%2CQ_80",
+    "source_media_sha256": "80200bc5e3826f1c104589d670dde82932cdb6b2e460ce79f8658e56a24163dc",
+    "editorial_quotation": {
+      "purpose": "editorial-identification-and-commentary",
+      "scope": "one-compressed-product-photo",
+      "source_link_required": true,
+      "no_license_asserted": true,
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-09-28",
+      "embedded_metadata": "stripped",
+      "faces": "none-visible",
+      "vehicle_registration": "none-visible",
+      "account_identifiers": "none-visible",
+      "location_identifiers": "none-visible"
+    }
   },
-  "source_ids": ["ltwoo-erx-road-official-2026-08-24", "ltwoo-erx-manual-catalog-2026-08-24", "ltwoo-erx-user-manual-2026-08-24", "taobao-ltwoo-er9-options-2026-08-24"],
+  "source_ids": [
+    "ltwoo-erx-road-official-2026-08-24",
+    "ltwoo-erx-manual-catalog-2026-08-24",
+    "ltwoo-erx-user-manual-2026-08-24",
+    "taobao-ltwoo-er9-options-2026-08-24"
+  ],
   "reviewed_at": "2026-08-24"
 }

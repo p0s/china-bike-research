@@ -5,17 +5,56 @@
   "subject_accuracy": "same-model-different-market-build",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://f.lnwfile.com/_/f/_raw/9u/3m/ml.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/gito-g325-primary-image/18e3a4036bd07148-detail-w900.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/gito-g325-primary-image/5569a0120e468466-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 21672,
+        "sha256": "5569a0120e4684662be734a35791f9a95becc107268ff7a614fbe3515a28d5f8",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/gito-g325-primary-image/18e3a4036bd07148-detail-w900.webp",
+        "width": 900,
+        "height": 600,
+        "bytes": 52212,
+        "sha256": "18e3a4036bd071480063eaa8466d1e99045228fbefef9ee423686397959d491d",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "gito-g325-retailer-2026-08-29",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Not established; image published by 888Bike",
-    "usage_note": "Remote embed from the cited exact-model retailer page; no ownership or redistribution license is inferred."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image via 888Bike",
   "alt": "GITO G325 carbon aero road bike shown on the exact-model retailer page",
   "reviewed_at": "2026-09-01",
-  "display_note": "Exact G325 model reference with a higher-spec regional build; the retained entry build remains unresolved."
+  "display_note": "Exact G325 model reference with a higher-spec regional build; the retained entry build remains unresolved.",
+  "source_media_url": "https://f.lnwfile.com/_/f/_raw/9u/3m/ml.png",
+  "source_media_sha256": "25ddd786bfd05cb902d7e0b28e69514e91c3c54562cc3b3373d2d62dc51f6fbd",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

@@ -7,18 +7,57 @@
   "subject_accuracy": "same-model-different-color",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://img.alicdn.com/bao/uploaded/O1CN01wybXdZ23L3TlJ52k4_%21%216000000007238-2-yinhe.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/twitter-gravel-v3-2024-rs-carbon-wave-alt-color-gallery/7dec7f5ee0d920f2-detail-w800.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/twitter-gravel-v3-2024-rs-carbon-wave-alt-color-gallery/0c81f6a46bcbca33-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 44770,
+        "sha256": "0c81f6a46bcbca33124667d4bab608c6a287795d74729c386c42be1304863253",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/twitter-gravel-v3-2024-rs-carbon-wave-alt-color-gallery/7dec7f5ee0d920f2-detail-w800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 91550,
+        "sha256": "7dec7f5ee0d920f2648e5853f24dbbe6df26a50acc38d06c2577cd5bfb94da0f",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "fallback_local_path": "/assets/images/placeholders/complete-bike.svg",
   "source_id": "twitter-gravel-v3-2024-public-listing-image-2026-08-21",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Original marketplace image owner; identity not independently confirmed",
-    "usage_note": "Remote embed from the cited public marketplace mirror. Copyright remains with the original image owner; no redistribution license is asserted and the file is not stored by the project."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image via public marketplace listing mirror",
   "alt": "Dark color-shift TWITTER Gravel V3 complete bike, shown from the drive side",
   "display_note": "This listing image shows the same Gravel V3 model name in another color. The wheel material and selection, exact production year, and component batch are not independently confirmed.",
-  "reviewed_at": "2026-08-24"
+  "reviewed_at": "2026-08-24",
+  "source_media_url": "https://img.alicdn.com/bao/uploaded/O1CN01wybXdZ23L3TlJ52k4_%21%216000000007238-2-yinhe.png",
+  "source_media_sha256": "d0db1fd4cd4b867b0f0c2e1ba026484e23c1ed1c5788e726344dcf6e66d06aa4",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

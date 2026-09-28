@@ -8,19 +8,58 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.incolor.vip/uploads/upload/images/20260702/dafcb254db4b4a9e7a96b09f88ab6852.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/incolor-voyager-official-primary-image/349cbff442815e34-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/incolor-voyager-official-primary-image/2e373cfad118ba38-card-w480.webp",
+        "width": 480,
+        "height": 210,
+        "bytes": 5756,
+        "sha256": "2e373cfad118ba389b9241e270f6886c4309d24e939a368927f369c43e3161f5",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/incolor-voyager-official-primary-image/349cbff442815e34-detail-w1200.webp",
+        "width": 1200,
+        "height": 525,
+        "bytes": 21754,
+        "sha256": "349cbff442815e348195774ea0bb8936f7eb58926b6e2c05964f37d50b82baa1",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "incolor-voyager-official-2026-08-25",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "INCOLOR",
-    "usage_note": "Remote embed from the cited manufacturer product page. Copyright remains with INCOLOR; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © INCOLOR",
   "alt": "Blue INCOLOR Voyager carbon gravel frameset in three-quarter view",
   "display_note": "Official exact-model manufacturer frame image.",
   "reviewed_at": "2026-08-29",
+  "source_media_url": "https://www.incolor.vip/uploads/upload/images/20260702/dafcb254db4b4a9e7a96b09f88ab6852.jpg",
+  "source_media_sha256": "e7348fe5b7af0443f9e91c785d00bd93257bd945bdcb5f191f4d65cc39253772",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [
