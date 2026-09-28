@@ -5,7 +5,8 @@ Assets. The checked-in [`wrangler.jsonc`](../wrangler.jsonc) pins the Worker
 name, the production site URL used for canonical tags,
 and the asset-first route split. `assets/*`, generated data, `sitemap.xml`,
 `robots.txt`, and other static files stay on the CDN asset path. The Worker
-runs first only for document route families and the two privacy-choice routes.
+runs first for document route families and analytics preference, action, and
+configuration routes.
 
 The build used by Wrangler is `npm run build:cloudflare`; it clears the
 GitHub-project base path and sets `https://chinesebikes.xyz` as the canonical
@@ -72,6 +73,31 @@ retention is 13 months; encrypted operational backup copies expire within 30
 days after live removal. A missing or failing collector never changes the site
 response. Umami's existing website was renamed to the canonical domain so its
 history remains in the same record.
+
+## Parallel GA4 test
+
+Keep Umami enabled. Create a dedicated GA4 web stream for
+`https://chinesebikes.xyz`, with advertising signals disabled. Disable
+Enhanced Measurement features that generate additional automatic page views,
+site-search queries, or outbound clicks. Set event-level retention to the
+shortest useful interval for this comparison. Configure Cloudflare Google tag
+gateway for the exact zone, tag ID, and unused `/gtag` measurement path.
+Before enabling the Worker flag, verify the gateway does not inject a tag into
+an opt-out, DNT, or GPC page. The browser module loads `/gtag/js?id=...` only
+after the same-origin `/analytics/ga-config` responds with valid IDs.
+
+Set `GA4_MEASUREMENT_ID` to the web stream ID and `GA4_API_SECRET` to a new
+Measurement Protocol API secret in Worker secrets. Set `GA4_ENABLED=true` only
+after those, the gateway, and the privacy checks are verified. Never put the
+API secret in source, build output, or browser responses. `site_open` is one
+server event per eligible HTML response. `page_view` is one browser event when
+the tag loads. Compare the two names separately, and compare Umami page views
+to `site_open`; never add `site_open` and `page_view` together. A 2xx from the
+Measurement Protocol endpoint proves only HTTP receipt. Confirm processing in
+GA4 Realtime or reports and check the browser network request's client and
+session identifiers against the server payload before claiming a joined
+session. Missing cookies, blocked network traffic, and Google's processing
+can still cause gaps.
 
 ## Smoke checks
 

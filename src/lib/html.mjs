@@ -103,6 +103,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>
   <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
+  <script type="module" src="${url(base,'/assets/ga4.js')}"></script>
 </body>
 </html>`;
   return clarifyMainlandInDisplayHtml(localizeHtml(html, { base, locale, siteUrl }));
