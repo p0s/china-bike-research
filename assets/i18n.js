@@ -303,3 +303,16 @@ export function translate(value, locale = 'en') {
 Object.assign(zh, {
   'Configure a China-market frameset or complete bike with sourced components and transparent price, weight, package and compatibility totals.': '选择中国市场车架组或整车，使用有来源的部件配置方案，查看透明的价格、重量、套餐范围与兼容性汇总。'
 });
+
+Object.assign(zh, {
+  'Page and action counts, privacy choices, and external media.': '页面与操作计数、隐私选项和外部媒体。',
+  'No accounts, ads, newsletter, or payments. Your comparison and build choices stay in your browser; a shared build link may include them in its URL.': '本站没有账号、广告、订阅邮件或支付。对比和装车选择保留在浏览器中；分享装车链接时，选择可能包含在网址里。',
+  'We count eligible public HTML page views, compare_open when the comparison opens, and product_outbound_click when a marked product link is activated. These are approximate actions, not people or purchases.': '本站统计符合条件的公开 HTML 页面浏览、打开对比面板时的 compare_open，以及点击标记产品链接时的 product_outbound_click。这些是近似操作次数，不是人数或购买次数。',
+  'Page counts keep the public path, referring site, country, and estimated sessions. The collector briefly uses IP and User-Agent, then discards them. Comparison events do not include selected bikes; product-link actions send only a fixed action ID, without product or visitor details. Live data remains for 13 months; encrypted backups expire within 30 days of live removal.': '页面计数保留公开路径、来源网站、国家或地区及估算会话。接收服务短暂使用 IP 和 User-Agent，随后将其丢弃。对比事件不包含所选车型；产品链接操作只发送固定操作编号，不包含产品或访问者详情。实时数据保留 13 个月；加密备份在实时数据删除后 30 天内过期。',
+  'Do Not Track, Global Privacy Control, and the opt-out below suppress all counts. The only analytics cookie remembers your choice.': '“请勿跟踪”、Global Privacy Control 和下方的退出选项会停止所有计数。唯一的分析 Cookie 只记住你的选择。',
+  'External media': '外部媒体',
+  'Some credited product photos load from manufacturers or shops, which receive the image request. Selected marketplace evidence images may load from our separate media origin or this site. YouTube is contacted only after you choose to load its': '部分署名产品图片从厂家或商店加载，对方会收到图片请求。精选市场证据图片可能从独立媒体域名或本站加载。只有你选择加载播放器后，本站才会联系 YouTube 的',
+  'player.': '播放器。',
+  'Contributions': '公开贡献',
+  'GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.': 'GitHub 问题和合并请求是公开的。发布图片或链接前请删除个人信息；需要更正或移除内容时可提交问题。'
+});

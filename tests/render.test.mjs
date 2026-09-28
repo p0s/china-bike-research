@@ -862,26 +862,26 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
 
   const privacy = renderPrivacy(context);
-  assert.match(privacy, /Opening the catalog comparison records one approximate event named compare_open/);
+  assert.match(privacy, /compare_open when the comparison opens/);
   assert.match(privacy, /product_outbound_click/);
-  assert.match(privacy, /client IP, and browser details are not sent with that action/);
-  assert.match(privacy, /Your selected bikes and comparison details are not sent/);
-  assert.match(privacy, /Live page and event data, including country, are kept for 13 months/);
-  assert.match(privacy, /This setting applies to page counts and comparison and product-link action events/);
+  assert.match(privacy, /Comparison events do not include selected bikes/);
+  assert.match(privacy, /product-link actions send only a fixed action ID, without product or visitor details/);
+  assert.match(privacy, /Live data remains for 13 months; encrypted backups expire within 30 days of live removal/);
+  assert.match(privacy, /Do Not Track, Global Privacy Control, and the opt-out below suppress all counts/);
   assert.match(privacy, /Opt out of optional analytics/);
 
   const localizedPrivacy = renderPrivacy({ ...context, locale: 'zh-Hans' });
   assert.match(localizedPrivacy, /可选流量分析/);
   assert.match(localizedPrivacy, /compare_open/);
-  assert.match(localizedPrivacy, /页面请求、事件和国家／地区数据保留 13 个月/);
+  assert.match(localizedPrivacy, /实时数据保留 13 个月/);
+  assert.match(localizedPrivacy, /外部媒体/);
 
   const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
   const openComparison = client.slice(client.indexOf('function openComparison('), client.indexOf('function closeComparison('));
   assert.match(openComparison, /const wasOpen = !comparePanel\.hidden/);
   assert.match(openComparison, /if \(!wasOpen\) sendComparisonOpenedEvent\(\)/);
   assert.match(privacy, /youtube-nocookie\.com/);
-  assert.match(privacy, /only after the visitor presses/);
-  assert.match(privacy, /videos do not autoplay/);
+  assert.match(privacy, /only after you choose to load/);
 
   const imagePolicy = renderImagePolicy(context);
   assert.match(imagePolicy, /Selected XHS, Taobao, and Xianyu images/);
