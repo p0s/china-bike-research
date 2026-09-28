@@ -573,6 +573,49 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   assert.match(falathDetail, /<dt>Frame weight<\/dt><dd>1,080 g<\/dd>/);
 });
 
+test('only external manufacturer and shop product-page links receive the outbound action marker', () => {
+  const baseProduct = products.find((item) => item.variant.id === 'lightcarbon-speedz-frameset');
+  const sources = [
+    ['test-manufacturer-product', 'manufacturer-product-page', 'https://maker.example/bike'],
+    ['test-retailer-product', 'retailer-product-page', 'https://shop.example/bike'],
+    ['test-manufacturer-policy', 'manufacturer-warranty-page', 'https://maker.example/warranty'],
+    ['test-marketplace-snapshot', 'public-marketplace-listing-mirror', 'https://forum.example/listing'],
+    ['test-internal-product', 'official-product-page', 'https://chinesebikes.xyz/models/internal/']
+  ].map(([id, type, url]) => ({
+    id,
+    type,
+    url,
+    title: id,
+    publisher: 'Test publisher',
+    accessed_at: '2026-09-28',
+    reliability: { identity: 'high', specification: 'high', price: 'high' }
+  }));
+  const context = {
+    data: { ...data, sources: [...data.sources, ...sources] },
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-09-28T00:00:00Z')
+  };
+  const product = {
+    ...baseProduct,
+    variant: { ...baseProduct.variant, source_ids: sources.map((source) => source.id) },
+    platform: { ...baseProduct.platform, source_ids: [] },
+    prices: [],
+    image: null
+  };
+  const detail = renderModel(context, product);
+
+  assert.equal((detail.match(/data-analytics-action="product_outbound_click"/g) ?? []).length, 2);
+  assert.match(detail, /href="https:\/\/maker\.example\/bike" rel="noreferrer" data-analytics-action="product_outbound_click"/);
+  assert.match(detail, /href="https:\/\/shop\.example\/bike" rel="noreferrer" data-analytics-action="product_outbound_click"/);
+  assert.match(detail, /href="https:\/\/maker\.example\/warranty" rel="noreferrer"/);
+  assert.doesNotMatch(detail, /href="https:\/\/maker\.example\/warranty" rel="noreferrer" data-analytics-action/);
+  assert.doesNotMatch(detail, /href="https:\/\/forum\.example\/listing" rel="noreferrer" data-analytics-action/);
+  assert.doesNotMatch(detail, /href="https:\/\/chinesebikes\.xyz\/models\/internal\/" rel="noreferrer" data-analytics-action/);
+});
+
 test('primary navigation reflects catalog and exact model context', () => {
   assert.match(html, /data-nav-catalog aria-current="page"/);
   assert.doesNotMatch(html, /data-nav-framesets aria-current="page"/);
@@ -820,9 +863,11 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
 
   const privacy = renderPrivacy(context);
   assert.match(privacy, /Opening the catalog comparison records one approximate event named compare_open/);
+  assert.match(privacy, /product_outbound_click/);
+  assert.match(privacy, /client IP, and browser details are not sent with that action/);
   assert.match(privacy, /Your selected bikes and comparison details are not sent/);
   assert.match(privacy, /Live page and event data, including country, are kept for 13 months/);
-  assert.match(privacy, /This setting applies to page counts and comparison events/);
+  assert.match(privacy, /This setting applies to page counts and comparison and product-link action events/);
   assert.match(privacy, /Opt out of optional analytics/);
 
   const localizedPrivacy = renderPrivacy({ ...context, locale: 'zh-Hans' });

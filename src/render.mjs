@@ -1030,7 +1030,7 @@ function candidateSourceList(entry) {
       .map((key) => `${sentenceLabel(key)}: ${confidenceLabel(source.reliability[key])}`)
       .join(' · ');
     const unavailable = source.url ? '' : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))}</span>${confidence ? `<span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>` : `<span>Accessed ${escapeHtml(source.accessed_at)}</span>`}${unavailable}${source.notes ? `<p>${escapeHtml(candidatePublicText(source.notes))}</p>` : ''}</div>`;
+    return `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))}</span>${confidence ? `<span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>` : `<span>Accessed ${escapeHtml(source.accessed_at)}</span>`}${unavailable}${source.notes ? `<p>${escapeHtml(candidatePublicText(source.notes))}</p>` : ''}</div>`;
   }).join('')}</div>`;
 }
 
@@ -1052,6 +1052,24 @@ function sourceUsages(ctx, product) {
   return [...usages.values()];
 }
 
+function hasProductOutboundTarget(source) {
+  const type = String(source?.type ?? '').trim().toLowerCase().replace(/\s+/g, '-');
+  const hasSellerOrManufacturer = /(?:^|-)(?:manufacturer|official|brand|retailer|dealer|distributor|marketplace|seller|supplier|authorized)(?:-|$)/.test(type);
+  const isProductPage = /(?:^|-)(?:product-page|product-listing|marketplace-listing|seller-listing)(?:-|$)/.test(type);
+  if (!source?.url || !hasSellerOrManufacturer || !isProductPage || /(?:^|-)(?:mirror|snapshot)(?:-|$)/.test(type)) return false;
+  try {
+    const target = new URL(source.url);
+    return ['http:', 'https:'].includes(target.protocol)
+      && !['chinesebikes.xyz', 'www.chinesebikes.xyz'].includes(target.hostname.toLowerCase());
+  } catch {
+    return false;
+  }
+}
+
+function productOutboundAttribute(source) {
+  return hasProductOutboundTarget(source) ? ' data-analytics-action="product_outbound_click"' : '';
+}
+
 function sourceList(ctx, product) {
   const usages = sourceUsages(ctx, product);
   return `<div class="source-list"><p class="source-intro">Each source is labelled by what it supports. Confidence applies only to that role.</p>${usages.map(({ source, roles }) => {
@@ -1060,7 +1078,7 @@ function sourceList(ctx, product) {
     const unavailable = source.url ? '' : source.type === 'project-asset'
       ? '<span class="source-local">Project-owned local asset</span>'
       : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`;
+    return `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`;
   }).join('')}</div>`;
 }
 
@@ -1936,12 +1954,12 @@ export function renderMethodology(ctx) {
 export function renderPrivacy(ctx) {
   const html = `<h2>Site behavior</h2><p>There are no accounts, advertising trackers, newsletters, or payment systems. Bike comparisons, the optional frameset allowance and the Build-page configuration stay in the visitor’s browser and may also be encoded in the URL when a visitor chooses or copies a build. Native-app telemetry is unchanged.</p>
     <h2>Optional analytics</h2>
-    <p>Eligible successful public HTML page requests are counted. Opening the catalog comparison records one approximate event named compare_open. Counts describe request and comparison activity; they do not identify people or prove human visits, downloads, conversions, or purchases. Assets, redirects, errors, automated or preloaded visits, nonpublic pages, and preference actions are excluded. Requests with Do Not Track or Global Privacy Control, and browsers that opted out, are excluded too.</p>
-    <p>When the comparison opens, this site records only the fixed event name and the current page address. Your selected bikes and comparison details are not sent. Page requests also record the site you came from. The analytics service temporarily uses your IP address and browser details, plus an optional country code, to estimate sessions; it discards the IP and browser details after processing. Live page and event data, including country, are kept for 13 months; encrypted operational backups expire within 30 days after live removal. Query strings, fragments, search text, event properties, tracking identifiers, cross-site IDs, and account links are not collected. A cookie limited to this site is used only to remember your opt-out choice.</p>
-    <p>Do Not Track and Global Privacy Control are honored automatically. You can also opt out with the control below; a cookie limited to this site remembers the choice. This setting applies to page counts and comparison events.</p>
+    <p>Eligible successful public HTML page requests are counted. Opening the catalog comparison records one approximate event named compare_open. Activating a marked manufacturer or shop product-page link records one fixed action named product_outbound_click. Counts describe request and action activity; they do not identify people or prove human visits, downloads, conversions, or purchases. Assets, redirects, errors, automated or preloaded visits, nonpublic pages, and preference actions are excluded. Requests with Do Not Track or Global Privacy Control, and browsers that opted out, are excluded too.</p>
+    <p>When the comparison opens, this site records only the fixed event name and current page address. Your selected bikes and comparison details are not sent. Product-link actions send only their fixed action name; the product, link, page, query, referrer, client IP, and browser details are not sent with that action. Page requests also record the site you came from. The analytics service temporarily uses your IP address and browser details, plus an optional country code, to estimate sessions; it discards the IP and browser details after processing. Live page and event data, including country, are kept for 13 months; encrypted operational backups expire within 30 days after live removal. Query strings, fragments, search text, event properties, tracking identifiers, cross-site IDs, and account links are not collected. A cookie limited to this site is used only to remember your opt-out choice.</p>
+    <p>Do Not Track and Global Privacy Control are honored automatically. You can also opt out with the control below; a cookie limited to this site remembers the choice. This setting applies to page counts and comparison and product-link action events.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-out')}"><button class="primary-button" type="submit">Opt out of optional analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-in')}"><button class="text-button" type="submit">Opt in again</button></form></div><p>These forms submit to this site and work without JavaScript.</p>
     <h2>Product images</h2><p>Some product photos load from their credited manufacturer or retailer, which receives a normal image request. Selected XHS and marketplace evidence images may load from the project’s separate media origin or from the same Cloudflare static site as small sanitized WebP derivatives. Public source links are reduced to identity-safe canonical post or listing URLs. Remote images use <code>referrerpolicy="no-referrer"</code>; when a source fails, the image is hidden and the product facts remain available.</p><h2>Optional videos</h2><p>Model pages do not contact YouTube when they first load. A video request is made to YouTube’s privacy-enhanced <code>youtube-nocookie.com</code> embed only after the visitor presses “Load video”; videos do not autoplay. The separate “Watch on YouTube” link opens YouTube directly.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, location metadata, and share or referral parameters before submitting screenshots, photos, or source links. A removal request may identify the model and canonical source URL without publishing private contact details.</p>`;
-  return prosePage(ctx, { title: 'Privacy', desc: 'Optional page and comparison analytics and third-party media are disclosed.', path: '/privacy/', html });
+  return prosePage(ctx, { title: 'Privacy', desc: 'Optional page, comparison, product-link analytics and third-party media are disclosed.', path: '/privacy/', html });
 }
 
 export function renderImagePolicy(ctx) {
