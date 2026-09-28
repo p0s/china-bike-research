@@ -37,7 +37,7 @@ Within minutes, a buyer should be able to:
 - A complete encyclopedia of every bicycle.
 - Paid placement, hidden affiliate ranking, or a universal quality score.
 - Automated scraping that bypasses platform controls.
-- Building a bulk third-party image mirror or using copied photography as decoration. Selected XHS and marketplace images may support exact-model identification or decision-relevant specifications when they meet the source, attribution, privacy, removal, compression, and hosting contract in `SPEC.md`.
+- Building an unrestricted third-party image mirror or using copied photography as decoration. The reviewed migration of existing product photos and selected XHS or marketplace evidence images is limited to exact-model identification or decision-relevant specifications under the source, attribution, privacy, removal, compression, and hosting contract in `SPEC.md`.
 
 ## Change policy
 

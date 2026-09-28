@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://cdn.xidesheng.com/2026/06/06/1780726701954-c1zAD350%202026%20%E6%9D%BE%E7%83%9F%E7%81%B0.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/xds-ad350-2026-primary-image/e5fb6b3e3ab7025c-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/xds-ad350-2026-primary-image/6d154261d710fd1f-card-w480.webp",
+        "width": 480,
+        "height": 280,
+        "bytes": 38214,
+        "sha256": "6d154261d710fd1fa43eeeabdb7488b625f58b6f761d7bde34b76e87bb345c00",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/xds-ad350-2026-primary-image/e5fb6b3e3ab7025c-detail-w1200.webp",
+        "width": 1200,
+        "height": 700,
+        "bytes": 147626,
+        "sha256": "e5fb6b3e3ab7025cba7a563298851f328ec488e45518f5e611ec08dd064737a2",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "xds-ad350-official-2026-08-08",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "XDS",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © XDS",
   "alt": "Smoke gray XDS AD350 2026 road bike shown from the drive side",
   "display_note": "Official exact-model/year photo; the catalog does not infer unverified components from the image.",
-  "reviewed_at": "2026-08-08"
+  "reviewed_at": "2026-08-08",
+  "source_media_url": "https://cdn.xidesheng.com/2026/06/06/1780726701954-c1zAD350%202026%20%E6%9D%BE%E7%83%9F%E7%81%B0.png",
+  "source_media_sha256": "dad911a21a025e946c72864b5f4e047df7f8fc048613ff626706661e177a7bcf",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

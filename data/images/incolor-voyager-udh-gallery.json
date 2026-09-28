@@ -1,23 +1,64 @@
 {
   "id": "incolor-voyager-udh-gallery",
   "platform_id": "incolor-voyager",
-  "variant_ids": ["incolor-voyager-frameset"],
+  "variant_ids": [
+    "incolor-voyager-frameset"
+  ],
   "role": "gallery",
   "sort_order": 3,
   "label": "UDH dropout detail",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://incolor.vip/uploads/upload/images/20260410/27919b432005765b4427b81853d66705.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/incolor-voyager-udh-gallery/54fce79b35fedd4e-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/incolor-voyager-udh-gallery/205d6015d45c0a97-card-w480.webp",
+        "width": 480,
+        "height": 279,
+        "bytes": 7144,
+        "sha256": "205d6015d45c0a9791ee323c8615f4b6950d10b050f616e5dbd4e1092a995e17",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/incolor-voyager-udh-gallery/54fce79b35fedd4e-detail-w1200.webp",
+        "width": 1200,
+        "height": 697,
+        "bytes": 22914,
+        "sha256": "54fce79b35fedd4e7bcc0568e6eefb995f66f3b631723ed8368b384d56f1b631",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "incolor-voyager-official-2026-08-25",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "INCOLOR",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with INCOLOR; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product detail © INCOLOR",
   "alt": "INCOLOR Voyager UDH rear dropout and derailleur hanger detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://incolor.vip/uploads/upload/images/20260410/27919b432005765b4427b81853d66705.jpg",
+  "source_media_sha256": "c8b06fe31ff90e4f748fd27684d00d4a5444a7f7ac8398ec302c061afee20934",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

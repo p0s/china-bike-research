@@ -1,23 +1,64 @@
 {
   "id": "ican-graro-rear-gallery",
   "platform_id": "ican-graro",
-  "variant_ids": ["ican-graro-frameset"],
+  "variant_ids": [
+    "ican-graro-frameset"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "Rear frameset angle",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://icanwheels.com/cdn/shop/files/ICAN_Graro_UCI_gravel_bike_frame_without_bolts_0mm_offset_seat_post-22.jpg?v=1770709688"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/ican-graro-rear-gallery/67726c915f8328c9-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/ican-graro-rear-gallery/d42c0fa373e191d1-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14542,
+        "sha256": "d42c0fa373e191d124aa08619d6782ac07a3dcde5ed540cf713953060c68331e",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/ican-graro-rear-gallery/67726c915f8328c9-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 47314,
+        "sha256": "67726c915f8328c90ac91498c260baac4f143274efb9d584489a89404cf8c569",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "ican-graro-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "ICAN",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with ICAN; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © ICAN",
   "alt": "ICAN Graro gravel frameset viewed from the rear quarter",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://icanwheels.com/cdn/shop/files/ICAN_Graro_UCI_gravel_bike_frame_without_bolts_0mm_offset_seat_post-22.jpg?v=1770709688",
+  "source_media_sha256": "41ee1ff330e37b0855761585425b2e4a759f7c7d47fdf4cf8fe2ab668095a5c0",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

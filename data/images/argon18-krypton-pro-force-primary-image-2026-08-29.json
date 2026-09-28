@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://storage.googleapis.com/argon18craft/products/2024/_productImageXS/KryptonPro_364A_SRAM-Force-eTap-AXS_profil.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/argon18-krypton-pro-force-primary-image-2026-08-29/cdb3bb12cb87dd55-detail-w320.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/argon18-krypton-pro-force-primary-image-2026-08-29/128b4883d34a7a31-card-w320.webp",
+        "width": 320,
+        "height": 212,
+        "bytes": 7266,
+        "sha256": "128b4883d34a7a310b15a25611a94f9da874d5be16c63b8a27e3905f82f1e810",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/argon18-krypton-pro-force-primary-image-2026-08-29/cdb3bb12cb87dd55-detail-w320.webp",
+        "width": 320,
+        "height": 212,
+        "bytes": 7842,
+        "sha256": "cdb3bb12cb87dd5570acb218f726d300fd7c57433edca645b8caa09dc310a577",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "argon18-krypton-pro-official-2026-08-29",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Argon 18",
-    "usage_note": "Remote embed from the cited exact-build manufacturer page."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Argon 18; see source",
   "alt": "Argon 18 Krypton Pro complete bike with SRAM Force AXS drivetrain",
   "display_note": "Official Force AXS build image; the catalog reference price is for the frameset unless the documented build is selected.",
-  "reviewed_at": "2026-08-29"
+  "reviewed_at": "2026-08-29",
+  "source_media_url": "https://storage.googleapis.com/argon18craft/products/2024/_productImageXS/KryptonPro_364A_SRAM-Force-eTap-AXS_profil.png",
+  "source_media_sha256": "0988441b4a00f45163786f2118bea8e22c7935b8fd00d3f0a7ae0099340176ad",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

@@ -1,23 +1,64 @@
 {
   "id": "ican-graro-torque-gallery",
   "platform_id": "ican-graro",
-  "variant_ids": ["ican-graro-frameset"],
+  "variant_ids": [
+    "ican-graro-frameset"
+  ],
   "role": "gallery",
   "sort_order": 3,
   "label": "Torque guidance detail",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://icanwheels.com/cdn/shop/files/ICAN_Graro_UCI_gravel_bike_frame_Torque.jpg?v=1770709688"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/ican-graro-torque-gallery/bd0405c43e8769e5-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/ican-graro-torque-gallery/53f36d6ea4c38f10-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 23678,
+        "sha256": "53f36d6ea4c38f108a5d6ddcaa8558c72732fc95f214bde8441b2f02df8df569",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/ican-graro-torque-gallery/bd0405c43e8769e5-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 78598,
+        "sha256": "bd0405c43e8769e52bf8c15846e07b4cad02712d76e586bd0812f230aad9ad74",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "ican-graro-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "ICAN",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with ICAN; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Technical image © ICAN",
   "alt": "ICAN Graro frameset torque guidance and hardware detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://icanwheels.com/cdn/shop/files/ICAN_Graro_UCI_gravel_bike_frame_Torque.jpg?v=1770709688",
+  "source_media_sha256": "6c1a681866c88fe9f3a492f26e23f09e2c9c2cad51e3466d5461f9612378bbf6",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

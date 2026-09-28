@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2402/22/products/eccc2a151a.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/tavelo-attack-primary-image/1934afe358c649c6-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/tavelo-attack-primary-image/8543642256608bf4-card-w480.webp",
+        "width": 480,
+        "height": 321,
+        "bytes": 7398,
+        "sha256": "8543642256608bf43a8f8d158d7a734e9a92839fad916a3cee7564176131a2fb",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/tavelo-attack-primary-image/1934afe358c649c6-detail-w1000.webp",
+        "width": 1000,
+        "height": 667,
+        "bytes": 18930,
+        "sha256": "1934afe358c649c69315448600a14e339bb40a7ff304e2bb7ebc19df8a2b5d2d",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "tavelo-attack-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Tavelo",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Tavelo",
   "alt": "Tavelo Attack carbon road frameset",
   "display_note": "Official exact-variant frameset image; mainland price and stock remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2402/22/products/eccc2a151a.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000",
+  "source_media_sha256": "4e5f2a5f48b3f41ac70e0d1fee1922612f51f58704b521a89ce225eed67d2a08",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

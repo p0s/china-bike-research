@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6020-Black.jpg?v=1755591722&width=1080"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-sf-candidate-primary-image/88ede89a0b465744-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf-candidate-primary-image/ffae88a9ba425512-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 15454,
+        "sha256": "ffae88a9ba42551238f5e47b9b1112bd72131b565bd63f3b05a9153a9b1b6b93",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf-candidate-primary-image/88ede89a0b465744-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 58482,
+        "sha256": "88ede89a0b46574420a0cedfbae1bd433098ca77fa0d89d90b1ccc61846c5b51",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "sava-gelaro-sf6-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "SAVA",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SAVA",
   "alt": "SAVA Gelaro SF6 CUES carbon flat-bar gravel bike",
   "reviewed_at": "2026-08-07",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6020-Black.jpg?v=1755591722&width=1080",
+  "source_media_sha256": "73a256bf9ed21d161ca9b1b9eb42f53309b22fb14f8694f504b948347b556b11",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://js.merida.cn/uploads/20260328/56912ac568f0930a28a8992339c1a80f.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/merida-scultura-6000-25-primary-image/fe435c13cfab54c9-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/merida-scultura-6000-25-primary-image/c5f8af4f61bceb9b-card-w480.webp",
+        "width": 480,
+        "height": 294,
+        "bytes": 21076,
+        "sha256": "c5f8af4f61bceb9b3f3d28b590dadef5ff0d8b3a715986f1e42a5b4a9269d8ca",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/merida-scultura-6000-25-primary-image/fe435c13cfab54c9-detail-w1200.webp",
+        "width": 1200,
+        "height": 733,
+        "bytes": 67682,
+        "sha256": "fe435c13cfab54c97a35c65b086c7bbfe3b73ec5735580a068ec24c98d146c29",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "merida-china-scultura-6000-25-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Merida",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Merida",
   "alt": "Merida SCULTURA 6000 25 road bike",
   "display_note": "Official exact-variant mainland product image; specifications may vary by production batch.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://js.merida.cn/uploads/20260328/56912ac568f0930a28a8992339c1a80f.png",
+  "source_media_sha256": "10f42f64c276d16c494820ab5931b9d2f44d8bdfeaf3ca74b730b26539466d83",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

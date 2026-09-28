@@ -1,16 +1,66 @@
 {
   "id": "camp-gx700-black-gallery",
   "platform_id": "camp-gx700",
-  "variant_ids": ["camp-gx700-grx820"],
+  "variant_ids": [
+    "camp-gx700-grx820"
+  ],
   "role": "gallery",
   "sort_order": 1,
-  "label": "Dark Night Black",
+  "label": "Obsidian Black regional finish",
   "subject_accuracy": "same-model-different-color",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/upload/image/20260519/GX700-%E6%9A%97%E5%A4%9C%E9%BB%91.jpg"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/camp-gx700-black-gallery/02b1b096c09e7172-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/camp-gx700-black-gallery/f7da5e257847eb9a-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 23024,
+        "sha256": "f7da5e257847eb9aba88660ecedcf662f1aeb5a0537f656e9c4a2551008868cc",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/camp-gx700-black-gallery/02b1b096c09e7172-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 86184,
+        "sha256": "02b1b096c09e717203f9961aff55a47e8a161e389970a9580d5fad6085e78733",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "camp-gx700-official-2026-08-17",
-  "rights": {"status": "official-page-embed", "copyright_holder": "CAMP", "usage_note": "Remote embed from the cited official product page. Copyright remains with CAMP; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "CAMP",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © CAMP",
-  "alt": "CAMP GX700 GRX gravel bike in Dark Night Black",
-  "reviewed_at": "2026-08-25"
+  "alt": "CAMP GX700 gravel bike in the regional Obsidian Black finish",
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://campbike.jp/cdn/shop/files/GX700_ObsidianBlack_260518.jpg?v=1779083013&width=2250",
+  "source_media_page_url": "https://campbike.jp/pages/gx700",
+  "source_media_sha256": "352a8e1765d3c73beebd10da03078df3da1bf327474293e23a310b80098eefcb",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "display_note": "Official Japanese-market GX700 color and build illustration; components and finish may differ from the selected China-market GRX820 bike."
 }

@@ -122,7 +122,8 @@ test('batch 020 keeps exact findings separate from exhausted unknowns', () => {
   assert.equal(bianchi.platform.tire_clearance.published_max_mm, 28);
   assert.equal(bianchi.image.id, 'bianchi-oltre-race-ytb8d-primary-image-2026-08-30');
   assert.equal(bianchi.image.subject_accuracy, 'exact-variant');
-  assert.match(bianchi.image.hosting.remote_url, /OltreRace-FQ_Ph-scaled\.jpg$/);
+  assert.match(bianchi.image.source_media_url, /OltreRace-FQ_Ph-scaled\.jpg$/);
+  assert.equal(bianchi.image.hosting.mode, 'local');
 });
 
 test('batch 024 preserves selected-trim, generation, and tire-maximum boundaries', () => {
@@ -1423,7 +1424,8 @@ test('batch 042 resolves thirteen exact fields and explicitly exhausts six unkno
   const savaImage = data.images.find((image) => image.id === 'sava-a7l-r08-2026-exact-primary-image');
   assert.equal(savaImage.subject_accuracy, 'exact-variant');
   assert.equal(savaImage.source_id, 'sava-a7l-r08-current-2026-08-30');
-  assert.match(savaImage.hosting.remote_url, /savadeck-bike\.com\/cdn\/shop\/files\/sava-a7l-2026/);
+  assert.match(savaImage.source_media_url, /savadeck-bike\.com\/cdn\/shop\/files\/sava-a7l-2026/);
+  assert.equal(savaImage.hosting.mode, 'local');
 
   assert.match(candidates.get('missing-china-price-giant-defy-advanced').facts.complete_weight_status, /50 registered source areas/);
   assert.match(candidates.get('quick-pro-gr-one-grx-di2').facts.complete_weight_status, /50 registered source areas/);
@@ -1891,9 +1893,18 @@ test('buyer-hidden images cannot mask an active replacement', () => {
   fixture.images.unshift({ ...visibleCandidateImage, id: 'hidden-candidate-primary', buyer_visibility: 'omit' });
   assert.notEqual(joinCatalogCandidates(fixture).find((item) => item.candidate.id === 'pardus-uragano-sport').image.id, 'hidden-candidate-primary');
 
-  const visibleProductImage = fixture.images.find((item) => item.platform_id === 'twitter-gravel-v3' && item.role === 'primary' && item.buyer_visibility !== 'omit');
+  const visibleProductImage = fixture.images.find((item) => item.platform_id === 'twitter-cyclone-gen3-et' && item.role === 'primary' && item.buyer_visibility !== 'omit');
   fixture.images.unshift({ ...visibleProductImage, id: 'hidden-product-primary', buyer_visibility: 'omit' });
-  assert.notEqual(joinProducts(fixture).find((item) => item.platform.id === 'twitter-gravel-v3').image.id, 'hidden-product-primary');
+  assert.notEqual(joinProducts(fixture).find((item) => item.platform.id === 'twitter-cyclone-gen3-et').image.id, 'hidden-product-primary');
+});
+
+test('displayed catalog photos are first-party assets after image cutover', () => {
+  assert.ok(data.images.filter((image) => image.buyer_visibility !== 'omit').every((image) => image.hosting.mode === 'local'));
+  assert.ok(products.every((product) => !product.image || product.image.hosting.mode === 'local'));
+  assert.ok(catalogCandidates.every((entry) => !entry.image || entry.image.hosting.mode === 'local'));
+  const fixture = structuredClone(data);
+  fixture.images.find((image) => image.id === 'camp-gx700-primary-image').hosting.mode = 'remote';
+  assert.ok(validateDataset(fixture).some((error) => /displayed product images must be locally hosted/.test(error)));
 });
 
 test('XHS, Taobao, and Xianyu sources use identity-safe canonical public URLs', () => {
@@ -1983,7 +1994,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
   assert.equal(data.prices.length, 76);
-  assert.equal(data.images.length, 212);
+  assert.equal(data.images.length, 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 16);
@@ -2094,7 +2105,7 @@ test('batch 148 records a foreign seller FX reference without implying a mainlan
   assert.equal(airwolf.channels.web.attempts[0].outcome, 'found');
   assert.match(airwolf.channels.web.attempts[0].note, /not a mainland CNY offer/);
   assert.equal(data.researchAttempts.filter((attempt) => attempt.id.includes('-b148-2026-09-25') && attempt.campaign_extension).length, 8);
-  assert.equal(data.images.length, 212);
+  assert.equal(data.images.length, 213);
 });
 
 test('batch 044 keeps unmatched weights and Japan-market references separate from mainland builds', () => {
@@ -2246,8 +2257,9 @@ test('electronic groupset references preserve package and price boundaries', () 
   assert.ok(data.groupsets.every((item) => item.compatibility.brake_fluid));
   const imagedGroupsets = data.groupsets.filter((item) => item.image);
   assert.equal(imagedGroupsets.length, 10);
-  assert.ok(imagedGroupsets.every((item) => item.image.remote_url.startsWith('https://')));
-  assert.ok(imagedGroupsets.every((item) => item.image.rights.status === 'official-page-embed'));
+  assert.ok(imagedGroupsets.every((item) => item.image.local_path.startsWith('/assets/images/sourced/official/')));
+  assert.ok(imagedGroupsets.every((item) => item.image.source_media_url.startsWith('https://')));
+  assert.ok(imagedGroupsets.every((item) => item.image.rights.status === 'source-attributed-rehost'));
   assert.ok(imagedGroupsets.every((item) => item.source_ids.includes(item.image.source_id)));
   assert.equal(r8170.image, undefined);
   assert.deepEqual(data.meta.frameset_build_assumption.presets.map((preset) => preset.amount_cny ?? null), [6000, 7900, null, null, null]);
@@ -2261,8 +2273,8 @@ test('electronic groupset references preserve package and price boundaries', () 
 
 test('groupset images require exact official-source and rights metadata', () => {
   const invalidUrl = structuredClone(data);
-  invalidUrl.groupsets.find((item) => item.id === 'shimano-105-r7170').image.remote_url = 'http://example.com/105.jpg';
-  assert.ok(validateDataset(invalidUrl).some((error) => error.includes('image.remote_url must use HTTPS')));
+  invalidUrl.groupsets.find((item) => item.id === 'shimano-105-r7170').image.source_media_url = 'http://example.com/105.jpg';
+  assert.ok(validateDataset(invalidUrl).some((error) => error.includes('missing source media provenance')));
 
   const invalidSource = structuredClone(data);
   invalidSource.groupsets.find((item) => item.id === 'wheeltop-eds-tx').image.source_id = 'missing-source';
@@ -2329,7 +2341,7 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   const oldTwitterCarbon = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
   assert.equal(oldTwitterCarbon.candidate.status, 'superseded');
   assert.equal(oldTwitterCarbon.image.subject_accuracy, 'exact-platform');
-  assert.equal(oldTwitterCarbon.image.hosting.mode, 'remote');
+  assert.equal(oldTwitterCarbon.image.hosting.mode, 'local');
   assert.equal(oldTwitterCarbon.imageSource.id, 'twitter-gravel-v3-2024-public-listing-image-2026-08-21');
   assert.deepEqual(oldTwitterCarbon.galleryImages.map((image) => image.label), [
     'Alternate-color full-bike view',
@@ -2390,7 +2402,7 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(quickEr.candidate.facts.drivetrain, 'Shimano Ultegra R8170 Di2 2×12');
   assert.equal(quickEr.candidate.facts.complete_weight_g, 7100);
   assert.equal(quickEr.image.subject_accuracy, 'exact-variant');
-  assert.match(quickEr.image.hosting.remote_url, /ERONE___SHIMANO_UT_DI2/);
+  assert.match(quickEr.image.source_media_url, /ERONE___SHIMANO_UT_DI2/);
   const gt8 = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-x-lab-xds-gt8');
   assert.equal(gt8.price.amount_cny, 21980);
   assert.equal(gt8.candidate.facts.complete_weight_g, 8780);
@@ -2773,14 +2785,16 @@ test('wide-clearance products preserve the narrower rear limit', () => {
   assert.equal(clearanceLongLabel(camp.platform), '45 mm stock fit; maximum unverified');
 });
 
-test('every platform and variant resolves a primary visual', () => {
+test('every platform has a documented primary image and unavailable photos stay omitted', () => {
   const platformImages = data.images.filter((image) => image.platform_id);
   const primaryPlatformImages = platformImages.filter((image) => image.role === 'primary');
   const imagedPlatforms = new Set(platformImages.filter((image) => image.role === 'primary').map((image) => image.platform_id));
   assert.equal(imagedPlatforms.size, data.platforms.length);
   assert.deepEqual([...imagedPlatforms].sort(), data.platforms.map((platform) => platform.id).sort());
-  for (const product of products) {
-    assert.ok(product.image, product.variant.id);
+  const missing = products.filter((product) => !product.image).map((product) => product.variant.id);
+  assert.deepEqual(missing, ['camp-gx600-pes']);
+  for (const product of products.filter((item) => item.image)) {
+    assert.equal(product.image.hosting.mode, 'local', product.variant.id);
     assert.ok(product.imageSource, product.variant.id);
   }
 });
@@ -2802,9 +2816,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 191);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 122);
-  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 19);
+  assert.ok(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length > 190);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images
@@ -2840,17 +2853,24 @@ test('published products expose ordered exact-model gallery images', () => {
   assert.ok(quick.galleryImages.every((image) => image.source?.id === 'quick-gr-one-official'));
 });
 
-test('public-post embeds remain remote while sourced rehosts use the bounded local contract', () => {
+test('buyer-hidden public-post embeds remain valid while sourced rehosts use the bounded local contract', () => {
   const remote = structuredClone(data);
   const image = remote.images.find((item) => item.id === 'quick-pro-er-one-primary-image');
   image.media_type = 'community-post-photo';
   image.rights.status = 'public-post-embed';
+  image.hosting = { mode: 'remote', remote_url: image.source_media_url };
+  image.buyer_visibility = 'omit';
+  delete image.source_media_url;
+  delete image.source_media_sha256;
+  delete image.editorial_quotation;
+  delete image.privacy_review;
   assert.deepEqual(validateDataset(remote), []);
 
   image.hosting = { mode: 'local', local_path: '/assets/images/placeholders/complete-bike.svg' };
   assert.ok(validateDataset(remote).some((error) => error.includes('third-party remote image cannot be stored locally')));
 
-  const rehosted = data.images.find((item) => item.rights.status === 'source-attributed-rehost');
+  const rehosted = data.images.find((item) => item.rights.status === 'source-attributed-rehost'
+    && item.hosting.local_path.startsWith('/assets/images/sourced/xhs/'));
   assert.ok(rehosted, 'expected a sourced local image fixture');
   assert.equal(rehosted.hosting.mode, 'local');
   assert.match(rehosted.hosting.local_path, /^\/assets\/images\/sourced\/xhs\//);
@@ -2887,6 +2907,7 @@ test('public-post quotations require bounded immutable media and a completed pri
       }
     ]
   };
+  image.buyer_visibility = 'omit';
   image.editorial_quotation = {
     purpose: 'editorial-identification-and-commentary',
     scope: 'one-compressed-public-post-photo',
@@ -2998,8 +3019,9 @@ test('shared frame images do not masquerade as exact component builds', () => {
   const rs = products.find((item) => item.variant.id === 'twitter-v3-rs-sensah');
   const oldRs = products.find((item) => item.variant.id === 'twitter-v3-2024-rs-sensah-alloy');
   const pardus = products.find((item) => item.variant.id === 'pardus-super-sport-gen2-egr');
-  assert.equal(eds.image.display_accuracy, 'exact-variant');
+  assert.equal(eds.image.display_accuracy, 'same-platform');
   assert.equal(rs.image.display_accuracy, 'same-platform');
+  assert.match(eds.image.display_note, /Shimano 105 build.*WheelTop components differ/);
   assert.equal(oldRs.image.display_accuracy, 'same-model-different-market-build');
   assert.equal(pardus.image.display_accuracy, 'exact-variant');
 });
@@ -3007,9 +3029,9 @@ test('shared frame images do not masquerade as exact component builds', () => {
 test('published images stay credited while incomplete builds remain candidates', () => {
   const ican = products.find((product) => product.platform.id === 'ican-gra04');
   const trinx = data.candidates.find((candidate) => candidate.id === 'trinx-gtr-c6');
-  assert.equal(ican.image.hosting.mode, 'remote');
+  assert.equal(ican.image.hosting.mode, 'local');
   assert.equal(ican.image.display_accuracy, 'exact-variant');
-  assert.equal(ican.image.rights.status, 'official-page-embed');
+  assert.equal(ican.image.rights.status, 'source-attributed-rehost');
   assert.equal(trinx.status, 'exact-carbon-1x12-core-specs-verified');
   assert.ok(trinx.missing.some((item) => /complete-bike weight/i.test(item)));
   assert.ok(trinx.missing.some((item) => /maximum tire clearance/i.test(item)));

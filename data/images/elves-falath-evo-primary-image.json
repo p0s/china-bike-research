@@ -4,11 +4,57 @@
   "role": "primary",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU610/2302/13/products/Sea-Mist-GreenMatt-Peacock-Green2-6f7d.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/elves-falath-evo-primary-image/7412258a11e41998-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/elves-falath-evo-primary-image/137f4d6a488100a0-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12370,
+        "sha256": "137f4d6a488100a0679f290b6d25428550851150ce48838f2c733ec42e7f604c",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/elves-falath-evo-primary-image/7412258a11e41998-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 40266,
+        "sha256": "7412258a11e41998bf88a45322347315cebd1a9eb79e538600334a807875d307",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "elves-falath-evo-frameset-official-2026-08-17",
-  "rights": { "status": "official-page-embed", "copyright_holder": "ELVES", "usage_note": "Remote embed from the cited manufacturer page; no redistribution license is asserted." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "ELVES",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © ELVES",
   "alt": "ELVES Falath EVO carbon road frameset in sea-mist green",
   "reviewed_at": "2026-08-17",
-  "display_note": "Official Falath EVO+ platform image; exact mainland build and color availability remain unresolved."
+  "display_note": "Official Falath EVO+ platform image; exact mainland build and color availability remain unresolved.",
+  "source_media_url": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU610/2302/13/products/Sea-Mist-GreenMatt-Peacock-Green2-6f7d.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100",
+  "source_media_sha256": "aaabf9e0bc102c324d301931a404465fc09d4017527e99c9d6e7d439cbe7c310",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

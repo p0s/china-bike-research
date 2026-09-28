@@ -4,15 +4,57 @@
   "role": "primary",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://images2.giant-bicycles.com/msnng8mraon1ugaxand9/MY27PropelAdvanced2_ColorAWhite.jpg" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/giant-propel-gen4-primary-image/75355b1121695c5d-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/giant-propel-gen4-primary-image/3fd468894dd00284-card-w480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 17438,
+        "sha256": "3fd468894dd0028499422db731f72fa1b78d5fb95b2188f21c87edf258dd6abe",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/giant-propel-gen4-primary-image/75355b1121695c5d-detail-w1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 70852,
+        "sha256": "75355b1121695c5d1e84d31bd078ea1be1bd2516c4321d14b947f2b1b49a09d7",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "giant-propel-gen4-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Giant Bicycles",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with Giant Bicycles; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Giant Bicycles",
   "alt": "Giant Propel Advanced 2 2027 aero road bike in white",
   "display_note": "Official fourth-generation platform image at 4000×3000; the candidate's exact trim and mainland-China package remain unspecified.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://images2.giant-bicycles.com/msnng8mraon1ugaxand9/MY27PropelAdvanced2_ColorAWhite.jpg",
+  "source_media_sha256": "53af049c2735ad090bb74818697e83645edeb607a6c8c8fec919ab21a0fcba1a",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

@@ -4,10 +4,56 @@
   "role": "primary",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://twitterbikeusa.com/cdn/shop/files/t10-pro-2rd-white-gray_37550c56-267b-4197-96c5-e9b2983ff90e.jpg?v=1783119864&width=780" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/twitter-t10-pro-primary-image/d33da1058ee778fd-detail-w780.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/twitter-t10-pro-primary-image/28126f08c9890da7-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 11356,
+        "sha256": "28126f08c9890da7dedd7d1671a3c371500ff6eaad88213c16b4a8f65eda2eb2",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/twitter-t10-pro-primary-image/d33da1058ee778fd-detail-w780.webp",
+        "width": 780,
+        "height": 520,
+        "bytes": 29696,
+        "sha256": "d33da1058ee778fd250ee2c0f258a07d0b4b283e1861b7db83e72af078947479",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "twitter-t10-pro-official-2026-08-17",
-  "rights": { "status": "official-page-embed", "copyright_holder": "Twitter Bike USA", "usage_note": "Remote embed from the cited manufacturer storefront; no redistribution license is asserted." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Twitter Bike USA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © Twitter Bike USA",
   "alt": "Twitter T10 Pro 2rd carbon road bike in white and gray",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://twitterbikeusa.com/cdn/shop/files/t10-pro-2rd-white-gray_37550c56-267b-4197-96c5-e9b2983ff90e.jpg?v=1783119864&width=780",
+  "source_media_sha256": "f6dc393734e917c847ce09242bbe78d852fefef220e6576f24d3949b0c3c1885",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

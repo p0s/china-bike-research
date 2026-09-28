@@ -10,16 +10,55 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.incolor.vip/uploads/upload/images/20260710/92ec6be256eda83e96765fa48c8859bb.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/incolor-ssr-side-gallery/9b8944d82603132b-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/incolor-ssr-side-gallery/1efb8a8227253f11-card-w480.webp",
+        "width": 480,
+        "height": 210,
+        "bytes": 4760,
+        "sha256": "1efb8a8227253f11de587745b45df77808fa3e5874f9897ea1006886761e8eb3",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/incolor-ssr-side-gallery/9b8944d82603132b-detail-w1200.webp",
+        "width": 1200,
+        "height": 525,
+        "bytes": 17986,
+        "sha256": "9b8944d82603132b004ddae4baade225eb73467802fd4ef9685674b158780d5c",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "incolor-ssr-official-2026-08-29",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "INCOLOR",
-    "usage_note": "Remote embed from the cited manufacturer product page. Copyright remains with INCOLOR; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © INCOLOR",
   "alt": "Official side profile of the red INCOLOR Speedster Radical SSR frameset",
-  "reviewed_at": "2026-08-29"
+  "reviewed_at": "2026-08-29",
+  "source_media_url": "https://www.incolor.vip/uploads/upload/images/20260710/92ec6be256eda83e96765fa48c8859bb.jpg",
+  "source_media_sha256": "3d0982f1f5cf8274b3e06ace88e0161561176c1a4bc9ad5dd694649f3932a09c",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

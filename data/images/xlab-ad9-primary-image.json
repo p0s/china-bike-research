@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://cdn.xidesheng.com/2026/03/21/1774065626870-SJ2%E5%96%9C%E5%BE%B7%E7%9B%9B%E9%98%BF%E6%96%AF%E5%A1%94%E7%BA%B3%E4%B8%96%E7%95%8C%E9%98%9F%E7%89%88(1).png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/xlab-ad9-primary-image/7ad87a8a7ae82c45-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/xlab-ad9-primary-image/99f38b1dc02e1bbd-card-w480.webp",
+        "width": 480,
+        "height": 280,
+        "bytes": 36986,
+        "sha256": "99f38b1dc02e1bbd17ecc34d1d6ace376fba49f191fa3d1add095c5efa345e25",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/xlab-ad9-primary-image/7ad87a8a7ae82c45-detail-w1200.webp",
+        "width": 1200,
+        "height": 700,
+        "bytes": 139450,
+        "sha256": "7ad87a8a7ae82c45db397d90ee18a56692bdfb72c6bf3c55fbf0382584d05c19",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "xlab-ad9-official-cn-spec-2026-08-27",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "XDS",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © XDS",
   "alt": "X-LAB AD9 complete aero road bike in Astana team paint",
   "display_note": "Official exact-model platform photo; the paint may differ from the preferred reference build.",
-  "reviewed_at": "2026-08-27"
+  "reviewed_at": "2026-08-27",
+  "source_media_url": "https://cdn.xidesheng.com/2026/03/21/1774065626870-SJ2%E5%96%9C%E5%BE%B7%E7%9B%9B%E9%98%BF%E6%96%AF%E5%A1%94%E7%BA%B3%E4%B8%96%E7%95%8C%E9%98%9F%E7%89%88(1).png",
+  "source_media_sha256": "4f5cdca0126ef3c5b9fce0305957101f5f59fb4fa681cae8a45f8fb8c61e2b27",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

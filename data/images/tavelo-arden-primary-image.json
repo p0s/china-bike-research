@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2607/20/products/1.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/tavelo-arden-primary-image/044a8b7b9b6e53a0-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/tavelo-arden-primary-image/6b3cc0af9b858859-card-w480.webp",
+        "width": 480,
+        "height": 321,
+        "bytes": 20902,
+        "sha256": "6b3cc0af9b858859b0bb53a7076e8d620459389e37bf2ab2b13189182c1e2fe0",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/tavelo-arden-primary-image/044a8b7b9b6e53a0-detail-w1000.webp",
+        "width": 1000,
+        "height": 667,
+        "bytes": 58396,
+        "sha256": "044a8b7b9b6e53a0ea5f10836b641083d7dfa995462f72cff5b5e9bb4226b277",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "tavelo-arden-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "TAVELO Xiamen Sports Co., Ltd.",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with TAVELO; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © TAVELO Xiamen Sports Co., Ltd.",
   "alt": "Tavelo ARDEN Race carbon frameset",
   "display_note": "Official ARDEN Race platform image; the public lead's trim and color are not independently established.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2607/20/products/1.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000",
+  "source_media_sha256": "a0b1d4cf2483c8cbe1589e9f93e9bb20863ab67b1a4f4f9518c436077719fd64",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

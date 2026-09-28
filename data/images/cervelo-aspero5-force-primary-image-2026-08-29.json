@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://omaracycles.com/cdn/shop/files/0L0ALBFE1C48.jpg?v=1750487406"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/cervelo-aspero5-force-primary-image-2026-08-29/c87243dc4f92b93a-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/cervelo-aspero5-force-primary-image-2026-08-29/7a60ed2532e9371b-card-w480.webp",
+        "width": 480,
+        "height": 261,
+        "bytes": 15788,
+        "sha256": "7a60ed2532e9371bb2c87a80e8383e8a0b61c11589041fbd5db5b00fbae540c4",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/cervelo-aspero5-force-primary-image-2026-08-29/c87243dc4f92b93a-detail-w1000.webp",
+        "width": 1000,
+        "height": 543,
+        "bytes": 54874,
+        "sha256": "c87243dc4f92b93a09a94a312d926107718f8a22cebd88274efdd56486a5f3cb",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "cervelo-aspero5-omara-image-2026-08-29",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Cervélo / O'Mara Cycles",
-    "usage_note": "Remote embed from the cited exact-build retailer page."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Cervélo / O'Mara Cycles; see source",
   "alt": "Black Cervélo Áspero-5 aerodynamic gravel bike with SRAM Force AXS 1",
   "display_note": "Exact current Force AXS 1 retailer image; the catalog reference price is for the frameset unless another documented build is selected.",
-  "reviewed_at": "2026-08-29"
+  "reviewed_at": "2026-08-29",
+  "source_media_url": "https://omaracycles.com/cdn/shop/files/0L0ALBFE1C48.jpg?v=1750487406",
+  "source_media_sha256": "7e9c738b56dab8a2bb0335acff1763b6ab61a388b91c9ca9e945daa12bfbc119",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

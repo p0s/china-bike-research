@@ -7,8 +7,16 @@
   "status": "current-established",
   "positioning": "The mainstream fully wireless benchmark: easy electronic installation, but XDR, Flattop, DUB and DOT requirements can raise retrofit cost.",
   "variants": [
-    { "name": "Rival AXS E1 2x", "tier": "value-road", "cassette_speeds": "12" },
-    { "name": "Rival AXS E1 1x", "tier": "all-road", "cassette_speeds": "12" }
+    {
+      "name": "Rival AXS E1 2x",
+      "tier": "value-road",
+      "cassette_speeds": "12"
+    },
+    {
+      "name": "Rival AXS E1 1x",
+      "tier": "all-road",
+      "cassette_speeds": "12"
+    }
   ],
   "shifting": {
     "chainrings": "1x or 2x",
@@ -17,8 +25,13 @@
     "max_rear_sprocket_teeth": 36
   },
   "architecture": "Fully wireless AXS control with removable batteries on each derailleur and coin cells in the levers.",
-  "brake_options": ["Hydraulic disc"],
-  "weight": { "status": "package-dependent", "note": "SRAM states the current family is 213 g lighter than its prior generation, but no cross-brand package total is used here." },
+  "brake_options": [
+    "Hydraulic disc"
+  ],
+  "weight": {
+    "status": "package-dependent",
+    "note": "SRAM states the current family is 213 g lighter than its prior generation, but no cross-brand package total is used here."
+  },
   "battery": "One removable AXS battery per installed derailleur plus lever coin cells; a 2x setup normally carries two interchangeable derailleur batteries.",
   "controls_and_app": "AXS app supports setup, personalization, battery state and firmware.",
   "package_summary": "A road conversion may need levers, RD, optional FD, one or two batteries, charger, calipers, cassette, Flattop chain, crank, DUB bottom bracket and rotors.",
@@ -36,7 +49,6 @@
     "Confirm whether a listing is E1 current generation or older Rival eTap AXS."
   ],
   "image": {
-    "remote_url": "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/derailleurs---rear/derailleurs---rear/rd-rival-e-e1/productassets_rd-riv-e-e1_fg/rd-rival-axs-e1-max-36t-c-dside-s.png?w=1000",
     "source_id": "sram-rival-axs-e1-official-2026-08-24",
     "subject_accuracy": "exact-family",
     "width": 1000,
@@ -44,12 +56,55 @@
     "credit": "SRAM",
     "alt": "SRAM Rival AXS E1 wireless rear derailleur",
     "rights": {
-      "status": "official-page-embed",
+      "status": "source-attributed-rehost",
       "copyright_holder": "SRAM",
-      "usage_note": "Remote embed from the cited manufacturer page; no redistribution license asserted."
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
     },
-    "reviewed_at": "2026-08-25"
+    "reviewed_at": "2026-08-25",
+    "local_path": "/assets/images/sourced/official/groupset-sram-rival-axs-e1/2f011d0dbc1b0c5e-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/groupset-sram-rival-axs-e1/c151d8300d39f048-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 19586,
+        "sha256": "c151d8300d39f048f9724390f0d663a9882a89bae6331fb0f83640c106f4bcfd",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/groupset-sram-rival-axs-e1/2f011d0dbc1b0c5e-detail-w1000.webp",
+        "width": 1000,
+        "height": 1000,
+        "bytes": 55872,
+        "sha256": "2f011d0dbc1b0c5efebeb730bef936cedf75fae31abdf70a0de34ba6e7b9ab0a",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ],
+    "source_media_url": "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/derailleurs---rear/derailleurs---rear/rd-rival-e-e1/productassets_rd-riv-e-e1_fg/rd-rival-axs-e1-max-36t-c-dside-s.png?w=1000",
+    "source_media_sha256": "a82d870bcfb57f184c097c22e602186e436f58e7e56f1da3e1360046adc495f8",
+    "editorial_quotation": {
+      "purpose": "editorial-identification-and-commentary",
+      "scope": "one-compressed-product-photo",
+      "source_link_required": true,
+      "no_license_asserted": true,
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-09-28",
+      "embedded_metadata": "stripped",
+      "faces": "none-visible",
+      "vehicle_registration": "none-visible",
+      "account_identifiers": "none-visible",
+      "location_identifiers": "none-visible"
+    }
   },
-  "source_ids": ["sram-rival-axs-e1-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "source_ids": [
+    "sram-rival-axs-e1-official-2026-08-24",
+    "gpt-pro-electronic-groupsets-input-2026-08-24"
+  ],
   "reviewed_at": "2026-08-24"
 }

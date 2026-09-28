@@ -4,10 +4,56 @@
   "role": "primary",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://33292137.s21i.faiusr.com/2/ABUIABACGAAgvvS8wAYo49HH8wMwoAY4oAY.jpg" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-r9-primary-image/56f4010c7cf6292d-detail-w800.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-r9-primary-image/ceebe3be0279b5f5-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 22374,
+        "sha256": "ceebe3be0279b5f57b2a215ad2d4d509222ee4ccca76fc7f8735153d10776216",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-r9-primary-image/56f4010c7cf6292d-detail-w800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 56076,
+        "sha256": "56f4010c7cf6292ddc756e35ec396ad4bba499e1ddc98c7a249b908cea0c6909",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-blade-r9-official-cn-2026-08-17",
-  "rights": { "status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited manufacturer page; no redistribution license is asserted." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © SAVA",
   "alt": "SAVA Blade R9 carbon aero road bike on the official China page",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://33292137.s21i.faiusr.com/2/ABUIABACGAAgvvS8wAYo49HH8wMwoAY4oAY.jpg",
+  "source_media_sha256": "faf3ef3c1c29fc03ab3b5c10b19e3b8f6c9d6e4c0a25945d5f98e7fbc6786b07",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

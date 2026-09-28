@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://contents.mediadecathlon.com/p2891598/k%24031fbc032ef3257f94304c81f2e8f024/picture.jpg?f=3000x0&format=auto"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/van-rysel-rcr-f-pro-primary-image/d08d609432c3a951-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/van-rysel-rcr-f-pro-primary-image/a0ee77bfe093f287-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14790,
+        "sha256": "a0ee77bfe093f287572dbc4c0922cb58a6731bfb6ed8166c65c7c9a9bd7bca6f",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/van-rysel-rcr-f-pro-primary-image/d08d609432c3a951-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 58808,
+        "sha256": "d08d609432c3a9513a2fbf25fb612410d3b1a08e18eb4d5560bfc70e044c88c4",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "van-rysel-rcr-f-pro-official-global-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Van Rysel / Decathlon",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Van Rysel / Decathlon",
   "alt": "Van Rysel RCR-F Pro Shimano 105 Di2 road bike",
   "display_note": "Official exact-variant global product image; current mainland SKU, price and stock remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://contents.mediadecathlon.com/p2891598/k%24031fbc032ef3257f94304c81f2e8f024/picture.jpg?f=3000x0&format=auto",
+  "source_media_sha256": "928b827968e47f2a0b1ac10550e723b57b1a6f2f774c37d120af68ad38e0fab4",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

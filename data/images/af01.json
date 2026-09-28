@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://afbicycles.com/cdn/shop/files/DSC7959_1_1.jpg?v=1781773388&width=3840"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/af01-primary-image/06edf0370dea816f-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/af01-primary-image/e52186044e4b0fb9-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 4692,
+        "sha256": "e52186044e4b0fb9012762e5c5c7ac2ba5d4e4b8af3bdf620f9303f59d2ddd09",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/af01-primary-image/06edf0370dea816f-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 18830,
+        "sha256": "06edf0370dea816fba88c4ebd12b52b5df6d31b8970b5b4ec9bd7827a4128712",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "af01-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "AF Bicycles",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © AF Bicycles",
   "alt": "AF01 carbon gravel frameset",
   "reviewed_at": "2026-08-07",
+  "source_media_url": "https://afbicycles.com/cdn/shop/files/DSC7959_1_1.jpg?v=1781773388&width=3840",
+  "source_media_sha256": "3d917ab4882c5042e25bbe5f180cac899392cd01362eb43f8e5c549b750e0c39",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

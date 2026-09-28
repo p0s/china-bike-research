@@ -4,15 +4,57 @@
   "role": "primary",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://www.quickprousa.com/cdn/shop/files/TTONE_Wave_Orange.png?crop=center&height=2048&v=1781726905&width=2048" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/quick-pro-tt-one-primary-image/e438b61e5ae0a5e3-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/quick-pro-tt-one-primary-image/3b73bafa1cc94b0f-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 25974,
+        "sha256": "3b73bafa1cc94b0f26fad08c7d767a7749d9d673d2e74e2e016e9ec0e461517c",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/quick-pro-tt-one-primary-image/e438b61e5ae0a5e3-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 97930,
+        "sha256": "e438b61e5ae0a5e37a2f49acadb55ba10450e2034e33e662122f3659a2131385",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "quick-pro-tt-one-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Quick Pro",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with Quick Pro; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Quick Pro",
   "alt": "Quick Pro TT:ONE time-trial frameset in Wave Orange",
   "display_note": "Official exact-frameset image from the global manufacturer listing; mainland package and color availability remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://www.quickprousa.com/cdn/shop/files/TTONE_Wave_Orange.png?crop=center&height=2048&v=1781726905&width=2048",
+  "source_media_sha256": "d26d816becedd5eb92a784a8a28be121238b0c301950b60f05dfae8d07cb2bab",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

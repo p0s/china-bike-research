@@ -34,7 +34,7 @@ function fixture(t,mode='',base='') {
  fs.writeFileSync(path.join(root,'src/render.mjs'),`
  export function renderHome(ctx){
  if(process.env.FAIL_BUILD==='render')throw Error('render failure');
- if(process.env.FAIL_BUILD==='budget')return 'x'.repeat(1_000_000);
+ if(process.env.FAIL_BUILD==='budget')return 'x'.repeat(1_000_001);
  const target=process.env.FAIL_BUILD==='links'?ctx.base+'/missing/':process.env.FAIL_BUILD==='escape'?ctx.base+'/%2e%2e%2fsecret':ctx.base+'/models/bike/';
  return '<html><a href="'+target+'">Bike</a></html>';
  }

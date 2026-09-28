@@ -1,23 +1,64 @@
 {
   "id": "incolor-voyager-seatpost-gallery",
   "platform_id": "incolor-voyager",
-  "variant_ids": ["incolor-voyager-frameset"],
+  "variant_ids": [
+    "incolor-voyager-frameset"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "27.2 mm seatpost detail",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://incolor.vip/uploads/upload/images/20260410/bc62c6dcc5bfff522fbabe391becee0f.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/incolor-voyager-seatpost-gallery/f2b38b5239fe4dd5-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/incolor-voyager-seatpost-gallery/47a6a8b9a83b08bb-card-w480.webp",
+        "width": 480,
+        "height": 279,
+        "bytes": 3170,
+        "sha256": "47a6a8b9a83b08bb527d23c5434982cbebf99e0a12613fe222ab6bbbde73a342",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/incolor-voyager-seatpost-gallery/f2b38b5239fe4dd5-detail-w1200.webp",
+        "width": 1200,
+        "height": 697,
+        "bytes": 10096,
+        "sha256": "f2b38b5239fe4dd521b0f5be901f80ff8e0f83c733b0caee9ea5808a61107774",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "incolor-voyager-official-2026-08-25",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "INCOLOR",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with INCOLOR; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product detail © INCOLOR",
   "alt": "INCOLOR Voyager 27.2 millimeter round seatpost detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://incolor.vip/uploads/upload/images/20260410/bc62c6dcc5bfff522fbabe391becee0f.jpg",
+  "source_media_sha256": "e30175d777209114f5158a5eca27b9c3455692302ada53369a75b23563b247e1",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

@@ -1,23 +1,64 @@
 {
   "id": "rinasclta-gr025-clearance-gallery",
   "platform_id": "rinasclta-gr025",
-  "variant_ids": ["rinasclta-gr025-frameset"],
+  "variant_ids": [
+    "rinasclta-gr025-frameset"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "50 mm tire clearance",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://rinascltabike.com/wp-content/uploads/2025/05/Rinasclta-carbon-gravel-framset-GR025-max-50mm-tire-clearance.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/rinasclta-gr025-clearance-gallery/b9264e242808048f-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/rinasclta-gr025-clearance-gallery/6e66c865a997686a-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 9192,
+        "sha256": "6e66c865a997686a9d8085d9f8304b266cd4f6f2af3284acd53641801ceef4ba",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/rinasclta-gr025-clearance-gallery/b9264e242808048f-detail-w1000.webp",
+        "width": 1000,
+        "height": 1000,
+        "bytes": 30832,
+        "sha256": "b9264e242808048fe832dc27f66e8d0c8f5511bb8aa9dcf9dbfc69ca7cac4b3a",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "rinasclta-gr025-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Rinasclta",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with Rinasclta; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Tire-clearance graphic © Rinasclta",
   "alt": "Official Rinasclta GR025 frame graphic showing 700 by 50 millimeter tire clearance",
-  "reviewed_at": "2026-08-26"
+  "reviewed_at": "2026-08-26",
+  "source_media_url": "https://rinascltabike.com/wp-content/uploads/2025/05/Rinasclta-carbon-gravel-framset-GR025-max-50mm-tire-clearance.jpg",
+  "source_media_sha256": "a3251c586bf53cfaf85719c0a5a285bdd5dcd06bade82306127664b6cc2a7225",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

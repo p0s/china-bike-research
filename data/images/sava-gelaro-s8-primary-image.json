@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://savadeck-bike.com/cdn/shop/files/GelaroS8-ClassicBlack.png?v=1779789542&width=1080"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-s8-primary-image/e5a0f879df74baaf-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-s8-primary-image/7838680bb0a2f4bb-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 17356,
+        "sha256": "7838680bb0a2f4bb28555da589ae9c5d6bf51e65fe16b1121d5cc4e3831a6403",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-s8-primary-image/e5a0f879df74baaf-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 62792,
+        "sha256": "e5a0f879df74baaf875ab4b1896270fdc9f5e4e75b48f2b50a14d6f474cdec0e",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "sava-gelaro-s8-official-2026-08-08",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "SAVA",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SAVA",
   "alt": "Black SAVA Gelaro S8 GRX820 carbon gravel bike",
   "reviewed_at": "2026-08-08",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/GelaroS8-ClassicBlack.png?v=1779789542&width=1080",
+  "source_media_sha256": "6b0a9ba21e31c5f0313e70fc3b71abfd9b6be3d81fd9591d8c00e042dd83fcbe",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

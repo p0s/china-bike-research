@@ -7,8 +7,20 @@
   "status": "current-established-split-revisions",
   "positioning": "Apex D1 is the standard-hanger 12-speed route; Rival E1 is the newer 13-speed Full Mount route and requires a UDH-capable frame.",
   "variants": [
-    { "name": "Apex XPLR AXS D1", "tier": "value-gravel", "cassette_speeds": "12", "max_rear_sprocket_teeth": 44, "hanger": "standard" },
-    { "name": "Rival XPLR AXS E1", "tier": "performance-gravel", "cassette_speeds": "13", "max_rear_sprocket_teeth": 46, "hanger": "Full Mount / UDH interface" }
+    {
+      "name": "Apex XPLR AXS D1",
+      "tier": "value-gravel",
+      "cassette_speeds": "12",
+      "max_rear_sprocket_teeth": 44,
+      "hanger": "standard"
+    },
+    {
+      "name": "Rival XPLR AXS E1",
+      "tier": "performance-gravel",
+      "cassette_speeds": "13",
+      "max_rear_sprocket_teeth": 46,
+      "hanger": "Full Mount / UDH interface"
+    }
   ],
   "shifting": {
     "chainrings": "1x",
@@ -17,8 +29,13 @@
     "max_rear_sprocket_teeth": 46
   },
   "architecture": "Fully wireless AXS control with a removable rear-derailleur battery; the two revisions use different cassettes and frame mounts.",
-  "brake_options": ["Hydraulic disc"],
-  "weight": { "status": "revision-and-package-dependent", "note": "No combined total is used because Apex D1 12-speed and Rival E1 13-speed are different systems." },
+  "brake_options": [
+    "Hydraulic disc"
+  ],
+  "weight": {
+    "status": "revision-and-package-dependent",
+    "note": "No combined total is used because Apex D1 12-speed and Rival E1 13-speed are different systems."
+  },
   "battery": "Removable AXS rear-derailleur battery plus lever coin cells.",
   "controls_and_app": "AXS app supports setup, personalization, battery state and firmware.",
   "package_summary": "Apex D1 works with 10-36T, 10-44T or 11-44T XPLR cassettes; the 11-44T route can retain HG. Rival E1 uses the 10-46T 13-speed XPLR cassette and Full Mount.",
@@ -36,7 +53,6 @@
     "Count XDR, Flattop chain, batteries, brakes and installation parts in the conversion price."
   ],
   "image": {
-    "remote_url": "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/derailleurs---rear/derailleurs---rear/rd-apex-1e-d1/productassets_rd-apx-1e-d1_fg/rd-apex-xplr-axs-d1-max-44t-01-04-22-c-side-s.png?w=1000",
     "source_id": "sram-apex-xplr-axs-d1-official-2026-08-24",
     "subject_accuracy": "featured-variant",
     "featured_variant": "Apex XPLR AXS D1",
@@ -45,12 +61,56 @@
     "credit": "SRAM",
     "alt": "SRAM Apex XPLR AXS D1 wireless rear derailleur",
     "rights": {
-      "status": "official-page-embed",
+      "status": "source-attributed-rehost",
       "copyright_holder": "SRAM",
-      "usage_note": "Remote embed from the cited manufacturer page; no redistribution license asserted."
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
     },
-    "reviewed_at": "2026-08-25"
+    "reviewed_at": "2026-08-25",
+    "local_path": "/assets/images/sourced/official/groupset-sram-xplr-apex-d1-rival-e1/72a4d95d171df380-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/groupset-sram-xplr-apex-d1-rival-e1/6fa4be5bb02af32b-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 22444,
+        "sha256": "6fa4be5bb02af32b8df97140afd3948ffa27f38059ef2f63bce907eca28a7d72",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/groupset-sram-xplr-apex-d1-rival-e1/72a4d95d171df380-detail-w1000.webp",
+        "width": 1000,
+        "height": 1000,
+        "bytes": 64394,
+        "sha256": "72a4d95d171df3803a67b60ac418b0713bdbf3f59b0ffe1efe119ef34c84dc96",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ],
+    "source_media_url": "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/derailleurs---rear/derailleurs---rear/rd-apex-1e-d1/productassets_rd-apx-1e-d1_fg/rd-apex-xplr-axs-d1-max-44t-01-04-22-c-side-s.png?w=1000",
+    "source_media_sha256": "53d83e26eb34761a9c2f87f539a2929b430204072830a8a9f1d64c97be629644",
+    "editorial_quotation": {
+      "purpose": "editorial-identification-and-commentary",
+      "scope": "one-compressed-product-photo",
+      "source_link_required": true,
+      "no_license_asserted": true,
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-09-28",
+      "embedded_metadata": "stripped",
+      "faces": "none-visible",
+      "vehicle_registration": "none-visible",
+      "account_identifiers": "none-visible",
+      "location_identifiers": "none-visible"
+    }
   },
-  "source_ids": ["sram-apex-xplr-axs-d1-official-2026-08-24", "sram-rival-xplr-axs-e1-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "source_ids": [
+    "sram-apex-xplr-axs-d1-official-2026-08-24",
+    "sram-rival-xplr-axs-e1-official-2026-08-24",
+    "gpt-pro-electronic-groupsets-input-2026-08-24"
+  ],
   "reviewed_at": "2026-08-24"
 }

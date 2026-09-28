@@ -1,23 +1,64 @@
 {
   "id": "ican-graro-color-eleven-gallery",
   "platform_id": "ican-graro",
-  "variant_ids": ["ican-graro-frameset"],
+  "variant_ids": [
+    "ican-graro-frameset"
+  ],
   "role": "gallery",
   "sort_order": 4,
   "label": "YS716 color view one",
   "subject_accuracy": "same-model-different-color",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://icanwheels.com/cdn/shop/files/ICAN_Graro_frame_11.jpg?v=1782544327"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/ican-graro-color-eleven-gallery/cb62deb09b2cf3f1-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/ican-graro-color-eleven-gallery/4cf6f2a975cebdea-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 8140,
+        "sha256": "4cf6f2a975cebdeaad578b8eaa7f8eb896169e9da920922185e93f0d5f3abc5d",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/ican-graro-color-eleven-gallery/cb62deb09b2cf3f1-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 43232,
+        "sha256": "cb62deb09b2cf3f1cb24f4ef9824d99e86f025df1ba2de7b7526466143c02688",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "ican-graro-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "ICAN",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with ICAN; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © ICAN",
   "alt": "ICAN Graro gravel frame in an official YS716 color finish",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://icanwheels.com/cdn/shop/files/ICAN_Graro_frame_11.jpg?v=1782544327",
+  "source_media_sha256": "cd129fbc0aacdc805e0fd8960eae9f6f293d152f3c52e641dffeb317fe6c42d9",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

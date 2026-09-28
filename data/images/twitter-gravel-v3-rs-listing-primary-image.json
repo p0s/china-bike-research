@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://img.alicdn.com/bao/uploaded/i1/3021506430/O1CN017OYwnS1xMzrJi7mmi_!!4611686018427381630-2-item_pic.png_500x500q90"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/twitter-gravel-v3-rs-listing-primary-image/e2b6780ff994d02d-detail-w500.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/retailer/twitter-gravel-v3-rs-listing-primary-image/5a2f3ed058b7fece-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 49852,
+        "sha256": "5a2f3ed058b7fece582ff107a4669bf2dcd4d78e8df96e589400fa2af0a668e7",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/retailer/twitter-gravel-v3-rs-listing-primary-image/e2b6780ff994d02d-detail-w500.webp",
+        "width": 500,
+        "height": 500,
+        "bytes": 68714,
+        "sha256": "e2b6780ff994d02d568ca031654e13debf93da869bd29f773dc2a533bce147ac",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "twitter-v3-full-title-mirror-2026-08-30",
   "rights": {
-    "status": "retailer-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Not established; image published in the TWITTER marketplace listing",
-    "usage_note": "Remote embed from the cited marketplace listing mirror; no ownership or redistribution license is inferred."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image via the TWITTER marketplace listing",
   "alt": "TWITTER Gravel V3 carbon gravel bike from the retained marketplace listing",
   "reviewed_at": "2026-09-01",
-  "display_note": "Exact listing-family photo; selected alloy-wheel option and frame generation remain unresolved."
+  "display_note": "Exact listing-family photo; selected alloy-wheel option and frame generation remain unresolved.",
+  "source_media_url": "https://img.alicdn.com/bao/uploaded/i1/3021506430/O1CN017OYwnS1xMzrJi7mmi_!!4611686018427381630-2-item_pic.png_500x500q90",
+  "source_media_sha256": "a124d6236b9e9742cc7b7020313fbc061d12a152c6eea39ce2e3cc516dc5ab09",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

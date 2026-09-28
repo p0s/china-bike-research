@@ -4,15 +4,57 @@
   "role": "primary",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/SAVA_A4-Purple.jpg?v=1731295995&width=1080" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-a4-primary-image/d3a7f4f318f67485-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-a4-primary-image/3b60295f0ba9523f-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 19662,
+        "sha256": "3b60295f0ba9523f79323393732c611d6f263c3578b2ecfa7c341c54b497e112",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-a4-primary-image/d3a7f4f318f67485-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 78626,
+        "sha256": "d3a7f4f318f674856b466fb71bd9449175762f79334f65902cadae90742758ff",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-a4-official-global-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "SAVA Carbon Bike",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with SAVA Carbon Bike; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SAVA Carbon Bike",
   "alt": "SAVA A4 carbon road bike in purple",
   "display_note": "Official exact-variant image; purple is one listed color and the mainland-China package remains unconfirmed.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/SAVA_A4-Purple.jpg?v=1731295995&width=1080",
+  "source_media_sha256": "324c858a40041d994383bec02224c421843b4539df49776e1fd53c70b21e3d20",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

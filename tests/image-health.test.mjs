@@ -34,26 +34,24 @@ test('buyer-omitted PARDUS images are not health-check targets', () => {
   assert.equal(ids.some((id) => id.startsWith('pardus-spark-sport-pes-cn-color-primary-image')), false);
 });
 
-test('official groupset embeds are health-check targets', () => {
-  const targets = imageHealthTargets(loadDataset());
-  const groupsetTargets = targets.filter((target) => target.id.startsWith('groupset:'));
-  assert.equal(groupsetTargets.length, 10);
-  assert.ok(groupsetTargets.every((target) => target.url.startsWith('https://')));
-  assert.ok(groupsetTargets.some((target) => target.id === 'groupset:shimano-105-r7170'));
-  assert.ok(groupsetTargets.some((target) => target.id === 'groupset:magene-qed-pes'));
+test('official groupset images are local and no remote images remain health-check targets', () => {
+  const data = loadDataset();
+  assert.equal(imageHealthTargets(data).length, 0);
+  assert.equal(data.groupsets.filter((groupset) => groupset.image?.local_path).length, 10);
+  assert.ok(data.groupsets.every((groupset) => !groupset.image?.remote_url));
 });
 
-test('image health report supports exact image filters and JSON results', () => {
-  const targets = imageHealthTargets(loadDataset());
-  const selected = filterImageHealthTargets(targets, ['camp-gx600-primary-image']);
-  assert.deepEqual(selected.map(({ id }) => id), ['camp-gx600-primary-image']);
+test('legacy remote image health filters and JSON results remain deterministic', () => {
+  const targets = [{ id: 'sample-image', url: 'https://example.com/bike.jpg' }];
+  const selected = filterImageHealthTargets(targets, ['sample-image']);
+  assert.deepEqual(selected.map(({ id }) => id), ['sample-image']);
   assert.throws(() => filterImageHealthTargets(targets, ['not-a-real-image']), /unknown remote image id/);
   const json = JSON.parse(formatImageHealthJson([{
-    id: 'camp-gx600-primary-image', url: 'https://example.com/bike.jpg', classification: 'healthy', status: 200, contentType: 'image/jpeg'
+    id: 'sample-image', url: 'https://example.com/bike.jpg', classification: 'healthy', status: 200, contentType: 'image/jpeg'
   }], '2026-09-24'));
   assert.equal(json.checked_at, '2026-09-24');
   assert.deepEqual(json.results[0], {
-    id: 'camp-gx600-primary-image', url: 'https://example.com/bike.jpg', classification: 'healthy', status: 200, content_type: 'image/jpeg'
+    id: 'sample-image', url: 'https://example.com/bike.jpg', classification: 'healthy', status: 200, content_type: 'image/jpeg'
   });
 });
 
@@ -72,16 +70,11 @@ test('only complete, healthy checks for current URLs within 30 days suppress ima
   assert.equal(imageHealthIsFreshAndHealthy({ ...image, health_check: { ...image.health_check, checked_at: '2026-09-25' } }, '2026-09-24'), false);
 });
 
-test('gap report suppresses only the covered remote image health gap', () => {
+test('gap report keeps an unavailable product photo as a research gap', () => {
   const data = loadDataset();
   const image = data.images.find((item) => item.id === 'camp-gx600-primary-image');
-  const url = image.hosting.remote_url;
-  image.health_check = { checked_at: '2026-09-24', resources: [{
-    target_id: image.id, url, classification: 'healthy', status: 200, content_type: 'image/jpeg'
-  }] };
+  assert.equal(image.buyer_visibility, 'omit');
   const gaps = buildGapReport(data, '2026-09-24').records.find((record) => record.id === 'camp-gx600-pes').gaps;
-  assert.equal(gaps.some((gap) => gap.code === 'image-health-unverified'), false);
-  image.health_check.resources[0].classification = 'unreachable';
-  const failedGaps = buildGapReport(data, '2026-09-24').records.find((record) => record.id === 'camp-gx600-pes').gaps;
-  assert.equal(failedGaps.some((gap) => gap.code === 'image-health-unverified'), true);
+  assert.ok(gaps.some((gap) => gap.code === 'image-missing'));
+  assert.ok(!gaps.some((gap) => gap.code === 'image-health-unverified'));
 });

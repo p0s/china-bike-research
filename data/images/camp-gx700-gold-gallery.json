@@ -1,16 +1,27 @@
 {
   "id": "camp-gx700-gold-gallery",
   "platform_id": "camp-gx700",
-  "variant_ids": ["camp-gx700-grx820"],
+  "variant_ids": [
+    "camp-gx700-grx820"
+  ],
   "role": "gallery",
   "sort_order": 2,
   "label": "Champagne Gold",
   "subject_accuracy": "same-model-different-color",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/upload/image/20260519/GX700-%E9%A6%99%E6%A7%9F%E9%87%91.jpg"},
+  "hosting": {
+    "mode": "remote",
+    "remote_url": "https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/upload/image/20260519/GX700-%E9%A6%99%E6%A7%9F%E9%87%91.jpg"
+  },
   "source_id": "camp-gx700-official-2026-08-17",
-  "rights": {"status": "official-page-embed", "copyright_holder": "CAMP", "usage_note": "Remote embed from the cited official product page. Copyright remains with CAMP; no redistribution license is asserted."},
+  "rights": {
+    "status": "official-page-embed",
+    "copyright_holder": "CAMP",
+    "usage_note": "Remote embed from the cited official product page. Copyright remains with CAMP; no redistribution license is asserted."
+  },
   "credit": "Product image © CAMP",
   "alt": "CAMP GX700 GRX gravel bike in Champagne Gold",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "buyer_visibility": "omit",
+  "unavailable_note": "Original image could not be retrieved from the publisher or an exact replacement could not be verified on 2026-09-29. Preserve source reference but do not request this remote image on the public site."
 }

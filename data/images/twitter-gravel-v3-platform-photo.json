@@ -1,0 +1,60 @@
+{
+  "id": "twitter-gravel-v3-platform-photo",
+  "role": "primary",
+  "subject_accuracy": "exact-platform",
+  "media_type": "official-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/twitter-gravel-v3-105-primary-image/f472771417506db1-detail-w779.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/twitter-gravel-v3-105-primary-image/94d92ec231c8d42f-card-w480.webp",
+        "width": 480,
+        "height": 322,
+        "bytes": 15626,
+        "sha256": "94d92ec231c8d42f83cd03e89f4d1195b799cedc4f4a67a8d7cd315cdf36d868",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/twitter-gravel-v3-105-primary-image/f472771417506db1-detail-w779.webp",
+        "width": 779,
+        "height": 521,
+        "bytes": 40276,
+        "sha256": "f472771417506db1d7d1d71cc1f6bc078340d7de2f9c2cbf185cf9c957135e1c",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
+  "source_id": "twitter-gravel-v3-official-2026-08-17",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Twitter Bike USA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
+  "credit": "Product image © Twitter Bike USA",
+  "alt": "Twitter Gravel V3 carbon gravel bike in cyan green and gray",
+  "reviewed_at": "2026-08-17",
+  "display_note": "Official Gravel V3 frame-platform image showing a regional Shimano 105 build; RS/SENSAH and WheelTop components differ.",
+  "source_media_url": "https://twitterbikeusa.com/cdn/shop/files/gravel-v3-cyan-green-gray_d2ae6b90-0107-48f4-b8bd-7d320d1dc6c0.jpg?v=1783991551&width=779",
+  "source_media_sha256": "d396a398c5966c17f4a9ea93eb71d9d9ca3fd13f544b00b1be5c7acd7bf9b6fd",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "platform_id": "twitter-gravel-v3"
+}

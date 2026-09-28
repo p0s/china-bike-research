@@ -7,8 +7,18 @@
   "status": "current-direct-sale",
   "positioning": "The broad-compatibility option: app-selectable cassette speed and a rim/cable-brake kit as well as hydraulic disc.",
   "variants": [
-    { "name": "EDS TX hydraulic", "tier": "hydraulic", "lever_material": "carbon", "caliper_style": "separate" },
-    { "name": "EDS TX cable brake", "tier": "cable", "lever_material": "carbon", "caliper_style": "not included" }
+    {
+      "name": "EDS TX hydraulic",
+      "tier": "hydraulic",
+      "lever_material": "carbon",
+      "caliper_style": "separate"
+    },
+    {
+      "name": "EDS TX cable brake",
+      "tier": "cable",
+      "lever_material": "carbon",
+      "caliper_style": "not included"
+    }
   ],
   "shifting": {
     "chainrings": "1× or 2×",
@@ -19,7 +29,10 @@
     "max_front_chainring_teeth": 53
   },
   "architecture": "Fully wireless control with separate rechargeable batteries in the front and rear derailleurs; shifters use CR2032 cells.",
-  "brake_options": ["Hydraulic disc", "Cable-actuated rim or mechanical disc"],
+  "brake_options": [
+    "Hydraulic disc",
+    "Cable-actuated rim or mechanical disc"
+  ],
   "weight": {
     "status": "official-component-weights",
     "note": "Hydraulic kit listings: 223 g per lever, 336 g rear derailleur, 191 g front derailleur and 163 g per caliper. Hoses, charging parts and small hardware are additional."
@@ -106,20 +119,62 @@
     "Confirm brake version, hose length, pad/rotor compatibility and local after-sales route."
   ],
   "image": {
-    "remote_url": "https://wheeltop.com/cdn/shop/files/2_1ae87c4f-d979-4965-bf41-3204ab33ad88.png?v=1708912275",
     "source_id": "wheeltop-eds-tx-official-2026-08-24",
     "subject_accuracy": "exact-family",
-    "width": 3000,
-    "height": 3000,
+    "width": 1200,
+    "height": 1200,
     "credit": "WheelTop",
     "alt": "WheelTop EDS TX electronic road shift levers",
     "rights": {
-      "status": "official-page-embed",
+      "status": "source-attributed-rehost",
       "copyright_holder": "WheelTop",
-      "usage_note": "Remote embed from the cited manufacturer page; no redistribution license asserted."
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
     },
-    "reviewed_at": "2026-08-25"
+    "reviewed_at": "2026-08-25",
+    "local_path": "/assets/images/sourced/official/groupset-wheeltop-eds-tx/28a8e26f78359628-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/groupset-wheeltop-eds-tx/ff0ad672a27e53d4-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 9878,
+        "sha256": "ff0ad672a27e53d4081b63ae1059477c17a40802623363a4c1312466ef7c2250",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/groupset-wheeltop-eds-tx/28a8e26f78359628-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 39606,
+        "sha256": "28a8e26f783596282d181bd92c9af40ee373dd6bd8515f71372be77a9ee9caad",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ],
+    "source_media_url": "https://wheeltop.com/cdn/shop/files/2_1ae87c4f-d979-4965-bf41-3204ab33ad88.png?v=1708912275",
+    "source_media_sha256": "5e98d1c6f8abafd9b533c6ef3de0193f08d2a43b37797e3d49ddabe8374c7d02",
+    "editorial_quotation": {
+      "purpose": "editorial-identification-and-commentary",
+      "scope": "one-compressed-product-photo",
+      "source_link_required": true,
+      "no_license_asserted": true,
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-09-28",
+      "embedded_metadata": "stripped",
+      "faces": "none-visible",
+      "vehicle_registration": "none-visible",
+      "account_identifiers": "none-visible",
+      "location_identifiers": "none-visible"
+    }
   },
-  "source_ids": ["wheeltop-eds-tx-official-2026-08-24", "taobao-wheeltop-eds-tx-options-2026-08-24"],
+  "source_ids": [
+    "wheeltop-eds-tx-official-2026-08-24",
+    "taobao-wheeltop-eds-tx-options-2026-08-24"
+  ],
   "reviewed_at": "2026-08-24"
 }

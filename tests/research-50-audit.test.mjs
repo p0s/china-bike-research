@@ -25,9 +25,9 @@ test('the 50-approach audit retains new live gaps until the campaign is extended
   const report = auditResearch50Campaign(campaign, loadDataset(), '2026-08-29');
   assert.equal(report.counts.fields, campaign.field_count);
   assert.equal(report.counts.complete + report.counts.incomplete, campaign.field_count);
-  const newTargets = ['airwolf-yf-r003', 'mondince-fm316', 'seka-exaero-road', 'seraph-tt-x68-new-udh', 'twitter-gravel-v3', 'velobuild-cx-002-2023', 'xlab-rs9'];
+  const newTargets = ['airwolf-yf-r003', 'camp-gx600-pes', 'mondince-fm316', 'seka-exaero-road', 'seraph-tt-x68-new-udh', 'twitter-gravel-v3', 'twitter-v3-rs-sensah', 'twitter-v3-wheeltop-eds', 'velobuild-cx-002-2023', 'xlab-rs9'];
   const expectedTargets = newTargets;
-  assert.equal(report.counts.uncovered_current_fields, 12);
+  assert.equal(report.counts.uncovered_current_fields, 15);
   assert.deepEqual([...new Set(report.uncovered_current_fields.map((field) => field.target.record_id))].sort(), expectedTargets.sort());
   assert.ok(!report.uncovered_current_fields.some((field) => field.target.record_id === 'sava-gelaro' && field.field === 'bottom-bracket'));
   assert.ok(report.incomplete.every((field) => field.approach_applications < 50 || field.distinct_approach_areas < 50));

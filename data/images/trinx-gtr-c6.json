@@ -3,19 +3,65 @@
   "candidate_id": "trinx-gtr-c6",
   "role": "primary",
   "subject_accuracy": "same-model-different-market-build",
-  "media_type": "retailer-product-photo",
+  "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://derman.cl/21798-large_default/bicicleta-gravel-trinx-gtr-c6-ltwoo-1x12.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/trinx-gtr-c6-primary-image/5569eefd6ef60cf8-detail-w454.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/trinx-gtr-c6-primary-image/8c09cc844e2506da-card-w454.webp",
+        "width": 454,
+        "height": 262,
+        "bytes": 23870,
+        "sha256": "8c09cc844e2506dab3da129286d0365c3eecce21fbd8621f1f6b8af52d6a480f",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/trinx-gtr-c6-primary-image/5569eefd6ef60cf8-detail-w454.webp",
+        "width": 454,
+        "height": 262,
+        "bytes": 25554,
+        "sha256": "5569eefd6ef60cf883e8d69b89a6fdd5b0b344aee8fea399fef30530e08674c6",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "trinx-gtr-c6-retailer-image",
   "rights": {
-    "status": "retailer-page-embed",
-    "copyright_holder": "TRINX / Derman.cl",
-    "usage_note": "Remote embed from the cited retailer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "status": "source-attributed-rehost",
+    "copyright_holder": "TRINX",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
-  "display_note": "International-market GTR C6 reference only. The retailer describes this pictured build as aluminum; it does not depict the China-market carbon specification in the catalog.",
-  "credit": "Product image © TRINX / Derman.cl",
-  "alt": "Brown international-market TRINX GTR C6 gravel bike shown from the drive side",
-  "reviewed_at": "2026-08-07"
+  "display_note": "Official 2024 GTR C6 catalog photo of the LTWOO 1×12 build; the selected China-market listing and regional details still need independent confirmation.",
+  "credit": "Product image © TRINX",
+  "alt": "Green TRINX GTR C6 gravel bike with LTWOO 1×12 shifting",
+  "reviewed_at": "2026-08-07",
+  "source_media_url": "https://trinx.jp/wp-content/uploads/2024/09/TRINX-Collection-2024.pdf",
+  "source_media_page_url": "https://trinx.jp/wp-content/uploads/2024/09/TRINX-Collection-2024.pdf",
+  "source_media_sha256": "f74392be4d6fe5b2bbc1f610accf31bce0c5951cd841f7206f44bc3f59e53616",
+  "source_media_extraction": {
+    "document_sha256": "d1f27b76525aa78bebeaac10e46181cbcd6b61d59938ca66832a71b8bb065233",
+    "page": 17,
+    "embedded_image": "Im5.jp2",
+    "embedded_sha256": "9e21b9005c55ab8929482b35dc21e5b10412a0798a1ea20c1716cc6edc28d73b"
+  },
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

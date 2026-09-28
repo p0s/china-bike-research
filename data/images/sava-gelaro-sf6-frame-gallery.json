@@ -1,16 +1,64 @@
 {
   "id": "sava-gelaro-sf6-frame-gallery",
   "platform_id": "sava-gelaro-sf",
-  "variant_ids": ["sava-gelaro-sf6-cues"],
+  "variant_ids": [
+    "sava-gelaro-sf6-cues"
+  ],
   "role": "gallery",
   "sort_order": 7,
   "label": "Carbon frame detail",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
-  "hosting": {"mode": "remote", "remote_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-Frame.jpg?v=1755591748&width=1080"},
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-gelaro-sf6-frame-gallery/79749d5a758b4a0f-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-frame-gallery/51033c02c4674e11-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 13852,
+        "sha256": "51033c02c4674e1106832d9633c590f8848d48127c34dfa294cdaff401b0edf8",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-gelaro-sf6-frame-gallery/79749d5a758b4a0f-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 53592,
+        "sha256": "79749d5a758b4a0f84c78ec0e43d17993d4b3f449f591dc8d69ff61628914993",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "sava-gelaro-sf6-official-2026-08-25",
-  "rights": {"status": "official-page-embed", "copyright_holder": "SAVA", "usage_note": "Remote embed from the cited official product page. Copyright remains with SAVA; no redistribution license is asserted."},
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "SAVA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Frame detail © SAVA",
   "alt": "SAVA Gelaro SF6 T800 carbon frame tube detail",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-Frame.jpg?v=1755591748&width=1080",
+  "source_media_sha256": "e772028797a7b31a2f1fbfaf2c51c4318ec3bd62b6561496a4d852349cbdfea1",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

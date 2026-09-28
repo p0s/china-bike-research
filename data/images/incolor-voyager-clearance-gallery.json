@@ -1,23 +1,71 @@
 {
   "id": "incolor-voyager-clearance-gallery",
   "platform_id": "incolor-voyager",
-  "variant_ids": ["incolor-voyager-frameset"],
+  "variant_ids": [
+    "incolor-voyager-frameset"
+  ],
   "role": "gallery",
   "sort_order": 4,
-  "label": "45C clearance view",
+  "label": "Complete-bike tire view",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://incolor.vip/uploads/upload/images/20260501/b0c4163feb68117b6bc77e9350df0443.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/incolor-voyager-clearance-gallery/f5960263e8a1f008-detail-w1084.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/incolor-voyager-clearance-gallery/c53b20eea2f98fed-card-w480.webp",
+        "width": 480,
+        "height": 854,
+        "bytes": 44712,
+        "sha256": "c53b20eea2f98fed790b507f69312f96f1627a175fdcb15059fe5f493dfba0e8",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/incolor-voyager-clearance-gallery/f5960263e8a1f008-detail-w1084.webp",
+        "width": 1084,
+        "height": 1928,
+        "bytes": 180264,
+        "sha256": "f5960263e8a1f0087884b1b699774f9eaf60ce8254c41f0eaa01f24a800e4486",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "incolor-voyager-official-2026-08-25",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "INCOLOR",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with INCOLOR; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product detail © INCOLOR",
-  "alt": "INCOLOR Voyager gravel frame shown with wide knobby tires",
-  "reviewed_at": "2026-08-25"
+  "alt": "INCOLOR Voyager gravel bike with knobby tires, shown in the official product brochure",
+  "reviewed_at": "2026-08-25",
+  "display_note": "Official Voyager complete-bike illustration; the documented tire limit comes from the source text, not visual measurement.",
+  "source_media_url": "https://incolor.vip/uploads/upload/files/20260414/f1c31ed1f3fd5f23ca8dfdaa8b4efb3c.pdf",
+  "source_media_sha256": "fb72c6b0ac7e8bfde02382abfc8163d90b487d927cc4679c7900aae80d80657f",
+  "source_media_extraction": {
+    "kind": "embedded-image-from-pdf",
+    "page": 1,
+    "image_name": "Im0.jpg",
+    "document_sha256": "7cf7d1a765768632d1f07ee283355062cdca2b97dd304224419a2d394aa2c643"
+  },
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

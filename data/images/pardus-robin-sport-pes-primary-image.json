@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://pardusbicycle.com/wp-content/uploads/2026/05/robin-sport-white-pardus.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/pardus-robin-sport-pes-primary-image/3441beafe6f2a10d-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/pardus-robin-sport-pes-primary-image/242c86974fba6f38-card-w480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 21900,
+        "sha256": "242c86974fba6f38532b399b0a9b1a2abf9a015f8106d0ce1a303a372ee90efa",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/pardus-robin-sport-pes-primary-image/3441beafe6f2a10d-detail-w1200.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 92178,
+        "sha256": "3441beafe6f2a10d518fc9d14d8f02e33b6b63f4db0f3d70dc2a9af38a37a8c9",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "pardus-robin-sport-official-image-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "PARDUS",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © PARDUS",
   "alt": "PARDUS Robin Sport road bike in white",
   "display_note": "Official Robin Sport family image; the candidate's PES trim and exact component mapping remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://pardusbicycle.com/wp-content/uploads/2026/05/robin-sport-white-pardus.png",
+  "source_media_sha256": "e6fb24dd95caf985f6a36b1ae34cb3194df940da9b0499f8bca9496ce4ccedb6",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

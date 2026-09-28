@@ -8,19 +8,58 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.incolor.vip/uploads/upload/images/20260709/44a68269648859f3a3544fc0ee809351.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/incolor-speedster-sr-plus-primary-image/2a872f23774d53fe-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/incolor-speedster-sr-plus-primary-image/e5c8d1171b73ee73-card-w480.webp",
+        "width": 480,
+        "height": 210,
+        "bytes": 6252,
+        "sha256": "e5c8d1171b73ee7313514be59e812ab5dd793bab3db7a0878ab1a1eb1526f499",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/incolor-speedster-sr-plus-primary-image/2a872f23774d53fe-detail-w1200.webp",
+        "width": 1200,
+        "height": 525,
+        "bytes": 22026,
+        "sha256": "2a872f23774d53fed869cb54f524061c0fc55c67aaedae127bcceb9ce9635189",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "incolor-speedster-official-2026-08-29",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "INCOLOR",
-    "usage_note": "Remote embed from the cited manufacturer product page. Copyright remains with INCOLOR; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © INCOLOR",
   "alt": "Red white and black INCOLOR Speedster SR+ aero road frameset",
   "display_note": "Official exact-variant manufacturer image labelled SR+.",
   "reviewed_at": "2026-08-29",
+  "source_media_url": "https://www.incolor.vip/uploads/upload/images/20260709/44a68269648859f3a3544fc0ee809351.jpg",
+  "source_media_sha256": "66f11ba99d068009d167c10ed7c83845ebad7a4e107bc0872dbeb5904536cf53",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

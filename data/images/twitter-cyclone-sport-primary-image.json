@@ -4,11 +4,57 @@
   "role": "primary",
   "subject_accuracy": "same-model-different-market-build",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://twitterbikeusa.com/cdn/shop/files/cyclone-pro-3rd-white-gray_2598ac1c-15fd-40b1-bd8e-a5938c7976e6.jpg?v=1783124404&width=762" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/twitter-cyclone-sport-primary-image/81cd9589aa780457-detail-w762.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/twitter-cyclone-sport-primary-image/5c30642b2911778e-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14694,
+        "sha256": "5c30642b2911778e14bb0c4391e6cb324b710348e7388ebf2bbcb493573223ea",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/twitter-cyclone-sport-primary-image/81cd9589aa780457-detail-w762.webp",
+        "width": 762,
+        "height": 508,
+        "bytes": 36016,
+        "sha256": "81cd9589aa78045744383b9362c714e01b2c72daa2cbcbb9b0ca18b363d86bd6",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "twitter-cyclone-pro-official-2026-08-17",
-  "rights": { "status": "official-page-embed", "copyright_holder": "Twitter Bike USA", "usage_note": "Remote embed from the cited manufacturer storefront; no redistribution license is asserted." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Twitter Bike USA",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
   "credit": "Product image © Twitter Bike USA",
   "alt": "Twitter Cyclone Pro 3rd road bike used as a Cyclone family reference",
   "reviewed_at": "2026-08-17",
-  "display_note": "Cyclone Pro 3rd family reference only; it is not proven to be the candidate's exact Cyclone Sport trim."
+  "display_note": "Cyclone Pro 3rd family reference only; it is not proven to be the candidate's exact Cyclone Sport trim.",
+  "source_media_url": "https://twitterbikeusa.com/cdn/shop/files/cyclone-pro-3rd-white-gray_2598ac1c-15fd-40b1-bd8e-a5938c7976e6.jpg?v=1783124404&width=762",
+  "source_media_sha256": "35f2d1064746a1c46702a2bc365fa71b3ed8fcf2017ccbf83af2a69ce4cd9d64",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

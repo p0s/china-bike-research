@@ -7,8 +7,20 @@
   "status": "research-candidate-service-action-unverified",
   "positioning": "QED is the lighter carbon-injection system and PES trades 100 g for lower-cost construction, but supplied 2026 service-action reports lack a matching official bulletin, so treat both as research-stage purchases.",
   "variants": [
-    { "name": "QED", "tier": "performance", "material": "carbon-fibre injection moulding", "disc_core_weight_g": 1150, "cassette_speeds": "10-13" },
-    { "name": "PES", "tier": "value", "material": "glass-fibre reinforced plastic", "disc_core_weight_g": 1250, "cassette_speeds": "10-12" }
+    {
+      "name": "QED",
+      "tier": "performance",
+      "material": "carbon-fibre injection moulding",
+      "disc_core_weight_g": 1150,
+      "cassette_speeds": "10-13"
+    },
+    {
+      "name": "PES",
+      "tier": "value",
+      "material": "glass-fibre reinforced plastic",
+      "disc_core_weight_g": 1250,
+      "cassette_speeds": "10-12"
+    }
   ],
   "shifting": {
     "chainrings": "2×",
@@ -19,7 +31,10 @@
     "rear_shift_response_ms": 90
   },
   "architecture": "Semi-wireless: levers communicate wirelessly; front and rear derailleurs connect to one internal seatpost battery.",
-  "brake_options": ["Hydraulic disc", "Rim brake"],
+  "brake_options": [
+    "Hydraulic disc",
+    "Rim brake"
+  ],
   "weight": {
     "status": "official-disc-core-weight",
     "note": "Official catalog: QED disc-brake core groupset 1,150 g; PES disc-brake core groupset 1,250 g. Core means levers, derailleurs and brakes, not cassette, chain or crank."
@@ -43,7 +58,6 @@
     "Confirm internal battery fit, wire routing, brake-caliper version and an after-sales route for the exact seller or complete bike."
   ],
   "image": {
-    "remote_url": "https://static.magene.com/img/cms/QED-%E4%B9%9D%E5%AE%AB%E6%A0%BC/%E7%94%B5%E5%8F%98%E4%B9%9D%E5%AE%AB%E6%A0%BC-4.png",
     "source_id": "magene-qed-official-overview-2026-08-24",
     "subject_accuracy": "featured-variant",
     "featured_variant": "QED",
@@ -52,12 +66,56 @@
     "credit": "Magene",
     "alt": "Magene QED electronic groupset brake caliper and rotor",
     "rights": {
-      "status": "official-page-embed",
+      "status": "source-attributed-rehost",
       "copyright_holder": "Magene",
-      "usage_note": "Remote embed from the cited manufacturer page; no redistribution license asserted."
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
     },
-    "reviewed_at": "2026-08-25"
+    "reviewed_at": "2026-08-25",
+    "local_path": "/assets/images/sourced/official/groupset-magene-qed-pes/292b3196f77c1a94-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/groupset-magene-qed-pes/1ad4d32a8281e0ef-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 13478,
+        "sha256": "1ad4d32a8281e0ef6f0fef080d9b43d4b808ff81ef04f5560ec60d57115e03ca",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/groupset-magene-qed-pes/292b3196f77c1a94-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 56098,
+        "sha256": "292b3196f77c1a948136c665a401a43972026ea6b073a96dd973d26e82b9f9dc",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ],
+    "source_media_url": "https://static.magene.com/img/cms/QED-%E4%B9%9D%E5%AE%AB%E6%A0%BC/%E7%94%B5%E5%8F%98%E4%B9%9D%E5%AE%AB%E6%A0%BC-4.png",
+    "source_media_sha256": "2bbabbdf5a3ff6c43bcabae3577435de1d301a92b8ac213eb3eed220883c0169",
+    "editorial_quotation": {
+      "purpose": "editorial-identification-and-commentary",
+      "scope": "one-compressed-product-photo",
+      "source_link_required": true,
+      "no_license_asserted": true,
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-09-28",
+      "embedded_metadata": "stripped",
+      "faces": "none-visible",
+      "vehicle_registration": "none-visible",
+      "account_identifiers": "none-visible",
+      "location_identifiers": "none-visible"
+    }
   },
-  "source_ids": ["magene-qed-pes-catalog-2026-08-24", "magene-qed-official-overview-2026-08-24", "magene-direct-warranty-official-2026-08-24"],
+  "source_ids": [
+    "magene-qed-pes-catalog-2026-08-24",
+    "magene-qed-official-overview-2026-08-24",
+    "magene-direct-warranty-official-2026-08-24"
+  ],
   "reviewed_at": "2026-08-24"
 }

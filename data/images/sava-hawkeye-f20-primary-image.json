@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://savadeck-bike.com/cdn/shop/files/Hawkeye_SLR7-S-turquoise_green.jpg?v=1749178013&width=1080"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/sava-hawkeye-f20-primary-image/78d82e740d513c6e-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/sava-hawkeye-f20-primary-image/fddfb76cf30c9830-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 17386,
+        "sha256": "fddfb76cf30c9830d924a7229fc072823b0a76780361cc7e35c5295648c7801e",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/sava-hawkeye-f20-primary-image/78d82e740d513c6e-detail-w1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "bytes": 63304,
+        "sha256": "78d82e740d513c6e967f5f3e358dc6e0edec4312508ed9f72fb6c74e27f131f6",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "sava-hawkeye-f20-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "SAVA Carbon Bike",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SAVA Carbon Bike",
   "alt": "SAVA Hawkeye F20 full-carbon road bike in turquoise green",
   "display_note": "Official exact-variant global-store product image; mainland price and availability remain unresolved.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://savadeck-bike.com/cdn/shop/files/Hawkeye_SLR7-S-turquoise_green.jpg?v=1749178013&width=1080",
+  "source_media_sha256": "b3b7413ab36ad09d1e98589b42be3af791682da04a67f65598a9cf14933b8bcd",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

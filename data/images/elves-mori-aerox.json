@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://uk.elvesbike.com/u_file/2606/18/products/20260618163157227467.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/elves-mori-aerox-primary-image/aeca984303768d5f-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/elves-mori-aerox-primary-image/52e62ccf8aacc433-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12314,
+        "sha256": "52e62ccf8aacc433b7f8119bcd1c48d265748cde076b188d8df5a788a31711c6",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/elves-mori-aerox-primary-image/aeca984303768d5f-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 40072,
+        "sha256": "aeca984303768d5f7ebde75076a99cb1bebf5aab7b122dad28e7507ad435dff5",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "elves-mori-aerox-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Elves Bike",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Elves Bike",
   "alt": "Elves Mori AeroX carbon gravel frameset in silver and blue",
   "reviewed_at": "2026-08-17",
+  "source_media_url": "https://uk.elvesbike.com/u_file/2606/18/products/20260618163157227467.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000",
+  "source_media_sha256": "a25e3c15ed2320c8462234dad7c433f06714ab3c8473e4ae230217b508467751",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.winspace.cc/cdn/shop/files/G3_Product_Details_8.webp?v=1785292123&width=1200"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/winspace-g3-pro-di2-exact-primary-image/7a205de3ccb43605-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/winspace-g3-pro-di2-exact-primary-image/0da84ae2f4420295-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 16426,
+        "sha256": "0da84ae2f4420295e77fdc99126b7fa7cd3337d34bf2ac0a497592e21d9611f5",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/winspace-g3-pro-di2-exact-primary-image/7a205de3ccb43605-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 82678,
+        "sha256": "7a205de3ccb43605bb804397f9210c8ffe7c51b2d85a3d2cba9ebaec5ddbe084",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "winspace-g3-pro-di2-official-2026-08-27",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Winspace",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Winspace",
   "alt": "Winspace G3 Gravel Pro Di2 complete bike in the official product photography",
   "display_note": "Official exact-build product image for the tracked G3 Gravel Pro Di2 complete bike.",
-  "reviewed_at": "2026-08-27"
+  "reviewed_at": "2026-08-27",
+  "source_media_url": "https://www.winspace.cc/cdn/shop/files/G3_Product_Details_8.webp?v=1785292123&width=1200",
+  "source_media_sha256": "39b4713b8a2a304de4a3c10fcfadbe497c159a0e2d04625defd759dabb6cf652",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

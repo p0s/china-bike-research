@@ -1,23 +1,64 @@
 {
   "id": "rinasclta-gr025-geometry-gallery",
   "platform_id": "rinasclta-gr025",
-  "variant_ids": ["rinasclta-gr025-frameset"],
+  "variant_ids": [
+    "rinasclta-gr025-frameset"
+  ],
   "role": "gallery",
   "sort_order": 1,
   "label": "Geometry chart",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://rinascltabike.com/wp-content/uploads/2025/05/Rinasclta-carbon-gravel-framset-GR025-max-50mm-tire-clearance-geometry.jpg"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/rinasclta-gr025-geometry-gallery/a4ad3d7bbc9d32f1-detail-w993.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/rinasclta-gr025-geometry-gallery/950711a6ea1f9e98-card-w480.webp",
+        "width": 480,
+        "height": 491,
+        "bytes": 30200,
+        "sha256": "950711a6ea1f9e9887ef7e942b48ecf5dd068334375322f9dda84b1ed50f5118",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/rinasclta-gr025-geometry-gallery/a4ad3d7bbc9d32f1-detail-w993.webp",
+        "width": 993,
+        "height": 1014,
+        "bytes": 87052,
+        "sha256": "a4ad3d7bbc9d32f1c669ddef545558852add307e7716fc087246c685380efa80",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "rinasclta-gr025-official",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Rinasclta",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with Rinasclta; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Geometry graphic © Rinasclta",
   "alt": "Official Rinasclta GR025 gravel frame geometry chart",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://rinascltabike.com/wp-content/uploads/2025/05/Rinasclta-carbon-gravel-framset-GR025-max-50mm-tire-clearance-geometry.jpg",
+  "source_media_sha256": "b06d724ca976023fd49d66440964bc17ffe73609193b54e4585f4cee1383ee72",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

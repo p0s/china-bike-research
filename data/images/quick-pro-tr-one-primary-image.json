@@ -4,15 +4,57 @@
   "role": "primary",
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://www.quickprousa.com/cdn/shop/files/TRONE_AuroraBlue.png?crop=center&height=2048&v=1781728357&width=2048" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/quick-pro-tr-one-primary-image/ad71de9af928e468-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/quick-pro-tr-one-primary-image/17e955bc039cad78-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 28522,
+        "sha256": "17e955bc039cad78f3d89961f02bb4bbbb511d7a8abc73b4677a079adc07ccac",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/quick-pro-tr-one-primary-image/ad71de9af928e468-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 111560,
+        "sha256": "ad71de9af928e46862ba6ac987effc1434bf3f87483b57747403843cdd050322",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "quick-pro-tr-one-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Quick Pro",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with Quick Pro; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Quick Pro",
   "alt": "Quick Pro TR:ONE triathlon frameset in Aurora Blue",
   "display_note": "Official exact-frameset image; the dated mainland launch package and color are not established by this global listing.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://www.quickprousa.com/cdn/shop/files/TRONE_AuroraBlue.png?crop=center&height=2048&v=1781728357&width=2048",
+  "source_media_sha256": "e52581b228e00c9c7c8a99ccf3edd991c3ffa0902992e95b2e186d215c600b70",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

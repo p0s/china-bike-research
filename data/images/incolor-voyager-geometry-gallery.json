@@ -1,23 +1,64 @@
 {
   "id": "incolor-voyager-geometry-gallery",
   "platform_id": "incolor-voyager",
-  "variant_ids": ["incolor-voyager-frameset"],
+  "variant_ids": [
+    "incolor-voyager-frameset"
+  ],
   "role": "gallery",
   "sort_order": 5,
   "label": "Geometry chart",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://incolor.vip/uploads/upload/images/20260402/9749cabeed6ee047bba2a22d3184896a.png"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/incolor-voyager-geometry-gallery/2413f807c10d3d33-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/incolor-voyager-geometry-gallery/ce951bd494dfd035-card-w480.webp",
+        "width": 480,
+        "height": 210,
+        "bytes": 25750,
+        "sha256": "ce951bd494dfd0356d9a919ccc6ef76dd85dcc1a5071a73a2508ff60c6ce8499",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/incolor-voyager-geometry-gallery/2413f807c10d3d33-detail-w1200.webp",
+        "width": 1200,
+        "height": 524,
+        "bytes": 90432,
+        "sha256": "2413f807c10d3d333b71363fb94aab801cce8c7c51dcf39f996498288696cd2f",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "incolor-voyager-official-2026-08-25",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "INCOLOR",
-    "usage_note": "Remote embed from the cited official product page. Copyright remains with INCOLOR; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Geometry graphic © INCOLOR",
   "alt": "Official INCOLOR Voyager five-size frame geometry chart",
-  "reviewed_at": "2026-08-25"
+  "reviewed_at": "2026-08-25",
+  "source_media_url": "https://incolor.vip/uploads/upload/images/20260402/9749cabeed6ee047bba2a22d3184896a.png",
+  "source_media_sha256": "50ae5639b4f304fda4cb561edd8a3ad539ab86816506d027e3b1de9445430f86",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

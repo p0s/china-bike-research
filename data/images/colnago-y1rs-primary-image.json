@@ -5,17 +5,56 @@
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://cdn.shopify.com/s/files/1/0828/8980/2039/files/COLNAGO_Y1Rs-VIOLA-laterale-fondo_nero_bagliore_oro_bis.png?v=1751298126&width=2200&height=2200&crop=center"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/colnago-y1rs-primary-image/f30428bb612edef2-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/colnago-y1rs-primary-image/8f7f783665c639fc-card-w480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14530,
+        "sha256": "8f7f783665c639fcb634afcbad03f5d722a03781b6bbe049a743f4aeefc5a474",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/colnago-y1rs-primary-image/f30428bb612edef2-detail-w1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 59190,
+        "sha256": "f30428bb612edef20a7fa2037573673c34de613da081649ac0c0ca1942c08e70",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "colnago-y1rs-official-2026-08-08",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "Colnago",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © Colnago",
   "alt": "Purple Colnago Y1Rs assembled display bicycle shown from the drive side",
   "display_note": "Official exact-platform photo of an assembled display bicycle; the tracked ¥59,800 China listing is the frameset package, and the pictured drivetrain and wheels are not included.",
-  "reviewed_at": "2026-08-30"
+  "reviewed_at": "2026-08-30",
+  "source_media_url": "https://cdn.shopify.com/s/files/1/0828/8980/2039/files/COLNAGO_Y1Rs-VIOLA-laterale-fondo_nero_bagliore_oro_bis.png?v=1751298126&width=2200&height=2200&crop=center",
+  "source_media_sha256": "4370ca74b07795b7a253b9e1a620d7f68dec3726f96c9058a2bdfba9d5be393a",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

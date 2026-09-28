@@ -170,7 +170,7 @@ import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from './anal
     });
     if (image.complete && image.currentSrc && image.naturalWidth === 0) hideUnavailable();
   }
-  document.querySelectorAll('[data-product-image]').forEach(enableImageFailureHandling);
+  document.querySelectorAll('[data-product-image], .product-image img, .gallery-thumb img, .credit-image img').forEach(enableImageFailureHandling);
 
   document.querySelectorAll('[data-blog-header-image], [data-blog-bike-image], [data-blog-mascot]').forEach((image) => {
     const hideUnavailable = () => {

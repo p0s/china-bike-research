@@ -354,14 +354,31 @@ export function validateDataset(data = loadDataset()) {
       const image = groupset.image;
       if (!isObject(image)) errors.push(`groupset ${groupset.id}: image must be an object`);
       else {
-        for (const field of ['remote_url', 'source_id', 'subject_accuracy', 'credit', 'alt', 'reviewed_at']) {
+        for (const field of ['source_id', 'subject_accuracy', 'credit', 'alt', 'reviewed_at']) {
           if (typeof image[field] !== 'string' || !image[field].trim()) errors.push(`groupset ${groupset.id}: missing image.${field}`);
         }
-        try {
-          const imageUrl = new URL(image.remote_url);
-          if (imageUrl.protocol !== 'https:') errors.push(`groupset ${groupset.id}: image.remote_url must use HTTPS`);
-        } catch {
-          errors.push(`groupset ${groupset.id}: invalid image.remote_url`);
+        if (image.local_path !== undefined) {
+          const pattern = /^\/assets\/images\/sourced\/official\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
+          if (!pattern.test(image.local_path) || !fs.existsSync(path.join(root, image.local_path.replace(/^\//, '')))) errors.push(`groupset ${groupset.id}: invalid local image`);
+          if (image.remote_url !== undefined) errors.push(`groupset ${groupset.id}: local image must not retain a remote render URL`);
+          if (!Array.isArray(image.variants) || image.variants.length !== 2 || image.local_path !== image.variants.find((variant) => variant.purpose === 'detail')?.url) errors.push(`groupset ${groupset.id}: invalid local variants`);
+          for (const variant of image.variants ?? []) {
+            const byteLimit = variant.purpose === 'card' ? 100_000 : 400_000;
+            const widthLimit = variant.purpose === 'card' ? 480 : 1200;
+            if (!pattern.test(variant.url ?? '') || !fs.existsSync(path.join(root, String(variant.url ?? '').replace(/^\//, '')))
+              || !Number.isInteger(variant.bytes) || variant.bytes < 1 || variant.bytes > byteLimit
+              || !Number.isInteger(variant.width) || variant.width < 1 || variant.width > widthLimit
+              || !/^[a-f0-9]{64}$/.test(variant.sha256 ?? '') || variant.format !== 'image/webp') errors.push(`groupset ${groupset.id}: invalid local ${variant.purpose ?? 'unknown'} variant`);
+          }
+          if (image.rights?.status !== 'source-attributed-rehost' || image.privacy_review?.embedded_metadata !== 'stripped') errors.push(`groupset ${groupset.id}: incomplete local image review`);
+          if (!image.source_media_url?.startsWith('https://') || !/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '')) errors.push(`groupset ${groupset.id}: missing source media provenance`);
+        } else {
+          try {
+            const imageUrl = new URL(image.remote_url);
+            if (imageUrl.protocol !== 'https:') errors.push(`groupset ${groupset.id}: image.remote_url must use HTTPS`);
+          } catch {
+            errors.push(`groupset ${groupset.id}: invalid image.remote_url`);
+          }
         }
         if (!sourceIds.has(image.source_id)) errors.push(`groupset ${groupset.id}: missing image source ${image.source_id}`);
         if (!groupset.source_ids.includes(image.source_id)) errors.push(`groupset ${groupset.id}: image source must be listed in source_ids`);
@@ -370,7 +387,7 @@ export function validateDataset(data = loadDataset()) {
         if (!Number.isInteger(image.width) || image.width <= 0 || !Number.isInteger(image.height) || image.height <= 0) errors.push(`groupset ${groupset.id}: image needs positive integer dimensions`);
         if (typeof image.alt !== 'string' || image.alt.trim().length < 10) errors.push(`groupset ${groupset.id}: image.alt is too short`);
         if (!isDate(image.reviewed_at)) errors.push(`groupset ${groupset.id}: invalid image.reviewed_at`);
-        if (!isObject(image.rights) || image.rights.status !== 'official-page-embed') errors.push(`groupset ${groupset.id}: image must use official-page-embed rights status`);
+        if (!isObject(image.rights) || ![image.local_path ? 'source-attributed-rehost' : 'official-page-embed'].includes(image.rights.status)) errors.push(`groupset ${groupset.id}: image has incompatible rights status`);
         for (const field of ['copyright_holder', 'usage_note']) {
           if (typeof image.rights?.[field] !== 'string' || !image.rights[field].trim()) errors.push(`groupset ${groupset.id}: missing image.rights.${field}`);
         }
@@ -680,6 +697,7 @@ export function validateDataset(data = loadDataset()) {
     if (!mediaValues.has(image.media_type)) errors.push(`image ${image.id}: invalid media_type`);
     if (!isDate(image.reviewed_at)) errors.push(`image ${image.id}: invalid reviewed_at`);
     if (!sourceIds.has(image.source_id)) errors.push(`image ${image.id}: missing source ${image.source_id}`);
+    if (image.source_media_page_url !== undefined && (typeof image.source_media_page_url !== 'string' || !image.source_media_page_url.startsWith('https://'))) errors.push(`image ${image.id}: source media page must use HTTPS`);
     if (!isObject(image.rights) || !rightsValues.has(image.rights?.status)) errors.push(`image ${image.id}: invalid rights status`);
     if (typeof image.alt !== 'string' || image.alt.trim().length < 10) errors.push(`image ${image.id}: alt text is too short`);
     if (typeof image.credit !== 'string' || image.credit.trim().length < 3) errors.push(`image ${image.id}: credit is required`);
@@ -701,6 +719,7 @@ export function validateDataset(data = loadDataset()) {
     }
     if (image.candidate_id !== undefined && image.variant_ids?.length) errors.push(`image ${image.id}: candidate image cannot target variants`);
     const mode = image.hosting?.mode;
+    if (image.buyer_visibility !== 'omit' && mode === 'remote') errors.push(`image ${image.id}: displayed product images must be locally hosted`);
     if (mode === 'remote') {
       if (!['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(image.rights?.status)) errors.push(`image ${image.id}: remote image has incompatible rights status`);
       try {
@@ -761,14 +780,15 @@ export function validateDataset(data = loadDataset()) {
       if (['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation'].includes(image.rights?.status)) errors.push(`image ${image.id}: third-party remote image cannot be stored locally`);
       if (image.rights?.status === 'source-attributed-rehost') {
         const variants = image.hosting?.variants;
-        const localPattern = /^\/assets\/images\/sourced\/(xhs|taobao|xianyu)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
+        const localPattern = /^\/assets\/images\/sourced\/(xhs|taobao|xianyu|official|retailer)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
         if (!Array.isArray(variants) || variants.length !== 2) {
           errors.push(`image ${image.id}: sourced rehost needs card and detail variants`);
         } else {
           const purposes = new Set();
           for (const variant of variants) {
             purposes.add(variant?.purpose);
-            const byteLimit = variant?.purpose === 'card' ? 40_000 : variant?.purpose === 'detail' ? 88_000 : 0;
+            const productPhoto = ['official', 'retailer'].includes(localPattern.exec(localPath ?? '')?.[1]);
+            const byteLimit = variant?.purpose === 'card' ? (productPhoto ? 100_000 : 40_000) : variant?.purpose === 'detail' ? (productPhoto ? 400_000 : 88_000) : 0;
             const widthLimit = variant?.purpose === 'card' ? 480 : variant?.purpose === 'detail' ? 1200 : 0;
             const match = localPattern.exec(variant?.url ?? '');
             if (!byteLimit) errors.push(`image ${image.id}: invalid sourced variant purpose`);
@@ -792,8 +812,14 @@ export function validateDataset(data = loadDataset()) {
               ? /^https:\/\/(?:item\.taobao\.com|detail\.tmall\.com)\/item\.htm\?id=\d+$/.test(sourceUrl)
               : channel === 'xianyu'
                 ? /^https:\/\/www\.goofish\.com\/item\?id=\d+$/.test(sourceUrl)
-              : false;
+                : ['official', 'retailer'].includes(channel) && sourceUrl.startsWith('https://');
           if (!sourceMatches) errors.push(`image ${image.id}: sourced rehost needs a matching identity-safe public source`);
+          if (['official', 'retailer'].includes(channel)
+            && (image.media_type !== `${channel}-product-photo`
+              || !image.source_media_url?.startsWith('https://')
+              || !/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '')
+              || image.editorial_quotation?.scope !== 'one-compressed-product-photo'
+              || image.editorial_quotation?.no_license_asserted !== true)) errors.push(`image ${image.id}: incomplete product-photo provenance`);
         }
         const quotation = image.editorial_quotation;
         if (quotation?.purpose !== 'editorial-identification-and-commentary'
@@ -809,7 +835,7 @@ export function validateDataset(data = loadDataset()) {
           || privacy?.vehicle_registration !== 'none-visible'
           || privacy?.account_identifiers !== 'none-visible'
           || privacy?.location_identifiers !== 'none-visible') errors.push(`image ${image.id}: incomplete privacy review`);
-        if (!['community-post-photo', 'retailer-product-photo'].includes(image.media_type)) errors.push(`image ${image.id}: sourced rehost needs a community or retailer photo`);
+        if (!['community-post-photo', 'retailer-product-photo', 'official-product-photo'].includes(image.media_type)) errors.push(`image ${image.id}: sourced rehost needs a community, retailer, or official photo`);
       } else if (localPath?.startsWith('/assets/images/sourced/')) {
         errors.push(`image ${image.id}: sourced local media needs source-attributed-rehost rights status`);
       }

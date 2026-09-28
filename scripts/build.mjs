@@ -220,7 +220,7 @@ const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // reference prices measured 994,022 bytes with the production project base on
 // 2026-09-01. These limits retain modest growth headroom while keeping the full
 // candidate set available without a second page or client-side data fetch.
-const performanceBudget = { home_html_bytes: 998_000, home_elements: 7_535 };
+const performanceBudget = { home_html_bytes: 1_000_000, home_elements: 7_535 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length

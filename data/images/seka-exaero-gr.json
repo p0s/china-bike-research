@@ -8,18 +8,57 @@
   "subject_accuracy": "exact-variant",
   "media_type": "official-product-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.shopsekabikes.com/cdn/shop/files/ExAero_GR_2_f5e2e83e-85f0-4194-be15-3789b5451b3b.jpg?v=1764062711&width=3840"
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/seka-exaero-gr-primary-image/bc504df47c6bc00d-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/seka-exaero-gr-primary-image/a33d0a84421eead7-card-w480.webp",
+        "width": 480,
+        "height": 206,
+        "bytes": 5524,
+        "sha256": "a33d0a84421eead780844ef54b27501c9ca121d101858a85cc60c047078a4382",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/seka-exaero-gr-primary-image/bc504df47c6bc00d-detail-w1200.webp",
+        "width": 1200,
+        "height": 514,
+        "bytes": 24398,
+        "sha256": "bc504df47c6bc00de29cb3ae8b16f5ffe5cbd5551ba6c791604a8162952b1327",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
   },
   "source_id": "seka-exaero-gr-official-store-2026-08-09",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "SEKA",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SEKA",
   "alt": "SEKA ExAero GR carbon gravel frameset",
   "reviewed_at": "2026-08-09",
+  "source_media_url": "https://www.shopsekabikes.com/cdn/shop/files/ExAero_GR_2_f5e2e83e-85f0-4194-be15-3789b5451b3b.jpg?v=1764062711&width=3840",
+  "source_media_sha256": "2d6fa7ccdf47a8340202176453b5f3896228ac0253253da355b89ad66d9748ce",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
   "health_check": {
     "checked_at": "2026-09-25",
     "resources": [

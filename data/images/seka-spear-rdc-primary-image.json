@@ -4,15 +4,57 @@
   "role": "primary",
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://www.shopsekabikes.com/cdn/shop/files/V2_8bc56adb-536e-44bb-8b44-dba150444f2e.jpg?v=1754980243&width=3840" },
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/seka-spear-rdc-primary-image/44af865c053ba3ec-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/seka-spear-rdc-primary-image/880fa15f7face62d-card-w480.webp",
+        "width": 480,
+        "height": 378,
+        "bytes": 13664,
+        "sha256": "880fa15f7face62d8babf093f19ec0a4f828cdea8b5fe2d2cdce545316c475c5",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/seka-spear-rdc-primary-image/44af865c053ba3ec-detail-w1200.webp",
+        "width": 1200,
+        "height": 944,
+        "bytes": 52922,
+        "sha256": "44af865c053ba3ec210568b6d36633499f3e04f40ec44edbf73aa5c3c4d719e4",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
   "source_id": "seka-spear-rdc-official-2026-08-17",
   "rights": {
-    "status": "official-page-embed",
+    "status": "source-attributed-rehost",
     "copyright_holder": "SEKA Bikes",
-    "usage_note": "Remote embed from the cited manufacturer page. Copyright remains with SEKA Bikes; no redistribution license is asserted."
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SEKA Bikes",
   "alt": "SEKA SPEAR RDC carbon road frameset",
   "display_note": "Official frameset image; it does not depict or prove the separately reported owner's complete-bike components.",
-  "reviewed_at": "2026-08-17"
+  "reviewed_at": "2026-08-17",
+  "source_media_url": "https://www.shopsekabikes.com/cdn/shop/files/V2_8bc56adb-536e-44bb-8b44-dba150444f2e.jpg?v=1754980243&width=3840",
+  "source_media_sha256": "b6661d6cb3e41ffc87edc7f5364ce48907eb7754663b655474177c6dd71662b7",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-28",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }
