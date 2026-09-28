@@ -1,4 +1,5 @@
 import { url } from './html.mjs';
+import { sourceEditorialReview } from './editorial-review.mjs';
 
 function xml(value) {
   return String(value)
@@ -64,6 +65,9 @@ export function modelPageStructuredData({
   description,
   image = '',
   includeSubject = true,
+  editorial,
+  reviewName = name,
+  brand = '',
   trail = []
 }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
@@ -80,15 +84,30 @@ export function modelPageStructuredData({
   };
   const graph = [page, breadcrumbData];
   if (includeSubject) {
+    const review = sourceEditorialReview(editorial);
     const subjectId = `${pageUrl}#subject`;
     page.mainEntity = { '@id': subjectId };
     graph.push({
-      '@type': 'Thing',
+      '@type': review ? 'Product' : 'Thing',
       '@id': subjectId,
       name,
       description,
       url: pageUrl,
-      ...(image ? { image: [absoluteMediaUrl(siteUrl, image)] } : {})
+      ...(image ? { image: [absoluteMediaUrl(siteUrl, image)] } : {}),
+      ...(review ? {
+        ...(brand ? { brand: { '@type': 'Brand', name: brand } } : {}),
+        review: {
+          '@type': 'Review',
+          '@id': `${pageUrl}#editorial-review`,
+          url: `${pageUrl}#editorial-review`,
+          name: reviewName,
+          author: { '@type': 'Organization', name: review.author, url: absoluteUrl(siteUrl, base, '/methodology/') },
+          reviewBody: review.body,
+          inLanguage: 'en',
+          positiveNotes: { '@type': 'ItemList', itemListElement: review.positives.map((text, index) => ({ '@type': 'ListItem', position: index + 1, name: text })) },
+          negativeNotes: { '@type': 'ItemList', itemListElement: review.negatives.map((text, index) => ({ '@type': 'ListItem', position: index + 1, name: text })) }
+        }
+      } : {})
     });
   }
   return { '@context': 'https://schema.org', '@graph': graph };

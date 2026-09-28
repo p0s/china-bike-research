@@ -1,6 +1,7 @@
 import { translate } from '../assets/i18n.js';
 import { relatedArticleLinks } from './lib/posts.mjs';
 import { renderEditorialCredits } from './lib/editorial-images.mjs';
+import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import {
   categoryLabel,
@@ -1323,6 +1324,9 @@ export function renderModel(ctx, product) {
   ];
   const specificationRows = publishedSpecificationRows(product);
   const storyTitle = publishedStoryTitle(product, weight, tireClearance);
+  const reviewByline = variant.editorial.review
+    ? `<p class="evidence-context" data-review-basis="source-research"><a href="${url(ctx.base, '/methodology/')}">China Bikes</a><span>${reviewBasisNotice}</span></p>`
+    : '';
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
   const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<div class="model-grid${heroImage ? '' : ' has-no-image'}">
@@ -1331,7 +1335,7 @@ export function renderModel(ctx, product) {
   </div>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ''}
-    <section class="model-story" aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
+    <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
     <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div></dl></section>
     <section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p><h3>What to verify</h3><p>${escapeHtml(sentenceList(variant.editorial.caveats, ctx.locale))}</p></section>
     ${relatedArticleLinks(ctx, variant.id)}
@@ -1354,6 +1358,9 @@ export function renderModel(ctx, product) {
       name: `${brand.name} ${variant.name}`,
       description: variant.editorial.verdict,
       image: heroImage,
+      editorial: variant.editorial,
+      reviewName: storyTitle,
+      brand: brand.name,
       trail: modelTrail
     }),
     body

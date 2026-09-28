@@ -1,6 +1,7 @@
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  'Source-based editorial review; no hands-on testing.':'基于所列资料的编辑评述；未进行实车骑行或独立测试。',
   'Bikes':'整车', 'Framesets':'车架组', 'Frameset':'车架组', 'Build':'装车', 'Groupsets':'变速套件', 'Blog':'购车文章', 'Buying guides':'购车指南',
   'China Bikes home':'China Bikes 首页', 'Primary':'主导航', 'Footer':'页脚', 'Home':'首页', 'Menu':'菜单', 'Skip to content':'跳到主要内容',
   'System':'跟随系统', 'Light':'浅色', 'Dark':'深色', 'Theme: System':'主题：跟随系统', 'Theme: System. Switch to light theme':'主题：跟随系统。切换为浅色',

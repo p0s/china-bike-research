@@ -1,6 +1,7 @@
 /** Generated-HTML SEO contract. Uses only Node built-ins; never submits to a search engine. */
 import fs from 'node:fs';
 import path from 'node:path';
+import { auditProductReview } from '../src/lib/seo-review-audit.mjs';
 const dist = path.resolve(import.meta.dirname, '../dist');
 const manifest = JSON.parse(fs.readFileSync(path.join(dist, 'build-manifest.json'), 'utf8'));
 const { base, site_url: origin } = manifest;
@@ -50,7 +51,7 @@ for (const file of files) {
       const data = JSON.parse(match[1]);
       if (match[0].startsWith('<script type="application/ld+json">')) {
         for (const node of data['@graph'] ?? [data]) {
-          if (node['@type'] === 'Product') errors.push(`${file}: Product schema without a current offer or genuine review`);
+          if (node['@type'] === 'Product') errors.push(...auditProductReview(node, html, { pageUrl: absolute, locale: isZh ? 'zh-Hans' : 'en', noindex }).map((issue) => `${file}: ${issue}`));
           if (node['@type'] === 'Dataset' && !node.creator?.name) errors.push(`${file}: Dataset creator missing`);
         }
       }
