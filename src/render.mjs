@@ -301,9 +301,9 @@ function availabilityLabel(value) {
   return sentenceLabel(value, {
     'direct-brand': 'brand direct',
     'direct-factory': 'factory direct',
-    'mainland-and-direct': 'mainland retail and direct',
-    'mainland-domestic': 'mainland domestic',
-    'mainland-marketplace-observed': 'mainland marketplace observed',
+    'mainland-and-direct': 'retail and direct sales in mainland China',
+    'mainland-domestic': 'domestic sales in mainland China',
+    'mainland-marketplace-observed': 'observed on mainland China marketplaces',
     'discontinued-superseded': 'discontinued; superseded by the 2025 Gravel V3',
     'preorder-direct': 'direct preorder'
   });
@@ -1361,7 +1361,7 @@ export function renderModel(ctx, product) {
 }
 
 function candidateMaturityLabel(status) {
-  if (String(status).startsWith('official-mainland')) return 'Official mainland model';
+  if (String(status).startsWith('official-mainland')) return 'Official mainland China model';
   if (String(status).startsWith('official-global')) return 'Official global model';
   if (['exact-trim-unproven', 'exact-build-unproven', 'split-variant-before-publish'].includes(status)) return 'Exact configuration not confirmed';
   if (status === 'missing-china-price') return 'China price not verified';

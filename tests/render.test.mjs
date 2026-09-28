@@ -199,7 +199,7 @@ test('candidate bikes have concise internal research profiles with visible facts
   const airwolfPriceReference = candidates.find((entry) => entry.candidate.id === 'airwolf-yf-r003');
   const airwolfPriceDetail = renderCandidateModel(context, airwolfPriceReference);
   assert.match(airwolfPriceDetail, /Frame package ¥9,644 · Foreign seller FX estimate · 2026-09-25/);
-  assert.match(airwolfPriceDetail, /currency conversion of a foreign seller listing, not a confirmed mainland checkout price/);
+  assert.match(airwolfPriceDetail, /currency conversion of a foreign seller listing, not a confirmed mainland China checkout price/);
   assert.match(airwolfPriceDetail, /adjust the allowance to avoid double-counting included parts/);
   assert.doesNotMatch(airwolfPriceDetail, /Official FX estimate/);
 
@@ -765,7 +765,7 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /data-build-custom hidden/);
   assert.match(html, /id="frameset-build-allowance" type="number" min="0" max="100000" step="500"[^>]*value="6000"[^>]*data-frameset-build-allowance/);
   assert.match(html, /parts already included in that package remain in the frame price/);
-  assert.match(html, /No attributable mainland consumer price is recorded/);
+  assert.match(html, /No attributable mainland China consumer price is recorded/);
   assert.match(html, /cover a 2× hydraulic shift-and-brake kit, not every remaining complete-build part/);
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3987" data-frame-price-high="3987"/);
   assert.match(html, /<span data-calculated-price>Est\. ¥9,987<\/span>/);
