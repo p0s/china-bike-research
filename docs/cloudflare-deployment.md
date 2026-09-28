@@ -9,7 +9,9 @@ runs first only for document route families and the two privacy-choice routes.
 
 The build used by Wrangler is `npm run build:cloudflare`; it clears the
 GitHub-project base path and sets `https://chinesebikes.xyz` as the canonical
-origin. Use `npm run check` before a deployment, or `npm run deploy:cloudflare`
+origin. That command generates `sitemap.xml` from the published routes and
+runs the SEO audit before Wrangler uploads the assets. Use `npm run check`
+before a deployment, or `npm run deploy:cloudflare`
 with an authenticated Wrangler session. The repository workflow uses the
 `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` GitHub secrets. The
 account ID is supplied through the environment, not the public config.
