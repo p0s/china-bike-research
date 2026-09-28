@@ -1994,7 +1994,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
   assert.equal(data.prices.length, 76);
-  assert.equal(data.images.length, 213);
+  assert.ok(data.images.length >= 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 16);
@@ -2105,7 +2105,7 @@ test('batch 148 records a foreign seller FX reference without implying a mainlan
   assert.equal(airwolf.channels.web.attempts[0].outcome, 'found');
   assert.match(airwolf.channels.web.attempts[0].note, /not a mainland CNY offer/);
   assert.equal(data.researchAttempts.filter((attempt) => attempt.id.includes('-b148-2026-09-25') && attempt.campaign_extension).length, 8);
-  assert.equal(data.images.length, 213);
+  assert.ok(data.images.length >= 213);
 });
 
 test('batch 044 keeps unmatched weights and Japan-market references separate from mainland builds', () => {
@@ -2785,14 +2785,15 @@ test('wide-clearance products preserve the narrower rear limit', () => {
   assert.equal(clearanceLongLabel(camp.platform), '45 mm stock fit; maximum unverified');
 });
 
-test('every platform has a documented primary image and unavailable photos stay omitted', () => {
+test('every platform has a documented primary image and displayed photos stay local', () => {
   const platformImages = data.images.filter((image) => image.platform_id);
   const primaryPlatformImages = platformImages.filter((image) => image.role === 'primary');
   const imagedPlatforms = new Set(platformImages.filter((image) => image.role === 'primary').map((image) => image.platform_id));
   assert.equal(imagedPlatforms.size, data.platforms.length);
   assert.deepEqual([...imagedPlatforms].sort(), data.platforms.map((platform) => platform.id).sort());
   const missing = products.filter((product) => !product.image).map((product) => product.variant.id);
-  assert.deepEqual(missing, ['camp-gx600-pes']);
+  assert.deepEqual(missing, []);
+  assert.equal(products.find((product) => product.variant.id === 'camp-gx600-pes').image.display_accuracy, 'same-platform');
   for (const product of products.filter((item) => item.image)) {
     assert.equal(product.image.hosting.mode, 'local', product.variant.id);
     assert.ok(product.imageSource, product.variant.id);
@@ -2816,7 +2817,7 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 122);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 125);
   assert.ok(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length > 190);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(

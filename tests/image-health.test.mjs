@@ -70,11 +70,12 @@ test('only complete, healthy checks for current URLs within 30 days suppress ima
   assert.equal(imageHealthIsFreshAndHealthy({ ...image, health_check: { ...image.health_check, checked_at: '2026-09-25' } }, '2026-09-24'), false);
 });
 
-test('gap report keeps an unavailable product photo as a research gap', () => {
+test('a representative GX600 photo closes the missing-image gap but keeps exactness unresolved', () => {
   const data = loadDataset();
   const image = data.images.find((item) => item.id === 'camp-gx600-primary-image');
   assert.equal(image.buyer_visibility, 'omit');
   const gaps = buildGapReport(data, '2026-09-24').records.find((record) => record.id === 'camp-gx600-pes').gaps;
-  assert.ok(gaps.some((gap) => gap.code === 'image-missing'));
+  assert.ok(!gaps.some((gap) => gap.code === 'image-missing'));
+  assert.ok(gaps.some((gap) => gap.code === 'image-exactness'));
   assert.ok(!gaps.some((gap) => gap.code === 'image-health-unverified'));
 });

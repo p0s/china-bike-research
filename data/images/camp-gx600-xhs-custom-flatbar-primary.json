@@ -1,0 +1,61 @@
+{
+  "id": "camp-gx600-xhs-custom-flatbar-primary",
+  "platform_id": "camp-gx600",
+  "role": "primary",
+  "variant_ids": [
+    "camp-gx600-pes"
+  ],
+  "subject_accuracy": "same-platform",
+  "media_type": "community-post-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/camp-gx600-custom-flatbar/29665a434d1cd409-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/camp-gx600-custom-flatbar/5d4ab35f58c78b43-card-w480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 12744,
+        "sha256": "5d4ab35f58c78b43ccc155e0332a5a67c60a9b527fac0d9b1d507edab6201135",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/camp-gx600-custom-flatbar/29665a434d1cd409-detail-w1200.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 58604,
+        "sha256": "29665a434d1cd40955678546cdf8965c54598eb5c0d9b708850532f7826e9438",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-camp-gx600-custom-flatbar-xhs-2026-08-25",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "山地情怀",
+    "usage_note": "Small source-attributed editorial derivative for model identification or fit-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS · 山地情怀",
+  "alt": "Teal CAMP GX600 carbon gravel bike with a custom flat handlebar and drivetrain",
+  "display_note": "Custom GX600 flat-bar build; drivetrain, wheels and finish may differ from the listed PES configuration.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/664d7a4d00000000160129c4",
+  "source_media_sha256": "bcf54cbb9670648f8ed44c314f5bb4342d26cd388c61a8770f4900b9436d3eff",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-29",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-09-29"
+}
