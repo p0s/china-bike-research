@@ -1,11 +1,18 @@
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
-import { sendComparisonOpenedEvent } from './analytics-event.js';
+import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from './analytics-event.js';
 
 (() => {
   const base = document.body.dataset.base ?? '';
   const locale = document.documentElement.lang;
+  document.addEventListener('click', (event) => {
+    if (!(event instanceof MouseEvent) || !event.isTrusted || event.button !== 0) return;
+    if (!(event.target instanceof Element)) return;
+    const link = event.target.closest('a[data-analytics-action="product_outbound_click"]');
+    if (!link) return;
+    sendProductOutboundClickEvent();
+  });
   // A language change retains the current filter/comparison/builder state in the URL.
   document.querySelectorAll('[data-language-switch]').forEach((link) => {
     const syncLanguageLink = () => {

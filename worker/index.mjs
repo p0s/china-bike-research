@@ -9,6 +9,10 @@ const MAX_REFERRER_LENGTH = 255;
 const MAX_USER_AGENT_LENGTH = 512;
 const COMPARISON_OPEN_EVENT_NAME = 'compare_open';
 const ANALYTICS_EVENT_ROUTE = '/analytics/event';
+const ANALYTICS_ACTION_ROUTE = '/analytics/action';
+const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
+const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
+const MAX_ACTION_BODY_BYTES = 64;
 
 const publicDocumentPattern = /^(?:\/zh)?\/(?:models|brands|prices|complete-bikes|framesets|build|methodology|privacy|image-policy|image-sources|electronic-shifting|blog)(?:\/|$)/;
 const privatePathPattern = /\/(?:account|admin|auth|login|logout|job|jobs|private|session|token|api)(?:\/|$)/i;
@@ -210,6 +214,32 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
   }
 }
 
+export async function ingestAction(actionId, env, fetchImpl = globalThis.fetch) {
+  const token = String(env?.ANALYTICS_INGEST_TOKEN ?? '').trim();
+  if (!ANALYTICS_ACTION_IDS.has(actionId) || !token) return false;
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 1500);
+  try {
+    const response = await fetchImpl(ANALYTICS_ACTION_INGEST_URL, {
+      method: 'POST',
+      headers: {
+        authorization: `Bearer ${token}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({ actionId }),
+      redirect: 'error',
+      referrerPolicy: 'no-referrer',
+      signal: controller.signal
+    });
+    return response.ok;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 function sameOriginPost(request, url) {
   const origin = request.headers.get('origin');
   if (origin) return origin === url.origin;
@@ -262,6 +292,67 @@ async function hasEventBodyBytes(request) {
   }
 }
 
+async function readActionId(request) {
+  const declaredLength = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declaredLength) && declaredLength > MAX_ACTION_BODY_BYTES) return null;
+  if (!request.body) return null;
+
+  const reader = request.body.getReader();
+  const chunks = [];
+  let length = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      length += value?.byteLength ?? 0;
+      if (length > MAX_ACTION_BODY_BYTES) {
+        await reader.cancel();
+        return null;
+      }
+      chunks.push(value);
+    }
+  } catch {
+    return null;
+  } finally {
+    reader.releaseLock();
+  }
+
+  const bytes = new Uint8Array(length);
+  let offset = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  try {
+    const body = JSON.parse(new TextDecoder().decode(bytes));
+    if (!body || typeof body !== 'object' || Array.isArray(body)) return null;
+    const keys = Object.keys(body);
+    if (keys.length !== 1 || keys[0] !== 'actionId') return null;
+    return ANALYTICS_ACTION_IDS.has(body.actionId) ? body.actionId : null;
+  } catch {
+    return null;
+  }
+}
+
+function isExcludedActionRequest(request) {
+  return isExcludedAnalyticsRequest(request)
+    || !String(request.headers.get('user-agent') ?? '').trim();
+}
+
+async function actionResponse(request, url, env, ctx) {
+  if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
+  if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
+  if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash) return plainResponse('Invalid action request', 400);
+  if (isExcludedActionRequest(request)) return noContentResponse();
+
+  const contentType = request.headers.get('content-type') ?? '';
+  if (!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(contentType)) return plainResponse('Invalid action request', 400);
+  const actionId = await readActionId(request);
+  if (!actionId) return plainResponse('Invalid action request', 400);
+  if (typeof ctx.waitUntil === 'function') ctx.waitUntil(ingestAction(actionId, env));
+  return noContentResponse();
+}
+
 async function comparisonEventResponse(request, url, env, ctx) {
   if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
   if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
@@ -303,6 +394,7 @@ export async function handleRequest(request, env = {}, ctx = {}) {
   if (url.pathname === '/analytics/opt-out') return choiceResponse(request, url, true);
   if (url.pathname === '/analytics/opt-in') return choiceResponse(request, url, false);
   if (url.pathname === ANALYTICS_EVENT_ROUTE) return comparisonEventResponse(request, url, env, ctx);
+  if (url.pathname === ANALYTICS_ACTION_ROUTE) return actionResponse(request, url, env, ctx);
 
   const redirect = trailingSlashRedirect(url);
   if (redirect) return redirect;

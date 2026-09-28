@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyticsEventPayload, analyticsPayload, handleRequest, hasOptOutCookie, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
+import { analyticsEventPayload, analyticsPayload, handleRequest, hasOptOutCookie, ingestAction, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
 
 function makeRequest(path, init = {}, cf = { country: 'SG' }) {
   const request = new Request(`https://chinesebikes.xyz${path}`, init);
@@ -267,6 +267,77 @@ test('comparison events require same-origin bodyless POST and honor analytics ex
     const get = await handleRequest(makeRequest('/analytics/event', { headers: common }), env);
     assert.equal(get.status, 405);
     assert.equal(sent.length, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('product outbound action relay forwards only its fixed action ID and honors privacy exclusions', async () => {
+  const origin = 'https://chinesebikes.xyz';
+  const env = { ANALYTICS_INGEST_TOKEN: 'test-token' };
+  const outbound = [];
+  const waits = [];
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    outbound.push({ url, init });
+    return new Response(null, { status: 204 });
+  };
+  try {
+    const request = makeRequest('/analytics/action', {
+      method: 'POST',
+      headers: {
+        origin,
+        'content-type': 'application/json',
+        'user-agent': 'Mozilla/5.0',
+        'cf-connecting-ip': '203.0.113.10',
+        referer: `${origin}/models/example/?variant=private`
+      },
+      body: JSON.stringify({ actionId: 'product_outbound_click' })
+    });
+    const response = await handleRequest(request, env, { waitUntil: (promise) => waits.push(promise) });
+    assert.equal(response.status, 204);
+    await Promise.all(waits);
+    assert.equal(outbound.length, 1);
+    assert.equal(outbound[0].url, 'https://stats.p0s.eu/ingest/action/v1');
+    assert.deepEqual(JSON.parse(outbound[0].init.body), { actionId: 'product_outbound_click' });
+    assert.deepEqual([...new Headers(outbound[0].init.headers).keys()].sort(), ['authorization', 'content-type']);
+    assert.equal(outbound[0].init.headers.authorization, 'Bearer test-token');
+    assert.equal(outbound[0].init.redirect, 'error');
+    assert.equal(outbound[0].init.referrerPolicy, 'no-referrer');
+    assert.equal(await ingestAction('compare_open', env, async () => new Response(null)), false);
+
+    for (const blocked of [
+      { dnt: '1' },
+      { 'sec-gpc': '1' },
+      { cookie: 'p0s_analytics_optout=1' },
+      { purpose: 'prefetch' },
+      { 'user-agent': 'ExampleBot/1.0' },
+      { 'user-agent': '' }
+    ]) {
+      const skipped = await handleRequest(makeRequest('/analytics/action', {
+        method: 'POST',
+        headers: { origin, 'content-type': 'application/json', 'user-agent': 'Mozilla/5.0', ...blocked },
+        body: JSON.stringify({ actionId: 'product_outbound_click' })
+      }), env, { waitUntil: (promise) => waits.push(promise) });
+      assert.equal(skipped.status, 204);
+    }
+    assert.equal(outbound.length, 1);
+
+    for (const [body, headers, path, expectedStatus] of [
+      ['{ "actionId": "product_outbound_click", "page": "/" }', { 'content-type': 'application/json' }, '/analytics/action', 400],
+      ['{ "actionId": "compare_open" }', { 'content-type': 'application/json' }, '/analytics/action', 400],
+      ['{ "actionId": "product_outbound_click" }', { 'content-type': 'text/plain' }, '/analytics/action', 400],
+      ['{ "actionId": "product_outbound_click" }', { 'content-type': 'application/json', origin: 'https://attacker.example' }, '/analytics/action', 403],
+      ['{ "actionId": "product_outbound_click" }', { 'content-type': 'application/json' }, '/analytics/action?item=secret', 400]
+    ]) {
+      const rejected = await handleRequest(makeRequest(path, {
+        method: 'POST', headers: { origin, 'user-agent': 'Mozilla/5.0', ...headers }, body
+      }), env, { waitUntil: (promise) => waits.push(promise) });
+      assert.equal(rejected.status, expectedStatus);
+    }
+    const get = await handleRequest(makeRequest('/analytics/action', { headers: { origin, 'user-agent': 'Mozilla/5.0' } }), env);
+    assert.equal(get.status, 405);
+    assert.equal(outbound.length, 1);
   } finally {
     globalThis.fetch = originalFetch;
   }
