@@ -82,8 +82,10 @@ Enhanced Measurement features that generate additional automatic page views,
 site-search queries, or outbound clicks. Set event-level retention to the
 shortest useful interval for this comparison. Configure Cloudflare Google tag
 gateway for the exact zone, tag ID, and unused `/gtag` measurement path.
-Before enabling the Worker flag, verify the gateway does not inject a tag into
-an opt-out, DNT, or GPC page. The browser module loads `/gtag/js?id=...` only
+Leave Cloudflare's **Set up tag** option off: it inserts a tag automatically
+and would bypass the site's DNT, GPC, and opt-out checks. Before enabling the
+Worker flag, verify the gateway does not inject a tag into an excluded page.
+The browser module loads `/gtag/js?id=...` only
 after the same-origin `/analytics/ga-config` responds with valid IDs.
 
 Set `GA4_MEASUREMENT_ID` to the web stream ID and `GA4_API_SECRET` to a new
