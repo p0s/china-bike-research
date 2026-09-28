@@ -1,0 +1,60 @@
+{
+  "id": "winspace-g3-xhs-dealer-build-gallery",
+  "platform_id": "winspace-g3",
+  "role": "gallery",
+  "label": "G3 dealer build",
+  "sort_order": 10,
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/winspace-g3-dealer-build/ef4737e0cc5a68a9-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/winspace-g3-dealer-build/e80c9663153a3127-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 11856,
+        "sha256": "e80c9663153a3127d8fd8029016304f46ea62c91e5cde8313fd2a10728e97459",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/winspace-g3-dealer-build/ef4737e0cc5a68a9-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 43518,
+        "sha256": "ef4737e0cc5a68a929229ef32860986643a591a67ac1f8f63e99d8c8c864415d",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-winspace-g3-dealer-xhs-2026-08-27",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "温州银贝斯自行车形象店",
+    "usage_note": "Small source-attributed editorial derivative for model identification or fit-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS · 温州银贝斯自行车形象店",
+  "alt": "White Winspace G3 gravel bike assembled with deep wheels and tan-wall tires",
+  "display_note": "Dealer-assembled G3 example; components and finish need not match the catalog reference build.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/68da14db000000000e00d843",
+  "source_media_sha256": "676848d211296df82db66ae5cf35c47f971196465da29b5a5e882440f4ead710",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-09-29",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-09-29"
+}
