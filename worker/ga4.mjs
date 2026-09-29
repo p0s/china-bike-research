@@ -109,7 +109,9 @@ export async function sendGa4(payload, env, fetchImpl = globalThis.fetch, logger
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(payload),
-      redirect: 'error',
+      // Our Workers compatibility date rejects 'error'. A redirect fails delivery;
+      // never follow it with the Measurement Protocol secret or payload.
+      redirect: 'manual',
       referrerPolicy: 'no-referrer',
       signal: controller.signal
     });

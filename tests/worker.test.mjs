@@ -302,9 +302,16 @@ test('product outbound action relay forwards only its fixed action ID and honors
     assert.deepEqual(JSON.parse(outbound[0].init.body), { actionId: 'product_outbound_click' });
     assert.deepEqual([...new Headers(outbound[0].init.headers).keys()].sort(), ['authorization', 'content-type']);
     assert.equal(outbound[0].init.headers.authorization, 'Bearer test-token');
-    assert.equal(outbound[0].init.redirect, 'error');
+    assert.equal(outbound[0].init.redirect, 'manual');
     assert.equal(outbound[0].init.referrerPolicy, 'no-referrer');
     assert.equal(await ingestAction('compare_open', env, async () => new Response(null)), false);
+    let redirectCalls = 0;
+    assert.equal(await ingestAction('product_outbound_click', env, async (_url, init) => {
+      redirectCalls += 1;
+      assert.equal(init.redirect, 'manual');
+      return new Response(null, { status: 302, headers: { location: 'https://elsewhere.example/' } });
+    }), false);
+    assert.equal(redirectCalls, 1);
 
     for (const blocked of [
       { dnt: '1' },
