@@ -34,7 +34,9 @@ The preceding reviewed batch added nine useful photos: X-LAB AD8's Astana bare f
 
 ## Videos added in this pass
 
-The 19 linked posts cover CAMP GX600 (1), PARDUS Super Sport Gen 2 (2), Quick Pro XR:ONE (1), TWITTER Gravel V3 (4), Winspace G3 (1), X-LAB AD8 (3), AD9 (4), and RS9 (3). Each record includes a canonical post ID and URL, author, exact model target, relationship disclosure, and source-archive SHA-256. Model pages show two XHS links immediately and put further links in an expandable list. Opening a model page makes no XHS player request. These links are viewing context only and do not establish product specifications or price.
+The 19 linked posts cover CAMP GX600 (1), PARDUS Super Sport Gen 2 (2), Quick Pro XR:ONE (1), TWITTER Gravel V3 (4), Winspace G3 (1), X-LAB AD8 (3), AD9 (4), and RS9 (3). Each record includes a canonical post ID and URL, author, exact model target, relationship disclosure, and source-archive SHA-256. These records are research context only and do not establish product specifications or price.
+
+Presentation decision on 2026-09-29: model pages no longer display XHS video links or players; the records remain for provenance and possible future review.
 
 ## Research limitation
 

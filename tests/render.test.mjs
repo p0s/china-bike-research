@@ -843,7 +843,7 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
   assert.doesNotMatch(detail, /snapshot-classification|from_image|medium-low|promotion-conditional/);
 });
 
-test('model videos are exact, disclosed, and privacy-preserving before interaction', () => {
+test('model videos embed YouTube directly without autoplay and retain disclosure', () => {
   const product = products.find((item) => item.variant.id === 'yoeleo-altera-g21-frameset');
   const context = {
     data,
@@ -854,13 +854,14 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
     now: new Date('2026-08-09T00:00:00Z')
   };
   const detail = renderModel(context, product);
-  assert.match(detail, /Selected video context/);
-  assert.match(detail, /data-video-shell data-youtube-id="jmdVakRJPQ8" data-video-title="\$1278 for a frame THIS GOOD! The Yoeleo G21 Altera"/);
-  assert.match(detail, /No YouTube request until you choose/);
+  assert.match(detail, /<h2 id="video-context-title">Videos<\/h2>/);
+  assert.doesNotMatch(detail, /Selected video context|Useful for seeing the bike|video commentary does not verify/);
+  assert.match(detail, /<iframe src="https:\/\/www\.youtube-nocookie\.com\/embed\/jmdVakRJPQ8\?rel=0"/);
+  assert.match(detail, /loading="lazy" referrerpolicy="strict-origin-when-cross-origin"/);
   assert.match(detail, /Retailer-linked/);
   assert.match(detail, /Disclosure basis/);
   assert.match(detail, /href="https:\/\/www\.youtube\.com\/watch\?v=jmdVakRJPQ8" rel="noreferrer"/);
-  assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
+  assert.doesNotMatch(detail, /autoplay=1|data-load-video|Play video/);
 
   const privacy = renderPrivacy(context);
   assert.match(privacy, /compare_open when the comparison opens/);
@@ -884,7 +885,8 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(openComparison, /const wasOpen = !comparePanel\.hidden/);
   assert.match(openComparison, /if \(!wasOpen\) sendComparisonOpenedEvent\(\)/);
   assert.match(privacy, /youtube-nocookie\.com/);
-  assert.match(privacy, /only after you choose to load/);
+  assert.match(privacy, /may contact YouTube when the page loads or the video comes into view/);
+  assert.doesNotMatch(privacy, /XHS video links|only after you choose to load/);
 
   const imagePolicy = renderImagePolicy(context);
   assert.match(imagePolicy, /Displayed product photos are optimized WebP copies served by this site/);
@@ -904,15 +906,15 @@ test('candidate videos render as disclosed context with timestamp links', () => 
   };
   const detail = renderCandidateModel(context, entry);
   assert.match(detail, /Quick Pro UR One Full Review in Beijing, China/);
-  assert.match(detail, /Watch this model/);
+  assert.match(detail, /<h2 id="video-context-title">Videos<\/h2>/);
   assert.match(detail, /Publication review/);
   assert.match(detail, /Specifications · 1:06/);
   assert.match(detail, /watch\?v=rRZ6zr4hfow&amp;t=66/);
-  assert.match(detail, /No YouTube request until you choose/);
-  assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
+  assert.match(detail, /<iframe src="https:\/\/www\.youtube-nocookie\.com\/embed\/rRZ6zr4hfow\?rel=0"/);
+  assert.doesNotMatch(detail, /data-load-video|autoplay=1/);
 });
 
-test('XHS model videos are canonical click-only links with a compact overflow', () => {
+test('XHS video records do not display as links or an empty video section', () => {
   const entry = candidates.find((item) => item.candidate.id === 'xlab-ad9');
   const context = {
     data,
@@ -923,10 +925,13 @@ test('XHS model videos are canonical click-only links with a compact overflow', 
     now: new Date('2026-09-29T00:00:00Z')
   };
   const detail = renderCandidateModel(context, entry);
-  assert.match(detail, /More model videos on XHS/);
-  assert.match(detail, /Show 2 more XHS videos/);
-  assert.match(detail, /href="https:\/\/www\.xiaohongshu\.com\/explore\/69e8f860000000001f001363" rel="noreferrer noopener"/);
-  assert.doesNotMatch(detail, /data-youtube-id=|<iframe|xiaohongshu\.com\/video\/|xsec_token/);
+  assert.doesNotMatch(detail, /class="video-context"|class="video-external-list"/);
+  assert.doesNotMatch(detail, /href="https:\/\/www\.xiaohongshu\.com\/explore\/69e8f860000000001f001363"/);
+
+  const youtube = data.videos.find((video) => video.provider === 'youtube');
+  const mixed = renderCandidateModel(context, { ...entry, videos: [youtube, ...entry.videos] });
+  assert.match(mixed, /<iframe src="https:\/\/www\.youtube-nocookie\.com\/embed\//);
+  assert.doesNotMatch(mixed, /class="video-external-list"|href="https:\/\/www\.xiaohongshu\.com\/explore\/69e8f860000000001f001363"/);
 });
 
 
