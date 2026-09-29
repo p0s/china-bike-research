@@ -1027,21 +1027,27 @@ function candidateAlternativeBuilds(entry) {
   }).join('')}</div></section>`;
 }
 
-function candidateSourceList(entry) {
+function buyerFacingSourceUrl(ctx, source) {
+  if (!source.url) return '';
+  return ctx.data.videos.some((video) => video.provider === 'xhs' && video.url === source.url) ? '' : source.url;
+}
+
+function candidateSourceList(ctx, entry) {
   const sources = new Map((entry.sources ?? []).map((source) => [source.id, source]));
   if (entry.image?.media_type !== 'project-placeholder' && entry.imageSource) sources.set(entry.imageSource.id, entry.imageSource);
   const directUrl = entry.candidate.source_url;
-  const directLink = directUrl && ![...sources.values()].some((source) => source.url === directUrl)
+  const directLink = directUrl && buyerFacingSourceUrl(ctx, { url: directUrl }) && ![...sources.values()].some((source) => source.url === directUrl)
     ? `<p class="source-direct-link">Direct candidate link: <a href="${escapeAttr(directUrl)}" rel="noreferrer">open recorded source</a></p>`
     : '';
   if (!sources.size && !directLink) return '<p class="source-intro">No public source link is recorded yet.</p>';
   return `<div class="source-list"><p class="source-intro">These sources support this model page; individual claims retain the confidence of their cited source.</p>${directLink}${[...sources.values()].map((source) => {
+    const sourceUrl = buyerFacingSourceUrl(ctx, source);
     const confidence = ['identity', 'specification', 'price']
       .filter((key) => source.reliability?.[key])
       .map((key) => `${sentenceLabel(key)}: ${confidenceLabel(source.reliability[key])}`)
       .join(' · ');
     const unavailable = source.url ? '' : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))}</span>${confidence ? `<span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>` : `<span>Accessed ${escapeHtml(source.accessed_at)}</span>`}${unavailable}${source.notes ? `<p>${escapeHtml(candidatePublicText(source.notes))}</p>` : ''}</div>`;
+    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))}</span>${confidence ? `<span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>` : `<span>Accessed ${escapeHtml(source.accessed_at)}</span>`}${unavailable}${source.notes ? `<p>${escapeHtml(candidatePublicText(source.notes))}</p>` : ''}</div>`;
   }).join('')}</div>`;
 }
 
@@ -1084,12 +1090,13 @@ function productOutboundAttribute(source) {
 function sourceList(ctx, product) {
   const usages = sourceUsages(ctx, product);
   return `<div class="source-list"><p class="source-intro">Each source is labelled by what it supports. Confidence applies only to that role.</p>${usages.map(({ source, roles }) => {
+    const sourceUrl = buyerFacingSourceUrl(ctx, source);
     const roleLabels = roles.map(({ role }) => role).join(' · ');
     const confidence = roles.map(({ role, reliabilityKey }) => `${role}: ${confidenceLabel(source.reliability?.[reliabilityKey])}`).join(' · ');
     const unavailable = source.url ? '' : source.type === 'project-asset'
       ? '<span class="source-local">Project-owned local asset</span>'
       : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`;
+    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`;
   }).join('')}</div>`;
 }
 
@@ -1117,29 +1124,17 @@ function videoTimestampHref(video, timestamp) {
   return `${video.url}${separator}t=${Math.max(0, Math.floor(timestamp.at_seconds))}`;
 }
 
-function xhsVideoEntry(video) {
-  return `<article class="video-external-entry">
-    <h3><a href="${escapeAttr(video.url)}" rel="noreferrer noopener">${escapeHtml(video.title)} ↗</a></h3>
-    <small>${escapeHtml(video.channel_name)} on XHS${video.relationship === 'retailer-linked' || video.relationship === 'product-supplied' ? ` · ${escapeHtml(videoRelationshipLabel(video.relationship))}` : ''}</small>
-  </article>`;
-}
-
 function videoContext(videos) {
-  if (!videos?.length) return '';
-  const youtubeVideos = videos.filter((video) => video.provider === 'youtube');
-  const xhsVideos = videos.filter((video) => video.provider === 'xhs');
-  const xhsVisible = xhsVideos.slice(0, 2).map(xhsVideoEntry).join('');
-  const xhsMore = xhsVideos.slice(2).map(xhsVideoEntry).join('');
+  const youtubeVideos = videos?.filter((video) => video.provider === 'youtube') ?? [];
+  if (!youtubeVideos.length) return '';
   return `<section class="video-context" aria-labelledby="video-context-title">
     <h2 id="video-context-title">Videos</h2>
-    ${youtubeVideos.length ? `<div class="video-list">${youtubeVideos.map((video) => `<article class="video-entry">
-      <div class="video-shell" data-video-shell data-youtube-id="${escapeAttr(video.youtube_video_id)}" data-video-title="${escapeAttr(video.title)}">
-        <button class="video-load" type="button" data-load-video aria-label="Play ${escapeAttr(video.title)} from YouTube"><span class="video-play" aria-hidden="true">▶</span><strong>Play video</strong></button>
-        <noscript><p>JavaScript is off. <a href="${escapeAttr(video.url)}" rel="noreferrer">Watch on YouTube</a>.</p></noscript>
+    <div class="video-list">${youtubeVideos.map((video) => `<article class="video-entry">
+      <div class="video-shell">
+        <iframe src="https://www.youtube-nocookie.com/embed/${escapeAttr(video.youtube_video_id)}?rel=0" title="${escapeAttr(video.title)} — YouTube video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="video-copy"><div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div><h3><a href="${escapeAttr(video.url)}" rel="noreferrer">${escapeHtml(video.title)}</a></h3><p>${escapeHtml(video.summary)}</p>${video.timestamps?.length ? `<div class="video-timestamps" aria-label="Video sections">${video.timestamps.map((timestamp) => `<a href="${escapeAttr(videoTimestampHref(video, timestamp))}" rel="noreferrer">${escapeHtml(timestamp.label)} · ${Math.floor(timestamp.at_seconds / 60)}:${String(Math.floor(timestamp.at_seconds % 60)).padStart(2, '0')}</a>`).join('')}</div>` : ''}<small>${escapeHtml(video.channel_name)}${video.published_at ? ` · ${escapeHtml(video.published_at)}` : ''}. ${escapeHtml(video.disclosure)} <a href="${escapeAttr(video.disclosure_url)}" rel="noreferrer">Disclosure basis</a>.</small></div>
-    </article>`).join('')}</div>` : ''}
-    ${xhsVideos.length ? `<div class="video-external-list">${xhsVisible}${xhsMore ? `<details><summary>Show ${xhsVideos.length - 2} more</summary>${xhsMore}</details>` : ''}</div>` : ''}
+    </article>`).join('')}</div>
   </section>`;
 }
 
@@ -1526,7 +1521,7 @@ export function renderCandidateModel(ctx, entry) {
     ${relatedArticleLinks(ctx, candidate.id)}
     ${brandStory(brand)}
     ${videoContext(entry.videos)}
-    <details class="detail-panel" id="source-records"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(entry)}</div></details>
+    <details class="detail-panel" id="source-records"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(ctx, entry)}</div></details>
   </div></div></section>`;
   return page(ctx, {
     title: ctx.locale === 'zh-Hans' ? `${pageTitle}：${entry.kind === 'frameset' ? '车架组' : '整车配置'}研究与来源` : `${pageTitle} — ${entry.kind === 'frameset' ? 'frameset' : 'bike build'} research`,
@@ -2034,7 +2029,7 @@ export function renderPrivacy(ctx) {
     <p>We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google's tag through this site's first-party gateway, it sends a separate page_view with browser and device details. The tag's reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. The server request does not send Google your IP, User-Agent, search terms, URL query, or selected bikes; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-out')}"><button class="primary-button" type="submit">Opt out of optional analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-in')}"><button class="text-button" type="submit">Opt in again</button></form></div>
-    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Source and XHS video links open the original publisher only when you select them. YouTube is contacted only after you choose to load its <code>youtube-nocookie.com</code> player.</p>
+    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Pages with videos embed a <code>youtube-nocookie.com</code> player. It may contact YouTube when the page loads or the video comes into view. Videos do not autoplay.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
 }

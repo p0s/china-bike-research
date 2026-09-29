@@ -523,25 +523,6 @@ void import('./analytics-event.js').then((events) => {
     renderModelCompare();
   }
 
-  document.querySelectorAll('[data-video-shell]').forEach((shell) => {
-    const button = shell.querySelector('[data-load-video]');
-    if (!(shell instanceof HTMLElement) || !(button instanceof HTMLButtonElement)) return;
-    button.addEventListener('click', () => {
-      const videoId = shell.dataset.youtubeId ?? '';
-      if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) return;
-      const frame = document.createElement('iframe');
-      frame.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0`;
-      frame.title = `${shell.dataset.videoTitle || 'Model video'} — YouTube video`;
-      frame.loading = 'lazy';
-      frame.referrerPolicy = 'strict-origin-when-cross-origin';
-      frame.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share';
-      frame.allowFullscreen = true;
-      frame.tabIndex = 0;
-      shell.replaceChildren(frame);
-      frame.focus({ preventScroll: true });
-    }, { once: true });
-  });
-
   const modelFramePrice = document.querySelector('[data-model-frame-price-low]');
   if (modelFramePrice instanceof HTMLElement) {
     const defaultAllowance = Number(modelFramePrice.dataset.modelDefaultAllowance || 0);

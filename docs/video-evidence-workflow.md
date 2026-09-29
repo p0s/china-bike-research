@@ -32,7 +32,7 @@ Captures are immutable: set `VIDEO_CORPUS_ROOT` to a fresh ignored directory for
 
 ## Site presentation
 
-Curated context uses records in `data/videos/`. A record targets exactly one published platform/variant or research-stage candidate. Model pages show disclosure, relationship, date, summary, and optional timestamp links. The player is an explicit click-to-load control using YouTube's privacy-enhanced host; the initial page makes no YouTube embed request and videos never autoplay.
+Curated context uses records in `data/videos/`. A record targets exactly one published platform/variant or research-stage candidate. Model pages show disclosure, relationship, date, summary, and optional timestamp links for YouTube videos. The YouTube player is embedded directly from its privacy-enhanced host with lazy loading; videos never autoplay. XHS video records remain research metadata and do not appear on model pages.
 
 Candidate video context does not promote a candidate into the published catalog. It remains separate from sources used for price, specifications, and publication readiness.
 
