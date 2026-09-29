@@ -1,4 +1,4 @@
-import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SiteOpenPayload, ga4StoredIdentity, sendGa4 } from './ga4.mjs';
+import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SessionCookieHeader, ga4SiteOpenPayload, ga4StoredIdentity, sendGa4, validGa4SessionId } from './ga4.mjs';
 
 const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
 const OPT_OUT_COOKIE = 'p0s_analytics_optout';
@@ -13,6 +13,7 @@ const COMPARISON_OPEN_EVENT_NAME = 'compare_open';
 const ANALYTICS_EVENT_ROUTE = '/analytics/event';
 const ANALYTICS_ACTION_ROUTE = '/analytics/action';
 const GA4_CONFIG_ROUTE = '/analytics/ga-config';
+const GA4_SESSION_ROUTE = '/analytics/ga-session';
 const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
 const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
 const MAX_ACTION_BODY_BYTES = 64;
@@ -385,9 +386,22 @@ function ga4ConfigResponse(request, url, env) {
   return responseWithHeaders(new Response(JSON.stringify({
     measurementId: env.GA4_MEASUREMENT_ID,
     clientId: identity.clientId,
-    sessionId: identity.sessionId
   }), { headers: { 'content-type': 'application/json; charset=utf-8' } }), {
     'cache-control': 'no-store'
+  });
+}
+
+async function ga4SessionResponse(request, url, env) {
+  if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
+  if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash) return plainResponse('Invalid analytics request', 400);
+  if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
+  if (isExcludedAnalyticsRequest(request) || !ga4Configured(env)) return noContentResponse();
+  if (await hasEventBodyBytes(request)) return plainResponse('Invalid analytics request', 400);
+  const sessionId = request.headers.get('x-ga4-session-id');
+  if (!validGa4SessionId(sessionId) || !ga4StoredIdentity(request)) return plainResponse('Invalid analytics request', 400);
+  return responseWithHeaders(noContentResponse(), {
+    'cache-control': 'no-store',
+    'set-cookie': ga4SessionCookieHeader(sessionId)
   });
 }
 
@@ -422,6 +436,7 @@ export async function handleRequest(request, env = {}, ctx = {}) {
   if (url.pathname === '/analytics/opt-out') return choiceResponse(request, url, true, env);
   if (url.pathname === '/analytics/opt-in') return choiceResponse(request, url, false, env);
   if (url.pathname === GA4_CONFIG_ROUTE) return ga4ConfigResponse(request, url, env);
+  if (url.pathname === GA4_SESSION_ROUTE) return ga4SessionResponse(request, url, env);
   if (url.pathname === ANALYTICS_EVENT_ROUTE) return comparisonEventResponse(request, url, env, ctx);
   if (url.pathname === ANALYTICS_ACTION_ROUTE) return actionResponse(request, url, env, ctx);
 

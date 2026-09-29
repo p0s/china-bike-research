@@ -23,13 +23,14 @@ export function ga4Configured(env) {
     && Boolean(String(env?.GA4_API_SECRET ?? '').trim());
 }
 
-export function ga4Identity(request, now = Date.now()) {
+export function ga4Identity(request) {
   const cookies = request.headers.get('cookie');
   const existingClientId = cookieValue(cookies, GA4_CLIENT_COOKIE);
   const existingSessionId = cookieValue(cookies, GA4_SESSION_COOKIE);
+  const hasClientId = CLIENT_ID_PATTERN.test(existingClientId);
   return {
-    clientId: CLIENT_ID_PATTERN.test(existingClientId) ? existingClientId : `${randomPositive64()}.${randomPositive64()}`,
-    sessionId: SESSION_ID_PATTERN.test(existingSessionId) ? existingSessionId : String(Math.floor(now / 1000))
+    clientId: hasClientId ? existingClientId : `${randomPositive64()}.${randomPositive64()}`,
+    sessionId: hasClientId && SESSION_ID_PATTERN.test(existingSessionId) ? existingSessionId : null
   };
 }
 
@@ -37,17 +38,21 @@ export function ga4StoredIdentity(request) {
   const cookies = request.headers.get('cookie');
   const clientId = cookieValue(cookies, GA4_CLIENT_COOKIE);
   const sessionId = cookieValue(cookies, GA4_SESSION_COOKIE);
-  return CLIENT_ID_PATTERN.test(clientId) && SESSION_ID_PATTERN.test(sessionId)
-    ? { clientId, sessionId }
+  return CLIENT_ID_PATTERN.test(clientId)
+    ? { clientId, sessionId: SESSION_ID_PATTERN.test(sessionId) ? sessionId : null }
     : null;
 }
 
+export function validGa4SessionId(value) {
+  return SESSION_ID_PATTERN.test(String(value ?? ''));
+}
+
 export function ga4CookieHeaders(identity) {
-  const attributes = 'Path=/; Secure; HttpOnly; SameSite=Lax';
-  return [
-    `${GA4_CLIENT_COOKIE}=${identity.clientId}; Max-Age=${CLIENT_MAX_AGE}; ${attributes}`,
-    `${GA4_SESSION_COOKIE}=${identity.sessionId}; Max-Age=${SESSION_MAX_AGE}; ${attributes}`
-  ];
+  return [`${GA4_CLIENT_COOKIE}=${identity.clientId}; Max-Age=${CLIENT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`];
+}
+
+export function ga4SessionCookieHeader(sessionId) {
+  return `${GA4_SESSION_COOKIE}=${sessionId}; Max-Age=${SESSION_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`;
 }
 
 export function clearGa4CookieHeaders(measurementId = '') {
@@ -66,7 +71,7 @@ export function ga4SiteOpenPayload(analytics, identity) {
     events: [{
       name: 'site_open',
       params: {
-        session_id: identity.sessionId,
+        ...(identity.sessionId ? { session_id: identity.sessionId } : {}),
         page_location: `https://chinesebikes.xyz${analytics.path}`,
         ...(analytics.referrer ? { page_referrer: analytics.referrer } : {})
       }
@@ -81,7 +86,7 @@ export function ga4ActionPayload(name, identity) {
   return {
     client_id: identity.clientId,
     consent: { ad_user_data: 'DENIED', ad_personalization: 'DENIED' },
-    events: [{ name, params: { session_id: identity.sessionId } }]
+    events: [{ name, params: identity.sessionId ? { session_id: identity.sessionId } : {} }]
   };
 }
 

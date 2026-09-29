@@ -14,9 +14,9 @@ export async function startGa4(win = globalThis.window) {
       credentials: 'same-origin', cache: 'no-store', referrerPolicy: 'no-referrer'
     });
     if (!response.ok || response.status === 204) return false;
-    const { measurementId, clientId, sessionId } = await response.json();
+    const { measurementId, clientId } = await response.json();
     if (!MEASUREMENT_ID_PATTERN.test(measurementId)
-      || !CLIENT_ID_PATTERN.test(clientId) || !SESSION_ID_PATTERN.test(sessionId)) return false;
+      || !CLIENT_ID_PATTERN.test(clientId)) return false;
 
     win.dataLayer = win.dataLayer || [];
     const gtag = (...args) => win.dataLayer.push(args);
@@ -30,7 +30,6 @@ export async function startGa4(win = globalThis.window) {
     const pageReferrer = referringOrigin(win.document.referrer);
     gtag('config', measurementId, {
       client_id: clientId,
-      session_id: sessionId,
       page_location: pageLocation,
       ...(pageReferrer ? { page_referrer: pageReferrer } : {}),
       cookie_domain: 'none',
@@ -43,6 +42,20 @@ export async function startGa4(win = globalThis.window) {
       send_to: measurementId,
       page_location: pageLocation,
       ...(pageReferrer ? { page_referrer: pageReferrer } : {})
+    });
+    gtag('get', measurementId, 'client_id', (tagClientId) => {
+      if (String(tagClientId) !== clientId) return;
+      gtag('get', measurementId, 'session_id', (sessionId) => {
+        if (!SESSION_ID_PATTERN.test(String(sessionId))) return;
+        void win.fetch('/analytics/ga-session', {
+          method: 'POST',
+          headers: { 'x-ga4-session-id': String(sessionId) },
+          credentials: 'same-origin',
+          cache: 'no-store',
+          referrerPolicy: 'no-referrer',
+          keepalive: true
+        }).catch(() => {});
+      });
     });
     const script = win.document.createElement('script');
     script.async = true;

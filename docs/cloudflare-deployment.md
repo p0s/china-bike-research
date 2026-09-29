@@ -95,15 +95,19 @@ API secret in source, build output, or browser responses. `site_open` is one
 server event per eligible HTML response. `page_view` is one browser event when
 the tag loads. Compare the two names separately, and compare Umami page views
 to `site_open`; never add `site_open` and `page_view` together. A 2xx from the
-Measurement Protocol endpoint proves only HTTP receipt. Confirm processing in
-GA4 Realtime or reports and check the browser network request's client and
-session identifiers against the server payload before claiming a joined
-session. Missing cookies, blocked network traffic, and Google's processing
-can still cause gaps.
+Measurement Protocol endpoint proves only HTTP receipt. The first server
+`site_open` has the same client ID as the browser tag but no invented session
+ID. When the tag reports its actual client and session IDs, the browser checks
+the client ID and sends the session ID to the same-origin, bodyless
+`/analytics/ga-session` route. Only later server events include that session
+ID. Confirm processing in GA4 Realtime or reports; inspect the browser tag's
+client/session IDs and a later server event before claiming joined sessions.
+Missing cookies, blocked network traffic, and Google's processing can still
+cause gaps.
 
 ## Smoke checks
 
-After deployment, verify the production host with a cacheable document and a
+After deployment, verify the production host with an eligible document and a
 static asset, then confirm the trailing-slash redirect and the privacy forms:
 
 ```text
