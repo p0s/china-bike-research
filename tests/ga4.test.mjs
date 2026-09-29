@@ -182,7 +182,7 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
   };
   assert.equal(await startGa4(win), true);
   assert.equal(scripts.length, 1);
-  assert.equal(scripts[0].src, '/site-delivery/js?id=G-TEST12345');
+  assert.equal(scripts[0].src, '/sitedelivery/js?id=G-TEST12345');
   assert.ok(win.dataLayer.every((entry) => Object.prototype.toString.call(entry) === '[object Arguments]'));
   const config = win.dataLayer.find((args) => args[0] === 'config');
   assert.equal(config[2].client_id, '123.456');
@@ -225,7 +225,7 @@ test('error documents cannot initialize a tag even with a returning visitor ID',
 });
 
 test('browser reuses the gateway loader and concurrent initialization queues one page view', async () => {
-  for (const src of ['/site-delivery/', `/site-delivery/js?id=${env.GA4_MEASUREMENT_ID}`, '/gtag/', `/gtag/js?id=${env.GA4_MEASUREMENT_ID}`]) {
+  for (const src of ['/sitedelivery/', `/sitedelivery/js?id=${env.GA4_MEASUREMENT_ID}`, '/gtag/', `/gtag/js?id=${env.GA4_MEASUREMENT_ID}`]) {
     const scripts = [{ src }];
     const win = {
       location: { hostname: 'chinesebikes.xyz', origin: 'https://chinesebikes.xyz', pathname: '/' },

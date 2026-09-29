@@ -81,7 +81,8 @@ Keep Umami enabled. Create a dedicated GA4 web stream for
 Enhanced Measurement features that generate additional automatic page views,
 site-search queries, or outbound clicks. Set event-level retention to the
 shortest useful interval for this comparison. Configure Cloudflare Google tag
-gateway for the exact zone, tag ID, and unused `/site-delivery` measurement path.
+gateway for the exact zone, tag ID, and unused `/sitedelivery` measurement path. Cloudflare accepts only letters,
+numbers and forward slashes in this field; hyphens are rejected.
 Leave Cloudflare's **Set up tag** option off: it inserts a tag automatically
 and would bypass the site's DNT, GPC, and opt-out checks. This option alone
 does not guarantee that an excluded page downloads no Google code: on
@@ -92,13 +93,13 @@ those outcomes for DNT, GPC, and opt-out, as well as a `204` response from
 `/analytics/ga-config`; do not infer them from the toggle. The browser module
 initializes only on a document bearing the renderer's `data-ga4-page` marker,
 which error pages omit. It runs once per document and reuses Cloudflare's
-existing `/site-delivery/` loader. Only if that loader is absent does it append
-`/site-delivery/js?id=...`, after the config route returns valid IDs. The managed
+existing `/sitedelivery/` loader. Only if that loader is absent does it append
+`/sitedelivery/js?id=...`, after the config route returns valid IDs. The managed
 gateway can still download its bootstrap on excluded pages; no GA config,
 event, or collection request may follow.
 
 For the gateway path migration, deploy the loader first: it recognizes both
-`/site-delivery/` and the previous `/gtag/` injection, including their exact
+`/sitedelivery/` and the previous `/gtag/` injection, including their exact
 `js?id=...` forms. Then update only the measurement path in Cloudflare,
 leaving the tag ID and **Set up tag** setting unchanged. Verify the saved
 configuration, one library download, a successful collection request, and
