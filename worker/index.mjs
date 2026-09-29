@@ -232,7 +232,8 @@ export async function ingestAction(actionId, env, fetchImpl = globalThis.fetch) 
         'content-type': 'application/json'
       },
       body: JSON.stringify({ actionId }),
-      redirect: 'error',
+      // Workers rejects redirect: 'error'; manual preserves the no-forward rule.
+      redirect: 'manual',
       referrerPolicy: 'no-referrer',
       signal: controller.signal
     });

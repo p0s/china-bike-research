@@ -211,6 +211,17 @@ test('Measurement Protocol failure never throws or reports receipt as processing
   assert.equal(await sendGa4(payload, env, async () => { throw new Error('blocked'); }), false);
 });
 
+test('GA sender uses Workers-compatible manual redirects and rejects a redirect without retrying', async () => {
+  const payload = ga4SiteOpenPayload({ path: '/' }, { clientId: '123.456' });
+  let calls = 0;
+  assert.equal(await sendGa4(payload, env, async (_url, init) => {
+    calls += 1;
+    assert.equal(init.redirect, 'manual');
+    return new Response(null, { status: 302, headers: { location: 'https://elsewhere.example/' } });
+  }, { info() {} }), false);
+  assert.equal(calls, 1);
+});
+
 test('GA delivery diagnostics expose only bounded outcomes and never visitor data or credentials', async () => {
   const payload = ga4SiteOpenPayload({ path: '/models/private-model/', country: 'SG' }, { clientId: '123.456' });
   const messages = [];
