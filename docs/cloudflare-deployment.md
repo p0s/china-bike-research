@@ -112,6 +112,14 @@ ending the previous day; select a range that includes the first live date
 before interpreting an empty report. First `site_open` events have no asserted
 session and may be absent from Realtime even if later processed in reports.
 
+Use a narrowly filtered `wrangler tail` session for live delivery diagnosis.
+The Worker emits `ga4_delivery` with a fixed event name, `outcome`, and HTTP
+`status`. `http_received` confirms receipt only; `http_rejected`, `timeout`,
+and `network_error` identify transport failures. Logs deliberately omit the
+secret-bearing collector URL, payload, visitor IDs, paths, and raw errors.
+Do not retry ambiguous deliveries automatically or fabricate engagement time
+to make server opens appear in Realtime.
+
 ## Smoke checks
 
 After deployment, verify the production host with an eligible document and a
