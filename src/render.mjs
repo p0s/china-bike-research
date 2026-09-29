@@ -1107,7 +1107,8 @@ function videoRelationshipLabel(value) {
     'retailer-linked': 'Retailer-linked',
     'product-supplied': 'Product supplied',
     'publication-review': 'Publication review',
-    'owner-review': 'Owner review'
+    'owner-review': 'Owner review',
+    'community-post': 'Community post'
   }[value] ?? sentenceLabel(value);
 }
 
@@ -1116,17 +1117,30 @@ function videoTimestampHref(video, timestamp) {
   return `${video.url}${separator}t=${Math.max(0, Math.floor(timestamp.at_seconds))}`;
 }
 
+function xhsVideoEntry(video) {
+  return `<article class="video-external-entry">
+    <div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div>
+    <h3><a href="${escapeAttr(video.url)}" rel="noreferrer noopener">${escapeHtml(video.title)} ↗</a></h3>
+    <p>${escapeHtml(video.summary)}</p><small>XHS · ${escapeHtml(video.channel_name)}. ${escapeHtml(video.disclosure)}</small>
+  </article>`;
+}
+
 function videoContext(videos, heading = 'Watch this platform') {
   if (!videos?.length) return '';
+  const youtubeVideos = videos.filter((video) => video.provider === 'youtube');
+  const xhsVideos = videos.filter((video) => video.provider === 'xhs');
+  const xhsVisible = xhsVideos.slice(0, 2).map(xhsVideoEntry).join('');
+  const xhsMore = xhsVideos.slice(2).map(xhsVideoEntry).join('');
   return `<section class="video-context" aria-labelledby="video-context-title">
-    <div class="video-intro"><span>Selected video context</span><h2 id="video-context-title">${escapeHtml(heading)}</h2><p>Useful for seeing the bike and hearing ride or build context. The shown build may differ, and video commentary does not verify the current China price, exact BOM, or published specifications.</p></div>
-    <div class="video-list">${videos.map((video) => `<article class="video-entry">
+    <div class="video-intro"><span>Selected video context</span><h2 id="video-context-title">${escapeHtml(heading)}</h2><p>Useful for seeing the bike and hearing ride or build context. The shown build may differ, and video commentary does not verify the current China price, exact BOM, or published specifications. XHS links open only when selected.</p></div>
+    ${youtubeVideos.length ? `<div class="video-list">${youtubeVideos.map((video) => `<article class="video-entry">
       <div class="video-shell" data-video-shell data-youtube-id="${escapeAttr(video.youtube_video_id)}" data-video-title="${escapeAttr(video.title)}">
         <button class="video-load" type="button" data-load-video aria-label="Load ${escapeAttr(video.title)} from YouTube"><span class="video-play" aria-hidden="true">▶</span><span><strong>Load video</strong><small>No YouTube request until you choose</small></span></button>
         <noscript><p>JavaScript is off. <a href="${escapeAttr(video.url)}" rel="noreferrer">Watch on YouTube</a>.</p></noscript>
       </div>
       <div class="video-copy"><div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div><h3><a href="${escapeAttr(video.url)}" rel="noreferrer">${escapeHtml(video.title)}</a></h3><p>${escapeHtml(video.summary)}</p>${video.timestamps?.length ? `<div class="video-timestamps" aria-label="Video sections">${video.timestamps.map((timestamp) => `<a href="${escapeAttr(videoTimestampHref(video, timestamp))}" rel="noreferrer">${escapeHtml(timestamp.label)} · ${Math.floor(timestamp.at_seconds / 60)}:${String(Math.floor(timestamp.at_seconds % 60)).padStart(2, '0')}</a>`).join('')}</div>` : ''}<small>${escapeHtml(video.channel_name)}${video.published_at ? ` · ${escapeHtml(video.published_at)}` : ''}. ${escapeHtml(video.disclosure)} <a href="${escapeAttr(video.disclosure_url)}" rel="noreferrer">Disclosure basis</a>.</small></div>
-    </article>`).join('')}</div>
+    </article>`).join('')}</div>` : ''}
+    ${xhsVideos.length ? `<div class="video-external-list"><h3>More model videos on XHS</h3>${xhsVisible}${xhsMore ? `<details><summary>Show ${xhsVideos.length - 2} more XHS videos</summary>${xhsMore}</details>` : ''}</div>` : ''}
   </section>`;
 }
 
@@ -2021,7 +2035,7 @@ export function renderPrivacy(ctx) {
     <p>We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google's tag through this site's first-party gateway, it sends a separate page_view with browser and device details. The tag's reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. The server request does not send Google your IP, User-Agent, search terms, URL query, or selected bikes; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-out')}"><button class="primary-button" type="submit">Opt out of optional analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-in')}"><button class="text-button" type="submit">Opt in again</button></form></div>
-    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Source links open the original publisher only when you select them. YouTube is contacted only after you choose to load its <code>youtube-nocookie.com</code> player.</p>
+    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Source and XHS video links open the original publisher only when you select them. YouTube is contacted only after you choose to load its <code>youtube-nocookie.com</code> player.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
 }
