@@ -180,6 +180,7 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
   assert.equal(await startGa4(win), true);
   assert.equal(scripts.length, 1);
   assert.equal(scripts[0].src, '/gtag/js?id=G-TEST12345');
+  assert.ok(win.dataLayer.every((entry) => Object.prototype.toString.call(entry) === '[object Arguments]'));
   const config = win.dataLayer.find((args) => args[0] === 'config');
   assert.equal(config[2].client_id, '123.456');
   assert.equal(Object.hasOwn(config[2], 'session_id'), false);
