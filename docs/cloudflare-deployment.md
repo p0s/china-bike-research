@@ -81,7 +81,7 @@ Keep Umami enabled. Create a dedicated GA4 web stream for
 Enhanced Measurement features that generate additional automatic page views,
 site-search queries, or outbound clicks. Set event-level retention to the
 shortest useful interval for this comparison. Configure Cloudflare Google tag
-gateway for the exact zone, tag ID, and unused `/gtag` measurement path.
+gateway for the exact zone, tag ID, and unused `/site-delivery` measurement path.
 Leave Cloudflare's **Set up tag** option off: it inserts a tag automatically
 and would bypass the site's DNT, GPC, and opt-out checks. This option alone
 does not guarantee that an excluded page downloads no Google code: on
@@ -92,10 +92,18 @@ those outcomes for DNT, GPC, and opt-out, as well as a `204` response from
 `/analytics/ga-config`; do not infer them from the toggle. The browser module
 initializes only on a document bearing the renderer's `data-ga4-page` marker,
 which error pages omit. It runs once per document and reuses Cloudflare's
-existing `/gtag/` loader. Only if that loader is absent does it append
-`/gtag/js?id=...`, after the config route returns valid IDs. The managed
+existing `/site-delivery/` loader. Only if that loader is absent does it append
+`/site-delivery/js?id=...`, after the config route returns valid IDs. The managed
 gateway can still download its bootstrap on excluded pages; no GA config,
 event, or collection request may follow.
+
+For the gateway path migration, deploy the loader first: it recognizes both
+`/site-delivery/` and the previous `/gtag/` injection, including their exact
+`js?id=...` forms. Then update only the measurement path in Cloudflare,
+leaving the tag ID and **Set up tag** setting unchanged. Verify the saved
+configuration, one library download, a successful collection request, and
+matching client/session IDs on a fresh page. Rollback changes the gateway
+path back to `/gtag`; the compatible loader still reuses that injection.
 
 Use UTC as the GA property's reporting timezone to match the portfolio's
 completed UTC days. Exclude the day of a timezone or collection change from

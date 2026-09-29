@@ -1,6 +1,9 @@
 const MEASUREMENT_ID_PATTERN = /^G-[A-Z0-9]{5,20}$/;
 const CLIENT_ID_PATTERN = /^[1-9]\d{0,19}\.[1-9]\d{0,19}$/;
 const SESSION_ID_PATTERN = /^[1-9]\d{9,12}$/;
+const GATEWAY_PATH = '/site-delivery';
+// Recognize the previous injection during a staged gateway configuration change.
+const GATEWAY_LOADER_PATHS = [GATEWAY_PATH, '/gtag'];
 const initializedPages = new WeakSet();
 
 function referringOrigin(referrer) {
@@ -60,19 +63,20 @@ export async function startGa4(win = globalThis.window) {
         }).catch(() => {});
       });
     });
-    // Cloudflare injects the same library at /gtag/ even with Set up tag off.
-    // Reuse that loader; requesting /gtag/js as well downloads it twice.
+    // Cloudflare injects the library even with Set up tag off. Reuse that
+    // loader so the site's fallback does not download the same library twice.
     const hasLoader = Array.from(win.document.scripts).some((script) => {
       try {
         const src = new URL(script.src, win.location.origin);
-        return src.origin === win.location.origin && (src.pathname === '/gtag/'
-          || (src.pathname === '/gtag/js' && src.searchParams.get('id') === measurementId));
+        return src.origin === win.location.origin && GATEWAY_LOADER_PATHS.some((path) =>
+          src.pathname === `${path}/`
+          || (src.pathname === `${path}/js` && src.searchParams.get('id') === measurementId));
       } catch { return false; }
     });
     if (!hasLoader) {
       const script = win.document.createElement('script');
       script.async = true;
-      script.src = `/gtag/js?id=${encodeURIComponent(measurementId)}`;
+      script.src = `${GATEWAY_PATH}/js?id=${encodeURIComponent(measurementId)}`;
       win.document.head.appendChild(script);
     }
     return true;
