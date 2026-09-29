@@ -20,6 +20,9 @@ function clarifyDisplayPayload(value, key = '') {
   if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([name, item]) => [name, clarifyDisplayPayload(item, name)]));
   return typeof value === 'string' && displayPayloadKeys.has(key) ? clarifyMainland(value) : value;
 }
+export function localizedCatalogPayload(value, options = {}) {
+  return clarifyDisplayPayload(localizeJson(value, options));
+}
 // Clarify English geographic shorthand only in reader-facing HTML. Keep URLs,
 // data IDs, and JSON-LD unchanged; update only display fields in the embedded
 // catalog and configurator payloads that the browser can reveal to visitors.

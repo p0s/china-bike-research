@@ -1,9 +1,16 @@
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
-import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from './analytics-event.js';
+// Privacy tools may block the optional analytics module. Catalog behavior must
+// still initialize when that happens.
+let sendComparisonOpenedEvent = () => false;
+let sendProductOutboundClickEvent = () => false;
+void import('./analytics-event.js').then((events) => {
+  sendComparisonOpenedEvent = events.sendComparisonOpenedEvent;
+  sendProductOutboundClickEvent = events.sendProductOutboundClickEvent;
+}).catch(() => {});
 
-(() => {
+(async () => {
   const base = document.body.dataset.base ?? '';
   const locale = document.documentElement.lang;
   document.addEventListener('click', (event) => {
@@ -548,10 +555,13 @@ import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from './anal
     if (calculated) calculated.textContent = priceLabel;
     const brief = document.querySelector('[data-model-price-brief]');
     if (brief) {
-      brief.textContent = String(brief.textContent ?? '').replace(
-        /^The displayed .*? estimate adds the adjustable ¥[\d,]+ build allowance/,
-        `The displayed ${priceLabel} estimate adds the adjustable ${formatYuan(allowance)} build allowance`
-      );
+      const current = String(brief.textContent ?? '');
+      brief.textContent = document.body.dataset.locale === 'zh-Hans'
+        ? current.replace(/¥[\d,]+/, formatYuan(allowance))
+        : current.replace(
+          /^The displayed .*? estimate adds the adjustable ¥[\d,]+ build allowance/,
+          `The displayed ${priceLabel} estimate adds the adjustable ${formatYuan(allowance)} build allowance`
+        );
     }
     writeStoredBuildAllowance(allowance);
   }
@@ -561,7 +571,17 @@ import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from './anal
   if (!catalogRoot || !catalogData) return;
 
   let products = [];
-  try { products = JSON.parse(catalogData.textContent ?? '[]'); } catch { products = []; }
+  try {
+    const response = await fetch(catalogData.dataset.src, { cache: 'force-cache' });
+    if (!response.ok) throw new Error(`Catalog data HTTP ${response.status}`);
+    products = await response.json();
+    if (!Array.isArray(products)) throw new Error('Catalog data is not an array');
+  } catch (error) {
+    console.error('Comparison data unavailable', error);
+    catalogRoot.dataset.catalogError = String(error);
+    return;
+  }
+  catalogRoot.dataset.catalogReady = 'true';
   const byId = new Map(products.map((item) => [item.id, item]));
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];

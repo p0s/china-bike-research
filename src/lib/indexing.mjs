@@ -2,7 +2,7 @@
 // Missing evidence is not a negative product-quality judgment.
 export function candidateIndexable(entry) {
   if (!entry.identifiableModel || !entry.defaultVisible) return false;
-  if (['research-queue', 'needs-exact-model', 'model-unclear'].includes(entry.candidate.status)) return false;
+  if (['research-queue', 'needs-exact-model', 'model-unclear', 'split-variant-before-publish'].includes(entry.candidate.status)) return false;
   if (!entry.sources?.some((source) => source.url?.startsWith('https://'))) return false;
   const facts = entry.candidate.facts ?? {};
   const usefulKeys = ['drivetrain', 'brakes', 'frame', 'frame_material', 'bottom_bracket', 'wheels', 'tires', 'sizes', 'complete_weight_g', 'frame_weight_g', 'tire_clearance_mm'];

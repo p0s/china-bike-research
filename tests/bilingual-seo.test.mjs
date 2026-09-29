@@ -72,6 +72,12 @@ test('every published model has a reviewed Chinese verdict without rewriting the
   for (const { variant } of products) {
     assert.ok(zh[variant.editorial.verdict], `Missing native summary for ${variant.id}`);
     assert.match(translate(variant.editorial.verdict, 'zh-Hans'), /[\u3400-\u9fff]/);
+    for (const field of ['best_for', 'strengths', 'caveats']) {
+      for (const value of variant.editorial[field] ?? []) {
+        const phrase = field === 'best_for' ? value : value.trim().replace(/[.;]+$/, '');
+        assert.match(translate(phrase, 'zh-Hans'), /[\u3400-\u9fff]/, `Missing ${field} translation for ${variant.id}: ${phrase}`);
+      }
+    }
   }
 });
 test('research indexing is an evidence gate, not just catalog visibility', () => {
@@ -81,6 +87,7 @@ test('research indexing is an evidence gate, not just catalog visibility', () =>
   assert.equal(candidateIndexable({ ...qualified, identifiableModel: false }), false);
   assert.equal(candidateIndexable({ ...qualified, sources: [] }), false);
   assert.equal(candidateIndexable({ ...qualified, candidate: { status: 'model-unclear', facts: qualified.candidate.facts } }), false);
+  assert.equal(candidateIndexable({ ...qualified, candidate: { status: 'split-variant-before-publish', facts: qualified.candidate.facts } }), false);
   assert.equal(candidateIndexable({ ...qualified, candidate: { facts: { frame: 'unknown', tires: 'not confirmed', frame_weight_g: 0 } } }), false);
   assert.ok(candidates.some(candidateIndexable), 'Retain genuinely useful research pages');
   assert.ok(candidates.some((entry) => !candidateIndexable(entry)), 'Do not index every unfinished research page');
@@ -96,7 +103,7 @@ test('a real low-evidence profile is noindex while useful model and original rec
   assert.match(productHtml, /尚未逐条翻译/);
 });
 test('bilingual articles and scheduled drafts have valid stable identities and only known evidence references', () => {
-  assert.equal(posts.length, 24);
+  assert.equal(posts.length, 25);
   assert.doesNotThrow(() => validatePostReferences(posts, data, products));
   for (const post of posts) {
     assert.match(post.translations['zh-Hans'].title, /[\u3400-\u9fff]/);
