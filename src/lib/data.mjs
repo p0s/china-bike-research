@@ -852,24 +852,36 @@ export function validateDataset(data = loadDataset()) {
   }
 
   const youtubeIds = new Set();
+  const xhsPostIds = new Set();
   const platformVideoCounts = new Map();
   const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride']);
-  const videoRelationships = new Set(['retailer-linked', 'product-supplied', 'publication-review', 'owner-review']);
+  const videoRelationships = new Set(['retailer-linked', 'product-supplied', 'publication-review', 'owner-review', 'community-post']);
   for (const video of data.videos) {
     requireFields('video', video, [
-      'provider', 'youtube_video_id', 'title', 'channel_name', 'channel_url', 'url', 'language',
-      'accessed_at', 'target', 'match', 'format', 'relationship', 'disclosure', 'disclosure_url', 'summary'
+      'provider', 'title', 'channel_name', 'url', 'language', 'accessed_at', 'target',
+      'match', 'format', 'relationship', 'disclosure', 'disclosure_url', 'summary'
     ]);
-    if (video.provider !== 'youtube') errors.push(`video ${video.id}: unsupported provider ${video.provider}`);
-    if (typeof video.youtube_video_id !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(video.youtube_video_id)) errors.push(`video ${video.id}: invalid YouTube video ID`);
-    if (youtubeIds.has(video.youtube_video_id)) errors.push(`video ${video.id}: duplicate YouTube video ID ${video.youtube_video_id}`);
-    youtubeIds.add(video.youtube_video_id);
-    const expectedUrl = `https://www.youtube.com/watch?v=${video.youtube_video_id}`;
-    if (video.url !== expectedUrl) errors.push(`video ${video.id}: URL must match its YouTube video ID`);
-    try {
-      const channel = new URL(video.channel_url);
-      if (channel.protocol !== 'https:' || !['www.youtube.com', 'youtube.com'].includes(channel.hostname)) errors.push(`video ${video.id}: invalid YouTube channel URL`);
-    } catch { errors.push(`video ${video.id}: invalid channel URL`); }
+    if (video.provider === 'youtube') {
+      requireFields('YouTube video', video, ['youtube_video_id', 'channel_url']);
+      if (typeof video.youtube_video_id !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(video.youtube_video_id)) errors.push(`video ${video.id}: invalid YouTube video ID`);
+      if (youtubeIds.has(video.youtube_video_id)) errors.push(`video ${video.id}: duplicate YouTube video ID ${video.youtube_video_id}`);
+      youtubeIds.add(video.youtube_video_id);
+      if (video.url !== `https://www.youtube.com/watch?v=${video.youtube_video_id}`) errors.push(`video ${video.id}: URL must match its YouTube video ID`);
+      try {
+        const channel = new URL(video.channel_url);
+        if (channel.protocol !== 'https:' || !['www.youtube.com', 'youtube.com'].includes(channel.hostname)) errors.push(`video ${video.id}: invalid YouTube channel URL`);
+      } catch { errors.push(`video ${video.id}: invalid channel URL`); }
+    } else if (video.provider === 'xhs') {
+      requireFields('XHS video', video, ['xhs_post_id', 'source_capture_archive', 'source_archive_sha256']);
+      if (typeof video.xhs_post_id !== 'string' || !/^[a-f0-9]{24}$/.test(video.xhs_post_id)) errors.push(`video ${video.id}: invalid XHS post ID`);
+      if (xhsPostIds.has(video.xhs_post_id)) errors.push(`video ${video.id}: duplicate XHS post ID ${video.xhs_post_id}`);
+      xhsPostIds.add(video.xhs_post_id);
+      if (video.url !== `https://www.xiaohongshu.com/explore/${video.xhs_post_id}`) errors.push(`video ${video.id}: URL must match its XHS post ID`);
+      if (video.disclosure_url !== video.url) errors.push(`video ${video.id}: XHS disclosure must link to its source post`);
+      if (typeof video.source_capture_archive !== 'string' || !/^xhs-complete-[^/]+\.zip$/.test(video.source_capture_archive)) errors.push(`video ${video.id}: invalid source archive name`);
+      if (typeof video.source_archive_sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(video.source_archive_sha256)) errors.push(`video ${video.id}: invalid source archive hash`);
+      if (video.youtube_video_id !== undefined || video.timestamps !== undefined) errors.push(`video ${video.id}: XHS link must not carry YouTube player metadata`);
+    } else errors.push(`video ${video.id}: unsupported provider ${video.provider}`);
     if (!isDate(video.accessed_at)) errors.push(`video ${video.id}: invalid accessed_at`);
     if (video.published_at !== undefined && !isDate(video.published_at)) errors.push(`video ${video.id}: invalid published_at`);
     if (!videoFormats.has(video.format)) errors.push(`video ${video.id}: invalid format`);
@@ -895,7 +907,7 @@ export function validateDataset(data = loadDataset()) {
     if (target.platform_id !== undefined) {
       if (!platformIds.has(target.platform_id)) errors.push(`video ${video.id}: missing platform ${target.platform_id}`);
       if (video.match !== 'exact-platform') errors.push(`video ${video.id}: platform target must use exact-platform match`);
-      platformVideoCounts.set(target.platform_id, (platformVideoCounts.get(target.platform_id) ?? 0) + 1);
+      if (video.provider === 'youtube') platformVideoCounts.set(target.platform_id, (platformVideoCounts.get(target.platform_id) ?? 0) + 1);
     }
     if (target.variant_id !== undefined) {
       if (!variantIds.has(target.variant_id)) errors.push(`video ${video.id}: missing variant ${target.variant_id}`);

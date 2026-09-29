@@ -912,6 +912,23 @@ test('candidate videos render as disclosed context with timestamp links', () => 
   assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
 });
 
+test('XHS model videos are canonical click-only links with a compact overflow', () => {
+  const entry = candidates.find((item) => item.candidate.id === 'xlab-ad9');
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-09-29T00:00:00Z')
+  };
+  const detail = renderCandidateModel(context, entry);
+  assert.match(detail, /More model videos on XHS/);
+  assert.match(detail, /Show 2 more XHS videos/);
+  assert.match(detail, /href="https:\/\/www\.xiaohongshu\.com\/explore\/69e8f860000000001f001363" rel="noreferrer noopener"/);
+  assert.doesNotMatch(detail, /data-youtube-id=|<iframe|xiaohongshu\.com\/video\/|xsec_token/);
+});
+
 
 test('generic project copy is category-neutral', () => {
   assert.match(html, /<h1>Bikes in China<\/h1>/);

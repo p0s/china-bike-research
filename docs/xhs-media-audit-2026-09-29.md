@@ -1,24 +1,41 @@
-# Local XHS bicycle-image audit — 2026-09-29
+# XHS media audit — 29 September 2026
 
-This audit closes the locally available, model-focused XHS ZIP set for the current bike catalog. It does not claim to cover every image on XHS or images that may be captured later. Immutable originals and numbered contact sheets stayed outside Git. Each new public image is a compressed, metadata-free derivative linked to its exact canonical post, creator, archive digest, original-media digest, and removal route in `data/images/` and `data/sources/`.
+This is an inventory of the XHS captures available locally for the site's current bicycle models, not a claim that every XHS post on the public service has been found. Raw capture ZIPs, search results, and contact sheets remain outside this public repository. The checked-in image and video records carry their own source links and hashes.
 
-## Inventory and review
+## Search boundary and reduction
 
-- The local collection contained about 98 XHS ZIPs across the searched project, document, and download roots. The 39 bike-model query archives contributed 1,103 image entries. The 13 relevant query families reduced to 857 within-family distinct images and 806 globally distinct media SHA-256 values from 156 canonical posts. Search-result duplication explains part of the difference.
-- All 13 families were visually reviewed on numbered contact sheets; selected photos were inspected at full size and cross-checked against existing galleries. The additional nine photos below add a different decision-relevant view for an exact catalog model. The earlier small batch remains in place.
-- The five broad-search families for Airwolf YFR068, BXT 055, Rinasclta GR025, Q-AERO GR, and XMCarbonspeed CS-GR01 contained hundreds of unrelated hits (including other bike brands, shoes, cars, and helicopters). The contact sheets did not establish an exact, privacy-safe, decision-relevant photo for those five catalog models. Model words in the query or post caption were not enough to reassign a different bike to a catalog entry.
-- The remaining AD8, AD9, RS9, Quick XR:ONE, Winspace G3, PARDUS Super Sport Gen2, CAMP GX, and Twitter Gravel V3 images were screened for duplicate angles, other generations (notably Twitter V1), wrong components or model labels (notably an RS8 photo in an RS9 search), article screenshots, people, location or account identifiers, and images that only decorate a page. Existing useful photos were not re-added.
-- Older `xhs-gpt-*` ZIPs do not carry the validated canonical public-post and media manifest needed to prove the source of each image. Their raw media was not published. These are a provenance limit, not evidence that no useful image exists within them.
+- Inventoried 98 local XHS ZIPs: 66 complete-capture archives and 32 older `xhs-gpt` archives. The archive inventory also includes unrelated travel/rental research, which was screened out.
+- The 39 bike-model query archives in the complete-capture set contributed 1,103 image entries. Examined the 13 relevant query families: 857 images after within-family hash deduplication, or 806 distinct media hashes across groups from 156 canonical posts. Contact sheets were reviewed for exact model identity, distinct useful angles, overlays, privacy, and existing site coverage.
+- Examined all 144 distinct images in the 11 older bike-query ZIPs. These ZIPs omit canonical post IDs and authors. Exact-title searches in the dedicated research browser recovered canonical public posts for the **nine legacy images** selected below; three additional images came from the complete-capture manifests. Unmatched images were not published.
+- Found 2,019 video stream references in the ZIP manifests, representing 187 distinct posts across all topics. There are **no video files in the archives**. Stream variants and expiring signed URLs are not separate editorial clips. Nineteen exact-model bike posts were selected as canonical outbound links; no XHS stream, player, or autoplay was added.
 
-## New editorial views
+The selected stills are deliberately fewer than the number of captured frames. Images of another model, repeat angles, title cards, screenshots, too-small or heavily overlaid frames, and photos with unclear source identity do not improve a buyer's comparison. The broad-search groups for Airwolf YFR068, BXT 055, Rinasclta GR025, Q-AERO GR, and XMCarbonspeed CS-GR01 mostly returned other bicycles, shoes, cars, or helicopters; they yielded no exact, distinct, privacy-safe image for those five models. A GT600 frame with a background phone number and a YOELEO frame with a possible location sign were excluded. Two additional otherwise relevant frames (GT8 legacy image 117 and AD8 group image 37) were rejected because their large text overlays made them less useful than the selected alternatives and they did not meet the site's 88 KiB detail-image optimization limit at its standard size.
 
-| Exact model | New views | Why they add information |
-| --- | --- | --- |
-| X-LAB AD8 | Astana bare frameset | Frame silhouette and paint before assembly. |
-| X-LAB AD9 | Anniversary rear triangle | Seatpost junction and rear-frame profile. |
-| X-LAB RS9 | Full seller build, rear, front | Exact RS9 identity plus assembled profile, seatpost, fork and cockpit shapes. Parts are a seller build. |
-| Quick Pro XR:ONE | Seat-tube accessory mounts | Mount positions beyond the existing full-frame, downtube and bottom-bracket views. |
-| Winspace G3 | Rear frameset, UDH dropout | Rear-triangle and hanger details beyond the existing full-frame and built-bike views. |
-| PARDUS Super Sport Gen2 | Owner bare frameset | Frame and fork silhouette, distinct from the existing scale and complete-bike photos. |
+## Images added in this pass
 
-Every photo was optimized to one ≤480 px/40 KB card and one ≤1200 px/88 KB detail file. Attribution does not assert a general redistribution license. A valid removal request can be filed through the linked public repository issue route.
+The source and image JSON records provide the exact public post, publisher credit, original-media SHA-256, local derivative hashes, alt text, rights status, removal route, and privacy review. Each is a small optimized editorial derivative, not an assertion of a redistribution license.
+
+| Model | Newly selected angles |
+| --- | ---: |
+| LightCarbon LCG071 Pro | 1 |
+| PARDUS Super Sport Gen 2 | 2 |
+| SAVA Gelaro SF | 1 |
+| TRINX GTR-C6 | 2 |
+| Winspace G3 | 1 |
+| X-LAB/XDS GT8 | 1 |
+| XDS GT600 | 1 |
+| X-LAB AD8 | 1 |
+| X-LAB AD9 | 1 |
+| YOELEO Altera G21 | 1 |
+
+These 12 images have 24 responsive WebP derivatives totaling about 1.0 MB in Git. The site's prior reviewed XHS images remain; this pass adds distinct views rather than copies of those files.
+
+The preceding reviewed batch added nine useful photos: X-LAB AD8's Astana bare frameset; AD9's anniversary rear triangle; RS9's full seller build and rear/front details; Quick Pro XR:ONE's seat-tube accessory mounts; Winspace G3's rear frameset and UDH dropout; and PARDUS Super Sport Gen 2's owner bare frameset. Earlier model angles remain where distinct. Variant components shown in community and seller builds are not treated as catalog-trim facts.
+
+## Videos added in this pass
+
+The 19 linked posts cover CAMP GX600 (1), PARDUS Super Sport Gen 2 (2), Quick Pro XR:ONE (1), TWITTER Gravel V3 (4), Winspace G3 (1), X-LAB AD8 (3), AD9 (4), and RS9 (3). Each record includes a canonical post ID and URL, author, exact model target, relationship disclosure, and source-archive SHA-256. Model pages show two XHS links immediately and put further links in an expandable list. Opening a model page makes no XHS player request. These links are viewing context only and do not establish product specifications or price.
+
+## Research limitation
+
+A fresh seven-query capture was attempted to resolve more legacy-post provenance. Its first query stopped after three details because the search observer did not deliver a usable response. The preserved local journal contains no export. The route was not repeatedly retried. The dedicated research browser's exact-title search supplied the links used for the selected legacy images; the remaining legacy images are left out where the source or exact model could not be established. New public XHS posts may exist beyond the captured corpus, so this audit should be repeated when a new verified capture becomes available.
