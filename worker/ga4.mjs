@@ -90,7 +90,14 @@ export function ga4ActionPayload(name, identity) {
   };
 }
 
-export async function sendGa4(payload, env, fetchImpl = globalThis.fetch) {
+function reportDelivery(logger, payload, outcome, status = null) {
+  const event = payload.events?.[0]?.name;
+  const eventName = ['site_open', 'compare_open', 'product_outbound_click'].includes(event) ? event : 'unknown';
+  // Never log the request URL (which contains the secret), payload, IDs, or errors.
+  try { logger.info(JSON.stringify({ type: 'ga4_delivery', event: eventName, outcome, status })); } catch {}
+}
+
+export async function sendGa4(payload, env, fetchImpl = globalThis.fetch, logger = console) {
   if (!payload || !ga4Configured(env)) return false;
   const url = new URL('https://www.google-analytics.com/mp/collect');
   url.searchParams.set('measurement_id', env.GA4_MEASUREMENT_ID);
@@ -106,8 +113,10 @@ export async function sendGa4(payload, env, fetchImpl = globalThis.fetch) {
       referrerPolicy: 'no-referrer',
       signal: controller.signal
     });
+    reportDelivery(logger, payload, response.ok ? 'http_received' : 'http_rejected', response.status);
     return response.ok;
   } catch {
+    reportDelivery(logger, payload, controller.signal.aborted ? 'timeout' : 'network_error');
     return false;
   } finally {
     clearTimeout(timeout);

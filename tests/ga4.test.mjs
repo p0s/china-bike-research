@@ -210,3 +210,18 @@ test('Measurement Protocol failure never throws or reports receipt as processing
   assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 500 })), false);
   assert.equal(await sendGa4(payload, env, async () => { throw new Error('blocked'); }), false);
 });
+
+test('GA delivery diagnostics expose only bounded outcomes and never visitor data or credentials', async () => {
+  const payload = ga4SiteOpenPayload({ path: '/models/private-model/', country: 'SG' }, { clientId: '123.456' });
+  const messages = [];
+  const logger = { info: (message) => messages.push(JSON.parse(message)) };
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), logger), true);
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 503 }), logger), false);
+  assert.equal(await sendGa4(payload, env, async () => { throw new Error('test-secret 123.456 private-model'); }, logger), false);
+  assert.deepEqual(messages, [
+    { type: 'ga4_delivery', event: 'site_open', outcome: 'http_received', status: 204 },
+    { type: 'ga4_delivery', event: 'site_open', outcome: 'http_rejected', status: 503 },
+    { type: 'ga4_delivery', event: 'site_open', outcome: 'network_error', status: null }
+  ]);
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), { info() { throw new Error('logger unavailable'); } }), true);
+});
