@@ -1,7 +1,7 @@
 const MEASUREMENT_ID_PATTERN = /^G-[A-Z0-9]{5,20}$/;
 const CLIENT_ID_PATTERN = /^[1-9]\d{0,19}\.[1-9]\d{0,19}$/;
 const SESSION_ID_PATTERN = /^[1-9]\d{9,12}$/;
-const GATEWAY_PATH = '/site-delivery';
+const GATEWAY_PATH = '/sitedelivery';
 // Recognize the previous injection during a staged gateway configuration change.
 const GATEWAY_LOADER_PATHS = [GATEWAY_PATH, '/gtag'];
 const initializedPages = new WeakSet();
