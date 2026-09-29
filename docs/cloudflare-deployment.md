@@ -90,7 +90,22 @@ response with **Set up tag** off. In that unblocked-browser check, the
 bootstrap queued no GA config or event and sent no collection hit. Verify
 those outcomes for DNT, GPC, and opt-out, as well as a `204` response from
 `/analytics/ga-config`; do not infer them from the toggle. The browser module
-loads `/gtag/js?id=...` only after that config route returns valid IDs.
+initializes only on a document bearing the renderer's `data-ga4-page` marker,
+which error pages omit. It runs once per document and reuses Cloudflare's
+existing `/gtag/` loader. Only if that loader is absent does it append
+`/gtag/js?id=...`, after the config route returns valid IDs. The managed
+gateway can still download its bootstrap on excluded pages; no GA config,
+event, or collection request may follow.
+
+Use UTC as the GA property's reporting timezone to match the portfolio's
+completed UTC days. Exclude the day of a timezone or collection change from
+comparisons. Keep the shortest retention (two months) and advertising
+consent denied. Enable only Scrolls in Enhanced Measurement (one event when
+90 percent of a page becomes visible). Disable automatic history page views,
+outbound clicks, site search, forms, video and file downloads: page views and
+product-link actions already have bounded explicit senders, and search/form
+text must not enter the trial. Do not turn on advertising to clear the
+zero-advertising-consent diagnostic.
 
 Set `GA4_MEASUREMENT_ID` to the web stream ID and `GA4_API_SECRET` to a new
 Measurement Protocol API secret in Worker secrets. Set `GA4_ENABLED=true` only
@@ -126,6 +141,32 @@ product-action ingestion. This defect was reproduced in the local Workers
 runtime on 2026-09-29: the original sender threw `TypeError`; the corrected
 sender reached the collector and received HTTP 204. Node mocks alone did not
 expose the unsupported option.
+
+### Comparison procedure
+
+After the final production change, collect three complete UTC days and allow
+another 48 hours for GA processing. Record the same inclusive date range and
+canonical hostname in both systems. Start a new comparison window after any
+collection change; do not mix earlier broken delivery or partial days into
+the baseline.
+
+1. Compare Umami page views with the GA event count filtered to `site_open`.
+   These share the successful, eligible HTML-request definition. A difference
+   calls for checking transport outcomes and processing before interpretation.
+2. Divide the GA event count filtered to `page_view` by `site_open` to estimate
+   browser measurement coverage. Preserve the raw counts. Do not clamp a ratio
+   above 100 percent: investigate scope, date windows, caching, repeated browser
+   events and errors. The gap includes blockers, disabled JavaScript and delivery
+   failures; it is not a measured adblock percentage or a count of people.
+3. Assess whether browser engagement, `scroll`, `compare_open` and
+   `product_outbound_click` help explain usage beyond Umami. Compare event counts,
+   not GA Users/Sessions against backend request counts. Never sum `site_open`
+   and `page_view`. First/server-only opens have no invented session or engagement.
+
+Verify a normal page, a returning-visitor 404, a blocked Google loader, DNT,
+GPC and opt-out after a loader change. Check one normal `page_view` and at most
+one Google library load. Redirecting alias domains must return plain redirects
+without page/event collection. Keep Umami enabled throughout.
 
 ## Smoke checks
 

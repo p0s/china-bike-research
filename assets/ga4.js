@@ -1,6 +1,7 @@
 const MEASUREMENT_ID_PATTERN = /^G-[A-Z0-9]{5,20}$/;
 const CLIENT_ID_PATTERN = /^[1-9]\d{0,19}\.[1-9]\d{0,19}$/;
 const SESSION_ID_PATTERN = /^[1-9]\d{9,12}$/;
+const initializedPages = new WeakSet();
 
 function referringOrigin(referrer) {
   try { return new URL(referrer).origin; } catch { return undefined; }
@@ -8,7 +9,9 @@ function referringOrigin(referrer) {
 
 export async function startGa4(win = globalThis.window) {
   if (!win || win.location.hostname !== 'chinesebikes.xyz'
-    || win.navigator?.doNotTrack === '1' || win.navigator?.globalPrivacyControl === true) return false;
+    || win.navigator?.doNotTrack === '1' || win.navigator?.globalPrivacyControl === true
+    || !win.document.querySelector('script[data-ga4-page]') || initializedPages.has(win)) return false;
+  initializedPages.add(win);
   try {
     const response = await win.fetch('/analytics/ga-config', {
       credentials: 'same-origin', cache: 'no-store', referrerPolicy: 'no-referrer'
@@ -57,10 +60,21 @@ export async function startGa4(win = globalThis.window) {
         }).catch(() => {});
       });
     });
-    const script = win.document.createElement('script');
-    script.async = true;
-    script.src = `/gtag/js?id=${encodeURIComponent(measurementId)}`;
-    win.document.head.appendChild(script);
+    // Cloudflare injects the same library at /gtag/ even with Set up tag off.
+    // Reuse that loader; requesting /gtag/js as well downloads it twice.
+    const hasLoader = Array.from(win.document.scripts).some((script) => {
+      try {
+        const src = new URL(script.src, win.location.origin);
+        return src.origin === win.location.origin && (src.pathname === '/gtag/'
+          || (src.pathname === '/gtag/js' && src.searchParams.get('id') === measurementId));
+      } catch { return false; }
+    });
+    if (!hasLoader) {
+      const script = win.document.createElement('script');
+      script.async = true;
+      script.src = `/gtag/js?id=${encodeURIComponent(measurementId)}`;
+      win.document.head.appendChild(script);
+    }
     return true;
   } catch {
     return false;
