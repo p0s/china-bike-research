@@ -854,9 +854,10 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
     now: new Date('2026-08-09T00:00:00Z')
   };
   const detail = renderModel(context, product);
-  assert.match(detail, /Selected video context/);
+  assert.match(detail, /<h2 id="video-context-title">Videos<\/h2>/);
+  assert.doesNotMatch(detail, /Selected video context|Useful for seeing the bike|video commentary does not verify/);
   assert.match(detail, /data-video-shell data-youtube-id="jmdVakRJPQ8" data-video-title="\$1278 for a frame THIS GOOD! The Yoeleo G21 Altera"/);
-  assert.match(detail, /No YouTube request until you choose/);
+  assert.match(detail, /Play video/);
   assert.match(detail, /Retailer-linked/);
   assert.match(detail, /Disclosure basis/);
   assert.match(detail, /href="https:\/\/www\.youtube\.com\/watch\?v=jmdVakRJPQ8" rel="noreferrer"/);
@@ -904,11 +905,11 @@ test('candidate videos render as disclosed context with timestamp links', () => 
   };
   const detail = renderCandidateModel(context, entry);
   assert.match(detail, /Quick Pro UR One Full Review in Beijing, China/);
-  assert.match(detail, /Watch this model/);
+  assert.match(detail, /<h2 id="video-context-title">Videos<\/h2>/);
   assert.match(detail, /Publication review/);
   assert.match(detail, /Specifications · 1:06/);
   assert.match(detail, /watch\?v=rRZ6zr4hfow&amp;t=66/);
-  assert.match(detail, /No YouTube request until you choose/);
+  assert.match(detail, /Play video/);
   assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
 });
 
@@ -923,8 +924,9 @@ test('XHS model videos are canonical click-only links with a compact overflow', 
     now: new Date('2026-09-29T00:00:00Z')
   };
   const detail = renderCandidateModel(context, entry);
-  assert.match(detail, /More model videos on XHS/);
-  assert.match(detail, /Show 2 more XHS videos/);
+  assert.match(detail, /class="video-external-list"/);
+  assert.match(detail, /Show 2 more/);
+  assert.doesNotMatch(detail, /Selected video context|Useful for seeing the bike|video commentary does not verify/);
   assert.match(detail, /href="https:\/\/www\.xiaohongshu\.com\/explore\/69e8f860000000001f001363" rel="noreferrer noopener"/);
   assert.doesNotMatch(detail, /data-youtube-id=|<iframe|xiaohongshu\.com\/video\/|xsec_token/);
 });
