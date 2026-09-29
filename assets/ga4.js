@@ -19,7 +19,7 @@ export async function startGa4(win = globalThis.window) {
       || !CLIENT_ID_PATTERN.test(clientId)) return false;
 
     win.dataLayer = win.dataLayer || [];
-    const gtag = (...args) => win.dataLayer.push(args);
+    function gtag() { win.dataLayer.push(arguments); }
     win.gtag = gtag;
     gtag('consent', 'default', {
       analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied',
