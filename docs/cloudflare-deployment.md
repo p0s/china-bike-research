@@ -106,6 +106,13 @@ configuration, one library download, a successful collection request, and
 matching client/session IDs on a fresh page. Rollback changes the gateway
 path back to `/gtag`; the compatible loader still reuses that injection.
 
+The browser normalizes query-parameter ordering for the configured tag’s
+exact same-origin `/sitedelivery/ga/g/c` collection URL after config passes
+the privacy checks. Fetch and beacon bodies and options remain untouched.
+Other requests pass through unchanged, and there is no delivery retry. Verify
+a completed collection response as well as the library download: a queued
+`page_view` or a working session handshake alone does not prove delivery.
+
 Use UTC as the GA property's reporting timezone to match the portfolio's
 completed UTC days. Exclude the day of a timezone or collection change from
 comparisons. Keep the shortest retention (two months) and advertising

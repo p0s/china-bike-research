@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { startGa4 } from '../assets/ga4.js';
+import { collectionRequestUrl, startGa4 } from '../assets/ga4.js';
 import { layout } from '../src/lib/html.mjs';
 import { ga4Identity, ga4SiteOpenPayload, sendGa4 } from '../worker/ga4.mjs';
 import { handleRequest } from '../worker/index.mjs';
@@ -160,6 +160,23 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
   }
 });
 
+test('collection URL ordering preserves values and repeated-key order only for this gateway and tag', () => {
+  const origin = 'https://chinesebikes.xyz';
+  const input = `${origin}/sitedelivery/ga/g/c?v=2&tid=G-TEST12345&en=page_view&dl=https%3A%2F%2Fchinesebikes.xyz%2F%3Fx%3Da%2Bb&ep.label=%E8%87%AA%E8%A1%8C%E8%BD%A6%20test&a=second&a=first&empty=`;
+  const output = collectionRequestUrl(input, origin, 'G-TEST12345');
+  assert.notEqual(output, input);
+  const before = new URL(input).searchParams;
+  const after = new URL(output).searchParams;
+  for (const key of before.keys()) assert.deepEqual(after.getAll(key), before.getAll(key));
+  assert.deepEqual([...after.keys()], [...after.keys()].sort());
+  assert.equal(collectionRequestUrl(output, origin, 'G-TEST12345'), output);
+  for (const other of [input.replace(origin, 'https://other.example'), input.replace('/ga/g/c?', '/ga/g/other?'), input.replace('v=2', 'v=1'), input.replace('G-TEST12345', 'G-OTHER123'), '/analytics/ga-session', 'https://[invalid']) {
+    assert.equal(collectionRequestUrl(other, origin, 'G-TEST12345'), other);
+  }
+  const request = new Request(input);
+  assert.equal(collectionRequestUrl(request, origin, 'G-TEST12345'), request);
+});
+
 test('browser tag uses shared IDs and queues one bounded page_view', async () => {
   const scripts = [];
   const requests = [];
@@ -207,6 +224,45 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
   assert.equal(requests[1].init.method, 'POST');
   assert.equal(await startGa4({ ...win, navigator: { doNotTrack: '1' } }), false);
   assert.equal(await startGa4({ ...win, navigator: { globalPrivacyControl: true } }), false);
+});
+
+test('collection transport preserves fetch and beacon bodies, results, receivers and unrelated requests', async () => {
+  const calls = [];
+  const response = Promise.resolve(new Response(null, { status: 204 }));
+  const win = {
+    location: { hostname: 'chinesebikes.xyz', origin: 'https://chinesebikes.xyz', pathname: '/' },
+    navigator: { sendBeacon(url, body) { calls.push({ transport: 'beacon', receiver: this, url, body }); return false; } },
+    fetch(url, init) {
+      if (url === '/analytics/ga-config') return Promise.resolve(Response.json({ measurementId: env.GA4_MEASUREMENT_ID, clientId: '123.456' }));
+      calls.push({ transport: 'fetch', receiver: this, url, init });
+      return response;
+    },
+    document: { querySelector: () => ({}), scripts: [{ src: '/sitedelivery/' }], referrer: '' }
+  };
+  assert.equal(await startGa4(win), true);
+  const url = '/sitedelivery/ga/g/c?v=2&tid=G-TEST12345&en=page_view';
+  const body = new Blob(['test-body']);
+  const init = { method: 'POST', body, keepalive: true, credentials: 'omit' };
+  assert.equal(win.fetch(url, init), response);
+  assert.equal(win.navigator.sendBeacon(url, body), false);
+  assert.equal(calls[0].receiver, win);
+  assert.equal(calls[0].init, init);
+  assert.equal(calls[1].receiver, win.navigator);
+  assert.equal(calls[1].body, body);
+  assert.equal(calls[0].url, calls[1].url);
+  assert.notEqual(calls[0].url, url);
+  const unrelated = '/analytics/ga-session';
+  win.fetch(unrelated, init);
+  win.navigator.sendBeacon(unrelated, body);
+  assert.equal(calls[2].url, unrelated);
+  assert.equal(calls[3].url, unrelated);
+  assert.equal(calls.length, 4);
+  const denied = { ...win, fetch: win.fetch, navigator: { doNotTrack: '1', sendBeacon: win.navigator.sendBeacon } };
+  const fetchBefore = denied.fetch;
+  const beaconBefore = denied.navigator.sendBeacon;
+  assert.equal(await startGa4(denied), false);
+  assert.equal(denied.fetch, fetchBefore);
+  assert.equal(denied.navigator.sendBeacon, beaconBefore);
 });
 
 test('error documents cannot initialize a tag even with a returning visitor ID', async () => {

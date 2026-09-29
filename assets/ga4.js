@@ -10,6 +10,33 @@ function referringOrigin(referrer) {
   try { return new URL(referrer).origin; } catch { return undefined; }
 }
 
+export function collectionRequestUrl(input, origin, measurementId) {
+  if (typeof input !== 'string') return input;
+  try {
+    const target = new URL(input, origin);
+    if (target.origin !== origin || target.pathname !== `${GATEWAY_PATH}/ga/g/c`
+      || target.searchParams.get('v') !== '2'
+      || target.searchParams.get('tid') !== measurementId) return input;
+    // Keep equivalent collection URLs in a stable parameter order. Sorting
+    // preserves values and the order of repeated keys.
+    target.searchParams.sort();
+    return target.href;
+  } catch { return input; }
+}
+
+function configureCollectionTransport(win, measurementId) {
+  const originalFetch = win.fetch;
+  win.fetch = function (input, init) {
+    return originalFetch.call(win, collectionRequestUrl(input, win.location.origin, measurementId), init);
+  };
+  const originalBeacon = win.navigator?.sendBeacon;
+  if (typeof originalBeacon === 'function') {
+    win.navigator.sendBeacon = function (url, data) {
+      return originalBeacon.call(win.navigator, collectionRequestUrl(url, win.location.origin, measurementId), data);
+    };
+  }
+}
+
 export async function startGa4(win = globalThis.window) {
   if (!win || win.location.hostname !== 'chinesebikes.xyz'
     || win.navigator?.doNotTrack === '1' || win.navigator?.globalPrivacyControl === true
@@ -24,6 +51,7 @@ export async function startGa4(win = globalThis.window) {
     if (!MEASUREMENT_ID_PATTERN.test(measurementId)
       || !CLIENT_ID_PATTERN.test(clientId)) return false;
 
+    configureCollectionTransport(win, measurementId);
     win.dataLayer = win.dataLayer || [];
     function gtag() { win.dataLayer.push(arguments); }
     win.gtag = gtag;
