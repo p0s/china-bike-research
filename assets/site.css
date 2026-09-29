@@ -251,7 +251,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .catalog-head,
 .catalog-row {
   display: grid;
-  grid-template-columns: 34px minmax(350px, 2.2fr) minmax(136px, .85fr) minmax(88px, .55fr) minmax(88px, .55fr) minmax(145px, 1fr) minmax(86px, .55fr) minmax(122px, .75fr) 28px;
+  grid-template-columns: 34px minmax(350px, 2.2fr) minmax(136px, .85fr) minmax(88px, .55fr) minmax(88px, .55fr) minmax(145px, 1fr) minmax(86px, .55fr) minmax(122px, .75fr);
   gap: 14px;
   align-items: center;
 }
@@ -360,9 +360,6 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .price-state { overflow: visible; white-space: nowrap; }
 .price-state.is-conditional { color: var(--warning); }
 .price-state.is-historical { color: var(--danger); }
-.row-link-cell { display: grid; place-items: center; }
-.row-link { position: relative; z-index: 2; display: grid; place-items: center; width: 28px; height: 34px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 1.45rem; }
-.row-link:hover { background: var(--surface-soft); color: var(--ink); }
 .empty-state { padding: 54px 20px; text-align: center; color: var(--muted); }
 
 @media (hover: hover) and (pointer: fine) {
@@ -785,7 +782,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .filter-bar { grid-template-columns: 1fr; }
   .filter-primary { grid-template-columns: minmax(230px, 1fr) minmax(170px, .7fr) minmax(125px, .45fr) auto auto minmax(185px, .55fr); }
   .catalog-head,
-  .catalog-row { grid-template-columns: 32px minmax(310px, 2fr) minmax(128px, .85fr) 80px 80px minmax(132px, 1fr) 78px minmax(108px, .7fr) 26px; gap: 10px; }
+  .catalog-row { grid-template-columns: 32px minmax(310px, 2fr) minmax(128px, .85fr) 80px 80px minmax(132px, 1fr) 78px minmax(108px, .7fr); gap: 10px; }
   .catalog-row { --catalog-preview-scale: 2.5; min-height: 116px; }
   .catalog-product { grid-template-columns: 144px minmax(0, 1fr); gap: 12px; }
   .product-image { width: 144px; }
@@ -826,7 +823,6 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .catalog-cell { position: relative; padding-top: 14px; border-top: 1px solid var(--line); }
   .catalog-cell::before { content: attr(data-label); position: absolute; top: 0; left: 0; color: var(--muted); font-size: .58rem; font-weight: 720; letter-spacing: .05em; text-transform: uppercase; }
   .tire-clearance-cell::before { content: 'Tire clearance'; }
-  .row-link-cell { display: none; }
   .empty-state { grid-column: 1 / -1; border: 1px dashed var(--line); border-radius: 12px; background: var(--surface); }
   .curated-group { padding-inline: 14px; }
   .model-grid { grid-template-columns: 1fr; gap: 26px; }

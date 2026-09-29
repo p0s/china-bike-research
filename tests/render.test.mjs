@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
-import { renderHome, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderMethodology, renderPrivacy } from '../src/render.mjs';
+import { renderHome, catalogSummaries, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderMethodology, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -88,7 +88,8 @@ test('homepage offers compact criteria-led comparison starting points', () => {
 });
 
 test('homepage comparison payload keeps frameset pricing dynamic without serializing inactive fields', () => {
-  const payload = JSON.parse(html.match(/<script type="application\/json" id="catalog-data">([^<]+)<\/script>/)?.[1] ?? '[]');
+  assert.match(html, /id="catalog-data" data-src="\/china-bike-research\/data\/home-catalog-en\.json"/);
+  const payload = catalogSummaries({ data, products });
   const frameset = payload.find((item) => item.estimated === true);
   const complete = payload.find((item) => item.type === 'Complete bike');
   const cosmosworks = payload.find((item) => item.id === 'candidate-cosmosworks-carbon-e-road');
@@ -487,7 +488,7 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /data-filter-tire-unknown/);
   assert.match(html, /data-filter-complete-weight/);
   assert.match(html, /data-filter-frame-weight/);
-  assert.match(html, /"weightGrams":9900,"weightKind":"complete"/);
+  assert.ok(catalogSummaries({ data, products }).some((item) => item.weightGrams === 9900 && item.weightKind === 'complete'));
   assert.match(html, /data-filter-drivetrain/);
   assert.match(html, /data-filter-frame/);
   assert.match(html, /data-filter-panel/);
@@ -684,7 +685,7 @@ test('build configurator renders every required slot with sourced package data',
 test('buyer controls preserve strict budget, category evidence, and valid row semantics', () => {
   assert.match(html, /data-id="sava-gelaro-s4-grx400"[^>]*data-price-filter="12089"/);
   assert.match(html, /Triathlon storage \/ boxes: Unknown\./);
-  assert.match(html, /"internalFrameStorage":"No"/);
+  assert.ok(catalogSummaries({ data, products }).some((item) => item.internalFrameStorage === 'No'));
   assert.doesNotMatch(html, /<article class="catalog-row" role="row"/);
   assert.match(html, /<div class="catalog-row" role="row"/);
   assert.match(html, /<div class="compare-toggle" role="cell"><label>/);

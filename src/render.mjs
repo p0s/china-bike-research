@@ -701,7 +701,6 @@ function productRow(ctx, product) {
     <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${variant.kind === 'frameset' ? '' : `<span class="metric-main compact-metric">${escapeHtml(drivetrainLabel(ctx, product))}</span><span class="metric-sub">${escapeHtml(drivetrainSubline(ctx, product))}</span>`}</div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight"><span class="metric-main">${escapeHtml(weightLabel(product))}</span></div>
     <div class="catalog-cell frame-cell" role="cell" data-label="Frame"><span class="metric-main">${escapeHtml(frameStandard(product))}${infoTip('Frame details', frameTooltipLines(product))}</span></div>
-    <div class="row-link-cell" role="cell"><a class="row-link" href="${url(ctx.base, `/models/${variant.id}/`)}" data-model-link aria-label="View ${escapeAttr(brand.name)} ${escapeAttr(variant.name)} details">›</a></div>
   </div>`;
 }
 
@@ -858,7 +857,6 @@ function candidateRow(ctx, entry) {
     <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${entry.kind === 'frameset' ? '' : escapeHtml(facts.drivetrain ?? '—')}</div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight">${escapeHtml(weight)}</div>
     <div class="catalog-cell frame-cell" role="cell" data-label="Frame">${escapeHtml(frame)}</div>
-    <div class="row-link-cell" role="cell"><a href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(candidate.name)} details">→</a></div>
   </div>`;
 }
 
@@ -1206,10 +1204,7 @@ export function renderHome(ctx) {
   const assumption = buildAssumption(ctx);
   const candidates = joinCatalogCandidates(ctx.data);
   const defaultCandidateCount = candidates.filter((entry) => entry.defaultVisible).length;
-  const summaries = [
-    ...ctx.products.map((product) => comparisonSummary(ctx, product)),
-    ...candidates.map((entry) => candidateComparisonSummary(ctx, entry))
-  ];
+  const summaries = catalogSummaries(ctx);
   const rows = [
     ...ctx.products.map((product) => ({
       price: platformIsSuperseded(product) ? Number.POSITIVE_INFINITY : product.allInPrice.midpoint,
@@ -1254,11 +1249,11 @@ export function renderHome(ctx) {
 
     <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length + defaultCandidateCount}</strong> matches<span data-result-context></span><span data-filter-notice></span></span><div class="catalog-meta-actions"><span class="catalog-selection-hint">Select two to ten bikes to compare</span><button class="text-button catalog-scope-button" type="button" data-show-all-models aria-pressed="false" aria-controls="catalog-rows">Show all models</button></div></div>
     <div class="catalog-table" id="catalog-rows" data-product-list role="table" aria-label="Bike comparison">
-      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button>${catalogFilterShortcut('search', 'bike')}</span></span><span role="columnheader" aria-sort="ascending"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Full-bike price</span></button>${catalogFilterShortcut('price', 'full-bike price')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button>${catalogFilterShortcut('category', 'category fact')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tire clearance</span></button>${catalogFilterShortcut('tire', 'tire clearance')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Drivetrain</span>${catalogFilterShortcut('drivetrain', 'drivetrain')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Weight</span>${catalogFilterShortcut('weight', 'weight')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Frame</span>${catalogFilterShortcut('frame', 'frame')}</span></span><span role="columnheader" aria-label="Details"></span></div>
+      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button>${catalogFilterShortcut('search', 'bike')}</span></span><span role="columnheader" aria-sort="ascending"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Full-bike price</span></button>${catalogFilterShortcut('price', 'full-bike price')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button>${catalogFilterShortcut('category', 'category fact')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tire clearance</span></button>${catalogFilterShortcut('tire', 'tire clearance')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Drivetrain</span>${catalogFilterShortcut('drivetrain', 'drivetrain')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Weight</span>${catalogFilterShortcut('weight', 'weight')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Frame</span>${catalogFilterShortcut('frame', 'frame')}</span></span></div>
       ${rows.map((row) => row.html).join('')}
       <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
     </div>
-    <script type="application/json" id="catalog-data">${safeJson(summaries)}</script>
+    <script type="application/json" id="catalog-data" data-src="${url(ctx.base, `/data/home-catalog-${ctx.locale === 'zh-Hans' ? 'zh-Hans' : 'en'}.json`)}">[]</script>
   </div></section>`;
   return page(ctx, {
     title: 'Chinese bikes, framesets and China-market prices',
@@ -1279,6 +1274,13 @@ export function renderHome(ctx) {
   });
 }
 
+export function catalogSummaries(ctx) {
+  return [
+    ...ctx.products.map((product) => comparisonSummary(ctx, product)),
+    ...(ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data)).map((entry) => candidateComparisonSummary(ctx, entry))
+  ];
+}
+
 export function renderModel(ctx, product) {
   const { variant, platform, brand, latestPrice, prices, videos } = product;
   const assumption = buildAssumption(ctx);
@@ -1288,18 +1290,25 @@ export function renderModel(ctx, product) {
     ? publishedPriceState(product)
     : [variant.kind === 'frameset' ? 'Estimated complete build' : '', priceState(product)].filter(Boolean).join(' · ');
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
-  const bestFor = variant.editorial.best_for?.join(', ');
+  const bestFor = variant.editorial.best_for?.map((item) => translate(item, ctx.locale)).join(ctx.locale === 'zh-Hans' ? '、' : ', ');
   const weight = weightLabel(product);
   const tireClearance = publishedTireClearance(product);
   const frameMaterial = frameMaterialLabel(product);
+  const zh = ctx.locale === 'zh-Hans';
   const keyHardware = [
-    `${frameMaterial} frame`,
+    zh ? '碳纤维车架（材料等级及证据见下方规格）' : `${frameMaterial} frame`,
     variant.kind === 'complete-bike' ? drivetrainLabel(ctx, product) : null,
-    weight !== '—' ? `${weight} weight` : null,
-    tireClearance.value !== '—' ? `tire clearance ${tireClearance.value}` : null,
-    !['discipline', 'tire'].includes(metric.kind) && metric.value !== '—' ? `${metric.label.toLowerCase()} ${metric.value}` : null
-  ].filter(Boolean).join('; ');
-  const priceBrief = superseded
+    weight !== '—' ? (zh ? `${weight.endsWith(' frame') ? '车架' : '整车'}标注重量 ${weight.replace(/ frame$/, '')}` : `${weight} weight`) : null,
+    tireClearance.value !== '—' ? (zh ? `轮胎空间 ${tireClearance.value}` : `tire clearance ${tireClearance.value}`) : null,
+    !['discipline', 'tire'].includes(metric.kind) && metric.value !== '—' ? `${zh ? translate(metric.label, ctx.locale) : metric.label.toLowerCase()} ${metric.value}` : null
+  ].filter(Boolean).join(zh ? '；' : '; ');
+  const priceBrief = zh
+    ? superseded
+      ? `此版本已被 ${successorLabel(platform)} 取代，不再作为新车销售；下方有日期的价格仅供历史参考。`
+      : variant.kind === 'frameset'
+        ? `页面上的整车估算价在最近一次记录的车架组价格上，加上可调整的 ${formatCny(assumption.amount_cny)} 装车预算。实际配件和工时仍需报价。`
+        : `记录的整车价格为 ${formatAllInPrice(product)}；下方保留了报价日期、渠道和条件，结算前请再次核对。`
+    : superseded
     ? `This version is no longer sold new and was superseded by the ${successorLabel(platform)}. The dated price record below is historical only.`
     : variant.kind === 'frameset'
     ? `The displayed ${formatAllInPrice(product)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the latest frame price.`
@@ -1323,7 +1332,7 @@ export function renderModel(ctx, product) {
     ['Availability', availabilityLabel(platform.china_availability), '']
   ];
   const specificationRows = publishedSpecificationRows(product);
-  const storyTitle = publishedStoryTitle(product, weight, tireClearance);
+  const storyTitle = publishedStoryTitle(product, weight, tireClearance, ctx.locale);
   const reviewByline = variant.editorial.review
     ? `<p class="evidence-context" data-review-basis="source-research"><a href="${url(ctx.base, '/methodology/')}">China Bikes</a><span>${reviewBasisNotice}</span></p>`
     : '';
@@ -1335,7 +1344,7 @@ export function renderModel(ctx, product) {
   </div>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ''}
-    <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
+    <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? `${zh ? ' 适合重点考虑的用途：' : ' Best suited to '}${escapeHtml(bestFor)}${zh ? '。' : '.'}` : ''}</p><p><strong>${zh ? '关键配置：' : 'Key hardware:'}</strong> ${escapeHtml(keyHardware)}${zh ? '。' : '.'}</p></section>
     <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div></dl></section>
     <section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p><h3>What to verify</h3><p>${escapeHtml(sentenceList(variant.editorial.caveats, ctx.locale))}</p></section>
     ${relatedArticleLinks(ctx, variant.id)}
@@ -1386,7 +1395,11 @@ function sentenceList(items = [], locale = 'en') {
     .join(' ');
 }
 
-function publishedStoryTitle(product, weight, tireClearance) {
+function publishedStoryTitle(product, weight, tireClearance, locale = 'en') {
+  if (locale === 'zh-Hans') {
+    const details = [weight !== '—' ? `${weight.endsWith(' frame') ? '车架' : '整车'}标注重量 ${weight.replace(/ frame$/, '')}` : '', tireClearance.value !== '—' ? `轮胎空间 ${tireClearance.value}` : ''].filter(Boolean);
+    return details.length ? details.join('；') : `${product.variant.name} 的关键购买信息`;
+  }
   const weightDescription = weight === '—'
     ? ''
     : /\b(?:frame|complete bike)$/.test(weight)
@@ -1401,6 +1414,14 @@ function publishedStoryTitle(product, weight, tireClearance) {
 
 function candidateStoryTitle(ctx, entry) {
   const facts = entry.candidate.facts ?? {};
+  if (ctx.locale === 'zh-Hans') {
+    const details = [
+      Number.isFinite(facts.complete_weight_g) ? `整车重量记录 ${(facts.complete_weight_g / 1000).toFixed(1)} kg` : '',
+      !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `车架重量记录 ${facts.frame_weight_g} g` : '',
+      Number.isFinite(facts.tire_clearance_mm) ? `轮胎空间记录 ${candidateTireClearance(entry).value}` : ''
+    ].filter(Boolean);
+    return details.length ? details.join('；') : `${entry.candidate.name}：已核实的资料`;
+  }
   const details = [
     Number.isFinite(facts.complete_weight_g) ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg complete bike` : '',
     !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame` : '',
@@ -1409,6 +1430,15 @@ function candidateStoryTitle(ctx, entry) {
   if (details.length) return details.join(' with ');
   if (entry.price) return `${candidatePriceLabel(ctx, entry)} ${entry.kind === 'frameset' ? 'frameset' : 'complete-bike'} lead under review`;
   return `What is verified about the ${entry.candidate.name}`;
+}
+
+function candidateChineseBuyingContext(entry) {
+  const status = entry.candidate.status ?? '';
+  if (status === 'split-variant-before-publish') return '同名商品卡片涉及不同配置。下单前须请卖家确认具体年份、变速套件、轮组和对应报价；现有资料不能把它们合并为一个确定配置。';
+  if (/price|checkout|seller|package|sku|trim|build|option/.test(status)) return '下单前请核对准确型号与所选配置、套餐包含的零件、运费及最终结算价。现有价格是有日期的记录，不能代替当前报价。';
+  if (/weight|clearance|material|specification/.test(status)) return '请向厂家或卖家核对目标尺码、重量的测量口径、轮胎与变速配置，以及尚未确认的规格；不要把其他版本的数字套用到本车。';
+  if (/global|missing-china/.test(status)) return '现有资料可以帮助核对车架规格，但下单前仍需确认中国大陆的购买渠道、可选配置、税费与实际结算价。';
+  return '下单前请核对目标尺码、准确配置、套餐内容与最终报价；下方原始研究记录列出了尚未解决的问题。';
 }
 
 function brandStory(brand) {
@@ -1439,7 +1469,15 @@ export function renderCandidateModel(ctx, entry) {
   const priceState = candidatePriceState(entry);
   const sellerListingFxReference = entry.price?.price_type === 'seller-listing-reference-conversion';
   const assumption = buildAssumption(ctx);
-  const priceBrief = !entry.price
+  const priceBrief = ctx.locale === 'zh-Hans'
+    ? !entry.price
+      ? isSuperseded ? `此版本已被 ${successorLabel(candidate)} 取代；目前没有可用于新车购买的已核实价格。` : '尚无已核实的当前价格；请向销售渠道核对目标配置的实际报价。'
+      : entry.kind === 'frameset'
+        ? `页面上的整车估算价把 ${formatCny(assumption.amount_cny)} 可调整的装车预算加到 ${formatPrice(entry.price)} 的车架组价格记录上。${sellerListingFxReference ? '原价来自境外卖家的有日期报价及汇率换算，尚非中国大陆的结算价。' : ''}套餐内容可能已包含部分零件；请核对后调整预算，避免重复计算。`
+        : isReferenceConversionPrice(entry.price)
+          ? `所示价格是有日期的境外官方报价换算，不是已确认的中国大陆结算价。`
+          : `已记录整车报价 ${candidatePriceLabel(ctx, entry)}；报价日期和适用条件列在下方，购买前仍需核对。`
+    : !entry.price
     ? isSuperseded
       ? candidatePublicText(candidate.availability_note) || `This version is no longer sold new and was superseded by the ${successorLabel(candidate)}.`
       : 'A current price is not recorded.'
@@ -1471,7 +1509,7 @@ export function renderCandidateModel(ctx, entry) {
     <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(reason)}</p>${ctx.locale === 'zh-Hans' ? `<details class="original-research"><summary>原始研究说明（英文）</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p></section>
     ${candidateAlternativeBuilds(entry)}
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
-    <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2><p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p></section>
+    <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
     ${relatedArticleLinks(ctx, candidate.id)}
     ${brandStory(brand)}
     ${videoContext(entry.videos, 'Watch this model')}

@@ -1,6 +1,6 @@
 import { loadPosts, validatePostReferences, renderBlogIndex, renderPost, postLastmod } from '../src/lib/posts.mjs';
 import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
-import { LOCALES, localePath } from '../src/lib/i18n.mjs';
+import { LOCALES, localePath, localizedCatalogPayload } from '../src/lib/i18n.mjs';
 import { candidateIndexable } from '../src/lib/indexing.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,6 +19,7 @@ import {
 } from '../src/lib/data.mjs';
 import {
   renderHome,
+  catalogSummaries,
   renderModel,
   renderCandidateModel,
   renderBikeBuilder,
@@ -143,6 +144,10 @@ function addLocalized(route, render, includeInSitemap = true, metadata = {}) {
   }
 }
 addLocalized('/', renderHome, true, { lastmod: latestDate([siteLastmod, '2026-09-22'], siteLastmod) });
+for (const locale of LOCALES) {
+  const localized = { ...ctx, locale };
+  write(`data/home-catalog-${locale}.json`, `${JSON.stringify(localizedCatalogPayload(catalogSummaries(localized), { base, locale, siteUrl })).replaceAll('<', '\\u003c')}\n`);
+}
 for (const landing of landings.pages) {
   const lastmod = landingLastmod(landing);
   addLocalized(landing.route, (localized) => renderLandingPage(localized, { ...landing, lastmod }), true, { lastmod });
@@ -215,11 +220,9 @@ write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) =
 write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.meta.snapshot_date }));
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
-// GitHub Pages prefixes each root-relative image and link with the project
-// base; the Cloudflare production build has no prefix. Keep the production
-// limit within 0.5% of 1 MB for the reviewed GX600 image card, with a narrow
-// allowance for GitHub Pages base-path text.
-const performanceBudget = { home_html_bytes: 1_005_000 + (base ? 35_000 : 0), home_elements: 7_535 };
+// Keep the comparison data in its own cacheable resource and one model link in
+// every server-rendered row. The project-path build repeats its base in links.
+const performanceBudget = { home_html_bytes: 750_000 + (base ? 35_000 : 0), home_elements: 7_100 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length

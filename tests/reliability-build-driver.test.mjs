@@ -26,7 +26,7 @@ function fixture(t,mode='',base='') {
  export const maxClearance=()=>null;export const clearanceLongLabel=()=>'';
  `);
  fs.writeFileSync(path.join(root,'src/lib/posts.mjs'),"export const loadPosts=()=>[];export const validatePostReferences=()=>{};export const renderBlogIndex=()=>'<html>Blog</html>';export const renderPost=()=>'<html>Post</html>';export const postLastmod=()=> '2026-09-18';");
- fs.writeFileSync(path.join(root,'src/lib/i18n.mjs'),"export const LOCALES=['en','zh-Hans'];export const localePath=(route,locale)=>locale==='zh-Hans'?'/zh'+route:route;");
+ fs.writeFileSync(path.join(root,'src/lib/i18n.mjs'),"export const LOCALES=['en','zh-Hans'];export const localePath=(route,locale)=>locale==='zh-Hans'?'/zh'+route:route;export const localizedCatalogPayload=(value)=>value;");
  fs.writeFileSync(path.join(root,'src/lib/indexing.mjs'),"export const candidateIndexable=()=>false;");
  fs.writeFileSync(path.join(root,'src/lib/post-publication.mjs'),"export const loadSchedule=()=>({entries:[]});export const publishedPosts=posts=>posts;");
  fs.writeFileSync(path.join(root,'src/lib/landings.mjs'),'export const buildLandingPages=()=>({pages:[],brandPages:[]});');
@@ -38,6 +38,7 @@ function fixture(t,mode='',base='') {
  const target=process.env.FAIL_BUILD==='links'?ctx.base+'/missing/':process.env.FAIL_BUILD==='escape'?ctx.base+'/%2e%2e%2fsecret':ctx.base+'/models/bike/';
  return '<html><a href="'+target+'">Bike</a></html>';
  }
+ export const catalogSummaries=()=>[];
  export const renderModel=()=>'<html>Bike</html>';
  export const renderCandidateModel=renderModel,renderBikeBuilder=renderModel,renderElectronicGroupsets=renderModel,renderLandingPage=renderModel,renderMethodology=renderModel,renderPrivacy=renderModel,renderImagePolicy=renderModel,renderImageSources=renderModel,render404=renderModel;
  `);

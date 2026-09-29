@@ -13,7 +13,7 @@ const data=loadDataset();
 const ctx={data,products:joinProducts(data),catalogCandidates:joinCatalogCandidates(data),base:'',siteUrl:'https://chinesebikes.xyz',siteLastmod:data.meta.snapshot_date};
 test('the committed queue remains valid as releases are prepared',()=>{
  const prepared=committedQueue.entries.filter(entry=>entry.published_at!==null).length;
- assert.equal(publishedPosts(posts,committedQueue,new Date('2030-01-01T00:00:00Z')).length,4+prepared);
+ assert.equal(publishedPosts(posts,committedQueue,new Date('2030-01-01T00:00:00Z')).length,5+prepared);
  assert.equal(nextPublication(committedQueue,{},new Date('2030-01-01')).action,prepared?'verify':'publish');
 });
 test('the fixed twenty-entry calendar starts three days after the request and preserves every random gap',()=>{
@@ -28,7 +28,7 @@ test('the fixed twenty-entry calendar starts three days after the request and pr
 });
 test('time alone never publishes a draft, even after the entire calendar has passed',()=>{
  const visible=publishedPosts(posts,queue,new Date('2030-01-01T00:00:00Z'));
- assert.equal(visible.length,4);
+ assert.equal(visible.length,5);
  const html=renderBlogIndex({...ctx,posts:visible},visible);
  for(const e of queue.entries)assert.ok(!html.includes('/blog/'+e.slug+'/'));
  assert.equal(relatedArticleLinks({...ctx,posts:visible},'seka-spear-rdc'),'');
@@ -38,8 +38,8 @@ test('release preparation rejects early, wrong-order and duplicate requests',()=
  assert.throws(()=>preparePublication(queue,{},slug,new Date(+start-1)),/Not due/);
  assert.throws(()=>preparePublication(queue,{},queue.entries[1].slug,start),/Not due/);
  const ready=preparePublication(queue,{},slug,start);
- assert.equal(publishedPosts(posts,ready,start).length,5);
- assert.equal(publishedPosts(posts,ready,new Date(+start-1)).length,4);
+ assert.equal(publishedPosts(posts,ready,start).length,6);
+ assert.equal(publishedPosts(posts,ready,new Date(+start-1)).length,5);
  assert.throws(()=>preparePublication(ready,{},slug,start),/verify/);
  assert.equal(nextPublication(ready,{},new Date('2030-01-01')).action,'verify');
 });
@@ -62,7 +62,7 @@ test('all twenty releases require their own receipt, then terminate',()=>{
    assert.equal(nextPublication(current,receipts,now).action,'verify');
    receipts[entry.slug]={published_at:now.toISOString(),verified_at:now.toISOString()};
  }
- assert.equal(publishedPosts(posts,current,new Date('2030-01-01')).length,24);
+ assert.equal(publishedPosts(posts,current,new Date('2030-01-01')).length,25);
  assert.equal(nextPublication(current,receipts).action,'complete');
  assert.throws(()=>preparePublication(current,receipts,queue.entries[0].slug),/complete/);
 });

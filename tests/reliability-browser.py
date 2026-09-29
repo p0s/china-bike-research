@@ -103,7 +103,7 @@ def _(p):
  new(p,'/?compare=af01-frameset,af01-frameset');eq(p.locator('[data-compare-count]').inner_text(),'1');assert p.locator('[data-inline-compare]').is_hidden()
 @case('model page uses the existing ten-item comparison limit, not four')
 def _(p):
- home=BeautifulSoup((SITE/'index.html').read_text(),'html.parser');data=json.loads(home.select_one('#catalog-data').string);ids=[x['id'] for x in data if x['id']!='af01-frameset'][:5]
+ data=json.loads((SITE/'data/home-catalog-en.json').read_text());ids=[x['id'] for x in data if x['id']!='af01-frameset'][:5]
  target='/?compare='+','.join(ids);new(p,'/models/af01-frameset/?'+urlencode({'from':target}),blocked=True)
  assert p.locator('[data-add-to-comparison]').is_enabled();p.locator('[data-add-to-comparison]').click();assert 'af01-frameset' in p.locator('[data-model-compare-link]').get_attribute('href')
 
