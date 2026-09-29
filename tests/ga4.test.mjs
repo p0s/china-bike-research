@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { startGa4 } from '../assets/ga4.js';
+import { layout } from '../src/lib/html.mjs';
 import { ga4Identity, ga4SiteOpenPayload, sendGa4 } from '../worker/ga4.mjs';
 import { handleRequest } from '../worker/index.mjs';
 
@@ -172,6 +173,8 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
         : new Response(null, { status: 204 });
     },
     document: {
+      querySelector: () => ({}),
+      scripts,
       referrer: 'https://other.example/page?private=1',
       createElement: () => ({}),
       head: { appendChild: (script) => scripts.push(script) }
@@ -187,6 +190,8 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
   assert.equal(config[2].send_page_view, false);
   const pageviews = win.dataLayer.filter((args) => args[0] === 'event' && args[1] === 'page_view');
   assert.equal(pageviews.length, 1);
+  assert.equal(await startGa4(win), false);
+  assert.equal(requests.length, 1);
   assert.equal(pageviews[0][2].page_location, 'https://chinesebikes.xyz/models/example/');
   assert.equal(pageviews[0][2].page_referrer, 'https://other.example');
   const getClient = win.dataLayer.find((args) => args[0] === 'get' && args[2] === 'client_id');
@@ -202,6 +207,35 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
   assert.equal(requests[1].init.method, 'POST');
   assert.equal(await startGa4({ ...win, navigator: { doNotTrack: '1' } }), false);
   assert.equal(await startGa4({ ...win, navigator: { globalPrivacyControl: true } }), false);
+});
+
+test('error documents cannot initialize a tag even with a returning visitor ID', async () => {
+  const errorHtml = layout({ path: '/404.html', body: 'Not found', repositoryUrl: 'https://github.com/p0s/china-bike-research' });
+  assert.doesNotMatch(errorHtml, /data-ga4-page|\/assets\/ga4\.js/);
+  const contentHtml = layout({ path: '/models/example/', body: 'Example', repositoryUrl: 'https://github.com/p0s/china-bike-research' });
+  assert.match(contentHtml, /<script type="module" data-ga4-page src="\/assets\/ga4\.js"/);
+  let fetched = false;
+  const win = {
+    location: { hostname: 'chinesebikes.xyz' }, navigator: {},
+    document: { querySelector: () => null },
+    fetch: async () => { fetched = true; return Response.json({ measurementId: env.GA4_MEASUREMENT_ID, clientId: '123.456' }); }
+  };
+  assert.equal(await startGa4(win), false);
+  assert.equal(fetched, false);
+});
+
+test('browser reuses the gateway loader and concurrent initialization queues one page view', async () => {
+  for (const src of ['/gtag/', `/gtag/js?id=${env.GA4_MEASUREMENT_ID}`]) {
+    const scripts = [{ src }];
+    const win = {
+      location: { hostname: 'chinesebikes.xyz', origin: 'https://chinesebikes.xyz', pathname: '/' },
+      navigator: {},
+      document: { querySelector: () => ({}), scripts, referrer: '', head: { appendChild: () => assert.fail('duplicate loader') } },
+      fetch: async () => Response.json({ measurementId: env.GA4_MEASUREMENT_ID, clientId: '123.456' })
+    };
+    assert.deepEqual(await Promise.all([startGa4(win), startGa4(win)]), [true, false]);
+    assert.equal(win.dataLayer.filter(args => args[0] === 'event' && args[1] === 'page_view').length, 1);
+  }
 });
 
 test('Measurement Protocol failure never throws or reports receipt as processing proof', async () => {
