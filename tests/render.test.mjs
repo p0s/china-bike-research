@@ -867,7 +867,7 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(privacy, /Comparison events do not include selected bikes/);
   assert.match(privacy, /product-link actions send only a fixed action ID, without product or visitor details/);
   assert.match(privacy, /Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal/);
-  assert.match(privacy, /testing Google Analytics 4 in parallel/);
+  assert.match(privacy, /optional Google Analytics 4 parallel test/);
   assert.match(privacy, /Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams/);
   assert.match(privacy, /Opt out of optional analytics/);
 
@@ -875,7 +875,7 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(localizedPrivacy, /可选流量分析/);
   assert.match(localizedPrivacy, /compare_open/);
   assert.match(localizedPrivacy, /实时数据保留 13 个月/);
-  assert.match(localizedPrivacy, /并行测试 Google Analytics 4/);
+  assert.match(localizedPrivacy, /可选的 Google Analytics 4 并行测试/);
   assert.match(localizedPrivacy, /外部媒体/);
 
   const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
