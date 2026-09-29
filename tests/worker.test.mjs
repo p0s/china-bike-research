@@ -429,10 +429,12 @@ test('preference routes require same-origin POST and set host-only cookies', asy
     headers: { origin }
   }), {});
   assert.equal(optOut.status, 200);
-  assert.match(optOut.headers.get('set-cookie'), /p0s_analytics_optout=1/);
-  assert.match(optOut.headers.get('set-cookie'), /HttpOnly/);
-  assert.match(optOut.headers.get('set-cookie'), /SameSite=Lax/);
-  assert.doesNotMatch(optOut.headers.get('set-cookie'), /Domain=/i);
+  const preferenceCookie = optOut.headers.getSetCookie()[0];
+  assert.match(preferenceCookie, /p0s_analytics_optout=1/);
+  assert.match(preferenceCookie, /HttpOnly/);
+  assert.match(preferenceCookie, /SameSite=Lax/);
+  assert.doesNotMatch(preferenceCookie, /Domain=/i);
+  assert.ok(optOut.headers.getSetCookie().some((cookie) => cookie.startsWith('p0s_ga_cid=;')));
 
   const optIn = await handleRequest(new Request(`${origin}/analytics/opt-in`, {
     method: 'POST',

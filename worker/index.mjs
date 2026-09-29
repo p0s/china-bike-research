@@ -1,3 +1,5 @@
+import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SessionCookieHeader, ga4SiteOpenPayload, ga4StoredIdentity, sendGa4, validGa4SessionId } from './ga4.mjs';
+
 const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
 const OPT_OUT_COOKIE = 'p0s_analytics_optout';
 const OPT_OUT_MAX_AGE = 31_536_000;
@@ -10,6 +12,8 @@ const MAX_USER_AGENT_LENGTH = 512;
 const COMPARISON_OPEN_EVENT_NAME = 'compare_open';
 const ANALYTICS_EVENT_ROUTE = '/analytics/event';
 const ANALYTICS_ACTION_ROUTE = '/analytics/action';
+const GA4_CONFIG_ROUTE = '/analytics/ga-config';
+const GA4_SESSION_ROUTE = '/analytics/ga-session';
 const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
 const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
 const MAX_ACTION_BODY_BYTES = 64;
@@ -349,7 +353,11 @@ async function actionResponse(request, url, env, ctx) {
   if (!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(contentType)) return plainResponse('Invalid action request', 400);
   const actionId = await readActionId(request);
   if (!actionId) return plainResponse('Invalid action request', 400);
-  if (typeof ctx.waitUntil === 'function') ctx.waitUntil(ingestAction(actionId, env));
+  if (typeof ctx.waitUntil === 'function') {
+    ctx.waitUntil(ingestAction(actionId, env));
+    const identity = ga4Configured(env) && ga4StoredIdentity(request);
+    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(actionId, identity), env));
+  }
   return noContentResponse();
 }
 
@@ -361,18 +369,52 @@ async function comparisonEventResponse(request, url, env, ctx) {
   const path = request.headers.get('x-analytics-path') ?? '';
   if (!validEventPagePath(path)) return plainResponse('Invalid event request', 400);
   const payload = analyticsEventPayload(request, url);
-  if (payload && typeof ctx.waitUntil === 'function') ctx.waitUntil(ingestAnalytics(payload, env));
+  if (payload && typeof ctx.waitUntil === 'function') {
+    ctx.waitUntil(ingestAnalytics(payload, env));
+    const identity = ga4Configured(env) && ga4StoredIdentity(request);
+    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(COMPARISON_OPEN_EVENT_NAME, identity), env));
+  }
   return noContentResponse();
 }
 
-function choiceResponse(request, url, optOut) {
+function ga4ConfigResponse(request, url, env) {
+  if (request.method !== 'GET') return plainResponse('Method not allowed', 405, { allow: 'GET' });
+  if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash) return plainResponse('Invalid analytics request', 400);
+  if (isExcludedAnalyticsRequest(request) || !ga4Configured(env)) return responseWithHeaders(noContentResponse(), { 'cache-control': 'no-store' });
+  const identity = ga4StoredIdentity(request);
+  if (!identity) return responseWithHeaders(noContentResponse(), { 'cache-control': 'no-store' });
+  return responseWithHeaders(new Response(JSON.stringify({
+    measurementId: env.GA4_MEASUREMENT_ID,
+    clientId: identity.clientId,
+  }), { headers: { 'content-type': 'application/json; charset=utf-8' } }), {
+    'cache-control': 'no-store'
+  });
+}
+
+async function ga4SessionResponse(request, url, env) {
+  if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
+  if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash) return plainResponse('Invalid analytics request', 400);
+  if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
+  if (isExcludedAnalyticsRequest(request) || !ga4Configured(env)) return noContentResponse();
+  if (await hasEventBodyBytes(request)) return plainResponse('Invalid analytics request', 400);
+  const sessionId = request.headers.get('x-ga4-session-id');
+  if (!validGa4SessionId(sessionId) || !ga4StoredIdentity(request)) return plainResponse('Invalid analytics request', 400);
+  return responseWithHeaders(noContentResponse(), {
+    'cache-control': 'no-store',
+    'set-cookie': ga4SessionCookieHeader(sessionId)
+  });
+}
+
+function choiceResponse(request, url, optOut, env) {
   if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
   if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
   const cookie = optOut
     ? `${OPT_OUT_COOKIE}=1; Max-Age=${OPT_OUT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`
     : `${OPT_OUT_COOKIE}=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/; Secure; HttpOnly; SameSite=Lax`;
   const action = optOut ? 'excluded from' : 'included in';
-  return htmlResponse(`<main><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main>`, 200, { 'set-cookie': cookie });
+  const response = htmlResponse(`<main><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main>`, 200, { 'set-cookie': cookie });
+  if (optOut) for (const header of clearGa4CookieHeaders(String(env?.GA4_MEASUREMENT_ID ?? ''))) response.headers.append('set-cookie', header);
+  return response;
 }
 
 function trailingSlashRedirect(url) {
@@ -391,8 +433,10 @@ function trailingSlashRedirect(url) {
 
 export async function handleRequest(request, env = {}, ctx = {}) {
   const url = new URL(request.url);
-  if (url.pathname === '/analytics/opt-out') return choiceResponse(request, url, true);
-  if (url.pathname === '/analytics/opt-in') return choiceResponse(request, url, false);
+  if (url.pathname === '/analytics/opt-out') return choiceResponse(request, url, true, env);
+  if (url.pathname === '/analytics/opt-in') return choiceResponse(request, url, false, env);
+  if (url.pathname === GA4_CONFIG_ROUTE) return ga4ConfigResponse(request, url, env);
+  if (url.pathname === GA4_SESSION_ROUTE) return ga4SessionResponse(request, url, env);
   if (url.pathname === ANALYTICS_EVENT_ROUTE) return comparisonEventResponse(request, url, env, ctx);
   if (url.pathname === ANALYTICS_ACTION_ROUTE) return actionResponse(request, url, env, ctx);
 
@@ -406,6 +450,13 @@ export async function handleRequest(request, env = {}, ctx = {}) {
     if (payload) {
       const task = ingestAnalytics(payload, env);
       if (typeof ctx.waitUntil === 'function') ctx.waitUntil(task);
+      if (ga4Configured(env)) {
+        const identity = ga4Identity(request);
+        if (typeof ctx.waitUntil === 'function') ctx.waitUntil(sendGa4(ga4SiteOpenPayload(payload, identity), env));
+        const ga4Response = responseWithHeaders(response, { 'cache-control': 'private, no-store' });
+        for (const header of ga4CookieHeaders(identity)) ga4Response.headers.append('set-cookie', header);
+        return ga4Response;
+      }
     }
   }
   return response;
