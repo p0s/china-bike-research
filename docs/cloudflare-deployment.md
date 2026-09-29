@@ -83,10 +83,14 @@ site-search queries, or outbound clicks. Set event-level retention to the
 shortest useful interval for this comparison. Configure Cloudflare Google tag
 gateway for the exact zone, tag ID, and unused `/gtag` measurement path.
 Leave Cloudflare's **Set up tag** option off: it inserts a tag automatically
-and would bypass the site's DNT, GPC, and opt-out checks. Before enabling the
-Worker flag, verify the gateway does not inject a tag into an excluded page.
-The browser module loads `/gtag/js?id=...` only
-after the same-origin `/analytics/ga-config` responds with valid IDs.
+and would bypass the site's DNT, GPC, and opt-out checks. This option alone
+does not guarantee that an excluded page downloads no Google code: on
+2026-09-29, Cloudflare still injected a `/gtag/` bootstrap into a DNT HTML
+response with **Set up tag** off. In that unblocked-browser check, the
+bootstrap queued no GA config or event and sent no collection hit. Verify
+those outcomes for DNT, GPC, and opt-out, as well as a `204` response from
+`/analytics/ga-config`; do not infer them from the toggle. The browser module
+loads `/gtag/js?id=...` only after that config route returns valid IDs.
 
 Set `GA4_MEASUREMENT_ID` to the web stream ID and `GA4_API_SECRET` to a new
 Measurement Protocol API secret in Worker secrets. Set `GA4_ENABLED=true` only
@@ -103,7 +107,10 @@ the client ID and sends the session ID to the same-origin, bodyless
 ID. Confirm processing in GA4 Realtime or reports; inspect the browser tag's
 client/session IDs and a later server event before claiming joined sessions.
 Missing cookies, blocked network traffic, and Google's processing can still
-cause gaps.
+cause gaps. On 2026-09-29, this property's Events report defaulted to a range
+ending the previous day; select a range that includes the first live date
+before interpreting an empty report. First `site_open` events have no asserted
+session and may be absent from Realtime even if later processed in reports.
 
 ## Smoke checks
 
