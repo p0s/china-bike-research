@@ -66,6 +66,8 @@ export async function startGa4(win = globalThis.window) {
     if (!MEASUREMENT_ID_PATTERN.test(measurementId)
       || !CLIENT_ID_PATTERN.test(clientId)) return false;
     if (win.p0sAnalyticsStopped) return false;
+    const nonce = win.document.querySelector('script[data-ga4-page]')?.nonce;
+    if (!/^[a-f0-9]{32}$/.test(nonce ?? '')) return false;
     win.p0sGa4MeasurementId = measurementId;
 
     configureCollectionTransport(win, measurementId);
@@ -106,18 +108,21 @@ export async function startGa4(win = globalThis.window) {
       });
     });
     // The injected gateway-root bootstrap is blocked by the edge CSP. Reuse
-    // only an explicit loader created after our consent defaults and config.
+    // only our nonce-bearing loader created after consent defaults and config.
     const hasLoader = Array.from(win.document.scripts).some((script) => {
       try {
         const src = new URL(script.src, win.location.origin);
-        return src.origin === win.location.origin && src.pathname === `${GATEWAY_PATH}/js`
-          && src.searchParams.get('id') === measurementId;
+        return src.origin === win.location.origin && src.pathname === `${GATEWAY_PATH}/`
+          && script.nonce === nonce;
       } catch { return false; }
     });
     if (!hasLoader) {
       const script = win.document.createElement('script');
       script.async = true;
-      script.src = `${GATEWAY_PATH}/js?id=${encodeURIComponent(measurementId)}`;
+      script.nonce = nonce;
+      // The managed gateway serves its configured tag at the root; /js is not
+      // a supported endpoint and returns 400.
+      script.src = `${GATEWAY_PATH}/`;
       win.document.head.appendChild(script);
     }
     return true;

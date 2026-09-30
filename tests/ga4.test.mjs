@@ -195,7 +195,7 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
         : new Response(null, { status: 204 });
     },
     document: {
-      querySelector: () => ({}),
+      querySelector: () => ({ nonce: 'a'.repeat(32) }),
       scripts,
       referrer: 'https://other.example/page?private=1',
       createElement: () => ({}),
@@ -204,7 +204,8 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
   };
   assert.equal(await startGa4(win), true);
   assert.equal(scripts.length, 1);
-  assert.equal(scripts[0].src, '/sitedelivery/js?id=G-TEST12345');
+  assert.equal(scripts[0].src, '/sitedelivery/');
+  assert.equal(scripts[0].nonce, 'a'.repeat(32));
   assert.ok(win.dataLayer.every((entry) => Object.prototype.toString.call(entry) === '[object Arguments]'));
   const config = win.dataLayer.find((args) => args[0] === 'config');
   assert.equal(config[2].client_id, '123.456');
@@ -242,7 +243,7 @@ test('collection transport preserves fetch and beacon bodies, results, receivers
       calls.push({ transport: 'fetch', receiver: this, url, init });
       return response;
     },
-    document: { querySelector: () => ({}), scripts: [{ src: '/sitedelivery/js?id=G-TEST12345' }], referrer: '' }
+    document: { querySelector: () => ({ nonce: 'a'.repeat(32) }), scripts: [{ src: '/sitedelivery/', nonce: 'a'.repeat(32) }], referrer: '' }
   };
   assert.equal(await startGa4(win), true);
   const url = '/sitedelivery/ga/g/c?v=2&tid=G-TEST12345&en=page_view';
@@ -286,19 +287,22 @@ test('error documents cannot initialize a tag even with a returning visitor ID',
 });
 
 test('browser reuses only its explicit loader and concurrent initialization queues one page view', async () => {
-  for (const src of ['/sitedelivery/', `/sitedelivery/js?id=${env.GA4_MEASUREMENT_ID}`, '/gtag/', `/gtag/js?id=${env.GA4_MEASUREMENT_ID}`]) {
-    const scripts = [{ src }];
+  for (const [src, nonce] of [['/sitedelivery/', 'a'.repeat(32)], ['/sitedelivery/', ''], ['/sitedelivery/js?id=G-TEST12345', ''], ['/gtag/', '']]) {
+    const scripts = [{ src, nonce }];
     const appended = [];
     const win = {
       location: { hostname: 'chinesebikes.xyz', origin: 'https://chinesebikes.xyz', pathname: '/' },
       navigator: {},
-      document: { querySelector: () => ({}), scripts, referrer: '', createElement: () => ({}), head: { appendChild: script => appended.push(script) } },
+      document: { querySelector: () => ({ nonce: 'a'.repeat(32) }), scripts, referrer: '', createElement: () => ({}), head: { appendChild: script => appended.push(script) } },
       fetch: async () => Response.json({ measurementId: env.GA4_MEASUREMENT_ID, clientId: '123.456' })
     };
     assert.deepEqual(await Promise.all([startGa4(win), startGa4(win)]), [true, false]);
     assert.equal(win.dataLayer.filter(args => args[0] === 'event' && args[1] === 'page_view').length, 1);
-    assert.equal(appended.length, src.startsWith('/sitedelivery/js?') ? 0 : 1);
-    if (appended.length) assert.equal(appended[0].src, '/sitedelivery/js?id=G-TEST12345');
+    assert.equal(appended.length, nonce ? 0 : 1);
+    if (appended.length) {
+      assert.equal(appended[0].src, '/sitedelivery/');
+      assert.equal(appended[0].nonce, 'a'.repeat(32));
+    }
   }
 });
 

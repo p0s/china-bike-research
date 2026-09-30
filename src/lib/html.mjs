@@ -32,7 +32,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta name="description" content="${escapeAttr(description)}">
   ${googleSiteVerification ? `<meta name="google-site-verification" content="${escapeAttr(googleSiteVerification)}">` : ''}
   <meta name="theme-color" content="#f7f7f4" data-theme-color>
-  <script>(()=>{try{const k='china-bikes-theme-v1',t=localStorage.getItem(k);if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;const d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.querySelector('[data-theme-color]').content=d?'#111512':'#f7f7f4'}catch{}})()</script>
+  <script data-site-theme>(()=>{try{const k='china-bikes-theme-v1',t=localStorage.getItem(k);if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;const d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.querySelector('[data-theme-color]').content=d?'#111512':'#f7f7f4'}catch{}})()</script>
   <meta name="robots" content="${noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'}">
   <link rel="icon" type="image/svg+xml" href="${url(base,'/assets/logo.svg')}">
   <link rel="stylesheet" href="${url(base,'/assets/site.css')}">

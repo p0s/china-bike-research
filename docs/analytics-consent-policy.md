@@ -20,9 +20,9 @@ enables analytics. Forms also work without JavaScript.
 | United Kingdom | Prior choice for this GA setup | The statistical-purposes exception is limited to aggregate statistics, with safeguards and an easy objection. This tag's pseudonymous visitor/session identifiers and browser detail do not establish that exemption. [ICO exceptions guidance](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/) |
 | Mainland China | Prior choice, including the disclosed Google overseas processing | The site targets people buying bicycles in China; PIPL can apply to overseas analysis of people in China (Article 3). Applicable overseas transfers require separate informed consent (Article 39). Consent alone does not establish every transfer or localization requirement. [PIPL scope](https://en.spp.gov.cn/2021-12/29/c_948419.htm), [transfer provisions](https://en.spp.gov.cn/2021-12/29/c_948419_2.htm) |
 | Turkey | Prior choice for this non-essential analytics | The regulator's decision requires active opt-in for applicable non-essential analytics cookies without another lawful basis. [KVKK decision 2024/1361](https://www.kvkk.gov.tr/Icerik/8884/2024-1361) |
-| Switzerland | Prior choice conservatively | Swiss rules do not impose a blanket prior-consent requirement on every analytics cookie. The policy avoids relying on that distinction for this Google setup. [FDPIC cookie guidance](https://www.edoeb.admin.ch/dam/en/sd-web/brLL9rM3ny9d/Leitfaden%20des%20ED%C3%96B%20betreffend%20Datenbearbeitungen%20mittels%20Cookies%20und%20%C3%A4hnlichen%20Technologien%20mit%20Anhang%20A%20V.%201.1%20vom%2022.01.2025%20EN.pdf) |
+| Switzerland | Automatic limited analytics, with permanent opt-out | The policy uses the ordinary notice/opt-out approach for this expected, limited site analytics: no advertising, cross-site identity or sensitive profiling. This is an implementation judgment, not a blanket exemption for every Google setup. Reassess if provider reuse, processing purposes or risk change. [FDPIC cookie guidance](https://www.edoeb.admin.ch/dam/en/sd-web/brLL9rM3ny9d/Leitfaden%20des%20ED%C3%96B%20betreffend%20Datenbearbeitungen%20mittels%20Cookies%20und%20%C3%A4hnlichen%20Technologien%20mit%20Anhang%20A%20V.%201.1%20vom%2022.01.2025%20EN.pdf) |
 | Listed European territories | Prior choice conservatively | AX, GF, GP, MQ, RE, YT, MF, GI, GG, JE and IM follow the stricter policy; this is not a claim that identical laws apply to all of them. |
-| Unknown or invalid location | Prior choice | A missing location must not silently permit tracking; the banner still makes allowing easy. |
+| Unknown or invalid location | Automatic analytics, with permanent opt-out | User-selected default. Missing location alone does not require a banner. DNT, GPC and explicit opt-out still prevail. Unknown country sentinels are omitted from analytics payloads. |
 | Other detected countries | Automatic analytics, with permanent opt-out | This preserves the requested existing behavior. Absence from this list does not prove no local obligations apply. Revisit the policy if audience, processing or laws change. |
 
 Only Cloudflare's trusted `request.cf.country` selects the regional policy.
@@ -31,12 +31,20 @@ it. The consent cookie permits analytics after a visitor changes region, unless
 another privacy exclusion applies. Cacheable assets remain unchanged; eligible
 HTML and config responses cannot be shared between visitors.
 
+The UK statistical exception also requires aggregate-only results, prompt
+aggregation and no unnecessary retention of individual-level information. The
+current GA4 event retention and visitor/session joins do not establish these
+conditions; removing advertising alone does not establish the exception.
+
 ## Tag ordering and opt-out
 
 Cloudflare's injected `/sitedelivery/` bootstrap can execute before the site's
-asynchronous module. The HTML CSP blocks it. The site queues all-denied consent
-defaults synchronously, obtains an eligible config, grants analytics only, and
-then inserts the explicit `/sitedelivery/js?id=...` library. Advertising consent
+asynchronous module. The HTML CSP blocks it. Each allowed HTML response gives only the site theme and GA module a fresh CSP
+nonce; the injected gateway commands and bootstrap receive none. The site queues
+all-denied consent defaults synchronously, obtains an eligible config, grants
+analytics only, and then inserts a nonce-bearing `/sitedelivery/` library. The
+managed gateway serves its configured tag at this root; `/sitedelivery/js` is
+unsupported and returns 400. Advertising consent
 stays denied. No cookieless Google pings are intentionally sent before consent.
 [Google's ordering guidance](https://developers.google.com/tag-platform/security/guides/consent)
 requires defaults before measurement commands.
