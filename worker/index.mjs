@@ -1,4 +1,5 @@
 import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SessionCookieHeader, ga4SiteOpenPayload, ga4StoredIdentity, sendGa4, validGa4SessionId } from './ga4.mjs';
+import { analyticsBanner, analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COOKIE, CONSENT_MAX_AGE, CONSENT_VERSION, hasAnalyticsConsent, needsAnalyticsConsent } from './consent.mjs';
 
 const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
 const OPT_OUT_COOKIE = 'p0s_analytics_optout';
@@ -152,10 +153,15 @@ function looksLikeBot(request) {
   return botPattern.test(request.headers.get('user-agent') ?? '');
 }
 
-function isExcludedAnalyticsRequest(request) {
+function isAnalyticsOptedOut(request) {
   return normalizeBooleanHeader(request.headers.get('dnt'))
     || normalizeBooleanHeader(request.headers.get('sec-gpc'))
-    || hasOptOutCookie(request.headers.get('cookie'))
+    || hasOptOutCookie(request.headers.get('cookie'));
+}
+
+function isExcludedAnalyticsRequest(request) {
+  return isAnalyticsOptedOut(request)
+    || !analyticsConsentAllowed(request)
     || hasPrefetchIntent(request)
     || looksLikeBot(request);
 }
@@ -381,7 +387,13 @@ async function comparisonEventResponse(request, url, env, ctx) {
 function ga4ConfigResponse(request, url, env) {
   if (request.method !== 'GET') return plainResponse('Method not allowed', 405, { allow: 'GET' });
   if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash) return plainResponse('Invalid analytics request', 400);
-  if (isExcludedAnalyticsRequest(request) || !ga4Configured(env)) return responseWithHeaders(noContentResponse(), { 'cache-control': 'no-store' });
+  if (isExcludedAnalyticsRequest(request) || !ga4Configured(env)) {
+    const response = responseWithHeaders(noContentResponse(), { 'cache-control': 'no-store' });
+    if (request.headers.get('cookie')?.match(/(?:^|;\s*)(?:p0s_ga_cid|p0s_ga_sid|_ga(?:_[A-Z0-9]+)?)=/)) {
+      for (const header of clearGa4CookieHeaders(String(env?.GA4_MEASUREMENT_ID ?? ''))) response.headers.append('set-cookie', header);
+    }
+    return response;
+  }
   const identity = ga4StoredIdentity(request);
   if (!identity) return responseWithHeaders(noContentResponse(), { 'cache-control': 'no-store' });
   return responseWithHeaders(new Response(JSON.stringify({
@@ -409,11 +421,17 @@ async function ga4SessionResponse(request, url, env) {
 function choiceResponse(request, url, optOut, env) {
   if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
   if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
+  const expiry = 'Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/; Secure; HttpOnly; SameSite=Lax';
   const cookie = optOut
     ? `${OPT_OUT_COOKIE}=1; Max-Age=${OPT_OUT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`
-    : `${OPT_OUT_COOKIE}=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/; Secure; HttpOnly; SameSite=Lax`;
+    : `${OPT_OUT_COOKIE}=; ${expiry}`;
   const action = optOut ? 'excluded from' : 'included in';
-  const response = htmlResponse(`<main><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main>`, 200, { 'set-cookie': cookie });
+  const response = htmlResponse(`<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
+    'set-cookie': cookie, 'content-security-policy': analyticsScriptPolicy(false)
+  });
+  response.headers.append('set-cookie', optOut
+    ? `${CONSENT_COOKIE}=; ${expiry}`
+    : `${CONSENT_COOKIE}=${CONSENT_VERSION}; Max-Age=${CONSENT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`);
   if (optOut) for (const header of clearGa4CookieHeaders(String(env?.GA4_MEASUREMENT_ID ?? ''))) response.headers.append('set-cookie', header);
   return response;
 }
@@ -445,7 +463,26 @@ export async function handleRequest(request, env = {}, ctx = {}) {
   if (redirect) return redirect;
 
   if (!env.ASSETS?.fetch) return plainResponse('Static assets binding is unavailable', 500);
-  const response = responseWithHeaders(await env.ASSETS.fetch(request));
+  let response = responseWithHeaders(await env.ASSETS.fetch(request));
+  if ((response.headers.get('content-type') ?? '').toLowerCase().startsWith('text/html')) {
+    const eligible = response.status === 200 && request.method === 'GET'
+      && url.hostname === PRODUCTION_HOSTNAME && isEligibleDocumentPath(url.pathname);
+    const allowed = eligible && !isExcludedAnalyticsRequest(request) && ga4Configured(env);
+    response = responseWithHeaders(response, {
+      'content-security-policy': analyticsScriptPolicy(allowed),
+      ...(eligible ? { 'cache-control': 'private, no-store' } : {})
+    });
+    if (eligible && !allowed && ga4Configured(env)
+      && request.headers.get('cookie')?.match(/(?:^|;\s*)(?:p0s_ga_cid|p0s_ga_sid|_ga(?:_[A-Z0-9]+)?)=/)) {
+      for (const header of clearGa4CookieHeaders(String(env.GA4_MEASUREMENT_ID))) response.headers.append('set-cookie', header);
+    }
+    if (eligible && needsAnalyticsConsent(request) && !hasAnalyticsConsent(request)
+      && !isAnalyticsOptedOut(request) && !hasPrefetchIntent(request) && !looksLikeBot(request)) {
+      const html = await response.text();
+      const banner = analyticsBanner(url.pathname.startsWith('/zh/'));
+      response = new Response(html.includes('</body>') ? html.replace('</body>', `${banner}</body>`) : html + banner, response);
+    }
+  }
   if (response.status === 200 && (response.headers.get('content-type') ?? '').toLowerCase().startsWith('text/html')) {
     const payload = analyticsPayload(request, url);
     if (payload) {
