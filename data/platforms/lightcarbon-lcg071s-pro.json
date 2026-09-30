@@ -37,7 +37,15 @@
         { "size": "520", "rider_height": "173–179 cm", "seatpost_insert_mm": 220, "reach_mm": 377.5, "top_tube_mm": 550, "stack_mm": 563.4, "wheelbase_mm": 1014.5, "chainstay_mm": 430, "front_center_mm": 599.4, "bb_drop_mm": 70, "bb_height_mm": 285, "seat_angle_deg": 73, "head_angle_deg": 71.5, "seat_tube_mm": 520, "head_tube_mm": 140, "standover_700c_53c_mm": 793.4, "standover_650b_2_1_mm": 783.4, "fork_offset_mm": 50, "fork_length_mm": 397, "trail_mm": 66.1 },
         { "size": "550", "rider_height": "180–186 cm", "seatpost_insert_mm": 250, "reach_mm": 386, "top_tube_mm": 575, "stack_mm": 598.6, "wheelbase_mm": 1029.6, "chainstay_mm": 430, "front_center_mm": 614.5, "bb_drop_mm": 70, "bb_height_mm": 285, "seat_angle_deg": 72.5, "head_angle_deg": 72, "seat_tube_mm": 550, "head_tube_mm": 175, "standover_700c_53c_mm": 833.4, "standover_650b_2_1_mm": 823.4, "fork_offset_mm": 50, "fork_length_mm": 397, "trail_mm": 62.7 },
         { "size": "580", "rider_height": "187–194 cm", "seatpost_insert_mm": 270, "reach_mm": 397.1, "top_tube_mm": 595, "stack_mm": 627.1, "wheelbase_mm": 1049.8, "chainstay_mm": 430, "front_center_mm": 634.5, "bb_drop_mm": 70, "bb_height_mm": 285, "seat_angle_deg": 72.5, "head_angle_deg": 72, "seat_tube_mm": 580, "head_tube_mm": 205, "standover_700c_53c_mm": 863.9, "standover_650b_2_1_mm": 853.9, "fork_offset_mm": 50, "fork_length_mm": 397, "trail_mm": 62.7 }
-      ]
+      ],
+      "evidence_review": {
+        "reviewed_at": "2026-09-30",
+        "status": "source-values-preserved-clarification-needed",
+        "source_ids": [
+          "lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30"
+        ],
+        "note": "The live exact-model table matches all stored sizes and dimensions. Its published front-center, chainstay, BB-drop and wheelbase values do not reconcile within rounding under common horizontal or direct front-center definitions (about 5 mm). Preserve the manufacturer values; their definition or consistency remains unconfirmed. Confirm the affected dimensions before using them for fit calculations."
+      }
     }
   },
   "tire_clearance": {
@@ -58,7 +66,8 @@
     "lightcarbon-lcg071s-official",
     "lightcarbon-company-official",
     "lightcarbon-lcg071s-official-2026-08-16",
-    "lightcarbon-lcg071s-order-options-2026-08-27"
+    "lightcarbon-lcg071s-order-options-2026-08-27",
+    "lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30"
   ],
   "last_reviewed": "2026-08-28"
 }

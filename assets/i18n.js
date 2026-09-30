@@ -1,6 +1,9 @@
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  'The manufacturer geometry chart is retained as published; confirm front-center and wheelbase definitions before fit calculations':'保留厂家公布的原始几何表；用于合身计算前，请确认前轴距与轴距的定义',
+  'The official geometry chart is retained as published; confirm XXS/S front-center and wheelbase, and the XL seat-tube length, before choosing those sizes':'保留官方公布的原始几何表；选择这些尺码前，请确认 XXS/S 的前轴距与轴距，以及 XL 的立管长度',
+  'The attributed 2025 geometry table is retained; confirm the XL front-center/wheelbase inconsistency and the applicable model revision before choosing size':'保留有来源的 2025 年几何表；选择尺码前，请确认 XL 前轴距与轴距的不一致，以及该表适用的车型版本',
   // Reviewed model-specific buying audiences, kept separate from source quotations.
   'budget complete':'预算型整车买家',
   'drop-bar gravel':'弯把砾石骑行',

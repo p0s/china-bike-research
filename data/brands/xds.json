@@ -7,11 +7,22 @@
   "manufacturing": {
     "relationship": "integrated-manufacturer",
     "confidence": "high",
-    "summary": "Strong industrial manufacturing, inspection, and traceability evidence."
+    "summary": "Strong industrial manufacturing, inspection, and traceability evidence.",
+    "evidence_review": {
+      "reviewed_at": "2026-09-30",
+      "source_ids": [
+        "xds-manufacturing-profile-recheck-2026-09-30"
+      ],
+      "note": "The 2026-03-27 profile identifies the XDS carbon subsidiary and describes production, industrial CT/3D inspection, tests and ERP/MES traceability. This supports the brand manufacturing relationship and disclosure, not an independently verified test result for every catalog model."
+    }
   },
   "china_support": {
     "domestic_purchase": "yes",
     "warranty": "verify-exact-seller-and-sku"
   },
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-06",
+  "source_ids": [
+    "xds-manufacturing-government",
+    "xds-manufacturing-profile-recheck-2026-09-30"
+  ]
 }
