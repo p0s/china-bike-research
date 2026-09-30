@@ -1,0 +1,34 @@
+{
+  "id": "platform-elves-mori-aerox-axles-2026-09-30",
+  "target": {
+    "record_type": "platform",
+    "record_id": "elves-mori-aerox"
+  },
+  "field": "axles",
+  "priority": "medium",
+  "searched_at": "2026-09-30",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "elves-mori-aerox exact axles",
+          "route": "Exact manufacturer specification page",
+          "outcome": "found",
+          "accessed_at": "2026-09-30",
+          "result_url": "https://www.elvesbike.com/more.php?id=188&lm=47",
+          "note": "12 mm axles at 100/142 mm front/rear spacing"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "elves-mori-aerox-components-2026-09-30"
+  ],
+  "notes": "Exact-model primary-source data addition; no cross-trim inference."
+}

@@ -30,7 +30,8 @@
     "camp-gx600-official-2026-08-28",
     "camp-gx600-official-recheck-2026-09-23",
     "camp-gx600-geometry-recheck-2026-09-24",
-    "camp-gx600-pes-bottom-bracket-recheck-2026-09-24"
+    "camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+    "camp-gx600-bom-2026-09-30"
   ],
   "drivetrain": {
     "brand": "Magene",
@@ -39,7 +40,10 @@
     "shifting": "electronic-wireless",
     "layout": "single",
     "crankset": "Yuyong 42T aluminum integrated-axle crank",
-    "cassette": "HR 12-speed 11–45T"
+    "cassette": "HR 12-speed 11–45T",
+    "shifters": "Magene PES 12-speed wireless trigger shifter",
+    "rear_derailleur": "Magene PES 12-speed",
+    "chain": "12-speed; manufacturer/model not specified"
   },
   "brakes": {
     "actuation": "hydraulic",
@@ -47,9 +51,10 @@
     "calipers": "Tektro hydraulic"
   },
   "wheels": {
-    "rim_material": "aluminum"
+    "rim_material": "aluminum",
+    "description": "Aluminum double-wall rims; hubs with two front and four rear cartridge bearings"
   },
-  "tires": "700×35C",
+  "tires": "Chaoyang 700×35C tan-wall gravel tires (stock; maximum clearance unverified)",
   "cockpit": {
     "material": "aluminum",
     "integrated": false
@@ -57,5 +62,5 @@
   "claimed_complete_weight_g": 9100,
   "claimed_complete_weight_basis": "Official small-size complete-bike weight excluding pedals and small accessories",
   "purchase_route": "Current CAMP mainland GX600 PES 1×12 page shows CNY 5,688, Add to Cart and JD Buy Now; size selection is required, delivery is stated as 7–10 working days, and CAMP reserves stock-dependent cancellation/refund. Selected SKU stock and checkout remain unverified.",
-  "last_reviewed": "2026-09-24"
+  "last_reviewed": "2026-09-30"
 }

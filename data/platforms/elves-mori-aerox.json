@@ -15,7 +15,7 @@
     "cable_routing": "fully-internal",
     "claimed_fiber": "T800/T1000-claimed",
     "claimed_frame_weight_g": 960,
-    "claimed_frame_weight_basis": "Size 46, unpainted and without metal parts; paint adds 80-180 g depending on finish complexity.",
+    "claimed_frame_weight_basis": "Size 46, unpainted and without metal parts; paint adds 80-180 g depending on finish complexity. Fork: 428 g without thru-axle. Seatpost: 188 g at 12 mm offset or 220 g at 25 mm offset. These are component claims, not a weighed frameset package.",
     "claimed_frame_weight_g_by_size": {
       "46": 960,
       "49": 990,
@@ -99,7 +99,15 @@
         }
       ]
     },
-    "stiffness_evidence": "An approximately 18,000 km exact-model owner review describes comfort and flex with less sharp acceleration than a stiff race frame; it is not instrumented. A separate stage-race test describes the frame as responsive under load. These are qualitative ride impressions, not a numeric stiffness result."
+    "stiffness_evidence": "An approximately 18,000 km exact-model owner review describes comfort and flex with less sharp acceleration than a stiff race frame; it is not instrumented. A separate stage-race test describes the frame as responsive under load. These are qualitative ride impressions, not a numeric stiffness result.",
+    "construction": "EPS and latex-bladder molded Toray T800/T1000 carbon. Flat-mount brakes with 160 mm maximum rotors; 12 mm thru-axles at 100 mm front / 142 mm rear spacing.",
+    "claimed_fork_weight_g": 428,
+    "claimed_fork_weight_basis": "Manufacturer claim excluding thru-axle",
+    "claimed_seatpost_weight_g_range": {
+      "low": 188,
+      "high": 220
+    },
+    "claimed_seatpost_weight_basis": "Manufacturer claims 188 g for 12 mm offset, 220 g for 25 mm offset; 350 mm carbon post"
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -123,7 +131,8 @@
     "elves-mori-aerox-japan-owner-review-2026-09-01",
     "elves-mori-aerox-bicycling-sa-review-2026-09-01",
     "elves-mori-aerox-japan-owner-review-current-2026-09-23",
-    "elves-mori-aerox-bicycling-sa-review-current-2026-09-23"
+    "elves-mori-aerox-bicycling-sa-review-current-2026-09-23",
+    "elves-mori-aerox-components-2026-09-30"
   ],
-  "last_reviewed": "2026-09-23"
+  "last_reviewed": "2026-09-30"
 }

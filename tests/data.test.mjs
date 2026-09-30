@@ -1993,7 +1993,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 76);
+  assert.equal(data.prices.length, 77);
   assert.ok(data.images.length >= 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -2002,10 +2002,10 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 236);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1823);
+  assert.equal(data.researchAttempts.length, 1844);
   assert.equal(new Set(data.researchAttempts.map((attempt) =>
     `${attempt.target.record_type}:${attempt.target.record_id}:${attempt.field}`
-  )).size, 1503);
+  )).size, 1522);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -3050,4 +3050,28 @@ test('Cyclone ET retains only cockpit facts consistent across the exact current 
   const cyclone = data.variants.find((variant) => variant.id === 'twitter-cyclone-gen3-et');
   assert.deepEqual(cyclone.cockpit, { integrated: true, routing: 'fully internal' });
   assert.match(cyclone.cockpit_status, /420×90 mm.*then later says.*alloy 400×90 mm/i);
+});
+
+test('September 30 primary-source additions preserve exact build and weight limits', () => {
+  const gx600 = products.find((p) => p.variant.id === 'camp-gx600-pes');
+  assert.equal(gx600.latestPrice.id, 'camp-gx600-official-2026-09-30');
+  assert.equal(gx600.latestPrice.amount_cny, 5688);
+  assert.equal(gx600.latestPrice.status, 'official-current');
+  assert.equal(gx600.platform.tire_clearance.published_max_mm, undefined);
+  assert.equal(gx600.platform.frame.geometry, undefined);
+  const scott = products.find((p) => p.variant.id === 'scott-addict-rc-40');
+  assert.equal(scott.variant.drivetrain.chain, 'Shimano CN-M6100-12');
+  assert.match(scott.variant.drivetrain.crankset, /50\/34T/);
+  assert.match(scott.variant.brakes.rotors, /160 mm front and rear/);
+  assert.equal(scott.platform.tire_clearance.published_max_mm, undefined);
+  const mori = products.find((p) => p.variant.id === 'elves-mori-aerox-frameset');
+  assert.equal(mori.platform.frame.claimed_fork_weight_g, 428);
+  assert.match(mori.platform.frame.claimed_fork_weight_basis, /excluding thru-axle/);
+  assert.deepEqual(mori.platform.frame.claimed_seatpost_weight_g_range, { low: 188, high: 220 });
+  assert.match(mori.platform.frame.claimed_seatpost_weight_basis, /12 mm offset.*25 mm offset/);
+  assert.ok(mori.variant.included.some((part) => /T47 bottom bracket/.test(part)));
+  const g5 = products.find((p) => p.variant.id === 'winspace-g5-frameset');
+  assert.equal(g5.platform.frame.bottom_bracket, 'T47 68 mm external');
+  const gx700 = products.find((p) => p.variant.id === 'camp-gx700-grx820');
+  assert.match(gx700.variant.claimed_complete_weight_basis, /conflicts/);
 });

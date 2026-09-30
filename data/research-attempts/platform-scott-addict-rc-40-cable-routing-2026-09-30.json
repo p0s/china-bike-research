@@ -1,0 +1,34 @@
+{
+  "id": "platform-scott-addict-rc-40-cable-routing-2026-09-30",
+  "target": {
+    "record_type": "platform",
+    "record_id": "scott-addict-rc-40"
+  },
+  "field": "cable-routing",
+  "priority": "medium",
+  "searched_at": "2026-09-30",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "scott-addict-rc-40 exact cable-routing",
+          "route": "Exact manufacturer specification page",
+          "outcome": "found",
+          "accessed_at": "2026-09-30",
+          "result_url": "https://www.scott.pl/produkt/1635/12093/Rower-Addict-RC-40",
+          "note": "Internal routing explicitly identified for model 290362"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "scott-addict-rc-40-bom-2026-09-30"
+  ],
+  "notes": "Exact-model primary-source data addition; no cross-trim inference."
+}
