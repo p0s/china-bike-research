@@ -1,0 +1,43 @@
+{
+  "id": "platform-camp-gx600-geometry-2026-09-30",
+  "target": {
+    "record_type": "platform",
+    "record_id": "camp-gx600"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-09-30",
+  "retry_of": "platform-camp-gx600-geometry-2026-09-01-b141-live-recheck-2026-09-25",
+  "retry_reason": "Bounded direct chart inspection after text-only checks; see dated scope. Normal chart access remains blocked.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-camp-gx600-geometry-2026-09-01-b141-live-recheck-2026-09-25",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "Linked size.avif returns HTTP 403; no retry or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "GX600 linked manufacturer size chart",
+          "route": "Direct public geometry image linked by the current exact product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-30",
+          "result_url": "https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/template/cn/img/size.avif",
+          "note": "HTTP 403; no numeric geometry extracted."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "camp-gx600-bom-2026-09-30"
+  ],
+  "notes": "Do not infer geometry from size choices. No GX700 retry of the same shared chart."
+}

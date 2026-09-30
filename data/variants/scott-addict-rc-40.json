@@ -24,18 +24,27 @@
     "scott-addict-rc-40-poland-recheck-2026-09-24",
     "scott-addict-2026-manual-recheck-2026-09-24",
     "scott-addict-rc-40-poland-route-recheck-2026-09-25",
-    "scott-addict-rc-40-identity-review-2026-09-25"
+    "scott-addict-rc-40-identity-review-2026-09-25",
+    "scott-addict-rc-40-bom-2026-09-30"
   ],
   "drivetrain": {
     "brand": "Shimano",
     "model": "105 Di2",
     "speeds": "2x12",
     "shifting": "electronic",
-    "layout": "double"
+    "layout": "double",
+    "shifters": "Shimano 105 Di2 ST-R7170",
+    "front_derailleur": "Shimano 105 Di2 FD-R7150",
+    "rear_derailleur": "Shimano 105 Di2 RD-R7150",
+    "crankset": "Shimano 105 FC-R7100 Hollowtech II 50/34T",
+    "cassette": "Shimano CS-R7100 11–34T",
+    "chain": "Shimano CN-M6100-12"
   },
   "brakes": {
     "actuation": "hydraulic",
-    "type": "disc"
+    "type": "disc",
+    "calipers": "Shimano BR-R7170",
+    "rotors": "Shimano SM-RT70 Center Lock, 160 mm front and rear"
   },
   "wheels": {
     "description": "Syncros RP2.0 Disc, 28 spokes front and rear; current exact page does not state rim material",
@@ -50,6 +59,6 @@
   "claimed_complete_weight_g": 7900,
   "purchase_route": "Current SCOTT Poland page identifies model 290362 and offers a dealer inquiry for size-availability; buyers are directed to ask a dealer for price. This verifies a Poland regional route only, not mainland stock, service, price or direct checkout.",
   "claimed_complete_weight_basis": "Current exact regional manufacturer claim for model 290362: 7.9 kg; size, pedals, accessories and weighing protocol are unpublished",
-  "last_reviewed": "2026-09-25",
+  "last_reviewed": "2026-09-30",
   "bottom_bracket": "Shimano BB-RS500-PB"
 }

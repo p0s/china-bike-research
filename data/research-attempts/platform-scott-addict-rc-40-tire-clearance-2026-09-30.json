@@ -1,0 +1,60 @@
+{
+  "id": "platform-scott-addict-rc-40-tire-clearance-2026-09-30",
+  "target": {
+    "record_type": "platform",
+    "record_id": "scott-addict-rc-40"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-30",
+  "retry_of": "platform-scott-addict-rc-40-tire-clearance-2026-09-01",
+  "retry_reason": "Inspect newly surfaced older Addict RC Disc manual rather than later endurance Addict documentation.",
+  "campaign_extension": {
+    "id": "scott-addict-rc-40-clearance-2026-09-30",
+    "extends_attempt_id": "platform-scott-addict-rc-40-tire-clearance-2026-09-01",
+    "authorized_at": "2026-09-30",
+    "scope_file": "docs/research-batches/2026-09-30/gap-fill-scope.json",
+    "reason": "Older exact-family RC Disc manual offers a new generation-appropriate lead after the later Addict manual was rejected.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 3
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-scott-addict-rc-40-tire-clearance-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site.scott-sports.com Addict RC 2023 30mm tire clearance manual",
+          "route": "Official-document discovery and inspection of older Addict RC Disc manual",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-30",
+          "result_url": "https://asset-misc.scott-sports.com/Add/Addict_RC_Manual_A5_2020_BIKE_SCOTT-Sports_EN.pdf",
+          "note": "Older RC Disc manual supplies technical and geometry information, but no tire maximum. No later-generation figure transferred."
+        },
+        {
+          "attempt": 2,
+          "query": "site.scott.pl Addict RC 40 opony 30",
+          "route": "Regional manufacturer search and exact model 290362 specification",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-30",
+          "result_url": "https://www.scott.pl/produkt/1635/12093/Rower-Addict-RC-40",
+          "note": "Fitted 28C tire only; maximum remains unknown."
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "notes": "No maximum established. Partial research remains open, not exhausted; unchanged blocked public-post channel is carried forward."
+}

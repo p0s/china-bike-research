@@ -371,7 +371,7 @@ test('complete-bike pages expose researched build components and weight basis wi
   const gx600 = products.find((entry) => entry.variant.id === 'camp-gx600-pes');
   const gx600Detail = renderModel(context, gx600);
   assert.match(gx600Detail, /<dt>Weight basis<\/dt><dd>Official small-size complete-bike weight excluding pedals and small accessories<\/dd>/);
-  assert.match(gx600Detail, /<dt>Drivetrain build<\/dt><dd>Crank: Yuyong 42T aluminum integrated-axle crank · Cassette: HR 12-speed 11–45T<\/dd>/);
+  assert.match(gx600Detail, /<dt>Drivetrain build<\/dt><dd>Shifters: Magene PES 12-speed wireless trigger shifter · RD: Magene PES 12-speed · Crank: Yuyong 42T aluminum integrated-axle crank · Cassette: HR 12-speed 11–45T · Chain: 12-speed; manufacturer\/model not specified<\/dd>/);
   assert.match(gx600Detail, /<dt>Brakes<\/dt><dd>Hydraulic disc · Calipers: Tektro hydraulic<\/dd>/);
 
   const gx700 = products.find((entry) => entry.variant.id === 'camp-gx700-grx820');
