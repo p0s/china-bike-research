@@ -87,13 +87,16 @@ Leave Cloudflare's **Set up tag** option off. Its injected gateway-root
 bootstrap is additionally blocked by the document CSP, because the toggle alone
 still allowed the Google library to read consent before the site's defaults.
 The module queues all-denied defaults before asynchronous config and inserts
-only the explicit `/sitedelivery/js?id=...` loader after eligibility passes.
+only its nonce-bearing `/sitedelivery/` loader after eligibility passes. The
+managed gateway does not serve `/sitedelivery/js`; that path returns 400. The
+HTML nonce is fresh per permitted response and marks only the site theme and
+GA module, leaving injected gateway commands and bootstrap blocked.
 Verify the real library and collection response, not only the queued commands.
 
 Follow `docs/analytics-consent-policy.md` for the trusted-country consent gate.
 Visitors in the prior-choice regions see equally visible Allow/No thanks;
-Google and Umami remain stopped until Allow. Unknown location also has an easy
-Allow option. DNT, GPC and opt-out prevail everywhere. Test the first opt-out,
+Google and Umami remain stopped until Allow. Unknown locations and Switzerland use
+automatic limited analytics with a permanent Privacy opt-out. DNT, GPC and opt-out prevail everywhere. Test the first opt-out,
 not merely a second one: stop the old tag before the POST, clear Google cookies
 after success, reload, and confirm no identifier remains or collection follows.
 The Privacy page exposes both choices without a banner elsewhere. Do not loosen

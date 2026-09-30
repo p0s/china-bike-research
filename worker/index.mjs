@@ -125,7 +125,7 @@ export function referrerOrigin(value) {
 
 function requestCountry(request) {
   const country = String(request.cf?.country ?? '').trim().toUpperCase();
-  return /^[A-Z]{2}$/.test(country) ? country : '';
+  return /^[A-Z]{2}$/.test(country) && country !== 'XX' ? country : '';
 }
 
 function documentPath(pathname) {
@@ -468,19 +468,30 @@ export async function handleRequest(request, env = {}, ctx = {}) {
     const eligible = response.status === 200 && request.method === 'GET'
       && url.hostname === PRODUCTION_HOSTNAME && isEligibleDocumentPath(url.pathname);
     const allowed = eligible && !isExcludedAnalyticsRequest(request) && ga4Configured(env);
+    const nonce = allowed ? crypto.randomUUID().replaceAll('-', '') : '';
     response = responseWithHeaders(response, {
-      'content-security-policy': analyticsScriptPolicy(allowed),
+      'content-security-policy': analyticsScriptPolicy(allowed, nonce),
       ...(eligible ? { 'cache-control': 'private, no-store' } : {})
     });
     if (eligible && !allowed && ga4Configured(env)
       && request.headers.get('cookie')?.match(/(?:^|;\s*)(?:p0s_ga_cid|p0s_ga_sid|_ga(?:_[A-Z0-9]+)?)=/)) {
       for (const header of clearGa4CookieHeaders(String(env.GA4_MEASUREMENT_ID))) response.headers.append('set-cookie', header);
     }
-    if (eligible && needsAnalyticsConsent(request) && !hasAnalyticsConsent(request)
-      && !isAnalyticsOptedOut(request) && !hasPrefetchIntent(request) && !looksLikeBot(request)) {
-      const html = await response.text();
-      const banner = analyticsBanner(url.pathname.startsWith('/zh/'));
-      response = new Response(html.includes('</body>') ? html.replace('</body>', `${banner}</body>`) : html + banner, response);
+    const showBanner = eligible && needsAnalyticsConsent(request) && !hasAnalyticsConsent(request)
+      && !isAnalyticsOptedOut(request) && !hasPrefetchIntent(request) && !looksLikeBot(request);
+    if (allowed || showBanner) {
+      let html = await response.text();
+      if (allowed) {
+        // Only site-owned markers receive a nonce. Cloudflare's injected inline
+        // commands and external bootstrap must not start the tag first.
+        html = html.replace(/<script(?=[\s>])(?=[^>]*\b(?:data-ga4-page|data-site-theme)\b)([^>]*)>/g,
+          (_tag, attributes) => `<script nonce="${nonce}"${attributes}>`);
+      }
+      if (showBanner) {
+        const banner = analyticsBanner(url.pathname.startsWith('/zh/'));
+        html = html.includes('</body>') ? html.replace('</body>', `${banner}</body>`) : html + banner;
+      }
+      response = new Response(html, response);
     }
   }
   if (response.status === 200 && (response.headers.get('content-type') ?? '').toLowerCase().startsWith('text/html')) {

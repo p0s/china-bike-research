@@ -1,9 +1,9 @@
 // Operational policy, reviewed 2026-09-30. See docs/analytics-consent-policy.md.
-// CH and the listed European territories use a conservative prior-choice policy.
+// The listed European territories use the prior-choice policy.
 export const CONSENT_COUNTRIES = new Set([
   'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
   'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK',
-  'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CN', 'TR', 'CH',
+  'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CN', 'TR',
   'AX', 'GF', 'GP', 'MQ', 'RE', 'YT', 'MF', 'GI', 'GG', 'JE', 'IM'
 ]);
 export const CONSENT_COOKIE = 'p0s_analytics_consent';
@@ -23,20 +23,20 @@ export function needsAnalyticsConsent(request) {
   // Only Cloudflare's trusted metadata can choose the policy. Never use a
   // browser-supplied country header, query, locale, or cookie.
   const country = String(request.cf?.country ?? '').toUpperCase();
-  return !/^[A-Z]{2}$/.test(country) || country === 'XX' || country === 'T1'
-    || CONSENT_COUNTRIES.has(country);
+  // Unknown locations follow the automatic-analytics default. Explicit
+  // opt-out, DNT and GPC still override that default in the request gate.
+  return CONSENT_COUNTRIES.has(country);
 }
 
 export function analyticsConsentAllowed(request) {
   return hasAnalyticsConsent(request) || !needsAnalyticsConsent(request);
 }
 
-export function analyticsScriptPolicy(allowed) {
+export function analyticsScriptPolicy(allowed, nonce = '') {
   // Cloudflare injects /sitedelivery/ before site code. Block that bootstrap;
-  // only our explicit loader may start, after the privacy decision and defaults.
-  const sources = ["'unsafe-inline'", 'https://chinesebikes.xyz/assets/'];
-  if (allowed) sources.push('https://chinesebikes.xyz/sitedelivery/js',
-    'https://www.googletagmanager.com/gtag/js', 'https://www.googletagmanager.com/debug/');
+  // only our nonce-bearing loader may start, after the privacy decision and defaults.
+  const sources = [allowed && nonce ? `'nonce-${nonce}'` : "'unsafe-inline'", 'https://chinesebikes.xyz/assets/'];
+  if (allowed) sources.push('https://www.googletagmanager.com/gtag/js', 'https://www.googletagmanager.com/debug/');
   return `script-src ${sources.join(' ')}; object-src 'none'; base-uri 'self'`;
 }
 

@@ -21,21 +21,25 @@ function request(path = '/', country = 'FR', init = {}) {
   return req;
 }
 
-test('trusted location requires a choice in the policy regions and fails closed for unknown locations', () => {
-  for (const country of [...CONSENT_COUNTRIES, '', 'XX', 'T1', 'unknown']) {
+test('trusted location requires a choice only in the policy regions; unknown locations default to allow', () => {
+  for (const country of CONSENT_COUNTRIES) {
     assert.equal(needsAnalyticsConsent(request('/', country)), true, country);
     assert.equal(analyticsConsentAllowed(request('/', country)), false, country);
     assert.equal(analyticsConsentAllowed(request('/', country, { headers: { cookie: consent } })), true, country);
   }
-  assert.equal(needsAnalyticsConsent(new Request(origin)), true);
-  for (const country of ['SG', 'US', 'AU', 'CA']) assert.equal(needsAnalyticsConsent(request('/', country)), false);
+  assert.equal(needsAnalyticsConsent(new Request(origin)), false);
+  assert.equal(analyticsConsentAllowed(new Request(origin)), true);
+  for (const country of ['SG', 'US', 'AU', 'CA', 'CH', '', 'XX', 'T1', 'unknown']) {
+    assert.equal(needsAnalyticsConsent(request('/', country)), false, country);
+    assert.equal(analyticsConsentAllowed(request('/', country)), true, country);
+  }
   assert.equal(needsAnalyticsConsent(request('/?country=SG', 'FR', { headers: { 'cf-ipcountry': 'SG' } })), true);
   assert.equal(needsAnalyticsConsent(request('/', 'SG', { headers: { 'cf-ipcountry': 'FR' } })), false);
   assert.equal(analyticsConsentAllowed(request('/', 'FR', { headers: { cookie: `${ids}; p0s_analytics_consent=old` } })), false);
 });
 
 test('pending visitors get a choice, no collector dispatch or identities, and no executable Google bootstrap', async () => {
-  for (const [path, country, label] of [['/', 'FR', 'Allow analytics'], ['/zh/', 'CN', '允许分析'], ['/', '', 'Allow analytics']]) {
+  for (const [path, country, label] of [['/', 'FR', 'Allow analytics'], ['/zh/', 'CN', '允许分析']]) {
     const waits = [];
     const response = await handleRequest(request(path, country, { headers: { cookie: ids } }), env, { waitUntil: p => waits.push(p) });
     assert.equal(waits.length, 0);
@@ -51,7 +55,56 @@ test('pending visitors get a choice, no collector dispatch or identities, and no
     assert.ok(response.headers.getSetCookie().every(value => value.includes('Max-Age=0')));
   }
   assert.doesNotMatch(analyticsScriptPolicy(true), /https:\/\/chinesebikes\.xyz\/sitedelivery\/(?:\s|;)/);
-  assert.match(analyticsScriptPolicy(true), /https:\/\/chinesebikes\.xyz\/sitedelivery\/js/);
+  assert.match(analyticsScriptPolicy(true, 'a'.repeat(32)), /'nonce-/);
+  assert.doesNotMatch(analyticsScriptPolicy(true, 'a'.repeat(32)), /unsafe-inline/);
+});
+
+test('unknown locations and Switzerland allow automatically, while privacy signals still stop collection', async () => {
+  const originalFetch = globalThis.fetch;
+  const sent = [];
+  globalThis.fetch = async (url, init) => {
+    sent.push({ url: String(url), body: JSON.parse(init.body) });
+    return new Response(null, { status: 204 });
+  };
+  try {
+    for (const country of ['', 'XX', 'T1', 'unknown', 'CH']) {
+      const waits = [];
+      const before = sent.length;
+      const response = await handleRequest(request('/', country), env, { waitUntil: p => waits.push(p) });
+      await Promise.all(waits);
+      assert.equal(sent.length - before, 2, country);
+      assert.doesNotMatch(await response.text(), /data-analytics-banner/);
+      assert.ok(response.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)));
+      const ga = sent.slice(before).find(item => item.url.includes('/mp/collect'));
+      assert.equal(Object.hasOwn(ga.body, 'user_location'), country === 'CH');
+      for (const privacy of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: 'p0s_analytics_optout=1' }]) {
+        const deniedWaits = [];
+        const denied = await handleRequest(request('/', country, { headers: privacy }), env, { waitUntil: p => deniedWaits.push(p) });
+        assert.equal(deniedWaits.length, 0, country);
+        assert.equal(denied.headers.get('content-security-policy'), analyticsScriptPolicy(false));
+        assert.doesNotMatch(await denied.text(), /data-analytics-banner/);
+      }
+    }
+  } finally { globalThis.fetch = originalFetch; }
+});
+
+test('each allowed response authorizes only site-owned marked scripts with a fresh nonce', async () => {
+  const binding = { fetch: async () => new Response('<script data-site-theme>theme()</script><script>gateway()</script><script src="/sitedelivery/"></script><script type="module" data-ga4-page src="/assets/ga4.js"></script>', { headers: { 'content-type': 'text/html' } }) };
+  const nonces = [];
+  for (let i = 0; i < 2; i++) {
+    // No client IP: no server dispatch is scheduled in this markup-only check.
+    const req = request('/', 'SG', { headers: { 'cf-connecting-ip': '' } });
+    const response = await handleRequest(req, { ...env, ASSETS: binding });
+    const nonce = response.headers.get('content-security-policy').match(/'nonce-([a-f0-9]{32})'/)?.[1];
+    assert.ok(nonce);
+    nonces.push(nonce);
+    const html = await response.text();
+    assert.ok(html.includes(`<script nonce="${nonce}" data-site-theme>`));
+    assert.ok(html.includes(`<script nonce="${nonce}" type="module" data-ga4-page`));
+    assert.match(html, /<script>gateway\(\)<\/script><script src="\/sitedelivery\/">/);
+    assert.equal((html.match(/nonce=/g) ?? []).length, 2);
+  }
+  assert.notEqual(nonces[0], nonces[1]);
 });
 
 test('config, session, comparison and product events cannot use old identifiers before consent', async () => {
@@ -84,7 +137,7 @@ test('allow records versioned consent, while decline and privacy signals remain 
     await Promise.all(waits);
     assert.equal(sent.length, 2);
     assert.doesNotMatch(await allowed.text(), /data-analytics-banner/);
-    assert.match(allowed.headers.get('content-security-policy'), /sitedelivery\/js/);
+    assert.match(allowed.headers.get('content-security-policy'), /'nonce-[a-f0-9]{32}'/);
     assert.ok(allowed.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)));
     for (const privacy of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: `${consent}; p0s_analytics_optout=1` }]) {
       const deniedWaits = [];
@@ -104,7 +157,7 @@ function browser(fetch) {
   const scripts = [];
   return {
     location: { hostname: 'chinesebikes.xyz', origin, pathname: '/' }, navigator: {}, fetch,
-    document: { querySelector: () => ({}), scripts, cookie: '', referrer: '', createElement: () => ({}), head: { appendChild: s => scripts.push(s) } }
+    document: { querySelector: () => ({ nonce: 'a'.repeat(32) }), scripts, cookie: '', referrer: '', createElement: () => ({}), head: { appendChild: s => scripts.push(s) } }
   };
 }
 
