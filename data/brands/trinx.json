@@ -7,11 +7,23 @@
   "manufacturing": {
     "relationship": "integrated-manufacturer",
     "confidence": "high",
-    "summary": "Large vertically integrated manufacturer with documented carbon production and testing infrastructure."
+    "summary": "Large vertically integrated manufacturer with documented carbon production and testing infrastructure.",
+    "evidence_review": {
+      "reviewed_at": "2026-09-30",
+      "source_ids": [
+        "trinx-company-profile-recheck-2026-09-30"
+      ],
+      "note": "The current company profile identifies TRINX as Trinity’s own brand, describes in-house carbon/aluminum frame and fork production and a testing center established in 2016. The undated profile is company-reported capability, not a current audit of each model. The separately retained Biketo factory visit was published 2020-05-27; it is historical first-hand reporting, not 2026 production certification."
+    }
   },
   "china_support": {
     "domestic_purchase": "yes",
     "warranty": "verify-exact-seller-and-sku"
   },
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-06",
+  "source_ids": [
+    "trinx-company-official",
+    "trinx-factory-biketo",
+    "trinx-company-profile-recheck-2026-09-30"
+  ]
 }

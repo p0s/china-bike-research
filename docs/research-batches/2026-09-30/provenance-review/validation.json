@@ -1,0 +1,43 @@
+{
+  "base_commit": "5cd38b9c8ce480e98c3c325e70f579d2c068d196",
+  "preservation": {
+    "frozen_files": 5014,
+    "unchanged_files": 5003,
+    "additive_json_files": 9,
+    "additive_translation_files": 1,
+    "losses": 0,
+    "generated_coverage_inventory": "monotonic coverage check passed"
+  },
+  "validation": [
+    {
+      "command": "npm run check",
+      "result": "Privacy, dataset, research and coverage passed. Test phase: 371/379 passed; one missing new-caveat translation and seven sandbox listen EPERM failures. Build/SEO did not run in this stopped invocation."
+    },
+    {
+      "command": "node --test tests/data-preservation.test.mjs tests/bilingual-seo.test.mjs",
+      "result": "33/33 passed after adding the three Chinese translations and translation-preservation test."
+    },
+    {
+      "command": "node --test tests/reliability-preview-server.test.mjs",
+      "result": "8/8 passed on host; the seven loopback-restricted tests are covered."
+    },
+    {
+      "command": "npm run build",
+      "result": "588 pages generated for 41 products. Existing previous-output backup could not be removed; no source or data removed."
+    },
+    {
+      "command": "npm run seo:check",
+      "result": "588 pages, 456 indexable, 132 noindex; passed."
+    },
+    {
+      "command": "npm run coverage:check",
+      "result": "244 images, 77 prices, 1456 sources and 236 candidates protected; passed."
+    },
+    {
+      "command": "node scripts/check-data-preservation.mjs --base BASE --manifest baseline-manifest.json",
+      "result": "Zero losses; original translation lines retained in order."
+    }
+  ],
+  "generated_page_readback": "All three affected English and Chinese model pages contain the caveats; English pages include the dated recheck source.",
+  "canonical_preservation": "Original HEAD/status and 45 dirty file hashes unchanged."
+}

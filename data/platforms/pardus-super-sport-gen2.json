@@ -130,7 +130,15 @@
           "fork_offset_mm": 50,
           "fork_length_mm": 382
         }
-      ]
+      ],
+      "evidence_review": {
+        "reviewed_at": "2026-09-30",
+        "status": "source-values-preserved-clarification-needed",
+        "source_ids": [
+          "pardus-super-sport-gen2-geometry-recheck-2026-09-30"
+        ],
+        "note": "The live SUPG2 SPORT—105 table matches the retained XXS–XL geometry, including XXS wheelbase 963.7 mm / front-center 581 mm, S wheelbase 1003.6 mm / front-center 584 mm and XL seat tube 645 mm. XXS and S dimensions need clarification under common front-center definitions; the XL seat-tube outlier is also copied accurately. Keep every original value. This 105 page is geometry reference evidence and does not establish the eGR trim material or BOM."
+      }
     }
   },
   "tire_clearance": {
@@ -155,7 +163,8 @@
     "public-pardus-super-sport-gen2-owner-weight-2026-08-28",
     "pardus-super-sport-gen2-taobao-2026-08-28",
     "pardus-super-sport-gen2-official-current-2026-09-23",
-    "pardus-super-sport-gen2-official-material-recheck-2026-09-25"
+    "pardus-super-sport-gen2-official-material-recheck-2026-09-25",
+    "pardus-super-sport-gen2-geometry-recheck-2026-09-30"
   ],
   "last_reviewed": "2026-09-25"
 }

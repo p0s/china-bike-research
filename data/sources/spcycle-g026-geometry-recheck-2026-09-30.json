@@ -1,0 +1,15 @@
+{
+  "id": "spcycle-g026-geometry-recheck-2026-09-30",
+  "type": "geometry-database-page-recheck",
+  "title": "SPcycle G026 geometry attribution review",
+  "publisher": "Bike Insights",
+  "language": "en",
+  "accessed_at": "2026-09-30",
+  "url": "https://bikeinsights.com/bikes/6903c6ae07e4a3001a6c0164-spcycle-g026?build=base&version=2025",
+  "reliability": {
+    "identity": "high",
+    "specification": "medium",
+    "price": "none"
+  },
+  "notes": "The live 2025 G026 database matches the stored sizes, including XL front-center 691 mm, chainstay 425 mm, BB drop 75 mm and wheelbase 1119 mm. It also displays a derived XL horizontal front-center 700.7 mm that exceeds the direct front-center; the source fields are internally inconsistent. The manufacturer listing now presents a 2026 G026 and does not establish that its current revision uses this 2025 table. Preserve the attributed values and confirm chart definitions and generation before relying on affected dimensions for fit."
+}

@@ -93,7 +93,15 @@
           "stack_mm": 643,
           "wheelbase_mm": 1119
         }
-      ]
+      ],
+      "evidence_review": {
+        "reviewed_at": "2026-09-30",
+        "status": "source-values-preserved-clarification-needed",
+        "source_ids": [
+          "spcycle-g026-geometry-recheck-2026-09-30"
+        ],
+        "note": "The live 2025 G026 database matches the stored sizes, including XL front-center 691 mm, chainstay 425 mm, BB drop 75 mm and wheelbase 1119 mm. It also displays a derived XL horizontal front-center 700.7 mm that exceeds the direct front-center; the source fields are internally inconsistent. The manufacturer listing now presents a 2026 G026 and does not establish that its current revision uses this 2025 table. Preserve the attributed values and confirm chart definitions and generation before relying on affected dimensions for fit."
+      }
     },
     "material_grade": "High-modulus T1000 full carbon fibre",
     "claimed_fiber": "T1000-claimed",
@@ -115,7 +123,8 @@
   "source_ids": [
     "spcycle-g026-official-2026-08-25",
     "spcycle-g026-geometry-bikeinsights-2026-08-25",
-    "spcycle-gravel-catalog"
+    "spcycle-gravel-catalog",
+    "spcycle-g026-geometry-recheck-2026-09-30"
   ],
   "last_reviewed": "2026-09-01"
 }

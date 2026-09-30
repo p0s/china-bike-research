@@ -7,11 +7,22 @@
   "manufacturing": {
     "relationship": "integrated-manufacturer",
     "confidence": "high",
-    "summary": "Strongest model-specific carbon-process story in this price discussion, including EPS+ claims and established performance-bike production."
+    "summary": "Strongest model-specific carbon-process story in this price discussion, including EPS+ claims and established performance-bike production.",
+    "evidence_review": {
+      "reviewed_at": "2026-09-30",
+      "source_ids": [
+        "pardus-carbon-process-recheck-2026-09-30"
+      ],
+      "note": "The current company page identifies PARDUS as part of Taishan Sports Industry Group and describes EPS+, EPS and HPT molding. These are company-reported process descriptions; they do not prove comparative superiority. The original brand summary is retained as historical editorial wording. Its “strongest” comparison is not established by these company sources, and no process is transferred to an exact model without model-level evidence."
+    }
   },
   "china_support": {
     "domestic_purchase": "yes",
     "warranty": "verify-exact-seller-and-sku"
   },
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-06",
+  "source_ids": [
+    "pardus-company-official",
+    "pardus-carbon-process-recheck-2026-09-30"
+  ]
 }
