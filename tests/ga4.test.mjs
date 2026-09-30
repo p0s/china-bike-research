@@ -10,11 +10,16 @@ const env = {
   ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1', ANALYTICS_INGEST_TOKEN: 'test-token'
 };
 
+function gaRequest(url, init) {
+  const request = new Request(url, init);
+  Object.defineProperty(request, 'cf', { value: { country: 'SG' } });
+  return request;
+}
+
 function documentRequest(cookie = '', extraHeaders = {}) {
-  const request = new Request('https://chinesebikes.xyz/models/example/?q=private', {
+  const request = gaRequest('https://chinesebikes.xyz/models/example/?q=private', {
     headers: { 'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0', cookie, ...extraHeaders }
   });
-  Object.defineProperty(request, 'cf', { value: { country: 'SG' } });
   return request;
 }
 
@@ -62,7 +67,7 @@ test('eligible document schedules one minimized GA site_open alongside Umami', a
     assert.equal(Object.hasOwn(body.events[0].params, 'session_id'), false);
     assert.doesNotMatch(ga.init.body, /private|203\.0\.113|Mozilla/);
 
-    const config = await handleRequest(new Request('https://chinesebikes.xyz/analytics/ga-config', {
+    const config = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-config', {
       headers: { cookie: cookies, 'user-agent': 'Mozilla/5.0' }
     }), env);
     assert.equal(config.status, 200);
@@ -78,7 +83,7 @@ test('eligible document schedules one minimized GA site_open alongside Umami', a
 
 test('a verified browser session is persisted and used on later server events', async () => {
   const cookies = 'p0s_ga_cid=123.456';
-  const sync = await handleRequest(new Request('https://chinesebikes.xyz/analytics/ga-session', {
+  const sync = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-session', {
     method: 'POST',
     headers: { origin: 'https://chinesebikes.xyz', cookie: cookies, 'user-agent': 'Mozilla/5.0', 'x-ga4-session-id': '1780000000' }
   }), env);
@@ -90,17 +95,17 @@ test('a verified browser session is persisted and used on later server events', 
     { origin: 'https://chinesebikes.xyz', cookie: cookies, 'x-ga4-session-id': 'bad' },
     { origin: 'https://chinesebikes.xyz', 'x-ga4-session-id': '1780000000' }
   ]) {
-    const rejected = await handleRequest(new Request('https://chinesebikes.xyz/analytics/ga-session', {
+    const rejected = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-session', {
       method: 'POST', headers
     }), env);
     assert.ok(rejected.status === 400 || rejected.status === 403);
   }
-  const bodyRejected = await handleRequest(new Request('https://chinesebikes.xyz/analytics/ga-session', {
+  const bodyRejected = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-session', {
     method: 'POST', headers: { origin: 'https://chinesebikes.xyz', cookie: cookies, 'x-ga4-session-id': '1780000000' }, body: 'private'
   }), env);
   assert.equal(bodyRejected.status, 400);
   for (const excluded of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: `${cookies}; p0s_analytics_optout=1` }]) {
-    const skipped = await handleRequest(new Request('https://chinesebikes.xyz/analytics/ga-session', {
+    const skipped = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-session', {
       method: 'POST',
       headers: { origin: 'https://chinesebikes.xyz', cookie: cookies, 'x-ga4-session-id': '1780000000', ...excluded }
     }), env);
@@ -120,7 +125,7 @@ test('excluded requests do not receive GA cookies or dispatch and config stays c
     assert.equal(response.headers.getSetCookie().length, 0);
     assert.equal(waits.length, 0);
   }
-  const noCookie = await handleRequest(new Request('https://chinesebikes.xyz/analytics/ga-config'), env);
+  const noCookie = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-config'), env);
   assert.equal(noCookie.status, 204);
   assert.equal(noCookie.headers.get('cache-control'), 'no-store');
 });
@@ -135,7 +140,7 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
   };
   try {
     const cookie = 'p0s_ga_cid=123.456; p0s_ga_sid=1780000000';
-    const response = await handleRequest(new Request('https://chinesebikes.xyz/analytics/action', {
+    const response = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/action', {
       method: 'POST',
       headers: { origin: 'https://chinesebikes.xyz', 'content-type': 'application/json', 'user-agent': 'Mozilla/5.0', cookie },
       body: JSON.stringify({ actionId: 'product_outbound_click' })
@@ -147,7 +152,7 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
     assert.equal(JSON.parse(ga[0].init.body).events[0].name, 'product_outbound_click');
     assert.equal(JSON.parse(ga[0].init.body).client_id, '123.456');
 
-    const optOut = await handleRequest(new Request('https://chinesebikes.xyz/analytics/opt-out', {
+    const optOut = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/opt-out', {
       method: 'POST', headers: { origin: 'https://chinesebikes.xyz', cookie }
     }), env);
     const cleared = optOut.headers.getSetCookie();
@@ -173,7 +178,7 @@ test('collection URL ordering preserves values and repeated-key order only for t
   for (const other of [input.replace(origin, 'https://other.example'), input.replace('/ga/g/c?', '/ga/g/other?'), input.replace('v=2', 'v=1'), input.replace('G-TEST12345', 'G-OTHER123'), '/analytics/ga-session', 'https://[invalid']) {
     assert.equal(collectionRequestUrl(other, origin, 'G-TEST12345'), other);
   }
-  const request = new Request(input);
+  const request = gaRequest(input);
   assert.equal(collectionRequestUrl(request, origin, 'G-TEST12345'), request);
 });
 
@@ -237,7 +242,7 @@ test('collection transport preserves fetch and beacon bodies, results, receivers
       calls.push({ transport: 'fetch', receiver: this, url, init });
       return response;
     },
-    document: { querySelector: () => ({}), scripts: [{ src: '/sitedelivery/' }], referrer: '' }
+    document: { querySelector: () => ({}), scripts: [{ src: '/sitedelivery/js?id=G-TEST12345' }], referrer: '' }
   };
   assert.equal(await startGa4(win), true);
   const url = '/sitedelivery/ga/g/c?v=2&tid=G-TEST12345&en=page_view';
@@ -280,17 +285,20 @@ test('error documents cannot initialize a tag even with a returning visitor ID',
   assert.equal(fetched, false);
 });
 
-test('browser reuses the gateway loader and concurrent initialization queues one page view', async () => {
+test('browser reuses only its explicit loader and concurrent initialization queues one page view', async () => {
   for (const src of ['/sitedelivery/', `/sitedelivery/js?id=${env.GA4_MEASUREMENT_ID}`, '/gtag/', `/gtag/js?id=${env.GA4_MEASUREMENT_ID}`]) {
     const scripts = [{ src }];
+    const appended = [];
     const win = {
       location: { hostname: 'chinesebikes.xyz', origin: 'https://chinesebikes.xyz', pathname: '/' },
       navigator: {},
-      document: { querySelector: () => ({}), scripts, referrer: '', head: { appendChild: () => assert.fail('duplicate loader') } },
+      document: { querySelector: () => ({}), scripts, referrer: '', createElement: () => ({}), head: { appendChild: script => appended.push(script) } },
       fetch: async () => Response.json({ measurementId: env.GA4_MEASUREMENT_ID, clientId: '123.456' })
     };
     assert.deepEqual(await Promise.all([startGa4(win), startGa4(win)]), [true, false]);
     assert.equal(win.dataLayer.filter(args => args[0] === 'event' && args[1] === 'page_view').length, 1);
+    assert.equal(appended.length, src.startsWith('/sitedelivery/js?') ? 0 : 1);
+    if (appended.length) assert.equal(appended[0].src, '/sitedelivery/js?id=G-TEST12345');
   }
 });
 

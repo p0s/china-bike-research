@@ -1,9 +1,9 @@
+import { bindAnalyticsChoices, clearGoogleCookies } from './analytics-choice.js';
+
 const MEASUREMENT_ID_PATTERN = /^G-[A-Z0-9]{5,20}$/;
 const CLIENT_ID_PATTERN = /^[1-9]\d{0,19}\.[1-9]\d{0,19}$/;
 const SESSION_ID_PATTERN = /^[1-9]\d{9,12}$/;
 const GATEWAY_PATH = '/sitedelivery';
-// Recognize the previous injection during a staged gateway configuration change.
-const GATEWAY_LOADER_PATHS = [GATEWAY_PATH, '/gtag'];
 const initializedPages = new WeakSet();
 
 function referringOrigin(referrer) {
@@ -27,35 +27,49 @@ export function collectionRequestUrl(input, origin, measurementId) {
 function configureCollectionTransport(win, measurementId) {
   const originalFetch = win.fetch;
   win.fetch = function (input, init) {
+    if (win.p0sAnalyticsStopped && typeof input === 'string' && input.includes(`${GATEWAY_PATH}/ga/g/c`)) {
+      return Promise.resolve(new Response(null, { status: 204 }));
+    }
     return originalFetch.call(win, collectionRequestUrl(input, win.location.origin, measurementId), init);
   };
   const originalBeacon = win.navigator?.sendBeacon;
   if (typeof originalBeacon === 'function') {
     win.navigator.sendBeacon = function (url, data) {
+      if (win.p0sAnalyticsStopped && typeof url === 'string' && url.includes(`${GATEWAY_PATH}/ga/g/c`)) return true;
       return originalBeacon.call(win.navigator, collectionRequestUrl(url, win.location.origin, measurementId), data);
     };
   }
 }
 
 export async function startGa4(win = globalThis.window) {
+  bindAnalyticsChoices(win);
   if (!win || win.location.hostname !== 'chinesebikes.xyz'
     || win.navigator?.doNotTrack === '1' || win.navigator?.globalPrivacyControl === true
     || !win.document.querySelector('script[data-ga4-page]') || initializedPages.has(win)) return false;
   initializedPages.add(win);
+  win.dataLayer = win.dataLayer || [];
+  function gtag() { win.dataLayer.push(arguments); }
+  win.gtag = gtag;
+  // Establish defaults before asynchronous config or any Google library starts.
+  gtag('consent', 'default', {
+    analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+  });
   try {
     const response = await win.fetch('/analytics/ga-config', {
       credentials: 'same-origin', cache: 'no-store', referrerPolicy: 'no-referrer'
     });
-    if (!response.ok || response.status === 204) return false;
+    if (!response.ok || response.status === 204 || win.p0sAnalyticsStopped) {
+      if (response.status === 204) clearGoogleCookies(win);
+      return false;
+    }
     const { measurementId, clientId } = await response.json();
     if (!MEASUREMENT_ID_PATTERN.test(measurementId)
       || !CLIENT_ID_PATTERN.test(clientId)) return false;
+    if (win.p0sAnalyticsStopped) return false;
+    win.p0sGa4MeasurementId = measurementId;
 
     configureCollectionTransport(win, measurementId);
-    win.dataLayer = win.dataLayer || [];
-    function gtag() { win.dataLayer.push(arguments); }
-    win.gtag = gtag;
-    gtag('consent', 'default', {
+    gtag('consent', 'update', {
       analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied',
       ad_personalization: 'denied'
     });
@@ -78,9 +92,9 @@ export async function startGa4(win = globalThis.window) {
       ...(pageReferrer ? { page_referrer: pageReferrer } : {})
     });
     gtag('get', measurementId, 'client_id', (tagClientId) => {
-      if (String(tagClientId) !== clientId) return;
+      if (win.p0sAnalyticsStopped || String(tagClientId) !== clientId) return;
       gtag('get', measurementId, 'session_id', (sessionId) => {
-        if (!SESSION_ID_PATTERN.test(String(sessionId))) return;
+        if (win.p0sAnalyticsStopped || !SESSION_ID_PATTERN.test(String(sessionId))) return;
         void win.fetch('/analytics/ga-session', {
           method: 'POST',
           headers: { 'x-ga4-session-id': String(sessionId) },
@@ -91,14 +105,13 @@ export async function startGa4(win = globalThis.window) {
         }).catch(() => {});
       });
     });
-    // Cloudflare injects the library even with Set up tag off. Reuse that
-    // loader so the site's fallback does not download the same library twice.
+    // The injected gateway-root bootstrap is blocked by the edge CSP. Reuse
+    // only an explicit loader created after our consent defaults and config.
     const hasLoader = Array.from(win.document.scripts).some((script) => {
       try {
         const src = new URL(script.src, win.location.origin);
-        return src.origin === win.location.origin && GATEWAY_LOADER_PATHS.some((path) =>
-          src.pathname === `${path}/`
-          || (src.pathname === `${path}/js` && src.searchParams.get('id') === measurementId));
+        return src.origin === win.location.origin && src.pathname === `${GATEWAY_PATH}/js`
+          && src.searchParams.get('id') === measurementId;
       } catch { return false; }
     });
     if (!hasLoader) {

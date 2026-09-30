@@ -85,7 +85,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
         <a href="${url(base,'/build/')}">Build a bike</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
-        <a href="${url(base,'/privacy/')}">Privacy</a>
+        <a href="${url(base,'/privacy/')}#analytics">Privacy</a>
         <a href="${url(base,'/data/catalog.json')}">Data</a>
         <a href="${repositoryUrl}">GitHub</a>
         <a href="${repositoryUrl}/issues">Add or correct a bike</a>

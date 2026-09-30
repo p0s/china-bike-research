@@ -350,7 +350,7 @@ test('product outbound action relay forwards only its fixed action ID and honors
   }
 });
 
-test('document responses preserve cache behavior and schedule bounded ingestion', async () => {
+test('document responses prevent shared caching and schedule bounded ingestion', async () => {
   const assets = assetsBinding();
   const waits = [];
   const sent = [];
@@ -373,7 +373,7 @@ test('document responses preserve cache behavior and schedule bounded ingestion'
       ANALYTICS_INGEST_TOKEN: 'test-token'
     }, { waitUntil: (promise) => waits.push(promise) });
     assert.equal(response.status, 200);
-    assert.equal(response.headers.get('cache-control'), 'public, max-age=120');
+    assert.equal(response.headers.get('cache-control'), 'private, no-store');
     assert.equal(response.headers.get('x-content-type-options'), 'nosniff');
     assert.equal(waits.length, 1);
     await Promise.all(waits);

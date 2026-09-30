@@ -83,28 +83,21 @@ site-search queries, or outbound clicks. Set event-level retention to the
 shortest useful interval for this comparison. Configure Cloudflare Google tag
 gateway for the exact zone, tag ID, and unused `/sitedelivery` measurement path. Cloudflare accepts only letters,
 numbers and forward slashes in this field; hyphens are rejected.
-Leave Cloudflare's **Set up tag** option off: it inserts a tag automatically
-and would bypass the site's DNT, GPC, and opt-out checks. This option alone
-does not guarantee that an excluded page downloads no Google code: on
-2026-09-29, Cloudflare still injected a `/gtag/` bootstrap into a DNT HTML
-response with **Set up tag** off. In that unblocked-browser check, the
-bootstrap queued no GA config or event and sent no collection hit. Verify
-those outcomes for DNT, GPC, and opt-out, as well as a `204` response from
-`/analytics/ga-config`; do not infer them from the toggle. The browser module
-initializes only on a document bearing the renderer's `data-ga4-page` marker,
-which error pages omit. It runs once per document and reuses Cloudflare's
-existing `/sitedelivery/` loader. Only if that loader is absent does it append
-`/sitedelivery/js?id=...`, after the config route returns valid IDs. The managed
-gateway can still download its bootstrap on excluded pages; no GA config,
-event, or collection request may follow.
+Leave Cloudflare's **Set up tag** option off. Its injected gateway-root
+bootstrap is additionally blocked by the document CSP, because the toggle alone
+still allowed the Google library to read consent before the site's defaults.
+The module queues all-denied defaults before asynchronous config and inserts
+only the explicit `/sitedelivery/js?id=...` loader after eligibility passes.
+Verify the real library and collection response, not only the queued commands.
 
-For the gateway path migration, deploy the loader first: it recognizes both
-`/sitedelivery/` and the previous `/gtag/` injection, including their exact
-`js?id=...` forms. Then update only the measurement path in Cloudflare,
-leaving the tag ID and **Set up tag** setting unchanged. Verify the saved
-configuration, one library download, a successful collection request, and
-matching client/session IDs on a fresh page. Rollback changes the gateway
-path back to `/gtag`; the compatible loader still reuses that injection.
+Follow `docs/analytics-consent-policy.md` for the trusted-country consent gate.
+Visitors in the prior-choice regions see equally visible Allow/No thanks;
+Google and Umami remain stopped until Allow. Unknown location also has an easy
+Allow option. DNT, GPC and opt-out prevail everywhere. Test the first opt-out,
+not merely a second one: stop the old tag before the POST, clear Google cookies
+after success, reload, and confirm no identifier remains or collection follows.
+The Privacy page exposes both choices without a banner elsewhere. Do not loosen
+CSP or grant advertising consent to clear an unrelated console diagnostic.
 
 The browser normalizes query-parameter ordering for the configured tag’s
 exact same-origin `/sitedelivery/ga/g/c` collection URL after config passes
@@ -194,7 +187,7 @@ GET  https://chinesebikes.xyz/                 -> 200 text/html
 GET  https://chinesebikes.xyz/assets/logo.svg -> 200 image/svg+xml
 GET  https://chinesebikes.xyz/models/<id>      -> 308 .../<id>/
 POST https://chinesebikes.xyz/analytics/opt-out -> 200 + host-only cookie
-POST https://chinesebikes.xyz/analytics/opt-in  -> 200 + expired cookie
+POST https://chinesebikes.xyz/analytics/opt-in  -> 200 + Allow cookie + expired opt-out
 GET  https://www.chinesebikes.xyz/models/<id> -> 301 https://chinesebikes.xyz/models/<id>
 GET  https://china-bikes.p0s.eu/assets/logo.svg -> 301 https://chinesebikes.xyz/assets/logo.svg
 ```
