@@ -1,7 +1,7 @@
 # Publish the twenty-post editorial series
 
 ## Authority and fixed scope
-The user authorized writing and automatically publishing exactly twenty additional posts, starting three days after September 22, 2026, with randomized two-to-five-day gaps. The queue is `content/post-schedule.json`. The first release is September 25 at 20:20 Asia/Singapore. Each article has English and Simplified Chinese editions, a mascot cover and relevant credited remote bike photographs.
+The user authorized writing and automatically publishing exactly twenty additional posts, starting three days after September 22, 2026, with randomized two-to-five-day gaps. The queue is `content/post-schedule.json`. The first release is September 25 at 20:20 Asia/Singapore. Current SPEC requires English, Simplified Chinese and German editions, a mascot cover and relevant credited bike photographs. Use the existing image-rights records and hosted assets.
 
 The twenty new articles are scheduled drafts in `content/posts/`. They are deliberately visible in this public source repository, but absent from the website until explicitly released. Existing articles remain published. Never publish multiple queued articles to catch up, rerandomize intervals, change the first date, or add articles to this authorization.
 
@@ -21,8 +21,8 @@ The twenty new articles are scheduled drafts in `content/posts/`. They are delib
 
 ## Prepare one due article
 1. Synchronize the owned checkout with remote main without overwriting dirty work. Create a feature branch for the exact due slug. Never push directly to main. Keep any prior failed release intact.
-2. Inspect both language editions, relevant photo captions and inline sources. Reopen current purchasing routes and any import, shipping, warranty or stock claims material to this article. Verify owner anecdotes remain attributed to their original dates and models. Do not treat a page fetch failure as evidence of changed policy.
-3. Fix factual changes in both editions, cite the current source and record the actual review date. Never automatically refresh every research date; the original source-check date remains valid historical provenance. Do not fabricate stock, prices, personal testing or an overseas owner experience.
+2. Inspect all three language editions, relevant photo captions and inline sources. Reopen current purchasing routes and any import, shipping, warranty or stock claims material to this article. Verify owner anecdotes remain attributed to their original dates and models. Do not treat a page fetch failure as evidence of changed policy.
+3. Fix factual changes in all editions, cite the current source and record the actual review date. Never automatically refresh every research date; the original source-check date remains valid historical provenance. Do not fabricate stock, prices, personal testing or an overseas owner experience.
 4. Run `node scripts/blog-publication.mjs prepare EXACT-SLUG`. It refuses early, duplicate and out-of-order preparation, and enforces the gap after the previous live verification. This is the only queue mutation needed to expose the due article.
 5. Run the repository's complete `npm run check` gate once for the changed release (prefer `codex-pnpm-check check`). Inspect the released article on desktop and mobile. Run the image report if image sources or assets changed. Fix failures before proceeding.
 6. Run signing/GitHub preflight; report p0s account, repository and feature branch. Make a signed commit, push that exact branch, create a public pull request with validation and the due date, and attach it to this task. Wait for required checks, then merge through the PR. No direct-main push, force push or workflow/secret changes.
@@ -37,11 +37,13 @@ The twenty new articles are scheduled drafts in `content/posts/`. They are delib
    . .research/cloudflare-account-id.env
    set +a
    : "${CLOUDFLARE_ACCOUNT_ID:?missing Cloudflare account ID}"
-   env WRANGLER_LOG_PATH=/private/tmp/china-bikes-blog-publish npx --no-install wrangler deploy
+   read -r BLOG_WRANGLER_PROFILE < .research/blog-cloudflare-profile.txt
+   : "${BLOG_WRANGLER_PROFILE:?missing verified saved profile}"
+   env WRANGLER_LOG_PATH=/private/tmp/china-bikes-blog-publish npx --no-install wrangler deploy --profile "$BLOG_WRANGLER_PROFILE"
    ```
 
    The configured build command performs the production build. If the file is missing or the account cannot be verified, stop rather than selecting another account. Do not install a new CLI, change accounts or create credentials automatically.
-3. Record the returned Cloudflare deployment version. Run `node scripts/blog-publication.mjs confirm EXACT-SLUG CLOUDFLARE-VERSION-UUID`. It requires both live language pages to match local production HTML, and requires the live sitemap and blog index to contain the article. The command stores the receipt only after all checks pass.
+3. Record the returned Cloudflare deployment version. Run `node scripts/blog-publication.mjs confirm EXACT-SLUG CLOUDFLARE-VERSION-UUID`. It sends DNT/GPC headers to avoid counting verification as visits or receiving per-visitor analytics markup. It requires all three live language pages to match local production HTML, and requires the live sitemap and blog index to contain the article. The command stores the receipt only after all checks pass.
 4. Verify the next pending slug still returns 404 and is absent from the live sitemap/index. Confirm the due article's canonical, hreflang, cover and real-bike photo behavior. A deployed version alone is not proof of these public results.
 5. Update the <=25-line checkpoint with the exact merge SHA, deployment version, slug, live verification and next due time. Keep one current baseline plus the latest delta.
 
