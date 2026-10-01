@@ -509,6 +509,39 @@ Object.assign(zh, {
   "Cheapest credible strict manufacturer option for a light 40C race-gravel build, with a wide uncertainty interval.": "在本目录严格厂家选项中，是用于轻量 40C 竞赛 Gravel 装车的低价选择；不确定范围仍较大。"
 });
 
+// Reviewed YouTube context and visible commercial relationship labels.
+Object.assign(zh, {
+  "Brand video": "品牌视频",
+  "Bike details": "车辆细节",
+  "Ride and handling": "骑行与操控",
+  "One issue…": "一个问题…",
+  "The description discloses affiliate commissions and an ICAN discount code; frame-supply terms are not established by the description.": "简介披露了推广佣金和 ICAN 优惠码，但未说明车架的提供条件。",
+  "Workshop assembly of a custom Graro with Wheeltop GeX shifting. The parts and budget belong to this build, not the catalog build estimate.": "在车间组装搭配 Wheeltop GeX 变速的定制 Graro。配件与预算仅适用于视频中的装车方案，不代表目录中的装车估算。",
+  "Ride review of the creator's custom Graro in the Lake District and Grizedale Forest. It complements the workshop build video; the shown components differ from the catalog estimate.": "创作者在英国湖区和 Grizedale 森林骑行自己的定制 Graro，补充了车间装车视频；视频中的配件与目录估算不同。",
+  "The description links to Winspace's G5 shop page and provides a GC Performance discount code; product-supply terms are not established there.": "简介链接到 Winspace G5 商店页面，并提供 GC Performance 优惠码；未说明产品提供条件。",
+  "Overview of a Winspace G5 complete bike linked to the G5 Ultra AXS shop listing. This is visual platform context, not confirmation of the catalog frameset build or current China price.": "展示一辆 Winspace G5 整车，简介链接到 G5 Ultra AXS 商品页。仅用于了解平台外观，不确认目录中的车架组装车方案或当前中国价格。",
+  "Published by ELVES BIKE, the brand's own channel. This is promotional model context, not an independent review.": "由品牌自身的 ELVES BIKE 频道发布，属于车型宣传资料，并非独立评测。",
+  "Brand presentation of the exact Mori AeroX gravel frameset. Useful for its appearance; performance and material statements remain manufacturer claims.": "品牌对 Mori AeroX 砾石车架组的展示，可用于了解外观；性能与材料表述仍属于厂家宣称。",
+  "The creator identifies this as his own frame. The description includes an Amazon support link; frame-purchase or supply terms are not stated.": "创作者说明这是自己的车架。简介含有 Amazon 支持链接，但未说明车架购买或提供条件。",
+  "Owner build of a Carbonda 696, also named Flybike FM696 in the title. The description corrects the frame size to 56. This 2021 custom build is historical context, not a current stock configuration.": "车主组装 Carbonda 696，标题也称其为 Flybike FM696；简介将车架尺码更正为 56。这是 2021 年定制装车的历史资料，不代表当前原厂配置。",
+  "Published by Crafted Cycles, a custom-build workshop promoting its services in the description; this is shop-produced build context.": "由定制装车工作室 Crafted Cycles 发布，简介推广其服务；属于店铺制作的装车资料。",
+  "Workshop build of the Incolor Speedster SR+ with a custom component selection. It shows the SR+ version, not the SSR or a factory complete-bike configuration for the SR.": "工作室用自行选择的配件组装 Incolor Speedster SR+。展示的是 SR+，并非 SSR，也不是 SR 的原厂整车配置。",
+  "The description identifies Squarespace as an episode sponsor. Winspace frame-supply and payment terms are not established by that description.": "简介说明本期节目由 Squarespace 赞助，但未说明 Winspace 车架的提供及报酬条件。",
+  "Review of a Winspace SLC 3.0 road build with ride, equipment and issue discussion. Creator chapter links help navigate the review; its build and comparisons do not establish checkout or warranty in mainland China.": "评测一辆 Winspace SLC 3.0 公路车，讨论骑行、配件及问题。创作者提供的章节链接便于浏览；视频配置与对比不证明中国大陆结算条件或保修。",
+  "Published by Cyclingnews Tech. The description does not establish whether the test bike was supplied or whether the review was sponsored.": "由 Cyclingnews Tech 发布；简介未说明测试车是否由品牌提供，也未说明评测是否受到赞助。",
+  "Exact Spear RDC review presented with riding and wind-tunnel context. The test configuration is separate from this candidate's custom build; no aerodynamic ranking or specification is accepted from the video alone.": "针对 Spear RDC 的评测，涉及骑行和风洞测试。测试配置与此待研究车型的定制装车不同；不单凭视频接受气动排名或规格结论。",
+  "Hands-on review": "实车评测",
+  "Long-term review": "长期使用评测",
+  "Model overview": "车型展示",
+  "Build and ride": "装车与骑行",
+  "Retailer-linked": "关联商家",
+  "Product supplied": "产品由品牌提供",
+  "Publication review": "媒体评测",
+  "Owner review": "车主评测",
+  "Community post": "社区帖子",
+  "Disclosure basis": "披露依据"
+});
+
 export function translate(value, locale = 'en') {
   if (locale === 'de') return translateGerman(value);
   if (locale !== 'zh-Hans' || typeof value !== 'string' || !value.trim()) return value;

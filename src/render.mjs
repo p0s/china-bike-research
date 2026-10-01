@@ -1112,6 +1112,7 @@ function videoFormatLabel(value) {
 function videoRelationshipLabel(value) {
   return {
     'retailer-linked': 'Retailer-linked',
+    'brand-published': 'Brand video',
     'product-supplied': 'Product supplied',
     'publication-review': 'Publication review',
     'owner-review': 'Owner review',
@@ -1133,7 +1134,7 @@ function videoContext(videos) {
       <div class="video-shell">
         <iframe src="https://www.youtube-nocookie.com/embed/${escapeAttr(video.youtube_video_id)}?rel=0" title="${escapeAttr(video.title)} — YouTube video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <div class="video-copy"><div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div><h3><a href="${escapeAttr(video.url)}" rel="noreferrer">${escapeHtml(video.title)}</a></h3><p>${escapeHtml(video.summary)}</p>${video.timestamps?.length ? `<div class="video-timestamps" aria-label="Video sections">${video.timestamps.map((timestamp) => `<a href="${escapeAttr(videoTimestampHref(video, timestamp))}" rel="noreferrer">${escapeHtml(timestamp.label)} · ${Math.floor(timestamp.at_seconds / 60)}:${String(Math.floor(timestamp.at_seconds % 60)).padStart(2, '0')}</a>`).join('')}</div>` : ''}<small>${escapeHtml(video.channel_name)}${video.published_at ? ` · ${escapeHtml(video.published_at)}` : ''}. ${escapeHtml(video.disclosure)} <a href="${escapeAttr(video.disclosure_url)}" rel="noreferrer">Disclosure basis</a>.</small></div>
+      <div class="video-copy"><div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div><h3><a href="${escapeAttr(video.url)}" rel="noreferrer">${escapeHtml(video.title)}</a></h3><p>${escapeHtml(video.summary)}</p>${video.timestamps?.length ? `<div class="video-timestamps" aria-label="Video sections">${video.timestamps.map((timestamp) => `<a href="${escapeAttr(videoTimestampHref(video, timestamp))}" rel="noreferrer">${escapeHtml(timestamp.label)} · ${Math.floor(timestamp.at_seconds / 60)}:${String(Math.floor(timestamp.at_seconds % 60)).padStart(2, '0')}</a>`).join('')}</div>` : ''}<small>${escapeHtml(video.channel_name)}${video.published_at ? ` · ${escapeHtml(video.published_at)}` : ''}. <span>${escapeHtml(video.disclosure)}</span> <a href="${escapeAttr(video.disclosure_url)}" rel="noreferrer">Disclosure basis</a>.</small></div>
     </article>`).join('')}</div>
   </section>`;
 }

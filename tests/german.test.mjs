@@ -4,7 +4,7 @@ import { translate } from '../assets/i18n.js';
 import { de } from '../assets/i18n-de.js';
 import { bindAnalyticsChoices } from '../assets/analytics-choice.js';
 import { LOCALES, localePath, routeLocale, localizedHref, localizeHtml, localizedCatalogPayload } from '../src/lib/i18n.mjs';
-import { layout } from '../src/lib/html.mjs';
+import { escapeHtml, layout } from '../src/lib/html.mjs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
 import { loadPosts, renderPost } from '../src/lib/posts.mjs';
 import { editorialImages, blogPhotos } from '../src/lib/editorial-images.mjs';
@@ -83,6 +83,29 @@ test('every published model has a German verdict and buying advice; research pro
     assert.ok(html.includes('data-original-language'));
     assert.ok(html.includes('Originale Recherchehinweise (Englisch)'));
     assert.doesNotMatch(html, /The displayed .* build allowance|complete-bike lead under review/);
+  }
+});
+
+test('video disclosures translate separately from creator identities and publication dates', () => {
+  for (const locale of ['en', 'zh-Hans', 'de']) {
+    const videoCtx = { ...ctx, locale };
+    for (const id of ['cycle-workshop-ican-graro-ride-review', 'elves-mori-aerox-brand-overview', 'david-arthur-winspace-slc3-review']) {
+      const video = data.videos.find((record) => record.id === id);
+      const entry = video.target.platform_id
+        ? products.find((product) => product.platform.id === video.target.platform_id)
+        : catalogCandidates.find((candidate) => candidate.candidate.id === video.target.candidate_id);
+      const html = video.target.platform_id ? renderModel(videoCtx, entry) : renderCandidateModel(videoCtx, entry);
+      const disclosure = translate(video.disclosure, locale);
+      if (locale !== 'en') {
+        assert.notEqual(disclosure, video.disclosure);
+        assert.notEqual(translate(video.summary, locale), video.summary);
+      }
+      assert.ok(html.includes(`${escapeHtml(video.channel_name)} · ${video.published_at}. <span>${escapeHtml(disclosure)}</span>`));
+      assert.ok(html.includes(escapeHtml(translate(video.summary, locale))));
+      assert.ok(html.includes(`https://www.youtube-nocookie.com/embed/${video.youtube_video_id}?rel=0`));
+      assert.ok(html.includes(`href="${escapeHtml(video.url)}"`));
+      if (video.relationship === 'brand-published') assert.ok(html.includes(`<span>${translate('Brand video', locale)}</span>`));
+    }
   }
 });
 

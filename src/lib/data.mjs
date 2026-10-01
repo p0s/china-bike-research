@@ -855,7 +855,7 @@ export function validateDataset(data = loadDataset()) {
   const xhsPostIds = new Set();
   const platformVideoCounts = new Map();
   const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride']);
-  const videoRelationships = new Set(['retailer-linked', 'product-supplied', 'publication-review', 'owner-review', 'community-post']);
+  const videoRelationships = new Set(['retailer-linked', 'brand-published', 'product-supplied', 'publication-review', 'owner-review', 'community-post']);
   for (const video of data.videos) {
     requireFields('video', video, [
       'provider', 'title', 'channel_name', 'url', 'language', 'accessed_at', 'target',
