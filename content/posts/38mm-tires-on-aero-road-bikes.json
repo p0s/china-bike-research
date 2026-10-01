@@ -138,6 +138,68 @@
         "lightcarbon-lcr018-d": "厂家采用实测宽度上限。现有记录未分别列出单双盘数值，不能从车主装过更宽轮胎推导出新上限。",
         "tavelo-arden": "38 mm 对应单盘，双盘上限为 34 mm。仍需确认具体代际与准备使用的轮胎组合。"
       }
+    },
+    "de": {
+      "title": "38-mm-Reifen auf Aero-Rennrädern: Grenzen bei 1× und 2×",
+      "description": "Vergleichen Sie die Reifengrenzen von Incolor Speedster SR, Tavelo Arden und LightCarbon LCR018-D. Antrieb, Profil und gemessene Breite sind entscheidend.",
+      "intro": "Eine Angabe von 38 mm bedeutet nicht, dass 38 mm bei jeder Ausstattung passen. Incolor Speedster SR und Tavelo Arden haben mit Umwerfer engere Grenzen. LightCarbon LCR018-D nennt eine Grenze für die gemessene Breite. Prüfen Sie Antrieb und tatsächliche Reifenbreite vor der Rahmenwahl.",
+      "sections": [
+        {
+          "id": "the-three-records",
+          "heading": "Drei Rahmen, drei unterschiedliche Antworten",
+          "paragraphs": [
+            "Nutzen Sie die Tabelle, um ungeeignete Konfigurationen vor dem Preisvergleich auszuschließen. Incolor ist eine veröffentlichte Ausstattung; LightCarbon und Tavelo bleiben Rechercheprofile mit belegten Angaben zur Reifenfreiheit. Die Tabelle vergleicht diese Fakten, ohne die noch offene Kaufrecherche als abgeschlossen darzustellen."
+          ]
+        },
+        {
+          "id": "why-drivetrain-matters",
+          "heading": "38-mm-Reifen und zwei Kettenblätter? Zuerst lesen",
+          "paragraphs": [
+            "Bei einem geplanten 2×-Aufbau mit 38-mm-Reifen schließen die dokumentierten Grenzen von Incolor und Tavelo diese Kombination aus. Ein Wechsel auf 1× verändert die belegte Grenze, aber auch den geplanten Antrieb. Entscheiden Sie diesen Kompromiss vor der Teilebestellung. Die breitere 1×-Freigabe gilt nicht automatisch für einen Aufbau mit Umwerfer oder einen anderen Rahmen derselben Marke.",
+            "Beginnen Sie mit der [Modellseite des Incolor Speedster SR](/models/incolor-speedster-sr-frameset/#source-records) und vergleichen Sie danach die [Belege zum Tavelo Arden](/models/tavelo-arden/#source-records). Bewahren Sie im Gespräch mit dem Verkäufer die Einschränkungen des Herstellers, statt sie auf eine einzige Maximalzahl zu reduzieren."
+          ]
+        },
+        {
+          "id": "measured-width",
+          "heading": "Die Reifenbezeichnung ist nur der Anfang",
+          "paragraphs": [
+            "Nennmaß und gemessene Breite sind unterschiedliche Angaben. Die gespeicherte LightCarbon-Grenze ist ausdrücklich ein Maximum der gemessenen Breite. Fragen Sie nach dem vorgesehenen Reifen und Laufrad; ein fremder Aufbau allein rechtfertigt keine Bestellung.",
+            "Ein Besitzerfoto kann zeigen, dass eine bestimmte Kombination existiert. Es belegt allein keine freigegebene Grenze für jede Rahmengröße, Felge, jeden Reifen oder Einsatz. Beim LCR018-D hält der Datensatz größere Reifen in Besitzeraufbauten ausdrücklich vom Herstellermaximum getrennt."
+          ],
+          "bullets": [
+            "Notieren Sie Rahmengeneration und Größe, Antriebskonfiguration, Reifenmodell und Laufradsatz.",
+            "Fragen Sie, auf welcher Breitenmessung die Grenze beruht und ob Profil oder Rahmengröße sie verändern.",
+            "Gleichen Sie die geplante Kombination mit den Unterlagen ab; ein Besitzerfoto begründet kein neues Maximum."
+          ]
+        },
+        {
+          "id": "geometry",
+          "heading": "Reifenfreiheit ersetzt keine passende Sitzposition",
+          "paragraphs": [
+            "Vergleichen Sie als Nächstes Geometrie und Einstellmöglichkeiten des Cockpits. Prüfen Sie Stack, Reach, zulässige Spacer, Vorbauoptionen und Sattelstütze in Ihrer Größe. Ein Rahmen kann die Reifenanforderung erfüllen und trotzdem nicht passen.",
+            "Vergleichen Sie außerdem den Paketumfang: Cockpit, Sattelstütze, Steuersatz und Kleinteile können enthalten oder separat sein. Nutzen Sie den [Aufbauplaner](/build/), statt einen nackten Rahmenpreis mit einem vollständigen Rahmenset zu vergleichen. Lassen Sie ungeklärte Schnittstellen sichtbar; das LightCarbon-Profil bewahrt etwa widersprüchliche Innenlagermaße aus Hersteller- und Marktplatzangaben."
+          ]
+        },
+        {
+          "id": "decision",
+          "heading": "Eine kurze Checkliste vor der Rahmenwahl",
+          "paragraphs": [
+            "Behalten Sie einen Rahmen nur dann auf der Liste, wenn Generation, Größe, Antrieb und Reifenkombination mit seinen Unterlagen übereinstimmen. Prüfen Sie anschließend Sitzposition, Paketumfang und offene Schnittstellen auf der Modellseite.",
+            "Öffnen Sie den [Vergleich der drei Rahmen](/?compare=incolor-speedster-sr-frameset%2Clightcarbon-lcr018-d%2Ctavelo-arden#compare) oder [planen Sie einen Incolor-Speedster-Aufbau](/build/?base=incolor-speedster-sr-frameset), um den Einfluss der Antriebsauswahl zu sehen."
+          ],
+          "bullets": [
+            "Die Reifenfreigabe passt zu Ihrem 1×- oder 2×-Plan.",
+            "Die Bedingungen für Profil und Breite passen zu Ihrem Reifen.",
+            "Geometrie und Cockpit-Einstellung passen zur gewünschten Position.",
+            "Der Verkäufer bestätigt Paketumfang und offene Spezifikationen."
+          ]
+        }
+      ],
+      "table_notes": {
+        "incolor-speedster-sr-frameset": "1×: bis 38C Slick oder 36C mit kleinen Stollen. 2×: bis 32C Slick. Felge und Reifen beeinflussen die tatsächliche Breite.",
+        "lightcarbon-lcr018-d": "Herstellermaximum der gemessenen Breite. Keine getrennten 1×-/2×-Grenzen dokumentiert; ein größerer Reifen im Besitzeraufbau begründet keine neue Grenze.",
+        "tavelo-arden": "Das Maximum von 38 mm gilt für 1×; bei 2× sind es 34 mm. Bestätigen Sie Generation und geplante Reifenkombination."
+      }
     }
   },
   "comparison": {

@@ -186,6 +186,87 @@
           ]
         }
       ]
+    },
+    "de": {
+      "title": "Wie lange dauert ein Rad aus China? Vier getrennte Zeitabschnitte",
+      "description": "Bestandszuweisung, Produktion, Transport und Montage getrennt planen: mit datierten Besitzerbeispielen von Elves, ICAN und YOELEO.",
+      "intro": "Zwei Wochen Versand können in einem dreimonatigen Kauf stecken. Meist beantwortet die Angabe nur einen Teil der Frage: Wann kann ich das Rad fahren?",
+      "sections": [
+        {
+          "id": "clocks",
+          "heading": "Vier Meilensteine notieren",
+          "paragraphs": [
+            "Fragen Sie, welches Datum die Schätzung beschreibt. „In drei Wochen fertig“ kann ein lackierter Rahmen vor Abholung sein, ohne fehlendes Cockpit, Zoll oder Werkstattwarteschlange. Die Zeitlinie endet beim fahrfertigen Rad.",
+            "Notieren Sie die aktuelle Schätzung in der mittleren und das tatsächliche Ereignis in der letzten Spalte. „Lack freigegeben, Cockpit fehlt“ zeigt dann genau die offene Frist."
+          ],
+          "worksheet": {
+            "caption": "Bestellzeitlinie — Daten statt nur Wochen eintragen",
+            "columns": [
+              "Meilenstein",
+              "Erwartetes Datum",
+              "Tatsächliches Datum / Beleg"
+            ],
+            "rows": [
+              [
+                "Rahmen und notwendige Teile zugeteilt",
+                "Verkäufer fragen",
+                "Bestand für Ihren Auftrag bestätigt"
+              ],
+              [
+                "Lackierung und Vorbereitung fertig",
+                "Verkäufer fragen",
+                "Ausstattung zum Versand freigegeben"
+              ],
+              [
+                "Paket vom Transporteur angenommen",
+                "Verkäufer fragen",
+                "Erster Annahmescan"
+              ],
+              [
+                "Zollfreigabe und Lieferung",
+                "Transportschätzung",
+                "Liefernachweis"
+              ],
+              [
+                "Prüfung und Montage abgeschlossen",
+                "Mit Werkstatt planen",
+                "Rad geprüft und bereit"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "examples",
+          "heading": "Drei Berichte, drei unterschiedliche Engpässe",
+          "paragraphs": [
+            "Eine [Elves-Bestellung von 2025](https://chinertown.com/index.php/topic,4032.165.html) erreichte den Versand nach etwa zehn Wochen, ein anderer Besitzer desselben Threads meldete 2026 deutlich kürzere Gesamtzeit. Sonderbestellungen verschiedener Zeiträume ergeben keine Markenzusage.",
+            "Ein [ICAN-GRARO-Bericht vom Juni 2025](https://chinertown.com/index.php?topic=4766.135) nennt etwa viereinhalb Wochen bis Ankunft nach fehlendem EU-Bestand und China-Lieferung. Entscheidend war der geänderte Startort.",
+            "Ein [YOELEO-R11-Aufbau von 2021](https://chinertown.com/index.php?topic=3237.0) beschreibt lange Vorbereitung und etwa zwei Wochen Transport in die Schweiz. Schneller Transport beseitigte die Vorbereitung nicht. Das sind datierte Einzelfälle, keine heutige Prognose."
+          ]
+        },
+        {
+          "id": "tracking",
+          "heading": "Scans statt nur Sendungsnummer lesen",
+          "paragraphs": [
+            "Eine Sendungsnummer bedeutet ein Etikett. Der erste Annahmescan belegt stärker, dass das Paket im Transportnetz ist. Spätere Scanlücken allein verraten keinen Verzögerungsort.",
+            "Bei verfehltem Meilenstein senden Sie Bestellnummer, zugesagtes Datum und Trackingstand und fragen nach nächstem Schritt und neuem Datum. Zahlungsdienstleisterfristen gesondert verfolgen."
+          ],
+          "bullets": [
+            "Etikett ohne Annahmescan: Abholung durch Transporteur erfragen.",
+            "Fehlende Zollinformation: nötige Unterlagen oder Zahlung und vereinbarte Zuständigkeit prüfen.",
+            "Geliefert, aber Teil fehlt: Packliste klären; schnellere Lieferung löst das Problem nicht mehr."
+          ]
+        },
+        {
+          "id": "plan",
+          "heading": "Erste Fahrt nach Aufbau statt nach Lieferung planen",
+          "paragraphs": [
+            "Planen Sie Werkstattzeit für Prüfung und fehlende Teile. Buchen Sie kein nicht erstattbares Ereignis am optimistischen Rand einer Sonderrahmenschätzung. Ist der Termin wichtiger als die Lackierung, fragen Sie nach bestätigtem Fertigbestand.",
+            "Halten Sie Ihr bisheriges Rad nutzbar, bis der Ersatz geprüft ist. Eine Rahmenlieferung am Freitag garantiert keine lange Samstagsfahrt.",
+            "Die beste Schätzung ist die aktuelle auftragsspezifische Zeitlinie plus realistischer Montageplan. Foren zeigen mögliche Verzögerungen, keine garantierten Termine."
+          ]
+        }
+      ]
     }
   },
   "editorial_references": [

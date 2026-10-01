@@ -1,3 +1,4 @@
+import { LOCALES } from './i18n.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,7 +19,7 @@ export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url)
     postPhotos(post);
     for (const key of ['datePublished', 'dateModified']) if (!/^\d{4}-\d{2}-\d{2}$/.test(post[key])) throw new Error(`Invalid ${key}: ${post.slug}`);
     if (post.dateModified < post.datePublished) throw new Error(`Article modification precedes publication: ${post.slug}`);
-    for (const locale of ['en', 'zh-Hans']) {
+    for (const locale of LOCALES) {
       const copy = post.translations[locale];
       if (!copy?.title || !copy.description || !copy.intro || copy.sections?.length < 3) throw new Error(`Incomplete ${locale} article: ${post.slug}`);
       if (new Set(copy.sections.map((section) => section.id)).size !== copy.sections.length) throw new Error(`Duplicate section ID: ${post.slug}`);
@@ -29,7 +30,7 @@ export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url)
         if (section.worksheet && (!section.worksheet.caption || !Array.isArray(section.worksheet.columns) || !section.worksheet.columns.every((cell) => typeof cell === 'string' && cell) || !section.worksheet.rows?.length || !section.worksheet.rows.every((row) => row.length === section.worksheet.columns.length && row.every((cell) => typeof cell === 'string')))) throw new Error(`Invalid worksheet: ${post.slug}`);
       }
     }
-    if (post.translations.en.sections.map((s) => s.id).join() !== post.translations['zh-Hans'].sections.map((s) => s.id).join()) throw new Error(`Unpaired sections: ${post.slug}`);
+    if (LOCALES.some((locale) => post.translations.en.sections.map((s) => s.id).join() !== post.translations[locale].sections.map((s) => s.id).join())) throw new Error(`Unpaired sections: ${post.slug}`);
     const sections = new Set(post.translations.en.sections.map((section) => section.id));
     if (post.comparison && (!['gravel', 'clearance', 'build', 'price-basis'].includes(post.comparison.kind) || !sections.has(post.comparison.section_id))) throw new Error(`Invalid comparison placement: ${post.slug}`);
     const placements = post.photo_sections ?? [];

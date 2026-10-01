@@ -1,3 +1,4 @@
+import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
@@ -509,6 +510,7 @@ Object.assign(zh, {
 });
 
 export function translate(value, locale = 'en') {
+  if (locale === 'de') return translateGerman(value);
   if (locale !== 'zh-Hans' || typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
   const pad = (translated) => value.replace(text, translated);

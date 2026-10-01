@@ -188,6 +188,88 @@
           ]
         }
       ]
+    },
+    "de": {
+      "title": "Das neue Carbonrad ist da: Auspack- und Werkstattcheckliste",
+      "description": "Lieferung dokumentieren, vereinbarte Teile prüfen, Probleme erkennen und eine sichere Werkstattübergabe vorbereiten.",
+      "intro": "Der Karton ist angekommen. Ein ruhiger erster Blick bewahrt Belege, findet fehlende Teile und erleichtert die Werkstattübergabe.",
+      "sections": [
+        {
+          "id": "record",
+          "heading": "Den Karton vor Veränderungen dokumentieren",
+          "paragraphs": [
+            "Fotografieren Sie vor Öffnung alle Seiten, Etikett und eingedrückte oder nasse Stellen. Bestellnummer und Adresse bleiben beim Teilen privat. Öffnen Sie vorsichtig und bewahren Sie Verpackung und Beutel, bis alles zur Rechnung passt.",
+            "Bei Schäden fragen Sie nach der Transporteurdokumentation und informieren den Verkäufer mit Bestellreferenz. Ein Video kann helfen, ersetzt aber keine tatsächliche Reklamationsprozedur und garantiert keine Erstattung."
+          ],
+          "bullets": [
+            "Geschlossenen Karton und Schäden vor Entfernen der Polster fotografieren.",
+            "Kleinbeutel sauber auslegen und Teile gemeinsam sowie einzeln fotografieren.",
+            "Karton, Polster und Etiketten bis zur Klärung von Abweichungen oder Schäden behalten."
+          ]
+        },
+        {
+          "id": "inventory",
+          "heading": "Inhalt mit der vereinbarten Bestellung vergleichen",
+          "paragraphs": [
+            "Vergleichen Sie Generation, Größe, Lackierung und Cockpitmaße mit der finalen Bestellung. Markieren Sie zugesagt, erhalten und fehlend. Der Rahmenname allein zeigt keine falsche Lenkerbreite oder fehlende Abdeckung.",
+            "Erstellen Sie pro Abweichung ein Foto und einen Satz. Informieren Sie den Verkäufer vor Montage oder Veränderungen."
+          ],
+          "bullets": [
+            "Rahmen, Gabel, Größenetikett und Lackierung passen zur Rechnung.",
+            "Sattelstütze, Klemme oder Keil und Cockpit passen zur Auswahl.",
+            "Achsen, Schaltauge und Schrauben sind vorhanden.",
+            "Lager, Kompressionsring, obere Abdeckung, Spacer und Verlegungsteile passen zur Liste.",
+            "Halter, Stopfen, Stauraumteile und Anleitungen sind vorhanden, soweit zugesagt."
+          ]
+        },
+        {
+          "id": "inspection",
+          "heading": "Sichtprüfung ist ein erster Prüfschritt",
+          "paragraphs": [
+            "Ordnen Sie den Befund: falsche oder fehlende Teile brauchen Bestellkorrektur, sichtbare Schäden schnelle Dokumentation, vermutete Strukturprobleme Nutzungsstopp bis zur Prüfung durch Verkäufer und qualifizierte Werkstatt.",
+            "Bohren, schleifen, feilen, klopfen oder belasten Sie verdächtiges Carbon nicht selbst. Auch eine saubere Oberfläche beweist keine strukturelle Sicherheit. Nutzen Sie genaue Herstelleranweisungen und lassen Sie vor irreversibler Montage prüfen."
+          ],
+          "worksheet": {
+            "caption": "Befund → nächster Schritt",
+            "columns": [
+              "Befund",
+              "Dokumentieren",
+              "Nächster Schritt"
+            ],
+            "rows": [
+              [
+                "Falsche Größe oder Komponente",
+                "Rechnung und Teileetiketten",
+                "Vor Nutzung Korrektur anfordern"
+              ],
+              [
+                "Zugesagtes Teil fehlt",
+                "Packliste und Kleinbeutel",
+                "Fehlendes Teil anfordern"
+              ],
+              [
+                "Oberflächen- oder Ankunftsschaden",
+                "Nahaufnahme und Kartonfoto",
+                "Verkäufer und ggf. Transporteur kontaktieren"
+              ],
+              [
+                "Vermuteter Strukturschaden",
+                "Fotos; keine Tests oder Veränderungen",
+                "Montage stoppen und qualifiziert prüfen lassen"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "handover",
+          "heading": "Der Werkstatt die ganze Geschichte geben",
+          "paragraphs": [
+            "Bringen Sie Teileliste, Anleitungen, Passformübersicht und offene Korrespondenz. Lassen Sie Rahmen und Teile vor Kürzen, Verlegung oder anderen irreversiblen Arbeiten prüfen.",
+            "Vereinbaren Sie restliche Teile und Verbrauchsmaterial und aktualisieren Sie das Budget. Der [Aufbauplaner](/build/) organisiert bekannte Komponenten, untersucht aber keine Lieferung und zertifiziert keine Kompatibilität.",
+            "Lassen Sie nach Montage Prüfungen und vorgeschriebene Einfahr- oder Nachkontrollen erklären. Bewahren Sie Rechnung, Serienangaben und finale Ausstattung. Ziel ist ein ordentlich geprüftes Rad zum Beginn der Nutzung."
+          ]
+        }
+      ]
     }
   },
   "editorial_references": []

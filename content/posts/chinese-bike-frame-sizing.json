@@ -208,6 +208,98 @@
           }
         }
       ]
+    },
+    "de": {
+      "title": "Die passende Rahmengröße vor einer Onlinebestellung wählen",
+      "description": "Stack, Reach und Cockpitoptionen vor dem Rahmenkauf vergleichen: mit Passformtabelle für Verkäufer und Bikefitter.",
+      "intro": "Zwei Räder in Größe M können Ihre Hände unterschiedlich positionieren. Wenn eine Rückgabe internationalen Versand erfordert, ist eine vermutete Größenwahl besonders teuer.",
+      "sections": [
+        {
+          "id": "baseline",
+          "heading": "Mit einer beschreibbaren Position beginnen",
+          "paragraphs": [
+            "Bei einem bequemen Rad notieren Sie Modell, Jahr und Größe und besorgen dessen Geometrietabelle. Erfassen Sie Sattelposition, Cockpitmaße und Spacer. Seitenfotos helfen der Anpassung, ersetzen aber keine vollständige Vermessung.",
+            "Notieren Sie gewünschte Gemeinsamkeiten und Änderungen. Sitzen Sie auf den Bremsgriffen bequem oder möchten Sie anhaltende Reichweitenprobleme lösen? Der neue Rahmen soll eine konkrete Anforderung erfüllen.",
+            "Ist Ihr Rad unbequem, nehmen Sie es nicht ungeprüft als Vorlage. Eine Beratung vor dem Kauf kann hilfreicher sein als spätere Änderungen am bestellten integrierten Cockpit."
+          ]
+        },
+        {
+          "id": "geometry",
+          "heading": "Koordinaten statt Konfektionsgrößen vergleichen",
+          "paragraphs": [
+            "Stack ist der vertikale Abstand von der Innenlagermitte zur oberen Mitte des Steuerrohrs, Reach der horizontale Abstand derselben Punkte. Zusammen beschreiben sie das Rahmenvorderende. Ihre Hände liegen weiter entlang von Lagerabdeckung, Spacern, Vorbau, Lenker und Griffen.",
+            "Ein erfundenes Beispiel: aktueller Rahmen mit 560 mm Stack und 380 mm Reach, Kandidat mit 545 und 390 mm. Dessen Referenzpunkt liegt 15 mm tiefer und 10 mm weiter vorn. Daraus folgt nicht einfach „15 mm Spacer und 10 mm kürzerer Vorbau“; Lenkwinkel, Vorbauwinkel und restliches Cockpit ändern das Ergebnis.",
+            "Vergleichen Sie den gesamten Aufbau samt Sattelposition und Herstellergrenzen. Größe 54 einer Marke muss keiner anderen entsprechen. Nutzen Sie [Winspaces Größenhilfe](https://www.winspace.cc/pages/size-chart) oder die passende Markentabelle zur Vorauswahl und lassen Sie die erreichbare Zielposition erklären."
+          ]
+        },
+        {
+          "id": "front-end",
+          "heading": "Das tatsächlich bestellbare Cockpit prüfen",
+          "paragraphs": [
+            "Listen Sie vor Rahmenwahl die lieferbaren Cockpitgrößen. Fragen Sie nach Breitenmessung und Vorbaulängen. Ein kleiner Rahmen enthält nicht automatisch ein zu Schultern und Reichweite passendes Cockpit.",
+            "Fordern Sie zulässige Spaceranordnung, Einstellgrenzen sowie Sattelstützen-Einstecktiefe und Sattelstrebenanforderungen aus der aktuellen Anleitung an. Diese gelten modellspezifisch; ein Forenfoto mit mehr Spacern ist keine Freigabe.",
+            "Braucht Ihre Position nicht lieferbare Teile oder unzulässige Einstellungen, prüfen Sie die Rahmenwahl erneut. Sicherheitsrelevante Schnittstellen dürfen keine Improvisation erfordern."
+          ]
+        },
+        {
+          "id": "worksheet",
+          "heading": "Vor „Welche Größe?“ diese Tabelle ausfüllen",
+          "paragraphs": [
+            "Übernehmen Sie die Tabelle in Ihre Notizen. Verwenden Sie Millimeter und dieselbe Messmethode für beide Räder. Unbekannte Felder bleiben leer und werden zu Fragen an Anpasser und Verkäufer.",
+            "Senden Sie die Übersicht mit Geometrielinks und Angaben zu typischen Fahrten und Beschwerden. Fragen Sie nach Cockpit und Spacern statt nur nach Größe. Geben Sie Lackierung erst frei, wenn die Position auf dem Papier stimmt."
+          ],
+          "worksheet": {
+            "caption": "Passformübersicht — aktuelles Rad und geplanter Aufbau",
+            "columns": [
+              "Punkt",
+              "Aktuelle bequeme Einstellung",
+              "Plan / Frage"
+            ],
+            "rows": [
+              [
+                "Modell, Jahr und Größe",
+                "Eintragen",
+                "Eintragen"
+              ],
+              [
+                "Geometrielink; Stack / Reach (mm)",
+                "Eintragen",
+                "Eintragen"
+              ],
+              [
+                "Vorbaulänge / Winkel; Lenker-Reach / Drop",
+                "Eintragen",
+                "Geliefertes Cockpit bestätigen"
+              ],
+              [
+                "Lenkerbreite und Messstelle",
+                "Eintragen",
+                "Messkonvention bestätigen"
+              ],
+              [
+                "Lagerabdeckung und Spacer unter Vorbau",
+                "Eintragen",
+                "Anleitungsgrenzen prüfen"
+              ],
+              [
+                "Sattelmodell, Höhe und Versatz",
+                "Messmethode des Anpassers",
+                "Erreichbare Position prüfen"
+              ],
+              [
+                "Sattelstützenversatz und Einsteckgrenzen",
+                "Eintragen",
+                "Genaue Stütze bestätigen"
+              ],
+              [
+                "Was bleibt / was ändert sich?",
+                "Komfort und Einsatz beschreiben",
+                "Änderungen erklären lassen"
+              ]
+            ]
+          }
+        }
+      ]
     }
   },
   "editorial_references": [

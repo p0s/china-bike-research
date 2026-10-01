@@ -437,7 +437,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .compare-grid > *:nth-child(calc(var(--compare-count) + 1n)) { }
 .compare-label { position: sticky; left: 0; z-index: 2; background: var(--surface-soft); color: var(--muted); box-shadow: 1px 0 0 var(--line); font-size: .68rem; font-weight: 720; letter-spacing: .04em; text-transform: uppercase; }
 .compare-product-head { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 10px; align-items: center; position: relative; }
-.compare-product-head img { width: 72px; aspect-ratio: 3 / 2; padding: 4px; border: 1px solid var(--line); border-radius: 7px; object-fit: contain; background: var(--image-surface); }
+.compare-product-head img { width: 72px; height: auto; aspect-ratio: 3 / 2; padding: 4px; border: 1px solid var(--line); border-radius: 7px; object-fit: contain; background: var(--image-surface); }
 .compare-product-head.has-no-image { grid-template-columns: minmax(0, 1fr); }
 .compare-product-head > div { min-width: 0; padding-right: 17px; }
 .compare-product-head a { text-decoration: none; font-weight: 760; line-height: 1.24; }
@@ -1020,3 +1020,5 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .analytics-consent p{margin:0;flex:1;line-height:1.5}.analytics-consent>div{display:flex;gap:8px;flex-shrink:0}.analytics-consent form{margin:0}.analytics-consent button{min-height:40px;padding:8px 12px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-soft);cursor:pointer;white-space:nowrap}.analytics-consent button:hover{border-color:var(--accent)}.analytics-consent button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.analytics-consent button:disabled{opacity:.6;cursor:wait}.analytics-consent [hidden]{display:none}.analytics-consent [role=status]:not([hidden]){color:var(--danger)}
 body:has([data-analytics-banner]) .selection-bar{bottom:120px}
 @media(max-width:640px){.analytics-consent{inset:auto 10px 10px;display:block;padding:12px}.analytics-consent>div{margin-top:10px}.analytics-consent form{flex:1}.analytics-consent button{width:100%}body:has([data-analytics-banner]) .selection-bar{bottom:180px}}
+
+.language-nav { display: flex; align-items: center; }

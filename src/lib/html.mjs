@@ -1,4 +1,4 @@
-import { clarifyMainlandInDisplayHtml, localePath, localizeHtml } from './i18n.mjs';
+import { LOCALES, LOCALE_PREFIXES, clarifyMainlandInDisplayHtml, localePath, localizeHtml } from './i18n.mjs';
 import { translate } from '../../assets/i18n.js';
 export function escapeHtml(value='') {
   return String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
@@ -15,8 +15,10 @@ export function layout({base='', repositoryUrl, title='', description, current='
   title = t(title);
   description = t(description);
   const localizedPath = localePath(path, locale);
-  const languageHref = url(base, localePath(path, locale === 'en' ? 'zh-Hans' : 'en'));
-  const languageLinks = noindex ? '' : ['en', 'zh-Hans', 'x-default'].map((lang) => `<link rel="alternate" hreflang="${lang}" href="${escapeAttr(`${siteUrl}${url(base, localePath(path, lang === 'zh-Hans' ? lang : 'en'))}`)}">`).join('\n  ');
+  const languageNames = { en: 'English', 'zh-Hans': '中文', de: 'Deutsch' };
+  const languageLabels = { en: 'Read this page in English', 'zh-Hans': '阅读此页面的中文版本', de: 'Diese Seite auf Deutsch lesen' };
+  const socialLocales = { en: 'en_US', 'zh-Hans': 'zh_CN', de: 'de_DE' };
+  const languageLinks = noindex ? '' : [...LOCALES, 'x-default'].map((lang) => `<link rel="alternate" hreflang="${lang}" href="${escapeAttr(`${siteUrl}${url(base, localePath(path, lang === 'x-default' ? 'en' : lang))}`)}">`).join('\n  ');
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,localizedPath)}`;
   const socialImage = image ? (image.startsWith('https://') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`) : '';
@@ -39,8 +41,8 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <link rel="canonical" href="${escapeAttr(canonical)}">
   ${languageLinks}
   <meta property="og:site_name" content="${siteName}">
-  <meta property="og:locale" content="${locale === 'zh-Hans' ? 'zh_CN' : 'en_US'}">
-  <meta property="og:locale:alternate" content="${locale === 'zh-Hans' ? 'en_US' : 'zh_CN'}">
+  <meta property="og:locale" content="${socialLocales[locale]}">
+  ${LOCALES.filter((lang) => lang !== locale).map((lang) => `<meta property="og:locale:alternate" content="${socialLocales[lang]}">`).join("\n  ")}
   <meta property="og:title" content="${escapeAttr(pageTitle)}">
   <meta property="og:description" content="${escapeAttr(description)}">
   <meta property="og:type" content="${escapeAttr(ogType)}">
@@ -51,7 +53,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   ${jsonLd}
   <title>${escapeHtml(pageTitle)}</title>
 </head>
-<body data-base="${escapeAttr(base + (locale === 'zh-Hans' ? '/zh' : ''))}" data-locale="${locale}">
+<body data-base="${escapeAttr(base + (LOCALE_PREFIXES[locale] ?? ''))}" data-locale="${locale}">
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="page header-inner">
@@ -64,7 +66,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
           <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
           <a href="${url(base,'/blog/')}"${current==='blog'?' aria-current="page"':''}>Blog</a>
         </nav>
-        <a class="language-switch" data-language-switch href="${languageHref}" lang="${locale === 'en' ? 'zh-Hans' : 'en'}" hreflang="${locale === 'en' ? 'zh-Hans' : 'en'}" aria-label="${locale === 'en' ? '阅读此页面的中文版本' : 'Read this page in English'}">${locale === 'en' ? '中文' : 'English'}</a>
+        <nav class="language-nav" aria-label="Language">${LOCALES.filter((lang) => lang !== locale).map((lang) => `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav>
         <button class="theme-button" type="button" data-theme-control aria-label="Theme: System. Switch to light theme" title="Theme: System"><span aria-hidden="true" data-theme-icon>◐</span><span data-theme-label>System</span></button>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       </div>

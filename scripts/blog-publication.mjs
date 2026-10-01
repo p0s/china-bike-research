@@ -1,3 +1,4 @@
+import { LOCALES, LOCALE_PREFIXES } from '../src/lib/i18n.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -22,7 +23,7 @@ if(command==='status') {
  const next=nextPublication(queue,state.receipts);
  if(next.action!=='verify'||next.entry.slug!==slug||!deployment||!/^[a-f0-9-]{36}$/.test(deployment)) throw new Error('Usage: confirm NEXT-UNVERIFIED-SLUG CLOUDFLARE-VERSION-UUID');
  const proof=[];
- for(const prefix of ['', '/zh']) {
+ for(const prefix of LOCALES.map(locale => LOCALE_PREFIXES[locale])) {
   const route=prefix+'/blog/'+slug+'/';
   const local=fs.readFileSync(path.join(root,'dist',route,'index.html'),'utf8');
   const response=await fetch('https://chinesebikes.xyz'+route,{redirect:'error',signal:AbortSignal.timeout(30000)});
