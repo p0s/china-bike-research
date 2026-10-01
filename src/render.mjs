@@ -1113,6 +1113,7 @@ function videoRelationshipLabel(value) {
   return {
     'retailer-linked': 'Retailer-linked',
     'brand-published': 'Brand video',
+    'unknown': 'Relationship unknown',
     'product-supplied': 'Product supplied',
     'publication-review': 'Publication review',
     'owner-review': 'Owner review',

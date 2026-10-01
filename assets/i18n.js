@@ -542,6 +542,58 @@ Object.assign(zh, {
   "Disclosure basis": "披露依据"
 });
 
+// Reviewed context for the expanded October video batch.
+Object.assign(zh, {
+  "The channel identifies itself as BXT Official store. No description is provided, so commercial and product-supply terms are not established.": "频道自称 BXT Official store。视频没有简介，因此商业关系和产品提供条件未明确。",
+  "Short storefront presentation of the BXT-055. It adds visual context; the clearance wording in the title is not new specification evidence.": "BXT-055 的简短店铺展示，可用于了解外观；标题中的胎容表述不构成新的规格证据。",
+  "The creator describes his own factory-ordered custom build. Purchase details are owner-reported; other commercial arrangements remain unknown.": "创作者说明这是自己向厂家订购的定制装车。购买细节属于车主自述，其他商业安排仍未知。",
+  "Custom CFR707 build with fit, component, weight and ride discussion. The shown configuration and owner-reported costs are not a current mainland China quote or a catalog specification.": "定制 CFR707 装车，讨论合身、配件、重量与骑行。视频配置和车主自述费用不代表当前中国大陆报价或目录规格。",
+  "The description identifies the CFR707 build but does not establish ownership, product-supply terms or commercial relationships.": "简介说明是 CFR707 装车，但未明确所有权、产品提供条件或商业关系。",
+  "A 2023 CFR707 build presentation with component-weight context. Build-specific values are not adopted as current catalog weights or specifications.": "2023 年的 CFR707 装车展示，涉及配件重量。此装车的数值不作为当前目录重量或规格。",
+  "The creator presents the frame as an anonymous purchase and names the Falath Evo in the description; other commercial arrangements are not established.": "创作者将车架描述为匿名购买，并在简介中明确 Falath Evo；其他商业安排未明确。",
+  "Assessment of a purchased Falath EVO frameset with a carbon specialist and mechanic. This is the 2023 EVO sample, not evidence for EVO+ or EXP revisions or every production frame.": "与碳纤维专家和技师一起评估购买的 Falath EVO 车架组。对象是 2023 年 EVO 样品，不代表 EVO+、EXP 版本或所有量产车架。",
+  "The description promotes discount codes and commercial product links. Elves-specific frame-supply or payment terms are not established there.": "简介推广优惠码和商业产品链接，但未说明针对 Elves 的车架提供或报酬条件。",
+  "Falath EVO ride review framed around 1,000 miles on a 2023 custom build. It complements the frame assessment without establishing current prices or EVO+ specifications.": "围绕 2023 年定制装车骑行 1,000 英里的 Falath EVO 评测，补充车架评估；不证明当前价格或 EVO+ 规格。",
+  "The creator discloses occasional commissions on equipment links. The description does not establish frame-supply terms for this first look.": "创作者披露装备链接有时带来佣金；简介未说明本次初次展示的车架提供条件。",
+  "First look at the explicitly named Vanyar Pro Disc 2024, published in 2023. It is unboxing context, not a long-term ride test or evidence for older Vanyar frames.": "明确针对 Vanyar Pro Disc 2024 的初次展示，发布于 2023 年。属于开箱资料，不是长期骑行测试，也不代表旧款 Vanyar。",
+  "Cycle Shop Popeye describes assembling an ELVES test bike at its shop and links its business. This is retailer-produced context.": "Cycle Shop Popeye 说明在店内组装 ELVES 测试车，并链接其商店；属于商家制作的资料。",
+  "Japanese shop presentation of a Vanyar Pro Disc 2024 test build, linked to the exact regional product page. The parts shown are not a verified mainland China stock configuration.": "日本店铺展示 Vanyar Pro Disc 2024 测试装车，并链接具体地区商品页。视频配件不代表已核实的中国大陆原厂配置。",
+  "The creator describes his own build, provides a Winspace discount code and lists a SunGod affiliate link. Frame-purchase or supply terms remain unknown.": "创作者说明是自己的装车，提供 Winspace 优惠码并列出 SunGod 推广链接；车架购买或提供条件仍未知。",
+  "Itemized discussion of the creator's T1550 Gen 2 custom-build costs and parts. The comparison is historical owner context, not a mainland China checkout or current factory-build price.": "逐项讨论创作者 T1550 Gen 2 定制装车的费用与配件。这是有日期的车主对比资料，不代表中国大陆结算价或当前原厂整车价格。",
+  "The description links the creator's supplier discount codes and paid Patreon material. Frame-supply terms are not established by the public description.": "简介链接创作者的供应商优惠码和付费 Patreon 内容；公开简介未说明车架提供条件。",
+  "Long-term T1600 review based on the creator's race build. The original T1600 is kept separate from T1600 Ultra; aero and stiffness discussion is contextual, not an accepted catalog ranking.": "根据创作者竞赛装车进行的 T1600 长期评测。原款 T1600 与 T1600 Ultra 分开；气动和刚性讨论仅作背景，不构成目录排名。",
+  "The creator says Winspace supplied the frame, wheels and handlebars, and discloses affiliate commissions and a Winspace discount code.": "创作者说明 Winspace 提供了车架、轮组和把组，并披露推广佣金与 Winspace 优惠码。",
+  "T1600 build and ride review with equipment and issue discussion. The supplied review build does not select the catalog candidate's unresolved trim or establish T1600 Ultra specifications.": "T1600 装车与骑行评测，涉及装备和问题。品牌提供的评测配置不能确定目录候选车型尚未明确的具体配置，也不证明 T1600 Ultra 规格。",
+  "The description discloses affiliate commissions and a Winspace discount code. Product-supply terms are not established there.": "简介披露推广佣金和 Winspace 优惠码，但未说明产品提供条件。",
+  "M6 review of an Ultegra Di2 and UPVINE Pro+ custom build. It complements the existing shop-tour context without resolving the candidate's mainland China coupon-card configuration.": "搭配 Ultegra Di2 和 UPVINE Pro+ 的定制 M6 评测，补充已有店铺参观资料；不确定候选车型中国大陆优惠券卡对应的具体配置。",
+  "The creator says Evolve gave him the frame free and did not pay for this video. His China Cycling/Panda Podium retailer relationship remains relevant.": "创作者说明 Evolve 免费提供了车架，但未为本视频付款；其 China Cycling/Panda Podium 商家关系仍有参考意义。",
+  "CIMA road update after a reported 3,000 km, covering use, likes, issues and the revised build. This road platform is distinct from CIMA GR; ride impressions remain creator reports.": "CIMA 公路车骑行自述 3,000 km 后的更新，讨论用途、优点、问题和改装配置。此公路平台与 CIMA GR 不同；骑行感受仍是创作者自述。",
+  "The description links the CIMA Speed Artist and promotes parts sold by Panda Podium; this is retailer-linked build context.": "简介链接 CIMA Speed Artist，并推广 Panda Podium 销售的配件；属于关联商家的装车资料。",
+  "Lightweight CIMA road build with a component walkthrough and ride discussion. The title's weight belongs to the shown custom build, not a factory configuration or this candidate's package.": "轻量 CIMA 公路装车，介绍配件并讨论骑行。标题中的重量仅适用于视频中的定制装车，不代表原厂配置或候选车型套餐。",
+  "The creator describes upgrading his own bike; the description includes commercial referral links and discount codes. Frame-supply terms remain unknown.": "创作者说明改装自己的车；简介含有商业推广链接和优惠码，车架提供条件仍未知。",
+  "Custom LCG071-PRO upgrade build with Wheeltop GeX, carbon wheels and cranks. The description names the exact PRO frame; it does not establish LCG071S-PRO specifications or current China prices.": "LCG071-PRO 定制升级，搭配 Wheeltop GeX、碳轮和碳曲柄。简介明确 PRO 车架；不证明 LCG071S-PRO 规格或当前中国价格。",
+  "Published by the LightCarbon channel and linked to its LCG071-PRO product page. This is promotional context, not an independent review.": "由 LightCarbon 频道发布，并链接其 LCG071-PRO 商品页。属于宣传资料，不是独立评测。",
+  "Short LCG071-PRO presentation focused on the storage-equipped frameset and integrated cockpit. Manufacturer specification statements stay separate from independent measurement and the LCG071S-PRO model.": "LCG071-PRO 的简短展示，重点是带储物空间的车架组和一体把组。厂家规格表述与独立测量、LCG071S-PRO 型号保持区分。",
+  "The creator describes a season on his GR:ONE and a teammate's Grow, both from Panda Podium. Purchase, supply and payment terms are not stated.": "创作者说明自己骑 GR:ONE 一整个赛季，并与队友的 Grow 对比，两车均来自 Panda Podium；未说明购买、产品提供或报酬条件。",
+  "Owner comparison of the Quick Pro GR:ONE and Tavelo Grow, with wheels, cockpit and issue discussion. The shown builds and comparisons do not establish universal performance or current China prices.": "车主对比 Quick Pro GR:ONE 和 Tavelo Grow，讨论轮组、把组及问题。视频中的装车与对比不证明普遍性能或当前中国价格。",
+  "Relationship unknown": "商业关系未明确"
+});
+
+Object.assign(zh, {
+  "Fit context": "合身背景",
+  "Build weight": "装车重量",
+  "Ride impressions": "骑行感受",
+  "Build experience": "装车体验",
+  "Ride experience": "骑行体验",
+  "Conclusion": "结论",
+  "Ride context": "骑行背景",
+  "Reported issues": "报告的问题",
+  "Current build": "当前装车",
+  "Components": "配件",
+  "Wheels and tires": "轮组与轮胎",
+  "Cockpits": "把组"
+});
+
 export function translate(value, locale = 'en') {
   if (locale === 'de') return translateGerman(value);
   if (locale !== 'zh-Hans' || typeof value !== 'string' || !value.trim()) return value;

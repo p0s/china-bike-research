@@ -89,7 +89,7 @@ test('every published model has a German verdict and buying advice; research pro
 test('video disclosures translate separately from creator identities and publication dates', () => {
   for (const locale of ['en', 'zh-Hans', 'de']) {
     const videoCtx = { ...ctx, locale };
-    for (const id of ['cycle-workshop-ican-graro-ride-review', 'elves-mori-aerox-brand-overview', 'david-arthur-winspace-slc3-review']) {
+    for (const id of ['cycle-workshop-ican-graro-ride-review', 'elves-mori-aerox-brand-overview', 'david-arthur-winspace-slc3-review', 'daryl-pace-carbonda-cfr707-build']) {
       const video = data.videos.find((record) => record.id === id);
       const entry = video.target.platform_id
         ? products.find((product) => product.platform.id === video.target.platform_id)
@@ -105,6 +105,7 @@ test('video disclosures translate separately from creator identities and publica
       assert.ok(html.includes(`https://www.youtube-nocookie.com/embed/${video.youtube_video_id}?rel=0`));
       assert.ok(html.includes(`href="${escapeHtml(video.url)}"`));
       if (video.relationship === 'brand-published') assert.ok(html.includes(`<span>${translate('Brand video', locale)}</span>`));
+      if (video.relationship === 'unknown') assert.ok(html.includes(`<span>${translate('Relationship unknown', locale)}</span>`));
     }
   }
 });
