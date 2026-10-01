@@ -1,3 +1,4 @@
+import { LOCALES, LOCALE_PREFIXES } from '../src/lib/i18n.mjs';
 // Drafts are rendered only here, into a separate ignored directory. Production
 // builds have no environment-variable switch that can include future articles.
 import fs from 'node:fs';
@@ -11,8 +12,8 @@ validatePostReferences(posts,data,products);
 const ctx={data,products,catalogCandidates:joinCatalogCandidates(data),posts,base:'',siteUrl:'https://preview.invalid',repositoryUrl:'https://github.com/p0s/china-bike-research',siteLastmod:data.meta.snapshot_date};
 fs.mkdirSync(output,{recursive:true});
 fs.cpSync(path.join(root,'assets'),path.join(output,'assets'),{recursive:true});
-for(const locale of ['en','zh-Hans']) {
- const prefix=locale==='en'?'':'zh/';
+for(const locale of LOCALES) {
+ const prefix=LOCALE_PREFIXES[locale].replace(/^\//, '');
  const write=(route,html)=>{
   const target=path.join(output,prefix,route,'index.html');
   fs.mkdirSync(path.dirname(target),{recursive:true});

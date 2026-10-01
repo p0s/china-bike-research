@@ -190,6 +190,89 @@
           ]
         }
       ]
+    },
+    "de": {
+      "title": "Schaltgruppe für einen Rahmenaufbau kaufen: Erst Teile, dann Ersparnis zählen",
+      "description": "Paketumfang einer Schaltgruppe klären, Teile nicht doppelt zählen und Kompatibilität vor dem Kauf von Antrieb und Bremsen prüfen.",
+      "intro": "Ein Schaltgruppenangebot kann vollständig wirken und ein entscheidendes Teil auslassen. Paketnamen sind Kurzformen; gekauft wird die konkrete Stückliste.",
+      "sections": [
+        {
+          "id": "package",
+          "heading": "Aus Paketnamen keinen Inhalt ableiten",
+          "paragraphs": [
+            "Händler meinen mit „kleiner“ und „großer Schaltgruppe“ unterschiedliche Pakete. Fragen Sie nach Modellcodes und Mengen und markieren Sie geliefert, vorhanden oder benötigt. Bei 1× kann der Umwerfer entfallen; bei 2× wäre sein Fehlen eine Lücke.",
+            "Klären Sie Unterschiede zwischen Foto und Teileliste vor Zahlung. Ein Scheibenfoto sagt nichts über Anzahl, Durchmesser oder Aufnahme der gelieferten Scheiben."
+          ],
+          "worksheet": {
+            "caption": "Schaltgruppeninventar — genaue Modellcodes eintragen",
+            "columns": [
+              "Teile",
+              "Zu erfassende Angaben",
+              "Geliefert / vorhanden / benötigt"
+            ],
+            "rows": [
+              [
+                "Bedienelemente und Schaltwerke",
+                "Links / rechts; Generation; 1× oder 2×",
+                "Eintragen"
+              ],
+              [
+                "Kurbel und Innenlager",
+                "Kurbellänge, Kettenblätter, Welle und Rahmenanschluss",
+                "Eintragen"
+              ],
+              [
+                "Kassette und Kette",
+                "Gänge, Zahnspanne, Freilauf und Kettenschloss",
+                "Eintragen"
+              ],
+              [
+                "Bremsen und Leitungen",
+                "Sättel vorn / hinten; Leitungen und Anschlüsse",
+                "Eintragen"
+              ],
+              [
+                "Scheiben und Befestigungen",
+                "Anzahl, Durchmesser, Aufnahme, Adapter",
+                "Eintragen"
+              ],
+              [
+                "Elektronikzubehör, falls nötig",
+                "Batterien, Ladegerät, Kabel und Halter",
+                "Eintragen"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "compatibility",
+          "heading": "Die Schnittstellenkette prüfen",
+          "paragraphs": [
+            "Beginnen Sie mit aktuellen Rahmenunterlagen und Kompatibilitätsinformationen der Komponentenhersteller. Für Shimano nutzen Sie das [Technikportal](https://si.shimano.com/en/), für SRAM die [Serviceinformationen](https://www.sram.com/en/service). Genaue Modellcodes statt nur Familiennamen abgleichen.",
+            "Prüfen Sie Innenlager und Welle, Antriebsgeneration und Gangzahl, Freilauf und Kassette, Schaltwerkaufnahme, Bremsaufnahme und Scheiben sowie Verlegung und Cockpit. Unbekannt bleibt eine Frage an die Werkstatt.",
+            "Elektronisch bedeutet nicht zubehörfrei. Je nach System fehlen möglicherweise Batterie, Ladegerät, Kabel oder Halter. Fragen Sie nach dem vollständigen System statt alle Verbindungen aus „kabellos“ abzuleiten."
+          ]
+        },
+        {
+          "id": "gearing",
+          "heading": "Übersetzung für den Einsatz wählen und Kombination prüfen",
+          "paragraphs": [
+            "Notieren Sie Strecke und Last: kurze schnelle Fahrten, lange Anstiege oder Gepäck verändern den Bedarf am leichtesten Gang. Vergleichen Sie mit einem gefahrenen Aufbau und prüfen Sie Kettenblatt, Kassette und Schaltwerk gegen Herstellergrenzen.",
+            "Ein Rechenbeispiel: 34 ÷ 34 ergibt 1,00, 40 ÷ 44 etwa 0,91. Bei gleichem Rad und Reifen legt die zweite Kombination pro Kurbelumdrehung weniger Strecke zurück. Das sind Rechenbeispiele, keine freigegebenen Kombinationen; prüfen Sie genaue Schaltwerk- und Kettenblattspezifikationen.",
+            "Eine größere spätere Kassette kann weitere Teile und zulässige Einstellungen beeinflussen. Auch Kurbellänge ist eine Passformentscheidung, nicht bloß die reduzierte Option.",
+            "Fordern Sie nach Vorlage der Teileliste ein Montageangebot einschließlich Verlegung und Kürzen an. Allgemeine Internet-Drehmomente ersetzen keine genaue Anleitung."
+          ]
+        },
+        {
+          "id": "budget",
+          "heading": "Jedes Teil nur einmal zählen",
+          "paragraphs": [
+            "Das [Rahmenset-/Komplettrad-Beispiel](/blog/frameset-vs-complete-bike-cost-in-china/) zeigt den Einfluss des Pakets: bereits enthaltene Bremsen oder Kassette erneut zu addieren erhöht die Summe; notwendiges Zubehör wegzulassen senkt sie fälschlich.",
+            "Vergleichen Sie den fertigen Aufbau mit einer genauen Komplettradausstattung. Das gezeigte Twitter ist eine Referenz, keine übertragbare Teileliste. Bei anderen Laufrädern, Gängen oder Cockpit Kosten und Vergleich aktualisieren.",
+            "Kaufen Sie nach Klärung von Inventar und Schnittstellen mit einem Plan für den Rest. Eine gute Ersparnis bleibt auch nach Öffnen aller Beutel bestehen."
+          ]
+        }
+      ]
     }
   },
   "editorial_references": [

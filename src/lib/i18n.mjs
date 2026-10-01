@@ -1,11 +1,13 @@
 import { translate } from '../../assets/i18n.js';
 
-export const LOCALES = ['en', 'zh-Hans'];
+export const LOCALES = ['en', 'zh-Hans', 'de'];
+export const LOCALE_PREFIXES = { en: '', 'zh-Hans': '/zh', de: '/de' };
+export function routeLocale(route) { return route.startsWith('/de/') ? 'de' : route.startsWith('/zh/') ? 'zh-Hans' : 'en'; }
 export function localePath(route = '/', locale = 'en') {
-  return locale === 'zh-Hans' ? `/zh${route}` : route;
+  return `${LOCALE_PREFIXES[locale] ?? ''}${route}`;
 }
 export function isPagePath(route) {
-  return route === '/' || route === '/404.html' || /^\/(?:zh\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|electronic-shifting|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
+  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|electronic-shifting|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
 }
 function escape(value) { return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'); }
 function decode(value) { return value.replaceAll('&quot;', '"').replaceAll('&#039;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&'); }
@@ -14,14 +16,17 @@ function clarifyMainland(value) {
     .replace(/\bnon-mainland\b(?![-\s]+Chin(?:a|ese)\b)/gi, (match) => match[0] === 'N' ? 'Outside mainland China' : 'outside mainland China')
     .replace(/\bmainland\b(?![-\s]+Chin(?:a|ese)\b)/gi, (match) => `${match} China`);
 }
-const displayPayloadKeys = new Set(['priceDetails', 'verdict', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'drivetrain', 'weightBasis', 'note']);
-function clarifyDisplayPayload(value, key = '') {
-  if (Array.isArray(value)) return value.map((item) => clarifyDisplayPayload(item, key));
-  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([name, item]) => [name, clarifyDisplayPayload(item, name)]));
-  return typeof value === 'string' && displayPayloadKeys.has(key) ? clarifyMainland(value) : value;
+const displayPayloadKeys = new Set(['priceDetails', 'verdict', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'drivetrain', 'weightBasis', 'note', 'frame', 'categoryMetric', 'categoryMetricLabel', 'type', 'category', 'manufacturing', 'mounts', 'internalFrameStorage', 'drivetrainSubline', 'bestFor']);
+function clarifyDisplayPayload(value, key = '', locale = 'en') {
+  if (Array.isArray(value)) return value.map((item) => clarifyDisplayPayload(item, key, locale));
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([name, item]) => [name, clarifyDisplayPayload(item, name, locale)]));
+  // Comparison summaries use human-readable category labels, while other
+  // payloads may use a canonical category ID. Only the labels are translated.
+  if (key === 'category' && typeof value === 'string' && /^[a-z][a-z0-9-]*$/.test(value)) return value;
+  return typeof value === 'string' && displayPayloadKeys.has(key) ? clarifyMainland(translate(value, locale)) : value;
 }
 export function localizedCatalogPayload(value, options = {}) {
-  return clarifyDisplayPayload(localizeJson(value, options));
+  return clarifyDisplayPayload(localizeJson(value, options), '', options.locale ?? 'en');
 }
 // Clarify English geographic shorthand only in reader-facing HTML. Keep URLs,
 // data IDs, and JSON-LD unchanged; update only display fields in the embedded
@@ -67,20 +72,20 @@ export function localizedHref(value, { base = '', locale = 'en', siteUrl = '' } 
   if (!local.startsWith('/') || local.startsWith('//') || (base && !(local === base || local.startsWith(`${base}/`)))) return value;
   const route = local.slice(base.length) || '/';
   const pathname = route.split(/[?#]/)[0];
-  if (pathname.startsWith('/zh/') || !isPagePath(pathname)) return value;
+  if (/^\/(?:zh|de)(?:\/|$)/.test(pathname) || !isPagePath(pathname)) return value;
   return `${prefix}${base}${localePath(route, locale)}`;
 }
 export function localizeJson(value, options = {}, key = '') {
   if (Array.isArray(value)) return value.map((item) => localizeJson(item, options, key));
-  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, k === 'inLanguage' ? 'zh-Hans' : localizeJson(v, options, k)]));
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, k === 'inLanguage' ? (options.locale ?? 'en') : localizeJson(v, options, k)]));
   if (typeof value !== 'string') return value;
   // IDs, categories used by filters, source URLs and media paths are not translations.
   if (['url', '@id', 'item', 'mainEntityOfPage', 'citation'].includes(key)) return localizedHref(value, options);
-  if (['name', 'description', 'reviewBody', 'label', 'title', 'value', 'price', 'tireClearance', 'weight', 'drivetrain', 'imageAccuracy', 'imageAlt', 'categoryLabel', 'frameMaterial'].includes(key)) return translate(value, options.locale);
+  if (['name', 'description', 'reviewBody', 'label', 'title', 'value', 'price', 'tireClearance', 'weight', 'drivetrain', 'imageAccuracy', 'imageAlt', 'categoryLabel', 'frameMaterial', 'verdict', 'priceDetails', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'weightBasis', 'note'].includes(key)) return translate(value, options.locale);
   return value;
 }
 export function localizeHtml(html, options = {}) {
-  if (options.locale !== 'zh-Hans') return html;
+  if (!options.locale || options.locale === 'en') return html;
   // Work on generated, escaped markup. Script bodies are isolated before tokenizing.
   const raw = [];
   let input = html.replace(/<(p|span)\b[^>]*data-original-language[^>]*>[\s\S]*?<\/\1>/gi, (block) => {
@@ -98,7 +103,12 @@ export function localizeHtml(html, options = {}) {
   input = input.split(/(<[^>]+>)/g).map((part) => {
     if (part.startsWith('<')) {
       if (/^<!--/.test(part)) return part;
-      part = part.replace(/\b(aria-label|title|placeholder|alt|label|data-gallery-caption|data-label)="([^"]*)"/g, (_, attr, value) => `${attr}="${escape(translate(decode(value), options.locale))}"`);
+      part = part.replace(/\b(aria-label|title|placeholder|alt|label|data-gallery-caption|data-label|data-tooltip-lines)="([^"]*)"/g, (_, attr, value) => {
+        const decoded = decode(value);
+        const translated = attr === 'data-tooltip-lines' ? JSON.stringify(JSON.parse(decoded).map((line) => translate(line, options.locale))) : translate(decoded, options.locale);
+        return `${attr}="${escape(translated)}"`;
+      });
+      if (options.locale === 'de') part = part.replace(/action="([^"?]*\/analytics\/opt-(?:in|out))"/g, 'action="$1?lang=de"');
       if (!/data-language-switch|rel="(?:alternate|canonical)"/.test(part)) part = part.replace(/\b(href|data-model-url)="([^"]*)"/g, (_, attr, value) => `${attr}="${escape(localizedHref(decode(value), options))}"`);
       return part;
     }

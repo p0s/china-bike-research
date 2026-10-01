@@ -41,6 +41,7 @@ export function analyticsScriptPolicy(allowed, nonce = '') {
 }
 
 export function analyticsBanner(chinese = false) {
+  if (chinese === 'de') return `<aside class="analytics-consent" aria-label="Analyseauswahl" data-analytics-banner><p>Analyse-Cookies erlauben, um die Website zu verbessern? Google verarbeitet Daten im Ausland. <a href="/de/privacy/#analytics">Datenschutz</a></p><div><form method="post" action="/analytics/opt-in?lang=de" data-analytics-choice><button type="submit">Analyse erlauben</button></form><form method="post" action="/analytics/opt-out?lang=de" data-analytics-choice><button type="submit">Nein, danke</button></form></div><p role="status" data-analytics-choice-status hidden></p></aside>`;
   const text = chinese
     ? '允许分析 Cookie，帮助我们改进网站？数据会由 Google 在境外处理。'
     : 'Allow analytics cookies to help improve this site? Google processes data abroad.';

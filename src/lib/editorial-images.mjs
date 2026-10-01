@@ -1,3 +1,4 @@
+import { translate } from '../../assets/i18n.js';
 import fs from 'node:fs';
 import { escapeAttr, escapeHtml, url } from './html.mjs';
 
@@ -37,7 +38,7 @@ export function postPhotos(post) {
 export function editorialImageMeta(ctx, id) {
   const header = editorialImage(id).header;
   const file = header.files.find((item) => item.purpose === 'social');
-  return { image: url(ctx.base, file.path), imageAlt: header.alt[ctx.locale ?? 'en'], imageWidth: file.width, imageHeight: file.height, imageType: file.type };
+  return { image: url(ctx.base, file.path), imageAlt: header.alt[ctx.locale ?? 'en'] ?? translate(header.alt.en, ctx.locale), imageWidth: file.width, imageHeight: file.height, imageType: file.type };
 }
 
 function mascot(ctx, image) {
@@ -55,7 +56,7 @@ function renderPhoto(ctx, photo, image, modelIds) {
   const srcset = variants?.length
     ? ` srcset="${escapeAttr(variants.map((variant) => `${url(ctx.base, variant.url)} ${variant.width}w`).join(', '))}" sizes="(max-width: 760px) calc(100vw - 48px), 760px"`
     : '';
-  return `<figure class="editorial-figure blog-model-photo" data-blog-photo="${photo.id}"><div class="blog-photo-scene"><img class="blog-bike-photo" data-blog-bike-image src="${escapeAttr(source)}"${srcset} alt="${escapeAttr(photo.alt[locale])}" referrerpolicy="no-referrer" loading="lazy" decoding="async">${mascot(ctx, image)}</div><figcaption><strong>${escapeHtml(photo.name)}</strong>${links ? ` · ${links}` : ''}<span class="blog-photo-note">${escapeHtml(photo.note[locale])}</span><a href="${escapeAttr(photo.source.url)}" rel="noreferrer">${escapeHtml(photo.image.credit)}</a><span class="blog-photo-status" data-blog-photo-status hidden>${zh ? '照片暂时无法加载，可打开来源查看。' : 'Photo unavailable; open the source to view it.'}</span></figcaption></figure>`;
+  return `<figure class="editorial-figure blog-model-photo" data-blog-photo="${photo.id}"><div class="blog-photo-scene"><img class="blog-bike-photo" data-blog-bike-image src="${escapeAttr(source)}"${srcset} alt="${escapeAttr(photo.alt[locale] ?? translate(photo.alt.en, locale))}" referrerpolicy="no-referrer" loading="lazy" decoding="async">${mascot(ctx, image)}</div><figcaption><strong>${escapeHtml(photo.name)}</strong>${links ? ` · ${links}` : ''}<span class="blog-photo-note">${escapeHtml(photo.note[locale] ?? translate(photo.note.en, locale))}</span><a href="${escapeAttr(photo.source.url)}" rel="noreferrer">${escapeHtml(photo.image.credit)}</a><span class="blog-photo-status" data-blog-photo-status hidden>${zh ? '照片暂时无法加载，可打开来源查看。' : 'Photo unavailable; open the source to view it.'}</span></figcaption></figure>`;
 }
 
 export function renderEditorialImage(ctx, id, { card = false, banner = false, href = '' } = {}) {
@@ -63,7 +64,7 @@ export function renderEditorialImage(ctx, id, { card = false, banner = false, hr
   const small = header.files.find((item) => item.purpose === 'card');
   const large = header.files.find((item) => item.purpose === 'hero');
   const sizes = card ? '(max-width: 760px) calc(100vw - 48px), 550px' : banner ? '(max-width: 1168px) calc(100vw - 48px), 1120px' : '(max-width: 1008px) calc(100vw - 48px), 960px';
-  const img = `<img data-blog-header-image src="${url(ctx.base, card ? small.path : large.path)}" srcset="${url(ctx.base, small.path)} ${small.width}w, ${url(ctx.base, large.path)} ${large.width}w" sizes="${sizes}" width="${large.width}" height="${large.height}" alt="${escapeAttr(card ? '' : header.alt[ctx.locale ?? 'en'])}" loading="${card ? 'lazy' : 'eager'}" decoding="async"${card ? '' : ' fetchpriority="high"'}>`;
+  const img = `<img data-blog-header-image src="${url(ctx.base, card ? small.path : large.path)}" srcset="${url(ctx.base, small.path)} ${small.width}w, ${url(ctx.base, large.path)} ${large.width}w" sizes="${sizes}" width="${large.width}" height="${large.height}" alt="${escapeAttr(card ? '' : header.alt[ctx.locale ?? 'en'] ?? translate(header.alt.en, ctx.locale))}" loading="${card ? 'lazy' : 'eager'}" decoding="async"${card ? '' : ' fetchpriority="high"'}>`;
   return `<figure class="editorial-figure illustrated-header ${card ? 'article-card-image' : banner ? 'blog-banner' : 'article-cover'}">${href ? `<a href="${escapeAttr(href)}" tabindex="-1" aria-hidden="true">${img}</a>` : img}</figure>`;
 }
 

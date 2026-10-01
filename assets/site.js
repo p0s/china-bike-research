@@ -33,7 +33,7 @@ void import('./analytics-event.js').then((events) => {
     link.addEventListener('click', syncLanguageLink);
   });
   // Static HTML is already localized. This only handles text created by interactions.
-  if (locale === 'zh-Hans') {
+  if (locale === 'zh-Hans' || locale === 'de') {
     const translateNode = (node) => {
       if (node.nodeType === Node.TEXT_NODE) {
         if (node.parentElement?.closest('script,style,code,textarea,[data-original-language]')) return;
@@ -537,7 +537,12 @@ void import('./analytics-event.js').then((events) => {
     const brief = document.querySelector('[data-model-price-brief]');
     if (brief) {
       const current = String(brief.textContent ?? '');
-      brief.textContent = document.body.dataset.locale === 'zh-Hans'
+      brief.textContent = document.body.dataset.locale === 'de'
+        ? current.replace(
+          /^Die angezeigte Schätzung .*? addiert den anpassbaren Aufbauzuschlag ¥[\d,]+/,
+          `Die angezeigte Schätzung ${translate(priceLabel, 'de')} addiert den anpassbaren Aufbauzuschlag ${formatYuan(allowance)}`
+        )
+        : document.body.dataset.locale === 'zh-Hans'
         ? current.replace(/¥[\d,]+/, formatYuan(allowance))
         : current.replace(
           /^The displayed .*? estimate adds the adjustable ¥[\d,]+ build allowance/,

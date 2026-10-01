@@ -34,7 +34,7 @@ export function bindAnalyticsChoices(win) {
     const buttons = [...form.parentElement.querySelectorAll('button')];
     buttons.forEach(button => { button.disabled = true; });
     try {
-      const response = await win.fetch(action.pathname, {
+      const response = await win.fetch(action.pathname + (action.searchParams.get('lang') === 'de' ? '?lang=de' : ''), {
         method: 'POST', credentials: 'same-origin', cache: 'no-store', referrerPolicy: 'no-referrer'
       });
       if (!response.ok) throw new Error('Preference not saved');
@@ -46,7 +46,7 @@ export function bindAnalyticsChoices(win) {
       const status = doc.querySelector('[data-analytics-choice-status]');
       if (status) {
         status.textContent = doc.documentElement.lang.startsWith('zh')
-          ? '无法保存偏好，请重试。' : 'Could not save your preference. Please try again.';
+          ? '无法保存偏好，请重试。' : doc.documentElement.lang === 'de' ? 'Ihre Auswahl konnte nicht gespeichert werden. Bitte erneut versuchen.' : 'Could not save your preference. Please try again.';
         status.hidden = false;
       }
       buttons.forEach(button => { button.disabled = false; });

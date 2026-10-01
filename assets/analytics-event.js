@@ -15,7 +15,7 @@ export function sendComparisonOpenedEvent({
   if ([navigatorRef?.doNotTrack, navigatorRef?.msDoNotTrack, windowRef?.doNotTrack].some(doNotTrackEnabled)) return false;
 
   const path = String(locationRef.pathname ?? '');
-  if (!['/', '/zh/'].includes(path)) return false;
+  if (!['/', '/zh/', '/de/'].includes(path)) return false;
 
   try {
     const result = fetchImpl('/analytics/event', {

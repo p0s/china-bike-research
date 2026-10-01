@@ -1,3 +1,4 @@
+import { LOCALES, localePath, routeLocale } from '../src/lib/i18n.mjs';
 /** Generated-HTML SEO contract. Uses only Node built-ins; never submits to a search engine. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,12 +18,12 @@ for (const file of files) {
   const html = fs.readFileSync(path.join(dist, file), 'utf8');
   const route = '/' + file.replaceAll(path.sep, '/').replace(/index\.html$/, '');
   const absolute = `${origin}${base}${route}`;
-  const isZh = route.startsWith('/zh/');
-  const untranslated = isZh ? route.slice(3) : route;
+  const locale = routeLocale(route);
+  const untranslated = locale === 'en' ? route : route.slice(3);
   const noindex = /<meta name="robots" content="noindex,follow">/.test(html);
   const canonical = [...html.matchAll(/<link rel="canonical" href="([^"]+)">/g)];
   if (canonical.length !== 1 || xmlDecode(canonical[0]?.[1] ?? '') !== absolute) errors.push(`${file}: invalid self-canonical`);
-  if (!html.includes(`<html lang="${isZh ? 'zh-Hans' : 'en'}">`)) errors.push(`${file}: incorrect document language`);
+  if (!html.includes(`<html lang="${locale}">`)) errors.push(`${file}: incorrect document language`);
   if ([...html.matchAll(/<h1\b/g)].length !== 1) errors.push(`${file}: expected exactly one H1`);
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
   const description = html.match(/<meta name="description" content="([^"]+)">/)?.[1];
@@ -38,11 +39,11 @@ for (const file of files) {
     if (!sitemapSet.has(absolute)) errors.push(`${file}: indexable URL absent from sitemap`);
     if (descriptions.has(description)) errors.push(`${file}: duplicate indexable description with ${descriptions.get(description)}`);
     descriptions.set(description, file);
-    if (alternates.length !== 3) errors.push(`${file}: expected three language links`);
-    for (const lang of ['en','zh-Hans','x-default']) {
-      const expected = `${origin}${base}${lang === 'zh-Hans' ? '/zh' : ''}${untranslated}`;
+    if (alternates.length !== LOCALES.length + 1) errors.push(`${file}: expected all reciprocal language links`);
+    for (const lang of [...LOCALES,'x-default']) {
+      const expected = `${origin}${base}${localePath(untranslated, lang === 'x-default' ? 'en' : lang)}`;
       if (!alternates.some((match) => match[1] === lang && xmlDecode(match[2]) === expected)) errors.push(`${file}: incorrect ${lang} alternate`);
-      const target = path.join(dist, `${lang === 'zh-Hans' ? '/zh' : ''}${untranslated}`.replace(/^\//,''), 'index.html');
+      const target = path.join(dist, localePath(untranslated, lang === 'x-default' ? 'en' : lang).replace(/^\//,''), 'index.html');
       if (!fs.existsSync(target)) errors.push(`${file}: missing language counterpart`);
     }
   }
@@ -51,7 +52,7 @@ for (const file of files) {
       const data = JSON.parse(match[1]);
       if (match[0].startsWith('<script type="application/ld+json">')) {
         for (const node of data['@graph'] ?? [data]) {
-          if (node['@type'] === 'Product') errors.push(...auditProductReview(node, html, { pageUrl: absolute, locale: isZh ? 'zh-Hans' : 'en', noindex }).map((issue) => `${file}: ${issue}`));
+          if (node['@type'] === 'Product') errors.push(...auditProductReview(node, html, { pageUrl: absolute, locale: locale, noindex }).map((issue) => `${file}: ${issue}`));
           if (node['@type'] === 'Dataset' && !node.creator?.name) errors.push(`${file}: Dataset creator missing`);
         }
       }

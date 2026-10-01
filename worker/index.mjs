@@ -19,7 +19,7 @@ const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
 const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
 const MAX_ACTION_BODY_BYTES = 64;
 
-const publicDocumentPattern = /^(?:\/zh)?\/(?:models|brands|prices|complete-bikes|framesets|build|methodology|privacy|image-policy|image-sources|electronic-shifting|blog)(?:\/|$)/;
+const publicDocumentPattern = /^(?:\/(?:zh|de))?\/(?:models|brands|prices|complete-bikes|framesets|build|methodology|privacy|image-policy|image-sources|electronic-shifting|blog)(?:\/|$)/;
 const privatePathPattern = /\/(?:account|admin|auth|login|logout|job|jobs|private|session|token|api)(?:\/|$)/i;
 const suspiciousPathPattern = /(?:@[\w.-]+\.[A-Za-z]{2,}|[0-9a-f]{32,}|(?:^|\/)\d{6,}(?:\/|$))/i;
 const botPattern = /(?:bot|crawler|spider|slurp|bingpreview|facebookexternalhit|headless|lighthouse|pagespeed|prerender|curl|wget|python-requests|go-http-client|uptimerobot|statuscake)/i;
@@ -42,8 +42,8 @@ function responseWithHeaders(response, extra = {}) {
   });
 }
 
-function htmlResponse(body, status = 200, extra = {}) {
-  return responseWithHeaders(new Response(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>China Bikes</title></head><body>${body}</body></html>`, {
+function htmlResponse(body, status = 200, extra = {}, locale = 'en') {
+  return responseWithHeaders(new Response(`<!doctype html><html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>China Bikes</title></head><body>${body}</body></html>`, {
     status,
     headers: { 'content-type': 'text/html; charset=utf-8' }
   }), {
@@ -129,7 +129,7 @@ function requestCountry(request) {
 }
 
 function documentPath(pathname) {
-  if (pathname === '/' || pathname === '/zh' || pathname === '/zh/' || pathname === '/404.html') return true;
+  if (pathname === '/' || pathname === '/zh' || pathname === '/zh/' || pathname === '/de' || pathname === '/de/' || pathname === '/404.html') return true;
   return publicDocumentPattern.test(pathname);
 }
 
@@ -260,7 +260,7 @@ function sameOriginPost(request, url) {
 }
 
 function validEventPagePath(path) {
-  return typeof path === 'string' && ['/', '/zh/'].includes(path) && isEligibleDocumentPath(path);
+  return typeof path === 'string' && ['/', '/zh/', '/de/'].includes(path) && isEligibleDocumentPath(path);
 }
 
 export function analyticsEventPayload(request, url) {
@@ -426,9 +426,10 @@ function choiceResponse(request, url, optOut, env) {
     ? `${OPT_OUT_COOKIE}=1; Max-Age=${OPT_OUT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`
     : `${OPT_OUT_COOKIE}=; ${expiry}`;
   const action = optOut ? 'excluded from' : 'included in';
-  const response = htmlResponse(`<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
+  const german = url.searchParams.get('lang') === 'de';
+  const response = htmlResponse(german ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analyseauswahl gespeichert</h1><p>${optOut ? 'Dieser Browser ist jetzt von der optionalen Seitenanalyse ausgeschlossen.' : 'Dieser Browser nimmt jetzt an der optionalen Seitenanalyse teil.'}</p><p>Do Not Track und Global Privacy Control werden weiterhin beachtet.</p><p><a href="/de/privacy/">Zurück zum Datenschutz</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
     'set-cookie': cookie, 'content-security-policy': analyticsScriptPolicy(false)
-  });
+  }, german ? 'de' : 'en');
   response.headers.append('set-cookie', optOut
     ? `${CONSENT_COOKIE}=; ${expiry}`
     : `${CONSENT_COOKIE}=${CONSENT_VERSION}; Max-Age=${CONSENT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`);
@@ -488,7 +489,7 @@ export async function handleRequest(request, env = {}, ctx = {}) {
           (_tag, attributes) => `<script nonce="${nonce}"${attributes}>`);
       }
       if (showBanner) {
-        const banner = analyticsBanner(url.pathname.startsWith('/zh/'));
+        const banner = analyticsBanner(url.pathname.startsWith('/de/') ? 'de' : url.pathname.startsWith('/zh/'));
         html = html.includes('</body>') ? html.replace('</body>', `${banner}</body>`) : html + banner;
       }
       response = new Response(html, response);
