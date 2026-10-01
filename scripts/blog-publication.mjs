@@ -12,6 +12,8 @@ const state=fs.existsSync(stateFile)?JSON.parse(fs.readFileSync(stateFile,'utf8'
 const [command='status',slug,deployment]=process.argv.slice(2);
 const write=(file,data)=>{fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file+'.tmp',JSON.stringify(data,null,2)+'\n');fs.renameSync(file+'.tmp',file);};
 const digest=text=>crypto.createHash('sha256').update(text).digest('hex');
+// Verification must neither count as a visit nor receive per-visitor analytics markup.
+const liveOptions=()=>({headers:{dnt:'1','sec-gpc':'1'},redirect:'error',signal:AbortSignal.timeout(30000)});
 if(command==='status') {
  const next=nextPublication(queue,state.receipts);
  console.log(JSON.stringify({...next,completed:Object.keys(state.receipts).length,rrule:next.due_at?oneShotRule(next.due_at):null},null,2));
@@ -26,15 +28,15 @@ if(command==='status') {
  for(const prefix of LOCALES.map(locale => LOCALE_PREFIXES[locale])) {
   const route=prefix+'/blog/'+slug+'/';
   const local=fs.readFileSync(path.join(root,'dist',route,'index.html'),'utf8');
-  const response=await fetch('https://chinesebikes.xyz'+route,{redirect:'error',signal:AbortSignal.timeout(30000)});
+  const response=await fetch('https://chinesebikes.xyz'+route,liveOptions());
   const remote=await response.text();
   if(response.status!==200 || digest(local)!==digest(remote)) throw new Error('Live article does not match local production output: '+route);
   proof.push({route,sha256:digest(remote)});
  }
- const sitemapResponse=await fetch('https://chinesebikes.xyz/sitemap.xml',{redirect:'error',signal:AbortSignal.timeout(30000)});
+ const sitemapResponse=await fetch('https://chinesebikes.xyz/sitemap.xml',liveOptions());
  const sitemap=await sitemapResponse.text();
  if(sitemapResponse.status!==200||!proof.every(p=>sitemap.includes('https://chinesebikes.xyz'+p.route))) throw new Error('Live sitemap is missing the released article.');
- const indexResponse=await fetch('https://chinesebikes.xyz/blog/',{redirect:'error',signal:AbortSignal.timeout(30000)});
+ const indexResponse=await fetch('https://chinesebikes.xyz/blog/',liveOptions());
  const index=await indexResponse.text();
  if(indexResponse.status!==200||!index.includes('/blog/'+slug+'/')) throw new Error('Live blog index is missing the released article.');
  state.receipts[slug]={published_at:next.entry.published_at,verified_at:new Date().toISOString(),deployment_id:deployment,proof};
