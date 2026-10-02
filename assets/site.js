@@ -1,5 +1,6 @@
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
+import { PRICE_MARKETS, resolvePriceMarket, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
@@ -556,6 +557,18 @@ void import('./analytics-event.js').then((events) => {
   const catalogData = document.querySelector('#catalog-data');
   if (!catalogRoot || !catalogData) return;
 
+  const regionalDataElement = document.querySelector('#regional-price-data');
+  const regionalDataPromise = (async () => {
+    try {
+      if (!regionalDataElement?.dataset.src) return null;
+      const response = await fetch(regionalDataElement.dataset.src, { cache: 'force-cache' });
+      if (!response.ok) return null;
+      const payload = await response.json();
+      if (!Object.values(PRICE_MARKETS).every(({ currency }) => Number.isFinite(payload.rates?.per_eur?.[currency]) && payload.rates.per_eur[currency] > 0) || !Array.isArray(payload.offers)) return null;
+      return { ...payload, asOf: new Date().toISOString().slice(0, 10) };
+    } catch { return null; } // Keep the original CNY catalog usable offline or on older deployments.
+  })();
+
   let products = [];
   try {
     const response = await fetch(catalogData.dataset.src, { cache: 'force-cache' });
@@ -571,6 +584,17 @@ void import('./analytics-event.js').then((events) => {
   const byId = new Map(products.map((item) => [item.id, item]));
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
+  const regionalData = await regionalDataPromise;
+  const marketControl = catalogRoot.querySelector('[data-price-market]');
+  const marketStorageKey = 'china-bikes-price-market-v1';
+  let savedMarket = '';
+  try { savedMarket = localStorage.getItem(marketStorageKey) ?? ''; } catch { /* URL choice remains available */ }
+  const suggestedMarket = resolvePriceMarket({ stored: savedMarket, edgeCountry: catalogRoot.dataset.priceCountry, languages: navigator.languages ?? [navigator.language] }).market;
+  let activeMarket = 'cn';
+  let explicitMarket = '';
+  const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
+  const originalPriceTips = new Map(rows.map((row) => [row.dataset.id, row.querySelector('.price-cell [data-tooltip-lines]')?.dataset.tooltipLines ?? '[]']));
+  if (regionalData) catalogRoot.querySelector('[data-price-market-control]').hidden = false;
   const empty = catalogRoot.querySelector('[data-empty]');
   const resultCount = catalogRoot.querySelector('[data-result-count]');
   const resultSummary = catalogRoot.querySelector('[data-result-summary]');
@@ -652,6 +676,85 @@ void import('./analytics-event.js').then((events) => {
       : `Est. ${formatYuan(low)}–${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(high)}`;
   }
 
+  function priceCurrency() { return PRICE_MARKETS[activeMarket].currency; }
+
+  function updateRegionalPrices() {
+    if (!regionalData) return;
+    const currency = priceCurrency();
+    if (marketControl) marketControl.value = activeMarket;
+    const heading = sortHeadingByKey.get('price')?.querySelector('span');
+    if (heading) heading.textContent = `${translate('Full-bike price', locale)} · ${currency}`;
+    catalogRoot.querySelector('[data-price-currency]').textContent = currency;
+    const note = catalogRoot.querySelector('[data-price-region-note]');
+    note.hidden = activeMarket === 'cn';
+    note.textContent = `${currency} · ${translate('Listed offers first; ≈ means a dated FX reference. Shipping and taxes require confirmation.', locale)} `;
+    const exchangeSource = document.createElement('a');
+    exchangeSource.href = regionalData.rates.source;
+    exchangeSource.rel = 'noreferrer';
+    exchangeSource.textContent = `ECB · ${regionalData.rates.rate_date}`;
+    note.append(exchangeSource);
+    rows.forEach((row) => {
+      const item = byId.get(row.dataset.id);
+      if (!item) return;
+      const original = originalPrices.get(item.id);
+      const projection = regionalPrice(item, activeMarket, regionalData, currentBuildAllowance);
+      const cell = row.querySelector('.price-cell');
+      const primary = cell?.querySelector('[data-calculated-price]') ?? cell?.querySelector('.metric-main');
+      const state = cell?.querySelector('.price-state');
+      const tip = cell?.querySelector('[data-tooltip-lines]');
+      cell?.querySelector('[data-regional-offer]')?.remove();
+      if (!Number.isFinite(projection.low) || !Number.isFinite(projection.high)) {
+        row.dataset.priceSort = '';
+        row.dataset.priceFilter = '';
+        return; // Preserve unknown, ambiguous and superseded labels.
+      }
+      row.dataset.priceSort = String((projection.low + projection.high) / 2);
+      row.dataset.priceFilter = String(projection.high);
+      const baseLow = projection.frame ? item.frameLow + currentBuildAllowance : item.priceLowCny;
+      const baseHigh = projection.frame ? (item.frameHigh ?? item.frameLow) + currentBuildAllowance : item.priceHighCny;
+      const cnyLabel = projection.frame ? translate(formatEstimatedRange(baseLow, baseHigh), locale) : original.price;
+      item.price = activeMarket === 'cn' ? cnyLabel
+        : `${projection.frame ? `${translate('Est.', locale)} ` : ''}${formatMoneyRange(projection.low, projection.high, currency, locale, { approximate: projection.converted })}`;
+      if (primary) primary.textContent = item.price;
+      const basis = projection.basis === 'offer' ? 'Listed bike offer' : projection.frame ? 'China build estimate' : 'Catalog conversion';
+      item.priceState = activeMarket === 'cn' ? original.state
+        : `${translate(basis, locale)}${projection.converted ? ' · FX' : ''} · ${projection.offer && !projection.frame ? projection.offer.date : regionalData.rates.rate_date}`;
+      if (state) state.textContent = activeMarket === 'cn' ? original.state : `${translate(projection.basis === 'offer' ? 'Listed bike offer' : 'FX reference', locale)} · ${cnyLabel}`;
+      const lines = activeMarket === 'cn' ? [] : [
+        `${translate('Catalog basis', locale)}: ${cnyLabel}. ${original.state}`,
+        `${translate('ECB reference rates', locale)}: ${regionalData.rates.rate_date}.`,
+        translate(projection.frame ? 'The build estimate uses the China allowance, not a verified regional build cost.' : 'Shipping, taxes and final checkout totals require confirmation.', locale)
+      ];
+      const offer = projection.offer;
+      if (offer) {
+        const nativeAmount = formatMoneyRange(offer.amount, offer.amount, offer.currency, locale);
+        lines.push(`${translate(offer.kind === 'frameset' ? 'Frameset offer' : 'Listed bike offer', locale)}: ${nativeAmount} · ${offer.date}.`, translate(offer.package, locale), translate(offer.conditions, locale));
+        const link = document.createElement('a');
+        link.dataset.regionalOffer = '';
+        link.className = 'regional-offer-link';
+        link.href = offer.source;
+        link.rel = 'noreferrer';
+        const offerAmount = convertPrice(offer.amount, offer.currency, currency, regionalData.rates);
+        const frameOfferLabel = formatMoneyRange(offerAmount, offerAmount, currency, locale, { approximate: offer.currency !== currency });
+        link.textContent = `${translate(offer.kind === 'frameset' ? 'Frameset offer' : 'Offer source', locale)} · ${offer.kind === 'frameset' ? frameOfferLabel : nativeAmount}`;
+        link.title = `${nativeAmount} · ${offer.date} · ${translate(offer.package, locale)}. ${translate(offer.conditions, locale)}`;
+        cell?.append(link);
+      }
+      let baseLines = [];
+      try { baseLines = JSON.parse(originalPriceTips.get(item.id)); } catch { /* original details remain in model page */ }
+      baseLines = baseLines.map((line) => {
+        if (line.startsWith('Estimated complete adds')) return `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`;
+        const threshold = Number(tip?.dataset.frameThreshold || 0);
+        if (threshold && line.startsWith('Great-buy reference:')) return `Great-buy reference: below ${formatYuan(threshold + currentBuildAllowance)} complete (${formatYuan(threshold)} frameset).`;
+        return line;
+      });
+      if (tip) tip.dataset.tooltipLines = JSON.stringify([...baseLines, ...lines]);
+      const details = String(original.details).replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`);
+      item.priceDetails = [details, ...lines].filter(Boolean).join(' ');
+    });
+    catalogRoot.dataset.activePriceMarket = activeMarket;
+  }
+
   function normalizedBuildAllowance(value) {
     const number = numberOrNull(value);
     if (number === null) return defaultBuildAllowance;
@@ -722,6 +825,7 @@ void import('./analytics-event.js').then((events) => {
           ? `Great-buy reference: below ${formatYuan(Number(item.greatBuyFrameThreshold) + currentBuildAllowance)} complete`
           : 'Great-buy reference: below complete');
     });
+    updateRegionalPrices();
     if (highlight) highlightBuildPrices();
   }
 
@@ -731,6 +835,7 @@ void import('./analytics-event.js').then((events) => {
       const target = new URL(link.dataset.baseHref || link.getAttribute('href') || '', location.origin);
       target.searchParams.set('from', from);
       setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
+      setParam(target, 'market', explicitMarket);
       link.href = `${target.pathname}${target.search}`;
     });
   }
@@ -741,6 +846,8 @@ void import('./analytics-event.js').then((events) => {
     setParam(next, 'type', activeType);
     setParam(next, 'brand', activeBrand);
     setParam(next, 'max', price?.value);
+    setParam(next, 'maxCurrency', price?.value ? priceCurrency() : '');
+    setParam(next, 'market', explicitMarket);
     setParam(next, 'tire', tire?.value);
     setParam(next, 'tireUnknown', tireUnknown?.checked ? '1' : '');
     setParam(next, 'completeWeight', completeWeight?.value);
@@ -975,7 +1082,7 @@ void import('./analytics-event.js').then((events) => {
 
   function typedFilterChips() {
     const chips = [];
-    if (price?.value) chips.push(['price', `Price ≤ ${formatYuan(Number(price.value))}`]);
+    if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
@@ -1065,6 +1172,11 @@ void import('./analytics-event.js').then((events) => {
   function restoreFromParams(params) {
     const requestedSearch = params.get('q') ?? '';
     const requestedPrice = params.get('max') ?? '';
+    explicitMarket = Object.hasOwn(PRICE_MARKETS, params.get('market') ?? '') ? params.get('market') : '';
+    activeMarket = regionalData ? explicitMarket || suggestedMarket : 'cn';
+    const limit = numberOrNull(requestedPrice);
+    const inputCurrency = params.get('maxCurrency') || 'CNY';
+    const convertedLimit = limit === null ? null : convertPrice(limit, inputCurrency, priceCurrency(), regionalData?.rates);
     const legacyCapability = params.get('capability') ?? '';
     const [legacyKind, legacyThreshold] = legacyCapability.split(':');
     const requestedTire = params.get('tire') ?? (legacyKind === 'tire' ? legacyThreshold : '');
@@ -1078,7 +1190,7 @@ void import('./analytics-event.js').then((events) => {
     const requestedBuildPreset = validSelectValue(buildPreset, params.get('buildPreset') ?? defaultBuildPreset, defaultBuildPreset);
     allModelsVisible = params.get('scope') === 'all';
     if (search) search.value = requestedSearch;
-    if (price) price.value = requestedPrice;
+    if (price) price.value = convertedLimit === null ? '' : String(convertedLimit);
     if (tire) tire.value = requestedTire;
     if (tireUnknown instanceof HTMLInputElement) tireUnknown.checked = requestedTireUnknown;
     if (completeWeight) completeWeight.value = params.get('completeWeight') ?? '';
@@ -1115,6 +1227,19 @@ void import('./analytics-event.js').then((events) => {
   const typedInputs = [search, price, tire, completeWeight, frameWeight, drivetrainFilter, frameFilter, categoryMinimum];
   typedInputs.forEach((element) => bindHistoryInput(element, (historyMode) => updateCatalog({ historyMode })));
   [category, sort, tireUnknown].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
+  marketControl?.addEventListener('change', () => {
+    const previousCurrency = priceCurrency();
+    activeMarket = Object.hasOwn(PRICE_MARKETS, marketControl.value) ? marketControl.value : 'cn';
+    explicitMarket = activeMarket;
+    try { localStorage.setItem(marketStorageKey, activeMarket); } catch { /* the URL still carries this choice */ }
+    if (price?.value) {
+      const limit = convertPrice(Number(price.value), previousCurrency, priceCurrency(), regionalData?.rates);
+      price.value = limit === null ? '' : String(limit);
+    }
+    updateRegionalPrices();
+    updateCatalog({ historyMode: 'push' });
+    if (selection?.length >= 2) renderComparison();
+  });
   sortHeadingButtons.forEach((button) => button.addEventListener('click', () => {
     if (!(button instanceof HTMLButtonElement) || button.disabled) return;
     const key = button.dataset.sortHeading;

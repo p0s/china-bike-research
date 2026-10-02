@@ -4,6 +4,7 @@ import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { renderVideoEntries } from './lib/videos.mjs';
+import { PRICE_MARKETS } from '../assets/regional-prices.js';
 import {
   categoryLabel,
   categoryFamily,
@@ -698,7 +699,7 @@ function productRow(ctx, product) {
     </div>
     <div class="catalog-cell price-cell" role="cell" data-label="Price"><span class="metric-main"><span data-calculated-price>${escapeHtml(publishedPriceLabel(product))}</span>${infoTip('Price details', priceTooltipLines(ctx, product), priceTipAttributes)}</span><span class="metric-sub price-state ${priceStateClass(product)}">${escapeHtml(publishedPriceState(product))}</span></div>
     <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}"><span class="metric-main">${escapeHtml(metric.value)}${infoTip(`${metric.label} details`, metric.details)}</span></div>
-    <div class="catalog-cell tire-clearance-cell" role="cell">${escapeHtml(tireClearance.value)}</div>
+    <div class="catalog-cell tire-clearance-cell" role="cell" data-label="Tire clearance">${escapeHtml(tireClearance.value)}</div>
     <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${variant.kind === 'frameset' ? '' : `<span class="metric-main compact-metric">${escapeHtml(drivetrainLabel(ctx, product))}</span><span class="metric-sub">${escapeHtml(drivetrainSubline(ctx, product))}</span>`}</div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight"><span class="metric-main">${escapeHtml(weightLabel(product))}</span></div>
     <div class="catalog-cell frame-cell" role="cell" data-label="Frame"><span class="metric-main">${escapeHtml(frameStandard(product))}${infoTip('Frame details', frameTooltipLines(product))}</span></div>
@@ -854,7 +855,7 @@ function candidateRow(ctx, entry) {
     </div>
     <div class="catalog-cell price-cell" role="cell" data-label="Full-bike price"><span class="metric-main"${priceLabelData}>${escapeHtml(candidatePriceLabel(ctx, entry))}</span>${candidatePriceState(entry) ? `<span class="metric-sub price-state">${escapeHtml(candidatePriceState(entry))}</span>` : ''}</div>
     <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}">${escapeHtml(metric.value)}</div>
-    <div class="catalog-cell tire-clearance-cell" role="cell">${escapeHtml(tireClearance.value)}</div>
+    <div class="catalog-cell tire-clearance-cell" role="cell" data-label="Tire clearance">${escapeHtml(tireClearance.value)}</div>
     <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${entry.kind === 'frameset' ? '' : escapeHtml(facts.drivetrain ?? '—')}</div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight">${escapeHtml(weight)}</div>
     <div class="catalog-cell frame-cell" role="cell" data-label="Frame">${escapeHtml(frame)}</div>
@@ -881,6 +882,9 @@ function comparisonSummary(ctx, product) {
     buildBaseKind: product.variant.kind,
     builderEligible: true,
     price: publishedPriceLabel(product),
+    priceLowCny: product.allInPrice.low ?? null,
+    priceHighCny: product.allInPrice.high ?? null,
+    priceUnavailable: platformIsSuperseded(product),
     ...(product.allInPrice.estimated ? {
       estimated: true,
       frameLow: product.allInPrice.frameLow,
@@ -945,6 +949,9 @@ function candidateComparisonSummary(ctx, entry) {
     type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
     ...(entry.kind && entry.identifiableModel ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
+    priceLowCny: Number.isFinite(frameLow) ? frameLow + (estimated ? assumption.amount_cny : 0) : null,
+    priceHighCny: Number.isFinite(frameHigh) ? frameHigh + (estimated ? assumption.amount_cny : 0) : null,
+    priceUnavailable: entry.candidate.status === 'superseded' || !entry.identifiableModel,
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
     ...(priceDetails ? { priceDetails } : {}),
@@ -1198,9 +1205,10 @@ export function renderHome(ctx) {
   const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><a class="catalog-jump" href="#catalog">Explore the full catalog <span aria-hidden="true">↓</span></a></div></section>
   ${renderHomeArticles(ctx)}
   ${curatedStartingPoints(ctx, summaries)}
-  <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
+  <section class="catalog-section" id="catalog"><div class="page" data-catalog-root data-price-country="">
     <div class="catalog-section-heading"><h2>Full catalog</h2><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Total allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div>
-    <nav class="catalog-discovery" aria-label="Browse the catalog"><a href="${url(ctx.base, '/brands/')}">Brands</a><a href="${url(ctx.base, '/complete-bikes/')}">Complete bikes</a><a href="${url(ctx.base, '/framesets/')}">Framesets</a><a href="${url(ctx.base, '/prices/')}">Price ranges</a><a href="${url(ctx.base, '/methodology/')}">Sources and dataset</a></nav>
+    <div class="catalog-tools"><nav class="catalog-discovery" aria-label="Browse the catalog"><a href="${url(ctx.base, '/brands/')}">Brands</a><a href="${url(ctx.base, '/complete-bikes/')}">Complete bikes</a><a href="${url(ctx.base, '/framesets/')}">Framesets</a><a href="${url(ctx.base, '/prices/')}">Price ranges</a><a href="${url(ctx.base, '/methodology/')}">Sources and dataset</a></nav><div class="price-market-control" hidden data-price-market-control><label class="compact-select"><span>Price region</span><select data-price-market aria-label="Price region">${Object.entries(PRICE_MARKETS).map(([id, market]) => `<option value="${id}"${id === 'cn' ? ' selected' : ''}>${escapeHtml(market.label)}</option>`).join('')}</select></label>${infoTip('Regional price basis', ['A listed regional complete-bike offer takes priority. Otherwise the catalog price is converted using dated ECB reference rates.', 'Frameset offers are shown separately. Full-bike estimates still use the China build allowance; they are not regional build quotes.', 'Shipping, taxes and final checkout totals are unverified unless explicitly recorded. The China catalog basis remains in the price details.', 'The default uses a site country hint, then the browser locale. Either can be wrong; choose your shopping region.'])}</div></div>
+    <p class="regional-price-note" data-price-region-note hidden aria-live="polite"></p>
     <div class="filter-bar">
       <div class="filter-primary">
         <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search model, use or drivetrain" autocomplete="off" data-filter-search></div>
@@ -1214,7 +1222,7 @@ export function renderHome(ctx) {
       <section class="filter-panel" id="table-filters" data-filter-panel aria-label="Table filters" hidden>
         <div class="filter-panel-heading"><div><span>Table filters</span><small>Only rows with recorded values match numeric limits.</small></div><button class="text-button" type="button" data-filter-panel-close>Close</button></div>
         <div class="filter-panel-grid">
-          <label class="compact-number"><span>Max full-bike price</span><span class="number-with-unit prefix"><span>¥</span><input name="max-price" type="number" min="0" max="1000000" step="100" inputmode="numeric" placeholder="Any" data-filter-price></span></label>
+          <label class="compact-number"><span>Max full-bike price</span><span class="number-with-unit prefix"><span data-price-currency>CNY</span><input name="max-price" type="number" min="0" max="1000000" step="any" inputmode="decimal" placeholder="Any" data-filter-price></span></label>
           <label class="compact-number"><span>Max complete-bike weight</span><span class="number-with-unit"><input name="max-complete-weight" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Any" data-filter-complete-weight><span>kg</span></span></label>
           <label class="compact-number"><span>Max frame weight</span><span class="number-with-unit"><input name="max-frame-weight" type="number" min="0" max="10000" step="10" inputmode="numeric" placeholder="Any" data-filter-frame-weight><span>g</span></span></label>
           <label class="compact-text"><span>Drivetrain contains</span><input name="drivetrain" type="search" autocomplete="off" placeholder="Shimano, electronic…" data-filter-drivetrain></label>
@@ -1236,7 +1244,8 @@ export function renderHome(ctx) {
       ${rows.map((row) => row.html).join('')}
       <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
     </div>
-    <script type="application/json" id="catalog-data" data-src="${url(ctx.base, `/data/home-catalog-${ctx.locale ?? 'en'}.json`)}">[]</script>
+    <script type="application/json" id="catalog-data" data-src="${url(ctx.base, `/data/home-catalog-${ctx.locale ?? 'en'}.json`)}?v=${ctx.catalogDataVersions?.[ctx.locale ?? 'en'] ?? 'regional-v1'}">[]</script>
+    <script type="application/json" id="regional-price-data" data-src="${url(ctx.base, '/data/regional-prices.json')}?v=${ctx.regionalPriceDataVersion ?? 'regional-v1'}">[]</script>
   </div></section>`;
   return page(ctx, {
     title: 'Chinese bikes, framesets and China-market prices',
@@ -2047,6 +2056,7 @@ export function renderMethodology(ctx) {
 
 export function renderPrivacy(ctx) {
   const html = `<h2>Site behavior</h2><p>No accounts, ads, newsletter, or payments. Your comparison and build choices stay in your browser; a shared build link may include them in its URL.</p>
+    <p>Your manually selected price region stays in browser storage and may appear in shared catalog links. The default uses a coarse country hint already available to the site, then browser language settings. The detected country is not saved by the pricing feature. No GPS permission or third-party location/rate request is used. Shopping choices do not change analytics consent.</p>
     <h2 id="analytics">Optional analytics</h2>
     <p>Where prior consent is required, optional analytics stays off until you choose Allow analytics. Elsewhere it runs by default. You can allow or withdraw it here at any time; no account is needed. Your choice is remembered in a necessary preference cookie for up to six months when allowing, or one year when declining.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-in')}" data-analytics-choice><button class="text-button" type="submit">Allow analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-out')}" data-analytics-choice><button class="text-button" type="submit">Opt out of optional analytics</button></form><p role="status" data-analytics-choice-status hidden></p></div>

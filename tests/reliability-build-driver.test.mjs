@@ -11,7 +11,7 @@ function fixture(t,mode='',base='') {
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'bike-build-driver-'));
  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  for(const dir of ['scripts','src/lib','assets','dist'])fs.mkdirSync(path.join(root,dir),{recursive:true});
- for(const f of ['scripts/build.mjs','src/lib/csv.mjs','src/lib/build-output.mjs'])fs.copyFileSync(path.join(project,f),path.join(root,f));
+ for(const f of ['scripts/build.mjs','src/lib/csv.mjs','src/lib/build-output.mjs','src/lib/regional-prices.mjs','assets/regional-prices.js'])fs.copyFileSync(path.join(project,f),path.join(root,f));
  fs.writeFileSync(path.join(root,'dist','previous.html'),'PREVIOUS GOOD BUILD');
  fs.writeFileSync(path.join(root,'src/lib/data.mjs'),`
  const platform={id:'p',category:'road',last_reviewed:'2026-09-01',frame:{},tire_clearance:{}};
@@ -54,4 +54,5 @@ for(const base of ['','/china-bike-research'])test(`build driver success at base
  const lines=csv.trimEnd().split('\n').map(l=>l.split(','));assert.equal(lines[1][lines[0].indexOf('storage')],'');
  const json=JSON.parse(fs.readFileSync(path.join(root,'dist','data','catalog.json')));assert.equal(json.products[0].brand.name,'=unsafe-text');
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'dist','build-manifest.json')));assert.equal(manifest.base,base);
+ const regional=JSON.parse(fs.readFileSync(path.join(root,'dist','data','regional-prices.json')));assert.deepEqual(regional.offers,[]);assert.equal(regional.rates,null);
 });

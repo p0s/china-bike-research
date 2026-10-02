@@ -22,6 +22,19 @@ function assetsBinding(response = new Response('<!doctype html><html></html>', {
   };
 }
 
+test('catalog receives only the trusted coarse country hint, independently of analytics consent', async () => {
+  const document = '<html><body><div data-catalog-root data-price-country=""></div></body></html>';
+  const assets = assetsBinding(new Response(document, { headers: { 'content-type': 'text/html' } }));
+  const response = await handleRequest(makeRequest('/?market=us&country=US', { headers: { dnt: '1', 'x-country': 'US' } }, { country: 'DE' }), { ASSETS: assets });
+  assert.match(await response.text(), /data-price-country="DE"/);
+  assert.equal(response.headers.get('cache-control'), 'private, no-store');
+  assert.equal(response.headers.has('set-cookie'), false);
+  const absent = await handleRequest(makeRequest('/', { headers: { 'cf-ipcountry': 'US' } }, {}), { ASSETS: assets });
+  assert.match(await absent.text(), /data-price-country=""/);
+  const invalid = await handleRequest(makeRequest('/', {}, { country: '\"><script>' }), { ASSETS: assets });
+  assert.match(await invalid.text(), /data-price-country=""/);
+});
+
 test('analytics payload is minimized to the frozen ingestion fields', () => {
   const request = makeRequest('/models/example-bike/?q=private-value#fragment', {
     headers: {

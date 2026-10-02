@@ -1993,7 +1993,10 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 77);
+  assert.equal(data.prices.length, 80);
+  assert.equal(data.prices.filter((price) => !price.market_ids).length, 77);
+  assert.equal(data.prices.filter((price) => price.market_ids).length, 3);
+  assert.equal(data.exchangeRates.length, 1);
   assert.ok(data.images.length >= 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);

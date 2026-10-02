@@ -3,6 +3,7 @@ import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
 import { validateImageHealthCheck } from './image-health.mjs';
 import { editorialReviewIssues } from './editorial-review.mjs';
+import { validateRegionalPricing } from './regional-prices.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -216,6 +217,7 @@ export function loadDataset() {
     platforms: loadDirectory('platforms'),
     variants: loadDirectory('variants'),
     prices: loadDirectory('prices'),
+    exchangeRates: loadDirectory('exchange-rates'),
     sources: loadDirectory('sources'),
     images: loadDirectory('images'),
     videos: loadDirectory('videos'),
@@ -267,6 +269,7 @@ export function validateDataset(data = loadDataset()) {
     platform: data.platforms,
     variant: data.variants,
     price: data.prices,
+    exchangeRate: data.exchangeRates ?? [],
     source: data.sources,
     image: data.images,
     video: data.videos,
@@ -521,6 +524,7 @@ export function validateDataset(data = loadDataset()) {
 
   for (const price of data.prices) {
     requireFields('price', price, ['variant_id', 'observed_at', 'price_type', 'currency', 'channel', 'status', 'conditions', 'source_ids']);
+    if (price.market_ids !== undefined) continue; // Native regional offers have their own numeric contract below.
     if (!variantIds.has(price.variant_id)) errors.push(`price ${price.id}: missing variant ${price.variant_id}`);
     if (!isDate(price.observed_at)) errors.push(`price ${price.id}: invalid observed_at`);
     if (price.currency !== 'CNY') errors.push(`price ${price.id}: currency must be CNY`);
@@ -926,6 +930,7 @@ export function validateDataset(data = loadDataset()) {
 
   for (const recommendation of data.recommendations) if (!variantIds.has(recommendation.variant_id)) errors.push(`recommendation ${recommendation.id}: missing variant ${recommendation.variant_id}`);
   for (const variant of data.variants) if (!data.prices.some((price) => price.variant_id === variant.id)) errors.push(`variant ${variant.id}: no price record`);
+  errors.push(...validateRegionalPricing(data));
   return errors;
 }
 
@@ -984,7 +989,7 @@ export function joinProducts(data = loadDataset()) {
     if (!platform) throw new Error(`Missing platform ${variant.platform_id}`);
     const brand = brands.get(platform.brand_id);
     if (!brand) throw new Error(`Missing brand ${platform.brand_id}`);
-    const prices = data.prices.filter((price) => price.variant_id === variant.id).sort((a, b) => b.observed_at.localeCompare(a.observed_at));
+    const prices = data.prices.filter((price) => price.variant_id === variant.id && !price.market_ids).sort((a, b) => b.observed_at.localeCompare(a.observed_at));
     const latestPrice = prices[0];
     const platformImages = data.images.filter((image) => image.platform_id === platform.id && image.buyer_visibility !== 'omit');
     const selectedImage = choosePrimaryImage(platformImages, variant.id);
