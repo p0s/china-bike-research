@@ -2,19 +2,58 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
+import { loadPosts } from '../src/lib/posts.mjs';
+import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
 import { renderHome, catalogSummaries, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderMethodology, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
 const candidates = joinCatalogCandidates(data);
-const html = renderHome({
+const allPosts = loadPosts();
+const posts = publishedPosts(allPosts, loadSchedule(new URL('..', import.meta.url).pathname, allPosts));
+const homeContext = {
   data,
   products,
+  posts,
   base: '/china-bike-research',
   repositoryUrl: 'https://github.com/example/china-bike-research',
   siteUrl: 'https://example.github.io',
   siteLastmod: '2026-08-28',
   now: new Date('2026-08-07T00:00:00Z')
+};
+const html = renderHome(homeContext);
+
+test('homepage puts published articles above category picks and the complete catalog', () => {
+  const articles = html.indexOf('class="homepage-articles page"');
+  const picks = html.indexOf('class="curated-picks page"');
+  const catalog = html.indexOf('class="catalog-section"');
+  assert.ok(articles > 0 && articles < picks && picks < catalog);
+  assert.match(html, /class="catalog-jump" href="#catalog"/);
+  assert.ok(html.indexOf('data-frameset-build-preset') > catalog);
+  const teasers = html.slice(articles, picks);
+  assert.equal((teasers.match(/class="article-card"/g) ?? []).length, 3);
+  for (const slug of ['incolor-speedster-sr-vs-sr-plus', 'gravel-bikes-around-5000-yuan', 'buy-chinese-bikes-europe']) {
+    const post = posts.find((entry) => entry.slug === slug);
+    assert.ok(teasers.includes(`/china-bike-research/blog/${slug}/`));
+    assert.ok(teasers.includes(`<time datetime="${post.dateModified}">${post.dateModified}</time>`));
+  }
+  assert.match(html, /data-show-all-models/);
+  assert.equal((html.match(/data-product-row/g) ?? []).length, products.length + candidates.length);
+});
+
+test('homepage article links follow the published feed, locale and deployment base', () => {
+  for (const [locale, prefix, heading] of [['en', '', 'Read before you buy'], ['zh-Hans', '/zh', '购车前阅读'], ['de', '/de', 'Vor dem Kauf lesen']]) {
+    const localized = renderHome({ ...homeContext, locale });
+    assert.ok(localized.includes(`id="homepage-articles-title">${heading}</h2>`));
+    assert.ok(localized.includes(`href="/china-bike-research${prefix}/blog/gravel-bikes-around-5000-yuan/"`));
+    for (const draft of allPosts.filter((post) => !posts.some((published) => published.slug === post.slug))) {
+      assert.ok(!localized.includes(`/blog/${draft.slug}/`));
+    }
+  }
+  const limited = renderHome({ ...homeContext, posts: posts.filter((post) => post.slug !== 'buy-chinese-bikes-europe') });
+  const teasers = limited.slice(limited.indexOf('class="homepage-articles page"'), limited.indexOf('class="curated-picks page"'));
+  assert.ok(!teasers.includes('/blog/buy-chinese-bikes-europe/'));
+  assert.equal((teasers.match(/class="article-card"/g) ?? []).length, 2);
 });
 
 test('homepage is the unified bike and frame-build comparison', () => {

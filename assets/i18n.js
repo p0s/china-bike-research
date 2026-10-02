@@ -250,6 +250,7 @@ export const zh = {
   'Selected bikes':'已选车型', 'selected':'已选择', 'selected · select one more':'已选择 · 再选一辆', 'Clear':'清除', 'Build selected':'配置所选车架', 'Compare':'对比',
   'Frameset build creator':'车架装车估算', 'Frameset build':'车架装车', 'Total allowance':'装车预算', 'Custom frameset build allowance in yuan':'自定义装车预算（人民币）', 'Frameset build assumption':'装车估算假设',
   'Browse the catalog':'浏览目录', 'Complete bikes':'整车', 'Sources and dataset':'来源与数据集', 'Search bikes':'搜索车型', 'Search model, use or drivetrain':'搜索车型、用途或变速系统',
+  'Explore the full catalog':'浏览完整目录', 'Read before you buy':'购车前阅读', 'All articles':'所有文章', 'Browse all bikes':'浏览所有车型', 'Full catalog':'完整目录',
   'Category':'车型类别', 'All categories':'所有类别', 'Min tire clearance':'最小轮胎空间', 'Minimum tire clearance':'最小轮胎空间', 'Any':'不限', 'Product type':'产品类型',
   'All':'全部', 'Complete':'整车', 'Frame builds':'车架装车', '+ Filter':'+ 筛选', 'Sort':'排序', 'Price: low to high':'价格：从低到高', 'Price: high to low':'价格：从高到低',
   'Bike: A to Z':'车型：A 到 Z', 'Bike: Z to A':'车型：Z 到 A', 'Tire clearance: high to low':'轮胎空间：从大到小', 'Tire clearance: low to high':'轮胎空间：从小到大',
