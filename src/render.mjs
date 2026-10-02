@@ -3,6 +3,7 @@ import { relatedArticleLinks, renderHomeArticles } from './lib/posts.mjs';
 import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
+import { renderVideoEntries } from './lib/videos.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -1100,43 +1101,12 @@ function sourceList(ctx, product) {
   }).join('')}</div>`;
 }
 
-function videoFormatLabel(value) {
-  return {
-    'hands-on-review': 'Hands-on review',
-    'long-term-review': 'Long-term review',
-    'model-overview': 'Model overview',
-    'build-and-ride': 'Build and ride'
-  }[value] ?? sentenceLabel(value);
-}
-
-function videoRelationshipLabel(value) {
-  return {
-    'retailer-linked': 'Retailer-linked',
-    'brand-published': 'Brand video',
-    'unknown': 'Relationship unknown',
-    'product-supplied': 'Product supplied',
-    'publication-review': 'Publication review',
-    'owner-review': 'Owner review',
-    'community-post': 'Community post'
-  }[value] ?? sentenceLabel(value);
-}
-
-function videoTimestampHref(video, timestamp) {
-  const separator = video.url.includes('?') ? '&' : '?';
-  return `${video.url}${separator}t=${Math.max(0, Math.floor(timestamp.at_seconds))}`;
-}
-
 function videoContext(videos) {
   const youtubeVideos = videos?.filter((video) => video.provider === 'youtube') ?? [];
   if (!youtubeVideos.length) return '';
   return `<section class="video-context" aria-labelledby="video-context-title">
     <h2 id="video-context-title">Videos</h2>
-    <div class="video-list">${youtubeVideos.map((video) => `<article class="video-entry">
-      <div class="video-shell">
-        <iframe src="https://www.youtube-nocookie.com/embed/${escapeAttr(video.youtube_video_id)}?rel=0" title="${escapeAttr(video.title)} — YouTube video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div class="video-copy"><div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div><h3><a href="${escapeAttr(video.url)}" rel="noreferrer">${escapeHtml(video.title)}</a></h3><p>${escapeHtml(video.summary)}</p>${video.timestamps?.length ? `<div class="video-timestamps" aria-label="Video sections">${video.timestamps.map((timestamp) => `<a href="${escapeAttr(videoTimestampHref(video, timestamp))}" rel="noreferrer">${escapeHtml(timestamp.label)} · ${Math.floor(timestamp.at_seconds / 60)}:${String(Math.floor(timestamp.at_seconds % 60)).padStart(2, '0')}</a>`).join('')}</div>` : ''}<small>${escapeHtml(video.channel_name)}${video.published_at ? ` · ${escapeHtml(video.published_at)}` : ''}. <span>${escapeHtml(video.disclosure)}</span> <a href="${escapeAttr(video.disclosure_url)}" rel="noreferrer">Disclosure basis</a>.</small></div>
-    </article>`).join('')}</div>
+    <div class="video-list">${renderVideoEntries(youtubeVideos)}</div>
   </section>`;
 }
 

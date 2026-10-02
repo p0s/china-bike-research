@@ -6,6 +6,7 @@ import { escapeHtml, escapeAttr, url, layout } from './html.mjs';
 import { renderEvidenceTable, renderBuildExample } from './post-comparisons.mjs';
 import { collectionStructuredData, latestDate } from './seo.mjs';
 import { editorialImage, editorialImageMeta, renderEditorialImage, renderPostPhotos, postPhotos } from './editorial-images.mjs';
+import { renderPostVideos, validatePostVideoReferences } from './post-videos.mjs';
 export { renderEvidenceTable } from './post-comparisons.mjs';
 
 export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url))) {
@@ -48,6 +49,7 @@ export function validatePostReferences(posts, data, products) {
     for (const id of post.model_ids) if (!modelIds.has(id)) throw new Error(`Article ${post.slug} references unknown model ${id}`);
     for (const id of post.source_ids) if (!sourceIds.has(id)) throw new Error(`Article ${post.slug} references unknown source ${id}`);
   }
+  validatePostVideoReferences(posts, data.videos);
 }
 export function postLastmod(ctx, post) {
   return latestDate([post.dateModified, ...post.model_ids.map((id) => ctx.productEvidenceDates?.get(id) ?? ctx.candidateEvidenceDates?.get(id))], post.dateModified);
@@ -74,7 +76,7 @@ function sourceList(ctx, post) {
 function renderSection(ctx, post, section) {
   const worksheet = section.worksheet;
   const photos = post.photo_sections.filter((placement) => placement.section_id === section.id).flatMap((placement) => placement.ids);
-  return `<section id="${section.id}"><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${inline(paragraph, ctx)}</p>`).join('')}${section.bullets?.length ? `<ul class="article-checklist">${section.bullets.map((item) => `<li>${inline(item, ctx)}</li>`).join('')}</ul>` : ''}${post.comparison?.section_id === section.id ? renderEvidenceTable(ctx, post) : ''}${post.example?.section_id === section.id ? renderBuildExample(ctx) : ''}${worksheet ? `<div class="article-table-wrap" role="region" tabindex="0" aria-label="${escapeAttr(worksheet.caption)}"><table class="article-table article-table-worksheet"><caption>${escapeHtml(worksheet.caption)}</caption><thead><tr>${worksheet.columns.map((column) => `<th scope="col">${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${worksheet.rows.map((row) => `<tr><th scope="row">${escapeHtml(row[0])}</th>${row.slice(1).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}${photos.length ? renderPostPhotos(ctx, post, photos) : ''}</section>`;
+  return `<section id="${section.id}"><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${inline(paragraph, ctx)}</p>`).join('')}${section.bullets?.length ? `<ul class="article-checklist">${section.bullets.map((item) => `<li>${inline(item, ctx)}</li>`).join('')}</ul>` : ''}${post.comparison?.section_id === section.id ? renderEvidenceTable(ctx, post) : ''}${post.example?.section_id === section.id ? renderBuildExample(ctx) : ''}${worksheet ? `<div class="article-table-wrap" role="region" tabindex="0" aria-label="${escapeAttr(worksheet.caption)}"><table class="article-table article-table-worksheet"><caption>${escapeHtml(worksheet.caption)}</caption><thead><tr>${worksheet.columns.map((column) => `<th scope="col">${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${worksheet.rows.map((row) => `<tr><th scope="row">${escapeHtml(row[0])}</th>${row.slice(1).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}${photos.length ? renderPostPhotos(ctx, post, photos) : ''}${renderPostVideos(ctx, post, section.id)}</section>`;
 }
 function articleCard(ctx, post, heading = 'h2') {
   const copy = copyFor(post, ctx);
