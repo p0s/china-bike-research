@@ -2,8 +2,10 @@ import { loadPosts, validatePostReferences, renderBlogIndex, renderPost, postLas
 import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
 import { LOCALES, localePath, localizedCatalogPayload } from '../src/lib/i18n.mjs';
 import { candidateIndexable } from '../src/lib/indexing.mjs';
+import { regionalPricePayload } from '../src/lib/regional-prices.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { csvCell, booleanCell } from '../src/lib/csv.mjs';
 import { createBuildOutput, internalRouteTarget } from '../src/lib/build-output.mjs';
 import {
@@ -143,11 +145,18 @@ function addLocalized(route, render, includeInSitemap = true, metadata = {}) {
     add(localePath(route, locale), html, includeInSitemap, { ...metadata, ...(locale === 'zh-Hans' && includeInSitemap ? { lastmod: latestDate([metadata.lastmod, '2026-09-22'], '2026-09-22') } : {}), locale, translationOf: route });
   }
 }
+const payloadVersion = (payload) => createHash('sha256').update(payload).digest('hex').slice(0, 12);
+const catalogPayloads = Object.fromEntries(LOCALES.map((locale) => [locale,
+  `${JSON.stringify(localizedCatalogPayload(catalogSummaries({ ...ctx, locale }), { base, locale, siteUrl })).replaceAll('<', '\\u003c')}\n`
+]));
+const regionalPayload = `${JSON.stringify(regionalPricePayload(data))}\n`;
+// Keep cacheable data fast without combining a new UI with a prior deployment's
+// cached schema, prices or FX snapshot in a returning visitor's browser.
+ctx.catalogDataVersions = Object.fromEntries(Object.entries(catalogPayloads).map(([locale, payload]) => [locale, payloadVersion(payload)]));
+ctx.regionalPriceDataVersion = payloadVersion(regionalPayload);
 addLocalized('/', renderHome, true, { lastmod: latestDate([siteLastmod, '2026-09-22'], siteLastmod) });
-for (const locale of LOCALES) {
-  const localized = { ...ctx, locale };
-  write(`data/home-catalog-${locale}.json`, `${JSON.stringify(localizedCatalogPayload(catalogSummaries(localized), { base, locale, siteUrl })).replaceAll('<', '\\u003c')}\n`);
-}
+write('data/regional-prices.json', regionalPayload);
+for (const [locale, payload] of Object.entries(catalogPayloads)) write(`data/home-catalog-${locale}.json`, payload);
 for (const landing of landings.pages) {
   const lastmod = landingLastmod(landing);
   addLocalized(landing.route, (localized) => renderLandingPage(localized, { ...landing, lastmod }), true, { lastmod });

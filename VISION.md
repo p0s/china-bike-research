@@ -1,10 +1,10 @@
 # Vision
 
-China Bikes should be the fastest trustworthy way for a rider in China to find and compare worthwhile bicycles.
+China Bikes should be the fastest trustworthy way to find and compare worthwhile Chinese bicycles and framesets, using research from China and prices relevant to the buyer's region.
 
 ## User
 
-A rider or buyer in mainland China who would otherwise need to search fragmented Chinese marketplaces, manufacturer pages, social media, videos, and forums.
+Europe and North America are the two primary buyer regions. Mainland China remains a supported market and an important source of price and product evidence. Buyers should not need to search fragmented Chinese marketplaces, manufacturer pages, social media, videos, and forums to understand the exact bike and the limits of its price evidence.
 
 ## Product promise
 
@@ -18,7 +18,7 @@ Within minutes, a buyer should be able to:
 ## Principles
 
 - **Decision first:** show information that changes a purchase decision.
-- **China reality:** use domestic prices, availability, aliases, support, and Chinese sources.
+- **Market reality:** preserve domestic China prices, availability, aliases and Chinese sources; distinguish regional listings and converted references from delivered local prices.
 - **Evidence over marketing:** date prices and qualify material claims.
 - **Useful coverage:** one reasonably attributable source is enough for a routine specification; prefer a useful value over an unnecessary blank.
 - **Comparable by default:** normalize price where the comparison is honest and useful.
@@ -28,7 +28,7 @@ Within minutes, a buyer should be able to:
 
 ## Scope
 
-- Bicycles and framesets relevant to buyers in mainland China.
+- Chinese bicycles and framesets relevant to buyers in Europe, North America and mainland China.
 - Priority to products where China-market research adds real value, especially Chinese brands, strong value, and carbon construction.
 - Categories expand incrementally when the products and comparison fields are decision-ready.
 

@@ -82,6 +82,9 @@ const allowedEmailDomains = new Set(['example.com','example.org','example.net','
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     if (entry.isDirectory() && ignoredDirectories.has(entry.name)) continue;
+    // Atomic build output is already gitignored. Only skip the builder's exact
+    // root-level temporary names; explicit outgoing-file scans still inspect it.
+    if (directory === root && entry.isDirectory() && /^\.dist-(?:stage|previous)-[A-Za-z0-9]{6}$/.test(entry.name)) continue;
     const absolute = path.join(directory, entry.name);
     const relative = path.relative(root, absolute).replaceAll(path.sep, '/');
     if (entry.isDirectory()) walk(absolute);

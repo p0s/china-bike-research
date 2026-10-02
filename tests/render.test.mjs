@@ -127,7 +127,7 @@ test('homepage offers compact criteria-led comparison starting points', () => {
 });
 
 test('homepage comparison payload keeps frameset pricing dynamic without serializing inactive fields', () => {
-  assert.match(html, /id="catalog-data" data-src="\/china-bike-research\/data\/home-catalog-en\.json"/);
+  assert.match(html, /id="catalog-data" data-src="\/china-bike-research\/data\/home-catalog-en\.json\?v=regional-v1"/);
   const payload = catalogSummaries({ data, products });
   const frameset = payload.find((item) => item.estimated === true);
   const complete = payload.find((item) => item.type === 'Complete bike');
@@ -458,7 +458,7 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort="33940"[^>]*data-price-filter="33940"/);
   assert.match(html, /Quick Pro ER:ONE[\s\S]*?Est\. ¥33,940[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-tire-clearance-sort="50"/);
-  assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell">50 mm<\/div>/);
+  assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell" data-label="Tire clearance">50 mm<\/div>/);
   assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21980"[^>]*data-tire-clearance-sort="55"/);
   assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?¥21,980[\s\S]*?Observed · 2026-08-21[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
   assert.match(html, /data-id="candidate-specialized-roubaix-sl8-sport-105"[^>]*data-price-sort="23519"[^>]*data-tire-clearance-sort="40"/);

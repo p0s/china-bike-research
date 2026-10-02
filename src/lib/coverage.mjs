@@ -5,6 +5,7 @@ export const COVERAGE_COLLECTIONS = [
   'platforms',
   'variants',
   'prices',
+  'exchangeRates',
   'sources',
   'images',
   'videos',
@@ -301,7 +302,7 @@ export function createCoverageSnapshot(data) {
   return {
     schema_version: COVERAGE_SCHEMA_VERSION,
     catalog_metrics: {
-      records: Object.fromEntries(COVERAGE_COLLECTIONS.map((collection) => [collection, data[collection].length])),
+      records: Object.fromEntries(COVERAGE_COLLECTIONS.map((collection) => [collection, (data[collection] ?? []).length])),
       image_accuracy: countBy(data.images, (image) => image.subject_accuracy),
       image_hosting: countBy(data.images, (image) => image.hosting?.mode ?? 'unknown'),
       candidate_prices: {

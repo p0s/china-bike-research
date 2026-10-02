@@ -259,6 +259,16 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   gap: 14px;
   align-items: center;
 }
+.catalog-tools { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 12px; }
+.catalog-tools .catalog-discovery { margin-bottom: 0; }
+.price-market-control { display: flex; align-items: center; gap: 6px; max-width: 100%; }
+.price-market-control[hidden] { display: none; }
+.price-market-control .compact-select { flex: 1; }
+.price-market-control select { width: 100%; min-width: 0; max-width: 270px; }
+.regional-price-note { margin: 0 0 14px; color: var(--muted); font-size: .76rem; line-height: 1.5; }
+.regional-price-note a { white-space: nowrap; }
+.regional-offer-link { display: block; margin-top: 5px; font-size: .74rem; line-height: 1.4; overflow-wrap: anywhere; }
+.number-with-unit.prefix [data-filter-price] { padding-left: 44px; }
 .catalog-head {
   position: sticky;
   top: var(--catalog-head-top, 144px);
@@ -823,7 +833,6 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .catalog-cell .metric-main { max-width: 100%; flex-wrap: wrap; overflow-wrap: anywhere; }
   .catalog-cell .price-state { white-space: normal; overflow-wrap: anywhere; }
   .catalog-cell::before { content: attr(data-label); position: absolute; top: 0; left: 0; color: var(--muted); font-size: .58rem; font-weight: 720; letter-spacing: .05em; text-transform: uppercase; }
-  .tire-clearance-cell::before { content: 'Tire clearance'; }
   .empty-state { grid-column: 1 / -1; border: 1px dashed var(--line); border-radius: 12px; background: var(--surface); }
   .curated-group { padding-inline: 14px; }
   .model-grid { grid-template-columns: 1fr; gap: 26px; }

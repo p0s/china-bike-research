@@ -480,8 +480,12 @@ export async function handleRequest(request, env = {}, ctx = {}) {
     }
     const showBanner = eligible && needsAnalyticsConsent(request) && !hasAnalyticsConsent(request)
       && !isAnalyticsOptedOut(request) && !hasPrefetchIntent(request) && !looksLikeBot(request);
-    if (allowed || showBanner) {
+    const priceCountry = eligible ? requestCountry(request) : '';
+    if (allowed || showBanner || priceCountry) {
       let html = await response.text();
+      // Only a coarse country hint enters the catalog. No location permission,
+      // additional lookup, persistence, or shopping-choice consent override.
+      if (priceCountry) html = html.replace('data-price-country=""', `data-price-country="${priceCountry}"`);
       if (allowed) {
         // Only site-owned markers receive a nonce. Cloudflare's injected inline
         // commands and external bootstrap must not start the tag first.

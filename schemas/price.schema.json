@@ -27,7 +27,7 @@
       "type": "string"
     },
     "currency": {
-      "const": "CNY"
+      "enum": ["CNY", "EUR", "GBP", "USD", "CAD", "MXN"]
     },
     "amount_cny": {
       "type": "number"
@@ -38,11 +38,22 @@
     "high_cny": {
       "type": "number"
     },
+    "amount": { "type": "number", "exclusiveMinimum": 0 },
+    "market_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["eu", "gb", "us", "ca", "mx"] } },
+    "package_kind": { "enum": ["frameset", "complete-bike"] },
+    "package_label": { "type": "string", "minLength": 1 },
     "source_ids": {
       "type": "array",
       "items": {
         "type": "string"
       }
     }
-  }
+  },
+  "if": { "required": ["market_ids"] },
+  "then": {
+    "required": ["amount", "package_kind", "package_label", "conditions", "channel", "status"],
+    "properties": { "price_type": { "const": "regional-listed-offer" }, "currency": { "enum": ["EUR", "GBP", "USD", "CAD", "MXN"] }, "status": { "const": "listed" } },
+    "not": { "anyOf": [{ "required": ["amount_cny"] }, { "required": ["low_cny"] }, { "required": ["high_cny"] }] }
+  },
+  "else": { "properties": { "currency": { "const": "CNY" } } }
 }
