@@ -1,5 +1,5 @@
 import { translate } from '../assets/i18n.js';
-import { relatedArticleLinks } from './lib/posts.mjs';
+import { relatedArticleLinks, renderHomeArticles } from './lib/posts.mjs';
 import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
@@ -1201,13 +1201,13 @@ function curatedStartingPoints(ctx, summaries) {
     const items = group.ids.map((id) => byId.get(id)).filter(Boolean);
     if (items.length !== group.ids.length) throw new Error(`Curated comparison group ${group.id} has an unresolved catalog id`);
     const params = new URLSearchParams({ compare: group.ids.join(',') });
-    return `<article class="curated-group" data-curated-group="${escapeAttr(group.id)}"><div class="curated-group-heading"><h3>${escapeHtml(group.title)}</h3><a href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" aria-label="Compare the three ${escapeAttr(group.title.toLowerCase())} choices">Compare three <span aria-hidden="true">→</span></a></div><p><strong>Criteria:</strong> ${escapeHtml(group.criteria)}</p><ol>${items.map((item) => {
+    return `<article class="curated-group" data-curated-group="${escapeAttr(group.id)}"><h3>${escapeHtml(group.title)}</h3><p><strong>Criteria:</strong> ${escapeHtml(group.criteria)}</p><ol>${items.map((item) => {
       const itemName = item.brand && !item.name.toLowerCase().startsWith(item.brand.toLowerCase()) ? `${item.brand} ${item.name}` : item.name;
       const facts = [item.price, item.tireClearance, item.stage === 'candidate' ? 'Research' : ''].filter(Boolean);
       return `<li><a href="${escapeAttr(item.url)}">${escapeHtml(itemName)}</a><span>${escapeHtml(facts.join(' · '))}</span></li>`;
-    }).join('')}</ol></article>`;
+    }).join('')}</ol><a class="curated-compare-link" href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" aria-label="Compare the three ${escapeAttr(group.title.toLowerCase())} choices">Compare three <span aria-hidden="true">→</span></a></article>`;
   }).join('');
-  return `<section class="curated-picks page" aria-labelledby="curated-picks-title"><div class="curated-picks-heading"><div><span class="section-label">Comparison starting points</span><h2 id="curated-picks-title">Top bikes, with the criteria shown</h2></div></div><div class="curated-groups">${groups}</div></section>`;
+  return `<section class="curated-picks page" aria-labelledby="curated-picks-title"><div class="curated-picks-heading homepage-section-heading"><div><span class="section-label">Comparison starting points</span><h2 id="curated-picks-title">Top bikes, with the criteria shown</h2></div><a href="#catalog">Browse all bikes <span aria-hidden="true">↓</span></a></div><div class="curated-groups">${groups}</div></section>`;
 }
 
 export function renderHome(ctx) {
@@ -1225,9 +1225,12 @@ export function renderHome(ctx) {
       html: candidateRow(ctx, entry)
     }))
   ].sort((a, b) => a.price - b.price);
-  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Total allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div><div class="page catalog-context"><nav class="catalog-discovery" aria-label="Browse the catalog"><a href="${url(ctx.base, '/brands/')}">Brands</a><a href="${url(ctx.base, '/complete-bikes/')}">Complete bikes</a><a href="${url(ctx.base, '/framesets/')}">Framesets</a><a href="${url(ctx.base, '/prices/')}">Price ranges</a><a href="${url(ctx.base, '/methodology/')}">Sources and dataset</a><a href="${url(ctx.base, '/blog/')}">Buying guides</a></nav></div></section>
+  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><a class="catalog-jump" href="#catalog">Explore the full catalog <span aria-hidden="true">↓</span></a></div></section>
+  ${renderHomeArticles(ctx)}
   ${curatedStartingPoints(ctx, summaries)}
   <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
+    <div class="catalog-section-heading"><h2>Full catalog</h2><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Total allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div>
+    <nav class="catalog-discovery" aria-label="Browse the catalog"><a href="${url(ctx.base, '/brands/')}">Brands</a><a href="${url(ctx.base, '/complete-bikes/')}">Complete bikes</a><a href="${url(ctx.base, '/framesets/')}">Framesets</a><a href="${url(ctx.base, '/prices/')}">Price ranges</a><a href="${url(ctx.base, '/methodology/')}">Sources and dataset</a></nav>
     <div class="filter-bar">
       <div class="filter-primary">
         <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search model, use or drivetrain" autocomplete="off" data-filter-search></div>
