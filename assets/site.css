@@ -403,9 +403,9 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 /* Tooltips */
 .tooltip { position: relative; z-index: 5; display: inline-flex; vertical-align: middle; }
 .info-button { position: relative; z-index: 4; display: inline-grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; background: transparent; color: var(--muted); cursor: help; font-family: Georgia, serif; font-size: .68rem; font-weight: 700; line-height: 1; }
-.info-button > span { display: grid; place-items: center; width: 17px; height: 17px; border: 1px solid var(--line-strong); border-radius: 50%; background: color-mix(in srgb, var(--surface) 88%, transparent); }
+.info-button::before { content: ''; position: absolute; z-index: -1; width: 17px; height: 17px; border: 1px solid var(--line-strong); border-radius: 50%; background: color-mix(in srgb, var(--surface) 88%, transparent); }
 .info-button:hover, .info-button:focus-visible, .info-button[aria-expanded="true"] { color: var(--accent); outline: none; }
-.info-button:hover > span, .info-button:focus-visible > span, .info-button[aria-expanded="true"] > span { border-color: var(--accent); background: var(--accent-soft); }
+.info-button:hover::before, .info-button:focus-visible::before, .info-button[aria-expanded="true"]::before { border-color: var(--accent); background: var(--accent-soft); }
 .tooltip-content {
   --tooltip-anchor-x: 50%;
   --tooltip-anchor-y: 50%;
