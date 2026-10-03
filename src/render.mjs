@@ -504,6 +504,24 @@ function publishedWeightFilter(product) {
   return { kind: 'frame', grams: values.length ? Math.max(...values) : null };
 }
 
+function builderFrameWeightBasis(product, grams) {
+  if (!Number.isFinite(grams)) return 'Frameset package weight unknown';
+  const frame = product.platform.frame ?? {};
+  const bySize = Object.entries(frame.claimed_frame_weight_g_by_size ?? {}).filter(([, value]) => Number.isFinite(value));
+  const selected = bySize.filter(([, value]) => value === grams).map(([size]) => size);
+  const notes = [];
+  if (selected.length) {
+    notes.push(`Conservative maximum across recorded sizes/finishes: ${selected.join(', ')} — ${grams} g.`);
+    notes.push(frame.claimed_frame_weight_by_size_basis ?? frame.claimed_frame_weight_g_by_size.basis ?? 'Size/finish measurement basis not recorded.');
+    if (frame.claimed_frame_weight_g !== grams && frame.claimed_frame_weight_basis) notes.push(`Separate ${frame.claimed_frame_weight_g} g frame claim: ${frame.claimed_frame_weight_basis}`);
+    else if (frame.claimed_frame_weight_basis) notes.push(frame.claimed_frame_weight_basis);
+  } else {
+    notes.push(product.variant.claimed_frame_weight_basis ?? frame.claimed_frame_weight_basis ?? 'Size/finish measurement basis not recorded.');
+  }
+  notes.push('Frame only; fork and package hardware may be additional unknown weight.');
+  return notes.filter(Boolean).join(' ');
+}
+
 function bottomBracket(product) {
   return product.variant.bottom_bracket ?? product.platform.frame?.bottom_bracket ?? 'unknown';
 }
@@ -806,14 +824,18 @@ function candidatePriceRecordLabel(entry) {
 }
 
 function candidatePackageOverlapNote(entry) {
-  if (entry.kind !== 'frameset' || !entry.price) return '';
-  const basis = `${entry.price.price_basis ?? ''} ${entry.price.conditions ?? ''}`;
-  const included = [];
-  if (/cockpit|handlebar/i.test(basis)) included.push('cockpit/handlebar');
-  if (/accessor/i.test(basis)) included.push('accessories');
-  if (/seatpost/i.test(basis)) included.push('seatpost');
-  if (!included.length) return '';
-  return `The recorded package mentions ${included.join(' and ')}; adjust the allowance to avoid double-counting included parts.`;
+  if (entry.kind !== 'frameset') return '';
+  const included = entry.price?.package_components?.included ?? [];
+  return included.length ? `The recorded package explicitly includes ${included.join(', ')}; adjust the allowance to avoid double-counting included parts.` : '';
+}
+
+function candidatePackageFacts(entry, locale) {
+  if (entry.kind !== 'frameset') return '';
+  const components = entry.price?.package_components;
+  if (!components) return translate('Package contents are unconfirmed; do not subtract component costs from the allowance without an exact package quote.', locale);
+  return [['included', 'Included package'], ['excluded', 'Package exclusions'], ['optional', 'Optional package parts'], ['unknown', 'Package contents unconfirmed']]
+    .filter(([key]) => components[key]?.length)
+    .map(([key, label]) => `${translate(label, locale)}: ${components[key].map(value => translate(value, locale)).join(', ')}.`).join(' ');
 }
 
 // Source measurements remain in facts even when they cannot identify the
@@ -1582,7 +1604,7 @@ export function renderCandidateModel(ctx, entry) {
   </div>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
-    <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p></section>
+    <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
     ${candidateAlternativeBuilds(entry)}
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
@@ -1771,7 +1793,7 @@ function builderBases(ctx) {
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'
-        : weight.grams ? 'frame only; fork and package hardware may be additional unknown weight' : 'frameset package weight unknown',
+        : builderFrameWeightBasis(product, weight.grams),
       bottomBracket: bottomBracket(product),
       bottomBracketKey: builderBottomBracketKey(bottomBracket(product)),
       tireClearanceMm: maxClearance(product.platform) ?? null,

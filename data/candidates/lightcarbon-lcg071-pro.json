@@ -58,7 +58,21 @@
     "conversion_rate_cny_per_original_unit": 6.7894,
     "conversion_rate_date": "2026-07-31",
     "price_basis": "Owner-reported US$629 exact LCG071-PRO frameset package converted at the dated central-parity reference",
-    "conditions": "Reference only; custom paint, wheelset, accessories, shipping, tax, duties, bank fees, actual FX and current availability are excluded"
+    "conditions": "Reference only; custom paint, wheelset, accessories, shipping, tax, duties, bank fees, actual FX and current availability are excluded",
+    "package_components": {
+      "included": [],
+      "excluded": [
+        "custom paint",
+        "wheelset",
+        "accessories"
+      ],
+      "optional": [],
+      "unknown": [
+        "remaining package contents"
+      ],
+      "source_id": "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+      "evidence_date": "2025-11-30"
+    }
   },
   "video_ids": [
     "tom-bowers-lightcarbon-lcg071-pro-build",

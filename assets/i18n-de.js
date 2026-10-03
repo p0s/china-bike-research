@@ -1519,3 +1519,25 @@ Object.assign(de, {
   "Current documented official English manual: nominal 50C with 1× and 45C with 2×; confirm actual mounted width.": "Aktuell dokumentiertes offizielles englisches Handbuch: nominell 50C bei 1× und 45C bei 2×; montierte Breite bestätigen.",
   "Manufacturer revision conflict: landing-page/knobby-tire claim is 45C; the English manual limits double chainrings to 32C. Use 32 mm as a conservative 2× warning threshold until the exact newer generation/revision is confirmed; this is not a universal physical-limit determination.": "Hersteller-Revisionskonflikt: Produktseite/Stollenreifenangabe 45C, englisches Handbuch 32C bei zwei Kettenblättern. Bis zur Klärung der genauen Generation/Revision dient 32 mm als konservative 2×-Warnschwelle, nicht als allgemeingültige physische Grenze."
 });
+
+Object.assign(de, {
+  "Package exclusions": "Paket enthält nicht",
+  "Optional package parts": "Optionale Paketbestandteile",
+  "Package contents unconfirmed": "Paketinhalt ungeklärt",
+  "Package contents are unconfirmed; do not subtract component costs from the allowance without an exact package quote.": "Paketinhalt ungeklärt; ohne genaues Paketangebot keine Teilekosten vom Aufbauzuschlag abziehen.",
+  "cockpit/handlebar": "Cockpit/Lenker",
+  "remaining package contents": "übriger Paketinhalt",
+  "Kreuza cockpit/handlebar": "Kreuza-Cockpit/Lenker",
+  "custom paint": "Sonderlackierung",
+  "wheelset": "Laufradsatz",
+  "accessories": "Zubehör",
+  "frame": "Rahmen",
+  "fork": "Gabel",
+  "seatpost": "Sattelstütze",
+  "essential parts": "notwendige Kleinteile",
+  "handlebar": "Lenker",
+  "aluminum parts": "Aluminiumteile",
+  "spacers": "Spacer",
+  "headset": "Steuersatz",
+  "thru-axle": "Steckachse"
+});
