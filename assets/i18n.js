@@ -2,6 +2,20 @@ import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  "T47 bottom-bracket component": "T47 中轴组件",
+  "Dated owner-reported package": "有日期的车主套餐报告",
+  "Current package quote unverified": "当前套餐报价未经核实",
+  "clamp": "夹具",
+  "headset spacers": "碗组垫圈",
+  "thru-axles": "桶轴",
+  "HBR08 cockpit": "HBR08 车把组件",
+  "Wahoo mount": "Wahoo 码表座",
+  "storage bag": "储物袋",
+  "T47 bottom bracket": "T47 中轴",
+  "bottle cages": "水壶架",
+  "EU shipping": "发往欧盟的运费",
+  "bank fee": "银行手续费",
+  "current quoted package": "当前报价套餐",
   "First-order offer": "首单优惠",
   "Subsidy offer": "补贴优惠",
   "Coupon or selected-offer eligibility": "优惠券或所选优惠的资格条件",
@@ -794,3 +808,27 @@ Object.assign(zh, {
   "Current documented official English manual: nominal 50C with 1× and 45C with 2×; confirm actual mounted width.": "当前已记录的官方英文手册：单盘标称 50C，双盘标称 45C；请确认实际安装宽度。",
   "Manufacturer revision conflict: landing-page/knobby-tire claim is 45C; the English manual limits double chainrings to 32C. Use 32 mm as a conservative 2× warning threshold until the exact newer generation/revision is confirmed; this is not a universal physical-limit determination.": "制造商版本冲突：商品页／颗粒胎标注为 45C，英文手册将双盘限定为 32C。在准确代次及新版文档核实前，32 mm 仅作双盘保守警告阈值，并非确定所有版本的物理极限。"
 });
+
+Object.assign(zh, {
+  "Package exclusions": "套餐不包含",
+  "Optional package parts": "另购可选零件",
+  "Package contents unconfirmed": "套餐内容尚未核实",
+  "Package contents are unconfirmed; do not subtract component costs from the allowance without an exact package quote.": "套餐内容尚未核实；取得准确套餐报价前，请勿从装车预算中扣除零件成本。",
+  "cockpit/handlebar": "把组／车把",
+  "remaining package contents": "其他套餐内容",
+  "Kreuza cockpit/handlebar": "Kreuza 把组／车把",
+  "custom paint": "定制涂装",
+  "wheelset": "轮组",
+  "accessories": "附件",
+  "frame": "车架",
+  "fork": "前叉",
+  "seatpost": "座管",
+  "essential parts": "必要小零件",
+  "handlebar": "车把",
+  "aluminum parts": "铝合金零件",
+  "spacers": "垫圈",
+  "headset": "碗组",
+  "thru-axle": "桶轴"
+});
+
+Object.assign(zh, {"Included package": "套餐包含"});

@@ -40,7 +40,19 @@
     "currency": "CNY",
     "observed_at": "2026-08-17",
     "price_basis": "launch-report frame, cockpit and accessory package",
-    "observation_count": 2
+    "observation_count": 2,
+    "package_components": {
+      "included": [
+        "frame",
+        "cockpit/handlebar",
+        "accessories"
+      ],
+      "excluded": [],
+      "optional": [],
+      "unknown": [],
+      "source_id": "quick-2026-one-series-launch",
+      "evidence_date": "2026-08-17"
+    }
   },
   "source_note": "A dated launch report and a separate public model post support a ¥21,800 frame package. The official page confirms this is a triathlon frameset, not an aero-road bike. The adjustable build allowance remains a comparison estimate, not a quoted Quick Pro complete build.",
   "last_reviewed": "2026-09-23"

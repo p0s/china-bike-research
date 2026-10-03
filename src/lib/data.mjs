@@ -645,6 +645,15 @@ export function validateDataset(data = loadDataset()) {
     }
     for (const [priceKey, candidatePrice] of [['observed_price', candidate.observed_price], ['official_price', candidate.official_price], ['current_observed_price', candidate.current_observed_price]]) {
       if (candidatePrice === undefined) continue;
+      if (candidatePrice?.package_components !== undefined) {
+        const parts = candidatePrice.package_components;
+        const categories = ['included', 'excluded', 'optional', 'unknown'];
+        if (!isObject(parts) || !categories.every(key => Array.isArray(parts[key]) && parts[key].every(value => typeof value === 'string' && value.trim())) ||
+          !sourceIds.has(parts.source_id) || !isDate(parts.evidence_date) ||
+          new Set(categories.flatMap(key => parts[key] ?? [])).size !== categories.flatMap(key => parts[key] ?? []).length) {
+          errors.push(`candidate ${candidate.id}: invalid ${priceKey}.package_components`);
+        }
+      }
       if (!isObject(candidatePrice)) {
         errors.push(`candidate ${candidate.id}: ${priceKey} must be an object`);
         continue;

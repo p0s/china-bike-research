@@ -1,5 +1,19 @@
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
+  "T47 bottom-bracket component": "T47-Innenlagerkomponente",
+  "Dated owner-reported package": "Datiertes Paket laut Besitzerbericht",
+  "Current package quote unverified": "Aktuelles Paketangebot unbestätigt",
+  "clamp": "Klemme",
+  "headset spacers": "Steuersatz-Spacer",
+  "thru-axles": "Steckachsen",
+  "HBR08 cockpit": "HBR08-Cockpit",
+  "Wahoo mount": "Wahoo-Halterung",
+  "storage bag": "Aufbewahrungstasche",
+  "T47 bottom bracket": "T47-Innenlager",
+  "bottle cages": "Flaschenhalter",
+  "EU shipping": "Versand in die EU",
+  "bank fee": "Bankgebühr",
+  "current quoted package": "Aktuell angebotenes Paket",
   "First-order offer": "Erstbestellungsangebot",
   "Subsidy offer": "Subventionsangebot",
   "Coupon or selected-offer eligibility": "Berechtigung für Gutschein oder ausgewähltes Angebot",
@@ -1523,4 +1537,26 @@ Object.assign(de, {
   "Manufacturer 53 mm maximum is for 1× only; the 2× maximum is unknown. Actual installed width must be checked.": "Die Herstellergrenze 53 mm gilt nur für 1×; die 2×-Grenze ist unbekannt. Montierte Breite prüfen.",
   "Current documented official English manual: nominal 50C with 1× and 45C with 2×; confirm actual mounted width.": "Aktuell dokumentiertes offizielles englisches Handbuch: nominell 50C bei 1× und 45C bei 2×; montierte Breite bestätigen.",
   "Manufacturer revision conflict: landing-page/knobby-tire claim is 45C; the English manual limits double chainrings to 32C. Use 32 mm as a conservative 2× warning threshold until the exact newer generation/revision is confirmed; this is not a universal physical-limit determination.": "Hersteller-Revisionskonflikt: Produktseite/Stollenreifenangabe 45C, englisches Handbuch 32C bei zwei Kettenblättern. Bis zur Klärung der genauen Generation/Revision dient 32 mm als konservative 2×-Warnschwelle, nicht als allgemeingültige physische Grenze."
+});
+
+Object.assign(de, {
+  "Package exclusions": "Paket enthält nicht",
+  "Optional package parts": "Optionale Paketbestandteile",
+  "Package contents unconfirmed": "Paketinhalt ungeklärt",
+  "Package contents are unconfirmed; do not subtract component costs from the allowance without an exact package quote.": "Paketinhalt ungeklärt; ohne genaues Paketangebot keine Teilekosten vom Aufbauzuschlag abziehen.",
+  "cockpit/handlebar": "Cockpit/Lenker",
+  "remaining package contents": "übriger Paketinhalt",
+  "Kreuza cockpit/handlebar": "Kreuza-Cockpit/Lenker",
+  "custom paint": "Sonderlackierung",
+  "wheelset": "Laufradsatz",
+  "accessories": "Zubehör",
+  "frame": "Rahmen",
+  "fork": "Gabel",
+  "seatpost": "Sattelstütze",
+  "essential parts": "notwendige Kleinteile",
+  "handlebar": "Lenker",
+  "aluminum parts": "Aluminiumteile",
+  "spacers": "Spacer",
+  "headset": "Steuersatz",
+  "thru-axle": "Steckachse"
 });

@@ -58,7 +58,94 @@
     "conversion_rate_cny_per_original_unit": 6.7894,
     "conversion_rate_date": "2026-07-31",
     "price_basis": "Owner-reported US$629 exact LCG071-PRO frameset package converted at the dated central-parity reference",
-    "conditions": "Reference only; custom paint, wheelset, accessories, shipping, tax, duties, bank fees, actual FX and current availability are excluded"
+    "conditions": "Historical owner package: USD 629 included frame, fork, SP03 seatpost, clamp, headset spacers, thru-axles, integrated HBR08 cockpit (400 x 90 mm), Wahoo mount and storage bag. The separately itemized bottom bracket, two bottle cages, wheelset, custom paint, EU shipping and bank fee were additional charges. Not a complete-bike total or current mainland quote; current package, tax/duty, actual FX and availability remain unverified.",
+    "package_components": {
+      "included": [
+        "frame",
+        "fork",
+        "seatpost",
+        "clamp",
+        "headset spacers",
+        "thru-axles",
+        "HBR08 cockpit",
+        "Wahoo mount",
+        "storage bag"
+      ],
+      "excluded": [
+        "T47 bottom-bracket component",
+        "bottle cages",
+        "wheelset",
+        "custom paint",
+        "EU shipping",
+        "bank fee"
+      ],
+      "optional": [],
+      "unknown": [
+        "current quoted package"
+      ],
+      "source_id": "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+      "evidence_date": "2025-11-30"
+    },
+    "package_components_history": [
+      {
+        "reviewed_at": "2026-10-03",
+        "prior_values": {
+          "included": [],
+          "excluded": [
+            "custom paint",
+            "wheelset",
+            "accessories"
+          ],
+          "optional": [],
+          "unknown": [
+            "remaining package contents"
+          ],
+          "source_id": "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+          "evidence_date": "2025-11-30"
+        },
+        "reason": "Independent review and the public owner itemization confirm specific included cockpit, mount and bag; the prior blanket accessory exclusion was inaccurate."
+      }
+    ],
+    "prior_conditions": [
+      "Reference only; custom paint, wheelset, accessories, shipping, tax, duties, bank fees, actual FX and current availability are excluded"
+    ],
+    "separately_charged_items": [
+      {
+        "item": "T47 bottom-bracket component",
+        "amount": 10,
+        "currency": "USD"
+      },
+      {
+        "item": "two bottle cages",
+        "amount": 30,
+        "currency": "USD"
+      },
+      {
+        "item": "wheelset",
+        "amount": 369,
+        "currency": "USD"
+      },
+      {
+        "item": "custom paint",
+        "amount": 120,
+        "currency": "USD"
+      },
+      {
+        "item": "EU shipping",
+        "amount": 200,
+        "currency": "USD"
+      },
+      {
+        "item": "bank fee",
+        "amount": 30,
+        "currency": "USD"
+      }
+    ],
+    "package_review": {
+      "reviewed_at": "2026-10-03",
+      "source_id": "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+      "scope": "Public exact-model owner itemization reopened; historical inclusions only, no current package/checkout certification."
+    }
   },
   "video_ids": [
     "tom-bowers-lightcarbon-lcg071-pro-build",

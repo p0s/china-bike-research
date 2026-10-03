@@ -56,7 +56,19 @@
     "high_cny": 12999,
     "currency": "CNY",
     "observed_at": "2026-08-17",
-    "price_basis": "Domestic launch report range for Arden Race and SL framesets without cockpit"
+    "price_basis": "Domestic launch report range for Arden Race and SL framesets without cockpit",
+    "package_components": {
+      "included": [],
+      "excluded": [
+        "cockpit/handlebar"
+      ],
+      "optional": [],
+      "unknown": [
+        "remaining package contents"
+      ],
+      "source_id": "tavelo-arden-china-launch-2026-08-17",
+      "evidence_date": "2026-08-17"
+    }
   },
   "official_price": {
     "amount_cny": 12893,

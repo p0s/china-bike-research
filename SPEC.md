@@ -216,3 +216,5 @@ Research bundles are evidence inputs, not publication authority. A dated marketp
 - CI publishes a before-and-after coverage report for review. Baseline, retirement, and guard changes require code-owner review on branches where GitHub branch protection enforces CODEOWNERS.
 
 Tire compatibility uses validated maximums separately from fitted or stock widths. Per-drivetrain limits may be null when unknown; a missing layout or conflicting shell never confirms fit. Exact manufacturer shifting restrictions and revision conflicts remain visible, and conservative warning thresholds do not resolve those conflicts.
+
+Planner frame weights retain the basis of the numeric default, including the conservative maximum across recorded sizes/finishes; different example claims are labeled separately. Package overlap advice uses source-attributed included/excluded/optional/unknown lists, never keyword presence in prose. Unknown and optional parts cannot reduce the allowance as included components.
