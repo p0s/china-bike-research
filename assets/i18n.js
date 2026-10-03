@@ -794,3 +794,12 @@ Object.assign(zh, {
   "Current documented official English manual: nominal 50C with 1× and 45C with 2×; confirm actual mounted width.": "当前已记录的官方英文手册：单盘标称 50C，双盘标称 45C；请确认实际安装宽度。",
   "Manufacturer revision conflict: landing-page/knobby-tire claim is 45C; the English manual limits double chainrings to 32C. Use 32 mm as a conservative 2× warning threshold until the exact newer generation/revision is confirmed; this is not a universal physical-limit determination.": "制造商版本冲突：商品页／颗粒胎标注为 45C，英文手册将双盘限定为 32C。在准确代次及新版文档核实前，32 mm 仅作双盘保守警告阈值，并非确定所有版本的物理极限。"
 });
+
+Object.assign(zh, {
+  "A large-set label is not normalized. Dated ¥4,150 and ¥4,200 observations describe a large package without rotors. The retained ¥3,570 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it.": "“大套”名称没有统一标准。有日期的 4,150 元及 4,200 元记录描述不含碟片的大套。保留的 3,570 元电子部件加夹器线索尚未核实：当前引用页面未复现该金额。",
+  "The dated R8170 ¥6,050 observation describes a large package with rotors. The retained ¥5,000 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it. Neither establishes a normalized checkout package.": "有日期的 R8170 6,050 元记录描述含碟片的大套。保留的 5,000 元电子部件加夹器线索尚未核实：当前引用页面未复现该金额。两者均不能确定统一口径的结算套餐。",
+  "Electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.": "电子部件加夹器；不是统一口径的完整套件。保留的转述价格线索尚未核实；当前引用的 SMZDM 页面未复现该金额，原始底层证据仍未核实。",
+  "R8170 electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.": "R8170 电子部件加夹器；不是统一口径的完整套件。保留的转述价格线索尚未核实；当前引用的 SMZDM 页面未复现该金额，原始底层证据仍未核实。",
+  "A secondary AI-generated summary/index of a Bilibili R70 review relays strong pedaling stiffness; original playback/transcript is unverified. Manufacturer T800 reinforcement is a construction claim, with no published instrumented frame-stiffness protocol.": "哔哩哔哩 R70 评测的 AI 转述摘要／索引称踩踏刚性较强，但原始视频或文字稿尚未核实。厂家所称 T800 加强属于构造声明，未公布仪器化车架刚性测试方法。",
+  "Secondary AI summary of a Bilibili review; original playback/transcript unverified. Qualitative lead, not an instrumented stiffness result.": "哔哩哔哩评测的 AI 转述摘要；原始视频或文字稿未核实。仅为定性线索，并非仪器化刚性测试结果。"
+});
