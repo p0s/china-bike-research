@@ -42,6 +42,27 @@
     "market_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["eu", "gb", "us", "ca", "mx"] } },
     "package_kind": { "enum": ["frameset", "complete-bike"] },
     "package_label": { "type": "string", "minLength": 1 },
+    "country_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[A-Z]{2}$" } },
+    "supersedes": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "delivery": {
+      "type": "object",
+      "required": ["status", "scope", "basis", "source_ids"],
+      "properties": {
+        "status": { "enum": ["confirmed", "estimated", "partial"] },
+        "scope": { "enum": ["standard-addresses", "contiguous-us"] },
+        "total_low": { "type": "number", "minimum": 0 },
+        "total_high": { "type": "number", "minimum": 0 },
+        "shipping_included": { "type": "boolean" },
+        "taxes_duties_included": { "type": "boolean" },
+        "all_required_charges_included": { "type": "boolean" },
+        "country_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[A-Z]{2}$" } },
+        "excluded_country_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^[A-Z]{2}$" } },
+        "basis": { "type": "string", "minLength": 1 },
+        "source_ids": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      },
+      "if": { "properties": { "status": { "enum": ["confirmed", "estimated"] } } },
+      "then": { "required": ["total_low", "total_high", "shipping_included", "taxes_duties_included"], "properties": { "shipping_included": { "const": true }, "taxes_duties_included": { "const": true } } }
+    },
     "source_ids": {
       "type": "array",
       "items": {
