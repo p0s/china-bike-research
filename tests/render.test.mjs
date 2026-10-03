@@ -508,7 +508,7 @@ test('frameset package details warn when the recorded price includes build parts
   };
   const quick = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
   const detail = renderCandidateModel(context, quick);
-  assert.match(detail, /package mentions cockpit\/handlebar and accessories/);
+  assert.match(detail, /package explicitly includes frame, cockpit\/handlebar, accessories/);
   assert.match(detail, /adjust the allowance to avoid double-counting/);
 });
 
