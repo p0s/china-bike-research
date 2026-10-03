@@ -1,6 +1,6 @@
 {
   "id": "twitter-cyclone-3rd-r7120-official-live-recheck-2026-09-25",
-  "type": "manufacturer-product-page-recheck",
+  "type": "regional-distributor-product-page-recheck",
   "title": "Twitter Bikes Cyclone 3rd R7120 manufacturer page recheck",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -10,5 +10,16 @@
     "identity": "high",
     "specification": "high"
   },
-  "notes": "Live check of the exact Shimano 105 R7120 Cyclone 3rd manufacturer page. It describes aerodynamic stability and efficient power delivery as chassis design goals. This is qualitative manufacturer language only; no stiffness measurement or protocol is published. The candidate's stored ID suffix 7170 does not match the page's R7120 trim designation."
+  "notes": "Live check of the exact Shimano 105 R7120 Cyclone 3rd manufacturer page. It describes aerodynamic stability and efficient power delivery as chassis design goals. This is qualitative manufacturer language only; no stiffness measurement or protocol is published. The candidate's stored ID suffix 7170 does not match the page's R7120 trim designation.",
+  "classification_history": [
+    {
+      "type": "manufacturer-product-page-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

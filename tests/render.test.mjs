@@ -472,7 +472,7 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /data-id="candidate-missing-china-price-specialized-roubaix-sl8"[^>]*data-tire-clearance-sort="40"/);
   assert.match(html, /data-id="candidate-missing-china-price-merida-scultura"[^>]*data-type="complete-bike"[^>]*data-price-sort="16800"[^>]*data-price-filter="16800"/);
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
-  assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17/);
+  assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?Exact build price unknown[\s\S]*?Unmatched price retained as reference/);
   assert.match(html, /Canyon Grail CF 7[\s\S]*?¥11,700–14,700[\s\S]*?Official price conflict · 2026-08-17/);
   assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-09-23/);
 });
@@ -576,7 +576,9 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   }, product);
   assert.match(detail, /<dt>Weight<\/dt><dd>9\.9 kg<\/dd>/);
   assert.match(detail, /Each source is labelled by what it supports/);
-  assert.match(detail, /Twitter Bike USA · Manufacturer storefront · Image/);
+  assert.match(detail, /Twitter Bike USA · Regional distributor storefront · Image/);
+  assert.match(detail, /Regional US distributor source/);
+  assert.match(detail, /Historical source annotation:/);
   assert.match(detail, /Image: High/);
   assert.match(detail, /Archived evidence; no public link/);
   assert.match(detail, /<section class="model-story"[^>]*>[\s\S]*9\.9 kg complete bike/);

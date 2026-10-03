@@ -1,6 +1,6 @@
 {
   "id": "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-24",
-  "type": "regional-manufacturer-product-page-recheck",
+  "type": "regional-distributor-product-page-recheck",
   "title": "TWITTER Gravel V3 WheelTop T47 regional build page recheck",
   "publisher": "Twitter Bikes USA",
   "language": "en",
@@ -10,5 +10,16 @@
     "identity": "high",
     "specification": "high"
   },
-  "notes": "Current regional manufacturer page identifies the Gravel V3 Wireless with WheelTop EDS TX 2×12 and threaded T47 bottom bracket, and lists fitted INNOVA PRO 700×40C tires. It states no maximum tire size or measurable frame/fork clearance; fitted tire size is not treated as the maximum."
+  "notes": "Current regional manufacturer page identifies the Gravel V3 Wireless with WheelTop EDS TX 2×12 and threaded T47 bottom bracket, and lists fitted INNOVA PRO 700×40C tires. It states no maximum tire size or measurable frame/fork clearance; fitted tire size is not treated as the maximum.",
+  "classification_history": [
+    {
+      "type": "regional-manufacturer-product-page-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

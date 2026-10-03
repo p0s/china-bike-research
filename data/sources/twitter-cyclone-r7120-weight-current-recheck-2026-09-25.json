@@ -1,6 +1,6 @@
 {
   "id": "twitter-cyclone-r7120-weight-current-recheck-2026-09-25",
-  "type": "manufacturer-product-page-recheck",
+  "type": "regional-distributor-product-page-recheck",
   "title": "Twitter Bikes Cyclone 3rd R7120 current complete-weight listing",
   "publisher": "Twitter Bikes USA",
   "language": "en",
@@ -10,5 +10,16 @@
     "identity": "high",
     "specification": "high"
   },
-  "notes": "Exact R7120 manufacturer page lists 8.7 kg net. The product builder shows sizes 43.5–54 cm and defaults to XXS (43.5 cm); the page gives no size-specific weighing basis, pedal/accessory inclusion or measurement protocol. This is a regional manufacturer claim, not a verified mainland checkout build."
+  "notes": "Exact R7120 manufacturer page lists 8.7 kg net. The product builder shows sizes 43.5–54 cm and defaults to XXS (43.5 cm); the page gives no size-specific weighing basis, pedal/accessory inclusion or measurement protocol. This is a regional manufacturer claim, not a verified mainland checkout build.",
+  "classification_history": [
+    {
+      "type": "manufacturer-product-page-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

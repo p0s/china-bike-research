@@ -994,6 +994,7 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
   assert.equal(pardus.facts.complete_weight_g, 8500);
   assert.match(pardus.facts.complete_weight_basis, /2026 Spark Sport 3 PES size-XS owner-build report/);
   assert.match(pardus.facts.stiffness_evidence, /20% higher pedaling stiffness/);
+  assert.match(pardus.facts.stiffness_evidence, /Prior Spark Sport QED\/105.*exact 2026 Gen3\/PES applicability unproven/);
   assert.match(pardus.facts.tire_clearance_status, /No generation-safe manufacturer maximum/);
 
   const sava = candidates.get('sava-a7l-pro-2026');

@@ -539,6 +539,7 @@ export function validateDataset(data = loadDataset()) {
   for (const source of data.sources) {
     requireFields('source', source, ['type', 'title', 'publisher', 'accessed_at', 'reliability', 'notes']);
     if (!isDate(source.accessed_at)) errors.push(`source ${source.id}: invalid accessed_at`);
+    for (const sourceId of source.authority_source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`source ${source.id}: missing authority source ${sourceId}`);
     if (source.url) {
       try {
         const parsed = new URL(source.url);
@@ -569,6 +570,12 @@ export function validateDataset(data = loadDataset()) {
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
     if (candidate.reference_price_kind !== undefined && !['official', 'observed'].includes(candidate.reference_price_kind)) errors.push(`candidate ${candidate.id}: invalid reference_price_kind`);
+    if (candidate.comparison_eligibility !== undefined) {
+      const eligibility = candidate.comparison_eligibility;
+      if (!isObject(eligibility) || !['complete_weight', 'price', 'builder_base'].every((key) => eligibility[key] === undefined || typeof eligibility[key] === 'boolean') ||
+        typeof eligibility.note !== 'string' || !eligibility.note.trim() || !isDate(eligibility.reviewed_at)) errors.push(`candidate ${candidate.id}: invalid comparison_eligibility`);
+    }
+    if (candidate.existing_record_id && !variantIds.has(candidate.existing_record_id) && !candidateIds.has(candidate.existing_record_id)) errors.push(`candidate ${candidate.id}: unresolved existing_record_id ${candidate.existing_record_id}`);
     if (candidate.source_url !== undefined) {
       try {
         const sourceUrl = new URL(candidate.source_url);
@@ -1120,6 +1127,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
         !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
+      const builderEligible = hasIdentifiableModel && candidate.comparison_eligibility?.builder_base !== false;
       return {
         id: `candidate-${candidate.id}`,
         candidate,
@@ -1129,7 +1137,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         kind: ['complete-bike', 'frameset'].includes(candidate.type) ? candidate.type : '',
         price,
         priceKind,
-        priceMidpoint: priceMidpoint(price) ?? Number.POSITIVE_INFINITY,
+        priceMidpoint: candidate.comparison_eligibility?.price === false ? Number.POSITIVE_INFINITY : priceMidpoint(price) ?? Number.POSITIVE_INFINITY,
         source,
         sources: candidateSources,
         image,
@@ -1137,6 +1145,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         galleryImages,
         videos,
         identifiableModel: hasIdentifiableModel,
+        builderEligible,
         defaultVisible: Boolean(
           officialPrice ||
           (observedPrice && hasIdentifiableModel) ||

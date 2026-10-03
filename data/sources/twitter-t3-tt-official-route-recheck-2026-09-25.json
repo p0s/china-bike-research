@@ -1,6 +1,6 @@
 {
   "id": "twitter-t3-tt-official-route-recheck-2026-09-25",
-  "type": "manufacturer-storefront-recheck",
+  "type": "regional-distributor-storefront-recheck",
   "title": "Twitter Bikes USA T3 TT current storefront route recheck",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -12,5 +12,16 @@
     "price": "medium",
     "purchase_route": "high"
   },
-  "notes": "Current exact T3 TT page offers made-to-order WheelTop TX-TT7110 or SRAM Rival AXS configurations and shows US$2,349. Six sizes are listed for the WheelTop build. The country selector includes China; mainland delivery price and final checkout terms were not checked."
+  "notes": "Current exact T3 TT page offers made-to-order WheelTop TX-TT7110 or SRAM Rival AXS configurations and shows US$2,349. Six sizes are listed for the WheelTop build. The country selector includes China; mainland delivery price and final checkout terms were not checked.",
+  "classification_history": [
+    {
+      "type": "manufacturer-storefront-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

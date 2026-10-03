@@ -1,0 +1,15 @@
+{
+  "id": "correct-tsb-pioneer-one-pointer-2026-10-03",
+  "record_type": "candidates",
+  "record_id": "missing-china-price-tsb-titan-super-bond-pioneer-one",
+  "action": "retire",
+  "protected_item": {
+    "kind": "relationship",
+    "value": "existing_record_id=tsb-pioneer-one"
+  },
+  "reason": "The old duplicate pointer named no active record. Only this invalid relationship is retired; the original pointer is preserved in pointer_history and the active exact candidate is tsb-titan-super-bond-pioneer-one.",
+  "reviewed_at": "2026-10-03",
+  "evidence_source_ids": [
+    "titanium-tsb-titan-super-bond-pioneer-one-official"
+  ]
+}

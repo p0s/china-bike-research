@@ -35,14 +35,29 @@
   "facts": {
     "drivetrain": "Official Spark Sport reference: Magene QED electronic 2×12 with hydraulic discs; exact PES mapping remains unconfirmed",
     "complete_weight_g": 8500,
-    "frame": "HS-EPS+ carbon",
+    "frame": "Prior Spark Sport QED/105 platform reference: HS-EPS+ carbon; exact 2026 Gen3/PES construction remains unproven",
     "wheels": "Official Spark Sport reference: PW5 alloy",
     "complete_weight_basis": "2026 Spark Sport 3 PES size-XS owner-build report is a stored approximately 8.5 kg lead; pedals, scale protocol and stock-component continuity were unpublished. The 2026-09-23 visible post does not display weight, size or PES trim, so this is not a refreshed comparable measurement.",
     "tires": "Official current platform shows fitted 700×28C; exact PES maximum unresolved",
     "tire_clearance_status": "No generation-safe manufacturer maximum attributable to the exact PES build after 50 registered source areas",
-    "stiffness_evidence": "Manufacturer claims the exact Spark Sport platform has 20% higher pedaling stiffness than its predecessor from revised tube shapes and HS-grade carbon; public protocol unpublished"
+    "stiffness_evidence": "Prior Spark Sport QED/105 platform manufacturer claims 20% higher pedaling stiffness than its predecessor; public protocol unpublished and exact 2026 Gen3/PES applicability unproven"
   },
-  "source_note": "A stored 2026 Spark Sport 3 PES size-XS owner-build report says about 8.5 kg, but the currently readable 2026-09-23 post does not display weight, size or PES trim. Treat the value as an unverified owner-report lead. The official Spark Sport page claims 20% higher pedaling stiffness than its predecessor; fitted 28C tires and older Spark-family maximum language do not establish the exact PES maximum.",
+  "source_note": "A stored 2026 Spark Sport 3 PES size-XS owner-build report says about 8.5 kg, but the currently readable 2026-09-23 post does not display weight, size or PES trim. Treat the value as an unverified owner-report lead. The official Spark Sport page claims 20% higher pedaling stiffness than its predecessor; fitted 28C tires and older Spark-family maximum language do not establish the exact PES maximum.\n\nGeneration correction (2026-10-03): the HS-EPS+ and 20% relative stiffness claims are prior-platform QED/105 references. No source bridge establishes them for exact 2026 Gen3/PES.",
   "source_refs": "IMG_6882.png#L2, IMG_6888.png#L1",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "fact_corrections_history": [
+    {
+      "reviewed_at": "2026-10-03",
+      "frame": "HS-EPS+ carbon",
+      "stiffness_evidence": "Manufacturer claims the exact Spark Sport platform has 20% higher pedaling stiffness than its predecessor from revised tube shapes and HS-grade carbon; public protocol unpublished",
+      "source_note": "A stored 2026 Spark Sport 3 PES size-XS owner-build report says about 8.5 kg, but the currently readable 2026-09-23 post does not display weight, size or PES trim. Treat the value as an unverified owner-report lead. The official Spark Sport page claims 20% higher pedaling stiffness than its predecessor; fitted 28C tires and older Spark-family maximum language do not establish the exact PES maximum.",
+      "reason": "Prior-platform QED/105 manufacturer evidence does not bridge to exact 2026 Gen3/PES."
+    }
+  ],
+  "comparison_eligibility": {
+    "builder_base": false,
+    "reviewed_at": "2026-10-03",
+    "note": "Exact builder starting point withheld: Gen3 PES owner lead not independently generation/trim bridged; prior QED/105 reference is not selected PES stock build The stored 8.5 kg owner lead is not a refreshed exact-build measurement.",
+    "complete_weight": false
+  }
 }

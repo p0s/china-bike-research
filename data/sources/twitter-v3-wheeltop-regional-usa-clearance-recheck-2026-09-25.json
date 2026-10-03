@@ -1,11 +1,27 @@
 {
   "id": "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-25",
-  "type": "manufacturer-regional-product-page",
+  "type": "regional-distributor-product-page",
   "title": "TWITTER Gravel V3 WheelTop regional build clearance recheck",
   "publisher": "Twitter Bikes USA",
   "language": "en",
   "accessed_at": "2026-09-25",
   "url": "https://twitterbikeusa.com/products/gravel-v3-wireless-twitter-gravel-road-bike",
-  "reliability": {"identity":"high","specification":"medium","price":"low","selected_option":"medium"},
-  "notes": "The regional build page lists T47 and fitted Innova Pro 700×40C tires but no maximum tire clearance. It does not support transferring 45C from a separate BB86 listing."
+  "reliability": {
+    "identity": "high",
+    "specification": "medium",
+    "price": "low",
+    "selected_option": "medium"
+  },
+  "notes": "The regional build page lists T47 and fitted Innova Pro 700×40C tires but no maximum tire clearance. It does not support transferring 45C from a separate BB86 listing.",
+  "classification_history": [
+    {
+      "type": "manufacturer-regional-product-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

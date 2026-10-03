@@ -1,6 +1,6 @@
 {
   "id": "twitter-cyclone-gen3-et-usa-2026-08-17",
-  "type": "manufacturer-regional-product-page",
+  "type": "regional-distributor-product-page",
   "title": "Twitter Cyclone 3rd ET",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "high",
     "price": "medium"
   },
-  "notes": "Current exact ET regional page lists US$1,489 made-to-order, a 9.2 kg base estimate, complete WheelTop/RS build details and qualitative frame stiffness/power-transfer claims. Size, pedals, accessories and weighing protocol are unpublished."
+  "notes": "Current exact ET regional page lists US$1,489 made-to-order, a 9.2 kg base estimate, complete WheelTop/RS build details and qualitative frame stiffness/power-transfer claims. Size, pedals, accessories and weighing protocol are unpublished.",
+  "classification_history": [
+    {
+      "type": "manufacturer-regional-product-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "twitter-v3-wheeltop-clearance-recheck-2026-09-24",
-  "type": "regional-manufacturer-product-page-recheck",
+  "type": "regional-distributor-product-page-recheck",
   "title": "TWITTER Gravel V3 WheelTop EDS TX exact build clearance recheck",
   "publisher": "Twitter Bikes USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "high",
     "price": "high"
   },
-  "notes": "Exact Holographic / L54 WheelTop EDS TX 2×12 listing identifies a T47 build with 700×40C tires fitted, but states no maximum tire size. Fitted tire size is not maximum clearance. The current mainland manufacturer configuration page search index also identifies WheelTop EDS TX but provides no readable maximum; the 45C claim belongs to a conflicting BB86 listing."
+  "notes": "Exact Holographic / L54 WheelTop EDS TX 2×12 listing identifies a T47 build with 700×40C tires fitted, but states no maximum tire size. Fitted tire size is not maximum clearance. The current mainland manufacturer configuration page search index also identifies WheelTop EDS TX but provides no readable maximum; the 45C claim belongs to a conflicting BB86 listing.",
+  "classification_history": [
+    {
+      "type": "regional-manufacturer-product-page-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

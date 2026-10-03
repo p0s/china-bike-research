@@ -1,6 +1,6 @@
 {
   "id": "twitter-cyclone-et-official-live-recheck-2026-09-25",
-  "type": "manufacturer-product-page-recheck",
+  "type": "regional-distributor-product-page-recheck",
   "title": "Twitter Bikes Cyclone 3rd ET current product page and specification recheck",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -10,5 +10,16 @@
     "identity": "high",
     "specification": "high"
   },
-  "notes": "Live check of the exact Cyclone 3rd ET manufacturer page. The listed build specifies WheelTop EDS TX wireless 2x12; SENICX PRF 34/50 crank; Sunshine 11-34 cassette; SUMC chain; WheelTop hydraulic disc brakes; RS AL7005 W21xH38 mm wheels; and RS 700x28C tires. The overview and spec table list a 420x90 mm high-modulus-carbon integrated cockpit for the displayed/default build, but a later 'Every build shares' section says alloy integrated bar/stem, 400x90 mm. No option mapping resolves this conflict, so do not generalize either cockpit statement. The page identifies a high-modulus-carbon frame and full-carbon fork and lists 9.2 kg net weight; size, pedals, accessories and weighing protocol are not stated. The manufacturer may change specifications."
+  "notes": "Live check of the exact Cyclone 3rd ET manufacturer page. The listed build specifies WheelTop EDS TX wireless 2x12; SENICX PRF 34/50 crank; Sunshine 11-34 cassette; SUMC chain; WheelTop hydraulic disc brakes; RS AL7005 W21xH38 mm wheels; and RS 700x28C tires. The overview and spec table list a 420x90 mm high-modulus-carbon integrated cockpit for the displayed/default build, but a later 'Every build shares' section says alloy integrated bar/stem, 400x90 mm. No option mapping resolves this conflict, so do not generalize either cockpit statement. The page identifies a high-modulus-carbon frame and full-carbon fork and lists 9.2 kg net weight; size, pedals, accessories and weighing protocol are not stated. The manufacturer may change specifications.",
+  "classification_history": [
+    {
+      "type": "manufacturer-product-page-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

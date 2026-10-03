@@ -1,6 +1,6 @@
 {
   "id": "twitter-x7-official-2026-08-30",
-  "type": "manufacturer-product-page",
+  "type": "regional-distributor-product-page",
   "title": "TWITTER X7 carbon aero road bike",
   "publisher": "TWITTER Bike USA",
   "language": "en",
@@ -12,5 +12,16 @@
     "price": "medium",
     "selected_option": "medium"
   },
-  "notes": "The exact current manufacturer page claims a complete-bike weight from approximately 7.6 kg and lists four drivetrain configurations: Sensah ES7000 1x14 wireless, Shimano 105 R7120 2x12, Shimano 105 R7170 Di2 2x12 and WheelTop EDS TX 2x12 wireless. It also documents T1000/T1100/T1K carbon, sizes 46-56, T47x24 and fitted INNOVA 700x30C tires, but no maximum tire clearance."
+  "notes": "The exact current manufacturer page claims a complete-bike weight from approximately 7.6 kg and lists four drivetrain configurations: Sensah ES7000 1x14 wireless, Shimano 105 R7120 2x12, Shimano 105 R7170 Di2 2x12 and WheelTop EDS TX 2x12 wireless. It also documents T1000/T1100/T1K carbon, sizes 46-56, T47x24 and fitted INNOVA 700x30C tires, but no maximum tire clearance.",
+  "classification_history": [
+    {
+      "type": "manufacturer-product-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

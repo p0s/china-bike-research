@@ -1,6 +1,6 @@
 {
   "id": "twitter-gravel-v3-official-2026-08-17",
-  "type": "manufacturer-storefront",
+  "type": "regional-distributor-storefront",
   "title": "Twitter Gravel V3 carbon gravel bike",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "high",
     "price": "high"
   },
-  "notes": "Current exact configurable Gravel V3 page lists the Shimano 105 R7120 option, high-modulus carbon frame/fork, fitted 700x40C tires and a 9.7-9.9 kg range. It does not identify a manufacturer maximum clearance or publish meaningful frame-stiffness evidence."
+  "notes": "Current exact configurable Gravel V3 page lists the Shimano 105 R7120 option, high-modulus carbon frame/fork, fitted 700x40C tires and a 9.7-9.9 kg range. It does not identify a manufacturer maximum clearance or publish meaningful frame-stiffness evidence.",
+  "classification_history": [
+    {
+      "type": "manufacturer-storefront",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

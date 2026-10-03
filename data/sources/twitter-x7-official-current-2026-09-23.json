@@ -1,6 +1,6 @@
 {
   "id": "twitter-x7-official-current-2026-09-23",
-  "type": "manufacturer-product-page",
+  "type": "regional-distributor-product-page",
   "title": "TWITTER X7 current product and build selector",
   "publisher": "TWITTER Bike USA",
   "language": "en",
@@ -12,5 +12,16 @@
     "price": "medium",
     "selected_option": "medium"
   },
-  "notes": "The live page displays 7.6 kg and its detailed specification says net weight from 7.6 kg. The page selector displays SENTYEH ES7000 1x14 wireless, matte black and XS (46 cm) by default, while the product lists five build choices. It does not say that the 7.6 kg value is measured for that selected combination or give the weighing method; the retained mainland price observations are not mapped to a selected build."
+  "notes": "The live page displays 7.6 kg and its detailed specification says net weight from 7.6 kg. The page selector displays SENTYEH ES7000 1x14 wireless, matte black and XS (46 cm) by default, while the product lists five build choices. It does not say that the 7.6 kg value is measured for that selected combination or give the weighing method; the retained mainland price observations are not mapped to a selected build.",
+  "classification_history": [
+    {
+      "type": "manufacturer-product-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

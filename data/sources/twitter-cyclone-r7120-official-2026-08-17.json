@@ -1,6 +1,6 @@
 {
   "id": "twitter-cyclone-r7120-official-2026-08-17",
-  "type": "manufacturer-storefront",
+  "type": "regional-distributor-storefront",
   "title": "Twitter Cyclone 3rd R7120 Small",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "high",
     "price": "high"
   },
-  "notes": "Current regional exact build page still lists 8.7 kg, high-modulus carbon frame/fork, Shimano 105 R7120 and qualitative aerodynamic-stability and efficient-power-delivery language. It publishes a fitted 700x28C tire but no manufacturer maximum."
+  "notes": "Current regional exact build page still lists 8.7 kg, high-modulus carbon frame/fork, Shimano 105 R7120 and qualitative aerodynamic-stability and efficient-power-delivery language. It publishes a fitted 700x28C tire but no manufacturer maximum.",
+  "classification_history": [
+    {
+      "type": "manufacturer-storefront",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }
