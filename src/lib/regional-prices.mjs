@@ -1,19 +1,22 @@
+import { priceEvidence, evidencePriceBounds } from './price-evidence.mjs';
 import { PRICE_MARKETS, PRICE_CURRENCIES, validCountry } from '../../assets/regional-prices.js';
 
 // CNY denomination alone is insufficient: several catalog references are
 // converted overseas listings. Never call those the price of buying in China.
 export function chinaPriceBasis(prices, asOf = new Date().toISOString().slice(0, 10)) {
   const price = [...prices].filter((item) => !item.market_ids && item.observed_at <= asOf
-    && !/conversion|conflict|historical|used/.test(item.price_type ?? '')
+    && !priceEvidence(item).reference && !priceEvidence(item).conflict && !priceEvidence(item).historical
     && (!item.original_currency || item.original_currency === 'CNY')
     && ['CNY', undefined].includes(item.currency)
     && Number.isFinite(item.amount_cny ?? item.low_cny) && Number.isFinite(item.amount_cny ?? item.high_cny))
     .sort((a, b) => b.observed_at.localeCompare(a.observed_at))[0];
   if (!price) return null;
-  return { id: price.id ?? null, low: price.amount_cny ?? price.low_cny, high: price.amount_cny ?? price.high_cny,
-    date: price.observed_at, conditional: price.status === 'promotion-conditional' || price.price_basis === 'coupon',
+  const evidence = priceEvidence(price);
+  return { id: price.id ?? null, ...evidencePriceBounds(price),
+    date: price.observed_at, conditional: evidence.conditional, starting: evidence.starting, partial: evidence.partial,
     approximate: /reference|range|estimate/.test(price.price_type ?? ''),
-    comparable: !/reference|range|estimate/.test(price.price_type ?? ''), conditions: price.conditions ?? '' };
+    comparable: evidence.purchaseEligible && !/reference|range|estimate/.test(price.price_type ?? ''),
+    conditions: [price.price_basis, price.conditions].filter(Boolean).join(' · ') };
 }
 
 export function validateRegionalPricing(data) {

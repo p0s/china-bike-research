@@ -2449,7 +2449,7 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   const meridaEndurance = catalogCandidates.find((entry) => entry.candidate.id === 'merida-scultura-endurance-4000-community-lead');
   assert.equal(meridaEndurance.price.price_type, 'official-mainland-list');
   const canyonGrail = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-canyon-grail');
-  assert.equal(canyonGrail.price.price_type, 'official-conflict');
+  assert.equal(canyonGrail.price.price_type, 'official-current-mainland-listing');
   assert.equal(canyonGrail.candidate.source_ids.includes('canyon-grail-cf7-promotional-crawl-2026-08-17'), true);
   const tsbPioneer = catalogCandidates.find((entry) => entry.candidate.id === 'tsb-titan-super-bond-pioneer-one');
   assert.equal(tsbPioneer.price.price_type, 'official-mainland-retail');
