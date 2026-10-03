@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { translate } from '../assets/i18n.js';
 import { de } from '../assets/i18n-de.js';
 import { bindAnalyticsChoices } from '../assets/analytics-choice.js';
@@ -146,6 +147,47 @@ function request(path, init = {}) {
   Object.defineProperty(req, 'cf', { value: { country: 'DE' } });
   return req;
 }
+const workerFirstPatterns = JSON.parse(readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8')).assets.run_worker_first;
+// These document requests already have static assets. Cloudflare serves an
+// existing asset directly unless its path matches run_worker_first.
+const runsWorkerFirst = (path) => workerFirstPatterns.some((pattern) => pattern.endsWith('*')
+  ? path.startsWith(pattern.slice(0, -1))
+  : path === pattern);
+test('deployment routing sends every locale document through the Worker and keeps shared assets asset-first', () => {
+  for (const prefix of ['', '/zh', '/de']) {
+    for (const path of ['/', '/models/example/', '/brands/example/', '/build/', '/privacy/', '/blog/example/']) {
+      const localized = prefix + path;
+      assert.equal(isEligibleDocumentPath(localized), true, localized);
+      assert.equal(runsWorkerFirst(localized), true, `Static document bypasses Worker: ${localized}`);
+    }
+  }
+  for (const path of ['/zh', '/de']) assert.equal(runsWorkerFirst(path), true, path);
+  for (const path of ['/assets/site.js', '/data/catalog.json', '/assets/images/example.webp']) {
+    assert.equal(runsWorkerFirst(path), false, path);
+  }
+});
+test('configured German document routing retains security, country and prior-consent behavior', async () => {
+  const routedEnv = {
+    ...env,
+    ASSETS: { fetch: async () => new Response('<html lang="de"><body><div data-catalog-root data-price-country=""></div></body></html>', {
+      headers: { 'content-type': 'text/html', 'cache-control': 'public, max-age=120' }
+    }) }
+  };
+  for (const path of ['/de/', '/de/models/example/', '/de/build/']) {
+    const req = request(path);
+    const waits = [];
+    const response = runsWorkerFirst(path)
+      ? await handleRequest(req, routedEnv, { waitUntil: (task) => waits.push(task) })
+      : await routedEnv.ASSETS.fetch(req);
+    const html = await response.text();
+    assert.equal(response.headers.get('cache-control'), 'private, no-store', path);
+    assert.ok(response.headers.has('content-security-policy'), path);
+    assert.equal(response.headers.get('x-content-type-options'), 'nosniff', path);
+    assert.match(html, /data-price-country="DE"/, path);
+    assert.match(html, /Analyse erlauben/, path);
+    assert.equal(waits.length, 0, `Prior consent required: ${path}`);
+  }
+});
 test('German pages and preference responses keep the consent gate and cookies unchanged', async () => {
   for (const path of ['/de/', '/de/build/', '/de/blog/example/', '/de/models/example/']) assert.equal(isEligibleDocumentPath(path), true);
   const waits = [];
