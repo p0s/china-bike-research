@@ -1,3 +1,4 @@
+import { normalizeMaterialSearch } from './catalog-search.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
@@ -988,14 +989,14 @@ void import('./analytics-event.js').then((events) => {
       (item?.weightKind === 'complete' && maxCompleteWeight && rowWeight && rowWeight <= maxCompleteWeight) ||
       (item?.weightKind === 'frame' && maxFrameWeight && rowWeight && rowWeight <= maxFrameWeight);
     const drivetrain = drivetrainFilter?.value.trim().toLowerCase() ?? '';
-    const frame = frameFilter?.value.trim().toLowerCase() ?? '';
+    const frame = normalizeMaterialSearch(frameFilter?.value);
     const categoryLimit = numericValue(categoryMinimum);
     const categoryKind = categoryMinimum?.dataset.kind ?? '';
     return (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       (!minTire || tireValue >= minTire || (!tireValue && tireUnknown?.checked)) &&
       weightMatches &&
       (!drivetrain || `${item?.drivetrain ?? ''} ${item?.drivetrainSubline ?? ''}`.toLowerCase().includes(drivetrain)) &&
-      (!frame || String(item?.frame ?? '').toLowerCase().includes(frame)) &&
+      (!frame || String(item?.frameSearch ?? item?.frame ?? '').toLowerCase().includes(frame)) &&
       (!categoryLimit || (row.dataset.capabilityKind === categoryKind && Number(row.dataset.capabilitySort || 0) >= categoryLimit));
   }
 
@@ -1163,7 +1164,7 @@ void import('./analytics-event.js').then((events) => {
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
     if (frameWeight?.value) chips.push(['frame-weight', `Frame ≤ ${frameWeight.value} g`]);
     if (drivetrainFilter?.value.trim()) chips.push(['drivetrain', `Drivetrain: ${drivetrainFilter.value.trim()}`]);
-    if (frameFilter?.value.trim()) chips.push(['frame', `Frame: ${frameFilter.value.trim()}`]);
+    if (frameFilter?.value.trim()) chips.push(['frame', `${translate('Frame', locale)}: ${frameFilter.value.trim()}`]);
     if (categoryMinimum?.value) chips.push(['category', `${categoryMinimumLabel?.textContent || 'Category'} ≥ ${categoryMinimum.value}${categoryMinimumUnit?.textContent ? ` ${categoryMinimumUnit.textContent}` : ''}`]);
     return chips;
   }
@@ -1561,18 +1562,37 @@ void import('./analytics-event.js').then((events) => {
   function comparisonGrid(items, fields, includeHeaders = false) {
     const scroll = element('div', 'compare-scroll');
     scroll.tabIndex = 0;
-    scroll.setAttribute('aria-label', 'Bike comparison table; scroll horizontally to see every selected bike');
-    const grid = element('div', 'compare-grid');
-    grid.style.setProperty('--compare-count', String(items.length));
-    if (includeHeaders) {
-      grid.append(element('div', 'compare-label', 'Bike'));
-      items.forEach((item, index) => grid.append(productHeader(item, index, items.length)));
-    }
-    fields.forEach(([label, render]) => {
-      grid.append(element('div', 'compare-label', label));
-      items.forEach((item) => grid.append(render(item)));
+    scroll.setAttribute('aria-label', translate('Bike comparison table; scroll horizontally to see every selected bike', locale));
+    const table = element('table', 'compare-grid');
+    table.style.setProperty('--compare-count', String(items.length));
+    table.setAttribute('aria-label', translate(includeHeaders ? 'Bike comparison' : 'Detailed bike comparison', locale));
+    const head = element('thead');
+    const headerRow = element('tr');
+    const corner = element('th', 'compare-label', translate('Bike', locale));
+    corner.scope = 'col';
+    headerRow.append(corner);
+    items.forEach((item, index) => {
+      const header = element('th');
+      header.scope = 'col';
+      header.append(includeHeaders ? productHeader(item, index, items.length) : element('span', '', [item.brand, item.name].filter(Boolean).join(' ')));
+      headerRow.append(header);
     });
-    scroll.append(grid);
+    head.append(headerRow);
+    const body = element('tbody');
+    fields.forEach(([label, render]) => {
+      const row = element('tr');
+      const header = element('th', 'compare-label', translate(label, locale));
+      header.scope = 'row';
+      row.append(header);
+      items.forEach((item) => {
+        const cell = element('td');
+        cell.append(render(item));
+        row.append(cell);
+      });
+      body.append(row);
+    });
+    table.append(head, body);
+    scroll.append(table);
     return scroll;
   }
 
@@ -1613,7 +1633,7 @@ void import('./analytics-event.js').then((events) => {
     compareContent.replaceChildren(context, orderHint, comparisonGrid(items, coreFields, true));
     if (secondaryFields.length) {
       const more = element('details', 'compare-more');
-      more.append(element('summary', '', 'More details'), comparisonGrid(items, secondaryFields));
+      more.append(element('summary', '', translate('More details', locale)), comparisonGrid(items, secondaryFields));
       compareContent.append(more);
     }
 
