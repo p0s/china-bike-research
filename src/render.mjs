@@ -1002,6 +1002,7 @@ function candidateComparisonSummary(ctx, entry) {
     chinaPrice: entry.identifiableModel && entry.candidate.comparison_eligibility?.price !== false && entry.price ? chinaPriceBasis([{ ...entry.price, observed_at: entry.price.observed_at ?? entry.candidate.observed_at }]) : null,
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
+    ...(entry.candidate.geometry_evidence ? { geometryFitEligible: false, geometryWarning: entry.candidate.geometry_evidence.note } : {}),
     ...(priceDetails ? { priceDetails } : {}),
     categoryMetric: metric.value,
     categoryMetricLabel: metric.label,
@@ -1607,6 +1608,7 @@ export function renderCandidateModel(ctx, entry) {
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
+    ${candidate.geometry_evidence ? `<p class="geometry-evidence-warning" role="note">${escapeHtml(translate(candidate.geometry_evidence.note, ctx.locale))}</p>` : ''}
     ${candidateAlternativeBuilds(entry)}
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
@@ -1843,6 +1845,7 @@ function builderBases(ctx) {
         tireClearanceLabel: candidateTireClearance(entry).value === '—' ? null : candidateTireClearance(entry).value,
         tireClearanceByDrivetrain: facts.tire_clearance_drivetrain_limits_mm ?? null,
         included: isComplete ? ['complete bike package'] : [],
+        forkCaliperNote: entry.candidate.fork_caliper_evidence?.note ?? '',
         drivetrain: isComplete ? facts.drivetrain ?? '' : '',
       };
     });

@@ -617,6 +617,11 @@ export function validateDataset(data = loadDataset()) {
         }
       }
     }
+    if (candidate.geometry_evidence !== undefined) {
+      const geometry = candidate.geometry_evidence;
+      if (!isObject(geometry) || geometry.status !== 'source-inconsistent' || geometry.derived_fit_eligible !== false ||
+        !sourceIds.has(geometry.source_id) || !isDate(geometry.reviewed_at) || typeof geometry.note !== 'string' || !geometry.note.trim()) errors.push(`candidate ${candidate.id}: invalid geometry_evidence`);
+    }
     if (candidate.alternative_builds !== undefined) {
       if (!Array.isArray(candidate.alternative_builds) || candidate.alternative_builds.length === 0) {
         errors.push(`candidate ${candidate.id}: alternative_builds must be a non-empty array`);

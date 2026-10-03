@@ -832,3 +832,16 @@ Object.assign(zh, {
 });
 
 Object.assign(zh, {"Included package": "套餐包含"});
+
+Object.assign(zh, {
+  "Literal recorded manufacturer geometry is internally inconsistent. Affected cells are excluded from derived fit; source intent and corrected values remain unresolved. This does not establish a product safety defect.": "记录中的制造商几何原始数值存在内部矛盾。相关单元格不用于推算适配；原文含义及正确数值仍未核实。这不证明产品存在安全缺陷。",
+  "Literal recorded manufacturer geometry is internally inconsistent. Affected cells are excluded from derived fit; source intent and corrected values remain unresolved. This does not establish a product safety defect. The current LCR014-D page was blocked; this flag concerns the retained source cells only.": "记录中的制造商几何原始数值存在内部矛盾；相关单元格不用于推算适配，正确数值仍未核实。当前 LCR014-D 页面无法读取，本标记仅针对保留的来源数值，不证明产品存在安全缺陷。",
+  "Manufacturer constraint for LCG087S-D only: the standard 509 ±15 g fork is incompatible with L-TWOO brake calipers. The manufacturer recommends optional FK073 instead; confirm the exact ordered fork and caliper before purchase.": "仅适用于 LCG087S-D 的制造商限制：标准 509 ±15 g 前叉不兼容 L-TWOO 刹车卡钳。制造商建议改选 FK073；购买前请确认实际订购的前叉与卡钳。",
+  "Fork compatibility": "前叉兼容性"
+});
+
+Object.assign(zh, {
+  "An aero-styled direct gravel frame with exact finish-specific weights, 45 mm clearance and a retained exact manufacturer geometry chart for six sizes. Confirm generation, selected-size stock and fit; numeric frame stiffness remains unverified.": "一款采用气动造型的直销砾石车架，记录了具体涂装的重量、45 mm 轮胎空间及保留的制造商六尺码几何表。请核对代次、目标尺码库存与适配；车架刚性的数值仍未核实。",
+  "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart.": "保留的制造商几何表涵盖六个尺码；请核对目标代次与尺码适配。当前可读取的 HTML 未显示该图表。",
+  "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart": "保留的制造商几何表涵盖六个尺码；请核对目标代次与尺码适配。当前可读取的 HTML 未显示该图表。"
+});

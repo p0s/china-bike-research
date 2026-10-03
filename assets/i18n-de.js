@@ -1560,3 +1560,16 @@ Object.assign(de, {
   "headset": "Steuersatz",
   "thru-axle": "Steckachse"
 });
+
+Object.assign(de, {
+  "Literal recorded manufacturer geometry is internally inconsistent. Affected cells are excluded from derived fit; source intent and corrected values remain unresolved. This does not establish a product safety defect.": "Die wörtlich dokumentierte Herstellergeometrie ist intern widersprüchlich. Betroffene Werte werden nicht für abgeleitete Passform verwendet; Quellenabsicht und korrigierte Werte bleiben ungeklärt. Das belegt keinen Produktsicherheitsmangel.",
+  "Literal recorded manufacturer geometry is internally inconsistent. Affected cells are excluded from derived fit; source intent and corrected values remain unresolved. This does not establish a product safety defect. The current LCR014-D page was blocked; this flag concerns the retained source cells only.": "Die dokumentierte Herstellergeometrie ist intern widersprüchlich; betroffene Werte werden nicht für abgeleitete Passform verwendet. Die aktuelle LCR014-D-Seite war blockiert; die Kennzeichnung betrifft nur gespeicherte Quellenwerte und belegt keinen Sicherheitsmangel.",
+  "Manufacturer constraint for LCG087S-D only: the standard 509 ±15 g fork is incompatible with L-TWOO brake calipers. The manufacturer recommends optional FK073 instead; confirm the exact ordered fork and caliper before purchase.": "Herstellervorgabe nur für LCG087S-D: Die Standardgabel mit 509 ±15 g passt nicht zu L-TWOO-Bremssätteln. Der Hersteller empfiehlt optional FK073; bestellte Gabel und Bremssattel vor dem Kauf bestätigen.",
+  "Fork compatibility": "Gabelkompatibilität"
+});
+
+Object.assign(de, {
+  "An aero-styled direct gravel frame with exact finish-specific weights, 45 mm clearance and a retained exact manufacturer geometry chart for six sizes. Confirm generation, selected-size stock and fit; numeric frame stiffness remains unverified.": "Ein aerodynamisch gestalteter Direktvertriebs-Gravelrahmen mit Gewichten für konkrete Lackierungen, 45 mm Reifenfreiheit und einer dokumentierten Herstellergeometrie für sechs Größen. Generation, Bestand der gewählten Größe und Passform bestätigen; numerische Rahmensteifigkeit bleibt ungeprüft.",
+  "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart.": "Die gespeicherte Herstellergeometrie umfasst sechs Größen; gewünschte Generation und Passform der Größe bestätigen. Das aktuell lesbare HTML zeigt die Tabelle nicht.",
+  "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart": "Die gespeicherte Herstellergeometrie umfasst sechs Größen; gewünschte Generation und Passform der Größe bestätigen. Das aktuell lesbare HTML zeigt die Tabelle nicht."
+});
