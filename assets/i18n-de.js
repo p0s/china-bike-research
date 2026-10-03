@@ -1,5 +1,9 @@
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
+  "First-order offer": "Erstbestellungsangebot",
+  "Subsidy offer": "Subventionsangebot",
+  "Coupon or selected-offer eligibility": "Berechtigung für Gutschein oder ausgewähltes Angebot",
+
   "China price": "China-Preis",
   "Reference estimate": "Referenzschätzung",
   "Build reference": "Aufbau-Richtwert",
@@ -1388,6 +1392,7 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `Bedingter Preis; den tatsächlich berechtigten Checkout-Preis eingeben. ${t(condition)} · ${amount} · ${date}`],
     [/^Category: (.+)\.$/, (_, label) => `Kategorie: ${t(label)}.`],
     [/^Up to (.+) rear$/, (_, amount) => `Bis ${amount} hinten`],
     [/^(.+) total remaining-build allowance in yuan$/, (_, plan) => `${t(plan)}: Gesamtzuschlag für den Restaufbau in Yuan`],

@@ -328,7 +328,7 @@ test('candidate fitted tire observations are labeled and are not sorted as verif
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
-  const entry = candidates.find((item) => item.candidate.id === 'carbonda-cfr707');
+  const entry = candidates.find((item) => item.candidate.id === 'hongfu-gravel');
   const detail = renderCandidateModel({
     data,
     products,
