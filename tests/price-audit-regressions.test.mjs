@@ -99,3 +99,24 @@ test('Voyager starting floor cannot satisfy a strict maximum or provide a known 
   assert.equal(builder.bases.find(x=>x.id===product.variant.id).priceLow,null);
   assert.equal(chinaPriceBasis([{amount_cny:8000,currency:'CNY',observed_at:'2026-10-03'}]).high,8000);
 });
+
+test('all seven conditional observations require buyer-entered eligible planner quotes in every locale',()=>{
+ const ids=['candidate-qingsha-carbon-folding','candidate-java-vittoria-er7-2026','candidate-upland-r70','candidate-camp-gx700','candidate-cinelli-pressure','candidate-laget-discovery-one-flagship','tfsa-jh37-frameset'];
+ for(const locale of ['en','zh-Hans','de']){
+  const payload=JSON.parse(renderBikeBuilder({...ctx,locale}).match(/id="build-configurator-data">([\s\S]*?)<\/script>/)[1]);
+  for(const id of ids){
+   const b=payload.bases.find(x=>x.id===id);assert.equal(b.priceLow,null,id+locale);assert.equal(b.priceHigh,null,id+locale);
+   assert.ok(b.priceNote.includes('2026-08-')&&b.priceNote.includes('·'),id+locale);
+   if(locale!=='en')assert.ok(!b.priceNote.startsWith('Conditional price'),id+locale);
+  }
+ }
+ assert.match(builder.bases.find(x=>x.id==='candidate-qingsha-carbon-folding').priceNote,/First-order offer.*3,599/);
+ assert.equal(priceEvidence({amount_cny:3599,conditional:true}).purchaseEligible,false);
+});
+test('the exact-source CFR707 gravel classification permits a quote-only gravel planner while MTB exclusions stay intact',()=>{
+ const c=entry('carbonda-cfr707');assert.equal(c.category,'adventure-gravel');
+ assert.equal(c.candidate.category_evidence.source_id,'carbonda-cfr707-official-2026-08-17');
+ assert.equal(base('carbonda-cfr707').category,'gravel');assert.equal(base('carbonda-cfr707').priceLow,null);
+ const html=renderCandidateModel(ctx,c);assert.doesNotMatch(html,/does not establish an MTB complete-build cost/);
+ for(const id of ['icanian-p9','icanian-sn04'])assert.equal(base(id),undefined);
+});

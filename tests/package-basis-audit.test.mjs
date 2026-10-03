@@ -26,7 +26,7 @@ test('conservative maximum defaults keep size and finish distinct from another r
 test('only source-attributed included lists produce overlap advice; negated and optional prose cannot',()=>{
  const script=fs.readFileSync(new URL('../src/render.mjs',import.meta.url),'utf8');const source=script.slice(script.indexOf('function candidatePackageOverlapNote('),script.indexOf('function candidatePackageFacts('));
  for(const basis of ['frameset without cockpit','optional handlebar is extra','accessories are excluded','includes cockpit but package not selected']) assert.equal(vm.runInNewContext(`(${source.trim()})(entry)`,{entry:{kind:'frameset',price:{price_basis:basis}}}),'');
- for(const id of ['tavelo-arden','lightcarbon-lcg071-pro'])assert.equal(vm.runInNewContext(`(${source.trim()})(entry)`,{entry:entry(id)}),'');
+ for(const id of ['tavelo-arden'])assert.equal(vm.runInNewContext(`(${source.trim()})(entry)`,{entry:entry(id)}),'');
  const cima=vm.runInNewContext(`(${source.trim()})(entry)`,{entry:entry('evolve-cima-road')});assert.match(cima,/explicitly includes frame, fork, seatpost, essential parts/);assert.doesNotMatch(cima,/includes.*handlebar/);
 });
 test('three corrected exclusions and optional costs stay visible in all locales',()=>{
@@ -42,4 +42,13 @@ test('structured lists keep package source and observed date and reject contradi
  }
  const copy=structuredClone(data);copy.candidates.find(x=>x.id==='tavelo-arden').observed_price.package_components.included=['cockpit/handlebar'];assert.ok(validateDataset(copy).some(x=>/invalid observed_price.package_components/.test(x)));
  assert.deepEqual(validateDataset(data),[]);
+});
+
+test('the dated USD629 owner package preserves exact inclusions and separately charged extras without confirming today’s quote',()=>{
+ const e=entry('lightcarbon-lcg071-pro'),p=e.price;assert.equal(p.original_amount,629);assert.equal(p.observed_at,'2025-11-30');
+ assert.deepEqual(p.package_components.included,['frame','fork','seatpost','clamp','headset spacers','thru-axles','HBR08 cockpit','Wahoo mount','storage bag']);
+ assert.ok(!p.package_components.excluded.includes('accessories'));assert.deepEqual(p.separately_charged_items.map(x=>x.amount),[10,30,369,120,200,30]);
+ assert.ok(p.package_components.unknown.includes('current quoted package'));assert.ok(p.package_components_history[0].prior_values.excluded.includes('accessories'));
+ for(const locale of ['en','zh-Hans','de']){const html=renderCandidateModel({...ctx,locale},e);for(const text of ['Dated owner-reported package','Current package quote unverified','HBR08 cockpit','Wahoo mount','storage bag','Package exclusions'])assert.ok(html.includes(translate(text,locale)),text+locale);}
+ const b=payload.bases.find(x=>x.id==='candidate-lightcarbon-lcg071-pro');assert.equal(b.priceLow,null);assert.deepEqual(b.included,[]);
 });

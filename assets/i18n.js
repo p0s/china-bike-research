@@ -2,6 +2,24 @@ import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  "T47 bottom-bracket component": "T47 中轴组件",
+  "Dated owner-reported package": "有日期的车主套餐报告",
+  "Current package quote unverified": "当前套餐报价未经核实",
+  "clamp": "夹具",
+  "headset spacers": "碗组垫圈",
+  "thru-axles": "桶轴",
+  "HBR08 cockpit": "HBR08 车把组件",
+  "Wahoo mount": "Wahoo 码表座",
+  "storage bag": "储物袋",
+  "T47 bottom bracket": "T47 中轴",
+  "bottle cages": "水壶架",
+  "EU shipping": "发往欧盟的运费",
+  "bank fee": "银行手续费",
+  "current quoted package": "当前报价套餐",
+  "First-order offer": "首单优惠",
+  "Subsidy offer": "补贴优惠",
+  "Coupon or selected-offer eligibility": "优惠券或所选优惠的资格条件",
+
   "China price": "中国价格",
   "Reference estimate": "参考估算",
   "Build reference": "装车参考值",
@@ -691,6 +709,7 @@ export function translate(value, locale = 'en') {
   const patterns = [
     [/^Confirm drivetrain: tire limits are (.+)\/(.+) mm \(1×\/2×\)\. Choose a known layout before using these limits; an unknown layout has no confirmed maximum\.$/, (_, single, double) => `请确认传动：单盘／双盘限制为 ${translate(single, locale)}／${translate(double, locale)} mm。请先选择已知布局；未知布局没有已确认的最大值。`],
     [/^(.+) mm tires exceed the frame's published (.+) mm limit( for (?:1×|2×))?\.$/, (_, width, limit, layout) => `${width} mm 轮胎超出车架记录的 ${limit} mm 限制${layout ? (layout.includes('1×') ? '（单盘）' : '（双盘）') : ''}。`],
+    [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `有条件价格；请输入符合资格的实际结算报价。${translate(condition, locale)} · ${amount} · ${date}`],
     [/^(.+) bikes in China$/, (_, name) => `${name} 中国市场车型`],
     [/^(.+) publication-ready complete bikes and framesets documented for riders in China, with dated prices and model-level sources\.$/, (_, name) => `${name} 已发布的中国市场整车与车架组资料，附有日期的价格和车型级来源。`],
     [/^(.+) frameset$/, (_, name) => `${name} 车架组`],

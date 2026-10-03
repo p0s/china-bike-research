@@ -1,5 +1,23 @@
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
+  "T47 bottom-bracket component": "T47-Innenlagerkomponente",
+  "Dated owner-reported package": "Datiertes Paket laut Besitzerbericht",
+  "Current package quote unverified": "Aktuelles Paketangebot unbestätigt",
+  "clamp": "Klemme",
+  "headset spacers": "Steuersatz-Spacer",
+  "thru-axles": "Steckachsen",
+  "HBR08 cockpit": "HBR08-Cockpit",
+  "Wahoo mount": "Wahoo-Halterung",
+  "storage bag": "Aufbewahrungstasche",
+  "T47 bottom bracket": "T47-Innenlager",
+  "bottle cages": "Flaschenhalter",
+  "EU shipping": "Versand in die EU",
+  "bank fee": "Bankgebühr",
+  "current quoted package": "Aktuell angebotenes Paket",
+  "First-order offer": "Erstbestellungsangebot",
+  "Subsidy offer": "Subventionsangebot",
+  "Coupon or selected-offer eligibility": "Berechtigung für Gutschein oder ausgewähltes Angebot",
+
   "China price": "China-Preis",
   "Reference estimate": "Referenzschätzung",
   "Build reference": "Aufbau-Richtwert",
@@ -1388,6 +1406,7 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `Bedingter Preis; den tatsächlich berechtigten Checkout-Preis eingeben. ${t(condition)} · ${amount} · ${date}`],
     [/^Category: (.+)\.$/, (_, label) => `Kategorie: ${t(label)}.`],
     [/^Up to (.+) rear$/, (_, amount) => `Bis ${amount} hinten`],
     [/^(.+) total remaining-build allowance in yuan$/, (_, plan) => `${t(plan)}: Gesamtzuschlag für den Restaufbau in Yuan`],
