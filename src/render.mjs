@@ -189,6 +189,14 @@ function candidateImage(ctx, entry) {
   return `<span class="product-image">${visual}${needsNote ? infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'], {}, 'image-info') : ''}</span>`;
 }
 
+function imageCredit(image) {
+  const suffix = image.display_note ? ` — ${image.display_note}` : '';
+  return suffix && image.credit?.endsWith(suffix) ? image.credit.slice(0, -suffix.length) : image.credit ?? 'Product image';
+}
+function imageScope(image, gallery = false) {
+  return `<p class="image-scope"${gallery ? ' data-gallery-note-text' : ''}${image?.display_note ? '' : ' hidden'}>${escapeHtml(image?.display_note ?? '')}</p>`;
+}
+
 function candidateGalleryFigure(ctx, entry) {
   const images = [entry.image, ...(entry.galleryImages ?? [])].filter((image) => imageUrl(ctx, image));
   const primary = images[0];
@@ -197,12 +205,12 @@ function candidateGalleryFigure(ctx, entry) {
   const primarySource = entry.imageSource;
   const primarySourceUrl = primary.source_media_page_url ?? primarySource?.url;
   if (images.length < 2) {
-    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(imageCredit(primary))} · ${escapeHtml(primaryAccuracy)}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer">source</a>` : ''}</figcaption>${imageScope(primary, images.length > 1)}</figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
   const caption = (image, index) => [
-    image.credit ?? 'Product image',
+    imageCredit(image),
     accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
     `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
   ].filter(Boolean).join(' · ');
@@ -210,9 +218,9 @@ function candidateGalleryFigure(ctx, entry) {
     const source = imageSource(image);
     const sourceUrl = image.source_media_page_url ?? source?.url;
     const accuracy = accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative');
-    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? entry.candidate.name)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${candidateImageElement(ctx, entry, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
+    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? entry.candidate.name)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl ?? '')}" data-gallery-note="${escapeAttr(image.display_note ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${candidateImageElement(ctx, entry, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
   }).join('');
-  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
+  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption>${imageScope(primary, images.length > 1)}</figure>`;
 }
 
 function productGalleryFigure(ctx, product) {
@@ -223,12 +231,12 @@ function productGalleryFigure(ctx, product) {
   const primarySource = product.imageSource;
   const primarySourceUrl = primary.source_media_page_url ?? primarySource?.url;
   if (images.length < 2) {
-    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(imageCredit(primary))} · ${escapeHtml(primaryAccuracy)}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer">source</a>` : ''}</figcaption>${imageScope(primary, images.length > 1)}</figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
   const caption = (image, index) => [
-    image.credit ?? 'Product image',
+    imageCredit(image),
     accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
     `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
   ].filter(Boolean).join(' · ');
@@ -236,9 +244,9 @@ function productGalleryFigure(ctx, product) {
     const source = imageSource(image);
     const sourceUrl = image.source_media_page_url ?? source?.url;
     const accuracy = accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative');
-    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? `${product.brand.name} ${product.variant.name}`)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${imageElement(ctx, product, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
+    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? `${product.brand.name} ${product.variant.name}`)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl ?? '')}" data-gallery-note="${escapeAttr(image.display_note ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${imageElement(ctx, product, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
   }).join('');
-  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${imageElement(ctx, product, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
+  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${imageElement(ctx, product, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption>${imageScope(primary, images.length > 1)}</figure>`;
 }
 
 function infoTip(label, lines, attributes = {}, wrapperClass = '') {

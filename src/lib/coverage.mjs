@@ -588,11 +588,15 @@ function recordMap(data, collection) {
   return new Map((data[collection] ?? []).map((record) => [record.id, record]));
 }
 
+function imageQualityValue(protection) {
+  return `minimum_accuracy_rank=${protection.minimum_accuracy_rank};minimum_source_tier=${protection.minimum_source_tier}`;
+}
+
 function retirementKey(recordType, recordId) {
   return `${recordType}:${recordId}`;
 }
 
-const scopedRetirementKinds = ['field', 'relationship', 'candidate-price', 'source-type'];
+const scopedRetirementKinds = ['field', 'relationship', 'candidate-price', 'source-type', 'image-quality'];
 
 function validateRetirements(data, baseline, retirements) {
   const errors = [];
@@ -627,6 +631,8 @@ function validateRetirements(data, baseline, retirements) {
         errors.push(`retirement ${retirement.id}: protected_item must identify one field, relationship, candidate price, or source type`);
       } else if (scopedItem.kind === 'candidate-price' && (retirement.record_type !== 'candidates' || !['observed_price', 'official_price'].includes(scopedItem.value))) {
         errors.push(`retirement ${retirement.id}: candidate-price must identify an observed or official candidate price`);
+      } else if (scopedItem.kind === 'image-quality' && retirement.record_type !== 'images') {
+        errors.push(`retirement ${retirement.id}: image-quality must identify an image`);
       } else if (scopedItem.kind === 'source-type' && retirement.record_type !== 'sources') {
         errors.push(`retirement ${retirement.id}: source-type must identify a source`);
       }
@@ -648,7 +654,9 @@ function validateRetirements(data, baseline, retirements) {
       const itemKey = `${key}#${scopedItem.kind}:${scopedItem.value}`;
       if (protectedItems.has(itemKey)) errors.push(`retirement ${retirement.id}: duplicate retirement for ${itemKey}`);
       protectedItems.add(itemKey);
-      const protectedValues = scopedItem.kind === 'field'
+      const protectedValues = scopedItem.kind === 'image-quality'
+        ? [imageQualityValue(baseline.images?.[retirement.record_id] ?? {})]
+        : scopedItem.kind === 'field'
         ? baseline?.fields?.[retirement.record_type]?.[retirement.record_id]
         : scopedItem.kind === 'relationship'
           ? baseline?.relationships?.[retirement.record_type]?.[retirement.record_id]
@@ -660,6 +668,19 @@ function validateRetirements(data, baseline, retirements) {
       if (!activeRecord) {
         errors.push(`retirement ${retirement.id}: scoped retirement requires active record ${key}`);
       } else {
+        if (scopedItem.kind === 'image-quality') {
+          // Correct only a rejected historical photo claim. Keep the record,
+          // bytes, rights and original quality protection; never excuse a
+          // visible image or an unrelated target/hosting regression.
+          const preserved = activeRecord.audit_corrections?.some(correction =>
+            correction.reviewed_at === retirement.reviewed_at
+            && typeof correction.reason === 'string' && correction.reason.length >= 20
+            && correction.prior_values?.subject_accuracy
+            && imageQualityValue(imageProtection({...activeRecord, ...correction.prior_values})) === scopedItem.value);
+          if (activeRecord.buyer_visibility !== 'omit' || !preserved) {
+            errors.push(`retirement ${retirement.id}: image-quality requires omission and preserved dated prior accuracy`);
+          }
+        }
         if (scopedItem.kind === 'source-type') {
           const priorTier = baseline?.source_quality?.[retirement.record_id]?.minimum_type_tier;
           if (retirement.corrected_type !== activeRecord.type || !Array.isArray(activeRecord.classification_history) ||
@@ -668,7 +689,9 @@ function validateRetirements(data, baseline, retirements) {
             errors.push(`retirement ${retirement.id}: source-type needs its exact corrected type, preserved classification history, and authority note`);
           }
         }
-        const activeValues = scopedItem.kind === 'field'
+        const activeValues = scopedItem.kind === 'image-quality'
+          ? [imageQualityValue(imageProtection(activeRecord))]
+          : scopedItem.kind === 'field'
           ? collectFieldPaths(activeRecord, '', unprotectedFieldRoots[retirement.record_type] ?? new Set())
           : scopedItem.kind === 'relationship'
             ? collectRelationships(activeRecord)
@@ -787,10 +810,11 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
     if (!image) continue;
     const actual = imageProtection(image);
     if (actual.target !== required.target) errors.push(`images:${id} changed target from ${required.target} to ${actual.target}`);
-    if (actual.minimum_accuracy_rank < required.minimum_accuracy_rank) {
+    const correctedQuality = retiredProtectedItems.has(`images:${id}#image-quality:${imageQualityValue(required)}`);
+    if (actual.minimum_accuracy_rank < required.minimum_accuracy_rank && !correctedQuality) {
       errors.push(`images:${id} downgraded subject accuracy from ${IMAGE_ACCURACY_LABELS[required.minimum_accuracy_rank]} to ${image.subject_accuracy}`);
     }
-    if (actual.minimum_source_tier < required.minimum_source_tier) errors.push(`images:${id} downgraded its source or reuse-rights tier`);
+    if (actual.minimum_source_tier < required.minimum_source_tier && !correctedQuality) errors.push(`images:${id} downgraded its source or reuse-rights tier`);
     if (required.remote_required && !preservesProtectedHosting(image)) errors.push(`images:${id} replaced a protected remote image with a local-only image`);
     if (required.primary_required && !actual.primary_required) errors.push(`images:${id} is no longer a primary image`);
   }
@@ -807,7 +831,13 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
     const qualified = matching.some((image) => image.minimum_accuracy_rank >= required.minimum_accuracy_rank
       && image.minimum_source_tier >= required.minimum_source_tier
       && (!required.remote_required || image.preserves_protected_hosting));
-    if (!qualified) errors.push(`${target} no longer has a primary image at its protected quality`);
+    const rejectedHistoricalPhoto = data.images.some(image => {
+      const prior = baseline.images?.[image.id];
+      return imageTarget(image) === target && image.role === 'primary' && image.buyer_visibility === 'omit'
+        && prior?.target === target && prior.minimum_accuracy_rank >= required.minimum_accuracy_rank
+        && retiredProtectedItems.has(`images:${image.id}#image-quality:${imageQualityValue(prior)}`);
+    });
+    if (!qualified && !rejectedHistoricalPhoto) errors.push(`${target} no longer has a primary image at its protected quality`);
   }
 
   const pricesByVariant = new Set(data.prices.map((price) => price.variant_id));

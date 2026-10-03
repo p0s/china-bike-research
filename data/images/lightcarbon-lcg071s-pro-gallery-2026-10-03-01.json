@@ -4,7 +4,7 @@
   "variant_ids": [
     "lightcarbon-lcg071s-pro-frameset"
   ],
-  "role": "gallery",
+  "role": "primary",
   "sort_order": 1,
   "subject_accuracy": "exact-platform",
   "media_type": "official-product-photo",
@@ -72,5 +72,14 @@
       "lightcarbon-lcg071s-pro-gallery-complete-2026-10-03"
     ],
     "conclusion": "Original pixels inspected against exact product-page context. Technical diagrams, colour designs, options, sample builds and source-caption conflicts are explicitly scoped; no private identifiers are visible."
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "role": "gallery"
+      },
+      "reason": "Select the already reviewed, locally reinspected S-PRO manufacturer image showing its separate-stem system. Preserve exact-platform scope and mainland-package caveat."
+    }
+  ]
 }
