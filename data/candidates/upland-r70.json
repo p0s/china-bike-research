@@ -13,7 +13,7 @@
     "stock_tire": "Michelin Dynamic Sport 700x25C on the displayed manufacturer build; maximum clearance unpublished",
     "frame_material": "Toray T700 carbon main frame with T800 reinforcement at key areas and a T800 carbon fork",
     "identity_source": "Exact UPLAND product page and race article identify the R70; the current product page was available only as a search-index excerpt because direct opening timed out. The pages do not map retained seller cards to one drivetrain option.",
-    "stiffness_evidence": "Independent exact-model review reports strong pedaling stiffness; current manufacturer engineering notes describe T800 reinforcement for structural strength, but no instrumented frame-stiffness protocol is published",
+    "stiffness_evidence": "A secondary AI-generated summary/index of a Bilibili R70 review relays strong pedaling stiffness; original playback/transcript is unverified. Manufacturer T800 reinforcement is a construction claim, with no published instrumented frame-stiffness protocol.",
     "current reference components": "Current manufacturer Di2 reference: 50/34T, 170 mm crank, 11–34T cassette, integrated carbon cockpit and BB86. These are not assigned to the retained unselected seller cards.",
     "current manufacturer total load reference": "100kg maximum total system mass including bicycle, rider and cargo. Displayed manufacturer R70Di2 reference; not a100kg rider-only limit or proof of applicability to retained unselected seller cards."
   },
@@ -48,7 +48,7 @@
   },
   "source_refs": "IMG_6864.png#L1, IMG_6865.png#L2",
   "source_url": "https://www.upland.bike/zh/product/308.html",
-  "source_note": "The accepted exact manufacturer, official-store and independent evidence resolves the T700/T800 construction and supplies bounded qualitative stiffness context. The exact manufacturer page timed out on 2026-09-25; no current exact weight method or retained-price configuration mapping was obtained. Retain model/trim and mainland-market limits in the research record.",
+  "source_note": "The exact manufacturer and official-store sources support the recorded T700/T800 construction. The stiffness lead is a secondary AI summary/index of a Bilibili review; original playback/transcript remains unverified. The manufacturer page timed out on 2026-09-25; no current exact weight method or retained-price configuration mapping was obtained. Retain model/trim and mainland-market limits in the research record.",
   "last_reviewed": "2026-09-25",
   "enrichment_reviews": [
     {
@@ -70,6 +70,18 @@
         "current manufacturer total load reference"
       ],
       "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ],
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "facts": {
+          "stiffness_evidence": "Independent exact-model review reports strong pedaling stiffness; current manufacturer engineering notes describe T800 reinforcement for structural strength, but no instrumented frame-stiffness protocol is published"
+        },
+        "source_note": "The accepted exact manufacturer, official-store and independent evidence resolves the T700/T800 construction and supplies bounded qualitative stiffness context. The exact manufacturer page timed out on 2026-09-25; no current exact weight method or retained-price configuration mapping was obtained. Retain model/trim and mainland-market limits in the research record."
+      },
+      "reason": "Identify the stiffness source tier while preserving manufacturer weight/material evidence, every retained seller observation and the absence of an instrumented test."
     }
   ]
 }
