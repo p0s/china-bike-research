@@ -1711,6 +1711,14 @@ void import('./analytics-event.js').then((events) => {
   const baseSelect = root.querySelector('[data-build-base]');
   const baseLink = root.querySelector('[data-build-base-link]');
   const baseFacts = root.querySelector('[data-build-base-facts]');
+  const startingPointWarning = root.querySelector('[data-build-starting-point-warning]');
+  if (baseSelect instanceof HTMLSelectElement) {
+    const pendingOption = document.createElement('option');
+    pendingOption.value = '';
+    pendingOption.disabled = true;
+    pendingOption.textContent = translate('Choose an exact starting point', document.documentElement.lang);
+    baseSelect.prepend(pendingOption);
+  }
   const baseCustom = root.querySelector('[data-build-base-custom]');
   const basePrice = root.querySelector('[data-build-base-price]');
   const baseWeight = root.querySelector('[data-build-base-weight]');
@@ -1867,7 +1875,7 @@ void import('./analytics-event.js').then((events) => {
     const target = new URL(location.href);
     const base = bases.get(state.baseId);
     const defaults = defaultSelections(base);
-    if (state.baseId) target.searchParams.set('base', state.baseId);
+    if (state.baseId) target.searchParams.set('base', state.requestedBaseId ?? state.baseId);
     target.searchParams.delete('frame');
     for (const [field, value, recorded] of [
       ['basePrice', state.baseCustom.price, numberOrNull(base?.priceLow)],
@@ -1903,8 +1911,17 @@ void import('./analytics-event.js').then((events) => {
     if (!base) return;
     const isComplete = base.kind === 'complete-bike';
     ensureBaseOption(base);
-    if (baseSelect instanceof HTMLSelectElement) baseSelect.value = base.id;
-    if (baseLink instanceof HTMLAnchorElement) baseLink.href = base.url;
+    if (baseSelect instanceof HTMLSelectElement) baseSelect.value = state.unavailableStartingPoint ? '' : base.id;
+    if (startingPointWarning instanceof HTMLElement) {
+      startingPointWarning.hidden = !state.unavailableStartingPoint;
+      startingPointWarning.textContent = state.unavailableStartingPoint
+        ? translate('The requested starting point is unavailable. Choose an exact replacement to calculate totals.', document.documentElement.lang)
+        : '';
+    }
+    if (baseLink instanceof HTMLAnchorElement) {
+      baseLink.href = base.url;
+      baseLink.hidden = Boolean(state.unavailableStartingPoint);
+    }
     if (baseFacts) baseFacts.textContent = [
       `${isComplete ? 'Complete bike' : 'Frameset'}${base.stage === 'candidate' ? ' · research stage' : ''}`,
       base.bottomBracket || 'bottom bracket unknown',
@@ -1913,7 +1930,10 @@ void import('./analytics-event.js').then((events) => {
       base.priceNote || '',
       base.weightBasis || ''
     ].filter(Boolean).join(' · ');
-    if (buildName) buildName.textContent = base.name.replace(/ · research stage$/, '');
+    if (state.unavailableStartingPoint && baseFacts) baseFacts.textContent = `${translate('Requested starting point', document.documentElement.lang)}: ${state.requestedBaseId}`;
+    if (buildName) buildName.textContent = state.unavailableStartingPoint
+      ? translate('Choose an exact starting point', document.documentElement.lang)
+      : base.name.replace(/ · research stage$/, '');
     if (summaryKicker) summaryKicker.textContent = isComplete ? 'Purchase + upgrades' : 'Current build';
     if (priceLabel) priceLabel.textContent = isComplete ? 'Purchase + upgrades' : 'Full build price';
     if (weightLabel) weightLabel.textContent = isComplete ? 'Projected weight' : 'Known weight';
@@ -2066,8 +2086,16 @@ void import('./analytics-event.js').then((events) => {
       ? `${isComplete ? 'Purchase total' : 'Complete price'} needs ${missingPrices.length} more input${missingPrices.length === 1 ? '' : 's'}; ${isComplete ? 'projected weight' : 'complete weight'} needs ${missingWeights.length} more input${missingWeights.length === 1 ? '' : 's'}.`
       : isComplete ? 'Purchase price and every replacement weight delta are resolved.' : 'Every required slot has a price and weight.';
 
-    const conflicts = compatibilityMessages(base, covered);
+    const conflicts = state.unavailableStartingPoint
+      ? [translate('The requested starting point is unavailable. Choose an exact replacement to calculate totals.', document.documentElement.lang)]
+      : compatibilityMessages(base, covered);
     if (impossibleWeight && completeness) completeness.textContent += ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
+    if (state.unavailableStartingPoint) {
+      const pending = translate('Choose an exact starting point', document.documentElement.lang);
+      if (totalPrice) totalPrice.textContent = '—';
+      if (totalWeight) totalWeight.textContent = '—';
+      if (completeness) completeness.textContent = pending;
+    }
     if (compatibility instanceof HTMLElement) {
       compatibility.classList.toggle('has-conflicts', conflicts.length > 0);
       compatibility.replaceChildren();
@@ -2096,6 +2124,8 @@ void import('./analytics-event.js').then((events) => {
     const previous = bases.get(state.baseId);
     const next = bases.get(baseSelect.value);
     state.baseId = baseSelect.value;
+    delete state.unavailableStartingPoint;
+    delete state.requestedBaseId;
     state.baseCustom = { price: '', weight: '', packageWeight: '' };
     for (const custom of Object.values(state.custom)) custom.removedWeight = '';
     if (previous?.kind !== next?.kind) {
@@ -2157,7 +2187,7 @@ void import('./analytics-event.js').then((events) => {
     }
   });
   root.querySelector('[data-build-reset]')?.addEventListener('click', () => {
-    state.baseId = firstBaseId;
+    if (!state.unavailableStartingPoint) state.baseId = firstBaseId;
     state.selections = defaultSelections(bases.get(firstBaseId));
     state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '', removedWeight: '' }]));
     state.baseCustom = { price: '', weight: '', packageWeight: '' };

@@ -43,7 +43,7 @@ export function restoreBuildState(data, params, stored = {}, { allowStored = tru
   const explicit = keys.some((key) => params.has(key));
   const saved = allowStored && !explicit && (own(stored, 'schemaVersion') === undefined || own(stored, 'schemaVersion') === 2)
     ? record(stored) : {};
-  const requestedBase = params.get('base') ?? params.get('frame') ?? own(saved, 'baseId') ?? own(saved, 'frameId');
+  const requestedBase = params.get('base') ?? params.get('frame') ?? own(saved, 'requestedBaseId') ?? own(saved, 'baseId') ?? own(saved, 'frameId');
   const baseId = bases.has(requestedBase) ? requestedBase : data.bases[0]?.id ?? '';
   const base = bases.get(baseId);
   const sameBase = (own(saved, 'baseId') ?? own(saved, 'frameId')) === baseId;
@@ -53,6 +53,10 @@ export function restoreBuildState(data, params, stored = {}, { allowStored = tru
     weight: numericInput(params.get('baseWeight') ?? own(savedBase, 'weight')),
     packageWeight: numericInput(params.get('packageWeight') ?? own(savedBase, 'packageWeight')),
   } };
+  if (requestedBase && !bases.has(requestedBase)) {
+    state.unavailableStartingPoint = true;
+    state.requestedBaseId = requestedBase;
+  }
   for (const slot of slots) {
     const fallback = base?.kind === 'complete-bike' ? 'included' : data.parts.find((part) => part.slot === slot && part.default)?.id ?? 'custom';
     const requested = params.get(`part-${slot}`) ?? (sameBase ? own(own(saved, 'selections'), slot) : undefined) ?? fallback;

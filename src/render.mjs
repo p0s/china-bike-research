@@ -590,7 +590,7 @@ function publishedSpecificationRows(product) {
     ['Included package', product.variant.kind === 'frameset' ? product.variant.included?.join(', ') : ''],
     ['Wheels', componentDescription(product.variant.wheels)],
     ['Tires', product.variant.tires],
-    ['Cockpit', componentDescription(product.variant.cockpit)],
+    ['Cockpit', product.variant.cockpit?.material && product.variant.cockpit_status ? product.variant.cockpit_status : componentDescription(product.variant.cockpit)],
     ['Fit range', geometrySummary(product.platform)],
     ['Purchase route', product.variant.purchase_route]
   ];
@@ -739,6 +739,7 @@ function candidateMetric(entry) {
 }
 
 function candidatePriceBounds(entry) {
+  if (entry.candidate.comparison_eligibility?.price === false) return {};
   if (!entry.price) return {};
   const low = entry.price.amount_cny ?? entry.price.low_cny;
   const high = entry.price.amount_cny ?? entry.price.high_cny ?? low;
@@ -754,6 +755,7 @@ function isReferenceConversionPrice(price) {
 }
 
 function candidatePriceLabel(ctx, entry) {
+  if (entry.candidate.comparison_eligibility?.price === false) return 'Exact build price unknown';
   if (!entry.price) return entry.candidate.status === 'superseded' ? 'Not sold new' : '—';
   if (entry.kind !== 'frameset') {
     const price = formatPrice(entry.price);
@@ -766,6 +768,7 @@ function candidatePriceLabel(ctx, entry) {
 }
 
 function candidatePriceState(entry) {
+  if (entry.candidate.comparison_eligibility?.price === false) return 'Unmatched price retained as reference';
   if (!entry.price) {
     return entry.candidate.status === 'superseded'
       ? `Superseded by ${successorLabel(entry.candidate)}`
@@ -784,6 +787,7 @@ function candidatePriceState(entry) {
 }
 
 function candidatePriceRecordLabel(entry) {
+  if (entry.candidate.comparison_eligibility?.price === false) return 'Reference only; exact build price unknown';
   const priceType = entry.price?.price_type ?? '';
   if (priceType === 'seller-listing-reference-conversion') return 'Foreign seller FX estimate';
   if (isReferenceConversionPrice(entry.price)) return 'Official FX estimate';
@@ -801,6 +805,13 @@ function candidatePackageOverlapNote(entry) {
   if (/seatpost/i.test(basis)) included.push('seatpost');
   if (!included.length) return '';
   return `The recorded package mentions ${included.join(' and ')}; adjust the allowance to avoid double-counting included parts.`;
+}
+
+// Source measurements remain in facts even when they cannot identify the
+// selected build. Only eligible exact-build measurements feed decisions.
+function candidateCompleteWeight(entry) {
+  return entry.candidate.comparison_eligibility?.complete_weight === false
+    ? null : entry.candidate.facts?.complete_weight_g ?? null;
 }
 
 function candidateRow(ctx, entry) {
@@ -823,7 +834,7 @@ function candidateRow(ctx, entry) {
   const allowance = buildAssumption(ctx).amount_cny;
   const isPricedFrameset = entry.kind === 'frameset' && Number.isFinite(frameLow);
   const priceHigh = entry.kind === 'complete-bike'
-    ? entry.price?.amount_cny ?? entry.price?.high_cny ?? entry.price?.low_cny ?? ''
+    ? frameHigh ?? ''
     : isPricedFrameset ? frameHigh + allowance : '';
   const priceSort = Number.isFinite(entry.priceMidpoint)
     ? entry.priceMidpoint + (isPricedFrameset ? allowance : 0)
@@ -837,8 +848,9 @@ function candidateRow(ctx, entry) {
   const brandButton = brand
     ? `<button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>`
     : '';
-  const weight = Number.isFinite(facts.complete_weight_g)
-    ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg`
+  const completeWeight = candidateCompleteWeight(entry);
+  const weight = Number.isFinite(completeWeight)
+    ? `${(completeWeight / 1000).toFixed(1)} kg`
     : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
       ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
       : '—';
@@ -923,12 +935,13 @@ function candidateComparisonSummary(ctx, entry) {
   const assumption = buildAssumption(ctx);
   const image = imageUrl(ctx, entry.image);
   const facts = entry.candidate.facts ?? {};
-  const weight = Number.isFinite(facts.complete_weight_g)
-    ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg`
+  const completeWeight = candidateCompleteWeight(entry);
+  const weight = Number.isFinite(completeWeight)
+    ? `${(completeWeight / 1000).toFixed(1)} kg`
     : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
       ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
       : '—';
-  const weightGrams = entry.kind === 'complete-bike' ? facts.complete_weight_g : entry.kind === 'frameset' ? facts.frame_weight_g : null;
+  const weightGrams = entry.kind === 'complete-bike' ? completeWeight : entry.kind === 'frameset' ? facts.frame_weight_g : null;
   const priceDetails = entry.candidate.status === 'superseded'
     ? candidatePublicText(entry.candidate.availability_note)
     : estimated
@@ -949,12 +962,12 @@ function candidateComparisonSummary(ctx, entry) {
       ...comparisonImageFields(ctx, entry.image)
     } : {}),
     type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
-    ...(entry.kind && entry.identifiableModel ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
+    ...(entry.kind && entry.builderEligible ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
     priceLowCny: Number.isFinite(frameLow) ? frameLow + (estimated ? assumption.amount_cny : 0) : null,
     priceHighCny: Number.isFinite(frameHigh) ? frameHigh + (estimated ? assumption.amount_cny : 0) : null,
-    priceUnavailable: entry.candidate.status === 'superseded' || !entry.identifiableModel,
-    chinaPrice: entry.identifiableModel && entry.price ? chinaPriceBasis([{ ...entry.price, observed_at: entry.price.observed_at ?? entry.candidate.observed_at }]) : null,
+    priceUnavailable: entry.candidate.status === 'superseded' || !entry.identifiableModel || entry.candidate.comparison_eligibility?.price === false,
+    chinaPrice: entry.identifiableModel && entry.candidate.comparison_eligibility?.price !== false && entry.price ? chinaPriceBasis([{ ...entry.price, observed_at: entry.price.observed_at ?? entry.candidate.observed_at }]) : null,
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
     ...(priceDetails ? { priceDetails } : {}),
@@ -1019,7 +1032,9 @@ function candidateFactRows(entry) {
         : key === 'tire_clearance_mm'
           ? candidateTireClearance(entry).value
           : value;
-    return [labels[key] ?? sentenceLabel(key), String(formatted)];
+    const label = key === 'complete_weight_g' && entry.candidate.comparison_eligibility?.complete_weight === false
+      ? 'Reference complete weight; exact build unresolved' : labels[key] ?? sentenceLabel(key);
+    return [label, String(formatted)];
   });
 }
 
@@ -1043,6 +1058,10 @@ function buyerFacingSourceUrl(ctx, source) {
   return ctx.data.videos.some((video) => video.provider === 'xhs' && video.url === source.url) ? '' : source.url;
 }
 
+function sourceAuthorityNote(source) {
+  return source.authority_note ? `<p class="source-authority">${escapeHtml(source.authority_note)}</p>` : '';
+}
+
 function candidateSourceList(ctx, entry) {
   const sources = new Map((entry.sources ?? []).map((source) => [source.id, source]));
   if (entry.image?.media_type !== 'project-placeholder' && entry.imageSource) sources.set(entry.imageSource.id, entry.imageSource);
@@ -1058,7 +1077,7 @@ function candidateSourceList(ctx, entry) {
       .map((key) => `${sentenceLabel(key)}: ${confidenceLabel(source.reliability[key])}`)
       .join(' · ');
     const unavailable = source.url ? '' : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))}</span>${confidence ? `<span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>` : `<span>Accessed ${escapeHtml(source.accessed_at)}</span>`}${unavailable}${source.notes ? `<p>${escapeHtml(candidatePublicText(source.notes))}</p>` : ''}</div>`;
+    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))}</span>${confidence ? `<span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>` : `<span>Accessed ${escapeHtml(source.accessed_at)}</span>`}${unavailable}${sourceAuthorityNote(source)}${source.notes ? `<p>${source.classification_history ? '<strong>Historical source annotation:</strong> ' : ''}${escapeHtml(candidatePublicText(source.notes))}</p>` : ''}</div>`;
   }).join('')}</div>`;
 }
 
@@ -1107,7 +1126,7 @@ function sourceList(ctx, product) {
     const unavailable = source.url ? '' : source.type === 'project-asset'
       ? '<span class="source-local">Project-owned local asset</span>'
       : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`;
+    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${sourceAuthorityNote(source)}${source.notes ? `<p>${source.classification_history ? '<strong>Historical source annotation:</strong> ' : ''}${escapeHtml(source.notes)}</p>` : ''}</div>`;
   }).join('')}</div>`;
 }
 
@@ -1420,26 +1439,27 @@ function publishedStoryTitle(product, weight, tireClearance, locale = 'en') {
 
 function candidateStoryTitle(ctx, entry) {
   const facts = entry.candidate.facts ?? {};
+  const completeWeight = candidateCompleteWeight(entry);
   if (ctx.locale === 'de') {
     const tire = candidateTireClearance(entry);
     const details = [
-      Number.isFinite(facts.complete_weight_g) ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg Komplettrad` : '',
-      !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `${facts.frame_weight_g} g Rahmen` : '',
+      Number.isFinite(completeWeight) ? `${(completeWeight / 1000).toFixed(1)} kg Komplettrad` : '',
+      !Number.isFinite(completeWeight) && Number.isFinite(facts.frame_weight_g) ? `${facts.frame_weight_g} g Rahmen` : '',
       Number.isFinite(facts.tire_clearance_mm) ? `${tire.value} ${tire.fitted ? 'Bereifung' : 'Reifenfreiheit'}` : ''
     ].filter(Boolean);
     return details.length ? details.join(' · ') : `Belegte Angaben zu ${entry.candidate.name}`;
   }
   if (ctx.locale === 'zh-Hans') {
     const details = [
-      Number.isFinite(facts.complete_weight_g) ? `整车重量记录 ${(facts.complete_weight_g / 1000).toFixed(1)} kg` : '',
-      !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `车架重量记录 ${facts.frame_weight_g} g` : '',
+      Number.isFinite(completeWeight) ? `整车重量记录 ${(completeWeight / 1000).toFixed(1)} kg` : '',
+      !Number.isFinite(completeWeight) && Number.isFinite(facts.frame_weight_g) ? `车架重量记录 ${facts.frame_weight_g} g` : '',
       Number.isFinite(facts.tire_clearance_mm) ? `轮胎空间记录 ${candidateTireClearance(entry).value}` : ''
     ].filter(Boolean);
     return details.length ? details.join('；') : `${entry.candidate.name}：已核实的资料`;
   }
   const details = [
-    Number.isFinite(facts.complete_weight_g) ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg complete bike` : '',
-    !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame` : '',
+    Number.isFinite(completeWeight) ? `${(completeWeight / 1000).toFixed(1)} kg complete bike` : '',
+    !Number.isFinite(completeWeight) && Number.isFinite(facts.frame_weight_g) ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame` : '',
     Number.isFinite(facts.tire_clearance_mm) ? (candidateTireClearance(entry).fitted ? `${candidateTireClearance(entry).value} tire` : `${candidateTireClearance(entry).value} tire clearance`) : ''
   ].filter(Boolean);
   if (details.length) return details.join(' with ');
@@ -1450,7 +1470,7 @@ function candidateStoryTitle(ctx, entry) {
 function candidateGermanSummary(entry) {
   const facts = entry.candidate.facts ?? {};
   const details = [
-    Number.isFinite(facts.complete_weight_g) ? `dokumentiertes Komplettgewicht ${facts.complete_weight_g} g` : '',
+    Number.isFinite(candidateCompleteWeight(entry)) ? `dokumentiertes Komplettgewicht ${candidateCompleteWeight(entry)} g` : '',
     Number.isFinite(facts.frame_weight_g) ? `dokumentiertes Rahmengewicht ${facts.frame_weight_g} g` : '',
     Number.isFinite(facts.tire_clearance_mm) ? `dokumentierte ${candidateTireClearance(entry).fitted ? 'Bereifung' : 'Reifenfreiheit'} ${candidateTireClearance(entry).value}` : ''
   ].filter(Boolean);
@@ -1486,7 +1506,7 @@ export function renderCandidateModel(ctx, entry) {
   const facts = candidateFactRows(entry);
   const originalReason = candidatePublicText(candidate.why_interesting) || 'This bike is tracked while its exact configuration and market evidence are completed.';
   const chineseFacts = [
-    Number.isFinite(candidate.facts?.complete_weight_g) ? `整车重量记录 ${candidate.facts.complete_weight_g} g` : '',
+    Number.isFinite(candidateCompleteWeight(entry)) ? `整车重量记录 ${candidateCompleteWeight(entry)} g` : '',
     Number.isFinite(candidate.facts?.frame_weight_g) ? `车架重量记录 ${candidate.facts.frame_weight_g} g` : '',
     Number.isFinite(candidate.facts?.tire_clearance_mm) ? `轮胎空间记录 ${candidateTireClearance(entry).value}` : ''
   ].filter(Boolean);
@@ -1503,7 +1523,9 @@ export function renderCandidateModel(ctx, entry) {
   const priceState = candidatePriceState(entry);
   const sellerListingFxReference = entry.price?.price_type === 'seller-listing-reference-conversion';
   const assumption = buildAssumption(ctx);
-  const priceBrief = ctx.locale === 'zh-Hans'
+  const priceBrief = candidate.comparison_eligibility?.price === false
+    ? translate('The retained price is not matched to this exact build; its purchase price remains unknown.', ctx.locale)
+    : ctx.locale === 'zh-Hans'
     ? !entry.price
       ? isSuperseded ? `此版本已被 ${successorLabel(candidate)} 取代；目前没有可用于新车购买的已核实价格。` : '尚无已核实的当前价格；请向销售渠道核对目标配置的实际报价。'
       : entry.kind === 'frameset'
@@ -1742,10 +1764,10 @@ function builderBases(ctx) {
     };
   });
   const candidates = joinCatalogCandidates(ctx.data)
-    .filter((entry) => entry.kind && entry.identifiableModel)
+    .filter((entry) => entry.kind && entry.builderEligible)
     .map((entry) => {
       const facts = entry.candidate.facts ?? {};
-      const { low, high, note } = builderCandidatePrice(entry.price);
+      const { low, high, note } = builderCandidatePrice(entry.candidate.comparison_eligibility?.price === false ? null : entry.price);
       const isComplete = entry.kind === 'complete-bike';
       return {
         id: entry.id,
@@ -1757,7 +1779,7 @@ function builderBases(ctx) {
         priceLow: low,
         priceHigh: high,
         priceNote: note,
-        baseWeightG: isComplete ? facts.complete_weight_g ?? null : facts.frame_weight_g ?? null,
+        baseWeightG: isComplete ? candidateCompleteWeight(entry) : facts.frame_weight_g ?? null,
         weightBasis: isComplete ? facts.complete_weight_basis ?? 'complete-bike weight basis not recorded' : facts.frame_weight_basis ?? 'frameset package weight unknown',
         bottomBracket: facts.bottom_bracket ?? '',
         bottomBracketKey: builderBottomBracketKey(facts.bottom_bracket),
@@ -1831,7 +1853,7 @@ export function renderBikeBuilder(ctx) {
   const body = `<section class="builder-intro"><div class="page">${breadcrumbs(ctx, 'Bike configurator')}<span class="builder-kicker">Component planner</span><h1>Configure a bike</h1><p>Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.</p>${originalNotes}</div></section>
   <section class="builder-page page" data-bike-builder>
     <div class="builder-workbench">
-      <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p data-build-base-facts>${initialBase ? escapeHtml(`${initialBase.kind === 'complete-bike' ? 'Complete bike' : 'Frameset'} · ${initialBase.bottomBracket || 'bottom bracket unknown'} · ${initialBase.tireClearanceLabel ? `${initialBase.tireClearanceLabel} tire clearance` : initialBase.tireClearanceMm ? `${initialBase.tireClearanceMm} mm tire clearance` : 'tire clearance unknown'}`) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom hidden><label data-build-base-price-field>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field>Base weight g<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
+      <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><p data-build-base-facts>${initialBase ? escapeHtml(`${initialBase.kind === 'complete-bike' ? 'Complete bike' : 'Frameset'} · ${initialBase.bottomBracket || 'bottom bracket unknown'} · ${initialBase.tireClearanceLabel ? `${initialBase.tireClearanceLabel} tire clearance` : initialBase.tireClearanceMm ? `${initialBase.tireClearanceMm} mm tire clearance` : 'tire clearance unknown'}`) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom hidden><label data-build-base-price-field>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field>Base weight g<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
       <div class="builder-parts" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot)).join('')}</div>
     </div>
     <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>Current build</span><h2 id="builder-summary-title" data-build-name>Build total</h2><dl><div><dt data-build-price-label>Full price</dt><dd data-build-total-price>—</dd></div><div><dt data-build-weight-label>Known weight</dt><dd data-build-total-weight>—</dd></div></dl><p data-build-completeness aria-live="polite"></p><div data-build-compatibility aria-live="polite"></div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>

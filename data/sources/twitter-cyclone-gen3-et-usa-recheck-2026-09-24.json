@@ -1,6 +1,6 @@
 {
   "id": "twitter-cyclone-gen3-et-usa-recheck-2026-09-24",
-  "type": "regional-manufacturer-product-page-recheck",
+  "type": "regional-distributor-product-page-recheck",
   "title": "Twitter Cyclone 3rd ET USA product page and geometry recheck",
   "publisher": "Twitter Bikes USA",
   "language": "en",
@@ -10,5 +10,16 @@
     "identity": "high",
     "specification": "medium"
   },
-  "notes": "Current USA regional product page specifies a threaded T47×24 mm bottom bracket and RS folding reflective-edge 700×28C fitted tires. Its six-size geometry chart publishes coordinates including stack, reach, chainstay and wheelbase, while multiple columns are blank and an entry labeled BB Drop is displayed as -68.37 with an unclear basis; only legible existing coordinates are retained. The same exact page first lists a 420×90 mm high-modulus carbon integrated cockpit, then later says every build has an alloy integrated bar/stem at 400×90 mm. Do not select either cockpit claim without an exact build mapping. The regional listing does not establish mainland-trim equivalence or maximum tire clearance."
+  "notes": "Current USA regional product page specifies a threaded T47×24 mm bottom bracket and RS folding reflective-edge 700×28C fitted tires. Its six-size geometry chart publishes coordinates including stack, reach, chainstay and wheelbase, while multiple columns are blank and an entry labeled BB Drop is displayed as -68.37 with an unclear basis; only legible existing coordinates are retained. The same exact page first lists a 420×90 mm high-modulus carbon integrated cockpit, then later says every build has an alloy integrated bar/stem at 400×90 mm. Do not select either cockpit claim without an exact build mapping. The regional listing does not establish mainland-trim equivalence or maximum tire clearance.",
+  "classification_history": [
+    {
+      "type": "regional-manufacturer-product-page-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

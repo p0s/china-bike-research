@@ -1,6 +1,6 @@
 {
   "id": "twitter-v3-wheeltop-usa-store-recheck-2026-09-24",
-  "type": "regional-manufacturer-product-page-recheck",
+  "type": "regional-distributor-product-page-recheck",
   "title": "Twitter Bikes Gravel V3 WheelTop EDS TX current U.S. store recheck",
   "publisher": "Twitter Bikes USA",
   "language": "en",
@@ -12,5 +12,16 @@
     "price": "high",
     "route": "high"
   },
-  "notes": "Current page identifies the Gravel V3 WheelTop EDS TX 2x12 build, selected Holographic/L 54 cm, lists US$1,750 with Add to bag, and states 3 Days Delivery (US). The price and route are U.S.-regional; mainland-China delivery, stock, and checkout terms remain unverified."
+  "notes": "Current page identifies the Gravel V3 WheelTop EDS TX 2x12 build, selected Holographic/L 54 cm, lists US$1,750 with Add to bag, and states 3 Days Delivery (US). The price and route are U.S.-regional; mainland-China delivery, stock, and checkout terms remain unverified.",
+  "classification_history": [
+    {
+      "type": "regional-manufacturer-product-page-recheck",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

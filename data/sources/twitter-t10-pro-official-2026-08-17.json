@@ -1,6 +1,6 @@
 {
   "id": "twitter-t10-pro-official-2026-08-17",
-  "type": "manufacturer-storefront",
+  "type": "regional-distributor-storefront",
   "title": "Twitter T10 Pro 2rd carbon road bike",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "high",
     "price": "high"
   },
-  "notes": "The current exact T10 Pro - 2rd page publishes an 8.8 kg base estimate across three selectable drivetrain builds and describes the full-carbon aero frame, fork and cockpit as designed for maximum speed and stiffness. Configuration, size and weighing protocol are not specified."
+  "notes": "The current exact T10 Pro - 2rd page publishes an 8.8 kg base estimate across three selectable drivetrain builds and describes the full-carbon aero frame, fork and cockpit as designed for maximum speed and stiffness. Configuration, size and weighing protocol are not specified.",
+  "classification_history": [
+    {
+      "type": "manufacturer-storefront",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

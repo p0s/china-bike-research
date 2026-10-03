@@ -201,6 +201,32 @@ test('scoped retirements authorize disproven protected facts without retiring th
     .some((error) => error.includes('facts.complete_weight_g is still active')));
 });
 
+test('publisher correction retires only its historical authority tier with exact scope and evidence', () => {
+  const id = 'twitter-cyclone-r7120-official-2026-08-17';
+  const correction = retirements.find(item => item.record_id === id && item.protected_item?.kind === 'source-type');
+  assert.ok(correction);
+  assert.deepEqual(errorsFor(data, baseline, retirements, { requireCurrentBaseline: false }), []);
+  assert.ok(errorsFor(data, baseline, retirements.filter(item => item !== correction), { requireCurrentBaseline: false })
+    .some(error => error.includes(`sources:${id} downgraded its evidence-source tier`)));
+  for (const mutate of [
+    source => { delete source.classification_history; },
+    source => { delete source.authority_note; },
+    source => { source.type = 'community-post'; }
+  ]) {
+    const changed = structuredClone(data);
+    mutate(changed.sources.find(item => item.id === id));
+    assert.ok(errorsFor(changed, baseline, retirements, { requireCurrentBaseline: false })
+      .some(error => error.includes('source-type needs its exact corrected type')));
+  }
+  const changed = structuredClone(data);
+  const source = changed.sources.find(item => item.id === id);
+  source.reliability.identity = 'low';
+  delete source.url;
+  const errors = errorsFor(changed, baseline, retirements, { requireCurrentBaseline: false });
+  assert.ok(errors.some(error => error.includes(`sources:${id} downgraded identity reliability`)));
+  assert.ok(errors.some(error => error.includes(`sources:${id} lost protected field url`)));
+});
+
 test('scoped candidate-price retirement requires evidence and the exact price to be absent', () => {
   const mutated = structuredClone(data);
   const candidate = mutated.candidates.find((item) => item.id === 'quick-pro-er-one');

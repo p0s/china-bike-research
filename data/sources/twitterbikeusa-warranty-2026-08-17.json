@@ -1,6 +1,6 @@
 {
   "id": "twitterbikeusa-warranty-2026-08-17",
-  "type": "manufacturer-regional-support-page",
+  "type": "regional-distributor-support-page",
   "title": "Twitter Bikes USA warranty",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "medium",
     "support": "high"
   },
-  "notes": "Official regional warranty page states a one-year limited warranty on frames, fork, and components for direct Twitter Bikes USA purchases and excludes third-party/marketplace purchases."
+  "notes": "Official regional warranty page states a one-year limited warranty on frames, fork, and components for direct Twitter Bikes USA purchases and excludes third-party/marketplace purchases.",
+  "classification_history": [
+    {
+      "type": "manufacturer-regional-support-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

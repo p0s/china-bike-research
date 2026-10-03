@@ -189,9 +189,9 @@ const catalog = {
       ...allInPrice
     },
     image,
-    image_source: imageSource ? { id: imageSource.id, type: imageSource.type, title: imageSource.title, publisher: imageSource.publisher, url: imageSource.url ?? null } : null,
+    image_source: imageSource ? { id: imageSource.id, type: imageSource.type, title: imageSource.title, publisher: imageSource.publisher, url: imageSource.url ?? null, ...(imageSource.authority_note ? { authority_note: imageSource.authority_note, authority_source_ids: imageSource.authority_source_ids } : {}) } : null,
     videos,
-    sources: sources.map(({ id, type, title, publisher, language, accessed_at, url, reliability, notes }) => ({ id, type, title, publisher, language, accessed_at, url, reliability, notes }))
+    sources: sources.map(({ id, type, title, publisher, language, accessed_at, url, reliability, notes, authority_note, authority_source_ids, classification_history }) => ({ id, type, title, publisher, language, accessed_at, url, reliability, notes, ...(authority_note ? { authority_note, authority_source_ids, classification_history } : {}) }))
   }))
 };
 write('data/catalog.json', `${JSON.stringify(catalog, null, 2)}\n`);

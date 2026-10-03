@@ -1,6 +1,6 @@
 {
   "id": "twitter-v3-wheeltop-regional-2026-08-28",
-  "type": "manufacturer-regional-product-page",
+  "type": "regional-distributor-product-page",
   "title": "TWITTER Gravel V3 WheelTop EDS TX 2x12",
   "publisher": "Twitter Bikes USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "medium-high",
     "price": "medium"
   },
-  "notes": "Current exact regional store page lists the WheelTop EDS TX complete build at US$1,750 and exposes a live order route. Mainland buyers also have the manufacturer contact route; stock, domestic warranty and final mainland checkout remain unverified."
+  "notes": "Current exact regional store page lists the WheelTop EDS TX complete build at US$1,750 and exposes a live order route. Mainland buyers also have the manufacturer contact route; stock, domestic warranty and final mainland checkout remain unverified.",
+  "classification_history": [
+    {
+      "type": "manufacturer-regional-product-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

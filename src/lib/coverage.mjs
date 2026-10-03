@@ -180,7 +180,7 @@ function preferredImageTargetProtection(previous, protection) {
 function sourceTypeTier(type) {
   if (/^(?:manufacturer-|official-|government-)/.test(type)) return 3;
   if (type === 'authorized-retailer-page') return 2;
-  if (/(?:retailer|industry)/.test(type)) return 2;
+  if (/(?:retailer|distributor|industry)/.test(type)) return 2;
   if (/(?:market|community|research)/.test(type)) return 1;
   return 0;
 }
@@ -592,6 +592,8 @@ function retirementKey(recordType, recordId) {
   return `${recordType}:${recordId}`;
 }
 
+const scopedRetirementKinds = ['field', 'relationship', 'candidate-price', 'source-type'];
+
 function validateRetirements(data, baseline, retirements) {
   const errors = [];
   const byKey = new Map();
@@ -621,10 +623,12 @@ function validateRetirements(data, baseline, retirements) {
     }
     const scopedItem = retirement.protected_item;
     if (scopedItem !== undefined) {
-      if (!isObject(scopedItem) || !['field', 'relationship', 'candidate-price'].includes(scopedItem.kind) || typeof scopedItem.value !== 'string' || !scopedItem.value) {
-        errors.push(`retirement ${retirement.id}: protected_item must identify one field, relationship, or candidate price`);
+      if (!isObject(scopedItem) || !scopedRetirementKinds.includes(scopedItem.kind) || typeof scopedItem.value !== 'string' || !scopedItem.value) {
+        errors.push(`retirement ${retirement.id}: protected_item must identify one field, relationship, candidate price, or source type`);
       } else if (scopedItem.kind === 'candidate-price' && (retirement.record_type !== 'candidates' || !['observed_price', 'official_price'].includes(scopedItem.value))) {
         errors.push(`retirement ${retirement.id}: candidate-price must identify an observed or official candidate price`);
+      } else if (scopedItem.kind === 'source-type' && retirement.record_type !== 'sources') {
+        errors.push(`retirement ${retirement.id}: source-type must identify a source`);
       }
     }
     if (retirement.action === 'replace' && !retirement.replacement) errors.push(`retirement ${retirement.id}: replacement is required`);
@@ -640,7 +644,7 @@ function validateRetirements(data, baseline, retirements) {
     if (!baseline?.records?.[retirement.record_type]?.includes(retirement.record_id)) {
       errors.push(`retirement ${retirement.id}: ${key} is not protected by the baseline`);
     }
-    if (scopedItem && isObject(scopedItem) && ['field', 'relationship', 'candidate-price'].includes(scopedItem.kind) && typeof scopedItem.value === 'string' && scopedItem.value) {
+    if (scopedItem && isObject(scopedItem) && scopedRetirementKinds.includes(scopedItem.kind) && typeof scopedItem.value === 'string' && scopedItem.value) {
       const itemKey = `${key}#${scopedItem.kind}:${scopedItem.value}`;
       if (protectedItems.has(itemKey)) errors.push(`retirement ${retirement.id}: duplicate retirement for ${itemKey}`);
       protectedItems.add(itemKey);
@@ -648,17 +652,29 @@ function validateRetirements(data, baseline, retirements) {
         ? baseline?.fields?.[retirement.record_type]?.[retirement.record_id]
         : scopedItem.kind === 'relationship'
           ? baseline?.relationships?.[retirement.record_type]?.[retirement.record_id]
-          : baseline?.price_targets?.candidates?.[retirement.record_id];
+          : scopedItem.kind === 'source-type'
+            ? [`minimum_type_tier=${baseline?.source_quality?.[retirement.record_id]?.minimum_type_tier}`]
+            : baseline?.price_targets?.candidates?.[retirement.record_id];
       if (!protectedValues?.includes(scopedItem.value)) errors.push(`retirement ${retirement.id}: ${itemKey} is not protected by the baseline`);
       const activeRecord = recordMap(data, retirement.record_type).get(retirement.record_id);
       if (!activeRecord) {
         errors.push(`retirement ${retirement.id}: scoped retirement requires active record ${key}`);
       } else {
+        if (scopedItem.kind === 'source-type') {
+          const priorTier = baseline?.source_quality?.[retirement.record_id]?.minimum_type_tier;
+          if (retirement.corrected_type !== activeRecord.type || !Array.isArray(activeRecord.classification_history) ||
+            !activeRecord.classification_history.some(item => sourceTypeTier(item.type ?? '') === priorTier) ||
+            typeof activeRecord.authority_note !== 'string' || !activeRecord.authority_note.trim()) {
+            errors.push(`retirement ${retirement.id}: source-type needs its exact corrected type, preserved classification history, and authority note`);
+          }
+        }
         const activeValues = scopedItem.kind === 'field'
           ? collectFieldPaths(activeRecord, '', unprotectedFieldRoots[retirement.record_type] ?? new Set())
           : scopedItem.kind === 'relationship'
             ? collectRelationships(activeRecord)
-            : priceKinds(activeRecord);
+            : scopedItem.kind === 'source-type'
+              ? [`minimum_type_tier=${sourceProtection(activeRecord).minimum_type_tier}`]
+              : priceKinds(activeRecord);
         if (activeValues.includes(scopedItem.value)) errors.push(`retirement ${retirement.id}: ${itemKey} is still active`);
       }
     } else {
@@ -735,7 +751,8 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
     const source = currentSources.get(id);
     if (!source) continue;
     const actual = sourceProtection(source);
-    if (actual.minimum_type_tier < required.minimum_type_tier) errors.push(`sources:${id} downgraded its evidence-source tier`);
+    if (actual.minimum_type_tier < required.minimum_type_tier &&
+      !retiredProtectedItems.has(`sources:${id}#source-type:minimum_type_tier=${required.minimum_type_tier}`)) errors.push(`sources:${id} downgraded its evidence-source tier`);
     for (const [dimension, minimum] of Object.entries(required.minimum_reliability ?? {})) {
       if ((actual.minimum_reliability?.[dimension] ?? -1) < minimum) errors.push(`sources:${id} downgraded ${dimension} reliability`);
     }

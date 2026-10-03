@@ -1460,3 +1460,31 @@ export function translateGerman(value) {
   if (text.includes(' · ')) return pad(text.split(' · ').map(t).join(' · '));
   return value;
 }
+
+// Reviewed qualifiers for exact-build and source-authority corrections.
+Object.assign(de, {
+  "Regional distributor product page recheck": "Nachprüfung der Produktseite des regionalen Vertriebs",
+  "Regional distributor warranty page recheck": "Nachprüfung der Garantieseite des regionalen Vertriebs",
+  "Regional distributor storefront recheck": "Nachprüfung des regionalen Vertriebsshops",
+  "Regional distributor support page": "Supportseite des regionalen Vertriebs",
+  "Choose an exact starting point": "Genauen Ausgangspunkt wählen",
+  "Requested starting point": "Angeforderter Ausgangspunkt",
+  "The requested starting point is unavailable. Choose an exact replacement to calculate totals.": "Der angeforderte Ausgangspunkt ist nicht verfügbar. Wählen Sie einen genauen Ersatz, um Summen zu berechnen.",
+  "Exact build price unknown": "Preis der genauen Ausstattung unbekannt",
+  "Unmatched price retained as reference": "Nicht zugeordneter Preis bleibt als Referenz erhalten",
+  "Reference only; exact build price unknown": "Nur Referenz; Preis der genauen Ausstattung unbekannt",
+  "Reference complete weight; exact build unresolved": "Referenzgewicht des Komplettrads; genaue Ausstattung ungeklärt",
+  "The retained price is not matched to this exact build; its purchase price remains unknown.": "Der aufbewahrte Preis ist dieser genauen Ausstattung nicht zugeordnet; ihr Kaufpreis bleibt unbekannt.",
+  "The requested starting point is unavailable. A different bike is shown; choose an exact starting point before using these totals.": "Der angeforderte Ausgangspunkt ist nicht verfügbar. Ein anderes Fahrrad wird angezeigt; wählen Sie einen genauen Ausgangspunkt, bevor Sie diese Summen verwenden.",
+  "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.": "Quelle eines regionalen US-Vertriebs. Die Autorisierung beruht auf dessen eigener Aussage; diese Quelle ist weder der Hersteller noch ein Beleg für Preise oder Garantie in Festlandchina.",
+  "Historical source annotation:": "Historische Quellenanmerkung:",
+  "Regional distributor storefront": "Regionaler Vertriebsshop",
+  "Regional distributor product page": "Produktseite des regionalen Vertriebs",
+  "Regional distributor regional product page": "Regionale Produktseite des Vertriebs",
+  "Regional distributor regional support page": "Regionale Supportseite des Vertriebs",
+  "Prior Spark Sport QED/105 platform reference: HS-EPS+ carbon; exact 2026 Gen3/PES construction remains unproven": "Referenz der früheren Spark-Sport-QED/105-Plattform: HS-EPS+-Carbon; die Konstruktion der genauen 2026-Gen3/PES-Ausführung bleibt unbelegt",
+  "Prior Spark Sport QED/105 platform manufacturer claims 20% higher pedaling stiffness than its predecessor; public protocol unpublished and exact 2026 Gen3/PES applicability unproven": "Für die frühere Spark-Sport-QED/105-Plattform nennt der Hersteller 20 % höhere Tretsteifigkeit als beim Vorgänger; ein öffentliches Testprotokoll fehlt, und die Übertragbarkeit auf die genaue 2026-Gen3/PES-Ausführung ist unbelegt",
+  "PARDUS reports EPS+, EPS and HPT carbon molding processes. These company disclosures do not establish comparative superiority or the process used by every model.": "PARDUS nennt EPS+, EPS und HPT als Carbon-Formverfahren. Diese Unternehmensangaben belegen weder eine Überlegenheit im Vergleich noch das Verfahren jedes einzelnen Modells.",
+  "Unresolved: the exact ET page lists a 420×90 mm high-modulus-carbon cockpit, then later says every build has an alloy 400×90 mm cockpit; no exact option mapping resolves the conflict.": "Ungeklärt: Die genaue ET-Seite nennt ein 420×90-mm-Cockpit aus hochmoduligem Carbon, später aber ein 400×90-mm-Aluminiumcockpit für alle Ausstattungen; keine genaue Optionszuordnung löst den Widerspruch.",
+  "Conflict on the exact official page: the displayed/default WheelTop build lists a 420×90 mm high-modulus-carbon cockpit, while a later section says every build has a 400×90 mm alloy cockpit. No selected-option mapping resolves the contradiction.": "Widerspruch auf derselben Produktseite: Die angezeigte beziehungsweise voreingestellte WheelTop-Ausstattung nennt ein 420×90-mm-Cockpit aus hochmoduligem Carbon; ein späterer Abschnitt nennt für alle Ausstattungen ein 400×90-mm-Aluminiumcockpit. Eine Zuordnung der ausgewählten Option fehlt."
+});

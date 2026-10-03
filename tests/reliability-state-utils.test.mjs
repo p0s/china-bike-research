@@ -39,6 +39,15 @@ test('history restore never reuses current local draft', () => {
 test('unknown base and wrong-slot component fall back deterministically', () => {
   const result = restore('base=nonexistent&part-drivetrain=wheel-a');
   assert.equal(result.baseId,'frame-a'); assert.equal(result.selections.drivetrain,'group-a');
+  assert.equal(result.unavailableStartingPoint, true);
+});
+test('an unavailable saved base is disclosed without copying its custom weight into the fallback', () => {
+  const result = restore('', {baseId:'removed-base', baseCustom:{weight:'8970', price:'14800'}});
+  assert.equal(result.unavailableStartingPoint, true);
+  assert.equal(result.baseCustom.weight, '');
+  assert.equal(result.baseCustom.price, '');
+  assert.equal(restore('base=bike-b').unavailableStartingPoint, undefined);
+  assert.equal(restore().unavailableStartingPoint, undefined);
 });
 test('complete-bike defaults remain included, not re-purchased', () => {
   assert.deepEqual(restore('base=bike-b').selections,{drivetrain:'included',wheelset:'included'});
@@ -62,4 +71,25 @@ test('buyer-confirmed frameset package inclusion is explicit, never an inferred 
   assert.equal(restore('base=frame-a&part-wheelset=in-base').selections.wheelset,'in-base');
   assert.equal(restore('base=bike-b&part-wheelset=in-base').selections.wheelset,'included');
   assert.equal(restore('base=frame-a').selections.wheelset,'wheel-a');
+});
+
+test('unavailable request survives a saved draft round trip and component edits', () => {
+  const initial = restore('base=removed-base&part-wheelset=custom&price-wheelset=5');
+  assert.equal(initial.requestedBaseId, 'removed-base');
+  const resumed = restore('', JSON.parse(JSON.stringify(initial)));
+  assert.equal(resumed.requestedBaseId, 'removed-base');
+  assert.equal(resumed.unavailableStartingPoint, true);
+  assert.equal(resumed.custom.wheelset.price, '5');
+});
+test('explicit replacement URL supersedes an unavailable local draft', () => {
+  const result = restore('base=bike-b', restore('base=removed-base'));
+  assert.equal(result.baseId, 'bike-b');
+  assert.equal(result.requestedBaseId, undefined);
+  assert.equal(result.unavailableStartingPoint, undefined);
+});
+test('legacy frame URLs and drafts retain the unavailable requested identity', () => {
+  for (const result of [restore('frame=removed-base'), restore('', {frameId:'removed-base'})]) {
+    assert.equal(result.requestedBaseId, 'removed-base');
+    assert.equal(result.unavailableStartingPoint, true);
+  }
 });

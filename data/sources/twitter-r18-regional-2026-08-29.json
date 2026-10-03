@@ -1,6 +1,6 @@
 {
   "id": "twitter-r18-regional-2026-08-29",
-  "type": "manufacturer-regional-product-page",
+  "type": "regional-distributor-product-page",
   "title": "R18 (Racing ED) - Cyctrac Carbon Road Bike",
   "publisher": "Twitter Bikes USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "medium",
     "price": "medium"
   },
-  "notes": "Official regional page uses both TWITTER R18 (Racing ED) and 'Cyctrac Carbon Road Bike,' resolving the retained title/branding mismatch as one manufacturer family rather than two bikes. It offers five drivetrain configurations and a 7.8 kg base estimate, so regional build weight is not substituted for the exact China R7170 listing."
+  "notes": "Official regional page uses both TWITTER R18 (Racing ED) and 'Cyctrac Carbon Road Bike,' resolving the retained title/branding mismatch as one manufacturer family rather than two bikes. It offers five drivetrain configurations and a 7.8 kg base estimate, so regional build weight is not substituted for the exact China R7170 listing.",
+  "classification_history": [
+    {
+      "type": "manufacturer-regional-product-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "twitter-cyclone-2025-eds-tx-2026-08-17",
-  "type": "manufacturer-regional-product-page",
+  "type": "regional-distributor-product-page",
   "title": "Twitter CYCLONE 2025 WheelTop EDS-TX 2x12",
   "publisher": "Twitter Bike USA",
   "language": "en",
@@ -11,5 +11,16 @@
     "specification": "high",
     "price": "high"
   },
-  "notes": "Exact 2025 Cyclone EDS-TX page shows US$1,710 for a carbon-wheel XL configuration, 700x28C tires, detailed EDS-TX BOM, and 9.0 kg carbon-wheel / 9.2 kg alloy-wheel claims."
+  "notes": "Exact 2025 Cyclone EDS-TX page shows US$1,710 for a carbon-wheel XL configuration, 700x28C tires, detailed EDS-TX BOM, and 9.0 kg carbon-wheel / 9.2 kg alloy-wheel claims.",
+  "classification_history": [
+    {
+      "type": "manufacturer-regional-product-page",
+      "corrected_at": "2026-10-03",
+      "reason": "Operator identifies itself as a regional U.S. distributor; authorization is self-described, not independently verified."
+    }
+  ],
+  "authority_note": "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.",
+  "authority_source_ids": [
+    "twitterbikeusa-operator-role-2026-10-03"
+  ]
 }

@@ -728,3 +728,31 @@ Object.assign(zh, {
   'Contributions': '公开贡献',
   'GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.': 'GitHub 问题和合并请求是公开的。发布图片或链接前请删除个人信息；需要更正或移除内容时可提交问题。'
 });
+
+// Reviewed qualifiers for exact-build and source-authority corrections.
+Object.assign(zh, {
+  "Regional distributor product page recheck": "地区经销商产品页面复查",
+  "Regional distributor warranty page recheck": "地区经销商保修页面复查",
+  "Regional distributor storefront recheck": "地区经销商商店复查",
+  "Regional distributor support page": "地区经销商售后页面",
+  "Choose an exact starting point": "请选择确切的初始车型",
+  "Requested starting point": "请求的初始车型",
+  "The requested starting point is unavailable. Choose an exact replacement to calculate totals.": "请求的初始车型不可用。请选择确切的替代车型以计算总计。",
+  "Exact build price unknown": "目标配置价格未知",
+  "Unmatched price retained as reference": "未对应目标配置的价格仅保留为参考",
+  "Reference only; exact build price unknown": "仅供参考；目标配置价格未知",
+  "Reference complete weight; exact build unresolved": "整车参考重量；目标配置尚未核实",
+  "The retained price is not matched to this exact build; its purchase price remains unknown.": "保留的价格尚未对应此目标配置；其购买价格仍然未知。",
+  "The requested starting point is unavailable. A different bike is shown; choose an exact starting point before using these totals.": "请求的初始车型不可用。当前显示的是另一辆车；使用这些总计前，请选择确切的初始车型。",
+  "Regional US distributor source. Its statement of authorization is self-described; this source is not the manufacturer or evidence of mainland-China price or warranty.": "美国地区经销商来源。其授权说明来自自身声明；此来源并非制造商，也不能证明中国大陆价格或保修条件。",
+  "Historical source annotation:": "历史来源注释：",
+  "Regional distributor storefront": "地区经销商商店",
+  "Regional distributor product page": "地区经销商产品页面",
+  "Regional distributor regional product page": "地区经销商地区产品页面",
+  "Regional distributor regional support page": "地区经销商地区售后页面",
+  "Prior Spark Sport QED/105 platform reference: HS-EPS+ carbon; exact 2026 Gen3/PES construction remains unproven": "前代 Spark Sport QED/105 平台参考：HS-EPS+ 碳纤维；2026 Gen3/PES 目标配置的构造仍未核实",
+  "Prior Spark Sport QED/105 platform manufacturer claims 20% higher pedaling stiffness than its predecessor; public protocol unpublished and exact 2026 Gen3/PES applicability unproven": "前代 Spark Sport QED/105 平台的制造商称踩踏刚性比其前代提高 20%；公开测试方法未公布，且不能证明适用于 2026 Gen3/PES 目标配置",
+  "PARDUS reports EPS+, EPS and HPT carbon molding processes. These company disclosures do not establish comparative superiority or the process used by every model.": "PARDUS 披露 EPS+、EPS 和 HPT 碳纤维成型工艺。这些公司说明不能证明与其他品牌相比更优，也不能证明每个车型都采用相同工艺。",
+  "Unresolved: the exact ET page lists a 420×90 mm high-modulus-carbon cockpit, then later says every build has an alloy 400×90 mm cockpit; no exact option mapping resolves the conflict.": "未核实：该 ET 页面列出 420×90 mm 高模量碳纤维把组，随后又称所有配置都采用 400×90 mm 铝合金把组；没有目标选项对应关系能消除此冲突。",
+  "Conflict on the exact official page: the displayed/default WheelTop build lists a 420×90 mm high-modulus-carbon cockpit, while a later section says every build has a 400×90 mm alloy cockpit. No selected-option mapping resolves the contradiction.": "同一产品页面存在冲突：展示或默认的 WheelTop 配置列出 420×90 mm 高模量碳纤维把组，后文却称所有配置都采用 400×90 mm 铝合金把组。没有选中配置的对应关系能消除此矛盾。"
+});
