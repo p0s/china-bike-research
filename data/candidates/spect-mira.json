@@ -1,6 +1,6 @@
 {
   "id": "spect-mira",
-  "name": "SPECT 空力公式 Mira frameset",
+  "name": "SPECT \u7a7a\u529b\u516c\u5f0f Mira frameset",
   "model_id": "spect-mira",
   "category": "road-aero",
   "type": "frameset",
@@ -9,13 +9,14 @@
   "facts": {
     "frame": "SPECT Mira T1100 + M90 carbon aero road frameset",
     "frame_material": "T1100 + M90 carbon lay-up",
-    "frame_construction": "Aero carbon frame with T47×86 bottom bracket, UDH and electronic-only shifting compatibility",
+    "frame_construction": "Aero carbon frame with T47\u00d786 bottom bracket, UDH and electronic-only shifting compatibility",
     "frame_weight_g": 940,
-    "frame_weight_basis": "Upper end of the 900–940 g quoted launch range; size, finish, hardware inclusion and weighing method are not stated, and no delivered production frame has been independently weighed",
-    "bottom_bracket": "T47×86 threaded",
+    "frame_weight_basis": "Upper end of the 900\u2013940 g quoted launch range; size, finish, hardware inclusion and weighing method are not stated, and no delivered production frame has been independently weighed",
+    "bottom_bracket": "T47\u00d786 threaded",
     "cockpit": "Matching integrated cockpit included in the reported launch package",
     "drivetrain_compatibility": "Electronic shifting only; no drivetrain is included with the frameset package",
-    "stiffness_evidence": "Independent launch reporting says SPECT judged the development Mira frame too stiff and was softening the lay-up before delivery; this is exact development-state evidence, not a numeric or delivered-production-frame test"
+    "stiffness_evidence": "Independent launch reporting says SPECT judged the development Mira frame too stiff and was softening the lay-up before delivery; this is exact development-state evidence, not a numeric or delivered-production-frame test",
+    "regional cockpit reference": "Current Cycle Gears retailer reference: 55 mm rise, 75 mm reach, 120 mm drop, \u221213\u00b0 stem, 22 mm clamp stack. Regional reference only; the retained selected package remains unverified."
   },
   "missing": [
     "Production-revision maximum tire clearance: current exact sources conflict between 32C and 35 mm rear / 38 mm front claims",
@@ -31,7 +32,8 @@
     "spect-mira-cyclistshub-2026-08-30",
     "spect-mira-bikeinsights-2026-08-30",
     "spect-mira-cyclegears-clearance-recheck-2026-09-25",
-    "spect-mira-cyclistshub-clearance-recheck-2026-09-25"
+    "spect-mira-cyclistshub-clearance-recheck-2026-09-25",
+    "spect-mira-enrichment-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -45,5 +47,17 @@
   "source_refs": "IMG_6891.png#R3, IMG_6893.png#R1",
   "source_url": "https://www.wildto.com/news/59020.html",
   "source_note": "The CNY 6,999 evidence is for the frame, fork and matching-handlebar package. The show bike is illustrative. The 32C current-retailer limit conflicts with independent launch reporting of 35 mm rear / 38 mm front fit, so the catalog preserves maximum clearance as unknown rather than selecting one claim.",
-  "last_reviewed": "2026-09-25"
+  "last_reviewed": "2026-09-25",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "spect-mira-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "regional cockpit reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

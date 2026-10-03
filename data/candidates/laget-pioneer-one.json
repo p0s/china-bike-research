@@ -14,7 +14,8 @@
   "source_ids": [
     "titanium-laget-pioneer-one-official",
     "laget-pioneer-one-official-recheck-2026-09-23",
-    "laget-pioneer-one-cyclenet-2026-09-01"
+    "laget-pioneer-one-cyclenet-2026-09-01",
+    "laget-pioneer-one-enrichment-2026-10-03"
   ],
   "official_price": {
     "amount_cny": 21900,
@@ -32,6 +33,19 @@
     "frame_weight_g": 1350,
     "frame_weight_basis": "Manufacturer claim for size S; brushed finish and included-hardware basis unpublished",
     "frame_material": "3D-printed titanium road frame with carbon fork",
-    "frame_stiffness_status": "No exact-model numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas"
-  }
+    "frame_stiffness_status": "No exact-model numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas",
+    "bottom_bracket": "Manufacturer T47 × 68 mm."
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "laget-pioneer-one-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "bottom_bracket"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

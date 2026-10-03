@@ -14,7 +14,9 @@
     "stock_tire": "MAXXIS Pursuer 700x28C; maximum clearance unpublished",
     "frame_material": "T1100+T800 carbon aero frame and fork; exact lay-up proportions are unpublished",
     "complete_weight_g": 8500,
-    "complete_weight_basis": "Manufacturer approximate claim for the exact CNY 10,999 Shimano 105 R7120 mechanical build, bare without pedals or computer mount; reference size and weighing method unstated"
+    "complete_weight_basis": "Manufacturer approximate claim for the exact CNY 10,999 Shimano 105 R7120 mechanical build, bare without pedals or computer mount; reference size and weighing method unstated",
+    "current reference components": "Current manufacturer mechanical 105 reference: MUTECH carbon wheelset with steel spokes, 50/34T 170 mm crank, 11–34T cassette and integrated carbon cockpit. Wheel selection for the retained observation remains unverified.",
+    "current manufacturer total load reference": "100kg maximum total system mass including bicycle, rider and cargo. Exact current manufacturer Taylor mechanical105 reference; confirm selected assembly. Not a rider-only maximum."
   },
   "missing": [
     "Manufacturer-confirmed maximum tire clearance",
@@ -24,7 +26,9 @@
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "upland-taylor-official-2026-08-30",
-    "upland-taylor-marketplace-2026-08-30"
+    "upland-taylor-marketplace-2026-08-30",
+    "upland-taylor-enrichment-2026-10-03",
+    "upland-taylor-supplementary-specs-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -38,5 +42,27 @@
   "source_refs": "IMG_6880.png#L1",
   "source_url": "https://www.upland.bike/zh/product/304.html",
   "source_note": "The manufacturer price, drivetrain, weight and T1100+T800 frame/fork construction align with the retained card. Fitted 28C tires are documented but are not treated as a maximum-clearance claim.",
-  "last_reviewed": "2026-09-24"
+  "last_reviewed": "2026-09-24",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "upland-taylor-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "current reference components"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "upland-taylor-supplementary-specs-2026-10-03"
+      ],
+      "fields": [
+        "current manufacturer total load reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

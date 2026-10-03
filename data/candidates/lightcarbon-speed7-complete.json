@@ -30,7 +30,8 @@
     "tire_clearance_basis": "Official Chinese catalog alias bridge to the exact LCR017-D manufacturer maximum",
     "factory_weight_context": "Manufacturer social post claims 7.8 kg for 7120, 7.5 kg for 7170 and 7.2 kg for 8170; none is mapped to the retained mechanical-105 package",
     "frame_stiffness_status": "Qualitative ride evidence is available; no numeric frame-only measurement is recorded.",
-    "stiffness_evidence": "A review of the exact LCR017D platform reports solid behavior under load for a custom review build. In a later public comment, the author attributes higher stiffness to the box-shaped downtube. Qualitative review and community-report evidence; no numeric baseline or controlled frame-only test, and the selected factory quality/build is not mapped to the retained mechanical-105 package."
+    "stiffness_evidence": "A review of the exact LCR017D platform reports solid behavior under load for a custom review build. In a later public comment, the author attributes higher stiffness to the box-shaped downtube. Qualitative review and community-report evidence; no numeric baseline or controlled frame-only test, and the selected factory quality/build is not mapped to the retained mechanical-105 package.",
+    "separate owner custom-build reference": "A post published2025-11-09 describes a Speed7/017 custom bike with a GRX/UltegraDi2 mix, R7000 chain/cassette, XXE/Xcadey, Goldix180SL custom wheels and MVMT cockpit, and claims6.98kg including clipless pedals. Size and scales/method are unstated. This is separate owner-build context; retained mechanical105 complete weight/BOM and SPEEDZ identity remain unresolved. Hypothetical6.8kg and title10k are not observed weight/exact price."
   },
   "source_ids": [
     "public-lightcarbon-speed7-factory-weight-2026-08-20",
@@ -40,9 +41,32 @@
     "lightcarbon-lcr017-d-official-2026-08-29",
     "lightcarbon-lcr017d-hambini-review-2026-09-22",
     "lightcarbon-lcr017d-hambini-comments-2026-09-22",
-    "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
+    "lightcarbon-lcr017-d-official-price-recheck-2026-09-23",
+    "lightcarbon-lcr017-d-enrichment-2026-10-03",
+    "lightcarbon-lcr017-d-gallery-complete-2026-10-03",
+    "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03"
   ],
   "source_note": "The official Chinese catalog maps 速7 to LCR017-D. Its 32C maximum therefore applies to the retained platform, but factory 7.8/7.5/7.2 kg social claims are not assigned to the retained mechanical-105 build. September22 follow-up adds attributed qualitative ride evidence with its build and source caveats; it does not supply an exact complete weight or maximum clearance.",
   "last_reviewed": "2026-09-23",
-  "source_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf"
+  "source_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr017-d-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "LightCarbon Speed7/LCR017-D bare-frame reference; retained mechanical-105 complete build and its package are not shown. Source reuse only; no new search or complete-build claim."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03"
+      ],
+      "fields": [
+        "separate owner custom-build reference"
+      ],
+      "scope": "Dated public reference only. Exact selected-build quantitative gaps and existing evidence/dates remain intact."
+    }
+  ]
 }

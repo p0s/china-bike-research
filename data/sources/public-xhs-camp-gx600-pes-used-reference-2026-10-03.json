@@ -1,0 +1,49 @@
+{
+  "id": "public-xhs-camp-gx600-pes-used-reference-2026-10-03",
+  "type": "public-product-post",
+  "title": "CAMP GX600 PES size45 used-build weight and asking reference",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/6a310167000000001702ed1e",
+  "accessed_at": "2026-10-03",
+  "published_at": "2026-06-16T07:55:19.000Z",
+  "published_date": "2026-06-16",
+  "last_updated_at": "2026-06-16T07:55:19.000Z",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "Used-bike seller describes a size45 GX600 Magene PES/Tektro build and claims9.6kg, roughly50km use, asking4999 with SF shipping included. Currency is unstated; weighing method, pedals/accessories and complete BOM unknown. Historical seller assertions only, no confirmed sale, delivered total or current offer.",
+  "reference_claims": [
+    {
+      "kind": "complete-bike-weight-claim",
+      "claim": "Seller claims 9.6 kg for the stated size 45 GX600 PES resale bike.",
+      "confidence": "low",
+      "limitations": "No scales, weighing method, pedals/accessories, finish or full BOM basis in the text. Owner-measured status is not established. Retain separately from official 9.1 kg small-size without pedals/accessories.",
+      "weight_g": 9600,
+      "size": "45",
+      "measurement_status": "asserted; not documented as measured",
+      "canonical_target_id": "camp-gx600-pes",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "historical-used-sale-asking-price",
+      "claim": "Seller asks 4999 for the near-new GX600 PES size 45 build and says SF Express shipping is included.",
+      "confidence": "low",
+      "limitations": "Currency symbol/unit is absent from the body; no confirmed sale, tax/delivered total, current availability or selected checkout. Date is post publication, not a independently dated transaction.",
+      "amount": 4999,
+      "currency": null,
+      "currency_status": "not explicitly stated",
+      "package_basis": "near-new GX600 PES flat-bar complete bike, size 45, claimed50 km use; SF shipping inclusion asserted",
+      "canonical_target_id": "camp-gx600-pes",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "cd8f30137ec8fd626cae43907b589bb71ec2e192993ef22f412b78c8ab86cb74",
+    "scope": "Previously validated local detail archive; raw bodies, account identifiers and original media remain private and outside Git. No child pixel review."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "hi-light-g0",
-  "name": "Hi-Light 航轮 G0",
+  "name": "Hi-Light \u822a\u8f6e G0",
   "model_id": "hi-light-g0",
   "category": "gravel",
   "type": "frameset",
@@ -19,7 +19,8 @@
     "hi-light-g0-171works-current-2026-09-23",
     "hi-light-g0-villain-current-2026-09-23",
     "hi-light-g0-manufacturer-checkout-recheck-2026-09-24",
-    "hi-light-g0-villain-ph-current-recheck-2026-09-24"
+    "hi-light-g0-villain-ph-current-recheck-2026-09-24",
+    "hi-light-g0-enrichment-2026-10-03"
   ],
   "official_price": {
     "amount_cny": 15900,
@@ -36,6 +37,19 @@
     "tire_clearance_basis": "Source-reported manufacturer value is 700x50C (official page last accessed 2026-09-01); 171WORKS also mentions 50C fit, while current Villain listing specifies 45C maximum. The manufacturer page returned 403 on 2026-09-23, so the exact maximum remains unresolved.",
     "frame_material": "Titanium frame with 3D-printed/integrated junction details and carbon fork",
     "frame_weight_status": "No exact frame-only weight with size, finish and included-hardware basis found after 50 registered source areas",
-    "stiffness_evidence": "A 171WORKS exact G0 review says its 3D-printed head section contributes to increased rigidity; this is qualitative construction evidence, not a measured stiffness magnitude."
-  }
+    "stiffness_evidence": "A 171WORKS exact G0 review says its 3D-printed head section contributes to increased rigidity; this is qualitative construction evidence, not a measured stiffness magnitude.",
+    "tire clearance current conflict": "Current Japan G0 page simultaneously prints ETRTO 47-622 and 700\u00d750C; regional Villain lists 45C with ETRTO 47-622. Existing 45C/50C conflict and historical observation dates remain unchanged; no resolved maximum is asserted."
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "hi-light-g0-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "tire clearance current conflict"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

@@ -15,7 +15,9 @@
   "source_ids": [
     "lightcarbon-lcg074s-d-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcg074s-d-enrichment-2026-10-03",
+    "lightcarbon-lcg074s-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCG074S-D gravel frameset with separate stem, micro-suspension pivot and downtube storage",
@@ -35,8 +37,23 @@
     "sizes": "49, 52, 55 and 58",
     "geometry": "Reach 374.1–397.1 mm; stack 542.6–627.1 mm; 430 mm chainstays; 70 mm BB drop; 62.7–69.3 mm trail",
     "warranty": "Two years",
-    "stiffness_evidence": "Manufacturer describes frame compliance through its micro-suspension pivot but publishes no independent deflection or stiffness measurement"
+    "stiffness_evidence": "Manufacturer describes frame compliance through its micro-suspension pivot but publishes no independent deflection or stiffness measurement",
+    "seatpost reference": "Current manufacturer SP03-27.2 seatpost: 15 mm offset, 192 g ±4%; component claim, not complete-package weight.",
+    "groupset compatibility": "Mechanical and Di2 supported, excluding older rear derailleurs without B-LINK, including Shimano 105 5800."
   },
   "source_note": "The current exact stem-package page remains quote-only, and no exact dated owner quotation or mainland selected checkout was found. LCG074-D amounts were not transferred to LCG074S-D.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcg074s-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "seatpost reference",
+        "groupset compatibility"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

@@ -14,7 +14,8 @@
   "source_ids": [
     "titanium-hi-light-g7-2-official",
     "hi-light-g7-2-villain-retailer-2026-08-27",
-    "hi-light-g7-2-official-current-2026-09-01"
+    "hi-light-g7-2-official-current-2026-09-01",
+    "hi-light-g7-2-enrichment-2026-10-03"
   ],
   "official_price": {
     "amount_cny": 6500,
@@ -45,5 +46,15 @@
     "price_basis": "Current exact-model manufacturer retail price for the G7.2 frameset; package, stock, shipping and checkout total require confirmation.",
     "observation_count": 1
   },
-  "price_status": "Last-readable dated official retail reference; current stock and checkout unverified"
+  "price_status": "Last-readable dated official retail reference; current stock and checkout unverified",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "hi-light-g7-2-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

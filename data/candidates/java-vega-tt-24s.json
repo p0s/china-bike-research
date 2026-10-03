@@ -28,7 +28,8 @@
     "java-vega-mexico-2026-08-29",
     "java-vega-eurobike-2026-08-29",
     "java-vega-chile-current-2026-09-23",
-    "java-vega-eurobike-current-2026-09-23"
+    "java-vega-eurobike-current-2026-09-23",
+    "java-vega-tt-24s-enrichment-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -42,5 +43,15 @@
   "source_refs": "IMG_6866.png#L2",
   "source_url": "https://www.javabikes.cl/product/vega-tt-24s",
   "source_note": "The retained card identifies Vega TT 24S at CNY 12,999. The 2026-09-23 Chilean and EUROBIKE references support a regional ER9 2x12, T800-carbon build and a 9.8 kg claim; the weight has no size or method basis. Components may vary, and neither source establishes the retained mainland selected option, a complete mainland BOM or maximum tire clearance.",
-  "last_reviewed": "2026-09-23"
+  "last_reviewed": "2026-09-23",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "java-vega-tt-24s-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

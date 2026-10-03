@@ -1,0 +1,25 @@
+{
+  "id": "trinx-catalog-q-2026-10-03",
+  "frozen_at": "2026-10-03",
+  "target": "trinx-gtr-c6",
+  "fields": [
+    "frame-material",
+    "complete-weight",
+    "tire-clearance",
+    "warranty-route",
+    "reference-bom",
+    "image"
+  ],
+  "route": "Read downloaded accepted 2024 manufacturer catalog exact page17/printed30 to resolve reader-size limitation. OCR assists discovery; all accepted fields/photo identity require actual page visual review.",
+  "source_url": "https://trinx.jp/wp-content/uploads/2024/09/TRINX-Collection-2024.pdf",
+  "max_targets": 1,
+  "max_atomic_fields": 6,
+  "steps": [
+    "Inspect exact page",
+    "Compare dated current facts",
+    "Add only useful absent/conflicting source-scoped reference facts",
+    "Preserve original sources and all unknowns",
+    "Run targeted validation"
+  ],
+  "done_criteria": "Exact catalog facts/photo scope accepted or mismatch retained explicitly; no later or regional build transfer"
+}

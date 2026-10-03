@@ -1,0 +1,50 @@
+{
+  "id": "platform-scott-addict-rc-40-tire-clearance-launch-recheck-2026-10-03",
+  "target": {
+    "record_type": "platform",
+    "record_id": "scott-addict-rc-40"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-10-03",
+  "retry_of": "platform-scott-addict-rc-40-tire-clearance-2026-09-30",
+  "retry_reason": "New focused older-generation official launch/press route; no repeat of prior manual or Polish fitment page.",
+  "campaign_extension": {
+    "id": "scott-addict-rc-40-old-generation-launch-clearance-2026-10-03",
+    "extends_attempt_id": "platform-scott-addict-rc-40-tire-clearance-2026-09-30",
+    "authorized_at": "2026-10-03",
+    "scope_file": "docs/research-batches/2026-10-03/official-specs-n-scope.json",
+    "reason": "Newly targeted official older-generation launch/press technical specification route; preserve original50-area sweep and Sep30 partial follow-up.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 3
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-scott-addict-rc-40-tire-clearance-2026-09-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SCOTT Addict RC 2020 2019 launch technical specifications maximum tyre tire clearance",
+          "route": "Focused manufacturer-domain discovery for older-generation launch/press technical specification",
+          "outcome": "no-result",
+          "accessed_at": "2026-10-03",
+          "note": "Search returned no usable older-generation SCOTT manufacturer launch result or newly linked technical document. Irrelevant results concerned non-bicycle Addict pages or current gravel context and were ignored; no claim was accepted from snippets."
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "notes": "One focused official-domain query found no qualifying old-generation source. Two conditional distinct document-route slots remain unrun because no new linked source surfaced; this is incomplete, not exhaustion. Fitted 28C remains fitment only. Old sources and searches are retained."
+}

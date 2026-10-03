@@ -16,7 +16,9 @@
   "source_ids": [
     "lightcarbon-lctr003-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lctr003-enrichment-2026-10-03",
+    "lightcarbon-lctr003-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCTR003 fixie and track carbon frameset",
@@ -32,8 +34,23 @@
     "sizes": "48, 51, 54 and 57",
     "geometry": "Official four-size track geometry chart and 155–190 cm rider-height guide are published as images",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "headset standard": "Manufacturer tapered 1 1/8 to 1 1/2 inches, 42/52 mm headset.",
+    "geometry numeric table": "Original LCTR003 image, columns size / C-T / A / offset / TT / HT / ST / BB / RC / WB / FC / FK / stack / reach. Values as printed (general unit legend absent): 480: 495.5 / 80 / 34.5 / 510 / 72.5 / 74.5 / 60 / 380 / 922 / 550 / 368 / 477.5 / 378; 510: 505.5 / 90 / 34.5 / 540 / 72.5 / 74.5 / 60 / 380 / 952 / 580 / 368 / 487 / 405; 540: 520 / 105 / 34.5 / 561 / 72.5 / 74.5 / 60 / 380 / 974 / 601.5 / 368 / 501.5 / 422; 570: 550 / 135 / 34.5 / 586 / 72.5 / 74.5 / 60 / 380 / 999.5 / 627 / 368 / 530 / 439. Chart additionally prints FSA NO.42ACB, BSA BC1.37*24T, 120MM OLD, special 74–78° post. No conversion to other sizes or models."
   },
   "source_note": "The exact manufacturer page remains inquiry-only. A US$420–490 LightCarbon fixie/track/TT supplier card was not promoted because it does not identify LCTR003 or its selected package.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lctr003-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "headset standard",
+        "geometry numeric table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

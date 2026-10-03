@@ -16,7 +16,9 @@
   "source_ids": [
     "lightcarbon-lcrxs-d-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcrxs-d-enrichment-2026-10-03",
+    "lightcarbon-lcrxs-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCRXS-D aero road disc frameset with integrated-routing stem",
@@ -32,8 +34,23 @@
     "sizes": "48, 51, 54, 56 and 58",
     "geometry": "Reach 371.1–404.9 mm; stack 506.1–574.4 mm; 410 mm chainstays; 69 mm BB drop",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "frame material current conflict": "Current manufacturer table says T700 + T800; retained earlier T700 claim remains unchanged. Exact lay-up proportions are unpublished.",
+    "headtube groupset compatibility": "Current manufacturer: straight 1 1/2-inch head tube; electronic shifting recommended; older rear derailleurs without B-LINK are excluded."
   },
   "source_note": "The exact manufacturer page remains quote-only. A secondary £500 2023 record was rejected because it is historical and incorrectly labels the disc model as rim brake, weakening package attribution.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcrxs-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "frame material current conflict",
+        "headtube groupset compatibility"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

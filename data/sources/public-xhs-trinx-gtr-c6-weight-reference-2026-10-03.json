@@ -1,0 +1,45 @@
+{
+  "id": "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03",
+  "type": "public-product-post",
+  "title": "TRINX GTR C6 third-party weight and material reference",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/6a0085e90000000007020c87",
+  "accessed_at": "2026-10-03",
+  "published_at": "2026-05-10T13:19:37.000Z",
+  "published_date": "2026-05-10",
+  "last_updated_at": "2026-05-10T13:19:37.000Z",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "none"
+  },
+  "notes": "Third-party carbon GTR C6 1x12 compilation claims about10.6kg, T800 frame and carbon fork. Size, pedals/accessories, weighing method and retained SKU/year are unknown. Public reference corroborates carbon-fork context, without confirming selected mainland weight or fiber grade; repeated6980 amount is not a new offer.",
+  "reference_claims": [
+    {
+      "kind": "complete-bike-weight-reference",
+      "claim": "Claims approximately 10.6 kg for the carbon GTR C6 1x12 reference build.",
+      "confidence": "low",
+      "limitations": "No scales/method, size, pedal/accessory basis or retained mainland SKU bridge. Selected complete weight remains unknown.",
+      "weight_g": 10600,
+      "size": null,
+      "measurement_status": "third-party assertion",
+      "canonical_target_id": "trinx-gtr-c6",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "frame-and-fork-reference",
+      "claim": "Claims T800 carbon frame and carbon fork.",
+      "confidence": "low",
+      "limitations": "Unverified public-reference grade. Carbon fork already has a distinct 2024 manufacturer regional reference; this adds public corroboration, not selected material confirmation.",
+      "canonical_target_id": "trinx-gtr-c6",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "d0ab95d870e9bdba6a1bf58911f982a5badb8c236fe09a31137262bdfc1aacc4",
+    "scope": "Previously validated local detail archive; raw bodies, account identifiers and original media remain private and outside Git. No child pixel review."
+  }
+}

@@ -30,7 +30,8 @@
   "source_ids": [
     "camp-gx700-official-2026-08-28",
     "camp-gx700-tmall-2026-08-28",
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "camp-gx700-enrichment-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -44,5 +45,15 @@
   "source_refs": "IMG_6871.png#R2, IMG_6878.png#R2, IMG_6887.png#L2, IMG_6894.png#R1, IMG_6898.png#L1",
   "source_url": "https://www.campbicycle.com/en/gx700.html",
   "source_note": "Current manufacturer and official-market records establish the standard GX700 GRX 1×12 build, approximately 10.2 kg small-size claim, 45C fitted tire and CNY 9,999 route. The fitted tire is not presented as a verified maximum.",
-  "last_reviewed": "2026-08-29"
+  "last_reviewed": "2026-08-29",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "camp-gx700-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

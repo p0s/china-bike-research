@@ -1,0 +1,29 @@
+{
+  "batch_id": "xhs-owner-r2-2026-10-03",
+  "frozen_at": "2026-10-03",
+  "authority": "Continued owner evidence research for previously unrun exact-model queries",
+  "models": [
+    "trinx-gtr-c6",
+    "upland-r80",
+    "gito-wave",
+    "viqi-r8000",
+    "west-biking-team-road",
+    "huanyu-az-one"
+  ],
+  "atomic_gaps": 12,
+  "bounds": {
+    "maxQueries": 6,
+    "maxDetails": 30,
+    "maxMinutes": 20,
+    "parallel": 1,
+    "minimumIntervalSeconds": 18
+  },
+  "purpose": "Exact owner build, weight, fitted tire and identity evidence. Cards are discovery only; sellers and comments remain attributed lower-confidence evidence.",
+  "done_criteria": [
+    "Validate and compactly assess captures before analysis",
+    "Deduplicate existing canonical public sources",
+    "Keep private author, account, IP and location details out of product data",
+    "Stop on access boundary without retries or bypasses; report productive evidence and remaining unknowns"
+  ],
+  "target_id_correction": "Planning aliases west-team and huanyu-azone resolved to retained canonical IDs; frozen query text unchanged."
+}

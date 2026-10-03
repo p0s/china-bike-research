@@ -15,7 +15,9 @@
   "source_ids": [
     "lightcarbon-lcr0x-d-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr0x-d-enrichment-2026-10-03",
+    "lightcarbon-lcr0x-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCR0X-D integrated road disc frame",
@@ -30,8 +32,23 @@
     "sizes": "48, 51, 54, 56 and 58",
     "geometry": "Reach 371.1–404.9 mm; stack 506.1–574.4 mm; 410 mm chainstays; 69 mm BB drop",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "frame material current conflict": "Current specification table says T700 + T800; retained earlier T700 claim is preserved with its sources. Exact lay-up remains unpublished.",
+    "seatpost weight reference": "Current manufacturer setback-adjustable seatpost 230 ±10 g; component-only claim."
   },
   "source_note": "The exact manufacturer page remains quote-only. A used LCR0X-D Ultegra Di2 complete-bike listing was rejected because it does not isolate the frameset package, original sale terms or current manufacturer availability.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr0x-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "frame material current conflict",
+        "seatpost weight reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

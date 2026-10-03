@@ -16,7 +16,10 @@
     "lightcarbon-lcg074-d-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
     "lightcarbon-about-official-2026-08-29",
-    "lightcarbon-lcg074-d-official-price-recheck-2026-09-24"
+    "lightcarbon-lcg074-d-official-price-recheck-2026-09-24",
+    "lightcarbon-lcg074-d-enrichment-2026-10-03",
+    "lightcarbon-lcg074-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-lcg074-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCG074-D gravel frameset with integrated HBR08 cockpit, micro-suspension pivot and downtube storage",
@@ -36,8 +39,34 @@
     "sizes": "49, 52, 55 and 58",
     "geometry": "Reach 374.1–397.1 mm; stack 542.6–627.1 mm; 430 mm chainstays; 70 mm BB drop; 62.7–69.3 mm trail",
     "warranty": "Two years",
-    "stiffness_evidence": "Manufacturer describes frame compliance through its micro-suspension pivot but publishes no independent deflection or stiffness measurement"
+    "stiffness_evidence": "Manufacturer describes frame compliance through its micro-suspension pivot but publishes no independent deflection or stiffness measurement",
+    "seatpost reference": "Current manufacturer SP03-27.2 seatpost: 15 mm offset, 192 g ±4%; component claim, not complete-package weight.",
+    "chainring compatibility": "Current manufacturer maxima: Shimano 2x 54–40T / 1x 42T; SRAM 2x 54–41T / 1x 42T. Confirm exact crank/chainline before assembly.",
+    "geometry complete current manufacturer table": "Exact current manufacturer table observed 2026-10-03. Printed size columns: 490 / 520 / 550 / 580. BODY HEIGHT (Reference): 165-172cm / 173-179cm / 180-186cm / 187-194cm; Remarks For BODY HEIGHT: For reference only, may vary due to different body proportions /; SEATPOST INSERT LENGTH: 180mm / 220mm / 250mm / 270mm; REACH: 374.1mm / 377.5mm / 386mm / 397.1mm; TOP TUBE LENGTH, HORIZONTAL: 535mm / 550mm / 575mm / 595mm; STACK: 542.6mm / 563.4mm / 598.6mm / 627.1mm; WHEELBASE: 1008.9mm / 1014.5mm / 1029.6mm / 1049.8mm; CHAINSTAY LENGTH: 430mm / 430mm / 430mm / 430mm; FRONT CENTER: 593.8mm / 599.4mm / 614.5mm / 634.5mm; BB DROP: 70mm / 70mm / 70mm / 70mm; BB HEIGHT: 285mm / 285mm / 285mm / 285mm; SEAT TUBE ANGLE: 73.5° / 73° / 72.5° / 72.5°; HEAD TUBE ANGLE: 71° / 71.5° / 72° / 72°; SEAT TUBE LENGTH: 490mm / 520mm / 550mm / 580mm; HEAD TUBE LENGTH: 120mm / 140mm / 175mm / 205mm; BIKE STANDOVER HEIGHT(700C*53C): 776.4mm / 793.4mm / 833.4mm / 863.9mm; BIKE STANDOVER HEIGHT(650B*2.1\"): 766.4mm / 783.4mm / 823.4mm / 853.9mm; FORK RAKE/OFFSET: 50mm / 50mm / 50mm / 50mm; FORK LENGTH, FULL: 397mm / 397mm / 397mm / 397mm; TRAIL: 69.3mm / 66.1mm / 62.7mm / 62.7mm. Current SIZE490/520/550/580 versus V1/V2 chart SIZE490/520/540/580 and its own C-T550. Preserve printed labels; parent PDF review pending. Size490 TRAIL current69.3mm versus V1 catalog69.6. No silent normalization. Standover rows use700C*53C and650B*2.1-inch; calculation bases do not change maximum-clearance evidence. Manufacturer-published values, not independent measurements. Existing historical range and catalog values remain separately retained."
   },
   "source_note": "The official exact page is quote-only. Owner reports around US$1,900 and €560 were rejected because the former bundles wheels, paint, accessories and DDP delivery and the latter does not define the selected package.",
-  "last_reviewed": "2026-09-24"
+  "last_reviewed": "2026-09-24",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcg074-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "seatpost reference",
+        "chainring compatibility"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcg074-d-complete-geometry-recheck-2026-10-03"
+      ],
+      "fields": [
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

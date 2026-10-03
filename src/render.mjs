@@ -185,7 +185,7 @@ function candidateImage(ctx, entry) {
   const needsNote = !['exact-variant', 'exact-platform'].includes(accuracy);
   const detailUrl = url(ctx.base, `/models/${entry.candidate.id}/`);
   const visual = `<a class="product-image-link" href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(entry.candidate.name)} details">${candidateImageElement(ctx, entry)}</a>`;
-  return `<span class="product-image">${visual}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'])}</span>` : ''}</span>`;
+  return `<span class="product-image">${visual}${needsNote ? infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'], {}, 'image-info') : ''}</span>`;
 }
 
 function candidateGalleryFigure(ctx, entry) {
@@ -240,12 +240,12 @@ function productGalleryFigure(ctx, product) {
   return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${imageElement(ctx, product, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySourceUrl ? ` · <a href="${escapeAttr(primarySourceUrl)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
 }
 
-function infoTip(label, lines, attributes = {}) {
+function infoTip(label, lines, attributes = {}, wrapperClass = '') {
   const content = JSON.stringify(lines.filter(Boolean).map(String));
   const extra = Object.entries(attributes)
     .map(([name, value]) => ` ${escapeAttr(name)}="${escapeAttr(value)}"`)
     .join('');
-  return `<span class="tooltip"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-expanded="false" aria-controls="shared-tooltip" data-tooltip-lines="${escapeAttr(content)}"${extra}><span aria-hidden="true">i</span></button></span>`;
+  return `<span class="tooltip${wrapperClass ? ` ${escapeAttr(wrapperClass)}` : ''}"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-expanded="false" aria-controls="shared-tooltip" data-tooltip-lines="${escapeAttr(content)}"${extra}><span aria-hidden="true">i</span></button></span>`;
 }
 
 function buildAssumption(ctx) {
@@ -655,7 +655,7 @@ function productImage(ctx, product, { hero = false, href = '' } = {}) {
   const visual = href
     ? `<a class="product-image-link" href="${escapeAttr(href)}" data-model-link aria-label="View ${escapeAttr(product.brand.name)} ${escapeAttr(product.variant.name)} details">${image}</a>`
     : image;
-  return `<span class="product-image ${hero ? 'hero-image' : ''}">${visual}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), product.image?.display_note ?? 'The image identifies the product family but may not show the exact listed components.'])}</span>` : ''}</span>`;
+  return `<span class="product-image ${hero ? 'hero-image' : ''}">${visual}${needsNote ? infoTip('About this image', [accuracyLabel(accuracy), product.image?.display_note ?? 'The image identifies the product family but may not show the exact listed components.'], {}, 'image-info') : ''}</span>`;
 }
 
 function productRow(ctx, product) {

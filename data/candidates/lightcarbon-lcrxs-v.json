@@ -16,7 +16,9 @@
   "source_ids": [
     "lightcarbon-lcrxs-v-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcrxs-v-enrichment-2026-10-03",
+    "lightcarbon-lcrxs-v-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCRXS-V internally routed aero rim-brake frameset with separate stem",
@@ -31,8 +33,21 @@
     "sizes": "48, 51, 54, 56 and 58",
     "geometry": "Reach 371.1–404.9 mm; stack 506.1–574.4 mm; 408 mm chainstays; 69 mm BB drop",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "headtube groupset compatibility": "Current manufacturer: straight 1 1/2-inch head tube; electronic shifting recommended; older rear derailleurs without B-LINK are excluded. HBR05 stem versus HBR07-only handlebar wording remains an unresolved current-page compatibility conflict."
   },
   "source_note": "The exact manufacturer page remains quote-only and conflicts on HBR05/HBR07 cockpit compatibility. No numeric offer with an exact selected package was found, and sibling prices were not transferred.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcrxs-v-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "headtube groupset compatibility"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

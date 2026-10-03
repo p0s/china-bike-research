@@ -17,7 +17,9 @@
     "lightcarbon-lcr018-d-official-2026-08-29",
     "cyclistshub-lcr018-d-owner-2026-08-29",
     "lightcarbon-lcr018-d-xianyu-2026-08-29",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-lcr018-d-gallery-complete-2026-10-03"
   ],
   "observed_price": {
     "amount_cny": 6450,
@@ -43,7 +45,8 @@
     "seatpost": "0 mm or 15 mm offset options according to the exact Xianyu listing",
     "geometry": "Listing ranges: 61–68 mm trail, 74–78 mm bottom-bracket drop, 415 mm chainstays, 71–72.6° head angle and approximately 1.45–1.50 stack/reach",
     "warranty": "Two-year quality warranty stated by both the manufacturer page and the exact Xianyu listing; claim route and mainland seller handling remain unverified",
-    "sizes": "46, 49, 52, 55, 58 and 61"
+    "sizes": "46, 49, 52, 55, 58 and 61",
+    "geometry complete current manufacturer table": "Exact current manufacturer table observed 2026-10-03. Printed size columns: 470 / 500 / 520 / 540 / 560 / 580. BODY HEIGHT (Reference): 156-165cm / 166-172cm / 173 - 179cm / 180 - 186cm / 187 - 193cm / 194 - 199cm; Remarks for BODY HEIGHT: For reference only, may vary due to different body proportions.; SEATPOST INSERT LENGTH: 160mm / 160mm / 160mm / 170mm / 200mm / 200mm; REACH: 365mm / 371mm / 377mm / 383mm / 389mm / 396mm; TOP TUBE LENGTH, HORIZONTAL: 503.9mm / 520mm / 535mm / 549.7mm / 563.1mm / 579.2mm; STACK: 519.6mm / 538.1mm / 552mm / 569mm / 586.8mm / 605.8mm; WHEELBASE: 983.3mm / 992mm / 992.2mm / 1004.8mm / 1006.3 +mm / 1020.3mm; CHAINSTAY LENGTH: 415mm / 415mm / 415mm / 415mm / 415mm / 415mm; FRONT CENTER: 580.9mm / 589.5mm / 589.8mm / 601.6mm / 603.1mm / 606.4mm; BB DROP: 78mm / 78mm / 78mm / 76mm / 76mm / 74mm; BB HEIGHT: 274mm / 274mm / 274mm / 276mm / 276mm / 278mm; SEAT TUBE ANGLE: 75° / 74.5° / 74° / 73.7° / 73.5° / 73.2°; HEAD TUBE ANGLE: 70.9° / 71.3° / 72° / 72° / 72.6° / 72.6°; SEAT TUBE LENGTH: 440mm / 460mm / 480mm / 500mm / 518mm / 530mm; HEAD TUBE LENGTH: 107mm / 125mm / 137mm / 157mm / 172mm / 194mm; BIKE STANDOVER HEIGHT(700C*32C): 713.5mm / 740.5mm / 758.6mm / 779.4mm / 797mm / 812.5mm; FORK RAKE/OFFSET: 51mm / 51mm / 51mm / 51mm / 47mm / 47mm; FORK LENGTH, FULL: 378mm / 378mm / 378mm / 378mm / 378mm / 378mm; TRAIL: 67.9mm / 65.3mm / 60.7mm / 60.7mm / 61mm / 61mm. Size580 FRONT CENTER: current606.4mm versus supplied exact-model V1/V2 text616.4. No silent correction or claim of changed manufactured geometry. Size560 WHEELBASE current cell is literally1006.3 +mm; catalog text prints1006.3. '+' meaning is undefined. Current standover heading700C*32C differs from V1/V2 heading700*38C with the same heights. Preserve both calculation bases; no maximum-clearance change. Numeric minimum head angle70.9° and trail60.7mm differ from retained/page ranges71–72.6° and61–68mm. Keep ranges unchanged and attributed. Manufacturer-published values, not independent measurements. Existing historical range and catalog values remain separately retained."
   },
   "alternative_builds": [
     {
@@ -67,5 +70,17 @@
     }
   ],
   "source_note": "The official manufacturer page supplies the materials, construction, size-specific weights and measured-width 38 mm maximum. The exact Xianyu listing adds geometry ranges, brake, seatpost, cockpit-weight, storage and warranty detail and also repeats 38C, while its 86.5 mm bottom-bracket wording remains a recorded conflict with the official 85.5 mm figure. The separate size-58 owner build supplies the 8.6 kg complete weight and price references; those observations are not treated as current mainland offers.",
-  "last_reviewed": "2026-08-29"
+  "last_reviewed": "2026-08-29",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
+      ],
+      "fields": [
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

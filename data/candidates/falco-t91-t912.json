@@ -21,7 +21,8 @@
     "falco-t912-official-2026-08-29",
     "falco-t912-jd-2026-08-29",
     "falco-t912-retailer-2026-08-29",
-    "falco-t912-official-current-2026-09-23"
+    "falco-t912-official-current-2026-09-23",
+    "falco-t91-t912-enrichment-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -36,5 +37,15 @@
   "source_refs": "IMG_6857.png#L1, IMG_6875.png#L2",
   "source_url": "https://www.falcospeed.com/Falco-T912-Triathlon-bikes-p6710798.html",
   "source_note": "The current FALCO T912 product page identifies a DA9280 2x12 reference build and 10.5 kg listing, but does not map that configuration to the retained China marketplace row. The exact T912 model is supported; its retained configuration and price range remain unmapped.",
-  "last_reviewed": "2026-09-23"
+  "last_reviewed": "2026-09-23",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "falco-t91-t912-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

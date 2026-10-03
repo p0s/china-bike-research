@@ -1,0 +1,75 @@
+{
+  "id": "java-vittoria-7170-official-enrichment-2026-10-03",
+  "candidate_id": "java-vittoria-7170",
+  "role": "primary",
+  "subject_accuracy": "same-model-different-market-build",
+  "media_type": "official-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/java-vittoria-7170-official-enrichment-2026-10-03/f9d1c19e455d715f-detail-w400.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "file": "f9d1c19e455d715f-card-w400.webp",
+        "width": 400,
+        "height": 400,
+        "bytes": 8358,
+        "sha256": "f9d1c19e455d715f883db723cfe0f0f17acd6867145aff11e25f0b07cb4ebe11",
+        "format": "image/webp",
+        "quality": 72,
+        "url": "/assets/images/sourced/official/java-vittoria-7170-official-enrichment-2026-10-03/f9d1c19e455d715f-card-w400.webp"
+      },
+      {
+        "purpose": "detail",
+        "file": "f9d1c19e455d715f-detail-w400.webp",
+        "width": 400,
+        "height": 400,
+        "bytes": 8358,
+        "sha256": "f9d1c19e455d715f883db723cfe0f0f17acd6867145aff11e25f0b07cb4ebe11",
+        "format": "image/webp",
+        "quality": 72,
+        "url": "/assets/images/sourced/official/java-vittoria-7170-official-enrichment-2026-10-03/f9d1c19e455d715f-detail-w400.webp"
+      }
+    ]
+  },
+  "source_id": "java-vittoria-7170-enrichment-2026-10-03",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "JAVA Chile",
+    "usage_note": "Bounded source-attributed derivative for exact product identification and comparison; copyright remains with its owner and no redistribution license is asserted."
+  },
+  "credit": "Product image \u00a9 JAVA Chile \u00b7 Regional reference build; mainland trim unverified",
+  "alt": "JAVA Chile java-vittoria-7170 reference complete bike",
+  "display_note": "Current Chilean VITTORIA AIR R7170 reference with deep front wheel and rear disc. Manufacturer notes component substitutions; retained mainland trim/year remains unmapped.",
+  "reviewed_at": "2026-10-03",
+  "source_media_url": "https://dojiw2m9tvv09.cloudfront.net/75463/product/M_vittoria-air-r7170-1113116.png?193=&t=1790918598",
+  "source_media_sha256": "1faa915e6bc2cae636e7f8487f9f340e4cf4b1798bbd60e074eb14fd950dd34a",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-03",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "review_evidence": {
+    "reviewed_at": "2026-10-03",
+    "source_ids": [
+      "java-vittoria-7170-enrichment-2026-10-03"
+    ],
+    "conclusion": "Original pixels reviewed against the exact product-linked gallery. Model/variant scope and exclusions are stated in display_note; no private identifiers are visible."
+  },
+  "acquisition_transport": {
+    "encoding": "gzip",
+    "sha256": "7e6654eaf3be473465a498654b942790e2587ce86b815f1ac946a1d0edf8ea92",
+    "bytes": 25736,
+    "note": "Ordinary HTTP gzip transport decoded locally; no second request. source_media_sha256 identifies the decoded image pixels file."
+  }
+}

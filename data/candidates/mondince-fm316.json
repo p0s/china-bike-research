@@ -6,14 +6,15 @@
   "facts": {
     "frame_material": "Manufacturer describes Toray T800/T1000 carbon",
     "frame_weight_g": 1030,
-    "frame_weight_basis": "Manufacturer: 1,030±30 g XS raw; 1,150 g M raw. The manufacturer method page defines range weights as size-M raw, unpainted carbon, excluding paint, decals and hardware. Downtube storage cover is separately listed at 42 g, but whether it is included in 1,150 g is unstated.",
+    "frame_weight_basis": "Manufacturer: 1,030\u00b130 g XS raw; 1,150 g M raw. The manufacturer method page defines range weights as size-M raw, unpainted carbon, excluding paint, decals and hardware. Downtube storage cover is separately listed at 42 g, but whether it is included in 1,150 g is unstated.",
     "tire_clearance_mm": 50,
-    "tire_clearance_basis": "Manufacturer 700C × 50 mm maximum; confirm actual fit and fork option",
+    "tire_clearance_basis": "Manufacturer 700C \u00d7 50 mm maximum; confirm actual fit and fork option",
     "bottom_bracket": "T47 85.5 mm",
     "storage": "Downtube storage",
     "sizes": "XS, S, M, L, XL",
     "included_package": "Frame, fork, seatpost, axles, headset and bag; exact FM316 sheet identifies 395 mm A-C fork with 45/50 mm flip chip. Confirm this fork in the selected order.",
-    "availability_evidence": "Current manufacturer FAQ permits MOQ 1 for private standard-color orders, while Factory Capacity states MOQ 30 and the page advises checking availability. A recent owner report says a size-M frame arrived the previous week; an older report describes a past two-frame order. Seller, dates, channel and current single-unit stock/reorder status remain unknown."
+    "availability_evidence": "Current manufacturer FAQ permits MOQ 1 for private standard-color orders, while Factory Capacity states MOQ 30 and the page advises checking availability. A recent owner report says a size-M frame arrived the previous week; an older report describes a past two-frame order. Seller, dates, channel and current single-unit stock/reorder status remain unknown.",
+    "geometry": "Manufacturer FM316 395 mm fork sheet. Columns size / A(seat tube) / B(top tube) / C(head tube) / D(chainstay) / E(front center) / F(seat angle) / G(head angle) / H(BB drop) / I(fork) / J(offset) / K(wheelbase) / L(stack) / M(reach). Printed values: XS 410 / 515.8 / 101 / 425 / 573\u2013578 / 75\u00b0 / 71\u00b0 / 85.5 / 395 / 45\u201350 / 992\u2013997 / 540 / 375.8; S 450 / 546.4 / 125 / 425 / 614\u2013619 / 75\u00b0 / 71\u00b0 / 85.5 / 395 / 45\u201350 / 1025\u20131029.5 / 562 / 400; M 480 / 576.7 / 146 / 425 / 646\u2013651 / 75\u00b0 / 71\u00b0 / 85.5 / 395 / 45\u201350 / 1056\u20131061.5 / 581 / 425; L 510 / 594.9 / 176 / 425 / 666\u2013671 / 75\u00b0 / 71\u00b0 / 85.5 / 395 / 45\u201350 / 1080\u20131085 / 610 / 435; XL 540 / 626.4 / 198 / 425 / 699\u2013704 / 75\u00b0 / 71\u00b0 / 85.5 / 395 / 45\u201350 / 1110\u20131115 / 632 / 460.5. Paired values correspond to the printed 45 / 50 offset options; general length-unit legend absent. No transfer to a different fork."
   },
   "official_price": {
     "amount_cny": 7035,
@@ -33,7 +34,7 @@
     "Reconcile current single-unit FAQ with bulk-only/MOQ wording",
     "Exact-frame stiffness measurement or named comparative ride evidence"
   ],
-  "source_note": "Weight headline now has an M-size basis and can coexist with the XS detailed value. Package is specified. Individual fulfilment remains conflicted; foreign guide and historical owner prices are not mainland observations.\n\nBatch 36 recheck: manufacturer method page defines range weights as size-M raw, unpainted carbon, excluding paint, decals and hardware. Exact FM316 page lists 1,150 g at M and a separate 42 g storage cover; it does not say whether that cover is included in the 1,150 g.\n\nBatch 52 recheck (2026-09-24): the exact product page now states a typical single frameset range of US$500–650 and welcomes individual orders; a separate bulk section states MOQ 30. This conflicts with the prior US$1,050 official guide reference. Both are foreign references and no mainland CNY price or selected package is established.\n\nBatch 55 recheck (2026-09-24): distinct public mainland marketplace searches returned no exact FM316 item. A foreign German-language MyBike.parts search result displayed USD $509 but routed to Mondince's foreign store; it is not a mainland offer and was not recorded as observed price.\n\nBatch 64 (2026-09-24): a recent public community post reports receipt of a size-M FM316 and a completed build, but its live relative-age display conflicts with its indexed date and it gives no order date, seller, market, explicit quantity or current reorder option. Record this as community-reported recent delivery only; current single-unit availability remains unknown.\n\nBatch 65 recheck (2026-09-25): current official page retains MOQ 1 private-order and MOQ 30 factory text plus an availability-check banner. The recent and older owner reports establish past/recent deliveries only, not current reorder terms.",
+  "source_note": "Weight headline now has an M-size basis and can coexist with the XS detailed value. Package is specified. Individual fulfilment remains conflicted; foreign guide and historical owner prices are not mainland observations.\n\nBatch 36 recheck: manufacturer method page defines range weights as size-M raw, unpainted carbon, excluding paint, decals and hardware. Exact FM316 page lists 1,150 g at M and a separate 42 g storage cover; it does not say whether that cover is included in the 1,150 g.\n\nBatch 52 recheck (2026-09-24): the exact product page now states a typical single frameset range of US$500\u2013650 and welcomes individual orders; a separate bulk section states MOQ 30. This conflicts with the prior US$1,050 official guide reference. Both are foreign references and no mainland CNY price or selected package is established.\n\nBatch 55 recheck (2026-09-24): distinct public mainland marketplace searches returned no exact FM316 item. A foreign German-language MyBike.parts search result displayed USD $509 but routed to Mondince's foreign store; it is not a mainland offer and was not recorded as observed price.\n\nBatch 64 (2026-09-24): a recent public community post reports receipt of a size-M FM316 and a completed build, but its live relative-age display conflicts with its indexed date and it gives no order date, seller, market, explicit quantity or current reorder option. Record this as community-reported recent delivery only; current single-unit availability remains unknown.\n\nBatch 65 recheck (2026-09-25): current official page retains MOQ 1 private-order and MOQ 30 factory text plus an availability-check banner. The recent and older owner reports establish past/recent deliveries only, not current reorder terms.",
   "model_id": "mondince-fm316",
   "type": "frameset",
   "status": "exact-model-research-stage",
@@ -52,7 +53,20 @@
     "mondince-fm316-recent-delivery-community-report-2026-09-24",
     "mondince-fm316-current-specification-recheck-2026-09-25",
     "mondince-fm316-recent-delivery-community-report-recheck-2026-09-25",
-    "mondince-fm316-older-owner-report-recheck-2026-09-25"
+    "mondince-fm316-older-owner-report-recheck-2026-09-25",
+    "mondince-fm316-enrichment-2026-10-03"
   ],
-  "last_reviewed": "2026-09-25"
+  "last_reviewed": "2026-09-25",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "mondince-fm316-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "geometry"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

@@ -7,7 +7,8 @@
   "why_interesting": "The retained seller card visibly identifies 青龙·赤子 AZ ONE and describes an aerodynamic triathlon frame, but the 50-area sweep found no second exact-model source or attributable complete-bike specification.",
   "facts": {
     "listing_identity": "Seller-card identity: 青龙·赤子 AZ ONE triathlon bike",
-    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep",
+    "dated public model-naming reference": "A public post published2026-06-18 explicitly names 寰宇赤子AZ-ONE in TT/triathlon context. Partial name corroboration only: full青龙·赤子 identity, separate AZone/青龙 TT JD mapping, selected SKU/BOM, price and current stock are not established."
   },
   "missing": [
     "Exact drivetrain, cockpit, wheels, brakes, and storage package",
@@ -17,7 +18,8 @@
   "status": "exact-model-seller-lead-build-unresolved",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "huanyu-azone-jd-index-2026-09-23"
+    "huanyu-azone-jd-index-2026-09-23",
+    "public-xhs-huanyu-az-one-naming-reference-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -30,5 +32,17 @@
   },
   "source_refs": "IMG_6858.png#L1",
   "source_note": "The retained seller card remains the only exact AZ ONE / 青龙·赤子 identity evidence. A current JD index shows separate HUANYU AZone TT and 青龙 TT listings but does not connect either to this exact seller-card identity; no alias or specification is inferred.",
-  "last_reviewed": "2026-09-23"
+  "last_reviewed": "2026-09-23",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "public-xhs-huanyu-az-one-naming-reference-2026-10-03"
+      ],
+      "fields": [
+        "dated public model-naming reference"
+      ],
+      "scope": "Dated public reference only. Exact selected-build quantitative gaps and existing evidence/dates remain intact."
+    }
+  ]
 }

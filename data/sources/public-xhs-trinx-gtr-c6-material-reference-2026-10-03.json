@@ -1,0 +1,45 @@
+{
+  "id": "public-xhs-trinx-gtr-c6-material-reference-2026-10-03",
+  "type": "public-product-post",
+  "title": "TRINX GTR C6 public fiber-supplier and price reference",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/68255b2e000000002300ebbf",
+  "accessed_at": "2026-10-03",
+  "published_at": "2025-05-15T03:10:38.000Z",
+  "published_date": "2025-05-15",
+  "last_updated_at": "2025-05-15T03:10:39.000Z",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "Public promotional specification text claims a Toray T800 frame, carbon fork and CNY6999 retail reference. Publisher authority and exact size/year/SKU are unverified. Publication2025-05-15 dates the statement, not a transaction or current quote; generic stiffness praise and a geometry ratio are not accepted.",
+  "reference_claims": [
+    {
+      "kind": "claimed-fiber-supplier-reference",
+      "claim": "Describes a Toray T800 frame and carbon fork.",
+      "confidence": "low",
+      "limitations": "Supplier/grade assertion is not manufacturer-attributed or selected-SKU-proven; retain current uncertainty.",
+      "canonical_target_id": "trinx-gtr-c6",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "historical-reference-price",
+      "claim": "States CNY 6999 retail reference for the described GTR C6 build.",
+      "confidence": "low",
+      "limitations": "Not a receipt or verified seller offer; size/color/package extras, stock, conditions, shipping/tax and actual observation date unknown. Publication 2025-05-15 dates the statement, not a transaction.",
+      "amount": 6999,
+      "currency": "CNY",
+      "price_kind": "reference assertion; no checkout",
+      "canonical_target_id": "trinx-gtr-c6",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "d0ab95d870e9bdba6a1bf58911f982a5badb8c236fe09a31137262bdfc1aacc4",
+    "scope": "Previously validated local detail archive; raw bodies, account identifiers and original media remain private and outside Git. No child pixel review."
+  }
+}

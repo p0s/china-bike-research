@@ -15,23 +15,37 @@
   "source_ids": [
     "lightcarbon-road-catalog-2026-2027",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-catalog-v1-exact-recheck-2026-10-03"
   ],
   "facts": {
     "frame": "LCR020-D super-aero carbon road disc frameset",
     "frame_material": "Toray T800, T1100 and M40J carbon",
     "frame_weight_g": 1100,
-    "frame_weight_basis": "Official size-54 UD-matte frame weight, ±4%",
+    "frame_weight_basis": "Official size-54 UD-matte frame weight, \u00b14%",
     "tire_clearance_mm": 35,
-    "tire_clearance_basis": "Official 700C×35C maximum",
-    "bottom_bracket": "T47×P1.0, 85.5 mm",
+    "tire_clearance_basis": "Official 700C\u00d735C maximum",
+    "bottom_bracket": "T47\u00d7P1.0, 85.5 mm",
     "hanger": "Light UDH",
     "brakes": "Flat-mount disc, 160 mm front and rear",
-    "axles": "12×100 mm front; 12×142 mm rear",
+    "axles": "12\u00d7100 mm front; 12\u00d7142 mm rear",
     "sizes": "49, 52, 54, 56 and 58",
-    "geometry": "Reach 375–400 mm; stack 511–589 mm; 410 mm chainstays; 70 mm BB drop; 57.4–68.1 mm trail",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "geometry": "Reach 375\u2013400 mm; stack 511\u2013589 mm; 410 mm chainstays; 70 mm BB drop; 57.4\u201368.1 mm trail",
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "geometry complete catalog table": "Official 2026\u20132027 V1 catalog page 1, exact LCR020-D five-size table. Column headings retained as printed: SIZE / C-T / TT / REACH / STACK / WB / RC / FC / BB DROP / BB HEIGHT / ST / HT / STIL / A / Standover Height (700\u00d735C) / Offset / FL / TRAIL. Printed rows: 490: 482 / 530 / 375 / 511 / 993.7 / 410 / 586.8 / 70 / 280 / 74.5\u00b0 / 71\u00b0 / 150 / 108 / 753.6 / 45 / 370 / 68.1; 520: 502 / 540 / 380 / 527 / 990.7 / 410 / 588.9 / 70 / 280 / 74\u00b0 / 72\u00b0 / 170 / 121 / 772 / 45 / 370 / 63.7; 540: 530 / 545 / 385 / 544 / 986 / 410 / 586 / 70 / 280 / 73.6\u00b0 / 72.5\u00b0 / 190 / 141 / 798.5 / 45 / 370 / 63; 560: 545 / 560 / 395 / 568 / 999 / 410 / 599 / 70 / 280 / 73.3\u00b0 / 73\u00b0 / 200 / 161 / 813 / 45 / 370 / 59.3; 580: 560 / 580 / 400 / 589 / 1008.6 / 410 / 607 / 70 / 280 / 73\u00b0 / 73.3\u00b0 / 230 / 181 / 831.3 / 45 / 370 / 57.4. Angles explicitly carry degree symbols; no general length-unit legend is printed in this table. Existing geometry range, claimed size-54 UD-matte 1,100 g \u00b14%, 35C maximum and package uncertainties are retained; no values are transferred to LCR017-D or SpeedZ."
   },
-  "source_note": "The exact LCR020-D is current in the 2026–2027 manufacturer catalog, but the catalog contains no retail price and no attributable selected checkout or dated owner quote was found.",
-  "last_reviewed": "2026-09-01"
+  "source_note": "The exact LCR020-D is current in the 2026\u20132027 manufacturer catalog, but the catalog contains no retail price and no attributable selected checkout or dated owner quote was found.",
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-catalog-v1-exact-recheck-2026-10-03"
+      ],
+      "fields": [
+        "geometry complete catalog table"
+      ],
+      "scope": "Exact V1 catalog pixel transcription; old summary and dates remain. CAD illustration is not displayed as a photograph."
+    }
+  ]
 }

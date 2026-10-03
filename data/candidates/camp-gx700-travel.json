@@ -1,6 +1,6 @@
 {
   "id": "camp-gx700-travel",
-  "name": "CAMP 坎普 GX700 travel-loaded build",
+  "name": "CAMP \u574e\u666e GX700 travel-loaded build",
   "model_id": "camp-gx700-travel",
   "brand_id": "camp",
   "category": "gravel-touring",
@@ -22,7 +22,9 @@
   "catalog_distinct_reason": "The dated listing may be a seller-loaded configuration of the published GX700, but the CNY 11,764 package and accessory inclusion are not established well enough to collapse it into the standard variant.",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "camp-gx700-official-2026-08-28"
+    "camp-gx700-official-2026-08-28",
+    "camp-gx700-official",
+    "camp-gx700-enrichment-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -35,5 +37,16 @@
   },
   "source_refs": "IMG_6881.png#L2",
   "source_note": "The retained marketplace snapshot proves the dated listing identity and price only. The current official GX700 page establishes the underlying T800 frame family; no source proves the pictured bags are included, the exact travel trim, loaded weight or maximum clearance.",
-  "last_reviewed": "2026-08-29"
+  "last_reviewed": "2026-08-29",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "camp-gx700-official",
+        "camp-gx700-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Standard GX700 reference only; retained travel bags, accessories, loaded build and selected drivetrain are not shown. Source reuse only; no new search or complete-build claim."
+    }
+  ]
 }

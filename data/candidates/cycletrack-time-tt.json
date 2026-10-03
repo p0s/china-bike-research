@@ -13,7 +13,10 @@
     "complete_weight_g": 9600,
     "complete_weight_basis": "Manufacturer approximate complete weight for the exact ER9/carbon-wheel reference build; listed size M option, pedal inclusion and measurement method are not stated",
     "tires": "Continental Grand Sport 700x28C fitted; this is not a published maximum",
-    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep",
+    "current manufacturer warranty reference": "Manufacturer policy lists frame five years and fork/general parts one year from purchase for non-external-force faults, with consumables excluded and use/maintenance conditions. Retained domestic seller authority, eligibility and claim route remain unverified.",
+    "manufacturer rotor reference": "Current Time ER9 reference specification names Shimano MT900 160 mm rotors; this does not guarantee retained seller substitutions or included parts.",
+    "current international storefront observation": "Public international storefront displayed USD 2,430 on 2026-10-03 with Sold out and shipping calculated at checkout. Listed reference build is ER9 TT with a size-M description; exact selected option, delivery destination and taxes are unverified. This is not a current mainland CNY offer or delivered total."
   },
   "missing": [
     "Maximum tire clearance and complete geometry/fit table",
@@ -26,7 +29,9 @@
     "cycletrack-time-tt-jd-2026-08-29",
     "cycletrack-time-tt-owner-2026-08-29",
     "cycletrack-time-tt-current-2026-09-23",
-    "cycletrack-jd-road-listings-current-2026-09-23"
+    "cycletrack-jd-road-listings-current-2026-09-23",
+    "cycletrack-time-tt-gallery-p-2026-10-03",
+    "cycletrack-warranty-reference-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -40,5 +45,36 @@
   "source_refs": "IMG_6877.png#R1",
   "source_url": "https://cycletrack.cn/products/cycletrack-time-carbon-fiber-tt-bicycle-racing-triathlon-road-bike-time-trial-bike",
   "source_note": "Current manufacturer and JD evidence identify the TIME / 时光 TT ER9 build and distinguish its closed-wheel configuration from separate road builds. The manufacturer’s approximate 9.6 kg M-size value remains qualified because pedal inclusion and weighing method are unstated.",
-  "last_reviewed": "2026-09-23"
+  "last_reviewed": "2026-09-23",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "cycletrack-time-tt-gallery-p-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "cycletrack-warranty-reference-2026-10-03"
+      ],
+      "fields": [
+        "current manufacturer warranty reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "cycletrack-time-tt-gallery-p-2026-10-03"
+      ],
+      "fields": [
+        "manufacturer rotor reference",
+        "current international storefront observation"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

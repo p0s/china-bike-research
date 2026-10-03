@@ -1,0 +1,33 @@
+{
+  "batch_id": "lightcarbon-gallery-t3-2026-10-03",
+  "frozen_at": "2026-10-03",
+  "authority": "Explicit request to add all verified LightCarbon images while preserving existing data and primaries",
+  "bounds": {
+    "models": 8,
+    "atomic_gaps": 16
+  },
+  "steps": [
+    "Inventory every current image and its provenance",
+    "Read exact manufacturer galleries and catalog-only identity leads",
+    "Acquire each distinct relevant source image once; retain immutable originals outside Git",
+    "Visually review model scope and privacy; add bounded optimized derivatives and captions",
+    "Verify preservation, image health, gallery controls and complete repository gate"
+  ],
+  "done_criteria": [
+    "Every listed identity has a dated gallery disposition with source URLs and inclusion or exclusion reasons",
+    "All available qualifying distinct product views are added; technical charts and sample builds are explicitly scoped",
+    "No existing image, datum or source evidence is removed or replaced",
+    "English, Chinese and German galleries share identical records and controls",
+    "Report inaccessible and unverified imagery without substitutes"
+  ],
+  "model_ids": [
+    "lightcarbon-lctr003",
+    "lightcarbon-lctt001",
+    "lightcarbon-lctt004",
+    "lightcarbon-lctt05-d",
+    "lightcarbon-speed7-complete",
+    "lightcarbon-speed7-frameset",
+    "lightcarbon-lcg071s-pro",
+    "lightcarbon-speedz"
+  ]
+}

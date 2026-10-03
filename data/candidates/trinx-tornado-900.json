@@ -13,7 +13,11 @@
     "complete_weight_g": 8100,
     "complete_weight_basis": "Current exact-model specialist-retailer approximate claim for the matching Factory Team / Shimano 105 / carbon-wheel build; size, pedals, accessories and weighing method are not stated and the value is not independently measured",
     "wheels": "TRINX carbon 700C wheelset on the documented manufacturer build",
-    "tires": "Grand Sport Race 700x28C fitted on the manufacturer build; no maximum is published"
+    "tires": "Grand Sport Race 700x28C fitted on the manufacturer build; no maximum is published",
+    "cockpit current reference": "Current exact manufacturer page explicitly lists an integrated carbon bent handlebar; assembly dimensions and retained selected build remain unverified.",
+    "sizes current reference": "Current manufacturer TDO 900 reference sizes: 450, 480, 510 and 530.",
+    "manufacturer reference chain": "SHIMANO CN-M7100. Exact current manufacturer TDO900 R7120/BR-R7170 complete reference. Does not establish retained selected production-batch substitutions.",
+    "manufacturer reference saddle": "Selle Italia SRX. Same exact current manufacturer build; no saddle weight or retained production-batch guarantee."
   },
   "missing": [
     "Manufacturer-confirmed maximum tire clearance",
@@ -29,7 +33,9 @@
     "trinx-tornado-900-biketo-2026-08-30",
     "trinx-tornado-900-jd-2026-08-30",
     "trinx-tornado-900-gulf-2026-08-30",
-    "trinx-tornado-900-design-competition-2026-08-30"
+    "trinx-tornado-900-design-competition-2026-08-30",
+    "trinx-tornado-900-enrichment-2026-10-03",
+    "trinx-tornado-900-supplementary-specs-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -43,5 +49,29 @@
   "source_refs": "IMG_6893.png#L2",
   "source_url": "https://www.trinx.com/index.php?ac=article&at=read&did=2190",
   "source_note": "Manufacturer and mainland indexes align on the blue-white Shimano 105 R7120 2x12 carbon build. The 8.1 kg value is retained only as an approximate retailer claim with its missing basis, and fitted 28C tires are not inferred to be the maximum.",
-  "last_reviewed": "2026-08-30"
+  "last_reviewed": "2026-08-30",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "trinx-tornado-900-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "cockpit current reference",
+        "sizes current reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "trinx-tornado-900-supplementary-specs-2026-10-03"
+      ],
+      "fields": [
+        "manufacturer reference chain",
+        "manufacturer reference saddle"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

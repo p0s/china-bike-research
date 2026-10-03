@@ -15,7 +15,10 @@
   "source_ids": [
     "lightcarbon-lcg087-d-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcg087-d-enrichment-2026-10-03",
+    "lightcarbon-lcg087-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-lcg087-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCG087-D gravel frameset with integrated HBR08 cockpit, micro suspension and downtube storage",
@@ -36,8 +39,34 @@
     "sizes": "S, M and L",
     "geometry": "Reach 369–401 mm; stack 541.7–581.3 mm; 430 mm chainstays; 75 mm BB drop; official table lists 78.4–81.8 mm trail",
     "warranty": "Two years",
-    "stiffness_evidence": "Manufacturer describes controlled rear-stay flex through the elastomer-and-pivot system; no independent deflection or lateral-stiffness result is published"
+    "stiffness_evidence": "Manufacturer describes controlled rear-stay flex through the elastomer-and-pivot system; no independent deflection or lateral-stiffness result is published",
+    "chainring compatibility": "Current manufacturer: maximum 1x 40T at 49.7 mm chainline; Shimano 2x 48/31T at 44.5 mm chainline; SRAM 2x 43/30T at 45 mm chainline. Confirm exact assembly.",
+    "seatpost reference": "Manufacturer 31.6×400 mm seatpost options: SP03 zero offset 207 ±10 g; SP02 25 mm offset 193 ±10 g. These do not establish selected package contents or total weight.",
+    "geometry complete current manufacturer table": "Exact current manufacturer table observed 2026-10-03. Printed size columns: S / M / L. BODY HEIGHT ( Reference): 155 - 164cm / 165 - 173cm / 174 - 183cm; Remarks for BODY HEIGHT: For reference only, may vary due to different body proportions.; SEATPOST INSERT LENGTH: 190mm / 220mm / 230mm; REACH: 369mm / 385mm / 401mm; TOP TUBE LENGTH, HORIZONTAL: 524.3mm / 545.7mm / 565.7mm; STACK: 541.7mm / 560.6mm / 581.3mm; WHEELBASE: 1020.3mm / 1043.4mm / 1061.9mm; CHAINSTAY LENGTH: 430mm / 430mm / 430mm; FRONT CENTER: 601.5mm / 624.5mm / 642.9mm; BB DROP: 75mm / 75mm / 75mm; BB HEIGHT: 286mm / 286mm / 286mm; SEAT TUBE ANGLE: 74° / 74.5° / 73.5°; HEAD TUBE ANGLE: 69.5° / 69.5° / 70°; SEAT TUBE LENGTH: 447mm / 477mm / 507mm; HEAD TUBE LENGTH: 120mm / 140mm / 160mm; BIKE STANDOVER HEIGHT(700C*47C): 742.8mm / 776mm / 798.6mm; FORK RAKE/OFFSET: 50mm / 50mm / 50mm; FORK LENGTH, FULL: 396mm / 396mm / 396mm; TRAIL: 81.8mm / 81.8mm / 78.4mm. M SEAT TUBE ANGLE current74.5° versus supplied V1/V2 exact-model catalog text74°. Preserve separate dated bases; parent PDF review pending. Manufacturer-published values, not independent measurements. Existing historical range and catalog values remain separately retained."
   },
   "source_note": "The current official page is quote-only. A secondary £500 database record is retained only as rejected historical context because it does not prove current stock, package, checkout conditions or mainland availability.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcg087-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "chainring compatibility",
+        "seatpost reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcg087-d-complete-geometry-recheck-2026-10-03"
+      ],
+      "fields": [
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

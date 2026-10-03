@@ -16,7 +16,9 @@
     "tire_clearance_basis": "The reviewed bike was fitted with Schwalbe 700×40C tires and the reviewer described 40C as the observed maximum; this is not a manufacturer maximum-clearance specification",
     "wheels": "IREFOX aluminum wheelset",
     "tires": "Schwalbe 700×40C",
-    "complete_weight_status": "No exact complete-bike weight, size or weighing protocol found after 50 registered source areas"
+    "complete_weight_status": "No exact complete-bike weight, size or weighing protocol found after 50 registered source areas",
+    "manufacturer weight publication policy": "Current manufacturer FAQ says it does not typically publish weights because handmade frames, paint and frame sizes vary. This supplies no complete-bike weight or measurement basis.",
+    "manufacturer support reference": "Brand FAQ describes a limited lifetime frame warranty for the original owner, with warranty consideration through an authorized dealer and original proof of purchase. Retained seller authority, exact domestic eligibility and claim handling remain unverified."
   },
   "reference_price_kind": "official",
   "official_price": {
@@ -41,9 +43,32 @@
     "irefox-profound-400-biketo-review-2026-08-28",
     "irefox-profound-400-biketo-review-current-2026-09-23",
     "round3-irefox-profound-launch-review-84f8968e36",
-    "irefox-profound-400-current-cn-catalog-price-recheck-2026-09-24"
+    "irefox-profound-400-current-cn-catalog-price-recheck-2026-09-24",
+    "irefox-profound-400-gallery-p-2026-10-03",
+    "irefox-support-reference-2026-10-03"
   ],
   "last_reviewed": "2026-09-24",
   "price_status": "The current indexed IREFOX China catalog still names Profound 400 but shows no price or purchase route; the only surfaced price remains the 2023 launch reference. No current exact-model mainland listing or checkout was found.",
-  "source_note": "The archived official catalog and 2023 review document the exact model. The review's 34T cassette cog does not establish the cassette's small cog or full range; this build is not generalized to all seller options. No current commercial offer or complete-bike weight was found, and historical 2023 prices are not promoted as current."
+  "source_note": "The archived official catalog and 2023 review document the exact model. The review's 34T cassette cog does not establish the cassette's small cog or full range; this build is not generalized to all seller options. No current commercial offer or complete-bike weight was found, and historical 2023 prices are not promoted as current.",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "irefox-profound-400-gallery-p-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "irefox-support-reference-2026-10-03"
+      ],
+      "fields": [
+        "manufacturer weight publication policy",
+        "manufacturer support reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }
