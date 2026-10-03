@@ -521,7 +521,8 @@ test('local builds use the live repository for public contribution links', () =>
 test('category-specific details stay accessible while price state is visible', () => {
   assert.match(html, /aria-label="Price details"/);
   assert.doesNotMatch(html, /data-capability-kind="tire"/);
-  assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"[^>]*data-tire-clearance-sort="40"/);
+  assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"/);
+  assert.doesNotMatch(html.match(/<div class="catalog-row[^>]*data-id="twitter-v3-wheeltop-eds"[^>]*>/)[0], /data-tire-clearance-sort=/);
   assert.match(html, /aria-label="Format details"/);
   assert.match(html, /type="number"[^>]*data-filter-tire/);
   assert.match(html, /data-filter-tire-unknown/);

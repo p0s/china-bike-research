@@ -113,8 +113,23 @@
     "wheel_size": "700c",
     "evidence": "official",
     "eligibility": "pass",
-    "note": "Manufacturer states a 45C maximum for knobby tires; actual measured width still depends on the rim and tire.",
-    "published_max_mm": 45
+    "note": "Manufacturer revision conflict: landing-page/knobby-tire claim is 45C; the English manual limits double chainrings to 32C. Use 32 mm as a conservative 2× warning threshold until the exact newer generation/revision is confirmed; this is not a universal physical-limit determination.",
+    "published_max_mm": 45,
+    "prior_observations": [
+      {
+        "wheel_size": "700c",
+        "evidence": "official",
+        "eligibility": "pass",
+        "note": "Manufacturer states a 45C maximum for knobby tires; actual measured width still depends on the rim and tire.",
+        "published_max_mm": 45
+      }
+    ],
+    "drivetrain_limits_mm": {
+      "single": 45,
+      "double": 32
+    },
+    "limits_status": "manufacturer-revision-conflict",
+    "limits_reviewed_at": "2026-10-03"
   },
   "mounts": [
     "top-tube"

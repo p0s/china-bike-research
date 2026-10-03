@@ -582,6 +582,8 @@ function publishedSpecificationRows(product) {
   const seatpostWeight = componentWeightValueLabel(product.platform.frame, 'seatpost');
   const rows = [
     ['Bottom bracket', bottomBracket(product) === 'unknown' ? '' : bottomBracket(product)],
+    ['Drivetrain compatibility', product.platform.frame.drivetrain_compatibility?.note],
+    ['Geometry qualification', product.platform.frame.geometry?.correction_note],
     ['Frame weight', frameWeight],
     ['Fork weight', forkWeight],
     ['Seatpost weight', seatpostWeight],
@@ -1037,7 +1039,7 @@ function candidateFactRows(entry) {
         ? `${new Intl.NumberFormat('en-US').format(value)} g`
         : key === 'tire_clearance_mm'
           ? candidateTireClearance(entry).value
-          : value;
+          : key === 'bottom_bracket_standard' ? value.note : value;
     const label = key === 'complete_weight_g' && entry.candidate.comparison_eligibility?.complete_weight === false
       ? 'Reference complete weight; exact build unresolved' : labels[key] ?? sentenceLabel(key);
     return [label, String(formatted)];
@@ -1711,6 +1713,8 @@ const buildSlotCopy = {
 
 function builderBottomBracketKey(value) {
   const text = String(value || '').toLowerCase();
+  const shells = [/(?:bb86|pf86)/.test(text) ? 'bb86' : null, /bb92/.test(text) ? 'bb92' : null, /t47/.test(text) ? 't47' : null, /(?:bsa|english)/.test(text) ? 'bsa-68' : null].filter(Boolean);
+  if (shells.length > 1) return null;
   if (text.includes('t47')) return 't47';
   if (text.includes('bb86') || text.includes('pf86')) return 'bb86';
   if (text.includes('bsa') || text.includes('english')) return 'bsa-68';
@@ -1781,6 +1785,9 @@ function builderBases(ctx) {
       tireClearanceMm: maxClearance(product.platform) ?? null,
       tireClearanceLabel: clearanceLabel(product.platform),
       tireClearanceByDrivetrain: product.platform.tire_clearance?.drivetrain_limits_mm ?? null,
+      tireClearanceNote: product.platform.tire_clearance?.note ?? '',
+      tireClearanceStatus: product.platform.tire_clearance?.limits_status ?? '',
+      drivetrainCompatibility: product.platform.frame.drivetrain_compatibility ?? null,
       drivetrainLayout: isComplete ? product.variant.drivetrain?.layout ?? null : null,
       included: isComplete ? ['complete bike package'] : product.variant.included ?? [],
       drivetrain: isComplete ? drivetrainLabel(ctx, product) : '',
@@ -1805,8 +1812,10 @@ function builderBases(ctx) {
         baseWeightG: isComplete ? candidateCompleteWeight(entry) : facts.frame_weight_g ?? null,
         weightBasis: isComplete ? facts.complete_weight_basis ?? 'complete-bike weight basis not recorded' : facts.frame_weight_basis ?? 'frameset package weight unknown',
         bottomBracket: facts.bottom_bracket ?? '',
-        bottomBracketKey: builderBottomBracketKey(facts.bottom_bracket),
-        tireClearanceMm: facts.tire_clearance_mm ?? null,
+        bottomBracketKey: facts.bottom_bracket_standard?.status === 'conflicting' ? null : facts.bottom_bracket_standard?.key ?? builderBottomBracketKey(facts.bottom_bracket),
+        bottomBracketStatus: facts.bottom_bracket_standard?.status ?? '',
+        tireClearanceMm: candidateTireClearance(entry).fitted ? null : facts.tire_clearance_mm ?? null,
+        tireClearanceNote: facts.tire_clearance_basis ?? '',
         tireClearanceLabel: candidateTireClearance(entry).value === '—' ? null : candidateTireClearance(entry).value,
         tireClearanceByDrivetrain: facts.tire_clearance_drivetrain_limits_mm ?? null,
         included: isComplete ? ['complete bike package'] : [],

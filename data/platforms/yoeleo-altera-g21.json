@@ -154,8 +154,23 @@
     "wheel_size": "700c",
     "evidence": "official",
     "eligibility": "pass",
-    "note": "Official 1× maximum; verify 2× clearance separately.",
-    "published_max_mm": 53
+    "note": "Manufacturer 53 mm maximum is for 1× only; the 2× maximum is unknown. Actual installed width must be checked.",
+    "published_max_mm": 53,
+    "prior_observations": [
+      {
+        "wheel_size": "700c",
+        "evidence": "official",
+        "eligibility": "pass",
+        "note": "Official 1× maximum; verify 2× clearance separately.",
+        "published_max_mm": 53
+      }
+    ],
+    "drivetrain_limits_mm": {
+      "single": 53,
+      "double": null
+    },
+    "limits_status": "current-manufacturer",
+    "limits_reviewed_at": "2026-10-03"
   },
   "mounts": [
     "top-tube",

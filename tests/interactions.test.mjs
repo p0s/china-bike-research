@@ -17,7 +17,7 @@ test('builder applies 1x/2x clearance and fails conservatively for unknown layou
   });
   assert.equal(run('single').length, 0);
   assert.match(run('double').join(' '), /32 mm limit for 2×/);
-  assert.match(run(null).join(' '), /Confirm drivetrain.*32 mm limit/);
+  assert.match(run(null).join(' '), /Confirm drivetrain.*38\/32 mm.*unknown layout/ );
   assert.match(run(null, { drivetrain: 'included' }).join(' '), /32 mm limit for 2×/);
 });
 

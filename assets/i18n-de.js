@@ -1403,7 +1403,7 @@ export function translateGerman(value) {
     [/^(Purchase total|Complete price) needs (\d+) more inputs?; (projected weight|complete weight) needs (\d+) more inputs?\.$/, (_, kind, prices, weight, weights) => `${kind === 'Purchase total' ? 'Gesamter Kaufpreis' : 'Gesamtpreis'}: ${prices} fehlende Eingaben; ${weight === 'projected weight' ? 'erwartetes Gewicht' : 'Gesamtgewicht'}: ${weights} fehlende Eingaben.`],
     [/^Included in (.+); not counted again\.$/, (_, name) => `In ${name} enthalten; nicht erneut gezählt.`],
     [/^(.+) does not list (.+) frame compatibility\.$/, (_, name, standard) => `${name}: keine dokumentierte Kompatibilität mit ${standard}-Rahmen.`],
-    [/^Confirm drivetrain: tire limits are (.+)\/(.+) mm \(1×\/2×\)\. The smallest recorded limit is a warning threshold, not proof of fit for an unknown layout\.$/, (_, single, double) => `Antrieb bestätigen: Reifengrenzen ${t(single)}/${t(double)} mm (1×/2×). Die kleinste dokumentierte Grenze dient als Warnschwelle; sie belegt keine Passung bei unbekanntem Antrieb.`],
+    [/^Confirm drivetrain: tire limits are (.+)\/(.+) mm \(1×\/2×\)\. Choose a known layout before using these limits; an unknown layout has no confirmed maximum\.$/, (_, single, double) => `Antrieb bestätigen: Reifengrenzen ${t(single)}/${t(double)} mm (1×/2×). Vor Anwendung dieser Grenzen die Anordnung wählen; bei unbekannter Anordnung ist kein Maximum bestätigt.`],
     [/^(.+) mm tires exceed the frame's published (.+) mm limit( for (?:1×|2×))?\.$/, (_, width, limit, layout) => `${width}-mm-Reifen überschreiten die veröffentlichte Rahmengrenze ${limit} mm${layout ? ` bei ${layout.slice(5)}` : ''}.`],
     [/^Rotors use (.+), but the wheelset lists (.+); confirm a compatible rotor or explicitly supported adapter\.$/, (_, rotor, hub) => `Bremsscheiben nutzen ${rotor}, Laufräder ${hub}. Passende Scheibe oder ausdrücklich unterstützten Adapter bestätigen.`],
     [/^(.+) requires (.+); the selected wheelset does not list it\.$/, (_, name, hub) => `${name} benötigt ${hub}; für die gewählten Laufräder nicht dokumentiert.`],
@@ -1503,4 +1503,24 @@ Object.assign(de, {
   "PARDUS reports EPS+, EPS and HPT carbon molding processes. These company disclosures do not establish comparative superiority or the process used by every model.": "PARDUS nennt EPS+, EPS und HPT als Carbon-Formverfahren. Diese Unternehmensangaben belegen weder eine Überlegenheit im Vergleich noch das Verfahren jedes einzelnen Modells.",
   "Unresolved: the exact ET page lists a 420×90 mm high-modulus-carbon cockpit, then later says every build has an alloy 400×90 mm cockpit; no exact option mapping resolves the conflict.": "Ungeklärt: Die genaue ET-Seite nennt ein 420×90-mm-Cockpit aus hochmoduligem Carbon, später aber ein 400×90-mm-Aluminiumcockpit für alle Ausstattungen; keine genaue Optionszuordnung löst den Widerspruch.",
   "Conflict on the exact official page: the displayed/default WheelTop build lists a 420×90 mm high-modulus-carbon cockpit, while a later section says every build has a 400×90 mm alloy cockpit. No selected-option mapping resolves the contradiction.": "Widerspruch auf derselben Produktseite: Die angezeigte beziehungsweise voreingestellte WheelTop-Ausstattung nennt ein 420×90-mm-Cockpit aus hochmoduligem Carbon; ein späterer Abschnitt nennt für alle Ausstattungen ein 400×90-mm-Aluminiumcockpit. Eine Zuordnung der ausgewählten Option fehlt."
+});
+
+Object.assign(de, {
+  "Drivetrain compatibility": "Antriebskompatibilität",
+  "Manufacturer supports mechanical 1× and electronic 1×/2×; mechanical 2× is unsupported.": "Der Hersteller unterstützt mechanisch 1× und elektronisch 1×/2×; mechanisch 2× wird nicht unterstützt.",
+  "Bottom bracket shell is unresolved or conflicting; confirm the exact frame standard before selecting this part.": "Innenlagergehäuse ungeklärt oder widersprüchlich; vor der Teilewahl den genauen Rahmenstandard bestätigen.",
+  "Confirm shifting type and chainring layout against the frame’s manufacturer-supported combinations.": "Schaltart und Kettenblattanordnung anhand der vom Rahmenhersteller unterstützten Kombinationen bestätigen.",
+  "The manufacturer does not support this shifting type and chainring layout on the selected frame.": "Der Hersteller unterstützt diese Schaltart und Kettenblattanordnung am gewählten Rahmen nicht.",
+  "Manufacturer tire-clearance revisions conflict; the recorded limit is a conservative warning threshold. Confirm the exact generation and manual before buying.": "Herstellerangaben zur Reifenfreiheit widersprechen sich zwischen Revisionen; die Grenze dient als konservative Warnschwelle. Generation und Handbuch vor dem Kauf bestätigen.",
+  "Tire clearance for the selected frame and drivetrain is not recorded; confirm it before buying.": "Reifenfreiheit für den gewählten Rahmen und Antrieb nicht dokumentiert; vor dem Kauf bestätigen.",
+  "53/unknown mm (1×/2×)": "53/unbekannt mm (1×/2×)",
+  "50/45 mm (1×/2×)": "50/45 mm (1×/2×)",
+  "45/32 mm (1×/2×)": "45/32 mm (1×/2×)",
+  "Up to 53 mm with 1× / unknown with 2×": "Bis 53 mm bei 1× / unbekannt bei 2×",
+  "Up to 50 mm with 1× / 45 mm with 2×": "Bis 50 mm bei 1× / 45 mm bei 2×",
+  "Up to 45 mm with 1× / 32 mm with 2×": "Bis 45 mm bei 1× / 32 mm bei 2×",
+  "Manufacturer FAQ: nominal 50C with 1× and 45C with 2×; actual mounted width depends on tire and rim. The prior 6 mm margin is a dated older observation, not a confirmed current FAQ claim.": "Hersteller-FAQ: nominell 50C bei 1× und 45C bei 2×; die montierte Breite hängt von Reifen und Felge ab. Der frühere 6-mm-Abstand ist eine historische Beobachtung, keine bestätigte aktuelle FAQ-Angabe.",
+  "Manufacturer 53 mm maximum is for 1× only; the 2× maximum is unknown. Actual installed width must be checked.": "Die Herstellergrenze 53 mm gilt nur für 1×; die 2×-Grenze ist unbekannt. Montierte Breite prüfen.",
+  "Current documented official English manual: nominal 50C with 1× and 45C with 2×; confirm actual mounted width.": "Aktuell dokumentiertes offizielles englisches Handbuch: nominell 50C bei 1× und 45C bei 2×; montierte Breite bestätigen.",
+  "Manufacturer revision conflict: landing-page/knobby-tire claim is 45C; the English manual limits double chainrings to 32C. Use 32 mm as a conservative 2× warning threshold until the exact newer generation/revision is confirmed; this is not a universal physical-limit determination.": "Hersteller-Revisionskonflikt: Produktseite/Stollenreifenangabe 45C, englisches Handbuch 32C bei zwei Kettenblättern. Bis zur Klärung der genauen Generation/Revision dient 32 mm als konservative 2×-Warnschwelle, nicht als allgemeingültige physische Grenze."
 });

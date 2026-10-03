@@ -693,6 +693,8 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    [/^Confirm drivetrain: tire limits are (.+)\/(.+) mm \(1×\/2×\)\. Choose a known layout before using these limits; an unknown layout has no confirmed maximum\.$/, (_, single, double) => `请确认传动：单盘／双盘限制为 ${translate(single, locale)}／${translate(double, locale)} mm。请先选择已知布局；未知布局没有已确认的最大值。`],
+    [/^(.+) mm tires exceed the frame's published (.+) mm limit( for (?:1×|2×))?\.$/, (_, width, limit, layout) => `${width} mm 轮胎超出车架记录的 ${limit} mm 限制${layout ? (layout.includes('1×') ? '（单盘）' : '（双盘）') : ''}。`],
     [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `有条件价格；请输入符合资格的实际结算报价。${translate(condition, locale)} · ${amount} · ${date}`],
     [/^(.+) bikes in China$/, (_, name) => `${name} 中国市场车型`],
     [/^(.+) publication-ready complete bikes and framesets documented for riders in China, with dated prices and model-level sources\.$/, (_, name) => `${name} 已发布的中国市场整车与车架组资料，附有日期的价格和车型级来源。`],
@@ -771,4 +773,24 @@ Object.assign(zh, {
   "PARDUS reports EPS+, EPS and HPT carbon molding processes. These company disclosures do not establish comparative superiority or the process used by every model.": "PARDUS 披露 EPS+、EPS 和 HPT 碳纤维成型工艺。这些公司说明不能证明与其他品牌相比更优，也不能证明每个车型都采用相同工艺。",
   "Unresolved: the exact ET page lists a 420×90 mm high-modulus-carbon cockpit, then later says every build has an alloy 400×90 mm cockpit; no exact option mapping resolves the conflict.": "未核实：该 ET 页面列出 420×90 mm 高模量碳纤维把组，随后又称所有配置都采用 400×90 mm 铝合金把组；没有目标选项对应关系能消除此冲突。",
   "Conflict on the exact official page: the displayed/default WheelTop build lists a 420×90 mm high-modulus-carbon cockpit, while a later section says every build has a 400×90 mm alloy cockpit. No selected-option mapping resolves the contradiction.": "同一产品页面存在冲突：展示或默认的 WheelTop 配置列出 420×90 mm 高模量碳纤维把组，后文却称所有配置都采用 400×90 mm 铝合金把组。没有选中配置的对应关系能消除此矛盾。"
+});
+
+Object.assign(zh, {
+  "Drivetrain compatibility": "传动兼容性",
+  "Manufacturer supports mechanical 1× and electronic 1×/2×; mechanical 2× is unsupported.": "制造商支持机械单盘及电子单盘／双盘；不支持机械双盘。",
+  "Bottom bracket shell is unresolved or conflicting; confirm the exact frame standard before selecting this part.": "中轴壳标准尚未核实或存在冲突；选择此零件前请确认目标车架的准确标准。",
+  "Confirm shifting type and chainring layout against the frame’s manufacturer-supported combinations.": "请按制造商支持的组合确认变速方式及单／双盘布局。",
+  "The manufacturer does not support this shifting type and chainring layout on the selected frame.": "制造商不支持目标车架使用此变速方式及链盘布局。",
+  "Manufacturer tire-clearance revisions conflict; the recorded limit is a conservative warning threshold. Confirm the exact generation and manual before buying.": "制造商不同版本的轮胎空间记录存在冲突；记录值仅作保守警告阈值。购买前请确认准确代次及手册。",
+  "Tire clearance for the selected frame and drivetrain is not recorded; confirm it before buying.": "目标车架与传动布局的最大轮胎空间尚未记录；购买前请确认。",
+  "53/unknown mm (1×/2×)": "53／未知 mm（单盘／双盘）",
+  "50/45 mm (1×/2×)": "50／45 mm（单盘／双盘）",
+  "45/32 mm (1×/2×)": "45／32 mm（单盘／双盘）",
+  "Up to 53 mm with 1× / unknown with 2×": "单盘最高 53 mm；双盘未知",
+  "Up to 50 mm with 1× / 45 mm with 2×": "单盘最高 50 mm；双盘最高 45 mm",
+  "Up to 45 mm with 1× / 32 mm with 2×": "单盘最高 45 mm；双盘最高 32 mm",
+  "Manufacturer FAQ: nominal 50C with 1× and 45C with 2×; actual mounted width depends on tire and rim. The prior 6 mm margin is a dated older observation, not a confirmed current FAQ claim.": "制造商常见问题：单盘标称 50C，双盘标称 45C；实际安装宽度取决于轮胎及轮圈。旧记录中的 6 mm 余量为历史观察，未确认仍适用于当前常见问题。",
+  "Manufacturer 53 mm maximum is for 1× only; the 2× maximum is unknown. Actual installed width must be checked.": "制造商 53 mm 最大值仅适用于单盘；双盘最大值未知。请核查实际安装宽度。",
+  "Current documented official English manual: nominal 50C with 1× and 45C with 2×; confirm actual mounted width.": "当前已记录的官方英文手册：单盘标称 50C，双盘标称 45C；请确认实际安装宽度。",
+  "Manufacturer revision conflict: landing-page/knobby-tire claim is 45C; the English manual limits double chainrings to 32C. Use 32 mm as a conservative 2× warning threshold until the exact newer generation/revision is confirmed; this is not a universal physical-limit determination.": "制造商版本冲突：商品页／颗粒胎标注为 45C，英文手册将双盘限定为 32C。在准确代次及新版文档核实前，32 mm 仅作双盘保守警告阈值，并非确定所有版本的物理极限。"
 });

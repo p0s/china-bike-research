@@ -146,14 +146,42 @@
         }
       ]
     },
-    "stiffness_evidence": "Manufacturer in-house testing reports 1.2% higher head-tube stiffness and 7.5% higher bottom-bracket rigidity than an unnamed top-tier gravel model. The result is exact-model and numeric, but the benchmark and protocol are undisclosed and it is not independent."
+    "stiffness_evidence": "Manufacturer in-house testing reports 1.2% higher head-tube stiffness and 7.5% higher bottom-bracket rigidity than an unnamed top-tier gravel model. The result is exact-model and numeric, but the benchmark and protocol are undisclosed and it is not independent.",
+    "drivetrain_compatibility": {
+      "mechanical": {
+        "single": true,
+        "double": false
+      },
+      "electronic": {
+        "single": true,
+        "double": true
+      },
+      "source_id": "evolve-gravel-faq-2026-08-27",
+      "reviewed_at": "2026-10-03",
+      "note": "Manufacturer supports mechanical 1× and electronic 1×/2×; mechanical 2× is unsupported."
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
     "evidence": "official",
     "eligibility": "pass",
-    "note": "Official FAQ states 50C with 1x and 45C with 2x, with 6 mm clearance on each side.",
-    "published_max_mm": 50
+    "note": "Manufacturer FAQ: nominal 50C with 1× and 45C with 2×; actual mounted width depends on tire and rim. The prior 6 mm margin is a dated older observation, not a confirmed current FAQ claim.",
+    "published_max_mm": 50,
+    "prior_observations": [
+      {
+        "wheel_size": "700c",
+        "evidence": "official",
+        "eligibility": "pass",
+        "note": "Official FAQ states 50C with 1x and 45C with 2x, with 6 mm clearance on each side.",
+        "published_max_mm": 50
+      }
+    ],
+    "drivetrain_limits_mm": {
+      "single": 50,
+      "double": 45
+    },
+    "limits_status": "current-manufacturer",
+    "limits_reviewed_at": "2026-10-03"
   },
   "mounts": [
     "top-tube"

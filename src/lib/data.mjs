@@ -467,7 +467,8 @@ export function validateDataset(data = loadDataset()) {
       if (clearance?.drivetrain_limits_mm !== undefined) {
         const limits = clearance.drivetrain_limits_mm;
         if (!isObject(limits) || Object.keys(limits).some((key) => !['single', 'double'].includes(key)) ||
-          !['single', 'double'].every((key) => Number.isFinite(limits[key]) && limits[key] > 0 && limits[key] <= 100) ||
+          !['single', 'double'].every((key) => limits[key] === null || (Number.isFinite(limits[key]) && limits[key] > 0 && limits[key] <= 100)) ||
+          !['single', 'double'].some((key) => Number.isFinite(limits[key])) ||
           Math.max(limits.single, limits.double) !== clearance.published_max_mm) {
           errors.push(`platform ${platform.id}: invalid drivetrain clearance limits`);
         }
@@ -603,7 +604,8 @@ export function validateDataset(data = loadDataset()) {
         if (candidate.facts.tire_clearance_drivetrain_limits_mm !== undefined) {
           const limits = candidate.facts.tire_clearance_drivetrain_limits_mm;
           if (!isObject(limits) || Object.keys(limits).some((key) => !['single', 'double'].includes(key)) ||
-            !['single', 'double'].every((key) => Number.isFinite(limits[key]) && limits[key] > 0 && limits[key] <= 100) ||
+            !['single', 'double'].every((key) => limits[key] === null || (Number.isFinite(limits[key]) && limits[key] > 0 && limits[key] <= 100)) ||
+          !['single', 'double'].some((key) => Number.isFinite(limits[key])) ||
             Math.max(limits.single, limits.double) !== candidate.facts.tire_clearance_mm) {
             errors.push(`candidate ${candidate.id}: invalid drivetrain clearance limits`);
           }
@@ -1185,23 +1187,23 @@ export function formatAllInPrice(product) {
 }
 export function maxClearance(platform) {
   const c = platform.tire_clearance;
-  if (!c) return undefined;
-  return c.published_max_mm ?? c.published_rear_max_mm ?? c.stock_nominal_mm;
+  if (!c || c.maximum_unverified) return undefined;
+  return c.published_max_mm ?? c.published_rear_max_mm;
 }
 export function clearanceLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not applicable';
-  if (c.drivetrain_limits_mm) return `${c.drivetrain_limits_mm.single}/${c.drivetrain_limits_mm.double} mm (1×/2×)`;
+  if (c.drivetrain_limits_mm) return `${c.drivetrain_limits_mm.single ?? 'unknown'}/${c.drivetrain_limits_mm.double ?? 'unknown'} mm (1×/2×)`;
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm}/${c.published_rear_max_mm} mm`;
   if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock`;
   if (c.published_max_mm) return `${c.published_max_mm} mm`;
-  if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm`;
+  if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock`;
   return 'Unverified';
 }
 export function clearanceLongLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not recorded for this category';
-  if (c.drivetrain_limits_mm) return `Up to ${c.drivetrain_limits_mm.single} mm with 1× / ${c.drivetrain_limits_mm.double} mm with 2×`;
+  if (c.drivetrain_limits_mm) return `${c.drivetrain_limits_mm.single === null ? 'Unknown' : 'Up to ' + c.drivetrain_limits_mm.single + ' mm'} with 1× / ${c.drivetrain_limits_mm.double === null ? 'unknown' : c.drivetrain_limits_mm.double + ' mm'} with 2×`;
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm} mm front / ${c.published_rear_max_mm} mm rear`;
   if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock fit; maximum unverified`;
   if (c.published_max_mm) return `Up to ${c.published_max_mm} mm`;

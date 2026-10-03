@@ -1838,6 +1838,7 @@ void import('./analytics-event.js').then((events) => {
     const acceptedShells = bottomBracket?.compatibility?.accepted_frame_shells
       || bottomBracket?.compatibility?.frame_bottom_bracket
       || [];
+    if (bottomBracket && (!base.bottomBracketKey || base.bottomBracketStatus === 'conflicting')) messages.push('Bottom bracket shell is unresolved or conflicting; confirm the exact frame standard before selecting this part.');
     if (bottomBracket && base.bottomBracketKey && acceptedShells.length && !acceptedShells.includes(base.bottomBracketKey)) {
       messages.push(`${bottomBracket.maker} ${bottomBracket.name} does not list ${base.bottomBracket} frame compatibility.`);
     }
@@ -1847,15 +1848,19 @@ void import('./analytics-event.js').then((events) => {
     const layout = drivetrain?.compatibility?.drivetrain_layout
       || (state.selections.drivetrain === 'included' ? base.drivetrainLayout : null);
     const limits = base.tireClearanceByDrivetrain;
-    const recordedLimits = limits ? [limits.single, limits.double].filter((value) => numberOrNull(value) !== null) : [];
     const clearanceLimit = limits
-      ? (layout ? numberOrNull(limits[layout]) : recordedLimits.length ? Math.min(...recordedLimits) : null)
+      ? (layout ? numberOrNull(limits[layout]) : null)
       : numberOrNull(base.tireClearanceMm);
-    if (limits && !layout) messages.push(`Confirm drivetrain: tire limits are ${limits.single ?? 'unknown'}/${limits.double ?? 'unknown'} mm (1×/2×). The smallest recorded limit is a warning threshold, not proof of fit for an unknown layout.`);
+    if (limits && !layout) messages.push(`Confirm drivetrain: tire limits are ${limits.single ?? 'unknown'}/${limits.double ?? 'unknown'} mm (1×/2×). Choose a known layout before using these limits; an unknown layout has no confirmed maximum.`);
     if (tires && clearanceLimit === null) messages.push('Tire clearance for the selected frame and drivetrain is not recorded; confirm it before buying.');
     if (tires && Number.isFinite(tireWidth) && Number.isFinite(clearanceLimit) && tireWidth > clearanceLimit) {
       messages.push(`${tireWidth} mm tires exceed the frame's published ${clearanceLimit} mm limit${layout ? ` for ${layout === 'single' ? '1×' : '2×'}` : ''}.`);
     }
+    if (base.tireClearanceStatus === 'manufacturer-revision-conflict') messages.push('Manufacturer tire-clearance revisions conflict; the recorded limit is a conservative warning threshold. Confirm the exact generation and manual before buying.');
+    const shifting = drivetrain?.compatibility?.shifting_type;
+    const support = base.drivetrainCompatibility;
+    if (support && (!shifting || !layout)) messages.push('Confirm shifting type and chainring layout against the frame’s manufacturer-supported combinations.');
+    if (support && shifting && layout && support[shifting]?.[layout] === false) messages.push('The manufacturer does not support this shifting type and chainring layout on the selected frame.');
     const wheelset = covered.has('wheelset') ? null : selectedPart('wheelset');
     const rotors = covered.has('rotors') ? null : selectedPart('rotors');
     const rotorMount = rotors?.compatibility?.rotor_mount;
@@ -1928,7 +1933,9 @@ void import('./analytics-event.js').then((events) => {
       base.tireClearanceLabel ? `${base.tireClearanceLabel} tire clearance` : base.tireClearanceMm ? `${base.tireClearanceMm} mm tire clearance` : 'tire clearance unknown',
       base.included.length ? base.included.join(', ') : 'package contents incomplete',
       base.priceNote || '',
-      base.weightBasis || ''
+      base.weightBasis || '',
+      base.tireClearanceNote || '',
+      base.drivetrainCompatibility?.note || ''
     ].filter(Boolean).join(' · ');
     if (state.unavailableStartingPoint && baseFacts) baseFacts.textContent = `${translate('Requested starting point', document.documentElement.lang)}: ${state.requestedBaseId}`;
     if (buildName) buildName.textContent = state.unavailableStartingPoint
