@@ -103,7 +103,19 @@ export function regionalPrice(item, { country, currency, area = '' }, { rates, o
     ? chinaHigh === null ? null : chinaHigh + (frame ? convertPrice(allowance, 'CNY', currency, rates) : 0)
     : fullTotal ? convertPrice(delivery.total_high, offer.currency, currency, rates) : null;
   const freshChina = china && china.date <= asOf && (Date.parse(asOf) - Date.parse(china.date)) / 86400000 <= 90;
+  // Display references stay separate from complete totals used by budgets and sorting.
+  const chinaBuildAllowance = frame ? allowance : 0;
+  const nativeLow = china ? china.low + chinaBuildAllowance : frame ? item.frameLow + allowance : item.priceLowCny;
+  const nativeHigh = china ? china.high + chinaBuildAllowance : frame ? (item.frameHigh ?? item.frameLow) + allowance : item.priceHighCny;
+  const display = {
+    low: Number.isFinite(low) ? low : item.priceUnavailable ? null : convertPrice(nativeLow, 'CNY', currency, rates),
+    high: Number.isFinite(high) ? high : item.priceUnavailable ? null : convertPrice(nativeHigh, 'CNY', currency, rates),
+    basis: fullTotal ? 'delivered' : china ? frame ? 'china-build' : 'china' : frame ? 'build-reference' : 'reference',
+    nativeLow, nativeHigh,
+    approximate: fullTotal ? state === 'estimated' || offer.currency !== currency : frame || !china || china.approximate || currency !== 'CNY'
+  };
   return { low, high, currency, offer, frame, state, china, chinaLow, chinaHigh, referenceLow, referenceHigh,
+    display,
     listAmount: offer ? convertPrice(offer.amount, offer.currency, currency, rates) : null,
     converted: country === 'CN' ? currency !== 'CNY' : offer?.currency !== currency,
     difference: fullTotal && freshChina && china.comparable && !frame ? chinaDifference(low, high, chinaLow, chinaHigh) : null };
