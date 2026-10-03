@@ -1,6 +1,6 @@
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
-import { PRICE_MARKETS, resolvePriceMarket, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
+import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
@@ -564,7 +564,7 @@ void import('./analytics-event.js').then((events) => {
       const response = await fetch(regionalDataElement.dataset.src, { cache: 'force-cache' });
       if (!response.ok) return null;
       const payload = await response.json();
-      if (!Object.values(PRICE_MARKETS).every(({ currency }) => Number.isFinite(payload.rates?.per_eur?.[currency]) && payload.rates.per_eur[currency] > 0) || !Array.isArray(payload.offers)) return null;
+      if (!PRICE_CURRENCIES.every((currency) => Number.isFinite(payload.rates?.per_eur?.[currency]) && payload.rates.per_eur[currency] > 0) || !Array.isArray(payload.offers)) return null;
       return { ...payload, asOf: new Date().toISOString().slice(0, 10) };
     } catch { return null; } // Keep the original CNY catalog usable offline or on older deployments.
   })();
@@ -585,16 +585,23 @@ void import('./analytics-event.js').then((events) => {
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
   const regionalData = await regionalDataPromise;
-  const marketControl = catalogRoot.querySelector('[data-price-market]');
-  const marketStorageKey = 'china-bikes-price-market-v1';
-  let savedMarket = '';
-  try { savedMarket = localStorage.getItem(marketStorageKey) ?? ''; } catch { /* URL choice remains available */ }
-  const suggestedMarket = resolvePriceMarket({ stored: savedMarket, edgeCountry: catalogRoot.dataset.priceCountry, languages: navigator.languages ?? [navigator.language] }).market;
-  let activeMarket = 'cn';
-  let explicitMarket = '';
+  const destinationControl = catalogRoot.querySelector('[data-ship-country]');
+  const currencyControl = catalogRoot.querySelector('[data-display-currency]');
+  const areaControl = catalogRoot.querySelector('[data-delivery-area]');
+  const preferenceStorageKey = 'china-bikes-delivery-preference-v1';
+  let savedPreference = {};
+  try { savedPreference = JSON.parse(localStorage.getItem(preferenceStorageKey) ?? '{}') ?? {}; } catch { /* URL choices remain available */ }
+  let timeZone = '';
+  try { timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { /* a suggestion is optional */ }
+  const suggestedDestination = resolveDestination({ stored: savedPreference.country, edgeCountry: catalogRoot.dataset.priceCountry, timeZone, languages: navigator.languages ?? [navigator.language] });
+  let activeCountry = 'CN';
+  let activeCurrency = 'CNY';
+  let currencyChosen = false;
+  let activeArea = '';
+  let destinationReason = 'unknown';
   const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
   const originalPriceTips = new Map(rows.map((row) => [row.dataset.id, row.querySelector('.price-cell [data-tooltip-lines]')?.dataset.tooltipLines ?? '[]']));
-  if (regionalData) catalogRoot.querySelector('[data-price-market-control]').hidden = false;
+  if (regionalData) catalogRoot.querySelector('[data-price-preferences]').hidden = false;
   const empty = catalogRoot.querySelector('[data-empty]');
   const resultCount = catalogRoot.querySelector('[data-result-count]');
   const resultSummary = catalogRoot.querySelector('[data-result-summary]');
@@ -676,18 +683,33 @@ void import('./analytics-event.js').then((events) => {
       : `Est. ${formatYuan(low)}–${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(high)}`;
   }
 
-  function priceCurrency() { return PRICE_MARKETS[activeMarket].currency; }
+  function priceCurrency() { return activeCurrency; }
+
+  function differenceLabel(difference) {
+    if (!difference) return '';
+    const { low, high } = difference;
+    const number = (value) => new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(Math.abs(value));
+    if (Math.abs(low) < 1e-8 && Math.abs(high) < 1e-8) return translate('Same price in China', locale);
+    if (low <= 0 && high >= 0) return translate('China difference varies', locale);
+    const positive = low > 0;
+    const from = positive ? low : high, to = positive ? high : low;
+    return `≈ ${number(from)}${Math.abs(low - high) > 1e-8 ? `–${number(to)}` : ''}% ${translate(positive ? 'less in China' : 'more in China', locale)}`;
+  }
 
   function updateRegionalPrices() {
     if (!regionalData) return;
     const currency = priceCurrency();
-    if (marketControl) marketControl.value = activeMarket;
+    destinationControl.value = activeCountry;
+    currencyControl.value = currency;
+    areaControl.value = activeArea;
+    catalogRoot.querySelector('[data-delivery-area-control]').hidden = activeCountry !== 'US';
+    catalogRoot.querySelector('[data-destination-suggestion]').hidden = destinationReason !== 'suggested';
     const heading = sortHeadingByKey.get('price')?.querySelector('span');
-    if (heading) heading.textContent = `${translate('Full-bike price', locale)} · ${currency}`;
+    if (heading) heading.textContent = `${translate(activeCountry === 'CN' ? 'Full-bike price' : 'Delivered price', locale)} · ${currency}`;
     catalogRoot.querySelector('[data-price-currency]').textContent = currency;
     const note = catalogRoot.querySelector('[data-price-region-note]');
-    note.hidden = activeMarket === 'cn';
-    note.textContent = `${currency} · ${translate('Listed offers first; ≈ means a dated FX reference. Shipping and taxes require confirmation.', locale)} `;
+    note.hidden = false;
+    note.textContent = `${translate(activeCountry === 'CN' ? 'Buying in China. Prices retain their observation dates and conditions.' : '≈ delivery totals are seller estimates. The China difference uses the same build; incomplete totals have no percentage.', locale)} `;
     const exchangeSource = document.createElement('a');
     exchangeSource.href = regionalData.rates.source;
     exchangeSource.rel = 'noreferrer';
@@ -697,51 +719,83 @@ void import('./analytics-event.js').then((events) => {
       const item = byId.get(row.dataset.id);
       if (!item) return;
       const original = originalPrices.get(item.id);
-      const projection = regionalPrice(item, activeMarket, regionalData, currentBuildAllowance);
       const cell = row.querySelector('.price-cell');
       const primary = cell?.querySelector('[data-calculated-price]') ?? cell?.querySelector('.metric-main');
-      const state = cell?.querySelector('.price-state');
       const tip = cell?.querySelector('[data-tooltip-lines]');
-      cell?.querySelector('[data-regional-offer]')?.remove();
-      if (!Number.isFinite(projection.low) || !Number.isFinite(projection.high)) {
+      cell?.querySelectorAll('[data-regional-offer]').forEach((link) => link.remove());
+      cell?.querySelector('[data-china-difference]')?.remove();
+      if (item.priceUnavailable) {
         row.dataset.priceSort = '';
         row.dataset.priceFilter = '';
-        return; // Preserve unknown, ambiguous and superseded labels.
+        return;
       }
-      row.dataset.priceSort = String((projection.low + projection.high) / 2);
-      row.dataset.priceFilter = String(projection.high);
-      const baseLow = projection.frame ? item.frameLow + currentBuildAllowance : item.priceLowCny;
-      const baseHigh = projection.frame ? (item.frameHigh ?? item.frameLow) + currentBuildAllowance : item.priceHighCny;
-      const cnyLabel = projection.frame ? translate(formatEstimatedRange(baseLow, baseHigh), locale) : original.price;
-      item.price = activeMarket === 'cn' ? cnyLabel
-        : `${projection.frame ? `${translate('Est.', locale)} ` : ''}${formatMoneyRange(projection.low, projection.high, currency, locale, { approximate: projection.converted })}`;
+      const projection = regionalPrice(item, { country: activeCountry, currency, area: activeArea }, regionalData, currentBuildAllowance);
+      const { china, offer, state } = projection;
+      let subline = cell?.querySelector('.price-state');
+      if (!subline && cell) {
+        subline = document.createElement('span');
+        subline.className = 'metric-sub price-state';
+        cell.append(subline);
+      }
+      row.dataset.priceSort = Number.isFinite(projection.low) ? String((projection.low + projection.high) / 2) : '';
+      row.dataset.priceFilter = Number.isFinite(projection.high) ? String(projection.high) : '';
+      const reference = projection.frame ? translate(formatEstimatedRange(item.frameLow + currentBuildAllowance, (item.frameHigh ?? item.frameLow) + currentBuildAllowance), locale) : original.price;
+      let chinaLine = '';
+      if (china) {
+        const native = formatMoneyRange(china.low, china.high, 'CNY', locale, { approximate: china.approximate });
+        const display = currency !== 'CNY' ? ` (${formatMoneyRange(projection.chinaLow, projection.chinaHigh, currency, locale, { approximate: true })})` : '';
+        chinaLine = `${translate(projection.frame ? 'Frame in China' : 'China', locale)}: ${native}${display}${china.conditional ? ` · ${translate('conditional', locale)}` : ''} · ${china.date}`;
+      } else chinaLine = `${translate('China price unavailable', locale)} · ${translate('Catalog reference', locale)}: ${reference}`;
+      if (state === 'china' && Number.isFinite(projection.low)) {
+        item.price = `${projection.frame ? `${translate('Est.', locale)} ` : ''}${formatMoneyRange(projection.low, projection.high, currency, locale, { approximate: china.approximate || projection.converted })}`;
+      } else if (['confirmed', 'estimated'].includes(state)) {
+        item.price = `${formatMoneyRange(projection.low, projection.high, currency, locale, { approximate: state === 'estimated' || projection.converted })} ${translate(state === 'estimated' ? 'estimated delivered' : 'delivered', locale)}`;
+      } else if (state === 'partial' && !projection.frame) {
+        item.price = `${formatMoneyRange(projection.listAmount, projection.listAmount, currency, locale, { approximate: projection.converted })} + ${translate('shipping/tax', locale)}`;
+      } else item.price = translate(state === 'china' ? 'China price unavailable' : state === 'choose-destination' ? 'Choose destination' : state === 'build-unknown' ? 'Build delivery total unavailable' : 'Delivery total unavailable', locale);
       if (primary) primary.textContent = item.price;
-      const basis = projection.basis === 'offer' ? 'Listed bike offer' : projection.frame ? 'China build estimate' : 'Catalog conversion';
-      item.priceState = activeMarket === 'cn' ? original.state
-        : `${translate(basis, locale)}${projection.converted ? ' · FX' : ''} · ${projection.offer && !projection.frame ? projection.offer.date : regionalData.rates.rate_date}`;
-      if (state) state.textContent = activeMarket === 'cn' ? original.state : `${translate(projection.basis === 'offer' ? 'Listed bike offer' : 'FX reference', locale)} · ${cnyLabel}`;
-      const lines = activeMarket === 'cn' ? [] : [
-        `${translate('Catalog basis', locale)}: ${cnyLabel}. ${original.state}`,
+      if (subline) subline.textContent = state === 'china' ? china ? `${china.conditional ? `${translate('conditional', locale)} · ` : ''}${china.date}${currency !== 'CNY' ? ` · ${formatMoneyRange(china.low, china.high, 'CNY', locale)}` : ''}` : `${translate('Catalog reference', locale)}: ${reference}` : chinaLine;
+      const difference = differenceLabel(projection.difference);
+      if (difference) {
+        const delta = document.createElement('span');
+        delta.className = 'china-price-difference';
+        delta.dataset.chinaDifference = '';
+        delta.textContent = difference;
+        cell.append(delta);
+      }
+      const scopeLabel = offer?.delivery?.scope === 'contiguous-us' ? 'Contiguous US only' : 'Standard addresses only';
+      const lines = [
+        `${translate('Catalog reference', locale)}: ${reference}. ${original.state}`,
+        chinaLine,
+        ...(china?.conditions ? [translate(china.conditions, locale)] : []),
         `${translate('ECB reference rates', locale)}: ${regionalData.rates.rate_date}.`,
-        translate(projection.frame ? 'The build estimate uses the China allowance, not a verified regional build cost.' : 'Shipping, taxes and final checkout totals require confirmation.', locale)
+        translate('China difference = (delivered total − China equivalent) ÷ delivered total. It is a market price gap, not an importing saving.', locale),
+        ...(projection.frame ? [translate('The build estimate uses the China allowance, not a verified regional build cost.', locale)] : []),
+        ...(offer ? [`${translate('Listing', locale)}: ${formatMoneyRange(offer.amount, offer.amount, offer.currency, locale)} · ${offer.date}.`, translate(offer.package, locale), translate(offer.conditions, locale)] : []),
+        ...(offer?.delivery ? [translate(scopeLabel, locale), offer.delivery.basis] : [])
       ];
-      const offer = projection.offer;
       if (offer) {
-        const nativeAmount = formatMoneyRange(offer.amount, offer.amount, offer.currency, locale);
-        lines.push(`${translate(offer.kind === 'frameset' ? 'Frameset offer' : 'Listed bike offer', locale)}: ${nativeAmount} · ${offer.date}.`, translate(offer.package, locale), translate(offer.conditions, locale));
         const link = document.createElement('a');
         link.dataset.regionalOffer = '';
         link.className = 'regional-offer-link';
         link.href = offer.source;
         link.rel = 'noreferrer';
-        const offerAmount = convertPrice(offer.amount, offer.currency, currency, regionalData.rates);
-        const frameOfferLabel = formatMoneyRange(offerAmount, offerAmount, currency, locale, { approximate: offer.currency !== currency });
-        link.textContent = `${translate(offer.kind === 'frameset' ? 'Frameset offer' : 'Offer source', locale)} · ${offer.kind === 'frameset' ? frameOfferLabel : nativeAmount}`;
-        link.title = `${nativeAmount} · ${offer.date} · ${translate(offer.package, locale)}. ${translate(offer.conditions, locale)}`;
+        link.textContent = `${translate(offer.kind === 'frameset' ? 'Frameset offer' : 'Listing', locale)} · ${formatMoneyRange(offer.amount, offer.amount, offer.currency, locale)}`;
+        link.title = `${offer.date} · ${translate(offer.package, locale)}. ${translate(offer.conditions, locale)}`;
         cell?.append(link);
+        for (const source of offer.deliverySources ?? []) {
+          if (source.url === offer.source) continue;
+          const policy = document.createElement('a');
+          policy.dataset.regionalOffer = '';
+          policy.className = 'regional-policy-link';
+          policy.href = source.url;
+          policy.rel = 'noreferrer';
+          policy.textContent = translate('Delivery policy', locale);
+          cell?.append(policy);
+        }
       }
       let baseLines = [];
-      try { baseLines = JSON.parse(originalPriceTips.get(item.id)); } catch { /* original details remain in model page */ }
+      try { baseLines = JSON.parse(originalPriceTips.get(item.id)); } catch { /* model page retains original details */ }
       baseLines = baseLines.map((line) => {
         if (line.startsWith('Estimated complete adds')) return `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`;
         const threshold = Number(tip?.dataset.frameThreshold || 0);
@@ -749,10 +803,12 @@ void import('./analytics-event.js').then((events) => {
         return line;
       });
       if (tip) tip.dataset.tooltipLines = JSON.stringify([...baseLines, ...lines]);
+      item.priceState = [subline?.textContent, difference].filter(Boolean).join(' · ');
       const details = String(original.details).replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`);
       item.priceDetails = [details, ...lines].filter(Boolean).join(' ');
     });
-    catalogRoot.dataset.activePriceMarket = activeMarket;
+    catalogRoot.dataset.activeShipCountry = activeCountry || 'unknown';
+    catalogRoot.dataset.activePriceCurrency = currency;
   }
 
   function normalizedBuildAllowance(value) {
@@ -835,7 +891,10 @@ void import('./analytics-event.js').then((events) => {
       const target = new URL(link.dataset.baseHref || link.getAttribute('href') || '', location.origin);
       target.searchParams.set('from', from);
       setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
-      setParam(target, 'market', explicitMarket);
+      target.searchParams.delete('market');
+      setParam(target, 'ship', activeCountry || 'unknown');
+      setParam(target, 'currency', activeCurrency);
+      setParam(target, 'area', activeCountry === 'US' ? activeArea : '');
       link.href = `${target.pathname}${target.search}`;
     });
   }
@@ -847,7 +906,10 @@ void import('./analytics-event.js').then((events) => {
     setParam(next, 'brand', activeBrand);
     setParam(next, 'max', price?.value);
     setParam(next, 'maxCurrency', price?.value ? priceCurrency() : '');
-    setParam(next, 'market', explicitMarket);
+    next.searchParams.delete('market');
+    setParam(next, 'ship', activeCountry || 'unknown');
+    setParam(next, 'currency', activeCurrency);
+    setParam(next, 'area', activeCountry === 'US' ? activeArea : '');
     setParam(next, 'tire', tire?.value);
     setParam(next, 'tireUnknown', tireUnknown?.checked ? '1' : '');
     setParam(next, 'completeWeight', completeWeight?.value);
@@ -902,7 +964,7 @@ void import('./analytics-event.js').then((events) => {
 
   function matchesTypedFilters(row) {
     const item = byId.get(row.dataset.id);
-    const maxPrice = numericValue(price);
+    const maxPrice = numberOrNull(price?.value);
     const minTire = numericValue(tire);
     const tireValue = Number(row.dataset.tireClearanceSort || 0);
     const maxCompleteWeight = numericValue(completeWeight, 1000);
@@ -916,7 +978,7 @@ void import('./analytics-event.js').then((events) => {
     const frame = frameFilter?.value.trim().toLowerCase() ?? '';
     const categoryLimit = numericValue(categoryMinimum);
     const categoryKind = categoryMinimum?.dataset.kind ?? '';
-    return (!maxPrice || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
+    return (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       (!minTire || tireValue >= minTire || (!tireValue && tireUnknown?.checked)) &&
       weightMatches &&
       (!drivetrain || `${item?.drivetrain ?? ''} ${item?.drivetrainSubline ?? ''}`.toLowerCase().includes(drivetrain)) &&
@@ -1172,8 +1234,19 @@ void import('./analytics-event.js').then((events) => {
   function restoreFromParams(params) {
     const requestedSearch = params.get('q') ?? '';
     const requestedPrice = params.get('max') ?? '';
-    explicitMarket = Object.hasOwn(PRICE_MARKETS, params.get('market') ?? '') ? params.get('market') : '';
-    activeMarket = regionalData ? explicitMarket || suggestedMarket : 'cn';
+    const legacyMarket = Object.hasOwn(PRICE_MARKETS, params.get('market') ?? '') ? params.get('market') : '';
+    const hasDestination = params.has('ship') || Boolean(legacyMarket);
+    const resolved = hasDestination ? params.get('ship') === 'unknown' || ['eu', 'europe', 'north-america'].includes(legacyMarket)
+      ? { country: '', reason: 'link' }
+      : resolveDestination({ requested: params.get('ship'), legacyMarket }) : suggestedDestination;
+    activeCountry = regionalData ? resolved.country : 'CN';
+    destinationReason = resolved.reason;
+    currencyChosen = PRICE_CURRENCIES.includes(params.get('currency')) || (!hasDestination && savedPreference.currencyChosen === true);
+    activeCurrency = regionalData ? PRICE_CURRENCIES.includes(params.get('currency')) ? params.get('currency')
+      : hasDestination ? PRICE_MARKETS[legacyMarket]?.currency ?? defaultCurrency(activeCountry)
+      : PRICE_CURRENCIES.includes(savedPreference.currency) ? savedPreference.currency : defaultCurrency(activeCountry) : 'CNY';
+    activeArea = activeCountry === 'US' ? ['contiguous', 'remote'].includes(params.get('area')) ? params.get('area')
+      : !hasDestination && savedPreference.country === 'US' && ['contiguous', 'remote'].includes(savedPreference.area) ? savedPreference.area : '' : '';
     const limit = numberOrNull(requestedPrice);
     const inputCurrency = params.get('maxCurrency') || 'CNY';
     const convertedLimit = limit === null ? null : convertPrice(limit, inputCurrency, priceCurrency(), regionalData?.rates);
@@ -1220,6 +1293,7 @@ void import('./analytics-event.js').then((events) => {
       (params.get('buildPreset') ?? defaultBuildPreset) !== currentBuildPreset ||
       (params.get('scope') ?? '') !== (allModelsVisible ? 'all' : '') ||
       Boolean(legacyCapability) ||
+      Boolean(legacyMarket) ||
       requestedSort !== (sort?.value ?? 'price');
     if (corrected) updateFilterUrl('replace');
   }
@@ -1227,11 +1301,28 @@ void import('./analytics-event.js').then((events) => {
   const typedInputs = [search, price, tire, completeWeight, frameWeight, drivetrainFilter, frameFilter, categoryMinimum];
   typedInputs.forEach((element) => bindHistoryInput(element, (historyMode) => updateCatalog({ historyMode })));
   [category, sort, tireUnknown].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
-  marketControl?.addEventListener('change', () => {
+  function updatePricePreference(control) {
     const previousCurrency = priceCurrency();
-    activeMarket = Object.hasOwn(PRICE_MARKETS, marketControl.value) ? marketControl.value : 'cn';
-    explicitMarket = activeMarket;
-    try { localStorage.setItem(marketStorageKey, activeMarket); } catch { /* the URL still carries this choice */ }
+    if (control === destinationControl) {
+      activeCountry = validCountry(destinationControl.value);
+      activeArea = '';
+      destinationReason = 'saved';
+      if (!currencyChosen) activeCurrency = defaultCurrency(activeCountry);
+    } else if (control === currencyControl) {
+      activeCurrency = PRICE_CURRENCIES.includes(currencyControl.value) ? currencyControl.value : defaultCurrency(activeCountry);
+      currencyChosen = true;
+    }
+    else {
+      activeArea = ['contiguous', 'remote'].includes(areaControl.value) ? areaControl.value : '';
+      destinationReason = 'saved';
+    }
+    // Persist only the user's manual shopping choices, never inferred location.
+    const preference = { country: activeCountry, currency: activeCurrency, currencyChosen, area: activeArea };
+    if (destinationReason === 'suggested' && control === currencyControl) {
+      try { localStorage.setItem(preferenceStorageKey, JSON.stringify({ ...savedPreference, currency: activeCurrency, currencyChosen: true })); } catch { /* URL still works */ }
+    } else {
+      try { localStorage.setItem(preferenceStorageKey, JSON.stringify(preference)); } catch { /* URL still works */ }
+    }
     if (price?.value) {
       const limit = convertPrice(Number(price.value), previousCurrency, priceCurrency(), regionalData?.rates);
       price.value = limit === null ? '' : String(limit);
@@ -1239,7 +1330,8 @@ void import('./analytics-event.js').then((events) => {
     updateRegionalPrices();
     updateCatalog({ historyMode: 'push' });
     if (selection?.length >= 2) renderComparison();
-  });
+  }
+  [destinationControl, currencyControl, areaControl].forEach((control) => control?.addEventListener('change', () => updatePricePreference(control)));
   sortHeadingButtons.forEach((button) => button.addEventListener('click', () => {
     if (!(button instanceof HTMLButtonElement) || button.disabled) return;
     const key = button.dataset.sortHeading;
@@ -1514,6 +1606,10 @@ void import('./analytics-event.js').then((events) => {
 
     const next = new URL(location.href);
     next.searchParams.set('compare', selection.join(','));
+    next.searchParams.delete('market');
+    next.searchParams.set('ship', activeCountry || 'unknown');
+    next.searchParams.set('currency', activeCurrency);
+    setParam(next, 'area', activeCountry === 'US' ? activeArea : '');
     try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }
   }
 
