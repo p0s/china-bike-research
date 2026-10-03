@@ -2,6 +2,21 @@ import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  "T47 bottom-bracket component": "T47 中轴组件",
+  "Dated owner-reported package": "有日期的车主套餐报告",
+  "Current package quote unverified": "当前套餐报价未经核实",
+  "clamp": "夹具",
+  "headset spacers": "碗组垫圈",
+  "thru-axles": "桶轴",
+  "HBR08 cockpit": "HBR08 车把组件",
+  "Wahoo mount": "Wahoo 码表座",
+  "storage bag": "储物袋",
+  "T47 bottom bracket": "T47 中轴",
+  "bottle cages": "水壶架",
+  "EU shipping": "发往欧盟的运费",
+  "bank fee": "银行手续费",
+  "current quoted package": "当前报价套餐",
+
   "China price": "中国价格",
   "Reference estimate": "参考估算",
   "Build reference": "装车参考值",

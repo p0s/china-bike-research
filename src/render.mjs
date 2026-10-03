@@ -833,7 +833,9 @@ function candidatePackageFacts(entry, locale) {
   if (entry.kind !== 'frameset') return '';
   const components = entry.price?.package_components;
   if (!components) return translate('Package contents are unconfirmed; do not subtract component costs from the allowance without an exact package quote.', locale);
-  return [['included', 'Included package'], ['excluded', 'Package exclusions'], ['optional', 'Optional package parts'], ['unknown', 'Package contents unconfirmed']]
+  const datedOwner = /owner-reported/.test(entry.price?.price_type ?? '')
+    ? `${translate('Dated owner-reported package', locale)} · ${components.evidence_date}. ${translate('Current package quote unverified', locale)}. ` : '';
+  return datedOwner + [['included', 'Included package'], ['excluded', 'Package exclusions'], ['optional', 'Optional package parts'], ['unknown', 'Package contents unconfirmed']]
     .filter(([key]) => components[key]?.length)
     .map(([key, label]) => `${translate(label, locale)}: ${components[key].map(value => translate(value, locale)).join(', ')}.`).join(' ');
 }

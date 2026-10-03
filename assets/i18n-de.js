@@ -1,5 +1,20 @@
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
+  "T47 bottom-bracket component": "T47-Innenlagerkomponente",
+  "Dated owner-reported package": "Datiertes Paket laut Besitzerbericht",
+  "Current package quote unverified": "Aktuelles Paketangebot unbestätigt",
+  "clamp": "Klemme",
+  "headset spacers": "Steuersatz-Spacer",
+  "thru-axles": "Steckachsen",
+  "HBR08 cockpit": "HBR08-Cockpit",
+  "Wahoo mount": "Wahoo-Halterung",
+  "storage bag": "Aufbewahrungstasche",
+  "T47 bottom bracket": "T47-Innenlager",
+  "bottle cages": "Flaschenhalter",
+  "EU shipping": "Versand in die EU",
+  "bank fee": "Bankgebühr",
+  "current quoted package": "Aktuell angebotenes Paket",
+
   "China price": "China-Preis",
   "Reference estimate": "Referenzschätzung",
   "Build reference": "Aufbau-Richtwert",
