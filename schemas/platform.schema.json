@@ -31,7 +31,51 @@
       "type": "object"
     },
     "tire_clearance": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "drivetrain_limits_mm": {
+          "type": "object",
+          "required": [
+            "single",
+            "double"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "single": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "double": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            }
+          },
+          "anyOf": [
+            {
+              "properties": {
+                "single": {
+                  "type": "number"
+                }
+              }
+            },
+            {
+              "properties": {
+                "double": {
+                  "type": "number"
+                }
+              }
+            }
+          ]
+        }
+      }
     },
     "source_ids": {
       "type": "array",

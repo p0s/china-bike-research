@@ -2784,7 +2784,7 @@ test('wide-clearance products preserve the narrower rear limit', () => {
   assert.equal(maxClearance(product.platform), 52);
 
   const camp = products.find((item) => item.variant.id === 'camp-gx700-grx820');
-  assert.equal(maxClearance(camp.platform), 45);
+  assert.equal(maxClearance(camp.platform), undefined);
   assert.equal(clearanceLabel(camp.platform), '45 mm stock');
   assert.equal(clearanceLongLabel(camp.platform), '45 mm stock fit; maximum unverified');
 });
