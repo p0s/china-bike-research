@@ -2,6 +2,10 @@ import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  "First-order offer": "首单优惠",
+  "Subsidy offer": "补贴优惠",
+  "Coupon or selected-offer eligibility": "优惠券或所选优惠的资格条件",
+
   "China price": "中国价格",
   "Reference estimate": "参考估算",
   "Build reference": "装车参考值",
@@ -689,6 +693,7 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `有条件价格；请输入符合资格的实际结算报价。${translate(condition, locale)} · ${amount} · ${date}`],
     [/^(.+) bikes in China$/, (_, name) => `${name} 中国市场车型`],
     [/^(.+) publication-ready complete bikes and framesets documented for riders in China, with dated prices and model-level sources\.$/, (_, name) => `${name} 已发布的中国市场整车与车架组资料，附有日期的价格和车型级来源。`],
     [/^(.+) frameset$/, (_, name) => `${name} 车架组`],
@@ -738,6 +743,17 @@ Object.assign(zh, {
   "Choose an exact starting point": "请选择确切的初始车型",
   "Requested starting point": "请求的初始车型",
   "The requested starting point is unavailable. Choose an exact replacement to calculate totals.": "请求的初始车型不可用。请选择确切的替代车型以计算总计。",
+  "Complete build price unknown": "整车装配价格未知",
+  "Foreign reference estimate": "境外参考估算",
+  "Conditional price": "附条件价格",
+  "Starting price; selected package unknown": "起售价；目标套餐尚未核实",
+  "Historical reference": "历史参考",
+  "Purchase total incomplete": "购买总价尚不完整",
+  "From": "起",
+  "The recorded frame price does not establish an MTB complete-build cost. A compatible bill of materials and exact quote are required.": "此车架报价不能证明山地整车装配成本。需要兼容的零件清单和目标配置的准确报价。",
+  "Foreign-source reference; enter the exact purchase quote before using planner totals.": "境外来源参考；使用装配总计前，请输入目标配置的准确购买报价。",
+  "Reference or incomplete purchase price excluded; enter the exact purchase quote.": "参考或不完整的购买价格不计入总价；请输入准确的购买报价。",
+  "Starting price; enter the exact selected-package purchase quote.": "起售价；请输入所选目标套餐的准确购买报价。",
   "Exact build price unknown": "目标配置价格未知",
   "Unmatched price retained as reference": "未对应目标配置的价格仅保留为参考",
   "Reference only; exact build price unknown": "仅供参考；目标配置价格未知",

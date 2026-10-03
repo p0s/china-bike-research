@@ -189,7 +189,7 @@ test('candidate leads share the catalog without a separate research queue', () =
   assert.match(html, /data-stage="candidate" data-default-visible="true" data-id="candidate-pardus-spark-sport-pes"/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
   assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+src="\/china-bike-research\/assets\/images\/sourced\/retailer\/xds-gt350-primary-image\/[^\"]+"[^>]+alt="XDS GT350 gravel bike shown from the drive side"/);
-  assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · 2026-08-08<\/span>/);
+  assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · Conditional price · 2026-08-08<\/span>/);
   assert.match(html, /href="\/china-bike-research\/models\/missing-china-price-winspace-slc3\/" data-model-link/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
   assert.doesNotMatch(html, /Research queue/);
@@ -328,7 +328,7 @@ test('candidate fitted tire observations are labeled and are not sorted as verif
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
-  const entry = candidates.find((item) => item.candidate.id === 'carbonda-cfr707');
+  const entry = candidates.find((item) => item.candidate.id === 'hongfu-gravel');
   const detail = renderCandidateModel({
     data,
     products,
@@ -473,7 +473,7 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /data-id="candidate-missing-china-price-merida-scultura"[^>]*data-type="complete-bike"[^>]*data-price-sort="16800"[^>]*data-price-filter="16800"/);
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
   assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?Exact build price unknown[\s\S]*?Unmatched price retained as reference/);
-  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥11,700–14,700[\s\S]*?Official price conflict · 2026-08-17/);
+  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥13,700[\s\S]*?Official · Conditional price · Purchase total incomplete · 2026-09-25/);
   assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-09-23/);
 });
 
@@ -718,7 +718,7 @@ test('build configurator renders every required slot with sourced package data',
   assert.match(builder, /"kind":"complete-bike"/);
   assert.match(builder, /"kind":"frameset"/);
   assert.match(builder, /"id":"candidate-quick-pro-er-one"[\s\S]*?"priceLow":null,"priceHigh":null,"priceNote":"Converted reference price excluded; enter the exact purchase price\."/);
-  assert.match(builder, /"id":"candidate-missing-china-price-canyon-grail"[\s\S]*?"priceLow":null,"priceHigh":null,"priceNote":"Conflicting official prices excluded; enter the exact purchase price\."/);
+  assert.match(builder, /"id":"candidate-missing-china-price-canyon-grail"[\s\S]*?"priceLow":null,"priceHigh":null,"priceNote":"Reference or incomplete purchase price excluded; enter the exact purchase quote\."/);
   assert.match(builder, /https:\/\/www\.elite-wheels\.com\/wp-content\/uploads/);
   assert.doesNotMatch(builder, /No attributable mainland price|No exact mainland package captured/);
 });

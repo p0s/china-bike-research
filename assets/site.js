@@ -532,7 +532,7 @@ void import('./analytics-event.js').then((events) => {
     const allowance = Number.isFinite(raw) ? Math.min(100000, Math.max(0, Math.round(raw))) : defaultAllowance;
     const frameLow = Number(modelFramePrice.dataset.modelFramePriceLow);
     const frameHigh = Number(modelFramePrice.dataset.modelFramePriceHigh || frameLow);
-    const priceLabel = formatEstimatedRange(frameLow + allowance, frameHigh + allowance);
+    const priceLabel = `${modelFramePrice.hasAttribute('data-model-price-starting') ? translate('From', locale) + ' ' : ''}${formatEstimatedRange(frameLow + allowance, frameHigh + allowance)}`;
     const calculated = modelFramePrice.querySelector('[data-model-calculated-price]');
     if (calculated) calculated.textContent = priceLabel;
     const brief = document.querySelector('[data-model-price-brief]');
@@ -759,13 +759,13 @@ void import('./analytics-event.js').then((events) => {
       } else chinaLine = `${translate('Catalog reference', locale)}: ${reference}`;
       const display = projection.display;
       const basisLabel = { china: 'China price', 'china-build': 'China build estimate', reference: 'Reference estimate', 'build-reference': 'Build reference' }[display.basis];
-      item.price = formatMoneyRange(display.low, display.high, currency, locale, { approximate: display.approximate });
+      item.price = `${display.starting ? translate('From', locale) + ' ' : ''}${formatMoneyRange(display.low, display.high, currency, locale, { approximate: display.approximate })}`;
       if (display.basis === 'delivered') item.price += ` ${translate(state === 'estimated' ? 'estimated delivered' : 'delivered', locale)}`;
       if (primary) primary.textContent = item.price;
       if (subline) subline.textContent = display.basis === 'delivered' ? chinaLine : [
         translate(basisLabel, locale),
         ...(currency !== 'CNY' ? [formatMoneyRange(display.nativeLow, display.nativeHigh, 'CNY', locale, { approximate: display.basis !== 'china' || china?.approximate })] : []),
-        ...(china ? [china.conditional ? translate('conditional', locale) : '', china.date] : [])
+        ...(china ? [china.conditional ? translate('conditional', locale) : '', china.starting ? translate('Starting price; selected package unknown', locale) : '', china.partial ? translate('Purchase total incomplete', locale) : '', china.date] : [])
       ].filter(Boolean).join(' · ');
       const difference = differenceLabel(projection.difference);
       if (difference) {

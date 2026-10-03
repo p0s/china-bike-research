@@ -96,22 +96,22 @@ export function regionalPrice(item, { country, currency, area = '' }, { rates, o
   else if (delivery && (!delivery.country_ids || delivery.country_ids.includes(country))
     && (delivery.scope !== 'contiguous-us' || area === 'contiguous') && !frame) state = delivery.status;
   const fullTotal = ['confirmed', 'estimated'].includes(state);
-  const low = item.priceUnavailable ? null : country === 'CN'
+  const low = item.priceUnavailable || (country === 'CN' && (china?.starting || china?.partial)) ? null : country === 'CN'
     ? chinaLow === null ? null : chinaLow + (frame ? convertPrice(allowance, 'CNY', currency, rates) : 0)
     : fullTotal ? convertPrice(delivery.total_low, offer.currency, currency, rates) : null;
-  const high = item.priceUnavailable ? null : country === 'CN'
+  const high = item.priceUnavailable || (country === 'CN' && (china?.starting || china?.partial)) ? null : country === 'CN'
     ? chinaHigh === null ? null : chinaHigh + (frame ? convertPrice(allowance, 'CNY', currency, rates) : 0)
     : fullTotal ? convertPrice(delivery.total_high, offer.currency, currency, rates) : null;
   const freshChina = china && china.date <= asOf && (Date.parse(asOf) - Date.parse(china.date)) / 86400000 <= 90;
   // Display references stay separate from complete totals used by budgets and sorting.
   const chinaBuildAllowance = frame ? allowance : 0;
   const nativeLow = china ? china.low + chinaBuildAllowance : frame ? item.frameLow + allowance : item.priceLowCny;
-  const nativeHigh = china ? china.high + chinaBuildAllowance : frame ? (item.frameHigh ?? item.frameLow) + allowance : item.priceHighCny;
+  const nativeHigh = china ? (china.high ?? china.low) + chinaBuildAllowance : frame ? (item.frameHigh ?? item.frameLow) + allowance : item.priceHighCny;
   const display = {
     low: Number.isFinite(low) ? low : item.priceUnavailable ? null : convertPrice(nativeLow, 'CNY', currency, rates),
     high: Number.isFinite(high) ? high : item.priceUnavailable ? null : convertPrice(nativeHigh, 'CNY', currency, rates),
     basis: fullTotal ? 'delivered' : china ? frame ? 'china-build' : 'china' : frame ? 'build-reference' : 'reference',
-    nativeLow, nativeHigh,
+    nativeLow, nativeHigh, starting: Boolean(china?.starting), partial: Boolean(china?.partial),
     approximate: fullTotal ? state === 'estimated' || offer.currency !== currency : frame || !china || china.approximate || currency !== 'CNY'
   };
   return { low, high, currency, offer, frame, state, china, chinaLow, chinaHigh, referenceLow, referenceHigh,

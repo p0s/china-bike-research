@@ -1,5 +1,9 @@
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
+  "First-order offer": "Erstbestellungsangebot",
+  "Subsidy offer": "Subventionsangebot",
+  "Coupon or selected-offer eligibility": "Berechtigung für Gutschein oder ausgewähltes Angebot",
+
   "China price": "China-Preis",
   "Reference estimate": "Referenzschätzung",
   "Build reference": "Aufbau-Richtwert",
@@ -1388,6 +1392,7 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `Bedingter Preis; den tatsächlich berechtigten Checkout-Preis eingeben. ${t(condition)} · ${amount} · ${date}`],
     [/^Category: (.+)\.$/, (_, label) => `Kategorie: ${t(label)}.`],
     [/^Up to (.+) rear$/, (_, amount) => `Bis ${amount} hinten`],
     [/^(.+) total remaining-build allowance in yuan$/, (_, plan) => `${t(plan)}: Gesamtzuschlag für den Restaufbau in Yuan`],
@@ -1470,6 +1475,17 @@ Object.assign(de, {
   "Choose an exact starting point": "Genauen Ausgangspunkt wählen",
   "Requested starting point": "Angeforderter Ausgangspunkt",
   "The requested starting point is unavailable. Choose an exact replacement to calculate totals.": "Der angeforderte Ausgangspunkt ist nicht verfügbar. Wählen Sie einen genauen Ersatz, um Summen zu berechnen.",
+  "Complete build price unknown": "Preis für kompletten Aufbau unbekannt",
+  "Foreign reference estimate": "Ausländische Referenzschätzung",
+  "Conditional price": "Bedingter Preis",
+  "Starting price; selected package unknown": "Ab-Preis; ausgewähltes Paket ungeklärt",
+  "Historical reference": "Historische Referenz",
+  "Purchase total incomplete": "Kaufgesamtpreis unvollständig",
+  "From": "Ab",
+  "The recorded frame price does not establish an MTB complete-build cost. A compatible bill of materials and exact quote are required.": "Der dokumentierte Rahmenpreis belegt keine Kosten für einen kompletten MTB-Aufbau. Eine kompatible Teileliste und ein genaues Angebot sind erforderlich.",
+  "Foreign-source reference; enter the exact purchase quote before using planner totals.": "Ausländische Quellenreferenz; vor Verwendung der Plansummen das genaue Kaufangebot eingeben.",
+  "Reference or incomplete purchase price excluded; enter the exact purchase quote.": "Referenz oder unvollständiger Kaufpreis ausgeschlossen; genaues Kaufangebot eingeben.",
+  "Starting price; enter the exact selected-package purchase quote.": "Ab-Preis; genaues Kaufangebot für das ausgewählte Paket eingeben.",
   "Exact build price unknown": "Preis der genauen Ausstattung unbekannt",
   "Unmatched price retained as reference": "Nicht zugeordneter Preis bleibt als Referenz erhalten",
   "Reference only; exact build price unknown": "Nur Referenz; Preis der genauen Ausstattung unbekannt",

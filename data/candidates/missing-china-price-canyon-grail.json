@@ -47,6 +47,19 @@
     "currency": "CNY",
     "observed_at": "2026-09-25",
     "price_type": "official-current-mainland-listing",
-    "price_basis": "Exact Canyon China Grail CF 7 page price; CNY 14,700 crossed out, CNY 749 estimated delivery/packaging excluded from the amount; VAT and customs excluded. The page is member-only and requires size selection."
-  }
+    "price_basis": "Exact Canyon China Grail CF 7 page price; CNY 14,700 crossed out, CNY 749 estimated delivery/packaging excluded from the amount; VAT and customs excluded. The page is member-only and requires size selection.",
+    "conditional": true,
+    "purchase_total_complete": false,
+    "conditions": "Exact Canyon China Grail CF 7 page price; CNY 14,700 crossed out, CNY 749 estimated delivery/packaging excluded from the amount; VAT and customs excluded. The page is member-only and requires size selection."
+  },
+  "prior_price_observations": [
+    {
+      "low_cny": 11700,
+      "high_cny": 14700,
+      "currency": "CNY",
+      "observed_at": "2026-08-17",
+      "price_type": "official-conflict",
+      "price_basis": "official China page and an official promotional crawl that could not be reproduced on page open"
+    }
+  ]
 }

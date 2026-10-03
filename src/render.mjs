@@ -5,6 +5,7 @@ import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { renderVideoEntries } from './lib/videos.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName } from '../assets/regional-prices.js';
+import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis } from './lib/regional-prices.mjs';
 import {
   categoryLabel,
@@ -738,6 +739,10 @@ function candidateMetric(entry) {
   };
 }
 
+function candidateFrameEstimateAllowed(entry) {
+  return entry.kind === 'frameset' && ['road', 'gravel', 'triathlon'].includes(categoryFamily(entry.category));
+}
+
 function candidatePriceBounds(entry) {
   if (entry.candidate.comparison_eligibility?.price === false) return {};
   if (!entry.price) return {};
@@ -751,12 +756,13 @@ function candidateFramePriceTerm(entry) {
 }
 
 function isReferenceConversionPrice(price) {
-  return ['reference-conversion', 'official-global-store-reference-conversion', 'seller-listing-reference-conversion'].includes(price?.price_type);
+  return /conversion/.test(price?.price_type ?? '') || Boolean(price?.original_currency && price.original_currency !== 'CNY');
 }
 
 function candidatePriceLabel(ctx, entry) {
   if (entry.candidate.comparison_eligibility?.price === false) return 'Exact build price unknown';
   if (!entry.price) return entry.candidate.status === 'superseded' ? 'Not sold new' : '—';
+  if (entry.kind === 'frameset' && !candidateFrameEstimateAllowed(entry)) return 'Complete build price unknown';
   if (entry.kind !== 'frameset') {
     const price = formatPrice(entry.price);
     return isReferenceConversionPrice(entry.price) ? `Est. ${price}` : price;
@@ -778,19 +784,20 @@ function candidatePriceState(entry) {
   const basis = priceType === 'seller-listing-reference-conversion'
     ? 'Foreign seller FX estimate'
     : isReferenceConversionPrice(entry.price)
-      ? 'Official FX estimate'
+      ? (priceType === 'reference-conversion' || /official-/.test(priceType)) ? 'Official FX estimate' : 'Foreign reference estimate'
       : priceType === 'official-conflict'
         ? 'Official price conflict'
         : entry.priceKind === 'official' || priceType.startsWith('official-') ? 'Official' : 'Observed';
   const framePrice = entry.kind === 'frameset' ? `${candidateFramePriceTerm(entry)} ${formatPrice(entry.price)}` : '';
-  return [framePrice, basis, entry.price.observed_at].filter(Boolean).join(' · ');
+  const evidence = priceEvidence(entry.price);
+  return [framePrice, basis, evidence.conditional ? 'Conditional price' : '', evidence.starting ? 'Starting price; selected package unknown' : '', evidence.historical ? 'Historical reference' : '', evidence.partial ? 'Purchase total incomplete' : '', entry.price.observed_at].filter(Boolean).join(' · ');
 }
 
 function candidatePriceRecordLabel(entry) {
   if (entry.candidate.comparison_eligibility?.price === false) return 'Reference only; exact build price unknown';
   const priceType = entry.price?.price_type ?? '';
   if (priceType === 'seller-listing-reference-conversion') return 'Foreign seller FX estimate';
-  if (isReferenceConversionPrice(entry.price)) return 'Official FX estimate';
+  if (isReferenceConversionPrice(entry.price)) return (priceType === 'reference-conversion' || /official-/.test(priceType)) ? 'Official FX estimate' : 'Foreign reference estimate';
   if (priceType === 'official-conflict') return 'Official price conflict';
   if (entry.priceKind === 'official' || priceType.startsWith('official-')) return 'Official reference';
   return 'Observed market record';
@@ -832,11 +839,11 @@ function candidateRow(ctx, entry) {
   const sourceName = `<a href="${detailUrl}" data-model-link>${escapeHtml(candidate.name)}</a>`;
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
   const allowance = buildAssumption(ctx).amount_cny;
-  const isPricedFrameset = entry.kind === 'frameset' && Number.isFinite(frameLow);
+  const isPricedFrameset = candidateFrameEstimateAllowed(entry) && Number.isFinite(frameLow);
   const priceHigh = entry.kind === 'complete-bike'
     ? frameHigh ?? ''
     : isPricedFrameset ? frameHigh + allowance : '';
-  const priceSort = Number.isFinite(entry.priceMidpoint)
+  const priceSort = (entry.kind !== 'frameset' || candidateFrameEstimateAllowed(entry)) && Number.isFinite(entry.priceMidpoint)
     ? entry.priceMidpoint + (isPricedFrameset ? allowance : 0)
     : '';
   const framePriceData = isPricedFrameset
@@ -931,7 +938,7 @@ function candidateComparisonSummary(ctx, entry) {
   const metric = candidateMetric(entry);
   const tireClearance = candidateTireClearance(entry);
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
-  const estimated = entry.kind === 'frameset' && Number.isFinite(frameLow);
+  const estimated = candidateFrameEstimateAllowed(entry) && Number.isFinite(frameLow);
   const assumption = buildAssumption(ctx);
   const image = imageUrl(ctx, entry.image);
   const facts = entry.candidate.facts ?? {};
@@ -944,9 +951,8 @@ function candidateComparisonSummary(ctx, entry) {
   const weightGrams = entry.kind === 'complete-bike' ? completeWeight : entry.kind === 'frameset' ? facts.frame_weight_g : null;
   const priceDetails = entry.candidate.status === 'superseded'
     ? candidatePublicText(entry.candidate.availability_note)
-    : estimated
-    ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds ${formatCny(assumption.amount_cny)} for the selected ${assumption.label}.`
     : [
+        estimated ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds ${formatCny(assumption.amount_cny)} for the selected ${assumption.label}.` : '',
         entry.price?.price_basis ? `Recorded basis: ${entry.price.price_basis}.` : '',
         entry.price?.conditions ?? ''
       ].filter(Boolean).join(' ');
@@ -961,12 +967,12 @@ function candidateComparisonSummary(ctx, entry) {
       imageRemote: entry.image?.hosting.mode === 'remote',
       ...comparisonImageFields(ctx, entry.image)
     } : {}),
-    type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
-    ...(entry.kind && entry.builderEligible ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
+    type: entry.kind === 'frameset' ? estimated ? 'Frame estimate' : 'Frameset' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
+    ...(entry.kind && entry.builderEligible && (entry.kind !== 'frameset' || candidateFrameEstimateAllowed(entry)) ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
-    priceLowCny: Number.isFinite(frameLow) ? frameLow + (estimated ? assumption.amount_cny : 0) : null,
-    priceHighCny: Number.isFinite(frameHigh) ? frameHigh + (estimated ? assumption.amount_cny : 0) : null,
-    priceUnavailable: entry.candidate.status === 'superseded' || !entry.identifiableModel || entry.candidate.comparison_eligibility?.price === false,
+    priceLowCny: (entry.kind !== 'frameset' || estimated) && Number.isFinite(frameLow) ? frameLow + (estimated ? assumption.amount_cny : 0) : null,
+    priceHighCny: (entry.kind !== 'frameset' || estimated) && Number.isFinite(frameHigh) ? frameHigh + (estimated ? assumption.amount_cny : 0) : null,
+    priceUnavailable: (entry.kind === 'frameset' && !candidateFrameEstimateAllowed(entry)) || entry.candidate.status === 'superseded' || !entry.identifiableModel || entry.candidate.comparison_eligibility?.price === false,
     chinaPrice: entry.identifiableModel && entry.candidate.comparison_eligibility?.price !== false && entry.price ? chinaPriceBasis([{ ...entry.price, observed_at: entry.price.observed_at ?? entry.candidate.observed_at }]) : null,
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
@@ -1335,7 +1341,7 @@ export function renderModel(ctx, product) {
     ? `The displayed ${formatAllInPrice(product)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the latest frame price.`
     : `The recorded complete-bike price is ${formatAllInPrice(product)}; the dated price record below preserves its channel and conditions.`;
   const modelPriceAttributes = variant.kind === 'frameset'
-    ? ` data-model-frame-price-low="${product.allInPrice.frameLow}" data-model-frame-price-high="${product.allInPrice.frameHigh}" data-model-default-allowance="${assumption.amount_cny}"`
+    ? ` data-model-frame-price-low="${product.allInPrice.frameLow}" data-model-frame-price-high="${product.allInPrice.frameHigh}" data-model-default-allowance="${assumption.amount_cny}"${priceEvidence(product.latestPrice).starting ? ' data-model-price-starting' : ''}`
     : '';
   const modelName = `${brand.name} ${variant.name}`;
   const modelTrail = [{
@@ -1523,7 +1529,11 @@ export function renderCandidateModel(ctx, entry) {
   const priceState = candidatePriceState(entry);
   const sellerListingFxReference = entry.price?.price_type === 'seller-listing-reference-conversion';
   const assumption = buildAssumption(ctx);
-  const priceBrief = candidate.comparison_eligibility?.price === false
+  const priceBrief = entry.kind === 'frameset' && !candidateFrameEstimateAllowed(entry)
+    ? translate('The recorded frame price does not establish an MTB complete-build cost. A compatible bill of materials and exact quote are required.', ctx.locale)
+    : /supplier|owner-reported/.test(entry.price?.price_type ?? '')
+      ? translate('Foreign-source reference; enter the exact purchase quote before using planner totals.', ctx.locale)
+      : candidate.comparison_eligibility?.price === false
     ? translate('The retained price is not matched to this exact build; its purchase price remains unknown.', ctx.locale)
     : ctx.locale === 'zh-Hans'
     ? !entry.price
@@ -1551,10 +1561,10 @@ export function renderCandidateModel(ctx, entry) {
         ? `${candidatePriceLabel(ctx, entry)} is a dated currency conversion of an official non-mainland price, not a confirmed China checkout price.`
         : `The recorded complete-bike price is ${candidatePriceLabel(ctx, entry)}; its date and basis remain visible below.`;
   const sourceNote = candidate.source_note ? candidatePublicText(candidate.source_note) : '';
-  const type = entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike lead';
+  const type = entry.kind === 'frameset' ? candidateFrameEstimateAllowed(entry) ? 'Frame estimate' : 'Frameset' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike lead';
   const candidateSeoProduct = entry.identifiableModel && !['Identity not confirmed', 'Exact configuration not confirmed'].includes(maturity);
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
-  const modelPriceAttributes = entry.kind === 'frameset' && Number.isFinite(frameLow)
+  const modelPriceAttributes = candidateFrameEstimateAllowed(entry) && Number.isFinite(frameLow)
     ? ` data-model-frame-price-low="${frameLow}" data-model-frame-price-high="${frameHigh}" data-model-default-allowance="${assumption.amount_cny}"`
     : '';
   const pageTitle = brand?.name && candidate.name.toLowerCase().startsWith(brand.name.toLowerCase())
@@ -1577,7 +1587,7 @@ export function renderCandidateModel(ctx, entry) {
     ${relatedArticleLinks(ctx, candidate.id)}
     ${brandStory(brand)}
     ${videoContext(entry.videos)}
-    <details class="detail-panel" id="source-records"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(ctx, entry)}</div></details>
+    <details class="detail-panel" id="source-records"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span><p>${escapeHtml([entry.price.original_currency ? `${entry.price.original_amount} ${entry.price.original_currency} · ${entry.price.conversion_rate_cny_per_original_unit} CNY/${entry.price.original_currency} · ${entry.price.conversion_rate_date}` : '', entry.price.price_basis, entry.price.conditions].filter(Boolean).join(' · '))}</p></div>${(candidate.prior_price_observations ?? []).map((prior) => `<div><strong>${escapeHtml(formatPrice(prior))}</strong><span>${escapeHtml(prior.observed_at)} · Historical reference${prior.price_type === 'official-conflict' ? ' · Official price conflict' : ''}</span><p>${escapeHtml(prior.price_basis ?? '')}</p></div>`).join('')}</div>` : ''}${candidateSourceList(ctx, entry)}</div></details>
   </div></div></section>`;
   return page(ctx, {
     title: ctx.locale === 'zh-Hans' ? `${pageTitle}：${entry.kind === 'frameset' ? '车架组' : '整车配置'}研究与来源` : `${pageTitle} — ${entry.kind === 'frameset' ? 'frameset' : 'bike build'} research`,
@@ -1714,7 +1724,19 @@ function builderPriceBounds(price) {
   return { low, high };
 }
 
+function builderConditionalPriceNote(price) {
+  const condition = price.price_basis === 'first_order' ? 'First-order offer'
+    : price.price_basis === 'subsidy' ? 'Subsidy offer'
+      : 'Coupon or selected-offer eligibility';
+  return `Conditional price; enter your eligible checkout quote. ${condition} · ${formatPrice(price)} · ${price.observed_at}`;
+}
+
 function builderCandidatePrice(price) {
+  if (priceEvidence(price).conditional) return {low:null, high:null, note:builderConditionalPriceNote(price)};
+  const evidence = priceEvidence(price);
+  if (evidence.historical || evidence.starting || evidence.partial || (evidence.reference && !isReferenceConversionPrice(price))) return {
+    low: null, high: null, note: 'Reference or incomplete purchase price excluded; enter the exact purchase quote.'
+  };
   if (isReferenceConversionPrice(price)) {
     return {
       low: null,
@@ -1747,8 +1769,9 @@ function builderBases(ctx) {
       kind: product.variant.kind,
       stage: 'published',
       category: categoryFamily(product.platform.category),
-      priceLow: isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
-      priceHigh: isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
+      priceLow: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
+      priceHigh: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
+      priceNote: priceEvidence(product.latestPrice).conditional ? builderConditionalPriceNote(product.latestPrice) : priceEvidence(product.latestPrice).starting ? 'Starting price; enter the exact selected-package purchase quote.' : '',
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'
@@ -1764,7 +1787,7 @@ function builderBases(ctx) {
     };
   });
   const candidates = joinCatalogCandidates(ctx.data)
-    .filter((entry) => entry.kind && entry.builderEligible)
+    .filter((entry) => entry.kind && entry.builderEligible && (entry.kind !== 'frameset' || candidateFrameEstimateAllowed(entry)))
     .map((entry) => {
       const facts = entry.candidate.facts ?? {};
       const { low, high, note } = builderCandidatePrice(entry.candidate.comparison_eligibility?.price === false ? null : entry.price);

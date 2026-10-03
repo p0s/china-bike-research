@@ -3,6 +3,7 @@ import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
 import { validateImageHealthCheck } from './image-health.mjs';
 import { editorialReviewIssues } from './editorial-review.mjs';
+import { priceEvidence } from './price-evidence.mjs';
 import { validateRegionalPricing } from './regional-prices.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
@@ -640,7 +641,7 @@ export function validateDataset(data = loadDataset()) {
         }
       }
     }
-    for (const [priceKey, candidatePrice] of [['observed_price', candidate.observed_price], ['official_price', candidate.official_price]]) {
+    for (const [priceKey, candidatePrice] of [['observed_price', candidate.observed_price], ['official_price', candidate.official_price], ['current_observed_price', candidate.current_observed_price]]) {
       if (candidatePrice === undefined) continue;
       if (!isObject(candidatePrice)) {
         errors.push(`candidate ${candidate.id}: ${priceKey} must be an object`);
@@ -975,12 +976,13 @@ export function allInPriceFor(variant, price, data = loadDataset()) {
   }
   const buildAmount = variant.kind === 'frameset' ? framesetBuildAssumption(data).amount_cny : 0;
   const low = rawLow + buildAmount;
-  const high = (rawHigh ?? rawLow) + buildAmount;
+  const high = priceEvidence(price).starting ? undefined : (rawHigh ?? rawLow) + buildAmount;
   return {
     estimated: variant.kind === 'frameset',
     low,
     high,
-    midpoint: Math.round((low + high) / 2),
+    midpoint: high === undefined ? Number.POSITIVE_INFINITY : Math.round((low + high) / 2),
+    starting: priceEvidence(price).starting,
     buildAmount,
     frameLow: rawLow,
     frameHigh: rawHigh ?? rawLow
@@ -1102,15 +1104,16 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const categories = categoryValues(candidate.category);
       const observedPrice = candidate.observed_price ?? null;
       const officialPrice = candidate.official_price ?? null;
+      const currentObservedPrice = candidate.current_observed_price ?? null;
       const preferredPrice = candidate.reference_price_kind === 'official'
         ? officialPrice
         : candidate.reference_price_kind === 'observed'
           ? observedPrice
           : null;
-      const price = preferredPrice ?? [observedPrice, officialPrice]
+      const price = preferredPrice ?? [currentObservedPrice, observedPrice, officialPrice]
         .filter(Boolean)
         .sort((a, b) => String(b.observed_at ?? '').localeCompare(String(a.observed_at ?? '')))[0] ?? null;
-      const priceKind = price === observedPrice ? 'observed' : price === officialPrice ? 'official' : '';
+      const priceKind = price === observedPrice || price === currentObservedPrice ? 'observed' : price === officialPrice ? 'official' : '';
       const sourceIds = candidate.source_ids ?? [];
       const candidateSources = sourceIds.map((id) => sources.get(id)).filter(Boolean);
       const source = candidateSources.find((item) => item?.url) ?? null;
@@ -1178,7 +1181,7 @@ export function formatPrice(price) {
   return formatRange(low, high);
 }
 export function formatAllInPrice(product) {
-  return formatRange(product.allInPrice.low, product.allInPrice.high, { estimated: product.allInPrice.estimated });
+  return `${product.allInPrice.starting ? 'From ' : ''}${formatRange(product.allInPrice.low, product.allInPrice.high, { estimated: product.allInPrice.estimated })}`;
 }
 export function maxClearance(platform) {
   const c = platform.tire_clearance;
