@@ -25,10 +25,11 @@ test('the 50-approach audit retains new live gaps until the campaign is extended
   const report = auditResearch50Campaign(campaign, loadDataset(), '2026-08-29');
   assert.equal(report.counts.fields, campaign.field_count);
   assert.equal(report.counts.complete + report.counts.incomplete, campaign.field_count);
-  const newTargets = ['airwolf-yf-r003', 'camp-gx600-pes', 'mondince-fm316', 'seka-exaero-road', 'seraph-tt-x68-new-udh', 'twitter-gravel-v3', 'twitter-v3-rs-sensah', 'twitter-v3-wheeltop-eds', 'velobuild-cx-002-2023', 'xlab-rs9'];
+  const newTargets = ['airwolf-yf-r003', 'camp-gx600-pes', 'mondince-fm316', 'seka-exaero-road', 'seraph-tt-x68-new-udh', 'twitter-gravel-v3', 'twitter-v3-rs-sensah', 'twitter-v3-wheeltop-eds', 'velobuild-cx-002-2023', 'xlab-rs9', 'lightcarbon-lcg071s-pro-frameset'];
   const expectedTargets = newTargets;
+  // S-PRO now retains platform-only photo scope, leaving exact-package photo identity unresolved.
   // The fresh GX600 official list price does not establish selected-SKU stock.
-  assert.equal(report.counts.uncovered_current_fields, 16);
+  assert.equal(report.counts.uncovered_current_fields, 17);
   assert.ok(report.uncovered_current_fields.some((field) => field.key === 'variant:camp-gx600-pes:purchase-route'));
   assert.deepEqual([...new Set(report.uncovered_current_fields.map((field) => field.target.record_id))].sort(), expectedTargets.sort());
   assert.ok(!report.uncovered_current_fields.some((field) => field.target.record_id === 'sava-gelaro' && field.field === 'bottom-bracket'));

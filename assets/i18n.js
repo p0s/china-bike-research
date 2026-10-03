@@ -1,3 +1,4 @@
+import { translateImageText } from './image-i18n.js';
 import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
@@ -686,6 +687,8 @@ export function translate(value, locale = 'en') {
   if (locale === 'de') return translateGerman(value);
   if (locale !== 'zh-Hans' || typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
+  const imageText = translateImageText(value, locale);
+  if (imageText !== value) return imageText;
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [

@@ -1,3 +1,4 @@
+import { translateImageText } from './image-i18n.js';
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
   "China price": "China-Preis",
@@ -1382,6 +1383,8 @@ Object.assign(de, {
 export function translateGerman(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
+  const imageText = translateImageText(value, 'de');
+  if (imageText !== value) return imageText;
   const pad = (result) => value.replace(text, result);
   if (Object.hasOwn(de, text)) return pad(de[text]);
   const t = translateGerman;

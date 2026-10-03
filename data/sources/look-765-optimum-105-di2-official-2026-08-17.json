@@ -12,5 +12,14 @@
     "price": "low",
     "image": "high"
   },
-  "notes": "Official exact-model or exact-platform page used for image identity. Mainland price, stock, configuration and warranty evidence remain separately unresolved."
+  "notes": "Official exact-model or exact-platform page used for image identity. The frozen 2026-10-03 manufacturer product/outlet review supports the carbon/glass-fibre construction detail; that detail is not stated by the linked 2022 press-release PDF. Mainland price, stock, configuration and warranty evidence remain separately unresolved.",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "notes": "Official exact-model or exact-platform page used for image identity. Mainland price, stock, configuration and warranty evidence remain separately unresolved."
+      },
+      "reason": "Attribute the supported glass-fibre detail to the already linked product/outlet page; original access date is preserved."
+    }
+  ]
 }

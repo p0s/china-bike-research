@@ -4,7 +4,7 @@
   "role": "gallery",
   "label": "LCG071 Pro raw-carbon frameset",
   "sort_order": 10,
-  "subject_accuracy": "exact-platform",
+  "subject_accuracy": "illustrative",
   "media_type": "official-product-photo",
   "hosting": {
     "mode": "local",
@@ -38,7 +38,7 @@
   },
   "credit": "XHS · LightCarbon轻碳工厂店",
   "alt": "Two sides of the LightCarbon LCG071 Pro carbon frameset",
-  "display_note": "Official frameset presentation; the build shown in other images may differ.",
+  "display_note": "Different PRO cockpit configuration; omitted from the S-PRO buyer images.",
   "source_media_page_url": "https://www.xiaohongshu.com/explore/6826d673000000002102d738",
   "source_media_sha256": "eb22e3f05421207bab24a60cbcc96ba280073331a9fa0c537e298560c67395e4",
   "editorial_quotation": {
@@ -56,5 +56,16 @@
     "account_identifiers": "none-visible",
     "location_identifiers": "none-visible"
   },
-  "reviewed_at": "2026-09-29"
+  "reviewed_at": "2026-09-29",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "subject_accuracy": "exact-platform",
+        "display_note": "Official frameset presentation; the build shown in other images may differ."
+      },
+      "reason": "The original public caption identifies LCG071 Pro. No exact S-PRO configuration relationship is established."
+    }
+  ],
+  "buyer_visibility": "omit"
 }
