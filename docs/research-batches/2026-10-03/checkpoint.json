@@ -1,19 +1,38 @@
 {
-  "as_of": "2026-10-03",
-  "base_commit": "12e2c64638dc3571e90e34881fc8bd32a29b8a02",
-  "verified_checkout": "isolated linked worktree bike-enrichment-current-main",
-  "catalog_rows": 263,
-  "displayed_images_before": 141,
-  "displayed_images_current": 202,
-  "added_facts_current": 94,
-  "baseline_files": 5683,
-  "semantic_preservation": "Passed original 148,289 and current-main 148,426 prior values or array members",
-  "collaborator_commit": "8211c9cb02220095bbbd8827df39b07c71e8e759",
-  "compatibility": "Final patch applies cleanly over merged PR161 with its own coverage baseline regenerated",
-  "remaining": "LightCarbon complete gallery batches T1/T2/T3 and sequential XHS evidence batches; then complete preservation, privacy, checks and authorized feature-branch PR/merge",
-  "publication": "User authorized feature branch PR and merge after expanded research; XHS owner evidence authorized; raw captures stay local",
-  "reconciled_commit": "12e2c64638dc3571e90e34881fc8bd32a29b8a02",
-  "validated": "427 tests, 885 pages and SEO passed on merged PR161 checkpoint",
-  "geometry_transcriptions": 18,
-  "workflow_decision": "[workflow-decision:keep]"
+  "workflow_decision": "[workflow-decision:keep]",
+  "checkout": "isolated actual repository worktree",
+  "branch": "codex/evidence-complete-enrichment-2026-10-03",
+  "baseline_head": "767278d9548ba743148f65b7d67053a87fb3699b",
+  "batches": [
+    "A-M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "R2",
+    "S",
+    "T1",
+    "T2",
+    "T3",
+    "U"
+  ],
+  "done": [
+    "All263 catalog rows inventoried and retained",
+    "98 candidate fields,18 full geometry tables and111 sources added",
+    "473 image records added; usable model imagery141 to202",
+    "LightCarbon410 gallery records and1 explicitly labelled CAD rendering",
+    "67 campaign details assessed;9 dated low-confidence public sources retained"
+  ],
+  "next": [
+    "Complete reconciled431-test gate and production build",
+    "Verify desktop/mobile output and immutable preservation",
+    "Publish reviewed feature PR, wait checks and merge; verify existing deployment"
+  ],
+  "blockers": [
+    "SpeedZ exact identity/photo unresolved",
+    "61 thumbnails still unavailable; strict selected-build unknowns remain explicit"
+  ],
+  "validation": "PR161 full427-test checkpoint passed; PR162 reconciliation verification in progress",
+  "mutation_authority": "Authorized feature-branch PR and merge; no direct main push; raw research and private information excluded"
 }
