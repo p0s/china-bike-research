@@ -1752,7 +1752,15 @@ function builderPriceBounds(price) {
   return { low, high };
 }
 
+function builderConditionalPriceNote(price) {
+  const condition = price.price_basis === 'first_order' ? 'First-order offer'
+    : price.price_basis === 'subsidy' ? 'Subsidy offer'
+      : 'Coupon or selected-offer eligibility';
+  return `Conditional price; enter your eligible checkout quote. ${condition} · ${formatPrice(price)} · ${price.observed_at}`;
+}
+
 function builderCandidatePrice(price) {
+  if (priceEvidence(price).conditional) return {low:null, high:null, note:builderConditionalPriceNote(price)};
   const evidence = priceEvidence(price);
   if (evidence.historical || evidence.starting || evidence.partial || (evidence.reference && !isReferenceConversionPrice(price))) return {
     low: null, high: null, note: 'Reference or incomplete purchase price excluded; enter the exact purchase quote.'
@@ -1789,9 +1797,9 @@ function builderBases(ctx) {
       kind: product.variant.kind,
       stage: 'published',
       category: categoryFamily(product.platform.category),
-      priceLow: priceEvidence(product.latestPrice).starting ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
-      priceHigh: priceEvidence(product.latestPrice).starting ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
-      priceNote: priceEvidence(product.latestPrice).starting ? 'Starting price; enter the exact selected-package purchase quote.' : '',
+      priceLow: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
+      priceHigh: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
+      priceNote: priceEvidence(product.latestPrice).conditional ? builderConditionalPriceNote(product.latestPrice) : priceEvidence(product.latestPrice).starting ? 'Starting price; enter the exact selected-package purchase quote.' : '',
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'

@@ -58,7 +58,8 @@ test('US delivery needs an explicit supported area; partial listings have no num
   const supported = regionalPrice(bike, preferences('US', 'USD', 'contiguous'), payload);
   assert.equal(supported.state, 'estimated');
   assert.equal(supported.low, 1699);
-  assert.ok(supported.difference.low > 0);
+  // A conditional China offer cannot certify a delivered-price difference.
+  assert.equal(supported.difference, null);
   assert.equal(regionalPrice(bike, preferences('US', 'USD', 'remote'), payload).state, 'unavailable');
 });
 test('destination restrictions override old broad EU observations', () => {

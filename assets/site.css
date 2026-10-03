@@ -682,7 +682,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .builder-frame-row select { width: min(520px, 70vw); padding: 7px 32px 7px 10px; font-size: 1.03rem; font-weight: 720; }
 .builder-frame-row p { margin: 7px 0 0; color: var(--muted); font-size: .72rem; }
 .builder-base-control { display: grid; gap: 7px; min-width: 0; }
-+.builder-starting-point-warning { margin: 0; padding: 10px; border: 1px solid var(--line); border-radius: 8px; font-weight: 650; }
+.builder-starting-point-warning { margin: 0; padding: 10px; border: 1px solid var(--line); border-radius: 8px; font-weight: 650; }
 .builder-base-custom { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; max-width: 520px; }
 .builder-base-custom[hidden] { display: none; }
 .builder-base-custom label { display: grid; gap: 3px; color: var(--muted); font-size: .61rem; font-weight: 680; }
