@@ -736,7 +736,10 @@ test('brand names expose an exact, base-safe catalog filter', () => {
   assert.match(html, /data-brand="twitter"/);
   assert.match(html, /data-brand-filter="twitter" aria-pressed="false" aria-label="Twitter · 骓特 — filter catalog to this brand"/);
   assert.match(html, /data-result-context/);
-  assert.match(html, /class="product-image-link" href="\/china-bike-research\/models\/twitter-v3-wheeltop-eds\/" data-model-link aria-label="View Twitter Gravel V3 WheelTop EDS 2×12 details"/);
+  assert.match(html, /class="product-image-link" href="\/china-bike-research\/models\/twitter-v3-wheeltop-eds\/" data-model-link>/);
+  const photoLinks = [...html.matchAll(/<a class="product-image-link"[^>]*>([\s\S]*?)<\/a>/g)];
+  assert.ok(photoLinks.length > 0);
+  assert.ok(photoLinks.every(([, image]) => /alt="[^"]+"/.test(image)), 'photo links keep an accessible name from the image description');
   assert.match(html, /select name="category" data-filter-category/);
   assert.match(html, /data-id="candidate-basso-venta-disc" data-brand="candidate-brand-basso"/);
   assert.match(html, /data-brand-filter="candidate-brand-basso" aria-pressed="false" aria-label="BASSO — filter catalog to this brand"/);

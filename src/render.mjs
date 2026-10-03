@@ -184,7 +184,7 @@ function candidateImage(ctx, entry) {
   const accuracy = entry.image.subject_accuracy ?? 'illustrative';
   const needsNote = !['exact-variant', 'exact-platform'].includes(accuracy);
   const detailUrl = url(ctx.base, `/models/${entry.candidate.id}/`);
-  const visual = `<a class="product-image-link" href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(entry.candidate.name)} details">${candidateImageElement(ctx, entry)}</a>`;
+  const visual = `<a class="product-image-link" href="${detailUrl}" data-model-link>${candidateImageElement(ctx, entry)}</a>`;
   return `<span class="product-image">${visual}${needsNote ? infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'], {}, 'image-info') : ''}</span>`;
 }
 
@@ -245,7 +245,7 @@ function infoTip(label, lines, attributes = {}, wrapperClass = '') {
   const extra = Object.entries(attributes)
     .map(([name, value]) => ` ${escapeAttr(name)}="${escapeAttr(value)}"`)
     .join('');
-  return `<span class="tooltip${wrapperClass ? ` ${escapeAttr(wrapperClass)}` : ''}"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-expanded="false" aria-controls="shared-tooltip" data-tooltip-lines="${escapeAttr(content)}"${extra}><span aria-hidden="true">i</span></button></span>`;
+  return `<span class="tooltip${wrapperClass ? ` ${escapeAttr(wrapperClass)}` : ''}"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-expanded="false" aria-controls="shared-tooltip" data-tooltip-lines="${escapeAttr(content)}"${extra}>i</button></span>`;
 }
 
 function buildAssumption(ctx) {
@@ -653,7 +653,7 @@ function productImage(ctx, product, { hero = false, href = '' } = {}) {
   const needsNote = !['exact-variant', 'exact-platform'].includes(accuracy);
   const image = imageElement(ctx, product, { hero });
   const visual = href
-    ? `<a class="product-image-link" href="${escapeAttr(href)}" data-model-link aria-label="View ${escapeAttr(product.brand.name)} ${escapeAttr(product.variant.name)} details">${image}</a>`
+    ? `<a class="product-image-link" href="${escapeAttr(href)}" data-model-link>${image}</a>`
     : image;
   return `<span class="product-image ${hero ? 'hero-image' : ''}">${visual}${needsNote ? infoTip('About this image', [accuracyLabel(accuracy), product.image?.display_note ?? 'The image identifies the product family but may not show the exact listed components.'], {}, 'image-info') : ''}</span>`;
 }
