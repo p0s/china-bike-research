@@ -2,6 +2,18 @@ import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  "China price": "中国价格",
+  "Reference estimate": "参考估算",
+  "Build reference": "装车参考值",
+  "Max delivered price": "最高到手总价",
+  "Delivered price: low to high": "到手总价：从低到高",
+  "Delivered price: high to low": "到手总价：从高到低",
+  "Sort by delivered totals; reference estimates follow.": "按到手总价排序；参考估算排在后面。",
+  "Sort by China totals; reference estimates follow.": "按中国总价排序；参考估算排在后面。",
+  "Buying in China. Prices retain their observation dates and conditions. Reference estimates are excluded from budget filters.": "在中国购买。价格保留原观察日期和适用条件；预算筛选不包含参考估算。",
+  "Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.": "优先显示到手总价；否则显示中国参考价格，不含运费及进口费用。预算筛选仅使用到手总价。",
+  "Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.": "配送目的地与显示币种独立选择。主价格优先显示有记录支持的到手总价或商家支持的配送估算；否则按所选币种换算中国境内价格，下方显示人民币金额。缺少境内证据时，目录金额标为参考估算；车架装车总价标为中国装车估算或装车参考值。这些参考值不含运费及进口费用，也不参与到手总价的预算筛选或排序。百分比对比相同整车配置的到手总价。日期、条件及原币种报价保留在价格详情中。",
+
   'Ship to':'配送至',
   'Shipping destination':'配送目的地',
   'Choose destination':'选择配送目的地',

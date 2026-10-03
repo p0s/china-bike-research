@@ -94,6 +94,51 @@ test('China buyers see a domestic value; missing domestic evidence remains unkno
   assert.equal(cn.difference, null);
   assert.equal(regionalPrice({ ...bike, chinaPrice: null }, preferences('CN', 'CNY'), payload).low, null);
 });
+test('unknown and partial delivery totals promote domestic references without inventing a budget total', () => {
+  for (const destination of [preferences('DE', 'EUR'), preferences('US'), preferences('CA', 'CAD'), preferences('', 'USD')]) {
+    const result = regionalPrice(bike, destination, payload);
+    assert.equal(result.display.basis, 'china');
+    assert.equal(result.display.low, convertPrice(7999, 'CNY', destination.currency, payload.rates));
+    assert.equal(result.display.nativeLow, 7999);
+    assert.equal(result.display.approximate, true);
+    assert.equal(result.low, null);
+    assert.equal(result.high, null);
+    assert.equal(result.difference, null);
+  }
+  const delivered = regionalPrice(bike, preferences('US', 'USD', 'contiguous'), payload);
+  assert.equal(delivered.display.basis, 'delivered');
+  assert.equal(delivered.display.low, 1699);
+});
+test('foreign catalog references never become domestic China prices, including for China shoppers', () => {
+  for (const country of ['DE', 'CN']) {
+    const result = regionalPrice({ ...bike, chinaPrice: null }, preferences(country, 'USD'), payload);
+    assert.equal(result.display.basis, 'reference');
+    assert.equal(result.display.low, convertPrice(12089, 'CNY', 'USD', payload.rates));
+    assert.equal(result.display.nativeLow, 12089);
+    assert.equal(result.low, null);
+    assert.equal(result.difference, null);
+  }
+});
+test('frameset fallback shows the complete planning amount while keeping the frame quote separate', () => {
+  const frame = { id: 'winspace-g5-frameset', estimated: true, frameLow: 14756, frameHigh: 14756 };
+  const reference = regionalPrice(frame, preferences('US', 'USD', 'contiguous'), payload, 6000);
+  assert.equal(reference.display.basis, 'build-reference');
+  assert.equal(reference.display.nativeLow, 20756);
+  assert.equal(reference.offer.amount, 2200);
+  assert.equal(reference.low, null);
+  const domestic = regionalPrice({ ...frame, chinaPrice: { ...bike.chinaPrice, low: 5000, high: 5500 } }, preferences('DE', 'EUR'), payload, 7000);
+  assert.equal(domestic.display.basis, 'china-build');
+  assert.equal(domestic.display.nativeLow, 12000);
+  assert.equal(domestic.display.nativeHigh, 12500);
+  assert.equal(domestic.display.low, convertPrice(12000, 'CNY', 'EUR', payload.rates));
+  assert.equal(domestic.low, null);
+  assert.equal(domestic.difference, null);
+});
+test('unavailable evidence remains empty even when the record has a numeric reference', () => {
+  const result = regionalPrice({ ...bike, priceUnavailable: true }, preferences('DE', 'EUR'), payload);
+  assert.equal(result.display.low, null);
+  assert.equal(result.display.high, null);
+});
 test('frameset offers never become complete-build delivered prices or percentages', () => {
   const frame = { id: 'winspace-g5-frameset', estimated: true, frameLow: 14756, frameHigh: 14756 };
   const result = regionalPrice(frame, preferences('US', 'USD', 'contiguous'), payload, 6000);

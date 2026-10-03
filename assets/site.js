@@ -705,11 +705,21 @@ void import('./analytics-event.js').then((events) => {
     catalogRoot.querySelector('[data-delivery-area-control]').hidden = activeCountry !== 'US';
     catalogRoot.querySelector('[data-destination-suggestion]').hidden = destinationReason !== 'suggested';
     const heading = sortHeadingByKey.get('price')?.querySelector('span');
-    if (heading) heading.textContent = `${translate(activeCountry === 'CN' ? 'Full-bike price' : 'Delivered price', locale)} · ${currency}`;
+    if (heading) heading.textContent = `${translate('Price', locale)} · ${currency}`;
+    const domestic = activeCountry === 'CN';
+    const priceSortLabel = domestic ? 'Price' : 'Delivered price';
+    for (const [direction, words] of [['asc', 'low to high'], ['desc', 'high to low']]) {
+      const option = sort?.querySelector(`option[value="price-${direction}"]`);
+      if (option) option.textContent = translate(`${priceSortLabel}: ${words}`, locale);
+    }
+    const budgetLabel = catalogRoot.querySelector('[data-price-budget-label]');
+    if (budgetLabel) budgetLabel.textContent = translate(domestic ? 'Max full-bike price' : 'Max delivered price', locale);
+    const sortButton = sortHeadingByKey.get('price');
+    if (sortButton) sortButton.title = translate(domestic ? 'Sort by China totals; reference estimates follow.' : 'Sort by delivered totals; reference estimates follow.', locale);
     catalogRoot.querySelector('[data-price-currency]').textContent = currency;
     const note = catalogRoot.querySelector('[data-price-region-note]');
     note.hidden = false;
-    note.textContent = `${translate(activeCountry === 'CN' ? 'Buying in China. Prices retain their observation dates and conditions.' : '≈ delivery totals are seller estimates. The China difference uses the same build; incomplete totals have no percentage.', locale)} `;
+    note.textContent = `${translate(domestic ? 'Buying in China. Prices retain their observation dates and conditions. Reference estimates are excluded from budget filters.' : 'Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.', locale)} `;
     const exchangeSource = document.createElement('a');
     exchangeSource.href = regionalData.rates.source;
     exchangeSource.rel = 'noreferrer';
@@ -720,6 +730,7 @@ void import('./analytics-event.js').then((events) => {
       if (!item) return;
       const original = originalPrices.get(item.id);
       const cell = row.querySelector('.price-cell');
+      if (cell) cell.dataset.label = translate('Price', locale);
       const primary = cell?.querySelector('[data-calculated-price]') ?? cell?.querySelector('.metric-main');
       const tip = cell?.querySelector('[data-tooltip-lines]');
       cell?.querySelectorAll('[data-regional-offer]').forEach((link) => link.remove());
@@ -745,16 +756,17 @@ void import('./analytics-event.js').then((events) => {
         const native = formatMoneyRange(china.low, china.high, 'CNY', locale, { approximate: china.approximate });
         const display = currency !== 'CNY' ? ` (${formatMoneyRange(projection.chinaLow, projection.chinaHigh, currency, locale, { approximate: true })})` : '';
         chinaLine = `${translate(projection.frame ? 'Frame in China' : 'China', locale)}: ${native}${display}${china.conditional ? ` · ${translate('conditional', locale)}` : ''} · ${china.date}`;
-      } else chinaLine = `${translate('China price unavailable', locale)} · ${translate('Catalog reference', locale)}: ${reference}`;
-      if (state === 'china' && Number.isFinite(projection.low)) {
-        item.price = `${projection.frame ? `${translate('Est.', locale)} ` : ''}${formatMoneyRange(projection.low, projection.high, currency, locale, { approximate: china.approximate || projection.converted })}`;
-      } else if (['confirmed', 'estimated'].includes(state)) {
-        item.price = `${formatMoneyRange(projection.low, projection.high, currency, locale, { approximate: state === 'estimated' || projection.converted })} ${translate(state === 'estimated' ? 'estimated delivered' : 'delivered', locale)}`;
-      } else if (state === 'partial' && !projection.frame) {
-        item.price = `${formatMoneyRange(projection.listAmount, projection.listAmount, currency, locale, { approximate: projection.converted })} + ${translate('shipping/tax', locale)}`;
-      } else item.price = translate(state === 'china' ? 'China price unavailable' : state === 'choose-destination' ? 'Choose destination' : state === 'build-unknown' ? 'Build delivery total unavailable' : 'Delivery total unavailable', locale);
+      } else chinaLine = `${translate('Catalog reference', locale)}: ${reference}`;
+      const display = projection.display;
+      const basisLabel = { china: 'China price', 'china-build': 'China build estimate', reference: 'Reference estimate', 'build-reference': 'Build reference' }[display.basis];
+      item.price = formatMoneyRange(display.low, display.high, currency, locale, { approximate: display.approximate });
+      if (display.basis === 'delivered') item.price += ` ${translate(state === 'estimated' ? 'estimated delivered' : 'delivered', locale)}`;
       if (primary) primary.textContent = item.price;
-      if (subline) subline.textContent = state === 'china' ? china ? `${china.conditional ? `${translate('conditional', locale)} · ` : ''}${china.date}${currency !== 'CNY' ? ` · ${formatMoneyRange(china.low, china.high, 'CNY', locale)}` : ''}` : `${translate('Catalog reference', locale)}: ${reference}` : chinaLine;
+      if (subline) subline.textContent = display.basis === 'delivered' ? chinaLine : [
+        translate(basisLabel, locale),
+        ...(currency !== 'CNY' ? [formatMoneyRange(display.nativeLow, display.nativeHigh, 'CNY', locale, { approximate: display.basis !== 'china' || china?.approximate })] : []),
+        ...(china ? [china.conditional ? translate('conditional', locale) : '', china.date] : [])
+      ].filter(Boolean).join(' · ');
       const difference = differenceLabel(projection.difference);
       if (difference) {
         const delta = document.createElement('span');
@@ -767,6 +779,7 @@ void import('./analytics-event.js').then((events) => {
       const lines = [
         `${translate('Catalog reference', locale)}: ${reference}. ${original.state}`,
         chinaLine,
+        ...(!domestic ? [translate(state === 'choose-destination' ? 'Choose destination' : projection.frame ? 'Build delivery total unavailable' : !['confirmed', 'estimated'].includes(state) ? 'Delivery total unavailable' : 'Delivered price', locale)] : []),
         ...(china?.conditions ? [translate(china.conditions, locale)] : []),
         `${translate('ECB reference rates', locale)}: ${regionalData.rates.rate_date}.`,
         translate('China difference = (delivered total − China equivalent) ÷ delivered total. It is a market price gap, not an importing saving.', locale),
