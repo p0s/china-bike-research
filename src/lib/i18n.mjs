@@ -16,7 +16,7 @@ function clarifyMainland(value) {
     .replace(/\bnon-mainland\b(?![-\s]+Chin(?:a|ese)\b)/gi, (match) => match[0] === 'N' ? 'Outside mainland China' : 'outside mainland China')
     .replace(/\bmainland\b(?![-\s]+Chin(?:a|ese)\b)/gi, (match) => `${match} China`);
 }
-const displayPayloadKeys = new Set(['priceDetails', 'verdict', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'drivetrain', 'weightBasis', 'tireClearanceLabel', 'tireClearanceNote', 'note', 'frame', 'categoryMetric', 'categoryMetricLabel', 'type', 'category', 'manufacturing', 'mounts', 'internalFrameStorage', 'drivetrainSubline', 'bestFor']);
+const displayPayloadKeys = new Set(['priceDetails', 'verdict', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'drivetrain', 'weightBasis', 'tireClearanceLabel', 'tireClearanceNote', 'forkCaliperNote', 'geometryWarning', 'note', 'frame', 'categoryMetric', 'categoryMetricLabel', 'type', 'category', 'manufacturing', 'mounts', 'internalFrameStorage', 'drivetrainSubline', 'bestFor']);
 function clarifyDisplayPayload(value, key = '', locale = 'en') {
   if (Array.isArray(value)) return value.map((item) => clarifyDisplayPayload(item, key, locale));
   if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([name, item]) => [name, clarifyDisplayPayload(item, name, locale)]));
@@ -81,7 +81,7 @@ export function localizeJson(value, options = {}, key = '') {
   if (typeof value !== 'string') return value;
   // IDs, categories used by filters, source URLs and media paths are not translations.
   if (['url', '@id', 'item', 'mainEntityOfPage', 'citation'].includes(key)) return localizedHref(value, options);
-  if (['name', 'description', 'reviewBody', 'label', 'title', 'value', 'price', 'tireClearance', 'weight', 'drivetrain', 'imageAccuracy', 'imageAlt', 'categoryLabel', 'frameMaterial', 'verdict', 'priceDetails', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'weightBasis', 'tireClearanceLabel', 'tireClearanceNote', 'note'].includes(key)) return translate(value, options.locale);
+  if (['name', 'description', 'reviewBody', 'label', 'title', 'value', 'price', 'tireClearance', 'weight', 'drivetrain', 'imageAccuracy', 'imageAlt', 'categoryLabel', 'frameMaterial', 'verdict', 'priceDetails', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'weightBasis', 'tireClearanceLabel', 'tireClearanceNote', 'forkCaliperNote', 'geometryWarning', 'note'].includes(key)) return translate(value, options.locale);
   return value;
 }
 export function localizeHtml(html, options = {}) {

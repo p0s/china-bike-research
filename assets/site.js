@@ -1935,7 +1935,8 @@ void import('./analytics-event.js').then((events) => {
       base.priceNote || '',
       base.weightBasis || '',
       base.tireClearanceNote || '',
-      base.drivetrainCompatibility?.note || ''
+      base.drivetrainCompatibility?.note || '',
+      base.forkCaliperNote || ''
     ].filter(Boolean).join(' · ');
     if (state.unavailableStartingPoint && baseFacts) baseFacts.textContent = `${translate('Requested starting point', document.documentElement.lang)}: ${state.requestedBaseId}`;
     if (buildName) buildName.textContent = state.unavailableStartingPoint
