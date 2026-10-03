@@ -7,10 +7,8 @@
   "required": [
     "id",
     "provider",
-    "youtube_video_id",
     "title",
     "channel_name",
-    "channel_url",
     "url",
     "language",
     "accessed_at",
@@ -23,47 +21,92 @@
     "summary"
   ],
   "properties": {
-    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
-    "provider": { "const": "youtube" },
-    "youtube_video_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
-    "title": { "type": "string", "minLength": 1 },
-    "channel_name": { "type": "string", "minLength": 1 },
-    "channel_url": { "type": "string", "format": "uri" },
-    "url": { "type": "string", "format": "uri" },
-    "language": { "type": "string", "minLength": 2 },
-    "published_at": { "type": "string", "format": "date" },
-    "accessed_at": { "type": "string", "format": "date" },
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "provider": {"enum": ["youtube", "xhs"]},
+    "youtube_video_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"},
+    "title": {"type": "string", "minLength": 1},
+    "channel_name": {"type": "string", "minLength": 1},
+    "channel_url": {"type": "string", "format": "uri"},
+    "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "language": {"type": "string", "minLength": 2},
+    "published_at": {"type": "string", "format": "date"},
+    "accessed_at": {"type": "string", "format": "date"},
     "target": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "platform_id": { "type": "string" },
-        "variant_id": { "type": "string" },
-        "candidate_id": { "type": "string" }
+        "platform_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "variant_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "candidate_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"}
       },
-      "oneOf": [
-        { "required": ["platform_id"] },
-        { "required": ["variant_id"] },
-        { "required": ["candidate_id"] }
+      "oneOf": [{"required": ["platform_id"]}, {"required": ["variant_id"]}, {"required": ["candidate_id"]}]
+    },
+    "match": {"enum": ["exact-platform", "exact-variant", "exact-model-lead"]},
+    "format": {"enum": ["hands-on-review", "long-term-review", "model-overview", "build-and-ride"]},
+    "relationship": {
+      "enum": [
+        "retailer-linked",
+        "brand-published",
+        "product-supplied",
+        "publication-review",
+        "owner-review",
+        "community-post",
+        "unknown"
       ]
     },
-    "match": { "enum": ["exact-platform", "exact-variant", "exact-model-lead"] },
-    "format": { "enum": ["hands-on-review", "long-term-review", "model-overview", "build-and-ride"] },
-    "relationship": { "enum": ["retailer-linked", "product-supplied", "publication-review", "owner-review"] },
     "timestamps": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
         "required": ["label", "at_seconds"],
+        "properties": {"label": {"type": "string", "minLength": 1}, "at_seconds": {"type": "number", "minimum": 0}}
+      }
+    },
+    "disclosure": {"type": "string", "minLength": 20},
+    "disclosure_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "summary": {"type": "string", "minLength": 30},
+    "xhs_post_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"},
+    "source_capture_archive": {"type": "string", "pattern": "^xhs-complete-[^/]+\\.zip$"},
+    "source_archive_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"provider": {"const": "youtube"}}},
+      "then": {
+        "required": ["youtube_video_id", "channel_url"],
         "properties": {
-          "label": { "type": "string", "minLength": 1 },
-          "at_seconds": { "type": "number", "minimum": 0 }
+          "url": {"pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$"},
+          "channel_url": {"pattern": "^https://(www\\.)?youtube\\.com(?:/|$)"}
+        },
+        "not": {
+          "anyOf": [
+            {"required": ["xhs_post_id"]},
+            {"required": ["source_capture_archive"]},
+            {"required": ["source_archive_sha256"]}
+          ]
         }
       }
     },
-    "disclosure": { "type": "string", "minLength": 20 },
-    "disclosure_url": { "type": "string", "format": "uri" },
-    "summary": { "type": "string", "minLength": 30 }
-  }
+    {
+      "if": {"properties": {"provider": {"const": "xhs"}}},
+      "then": {
+        "required": ["xhs_post_id", "source_capture_archive", "source_archive_sha256"],
+        "properties": {"url": {"pattern": "^https://www\\.xiaohongshu\\.com/explore/[a-f0-9]{24}$"}},
+        "not": {"anyOf": [{"required": ["youtube_video_id"]}, {"required": ["timestamps"]}]}
+      }
+    },
+    {
+      "if": {"properties": {"target": {"required": ["platform_id"]}}},
+      "then": {"properties": {"match": {"const": "exact-platform"}}}
+    },
+    {
+      "if": {"properties": {"target": {"required": ["variant_id"]}}},
+      "then": {"properties": {"match": {"const": "exact-variant"}}}
+    },
+    {
+      "if": {"properties": {"target": {"required": ["candidate_id"]}}},
+      "then": {"properties": {"match": {"const": "exact-model-lead"}}}
+    }
+  ]
 }

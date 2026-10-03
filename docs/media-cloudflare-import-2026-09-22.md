@@ -1,5 +1,7 @@
 # Reviewed media imported for the Cloudflare build
 
+This is the historical 2026-09-22 import inventory. Current buyer-facing product photos use reviewed, compressed local derivatives under [SPEC.md](../SPEC.md), including later bounded official/retailer and public-post/listing migrations. Image records and their responsive manifests describe the current selection and hosting; this dated table is not the complete current asset inventory. Raw source files remain outside Git. No migration entry establishes a redistribution license or broader copying authority.
+
 On 2026-09-22 the VPS `china-bike-media` public mount was read through the
 approved VPS wrapper at `/srv/china-bike-media/public/media/xhs/`. It contained
 only the optimized derivatives listed below (plus one XDS manifest); no raw
@@ -19,8 +21,6 @@ Assets.
 | `pardus-uragano-evo` | `public-pardus-uragano-evo-build-2026-08-17` | `7d366937bdaecca1f35ae5a101483856cc0f9093b1c1008fd73292aac2d5aaa1` · 25,258 B · 480×640 | `925778505e41933897591f1b7a82895a790b8b8badd05082e6a4840e523e3c88` · 70,694 B · 1080×1440 |
 | `xds-gt600` | `public-xds-gt600-retailer-build-2026-08-27` | `448f7d812db3aaaed18b24fab9e49717c06d53476eca863dddf3caf02479e0d8` · 35,626 B · 480×652 | `b06bac58cbf42c48d15f56af9f35efc601ea0df0c4810a57b2c3c816b85ca941` · 84,702 B · 1080×1467 |
 
-The remaining public derivatives stay on their existing reviewed hosting
-routes. No newly discovered or third-party original image was imported for
-this migration. The Cloudflare build’s `npm run image:report` is the required
-post-import check; any source or media change must keep this bounded inventory
-and the current `SPEC.md` media contract intact.
+At the end of this 2026-09-22 batch, the remaining public derivatives stayed on their then-existing reviewed hosting routes. No newly discovered or third-party original image was imported in that batch. Later migrations supersede that historical serving state without changing the hashes recorded here.
+
+For current media changes, run `npm run image:report` and retain the exact source, owner/credit, model scope, rights metadata, card/detail hashes and dimensions, alt text, completed privacy review, removal route and omission fallback required by `SPEC.md`. Displayed assets are local; historical remote references remain provenance only.
