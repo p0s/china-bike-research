@@ -19,7 +19,10 @@
     "lightcarbon-lcr015-d-alibaba-supplier-2026-09-01",
     "usd-cny-central-parity-2026-07-31",
     "lightcarbon-lcr015-d-supplier-current-2026-09-23",
-    "ecb-reference-rates-2026-09-22"
+    "ecb-reference-rates-2026-09-22",
+    "lightcarbon-lcr015-d-enrichment-2026-10-03",
+    "lightcarbon-lcr015-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-lcr015-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCR015-D aero road disc frame",
@@ -34,7 +37,11 @@
     "sizes": "48, 51, 54 and 57",
     "geometry": "Reach 369–404.3 mm; stack 524–571.2 mm; 405 mm chainstays; 68 mm BB drop",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "frame material current conflict": "2026-10-02 page hero says T700, while its specification table says T700 + T800. Both claims remain attributed; exact lay-up is unpublished.",
+    "brake mount current conflict": "2026-10-02 page hero says 140/160 mm rotors, while its specification table says 140 mm. Confirm the exact adapter and fork/frame before use.",
+    "cockpit options": "Manufacturer HBR11 widths 380/400/420/440 mm; stems 90/100/110/120 mm.",
+    "geometry complete current manufacturer table": "Exact current manufacturer table observed 2026-10-03. Printed size columns: 480 / 510 / 540 / 570. BODY HEIGHT: 155-164cm / 165-174cm / 175-183cm / 184-193cm; Remarks For BODY HEIGHT: For reference only, may vary due to different body proportions. /; SEATPOST INSERT LENGTH: 200mm / 250mm / 270mm / 280mm; REACH: 369mm / 392.8mm / 395.4mm / 404.3mm; TOP TUBE LENGTH, HORIZONTAL: 525mm / 550mm / 570mm / 590mm; STACK: 524mm / 533mm / 553.8mm / 571.2mm; WHEELBASE: 956mm / 985mm / 985.5mm / 1002.6mm; CHAINSTAY LENGTH: 405mm / 405mm / 405mm / 405mm; FRONT CENTER: 561mm / 586.6mm / 590.2mm / 604.2mm; BB DROP: 68mm / 68mm / 68mm / 68mm; BB HEIGHT: 372mm / 372mm / 372mm / 372mm; SEAT TUBE ANGLE: 73.5° / 73.5° / 72.5° / 72°; HEAD TUBE ANGLE: 72.5° / 73° / 73.5° / 73.5°; SEAT TUBE LENGTH: 480mm / 510mm / 540mm / 570mm; HEAD TUBE LENGTH: 120mm / 130mm / 150mm / 170mm; BIKE STANDOVER HEIGHT(700C*28C): 745mm / 776mm / 800mm / 822mm; FORK RAKE/OFFSET: 45mm / 45mm / 45mm / 45mm; FORK LENGTH, FULL: 370mm / 370mm / 370mm / 370mm; TRAIL: 60.4mm / 58.4mm / 53.8mm / 53.8mm. BB HEIGHT literally prints372mm in all four columns. Retain unchanged. Manufacturer-published values, not independent measurements. Existing historical range and catalog values remain separately retained."
   },
   "source_note": "The exact current Alibaba index card attributes US$500–590, MOQ 1 set, to Xiamen Lightcarbon for LCR015-D. The linked product page returned no readable text. This CNY range is a dated supplier-reference conversion, not a mainland checkout; exact size, finish, cockpit, shipping, tax, duties and stock remain unverified.",
   "last_reviewed": "2026-09-23",
@@ -52,5 +59,29 @@
     "conversion_rate_date": "2026-09-22",
     "price_basis": "Exact LCR015-D Alibaba supplier-card range converted at the dated ECB cross-rate",
     "conditions": "Supplier-card reference only, MOQ 1 set; product-detail page yielded no readable text; selected size, finish, cockpit, freight, tax, duties, live stock, actual FX and mainland checkout unverified."
-  }
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr015-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "frame material current conflict",
+        "brake mount current conflict",
+        "cockpit options"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr015-d-complete-geometry-recheck-2026-10-03"
+      ],
+      "fields": [
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

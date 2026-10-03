@@ -1,0 +1,69 @@
+{
+  "id": "hi-light-g7-2-frameset-enrichment-2026-10-03",
+  "candidate_id": "hi-light-g7-2",
+  "role": "primary",
+  "subject_accuracy": "exact-platform",
+  "media_type": "official-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/official/hi-light-g7-2-official-primary-image/268fac71c4fceaa7-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/hi-light-g7-2-official-primary-image/7952c92a4a3abe32-card-w480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6474,
+        "sha256": "7952c92a4a3abe3269ff8d66011b7ebda11a7313b72c15eb57b68458365edc39",
+        "format": "image/webp",
+        "quality": 84
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/hi-light-g7-2-official-primary-image/268fac71c4fceaa7-detail-w1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 24632,
+        "sha256": "268fac71c4fceaa7956acb26b060fe7b881574e510f29820260a8efe81fece97",
+        "format": "image/webp",
+        "quality": 86
+      }
+    ]
+  },
+  "source_id": "hi-light-g7-2-enrichment-2026-10-03",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Hi-Light",
+    "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
+  },
+  "credit": "Product image © Hi-Light / Beijing Hanglun",
+  "alt": "Hi-Light G7.2 titanium gravel frameset and fork",
+  "display_note": "Exact G7.2 titanium frameset and fork from the official Japan product page; shared reviewed derivatives do not establish the selected mainland package or complete-bike components.",
+  "reviewed_at": "2026-10-03",
+  "source_media_url": "https://storage.googleapis.com/studio-design-asset-files/projects/JpOLjRr8aQ/s-1200x800_v-fms_webp_8dcc921b-e805-49ec-888c-6ec5ea39d07a.jpg",
+  "source_media_page_url": "https://hilight.jp/g7-2",
+  "source_media_sha256": "2fe8c6297356b8045bc9a27c6fef86868de0d50044c34699b659136fef412b25",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-03",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "review_evidence": {
+    "reviewed_at": "2026-10-03",
+    "source_ids": [
+      "hi-light-g7-2-enrichment-2026-10-03",
+      "titanium-hi-light-g7-2-grx-gr1600-official"
+    ],
+    "conclusion": "Existing immutable derivative pixels were reviewed and show the G7.2 bare titanium frame and fork. Original image record and hashes remain unchanged."
+  }
+}

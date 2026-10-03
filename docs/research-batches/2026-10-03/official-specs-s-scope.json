@@ -1,0 +1,864 @@
+{
+  "id": "official-specs-s-2026-10-03",
+  "frozen_at": "2026-10-03",
+  "authority": "Renewed user request for remaining exact product identity and imagery research",
+  "max_models": 8,
+  "max_atomic_fields": 16,
+  "steps": [
+    "Inspect current candidates, accepted source metadata and latest field ledgers",
+    "Freeze exact identity/image fields and one new source-discovery route per target",
+    "Run bounded public discovery and accept only exact attributable sources",
+    "Save dated truthful outcomes and send useful leads to writer"
+  ],
+  "done_criteria": "All8targets have two explicit identity/image dispositions, actual routes/results and not-run channels. No selected-SKU, frame-family, stock/price, rights or exhaustive-status inference.",
+  "constraints": [
+    "Evidence-only: no product/repository edits, downloads, external mutations or subdelegation.",
+    "No XHS/browser lane; root owns authorized XHS runtime and sequential lane.",
+    "No reopening prior blocked/challenged pages or same source-family retries.",
+    "No guessed sourceURLs, duplicate keyword campaign or sibling/model/year/build substitution.",
+    "At most one focused official-model discovery query per target because no known productive exact primary/authorized product gallery route is established. One exact genuinely newly surfaced primary/authorized product result may be inspected as that same discovery route; no second source family.",
+    "Product media remains a URL lead until parent verifies pixels, exact version/scope, credit and rights."
+  ],
+  "targets": [
+    {
+      "id": "viqi-r8000",
+      "name": "ViQi 微琦 R8000 gravel road",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "010871d43e481ba872c8e6ce18fa13626e85840809b4af73a41a7f0a9bcf4c79",
+      "known_limitations": "The JD listing and 2026-09-24 index recheck identify a VIQI R8000 gravel-road listing, but the marketplace title does not identify frame or fork material. No exact manufacturer page was found; keep frame material, fork construction, carbon grade and lay-up unverified.",
+      "remaining_fields": [
+        "Exact complete-bike weight and weighing basis",
+        "Manufacturer-confirmed maximum tire clearance",
+        "Frame-specific material confirmation; carbon grade, lay-up, fork construction and exact frame, wheel, cockpit, brake, tire and size-specific BOM",
+        "Public purchase route, checkout conditions, returns, and domestic warranty"
+      ],
+      "accepted_sources": [
+        {
+          "id": "viqi-r8000-current-jd-2026-08-30",
+          "url": "https://www.jd.com/book/1318a62bdcf3128f2713.html",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "viqi-r8000-current-jd-recheck-2026-09-24",
+          "url": "https://www.jd.com/jiage/13186e3220ec8b4f997b.html?electedExtAttrSet=3883,&extAttrValue=expand_name,@196915::3883&sort_type=sort_default",
+          "accessed_at": "2026-09-24"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-viqi-r8000-frame-material-2026-08-30",
+          "field": "frame-material",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-viqi-r8000-tire-clearance-2026-08-30",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-viqi-r8000-drivetrain-2026-08-30",
+          "field": "drivetrain",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-viqi-r8000-identity-source-2026-08-30",
+          "field": "identity-source",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-viqi-r8000-frame-stiffness-2026-08-30",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-viqi-r8000-complete-weight-2026-08-30",
+          "field": "complete-weight",
+          "status": "blocked",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"VIQI\" \"R8000\" manufacturer product gallery",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    },
+    {
+      "id": "gito-wave",
+      "name": "GITO 捷拓 波浪 carbon-wheel listing (exact frame model unresolved)",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "a22abab8f2928e03b2eaf2605700e6b4e0d382b3983ed38ccb809dbb4f6c2c0e",
+      "known_limitations": "The retained seller title supplies 波浪 and carbon-frame context, but the chainstay marking remains unreadable. Current exact G530 evidence explicitly applies wave terminology to its carbon wheelset, and the indexed G525/530 listing also says 波浪碳轮; therefore the term is not treated as a verified frame-model identity. A fresh exact-name search on 2026-09-23 found no reliable frame-model link to this wave-wheel listing.",
+      "remaining_fields": [
+        "Exact frame model, model year/SKU, drivetrain, brakes, wheel depth, remaining BOM and complete-bike weight",
+        "Maximum tire clearance and exact carbon grade",
+        "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price"
+      ],
+      "accepted_sources": [
+        {
+          "id": "gito-g320-retailer-2026-08-29",
+          "url": "https://www.888bike.net/en/product/7515/gito-g320-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-r7120-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-45mm-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-bike",
+          "accessed_at": "2026-08-29"
+        },
+        {
+          "id": "gito-g530-retailer-2026-08-29",
+          "url": "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B8%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike",
+          "accessed_at": "2026-08-29"
+        },
+        {
+          "id": "gito-g530-taobao-index-2026-08-29",
+          "url": "https://tao.hooos.com/category_50018687_58.html",
+          "accessed_at": "2026-08-29"
+        },
+        {
+          "id": "gito-chinese-retail-2026-08-29",
+          "url": "https://www.ruten.com.tw/item/22614417383708/",
+          "accessed_at": "2026-08-29"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-gito-wave-tire-clearance-2026-08-29",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-gito-wave-frame-stiffness-2026-08-29",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-gito-wave-complete-weight-2026-08-29",
+          "field": "complete-weight",
+          "status": "blocked",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-gito-wave-frame-material-2026-08-29",
+          "field": "frame-material",
+          "status": "found",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-gito-wave-drivetrain-2026-08-29",
+          "field": "drivetrain",
+          "status": "blocked",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-gito-wave-identity-source-2026-08-29",
+          "field": "identity-source",
+          "status": "blocked",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"GITO\" \"波浪碳轮\" frame model manufacturer",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    },
+    {
+      "id": "irefox-by446",
+      "name": "IREFOX 火之狐 BY446 all-terrain",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "355b1b61940ea87428a3bb11ccb5783aa42ada803964f49dee5aea273e473e6d",
+      "known_limitations": "The retained exact seller card supports a carbon-frame IREFOX BY446; the current official Chinese catalog was directly checked on 2026-09-23 and does not list BY446. Generic IREFOX and differently branded BY446 supplier records still do not establish grade, fork, drivetrain, weight or maximum clearance.",
+      "remaining_fields": [
+        "Current exact IREFOX BY446 complete-bike weight and weighing basis",
+        "Exact drivetrain, wheels, brakes, and included accessories",
+        "Manufacturer-confirmed maximum tire clearance",
+        "Current purchase route, warranty, and return terms"
+      ],
+      "accepted_sources": [
+        {
+          "id": "irefox-current-catalog-2026-08-09",
+          "url": "https://irefox.net/cn/",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "irefox-current-catalog-2026-09-23",
+          "url": "https://irefox.net/cn/",
+          "accessed_at": "2026-09-23"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-irefox-by446-drivetrain-2026-08-30-b138-live-recheck-2026-09-25",
+          "field": "drivetrain",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-irefox-by446-complete-weight-2026-08-30-b138-live-recheck-2026-09-25",
+          "field": "complete-weight",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-irefox-by446-tire-clearance-2026-08-30-b157-2026-09-25",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-irefox-by446-frame-stiffness-2026-08-30",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-irefox-by446-frame-material-2026-08-30",
+          "field": "frame-material",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"BY446\" site:irefox.net product gallery",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    },
+    {
+      "id": "gito-gtv5-plus",
+      "name": "GITO 捷拓 G530 seller-listed 8.3 kg build",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "fe65f0fb6b9d2c13120f25b71d2bba7a52deb1d8aed8c8667a231ec55705480f",
+      "known_limitations": "The retained anonymized 2026-08-08 seller snapshot identifies a G530, Shimano mechanical 105, carbon wheels and an approximate 8.3 kg claim; size, accessories and weighing method are absent. A current retailer-indexed G530 listing claims a Toray T800 frame and a separate 105 2x12 mechanical/hydraulic build, but direct page access timed out and those parts do not verify the snapshot configuration. The old GTV5+ label is rejected.",
+      "remaining_fields": [
+        "Exact model year/SKU, wheel depth, remaining BOM and complete-weight size/equipment basis",
+        "Maximum tire clearance and retained-build carbon grade",
+        "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price",
+        "Exact 8.3 kg build size, included equipment and weighing method"
+      ],
+      "accepted_sources": [
+        {
+          "id": "gito-g530-retailer-2026-08-29",
+          "url": "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B8%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike",
+          "accessed_at": "2026-08-29"
+        },
+        {
+          "id": "gito-g530-taobao-index-2026-08-29",
+          "url": "https://tao.hooos.com/category_50018687_58.html",
+          "accessed_at": "2026-08-29"
+        },
+        {
+          "id": "gito-chinese-retail-2026-08-29",
+          "url": "https://www.ruten.com.tw/item/22614417383708/",
+          "accessed_at": "2026-08-29"
+        },
+        {
+          "id": "gito-g530-888bike-index-current-2026-09-23",
+          "url": "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike",
+          "accessed_at": "2026-09-23"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-gito-gtv5-plus-tire-clearance-b149-2026-09-25",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-gito-gtv5-plus-identity-source-2026-08-29",
+          "field": "identity-source",
+          "status": "found",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-gito-gtv5-plus-frame-material-2026-08-29",
+          "field": "frame-material",
+          "status": "found",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-gito-gtv5-plus-frame-stiffness-2026-08-29",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-gito-gtv5-plus-drivetrain-2026-08-29",
+          "field": "drivetrain",
+          "status": "found",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-gito-gtv5-plus-complete-weight-2026-08-29",
+          "field": "complete-weight",
+          "status": "found",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"GITO\" \"G530\" official product gallery",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    },
+    {
+      "id": "leinax-leina-road",
+      "name": "LEINAK 雷纳克 雷娜 carbon road",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "b871fba351885021e4640dec1c682ab5147b2cd82d5710dd2689514d77857ed2",
+      "known_limitations": "Earlier exact 雷娜 JD index evidence dated 2026-08-30 describes Toray carbon, hydraulic discs and separate Shimano 105 mechanical/Di2 2×12 options, without mapping the retained CNY 7,999 card. The 2026-09-23 direct JD recheck returned a generic Toray-carbon category page with no 雷娜 or option text. Current JD storefront identifies as 雷纳克自行车旗舰店 but is seller-authored brand context only. Keep the selected build unresolved and the corrected LEINAK / 雷纳克 rendering.",
+      "remaining_fields": [
+        "Exact retained SKU, selected 105 branch, complete BOM and complete-bike weight with measurement basis",
+        "Maximum tire clearance, meaningful stiffness evidence and current geometry",
+        "Exact domestic warranty route, authenticity and final checkout conditions"
+      ],
+      "accepted_sources": [
+        {
+          "id": "leinak-current-range-jd-2026-08-30",
+          "url": "https://www.jd.com/jiage/6728cfb9ee056be40f63.html",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "leinak-jd-store-2026-08-30",
+          "url": "https://mall.jd.com/introduction-16484185.html",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "leinak-leina-jd-2026-08-30",
+          "url": "https://www.jd.com/jiage/6524cb7b78d948999d5.html?electedExtAttrSet=&extAttrValue=expand_name%2C&page=2&sort_type=sort_default",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "leinak-leina-bilibili-2026-08-30",
+          "url": "https://www.bilibili.com/video/BV15SYVzAEbR/",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "leinak-leina-jd-index-recheck-2026-09-23",
+          "url": "https://www.jd.com/jiage/6524cb7b78d948999d5.html?electedExtAttrSet=&extAttrValue=expand_name%2C&page=2&sort_type=sort_default",
+          "accessed_at": "2026-09-23"
+        },
+        {
+          "id": "leinak-jd-storefront-current-2026-09-23",
+          "url": "https://mall.jd.com/introduction-16484185.html",
+          "accessed_at": "2026-09-23"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-leinax-leina-road-complete-weight-2026-08-30",
+          "field": "complete-weight",
+          "status": "blocked",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-leinax-leina-road-tire-clearance-2026-08-30",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-leinax-leina-road-frame-material-2026-08-30",
+          "field": "frame-material",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "found",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-leinax-leina-road-frame-stiffness-2026-08-30",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        },
+        {
+          "id": "candidate-leinax-leina-road-identity-source-2026-08-30",
+          "field": "identity-source",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "found",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-leinax-leina-road-drivetrain-2026-08-30",
+          "field": "drivetrain",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"LEINAK\" \"雷娜\" 官方 产品 图片",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    },
+    {
+      "id": "west-biking-team-road",
+      "name": "WEST BIKING 西骑者 Team edition carbon road",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "1aeed14986243a16403564b836167d2d5d7a820063dae9726ea9a56cf842adae",
+      "known_limitations": "A live JD model index links a specific XS R7120 mechanical hydraulic-disc team-edition build with T800 carbon and carbon wheels. Its item page exposes no readable checkout price or BOM in this review, the seller was not verified, and it is not mapped to the retained Aug 8 price observations. R8170 remains a separate configuration; no controlled weight or manufacturer maximum clearance was found in the earlier bounded sweep.",
+      "remaining_fields": [
+        "Link between the current JD R7120 XS item and retained 2026-08-08 price observations; exact checkout, full BOM, exact model year and seller authority",
+        "Exact complete-bike weight and weighing basis",
+        "Frame lay-up and fork construction",
+        "Manufacturer-confirmed maximum tire clearance",
+        "Seller authority, exact domestic warranty route, and final checkout conditions"
+      ],
+      "accepted_sources": [
+        {
+          "id": "west-biking-team-road-current-options-2026-08-30",
+          "url": "https://www.jd.com/xinghao/1318f839e4269a08e856.html",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "west-biking-team-road-jd-current-2026-09-23",
+          "url": "https://www.jd.com/xinghao/1318f839e4269a08e856.html",
+          "accessed_at": "2026-09-23"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-west-biking-team-road-complete-weight-b151-2026-09-25",
+          "field": "complete-weight",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-west-biking-team-road-tire-clearance-b151-2026-09-25",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-west-biking-team-road-frame-stiffness-b151-2026-09-25",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-west-biking-team-road-frame-material-2026-08-30",
+          "field": "frame-material",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-west-biking-team-road-drivetrain-2026-08-30",
+          "field": "drivetrain",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-west-biking-team-road-identity-source-2026-08-30",
+          "field": "identity-source",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"WEST BIKING\" \"Team\" \"R7120\" official product gallery",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    },
+    {
+      "id": "huanyu-az-one",
+      "name": "HUANYU 寰宇单车 AZ ONE / 青龙·赤子",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "078d833a076fe0984036d40ecd57bf9e21cd8c27a21148eec421a72f17045e43",
+      "known_limitations": "The retained seller card remains the only exact AZ ONE / 青龙·赤子 identity evidence. A current JD index shows separate HUANYU AZone TT and 青龙 TT listings but does not connect either to this exact seller-card identity; no alias or specification is inferred.",
+      "remaining_fields": [
+        "Exact drivetrain, cockpit, wheels, brakes, and storage package",
+        "Exact trim-to-price mapping",
+        "Current purchase route, warranty, and return terms"
+      ],
+      "accepted_sources": [
+        {
+          "id": "huanyu-azone-jd-index-2026-09-23",
+          "url": "https://www.jd.com/jiage/1318ef33768c430b38e7.html?catID=13806&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+          "accessed_at": "2026-09-23"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-huanyu-az-one-frame-material-b150-2026-09-25",
+          "field": "frame-material",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-huanyu-az-one-drivetrain-b150-2026-09-25",
+          "field": "drivetrain",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-huanyu-az-one-tire-clearance-b150-2026-09-25",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-huanyu-az-one-complete-weight-b150-2026-09-25",
+          "field": "complete-weight",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-huanyu-az-one-identity-source-2026-08-29",
+          "field": "identity-source",
+          "status": "found",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-huanyu-az-one-frame-stiffness-2026-08-29",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-08-29",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "temporarily-exhausted"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"AZ ONE\" \"青龙\" \"赤子\" manufacturer gallery",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    },
+    {
+      "id": "twitter-little-white-rabbit",
+      "name": "TWITTER 骓特 Little White Rabbit / 小白兔 custom",
+      "record_type": "candidate",
+      "fields": [
+        "exact-model-identity",
+        "image"
+      ],
+      "current_candidate_sha256": "54aacfe4a93a417fd44027db19382caf4feb53ca0dd4ddb20f171ada329c809b",
+      "known_limitations": "Current official-store and JD indexes establish the exact custom listing family and its full-carbon claim. They do not identify one selected drivetrain, underlying chassis, fiber grade or model-specific stiffness result.",
+      "remaining_fields": [
+        "Selected 24-speed mechanical versus Wheeltop wireless-electronic drivetrain and exact component models",
+        "Exact complete-bike weight and weighing basis",
+        "Manufacturer-confirmed maximum tire clearance",
+        "Underlying chassis, carbon grade, lay-up, fork construction and model-specific stiffness evidence",
+        "Selected seller authority, domestic warranty route and final checkout conditions"
+      ],
+      "accepted_sources": [
+        {
+          "id": "twitter-little-white-rabbit-tmall-mirror-2026-08-30",
+          "url": "https://tao.hooos.com/goods_ezZ6dg9SDtdemn4PNVT88Jczt0-A7AqqefKMGpkeZZFZ.html",
+          "accessed_at": "2026-08-30"
+        },
+        {
+          "id": "twitter-little-white-rabbit-jd-options-2026-08-30",
+          "url": "https://www.jd.com/xinkuan/13183502931ce9450271.html",
+          "accessed_at": "2026-08-30"
+        }
+      ],
+      "latest_prior_field_ledgers": [
+        {
+          "id": "candidate-twitter-little-white-rabbit-drivetrain-b155-2026-09-25",
+          "field": "drivetrain",
+          "status": "conflicted",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "conflicted"
+          }
+        },
+        {
+          "id": "candidate-twitter-little-white-rabbit-complete-weight-b155-2026-09-25",
+          "field": "complete-weight",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-twitter-little-white-rabbit-tire-clearance-b155-2026-09-25",
+          "field": "tire-clearance",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-twitter-little-white-rabbit-frame-stiffness-b155-2026-09-25",
+          "field": "frame-stiffness",
+          "status": "blocked",
+          "date": "2026-09-25",
+          "channel_statuses": {
+            "public-post": "carried-forward",
+            "web": "blocked"
+          }
+        },
+        {
+          "id": "candidate-twitter-little-white-rabbit-frame-material-2026-08-30",
+          "field": "frame-material",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        },
+        {
+          "id": "candidate-twitter-little-white-rabbit-identity-source-2026-08-30",
+          "field": "identity-source",
+          "status": "found",
+          "date": "2026-08-30",
+          "channel_statuses": {
+            "public-post": "blocked",
+            "web": "found"
+          }
+        }
+      ],
+      "new_route": {
+        "kind": "one-focused-official-model-gallery-discovery-query",
+        "query": "\"TWITTER\" \"小白兔\" \"定制款\" official product gallery",
+        "max_attempts": 1,
+        "purpose": "Seek a product-specific primary/authorized gallery or exact identity bridge absent from accepted source set, rather than reopening unresolved market indexes."
+      },
+      "unrun_channels": [
+        "public-post",
+        "XHS",
+        "browser"
+      ]
+    }
+  ]
+}

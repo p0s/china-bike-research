@@ -29,7 +29,8 @@
     "pardus-spark-sport-105-current-2026-08-30",
     "pardus-spark-gen3-current-index-2026-08-30",
     "pardus-spark-gen3-owner-2026-08-30",
-    "pardus-spark-sport-105-current-recheck-2026-09-23"
+    "pardus-spark-sport-105-current-recheck-2026-09-23",
+    "pardus-spark-enrichment-2026-10-03"
   ],
   "source_note": "Current 2026-09-23 manufacturer Spark Sport—105 page confirms HS-EPS+ carbon frame, HS-HPT carbon fork and a relative 20% prior-model pedaling-stiffness claim without a published protocol. These facts apply to that branch only. Retained cards still span incompatible prior-platform and 2026 Gen3 branches; their selected weights and maximum clearance remain unresolved.",
   "source_refs": "IMG_6875.png#R2, IMG_6876.png#R2, IMG_6886.png#R2",
@@ -42,5 +43,15 @@
     "frame_material": "Current prior-platform Spark Sport branch: HS-EPS+ carbon frame with HS-HPT carbon fork; exact fiber grades, proportions and lay-up are unpublished",
     "stiffness_evidence": "PARDUS claims the current prior-platform Spark Sport has 20% greater pedaling stiffness than the previous model due to revised tube shapes and HS high-strength carbon; manufacturer-relative evidence with no published protocol or independent exact-frame measurement"
   },
-  "source_url": "https://www.pardusbicycle.com/spark/"
+  "source_url": "https://www.pardusbicycle.com/spark/",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "pardus-spark-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

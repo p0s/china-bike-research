@@ -18,7 +18,10 @@
     "lightcarbon-about-official-2026-08-29",
     "lightcarbon-lcr017s-d-owner-quote-2025-04-09",
     "usd-cny-central-parity-2026-07-31",
-    "lightcarbon-lcr017s-d-official-price-recheck-2026-09-23"
+    "lightcarbon-lcr017s-d-official-price-recheck-2026-09-23",
+    "lightcarbon-lcr017s-d-enrichment-2026-10-03",
+    "lightcarbon-lcr017s-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-lcr017s-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCR017S-D super-light road disc frameset with separate stem",
@@ -36,7 +39,10 @@
     "sizes": "46, 49, 52, 54, 56 and 58",
     "geometry": "Reach 371–402.1 mm; stack 502.6–582.9 mm; 410 mm chainstays; 70 mm BB drop; 57.4–68.1 mm trail",
     "warranty": "Two years",
-    "stiffness_evidence": "Manufacturer process claim only; no independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "Manufacturer process claim only; no independent exact-model stiffness measurement recorded",
+    "manufacturer package": "Current manufacturer package: frame, fork, seatpost, clamp, headset, spacers, thru-axles and stem. T47 bottom bracket is a paid option, excluded by default; this does not establish the historical quoted package.",
+    "chainring compatibility": "Manufacturer maxima: Shimano 2x 55–42T / 1x 46T; SRAM 2x 56–43T / 1x 58T. Confirm exact crank and chainline before assembly.",
+    "geometry complete current manufacturer table": "Exact current manufacturer table observed 2026-10-03. Printed size columns: 460 / 490 / 520 / 540 / 560 / 580. BODY HEIGHT (Reference): 156-165cm / 166-172cm / 173 - 179cm / 180 - 186cm / 187 - 193cm / 194 - 199cm; Remarks for BODY HEIGHT: For reference only, may vary due to different body proportions.; SEATPOST INSERT LENGTH: 130mm / 150mm / 170mm / 190mm / 210mm / 230mm; REACH: 371mm / 385.1mm / 390.8mm / 390.8mm / 396.4mm / 402.1mm; TOP TUBE LENGTH, HORIZONTAL: 510mm / 525mm / 540mm / 550mm / 565mm / 580mm; STACK: 502.6mm / 505.4mm / 521.2mm / 541.9mm / 562.7mm / 582.9mm; WHEELBASE: 971.4mm / 986.6mm / 988.7mm / 990.8mm / 998.2mm / 1006.9mm; CHAINSTAY LENGTH: 410mm / 410mm / 410mm / 410mm / 410mm / 410mm; FRONT CENTER: 571.7mm / 586.8mm / 588.9mm / 590.9mm / 598.3mm / 607mm; BB DROP: 70mm / 70mm / 70mm / 70mm / 70mm / 70mm; BB HEIGHT: 278mm / 278mm / 278mm / 278mm / 278mm / 278mm; SEAT TUBE ANGLE: 74.5° / 74.5° / 74° / 73.6° / 73.3° / 73°; HEAD TUBE ANGLE: 71° / 71° / 72° / 72.5° / 73° / 73.3°; SEAT TUBE LENGTH: 460mm / 480mm / 500mm / 522mm / 542mm / 560mm; HEAD TUBE LENGTH: 105mm / 108mm / 121mm / 141mm / 161mm / 181mm; BIKE STANDOVER HEIGHT(700C*32C): 733.9mm / 753.6mm / 772mm / 793.1mm / 813mm / 831.3mm; FORK RAKE/OFFSET: 45mm / 45mm / 45mm / 45mm / 45mm / 45mm; FORK LENGTH, FULL: 368mm / 368mm / 368mm / 368mm / 368mm / 368mm; TRAIL: 68.1mm / 68.1mm / 63.7mm / 62.6mm / 59.3mm / 57.4mm. S-D full table was independently read on its own page. D-only catalog numbers are not assigned to S-D. Manufacturer-published values, not independent measurements. Existing historical range and catalog values remain separately retained."
   },
   "source_note": "The exact official page was rechecked on 2026-09-23 and publishes no price. Retain the 2025-04-09 owner-reported US$555 frame quotation and separately reported US$167 Italy shipping as historical only; no current quote or mainland checkout is established.",
   "last_reviewed": "2026-09-23",
@@ -52,5 +58,28 @@
     "conversion_rate_date": "2026-07-31",
     "price_basis": "Owner-reported US$555 LightCarbon LCR017S-D frame quotation converted at the dated central-parity reference",
     "conditions": "Reference only; US$167 Italy shipping, tax treatment, duties, actual FX, package changes and current availability are excluded"
-  }
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr017s-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "manufacturer package",
+        "chainring compatibility"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr017s-d-complete-geometry-recheck-2026-10-03"
+      ],
+      "fields": [
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

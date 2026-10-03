@@ -13,7 +13,8 @@
   "status": "exact-current-weight-material-and-price-confirmed",
   "source_ids": [
     "titanium-laget-aero-one-official",
-    "laget-aero-one-official-current-2026-09-23"
+    "laget-aero-one-official-current-2026-09-23",
+    "laget-aero-one-enrichment-2026-10-03"
   ],
   "official_price": {
     "amount_cny": 58800,
@@ -31,6 +32,19 @@
     "frame_weight_g": 1630,
     "frame_weight_basis": "Manufacturer claim for size M; finish is sandblasted with anodized logo and included-hardware basis is unpublished",
     "frame_material": "Fully 3D-printed titanium road frame with titanium fork",
-    "frame_stiffness_status": "No exact-model numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas"
-  }
+    "frame_stiffness_status": "No exact-model numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas",
+    "drivetrain compatibility": "Manufacturer explicitly lists wireless electronic shifting; mechanical compatibility is not inferred."
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "laget-aero-one-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "drivetrain compatibility"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

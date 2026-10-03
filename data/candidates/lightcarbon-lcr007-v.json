@@ -16,7 +16,9 @@
   "source_ids": [
     "lightcarbon-lcr007-v-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr007-v-enrichment-2026-10-03",
+    "lightcarbon-lcr007-v-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCR007-V super-light rim-brake road frameset",
@@ -31,8 +33,23 @@
     "sizes": "46, 49, 52, 54 and 58",
     "geometry": "Reach 367.5–398.4 mm; stack 513–620 mm; 405 mm chainstays; 67–72 mm BB drop; 53.5–67 mm trail",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "groupset compatibility": "Manufacturer supports mechanical and Di2 groupsets.",
+    "headtube standard": "Manufacturer tapered 1 1/8 to 1 1/2 inches."
   },
   "source_note": "The current manufacturer page exposes specifications but no price. A secondary £500 record is a 2018 snapshot and was not promoted as a current offer or mainland checkout.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr007-v-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "groupset compatibility",
+        "headtube standard"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

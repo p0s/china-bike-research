@@ -13,7 +13,9 @@
     "stock_tire": "Michelin Dynamic Sport 700x25C on the displayed manufacturer build; maximum clearance unpublished",
     "frame_material": "Toray T700 carbon main frame with T800 reinforcement at key areas and a T800 carbon fork",
     "identity_source": "Exact UPLAND product page and race article identify the R70; the current product page was available only as a search-index excerpt because direct opening timed out. The pages do not map retained seller cards to one drivetrain option.",
-    "stiffness_evidence": "Independent exact-model review reports strong pedaling stiffness; current manufacturer engineering notes describe T800 reinforcement for structural strength, but no instrumented frame-stiffness protocol is published"
+    "stiffness_evidence": "Independent exact-model review reports strong pedaling stiffness; current manufacturer engineering notes describe T800 reinforcement for structural strength, but no instrumented frame-stiffness protocol is published",
+    "current reference components": "Current manufacturer Di2 reference: 50/34T, 170 mm crank, 11–34T cassette, integrated carbon cockpit and BB86. These are not assigned to the retained unselected seller cards.",
+    "current manufacturer total load reference": "100kg maximum total system mass including bicycle, rider and cargo. Displayed manufacturer R70Di2 reference; not a100kg rider-only limit or proof of applicability to retained unselected seller cards."
   },
   "missing": [
     "Selected mechanical versus Di2 drivetrain for each retained price",
@@ -29,7 +31,9 @@
     "upland-r70-race-engineering-2026-08-30",
     "upland-r70-independent-review-2026-08-30",
     "upland-r70-indexed-current-2026-09-23",
-    "upland-r70-official-timeout-recheck-2026-09-25"
+    "upland-r70-official-timeout-recheck-2026-09-25",
+    "upland-r70-enrichment-2026-10-03",
+    "upland-r70-supplementary-specs-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -44,5 +48,27 @@
   "source_refs": "IMG_6864.png#L1, IMG_6865.png#L2",
   "source_url": "https://www.upland.bike/zh/product/308.html",
   "source_note": "The accepted exact manufacturer, official-store and independent evidence resolves the T700/T800 construction and supplies bounded qualitative stiffness context. The exact manufacturer page timed out on 2026-09-25; no current exact weight method or retained-price configuration mapping was obtained. Retain model/trim and mainland-market limits in the research record.",
-  "last_reviewed": "2026-09-25"
+  "last_reviewed": "2026-09-25",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "upland-r70-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "current reference components"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "upland-r70-supplementary-specs-2026-10-03"
+      ],
+      "fields": [
+        "current manufacturer total load reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

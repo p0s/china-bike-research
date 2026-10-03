@@ -1,0 +1,43 @@
+{
+  "id": "candidate-rinasclta-q-aero-gr-geometry-image-2026-10-03",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "rinasclta-q-aero-gr"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-10-03",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "attempts": [],
+      "from_attempt_id": "candidate-rinasclta-q-aero-gr-geometry-2026-08-27"
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Q-Aero GR product-linked current geometry chart XS S M L XL",
+          "route": "Current exact manufacturer linked geometry image pixel review",
+          "outcome": "found",
+          "accessed_at": "2026-10-03",
+          "result_url": "https://rinascltabike.com/wp-content/uploads/2026/06/Rinasclta-Q-Aero-GR-carbon-gravel-bike-frame-T47-UDH-geometry.jpg",
+          "note": "New public product-linked geometry image is readable; original pixels identify Q-Aero GR, five XS\u2013XL sizes, mm lengths and degree angles. Exact numeric seller-size mapping remains unverified."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "rinasclta-q-aero-gr-enrichment-2026-10-03"
+  ],
+  "retry_after": null,
+  "retry_of": "candidate-rinasclta-q-aero-gr-geometry-2026-08-27",
+  "retry_reason": "New exact product-linked geometry asset can now be retrieved and visually transcribed; retained exhausted source searches remain unchanged.",
+  "notes": "New public product-linked geometry image is readable; original pixels identify Q-Aero GR, five XS\u2013XL sizes, mm lengths and degree angles. Exact numeric seller-size mapping remains unverified."
+}

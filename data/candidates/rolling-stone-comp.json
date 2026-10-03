@@ -24,7 +24,8 @@
     "rolling-stone-compass-biketo-2026-08-30",
     "rolling-stone-compass-review-2026-08-30",
     "rolling-stone-compass-dragonbike-2026-08-30",
-    "rolling-stone-corporate-official-2026-08-30"
+    "rolling-stone-corporate-official-2026-08-30",
+    "rolling-stone-comp-enrichment-2026-10-03"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -38,5 +39,15 @@
   "source_url": "https://www.biketo.com/product/20228.html",
   "source_note": "The screenshot visibly shows ¥15,000. Its title describes a road frameset but its image shows an assembled bike. Exact COMPASS sources establish the legacy frame identity and frame facts only; no pictured drivetrain or complete-bike weight is inferred, and the current seller package remains unresolved.",
   "source_refs": "IMG_6867.png#R2",
-  "last_reviewed": "2026-08-30"
+  "last_reviewed": "2026-08-30",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "rolling-stone-comp-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

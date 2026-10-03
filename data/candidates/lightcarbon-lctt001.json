@@ -16,7 +16,9 @@
   "source_ids": [
     "lightcarbon-lctt001-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lctt001-enrichment-2026-10-03",
+    "lightcarbon-lctt001-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCTT001 hidden-brake time-trial frameset",
@@ -32,8 +34,23 @@
     "sizes": "46, 49, 52, 54 and 56",
     "geometry": "Official five-size time-trial geometry chart is published as an image",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model aero or stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model aero or stiffness measurement recorded",
+    "headset groupset compatibility": "Manufacturer 42/42 mm FSA NO.8B headset; mechanical and Di2 groupsets supported.",
+    "geometry numeric table": "Original LCTT001 image, columns size / C-T / A / offset / TT / HT / ST / BB / RC / WB / FC / stack / reach. Values as printed (general unit legend absent): 460: 460 / 70 / 45° / 495 / 71 / 75 / 70 / 395 / 950.3 / 558.7 / 469.4 / 369.2; 490: 515 / 75 / 45° / 515 / 72.5 / 75 / 70 / 395 / 951.7 / 567.4 / 478.9 / 386.9; 520: 535 / 82 / 45° / 530 / 72.5 / 75 / 70 / 395 / 966.9 / 582.3 / 502.3 / 399.9; 540: 555 / 102 / 45° / 550 / 72.5 / 75 / 70 / 395 / 987.7 / 603 / 521.3 / 414.7; 560: 575 / 122 / 45° / 570 / 72.5 / 75 / 70 / 395 / 1008.7 / 623.9 / 540.6 / 429.7. Offset cells print 45° despite the diagram showing an offset length: retained as source-unit ambiguity, not silently normalized. Chart also prints internal RD / FD, special 74–78° post, FSA NO.8 and BB86."
   },
   "source_note": "The exact manufacturer page remains inquiry-only. Alibaba supplier directories identify LCTT001 but publish no attributable amount, MOQ or selected package.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lctt001-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "headset groupset compatibility",
+        "geometry numeric table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

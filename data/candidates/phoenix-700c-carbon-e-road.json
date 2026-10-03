@@ -10,7 +10,8 @@
     "complete_weight_basis": "Current exact-family retailer specification lists vehicle quality as 20 kg; size, selected 6 Ah or 10 Ah battery, pedals, accessories and measurement method are not stated.",
     "drivetrain": "9-speed transmission; component maker, model and gearing range are not published.",
     "frame": "T700 carbon-fiber frame",
-    "frame_material": "Retailer-described T700 carbon-fiber frame; fork material and lay-up details are not published."
+    "frame_material": "Retailer-described T700 carbon-fiber frame; fork material and lay-up details are not published.",
+    "current retailer gallery conflict": "On 2026-10-03, the model799 retailer specification says front/rear disc brakes while its main photograph visibly shows rim brakes. Selected battery and assembly remain unverified; the contradictory photo is omitted rather than used to identify the retained build."
   },
   "missing": [
     "Selected 6 Ah or 10 Ah battery option, exact motor model, assist controls, and complete component identities",
@@ -20,7 +21,8 @@
   "status": "verify-before-publish",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "source_ids": [
-    "phoenix-799-ebuy7-2026-08-30"
+    "phoenix-799-ebuy7-2026-08-30",
+    "phoenix-799-gallery-conflict-2026-10-03"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -33,5 +35,17 @@
   "source_refs": "IMG_6857.png#R2",
   "source_url": "https://www.ebuy7.com/phoenix-carbon-fiber-electric-bicycle-power-assisted-battery-bike-for-men-and-women-adults-torque-sensing-off-road-motorcycle.html",
   "source_note": "The current exact-family retailer page identifies Phoenix model 799 with a carbon frame, 9-speed transmission, 20 kg listed vehicle weight and separate 36 V 6 Ah / 10 Ah choices. The retained card establishes the 700C China-market presentation but does not expose which battery option was selected.",
-  "last_reviewed": "2026-08-30"
+  "last_reviewed": "2026-08-30",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "phoenix-799-gallery-conflict-2026-10-03"
+      ],
+      "fields": [
+        "current retailer gallery conflict"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

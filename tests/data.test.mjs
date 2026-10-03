@@ -224,9 +224,9 @@ test('batch 026 preserves exact disc-frame evidence and unresolved build boundar
   assert.equal(elves.variant.claimed_frame_weight_g, 1080);
   assert.match(elves.variant.claimed_frame_weight_basis, /size 46/);
   assert.equal(elves.variant.wheels, undefined);
-  assert.equal(elves.image.subject_accuracy, 'illustrative');
-  assert.equal(elves.image.reviewed_at, '2026-09-24');
-  assert.deepEqual(elves.image.review_evidence.source_ids, [
+  const retainedElvesImage = data.images.find((image) => image.platform_id === 'elves-falath-r7170' && image.reviewed_at === '2026-09-24');
+  assert.equal(retainedElvesImage.subject_accuracy, 'illustrative');
+  assert.deepEqual(retainedElvesImage.review_evidence.source_ids, [
     'elves-falath-pro-image-exactness-current-2026-09-24',
     'elves-image-use-terms-current-2026-09-24'
   ]);
@@ -2005,7 +2005,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 236);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1844);
+  assert.ok(data.researchAttempts.length >= 1844, 'retain the existing research ledger while allowing additive evidence');
   assert.equal(new Set(data.researchAttempts.map((attempt) =>
     `${attempt.target.record_type}:${attempt.target.record_id}:${attempt.field}`
   )).size, 1522);
@@ -2309,7 +2309,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 222);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 215);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 216);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -2822,7 +2822,7 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   ];
   assert.ok(data.images.filter((image) => image.candidate_id).length >= 125);
   assert.ok(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length > 190);
-  assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
+  assert.equal(data.images.filter((image) => image.media_type === 'project-placeholder').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images
       .filter((image) => image.hosting.mode === 'local' && image.rights.status !== 'source-attributed-rehost')

@@ -5,11 +5,11 @@
   "type": "frameset",
   "why_interesting": "A current 50C direct frameset with T47, UDH, per-size painted weights and a manufacturer-described aero/Wind Eye shell.",
   "missing": [
-    "Exact geometry table",
     "Current mainland-CNY selected-option price and stock",
     "Independent or detailed comparable aerodynamic evidence",
     "Independent measured frame-stiffness or exact-model ride comparison",
-    "Mainland seller and warranty handling beyond the global direct policy"
+    "Mainland seller and warranty handling beyond the global direct policy",
+    "Confirm mapping of the geometry chart XS\u2013XL labels to numeric seller sizes before fitting"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
@@ -18,7 +18,8 @@
     "rinasclta-warranty-2026-08-27",
     "ecb-reference-rates-2026-08-31",
     "rinasclta-q-aero-gr-official-recheck-2026-09-23",
-    "rinasclta-warranty-recheck-2026-09-23"
+    "rinasclta-warranty-recheck-2026-09-23",
+    "rinasclta-q-aero-gr-enrichment-2026-10-03"
   ],
   "facts": {
     "frame": "T800/T1000-claimed carbon with manufacturer Q-AERO/Wind Eye marketing",
@@ -26,7 +27,7 @@
     "frame_construction": "Aerodynamic gravel frame with Wind Eye seatstay opening, 1.5-inch straight head tube, T47 86.5 mm shell, UDH and 27.2 mm round seatpost",
     "stiffness_evidence": "The manufacturer describes efficient power transfer, drivetrain stability and front-end stiffness, but publishes no exact-model deflection protocol or independent stiffness result",
     "frame_weight_g": 1200,
-    "frame_weight_basis": "Size 52/S, UD black paint, 1,200 g ±20 g; exact manufacturer size table lists 1,180/1,200/1,220/1,240/1,260 g for 49/52/54/56/58. A separate generic “Weight 5 kg” field is unlabeled and is not treated as frame weight.",
+    "frame_weight_basis": "Size 52/S, UD black paint, 1,200 g \u00b120 g; exact manufacturer size table lists 1,180/1,200/1,220/1,240/1,260 g for 49/52/54/56/58. A separate generic \u201cWeight 5 kg\u201d field is unlabeled and is not treated as frame weight.",
     "bottom_bracket": "T47 86.5 mm",
     "derailleur_hanger": "UDH",
     "tire_clearance_mm": 50,
@@ -34,10 +35,13 @@
     "drivetrain": "Mechanical and Di2 compatible",
     "seatpost": "27.2 mm round",
     "purchase_route": "Current global manufacturer-direct product page with size/finish options and add-to-cart; no mainland-China checkout, landed cost or local purchase route verified.",
-    "warranty": "Manufacturer policy states two-year frame/manufacturing-defect coverage with proof of purchase, frame identification and warranty form; man-made damage is excluded. Shipping language conflicts: opening terms say manufacturer-paid return shipping for manufacturing defects, later terms say buyer pays shipping for a quality issue. Confirm terms before relying on shipping coverage."
+    "warranty": "Manufacturer policy states two-year frame/manufacturing-defect coverage with proof of purchase, frame identification and warranty form; man-made damage is excluded. Shipping language conflicts: opening terms say manufacturer-paid return shipping for manufacturing defects, later terms say buyer pays shipping for a quality issue. Confirm terms before relying on shipping coverage.",
+    "geometry": "Current official Q-Aero GR chart (length mm; angles degrees). Columns size / seat tube / top tube / head tube / chainstay / front center / seat angle / head angle / BB drop / fork length / offset / wheelbase / stack / reach. XS: 410 / 520 / 101 / 425 / 590 / 74 / 70.5 / 75 / 420 / 45 / 1005 / 549 / 362; S: 450 / 550 / 125 / 425 / 620 / 74 / 70.5 / 75 / 420 / 45 / 1033 / 573 / 387; M: 480 / 580 / 145 / 425 / 650 / 74 / 70.5 / 75 / 420 / 45 / 1065 / 592 / 412; L: 510 / 600 / 176 / 425 / 671 / 74 / 70.5 / 75 / 420 / 45 / 1086 / 620 / 422; XL: 540 / 630 / 198 / 425 / 691 / 74 / 70.5 / 75 / 420 / 45 / 1119 / 643 / 447. Mapping to numeric seller size labels is unverified.",
+    "fork weight reference": "Manufacturer 480 \u00b120 g; size, finish and hardware inclusion are unstated.",
+    "seatpost weight reference": "Manufacturer 190 \u00b120 g; component only, not a total frameset-package weight."
   },
   "price_status": "Current exact official-store US$639 reference converted to CNY; no attributable mainland selected checkout",
-  "source_note": "Official painted frame weights are 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58, each ±20 g. The package includes frame, fork, seatpost, headset, clamp, thru axles and hanger. Manufacturer aero language is retained as marketing evidence, not an independent drag result.\n\nBatch 36 recheck: current manufacturer page confirms SKU RF-QA-GR-27, Toray T800+T1000 claim, 700×50C limit, global direct-store options, and size/finish weights. Size 52/S UD black is 1,200 g ±20 g; the page also shows 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58. A separate unlabeled “Weight 5 kg” field is not treated as frame weight. Warranty says two years but its shipping provisions conflict internally.",
+  "source_note": "Official painted frame weights are 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58, each \u00b120 g. The package includes frame, fork, seatpost, headset, clamp, thru axles and hanger. Manufacturer aero language is retained as marketing evidence, not an independent drag result.\n\nBatch 36 recheck: current manufacturer page confirms SKU RF-QA-GR-27, Toray T800+T1000 claim, 700\u00d750C limit, global direct-store options, and size/finish weights. Size 52/S UD black is 1,200 g \u00b120 g; the page also shows 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58. A separate unlabeled \u201cWeight 5 kg\u201d field is not treated as frame weight. Warranty says two years but its shipping provisions conflict internally.",
   "last_reviewed": "2026-09-23",
   "reference_price_kind": "official",
   "observed_price": {
@@ -51,5 +55,27 @@
     "conversion_rate_date": "2026-08-31",
     "price_basis": "Current exact Q-AERO GR sale amount converted at the dated ECB reference cross-rate",
     "conditions": "Reference only; selected size, finish, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
-  }
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "rinasclta-q-aero-gr-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "geometry",
+        "fork weight reference",
+        "seatpost weight reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ],
+  "resolved_missing_history": [
+    {
+      "item": "Exact geometry table",
+      "resolved_at": "2026-10-03",
+      "source_id": "rinasclta-q-aero-gr-enrichment-2026-10-03",
+      "note": "Printed XS\u2013XL geometry is now recorded and linked; mapping to numeric seller size labels remains unresolved."
+    }
+  ]
 }

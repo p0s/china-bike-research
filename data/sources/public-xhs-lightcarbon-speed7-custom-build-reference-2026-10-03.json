@@ -1,0 +1,46 @@
+{
+  "id": "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03",
+  "type": "public-product-post",
+  "title": "LightCarbon Speed7/017 separate owner custom-build reference",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/69106e74000000000703880b",
+  "accessed_at": "2026-10-03",
+  "published_at": "2025-11-09T10:35:32.000Z",
+  "published_date": "2025-11-09",
+  "last_updated_at": "2025-11-09T10:35:32.000Z",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "none"
+  },
+  "notes": "Owner custom-build post names017 and Speed7, describes mixed GRX/UltegraDi2 with R7000 chain/cassette, XXE/Xcadey, Goldix180SL custom wheels and MVMT cockpit, and claims6.98kg including clipless pedals. Size/scales/method unknown. Separately scoped custom build; no retained mechanical105 weight/BOM or SPEEDZ identity transfer. Hypothetical6.8kg and title10k are rejected as observed weight/exact price.",
+  "reference_claims": [
+    {
+      "kind": "owner-custom-complete-bike-weight-reference",
+      "claim": "Owner claims6.98kg including clipless pedals for an explicitly described Speed7/017 custom build.",
+      "confidence": "low",
+      "weight_g": 6980,
+      "size": null,
+      "pedals": "included according to post",
+      "measurement_status": "owner assertion; scales/method undocumented",
+      "limitations": "No retained mechanical105 build mapping, exact size, accessories or weighing method. Complete custom-bike mass is not frame/package mass and is not SPEEDZ evidence.",
+      "canonical_target_id": "lightcarbon-speed7-complete",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "owner-custom-build-component-reference",
+      "claim": "The separate Speed7/017 custom build is described with a GRX/UltegraDi2 mix, R7000 chain/cassette, XXE/Xcadey, Goldix180SL custom wheels and MVMT cockpit.",
+      "confidence": "low",
+      "limitations": "Sanitized prior-ledger build description only; no full audited BOM, component weights, exact dimensions or selected mainland factory-build equivalence.",
+      "canonical_target_id": "lightcarbon-speed7-complete",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "632f324f76339faa404d0c43e0b12a0d94a932bb7f441b63e7bad04af364902b",
+    "scope": "Previously validated local detail archive; raw bodies, account identifiers and original media remain private and outside Git. No child pixel review."
+  }
+}

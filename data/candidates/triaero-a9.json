@@ -30,7 +30,8 @@
     "triaero-a9-plover-2026-08-30",
     "triaero-a9-uci-2026-08-30",
     "triaero-company-ican-2026-08-30",
-    "triaero-a9-official-stale-recheck-2026-09-25"
+    "triaero-a9-official-stale-recheck-2026-09-25",
+    "triaero-a9-enrichment-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -44,5 +45,15 @@
   "source_refs": "IMG_6869.png#R1",
   "source_url": "https://triaero.com/products/disc-road-frame-a9",
   "source_note": "The exact A9 source states 700x28C / fits 28 mm; this is nominal fit, not maximum clearance. A conflicting 45 mm collection template remains rejected. The official-page retrieval on 2026-09-25 was labeled Crawled: last year and did not verify a current maximum.",
-  "last_reviewed": "2026-09-25"
+  "last_reviewed": "2026-09-25",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "triaero-a9-enrichment-2026-10-03"
+      ],
+      "fields": [],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

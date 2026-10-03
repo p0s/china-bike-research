@@ -11,7 +11,12 @@
     "frame": "China-market GTR C6 carbon frame and 700C fork; fork material is unverified",
     "frame_material": "Carbon frame; fork material, exact fiber grade, lay-up and molding process are unverified",
     "tires": "CST 700x40C on the documented exact-model 1x12 build; fitted width is not treated as maximum clearance",
-    "brakes": "LTWOO hydraulic disc brakes on the documented exact-model 1x12 build"
+    "brakes": "LTWOO hydraulic disc brakes on the documented exact-model 1x12 build",
+    "2024 manufacturer fork reference": "Exact GTR C6 column in the 2024 manufacturer catalog page 17 / printed page 30 specifies a carbon 700C fork. This is a dated regional reference, distinct from the retained mainland fork material that remains unverified.",
+    "2024 manufacturer component reference": "Exact GTR C6 catalog column: KMC X12 chain; TRINX double-wall 700C wheels; alloy sealed-bearing hubs; TRINX Sport saddle; TRINX alloy seatpost, stem and road handlebar; PROWHEEL 42T ×170 mm crank. Production batch, selected seller assembly and substitutions remain unverified.",
+    "2024 manufacturer size reference": "The exact catalog column lists 430 / 460 / 480 / 500 / 520 mm sizes. These labels supply no numeric fit geometry or complete-bike weight basis.",
+    "2026 public complete-weight reference": "A third-party post published2026-05-10 claims approximately10.6kg for a carbon GTR C6 mechanical1x12 reference build. Size, pedals/accessories and scales/method are unstated; no retained mainland SKU/year bridge, so selected complete-bike weight remains unknown.",
+    "public material references": "Public texts dated2025-05-15 and2026-05-10 claim a T800 frame and carbon fork; the2025 text additionally names Toray. These are unverified promotional/compilation references, distinct from the dated2024 manufacturer carbon-fork reference. Retained mainland fork material, fiber supplier/grade, lay-up and molding process remain unverified."
   },
   "missing": [
     "Exact complete-bike weight and weighing basis",
@@ -27,7 +32,10 @@
     "trinx-gtr-c6-jd-2026-08-30",
     "trinx-gtr-c6-catalog-2024",
     "trinx-gtr-c6-smzdm-2026-08-30",
-    "trinx-design-competition-2026-08-30"
+    "trinx-design-competition-2026-08-30",
+    "trinx-gtr-c6-catalog-exact-recheck-2026-10-03",
+    "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03",
+    "public-xhs-trinx-gtr-c6-material-reference-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -41,5 +49,40 @@
   "source_refs": "IMG_6897.png#L1",
   "source_url": "https://www.jd.com/brand/1318063de872c7288489.html",
   "source_note": "The current China listing establishes carbon construction and 12-speed identity; the official regional catalog supplies the matching green/brown LTWOO GR7010 1x12 build. Aluminum regional GTR C6 variants and an internally inconsistent 11-speed index token are not transferred.",
-  "last_reviewed": "2026-08-30"
+  "last_reviewed": "2026-08-30",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "trinx-gtr-c6-catalog-exact-recheck-2026-10-03"
+      ],
+      "fields": [
+        "2024 manufacturer fork reference",
+        "2024 manufacturer component reference",
+        "2024 manufacturer size reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03"
+      ],
+      "fields": [
+        "2026 public complete-weight reference"
+      ],
+      "scope": "Dated public reference only. Exact selected-build quantitative gaps and existing evidence/dates remain intact."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03",
+        "public-xhs-trinx-gtr-c6-material-reference-2026-10-03"
+      ],
+      "fields": [
+        "public material references"
+      ],
+      "scope": "Dated public reference only. Exact selected-build quantitative gaps and existing evidence/dates remain intact."
+    }
+  ]
 }

@@ -15,7 +15,9 @@
   "source_ids": [
     "lightcarbon-lcr0x-v-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
-    "lightcarbon-about-official-2026-08-29"
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr0x-v-enrichment-2026-10-03",
+    "lightcarbon-lcr0x-v-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCR0X-V integrated rim-brake road frame",
@@ -29,8 +31,23 @@
     "cockpit": "HBR11 integrated cockpit",
     "sizes": "48, 51, 54, 56 and 58",
     "geometry": "Reach 371.1–404.9 mm; stack 506.1–574.4 mm; 408 mm chainstays; 69 mm BB drop",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "manufacturer warranty reference": "Manufacturer page states two years; current mainland order eligibility, claims handling and return shipping remain unverified.",
+    "cockpit compatibility": "Manufacturer specifies HBR11 only and recommends electronic shifting; older rear derailleurs without B-LINK, including Shimano 105 5800, are excluded."
   },
   "source_note": "The exact manufacturer page remains quote-only. Used LCR0X-V complete-bike advertisements and unpriced model-database entries were not promoted as a current frameset offer.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr0x-v-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "manufacturer warranty reference",
+        "cockpit compatibility"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

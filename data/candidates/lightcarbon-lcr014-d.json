@@ -19,7 +19,10 @@
     "lightcarbon-about-official-2026-08-29",
     "lightcarbon-lcr014-d-alibaba-supplier-2026-09-01",
     "usd-cny-central-parity-2026-07-31",
-    "lightcarbon-lcr014-d-supplier-recheck-2026-09-23"
+    "lightcarbon-lcr014-d-supplier-recheck-2026-09-23",
+    "lightcarbon-lcr014-d-enrichment-2026-10-03",
+    "lightcarbon-lcr014-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-lcr014-d-gallery-complete-2026-10-03"
   ],
   "facts": {
     "frame": "LCR014-D aero road disc frameset",
@@ -34,7 +37,10 @@
     "sizes": "51, 54 and 57",
     "geometry": "Reach 392.8–404.3 mm; stack 533–571.2 mm; 405 mm chainstays; 68 mm BB drop; 53.8–58.4 mm trail",
     "warranty": "Two years",
-    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
+    "groupset compatibility": "Manufacturer explicitly supports mechanical and Di2 full internal routing.",
+    "test standard": "Manufacturer lists ISO4210; this is not an independent stiffness protocol or numeric result.",
+    "geometry complete current manufacturer table": "Exact current manufacturer table observed 2026-10-03. Printed size columns: 510 / 540 / 570. BODY HEIGHT(Reference): 165-174cm / 175-183cm / 184-193cm; Remarks For BODY HEIGHT: For reference only, may vary due to different body proportions. /; SEATPOST INSERT LENGTH: 250mm / 270mm / 280mm; REACH: 392.8mm / 395.4mm / 404.3mm; TOP TUBE LENGTH, HORIZONTAL: 550mm / 570 mm / 590mm; STACK: 533mm / 553.8mm / 571.2mm; WHEELBASE: 985mm / 985.5mm / 1002.6mm; CHAINSTAY LENGTH: 405mm / 405mm / 405mm; FRONT CENTER: 586.6mm / 590.2mm / 604.2mm; BB DROP: 68mm / 68mm / 68mm; BB HEIGHT: 372mm / 372mm / 372mm; SEAT TUBE ANGLE: 73.5° / 72.5° / 72°; HEAD TUBE ANGLE: 73° / 73.5° / 73.5°; SEAT TUBE LENGTH: 510mm / 540mm / 570mm; HEAD TUBE LENGTH: 130mm / 150mm / 170mm; BIKE STANDOVER HEIGHT(700C*28C): 776mm / 800mm / 822mm; FORK RAKE/OFFSET: 45mm / 45mm / 45mm; FORK LENGTH, FULL: 370mm / 370mm / 370mm; TRAIL: 58.4mm / 53.8mm / 53.8mm. BB HEIGHT literally prints372mm in all three columns. Retain this value; no derived or engineering correction. Manufacturer-published values, not independent measurements. Existing historical range and catalog values remain separately retained."
   },
   "source_note": "The exact Alibaba product URL returned no readable text on 2026-09-23. The retained 2026-09-01 record is an older indexed US$350, MOQ-10 bulk reference, not a current single-unit or mainland checkout.",
   "last_reviewed": "2026-09-23",
@@ -50,5 +56,28 @@
     "conversion_rate_date": "2026-07-31",
     "price_basis": "Current exact LCR014-D manufacturer-supplier USD 350 bulk price converted at the dated central-parity reference",
     "conditions": "Reference only; minimum order 10 sets; selected finish, customization, shipping, tax, duties, actual FX, stock and final checkout are unverified"
-  }
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr014-d-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "groupset compatibility",
+        "test standard"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "lightcarbon-lcr014-d-complete-geometry-recheck-2026-10-03"
+      ],
+      "fields": [
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

@@ -11,7 +11,8 @@
     "drivetrain": "Magene PES wireless electronic 2x12 (24-speed) with hydraulic disc brakes",
     "configuration_bridge": "Exact model and CNY 8,999 current public listing match the retained card",
     "stock_tire_family": "Current manufacturer R80 configurations are fitted with 700x28C tires; maximum clearance unpublished",
-    "frame_material": "T700+T800 carbon frame with T800 carbon fork; exact fiber proportions and lay-up are unpublished"
+    "frame_material": "T700+T800 carbon frame with T800 carbon fork; exact fiber proportions and lay-up are unpublished",
+    "current manufacturer total load reference": "Current manufacturer R80 reference specifies a 100 kg maximum total system mass, including bike, rider and luggage. This is not a rider-only limit; applicability to the retained Magene PES option is unverified."
   },
   "missing": [
     "Exact complete-bike weight and weighing basis for the CNY 8,999 Magene build",
@@ -22,7 +23,8 @@
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "upland-r80-douyin-2026-08-30",
-    "upland-r80-official-2026-08-30"
+    "upland-r80-official-2026-08-30",
+    "upland-r80-enrichment-2026-10-03"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -36,5 +38,17 @@
   "source_refs": "IMG_6872.png#L2",
   "source_url": "https://jingxuan.douyin.com/m/video/7648721057440624805",
   "source_note": "The exact current CNY 8,999 index establishes Magene PES wireless 2x12, while the manufacturer page establishes T700+T800 frame and T800 fork construction. The 8.1-8.4 kg claims on other R80 builds are not transferred, and fitted 28C tires are not treated as maximum clearance.",
-  "last_reviewed": "2026-09-24"
+  "last_reviewed": "2026-09-24",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-03",
+      "source_ids": [
+        "upland-r80-enrichment-2026-10-03"
+      ],
+      "fields": [
+        "current manufacturer total load reference"
+      ],
+      "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ]
 }

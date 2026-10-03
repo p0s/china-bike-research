@@ -1,0 +1,72 @@
+{
+  "id": "public-xhs-camp-gx700-compilation-reference-2026-10-03",
+  "type": "public-product-post",
+  "title": "CAMP GX700 third-party build compilation and conflicts",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/693be63f000000001e02e47b",
+  "accessed_at": "2026-10-03",
+  "published_at": "2025-12-12T09:54:07.000Z",
+  "published_date": "2025-12-12",
+  "last_updated_at": "2026-07-07T10:59:51.000Z",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "none"
+  },
+  "notes": "Third-party GX700 compilation, published2025-12-12 and updated2026-07-07, asserts about10.3kg,38T,T700+T800 frame/T800 fork, Maxxis REAVER700x45C and down-tube storage. Size, weighing protocol and selected-SKU mapping unknown. Claims conflict with retained36T/T800/no-storage representation and remain separate from current manufacturer evidence.",
+  "reference_claims": [
+    {
+      "kind": "complete-bike-weight-reference",
+      "claim": "Compilation claims approximately 10.3 kg for its GX700 reference build.",
+      "confidence": "low",
+      "limitations": "Not an owner measurement. Size, pedals/accessories and protocol unstated; do not replace official approximately 10.2 kg small-size basis.",
+      "weight_g": 10300,
+      "size": null,
+      "measurement_status": "third-party reference assertion",
+      "canonical_target_id": "camp-gx700",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "crank-configuration-conflict",
+      "claim": "Compilation states 38T chainring for its 1x12 GX700 build.",
+      "confidence": "low",
+      "limitations": "Retained exact GRX variant records FC-RX610 36T; current official 26-36T row is already a separate conflict. No evidence maps this38T reference to the retained SKU.",
+      "canonical_target_id": "camp-gx700",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "frame-material-reference-conflict",
+      "claim": "Compilation claims a Toray T700+T800 frame and T800 fork.",
+      "confidence": "low",
+      "limitations": "Current accepted exact page lists T800 frame. No lay-up verification or selected-SKU equivalence; preserve conflicting reference rather than supersede manufacturer evidence.",
+      "canonical_target_id": "camp-gx700",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "fitted-tire-reference",
+      "claim": "Compilation identifies Maxxis REAVER700x45C tires.",
+      "confidence": "low",
+      "limitations": "Brand/model detail is a third-party reference build claim. Retained selected build equivalence is unproven; nominal fitted45C is not a maximum.",
+      "canonical_target_id": "camp-gx700",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "storage-reference-claim",
+      "claim": "Compilation claims storage space inside the down tube.",
+      "confidence": "low",
+      "limitations": "No exact technical detail or independently reviewed pixels establish this feature. Conflicts with current stored internal_storage=false representation; flag as an uncorroborated source claim, not a verified update.",
+      "canonical_target_id": "camp-gx700",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "432c9eb7656c1fdd096e9833bf0ee0d2fd03c609fd627c864f8d8105a3343bc8",
+    "scope": "Previously validated local detail archive; raw bodies, account identifiers and original media remain private and outside Git. No child pixel review."
+  }
+}

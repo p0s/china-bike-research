@@ -1,0 +1,69 @@
+{
+  "id": "twitter-x7-official-enrichment-2026-10-03",
+  "candidate_id": "twitter-x7",
+  "role": "primary",
+  "subject_accuracy": "same-model-different-market-build",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/retailer/twitter-x7-official-enrichment-2026-10-03/0cfd7f802f77d673-detail-w1000.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "file": "bb1638c28578b498-card-w480.webp",
+        "width": 480,
+        "height": 288,
+        "bytes": 9466,
+        "sha256": "bb1638c28578b4981f2ab76ac26148375fd8dae326b32b71c03fca0930c76eee",
+        "format": "image/webp",
+        "quality": 72,
+        "url": "/assets/images/sourced/retailer/twitter-x7-official-enrichment-2026-10-03/bb1638c28578b498-card-w480.webp"
+      },
+      {
+        "purpose": "detail",
+        "file": "0cfd7f802f77d673-detail-w1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 31774,
+        "sha256": "0cfd7f802f77d673f5848da093a516e5caa58bda8ec6496c2f69f3aebbd5ae5b",
+        "format": "image/webp",
+        "quality": 72,
+        "url": "/assets/images/sourced/retailer/twitter-x7-official-enrichment-2026-10-03/0cfd7f802f77d673-detail-w1000.webp"
+      }
+    ]
+  },
+  "source_id": "twitter-x7-gallery-p-2026-10-03",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "TWITTER Bikes USA",
+    "usage_note": "Bounded source-attributed derivative for exact product identification and comparison; copyright remains with its owner and no redistribution license is asserted."
+  },
+  "credit": "Product image © TWITTER Bikes USA — Regional X7 mechanical-105 reference; retained mainland build and year unverified.",
+  "alt": "TWITTER X7 regional mechanical-105 reference bike",
+  "display_note": "Current regional distributor X7 mechanical-105 reference photo; retained mainland selected build, finish and model year remain unverified.",
+  "reviewed_at": "2026-10-03",
+  "source_media_url": "https://twitterbikeusa.com/cdn/shop/files/x7-matte-black.jpg?v=1784189836&width=1000",
+  "source_media_sha256": "95af433b3244b24be1fb229633c0858e329e1b5294e319fb9f27ae605faa3f16",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-product-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-03",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "review_evidence": {
+    "reviewed_at": "2026-10-03",
+    "source_ids": [
+      "twitter-x7-gallery-p-2026-10-03"
+    ],
+    "conclusion": "Original pixels reviewed against the exact product-linked gallery. Model/variant scope and exclusions are stated in display_note; no private identifiers are visible."
+  }
+}

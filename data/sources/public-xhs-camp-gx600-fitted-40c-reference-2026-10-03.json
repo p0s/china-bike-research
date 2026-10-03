@@ -1,0 +1,42 @@
+{
+  "id": "public-xhs-camp-gx600-fitted-40c-reference-2026-10-03",
+  "type": "public-product-post",
+  "title": "CAMP GX600 fitted-tire and ride owner reference",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/6a472430000000000803c4ef",
+  "accessed_at": "2026-10-03",
+  "published_at": "2026-07-03T02:53:37.000Z",
+  "published_date": "2026-07-03",
+  "last_updated_at": "2026-07-03T02:53:37.000Z",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "none"
+  },
+  "notes": "Single GX600 owner report names fitted nominal700x40C and a subjective subdued ride feel. Trim, tire/rim, size, year and modifications are unknown. Fitted width does not prove maximum clearance or retained PES stock specification; no tire-causation finding.",
+  "reference_claims": [
+    {
+      "kind": "fitted-tire-observation",
+      "claim": "Owner describes nominal 700x40C tires on a recently purchased GX600.",
+      "confidence": "low",
+      "limitations": "Text-only owner report; fitted width is not measured width or manufacturer maximum. Trim, rim, model year, tire make and mud clearance are unknown. Do not replace retained PES stock 35C or close maximum-clearance gap.",
+      "canonical_target_id": "camp-gx600",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "qualitative-ride-observation",
+      "claim": "Owner says the bike feels light but does not feel lively while riding and questions whether wider tires are responsible.",
+      "confidence": "low",
+      "limitations": "Subjective single-owner impression. Tire causation, pressures, terrain, rider and selected PES configuration are unproven.",
+      "canonical_target_id": "camp-gx600",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "cd8f30137ec8fd626cae43907b589bb71ec2e192993ef22f412b78c8ab86cb74",
+    "scope": "Previously validated local detail archive; raw bodies, account identifiers and original media remain private and outside Git. No child pixel review."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "public-xhs-scott-addict-rc-40-2024-reference-2026-10-03",
+  "type": "public-product-post",
+  "title": "SCOTT Addict RC40 2024 third-party reference build",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/681f30710000000021008285",
+  "accessed_at": "2026-10-03",
+  "published_at": "2025-05-10T10:54:41.000Z",
+  "published_date": "2025-05-10",
+  "last_updated_at": "2025-05-10T10:54:42.000Z",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "Third-party2024 Addict RC40 reference describes HMX/105Di2 2x12 and claims about8kg in sizeM and CNY27999. No scales, pedal/accessory basis, checkout or independently dated price observation. No exact SKU290362/mainland selected-build bridge; retain separately from current7.9kg manufacturer claim.",
+  "reference_claims": [
+    {
+      "kind": "complete-bike-weight-reference",
+      "claim": "Compilation claims approximately 8 kg for a size M 2024 AddictRC40 reference build.",
+      "confidence": "low",
+      "limitations": "No owner weighing, pedal/accessory or measurement protocol; do not supersede current exact regional 7.9 kg claim or assert selected mainland configuration equivalence.",
+      "weight_g": 8000,
+      "size": "M",
+      "reference_model_year": 2024,
+      "measurement_status": "third-party reference assertion",
+      "canonical_target_id": "scott-addict-rc-40",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "historical-reference-price",
+      "claim": "Compilation states CNY 27999 for the 2024 AddictRC40 reference build.",
+      "confidence": "low",
+      "limitations": "Not a seller checkout or owner receipt; no selected size/color, promotion conditions, stock, shipping or tax. Publication date is 2025-05-10; actual price-observation date is not independently supplied.",
+      "amount": 27999,
+      "currency": "CNY",
+      "reference_model_year": 2024,
+      "price_kind": "third-party reference; no live offer",
+      "canonical_target_id": "scott-addict-rc-40",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "28c9467e6b61e7fa6d62f7d3a33ab3029b1e26b95c64aac28a3591f0f12316f1",
+    "scope": "Previously validated local detail archive; raw bodies, account identifiers and original media remain private and outside Git. No child pixel review."
+  }
+}
