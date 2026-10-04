@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {loadPosts} from '../src/lib/posts.mjs';
-import {loadSchedule, nextPublication, preparePublication, oneShotRule} from '../src/lib/post-publication.mjs';
+import {loadSchedule, nextPublication, preparePublication, nextWakeRule, scheduleSeries} from '../src/lib/post-publication.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const scheduleFile=path.join(root,'content/post-schedule.json');
 const stateFile=path.join(root,'.research/blog-publication-state.json');
@@ -16,7 +16,8 @@ const digest=text=>crypto.createHash('sha256').update(text).digest('hex');
 const liveOptions=()=>({headers:{dnt:'1','sec-gpc':'1'},redirect:'error',signal:AbortSignal.timeout(30000)});
 if(command==='status') {
  const next=nextPublication(queue,state.receipts);
- console.log(JSON.stringify({...next,completed:Object.keys(state.receipts).length,rrule:next.due_at?oneShotRule(next.due_at):null},null,2));
+ const progress=scheduleSeries(queue).map(series=>({id:series.id,total:series.entries.length,completed:series.entries.filter(entry=>entry.published_at&&state.receipts[entry.slug]?.published_at===entry.published_at).length}));
+ console.log(JSON.stringify({...next,total:queue.entries.length,completed:progress.reduce((sum,item)=>sum+item.completed,0),series:progress,rrule:nextWakeRule(next)},null,2));
 } else if(command==='prepare') {
  if(!slug || deployment) throw new Error('Usage: node scripts/blog-publication.mjs prepare EXACT-SLUG');
  write(scheduleFile,preparePublication(queue,state.receipts,slug));
@@ -42,5 +43,5 @@ if(command==='status') {
  state.receipts[slug]={published_at:next.entry.published_at,verified_at:new Date().toISOString(),deployment_id:deployment,proof};
  write(stateFile,state);
  const following=nextPublication(queue,state.receipts);
- console.log(JSON.stringify({confirmed:slug,next:following,rrule:following.due_at?oneShotRule(following.due_at):null},null,2));
+ console.log(JSON.stringify({confirmed:slug,next:following,rrule:nextWakeRule(following)},null,2));
 } else throw new Error('Supported commands: status, prepare, confirm.');

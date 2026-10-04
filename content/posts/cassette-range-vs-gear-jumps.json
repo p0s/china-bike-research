@@ -1,0 +1,192 @@
+{
+  "slug": "cassette-range-vs-gear-jumps",
+  "publication_status": "draft",
+  "series_id": "october-2026",
+  "series_order": 38,
+  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "twitter-v3-wheeltop-eds"
+  ],
+  "source_ids": [
+    "twitter-v3-official",
+    "twitter-v3-official-2026-08-16"
+  ],
+  "editorial_references": [
+    "https://www.sram.com/en/sram/models/cs-xg-1271-d1"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "cadence",
+      "ids": [
+        "twitter-gravel-v3"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Cassette range and gear jumps: two numbers, two different jobs",
+      "description": "Calculate total cassette range and individual percentage jumps, then inspect the sprockets you use most often rather than choosing by speed count.",
+      "intro": "“Twelve-speed, wide range” tells you how many sprockets there are and how far the ends are apart. It leaves out the space between the gears where you spend most of the ride. Check both: range determines the available span, while the actual tooth sequence determines each step.",
+      "sections": [
+        {
+          "id": "range",
+          "heading": "Range describes the ends",
+          "paragraphs": [
+            "For a cassette alone, divide the largest sprocket by the smallest and multiply by 100. A 10–44 has 440% range; an illustrative 11–34 has about 309%. Keep the front ring constant when comparing their highest and lowest gears. For a double, calculate the entire drivetrain range separately because the front rings add another span."
+          ]
+        },
+        {
+          "id": "jumps",
+          "heading": "Count the percentages between teeth",
+          "paragraphs": [
+            "[SRAM’s XG-1271 specification](https://www.sram.com/en/sram/models/cs-xg-1271-d1), checked October 4, 2026, lists 10, 11, 13, 15, 17, 19, 21, 24, 28, 32, 38 and 44 teeth. Its 11-to-13 step is larger in percentage terms than its 17-to-19 step, despite both adding two teeth. Divide the larger tooth count by the smaller, subtract one and multiply by 100."
+          ],
+          "worksheet": {
+            "caption": "Tooth-ratio calculations, not ride-test results",
+            "columns": [
+              "Step",
+              "Calculation",
+              "Ratio increase"
+            ],
+            "rows": [
+              [
+                "11 → 13",
+                "13/11 − 1",
+                "18.2%"
+              ],
+              [
+                "17 → 19",
+                "19/17 − 1",
+                "11.8%"
+              ],
+              [
+                "32 → 38",
+                "38/32 − 1",
+                "18.8%"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cadence",
+          "heading": "Check the section of the cassette you live in",
+          "paragraphs": [
+            "At the same road speed, moving to the larger rear sprocket increases required cadence by that ratio. In the illustrative 17-to-19 shift, 80 rpm becomes about 89.4 rpm, ignoring speed changes. Whether that feels useful depends on your pace and preferences; the table is not a ranking of cassette quality.",
+            "On a [Twitter V3 Wheeltop EDS](/models/twitter-v3-wheeltop-eds/) shopping list, request the exact cassette sequence as well as the derailleur model. The frame photograph does not identify the gears on a different seller’s build. Compare sequences only among systems approved for the actual drivetrain and hub, then choose the gaps that suit your normal riding."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "飞轮范围与挡位跳跃：两种数字，回答不同问题",
+      "description": "计算飞轮总范围与相邻百分比跳跃，检查常用齿片，而不是只按速别选择。",
+      "intro": "“十二速，大范围”告诉你飞轮有几片、两端相距多远，却省略了你大部分骑行所在挡位之间的间隔。两者都要检查：范围决定可用跨度，实际齿数排列决定每次跳跃。",
+      "sections": [
+        {
+          "id": "range",
+          "heading": "范围描述两端",
+          "paragraphs": [
+            "仅就飞轮而言，用最大齿数除以最小齿数再乘100。10—44范围为440%，示例11—34约为309%。比较两者最高与最低挡时，保持前盘不变。双盘还要另算完整传动范围，因为前盘又增加了一段跨度。"
+          ]
+        },
+        {
+          "id": "jumps",
+          "heading": "算相邻齿片之间的百分比",
+          "paragraphs": [
+            "[SRAM XG-1271规格](https://www.sram.com/en/sram/models/cs-xg-1271-d1)在2026年10月4日查看时，列出10、11、13、15、17、19、21、24、28、32、38与44齿。11至13的百分比跳跃大于17至19，尽管都多了两齿。计算方法是大齿数除以小齿数，减一后乘100。"
+          ],
+          "worksheet": {
+            "caption": "齿比计算，并非路测结果",
+            "columns": [
+              "跳跃",
+              "计算",
+              "齿数比增幅"
+            ],
+            "rows": [
+              [
+                "11 → 13",
+                "13/11 − 1",
+                "18.2%"
+              ],
+              [
+                "17 → 19",
+                "19/17 − 1",
+                "11.8%"
+              ],
+              [
+                "32 → 38",
+                "38/32 − 1",
+                "18.8%"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cadence",
+          "heading": "检查你常用的那段飞轮",
+          "paragraphs": [
+            "在相同车速下，换到更大后齿片，会按该比例提高所需踏频。示例17换19时，若忽略速度变化，80转/分钟变为约89.4转/分钟。这个变化是否好用取决于你的速度与偏好，表格不是飞轮质量排名。",
+            "把[Twitter V3 Wheeltop EDS](/models/twitter-v3-wheeltop-eds/)列入购买清单时，除了后拨型号，也应索取具体飞轮齿数排列。车架照片不能识别另一卖家整车上的挡位。只在实际传动与花鼓认可的系统间比较，再选择适合常见骑行的间隔。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Kassettenbandbreite und Gangsprünge: Zwei unterschiedliche Fragen",
+      "description": "Berechne Bandbreite und einzelne Prozentsprünge und prüfe häufig genutzte Ritzel statt nur die Gangzahl.",
+      "intro": "„Zwölffach, große Bandbreite“ nennt Ritzelzahl und Abstand der Endpunkte. Die Abstände zwischen deinen häufig genutzten Gängen bleiben offen. Prüfe beides: Bandbreite beschreibt den gesamten Bereich, die Zahnfolge jeden einzelnen Schritt.",
+      "sections": [
+        {
+          "id": "range",
+          "heading": "Bandbreite beschreibt die Endpunkte",
+          "paragraphs": [
+            "Teile für die Kassette das größte Ritzel durch das kleinste und multipliziere mit 100. 10–44 ergibt 440 %, beispielhafte 11–34 rund 309 %. Halte das Kettenblatt beim Vergleich der Endgänge gleich. Beim Zweifachantrieb berechnest du die gesamte Bandbreite zusätzlich mit den Kettenblättern."
+          ]
+        },
+        {
+          "id": "jumps",
+          "heading": "Die Prozentschritte berechnen",
+          "paragraphs": [
+            "Die am 4. Oktober 2026 geprüfte [XG-1271-Spezifikation von SRAM](https://www.sram.com/en/sram/models/cs-xg-1271-d1) nennt 10, 11, 13, 15, 17, 19, 21, 24, 28, 32, 38 und 44 Zähne. 11 zu 13 ist prozentual größer als 17 zu 19, obwohl beide zwei Zähne hinzufügen. Rechne größeres Ritzel geteilt durch kleineres, minus eins, mal 100."
+          ],
+          "worksheet": {
+            "caption": "Zahnverhältnis gerechnet, keine Fahrtests",
+            "columns": [
+              "Schritt",
+              "Rechnung",
+              "Zunahme des Zahnverhältnisses"
+            ],
+            "rows": [
+              [
+                "11 → 13",
+                "13/11 − 1",
+                "18,2 %"
+              ],
+              [
+                "17 → 19",
+                "19/17 − 1",
+                "11,8 %"
+              ],
+              [
+                "32 → 38",
+                "38/32 − 1",
+                "18,8 %"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cadence",
+          "heading": "Den häufig genutzten Bereich prüfen",
+          "paragraphs": [
+            "Bei gleichem Tempo erhöht das größere Ritzel die nötige Kadenz um dieses Verhältnis. Im Beispiel 17 zu 19 werden aus 80 etwa 89,4 U/min, ohne Tempoänderung. Ob das angenehm ist, hängt von Fahrt und Vorlieben ab. Die Tabelle bewertet keine Kassettenqualität.",
+            "Frage beim [Twitter V3 Wheeltop EDS](/models/twitter-v3-wheeltop-eds/) neben dem Schaltwerk nach der genauen Ritzelfolge. Ein Rahmenfoto identifiziert nicht die Gänge eines anderen Händleraufbaus. Vergleiche nur für Antrieb und Nabe freigegebene Systeme und wähle Abstufungen für deine üblichen Fahrten."
+          ]
+        }
+      ]
+    }
+  }
+}

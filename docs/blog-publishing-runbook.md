@@ -1,9 +1,25 @@
-# Publish the twenty-post editorial series
+# Write and publish the China Bikes editorial series
 
 ## Authority and fixed scope
 The user authorized writing and automatically publishing exactly twenty additional posts, starting three days after September 22, 2026, with randomized two-to-five-day gaps. The queue is `content/post-schedule.json`. The first release is September 25 at 20:20 Asia/Singapore. Current SPEC requires English, Simplified Chinese and German editions, a mascot cover and relevant credited bike photographs. Use the existing image-rights records and hosted assets.
 
-The twenty new articles are scheduled drafts in `content/posts/`. They are deliberately visible in this public source repository, but absent from the website until explicitly released. Existing articles remain published. Never publish multiple queued articles to catch up, rerandomize intervals, change the first date, or add articles to this authorization.
+The twenty original articles are scheduled drafts in `content/posts/`. On October 4, the user additionally authorized 100 distinct, high-quality articles and an eight-hour publishing cadence for that new series. Preserve the eighteen pending original articles and their original intervals. The two series share one coordinator and one heartbeat; the new series does not compress or replace the old one.
+
+Article source files are deliberately visible in this public repository, but drafts stay absent from the website until explicitly released. Existing articles remain published. Never catch up by publishing several articles in one wake, rerandomize the original intervals or expose an unfinished article.
+
+## Finish the additional hundred before activation
+
+Follow `docs/editorial-guidelines.md` and the 100 distinct briefs in `docs/editorial-series-2026-10.md`. Author English, Simplified Chinese and German editions with equivalent facts and section anchors, relevant existing mascot art and credited real-bike photographs. Reuse curated videos only where they explain the section. Do not invent current offers, experience, safety approvals, source dates or image rights.
+
+While writing, keep `publication_status: draft`, `series_id: october-2026` and the fixed `series_order` from the brief. The bounded private plan under `.research/editorial-100-2026-10-04/` tracks progress; it is not proof that an article is ready. Read each full edition, verify its material sources, check the promised contribution and overlap, and record `editorial_review` with `status: reviewed` and the actual ISO `reviewed_at` only after that review. Do not stamp reviews automatically.
+
+Continue writing in bounded groups of up to ten full articles per authoring wake. Keep one writer, preserve unfinished work and update the checkpoint. If writing remains, an original queue `wait` or `complete` state does not end the authoring task. Rearm this same heartbeat for a future continuation, normally two hours later. Stay quiet about unchanged waiting states. Report completion or an actionable failure.
+
+If an original article becomes due, preserve the exact authoring work on its owned feature branch before using a separate release branch from current main. Release that one article through the usual checks and live proof, then return to authoring and integrate the fresh main without overwriting the saved work. Never include incomplete authoring work in an article-release PR.
+
+After all 100 editions and reviews are complete, run `node scripts/blog-series-activate.mjs`. It requires exactly 100 reviewed articles in orders 1–100, preserves the original queue and receipts, and starts the first new slot eight hours after readiness. It enrolls the series in schedule schema version 2. An interrupted enrollment fails the build closed; rerun the activation command to recover the same private journal and first date. Run the complete repository gate and inspect the private draft preview on desktop and mobile, then deliver the ready series and scheduler through its signed PR, required checks and deployment. No new article is released by this preparation deployment.
+
+Subsequent new slots keep an eight-hour minimum after the preceding new article's actual live verification. Original releases may occur between new releases, according to their independent unchanged intervals. Provider or computer downtime shifts publication later. It never skips articles or creates a burst.
 
 ## Ownership and durable state
 - Repository: p0s/china-bike-research; production: https://chinesebikes.xyz.
@@ -16,7 +32,7 @@ The twenty new articles are scheduled drafts in `content/posts/`. They are delib
 ## Every wake
 1. Read this runbook and the local `.research/blog-series-checkpoint.md`. Inspect Git status, branch ownership and current remote main before changing anything. Preserve any unfinished exact release and unrelated state.
 2. Run `node scripts/blog-publication.mjs status`. This returns one of: wait, publish, verify or complete. Do not infer state just from a date.
-3. If wait, rearm the same heartbeat for the returned next time and stop. If complete, set the heartbeat PAUSED, report all twenty complete and stop.
+3. After authoring/activation is finished: if wait, rearm the same heartbeat for the returned next time and stop. If complete, set the heartbeat PAUSED, report both series fully verified and stop. A `complete` result from the legacy queue alone must not stop unfinished authoring of the additional hundred.
 4. If verify, finish or recover that exact release before preparing another. A published_at value is a prepared release, not proof that production serves it. Recover the matching PR/merge/deployment using Git history and the checkpoint.
 
 ## Prepare one due article
@@ -44,13 +60,13 @@ The twenty new articles are scheduled drafts in `content/posts/`. They are delib
 
    The configured build command performs the production build. If the file is missing or the account cannot be verified, stop rather than selecting another account. Do not install a new CLI, change accounts or create credentials automatically.
 3. Record the returned Cloudflare deployment version. Run `node scripts/blog-publication.mjs confirm EXACT-SLUG CLOUDFLARE-VERSION-UUID`. It sends DNT/GPC headers to avoid counting verification as visits or receiving per-visitor analytics markup. It requires all three live language pages to match local production HTML, and requires the live sitemap and blog index to contain the article. The command stores the receipt only after all checks pass.
-4. Verify the next pending slug still returns 404 and is absent from the live sitemap/index. Confirm the due article's canonical, hreflang, cover and real-bike photo behavior. A deployed version alone is not proof of these public results.
+4. Verify the next pending slug in each series still returns 404 in all three languages and is absent from every live language index and the sitemap. `nextPendingArticles` in the publication library returns these slugs. Confirm the due article's canonical, hreflang, cover and real-bike photo behavior. A deployed version alone is not proof of these public results.
 5. Update the <=25-line checkpoint with the exact merge SHA, deployment version, slug, live verification and next due time. Keep one current baseline plus the latest delta.
 
 ## Rearm and recovery
-Use the same automation ID and preserve its full name, destination and prompt. The status/confirm command returns a one-shot rule for the next Singapore wall-clock time. Use `automation_update` to update the existing heartbeat with that rule and ACTIVE status, then view it to verify persistence. The rule is an annual calendar selector with COUNT=1 to encode an exact upcoming date without a DTSTART timezone override; it is not an annually recurring publication. Never rearm a date already in the past.
+Use the same automation ID and preserve its full name, destination and prompt. The status/confirm command returns a one-shot rule for the next Singapore wall-clock time. Use `automation_update` to update the existing heartbeat with that rule and ACTIVE status, then view it to verify persistence. The rule is an annual calendar selector with BYSETPOS=1 and COUNT=1 to encode an exact upcoming date without a DTSTART timezone override; it is not an annually recurring publication. BYSETPOS keeps this calendar selector on the installed app's local-wall-clock path; a plain yearly selector is evaluated in UTC. Never omit it or rearm a date already in the past. Check the saved next-run instant against the intended timestamp after changing the timer.
 
-The next prompt must instruct the agent to follow this runbook and preserve the latest successful receipt. After the twentieth verified release, use PAUSED instead of rearming. An expired COUNT=1 rule must not remain active.
+The next prompt must instruct the agent to follow this runbook and preserve the latest successful receipt. After all 120 queued releases are verified, use PAUSED instead of rearming. During authoring, preserve the original release receipts and continue the writing task. An expired COUNT=1 rule must not remain active.
 
 For a temporary provider/build/deploy failure, preserve the candidate and checkpoint and rearm the same heartbeat for a bounded retry (for example, two hours later). Do not repeatedly run the same failure without a relevant change, duplicate watchers or publish another article around it. If credential unlock, a policy conflict, concurrent ownership or a new authority boundary requires the user, report the concrete blocker and pause rather than inventing credentials or changing deployment targets.
 

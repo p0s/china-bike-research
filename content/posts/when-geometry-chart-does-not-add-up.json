@@ -1,0 +1,124 @@
+{
+  "slug": "when-geometry-chart-does-not-add-up",
+  "publication_status": "draft",
+  "series_id": "october-2026",
+  "series_order": 33,
+  "image_id": "38mm-tires-on-aero-road-bikes",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "lightcarbon-lcr018-d"
+  ],
+  "source_ids": [
+    "lightcarbon-lcr018-d-official-2026-08-29",
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
+  ],
+  "editorial_references": [
+    "https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html",
+    "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20Frame%2BComponent%20Catalog%20-V1.pdf"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "example",
+      "ids": [
+        "lightcarbon-lcr018-d"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "When a bike geometry chart does not add up",
+      "description": "Resolve conflicting sizes, measuring conventions and chart revisions before a geometry calculator turns uncertain inputs into precise advice.",
+      "intro": "A calculator can return a beautifully precise answer from the wrong chart. That is the problem with unresolved geometry: extra decimal places make the uncertainty harder to see. Before calculating a stem or frame size, establish which drawing actually describes the frame being sold.",
+      "sections": [
+        {
+          "id": "mismatch",
+          "heading": "Find the kind of disagreement",
+          "paragraphs": [
+            "Put the documents side by side and mark the disputed cells. Is the difference a changed frame revision, a size label, a measurement convention or a transcription error? Keep those possibilities open until evidence selects one. Do not average conflicting stack values: the result might describe neither frame.",
+            "Wheelbase, front-centre and chainstay figures also need their dimension lines. A diagonal distance and its horizontal projection cannot be added as if they were the same measurement. A suspicious sum is a reason to inspect the drawing, not proof that the manufacturer made an error."
+          ]
+        },
+        {
+          "id": "example",
+          "heading": "A changed reference can look like a changed frame",
+          "paragraphs": [
+            "The [LightCarbon LCR018-D record](/models/lightcarbon-lcr018-d/) preserves qualifications around conflicting geometry evidence. One concrete document difference is the standover reference: the 2025–2026 catalog labels it with a 700×38C basis, while the product table checked October 4, 2026 labels it 700C×32C. That alone is enough to stop a direct comparison of those standover figures.",
+            "A newer page may clarify a drawing, but its date does not identify your particular frame. Obtain the current size-labelled diagram and ask which production revision it covers. Keep the older document as history instead of silently replacing its meaning."
+          ]
+        },
+        {
+          "id": "resolve",
+          "heading": "Ask one question the seller can answer",
+          "paragraphs": [
+            "Send both diagrams with the disputed dimensions highlighted: “For the frame revision and size in this order, which drawing is authoritative, and what are the measurement endpoints for these values?” Request a corrected size-specific drawing if necessary. A reply that the frame is “comfortable” does not resolve a numerical mismatch.",
+            "Until the answer is usable, leave the affected fit calculation open. Compare candidates with clear inputs, or take the documents to a fitter. A question mark is more useful than an exact recommendation for a frame that the numbers have not yet identified."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "自行车几何表对不上时，怎么办",
+      "description": "先解决尺码、测量定义和图表版本冲突，再让几何计算器给出适配建议。",
+      "intro": "计算器能用错误图表算出漂亮而精确的答案。这正是未解决几何问题的麻烦：小数越多，不确定性越不容易看见。计算把立或车架尺码之前，先确认哪张图真正描述了正在出售的车架。",
+      "sections": [
+        {
+          "id": "mismatch",
+          "heading": "先找出冲突属于哪一类",
+          "paragraphs": [
+            "把文件并排放，标出争议单元格。差别来自车架版本变化、尺码标签、测量定义，还是录入错误？证据明确前，应保留这些可能性。不要将冲突堆高取平均，结果可能不属于任何一款车架。",
+            "轴距、前轴距与后下叉长度，还需要对应尺寸线。斜线距离与它的水平投影不能视为同一种测量相加。可疑总和说明值得检查图纸，并不能直接证明厂家算错。"
+          ]
+        },
+        {
+          "id": "example",
+          "heading": "参考基准变化，看起来也像车架变了",
+          "paragraphs": [
+            "[LightCarbon LCR018-D记录](/models/lightcarbon-lcr018-d/)保留了几何证据冲突的限定。其中一项具体文件差异是跨高基准：2025—2026目录以700×38C标注，2026年10月4日查看的产品表则标为700C×32C。仅这一点，就足以停止直接比较两份表的跨高数值。",
+            "新页面可能澄清图纸，但页面较新，并不能识别你那一支具体车架。应取得当前带尺码的图纸，并确认覆盖哪个生产版本。旧文件应作为历史保留，不要悄悄改变它原本含义。"
+          ]
+        },
+        {
+          "id": "resolve",
+          "heading": "问一个卖家能够明确回答的问题",
+          "paragraphs": [
+            "把两张图连同突出标记的争议尺寸一起发送：“就本订单的车架版本与尺码而言，以哪张图为准？这些数值的测量起止点是什么？”必要时索取针对该尺码的修正版图纸。“骑起来舒服”的答复，解决不了数字冲突。",
+            "在答复可用之前，先搁置受影响的适配计算。可以比较输入明确的候选车架，或把资料带给适配师。对数字尚未识别清楚的车架，一个问号比精确建议更有用。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Wenn eine Fahrrad-Geometrietabelle nicht zusammenpasst",
+      "description": "Kläre Größen, Messdefinitionen und Revisionen, bevor ein Rechner aus unsicheren Daten scheinbar präzise Empfehlungen macht.",
+      "intro": "Ein Rechner liefert auch aus einer falschen Tabelle ein hübsch präzises Ergebnis. Bei ungeklärter Geometrie verstecken zusätzliche Nachkommastellen die Unsicherheit. Kläre vor Vorbau- oder Größenberechnungen, welche Zeichnung den angebotenen Rahmen beschreibt.",
+      "sections": [
+        {
+          "id": "mismatch",
+          "heading": "Die Art des Widerspruchs bestimmen",
+          "paragraphs": [
+            "Lege die Dokumente nebeneinander und markiere strittige Felder. Geht es um Revision, Größenbezeichnung, Messdefinition oder Übertragungsfehler? Halte diese Möglichkeiten offen, bis Belege eine klären. Gemittelte Stack-Werte können am Ende zu keinem der beiden Rahmen gehören.",
+            "Radstand, Front-Center und Hinterbaulänge brauchen eindeutige Maßlinien. Eine diagonale Länge und ihre horizontale Projektion sind nicht gleichartig addierbar. Eine auffällige Summe ist Anlass zur Zeichnungsprüfung, noch kein Beweis für einen Herstellerfehler."
+          ]
+        },
+        {
+          "id": "example",
+          "heading": "Ein anderer Bezug kann wie ein anderer Rahmen aussehen",
+          "paragraphs": [
+            "Der [LightCarbon-LCR018-D-Eintrag](/models/lightcarbon-lcr018-d/) bewahrt Einschränkungen widersprüchlicher Geometriebelege. Ein konkreter Unterschied betrifft den Überstand: Der Katalog 2025–2026 nennt 700×38C, die am 4. Oktober 2026 geprüfte Produkttabelle 700C×32C. Schon deshalb sind die Überstandswerte nicht unmittelbar vergleichbar.",
+            "Eine neuere Seite kann etwas klären; ihr Datum identifiziert aber nicht deinen konkreten Rahmen. Fordere die aktuelle Zeichnung mit Größenlabels und zugehöriger Produktionsrevision an. Bewahre die alte Unterlage als historischen Beleg, statt ihre Bedeutung still zu ändern."
+          ]
+        },
+        {
+          "id": "resolve",
+          "heading": "Eine konkret beantwortbare Frage stellen",
+          "paragraphs": [
+            "Sende beide Zeichnungen mit markierten Streitpunkten: „Welche Zeichnung gilt für Revision und Größe meiner Bestellung, und zwischen welchen Punkten werden diese Werte gemessen?“ Bitte nötigenfalls um eine korrigierte Größenzeichnung. „Der Rahmen ist komfortabel“ löst keinen Zahlenwiderspruch.",
+            "Lass die betroffene Fit-Berechnung offen, bis die Antwort belastbar ist. Vergleiche Kandidaten mit klaren Daten oder besprich die Unterlagen mit einem Fitter. Ein Fragezeichen hilft mehr als eine exakte Empfehlung für einen noch nicht eindeutig beschriebenen Rahmen."
+          ]
+        }
+      ]
+    }
+  }
+}

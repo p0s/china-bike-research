@@ -1,0 +1,140 @@
+{
+  "slug": "comparing-two-geometry-charts",
+  "publication_status": "draft",
+  "series_id": "october-2026",
+  "series_order": 22,
+  "image_id": "38mm-tires-on-aero-road-bikes",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "lightcarbon-lcr018-d",
+    "incolor-speedster-sr-frameset"
+  ],
+  "source_ids": [
+    "lightcarbon-lcr018-d-official-2026-08-29",
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
+    "incolor-speedster-official-2026-08-29",
+    "incolor-speedster-brochure-2026-08-29"
+  ],
+  "editorial_references": [],
+  "photo_sections": [
+    {
+      "section_id": "normalise",
+      "ids": [
+        "incolor-speedster-sr",
+        "lightcarbon-lcr018-d"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Comparing two geometry charts: align the evidence before the numbers",
+      "description": "A method for comparing bike geometry across brands without mixing units, model revisions or incompatible measurement conventions.",
+      "intro": "Two tidy geometry charts can produce a very untidy comparison. Before subtracting stack or reach, make sure both tables describe the frames you can actually buy and measure the same things. A spreadsheet cannot repair the wrong source.",
+      "sections": [
+        {
+          "id": "source",
+          "heading": "Identify the chart, not just the brand",
+          "paragraphs": [
+            "Record model, revision, chart date or access date, size labels and source URL. Keep the original diagram. A current web table and an older PDF may both be genuine and still describe different revisions. Do not average conflicting values to make the disagreement disappear."
+          ]
+        },
+        {
+          "id": "normalise",
+          "heading": "Normalize units and references",
+          "paragraphs": [
+            "Convert centimetres to millimetres where necessary: 38.0 cm is 380 mm. Distinguish actual and effective top-tube length, frame stack and contact-point height, and any stated tire basis for standover. A size “54” should remain a label until the manufacturer explains what it means.",
+            "If one chart omits a dimension, leave the comparison blank. Deriving it may require angles or reference definitions that the table does not establish. A precise-looking result can be less honest than an empty cell."
+          ]
+        },
+        {
+          "id": "catalog",
+          "heading": "Respect the catalog’s warnings",
+          "paragraphs": [
+            "Compare the [LightCarbon LCR018-D](/models/lightcarbon-lcr018-d/) and [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) only using the exact geometry records and their qualifications. The catalog preserves source conflicts instead of resolving them by guesswork. A dimension unsuitable for a derived fit calculation should stay out of that calculation."
+          ]
+        },
+        {
+          "id": "finish",
+          "heading": "Finish with differences and open questions",
+          "paragraphs": [
+            "Make a short table of reliable differences, then a separate list of unresolved items. Compare the complete cockpit arrangements against your intended position. Send the remaining precise questions to the manufacturer. “Which revision is this chart?” is more answerable than “Will this bike fit me?”"
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "对比两张几何表：先统一资料，再比较数字",
+      "description": "跨品牌比较几何的方法，避免混用单位、车型版本和不同测量定义。",
+      "intro": "两张整齐的几何表，也可能产生非常混乱的对比。做stack或reach差值之前，先确认它们描述的是实际可以买到的车架，测量定义也相同。表格无法修复错误的来源。",
+      "sections": [
+        {
+          "id": "source",
+          "heading": "确认图表身份，而不只是品牌",
+          "paragraphs": [
+            "记录车型、版本、图表日期或访问日期、尺码标签和来源网址，并保存原示意图。当前网页与较早PDF可能都是真实资料，却对应不同版本。不要把冲突数值取平均，让分歧看起来消失。"
+          ]
+        },
+        {
+          "id": "normalise",
+          "heading": "统一单位与参考点",
+          "paragraphs": [
+            "需要时将厘米转换为毫米，例如38.0厘米等于380毫米。区分实际与有效上管长、车架stack与接触点高度，并保留跨高对应的轮胎基准。“54码”在厂家解释其含义之前，应只视为标签。",
+            "若一张表缺少某个尺寸，比较栏应留空。推导可能需要图表没有明确的角度或参考定义。看起来很精确的结果，有时反而不如一个空白诚实。"
+          ]
+        },
+        {
+          "id": "catalog",
+          "heading": "保留目录中的警示条件",
+          "paragraphs": [
+            "比较[LightCarbon LCR018-D](/models/lightcarbon-lcr018-d/)与[INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/)时，只使用准确几何记录，并保留限制。目录保留来源冲突，不会靠猜测消除。某个尺寸如果不适合用于推导适配，就应留在该计算之外。"
+          ]
+        },
+        {
+          "id": "finish",
+          "heading": "把差异与待确认问题一起列出",
+          "paragraphs": [
+            "用短表列出可靠差值，再另列未解决项目，把完整把组配置与目标骑姿对照。最后向厂家发送具体问题。“这张表对应哪个版本？”比“这辆车适合我吗？”更容易得到有效回答。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Zwei Geometrietabellen vergleichen: Erst die Grundlagen angleichen",
+      "description": "Vergleiche Geometrien ohne Einheiten, Modellrevisionen oder Messdefinitionen zu vermischen.",
+      "intro": "Zwei ordentliche Geometrietabellen können einen unordentlichen Vergleich ergeben. Prüfe vor Stack- und Reach-Differenzen, ob beide Tabellen die kaufbaren Rahmen und dieselben Messpunkte beschreiben. Eine Tabelle repariert keine falsche Quelle.",
+      "sections": [
+        {
+          "id": "source",
+          "heading": "Die Tabelle identifizieren, nicht nur die Marke",
+          "paragraphs": [
+            "Notiere Modell, Revision, Tabellen- oder Abrufdatum, Größenbezeichnungen und URL; behalte die Zeichnung. Aktuelle Webseite und altes PDF können echt sein und unterschiedliche Revisionen beschreiben. Widersprüche werden durch Mittelwerte nicht gelöst."
+          ]
+        },
+        {
+          "id": "normalise",
+          "heading": "Einheiten und Bezugspunkte angleichen",
+          "paragraphs": [
+            "Wandle nötigenfalls Zentimeter in Millimeter um: 38,0 cm sind 380 mm. Trenne tatsächliche und effektive Oberrohrlänge, Rahmen-Stack und Griffhöhe sowie Reifenbezüge der Überstandshöhe. „54“ bleibt ein Etikett, bis die Herstellerdefinition klar ist.",
+            "Fehlt ein Maß, lasse das Vergleichsfeld offen. Eine Ableitung kann Winkel oder Bezugsdefinitionen benötigen, die nicht belegt sind. Eine präzise wirkende Zahl ist dann weniger ehrlich als eine leere Zelle."
+          ]
+        },
+        {
+          "id": "catalog",
+          "heading": "Die Hinweise im Katalog respektieren",
+          "paragraphs": [
+            "Vergleiche [LightCarbon LCR018-D](/models/lightcarbon-lcr018-d/) und [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) anhand ihrer genauen Datensätze und Einschränkungen. Der Katalog bewahrt Quellenkonflikte. Ein für abgeleitete Passformrechnungen ungeeignetes Maß bleibt außerhalb der Rechnung."
+          ]
+        },
+        {
+          "id": "finish",
+          "heading": "Unterschiede und offene Fragen festhalten",
+          "paragraphs": [
+            "Liste belastbare Unterschiede und offene Fragen getrennt. Vergleiche vollständige Cockpits mit deiner Zielposition und schicke konkrete Restfragen an den Hersteller. „Welche Revision zeigt diese Tabelle?“ ist leichter zu beantworten als „Passt mir dieses Rad?“."
+          ]
+        }
+      ]
+    }
+  }
+}
