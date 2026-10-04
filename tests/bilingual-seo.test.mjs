@@ -103,7 +103,8 @@ test('a real low-evidence profile is noindex while useful model and original rec
   assert.match(productHtml, /尚未逐条翻译/);
 });
 test('bilingual articles and scheduled drafts have valid stable identities and only known evidence references', () => {
-  assert.equal(posts.length, 25);
+  assert.equal(posts.filter(post => post.series_id !== 'october-2026').length, 25);
+  assert.ok(posts.filter(post => post.series_id === 'october-2026').length <= 100);
   assert.doesNotThrow(() => validatePostReferences(posts, data, products));
   for (const post of posts) {
     assert.match(post.translations['zh-Hans'].title, /[\u3400-\u9fff]/);

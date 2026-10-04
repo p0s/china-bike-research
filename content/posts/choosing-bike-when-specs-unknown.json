@@ -1,0 +1,218 @@
+{
+  "slug": "choosing-bike-when-specs-unknown",
+  "publication_status": "scheduled",
+  "series_id": "october-2026",
+  "series_order": 20,
+  "image_id": "38mm-tires-on-aero-road-bikes",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "twitter-v3-rs-sensah"
+  ],
+  "source_ids": [
+    "twitter-v3-official",
+    "twitter-v3-official-2026-08-16"
+  ],
+  "editorial_references": [],
+  "photo_sections": [
+    {
+      "section_id": "real-example",
+      "ids": [
+        "twitter-gravel-v3"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Choosing a bike with missing specs: make an uncertainty budget",
+      "description": "Distinguish missing, conflicting and historical bike evidence, then identify which unknowns must be resolved before ordering.",
+      "intro": "A blank specification field tells you what is unknown. It does not tell you that the bike is bad. The useful question is whether the missing fact affects your fit, safety, compatibility or total cost—and whether you can get a dependable answer before buying.",
+      "sections": [
+        {
+          "id": "types",
+          "heading": "Name the kind of uncertainty",
+          "paragraphs": [
+            "A missing fact, a conflict and an old observation need different actions. Use a small evidence table instead of treating every blank as a reason to reject the bike or every seller answer as proof."
+          ],
+          "worksheet": {
+            "caption": "How to treat different evidence states",
+            "columns": [
+              "Evidence state",
+              "Example",
+              "Next action"
+            ],
+            "rows": [
+              [
+                "Known, conditional",
+                "A clearance figure with drivetrain restrictions",
+                "Keep the condition in the build brief"
+              ],
+              [
+                "Missing",
+                "No documented maximum load",
+                "Ask for the exact limit"
+              ],
+              [
+                "Conflicting",
+                "Two sources name different bottom-bracket shells",
+                "Resolve the revision and interface"
+              ],
+              [
+                "Historical",
+                "An older dated price observation",
+                "Get a current destination-specific quote"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "real-example",
+          "heading": "Keep model identity attached to the fact",
+          "paragraphs": [
+            "The [Twitter Gravel V3 mechanical record](/models/twitter-v3-rs-sensah/) preserves a generation-specific clearance and bottom-bracket evidence problem. A specification from a differently documented V3 should not fill the gap automatically. Resolve the revision of the bike you will receive, then ask for the relevant drawing or manual.",
+            "Record the answer’s source and date. A manual is useful evidence of what the manufacturer specifies; an owner’s fitted tire is evidence of that particular build. Neither should silently change class when repeated in a shopping spreadsheet."
+          ]
+        },
+        {
+          "id": "priority",
+          "heading": "Resolve the costly unknowns first",
+          "paragraphs": [
+            "Put fit, approved limits, irreversible part choices and unresolved delivery charges at the top. An unspecified paint weight may matter little to your purchase; an unidentified headset or maximum load can matter a great deal. Decide your walk-away conditions while you can still walk away.",
+            "Keep a shortlist of viable alternatives while waiting for answers. If a material requirement remains unresolved, do not convert uncertainty into optimism to keep a preferred bike at the top. Choose the build whose important requirements you can actually verify."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "规格资料不全，还能选车吗？给未知项目排个优先级",
+      "description": "区分缺失、冲突与历史资料，找出下单前必须解决的未知项目。",
+      "intro": "规格表的空白，告诉你的是“未知”，不是“这辆车差”。真正有用的问题是：缺失事实是否影响适配、安全、兼容性或总费用，以及下单前能否得到可靠答案。",
+      "sections": [
+        {
+          "id": "types",
+          "heading": "先给未知状态分类",
+          "paragraphs": [
+            "缺失事实、资料冲突和旧记录，需要不同处理方式。用一张简单证据表，避免把每个空白都当成拒绝理由，也避免把每个卖家回答都当成证明。"
+          ],
+          "worksheet": {
+            "caption": "不同证据状态的处理方式",
+            "columns": [
+              "证据状态",
+              "例子",
+              "下一步"
+            ],
+            "rows": [
+              [
+                "已知但有条件",
+                "胎宽数据带传动限制",
+                "在配置需求中保留条件"
+              ],
+              [
+                "缺失",
+                "没有记载最大载荷",
+                "询问具体限制"
+              ],
+              [
+                "冲突",
+                "两个来源给出不同中轴壳体",
+                "确认版本和接口"
+              ],
+              [
+                "历史",
+                "较早的带日期价格记录",
+                "取得当前收货地报价"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "real-example",
+          "heading": "让每个事实对应具体车型身份",
+          "paragraphs": [
+            "[Twitter Gravel V3机械版本记录](/models/twitter-v3-rs-sensah/)保留了与具体代次相关的轮胎空间和中轴证据问题。不能自动用另一份V3资料填补空白。先确认实际收到车辆的版本，再索取对应图纸或说明书。",
+            "记录答复的来源和日期。说明书能证明厂家规定了什么；车主装上的轮胎只能说明那个具体配置。两者被写进购物表格时，不能悄悄变成同一类证据。"
+          ]
+        },
+        {
+          "id": "priority",
+          "heading": "先解决代价大的未知",
+          "paragraphs": [
+            "把适配、认可限制、难以撤回的零件选择和未确定配送费用放在前面。未说明涂装重量可能影响不大，但碗组身份或最大载荷不明，可能很关键。趁还能放弃时，先设定放弃条件。",
+            "等待答复时保留可行替代方案。如果关键要求一直未解决，不要为了让喜欢的车继续排第一，就把未知改写成乐观判断。应选择重要需求确实能验证的配置。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Radwahl mit fehlenden Daten: Ungewissheit gezielt einplanen",
+      "description": "Unterscheide fehlende, widersprüchliche und historische Angaben und kläre kaufentscheidende Lücken.",
+      "intro": "Ein leeres Datenfeld bedeutet unbekannt, nicht schlecht. Entscheidend ist, ob die fehlende Information Passform, Sicherheit, Kompatibilität oder Gesamtkosten beeinflusst und ob du vor dem Kauf eine belastbare Antwort bekommst.",
+      "sections": [
+        {
+          "id": "types",
+          "heading": "Die Art der Ungewissheit benennen",
+          "paragraphs": [
+            "Fehlende Angaben, Widersprüche und alte Beobachtungen brauchen andere Schritte. Eine kleine Belegtabelle verhindert, dass jede Lücke zum Ausschluss oder jede Verkäuferantwort automatisch zum Beweis wird."
+          ],
+          "worksheet": {
+            "caption": "Umgang mit verschiedenen Belegständen",
+            "columns": [
+              "Belegstand",
+              "Beispiel",
+              "Nächster Schritt"
+            ],
+            "rows": [
+              [
+                "Bekannt, bedingt",
+                "Reifenlimit abhängig vom Antrieb",
+                "Bedingung im Aufbau behalten"
+              ],
+              [
+                "Fehlend",
+                "Keine dokumentierte Maximallast",
+                "Konkrete Grenze klären"
+              ],
+              [
+                "Widersprüchlich",
+                "Quellen nennen andere Tretlagergehäuse",
+                "Revision und Schnittstelle klären"
+              ],
+              [
+                "Historisch",
+                "Ältere datierte Preisbeobachtung",
+                "Aktuelles Angebot für den Zielort holen"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "real-example",
+          "heading": "Die Modellidentität am Fakt behalten",
+          "paragraphs": [
+            "Der [mechanische Twitter-Gravel-V3-Eintrag](/models/twitter-v3-rs-sensah/) hält generationsbezogene Fragen zu Reifenfreiheit und Tretlager fest. Daten eines anders dokumentierten V3 dürfen die Lücke nicht automatisch füllen. Kläre die gelieferte Revision und frage nach Zeichnung oder Anleitung.",
+            "Notiere Quelle und Datum. Ein Handbuch belegt Herstellervorgaben, ein montierter Besitzerreifen diesen konkreten Aufbau. Beim Übertragen in eine Einkaufstabelle dürfen beide nicht stillschweigend dieselbe Belegklasse bekommen."
+          ]
+        },
+        {
+          "id": "priority",
+          "heading": "Die folgenreichen Lücken zuerst klären",
+          "paragraphs": [
+            "Priorisiere Passform, Freigaben, irreversible Teileentscheidungen und offene Lieferkosten. Ein unbekanntes Lackgewicht kann nebensächlich sein; ein unklarer Steuersatz oder eine fehlende Lastgrenze nicht. Lege Abbruchbedingungen fest, solange ein Verzicht einfach ist.",
+            "Behalte passende Alternativen, während Antworten ausstehen. Wird eine wichtige Anforderung nicht geklärt, verwandle Ungewissheit nicht in Optimismus, nur damit dein Favorit vorne bleibt. Wähle einen Aufbau mit überprüfbaren Kernanforderungen."
+          ]
+        }
+      ]
+    }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T08:57:21.383Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "An evidence-state table separates missing, conflicting, conditional and historical facts and ranks the consequential unknowns."
+  }
+}
