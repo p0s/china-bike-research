@@ -928,7 +928,7 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
   const openComparison = client.slice(client.indexOf('function openComparison('), client.indexOf('function closeComparison('));
   assert.match(openComparison, /const wasOpen = !comparePanel\.hidden/);
-  assert.match(openComparison, /if \(!wasOpen\) sendComparisonOpenedEvent\(\)/);
+  assert.match(openComparison, /if \(!wasOpen\) sendComparisonOpenedEvent\(\{ comparisonCount: selection.length \}\)/);
   assert.match(privacy, /youtube-nocookie\.com/);
   assert.match(privacy, /may contact YouTube when the page loads or the video comes into view/);
   assert.doesNotMatch(privacy, /XHS video links|only after you choose to load/);

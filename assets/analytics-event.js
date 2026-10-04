@@ -5,6 +5,7 @@ function doNotTrackEnabled(value) {
 }
 
 export function sendComparisonOpenedEvent({
+  comparisonCount,
   locationRef = globalThis.location,
   navigatorRef = globalThis.navigator,
   windowRef = globalThis.window,
@@ -26,7 +27,9 @@ export function sendComparisonOpenedEvent({
       redirect: 'error',
       keepalive: true,
       referrerPolicy: 'no-referrer',
-      headers: { 'X-Analytics-Path': path }
+      headers: { 'X-Analytics-Path': path,
+        ...(Number.isInteger(comparisonCount) && comparisonCount >= 2 && comparisonCount <= 10
+          ? { 'X-Comparison-Count': String(comparisonCount) } : {}) }
     });
     if (result && typeof result.catch === 'function') result.catch(() => {});
   } catch {
@@ -36,6 +39,7 @@ export function sendComparisonOpenedEvent({
 }
 
 export function sendProductOutboundClickEvent({
+  sourceId,
   locationRef = globalThis.location,
   navigatorRef = globalThis.navigator,
   windowRef = globalThis.window,
@@ -44,6 +48,10 @@ export function sendProductOutboundClickEvent({
   if (locationRef?.hostname !== PRODUCTION_HOSTNAME || typeof fetchImpl !== 'function') return false;
   if (navigatorRef?.globalPrivacyControl === true) return false;
   if ([navigatorRef?.doNotTrack, navigatorRef?.msDoNotTrack, windowRef?.doNotTrack].some(doNotTrackEnabled)) return false;
+
+  const pagePath = String(locationRef.pathname ?? '');
+  if (sourceId !== undefined && (typeof sourceId !== 'string' || !/^[a-z0-9][a-z0-9-]{0,149}$/.test(sourceId)
+    || !/^(?:\/(?:zh|de))?\/models\/[a-z0-9][a-z0-9-]{0,149}\/$/.test(pagePath))) return false;
 
   try {
     const result = fetchImpl('/analytics/action', {
@@ -55,7 +63,8 @@ export function sendProductOutboundClickEvent({
       keepalive: true,
       referrerPolicy: 'no-referrer',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ actionId: 'product_outbound_click' })
+      body: JSON.stringify({ actionId: 'product_outbound_click',
+        ...(sourceId ? { pagePath, sourceId } : {}) })
     });
     if (result && typeof result.catch === 'function') result.catch(() => {});
   } catch {

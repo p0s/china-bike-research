@@ -44,6 +44,12 @@ In the `chinesebikes.xyz` zone, proxied `www` redirects
 `http*://www.chinesebikes.xyz/*` to `https://chinesebikes.xyz/${2}` with the
 same settings. The apex is the Worker Custom Domain.
 
+Enable **Always Use HTTPS** for the `chinesebikes.xyz` zone before serving
+production traffic. It covers HTTP documents and asset-first paths. The Worker
+also permanently redirects HTTP requests on the canonical host before handling
+preferences, events, cookies or content. Preserve the path and query; never
+collect an event for the redirect response.
+
 The domain remains registered at Spaceship, with Cloudflare DNS and hosting.
 Cloudflare DNSSEC is enabled and its DS record is installed at Spaceship;
 validate the signed chain after any nameserver or registrar change. The four
@@ -118,6 +124,14 @@ outbound clicks, site search, forms, video and file downloads: page views and
 product-link actions already have bounded explicit senders, and search/form
 text must not enter the trial. Do not turn on advertising to clear the
 zero-advertising-consent diagnostic.
+
+Action context is resolved from the build's `data/analytics-context.json`.
+Register event-scoped GA dimensions for `page_type`, `interface_language`,
+`model_id`, `brand_id`, `link_type` and `destination_host`, plus a standard
+numeric custom metric for `comparison_count`. GA page location is the canonical
+public path. Umami receives the same bounded fields as event data after its
+China Bikes validator is deployed. No query, fragment, search text, selected
+model list, full outbound URL or arbitrary client property is accepted.
 
 Set `GA4_MEASUREMENT_ID` to the web stream ID and `GA4_API_SECRET` to a new
 Measurement Protocol API secret in Worker secrets. Set `GA4_ENABLED=true` only
