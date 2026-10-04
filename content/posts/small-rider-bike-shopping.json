@@ -1,6 +1,6 @@
 {
   "slug": "small-rider-bike-shopping",
-  "publication_status": "draft",
+  "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 13,
   "image_id": "38mm-tires-on-aero-road-bikes",
@@ -42,7 +42,7 @@
           "id": "parts",
           "heading": "Check the included parts separately",
           "paragraphs": [
-            "Ask which bar width, stem length, crank length and seatpost offset actually come with that size. Confirm alternatives before paying. A short frame with a long fixed cockpit can still put the controls too far away. A post may also have minimum insertion and adjustment requirements that limit how low the saddle can go.",
+            "Ask which bar width, stem length, crank length and seatpost offset actually come with that size. Confirm alternatives before paying. A short frame with a long fixed cockpit can still put the controls too far away. Check the post’s minimum insertion, permitted maximum insertion and any internal obstruction: minimum insertion limits extension, while a post that bottoms out can prevent the saddle going low enough.",
             "Do not prescribe a crank length or bar width from height alone. Those choices deserve their own fit and use assessment. Price any necessary replacements into the offer rather than treating them as a surprise after delivery."
           ]
         },
@@ -78,7 +78,7 @@
           "id": "parts",
           "heading": "单独检查附带零件",
           "paragraphs": [
-            "询问该尺码实际附带的车把宽度、把立长度、曲柄长度和座管后飘，并在付款前确认替代选项。短车架配过长且固定的一体把，控制部件仍可能太远。座管的最低插入与调节要求，也可能限制坐垫能降多低。",
+            "询问该尺码实际附带的车把宽度、把立长度、曲柄长度和座管后飘，并在付款前确认替代选项。短车架配过长且固定的一体把，控制部件仍可能太远。还要检查座管最小插入深度、允许的最大插入深度，以及车架内部是否挡住座管。前者限制能伸多高；插到底或碰到内部结构，则可能导致坐垫降不到需要的高度。",
             "不要只按身高规定曲柄长度或车把宽度，这些选择需要单独的适配和用途评估。必要替换应提前计入报价，避免收货后才出现额外费用。"
           ]
         },
@@ -114,7 +114,7 @@
           "id": "parts",
           "heading": "Mitgelieferte Teile einzeln prüfen",
           "paragraphs": [
-            "Frage nach tatsächlicher Lenkerbreite, Vorbau- und Kurbellänge sowie Stützenversatz dieser Größe. Kläre Alternativen vor der Zahlung. Ein kurzer Rahmen mit langem festen Cockpit kann die Hebel trotzdem zu weit entfernen. Mindest-Einstecktiefe und Einstellgrenzen begrenzen außerdem die mögliche Sattelhöhe.",
+            "Frage nach tatsächlicher Lenkerbreite, Vorbau- und Kurbellänge sowie Stützenversatz dieser Größe. Kläre Alternativen vor der Zahlung. Ein kurzer Rahmen mit langem festem Cockpit kann die Hebel trotzdem zu weit entfernen. Prüfe Mindest-Einstecktiefe, erlaubte maximale Einstecktiefe und innere Hindernisse: Die Mindesttiefe begrenzt das Herausziehen; eine unten anstoßende Stütze kann die gewünschte niedrige Sattelhöhe verhindern.",
             "Leite Kurbel- oder Lenkermaße nicht allein aus der Körpergröße ab. Dafür braucht es eine eigene Passform- und Einsatzbewertung. Rechne notwendige Austauschteile vorab in das Angebot ein."
           ]
         },
@@ -134,5 +134,15 @@
         }
       ]
     }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T08:56:14.110Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "Small-frame selection includes supplied cockpit, shoe clearance and correctly separated minimum versus maximum seatpost insertion limits."
   }
 }

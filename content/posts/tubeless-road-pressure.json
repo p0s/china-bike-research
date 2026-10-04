@@ -1,0 +1,200 @@
+{
+  "slug": "tubeless-road-pressure",
+  "publication_status": "scheduled",
+  "series_id": "october-2026",
+  "series_order": 59,
+  "image_id": "38mm-tires-on-aero-road-bikes",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "lightcarbon-lcr018-d"
+  ],
+  "source_ids": [
+    "lightcarbon-lcr018-d-official-2026-08-29",
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
+  ],
+  "editorial_references": [
+    "https://www.sram.com/en/zipp/learn/how-to-calculate-tire-pressure",
+    "https://www.schwalbe.com/en/technology-faq/tire-pressure/"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "log",
+      "ids": [
+        "lightcarbon-lcr018-d"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Tubeless road pressure: a starting point, a limit and a ride log",
+      "description": "Use measured tyre width and total load in a pressure calculator, respect component limits, and keep a repeatable front/rear ride log.",
+      "intro": "The maximum number on a tyre is not your target pressure. A calculator recommendation is not permission to exceed the rim’s limit either. Treat limits as boundaries and a suitable calculator as a starting point for a correctly assembled system.",
+      "sections": [
+        {
+          "id": "inputs",
+          "heading": "Measure before entering numbers",
+          "paragraphs": [
+            "Record rider, bike and luggage weight, measured inflated tyre width, rim type and road surface. Enter the calculator’s requested values accurately. [Zipp explains the inputs to its pressure calculator](https://www.sram.com/en/zipp/learn/how-to-calculate-tire-pressure). Use the tool applicable to your wheels and compare its result with all published tyre/rim conditions, including minimums where specified."
+          ]
+        },
+        {
+          "id": "log",
+          "heading": "Keep front and rear separate",
+          "paragraphs": [
+            "For an [LCR018-D road build](/models/lightcarbon-lcr018-d/), keep a small log for a familiar route. Use the same gauge so changes are comparable. Record the actual pressure, load, surface and observations, not just “felt fast.” Avoid changing tyre, pressure and route together if you want to understand the result."
+          ],
+          "worksheet": {
+            "caption": "A pressure note to copy",
+            "columns": [
+              "Field",
+              "Record"
+            ],
+            "rows": [
+              [
+                "Setup",
+                "Tyre, rim, measured width and approved limits"
+              ],
+              [
+                "Load",
+                "Rider + bicycle + luggage"
+              ],
+              [
+                "Before the ride",
+                "Front/rear pressure, gauge, conditions"
+              ],
+              [
+                "After the ride",
+                "Pressure retention, handling, impacts or faults"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "limits",
+          "heading": "Do not tune through a fault",
+          "paragraphs": [
+            "Stop for tyre instability, rim impacts, bead problems or unexpected pressure loss and inspect the system. More or less air is not a universal repair. If the pressure required for your load cannot fit within the approved combination’s limits, choose a different approved tyre/wheel setup with the assembler. A useful pressure is one you can repeat safely, not the lowest number in a forum thread."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "公路真空胎气压：起点、限制与骑行记录",
+      "description": "用实测胎宽与总载荷计算参考气压，遵守部件限制，并记录可重复前后轮设置。",
+      "intro": "轮胎上的最高气压不是你的目标值，计算器的推荐也不允许你超过轮圈限制。把限制当作边界，再用适合这套轮组的计算器，为正确装好的系统找到参考起点。",
+      "sections": [
+        {
+          "id": "inputs",
+          "heading": "输入前先测量",
+          "paragraphs": [
+            "记录骑手、车、行李重量，充气实测胎宽、轮圈类型与路面，准确输入计算器要求。[Zipp解释气压计算器输入](https://www.sram.com/en/zipp/learn/how-to-calculate-tire-pressure)。用适合轮组的工具，对照所有胎圈条件，也包括有规定时的最低值。"
+          ]
+        },
+        {
+          "id": "log",
+          "heading": "前后轮分开记录",
+          "paragraphs": [
+            "[LCR018-D公路装车](/models/lightcarbon-lcr018-d/)可在熟悉路线保留简短记录，用同一个气压表便于比较，记实际气压、载荷、路面和观察，不只写“感觉快”。若想理解结果，别同时换胎、气压和路线。"
+          ],
+          "worksheet": {
+            "caption": "可复制的气压记录",
+            "columns": [
+              "项目",
+              "记录"
+            ],
+            "rows": [
+              [
+                "配置",
+                "胎、圈、实测宽度、认可限制"
+              ],
+              [
+                "载荷",
+                "骑手＋车辆＋行李"
+              ],
+              [
+                "骑前",
+                "前后气压、气压表、条件"
+              ],
+              [
+                "骑后",
+                "保压、操控、撞击或故障"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "limits",
+          "heading": "不要用调气压掩盖故障",
+          "paragraphs": [
+            "轮胎不稳定、撞圈、胎唇问题或意外失压时停止并检查，增减气压不是通用修复。如果载荷所需气压无法落在认可组合限制内，与装车者选其他认可胎圈方案。实用气压是能安全重复的设置，不是论坛里最低数字。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Tubeless-Druck auf der Straße: Startwert, Grenze und Fahrnotiz",
+      "description": "Nutze Messbreite und Gesamtlast, beachte Bauteilgrenzen und führe eine wiederholbare Drucknotiz.",
+      "intro": "Die Höchstzahl auf dem Reifen ist kein Zieldruck. Eine Rechnerempfehlung erlaubt auch kein Überschreiten der Felgengrenze. Grenzen sind Grenzen; ein geeigneter Rechner liefert einen Startwert für den korrekt montierten Aufbau.",
+      "sections": [
+        {
+          "id": "inputs",
+          "heading": "Vor der Eingabe messen",
+          "paragraphs": [
+            "Erfasse Fahrer, Rad und Gepäck, aufgepumpte Messbreite, Felgentyp und Untergrund. [Zipp erklärt die Eingaben seines Rechners](https://www.sram.com/en/zipp/learn/how-to-calculate-tire-pressure). Nutze das für deine Räder geeignete Werkzeug und gleiche das Ergebnis mit allen Reifen-/Felgenvorgaben einschließlich vorhandener Mindestwerte ab."
+          ]
+        },
+        {
+          "id": "log",
+          "heading": "Vorne und hinten getrennt notieren",
+          "paragraphs": [
+            "Führe beim [LCR018-D-Straßenaufbau](/models/lightcarbon-lcr018-d/) eine Notiz zur vertrauten Strecke. Nutze dasselbe Manometer. Erfasse Druck, Last, Untergrund und Beobachtung statt nur „fühlte sich schnell an“. Ändere nicht Reifen, Druck und Strecke zugleich."
+          ],
+          "worksheet": {
+            "caption": "Drucknotiz zum Kopieren",
+            "columns": [
+              "Feld",
+              "Eintrag"
+            ],
+            "rows": [
+              [
+                "Aufbau",
+                "Reifen, Felge, Messbreite, freigegebene Grenzen"
+              ],
+              [
+                "Last",
+                "Fahrer + Rad + Gepäck"
+              ],
+              [
+                "Vorher",
+                "Druck vorne/hinten, Manometer, Bedingungen"
+              ],
+              [
+                "Nachher",
+                "Druckhaltung, Verhalten, Einschläge oder Fehler"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "limits",
+          "heading": "Fehler nicht durch Druckänderungen übergehen",
+          "paragraphs": [
+            "Bei instabilem Reifen, Felgendurchschlag, Wulstproblemen oder unerwartetem Luftverlust anhalten und prüfen. Mehr oder weniger Luft repariert nicht alles. Passt der nötige Druck nicht in die Grenzen, wähle mit dem Monteur eine andere freigegebene Kombination. Nützlich ist ein sicher wiederholbarer Wert, nicht der niedrigste im Forum."
+          ]
+        }
+      ]
+    }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T09:03:15.471Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "The front/rear pressure log records measured width, total load, gauge and limits without supplying an unsupported universal pressure."
+  }
+}
