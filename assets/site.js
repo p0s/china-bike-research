@@ -19,7 +19,7 @@ void import('./analytics-event.js').then((events) => {
     if (!(event.target instanceof Element)) return;
     const link = event.target.closest('a[data-analytics-action="product_outbound_click"]');
     if (!link) return;
-    sendProductOutboundClickEvent();
+    sendProductOutboundClickEvent({ sourceId: link.dataset.analyticsSource });
   });
   // A language change retains the current filter/comparison/builder state in the URL.
   document.querySelectorAll('[data-language-switch]').forEach((link) => {
@@ -1632,7 +1632,7 @@ void import('./analytics-event.js').then((events) => {
     comparePanel.hidden = false;
     compareTray?.classList.add('is-comparing');
     renderComparison();
-    if (!wasOpen) sendComparisonOpenedEvent();
+    if (!wasOpen) sendComparisonOpenedEvent({ comparisonCount: selection.length });
     if (focus && comparePanel instanceof HTMLElement) comparePanel.focus({ preventScroll: true });
     if (scroll) comparePanel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   }
