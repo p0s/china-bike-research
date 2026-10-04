@@ -911,8 +911,8 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   const privacy = renderPrivacy(context);
   assert.match(privacy, /compare_open when the comparison opens/);
   assert.match(privacy, /product_outbound_click/);
-  assert.match(privacy, /Comparison events do not include selected bikes/);
-  assert.match(privacy, /product-link actions send only a fixed action ID, without product or visitor details/);
+  assert.match(privacy, /Comparison events exclude selected bike lists/);
+  assert.match(privacy, /Product-link actions include only public catalog context, without visitor details/);
   assert.match(privacy, /Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal/);
   assert.match(privacy, /optional Google Analytics 4 parallel test/);
   assert.match(privacy, /Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams/);
