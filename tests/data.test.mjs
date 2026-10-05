@@ -1242,7 +1242,8 @@ test('batch 039 records three exact LightCarbon owner quotations and exhausts se
   assert.equal(lcg071.observed_price.amount_cny, 4271);
   assert.equal(lcg071.observed_price.original_amount, 629);
   assert.match(lcg071.observed_price.price_basis, /exact LCG071-PRO frameset package/);
-  assert.match(lcg071.observed_price.conditions, /paint, wheelset, accessories, shipping/);
+  assert.match(lcg071.observed_price.conditions, /HBR08 cockpit.*Wahoo mount and storage bag/);
+  assert.match(lcg071.observed_price.conditions, /separately itemized.*wheelset, custom paint, EU shipping and bank fee/);
 
   const lcr017 = candidates.get('lightcarbon-lcr017-d');
   assert.equal(lcr017.observed_price.amount_cny, 4067);

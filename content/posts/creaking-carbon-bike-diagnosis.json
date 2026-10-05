@@ -1,0 +1,211 @@
+{
+  "slug": "creaking-carbon-bike-diagnosis",
+  "publication_status": "scheduled",
+  "series_id": "october-2026",
+  "series_order": 83,
+  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "ican-graro-frameset"
+  ],
+  "source_ids": [
+    "ican-graro-official",
+    "ican-graro-official-2026-08-27"
+  ],
+  "editorial_references": [
+    "https://www.trekbikes.com/ca/en_CA/carbon_care/"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "notes",
+      "ids": [
+        "ican-graro"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "A creaking carbon bike: give the mechanic clues, not a verdict",
+      "description": "Record when a creak occurs, stop for safety concerns and use a controlled workshop diagnosis before blaming the bottom bracket.",
+      "intro": "The sound seems to come from the bottom bracket. Sound travelling through a bike is a poor witness. A useful diagnosis begins with when the noise happens, not which expensive part you have decided to replace.",
+      "sections": [
+        {
+          "id": "stop",
+          "heading": "First separate noise from a safety concern",
+          "paragraphs": [
+            "Stop riding for suspected structural damage, steering/wheel play, loose components or unreliable brakes. After an impact, have the bike assessed even if the noise is intermittent. [Trek’s carbon-care guidance](https://www.trekbikes.com/ca/en_CA/carbon_care/) warns that some damage is not visible. A creak cannot prove or exclude carbon damage remotely."
+          ]
+        },
+        {
+          "id": "notes",
+          "heading": "Describe a pattern without provoking a failure",
+          "paragraphs": [
+            "For a [GRARO build](/models/ican-graro-frameset/), note when the sound was first noticed and any recent wheel, pedal, seatpost or drivetrain work. Record observations from normal safe use; do not ride harder to reproduce a worrying fault. Keep a short audio/video if it can be obtained safely."
+          ],
+          "worksheet": {
+            "caption": "Clues to tell the workshop",
+            "columns": [
+              "Observation",
+              "What it helps separate"
+            ],
+            "rows": [
+              [
+                "Seated or standing",
+                "Contact-point versus other load paths; not proof"
+              ],
+              [
+                "Pedalling or coasting",
+                "Conditions in which drivetrain load is present"
+              ],
+              [
+                "Same point each revolution",
+                "A repeatable pattern to investigate"
+              ],
+              [
+                "After recent work",
+                "Components and interfaces changed"
+              ],
+              [
+                "After impact or with play",
+                "Safety assessment before further use"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "diagnose",
+          "heading": "Change one thing and verify the result",
+          "paragraphs": [
+            "Have the workshop inspect the relevant interfaces and use the exact component procedures. Randomly tightening every bolt or spraying lubricant everywhere can add damage, contaminate brakes and erase clues. Record the confirmed cause and correction, then verify reliable function. If the cause remains unknown, keep it unresolved rather than turning a quiet test into a diagnosis."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "碳车异响：给技师线索，不先下结论",
+      "description": "记录异响发生条件，安全疑虑先停骑，经过受控车店诊断再归咎五通。",
+      "intro": "声音听起来像来自中轴，但沿着整辆车传来的声音并不是可靠的证人。有效诊断应该从“什么时候响”开始，而不是先决定换掉哪个昂贵零件。",
+      "sections": [
+        {
+          "id": "stop",
+          "heading": "先分清声音与安全疑虑",
+          "paragraphs": [
+            "疑似结构损伤、转向或轮组异常松旷、松件或不可靠刹车时停骑。撞击后即使间歇异响，也要评估。[Trek碳纤指导](https://www.trekbikes.com/ca/en_CA/carbon_care/)提醒有些损伤不可见，远程凭异响不能证明或排除碳纤损伤。"
+          ]
+        },
+        {
+          "id": "notes",
+          "heading": "描述规律，不刻意制造失效",
+          "paragraphs": [
+            "[GRARO装车](/models/ican-graro-frameset/)记首次察觉时间及最近轮组、脚踏、座管、传动工作。只记录正常安全使用观察，不为复现危险故障加大骑行强度；安全能拍时留短音视频。"
+          ],
+          "worksheet": {
+            "caption": "给车店的线索",
+            "columns": [
+              "观察",
+              "有助区分"
+            ],
+            "rows": [
+              [
+                "坐姿或站姿",
+                "接触点与其他受力路径，并非证明"
+              ],
+              [
+                "踩踏或滑行",
+                "是否存在传动负载"
+              ],
+              [
+                "每圈同一点",
+                "可重复的待查规律"
+              ],
+              [
+                "近期维护后",
+                "改变过的部件、接触面"
+              ],
+              [
+                "撞击后或有异常松旷",
+                "继续使用前先安全评估"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "diagnose",
+          "heading": "每次改变一项，再验证",
+          "paragraphs": [
+            "让车店检查相关接触面，使用具体部件步骤。随便紧所有螺栓或到处喷油，可能新增损伤、污染刹车、抹掉线索。记录确认原因与修正，验证可靠功能。原因未知就保留未解决，不能把一次安静测试当诊断。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Knarrendes Carbonrad: Hinweise statt Vorabdiagnose liefern",
+      "description": "Notiere Bedingungen, stoppe bei Sicherheitsverdacht und lass gezielt prüfen statt sofort das Innenlager zu beschuldigen.",
+      "intro": "Das Geräusch scheint vom Innenlager zu kommen. Durch das Rad übertragener Schall ist ein schlechter Zeuge. Eine hilfreiche Diagnose beginnt mit dem Zeitpunkt, nicht dem bereits ausgewählten teuren Ersatzteil.",
+      "sections": [
+        {
+          "id": "stop",
+          "heading": "Zuerst Geräusch und Sicherheitsverdacht trennen",
+          "paragraphs": [
+            "Bei Strukturverdacht, Lenk-/Radspiel, losen Teilen oder unsicherer Bremse nicht weiterfahren. Nach Aufprall auch intermittierende Geräusche prüfen lassen. [Treks Carbonhinweise](https://www.trekbikes.com/ca/en_CA/carbon_care/) nennen verdeckte Schäden. Ein Geräusch beweist oder widerlegt aus der Ferne keinen Carbonschaden."
+          ]
+        },
+        {
+          "id": "notes",
+          "heading": "Muster beschreiben, ohne einen Fehler zu provozieren",
+          "paragraphs": [
+            "Notiere am [GRARO](/models/ican-graro-frameset/) Beginn und jüngste Arbeiten an Rad, Pedal, Stütze oder Antrieb. Nur sichere Alltagsbeobachtungen festhalten, keinen besorgniserregenden Fehler durch stärkere Belastung erzwingen. Kurzen Clip nur sicher aufnehmen."
+          ],
+          "worksheet": {
+            "caption": "Hinweise für die Werkstatt",
+            "columns": [
+              "Beobachtung",
+              "Hilft bei der Eingrenzung"
+            ],
+            "rows": [
+              [
+                "Sitzend/stehend",
+                "Kontaktstellen oder andere Lastpfade; kein Beweis"
+              ],
+              [
+                "Treten/rollen",
+                "Vorhandene Antriebslast"
+              ],
+              [
+                "Gleicher Punkt je Umdrehung",
+                "Wiederholbares Muster"
+              ],
+              [
+                "Nach Arbeit",
+                "Geänderte Teile und Kontakte"
+              ],
+              [
+                "Nach Aufprall/mit Spiel",
+                "Sicherheitsprüfung vor weiterer Nutzung"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "diagnose",
+          "heading": "Gezielt ändern und Ergebnis prüfen",
+          "paragraphs": [
+            "Die Werkstatt prüft relevante Kontakte nach Bauteilvorgabe. Wahlloses Nachziehen oder Einsprühen kann Schäden, Bremsverschmutzung und verlorene Hinweise schaffen. Ursache und Korrektur dokumentieren, Funktion prüfen. Bleibt die Ursache offen, ist ein ruhiger Test noch keine Diagnose."
+          ]
+        }
+      ]
+    }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T09:09:15.617Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "A symptom table supports controlled workshop diagnosis without provoking faults; play is translated as abnormal looseness rather than ordinary clearance."
+  }
+}

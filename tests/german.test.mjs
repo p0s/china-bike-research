@@ -121,8 +121,9 @@ test('German dynamic build totals keep missing inputs and compatibility warnings
   assert.match(combined, /Ausgebaute Teile übersteigen das Gesamtgewicht/);
 });
 
-test('all 25 German articles preserve section anchors, model citations, dates and publication state', () => {
-  assert.equal(posts.length, 25);
+test('every German article preserves section anchors, model citations, dates and publication state', () => {
+  assert.equal(posts.filter(post => post.series_id !== 'october-2026').length, 25);
+  assert.ok(posts.filter(post => post.series_id === 'october-2026').length <= 100);
   for (const post of posts) {
     const copy = post.translations.de;
     assert.notEqual(copy.title, post.translations.en.title);

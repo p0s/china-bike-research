@@ -17,7 +17,8 @@ const GA4_CONFIG_ROUTE = '/analytics/ga-config';
 const GA4_SESSION_ROUTE = '/analytics/ga-session';
 const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
 const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
-const MAX_ACTION_BODY_BYTES = 64;
+const MAX_ACTION_BODY_BYTES = 512;
+const actionManifestCache = new WeakMap();
 
 const publicDocumentPattern = /^(?:\/(?:zh|de))?\/(?:models|brands|prices|complete-bikes|framesets|build|methodology|privacy|image-policy|image-sources|electronic-shifting|blog)(?:\/|$)/;
 const privatePathPattern = /\/(?:account|admin|auth|login|logout|job|jobs|private|session|token|api)(?:\/|$)/i;
@@ -224,7 +225,7 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
   }
 }
 
-export async function ingestAction(actionId, env, fetchImpl = globalThis.fetch) {
+export async function ingestAction(actionId, env, fetchImpl = globalThis.fetch, context = null) {
   const token = String(env?.ANALYTICS_INGEST_TOKEN ?? '').trim();
   if (!ANALYTICS_ACTION_IDS.has(actionId) || !token) return false;
 
@@ -237,7 +238,7 @@ export async function ingestAction(actionId, env, fetchImpl = globalThis.fetch) 
         authorization: `Bearer ${token}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify({ actionId }),
+      body: JSON.stringify({ actionId, ...(context ? { context } : {}) }),
       // Workers rejects redirect: 'error'; manual preserves the no-forward rule.
       redirect: 'manual',
       referrerPolicy: 'no-referrer',
@@ -263,12 +264,51 @@ function validEventPagePath(path) {
   return typeof path === 'string' && ['/', '/zh/', '/de/'].includes(path) && isEligibleDocumentPath(path);
 }
 
+function pageContext(path, type) {
+  return { page_path: path, page_type: type,
+    interface_language: path.startsWith('/de/') ? 'de' : path.startsWith('/zh/') ? 'zh-Hans' : 'en' };
+}
+
+function comparisonContext(request, path) {
+  const count = request.headers.get('x-comparison-count');
+  if (count !== null && !/^(?:[2-9]|10)$/.test(count)) return null;
+  return { ...pageContext(path, 'catalog'), ...(count !== null ? { comparison_count: Number(count) } : {}) };
+}
+
+async function productActionContext(action, env) {
+  if (!env.ASSETS?.fetch) return null;
+  const path = action.pagePath;
+  if (typeof path !== 'string' || !/^(?:\/(?:zh|de))?\/models\/[a-z0-9][a-z0-9-]{0,149}\/$/.test(path)
+    || typeof action.sourceId !== 'string' || !/^[a-z0-9][a-z0-9-]{0,149}$/.test(action.sourceId)) return null;
+  try {
+    let pending = actionManifestCache.get(env.ASSETS);
+    if (!pending) {
+      pending = env.ASSETS.fetch(new Request(`https://${PRODUCTION_HOSTNAME}/data/analytics-context.json`))
+        .then((response) => response.ok ? response.json() : null);
+      actionManifestCache.set(env.ASSETS, pending);
+    }
+    const manifest = await pending;
+    const canonicalPath = path.replace(/^\/(?:zh|de)(?=\/)/, '');
+    const model = manifest?.[canonicalPath];
+    const source = model?.sources?.[action.sourceId];
+    if (!model || !source) return null;
+    return { ...pageContext(path, 'model'), model_id: model.model_id,
+      ...(model.brand_id ? { brand_id: model.brand_id } : {}),
+      link_type: source.link_type, destination_host: source.destination_host };
+  } catch {
+    actionManifestCache.delete(env.ASSETS);
+    return null;
+  }
+}
+
 export function analyticsEventPayload(request, url) {
   if (request.method !== 'POST' || url.hostname !== PRODUCTION_HOSTNAME || url.pathname !== ANALYTICS_EVENT_ROUTE) return null;
   if (url.search || url.hash || request.headers.has('content-type') || !sameOriginPost(request, url)) return null;
 
   const path = request.headers.get('x-analytics-path') ?? '';
   if (!validEventPagePath(path) || isExcludedAnalyticsRequest(request)) return null;
+  const context = comparisonContext(request, path);
+  if (!context) return null;
   const identity = analyticsIdentity(request);
   if (!identity) return null;
 
@@ -276,7 +316,8 @@ export function analyticsEventPayload(request, url) {
     hostname: PRODUCTION_HOSTNAME,
     path,
     ...identity,
-    eventName: COMPARISON_OPEN_EVENT_NAME
+    eventName: COMPARISON_OPEN_EVENT_NAME,
+    context
   };
 }
 
@@ -303,7 +344,7 @@ async function hasEventBodyBytes(request) {
   }
 }
 
-async function readActionId(request) {
+async function readAction(request) {
   const declaredLength = Number(request.headers.get('content-length'));
   if (Number.isFinite(declaredLength) && declaredLength > MAX_ACTION_BODY_BYTES) return null;
   if (!request.body) return null;
@@ -338,8 +379,10 @@ async function readActionId(request) {
     const body = JSON.parse(new TextDecoder().decode(bytes));
     if (!body || typeof body !== 'object' || Array.isArray(body)) return null;
     const keys = Object.keys(body);
-    if (keys.length !== 1 || keys[0] !== 'actionId') return null;
-    return ANALYTICS_ACTION_IDS.has(body.actionId) ? body.actionId : null;
+    if (keys.length !== 1 && keys.length !== 3) return null;
+    if (keys.some((key) => !['actionId', 'pagePath', 'sourceId'].includes(key))) return null;
+    if (keys.length === 3 && (!Object.hasOwn(body, 'pagePath') || !Object.hasOwn(body, 'sourceId'))) return null;
+    return ANALYTICS_ACTION_IDS.has(body.actionId) ? body : null;
   } catch {
     return null;
   }
@@ -358,12 +401,14 @@ async function actionResponse(request, url, env, ctx) {
 
   const contentType = request.headers.get('content-type') ?? '';
   if (!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(contentType)) return plainResponse('Invalid action request', 400);
-  const actionId = await readActionId(request);
-  if (!actionId) return plainResponse('Invalid action request', 400);
+  const action = await readAction(request);
+  if (!action) return plainResponse('Invalid action request', 400);
+  const context = Object.hasOwn(action, 'pagePath') ? await productActionContext(action, env) : null;
+  if (Object.hasOwn(action, 'pagePath') && !context) return plainResponse('Invalid action request', 400);
   if (typeof ctx.waitUntil === 'function') {
-    ctx.waitUntil(ingestAction(actionId, env));
+    ctx.waitUntil(ingestAction(action.actionId, env, globalThis.fetch, context));
     const identity = ga4Configured(env) && ga4StoredIdentity(request);
-    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(actionId, identity), env));
+    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(action.actionId, identity, context ?? {}), env));
   }
   return noContentResponse();
 }
@@ -374,12 +419,12 @@ async function comparisonEventResponse(request, url, env, ctx) {
   if (url.search || request.headers.has('content-type') || await hasEventBodyBytes(request)) return plainResponse('Invalid event request', 400);
 
   const path = request.headers.get('x-analytics-path') ?? '';
-  if (!validEventPagePath(path)) return plainResponse('Invalid event request', 400);
+  if (!validEventPagePath(path) || !comparisonContext(request, path)) return plainResponse('Invalid event request', 400);
   const payload = analyticsEventPayload(request, url);
   if (payload && typeof ctx.waitUntil === 'function') {
     ctx.waitUntil(ingestAnalytics(payload, env));
     const identity = ga4Configured(env) && ga4StoredIdentity(request);
-    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(COMPARISON_OPEN_EVENT_NAME, identity), env));
+    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(COMPARISON_OPEN_EVENT_NAME, identity, payload.context), env));
   }
   return noContentResponse();
 }
@@ -453,6 +498,12 @@ function trailingSlashRedirect(url) {
 
 export async function handleRequest(request, env = {}, ctx = {}) {
   const url = new URL(request.url);
+  if (url.hostname === PRODUCTION_HOSTNAME && url.protocol === 'http:') {
+    url.protocol = 'https:';
+    return responseWithHeaders(new Response(null, { status: 308, headers: {
+      location: url.toString(), 'cache-control': 'public, max-age=3600'
+    } }));
+  }
   if (url.pathname === '/analytics/opt-out') return choiceResponse(request, url, true, env);
   if (url.pathname === '/analytics/opt-in') return choiceResponse(request, url, false, env);
   if (url.pathname === GA4_CONFIG_ROUTE) return ga4ConfigResponse(request, url, env);

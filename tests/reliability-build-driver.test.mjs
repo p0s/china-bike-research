@@ -11,7 +11,7 @@ function fixture(t,mode='',base='') {
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'bike-build-driver-'));
  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  for(const dir of ['scripts','src/lib','assets','dist'])fs.mkdirSync(path.join(root,dir),{recursive:true});
- for(const f of ['scripts/build.mjs','src/lib/csv.mjs','src/lib/build-output.mjs','src/lib/regional-prices.mjs','src/lib/price-evidence.mjs','assets/regional-prices.js'])fs.copyFileSync(path.join(project,f),path.join(root,f));
+ for(const f of ['scripts/build.mjs','src/lib/csv.mjs','src/lib/build-output.mjs','src/lib/regional-prices.mjs','src/lib/price-evidence.mjs','src/lib/analytics-context.mjs','assets/regional-prices.js'])fs.copyFileSync(path.join(project,f),path.join(root,f));
  fs.writeFileSync(path.join(root,'dist','previous.html'),'PREVIOUS GOOD BUILD');
  fs.writeFileSync(path.join(root,'src/lib/data.mjs'),`
  const platform={id:'p',category:'road',last_reviewed:'2026-09-01',frame:{},tire_clearance:{}};

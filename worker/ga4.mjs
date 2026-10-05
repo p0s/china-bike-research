@@ -81,12 +81,16 @@ export function ga4SiteOpenPayload(analytics, identity) {
   return body;
 }
 
-export function ga4ActionPayload(name, identity) {
+export function ga4ActionPayload(name, identity, context = {}) {
   if (!['compare_open', 'product_outbound_click'].includes(name)) return null;
   return {
     client_id: identity.clientId,
     consent: { ad_user_data: 'DENIED', ad_personalization: 'DENIED' },
-    events: [{ name, params: identity.sessionId ? { session_id: identity.sessionId } : {} }]
+    events: [{ name, params: {
+      ...(identity.sessionId ? { session_id: identity.sessionId } : {}),
+      ...context,
+      ...(context.page_path ? { page_location: `https://chinesebikes.xyz${context.page_path}` } : {})
+    } }]
   };
 }
 

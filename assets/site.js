@@ -1,3 +1,4 @@
+import { normalizeMaterialSearch } from './catalog-search.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
@@ -19,7 +20,7 @@ void import('./analytics-event.js').then((events) => {
     if (!(event.target instanceof Element)) return;
     const link = event.target.closest('a[data-analytics-action="product_outbound_click"]');
     if (!link) return;
-    sendProductOutboundClickEvent();
+    sendProductOutboundClickEvent({ sourceId: link.dataset.analyticsSource });
   });
   // A language change retains the current filter/comparison/builder state in the URL.
   document.querySelectorAll('[data-language-switch]').forEach((link) => {
@@ -993,7 +994,7 @@ void import('./analytics-event.js').then((events) => {
       (item?.weightKind === 'complete' && maxCompleteWeight && rowWeight && rowWeight <= maxCompleteWeight) ||
       (item?.weightKind === 'frame' && maxFrameWeight && rowWeight && rowWeight <= maxFrameWeight);
     const drivetrain = drivetrainFilter?.value.trim().toLowerCase() ?? '';
-    const frame = frameFilter?.value.trim().toLowerCase() ?? '';
+    const frame = normalizeMaterialSearch(frameFilter?.value);
     const categoryLimit = numericValue(categoryMinimum);
     const categoryKind = categoryMinimum?.dataset.kind ?? '';
     return (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
@@ -1168,7 +1169,7 @@ void import('./analytics-event.js').then((events) => {
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
     if (frameWeight?.value) chips.push(['frame-weight', `Frame ≤ ${frameWeight.value} g`]);
     if (drivetrainFilter?.value.trim()) chips.push(['drivetrain', `Drivetrain: ${drivetrainFilter.value.trim()}`]);
-    if (frameFilter?.value.trim()) chips.push(['frame', `Frame: ${frameFilter.value.trim()}`]);
+    if (frameFilter?.value.trim()) chips.push(['frame', `${translate('Frame', locale)}: ${frameFilter.value.trim()}`]);
     if (categoryMinimum?.value) chips.push(['category', `${categoryMinimumLabel?.textContent || 'Category'} ≥ ${categoryMinimum.value}${categoryMinimumUnit?.textContent ? ` ${categoryMinimumUnit.textContent}` : ''}`]);
     return chips;
   }
@@ -1656,7 +1657,7 @@ void import('./analytics-event.js').then((events) => {
     comparePanel.hidden = false;
     compareTray?.classList.add('is-comparing');
     renderComparison();
-    if (!wasOpen) sendComparisonOpenedEvent();
+    if (!wasOpen) sendComparisonOpenedEvent({ comparisonCount: selection.length });
     if (focus && comparePanel instanceof HTMLElement) comparePanel.focus({ preventScroll: true });
     if (scroll) comparePanel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   }
