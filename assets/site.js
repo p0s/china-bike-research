@@ -233,6 +233,7 @@ void import('./analytics-event.js').then((events) => {
     const hero = gallery.querySelector('[data-gallery-hero]');
     const caption = gallery.querySelector('[data-image-caption-status][data-gallery-caption]');
     const sourceLink = gallery.querySelector('[data-gallery-source-link]');
+    const note = gallery.querySelector('[data-gallery-note-text]');
     const buttons = [...gallery.querySelectorAll('[data-gallery-thumb]')];
     if (!(hero instanceof HTMLImageElement) || !buttons.length) return;
 
@@ -248,6 +249,10 @@ void import('./analytics-event.js').then((events) => {
       if (button.dataset.galleryRemote === 'true') hero.referrerPolicy = 'no-referrer';
       else hero.removeAttribute('referrerpolicy');
       if (caption instanceof HTMLElement) caption.textContent = button.dataset.galleryCaption ?? '';
+      if (note instanceof HTMLElement) {
+        note.textContent = button.dataset.galleryNote ?? '';
+        note.hidden = !note.textContent;
+      }
       if (sourceLink instanceof HTMLAnchorElement) {
         const href = button.dataset.gallerySource;
         sourceLink.hidden = !href;

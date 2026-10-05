@@ -4,7 +4,8 @@ import { escapeHtml, escapeAttr } from './html.mjs';
 // cells as numbers. Unrecognized transcriptions remain ordinary evidence facts.
 export function transcribedGeometry(value) {
   if (typeof value !== 'string') return null;
-  const match = value.match(/^(.*?)Printed size columns: ([^.]+)\. (.*)$/s);
+  const match = value.match(/^(.*?)Printed size columns: ([^.]+)\. (.*)$/s)
+    ?? value.match(/^(Literal manufacturer chart rechecked \d{4}-\d{2}-\d{2}); size columns ([^.]+)\. (.*)$/s);
   if (!match) return null;
   const sizes = match[2].split(' / ');
   if (sizes.length < 2) return null;

@@ -2,7 +2,7 @@
   "id": "giant-tcr-advanced-primary-image",
   "candidate_id": "missing-china-price-giant-tcr-advanced",
   "role": "primary",
-  "subject_accuracy": "exact-platform",
+  "subject_accuracy": "illustrative",
   "media_type": "official-product-photo",
   "hosting": {
     "mode": "local",
@@ -38,7 +38,7 @@
   },
   "credit": "Product image © Giant Bicycles",
   "alt": "Giant TCR Advanced 0 AXS carbon road bike",
-  "display_note": "Official TCR Advanced family image; the mainland catalog record is TCR Advanced 3-GC, so trim and color may differ.",
+  "display_note": "MY26 UK TCR Advanced 0 AXS disc-brake reference; different brake and frame generation from the China TCR Advanced 3-GC Tiagra rim-brake row.",
   "reviewed_at": "2026-08-17",
   "source_media_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_1200%2Cq_90%2Cw_1200/qpdtxyedf8alz3qnjhl5/MY26TCRAdvanced0-AXS_ColorAAlpineGreen.jpg",
   "source_media_sha256": "013ab3ddf0d6231db3345bbb0c20db66598f0efb8c627bb6cc9150a3cbccec72",
@@ -56,5 +56,16 @@
     "vehicle_registration": "none-visible",
     "account_identifiers": "none-visible",
     "location_identifiers": "none-visible"
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "subject_accuracy": "exact-platform",
+        "display_note": "Official TCR Advanced family image; the mainland catalog record is TCR Advanced 3-GC, so trim and color may differ."
+      },
+      "reason": "Frozen source and pixel audit confirms a different disc/thru-axle generation, beyond trim or colour differences. Retain as hidden provenance until an exact rim-brake photo is reviewed."
+    }
+  ],
+  "buyer_visibility": "omit"
 }

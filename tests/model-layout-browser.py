@@ -12,7 +12,7 @@ parser.add_argument('--reports', type=Path, default=Path('.research/model-layout
 parser.add_argument('--browser', help='Optional Chromium executable')
 args = parser.parse_args()
 args.reports.mkdir(parents=True, exist_ok=True)
-models = ['lightcarbon-lcr018-d', 'lightcarbon-lcg071s-pro-frameset', 'yoeleo-altera-g21-frameset', 'lightcarbon-speedz-frameset']
+models = ['lightcarbon-lcr018-d', 'lightcarbon-lcg071s-pro-frameset', 'yoeleo-altera-g21-frameset', 'lightcarbon-speedz-frameset', 'pardus-robin-sport-pes']
 results = []
 
 with sync_playwright() as pw:
@@ -73,6 +73,9 @@ with sync_playwright() as pw:
                         assert thumb.get_attribute('aria-pressed') == 'true'
                         assert page.locator('[data-gallery-thumb][aria-pressed="true"]').count() == 1
                         assert page.locator('span[data-gallery-caption]').text_content() == thumb.get_attribute('data-gallery-caption')
+                        note = page.locator('[data-gallery-note-text]')
+                        assert note.text_content() == thumb.get_attribute('data-gallery-note')
+                        assert note.is_visible() == bool(thumb.get_attribute('data-gallery-note'))
                         assert page.locator('[data-gallery-hero]').get_attribute('src') == thumb.get_attribute('data-gallery-src')
                         source = thumb.get_attribute('data-gallery-source')
                         if source: assert page.locator('[data-gallery-source-link]').get_attribute('href') == source
@@ -107,6 +110,11 @@ with sync_playwright() as pw:
                 if model == 'lightcarbon-lcr018-d':
                     assert page.locator('.geometry-table tbody tr').count() == 18
                     assert page.locator('.geometry-table').get_by_text('1006.3 +mm', exact=True).count() == 1
+                if model == 'pardus-robin-sport-pes':
+                    warning = {'en': 'Manufacturer geometry conflict', 'zh': '制造商几何冲突', 'de': 'Widerspruch in der Herstellergeometrie'}[lang]
+                    assert page.locator('p.geometry-evidence-warning').filter(has_text=warning).is_visible()
+                    assert page.locator('.geometry-table tbody tr').count() == 20
+                    assert page.locator('.geometry-table tbody tr').filter(has_text='Wheelbase').locator('td').all_text_contents() == ['974','981','986','1000','1014','1035']
                 source_panel = page.locator('#source-records')
                 assert not source_panel.evaluate('(el)=>el.open')
                 page.locator('a[href="#source-records"]').evaluate('(el)=>el.scrollIntoView({block:"center",behavior:"instant"})')
@@ -153,4 +161,4 @@ with sync_playwright() as pw:
             assert not static.evaluate('document.documentElement.scrollWidth>innerWidth')
     browser.close()
 (args.reports / 'measurements.json').write_text(json.dumps(results, indent=2))
-print('PASS: 60 viewport/locale routes, 12 no-JS routes, and image failure recovery.')
+print('PASS: 75 viewport/locale routes, 15 no-JS routes, and image failure recovery.')

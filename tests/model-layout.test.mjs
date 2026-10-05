@@ -20,7 +20,11 @@ test('every model keeps its identity before images and its full evidence records
     const images = [entry.image, ...(entry.galleryImages ?? [])];
     for (const image of images) {
       assert.ok(html.includes(escapeHtml(image.alt)), image.id);
-      if (image.credit) assert.ok(html.includes(clarifyMainlandInDisplayHtml(escapeHtml(image.credit))), image.id);
+      if (image.credit) {
+        const suffix = image.display_note ? ` — ${image.display_note}` : '';
+        const credit = suffix && image.credit.endsWith(suffix) ? image.credit.slice(0, -suffix.length) : image.credit;
+        assert.ok(html.includes(clarifyMainlandInDisplayHtml(escapeHtml(credit))), image.id);
+      }
       if (image.display_note) assert.ok(html.includes(clarifyMainlandInDisplayHtml(escapeHtml(image.display_note))), image.id);
       if (image.source_media_page_url) assert.ok(html.includes(escapeHtml(image.source_media_page_url)), image.id);
     }
@@ -54,6 +58,23 @@ test('an unrecognized or incomplete transcription never silently drops evidence'
   assert.equal(transcribedGeometry('Unstructured geometry observation'), null);
   assert.equal(transcribedGeometry('Printed size columns: S / M. REACH: 400mm'), null);
   assert.equal(transcribedGeometry('Printed size columns: S / M. REACH: 400mm / 410mm; unknown segment'), null);
+});
+
+test('PARDUS displays every literal chart cell beside its retained fit conflict', () => {
+  const entry = candidates.find(e => e.candidate.id === 'pardus-robin-sport-pes');
+  const original = entry.candidate.facts['geometry complete current manufacturer table'];
+  const parsed = transcribedGeometry(original);
+  const source = data.sources.find(s => s.id === entry.candidate.geometry_evidence.source_id);
+  assert.deepEqual(parsed.sizes, source.geometry_table.size_columns);
+  for (const [label, cells] of parsed.rows) {
+    assert.deepEqual(cells, source.geometry_table.rows_as_printed[label].map(String));
+  }
+  assert.equal(parsed.rows.length, Object.keys(source.geometry_table.rows_as_printed).length);
+  const html = renderCandidateModel(ctx, entry);
+  assert.ok(html.includes(escapeHtml(original)));
+  assert.ok(html.includes(escapeHtml(entry.candidate.geometry_evidence.note)));
+  assert.match(html, /<th scope="row">Wheelbase<\/th><td>974<\/td><td>981<\/td>/);
+  assert.equal(entry.candidate.geometry_evidence.derived_fit_eligible, false);
 });
 
 test('structured geometry retains every recorded cell and dated qualification', () => {

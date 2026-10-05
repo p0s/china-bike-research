@@ -191,25 +191,33 @@ function candidateImage(ctx, entry) {
   return `<span class="product-image">${visual}${needsNote ? infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'], {}, 'image-info') : ''}</span>`;
 }
 
+function imageCredit(image) {
+  const suffix = image.display_note ? ` — ${image.display_note}` : '';
+  return suffix && image.credit?.endsWith(suffix) ? image.credit.slice(0, -suffix.length) : image.credit ?? 'Product image';
+}
+function imageScope(image, gallery = false) {
+  return `<p class="image-scope"${gallery ? ' data-gallery-note-text' : ''}${image?.display_note ? '' : ' hidden'}>${escapeHtml(image?.display_note ?? '')}</p>`;
+}
+
 function modelGalleryFigure(ctx, entry, renderImage, fallbackAlt) {
   const images = [entry.image, ...(entry.galleryImages ?? [])].filter((image) => imageUrl(ctx, image));
   if (!images.length) return '';
   const sourceUrl = (image, index) => image.source_media_page_url ?? (index === 0 ? entry.imageSource : image.source)?.url;
   const caption = (image, index) => {
-    const credit = image.credit ?? 'Product image';
+    const credit = imageCredit(image);
     const count = `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`;
     const original = [credit, accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'), images.length > 1 ? count : ''].filter(Boolean).join(' · ');
-    // Translate the existing caption before adding qualifications, so a new
-    // warning cannot change how an existing caption is interpreted by i18n.
-    return [translate(original, ctx.locale), images.length === 1 ? translate(count, ctx.locale) : '', image.display_note && !credit.includes(image.display_note) ? translate(image.display_note, ctx.locale) : ''].filter(Boolean).join(' · ');
+    // Translate each caption once. Qualifications remain a separate visible
+    // note so changing the selected view preserves the audited media scope.
+    return [translate(original, ctx.locale), images.length === 1 ? translate(count, ctx.locale) : ''].filter(Boolean).join(' · ');
   };
   const sourceLink = (image, index, attributes = '') => sourceUrl(image, index)
     ? `<a href="${escapeAttr(sourceUrl(image, index))}" rel="noreferrer"${attributes}>source</a>`
     : attributes ? `<a href="#" rel="noreferrer"${attributes} hidden>source</a>` : '';
   const primary = images[0];
-  const selected = `<figure class="model-figure"><span class="product-image hero-image">${renderImage(primary, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><figcaption aria-live="polite"><span data-localized-caption data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span> ${sourceLink(primary, 0, ' data-gallery-source-link')}</figcaption></figure>`;
-  const thumbs = images.map((image, index) => `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'))}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? fallbackAlt)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl(image, index) ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${renderImage(image, { className: 'gallery-thumb-image', decorative: true })}</button>`).join('');
-  const all = images.map((image, index) => `<li><figure><a href="${escapeAttr(imageUrl(ctx, image))}" aria-label="${escapeAttr(image.alt ?? fallbackAlt)}">${renderImage(image, {})}</a><figcaption><span data-localized-caption>${escapeHtml(caption(image, index))}</span> ${sourceLink(image, index)}</figcaption></figure></li>`).join('');
+  const selected = `<figure class="model-figure"><span class="product-image hero-image">${renderImage(primary, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><figcaption aria-live="polite"><span data-localized-caption data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span> ${sourceLink(primary, 0, ' data-gallery-source-link')}${imageScope(primary, true)}</figcaption></figure>`;
+  const thumbs = images.map((image, index) => `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'))}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? fallbackAlt)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl(image, index) ?? '')}" data-gallery-note="${escapeAttr(image.display_note ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${renderImage(image, { className: 'gallery-thumb-image', decorative: true })}</button>`).join('');
+  const all = images.map((image, index) => `<li><figure><a href="${escapeAttr(imageUrl(ctx, image))}" aria-label="${escapeAttr(image.alt ?? fallbackAlt)}">${renderImage(image, {})}</a><figcaption><span data-localized-caption>${escapeHtml(caption(image, index))}</span> ${sourceLink(image, index)}${imageScope(image)}</figcaption></figure></li>`).join('');
   return `<div class="model-gallery" data-image-gallery>${selected}${images.length > 1 ? `<p class="gallery-rail-hint">Scroll image views or use arrow keys, Home and End.</p><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div>` : ''}<details class="gallery-all" data-gallery-all><summary><span>All images</span> (${images.length})</summary><ol class="gallery-all-images">${all}</ol></details></div>`;
 }
 
