@@ -1,3 +1,5 @@
+import { isCalendarDate } from './calendar-date.mjs';
+
 const healthyClassifications = new Set(['healthy']);
 const allClassifications = new Set(['healthy', 'host-blocked', 'wrong-content-type', 'broken', 'unreachable']);
 
@@ -10,8 +12,8 @@ export function remoteImageResources(image) {
 
 export function imageHealthIsFreshAndHealthy(image, asOf) {
   const check = image?.health_check;
-  if (image?.hosting?.mode !== 'remote' || !check || !/^\d{4}-\d{2}-\d{2}$/.test(asOf)) return false;
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(check.checked_at) || check.checked_at > asOf) return false;
+  if (image?.hosting?.mode !== 'remote' || !check || !isCalendarDate(asOf)) return false;
+  if (!isCalendarDate(check.checked_at) || check.checked_at > asOf) return false;
   const ageDays = (Date.parse(`${asOf}T00:00:00Z`) - Date.parse(`${check.checked_at}T00:00:00Z`)) / 86_400_000;
   if (ageDays < 0 || ageDays > 30) return false;
 
@@ -31,7 +33,7 @@ export function validateImageHealthCheck(image) {
   if (image.health_check === undefined) return errors;
   const check = image.health_check;
   if (!check || typeof check !== 'object' || Array.isArray(check)) return [`image ${image.id}: health_check must be an object`];
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(check.checked_at ?? '') || Number.isNaN(Date.parse(`${check.checked_at}T00:00:00Z`))) {
+  if (!isCalendarDate(check.checked_at)) {
     errors.push(`image ${image.id}: invalid health_check.checked_at`);
   }
   if (!Array.isArray(check.resources)) {

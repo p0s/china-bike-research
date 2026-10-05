@@ -184,6 +184,25 @@
         -15
       ]
     },
-    "basis": "Literal manufacturer chart; values are retained as printed, without independent measurement or recalculation."
+    "basis": "Literal manufacturer chart; values are retained as printed, without independent measurement or recalculation.",
+    "inconsistency_review": {
+      "reviewed_at": "2026-10-05",
+      "diagram_url": "https://parduscycle.com/upload/editor/image/20250428/28140438253.jpg",
+      "basis": "The manufacturer diagram defines front centre and chainstay as sloping bottom-bracket-to-axle lengths. Wheelbase implied by those lengths and BB drop is sqrt(front_centre^2 - bb_drop^2) + sqrt(chainstay^2 - bb_drop^2). Ordinary whole-mm rounding cannot reconcile XXS and XS.",
+      "derived_fit_eligible": false,
+      "observations": [
+        {
+          "size": "XXS",
+          "printed_wheelbase_mm": 974,
+          "implied_wheelbase_mm": 980.2
+        },
+        {
+          "size": "XS",
+          "printed_wheelbase_mm": 981,
+          "implied_wheelbase_mm": 987.3
+        }
+      ],
+      "resolution": "Preserve every printed cell; request manufacturer clarification before deriving fit."
+    }
   }
 }

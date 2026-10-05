@@ -846,3 +846,7 @@ Object.assign(zh, {
   "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart.": "保留的制造商几何表涵盖六个尺码；请核对目标代次与尺码适配。当前可读取的 HTML 未显示该图表。",
   "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart": "保留的制造商几何表涵盖六个尺码；请核对目标代次与尺码适配。当前可读取的 HTML 未显示该图表。"
 });
+
+Object.assign(zh, {
+  "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "制造商几何冲突：XXS／XS 的尺寸推算轴距约为 980.2／987.3 mm，而表中标注为 974／981 mm。保留表中原值；在制造商澄清前，不用于推算适配。请向 PARDUS 核实目标尺码。"
+});

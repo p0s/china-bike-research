@@ -1574,3 +1574,7 @@ Object.assign(de, {
   "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart.": "Die gespeicherte Herstellergeometrie umfasst sechs Größen; gewünschte Generation und Passform der Größe bestätigen. Das aktuell lesbare HTML zeigt die Tabelle nicht.",
   "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart": "Die gespeicherte Herstellergeometrie umfasst sechs Größen; gewünschte Generation und Passform der Größe bestätigen. Das aktuell lesbare HTML zeigt die Tabelle nicht."
 });
+
+Object.assign(de, {
+  "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "Widerspruch in der Herstellergeometrie: Die Maße für XXS/XS ergeben etwa 980,2/987,3 mm Radstand, die Tabelle nennt 974/981 mm. Die Tabellenwerte bleiben erhalten; bis zur Klärung durch den Hersteller wird daraus keine Passform abgeleitet. Die gewünschte Größe bei PARDUS bestätigen."
+});
