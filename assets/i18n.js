@@ -927,3 +927,16 @@ Object.assign(zh, {
   "The manufacturer page describes a generic RCR 830 g size-M frame reference. The exact UK retailer lists a 1,010 g gross RCR-F Pro frame in size M. Exact-frame association and measurement inclusions are unresolved; neither value is selected for comparison.": "制造商页面的 830 g／M 码记录描述的是泛称 RCR 车架。英国零售商为具体 RCR-F Pro 的 M 码车架列出 1,010 g 毛重。具体车架归属及测量包含范围仍未明确；两值均不用于对比。",
   "UK manufacturer selected-model card: HM carbon fork material. UK retailer: 420 g gross fork mass; inclusions and measurement protocol are unstated. The Hadron 470 number identifies the manufacturer wheel model. Mainland package weight remains unverified.": "英国制造商的所选车型卡片描述 HM 碳纤维前叉材质。英国零售商列出前叉 420 g 毛重，未说明包含范围或测量方法。Hadron 470 中的数字表示制造商轮组型号；中国大陆套餐重量仍未核实。"
 });
+
+Object.assign(zh, {
+  "Quick USA seller reference; manufacturer relationship unverified. Enter the exact purchase quote, including required charges.": "Quick USA 卖家参考；制造商关系未核实。请输入包含必要费用的准确购买报价。",
+  "Quick USA seller/manufacturer relationship, mainland China checkout and warranty handling remain unverified": "Quick USA 卖家与制造商的关系、中国大陆结算和保修处理仍未核实",
+  "Mainland listing and foreign seller": "中国大陆产品页面与境外卖家",
+  "Quick USA regional seller. Its storefront describes an authorized North American dealer, while its About page makes manufacturing claims and describes coordinating with Quick Pro’s manufacturer service center. The legal seller/manufacturer and factory-ownership relationship remains unverified; this does not establish false ownership. Seller-hosted reviews are not independent evidence. Mainland China eligibility, exact checkout total and warranty handling remain unverified.": "Quick USA 为地区卖家。其商店自称北美授权经销商，而关于页面提出制造能力主张，并描述与 Quick Pro 制造商服务中心协调。卖家与制造商的法律关系及工厂所有权仍未核实；这不证明所有权主张为假。卖家网站上的评价不是独立证据。中国大陆购买资格、准确结算总额及保修处理仍未核实。"
+});
+
+Object.assign(zh, {
+  "Visit the Quick USA regional storefront": "访问 Quick USA 地区商店",
+  "Chinese performance brand with attributed monocoque construction claims. The Quick USA storefront describes a North American authorized dealer; its legal relationship to the manufacturer and factory ownership remain unverified.": "中国运动自行车品牌，保留注明来源的一体成型结构主张。Quick USA 商店自称北美授权经销商；其与制造商的法律关系及工厂所有权仍未核实。",
+  "Seller and market terms unverified": "卖家与市场交易条件未核实"
+});

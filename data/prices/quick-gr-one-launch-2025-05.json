@@ -6,7 +6,34 @@
   "currency": "CNY",
   "channel": "mainland-china-launch",
   "status": "historical-launch-observation",
-  "conditions": "Frameset and Aelous handlebar package; not a complete bike or current checkout quote.",
-  "source_ids": ["biketo-quick-gr-one-launch-2025"],
-  "amount_cny": 13598
+  "conditions": "Frameset and Aelous handlebar package; not a complete bike or current checkout quote. Historical 2025 launch-package observation only; current mainland China stock, selected-package checkout and seller/warranty handling remain unverified.",
+  "source_ids": [
+    "biketo-quick-gr-one-launch-2025"
+  ],
+  "amount_cny": 13598,
+  "historical": true,
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "quick-gr-one-seller-role-recheck-2026-10-05",
+        "quick-gr-one-china-official-2026-08-25"
+      ],
+      "note": "Preserve the valid dated China launch package, but distinguish it from current mainland purchase evidence. The current seller-role recheck does not verify this historical price or today’s mainland checkout.",
+      "prior_values": {
+        "id": "quick-gr-one-launch-2025-05",
+        "variant_id": "quick-gr-one-frameset",
+        "observed_at": "2025-05-04",
+        "price_type": "official-launch",
+        "currency": "CNY",
+        "channel": "mainland-china-launch",
+        "status": "historical-launch-observation",
+        "conditions": "Frameset and Aelous handlebar package; not a complete bike or current checkout quote.",
+        "source_ids": [
+          "biketo-quick-gr-one-launch-2025"
+        ],
+        "amount_cny": 13598
+      }
+    }
+  ]
 }

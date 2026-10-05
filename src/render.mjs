@@ -1520,7 +1520,7 @@ function brandStory(brand) {
   if (!brand) return '';
   const profile = brand.profile ?? {};
   const paragraph = profile.summary ?? brand.manufacturing?.summary ?? '';
-  return `<section class="brand-story" aria-labelledby="about-${escapeAttr(brand.id)}-title"><h2 id="about-${escapeAttr(brand.id)}-title">About ${escapeHtml(brand.name)}</h2><p>${escapeHtml(paragraph)}</p>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">Visit the official ${escapeHtml(brand.name)} website</a>` : ''}</section>`;
+  return `<section class="brand-story" aria-labelledby="about-${escapeAttr(brand.id)}-title"><h2 id="about-${escapeAttr(brand.id)}-title">About ${escapeHtml(brand.name)}</h2><p>${escapeHtml(paragraph)}</p>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">${escapeHtml(brand.website_label ?? `Visit the official ${brand.name} website`)}</a>` : ''}</section>`;
 }
 
 export function renderCandidateModel(ctx, entry) {
@@ -1660,7 +1660,7 @@ function landingHubCards(ctx, landing) {
 function landingContext(ctx, landing) {
   if (landing.kind === 'brand') {
     const brand = landing.brand;
-    return `<section class="landing-facts" aria-labelledby="brand-context-title"><h2 id="brand-context-title">Brand context</h2><p>${escapeHtml(brand.manufacturing.summary)}</p><dl><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(sentenceLabel(brand.manufacturing.relationship))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(confidenceLabel(brand.manufacturing.confidence))}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(sentenceLabel(brand.china_support.domestic_purchase))}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(warrantyLabel(brand.china_support.warranty))}</dd></div></dl>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">Official brand website</a>` : ''}</section>`;
+    return `<section class="landing-facts" aria-labelledby="brand-context-title"><h2 id="brand-context-title">Brand context</h2><p>${escapeHtml(brand.manufacturing.summary)}</p><dl><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(sentenceLabel(brand.manufacturing.relationship))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(confidenceLabel(brand.manufacturing.confidence))}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(sentenceLabel(brand.china_support.domestic_purchase))}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(warrantyLabel(brand.china_support.warranty))}</dd></div></dl>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">${escapeHtml(brand.website_label ?? 'Official brand website')}</a>` : ''}</section>`;
   }
   if (landing.kind === 'price') {
     return '<p class="landing-rule">A product appears only when its full recorded range fits this band. Candidate profiles, historical-only prices, and ranges crossing a boundary are excluded. Frameset figures include the reviewed build allowance and remain estimates.</p>';
@@ -1781,6 +1781,8 @@ function builderBases(ctx) {
   const published = ctx.products.map((product) => {
     const isComplete = product.variant.kind === 'complete-bike';
     const weight = publishedWeightFilter(product);
+    const price = priceEvidence(product.latestPrice);
+    const needsQuote = price.conditional || price.starting || price.partial;
     return {
       id: product.variant.id,
       name: `${product.brand.name} ${product.variant.name}`,
@@ -1788,9 +1790,9 @@ function builderBases(ctx) {
       kind: product.variant.kind,
       stage: 'published',
       category: categoryFamily(product.platform.category),
-      priceLow: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
-      priceHigh: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
-      priceNote: priceEvidence(product.latestPrice).conditional ? builderConditionalPriceNote(product.latestPrice) : priceEvidence(product.latestPrice).starting ? 'Starting price; enter the exact selected-package purchase quote.' : '',
+      priceLow: needsQuote ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
+      priceHigh: needsQuote ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
+      priceNote: price.conditional ? builderConditionalPriceNote(product.latestPrice) : price.starting ? 'Starting price; enter the exact selected-package purchase quote.' : price.partial ? translate(product.latestPrice.planner_quote_note ?? 'Reference or incomplete purchase price excluded; enter the exact purchase quote.', ctx.locale) : '',
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'
