@@ -3,45 +3,14 @@
   "$id": "https://example.invalid/schemas/image.schema.json",
   "title": "Product image record",
   "type": "object",
-  "required": [
-    "id",
-    "role",
-    "subject_accuracy",
-    "media_type",
-    "hosting",
-    "source_id",
-    "rights",
-    "credit",
-    "alt",
-    "reviewed_at"
-  ],
+  "required": ["id", "role", "subject_accuracy", "media_type", "hosting", "source_id", "rights", "credit", "alt", "reviewed_at"],
   "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^[a-z0-9][a-z0-9-]*$"
-    },
-    "platform_id": {
-      "type": "string",
-      "pattern": "^[a-z0-9][a-z0-9-]*$"
-    },
-    "candidate_id": {
-      "type": "string",
-      "pattern": "^[a-z0-9][a-z0-9-]*$"
-    },
-    "variant_ids": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "pattern": "^[a-z0-9][a-z0-9-]*$"
-      }
-    },
-    "role": {
-      "const": "primary"
-    },
-    "buyer_visibility": {
-      "enum": ["show", "omit"]
-    },
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "platform_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "candidate_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "variant_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"}},
+    "role": {"enum": ["primary", "gallery"]},
+    "buyer_visibility": {"enum": ["show", "omit"]},
     "subject_accuracy": {
       "enum": [
         "exact-variant",
@@ -52,114 +21,35 @@
         "illustrative"
       ]
     },
-    "media_type": {
-      "enum": [
-        "official-product-photo",
-        "retailer-product-photo",
-        "community-post-photo",
-        "project-placeholder"
-      ]
-    },
+    "media_type": {"enum": ["official-product-photo", "retailer-product-photo", "community-post-photo", "project-placeholder"]},
     "hosting": {
       "oneOf": [
         {
           "type": "object",
-          "required": [
-            "mode",
-            "remote_url"
-          ],
           "properties": {
-            "mode": {
-              "const": "remote"
-            },
-            "remote_url": {
-              "type": "string",
-              "format": "uri",
-              "pattern": "^https://"
-            },
-            "variants": {
-              "type": "array",
-              "minItems": 1,
-              "maxItems": 2,
-              "items": {
-                "type": "object",
-                "required": [
-                  "purpose",
-                  "url",
-                  "width",
-                  "height",
-                  "bytes",
-                  "sha256",
-                  "format"
-                ],
-                "properties": {
-                  "purpose": {
-                    "enum": ["card", "detail"]
-                  },
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "pattern": "^https://"
-                  },
-                  "width": {
-                    "type": "integer",
-                    "minimum": 1,
-                    "maximum": 1200
-                  },
-                  "height": {
-                    "type": "integer",
-                    "minimum": 1,
-                    "maximum": 2400
-                  },
-                  "bytes": {
-                    "type": "integer",
-                    "minimum": 1,
-                    "maximum": 88000
-                  },
-                  "sha256": {
-                    "type": "string",
-                    "pattern": "^[a-f0-9]{64}$"
-                  },
-                  "format": {
-                    "const": "image/webp"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
+            "mode": {"const": "remote"},
+            "remote_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+            "variants": {"$ref": "#/$defs/variants"}
           },
+          "required": ["mode", "remote_url"],
           "additionalProperties": false
         },
         {
           "type": "object",
-          "required": [
-            "mode",
-            "local_path"
-          ],
           "properties": {
-            "mode": {
-              "const": "local"
-            },
-            "local_path": {
-              "type": "string",
-              "pattern": "^/assets/images/"
-            }
+            "mode": {"const": "local"},
+            "local_path": {"type": "string", "pattern": "^/assets/images/"},
+            "variants": {"$ref": "#/$defs/variants"}
           },
+          "required": ["mode", "local_path"],
           "additionalProperties": false
         }
       ]
     },
-    "source_id": {
-      "type": "string",
-      "pattern": "^[a-z0-9][a-z0-9-]*$"
-    },
+    "source_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
     "rights": {
       "type": "object",
-      "required": [
-        "status",
-        "copyright_holder",
-        "usage_note"
-      ],
+      "required": ["status", "copyright_holder", "usage_note"],
       "properties": {
         "status": {
           "enum": [
@@ -172,73 +62,32 @@
             "official-page-embed",
             "retailer-page-embed",
             "public-post-embed",
-            "public-post-quotation"
+            "public-post-quotation",
+            "source-attributed-rehost"
           ]
         },
-        "copyright_holder": {
-          "type": "string",
-          "minLength": 1
-        },
-        "usage_note": {
-          "type": "string",
-          "minLength": 1
-        },
-        "license": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "permission_date": {
-          "type": "string",
-          "format": "date"
-        }
+        "copyright_holder": {"type": "string", "minLength": 1},
+        "usage_note": {"type": "string", "minLength": 1},
+        "license": {"type": ["string", "null"]},
+        "permission_date": {"type": "string", "format": "date"}
       },
-      "additionalProperties": true
+      "additionalProperties": false
     },
-    "credit": {
-      "type": "string",
-      "minLength": 3
-    },
-    "alt": {
-      "type": "string",
-      "minLength": 10
-    },
-    "reviewed_at": {
-      "type": "string",
-      "format": "date"
-    },
-    "display_note": {
-      "type": "string",
-      "minLength": 10
-    },
+    "credit": {"type": "string", "minLength": 3},
+    "alt": {"type": "string", "minLength": 10},
+    "reviewed_at": {"type": "string", "format": "date"},
+    "display_note": {"type": "string", "minLength": 10},
     "editorial_quotation": {
       "type": "object",
-      "required": [
-        "purpose",
-        "scope",
-        "source_link_required",
-        "no_license_asserted",
-        "removal_route"
-      ],
+      "required": ["purpose", "scope", "source_link_required", "removal_route"],
       "properties": {
-        "purpose": {
-          "const": "editorial-identification-and-commentary"
-        },
+        "purpose": {"const": "editorial-identification-and-commentary"},
         "scope": {
-          "const": "one-compressed-public-post-photo"
+          "enum": ["one-compressed-public-post-photo", "one-compressed-public-listing-image", "one-compressed-product-photo"]
         },
-        "source_link_required": {
-          "const": true
-        },
-        "no_license_asserted": {
-          "const": true
-        },
-        "removal_route": {
-          "type": "string",
-          "format": "uri",
-          "pattern": "^https://"
-        }
+        "source_link_required": {"const": true},
+        "no_license_asserted": {"const": true},
+        "removal_route": {"type": "string", "format": "uri", "pattern": "^https://"}
       },
       "additionalProperties": false
     },
@@ -253,38 +102,372 @@
         "location_identifiers"
       ],
       "properties": {
-        "reviewed_at": {
-          "type": "string",
-          "format": "date"
-        },
-        "embedded_metadata": {
-          "const": "stripped"
-        },
-        "faces": {
-          "const": "none-visible"
-        },
-        "vehicle_registration": {
-          "const": "none-visible"
-        },
-        "account_identifiers": {
-          "const": "none-visible"
-        },
-        "location_identifiers": {
-          "const": "none-visible"
-        }
+        "reviewed_at": {"type": "string", "format": "date"},
+        "embedded_metadata": {"const": "stripped"},
+        "faces": {"const": "none-visible"},
+        "vehicle_registration": {"const": "none-visible"},
+        "account_identifiers": {"const": "none-visible"},
+        "location_identifiers": {"const": "none-visible"}
       },
       "additionalProperties": false
+    },
+    "source_media_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "source_media_page_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "source_media_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "fallback_local_path": {"type": "string", "pattern": "^/assets/images/"},
+    "label": {"type": "string", "minLength": 1},
+    "sort_order": {"type": "integer", "minimum": 0},
+    "content_type": {"type": "string", "minLength": 1},
+    "unavailable_note": {"type": "string", "minLength": 1},
+    "reused_image_record_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "review_evidence": {
+      "type": "object",
+      "properties": {
+        "reviewed_at": {"type": "string", "format": "date"},
+        "source_ids": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "conclusion": {"type": "string", "minLength": 1}
+      },
+      "required": ["reviewed_at", "source_ids", "conclusion"],
+      "additionalProperties": false
+    },
+    "health_check": {"$ref": "#/$defs/health"},
+    "reused_record_health_evidence": {"$ref": "#/$defs/health"},
+    "document_extraction": {
+      "type": "object",
+      "properties": {
+        "page": {"type": "integer", "minimum": 1},
+        "printed_page": {"type": "string", "minLength": 1},
+        "image_object": {"type": "integer", "minimum": 1},
+        "alpha_mask_object": {"type": "integer", "minimum": 1},
+        "document_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "image_object_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "method": {"type": "string", "minLength": 1},
+        "native_width": {"type": "integer", "minimum": 1},
+        "native_height": {"type": "integer", "minimum": 1},
+        "pdf_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "required": ["page", "method"],
+      "additionalProperties": false
+    },
+    "source_media_extraction": {
+      "type": "object",
+      "properties": {
+        "kind": {"type": "string", "minLength": 1},
+        "page": {"type": "integer", "minimum": 1},
+        "image_name": {"type": "string", "minLength": 1},
+        "document_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "embedded_image": {"type": "string", "minLength": 1},
+        "embedded_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "required": ["page"],
+      "additionalProperties": false
+    },
+    "acquisition_transport": {
+      "type": "object",
+      "properties": {
+        "encoding": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "note": {"type": "string", "minLength": 1}
+      },
+      "required": ["encoding", "sha256", "bytes", "note"],
+      "additionalProperties": false
+    },
+    "audit_corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reviewed_at": {"type": "string", "format": "date"},
+          "reason": {"type": "string", "minLength": 1},
+          "prior_values": {
+            "type": "object",
+            "properties": {
+              "alt": {"type": "string", "minLength": 10},
+              "display_note": {"type": "string", "minLength": 10},
+              "role": {"enum": ["primary", "gallery"]},
+              "subject_accuracy": {
+                "enum": [
+                  "exact-variant",
+                  "exact-platform",
+                  "same-platform",
+                  "same-model-different-color",
+                  "same-model-different-market-build",
+                  "illustrative"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": ["reviewed_at", "reason", "prior_values"],
+        "additionalProperties": false
+      },
+      "minItems": 1
     }
   },
   "oneOf": [
+    {"required": ["platform_id"], "not": {"required": ["candidate_id"]}},
+    {"required": ["candidate_id"], "not": {"required": ["platform_id"]}}
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "variant": {
+      "type": "object",
+      "properties": {
+        "purpose": {"enum": ["card", "detail"]},
+        "file": {"type": "string", "minLength": 1},
+        "url": {
+          "type": "string",
+          "anyOf": [
+            {"type": "string", "format": "uri", "pattern": "^https://"},
+            {
+              "pattern": "^/assets/images/sourced/(xhs|taobao|xianyu|official|retailer)/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.webp$"
+            }
+          ]
+        },
+        "width": {"type": "integer", "minimum": 1, "maximum": 1200},
+        "height": {"type": "integer", "minimum": 1, "maximum": 2400},
+        "bytes": {"type": "integer", "minimum": 1, "maximum": 400000},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "format": {"const": "image/webp"},
+        "quality": {"type": "integer", "minimum": 1, "maximum": 100}
+      },
+      "required": ["purpose", "url", "width", "height", "bytes", "sha256", "format"],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {"properties": {"purpose": {"const": "card"}}},
+          "then": {
+            "properties": {
+              "width": {"type": "integer", "minimum": 1, "maximum": 480},
+              "bytes": {"type": "integer", "minimum": 1, "maximum": 100000},
+              "url": {"pattern": "-card-w\\d+\\.webp$"}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"purpose": {"const": "detail"}}},
+          "then": {"properties": {"url": {"pattern": "-detail-w\\d+\\.webp$"}}}
+        }
+      ]
+    },
+    "variants": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/variant"},
+      "minItems": 2,
+      "maxItems": 2,
+      "allOf": [
+        {
+          "contains": {"properties": {"purpose": {"const": "card"}}, "required": ["purpose"]},
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {"properties": {"purpose": {"const": "detail"}}, "required": ["purpose"]},
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    },
+    "quotationVariants": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/variant"},
+          {
+            "if": {"properties": {"purpose": {"const": "card"}}},
+            "then": {"properties": {"bytes": {"type": "integer", "minimum": 1, "maximum": 40000}}}
+          },
+          {
+            "if": {"properties": {"purpose": {"const": "detail"}}},
+            "then": {"properties": {"bytes": {"type": "integer", "minimum": 1, "maximum": 88000}}}
+          }
+        ]
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "allOf": [
+        {
+          "contains": {"properties": {"purpose": {"const": "card"}}, "required": ["purpose"]},
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {"properties": {"purpose": {"const": "detail"}}, "required": ["purpose"]},
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    },
+    "healthResource": {
+      "type": "object",
+      "properties": {
+        "target_id": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "classification": {"enum": ["healthy", "host-blocked", "wrong-content-type", "broken", "unreachable"]},
+        "status": {"type": "integer", "minimum": 100, "maximum": 599},
+        "content_type": {"type": "string", "minLength": 1}
+      },
+      "required": ["target_id", "url", "classification"],
+      "additionalProperties": false
+    },
+    "health": {
+      "type": "object",
+      "properties": {
+        "checked_at": {"type": "string", "format": "date"},
+        "resources": {"type": "array", "items": {"$ref": "#/$defs/healthResource"}}
+      },
+      "required": ["checked_at", "resources"],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {"if": {"required": ["candidate_id"]}, "then": {"properties": {"variant_ids": {"maxItems": 0}}}},
     {
-      "required": ["platform_id"],
-      "not": { "required": ["candidate_id"] }
+      "if": {"properties": {"hosting": {"properties": {"mode": {"const": "remote"}}}}},
+      "then": {
+        "required": ["buyer_visibility"],
+        "properties": {
+          "buyer_visibility": {"const": "omit"},
+          "rights": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "official-page-embed",
+                  "retailer-page-embed",
+                  "public-post-embed",
+                  "public-post-quotation",
+                  "permission-granted",
+                  "brand-media-license",
+                  "cc-licensed",
+                  "public-domain"
+                ]
+              }
+            }
+          }
+        }
+      }
     },
     {
-      "required": ["candidate_id"],
-      "not": { "required": ["platform_id"] }
+      "if": {"properties": {"hosting": {"properties": {"mode": {"const": "local"}}}}},
+      "then": {
+        "properties": {
+          "rights": {
+            "properties": {
+              "status": {
+                "not": {"enum": ["official-page-embed", "retailer-page-embed", "public-post-embed", "public-post-quotation"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"rights": {"properties": {"status": {"const": "source-attributed-rehost"}}}}},
+      "then": {
+        "required": ["editorial_quotation", "privacy_review"],
+        "properties": {
+          "hosting": {
+            "required": ["variants"],
+            "properties": {
+              "mode": {"const": "local"},
+              "local_path": {
+                "pattern": "^/assets/images/sourced/(xhs|taobao|xianyu|official|retailer)/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.webp$"
+              }
+            }
+          },
+          "media_type": {"enum": ["community-post-photo", "retailer-product-photo", "official-product-photo"]}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"hosting": {"properties": {"mode": {"const": "local"}, "local_path": {"pattern": "^/assets/images/sourced/"}}}}
+      },
+      "then": {"properties": {"rights": {"properties": {"status": {"const": "source-attributed-rehost"}}}}}
+    },
+    {
+      "if": {
+        "properties": {
+          "hosting": {
+            "properties": {"local_path": {"pattern": "^/assets/images/sourced/(xhs|taobao|xianyu)/"}},
+            "required": ["local_path"]
+          }
+        }
+      },
+      "then": {"properties": {"hosting": {"properties": {"variants": {"$ref": "#/$defs/quotationVariants"}}}}}
+    },
+    {
+      "if": {
+        "properties": {
+          "hosting": {
+            "properties": {"local_path": {"pattern": "^/assets/images/sourced/(official|retailer)/"}},
+            "required": ["local_path"]
+          }
+        }
+      },
+      "then": {
+        "required": ["source_media_url", "source_media_sha256"],
+        "properties": {
+          "editorial_quotation": {
+            "required": ["no_license_asserted"],
+            "properties": {"scope": {"const": "one-compressed-product-photo"}, "no_license_asserted": {"const": true}}
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "hosting": {"properties": {"local_path": {"pattern": "^/assets/images/sourced/official/"}}, "required": ["local_path"]}
+        }
+      },
+      "then": {"properties": {"media_type": {"const": "official-product-photo"}}}
+    },
+    {
+      "if": {
+        "properties": {
+          "hosting": {"properties": {"local_path": {"pattern": "^/assets/images/sourced/retailer/"}}, "required": ["local_path"]}
+        }
+      },
+      "then": {"properties": {"media_type": {"const": "retailer-product-photo"}}}
+    },
+    {
+      "if": {"properties": {"rights": {"properties": {"status": {"const": "public-post-quotation"}}}}},
+      "then": {
+        "required": ["editorial_quotation", "privacy_review"],
+        "properties": {
+          "media_type": {"const": "community-post-photo"},
+          "editorial_quotation": {"required": ["no_license_asserted"], "properties": {"scope": {"const": "one-compressed-public-post-photo"}}},
+          "hosting": {
+            "required": ["variants"],
+            "properties": {
+              "variants": {
+                "allOf": [
+                  {"$ref": "#/$defs/quotationVariants"},
+                  {
+                    "items": {
+                      "properties": {
+                        "url": {
+                          "pattern": "^https://china-bike-media\\.161-97-123-19\\.sslip\\.io/media/xhs/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.webp$"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
     }
-  ],
-  "additionalProperties": false
+  ]
 }

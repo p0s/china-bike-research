@@ -6,6 +6,6 @@ The built-in OpenAI image generator edited the original project-created scenes o
 
 Header derivatives use 640- and 1600-pixel WebP for cards and covers and 1200-pixel JPEG for sharing previews. Optimization strips embedded metadata. The privacy checker pins every approved binary hash. Public headers have no AI-image caption.
 
-Real model images remain inside each article and stay on their original manufacturer or retailer hosts. The manifest's photo mappings select existing catalog image/source records; captions name the model, credit the owner and explain any different build. No third-party photo is modified or rehosted.
+Real model photographs remain inside each article and use reviewed local card/detail derivatives under [SPEC.md](../../SPEC.md). The manifest's photo mappings select existing catalog image/source records; captions name the model, credit the owner and explain any different build. Each derivative retains the original source URL and hash, its own hash and dimensions, rights metadata, privacy review and removal route. Resize/compression and permitted privacy cropping do not authorize aesthetic alteration or arbitrary rehosting. Raw originals remain outside Git; unavailable or unverified exact photographs are omitted.
 
 A failed header hides independently without losing article navigation. A failed inline mascot hides independently. A failed real photo retains its model/source links, build note and article content.
