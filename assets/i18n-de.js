@@ -301,6 +301,8 @@ export const de = {
   "Manufacturing note": "Herstellungshinweis",
   "Frame weight basis": "Grundlage des Rahmengewichts",
   "Complete weight basis": "Grundlage des Komplettgewichts",
+  "Alternative complete weight basis": "Grundlage des alternativen Gesamtgewichts",
+  "Complete weight status": "Status des Gesamtgewichts",
   "Tire clearance basis": "Grundlage der Reifenfreiheit",
   "Tire clearance conflict": "Widersprüchliche Reifenfreiheit",
   "Marketplace material reference": "Materialangabe vom Marktplatz",
