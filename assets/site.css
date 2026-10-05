@@ -568,7 +568,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .model-content { margin: 36px auto 0; }
 .model-content .detail-list { grid-template-columns: 1fr; }
 .model-content .detail-list > div { grid-template-columns: 190px minmax(0, 1fr); }
-.model-content .detail-list dd { overflow-wrap: anywhere; }
+.model-content .detail-list dt, .model-content .detail-list dd { min-width: 0; overflow-wrap: anywhere; }
 .model-geometry { margin: 30px 0 12px; }
 .geometry-basis, .geometry-source, .geometry-scroll-hint { color: var(--muted); font-size: .8rem; }
 .geometry-evidence-warning { line-height: 1.65; overflow-wrap: anywhere; }
