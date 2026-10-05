@@ -173,5 +173,12 @@
       ],
       "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
     }
-  ]
+  ],
+  "geometry_evidence": {
+    "status": "source-inconsistent",
+    "derived_fit_eligible": false,
+    "source_id": "lightcarbon-lcg071-pro-complete-geometry-recheck-2026-10-03",
+    "reviewed_at": "2026-10-03",
+    "note": "Literal recorded manufacturer geometry is internally inconsistent. Affected cells are excluded from derived fit; source intent and corrected values remain unresolved. This does not establish a product safety defect."
+  }
 }

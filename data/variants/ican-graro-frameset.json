@@ -5,8 +5,11 @@
   "kind": "frameset",
   "market": "mainland-china-or-direct",
   "editorial": {
-    "review": { "author": "China Bikes", "basis": "source-research" },
-    "verdict": "An aero-styled direct gravel frame with exact finish-specific weights, but 45 mm clearance and missing numeric geometry make it a near-miss rather than a strict road-like wide-clearance answer.",
+    "review": {
+      "author": "China Bikes",
+      "basis": "source-research"
+    },
+    "verdict": "An aero-styled direct gravel frame with exact finish-specific weights, 45 mm clearance and a retained exact manufacturer geometry chart for six sizes. Confirm generation, selected-size stock and fit; numeric frame stiffness remains unverified.",
     "best_for": [
       "premium direct-frame buyer",
       "gravel racer"
@@ -18,13 +21,23 @@
     ],
     "caveats": [
       "Substantially more expensive than GRA04",
-      "Current manufacturer page does not expose a numeric geometry table"
+      "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart."
     ],
     "price_thresholds_cny": {
       "great_buy_below": 6500,
       "fair_buy_below": 7500,
       "not_compelling_above": 8500
-    }
+    },
+    "prior_editorial_observations": [
+      {
+        "verdict": "An aero-styled direct gravel frame with exact finish-specific weights, but 45 mm clearance and missing numeric geometry make it a near-miss rather than a strict road-like wide-clearance answer.",
+        "caveats": [
+          "Substantially more expensive than GRA04",
+          "Current manufacturer page does not expose a numeric geometry table"
+        ],
+        "status": "superseded-geometry-summary"
+      }
+    ]
   },
   "source_ids": [
     "ican-graro-official",

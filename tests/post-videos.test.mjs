@@ -28,8 +28,9 @@ for (const locale of ['en', 'zh-Hans', 'de']) for (const base of ['', '/china-bi
   test(`article players preserve source identity, localized context, disclosure and fallbacks: ${locale} ${base || '/'}`, () => {
     for (const post of visible) {
       const html = renderPost({ ...ctx, locale, base }, post, visible);
-      const placements = postVideos.articles[post.slug];
+      const placements = postVideos.articles[post.slug] ?? [];
       assert.equal([...html.matchAll(/<iframe /g)].length, placements.length);
+      if (!placements.length) assert.doesNotMatch(html, /class="article-videos"/);
       for (const placement of placements) {
         const video = videoById.get(placement.video_id);
         const start = html.indexOf(`<section id="${placement.section_id}">`);

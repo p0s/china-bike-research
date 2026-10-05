@@ -3,6 +3,7 @@ import { relatedArticleLinks, renderHomeArticles } from './lib/posts.mjs';
 import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
+import { productLinkContext } from './lib/analytics-context.mjs';
 import { renderVideoEntries } from './lib/videos.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName } from '../assets/regional-prices.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
@@ -1002,6 +1003,7 @@ function candidateComparisonSummary(ctx, entry) {
     chinaPrice: entry.identifiableModel && entry.candidate.comparison_eligibility?.price !== false && entry.price ? chinaPriceBasis([{ ...entry.price, observed_at: entry.price.observed_at ?? entry.candidate.observed_at }]) : null,
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
+    ...(entry.candidate.geometry_evidence ? { geometryFitEligible: false, geometryWarning: entry.candidate.geometry_evidence.note } : {}),
     ...(priceDetails ? { priceDetails } : {}),
     categoryMetric: metric.value,
     categoryMetricLabel: metric.label,
@@ -1132,21 +1134,11 @@ function sourceUsages(ctx, product) {
 }
 
 function hasProductOutboundTarget(source) {
-  const type = String(source?.type ?? '').trim().toLowerCase().replace(/\s+/g, '-');
-  const hasSellerOrManufacturer = /(?:^|-)(?:manufacturer|official|brand|retailer|dealer|distributor|marketplace|seller|supplier|authorized)(?:-|$)/.test(type);
-  const isProductPage = /(?:^|-)(?:product-page|product-listing|marketplace-listing|seller-listing)(?:-|$)/.test(type);
-  if (!source?.url || !hasSellerOrManufacturer || !isProductPage || /(?:^|-)(?:mirror|snapshot)(?:-|$)/.test(type)) return false;
-  try {
-    const target = new URL(source.url);
-    return ['http:', 'https:'].includes(target.protocol)
-      && !['chinesebikes.xyz', 'www.chinesebikes.xyz'].includes(target.hostname.toLowerCase());
-  } catch {
-    return false;
-  }
+  return Boolean(productLinkContext(source));
 }
 
 function productOutboundAttribute(source) {
-  return hasProductOutboundTarget(source) ? ' data-analytics-action="product_outbound_click"' : '';
+  return hasProductOutboundTarget(source) ? ` data-analytics-action="product_outbound_click" data-analytics-source="${escapeAttr(source.id)}"` : '';
 }
 
 function sourceList(ctx, product) {
@@ -1607,6 +1599,7 @@ export function renderCandidateModel(ctx, entry) {
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
+    ${candidate.geometry_evidence ? `<p class="geometry-evidence-warning" role="note">${escapeHtml(translate(candidate.geometry_evidence.note, ctx.locale))}</p>` : ''}
     ${candidateAlternativeBuilds(entry)}
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
@@ -1843,6 +1836,7 @@ function builderBases(ctx) {
         tireClearanceLabel: candidateTireClearance(entry).value === '—' ? null : candidateTireClearance(entry).value,
         tireClearanceByDrivetrain: facts.tire_clearance_drivetrain_limits_mm ?? null,
         included: isComplete ? ['complete bike package'] : [],
+        forkCaliperNote: entry.candidate.fork_caliper_evidence?.note ?? '',
         drivetrain: isComplete ? facts.drivetrain ?? '' : '',
       };
     });
@@ -2142,8 +2136,9 @@ export function renderPrivacy(ctx) {
     <p>Where prior consent is required, optional analytics stays off until you choose Allow analytics. Elsewhere it runs by default. You can allow or withdraw it here at any time; no account is needed. Your choice is remembered in a necessary preference cookie for up to six months when allowing, or one year when declining.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-in')}" data-analytics-choice><button class="text-button" type="submit">Allow analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-out')}" data-analytics-choice><button class="text-button" type="submit">Opt out of optional analytics</button></form><p role="status" data-analytics-choice-status hidden></p></div>
     <p>We count eligible public HTML page views, compare_open when the comparison opens, and product_outbound_click when a marked product link is activated. These are approximate actions, not people or purchases.</p>
-    <p>Umami page counts keep the public path, referring site, country, and estimated sessions. Its collector briefly uses IP and User-Agent, then discards them. Comparison events do not include selected bikes; product-link actions send only a fixed action ID, without product or visitor details. Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal.</p>
-    <p>We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google's tag through this site's first-party gateway, it sends a separate page_view with browser and device details. The tag's reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. The server request does not send Google your IP, User-Agent, search terms, URL query, or selected bikes; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
+    <p>Umami page counts keep the public path, referring site, country, and estimated sessions. Its collector briefly uses IP and User-Agent, then discards them. Comparison events exclude selected bike lists. Product-link actions include only public catalog context, without visitor details. Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal.</p>
+    <p>We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google's tag through this site's first-party gateway, it sends a separate page_view with browser and device details. The tag's reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. Server analytics requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
+    <p>Product-link events include the public model and brand, source type, destination hostname, page path and interface language. Comparison events include the public page, interface language and comparison size. Queries, search text and selected bike lists stay excluded.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <p>Google processes analytics data outside your region. Its recipient and privacy information, contact options, and rights tools are described in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Allowing optional analytics includes this transfer. Advertising consent remains denied.</p>
     <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Pages with videos embed a <code>youtube-nocookie.com</code> player. It may contact YouTube when the page loads or the video comes into view. Videos do not autoplay.</p>

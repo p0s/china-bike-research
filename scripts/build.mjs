@@ -2,6 +2,7 @@ import { loadPosts, validatePostReferences, renderBlogIndex, renderPost, postLas
 import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
 import { LOCALES, localePath, localizedCatalogPayload } from '../src/lib/i18n.mjs';
 import { candidateIndexable } from '../src/lib/indexing.mjs';
+import { publicActionManifest } from '../src/lib/analytics-context.mjs';
 import { regionalPricePayload } from '../src/lib/regional-prices.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -156,6 +157,7 @@ ctx.catalogDataVersions = Object.fromEntries(Object.entries(catalogPayloads).map
 ctx.regionalPriceDataVersion = payloadVersion(regionalPayload);
 addLocalized('/', renderHome, true, { lastmod: latestDate([siteLastmod, '2026-09-22'], siteLastmod) });
 write('data/regional-prices.json', regionalPayload);
+write('data/analytics-context.json', `${JSON.stringify(publicActionManifest(products, candidates))}\n`);
 for (const [locale, payload] of Object.entries(catalogPayloads)) write(`data/home-catalog-${locale}.json`, payload);
 for (const landing of landings.pages) {
   const lastmod = landingLastmod(landing);

@@ -10,7 +10,7 @@
     "specification": "medium",
     "price": "low"
   },
-  "notes": "The currently cited intermediary explicitly labels its body as an AI-generated summary/index of a Bilibili R70 review. It relays qualitative strong pedaling stiffness and describes an 8.80 kg size-490 build with pedals separately from an 8.36 kg size-450 pedal-excluded claim. Original playback/transcript and the underlying measurement method remain unverified. This is a secondary qualitative lead, not an instrumented frame-stiffness result; neither weight is transferred to configuration-hidden retained cards.",
+  "notes": "The currently cited intermediary explicitly labels its body as an AI-generated summary/index of a Bilibili R70 review. It relays qualitative strong pedaling stiffness and an 8.8 kg tested build with pedals versus an 8.36 kg official reference; the accounts concern different sizes, but neither the cited page nor retained original evidence establishes exact size labels. Original playback/transcript and the underlying measurement method remain unverified. This is a secondary qualitative lead, not an instrumented frame-stiffness result; neither weight is transferred to configuration-hidden retained cards.",
   "accessed_at": "2026-08-30",
   "authority_note": "Secondary AI summary of a Bilibili review; original playback/transcript unverified. Qualitative lead, not an instrumented stiffness result.",
   "audit_corrections": [
@@ -22,6 +22,13 @@
         "notes": "Current exact-model review reports an 8.8 kg tested complete bike versus the lighter pedal-excluded manufacturer basis and describes strong pedaling stiffness and T800 reinforcement. It is qualitative ride evidence rather than an instrumented stiffness protocol, and its build weight is not transferred to configuration-hidden retained cards."
       },
       "reason": "Qualify the current AI intermediary without disproving the historical original review, combining different build weights or refreshing original access dates."
+    },
+    {
+      "reviewed_at": "2026-10-05",
+      "prior_values": {
+        "notes": "The currently cited intermediary explicitly labels its body as an AI-generated summary/index of a Bilibili R70 review. It relays qualitative strong pedaling stiffness and describes an 8.80 kg size-490 build with pedals separately from an 8.36 kg size-450 pedal-excluded claim. Original playback/transcript and the underlying measurement method remain unverified. This is a secondary qualitative lead, not an instrumented frame-stiffness result; neither weight is transferred to configuration-hidden retained cards."
+      },
+      "reason": "Remove unsupported size-490/size-450 precision introduced in the prior correction. Preserve the supported official/tested weights, pedals and different-size qualification, original access date, and historical text without presenting exact sizes as verified."
     }
   ]
 }

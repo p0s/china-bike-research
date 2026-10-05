@@ -36,7 +36,7 @@ test('historical3570/5000 leads retain amounts, capture dates, original citation
 });
 test('R70 stiffness is an unverified AI intermediary lead, with different weighted builds kept separate',()=>{
  const source=data.sources.find(x=>x.id==='upland-r70-independent-review-2026-08-30'),entry=candidates.find(x=>x.candidate.id==='upland-r70');
- assert.equal(source.type,'secondary-ai-video-summary-index');assert.equal(source.accessed_at,'2026-08-30');assert.match(source.notes,/8\.80 kg size-490.*with pedals.*8\.36 kg size-450 pedal-excluded/);assert.match(source.notes,/Original playback\/transcript.*unverified/);
+ assert.equal(source.type,'secondary-ai-video-summary-index');assert.equal(source.accessed_at,'2026-08-30');assert.match(source.notes,/8\.8 kg tested build with pedals.*8\.36 kg official reference/);assert.match(source.notes,/different sizes.*neither.*establishes exact size labels/);assert.doesNotMatch(source.notes,/size[- ](?:490|450)/);assert.match(source.audit_corrections.at(-1).prior_values.notes,/size-490/);assert.match(source.notes,/Original playback\/transcript.*unverified/);
  assert.equal(entry.candidate.facts.complete_weight_g,undefined);assert.match(entry.candidate.facts.complete_weight,/8\.3 kg bare/);assert.match(entry.candidate.facts.stiffness_evidence,/secondary AI-generated.*unverified/);
  assert.equal(entry.candidate.observed_price.low_cny,8999);assert.equal(entry.candidate.observed_price.high_cny,9597.25);assert.equal(entry.candidate.observed_at,'2026-08-08');
  for(const locale of locales){const html=renderCandidateModel({...ctx,locale},entry);assert.match(html,locale==='en'?/secondary AI-generated summary/:locale==='zh-Hans'?/AI 转述摘要/:/sekundäre KI-Zusammenfassung/);}

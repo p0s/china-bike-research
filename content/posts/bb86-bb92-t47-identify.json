@@ -1,0 +1,215 @@
+{
+  "slug": "bb86-bb92-t47-identify",
+  "publication_status": "scheduled",
+  "series_id": "october-2026",
+  "series_order": 72,
+  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "lightcarbon-lcr018-d",
+    "incolor-speedster-sr-frameset"
+  ],
+  "source_ids": [
+    "lightcarbon-lcr018-d-official-2026-08-29",
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
+    "incolor-speedster-official-2026-08-29",
+    "incolor-speedster-brochure-2026-08-29"
+  ],
+  "editorial_references": [
+    "https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "sheet",
+      "ids": [
+        "incolor-speedster-sr",
+        "lightcarbon-lcr018-d"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "BB86, BB92 and T47: the details to send before ordering",
+      "description": "Create a bottom-bracket order sheet with shell diameter, width, threading, asymmetry and crank model. Do not order from a single acronym.",
+      "intro": "The seller asks, “Which bottom bracket?” Reply with a specification, not only “T47” or “BB86.” A few measurements and the crank code can prevent the small wrong part that stops the entire build.",
+      "sections": [
+        {
+          "id": "identify",
+          "heading": "Identify the shell before the bearing",
+          "paragraphs": [
+            "[Park Tool’s terminology guide](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology) groups BB86/BB92 among PF41 press-fit arrangements; shell width still distinguishes applications. T47 is a threaded family with different widths and layouts. The crank’s spindle diameter is a separate measurement, so “24 mm crank” does not identify the frame’s shell."
+          ]
+        },
+        {
+          "id": "sheet",
+          "heading": "Fill this sheet with the maker or assembler",
+          "paragraphs": [
+            "For the [LCR018-D](/models/lightcarbon-lcr018-d/) and [Speedster SR](/models/incolor-speedster-sr-frameset/), use each exact generation’s drawing rather than another T47 frame’s dimensions. If the frame is already in your hands, have a competent assembler verify the shell without damaging threads or bearing seats."
+          ],
+          "worksheet": {
+            "caption": "Bottom-bracket order sheet",
+            "columns": [
+              "Field",
+              "Required detail"
+            ],
+            "rows": [
+              [
+                "Frame",
+                "Model, generation, shell drawing"
+              ],
+              [
+                "Shell",
+                "Internal diameter/thread and exact width"
+              ],
+              [
+                "Layout",
+                "Symmetric/asymmetric; bearing arrangement"
+              ],
+              [
+                "Crank",
+                "Model, spindle diameter and manufacturer instructions"
+              ],
+              [
+                "Final assembly",
+                "Confirmed part code, spacers and installation method"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "confirm",
+          "heading": "Ask for the actual part code",
+          "paragraphs": [
+            "Send the completed sheet and ask the supplier to confirm the compatible bottom-bracket model in writing. Include any required spacers, tool access and installation labour in the quote. If two sources disagree about the shell, hold the order until the frame maker resolves it. Averaging two widths does not produce a third useful standard."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "BB86、BB92、T47：订中轴前该发哪些资料",
+      "description": "制作中轴订货表，包含车架五通内径、宽度、螺纹、对称性与曲柄型号，不靠一个缩写下单。",
+      "intro": "卖家问“需要哪种中轴”，应回复完整规格，而不只是“T47”或“BB86”。写清五通尺寸和曲柄型号，就能避免买错一个小零件，卡住整个装车计划。",
+      "sections": [
+        {
+          "id": "identify",
+          "heading": "先辨认壳体，再选轴承",
+          "paragraphs": [
+            "[Park Tool术语指南](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology)把BB86、BB92归入PF41压入安排，应用还须按壳宽区分；T47是有不同宽度、布局的螺纹家族。曲柄轴径是另一尺寸，“24毫米曲柄”不能识别车架壳体。"
+          ]
+        },
+        {
+          "id": "sheet",
+          "heading": "与厂家或装车者填这张表",
+          "paragraphs": [
+            "[LCR018-D](/models/lightcarbon-lcr018-d/)与[Speedster SR](/models/incolor-speedster-sr-frameset/)应使用对应代际图纸，而非另一T47车架尺寸。车架已到手时，让合格装车者验证壳体，不损伤螺纹或轴承座。"
+          ],
+          "worksheet": {
+            "caption": "中轴订货表",
+            "columns": [
+              "项目",
+              "必要详情"
+            ],
+            "rows": [
+              [
+                "车架",
+                "型号、代际、壳体图纸"
+              ],
+              [
+                "壳体",
+                "内径或螺纹、确切宽度"
+              ],
+              [
+                "布局",
+                "对称或非对称、轴承安排"
+              ],
+              [
+                "曲柄",
+                "型号、轴径与厂家说明"
+              ],
+              [
+                "最终装配",
+                "确认编码、垫片与安装方法"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "confirm",
+          "heading": "索取实际零件编码",
+          "paragraphs": [
+            "发完整表，请供货方书面确认兼容中轴型号，报价包含必要垫片、工具空间与安装人工。两来源壳体资料矛盾时，等厂家解决后再订。两宽度取平均，不会产生第三种有用标准。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "BB86, BB92 und T47: Angaben für die richtige Bestellung",
+      "description": "Erstelle ein Innenlager-Bestellblatt mit Durchmesser, Breite, Gewinde, Asymmetrie und Kurbelmodell.",
+      "intro": "„Welches Innenlager?“ Beantworte die Frage mit einer Spezifikation statt nur T47 oder BB86. Einige Maße und die Kurbelkennung verhindern das kleine Fehlteil, das den ganzen Aufbau stoppt.",
+      "sections": [
+        {
+          "id": "identify",
+          "heading": "Zuerst das Tretlagergehäuse bestimmen",
+          "paragraphs": [
+            "[Park Tools Terminologie](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology) ordnet BB86/BB92 PF41-Pressfit zu; die Breite unterscheidet Anwendungen. T47 ist eine Gewindefamilie mit verschiedenen Breiten und Anordnungen. Der Kurbelachsdurchmesser bestimmt nicht das Tretlagergehäuse."
+          ]
+        },
+        {
+          "id": "sheet",
+          "heading": "Das Blatt mit Hersteller oder Monteur ausfüllen",
+          "paragraphs": [
+            "Für [LCR018-D](/models/lightcarbon-lcr018-d/) und [Speedster SR](/models/incolor-speedster-sr-frameset/) gilt die Zeichnung der Generation, nicht irgendeines T47-Rahmens. Vorhandene Gehäuse fachgerecht prüfen lassen, ohne Gewinde oder Lagersitze zu beschädigen."
+          ],
+          "worksheet": {
+            "caption": "Innenlager-Bestellblatt",
+            "columns": [
+              "Feld",
+              "Benötigte Angabe"
+            ],
+            "rows": [
+              [
+                "Rahmen",
+                "Modell, Generation, Gehäusezeichnung"
+              ],
+              [
+                "Gehäuse",
+                "Innendurchmesser/Gewinde und genaue Breite"
+              ],
+              [
+                "Anordnung",
+                "Symmetrisch/asymmetrisch; Lagerposition"
+              ],
+              [
+                "Kurbel",
+                "Modell, Achsdurchmesser, Herstelleranleitung"
+              ],
+              [
+                "Montage",
+                "Bestätigte Kennung, Distanzteile, Verfahren"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "confirm",
+          "heading": "Die konkrete Teilenummer bestätigen lassen",
+          "paragraphs": [
+            "Sende das Blatt und lass das passende Lagermodell schriftlich bestätigen. Distanzteile, Werkzeugzugang und Arbeit mitkalkulieren. Widersprechen sich Gehäuseangaben, vor Bestellung mit dem Rahmenhersteller klären. Zwei Breiten zu mitteln ergibt keinen dritten brauchbaren Standard."
+          ]
+        }
+      ]
+    }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T09:06:24.217Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "A compact ordering worksheet captures diameter, width, asymmetry, crank and final part number without inventing an interface from an acronym."
+  }
+}
