@@ -1,8 +1,8 @@
 {
   "id": "quick-gr-one-global-store-recheck-2026-09-23",
-  "type": "official-storefront-and-hosted-owner-reviews-recheck",
+  "type": "regional-retailer-product-page-and-hosted-owner-reviews",
   "title": "Quick Pro GR:ONE frame current hosted-review recheck",
-  "publisher": "Quick Pro USA",
+  "publisher": "Quick Pro USA / North American storefront",
   "language": "en",
   "accessed_at": "2026-09-23",
   "url": "https://www.quickprousa.com/products/gr-one-frame",
@@ -10,5 +10,41 @@
     "identity": "high",
     "specification": "low"
   },
-  "notes": "Current exact-frame page recheck found manufacturer-hosted owner comments describing the frame as stiff and praising its stiffness. These are qualitative owner reports, not an independent test or instrumented measurement."
+  "notes": "The dated exact-frame page recheck found seller-hosted owner comments describing the frame as stiff and praising its stiffness. These are qualitative owner reports, not an independent test or instrumented measurement.",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "quick-gr-one-seller-role-recheck-2026-10-05",
+        "quick-usa-operator-role-recheck-2026-10-05"
+      ],
+      "note": "Qualify the Quick USA operator and quote without asserting false ownership or replacing historical observations. Original record retained verbatim as structured values.",
+      "prior_values": {
+        "id": "quick-gr-one-global-store-recheck-2026-09-23",
+        "type": "official-storefront-and-hosted-owner-reviews-recheck",
+        "title": "Quick Pro GR:ONE frame current hosted-review recheck",
+        "publisher": "Quick Pro USA",
+        "language": "en",
+        "accessed_at": "2026-09-23",
+        "url": "https://www.quickprousa.com/products/gr-one-frame",
+        "reliability": {
+          "identity": "high",
+          "specification": "low"
+        },
+        "notes": "Current exact-frame page recheck found manufacturer-hosted owner comments describing the frame as stiff and praising its stiffness. These are qualitative owner reports, not an independent test or instrumented measurement."
+      }
+    }
+  ],
+  "classification_history": [
+    {
+      "type": "official-storefront-and-hosted-owner-reviews-recheck",
+      "corrected_at": "2026-10-05",
+      "reason": "The primary storefront identifies a regional dealer; manufacturer ownership and legal relationship remain unverified. Only the unsupported authority annotation is qualified."
+    }
+  ],
+  "authority_note": "Quick USA regional seller. Its storefront describes an authorized North American dealer, while its About page makes manufacturing claims and describes coordinating with Quick Pro’s manufacturer service center. The legal seller/manufacturer and factory-ownership relationship remains unverified; this does not establish false ownership. Seller-hosted reviews are not independent evidence. Mainland China eligibility, exact checkout total and warranty handling remain unverified.",
+  "authority_source_ids": [
+    "quick-gr-one-seller-role-recheck-2026-10-05",
+    "quick-usa-operator-role-recheck-2026-10-05"
+  ]
 }

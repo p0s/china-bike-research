@@ -3,7 +3,7 @@
   "platform_id": "quick-gr-one",
   "name": "GR:ONE frameset",
   "kind": "frameset",
-  "market": "mainland-china-or-direct",
+  "market": "mainland-china-or-regional-seller",
   "editorial": {
     "verdict": "A polished gravel-race near-miss: relatively light and fast-looking, but limited to 45 mm and longer than a literal road-race chassis.",
     "best_for": [
@@ -17,7 +17,8 @@
     "caveats": [
       "Only 45 mm clearance",
       "High price",
-      "Size M uses 425 mm chainstays and a 1,032 mm wheelbase"
+      "Size M uses 425 mm chainstays and a 1,032 mm wheelbase",
+      "Quick USA seller/manufacturer relationship, mainland China checkout and warranty handling remain unverified"
     ],
     "price_thresholds_cny": {
       "great_buy_below": 13500,
@@ -28,13 +29,65 @@
   "source_ids": [
     "quick-gr-one-official",
     "quick-gr-one-china-official-2026-08-25",
-    "quick-gr-one-global-store-2026-09-01"
+    "quick-gr-one-global-store-2026-09-01",
+    "quick-gr-one-seller-role-recheck-2026-10-05",
+    "quick-usa-operator-role-recheck-2026-10-05"
   ],
-  "purchase_route": "Current Quick Pro global storefront sells the exact GR:ONE frame for US$2,099 with Add to cart and current delivery guidance; the China product page remains another direct route. Confirm mainland CNY checkout, customization, tax and warranty handling.",
+  "purchase_route": "Quick USA is a foreign regional seller with a dated US$2,099 GR:ONE frame reference. Its storefront describes a North American authorized dealer; the legal seller/manufacturer and factory-ownership relationship remains unverified. The separate dated China product page is a mainland listing lead, not proof of current stock or direct-factory sale. Confirm the exact seller, CNY checkout, selected package, shipping, tax and warranty handling.",
   "included": [
     "frame",
     "fork",
     "small parts; verify exact package"
   ],
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-01",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "quick-gr-one-seller-role-recheck-2026-10-05",
+        "quick-usa-operator-role-recheck-2026-10-05"
+      ],
+      "note": "Qualify the Quick USA operator and quote without asserting false ownership or replacing historical observations. Original record retained verbatim as structured values.",
+      "prior_values": {
+        "id": "quick-gr-one-frameset",
+        "platform_id": "quick-gr-one",
+        "name": "GR:ONE frameset",
+        "kind": "frameset",
+        "market": "mainland-china-or-direct",
+        "editorial": {
+          "verdict": "A polished gravel-race near-miss: relatively light and fast-looking, but limited to 45 mm and longer than a literal road-race chassis.",
+          "best_for": [
+            "race-focused premium buyer"
+          ],
+          "strengths": [
+            "919 g claim",
+            "Monocoque construction",
+            "T47"
+          ],
+          "caveats": [
+            "Only 45 mm clearance",
+            "High price",
+            "Size M uses 425 mm chainstays and a 1,032 mm wheelbase"
+          ],
+          "price_thresholds_cny": {
+            "great_buy_below": 13500,
+            "fair_buy_below": 14500,
+            "not_compelling_above": 16000
+          }
+        },
+        "source_ids": [
+          "quick-gr-one-official",
+          "quick-gr-one-china-official-2026-08-25",
+          "quick-gr-one-global-store-2026-09-01"
+        ],
+        "purchase_route": "Current Quick Pro global storefront sells the exact GR:ONE frame for US$2,099 with Add to cart and current delivery guidance; the China product page remains another direct route. Confirm mainland CNY checkout, customization, tax and warranty handling.",
+        "included": [
+          "frame",
+          "fork",
+          "small parts; verify exact package"
+        ],
+        "last_reviewed": "2026-09-01"
+      }
+    }
+  ]
 }

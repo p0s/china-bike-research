@@ -2,18 +2,54 @@
   "id": "quick-gr-one-global-official-2026-09-01",
   "variant_id": "quick-gr-one-frameset",
   "observed_at": "2026-09-01",
-  "price_type": "official-global-store-reference-conversion",
+  "price_type": "foreign-seller-reference-conversion",
   "currency": "CNY",
-  "channel": "manufacturer-direct-global",
+  "channel": "regional-seller-global-reference",
   "status": "in-stock",
   "amount_cny": 14105,
   "original_amount": 2099,
   "original_currency": "USD",
   "conversion_rate_cny_per_original_unit": 6.719730941704037,
   "conversion_rate_date": "2026-08-31",
-  "conditions": "Reference conversion of the current global-direct price; size, color, customization, shipping, tax, mainland eligibility and checkout total may differ.",
+  "conditions": "Dated foreign seller reference conversion, not a manufacturer-direct or mainland China purchase quote. Quick USA describes an authorized North American dealer; its legal relationship to Quick Pro and factory ownership remain unverified. Size, color, customization, stock, shipping, tax, mainland eligibility, warranty handling and exact checkout total require confirmation.",
   "source_ids": [
     "quick-gr-one-global-store-2026-09-01",
     "ecb-reference-rates-2026-08-31"
+  ],
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "quick-gr-one-seller-role-recheck-2026-10-05",
+        "quick-usa-operator-role-recheck-2026-10-05"
+      ],
+      "note": "Qualify the Quick USA operator and quote without asserting false ownership or replacing historical observations. Original record retained verbatim as structured values.",
+      "prior_values": {
+        "id": "quick-gr-one-global-official-2026-09-01",
+        "variant_id": "quick-gr-one-frameset",
+        "observed_at": "2026-09-01",
+        "price_type": "official-global-store-reference-conversion",
+        "currency": "CNY",
+        "channel": "manufacturer-direct-global",
+        "status": "in-stock",
+        "amount_cny": 14105,
+        "original_amount": 2099,
+        "original_currency": "USD",
+        "conversion_rate_cny_per_original_unit": 6.719730941704037,
+        "conversion_rate_date": "2026-08-31",
+        "conditions": "Reference conversion of the current global-direct price; size, color, customization, shipping, tax, mainland eligibility and checkout total may differ.",
+        "source_ids": [
+          "quick-gr-one-global-store-2026-09-01",
+          "ecb-reference-rates-2026-08-31"
+        ]
+      }
+    }
+  ],
+  "purchase_total_complete": false,
+  "planner_quote_note": "Quick USA seller reference; manufacturer relationship unverified. Enter the exact purchase quote, including required charges.",
+  "provenance_reviewed_at": "2026-10-05",
+  "provenance_source_ids": [
+    "quick-gr-one-seller-role-recheck-2026-10-05",
+    "quick-usa-operator-role-recheck-2026-10-05"
   ]
 }

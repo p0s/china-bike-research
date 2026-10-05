@@ -5,13 +5,41 @@
   "country": "China",
   "website": "https://www.quickprousa.com/",
   "manufacturing": {
-    "relationship": "factory-linked-brand",
-    "confidence": "medium-high",
-    "summary": "Performance-oriented Chinese brand with monocoque construction claims and domestic industry visibility."
+    "relationship": "brand-identity-only",
+    "confidence": "unknown",
+    "summary": "Chinese performance brand with attributed monocoque construction claims. The Quick USA storefront describes a North American authorized dealer; its legal relationship to the manufacturer and factory ownership remain unverified."
   },
   "china_support": {
-    "domestic_purchase": "direct-or-import",
+    "domestic_purchase": "seller-and-market-terms-unverified",
     "warranty": "verify-exact-seller-and-sku"
   },
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-06",
+  "website_label": "Visit the Quick USA regional storefront",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "quick-gr-one-seller-role-recheck-2026-10-05",
+        "quick-usa-operator-role-recheck-2026-10-05"
+      ],
+      "note": "Qualify the listed Quick USA website operator and unsupported factory relationship; no conclusion of false ownership or changed sibling product specifications. Full original brand annotations retained.",
+      "prior_values": {
+        "id": "quick",
+        "name": "Quick Pro",
+        "name_zh": "快客",
+        "country": "China",
+        "website": "https://www.quickprousa.com/",
+        "manufacturing": {
+          "relationship": "factory-linked-brand",
+          "confidence": "medium-high",
+          "summary": "Performance-oriented Chinese brand with monocoque construction claims and domestic industry visibility."
+        },
+        "china_support": {
+          "domestic_purchase": "direct-or-import",
+          "warranty": "verify-exact-seller-and-sku"
+        },
+        "last_reviewed": "2026-08-06"
+      }
+    }
+  ]
 }

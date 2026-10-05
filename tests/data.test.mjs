@@ -1745,7 +1745,7 @@ test('batch 046 resolves fifteen exact fields and exhausts seven unknowns across
   assert.match(platforms.get('elves-mori-aerox').frame.stiffness_evidence, /18,000 km.*not instrumented/i);
   assert.match(platforms.get('evolve-cima-gr').frame.stiffness_evidence, /1.2%.*7.5%.*protocol/i);
   assert.match(platforms.get('ican-gra04').frame.stiffness_evidence, /manufacturer-hosted.*not an independent/i);
-  assert.match(platforms.get('quick-gr-one').frame.stiffness_evidence, /manufacturer-hosted.*not an independent/i);
+  assert.match(platforms.get('quick-gr-one').frame.stiffness_evidence, /seller-hosted.*not an independent/i);
   assert.match(platforms.get('twitter-gravel-v3-2024').frame.stiffness_evidence, /No exact-2024-generation.*50-area/i);
   assert.match(variants.get('sava-gelaro-s8').purchase_route, /US\$2,199.*factory-direct/i);
 
