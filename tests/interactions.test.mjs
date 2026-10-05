@@ -7,6 +7,85 @@ import { numberOrNull, compareNumbers, COMPARISON_SELECTION_LIMIT, normalizeSele
 const script = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
 const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
 
+function sourceNavigation(initialHash = '') {
+  const listeners = new Map(), frames = [], pendingHashes = [], entries = [];
+  class Element {
+    constructor(parentElement = null) { this.parentElement = parentElement; }
+    scrollIntoView() {}
+  }
+  class Details extends Element {
+    constructor() { super(); this.open = true; this.summary = { focus() {} }; }
+    querySelector() { return this.summary; }
+  }
+  const panel = new Details(), anchor = new Element();
+  const location = new URL(`https://example.invalid/models/test/?build=6000${initialHash}`);
+  const state = { retained: 'model preferences' };
+  anchor.href = 'https://example.invalid/models/test/?build=6000#source-records';
+  anchor.closest = () => anchor;
+  const history = { state, pushState(value, title, href) { entries.push({ value, href }); location.href = href; } };
+  const start = script.indexOf('  const sourceRecords =');
+  const end = script.indexOf("  document.addEventListener('click', (event) => {\n    if (!(event instanceof MouseEvent) || !event.isTrusted", start);
+  assert.ok(start >= 0 && end > start);
+  vm.runInNewContext(script.slice(start, end), {
+    Element, HTMLDetailsElement: Details, URL, location, history,
+    document: {
+      querySelector: selector => selector === '#source-records' ? panel : null,
+      getElementById: id => id === 'source-records' ? panel : null,
+      documentElement: { style: { setProperty() {} } },
+      addEventListener: (name, fn) => listeners.set(name, fn)
+    },
+    addEventListener: (name, fn) => listeners.set(name, fn),
+    requestAnimationFrame: fn => frames.push(fn)
+  });
+  const flush = () => {
+    while (pendingHashes.length) pendingHashes.shift()();
+    while (frames.length) frames.shift()();
+  };
+  return {
+    panel, location, history, entries, flush,
+    click() {
+      const event = { target: anchor, button: 0, defaultPrevented: false, preventDefault() { this.defaultPrevented = true; } };
+      listeners.get('click')(event);
+      // A native fragment default schedules hashchange after the click handler.
+      if (!event.defaultPrevented && location.href !== anchor.href) {
+        location.href = anchor.href;
+        pendingHashes.push(listeners.get('hashchange'));
+      }
+    },
+    traverse(hash) { location.hash = hash; pendingHashes.push(listeners.get('hashchange')); flush(); }
+  };
+}
+
+test('source activation cannot reopen an explicitly closed disclosure through delayed hashchange', () => {
+  const nav = sourceNavigation();
+  assert.equal(nav.panel.open, false);
+  nav.click();
+  assert.equal(nav.panel.open, true);
+  nav.panel.open = false;
+  nav.flush();
+  assert.equal(nav.panel.open, false);
+  assert.equal(nav.entries.length, 1);
+  assert.equal(nav.entries[0].value, nav.history.state);
+  assert.equal(nav.location.search, '?build=6000');
+  nav.click();
+  assert.equal(nav.panel.open, true);
+  assert.equal(nav.entries.length, 1, 'repeated activation does not add a duplicate history entry');
+  nav.panel.open = false;
+  nav.flush();
+  assert.equal(nav.panel.open, false);
+});
+
+test('source deep links and history fragment traversal still open the target', () => {
+  const nav = sourceNavigation('#source-records');
+  assert.equal(nav.panel.open, true);
+  nav.flush();
+  nav.panel.open = false;
+  nav.traverse('');
+  assert.equal(nav.panel.open, false);
+  nav.traverse('#source-records');
+  assert.equal(nav.panel.open, true);
+});
+
 test('builder applies 1x/2x clearance and fails conservatively for unknown layouts', () => {
   const source = script.slice(script.indexOf('  function compatibilityMessages('), script.indexOf('  function updateUrl(', script.indexOf('  function compatibilityMessages(')));
   const run = (layout, selections = {}) => vm.runInNewContext(`(${source.trim()})(base, new Map())`, {

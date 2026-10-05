@@ -36,15 +36,21 @@ void import('./analytics-event.js').then((events) => {
       target.scrollIntoView({ block: 'start', behavior: 'instant' });
       if (focus && target instanceof HTMLDetailsElement) target.querySelector('summary')?.focus({ preventScroll: true });
     });
+    return true;
   };
   if (location.hash) openFragment(location.hash);
   addEventListener('hashchange', () => openFragment(location.hash));
   document.addEventListener('click', (event) => {
     if (!(event.target instanceof Element)) return;
     const anchor = event.target.closest('a[href]');
-    if (!anchor || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (!anchor || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || (anchor.target && anchor.target !== '_self')) return;
     const destination = new URL(anchor.href, location.href);
-    if (destination.origin === location.origin && destination.pathname === location.pathname && destination.search === location.search && destination.hash) openFragment(destination.hash, true);
+    if (destination.origin === location.origin && destination.pathname === location.pathname && destination.search === location.search && destination.hash && openFragment(destination.hash, true)) {
+      // Handle activation once: the native default would queue a second open
+      // through hashchange and could undo an intervening explicit close.
+      event.preventDefault();
+      if (destination.hash !== location.hash) history.pushState(history.state, '', destination.href);
+    }
   });
   document.addEventListener('click', (event) => {
     if (!(event instanceof MouseEvent) || !event.isTrusted || event.button !== 0) return;
