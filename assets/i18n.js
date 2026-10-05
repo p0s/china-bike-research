@@ -736,6 +736,7 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    [/^(\d+)T chainring exceeds the frame's published (\d+)T 1× maximum\.$/, (_, teeth, limit) => `${teeth}T 牙盘超出车架公布的 ${limit}T 单盘最大值。`],
     [/^Move (.+) (left|right)$/, (_, name, direction) => `将 ${name} 向${direction === 'left' ? '左' : '右'}移动`],
     [/^Remove (.+)$/, (_, name) => `移除 ${name}`],
     [/^Category-specific facts are comparable across these (\d+) selections\.$/, (_, n) => `这些 ${n} 个选项的类别特有信息可互相比对。`],
@@ -902,6 +903,18 @@ Object.assign(zh, {
 
 Object.assign(zh, {
   "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "制造商几何冲突：XXS／XS 的尺寸推算轴距约为 980.2／987.3 mm，而表中标注为 974／981 mm。保留表中原值；在制造商澄清前，不用于推算适配。请向 PARDUS 核实目标尺码。"
+});
+
+Object.assign(zh, {
+  "Drivetrain compatibility": "传动兼容性",
+  "Manufacturer support: SRAM or Shimano wireless electronic 1× only, maximum 40T chainring. Confirm the exact drivetrain and frame version before buying.": "制造商支持：仅限 SRAM 或 Shimano 无线电子变速单盘，牙盘最大 40T。购买前请确认具体传动系统及车架版本。",
+  "The Chinese manufacturer page documents SRAM or Shimano mechanical or electronic 1×, maximum 44T chainring. The English page is less specific; 2× support is unconfirmed. Confirm the exact frame version before buying.": "中文制造商页面记录了 SRAM 或 Shimano 机械／电子变速单盘，牙盘最大 44T。英文页面较笼统；双盘支持尚未确认。购买前请核对具体车架版本。",
+  "This shifting and chainring combination is not confirmed by the frame’s manufacturer. Confirm it before buying.": "制造商尚未确认此变速类型与牙盘布局组合；购买前请核实。",
+  "Confirm the selected 1× chainring tooth count against the manufacturer’s published maximum.": "请核对所选单盘牙盘齿数是否符合制造商公布的最大值。",
+  "This frame requires wireless electronic shifting; the selected drivetrain is recorded as wired.": "此车架要求无线电子变速；所选传动系统记录为有线。",
+  "Confirm that the selected electronic drivetrain meets the frame’s wireless-shifting requirement.": "请确认所选电子变速系统符合此车架的无线变速要求。",
+  "Confirm the drivetrain manufacturer against the frame’s documented supported brands.": "请核对传动系统制造商是否属于车架记录支持的品牌。",
+  "The selected drivetrain manufacturer is outside the frame’s documented support. Confirm exact compatibility before buying.": "所选传动系统制造商不在车架记录的支持范围内；购买前请确认具体兼容性。"
 });
 
 Object.assign(zh, {

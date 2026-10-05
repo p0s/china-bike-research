@@ -49,7 +49,91 @@
     "titanium-laget-discovery-one-flagship-official",
     "laget-brand-story-2026-08-27",
     "laget-discovery-one-flagship-taobao-2026-08-27",
-    "laget-discovery-one-flagship-official-recheck-2026-09-23"
+    "laget-discovery-one-flagship-official-recheck-2026-09-23",
+    "laget-discovery-one-flagship-drivetrain-cn-recheck-2026-10-05"
   ],
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-10-05",
+  "drivetrain_compatibility": {
+    "mechanical": {
+      "single": false,
+      "double": false
+    },
+    "electronic": {
+      "single": true,
+      "double": false
+    },
+    "single_max_chainring_teeth": 40,
+    "supported_manufacturers": [
+      "sram",
+      "shimano"
+    ],
+    "source_id": "laget-discovery-one-flagship-drivetrain-cn-recheck-2026-10-05",
+    "reviewed_at": "2026-10-05",
+    "note": "Manufacturer support: SRAM or Shimano wireless electronic 1× only, maximum 40T chainring. Confirm the exact drivetrain and frame version before buying.",
+    "electronic_wireless_only": true
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "laget-discovery-one-flagship-drivetrain-cn-recheck-2026-10-05"
+      ],
+      "reason": "Add the exact-model manufacturer drivetrain restrictions; retain all previous weight, material, price, source and review observations. PRO English wording does not establish 2× support.",
+      "prior_values": {
+        "id": "laget-discovery-one-flagship",
+        "name": "LAGET DISCOVERY ONE flagship",
+        "model_id": "laget-discovery-one-flagship",
+        "brand_id": "laget",
+        "category": "gravel",
+        "type": "frameset",
+        "why_interesting": "Fully 3D-printed titanium gravel frameset with 50 mm clearance, a documented 1.45 kg size-S frame and UDH.",
+        "facts": {
+          "frame_weight_g": 1450,
+          "frame_weight_basis": "Current official page lists 1.45 kg for size S but does not state whether fork or hardware are included or provide a weighing protocol.",
+          "frame": "Fully 3D-printed titanium frame with carbon fork and UDH",
+          "frame_material": "3D-printed titanium frame; exact titanium alloy grade is not published The current 2026-09-23 product page does not restate the alloy; retain the material claim as the earlier dated official observation.",
+          "frame_construction": "Fully 3D-printed gravel frame with sandblasted finish and anodized logo",
+          "bottom_bracket": "T47 × 85.5 mm",
+          "tire_clearance_mm": 50,
+          "tire_clearance_basis": "Manufacturer maximum 700×50C",
+          "derailleur_hanger": "UDH",
+          "sizes": "S, M and L",
+          "stiffness_evidence": "No exact-model instrumented stiffness result or sufficiently specific independent ride assessment was found after the 50-area sweep; 3D-printing and strength language was not converted into a stiffness claim.",
+          "official_retail_price_cny": 25900,
+          "official_retail_price_basis": "Listed official retail price observed 2026-09-23; not a checkout quote."
+        },
+        "official_price": {
+          "amount_cny": 25900,
+          "currency": "CNY",
+          "price_type": "official-retail",
+          "observed_at": "2026-08-27",
+          "price_basis": "DISCOVERY ONE flagship frameset"
+        },
+        "observed_price": {
+          "amount_cny": 25900,
+          "currency": "CNY",
+          "observed_at": "2026-08-27",
+          "price_basis": "Selected S-size anodized-gold flagship frameset, SKU 6246437678731; CNY 26,000 before the displayed CNY 100 coupon",
+          "observation_count": 1,
+          "conditional": true
+        },
+        "missing": [
+          "Meaningful exact-model stiffness evidence",
+          "Mainland warranty issuer and invoice handling for the selected Taobao listing",
+          "Exact included-package weight beyond the stated frame weight"
+        ],
+        "status": "official-mainland-frameset-documented",
+        "source_url": "https://lagetbike.com/productinfo/2337830.html",
+        "source_note": "The 2026-08-27 official observation described a fully 3D-printed titanium frame; the exact alloy grade was not stated. On 2026-09-23 the official page again listed a 1.45 kg size-S frame, CNY 25,900 official retail and 700×50C maximum, but did not restate the frame alloy. The weight basis and included components remain unspecified; price is a published retail figure, not checkout.",
+        "manufacturing": "3D-printed titanium gravel frame",
+        "source_ids": [
+          "titanium-laget-discovery-one-flagship-official",
+          "laget-brand-story-2026-08-27",
+          "laget-discovery-one-flagship-taobao-2026-08-27",
+          "laget-discovery-one-flagship-official-recheck-2026-09-23"
+        ],
+        "last_reviewed": "2026-09-01"
+      }
+    }
+  ]
 }

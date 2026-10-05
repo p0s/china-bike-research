@@ -415,6 +415,14 @@ export function validateDataset(data = loadDataset()) {
     if (!['measured', 'official', 'seller claim', 'community report', 'inferred', 'unknown'].includes(part.weight?.claim_type)) errors.push(`build part ${part.id}: invalid weight claim_type`);
     if (part.weight?.source_id && !sourceIds.has(part.weight.source_id)) errors.push(`build part ${part.id}: missing weight source ${part.weight.source_id}`);
     if (!isObject(part.compatibility)) errors.push(`build part ${part.id}: compatibility must be an object`);
+    for (const [key, allowed] of [['drivetrain_layout', ['single', 'double']], ['shifting_type', ['mechanical', 'electronic']]]) {
+      const value = part.compatibility?.[key];
+      if (value !== undefined && value !== null && !allowed.includes(value)) errors.push(`build part ${part.id}: invalid compatibility.${key}`);
+    }
+    const teeth = part.compatibility?.largest_chainring_teeth;
+    if (teeth !== undefined && teeth !== null && (!Number.isInteger(teeth) || teeth <= 0 || teeth > 100)) errors.push(`build part ${part.id}: invalid compatibility.largest_chainring_teeth`);
+    const wireless = part.compatibility?.wireless_shifting;
+    if (wireless !== undefined && wireless !== null && typeof wireless !== 'boolean') errors.push(`build part ${part.id}: invalid compatibility.wireless_shifting`);
     const covered = part.covers ?? [];
     if (!Array.isArray(covered) || covered.some((slot) => !buildSlotSet.has(slot) || slot === part.slot) || new Set(covered).size !== covered.length) errors.push(`build part ${part.id}: invalid covers`);
     if (part.groupset_id && !data.groupsets.some((groupset) => groupset.id === part.groupset_id)) errors.push(`build part ${part.id}: missing groupset ${part.groupset_id}`);
@@ -616,6 +624,16 @@ export function validateDataset(data = loadDataset()) {
           }
         }
       }
+    }
+    if (candidate.drivetrain_compatibility !== undefined) {
+      const support = candidate.drivetrain_compatibility;
+      const keys = ['mechanical', 'electronic', 'single_max_chainring_teeth', 'supported_manufacturers', 'electronic_wireless_only', 'source_id', 'reviewed_at', 'note'];
+      if (!isObject(support) || Object.keys(support).some((key) => !keys.includes(key)) ||
+        !['mechanical', 'electronic'].every((type) => isObject(support[type]) && Object.keys(support[type]).every((key) => ['single', 'double'].includes(key)) && ['single', 'double'].every((layout) => support[type][layout] === null || typeof support[type][layout] === 'boolean')) ||
+        !Number.isInteger(support.single_max_chainring_teeth) || support.single_max_chainring_teeth <= 0 || support.single_max_chainring_teeth > 100 ||
+        !Array.isArray(support.supported_manufacturers) || !support.supported_manufacturers.length || support.supported_manufacturers.some((maker) => typeof maker !== 'string' || !/^[a-z][a-z0-9-]*$/.test(maker)) || new Set(support.supported_manufacturers).size !== support.supported_manufacturers.length ||
+        (support.electronic_wireless_only !== undefined && typeof support.electronic_wireless_only !== 'boolean') ||
+        !sourceIds.has(support.source_id) || !(candidate.source_ids ?? []).includes(support.source_id) || !isDate(support.reviewed_at) || typeof support.note !== 'string' || !support.note.trim()) errors.push(`candidate ${candidate.id}: invalid drivetrain_compatibility`);
     }
     if (candidate.geometry_evidence !== undefined) {
       const geometry = candidate.geometry_evidence;

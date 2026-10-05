@@ -1067,7 +1067,7 @@ function candidateFactRows(entry) {
       : key === 'frame_weight_g' && entry.candidate.comparison_eligibility?.frame_weight === false
         ? 'Reference frame weight; exact build unresolved' : labels[key] ?? sentenceLabel(key);
     return [label, String(formatted)];
-  });
+  }).concat(entry.candidate.drivetrain_compatibility ? [['Drivetrain compatibility', entry.candidate.drivetrain_compatibility.note]] : []);
 }
 
 function candidateAlternativeBuilds(entry) {
@@ -1835,6 +1835,7 @@ function builderBases(ctx) {
         tireClearanceByDrivetrain: facts.tire_clearance_drivetrain_limits_mm ?? null,
         included: isComplete ? ['complete bike package'] : [],
         forkCaliperNote: entry.candidate.fork_caliper_evidence?.note ?? '',
+        drivetrainCompatibility: entry.candidate.drivetrain_compatibility ?? null,
         drivetrain: isComplete ? facts.drivetrain ?? '' : '',
       };
     });
