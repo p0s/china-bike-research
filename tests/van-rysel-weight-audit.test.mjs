@@ -68,6 +68,14 @@ test('frame-weight eligibility requires a dated boolean decision', () => {
 
 test('exact UK wheel, fork and fitted-tyre observations keep their scopes without inventing a mainland build', () => {
   const facts = entry.candidate.facts;
+  for (const key of ['complete_weight_basis', 'complete_weight_alternative_basis', 'complete_weight_status']) {
+    assert.match(facts[key], /comparability.*unresolved/i, key);
+    assert.doesNotMatch(facts[key], /conflict/i, key);
+    assert.match(facts[key], /8\.0 kg/);
+    assert.match(facts[key], /8\.2 kg/);
+  }
+  assert.match(facts.complete_weight_basis, /size\/protocol unstated.*size M with tubeless assembly/);
+  assert.match(facts.complete_weight_status, /do not establish contradictory measurements/);
   assert.match(facts.wheels, /Hadron Classic 470.*Classic 625.*62 mm/);
   assert.match(facts.fork, /HM carbon fork material.*420 g gross fork.*inclusions and measurement protocol are unstated/);
   assert.match(facts.fork, /470 number identifies.*wheel model/);
@@ -91,7 +99,7 @@ test('every prior Van Rysel field and all price observations survive the correct
   assert.deepEqual(entry.candidate.observed_price, prior.observed_price);
   assert.equal(entry.candidate.observed_price.amount_cny, 19999);
   assert.equal(entry.candidate.observed_price.observed_at, '2026-08-20');
-  for (const key of ['complete_weight_g', 'complete_weight_alternative_g', 'frame_weight_g', 'complete_weight_basis', 'complete_weight_alternative_basis']) assert.deepEqual(entry.candidate.facts[key], prior.facts[key], key);
+  for (const key of ['complete_weight_g', 'complete_weight_alternative_g', 'frame_weight_g']) assert.deepEqual(entry.candidate.facts[key], prior.facts[key], key);
   for (const sourceId of prior.source_ids) assert.ok(entry.candidate.source_ids.includes(sourceId), sourceId);
   assert.equal(prior.comparison_eligibility.reviewed_at, '2026-10-03');
 });
