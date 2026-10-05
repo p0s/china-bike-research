@@ -873,3 +873,7 @@ Object.assign(zh, {
   "A secondary AI-generated summary/index of a Bilibili R70 review relays strong pedaling stiffness; original playback/transcript is unverified. Manufacturer T800 reinforcement is a construction claim, with no published instrumented frame-stiffness protocol.": "哔哩哔哩 R70 评测的 AI 转述摘要／索引称踩踏刚性较强，但原始视频或文字稿尚未核实。厂家所称 T800 加强属于构造声明，未公布仪器化车架刚性测试方法。",
   "Secondary AI summary of a Bilibili review; original playback/transcript unverified. Qualitative lead, not an instrumented stiffness result.": "哔哩哔哩评测的 AI 转述摘要；原始视频或文字稿未核实。仅为定性线索，并非仪器化刚性测试结果。"
 });
+
+Object.assign(zh, {
+  "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "制造商几何冲突：XXS／XS 的尺寸推算轴距约为 980.2／987.3 mm，而表中标注为 974／981 mm。保留表中原值；在制造商澄清前，不用于推算适配。请向 PARDUS 核实目标尺码。"
+});

@@ -1598,3 +1598,7 @@ Object.assign(de, {
   "A secondary AI-generated summary/index of a Bilibili R70 review relays strong pedaling stiffness; original playback/transcript is unverified. Manufacturer T800 reinforcement is a construction claim, with no published instrumented frame-stiffness protocol.": "Eine sekundäre KI-Zusammenfassung beziehungsweise ein Index eines Bilibili-R70-Reviews gibt hohe Tretsteifigkeit wieder; Originalvideo oder Transkript sind unbestätigt. Die T800-Verstärkung ist eine Herstellerangabe zur Konstruktion; ein instrumentiertes Prüfverfahren für Rahmensteifigkeit ist nicht veröffentlicht.",
   "Secondary AI summary of a Bilibili review; original playback/transcript unverified. Qualitative lead, not an instrumented stiffness result.": "Sekundäre KI-Zusammenfassung eines Bilibili-Reviews; Originalvideo oder Transkript unbestätigt. Qualitativer Hinweis, kein instrumentiertes Steifigkeitsergebnis."
 });
+
+Object.assign(de, {
+  "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "Widerspruch in der Herstellergeometrie: Die Maße für XXS/XS ergeben etwa 980,2/987,3 mm Radstand, die Tabelle nennt 974/981 mm. Die Tabellenwerte bleiben erhalten; bis zur Klärung durch den Hersteller wird daraus keine Passform abgeleitet. Die gewünschte Größe bei PARDUS bestätigen."
+});
