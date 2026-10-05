@@ -8,7 +8,7 @@
   "missing": [
     "Whether the model is made to order or remaining stock",
     "Current mainland quote and exact included package",
-    "Numeric geometry chart transcription and independent stiffness data"
+    "Independent stiffness data and source-image geometry unit ambiguity"
   ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "low",
@@ -51,6 +51,16 @@
         "geometry numeric table"
       ],
       "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
+    }
+  ],
+  "prior_missing_observations": [
+    {
+      "missing": [
+        "Whether the model is made to order or remaining stock",
+        "Current mainland quote and exact included package",
+        "Numeric geometry chart transcription and independent stiffness data"
+      ],
+      "status": "geometry-transcription-completed"
     }
   ]
 }

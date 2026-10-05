@@ -707,6 +707,9 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    [/^Move (.+) (left|right)$/, (_, name, direction) => `将 ${name} 向${direction === 'left' ? '左' : '右'}移动`],
+    [/^Remove (.+)$/, (_, name) => `移除 ${name}`],
+    [/^Category-specific facts are comparable across these (\d+) selections\.$/, (_, n) => `这些 ${n} 个选项的类别特有信息可互相比对。`],
     [/^Confirm drivetrain: tire limits are (.+)\/(.+) mm \(1×\/2×\)\. Choose a known layout before using these limits; an unknown layout has no confirmed maximum\.$/, (_, single, double) => `请确认传动：单盘／双盘限制为 ${translate(single, locale)}／${translate(double, locale)} mm。请先选择已知布局；未知布局没有已确认的最大值。`],
     [/^(.+) mm tires exceed the frame's published (.+) mm limit( for (?:1×|2×))?\.$/, (_, width, limit, layout) => `${width} mm 轮胎超出车架记录的 ${limit} mm 限制${layout ? (layout.includes('1×') ? '（单盘）' : '（双盘）') : ''}。`],
     [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `有条件价格；请输入符合资格的实际结算报价。${translate(condition, locale)} · ${amount} · ${date}`],
@@ -845,4 +848,16 @@ Object.assign(zh, {
   "An aero-styled direct gravel frame with exact finish-specific weights, 45 mm clearance and a retained exact manufacturer geometry chart for six sizes. Confirm generation, selected-size stock and fit; numeric frame stiffness remains unverified.": "一款采用气动造型的直销砾石车架，记录了具体涂装的重量、45 mm 轮胎空间及保留的制造商六尺码几何表。请核对代次、目标尺码库存与适配；车架刚性的数值仍未核实。",
   "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart.": "保留的制造商几何表涵盖六个尺码；请核对目标代次与尺码适配。当前可读取的 HTML 未显示该图表。",
   "The retained manufacturer chart covers six sizes; confirm the intended generation and selected-size fit. Current readable HTML does not expose the chart": "保留的制造商几何表涵盖六个尺码；请核对目标代次与尺码适配。当前可读取的 HTML 未显示该图表。"
+});
+
+Object.assign(zh, {
+  "More details": "更多详情",
+  "Verdict": "结论",
+  "Bike": "车型",
+  "Bike comparison": "车型对比",
+  "Detailed bike comparison": "车型详细对比",
+  "Bike comparison table; scroll horizontally to see every selected bike": "车型对比表；可横向滚动查看所有已选车型",
+  "Use the arrow controls to reorder columns. The comparison link keeps this order.": "使用箭头调整列顺序；对比链接保留此顺序。",
+  "These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.": "这些车型用途类别不同。各类别特有信息在下方分列，不应直接互相排名。",
+  "Check compatibility": "核对兼容性"
 });
