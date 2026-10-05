@@ -1436,6 +1436,7 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    [/^(\d+)T chainring exceeds the frame's published (\d+)T 1× maximum\.$/, (_, teeth, limit) => `${teeth}T-Kettenblatt überschreitet das veröffentlichte 1×-Maximum des Rahmens von ${limit}T.`],
     [/^Conditional price; enter your eligible checkout quote\. (.+) · (.+) · (.+)$/, (_, condition, amount, date) => `Bedingter Preis; den tatsächlich berechtigten Checkout-Preis eingeben. ${t(condition)} · ${amount} · ${date}`],
     [/^Category: (.+)\.$/, (_, label) => `Kategorie: ${t(label)}.`],
     [/^Up to (.+) rear$/, (_, amount) => `Bis ${amount} hinten`],
@@ -1627,4 +1628,16 @@ Object.assign(de, {
 
 Object.assign(de, {
   "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "Widerspruch in der Herstellergeometrie: Die Maße für XXS/XS ergeben etwa 980,2/987,3 mm Radstand, die Tabelle nennt 974/981 mm. Die Tabellenwerte bleiben erhalten; bis zur Klärung durch den Hersteller wird daraus keine Passform abgeleitet. Die gewünschte Größe bei PARDUS bestätigen."
+});
+
+Object.assign(de, {
+  "Drivetrain compatibility": "Antriebskompatibilität",
+  "Manufacturer support: SRAM or Shimano wireless electronic 1× only, maximum 40T chainring. Confirm the exact drivetrain and frame version before buying.": "Herstellerfreigabe: ausschließlich drahtlose elektronische 1×-Schaltung von SRAM oder Shimano, maximal 40T. Vor dem Kauf den genauen Antrieb und die Rahmenversion bestätigen.",
+  "The Chinese manufacturer page documents SRAM or Shimano mechanical or electronic 1×, maximum 44T chainring. The English page is less specific; 2× support is unconfirmed. Confirm the exact frame version before buying.": "Die chinesische Herstellerseite dokumentiert mechanische oder elektronische 1×-Schaltung von SRAM oder Shimano, maximal 44T. Die englische Seite ist weniger genau; 2×-Unterstützung ist unbestätigt. Die genaue Rahmenversion vor dem Kauf bestätigen.",
+  "This shifting and chainring combination is not confirmed by the frame’s manufacturer. Confirm it before buying.": "Diese Kombination aus Schaltungsart und Kettenblattanordnung ist vom Rahmenhersteller nicht bestätigt. Vor dem Kauf klären.",
+  "Confirm the selected 1× chainring tooth count against the manufacturer’s published maximum.": "Die Zähnezahl des gewählten 1×-Kettenblatts mit dem veröffentlichten Herstellermaximum abgleichen.",
+  "This frame requires wireless electronic shifting; the selected drivetrain is recorded as wired.": "Dieser Rahmen verlangt drahtlose elektronische Schaltung; der gewählte Antrieb ist als kabelgebunden dokumentiert.",
+  "Confirm that the selected electronic drivetrain meets the frame’s wireless-shifting requirement.": "Bestätigen, dass der gewählte elektronische Antrieb die Drahtlos-Anforderung des Rahmens erfüllt.",
+  "Confirm the drivetrain manufacturer against the frame’s documented supported brands.": "Den Antriebshersteller mit den dokumentierten unterstützten Marken des Rahmens abgleichen.",
+  "The selected drivetrain manufacturer is outside the frame’s documented support. Confirm exact compatibility before buying.": "Der gewählte Antriebshersteller liegt außerhalb der dokumentierten Rahmenfreigabe. Die genaue Kompatibilität vor dem Kauf bestätigen."
 });

@@ -49,7 +49,92 @@
     "laget-discovery-one-pro-taobao-2026-08-27",
     "laget-discovery-one-pro-official-current-2026-09-23",
     "laget-brand-story-current-2026-09-23",
-    "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+    "laget-discovery-one-pro-brushed-silver-current-2026-09-23",
+    "laget-discovery-one-pro-drivetrain-cn-recheck-2026-10-05",
+    "laget-discovery-one-pro-drivetrain-en-recheck-2026-10-05"
   ],
-  "last_reviewed": "2026-09-23"
+  "last_reviewed": "2026-10-05",
+  "drivetrain_compatibility": {
+    "mechanical": {
+      "single": true,
+      "double": null
+    },
+    "electronic": {
+      "single": true,
+      "double": null
+    },
+    "single_max_chainring_teeth": 44,
+    "supported_manufacturers": [
+      "sram",
+      "shimano"
+    ],
+    "source_id": "laget-discovery-one-pro-drivetrain-cn-recheck-2026-10-05",
+    "reviewed_at": "2026-10-05",
+    "note": "The Chinese manufacturer page documents SRAM or Shimano mechanical or electronic 1×, maximum 44T chainring. The English page is less specific; 2× support is unconfirmed. Confirm the exact frame version before buying."
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "laget-discovery-one-pro-drivetrain-cn-recheck-2026-10-05",
+        "laget-discovery-one-pro-drivetrain-en-recheck-2026-10-05"
+      ],
+      "reason": "Add the exact-model manufacturer drivetrain restrictions; retain all previous weight, material, price, source and review observations. PRO English wording does not establish 2× support.",
+      "prior_values": {
+        "id": "laget-discovery-one-pro",
+        "name": "LAGET DISCOVERY ONE PRO",
+        "model_id": "laget-discovery-one-pro",
+        "brand_id": "laget",
+        "category": "gravel",
+        "type": "frameset",
+        "why_interesting": "Fully 3D-printed titanium gravel frameset with a documented 1.38 kg size-S frame, 45 mm clearance and UDH.",
+        "facts": {
+          "frame_weight_g": 1380,
+          "frame_weight_basis": "Official size-S frame weight; included carbon fork and hardware are not stated to be part of the 1.38 kg figure",
+          "frame": "Fully 3D-printed titanium frame with carbon fork and UDH",
+          "frame_material": "3D-printed titanium frame; exact titanium alloy grade is not published",
+          "frame_construction": "Fully 3D-printed unibody frame; brushed or sandblasted finish depending color",
+          "stiffness_evidence": "The exact-model manufacturer page publishes no stiffness value or test protocol. Retailer language describes strength qualitatively, and the manufacturer brand story's general high-stiffness claim is not model-specific; no measured or attributable exact-model stiffness result was found.",
+          "bottom_bracket": "T47 × 85.5 mm",
+          "tire_clearance_mm": 45,
+          "tire_clearance_basis": "Manufacturer maximum 700×45C",
+          "derailleur_hanger": "UDH",
+          "sizes": "S, M, L and XL"
+        },
+        "official_price": {
+          "amount_cny": 21900,
+          "currency": "CNY",
+          "price_type": "official-retail",
+          "observed_at": "2026-08-27",
+          "price_basis": "DISCOVERY ONE PRO frameset"
+        },
+        "observed_price": {
+          "amount_cny": 21900,
+          "currency": "CNY",
+          "observed_at": "2026-08-27",
+          "price_basis": "Exact Discovery ONE PRO brushed-finish frameset listing; no cheaper option or variant selector was present",
+          "observation_count": 1
+        },
+        "missing": [
+          "Mainland warranty issuer and invoice handling for the exact Taobao listing",
+          "Independent measured stiffness or deflection result",
+          "Exact included-package weight beyond the stated frame weight"
+        ],
+        "status": "official-mainland-frameset-documented",
+        "source_url": "https://lagetbike.com/productinfo/3545905.html",
+        "source_note": "The exact manufacturer page opened 2026-09-23 identifies DISCOVERY ONE PRO brushed silver as a 3D-printed gravel model, with a 1.38 kg size-S claim, CNY 21,900 retail and a 700×45C maximum. TiParts identifies the frame as titanium; alloy grade is unknown. Fork/hardware inclusion for the weight is unstated, and the exact Taobao listing showed CNY 21,900 on 2026-08-27 without establishing a current checkout. No model-specific stiffness result or protocol is published.",
+        "manufacturing": "3D-printed titanium gravel frame",
+        "source_ids": [
+          "titanium-laget-discovery-one-pro-official",
+          "laget-discovery-one-pro-tiparts-2026-08-27",
+          "laget-brand-story-2026-08-27",
+          "laget-discovery-one-pro-taobao-2026-08-27",
+          "laget-discovery-one-pro-official-current-2026-09-23",
+          "laget-brand-story-current-2026-09-23",
+          "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+        ],
+        "last_reviewed": "2026-09-23"
+      }
+    }
+  ]
 }
