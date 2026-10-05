@@ -1,3 +1,4 @@
+import { isCalendarDate as isDate } from './calendar-date.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
@@ -238,7 +239,6 @@ export function resetDatasetCache() { cache = undefined; }
 /** @param {unknown} value */
 function isObject(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }
 /** @param {unknown} value */
-function isDate(value) { return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`)); }
 /** @param {unknown} value */
 function isId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]*$/.test(value); }
 function categoryValues(value) {
