@@ -1,0 +1,15 @@
+{
+  "id": "correct-lightcarbon-lcg071s-pro-primary-image-quality-2026-10-03",
+  "record_type": "images",
+  "record_id": "lightcarbon-lcg071s-pro-primary-image",
+  "action": "retire",
+  "protected_item": {
+    "kind": "image-quality",
+    "value": "minimum_accuracy_rank=4;minimum_source_tier=1"
+  },
+  "reviewed_at": "2026-10-03",
+  "reason": "Frozen image audit identified the integrated PRO cockpit, not the S-PRO separate-stem system. Preserve original source and derivative bytes as historical provenance.",
+  "evidence_source_ids": [
+    "lightcarbon-image-reference"
+  ]
+}

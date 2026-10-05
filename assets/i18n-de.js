@@ -1,3 +1,4 @@
+import { translateImageText } from './image-i18n.js';
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
   "T47 bottom-bracket component": "T47-Innenlagerkomponente",
@@ -1401,6 +1402,8 @@ Object.assign(de, {
 export function translateGerman(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
+  const imageText = translateImageText(value, 'de');
+  if (imageText !== value) return imageText;
   const pad = (result) => value.replace(text, result);
   if (Object.hasOwn(de, text)) return pad(de[text]);
   const t = translateGerman;
@@ -1585,6 +1588,15 @@ Object.assign(de, {
   "Use the arrow controls to reorder columns. The comparison link keeps this order.": "Spalten mit den Pfeilen neu anordnen. Der Vergleichslink bewahrt diese Reihenfolge.",
   "These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.": "Diese Räder gehören zu unterschiedlichen Kategorien. Kategoriespezifische Angaben stehen getrennt unten und sollten nicht gegeneinander bewertet werden.",
   "Check compatibility": "Kompatibilität prüfen"
+});
+
+Object.assign(de, {
+  "A large-set label is not normalized. Dated ¥4,150 and ¥4,200 observations describe a large package without rotors. The retained ¥3,570 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it.": "„Großes Paket“ ist kein Standard. Datierte Beobachtungen von ¥4.150 und ¥4.200 beschreiben ein großes Paket ohne Bremsscheiben. Der erhaltene Hinweis auf ¥3.570 für Elektronik plus Bremssättel bleibt ungeklärt: Die zitierte Seite gibt diesen Betrag nicht wieder.",
+  "The dated R8170 ¥6,050 observation describes a large package with rotors. The retained ¥5,000 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it. Neither establishes a normalized checkout package.": "Die datierte R8170-Beobachtung von ¥6.050 beschreibt ein großes Paket mit Bremsscheiben. Der erhaltene Hinweis auf ¥5.000 für Elektronik plus Bremssättel bleibt ungeklärt: Die zitierte Seite gibt diesen Betrag nicht wieder. Keiner der Hinweise belegt ein normalisiertes Checkout-Paket.",
+  "Electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.": "Elektronik plus Bremssättel; kein normalisiertes Komplettset. Erhaltener sekundärer Preishinweis ungeklärt: Die aktuell zitierte SMZDM-Seite gibt diesen Betrag nicht wieder; der ursprüngliche Beleg bleibt unbestätigt.",
+  "R8170 electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.": "R8170-Elektronik plus Bremssättel; kein normalisiertes Komplettset. Erhaltener sekundärer Preishinweis ungeklärt: Die aktuell zitierte SMZDM-Seite gibt diesen Betrag nicht wieder; der ursprüngliche Beleg bleibt unbestätigt.",
+  "A secondary AI-generated summary/index of a Bilibili R70 review relays strong pedaling stiffness; original playback/transcript is unverified. Manufacturer T800 reinforcement is a construction claim, with no published instrumented frame-stiffness protocol.": "Eine sekundäre KI-Zusammenfassung beziehungsweise ein Index eines Bilibili-R70-Reviews gibt hohe Tretsteifigkeit wieder; Originalvideo oder Transkript sind unbestätigt. Die T800-Verstärkung ist eine Herstellerangabe zur Konstruktion; ein instrumentiertes Prüfverfahren für Rahmensteifigkeit ist nicht veröffentlicht.",
+  "Secondary AI summary of a Bilibili review; original playback/transcript unverified. Qualitative lead, not an instrumented stiffness result.": "Sekundäre KI-Zusammenfassung eines Bilibili-Reviews; Originalvideo oder Transkript unbestätigt. Qualitativer Hinweis, kein instrumentiertes Steifigkeitsergebnis."
 });
 
 Object.assign(de, {

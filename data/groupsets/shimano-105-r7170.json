@@ -29,7 +29,7 @@
   },
   "battery": "Internal BT-DN300 derailleur battery; wireless levers use coin cells.",
   "controls_and_app": "E-TUBE PROJECT Cyclist supports firmware, adjustment and control configuration.",
-  "package_summary": "A large-set label is not normalized. The dated ¥4,150 and ¥4,200 observations say large package without rotors; a separate ¥3,570 observation covers electronic parts plus calipers.",
+  "package_summary": "A large-set label is not normalized. Dated ¥4,150 and ¥4,200 observations describe a large package without rotors. The retained ¥3,570 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it.",
   "compatibility": {
     "freehub": "HG road for the supported 11T-start cassettes",
     "hanger": "Standard/direct-mount compatible derailleur-hanger system",
@@ -64,9 +64,15 @@
       "market": "mainland public dealer-post synthesis",
       "price_type": "dealer-market-observation",
       "observed_at": "2026-08-24",
-      "conditions": "Electronic parts plus calipers; not a normalized full groupset.",
+      "conditions": "Electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.",
       "headline": false,
-      "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+      "source_id": "smzdm-shimano-di2-market-observations-2026-08-24",
+      "verification_status": "unresolved-supplied-secondary-lead",
+      "provenance_review": {
+        "reviewed_at": "2026-10-03",
+        "current_citation_reproduces_amount": false,
+        "limitation": "Retained citation does not reproduce this historical amount in its currently readable body; the preserved supplied synthesis metadata does not establish an exact underlying paragraph."
+      }
     }
   ],
   "caveats": [
@@ -135,5 +141,26 @@
     "smzdm-shimano-di2-market-observations-2026-08-24",
     "gpt-pro-electronic-groupsets-input-2026-08-24"
   ],
-  "reviewed_at": "2026-08-24"
+  "reviewed_at": "2026-08-24",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "package_summary": "A large-set label is not normalized. The dated ¥4,150 and ¥4,200 observations say large package without rotors; a separate ¥3,570 observation covers electronic parts plus calipers.",
+        "price_observations": [
+          {
+            "amount": 3570,
+            "currency": "CNY",
+            "market": "mainland public dealer-post synthesis",
+            "price_type": "dealer-market-observation",
+            "observed_at": "2026-08-24",
+            "conditions": "Electronic parts plus calipers; not a normalized full groupset.",
+            "headline": false,
+            "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+          }
+        ]
+      },
+      "reason": "Preserve dated numeric/package observations and their retained citation; qualify the two unreproduced secondary leads without asserting historical falsity or changing capture dates."
+    }
+  ]
 }

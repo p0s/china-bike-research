@@ -44,7 +44,7 @@ export function clarifyMainlandInDisplayHtml(html) {
   const clarified = input.split(/(<[^>]+>)/g).map((part) => {
     if (part.startsWith('<')) {
       if (/^<!--/.test(part)) return part;
-      const displayAttribute = /\b(aria-label|title|placeholder|alt|label|data-gallery-caption|data-label|data-tooltip-lines)="([^"]*)"/g;
+      const displayAttribute = /\b(aria-label|title|placeholder|alt|label|data-gallery-caption|data-gallery-note|data-label|data-tooltip-lines)="([^"]*)"/g;
       const withDisplayAttributes = part.replace(displayAttribute, (_, name, value) => {
         const decoded = decode(value);
         const next = clarifyMainland(decoded);
@@ -103,7 +103,7 @@ export function localizeHtml(html, options = {}) {
   input = input.split(/(<[^>]+>)/g).map((part) => {
     if (part.startsWith('<')) {
       if (/^<!--/.test(part)) return part;
-      part = part.replace(/\b(aria-label|title|placeholder|alt|label|data-gallery-caption|data-label|data-tooltip-lines)="([^"]*)"/g, (_, attr, value) => {
+      part = part.replace(/\b(aria-label|title|placeholder|alt|label|data-gallery-caption|data-gallery-note|data-label|data-tooltip-lines)="([^"]*)"/g, (_, attr, value) => {
         const decoded = decode(value);
         const translated = attr === 'data-tooltip-lines' ? JSON.stringify(JSON.parse(decoded).map((line) => translate(line, options.locale))) : translate(decoded, options.locale);
         return `${attr}="${escape(translated)}"`;

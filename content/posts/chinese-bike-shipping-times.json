@@ -2,7 +2,7 @@
   "slug": "chinese-bike-shipping-times",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-10-03",
   "researched_at": "2026-09-22",
   "image_id": "chinese-bike-prices-for-international-buyers",
   "model_ids": [
@@ -77,7 +77,7 @@
           "id": "examples",
           "heading": "Three owner stories, three different bottlenecks",
           "paragraphs": [
-            "An [Elves order described in 2025](https://chinertown.com/index.php/topic,4032.165.html) reached dispatch after about ten weeks, while another owner in the same thread reported a much shorter overall wait in 2026. Custom orders and different periods should not be averaged into a brand promise.",
+            "For an [Elves order described in 2025](https://chinertown.com/index.php/topic,4032.165.html), the buyer reported after about ten weeks that the seller said the frame was underway, with tracking expected in one or two days. Carrier handover or actual dispatch remained unverified. Another owner in the same thread reported a much shorter overall wait in 2026. Custom orders and different periods should not be averaged into a brand promise.",
             "A [June 2025 ICAN GRARO report](https://chinertown.com/index.php?topic=4766.135) described a roughly four-and-a-half-week arrival after missing EU stock led to China fulfillment. The important change was the origin of that order.",
             "A [2021 YOELEO R11 build](https://chinertown.com/index.php?topic=3237.0) described a long wait before dispatch and approximately two weeks in transit to Switzerland. Fast transport did not erase the preparation time. These are dated anecdotes, not a current delivery forecast."
           ]
@@ -158,7 +158,7 @@
           "id": "examples",
           "heading": "三个车主故事，三个不同的卡点",
           "paragraphs": [
-            "[2025 年描述的一笔 Elves 订单](https://chinertown.com/index.php/topic,4032.165.html)约十周后发货，同帖另一车主在 2026 年报告更短等待。不同阶段与定制条件，不能平均成品牌承诺。",
+            "[2025 年描述的一笔 Elves 订单](https://chinertown.com/index.php/topic,4032.165.html)中，买家在约十周后报告：卖家称车架正在运送途中，预计一至两天内提供物流追踪信息；承运商接货或实际发货仍未核实。同帖另一车主在 2026 年报告更短等待。不同阶段与定制条件，不能平均成品牌承诺。",
             "[2025 年 6 月 ICAN GRARO 报告](https://chinertown.com/index.php?topic=4766.135)描述欧洲缺货转中国发货后，约四周半到达。关键变化是该订单的起运地。",
             "[2021 年 YOELEO R11 装车帖](https://chinertown.com/index.php?topic=3237.0)描述发货前等待较久，运到瑞士约两周。快运输不能抹去备货时间。这些是有日期的个例，不是当前交期预测。"
           ]
@@ -239,7 +239,7 @@
           "id": "examples",
           "heading": "Drei Berichte, drei unterschiedliche Engpässe",
           "paragraphs": [
-            "Eine [Elves-Bestellung von 2025](https://chinertown.com/index.php/topic,4032.165.html) erreichte den Versand nach etwa zehn Wochen, ein anderer Besitzer desselben Threads meldete 2026 deutlich kürzere Gesamtzeit. Sonderbestellungen verschiedener Zeiträume ergeben keine Markenzusage.",
+            "Bei einer [Elves-Bestellung von 2025](https://chinertown.com/index.php/topic,4032.165.html) berichtete der Käufer nach etwa zehn Wochen, der Verkäufer habe den Rahmen als unterwegs bezeichnet; Tracking werde in ein bis zwei Tagen erwartet. Übergabe an den Transporteur oder tatsächlicher Versand blieben unbestätigt. Ein anderer Besitzer desselben Threads meldete 2026 deutlich kürzere Gesamtzeit. Sonderbestellungen verschiedener Zeiträume ergeben keine Markenzusage.",
             "Ein [ICAN-GRARO-Bericht vom Juni 2025](https://chinertown.com/index.php?topic=4766.135) nennt etwa viereinhalb Wochen bis Ankunft nach fehlendem EU-Bestand und China-Lieferung. Entscheidend war der geänderte Startort.",
             "Ein [YOELEO-R11-Aufbau von 2021](https://chinertown.com/index.php?topic=3237.0) beschreibt lange Vorbereitung und etwa zwei Wochen Transport in die Schweiz. Schneller Transport beseitigte die Vorbereitung nicht. Das sind datierte Einzelfälle, keine heutige Prognose."
           ]
@@ -273,5 +273,19 @@
     "https://chinertown.com/index.php/topic,4032.165.html",
     "https://chinertown.com/index.php?topic=4766.135",
     "https://chinertown.com/index.php?topic=3237.0"
+  ],
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "dateModified": "2026-09-27",
+        "passages": {
+          "en": "An [Elves order described in 2025](https://chinertown.com/index.php/topic,4032.165.html) reached dispatch after about ten weeks, while another owner in the same thread reported a much shorter overall wait in 2026. Custom orders and different periods should not be averaged into a brand promise.",
+          "zh-Hans": "[2025 年描述的一笔 Elves 订单](https://chinertown.com/index.php/topic,4032.165.html)约十周后发货，同帖另一车主在 2026 年报告更短等待。不同阶段与定制条件，不能平均成品牌承诺。",
+          "de": "Eine [Elves-Bestellung von 2025](https://chinertown.com/index.php/topic,4032.165.html) erreichte den Versand nach etwa zehn Wochen, ein anderer Besitzer desselben Threads meldete 2026 deutlich kürzere Gesamtzeit. Sonderbestellungen verschiedener Zeiträume ergeben keine Markenzusage."
+        }
+      },
+      "reason": "Correct the historical order/report year or seller-reported shipment milestone using the dated public owner account; preserve the preparation dates, scheduled publication state and prior wording."
+    }
   ]
 }

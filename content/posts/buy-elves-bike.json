@@ -2,7 +2,7 @@
   "slug": "buy-elves-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-10-03",
   "researched_at": "2026-09-22",
   "image_id": "frameset-vs-complete-bike-cost-in-china",
   "model_ids": [
@@ -77,7 +77,7 @@
           "id": "owners",
           "heading": "The same thread contains very different waits",
           "paragraphs": [
-            "The [Falath Evo thread](https://chinertown.com/index.php/topic,4032.165.html) includes a 2025 order dispatched after about ten weeks and a different 2026 buyer reporting a little over a month. For a custom frame, use these dates to ask which milestone your seller means by “ready.” They are separate owner reports, not a current brand average."
+            "In the [Falath Evo thread](https://chinertown.com/index.php/topic,4032.165.html), a 2025 buyer reported after about ten weeks that the seller said the frame was underway, with tracking expected in one or two days. Carrier handover or actual dispatch was not independently confirmed. A different 2026 buyer reported a little over a month. For a custom frame, ask which milestone the seller means by “ready.” These are separate owner reports, not a current brand average."
           ]
         },
         {
@@ -150,7 +150,7 @@
           "id": "owners",
           "heading": "同一讨论里，也有完全不同的等待",
           "paragraphs": [
-            "[Falath Evo 讨论](https://chinertown.com/index.php/topic,4032.165.html)中，一笔 2025 年订单约十周后发出；另一位 2026 年买家报告一个多月。买定制车架时，可用这些节点追问卖家“准备好”究竟指哪一步。它们是两笔独立经历，不是当前品牌平均交期。"
+            "[Falath Evo 讨论](https://chinertown.com/index.php/topic,4032.165.html)中，一位 2025 年买家在约十周后报告：卖家称车架正在运送途中，预计一至两天内提供物流追踪信息；承运商接货或实际发货未获独立确认。另一位 2026 年买家报告一个多月。买定制车架时，请追问卖家“准备好”究竟指哪一步。它们是两笔独立经历，不是当前品牌平均交期。"
           ]
         },
         {
@@ -223,7 +223,7 @@
           "id": "owners",
           "heading": "Ein Thread, sehr unterschiedliche Wartezeiten",
           "paragraphs": [
-            "Der [Falath-Evo-Thread](https://chinertown.com/index.php/topic,4032.165.html) enthält eine 2025er Bestellung mit Versand nach etwa zehn Wochen und einen anderen Käufer von 2026 mit etwas mehr als einem Monat. Fragen Sie bei einem Sonderrahmen, welchen Meilenstein der Verkäufer mit „fertig“ meint. Das sind einzelne Besitzerberichte, kein aktueller Markendurchschnitt."
+            "Im [Falath-Evo-Thread](https://chinertown.com/index.php/topic,4032.165.html) berichtete ein Käufer 2025 nach etwa zehn Wochen, der Verkäufer habe den Rahmen als unterwegs bezeichnet; Tracking werde in ein bis zwei Tagen erwartet. Übergabe an den Transporteur oder tatsächlicher Versand wurden nicht unabhängig bestätigt. Ein anderer Käufer berichtete 2026 von etwas mehr als einem Monat. Fragen Sie beim Sonderrahmen, welchen Meilenstein der Verkäufer mit „fertig“ meint. Das sind einzelne Besitzerberichte, kein aktueller Markendurchschnitt."
           ]
         },
         {
@@ -242,5 +242,19 @@
     "https://elvesbike.com/terms.php",
     "https://usa.elvesbike.com/pages/terms",
     "https://chinertown.com/index.php/topic,4032.165.html"
+  ],
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "dateModified": "2026-09-27",
+        "passages": {
+          "en": "The [Falath Evo thread](https://chinertown.com/index.php/topic,4032.165.html) includes a 2025 order dispatched after about ten weeks and a different 2026 buyer reporting a little over a month. For a custom frame, use these dates to ask which milestone your seller means by “ready.” They are separate owner reports, not a current brand average.",
+          "zh-Hans": "[Falath Evo 讨论](https://chinertown.com/index.php/topic,4032.165.html)中，一笔 2025 年订单约十周后发出；另一位 2026 年买家报告一个多月。买定制车架时，可用这些节点追问卖家“准备好”究竟指哪一步。它们是两笔独立经历，不是当前品牌平均交期。",
+          "de": "Der [Falath-Evo-Thread](https://chinertown.com/index.php/topic,4032.165.html) enthält eine 2025er Bestellung mit Versand nach etwa zehn Wochen und einen anderen Käufer von 2026 mit etwas mehr als einem Monat. Fragen Sie bei einem Sonderrahmen, welchen Meilenstein der Verkäufer mit „fertig“ meint. Das sind einzelne Besitzerberichte, kein aktueller Markendurchschnitt."
+        }
+      },
+      "reason": "Correct the historical order/report year or seller-reported shipment milestone using the dated public owner account; preserve the preparation dates, scheduled publication state and prior wording."
+    }
   ]
 }
