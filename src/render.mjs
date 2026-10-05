@@ -3,6 +3,7 @@ import { relatedArticleLinks, renderHomeArticles } from './lib/posts.mjs';
 import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
+import { productLinkContext } from './lib/analytics-context.mjs';
 import { renderVideoEntries } from './lib/videos.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName } from '../assets/regional-prices.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
@@ -833,7 +834,9 @@ function candidatePackageFacts(entry, locale) {
   if (entry.kind !== 'frameset') return '';
   const components = entry.price?.package_components;
   if (!components) return translate('Package contents are unconfirmed; do not subtract component costs from the allowance without an exact package quote.', locale);
-  return [['included', 'Included package'], ['excluded', 'Package exclusions'], ['optional', 'Optional package parts'], ['unknown', 'Package contents unconfirmed']]
+  const datedOwner = /owner-reported/.test(entry.price?.price_type ?? '')
+    ? `${translate('Dated owner-reported package', locale)} · ${components.evidence_date}. ${translate('Current package quote unverified', locale)}. ` : '';
+  return datedOwner + [['included', 'Included package'], ['excluded', 'Package exclusions'], ['optional', 'Optional package parts'], ['unknown', 'Package contents unconfirmed']]
     .filter(([key]) => components[key]?.length)
     .map(([key, label]) => `${translate(label, locale)}: ${components[key].map(value => translate(value, locale)).join(', ')}.`).join(' ');
 }
@@ -1133,21 +1136,11 @@ function sourceUsages(ctx, product) {
 }
 
 function hasProductOutboundTarget(source) {
-  const type = String(source?.type ?? '').trim().toLowerCase().replace(/\s+/g, '-');
-  const hasSellerOrManufacturer = /(?:^|-)(?:manufacturer|official|brand|retailer|dealer|distributor|marketplace|seller|supplier|authorized)(?:-|$)/.test(type);
-  const isProductPage = /(?:^|-)(?:product-page|product-listing|marketplace-listing|seller-listing)(?:-|$)/.test(type);
-  if (!source?.url || !hasSellerOrManufacturer || !isProductPage || /(?:^|-)(?:mirror|snapshot)(?:-|$)/.test(type)) return false;
-  try {
-    const target = new URL(source.url);
-    return ['http:', 'https:'].includes(target.protocol)
-      && !['chinesebikes.xyz', 'www.chinesebikes.xyz'].includes(target.hostname.toLowerCase());
-  } catch {
-    return false;
-  }
+  return Boolean(productLinkContext(source));
 }
 
 function productOutboundAttribute(source) {
-  return hasProductOutboundTarget(source) ? ' data-analytics-action="product_outbound_click"' : '';
+  return hasProductOutboundTarget(source) ? ` data-analytics-action="product_outbound_click" data-analytics-source="${escapeAttr(source.id)}"` : '';
 }
 
 function sourceList(ctx, product) {
@@ -1754,7 +1747,15 @@ function builderPriceBounds(price) {
   return { low, high };
 }
 
+function builderConditionalPriceNote(price) {
+  const condition = price.price_basis === 'first_order' ? 'First-order offer'
+    : price.price_basis === 'subsidy' ? 'Subsidy offer'
+      : 'Coupon or selected-offer eligibility';
+  return `Conditional price; enter your eligible checkout quote. ${condition} · ${formatPrice(price)} · ${price.observed_at}`;
+}
+
 function builderCandidatePrice(price) {
+  if (priceEvidence(price).conditional) return {low:null, high:null, note:builderConditionalPriceNote(price)};
   const evidence = priceEvidence(price);
   if (evidence.historical || evidence.starting || evidence.partial || (evidence.reference && !isReferenceConversionPrice(price))) return {
     low: null, high: null, note: 'Reference or incomplete purchase price excluded; enter the exact purchase quote.'
@@ -1791,9 +1792,9 @@ function builderBases(ctx) {
       kind: product.variant.kind,
       stage: 'published',
       category: categoryFamily(product.platform.category),
-      priceLow: priceEvidence(product.latestPrice).starting ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
-      priceHigh: priceEvidence(product.latestPrice).starting ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
-      priceNote: priceEvidence(product.latestPrice).starting ? 'Starting price; enter the exact selected-package purchase quote.' : '',
+      priceLow: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
+      priceHigh: (priceEvidence(product.latestPrice).conditional || priceEvidence(product.latestPrice).starting) ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
+      priceNote: priceEvidence(product.latestPrice).conditional ? builderConditionalPriceNote(product.latestPrice) : priceEvidence(product.latestPrice).starting ? 'Starting price; enter the exact selected-package purchase quote.' : '',
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'
@@ -2137,8 +2138,9 @@ export function renderPrivacy(ctx) {
     <p>Where prior consent is required, optional analytics stays off until you choose Allow analytics. Elsewhere it runs by default. You can allow or withdraw it here at any time; no account is needed. Your choice is remembered in a necessary preference cookie for up to six months when allowing, or one year when declining.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-in')}" data-analytics-choice><button class="text-button" type="submit">Allow analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-out')}" data-analytics-choice><button class="text-button" type="submit">Opt out of optional analytics</button></form><p role="status" data-analytics-choice-status hidden></p></div>
     <p>We count eligible public HTML page views, compare_open when the comparison opens, and product_outbound_click when a marked product link is activated. These are approximate actions, not people or purchases.</p>
-    <p>Umami page counts keep the public path, referring site, country, and estimated sessions. Its collector briefly uses IP and User-Agent, then discards them. Comparison events do not include selected bikes; product-link actions send only a fixed action ID, without product or visitor details. Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal.</p>
-    <p>We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google's tag through this site's first-party gateway, it sends a separate page_view with browser and device details. The tag's reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. The server request does not send Google your IP, User-Agent, search terms, URL query, or selected bikes; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
+    <p>Umami page counts keep the public path, referring site, country, and estimated sessions. Its collector briefly uses IP and User-Agent, then discards them. Comparison events exclude selected bike lists. Product-link actions include only public catalog context, without visitor details. Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal.</p>
+    <p>We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google's tag through this site's first-party gateway, it sends a separate page_view with browser and device details. The tag's reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. Server analytics requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
+    <p>Product-link events include the public model and brand, source type, destination hostname, page path and interface language. Comparison events include the public page, interface language and comparison size. Queries, search text and selected bike lists stay excluded.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <p>Google processes analytics data outside your region. Its recipient and privacy information, contact options, and rights tools are described in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Allowing optional analytics includes this transfer. Advertising consent remains denied.</p>
     <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Pages with videos embed a <code>youtube-nocookie.com</code> player. It may contact YouTube when the page loads or the video comes into view. Videos do not autoplay.</p>

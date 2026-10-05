@@ -1,0 +1,139 @@
+{
+  "slug": "subcompact-vs-compact-road-gearing",
+  "publication_status": "scheduled",
+  "series_id": "october-2026",
+  "series_order": 40,
+  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "ican-graro-frameset",
+    "lightcarbon-lcr018-d"
+  ],
+  "source_ids": [
+    "ican-graro-official",
+    "ican-graro-official-2026-08-27",
+    "lightcarbon-lcr018-d-official-2026-08-29",
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
+  ],
+  "editorial_references": [
+    "https://si.shimano.com/de/pdfs/ev/FC-RX610-5039/EV-FC-RX610-5039.pdf",
+    "https://si.shimano.com/ja/pdfs/ev/FC-R7100-4923/EV-FC-R7100-4923A.pdf",
+    "https://icanwheels.com/products/graro"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "clearance",
+      "ids": [
+        "lightcarbon-lcr018-d",
+        "ican-graro"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Compact or subcompact gearing: what changes beyond the small ring",
+      "description": "Compare 50/34 and 46/30 gearing, then check front-derailleur position, chainline, crank clearance and approved component combinations.",
+      "intro": "Changing from a 50/34 double to 46/30 can make the low gear appreciably easier without touching the cassette. It also lowers the high gear and may require more than two new rings. Use the ratio comparison to decide whether the change helps; use the exact component and frame instructions to decide whether it can be built.",
+      "sections": [
+        {
+          "id": "compare",
+          "heading": "Keep the cassette the same for the comparison",
+          "paragraphs": [
+            "With an illustrative 11–34 cassette, the lowest ratio changes from 34/34 = 1.00 to 30/34 ≈ 0.88, about 11.8% lower. The highest changes from 50/11 ≈ 4.55 to 46/11 ≈ 4.18, 8% lower. This calculation isolates the chainring change; it is not a complete parts prescription.",
+            "Shimano documents a 46/30 combination for the [FC-RX610-2](https://si.shimano.com/de/pdfs/ev/FC-RX610-5039/EV-FC-RX610-5039.pdf) and 50/34 for the [FC-R7100](https://si.shimano.com/ja/pdfs/ev/FC-R7100-4923/EV-FC-R7100-4923A.pdf). These are different crank models. Sharing a brand name does not make their rings or intended systems interchangeable."
+          ]
+        },
+        {
+          "id": "clearance",
+          "heading": "The front derailleur has to reach the right place",
+          "paragraphs": [
+            "Check the exact crank and front derailleur in the manufacturer’s compatibility information, including chainline and chain specification. The frame’s mount must allow the specified derailleur position around the smaller outer ring. Confirm crank/chainring clearance and the correct bottom-bracket arrangement too. Spindle diameter alone does not settle the complete fit.",
+            "This matters on Chinese framesets just as it does on any other frame. [ICAN’s GRARO guidance](https://icanwheels.com/products/graro), checked October 4, 2026, recommends gravel groupsets and a maximum 48/31 double. Our 50/34 arithmetic example should therefore not be read as a GRARO build plan. The [LCR018-D](/models/lightcarbon-lcr018-d/) has its own component-specific limits, which must be checked separately."
+          ]
+        },
+        {
+          "id": "decision",
+          "heading": "Choose the smaller system for a reason",
+          "paragraphs": [
+            "Compare with a climb and a fast pedalled section you know. If the lower gear solves a recurring problem and the lost top gear rarely matters, investigate the approved subcompact system. If you are already short of high gears, consider another compatible route to a lower bottom gear.",
+            "Ask the assembler to quote the whole change, including required derailleur, chain, bottom bracket and labour. An inexpensive chainring idea is not necessarily an inexpensive drivetrain conversion. Use the [climbing-gear calculation](/blog/gear-ratios-gravel-climbing/) to give that quote a clear target."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "紧凑盘还是超紧凑盘：不只是小盘变小",
+      "description": "比较50/34与46/30传动，再核对前变位置、链线、曲柄空间与认可部件组合。",
+      "intro": "50/34双盘换成46/30，不动飞轮也能明显降低最低挡。同时最高挡会下降，所需更换的也可能不止两片牙盘。用齿比判断改动是否有帮助，再用具体部件与车架说明判断能否实现。",
+      "sections": [
+        {
+          "id": "compare",
+          "heading": "比较时保持飞轮不变",
+          "paragraphs": [
+            "以示例11—34飞轮计算，最低齿比从34/34 = 1.00变为30/34约0.88，降低约11.8%；最高从50/11约4.55变为46/11约4.18，降低8%。这项计算只分离牙盘改动，并非完整零件处方。",
+            "Shimano文件列明[FC-RX610-2的46/30组合](https://si.shimano.com/de/pdfs/ev/FC-RX610-5039/EV-FC-RX610-5039.pdf)与[FC-R7100的50/34组合](https://si.shimano.com/ja/pdfs/ev/FC-R7100-4923/EV-FC-R7100-4923A.pdf)。它们是不同曲柄型号，同一品牌不代表牙盘或目标系统能够互换。"
+          ]
+        },
+        {
+          "id": "clearance",
+          "heading": "前变必须能到正确位置",
+          "paragraphs": [
+            "按照厂家兼容信息核对具体曲柄与前变，包括链线和链条规格。车架安装座必须允许前变在较小大盘周围达到指定位置，同时确认曲柄与牙盘空间及正确五通安排。只看轴径，不能确定完整适配。",
+            "中国车架与其他车架一样需要这些核对。[ICAN GRARO说明](https://icanwheels.com/products/graro)在2026年10月4日查看时，建议使用砾石套件，双盘最大48/31。因此这里的50/34算术例子，不能读成GRARO装车方案。[LCR018-D](/models/lightcarbon-lcr018-d/)有自己的部件相关限制，须另行检查。"
+          ]
+        },
+        {
+          "id": "decision",
+          "heading": "给小盘系统一个明确理由",
+          "paragraphs": [
+            "用熟悉的一段坡与一段快速踩踏路段比较。如果低挡解决反复出现的问题，而丢失的高速挡很少重要，可以研究认可的超紧凑系统。如果高挡本来就不够，应寻找其他兼容方式降低最低挡。",
+            "请装车者报价整个改动，包括必要前变、链条、五通与人工。便宜牙盘的想法，不一定等于便宜的传动转换。用[爬坡挡计算](/blog/gear-ratios-gravel-climbing/)为报价设定明确目标。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Kompakt oder Subkompakt: Was sich außer dem kleinen Blatt ändert",
+      "description": "Vergleiche 50/34 und 46/30 und prüfe Umwerferposition, Kettenlinie, Kurbelraum und freigegebene Kombinationen.",
+      "intro": "Von 50/34 auf 46/30 zu wechseln macht den Berggang bei gleicher Kassette deutlich kleiner. Der schnelle Gang sinkt ebenfalls; der Umbau kann mehr als zwei neue Blätter verlangen. Die Rechnung zeigt den Nutzen, konkrete Komponenten- und Rahmenvorgaben die Baubarkeit.",
+      "sections": [
+        {
+          "id": "compare",
+          "heading": "Für den Vergleich dieselbe Kassette ansetzen",
+          "paragraphs": [
+            "Mit beispielhaften 11–34 sinkt der kleinste Quotient von 34/34 = 1,00 auf 30/34 ≈ 0,88, etwa 11,8 %. Der größte sinkt von 50/11 ≈ 4,55 auf 46/11 ≈ 4,18, also um 8 %. Die Rechnung isoliert den Blattwechsel und ist keine vollständige Teileliste.",
+            "Shimano dokumentiert 46/30 für die [FC-RX610-2](https://si.shimano.com/de/pdfs/ev/FC-RX610-5039/EV-FC-RX610-5039.pdf) und 50/34 für die [FC-R7100](https://si.shimano.com/ja/pdfs/ev/FC-R7100-4923/EV-FC-R7100-4923A.pdf). Es sind verschiedene Kurbelmodelle. Der gleiche Markenname macht Blätter und zugehörige Systeme nicht austauschbar."
+          ]
+        },
+        {
+          "id": "clearance",
+          "heading": "Der Umwerfer muss die richtige Position erreichen",
+          "paragraphs": [
+            "Prüfe Kurbel und Umwerfer anhand der Herstellerkompatibilität samt Kettenlinie und Kette. Die Rahmenaufnahme muss die vorgeschriebene Position am kleineren Außenblatt ermöglichen. Dazu kommen Kurbel-/Blattfreiheit und passendes Innenlager. Der Achsdurchmesser allein klärt den Aufbau nicht.",
+            "Das gilt für chinesische Rahmensets wie für andere Rahmen. [ICAN empfiehlt beim GRARO](https://icanwheels.com/products/graro), geprüft am 4. Oktober 2026, Gravelgruppen und höchstens 48/31 zweifach. Das 50/34-Rechenbeispiel ist deshalb kein GRARO-Aufbauplan. Der [LCR018-D](/models/lightcarbon-lcr018-d/) hat eigene komponentenbezogene Grenzen."
+          ]
+        },
+        {
+          "id": "decision",
+          "heading": "Den kleineren Antrieb begründet wählen",
+          "paragraphs": [
+            "Vergleiche mit einem bekannten Anstieg und einem schnellen Abschnitt mit Pedaleinsatz. Löst der kleinere Gang ein häufiges Problem und fehlt der größte kaum, prüfe ein freigegebenes Subkompaktsystem. Fehlen schon schnelle Gänge, suche einen anderen kompatiblen Weg zum leichteren Berggang.",
+            "Lass den gesamten Umbau einschließlich nötigem Umwerfer, Kette, Innenlager und Arbeit anbieten. Eine günstige Blattidee ergibt nicht immer einen günstigen Antriebsumbau. Gib mit der [Berggangberechnung](/blog/gear-ratios-gravel-climbing/) ein klares Ziel vor."
+          ]
+        }
+      ]
+    }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T08:59:34.318Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "Compact-to-subcompact maths distinguishes separate Shimano crank systems and explicitly excludes the 50/34 example from GRARO recommendations."
+  }
+}

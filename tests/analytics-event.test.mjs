@@ -4,6 +4,19 @@ import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../ass
 
 const origin = 'https://chinesebikes.xyz';
 
+test('action sender transmits only public IDs and comparison size, never URL query or fragment', () => {
+  const requests = [];
+  const common = { locationRef: new URL(`${origin}/de/models/test-bike/?search=private#secret`),
+    navigatorRef: {}, windowRef: {}, fetchImpl: (url, init) => requests.push({ url, init }) };
+  assert.equal(sendProductOutboundClickEvent({ ...common, sourceId: 'test-source' }), true);
+  assert.deepEqual(JSON.parse(requests[0].init.body), { actionId: 'product_outbound_click',
+    pagePath: '/de/models/test-bike/', sourceId: 'test-source' });
+  assert.equal(sendProductOutboundClickEvent({ ...common, sourceId: 'user@example.com' }), false);
+  assert.equal(sendComparisonOpenedEvent({ ...common, locationRef: new URL(`${origin}/?compare=private`), comparisonCount: 3 }), true);
+  assert.deepEqual(requests[1].init.headers, { 'X-Analytics-Path': '/', 'X-Comparison-Count': '3' });
+  assert.equal(Object.hasOwn(requests[1].init, 'body'), false);
+});
+
 test('comparison event sends a bodyless same-origin request with only the public pathname', () => {
   const requests = [];
   const sent = sendComparisonOpenedEvent({
