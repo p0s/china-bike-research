@@ -1576,6 +1576,18 @@ Object.assign(de, {
 });
 
 Object.assign(de, {
+  "More details": "Weitere Details",
+  "Verdict": "Fazit",
+  "Bike": "Rad",
+  "Bike comparison": "Fahrradvergleich",
+  "Detailed bike comparison": "Detaillierter Fahrradvergleich",
+  "Bike comparison table; scroll horizontally to see every selected bike": "Fahrradvergleich; horizontal scrollen, um alle ausgewählten Räder zu sehen",
+  "Use the arrow controls to reorder columns. The comparison link keeps this order.": "Spalten mit den Pfeilen neu anordnen. Der Vergleichslink bewahrt diese Reihenfolge.",
+  "These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.": "Diese Räder gehören zu unterschiedlichen Kategorien. Kategoriespezifische Angaben stehen getrennt unten und sollten nicht gegeneinander bewertet werden.",
+  "Check compatibility": "Kompatibilität prüfen"
+});
+
+Object.assign(de, {
   "A large-set label is not normalized. Dated ¥4,150 and ¥4,200 observations describe a large package without rotors. The retained ¥3,570 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it.": "„Großes Paket“ ist kein Standard. Datierte Beobachtungen von ¥4.150 und ¥4.200 beschreiben ein großes Paket ohne Bremsscheiben. Der erhaltene Hinweis auf ¥3.570 für Elektronik plus Bremssättel bleibt ungeklärt: Die zitierte Seite gibt diesen Betrag nicht wieder.",
   "The dated R8170 ¥6,050 observation describes a large package with rotors. The retained ¥5,000 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it. Neither establishes a normalized checkout package.": "Die datierte R8170-Beobachtung von ¥6.050 beschreibt ein großes Paket mit Bremsscheiben. Der erhaltene Hinweis auf ¥5.000 für Elektronik plus Bremssättel bleibt ungeklärt: Die zitierte Seite gibt diesen Betrag nicht wieder. Keiner der Hinweise belegt ein normalisiertes Checkout-Paket.",
   "Electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.": "Elektronik plus Bremssättel; kein normalisiertes Komplettset. Erhaltener sekundärer Preishinweis ungeklärt: Die aktuell zitierte SMZDM-Seite gibt diesen Betrag nicht wieder; der ursprüngliche Beleg bleibt unbestätigt.",

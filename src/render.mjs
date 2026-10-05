@@ -950,6 +950,7 @@ function comparisonSummary(ctx, product) {
     ...(product.variant.kind === 'complete-bike' ? { drivetrain: drivetrainLabel(ctx, product), drivetrainSubline: drivetrainSubline(ctx, product) } : {}),
     weight: weightLabel(product),
     frame: frameStandard(product),
+    frameSearch: [product.platform.frame.material, frameMaterialLabel(product), frameStandard(product)].filter(Boolean).join(' '),
     category: `${categoryLabel(product.platform.category)} · ${product.platform.handlebar}-bar`,
     internalFrameStorage: product.platform.internal_storage ? 'Yes' : 'No',
     mounts: product.platform.mounts?.join(', ') || 'None recorded',
@@ -1013,6 +1014,7 @@ function candidateComparisonSummary(ctx, entry) {
     ...(entry.kind === 'complete-bike' && facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
     ...(weight !== '—' ? { weight } : {}),
     ...(frame ? { frame } : {}),
+    frameSearch: [facts.frame, facts.frame_material, facts.bottom_bracket].filter(Boolean).join(' '),
     category: entry.categories.map(categoryLabel).join(' · ') || '—',
     ...(entry.candidate.manufacturing ? { manufacturing: entry.candidate.manufacturing } : {})
   };
