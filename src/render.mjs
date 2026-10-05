@@ -1220,6 +1220,10 @@ const curatedComparisonGroups = [
 
 function curatedStartingPoints(ctx, summaries) {
   const byId = new Map(summaries.map((item) => [item.id, item]));
+  const entries = new Map([
+    ...ctx.products.map((product) => [product.variant.id, product]),
+    ...(ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data)).map((entry) => [entry.id, entry])
+  ]);
   const groups = curatedComparisonGroups.map((group) => {
     const items = group.ids.map((id) => byId.get(id)).filter(Boolean);
     if (items.length !== group.ids.length) throw new Error(`Curated comparison group ${group.id} has an unresolved catalog id`);
@@ -1227,7 +1231,14 @@ function curatedStartingPoints(ctx, summaries) {
     return `<article class="curated-group" data-curated-group="${escapeAttr(group.id)}"><h3>${escapeHtml(group.title)}</h3><p><strong>Criteria:</strong> ${escapeHtml(group.criteria)}</p><ol>${items.map((item) => {
       const itemName = item.brand && !item.name.toLowerCase().startsWith(item.brand.toLowerCase()) ? `${item.brand} ${item.name}` : item.name;
       const facts = [item.price, item.tireClearance, item.stage === 'candidate' ? 'Research' : ''].filter(Boolean);
-      return `<li><a href="${escapeAttr(item.url)}">${escapeHtml(itemName)}</a><span>${escapeHtml(facts.join(' · '))}</span></li>`;
+      const entry = entries.get(item.id);
+      const image = entry?.image;
+      const visual = image?.hosting.mode === 'local' && imageUrl(ctx, image) ? renderedImageAttributes(ctx, image) : null;
+      const source = image?.source_media_page_url ?? entry?.imageSource?.url;
+      const thumbnail = visual ? `<span class="product-image curated-thumbnail"><a class="product-image-link" href="${escapeAttr(item.url)}"><img src="${escapeAttr(visual.source)}"${visual.attributes} alt="${escapeAttr(image.alt)}" width="${visual.width}" height="${visual.height}" loading="lazy" decoding="async"></a></span>` : '';
+      const credit = visual ? `<span class="curated-image-credit">${source ? `<a href="${escapeAttr(source)}" rel="noreferrer">${escapeHtml(imageCredit(image))}</a>` : escapeHtml(imageCredit(image))}</span>` : '';
+      const imageNote = visual ? `<details class="curated-image-note"><summary>Accuracy</summary><span>${escapeHtml([accuracyLabel(image.display_accuracy ?? image.subject_accuracy), image.display_note].filter(Boolean).join(' — '))}</span></details>` : '';
+      return `<li>${thumbnail}<div class="curated-copy"><a href="${escapeAttr(item.url)}">${escapeHtml(itemName)}</a><span>${escapeHtml(facts.join(' · '))}</span>${credit}${imageNote}</div></li>`;
     }).join('')}</ol><a class="curated-compare-link" href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" aria-label="Compare the three ${escapeAttr(group.title.toLowerCase())} choices">Compare three <span aria-hidden="true">→</span></a></article>`;
   }).join('');
   return `<section class="curated-picks page" aria-labelledby="curated-picks-title"><div class="curated-picks-heading homepage-section-heading"><div><span class="section-label">Comparison starting points</span><h2 id="curated-picks-title">Top bikes, with the criteria shown</h2></div><a href="#catalog">Browse all bikes <span aria-hidden="true">↓</span></a></div><div class="curated-groups">${groups}</div></section>`;
