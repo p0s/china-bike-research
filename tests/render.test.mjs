@@ -778,7 +778,7 @@ test('model pages pair visible breadcrumbs with source and freshness context', (
   assert.match(detail, /data-catalog-back/);
   assert.match(detail, /Evidence reviewed through <time datetime="2026-09-25">/);
   assert.match(detail, /href="#source-records">View sources<\/a>/);
-  assert.match(detail, /<details class="detail-panel" id="source-records">/);
+  assert.match(detail, /<details class="detail-panel" id="source-records" open>/);
 });
 
 test('methodology visibly supports its Dataset and DataDownload schema', () => {
