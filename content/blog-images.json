@@ -144,6 +144,28 @@
             }
           },
           "reason": "The old referenced PRO integrated-cockpit image was not the S-PRO configuration."
+        },
+        {
+          "reviewed_at": "2026-10-05",
+          "prior_values": {
+            "id": "lightcarbon-lcg071s-pro",
+            "model_ids": [
+              "lightcarbon-lcg071s-pro-frameset"
+            ],
+            "image_id": "lightcarbon-lcg071s-pro-primary-image",
+            "name": "LightCarbon LCG071-PRO",
+            "alt": {
+              "en": "LightCarbon frameset reference photo labelled LCG071-PRO",
+              "zh-Hans": "标注为 LCG071-PRO 的 LightCarbon 车架组参考照片",
+              "de": "LightCarbon-Rahmenset-Referenzfoto mit Beschriftung LCG071-PRO"
+            },
+            "note": {
+              "en": "Reference photo marked LCG071-PRO; confirm the fork, cockpit and included parts for an LCG071S-PRO order.",
+              "zh-Hans": "参考图标注为 LCG071-PRO；LCG071S-PRO 订单的前叉、车把及内含配件需另行确认。",
+              "de": "Referenzfoto mit Beschriftung LCG071-PRO; Gabel, Cockpit und enthaltene Teile einer LCG071S-PRO-Bestellung bestätigen."
+            }
+          },
+          "reason": "Concurrent article publication qualified the old PRO reference image; retain that observation while the active reference uses the independently reviewed S-PRO separate-stem photo."
         }
       ]
     },
