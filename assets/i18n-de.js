@@ -1576,5 +1576,17 @@ Object.assign(de, {
 });
 
 Object.assign(de, {
+  "More details": "Weitere Details",
+  "Verdict": "Fazit",
+  "Bike": "Rad",
+  "Bike comparison": "Fahrradvergleich",
+  "Detailed bike comparison": "Detaillierter Fahrradvergleich",
+  "Bike comparison table; scroll horizontally to see every selected bike": "Fahrradvergleich; horizontal scrollen, um alle ausgewählten Räder zu sehen",
+  "Use the arrow controls to reorder columns. The comparison link keeps this order.": "Spalten mit den Pfeilen neu anordnen. Der Vergleichslink bewahrt diese Reihenfolge.",
+  "These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.": "Diese Räder gehören zu unterschiedlichen Kategorien. Kategoriespezifische Angaben stehen getrennt unten und sollten nicht gegeneinander bewertet werden.",
+  "Check compatibility": "Kompatibilität prüfen"
+});
+
+Object.assign(de, {
   "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "Widerspruch in der Herstellergeometrie: Die Maße für XXS/XS ergeben etwa 980,2/987,3 mm Radstand, die Tabelle nennt 974/981 mm. Die Tabellenwerte bleiben erhalten; bis zur Klärung durch den Hersteller wird daraus keine Passform abgeleitet. Die gewünschte Größe bei PARDUS bestätigen."
 });
