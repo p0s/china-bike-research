@@ -18,6 +18,7 @@ function sourceNavigation(initialHash = '') {
     querySelector() { return this.summary; }
   }
   const panel = new Details(), anchor = new Element();
+  const targets = new Map([['source-records', panel], ['content', new Element()], ['section-title', new Element()]]);
   const location = new URL(`https://example.invalid/models/test/?build=6000${initialHash}`);
   const state = { retained: 'model preferences' };
   anchor.href = 'https://example.invalid/models/test/?build=6000#source-records';
@@ -30,7 +31,7 @@ function sourceNavigation(initialHash = '') {
     Element, HTMLDetailsElement: Details, URL, location, history,
     document: {
       querySelector: selector => selector === '#source-records' ? panel : null,
-      getElementById: id => id === 'source-records' ? panel : null,
+      getElementById: id => targets.get(id) ?? null,
       documentElement: { style: { setProperty() {} } },
       addEventListener: (name, fn) => listeners.set(name, fn)
     },
@@ -43,7 +44,8 @@ function sourceNavigation(initialHash = '') {
   };
   return {
     panel, location, history, entries, flush,
-    click() {
+    click(hash = '#source-records') {
+      anchor.href = `https://example.invalid/models/test/?build=6000${hash}`;
       const event = { target: anchor, button: 0, defaultPrevented: false, preventDefault() { this.defaultPrevented = true; } };
       listeners.get('click')(event);
       // A native fragment default schedules hashchange after the click handler.
@@ -51,6 +53,7 @@ function sourceNavigation(initialHash = '') {
         location.href = anchor.href;
         pendingHashes.push(listeners.get('hashchange'));
       }
+      return event.defaultPrevented;
     },
     traverse(hash) { location.hash = hash; pendingHashes.push(listeners.get('hashchange')); flush(); }
   };
@@ -84,6 +87,17 @@ test('source deep links and history fragment traversal still open the target', (
   assert.equal(nav.panel.open, false);
   nav.traverse('#source-records');
   assert.equal(nav.panel.open, true);
+});
+
+test('skip and ordinary section anchors retain their native default navigation', () => {
+  for (const hash of ['#content', '#section-title']) {
+    const nav = sourceNavigation();
+    assert.equal(nav.click(hash), false, hash);
+    assert.equal(nav.entries.length, 0, 'the browser owns the fragment history entry');
+    nav.flush();
+    assert.equal(nav.location.hash, hash);
+    assert.equal(nav.panel.open, false);
+  }
 });
 
 test('builder applies 1x/2x clearance and fails conservatively for unknown layouts', () => {

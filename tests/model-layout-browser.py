@@ -15,6 +15,31 @@ args.reports.mkdir(parents=True, exist_ok=True)
 models = ['lightcarbon-lcr018-d', 'lightcarbon-lcg071s-pro-frameset', 'yoeleo-altera-g21-frameset', 'lightcarbon-speedz-frameset', 'pardus-robin-sport-pes']
 results = []
 
+def check_native_anchors(page, route):
+    page.keyboard.press('Tab')
+    assert page.evaluate("document.activeElement.matches('.skip-link')"), 'skip link is first keyboard stop'
+    page.keyboard.press('Enter')
+    page.keyboard.press('Tab')
+    assert page.evaluate("document.querySelector('#content').contains(document.activeElement)"), 'skip continues into main content'
+    # A normal section target with an intervening keyboard stop catches the
+    # same regression independently of the site's skip link.
+    page.evaluate('''() => {
+      const main=document.querySelector('#content');
+      const link=document.createElement('a');link.id='qa-section-link';link.href='#qa-section-target';link.textContent='Section';
+      const section=document.createElement('section');section.id='qa-section-target';
+      const button=document.createElement('button');button.id='qa-section-next';button.textContent='Section control';section.append(button);
+      main.prepend(link);main.append(section);
+    }''')
+    for _ in range(2):
+        page.locator('#qa-section-link').focus()
+        page.keyboard.press('Enter')
+        page.keyboard.press('Tab')
+        assert page.evaluate("document.activeElement.id==='qa-section-next'"), 'ordinary section navigation moves the next keyboard stop'
+    page.evaluate('''route => {
+      document.querySelector('#qa-section-link').remove();document.querySelector('#qa-section-target').remove();
+      history.replaceState(history.state,'',route);document.activeElement?.blur();window.scrollTo({top:0,behavior:'instant'});
+    }''', route)
+
 with sync_playwright() as pw:
     browser = pw.chromium.launch(headless=True, **({'executable_path': args.browser} if args.browser else {}))
     context = browser.new_context(device_scale_factor=1)
@@ -42,6 +67,7 @@ with sync_playwright() as pw:
                 if page.locator('[data-gallery-hero]').count():
                     page.wait_for_function("document.querySelector('[data-gallery-hero]').complete && document.querySelector('[data-gallery-hero]').naturalWidth>0")
                 page.wait_for_function("!document.querySelector('#source-records').open")
+                check_native_anchors(page, route)
                 state = page.evaluate('''() => {
                   const h=document.querySelector('h1'), g=document.querySelector('.model-gallery');
                   const caption=g?.querySelector('figcaption'), rail=g?.querySelector('.model-gallery-strip');
@@ -161,4 +187,4 @@ with sync_playwright() as pw:
             assert not static.evaluate('document.documentElement.scrollWidth>innerWidth')
     browser.close()
 (args.reports / 'measurements.json').write_text(json.dumps(results, indent=2))
-print('PASS: 75 viewport/locale routes, 15 no-JS routes, and image failure recovery.')
+print('PASS: 75 viewport/locale routes with native skip/section keyboard navigation, 15 no-JS routes, and image failure recovery.')

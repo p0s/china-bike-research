@@ -29,9 +29,13 @@ void import('./analytics-event.js').then((events) => {
     try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
     const target = id ? document.getElementById(id) : null;
     if (!sourceRecords || !target) return;
+    const disclosures = [];
     for (let node = target; node; node = node.parentElement) {
-      if (node instanceof HTMLDetailsElement) node.open = true;
+      if (node instanceof HTMLDetailsElement) disclosures.push(node);
     }
+    // Ordinary fragments keep the browser's focus and tab-navigation behavior.
+    if (!disclosures.length) return;
+    disclosures.forEach((node) => { node.open = true; });
     requestAnimationFrame(() => {
       target.scrollIntoView({ block: 'start', behavior: 'instant' });
       if (focus && target instanceof HTMLDetailsElement) target.querySelector('summary')?.focus({ preventScroll: true });
