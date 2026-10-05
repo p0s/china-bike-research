@@ -916,3 +916,14 @@ Object.assign(zh, {
   "Confirm the drivetrain manufacturer against the frame’s documented supported brands.": "请核对传动系统制造商是否属于车架记录支持的品牌。",
   "The selected drivetrain manufacturer is outside the frame’s documented support. Confirm exact compatibility before buying.": "所选传动系统制造商不在车架记录的支持范围内；购买前请确认具体兼容性。"
 });
+
+Object.assign(zh, {
+  "Reference frame weight; exact build unresolved": "参考车架重量；具体配置未核实",
+  "Alternative complete-weight reference": "另一整车重量参考",
+  "Regional build scope": "地区配置范围",
+  "Fork": "前叉",
+  "Powermeter": "功率计",
+  "UK product references only: whole-bike weight, exact frame attribution and wheelset specification remain unresolved. These observations do not establish the mainland China build, package weight, stock or checkout.": "仅为英国产品参考：整车重量、具体车架归属及轮组规格仍未核实。这些记录不能证明中国大陆配置、套餐重量、库存或结算情况。",
+  "The manufacturer page describes a generic RCR 830 g size-M frame reference. The exact UK retailer lists a 1,010 g gross RCR-F Pro frame in size M. Exact-frame association and measurement inclusions are unresolved; neither value is selected for comparison.": "制造商页面的 830 g／M 码记录描述的是泛称 RCR 车架。英国零售商为具体 RCR-F Pro 的 M 码车架列出 1,010 g 毛重。具体车架归属及测量包含范围仍未明确；两值均不用于对比。",
+  "UK manufacturer selected-model card: HM carbon fork material. UK retailer: 420 g gross fork mass; inclusions and measurement protocol are unstated. The Hadron 470 number identifies the manufacturer wheel model. Mainland package weight remains unverified.": "英国制造商的所选车型卡片描述 HM 碳纤维前叉材质。英国零售商列出前叉 420 g 毛重，未说明包含范围或测量方法。Hadron 470 中的数字表示制造商轮组型号；中国大陆套餐重量仍未核实。"
+});

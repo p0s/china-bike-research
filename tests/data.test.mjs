@@ -1166,7 +1166,7 @@ test('batch 038 records exact materials, weights and prices while preserving mod
   const vanRysel = candidates.get('missing-china-price-van-rysel-rcr');
   assert.equal(vanRysel.facts.tire_clearance_mm, 32);
   assert.equal(vanRysel.facts.complete_weight_g, 8000);
-  assert.match(vanRysel.facts.complete_weight_basis, /separate Decathlon regional catalog says 8\.2 kg/);
+  assert.match(vanRysel.facts.complete_weight_basis, /8\.2 kg in size M with tubeless assembly.*direct comparability remains unresolved/);
   assert.match(vanRysel.facts.stiffness_evidence, /7% stiffer than RCR Pro/);
 
   assert.match(candidates.get('missing-china-price-giant-defy-advanced').price_status, /CNY 14,800/);

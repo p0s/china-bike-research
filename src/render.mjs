@@ -835,6 +835,11 @@ function candidateCompleteWeight(entry) {
     ? null : entry.candidate.facts?.complete_weight_g ?? null;
 }
 
+function candidateFrameWeight(entry) {
+  return entry.candidate.comparison_eligibility?.frame_weight === false
+    ? null : entry.candidate.facts?.frame_weight_g ?? null;
+}
+
 function candidateRow(ctx, entry) {
   const { candidate, brand } = entry;
   const metric = candidateMetric(entry);
@@ -872,8 +877,8 @@ function candidateRow(ctx, entry) {
   const completeWeight = candidateCompleteWeight(entry);
   const weight = Number.isFinite(completeWeight)
     ? `${(completeWeight / 1000).toFixed(1)} kg`
-    : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
-      ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
+    : entry.kind === 'frameset' && Number.isFinite(candidateFrameWeight(entry))
+      ? `${new Intl.NumberFormat('en-US').format(candidateFrameWeight(entry))} g frame`
       : '—';
   const frame = facts.frame ?? candidate.manufacturing ?? '—';
   const tireClearanceData = tireClearance.sortValue ? ` data-tire-clearance-sort="${tireClearance.sortValue}"` : '';
@@ -960,10 +965,10 @@ function candidateComparisonSummary(ctx, entry) {
   const completeWeight = candidateCompleteWeight(entry);
   const weight = Number.isFinite(completeWeight)
     ? `${(completeWeight / 1000).toFixed(1)} kg`
-    : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
-      ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
+    : entry.kind === 'frameset' && Number.isFinite(candidateFrameWeight(entry))
+      ? `${new Intl.NumberFormat('en-US').format(candidateFrameWeight(entry))} g frame`
       : '—';
-  const weightGrams = entry.kind === 'complete-bike' ? completeWeight : entry.kind === 'frameset' ? facts.frame_weight_g : null;
+  const weightGrams = entry.kind === 'complete-bike' ? completeWeight : entry.kind === 'frameset' ? candidateFrameWeight(entry) : null;
   const priceDetails = entry.candidate.status === 'superseded'
     ? candidatePublicText(entry.candidate.availability_note)
     : [
@@ -1044,11 +1049,13 @@ function candidateFactRows(entry) {
     tire_clearance_basis: 'Tire clearance basis',
     seatpost: 'Seatpost',
     complete_weight_g: 'Complete weight',
+    complete_weight_alternative_g: 'Alternative complete-weight reference',
+    regional_build_scope: 'Regional build scope',
     frame_weight_g: 'Frame weight',
     tire_clearance_mm: 'Tire clearance'
   };
   return Object.entries(entry.candidate.facts ?? {}).filter(([key]) => key !== 'tire_clearance_drivetrain_limits_mm' && (entry.kind !== 'frameset' || key !== 'drivetrain')).map(([key, value]) => {
-    const formatted = key === 'complete_weight_g'
+    const formatted = ['complete_weight_g', 'complete_weight_alternative_g'].includes(key)
       ? `${(value / 1000).toFixed(1)} kg`
       : key === 'frame_weight_g'
         ? `${new Intl.NumberFormat('en-US').format(value)} g`
@@ -1056,7 +1063,9 @@ function candidateFactRows(entry) {
           ? candidateTireClearance(entry).value
           : key === 'bottom_bracket_standard' ? value.note : value;
     const label = key === 'complete_weight_g' && entry.candidate.comparison_eligibility?.complete_weight === false
-      ? 'Reference complete weight; exact build unresolved' : labels[key] ?? sentenceLabel(key);
+      ? 'Reference complete weight; exact build unresolved'
+      : key === 'frame_weight_g' && entry.candidate.comparison_eligibility?.frame_weight === false
+        ? 'Reference frame weight; exact build unresolved' : labels[key] ?? sentenceLabel(key);
     return [label, String(formatted)];
   }).concat(entry.candidate.drivetrain_compatibility ? [['Drivetrain compatibility', entry.candidate.drivetrain_compatibility.note]] : []);
 }
@@ -1457,7 +1466,7 @@ function candidateStoryTitle(ctx, entry) {
     const tire = candidateTireClearance(entry);
     const details = [
       Number.isFinite(completeWeight) ? `${(completeWeight / 1000).toFixed(1)} kg Komplettrad` : '',
-      !Number.isFinite(completeWeight) && Number.isFinite(facts.frame_weight_g) ? `${facts.frame_weight_g} g Rahmen` : '',
+      !Number.isFinite(completeWeight) && Number.isFinite(candidateFrameWeight(entry)) ? `${candidateFrameWeight(entry)} g Rahmen` : '',
       Number.isFinite(facts.tire_clearance_mm) ? `${tire.value} ${tire.fitted ? 'Bereifung' : 'Reifenfreiheit'}` : ''
     ].filter(Boolean);
     return details.length ? details.join(' · ') : `Belegte Angaben zu ${entry.candidate.name}`;
@@ -1465,14 +1474,14 @@ function candidateStoryTitle(ctx, entry) {
   if (ctx.locale === 'zh-Hans') {
     const details = [
       Number.isFinite(completeWeight) ? `整车重量记录 ${(completeWeight / 1000).toFixed(1)} kg` : '',
-      !Number.isFinite(completeWeight) && Number.isFinite(facts.frame_weight_g) ? `车架重量记录 ${facts.frame_weight_g} g` : '',
+      !Number.isFinite(completeWeight) && Number.isFinite(candidateFrameWeight(entry)) ? `车架重量记录 ${candidateFrameWeight(entry)} g` : '',
       Number.isFinite(facts.tire_clearance_mm) ? `轮胎空间记录 ${candidateTireClearance(entry).value}` : ''
     ].filter(Boolean);
     return details.length ? details.join('；') : `${entry.candidate.name}：已核实的资料`;
   }
   const details = [
     Number.isFinite(completeWeight) ? `${(completeWeight / 1000).toFixed(1)} kg complete bike` : '',
-    !Number.isFinite(completeWeight) && Number.isFinite(facts.frame_weight_g) ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame` : '',
+    !Number.isFinite(completeWeight) && Number.isFinite(candidateFrameWeight(entry)) ? `${new Intl.NumberFormat('en-US').format(candidateFrameWeight(entry))} g frame` : '',
     Number.isFinite(facts.tire_clearance_mm) ? (candidateTireClearance(entry).fitted ? `${candidateTireClearance(entry).value} tire` : `${candidateTireClearance(entry).value} tire clearance`) : ''
   ].filter(Boolean);
   if (details.length) return details.join(' with ');
@@ -1484,7 +1493,7 @@ function candidateGermanSummary(entry) {
   const facts = entry.candidate.facts ?? {};
   const details = [
     Number.isFinite(candidateCompleteWeight(entry)) ? `dokumentiertes Komplettgewicht ${candidateCompleteWeight(entry)} g` : '',
-    Number.isFinite(facts.frame_weight_g) ? `dokumentiertes Rahmengewicht ${facts.frame_weight_g} g` : '',
+    Number.isFinite(candidateFrameWeight(entry)) ? `dokumentiertes Rahmengewicht ${candidateFrameWeight(entry)} g` : '',
     Number.isFinite(facts.tire_clearance_mm) ? `dokumentierte ${candidateTireClearance(entry).fitted ? 'Bereifung' : 'Reifenfreiheit'} ${candidateTireClearance(entry).value}` : ''
   ].filter(Boolean);
   return `${entry.candidate.name}: Rechercheprofil.${details.length ? ` ${details.join('; ')}.` : ''} ${entry.price ? `Preisbeobachtung vom ${entry.price.observed_at ?? 'nicht dokumentierten Datum'}, kein aktueller Endpreis.` : 'Kein verifizierter aktueller Preis.'} Ausstattung, Messgrundlagen und offene Fragen stehen unten. Fehlende Belege beweisen keine schlechte Produktqualität.`;
@@ -1520,7 +1529,7 @@ export function renderCandidateModel(ctx, entry) {
   const originalReason = candidatePublicText(candidate.why_interesting) || 'This bike is tracked while its exact configuration and market evidence are completed.';
   const chineseFacts = [
     Number.isFinite(candidateCompleteWeight(entry)) ? `整车重量记录 ${candidateCompleteWeight(entry)} g` : '',
-    Number.isFinite(candidate.facts?.frame_weight_g) ? `车架重量记录 ${candidate.facts.frame_weight_g} g` : '',
+    Number.isFinite(candidateFrameWeight(entry)) ? `车架重量记录 ${candidateFrameWeight(entry)} g` : '',
     Number.isFinite(candidate.facts?.tire_clearance_mm) ? `轮胎空间记录 ${candidateTireClearance(entry).value}` : ''
   ].filter(Boolean);
   const reason = ctx.locale === 'zh-Hans'
@@ -1815,7 +1824,7 @@ function builderBases(ctx) {
         priceLow: low,
         priceHigh: high,
         priceNote: note,
-        baseWeightG: isComplete ? candidateCompleteWeight(entry) : facts.frame_weight_g ?? null,
+        baseWeightG: isComplete ? candidateCompleteWeight(entry) : candidateFrameWeight(entry),
         weightBasis: isComplete ? facts.complete_weight_basis ?? 'complete-bike weight basis not recorded' : facts.frame_weight_basis ?? 'frameset package weight unknown',
         bottomBracket: facts.bottom_bracket ?? '',
         bottomBracketKey: facts.bottom_bracket_standard?.status === 'conflicting' ? null : facts.bottom_bracket_standard?.key ?? builderBottomBracketKey(facts.bottom_bracket),
