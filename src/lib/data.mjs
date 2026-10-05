@@ -574,7 +574,7 @@ export function validateDataset(data = loadDataset()) {
     if (candidate.reference_price_kind !== undefined && !['official', 'observed'].includes(candidate.reference_price_kind)) errors.push(`candidate ${candidate.id}: invalid reference_price_kind`);
     if (candidate.comparison_eligibility !== undefined) {
       const eligibility = candidate.comparison_eligibility;
-      if (!isObject(eligibility) || !['complete_weight', 'price', 'builder_base'].every((key) => eligibility[key] === undefined || typeof eligibility[key] === 'boolean') ||
+      if (!isObject(eligibility) || !['complete_weight', 'frame_weight', 'price', 'builder_base'].every((key) => eligibility[key] === undefined || typeof eligibility[key] === 'boolean') ||
         typeof eligibility.note !== 'string' || !eligibility.note.trim() || !isDate(eligibility.reviewed_at)) errors.push(`candidate ${candidate.id}: invalid comparison_eligibility`);
     }
     if (candidate.existing_record_id && !variantIds.has(candidate.existing_record_id) && !candidateIds.has(candidate.existing_record_id)) errors.push(`candidate ${candidate.id}: unresolved existing_record_id ${candidate.existing_record_id}`);

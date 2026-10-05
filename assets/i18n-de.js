@@ -1628,3 +1628,14 @@ Object.assign(de, {
 Object.assign(de, {
   "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "Widerspruch in der Herstellergeometrie: Die Maße für XXS/XS ergeben etwa 980,2/987,3 mm Radstand, die Tabelle nennt 974/981 mm. Die Tabellenwerte bleiben erhalten; bis zur Klärung durch den Hersteller wird daraus keine Passform abgeleitet. Die gewünschte Größe bei PARDUS bestätigen."
 });
+
+Object.assign(de, {
+  "Reference frame weight; exact build unresolved": "Referenz-Rahmengewicht; genaue Ausstattung ungeklärt",
+  "Alternative complete-weight reference": "Alternative Komplettgewichtsreferenz",
+  "Regional build scope": "Geltungsbereich der regionalen Ausstattung",
+  "Fork": "Gabel",
+  "Powermeter": "Leistungsmesser",
+  "UK product references only: whole-bike weight, exact frame attribution and wheelset specification remain unresolved. These observations do not establish the mainland China build, package weight, stock or checkout.": "Nur britische Produktreferenzen: Komplettgewicht, Zuordnung des genauen Rahmens und Laufradspezifikation bleiben ungeklärt. Diese Angaben belegen weder die Ausstattung für Festlandchina noch Paketgewicht, Bestand oder Checkout.",
+  "The manufacturer page describes a generic RCR 830 g size-M frame reference. The exact UK retailer lists a 1,010 g gross RCR-F Pro frame in size M. Exact-frame association and measurement inclusions are unresolved; neither value is selected for comparison.": "Die Herstellerseite beschreibt die 830-g-Referenz in Größe M allgemein als RCR-Rahmen. Der britische Händler nennt 1.010 g Bruttogewicht für den RCR-F-Pro-Rahmen in M. Genaue Rahmenzuordnung und Messumfang bleiben ungeklärt; kein Wert wird für den Vergleich gewählt.",
+  "UK manufacturer selected-model card: HM carbon fork material. UK retailer: 420 g gross fork mass; inclusions and measurement protocol are unstated. The Hadron 470 number identifies the manufacturer wheel model. Mainland package weight remains unverified.": "Die britische Herstellerkarte beschreibt das Gabelmaterial als HM-Carbon. Der britische Händler nennt 420 g Bruttogabelgewicht ohne Angaben zu Umfang oder Messverfahren. Die Zahl in Hadron 470 bezeichnet das Laufradmodell; das Paketgewicht für Festlandchina bleibt ungeprüft."
+});
