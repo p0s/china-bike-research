@@ -1881,6 +1881,24 @@ void import('./analytics-event.js').then((events) => {
     const support = base.drivetrainCompatibility;
     if (support && (!shifting || !layout)) messages.push('Confirm shifting type and chainring layout against the frame’s manufacturer-supported combinations.');
     if (support && shifting && layout && support[shifting]?.[layout] === false) messages.push('The manufacturer does not support this shifting type and chainring layout on the selected frame.');
+    if (support && typeof support === 'object') {
+      if (shifting && layout && support[shifting]?.[layout] == null) messages.push('This shifting and chainring combination is not confirmed by the frame’s manufacturer. Confirm it before buying.');
+      if (layout === 'single' && Number.isFinite(support.single_max_chainring_teeth)) {
+        const teeth = drivetrain?.compatibility?.largest_chainring_teeth;
+        if (!Number.isInteger(teeth) || teeth <= 0) messages.push('Confirm the selected 1× chainring tooth count against the manufacturer’s published maximum.');
+        else if (teeth > support.single_max_chainring_teeth) messages.push(`${teeth}T chainring exceeds the frame's published ${support.single_max_chainring_teeth}T 1× maximum.`);
+      }
+      if (support.electronic_wireless_only && shifting === 'electronic') {
+        const wireless = drivetrain?.compatibility?.wireless_shifting;
+        if (wireless === false) messages.push('This frame requires wireless electronic shifting; the selected drivetrain is recorded as wired.');
+        else if (wireless !== true) messages.push('Confirm that the selected electronic drivetrain meets the frame’s wireless-shifting requirement.');
+      }
+      if (support.supported_manufacturers?.length) {
+        const maker = drivetrain?.maker?.trim().toLowerCase();
+        if (!maker) messages.push('Confirm the drivetrain manufacturer against the frame’s documented supported brands.');
+        else if (!support.supported_manufacturers.includes(maker)) messages.push('The selected drivetrain manufacturer is outside the frame’s documented support. Confirm exact compatibility before buying.');
+      }
+    }
     const wheelset = covered.has('wheelset') ? null : selectedPart('wheelset');
     const rotors = covered.has('rotors') ? null : selectedPart('rotors');
     const rotorMount = rotors?.compatibility?.rotor_mount;
@@ -1955,7 +1973,7 @@ void import('./analytics-event.js').then((events) => {
       base.priceNote || '',
       base.weightBasis || '',
       base.tireClearanceNote || '',
-      base.drivetrainCompatibility?.note || '',
+      base.drivetrainCompatibility?.note ? translate(base.drivetrainCompatibility.note, document.documentElement.lang) : '',
       base.forkCaliperNote || ''
     ].filter(Boolean).join(' · ');
     if (state.unavailableStartingPoint && baseFacts) baseFacts.textContent = `${translate('Requested starting point', document.documentElement.lang)}: ${state.requestedBaseId}`;
