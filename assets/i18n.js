@@ -1,3 +1,4 @@
+import { translateImageText } from './image-i18n.js';
 import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
@@ -704,6 +705,8 @@ export function translate(value, locale = 'en') {
   if (locale === 'de') return translateGerman(value);
   if (locale !== 'zh-Hans' || typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
+  const imageText = translateImageText(value, locale);
+  if (imageText !== value) return imageText;
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
@@ -861,6 +864,19 @@ Object.assign(zh, {
   "Use the arrow controls to reorder columns. The comparison link keeps this order.": "使用箭头调整列顺序；对比链接保留此顺序。",
   "These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.": "这些车型用途类别不同。各类别特有信息在下方分列，不应直接互相排名。",
   "Check compatibility": "核对兼容性"
+});
+
+Object.assign(zh, {
+  "A large-set label is not normalized. Dated ¥4,150 and ¥4,200 observations describe a large package without rotors. The retained ¥3,570 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it.": "“大套”名称没有统一标准。有日期的 4,150 元及 4,200 元记录描述不含碟片的大套。保留的 3,570 元电子部件加夹器线索尚未核实：当前引用页面未复现该金额。",
+  "The dated R8170 ¥6,050 observation describes a large package with rotors. The retained ¥5,000 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it. Neither establishes a normalized checkout package.": "有日期的 R8170 6,050 元记录描述含碟片的大套。保留的 5,000 元电子部件加夹器线索尚未核实：当前引用页面未复现该金额。两者均不能确定统一口径的结算套餐。",
+  "Electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.": "电子部件加夹器；不是统一口径的完整套件。保留的转述价格线索尚未核实；当前引用的 SMZDM 页面未复现该金额，原始底层证据仍未核实。",
+  "R8170 electronic parts plus calipers; not a normalized full groupset. Unresolved supplied secondary price lead; the current cited SMZDM page does not reproduce this amount. Original underlying evidence remains unverified.": "R8170 电子部件加夹器；不是统一口径的完整套件。保留的转述价格线索尚未核实；当前引用的 SMZDM 页面未复现该金额，原始底层证据仍未核实。",
+  "A secondary AI-generated summary/index of a Bilibili R70 review relays strong pedaling stiffness; original playback/transcript is unverified. Manufacturer T800 reinforcement is a construction claim, with no published instrumented frame-stiffness protocol.": "哔哩哔哩 R70 评测的 AI 转述摘要／索引称踩踏刚性较强，但原始视频或文字稿尚未核实。厂家所称 T800 加强属于构造声明，未公布仪器化车架刚性测试方法。",
+  "Secondary AI summary of a Bilibili review; original playback/transcript unverified. Qualitative lead, not an instrumented stiffness result.": "哔哩哔哩评测的 AI 转述摘要；原始视频或文字稿未核实。仅为定性线索，并非仪器化刚性测试结果。"
+});
+
+Object.assign(zh, {
+  "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS.": "制造商几何冲突：XXS／XS 的尺寸推算轴距约为 980.2／987.3 mm，而表中标注为 974／981 mm。保留表中原值；在制造商澄清前，不用于推算适配。请向 PARDUS 核实目标尺码。"
 });
 
 Object.assign(zh, {

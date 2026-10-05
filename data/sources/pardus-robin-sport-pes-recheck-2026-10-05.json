@@ -1,0 +1,208 @@
+{
+  "id": "pardus-robin-sport-pes-recheck-2026-10-05",
+  "type": "manufacturer-product-page",
+  "title": "PARDUS Robin Sport PES exact maximum, fitted tyres, BSA and literal six-size chart recheck",
+  "publisher": "PARDUS",
+  "language": "zh-CN",
+  "url": "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030",
+  "accessed_at": "2026-10-05",
+  "reliability": {
+    "identity": "high",
+    "specification": "high",
+    "price": "low",
+    "selected_option": "high"
+  },
+  "notes": "Exact ROBIN SPORT—PES page: frame and fork maximum 700×40C; fitted Chaoyang COBRA H-496 700×28C; BSA bottom bracket; PES electronic 2×12. Six-size chart transcribed literally, without deriving fit or changing printed values. Not Robin EVO evidence. No new stock weight, checkout or price evidence.",
+  "geometry_table": {
+    "size_columns": [
+      "XXS",
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "rows_as_printed": {
+      "Standover": [
+        731,
+        744,
+        761,
+        777,
+        798,
+        824
+      ],
+      "Reach": [
+        358,
+        366,
+        375,
+        385,
+        397,
+        410
+      ],
+      "Stack": [
+        511,
+        522,
+        535,
+        550,
+        570,
+        595
+      ],
+      "Stack/reach": [
+        1.43,
+        1.43,
+        1.43,
+        1.43,
+        1.44,
+        1.45
+      ],
+      "Horizontal top tube": [
+        495,
+        511,
+        528,
+        543,
+        566,
+        592
+      ],
+      "Head angle": [
+        "71°",
+        "71.5°",
+        "72.5°",
+        "72.5°",
+        "73°",
+        "73°"
+      ],
+      "Seat angle": [
+        "75°",
+        "74.5°",
+        "74°",
+        "74°",
+        "73.5°",
+        "73°"
+      ],
+      "Wheelbase": [
+        974,
+        981,
+        986,
+        1000,
+        1014,
+        1035
+      ],
+      "Chainstay": [
+        420,
+        420,
+        420,
+        420,
+        420,
+        420
+      ],
+      "Front centre": [
+        571,
+        578,
+        576,
+        591,
+        604,
+        625
+      ],
+      "BB drop": [
+        72,
+        72,
+        70,
+        70,
+        70,
+        70
+      ],
+      "Seat tube": [
+        440,
+        454,
+        469,
+        485,
+        505,
+        535
+      ],
+      "Head tube": [
+        112,
+        122,
+        132,
+        147,
+        167,
+        193
+      ],
+      "Fork offset": [
+        54,
+        54,
+        48,
+        48,
+        48,
+        48
+      ],
+      "Fork length": [
+        370,
+        370,
+        370,
+        370,
+        370,
+        370
+      ],
+      "Trail": [
+        62.5,
+        59,
+        59,
+        59,
+        56,
+        56
+      ],
+      "Stem": [
+        90,
+        100,
+        100,
+        100,
+        110,
+        120
+      ],
+      "Bar width": [
+        360,
+        360,
+        380,
+        400,
+        400,
+        400
+      ],
+      "Crank": [
+        165,
+        165,
+        170,
+        170,
+        172.5,
+        172.5
+      ],
+      "Seatpost offset": [
+        -15,
+        -15,
+        -15,
+        -15,
+        -15,
+        -15
+      ]
+    },
+    "basis": "Literal manufacturer chart; values are retained as printed, without independent measurement or recalculation.",
+    "inconsistency_review": {
+      "reviewed_at": "2026-10-05",
+      "diagram_url": "https://parduscycle.com/upload/editor/image/20250428/28140438253.jpg",
+      "basis": "The manufacturer diagram defines front centre and chainstay as sloping bottom-bracket-to-axle lengths. Wheelbase implied by those lengths and BB drop is sqrt(front_centre^2 - bb_drop^2) + sqrt(chainstay^2 - bb_drop^2). Ordinary whole-mm rounding cannot reconcile XXS and XS.",
+      "derived_fit_eligible": false,
+      "observations": [
+        {
+          "size": "XXS",
+          "printed_wheelbase_mm": 974,
+          "implied_wheelbase_mm": 980.2
+        },
+        {
+          "size": "XS",
+          "printed_wheelbase_mm": 981,
+          "implied_wheelbase_mm": 987.3
+        }
+      ],
+      "resolution": "Preserve every printed cell; request manufacturer clarification before deriving fit."
+    }
+  }
+}

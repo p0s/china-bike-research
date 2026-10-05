@@ -2,7 +2,7 @@
   "id": "scott-foil-rc-10-primary-image",
   "candidate_id": "scott-foil-rc-10",
   "role": "primary",
-  "subject_accuracy": "exact-variant",
+  "subject_accuracy": "illustrative",
   "media_type": "official-product-photo",
   "hosting": {
     "mode": "local",
@@ -37,8 +37,8 @@
     "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted."
   },
   "credit": "Product image © SCOTT Sports",
-  "alt": "SCOTT Foil RC 10 aero road bike",
-  "display_note": "Official exact-variant global product image; mainland price, stock and warranty remain unresolved.",
+  "alt": "SCOTT rider-height and frame-size recommendation chart, without a bicycle photo",
+  "display_note": "Rider-height and size chart; omitted as a product photograph.",
   "reviewed_at": "2026-08-17",
   "source_media_url": "https://static.scott-sports.com/image/upload/v1780078564/1932176.png",
   "source_media_sha256": "0c1d04bdb389c2e7686e41ed6763c8e2233f2240e64c31309966a4b792e9b5a3",
@@ -56,5 +56,18 @@
     "vehicle_registration": "none-visible",
     "account_identifiers": "none-visible",
     "location_identifiers": "none-visible"
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "subject_accuracy": "exact-variant",
+        "alt": "SCOTT Foil RC 10 aero road bike",
+        "display_note": "Official exact-variant global product image; mainland price, stock and warranty remain unresolved."
+      },
+      "reason": "Local derivative visually confirms a size chart with no bicycle. No replacement exact bicycle photo is available in this record set; preserve all pixels and source metadata."
+    }
+  ],
+  "buyer_visibility": "omit",
+  "content_type": "manufacturer-size-chart"
 }

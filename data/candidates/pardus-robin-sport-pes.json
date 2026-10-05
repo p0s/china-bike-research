@@ -20,20 +20,87 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6891.png#R1",
-  "last_reviewed": "2026-08-30",
+  "last_reviewed": "2026-10-05",
   "source_ids": [
     "pardus-robin-sport-official-image-2026-08-17",
     "pardus-robin-sport-pes-current-2026-08-30",
-    "pardus-robin-sport-pes-mainland-index-2026-08-30"
+    "pardus-robin-sport-pes-mainland-index-2026-08-30",
+    "pardus-robin-sport-pes-recheck-2026-10-05"
   ],
   "source_url": "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030",
   "facts": {
     "listing_identity": "PARDUS / 瑞豹 Robin Sport PES electronic 2x12 carbon-wheel build",
     "drivetrain": "Magene PES electronic 2x12: ST-PES controls and hydraulic brakes, FD-PES, RD-PES, SENICX PR5 50/34T, SUGEK CS-9012 11-34T, and KMC X12",
     "tire_clearance_mm": 40,
-    "tire_clearance_basis": "The accepted 2026-08-30 exact PES page records 700×40C frame/fork compatibility; its stored note does not confirm whether this is maximum clearance or a fitted-width figure. The 2026-09-23 page refresh timed out.",
+    "tire_clearance_basis": "Exact Robin Sport PES manufacturer page rechecked 2026-10-05: maximum 700×40C for both frame and fork; separate fitted tyres are Chaoyang COBRA H-496 700×28C.",
     "frame_material": "HS-EPS+ carbon frame with FLEX AIR elastic-cavity construction and HS-HPT carbon fork",
-    "stiffness_evidence": "PARDUS describes Robin Sport as balancing vibration absorption and stiffness; the exact PES page links FLEX AIR and FLEX PIVOT to comfort. This is qualitative manufacturer evidence without a numeric structural-test protocol or independent exact-build measurement"
+    "stiffness_evidence": "PARDUS describes Robin Sport as balancing vibration absorption and stiffness; the exact PES page links FLEX AIR and FLEX PIVOT to comfort. This is qualitative manufacturer evidence without a numeric structural-test protocol or independent exact-build measurement",
+    "tires": "Chaoyang COBRA H-496 700×28C fitted tyres; separate from the 700×40C frame-and-fork maximum",
+    "bottom_bracket": "BSA, explicitly identified on the exact Robin Sport PES manufacturer page",
+    "sizes": "XXS, XS, S, M, L and XL",
+    "geometry complete current manufacturer table": "Literal manufacturer chart rechecked 2026-10-05; size columns XXS / XS / S / M / L / XL. Standover: 731 / 744 / 761 / 777 / 798 / 824; Reach: 358 / 366 / 375 / 385 / 397 / 410; Stack: 511 / 522 / 535 / 550 / 570 / 595; Stack/reach: 1.43 / 1.43 / 1.43 / 1.43 / 1.44 / 1.45; Horizontal top tube: 495 / 511 / 528 / 543 / 566 / 592; Head angle: 71° / 71.5° / 72.5° / 72.5° / 73° / 73°; Seat angle: 75° / 74.5° / 74° / 74° / 73.5° / 73°; Wheelbase: 974 / 981 / 986 / 1000 / 1014 / 1035; Chainstay: 420 / 420 / 420 / 420 / 420 / 420; Front centre: 571 / 578 / 576 / 591 / 604 / 625; BB drop: 72 / 72 / 70 / 70 / 70 / 70; Seat tube: 440 / 454 / 469 / 485 / 505 / 535; Head tube: 112 / 122 / 132 / 147 / 167 / 193; Fork offset: 54 / 54 / 48 / 48 / 48 / 48; Fork length: 370 / 370 / 370 / 370 / 370 / 370; Trail: 62.5 / 59 / 59 / 59 / 56 / 56; Stem: 90 / 100 / 100 / 100 / 110 / 120; Bar width: 360 / 360 / 380 / 400 / 400 / 400; Crank: 165 / 165 / 170 / 170 / 172.5 / 172.5; Seatpost offset: -15 / -15 / -15 / -15 / -15 / -15. Printed values retained without recalculation; manufacturer chart evidence, not an independent fit measurement."
   },
-  "source_note": "The accepted exact manufacturer page dated 2026-08-30 resolves the Robin Sport PES electronic 2×12 BOM and its frame/fork construction. Its retained 700×40C wording does not establish maximum-versus-fitted basis, and the 2026-09-23 refresh timed out. A questionable 8.2 kg reseller page and modified owner builds are not treated as controlled stock weight. PARDUS stiffness wording is qualitative, without a numeric test protocol."
+  "source_note": "The exact Robin Sport PES manufacturer page rechecked 2026-10-05 explicitly distinguishes the maximum 700×40C frame/fork clearance from fitted Chaoyang COBRA H-496 700×28C tyres, identifies BSA, and provides six geometry sizes. Earlier accepted August evidence and the September refresh timeout remain dated history. The PES electronic 2×12 BOM and HS-EPS+/FLEX AIR frame with HS-HPT fork are exact-build evidence; qualitative stiffness wording has no numeric test protocol. Controlled stock complete-bike weight and current checkout conditions remain unresolved; reseller and modified-owner weights are not promoted. This recheck does not supply Robin EVO specifications or a new price observation.",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "pardus-robin-sport-pes-recheck-2026-10-05"
+      ],
+      "reason": "The exact PES page explicitly labels maximum clearance separately from fitted tyres and is readable on this recheck; earlier ambiguity and timeout no longer describe the active evidence.",
+      "prior_values": {
+        "id": "pardus-robin-sport-pes",
+        "name": "PARDUS 瑞豹 Robin Sport PES",
+        "model_id": "pardus-robin-sport-pes",
+        "category": "road-endurance",
+        "type": "complete-bike",
+        "why_interesting": "The retained card is the current Robin Sport PES: the exact manufacturer BOM establishes Magene PES electronic 2x12 and a 700x40C frame-and-fork maximum.",
+        "missing": [
+          "Controlled stock complete-bike weight and weighing basis",
+          "Current seller authority, warranty route, and final checkout conditions"
+        ],
+        "status": "exact-robin-sport-pes-weight-and-checkout-unresolved",
+        "source_snapshot_id": "taobao-snapshot-2026-08-08",
+        "observed_at": "2026-08-08",
+        "observed_price": {
+          "amount_cny": 8597.25,
+          "currency": "CNY",
+          "observed_at": "2026-08-08",
+          "price_basis": "coupon",
+          "observation_count": 1
+        },
+        "source_refs": "IMG_6891.png#R1",
+        "last_reviewed": "2026-08-30",
+        "source_ids": [
+          "pardus-robin-sport-official-image-2026-08-17",
+          "pardus-robin-sport-pes-current-2026-08-30",
+          "pardus-robin-sport-pes-mainland-index-2026-08-30"
+        ],
+        "source_url": "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030",
+        "facts": {
+          "listing_identity": "PARDUS / 瑞豹 Robin Sport PES electronic 2x12 carbon-wheel build",
+          "drivetrain": "Magene PES electronic 2x12: ST-PES controls and hydraulic brakes, FD-PES, RD-PES, SENICX PR5 50/34T, SUGEK CS-9012 11-34T, and KMC X12",
+          "tire_clearance_mm": 40,
+          "tire_clearance_basis": "The accepted 2026-08-30 exact PES page records 700×40C frame/fork compatibility; its stored note does not confirm whether this is maximum clearance or a fitted-width figure. The 2026-09-23 page refresh timed out.",
+          "frame_material": "HS-EPS+ carbon frame with FLEX AIR elastic-cavity construction and HS-HPT carbon fork",
+          "stiffness_evidence": "PARDUS describes Robin Sport as balancing vibration absorption and stiffness; the exact PES page links FLEX AIR and FLEX PIVOT to comfort. This is qualitative manufacturer evidence without a numeric structural-test protocol or independent exact-build measurement"
+        },
+        "source_note": "The accepted exact manufacturer page dated 2026-08-30 resolves the Robin Sport PES electronic 2×12 BOM and its frame/fork construction. Its retained 700×40C wording does not establish maximum-versus-fitted basis, and the 2026-09-23 refresh timed out. A questionable 8.2 kg reseller page and modified owner builds are not treated as controlled stock weight. PARDUS stiffness wording is qualitative, without a numeric test protocol."
+      }
+    },
+    {
+      "reviewed_at": "2026-10-05",
+      "source_ids": [
+        "pardus-robin-sport-pes-recheck-2026-10-05"
+      ],
+      "reason": "Independent review and the manufacturer dimension diagram identify an internal XXS/XS wheelbase conflict beyond ordinary rounding. All 120 printed chart cells remain literal; derived fit is excluded until clarification."
+    }
+  ],
+  "geometry_evidence": {
+    "status": "source-inconsistent",
+    "derived_fit_eligible": false,
+    "source_id": "pardus-robin-sport-pes-recheck-2026-10-05",
+    "reviewed_at": "2026-10-05",
+    "note": "Manufacturer geometry conflict: XXS/XS dimensions imply wheelbases of about 980.2/987.3 mm versus printed 974/981 mm. Printed cells are retained; derived fit is withheld pending manufacturer clarification. Confirm the selected size with PARDUS."
+  }
 }

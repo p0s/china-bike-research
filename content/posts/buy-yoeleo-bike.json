@@ -2,7 +2,7 @@
   "slug": "buy-yoeleo-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-10-03",
   "researched_at": "2026-09-22",
   "image_id": "chinese-bike-prices-for-international-buyers",
   "model_ids": [
@@ -79,7 +79,7 @@
           "id": "owners",
           "heading": "An older R11 build explains a useful distinction",
           "paragraphs": [
-            "An [R11 owner writing about a 2021 order](https://chinertown.com/index.php?topic=3237.0) described ordering in December, dispatch in March and about two weeks of transit to Switzerland. Most of that reported wait preceded shipment. It is a useful way to split the clock, but neither a current YOELEO lead time nor evidence of EU customs treatment. The ALTERA G21 pictured in this guide is a different frame."
+            "An [R11 owner reporting in May 2021](https://chinertown.com/index.php?topic=3237.0) described ordering on December 23, 2020, shipment on March 23, 2021, and about two weeks of transit to Switzerland. Most of that reported wait preceded shipment. It is a useful way to split the clock, but neither a current YOELEO lead time nor evidence of EU customs treatment. The ALTERA G21 pictured in this guide is a different frame."
           ]
         },
         {
@@ -154,7 +154,7 @@
           "id": "owners",
           "heading": "老 R11 装车帖带来的实用提醒",
           "paragraphs": [
-            "[R11 车主的 2021 年订单记录](https://chinertown.com/index.php?topic=3237.0)称十二月下单、三月发货，随后约两周送达瑞士。等待的大部分发生在发货前。它适合说明要把时间拆开看，却不能代表当前 YOELEO 交期或欧盟清关。文中 ALTERA G21 照片是另一款车架。"
+            "[R11 车主于 2021 年 5 月发布的记录](https://chinertown.com/index.php?topic=3237.0)称，2020 年 12 月 23 日下单，2021 年 3 月 23 日发货，随后约两周送达瑞士。等待的大部分发生在发货前。它适合说明要把时间拆开看，却不能代表当前 YOELEO 交期或欧盟清关。文中 ALTERA G21 照片是另一款车架。"
           ]
         },
         {
@@ -229,7 +229,7 @@
           "id": "owners",
           "heading": "Ein älterer R11-Aufbau zeigt eine wichtige Trennung",
           "paragraphs": [
-            "Ein [R11-Besitzer mit einer Bestellung von 2021](https://chinertown.com/index.php?topic=3237.0) berichtete von Bestellung im Dezember, Versand im März und etwa zwei Wochen Transport in die Schweiz. Der größte Teil der Wartezeit lag vor dem Versand. Das hilft bei der Zeitaufteilung, ist aber weder eine heutige YOELEO-Lieferzeit noch ein Beleg für EU-Zollbehandlung. Das gezeigte ALTERA G21 ist ein anderer Rahmen."
+            "Ein [R11-Besitzer berichtete im Mai 2021](https://chinertown.com/index.php?topic=3237.0) von einer Bestellung am 23. Dezember 2020, Versand am 23. März 2021 und etwa zwei Wochen Transport in die Schweiz. Der größte Teil der Wartezeit lag vor dem Versand. Das hilft bei der Zeitaufteilung, ist aber weder eine heutige YOELEO-Lieferzeit noch ein Beleg für EU-Zollbehandlung. Das gezeigte ALTERA G21 ist ein anderer Rahmen."
           ]
         },
         {
@@ -248,5 +248,19 @@
     "https://www.yoeleobike.com/pages/shipping-and-delivery",
     "https://www.yoeleobike.com/en-de/policies/shipping-policy",
     "https://chinertown.com/index.php?topic=3237.0"
+  ],
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "dateModified": "2026-09-27",
+        "passages": {
+          "en": "An [R11 owner writing about a 2021 order](https://chinertown.com/index.php?topic=3237.0) described ordering in December, dispatch in March and about two weeks of transit to Switzerland. Most of that reported wait preceded shipment. It is a useful way to split the clock, but neither a current YOELEO lead time nor evidence of EU customs treatment. The ALTERA G21 pictured in this guide is a different frame.",
+          "zh-Hans": "[R11 车主的 2021 年订单记录](https://chinertown.com/index.php?topic=3237.0)称十二月下单、三月发货，随后约两周送达瑞士。等待的大部分发生在发货前。它适合说明要把时间拆开看，却不能代表当前 YOELEO 交期或欧盟清关。文中 ALTERA G21 照片是另一款车架。",
+          "de": "Ein [R11-Besitzer mit einer Bestellung von 2021](https://chinertown.com/index.php?topic=3237.0) berichtete von Bestellung im Dezember, Versand im März und etwa zwei Wochen Transport in die Schweiz. Der größte Teil der Wartezeit lag vor dem Versand. Das hilft bei der Zeitaufteilung, ist aber weder eine heutige YOELEO-Lieferzeit noch ein Beleg für EU-Zollbehandlung. Das gezeigte ALTERA G21 ist ein anderer Rahmen."
+        }
+      },
+      "reason": "Correct the historical order/report year or seller-reported shipment milestone using the dated public owner account; preserve the preparation dates, scheduled publication state and prior wording."
+    }
   ]
 }
