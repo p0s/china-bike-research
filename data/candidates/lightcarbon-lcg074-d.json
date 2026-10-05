@@ -35,7 +35,7 @@
     "axles": "12×100 mm front; 12×142 mm rear",
     "cockpit": "HBR08 integrated carbon bar/stem; 380–440 mm bars and 90–120 mm stems",
     "storage": "Downtube storage compartment",
-    "suspension": "Manufacturer-described micro-suspension pivot; travel is not published",
+    "suspension": "Manufacturer-described micro-suspension pivot; current manufacturer claim observed 2026-10-03 is approximately 20 mm travel. Independent measurement and test protocol remain unknown.",
     "sizes": "49, 52, 55 and 58",
     "geometry": "Reach 374.1–397.1 mm; stack 542.6–627.1 mm; 430 mm chainstays; 70 mm BB drop; 62.7–69.3 mm trail",
     "warranty": "Two years",
@@ -68,5 +68,28 @@
       ],
       "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
     }
-  ]
+  ],
+  "geometry_evidence": {
+    "status": "source-inconsistent",
+    "derived_fit_eligible": false,
+    "source_id": "lightcarbon-lcg074-d-complete-geometry-recheck-2026-10-03",
+    "reviewed_at": "2026-10-03",
+    "note": "Literal recorded manufacturer geometry is internally inconsistent. Affected cells are excluded from derived fit; source intent and corrected values remain unresolved. This does not establish a product safety defect."
+  },
+  "prior_specification_observations": [
+    {
+      "field": "suspension",
+      "value": "Manufacturer-described micro-suspension pivot; travel is not published",
+      "status": "historical-source-observation",
+      "note": "Earlier travel-unknown observation retained; the source change date is unknown."
+    }
+  ],
+  "suspension_evidence": {
+    "claimed_travel_mm": 20,
+    "approximate": true,
+    "claim_type": "manufacturer",
+    "observed_at": "2026-10-03",
+    "independent_measurement": false,
+    "source_url": "https://www.lightcarbon.com/lightcarbon-gravel-frameset-micro-suspension-pivot-design-with-integrated-handlebar_p254.html"
+  }
 }

@@ -114,7 +114,8 @@ test('comparison event payload contains only the fixed event and validated publi
     ip: '203.0.113.10',
     userAgent: 'Mozilla/5.0',
     country: 'SG',
-    eventName: 'compare_open'
+    eventName: 'compare_open',
+    context: { page_path: '/zh/', page_type: 'catalog', interface_language: 'zh-Hans' }
   });
   assert.equal(analyticsPayload(request, new URL(request.url)), null);
 
@@ -169,7 +170,8 @@ test('same-origin comparison event reaches the gateway without browser-only fiel
       ip: '203.0.113.10',
       userAgent: 'Mozilla/5.0',
       country: 'SG',
-      eventName: 'compare_open'
+      eventName: 'compare_open',
+      context: { page_path: '/', page_type: 'catalog', interface_language: 'en' }
     });
   } finally {
     globalThis.fetch = originalFetch;
