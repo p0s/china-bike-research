@@ -328,7 +328,7 @@ test('candidate fitted tire observations are labeled and are not sorted as verif
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
-  const entry = candidates.find((item) => item.candidate.id === 'carbonda-cfr707');
+  const entry = candidates.find((item) => item.candidate.id === 'hongfu-gravel');
   const detail = renderCandidateModel({
     data,
     products,
@@ -911,8 +911,8 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   const privacy = renderPrivacy(context);
   assert.match(privacy, /compare_open when the comparison opens/);
   assert.match(privacy, /product_outbound_click/);
-  assert.match(privacy, /Comparison events do not include selected bikes/);
-  assert.match(privacy, /product-link actions send only a fixed action ID, without product or visitor details/);
+  assert.match(privacy, /Comparison events exclude selected bike lists/);
+  assert.match(privacy, /Product-link actions include only public catalog context, without visitor details/);
   assert.match(privacy, /Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal/);
   assert.match(privacy, /optional Google Analytics 4 parallel test/);
   assert.match(privacy, /Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams/);
@@ -928,7 +928,7 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
   const openComparison = client.slice(client.indexOf('function openComparison('), client.indexOf('function closeComparison('));
   assert.match(openComparison, /const wasOpen = !comparePanel\.hidden/);
-  assert.match(openComparison, /if \(!wasOpen\) sendComparisonOpenedEvent\(\)/);
+  assert.match(openComparison, /if \(!wasOpen\) sendComparisonOpenedEvent\(\{ comparisonCount: selection.length \}\)/);
   assert.match(privacy, /youtube-nocookie\.com/);
   assert.match(privacy, /may contact YouTube when the page loads or the video comes into view/);
   assert.doesNotMatch(privacy, /XHS video links|only after you choose to load/);

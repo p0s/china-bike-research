@@ -1,0 +1,199 @@
+{
+  "slug": "disc-brake-rub-new-bike",
+  "publication_status": "scheduled",
+  "series_id": "october-2026",
+  "series_order": 50,
+  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "ican-graro-frameset"
+  ],
+  "source_ids": [
+    "ican-graro-official",
+    "ican-graro-official-2026-08-27"
+  ],
+  "editorial_references": [
+    "https://www.parktool.com/en-int/blog/repair-help/hydraulic-disc-brake-alignment"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "order",
+      "ids": [
+        "ican-graro"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "New bike, rubbing disc brake: diagnose before moving the caliper",
+      "description": "Record whether brake rub is constant, periodic or follows a wheel change. Check wheel seating and hardware before caliper adjustment.",
+      "intro": "That little shh-shh sound can make a new bike feel unfinished. Resist the urge to turn every bolt until it disappears. A short diagnosis preserves the evidence and often prevents you from adjusting the wrong thing.",
+      "sections": [
+        {
+          "id": "observe",
+          "heading": "Describe the rub",
+          "paragraphs": [
+            "With the bike safely supported, observe without putting fingers or tools near a spinning rotor. Note front or rear, constant or once per revolution, and whether it began after wheel removal. A short stationary video showing the gaps can help the assembler. Noise alone does not identify a bent rotor or prove contamination."
+          ]
+        },
+        {
+          "id": "order",
+          "heading": "Check the cause in a useful order",
+          "paragraphs": [
+            "[Park Tool’s hydraulic alignment guide](https://www.parktool.com/en-int/blog/repair-help/hydraulic-disc-brake-alignment) lists wheel seating, rotor or bearing play, rotor distortion and piston issues alongside caliper alignment. Have wheel seating and fastening checked against the bike’s axle instructions before changing alignment. On a [GRARO build](/models/ican-graro-frameset/), the exact fitted brake and wheel hardware still determine the service method."
+          ],
+          "worksheet": {
+            "caption": "Useful clues, not diagnoses",
+            "columns": [
+              "Observation",
+              "Next check"
+            ],
+            "rows": [
+              [
+                "Started after wheel removal",
+                "Wheel seating and correct axle fastening"
+              ],
+              [
+                "Once per revolution",
+                "Rotor runout and mounting; workshop assessment"
+              ],
+              [
+                "Persistent after correct seating",
+                "Alignment, pad clearance and piston condition"
+              ],
+              [
+                "Play, leak or abnormal braking",
+                "Stop riding and arrange inspection"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "finish",
+          "heading": "Make one controlled correction",
+          "paragraphs": [
+            "If alignment is the confirmed issue, use the matching brake instructions and torque values or let the workshop do it. Do not face carbon mounts, bend rotors or add washers as a guessing exercise. Recheck brake function after any service. A quiet spin in the stand is useful evidence, but the finished bike must also brake reliably."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "新车蹭碟：先诊断，再移动卡钳",
+      "description": "记录蹭碟是持续、周期性还是换轮后出现，调卡钳前先查轮组安装与五金。",
+      "intro": "一点“沙沙”声就能让新车显得没装好。但别急着拧遍螺栓直到安静。先做简短诊断，既保留线索，也能避免调整错地方。",
+      "sections": [
+        {
+          "id": "observe",
+          "heading": "描述蹭碟规律",
+          "paragraphs": [
+            "安全支撑车辆后观察，不把手或工具靠近旋转碟片。记录前后轮、持续还是每转一圈一次，以及是否拆轮后出现。静态拍摄间隙的短视频有助装车者判断。单凭声音不能判定碟片弯曲，也不能证明污染。"
+          ]
+        },
+        {
+          "id": "order",
+          "heading": "按有用顺序查原因",
+          "paragraphs": [
+            "[Park Tool液压刹车对齐指南](https://www.parktool.com/en-int/blog/repair-help/hydraulic-disc-brake-alignment)把轮组安装、碟片或轴承间隙、碟片变形、活塞问题与卡钳对齐一起列出。调卡钳前先按轴说明检查轮组就位与紧固。[GRARO装车](/models/ican-graro-frameset/)仍需依据实际刹车、轮组五金决定维护方式。"
+          ],
+          "worksheet": {
+            "caption": "有用线索，并非诊断结论",
+            "columns": [
+              "观察",
+              "下一项检查"
+            ],
+            "rows": [
+              [
+                "拆轮后出现",
+                "轮组就位与正确轴紧固"
+              ],
+              [
+                "每圈一次",
+                "碟片偏摆与安装，交车店评估"
+              ],
+              [
+                "正确就位后仍持续",
+                "对齐、来令片间隙与活塞状态"
+              ],
+              [
+                "松旷、漏液或制动异常",
+                "停止骑行并安排检查"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "finish",
+          "heading": "一次做一项受控修正",
+          "paragraphs": [
+            "若确认是对齐问题，按对应刹车说明与扭矩调整，或交车店做。不要靠猜测打磨碳纤安装面、弯碟片、加垫片。任何维护后都复查刹车功能；车架台上空转安静是有用证据，整车还须可靠制动。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "Neues Rad, schleifende Bremse: Erst eingrenzen, dann ausrichten",
+      "description": "Unterscheide dauerhaftes, periodisches und nach Radwechsel auftretendes Schleifen, bevor du den Bremssattel verstellst.",
+      "intro": "Ein leises Schleifen lässt das neue Rad unfertig wirken. Drehe nicht wahllos an Schrauben, bis es verschwindet. Eine kurze Eingrenzung erhält Hinweise und verhindert oft das Verstellen der falschen Stelle.",
+      "sections": [
+        {
+          "id": "observe",
+          "heading": "Das Schleifen beschreiben",
+          "paragraphs": [
+            "Bei sicher abgestütztem Rad beobachten, ohne Finger oder Werkzeug an die drehende Scheibe zu bringen. Notiere vorne/hinten, dauerhaft/einmal pro Umdrehung und einen vorausgegangenen Radwechsel. Ein kurzer Clip der Spalte hilft der Werkstatt. Geräusche allein beweisen weder verbogene Scheibe noch Kontamination."
+          ]
+        },
+        {
+          "id": "order",
+          "heading": "Ursachen in sinnvoller Reihenfolge prüfen",
+          "paragraphs": [
+            "[Park Tools Hydraulik-Ausrichtungsleitfaden](https://www.parktool.com/en-int/blog/repair-help/hydraulic-disc-brake-alignment) nennt Radsitz, Scheiben- oder Lagerspiel, Scheibenverformung und Kolbenprobleme neben der Bremssattelausrichtung. Prüfe zuerst Sitz und Befestigung nach Achsanleitung. Auch beim [GRARO-Aufbau](/models/ican-graro-frameset/) bestimmt die montierte Brems-/Laufradhardware das Vorgehen."
+          ],
+          "worksheet": {
+            "caption": "Hinweise statt Ferndiagnosen",
+            "columns": [
+              "Beobachtung",
+              "Nächste Prüfung"
+            ],
+            "rows": [
+              [
+                "Nach Radentnahme",
+                "Radsitz und korrekte Achsbefestigung"
+              ],
+              [
+                "Einmal pro Umdrehung",
+                "Scheibenlauf und Befestigung in der Werkstatt"
+              ],
+              [
+                "Nach richtigem Radsitz weiterhin",
+                "Ausrichtung, Belagspalt und Kolben"
+              ],
+              [
+                "Spiel, Leck oder auffällige Bremswirkung",
+                "Nicht fahren; prüfen lassen"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "finish",
+          "heading": "Eine gezielte Korrektur vornehmen",
+          "paragraphs": [
+            "Ist Ausrichtung als Ursache bestätigt, nutze passende Anleitung und Drehmomente oder die Werkstatt. Carbonaufnahmen bearbeiten, Scheiben biegen oder Scheiben unterlegen sind keine Rateversuche. Nach Service die Funktion prüfen: Ruhiger Lauf im Ständer ist hilfreich, zuverlässiges Bremsen bleibt nötig."
+          ]
+        }
+      ]
+    }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T09:01:41.420Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "A symptom table preserves diagnostic clues and prioritises wheel seating before alignment; brake-caliper wording and play terminology clarified."
+  }
+}

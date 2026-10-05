@@ -35,6 +35,9 @@ try:
                     warning = page.locator('[data-build-starting-point-warning]')
                     def unresolved():
                         expect(warning).to_be_visible()
+                        expect(warning).to_have_css("padding-top", "10px")
+                        expect(warning).to_have_css("border-top-width", "1px")
+                        expect(warning).to_have_css("font-weight", "650")
                         expect(page.locator('[data-build-base]')).to_have_value('')
                         expect(page.locator('[data-build-total-price]')).to_have_text('—')
                         expect(page.locator('[data-build-total-weight]')).to_have_text('—')

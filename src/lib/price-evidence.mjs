@@ -10,7 +10,7 @@ export function priceEvidence(price) {
     || price?.price_basis === 'coupon';
   const partial = price?.purchase_total_complete === false;
   return { reference: Boolean(reference), historical, conflict, starting, conditional, partial,
-    purchaseEligible: Boolean(price) && !reference && !historical && !conflict && !starting && !partial };
+    purchaseEligible: Boolean(price) && !reference && !historical && !conflict && !starting && !partial && !conditional };
 }
 
 export function evidencePriceBounds(price) {

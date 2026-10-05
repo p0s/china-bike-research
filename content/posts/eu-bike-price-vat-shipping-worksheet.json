@@ -1,0 +1,226 @@
+{
+  "slug": "eu-bike-price-vat-shipping-worksheet",
+  "publication_status": "scheduled",
+  "series_id": "october-2026",
+  "series_order": 86,
+  "image_id": "europe-bike-delivery",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "researched_at": "2026-10-04",
+  "model_ids": [
+    "ican-graro-frameset"
+  ],
+  "source_ids": [
+    "ican-graro-official",
+    "ican-graro-official-2026-08-27"
+  ],
+  "editorial_references": [
+    "https://taxation-customs.ec.europa.eu/customs/common-customs-tariff-cct_en",
+    "https://taxation-customs.ec.europa.eu/taxation/vat/vat-directive/taxable-transactions_en",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R2146",
+    "https://trade.ec.europa.eu/access-to-markets/en/content/value-added-tax-0"
+  ],
+  "photo_sections": [
+    {
+      "section_id": "inputs",
+      "ids": [
+        "ican-graro"
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "The EU bike-price worksheet: keep VAT, duty and shipping separate",
+      "description": "Build a documented landed-cost worksheet and avoid adding VAT twice. Use an illustrative calculation without treating it as a tariff quote.",
+      "intro": "“€1,000 plus shipping” is not yet a delivered price. “€1,000 including taxes” needs confirmation of which taxes and destination. Put the quote into separate lines before comparing it with an EU dealer’s ready-to-collect price.",
+      "sections": [
+        {
+          "id": "inputs",
+          "heading": "Get the missing inputs",
+          "paragraphs": [
+            "Record seller, exact product, origin, ship-from location, destination, invoice currency, delivery term and tax inclusions. A [GRARO frameset](/models/ican-graro-frameset/) and a complete bicycle may require different classifications. The [EU Common Customs Tariff](https://taxation-customs.ec.europa.eu/customs/common-customs-tariff-cct_en) depends on product classification and origin; additional measures can matter. Get the applicable calculation from the carrier, broker or customs authority."
+          ]
+        },
+        {
+          "id": "worksheet",
+          "heading": "Calculate once per cost line",
+          "paragraphs": [
+            "Use the confirmed import-VAT base rather than assuming VAT applies only to the frame price. The [EU’s VAT guidance](https://trade.ec.europa.eu/access-to-markets/en/content/value-added-tax-0) includes relevant duties and incidental costs in that base. Here is pure arithmetic with invented inputs: goods €1,000, shipping €100 and duty €70 make an assumed €1,170 VAT base; illustrative 20% VAT is €234, giving €1,404. Handling and assembly are not included in this example: add them only after confirming the quote and tax treatment. None of these rates or amounts is a quote for your order."
+          ],
+          "worksheet": {
+            "caption": "Landed-cost worksheet",
+            "columns": [
+              "Line",
+              "Evidence needed"
+            ],
+            "rows": [
+              [
+                "Goods and delivery",
+                "Invoice quote; avoid overlapping shipping lines"
+              ],
+              [
+                "Duty and other measures",
+                "Confirmed classification, origin and applicable basis"
+              ],
+              [
+                "Import VAT",
+                "Confirmed rate/base; already included or still due?"
+              ],
+              [
+                "Handling/clearance",
+                "Carrier or broker quote; tax treatment confirmed"
+              ],
+              [
+                "Assembly",
+                "Local workshop scope and price"
+              ],
+              [
+                "Total",
+                "Only complete when every applicable line is resolved"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "compare",
+          "heading": "Compare a complete total with a complete total",
+          "paragraphs": [
+            "If duty or VAT treatment remains unknown, label the subtotal incomplete. For a tax-inclusive delivery quote, ask what evidence supports that inclusion before adding or removing any tax line. Use the broader [Europe buying guide](/blog/buy-chinese-bikes-europe/) to choose the purchase route; this worksheet is for checking its numbers. Rules and quotes need rechecking at the actual order date."
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "title": "欧盟自行车价格表：分开增值税、关税与运费",
+      "description": "建立有依据的到手费用表，避免重复加增值税；示例计算不是关税报价。",
+      "intro": "“1000欧元加运费”还不是到手价。“1000欧元含税”也要问清含哪些税、寄往哪里。与欧盟车店可直接取车的价格比较前，先把报价拆成几行，免得漏算或重复算。",
+      "sections": [
+        {
+          "id": "inputs",
+          "heading": "索取缺失输入",
+          "paragraphs": [
+            "记录卖家、具体商品、原产地、发货地、目的地、发票币种、交付条款与含税项。[GRARO车架组](/models/ican-graro-frameset/)与整车可能需不同分类。[欧盟共同关税](https://taxation-customs.ec.europa.eu/customs/common-customs-tariff-cct_en)按商品分类、原产地决定，额外措施也可能影响。向承运人、报关方或海关索取适用计算。"
+          ]
+        },
+        {
+          "id": "worksheet",
+          "heading": "每项费用只计算一次",
+          "paragraphs": [
+            "使用已确认的进口增值税计税基础，别假定只对车架价格计税。[欧盟增值税说明](https://trade.ec.europa.eu/access-to-markets/en/content/value-added-tax-0)将相关关税和附带费用纳入计税基础。以下仅用虚构数字演算：商品1000欧元、运费100欧元、关税70欧元，假设计税基础为1170欧元；示例20%增值税为234欧元，合计1404欧元。示例未含处理与装配费，取得报价并确认税务处理后再加。这些税率和金额都不是你的订单报价。"
+          ],
+          "worksheet": {
+            "caption": "到手费用表",
+            "columns": [
+              "项目",
+              "所需依据"
+            ],
+            "rows": [
+              [
+                "商品与配送",
+                "发票报价，避免重复运费"
+              ],
+              [
+                "关税及其他措施",
+                "确认分类、原产地与适用基础"
+              ],
+              [
+                "进口增值税",
+                "确认税率、基础，已含还是待缴？"
+              ],
+              [
+                "处理与清关",
+                "承运人、报关报价及税务处理"
+              ],
+              [
+                "装配",
+                "当地车店范围与价格"
+              ],
+              [
+                "总价",
+                "仅所有适用项解决后才完整"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "compare",
+          "heading": "完整总价对完整总价",
+          "paragraphs": [
+            "关税或增值税处理未知，标小计未完整。含税配送报价先问含税依据，再加减税项。用[欧洲购买指南](/blog/buy-chinese-bikes-europe/)选渠道，这张表负责核对数字。实际订货日期仍须复核规则、报价。"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "title": "EU-Radpreis berechnen: Umsatzsteuer, Zoll und Versand trennen",
+      "description": "Erstelle eine belegte Einstandskostenrechnung ohne doppelte Umsatzsteuer. Das Beispiel ist keine Zollauskunft.",
+      "intro": "„1.000 € plus Versand“ ist noch kein Endpreis. „Inklusive Steuern“ braucht Angaben zu Steuern und Ziel. Zerlege das Angebot vor dem Vergleich mit dem abholfertigen Händlerpreis.",
+      "sections": [
+        {
+          "id": "inputs",
+          "heading": "Fehlende Angaben beschaffen",
+          "paragraphs": [
+            "Erfasse Verkäufer, Produkt, Ursprung, Versandort, Ziel, Währung, Lieferbedingung und enthaltene Steuern. [GRARO-Rahmenset](/models/ican-graro-frameset/) und Komplettrad können anders eingereiht werden. Der [EU-Zolltarif](https://taxation-customs.ec.europa.eu/customs/common-customs-tariff-cct_en) hängt von Ware und Ursprung ab; Zusatzmaßnahmen können zählen. Berechnung bei Frachtführer, Zollvertretung oder Behörde klären."
+          ]
+        },
+        {
+          "id": "worksheet",
+          "heading": "Jeden Kostenposten einmal zählen",
+          "paragraphs": [
+            "Nutze die bestätigte Bemessungsgrundlage der Einfuhrumsatzsteuer statt nur des Rahmenpreises. Die [EU-Hinweise zur Umsatzsteuer](https://trade.ec.europa.eu/access-to-markets/en/content/value-added-tax-0) beziehen relevante Zölle und Nebenkosten ein. Ein Rechenbeispiel mit erfundenen Werten: Ware 1.000 €, Versand 100 € und Zoll 70 € ergeben eine angenommene Basis von 1.170 €. Beispielhafte 20 % sind 234 €, zusammen also 1.404 €. Abwicklung und Montage fehlen hier; ergänze sie erst mit Angebot und geklärter steuerlicher Behandlung. Kein Wert ist eine Auskunft für deine Bestellung."
+          ],
+          "worksheet": {
+            "caption": "Einstandskostenblatt",
+            "columns": [
+              "Posten",
+              "Benötigter Beleg"
+            ],
+            "rows": [
+              [
+                "Ware/Lieferung",
+                "Angebot ohne doppelte Fracht"
+              ],
+              [
+                "Zoll/Zusatzmaßnahmen",
+                "Einreihung, Ursprung, Berechnungsgrundlage"
+              ],
+              [
+                "Einfuhrumsatzsteuer",
+                "Satz/Basis bestätigt; enthalten oder fällig?"
+              ],
+              [
+                "Abwicklung",
+                "Angebot und steuerliche Behandlung"
+              ],
+              [
+                "Montage",
+                "Werkstattumfang und Preis"
+              ],
+              [
+                "Gesamt",
+                "Erst vollständig, wenn alle Posten geklärt"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "compare",
+          "heading": "Vollständige Summen vergleichen",
+          "paragraphs": [
+            "Bei offenem Zoll oder Steuerstatus bleibt die Zwischensumme unvollständig. Steuerinklusive Lieferung erst belegen lassen, bevor du Steuer addierst oder streichst. Der [Europa-Kaufleitfaden](/blog/buy-chinese-bikes-europe/) hilft beim Weg; dieses Blatt prüft die Zahlen. Regeln und Angebot am Bestelldatum erneut prüfen."
+          ]
+        }
+      ]
+    }
+  },
+  "editorial_review": {
+    "status": "reviewed",
+    "reviewed_at": "2026-10-04T09:16:26.696Z",
+    "reviewed_languages": [
+      "en",
+      "zh-Hans",
+      "de"
+    ],
+    "contribution": "Documented landed-cost worksheet uses the confirmed import VAT base and a source-linked 1404-euro invented example without silently excluding taxable handling fees."
+  }
+}
