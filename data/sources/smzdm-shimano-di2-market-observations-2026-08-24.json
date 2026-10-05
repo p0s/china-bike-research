@@ -6,6 +6,19 @@
   "language": "zh-CN",
   "accessed_at": "2026-08-24",
   "url": "https://post.smzdm.com/p/aomxlqvn/",
-  "reliability": { "identity": "medium", "specification": "low", "price": "medium" },
-  "notes": "AI-generated synthesis of public dealer and social posts. It reports dated R7170 and R8170 package observations but is not an official price, seller checkout, invoice, or normalized package record. Use only as a secondary market lead with the supplied package wording."
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "medium"
+  },
+  "notes": "AI-generated synthesis of public dealer and social posts. It reports dated R7170 and R8170 package observations but is not an official price, seller checkout, invoice, or normalized package record. Use only as a secondary market lead with the supplied package wording. The claim-scoped 2026-10-03 review found ¥4,150/¥4,200/¥6,050 in the readable body, but not the retained ¥3,570/¥5,000 leads. Those two amounts remain unresolved supplied secondary observations; the current citation does not reproduce them. This limitation does not establish that the historical observations were false. Original observation/capture dates remain unchanged.",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-03",
+      "prior_values": {
+        "notes": "AI-generated synthesis of public dealer and social posts. It reports dated R7170 and R8170 package observations but is not an official price, seller checkout, invoice, or normalized package record. Use only as a secondary market lead with the supplied package wording."
+      },
+      "reason": "State the current citation limitation while preserving the original secondary-source annotation and access date."
+    }
+  ]
 }
