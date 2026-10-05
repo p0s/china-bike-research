@@ -88,7 +88,7 @@ export function localizeHtml(html, options = {}) {
   if (!options.locale || options.locale === 'en') return html;
   // Work on generated, escaped markup. Script bodies are isolated before tokenizing.
   const raw = [];
-  let input = html.replace(/<(p|span)\b[^>]*data-original-language[^>]*>[\s\S]*?<\/\1>/gi, (block) => {
+  let input = html.replace(/<(p|span)\b[^>]*(?:data-original-language|data-localized-caption)[^>]*>[\s\S]*?<\/\1>/gi, (block) => {
     const index = raw.length;
     raw.push(block);
     return `<!--i18n-raw-${index}-->`;
@@ -103,7 +103,7 @@ export function localizeHtml(html, options = {}) {
   input = input.split(/(<[^>]+>)/g).map((part) => {
     if (part.startsWith('<')) {
       if (/^<!--/.test(part)) return part;
-      part = part.replace(/\b(aria-label|title|placeholder|alt|label|data-gallery-caption|data-label|data-tooltip-lines)="([^"]*)"/g, (_, attr, value) => {
+      part = part.replace(/\b(aria-label|title|placeholder|alt|label|data-label|data-tooltip-lines)="([^"]*)"/g, (_, attr, value) => {
         const decoded = decode(value);
         const translated = attr === 'data-tooltip-lines' ? JSON.stringify(JSON.parse(decoded).map((line) => translate(line, options.locale))) : translate(decoded, options.locale);
         return `${attr}="${escape(translated)}"`;

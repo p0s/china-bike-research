@@ -67,7 +67,7 @@ test('product galleries are explicit, keyboard-operable, and motion-safe', () =>
   assert.match(script, /event\.key === 'Home'/);
   assert.match(script, /event\.key === 'End'/);
   assert.doesNotMatch(script, /fallbackApplied|dataset\.fallback/);
-  assert.match(styles, /\.model-gallery-strip \{[^}]*grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /\.model-gallery-strip \{[^}]*grid-auto-flow: column;[^}]*overflow-x: auto/);
   assert.match(styles, /\.gallery-hero-image\.is-switching \{[^}]*opacity: \.18/);
   assert.match(styles, /\.gallery-thumb\[aria-pressed="true"\]/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);

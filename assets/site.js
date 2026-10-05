@@ -15,6 +15,37 @@ void import('./analytics-event.js').then((events) => {
 (async () => {
   const base = document.body.dataset.base ?? '';
   const locale = document.documentElement.lang;
+  // Native open disclosures keep evidence readable without JavaScript. Enhance
+  // them to compact panels, then open the complete ancestor chain for deep links.
+  const sourceRecords = document.querySelector('#source-records');
+  if (sourceRecords instanceof HTMLDetailsElement) sourceRecords.open = false;
+  const stickyHeader = document.querySelector('.site-header');
+  const updateHeaderOffset = () => document.documentElement.style.setProperty(
+    '--sticky-header-offset', `${(stickyHeader?.getBoundingClientRect().height ?? 60) + 16}px`);
+  updateHeaderOffset();
+  if (stickyHeader && typeof ResizeObserver !== 'undefined') new ResizeObserver(updateHeaderOffset).observe(stickyHeader);
+  const openFragment = (hash, focus = false) => {
+    let id;
+    try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+    const target = id ? document.getElementById(id) : null;
+    if (!sourceRecords || !target) return;
+    for (let node = target; node; node = node.parentElement) {
+      if (node instanceof HTMLDetailsElement) node.open = true;
+    }
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      if (focus && target instanceof HTMLDetailsElement) target.querySelector('summary')?.focus({ preventScroll: true });
+    });
+  };
+  if (location.hash) openFragment(location.hash);
+  addEventListener('hashchange', () => openFragment(location.hash));
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+    const anchor = event.target.closest('a[href]');
+    if (!anchor || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const destination = new URL(anchor.href, location.href);
+    if (destination.origin === location.origin && destination.pathname === location.pathname && destination.search === location.search && destination.hash) openFragment(destination.hash, true);
+  });
   document.addEventListener('click', (event) => {
     if (!(event instanceof MouseEvent) || !event.isTrusted || event.button !== 0) return;
     if (!(event.target instanceof Element)) return;
@@ -38,12 +69,12 @@ void import('./analytics-event.js').then((events) => {
   if (locale === 'zh-Hans' || locale === 'de') {
     const translateNode = (node) => {
       if (node.nodeType === Node.TEXT_NODE) {
-        if (node.parentElement?.closest('script,style,code,textarea,[data-original-language]')) return;
+        if (node.parentElement?.closest('script,style,code,textarea,[data-original-language],[data-localized-caption]')) return;
         const translated = translate(node.nodeValue, locale);
         if (translated !== node.nodeValue) node.nodeValue = translated;
         return;
       }
-      if (!(node instanceof Element) || node.matches('script,style,code,textarea,[data-original-language]')) return;
+      if (!(node instanceof Element) || node.matches('script,style,code,textarea,[data-original-language],[data-localized-caption]')) return;
       for (const attribute of ['aria-label', 'title', 'placeholder', 'alt']) {
         if (!node.hasAttribute(attribute)) continue;
         const value = node.getAttribute(attribute);
@@ -135,7 +166,7 @@ void import('./analytics-event.js').then((events) => {
         image.hidden = true;
         image.closest('.model-figure')?.classList.add('is-unavailable');
         const caption = image.closest('[data-image-gallery]')?.querySelector('[data-image-caption-status][data-gallery-caption]');
-        if (caption) caption.textContent = 'Source image unavailable. Choose another view or open the source.';
+        if (caption) caption.textContent = translate('Source image unavailable. Choose another view or open the source.', locale);
         return;
       }
       if (image.dataset.imageFailureHandled === 'true') return;
@@ -179,7 +210,7 @@ void import('./analytics-event.js').then((events) => {
     });
     if (image.complete && image.currentSrc && image.naturalWidth === 0) hideUnavailable();
   }
-  document.querySelectorAll('[data-product-image], .product-image img, .gallery-thumb img, .credit-image img').forEach(enableImageFailureHandling);
+  document.querySelectorAll('[data-product-image], .product-image img, .gallery-thumb img, .gallery-all-images img, .credit-image img').forEach(enableImageFailureHandling);
 
   document.querySelectorAll('[data-blog-header-image], [data-blog-bike-image], [data-blog-mascot]').forEach((image) => {
     const hideUnavailable = () => {
@@ -223,6 +254,7 @@ void import('./analytics-event.js').then((events) => {
         if (href) sourceLink.href = href;
       }
       buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      button.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
       hero.src = nextSrc;
     };
 
