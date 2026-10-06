@@ -1,4 +1,5 @@
 import { normalizeMaterialSearch } from './catalog-search.js';
+import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
@@ -15,6 +16,7 @@ void import('./analytics-event.js').then((events) => {
 (async () => {
   const base = document.body.dataset.base ?? '';
   const locale = document.documentElement.lang;
+  initArticleVideos();
   // Native open disclosures keep evidence readable without JavaScript. Enhance
   // them to compact panels, then open the complete ancestor chain for deep links.
   const sourceRecords = document.querySelector('#source-records');
@@ -1830,14 +1832,18 @@ void import('./analytics-event.js').then((events) => {
   });
 })();
 
-(() => {
+(async () => {
   const root = document.querySelector('[data-bike-builder]');
   const dataNode = document.querySelector('#build-configurator-data');
-  if (!(root instanceof HTMLElement) || !(dataNode instanceof HTMLScriptElement)) return;
+  if (!(root instanceof HTMLFieldSetElement) || !(dataNode instanceof HTMLScriptElement)) return;
 
   let data;
   try { data = JSON.parse(dataNode.textContent || '{}'); } catch { return; }
   if (data?.schemaVersion !== 2 || !Array.isArray(data.bases) || !Array.isArray(data.parts)) return;
+
+  let presentation;
+  try { presentation = await import('./builder-presentation.js'); } catch { return; }
+  const { buildBaseFacts, buildCompatibilityMessages, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
 
   const storageKey = 'china-bike-builder-v2';
   const bases = new Map(data.bases.map((base) => [base.id, base]));
@@ -1847,7 +1853,7 @@ void import('./analytics-event.js').then((events) => {
   const baseLink = root.querySelector('[data-build-base-link]');
   const baseFacts = root.querySelector('[data-build-base-facts]');
   const startingPointWarning = root.querySelector('[data-build-starting-point-warning]');
-  if (baseSelect instanceof HTMLSelectElement) {
+  if (baseSelect instanceof HTMLSelectElement && !baseSelect.querySelector('option[value=""]')) {
     const pendingOption = document.createElement('option');
     pendingOption.value = '';
     pendingOption.disabled = true;
@@ -1859,21 +1865,9 @@ void import('./analytics-event.js').then((events) => {
   const baseWeight = root.querySelector('[data-build-base-weight]');
   const basePriceField = root.querySelector('[data-build-base-price-field]');
   const baseWeightField = root.querySelector('[data-build-base-weight-field]');
-  const packageWeightField = document.createElement('label');
-  packageWeightField.className = 'builder-package-weight';
-  const packageLabel = document.createElement('span');
-  packageLabel.textContent = 'Fork + remaining frame-package weight (g)';
-  const packageWeight = document.createElement('input');
-  packageWeight.type = 'number';
-  packageWeight.min = '0';
-  packageWeight.step = 'any';
-  packageWeight.placeholder = 'Unknown';
-  packageWeight.dataset.buildPackageWeight = '';
-  packageWeight.setAttribute('aria-label', 'Fork and remaining frame-package weight in grams');
-  const packageNote = document.createElement('small');
-  packageNote.textContent = 'Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.';
-  packageWeightField.append(packageLabel, packageWeight, packageNote);
-  baseCustom?.append(packageWeightField);
+  const packageWeightField = root.querySelector('[data-build-package-weight-field]');
+  const packageWeight = root.querySelector('[data-build-package-weight]');
+  if (!(packageWeightField instanceof HTMLElement) || !(packageWeight instanceof HTMLInputElement)) return;
 
   const totalPrice = root.querySelector('[data-build-total-price]');
   const totalWeight = root.querySelector('[data-build-total-weight]');
@@ -1918,18 +1912,6 @@ void import('./analytics-event.js').then((events) => {
   const firstBaseId = data.bases[0]?.id || '';
   let state = restoreBuildState(data, new URLSearchParams(location.search), readStoredState());
 
-  function formatYuan(value) {
-    return `¥${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.round(value))}`;
-  }
-
-  function formatPriceRange(low, high) {
-    return low === high ? formatYuan(low) : `${formatYuan(low)}–${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.round(high))}`;
-  }
-
-  function formatWeight(grams) {
-    return grams >= 1000 ? `${(grams / 1000).toFixed(2)} kg` : `${Math.round(grams)} g`;
-  }
-
   function selectedPart(slot) {
     const id = state.selections[slot];
     return id && !['custom', 'included', 'in-base'].includes(id) ? parts.get(id) || null : null;
@@ -1968,65 +1950,7 @@ void import('./analytics-event.js').then((events) => {
   }
 
   function compatibilityMessages(base, covered) {
-    const messages = [];
-    const bottomBracket = covered.has('bottom-bracket') ? null : selectedPart('bottom-bracket');
-    const acceptedShells = bottomBracket?.compatibility?.accepted_frame_shells
-      || bottomBracket?.compatibility?.frame_bottom_bracket
-      || [];
-    if (bottomBracket && (!base.bottomBracketKey || base.bottomBracketStatus === 'conflicting')) messages.push('Bottom bracket shell is unresolved or conflicting; confirm the exact frame standard before selecting this part.');
-    if (bottomBracket && base.bottomBracketKey && acceptedShells.length && !acceptedShells.includes(base.bottomBracketKey)) {
-      messages.push(`${bottomBracket.maker} ${bottomBracket.name} does not list ${base.bottomBracket} frame compatibility.`);
-    }
-    const tires = covered.has('tires') ? null : selectedPart('tires');
-    const tireWidth = Number(tires?.compatibility?.nominal_tire_width_mm ?? tires?.compatibility?.tire_width_mm);
-    const drivetrain = selectedPart('drivetrain');
-    const layout = drivetrain?.compatibility?.drivetrain_layout
-      || (state.selections.drivetrain === 'included' ? base.drivetrainLayout : null);
-    const limits = base.tireClearanceByDrivetrain;
-    const clearanceLimit = limits
-      ? (layout ? numberOrNull(limits[layout]) : null)
-      : numberOrNull(base.tireClearanceMm);
-    if (limits && !layout) messages.push(`Confirm drivetrain: tire limits are ${limits.single ?? 'unknown'}/${limits.double ?? 'unknown'} mm (1×/2×). Choose a known layout before using these limits; an unknown layout has no confirmed maximum.`);
-    if (tires && clearanceLimit === null) messages.push('Tire clearance for the selected frame and drivetrain is not recorded; confirm it before buying.');
-    if (tires && Number.isFinite(tireWidth) && Number.isFinite(clearanceLimit) && tireWidth > clearanceLimit) {
-      messages.push(`${tireWidth} mm tires exceed the frame's published ${clearanceLimit} mm limit${layout ? ` for ${layout === 'single' ? '1×' : '2×'}` : ''}.`);
-    }
-    if (base.tireClearanceStatus === 'manufacturer-revision-conflict') messages.push('Manufacturer tire-clearance revisions conflict; the recorded limit is a conservative warning threshold. Confirm the exact generation and manual before buying.');
-    const shifting = drivetrain?.compatibility?.shifting_type;
-    const support = base.drivetrainCompatibility;
-    if (support && (!shifting || !layout)) messages.push('Confirm shifting type and chainring layout against the frame’s manufacturer-supported combinations.');
-    if (support && shifting && layout && support[shifting]?.[layout] === false) messages.push('The manufacturer does not support this shifting type and chainring layout on the selected frame.');
-    if (support && typeof support === 'object') {
-      if (shifting && layout && support[shifting]?.[layout] == null) messages.push('This shifting and chainring combination is not confirmed by the frame’s manufacturer. Confirm it before buying.');
-      if (layout === 'single' && Number.isFinite(support.single_max_chainring_teeth)) {
-        const teeth = drivetrain?.compatibility?.largest_chainring_teeth;
-        if (!Number.isInteger(teeth) || teeth <= 0) messages.push('Confirm the selected 1× chainring tooth count against the manufacturer’s published maximum.');
-        else if (teeth > support.single_max_chainring_teeth) messages.push(`${teeth}T chainring exceeds the frame's published ${support.single_max_chainring_teeth}T 1× maximum.`);
-      }
-      if (support.electronic_wireless_only && shifting === 'electronic') {
-        const wireless = drivetrain?.compatibility?.wireless_shifting;
-        if (wireless === false) messages.push('This frame requires wireless electronic shifting; the selected drivetrain is recorded as wired.');
-        else if (wireless !== true) messages.push('Confirm that the selected electronic drivetrain meets the frame’s wireless-shifting requirement.');
-      }
-      if (support.supported_manufacturers?.length) {
-        const maker = drivetrain?.maker?.trim().toLowerCase();
-        if (!maker) messages.push('Confirm the drivetrain manufacturer against the frame’s documented supported brands.');
-        else if (!support.supported_manufacturers.includes(maker)) messages.push('The selected drivetrain manufacturer is outside the frame’s documented support. Confirm exact compatibility before buying.');
-      }
-    }
-    const wheelset = covered.has('wheelset') ? null : selectedPart('wheelset');
-    const rotors = covered.has('rotors') ? null : selectedPart('rotors');
-    const rotorMount = rotors?.compatibility?.rotor_mount;
-    const hubMount = wheelset?.compatibility?.rotor_mount;
-    if (rotorMount && hubMount && rotorMount !== hubMount) {
-      messages.push(`Rotors use ${rotorMount}, but the wheelset lists ${hubMount}; confirm a compatible rotor or explicitly supported adapter.`);
-    }
-    const requiredFreehub = drivetrain?.compatibility?.required_freehub;
-    const availableFreehubs = wheelset?.compatibility?.freehubs || [];
-    if (requiredFreehub && availableFreehubs.length && !availableFreehubs.includes(requiredFreehub)) {
-      messages.push(`${drivetrain.maker} ${drivetrain.name} requires ${requiredFreehub}; the selected wheelset does not list it.`);
-    }
-    return messages;
+    return buildCompatibilityMessages(base, covered, selectedPart, state.selections);
   }
 
   function updateUrl(historyMode = 'replace') {
@@ -2080,17 +2004,7 @@ void import('./analytics-event.js').then((events) => {
       baseLink.href = base.url;
       baseLink.hidden = Boolean(state.unavailableStartingPoint);
     }
-    if (baseFacts) baseFacts.textContent = [
-      `${isComplete ? 'Complete bike' : 'Frameset'}${base.stage === 'candidate' ? ' · research stage' : ''}`,
-      base.bottomBracket || 'bottom bracket unknown',
-      base.tireClearanceLabel ? `${base.tireClearanceLabel} tire clearance` : base.tireClearanceMm ? `${base.tireClearanceMm} mm tire clearance` : 'tire clearance unknown',
-      base.included.length ? base.included.join(', ') : 'package contents incomplete',
-      base.priceNote || '',
-      base.weightBasis || '',
-      base.tireClearanceNote || '',
-      base.drivetrainCompatibility?.note ? translate(base.drivetrainCompatibility.note, document.documentElement.lang) : '',
-      base.forkCaliperNote || ''
-    ].filter(Boolean).join(' · ');
+    if (baseFacts) baseFacts.textContent = buildBaseFacts(base, document.documentElement.lang);
     if (state.unavailableStartingPoint && baseFacts) baseFacts.textContent = `${translate('Requested starting point', document.documentElement.lang)}: ${state.requestedBaseId}`;
     if (buildName) buildName.textContent = state.unavailableStartingPoint
       ? translate('Choose an exact starting point', document.documentElement.lang)
@@ -2278,6 +2192,7 @@ void import('./analytics-event.js').then((events) => {
     }
     persist();
     updateUrl(historyMode);
+    return true;
   }
 
   baseSelect?.addEventListener('change', () => {
@@ -2361,5 +2276,10 @@ void import('./analytics-event.js').then((events) => {
     render();
   });
 
-  render();
+  if (!render()) return;
+  root.disabled = false;
+  const previewStatus = document.querySelector('[data-build-preview-status]');
+  previewStatus?.classList.add('is-ready');
+  previewStatus?.querySelector('[data-build-static-label]')?.setAttribute('aria-hidden', 'true');
+  previewStatus?.querySelector('[data-build-ready-label]')?.removeAttribute('aria-hidden');
 })();

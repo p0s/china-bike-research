@@ -78,9 +78,9 @@ function renderSection(ctx, post, section) {
   const photos = post.photo_sections.filter((placement) => placement.section_id === section.id).flatMap((placement) => placement.ids);
   return `<section id="${section.id}"><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${inline(paragraph, ctx)}</p>`).join('')}${section.bullets?.length ? `<ul class="article-checklist">${section.bullets.map((item) => `<li>${inline(item, ctx)}</li>`).join('')}</ul>` : ''}${post.comparison?.section_id === section.id ? renderEvidenceTable(ctx, post) : ''}${post.example?.section_id === section.id ? renderBuildExample(ctx) : ''}${worksheet ? `<div class="article-table-wrap" role="region" tabindex="0" aria-label="${escapeAttr(worksheet.caption)}"><table class="article-table article-table-worksheet"><caption>${escapeHtml(worksheet.caption)}</caption><thead><tr>${worksheet.columns.map((column) => `<th scope="col">${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${worksheet.rows.map((row) => `<tr><th scope="row">${escapeHtml(row[0])}</th>${row.slice(1).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}${photos.length ? renderPostPhotos(ctx, post, photos) : ''}${renderPostVideos(ctx, post, section.id)}</section>`;
 }
-function articleCard(ctx, post, heading = 'h2') {
+function articleCard(ctx, post, heading = 'h2', compactCard = false) {
   const copy = copyFor(post, ctx);
-  return `<article class="article-card">${renderEditorialImage(ctx, post.image_id, { card: true, href: url(ctx.base, `/blog/${post.slug}/`) })}<${heading}><a href="${url(ctx.base, `/blog/${post.slug}/`)}">${escapeHtml(copy.title)}</a></${heading}><p>${escapeHtml(copy.description)}</p><time datetime="${post.dateModified}">${post.dateModified}</time></article>`;
+  return `<article class="article-card">${renderEditorialImage(ctx, post.image_id, { card: true, compactCard, href: url(ctx.base, `/blog/${post.slug}/`) })}<${heading}><a href="${url(ctx.base, `/blog/${post.slug}/`)}">${escapeHtml(copy.title)}</a></${heading}><p>${escapeHtml(copy.description)}</p><time datetime="${post.dateModified}">${post.dateModified}</time></article>`;
 }
 export function renderHomeArticles(ctx) {
   // Use the published feed shared by the blog; scheduled drafts never enter it.
@@ -88,7 +88,7 @@ export function renderHomeArticles(ctx) {
   const posts = ['incolor-speedster-sr-vs-sr-plus', 'gravel-bikes-around-5000-yuan', 'buy-chinese-bikes-europe']
     .map((slug) => bySlug.get(slug)).filter(Boolean);
   if (!posts.length) return '';
-  return `<section class="homepage-articles page" aria-labelledby="homepage-articles-title"><div class="homepage-section-heading"><h2 id="homepage-articles-title">Read before you buy</h2><a href="${url(ctx.base, '/blog/')}">All articles <span aria-hidden="true">→</span></a></div><div class="homepage-article-grid">${posts.map((post) => articleCard(ctx, post, 'h3')).join('')}</div></section>`;
+  return `<section class="homepage-articles page" aria-labelledby="homepage-articles-title"><div class="homepage-section-heading"><h2 id="homepage-articles-title">Read before you buy</h2><a href="${url(ctx.base, '/blog/')}">All articles <span aria-hidden="true">→</span></a></div><div class="homepage-article-grid">${posts.map((post) => articleCard(ctx, post, 'h3', true)).join('')}</div></section>`;
 }
 function postLayout(ctx, options) {
   return layout({ base: ctx.base, siteUrl: ctx.siteUrl, repositoryUrl: ctx.repositoryUrl, locale: ctx.locale ?? 'en', googleSiteVerification: ctx.googleSiteVerification, current: 'blog', datasetUpdated: ctx.siteLastmod, catalogReviewed: ctx.data.meta.snapshot_date, ...options });

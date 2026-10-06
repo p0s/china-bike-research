@@ -1,3 +1,4 @@
+import { buildCompatibilityMessages } from '../assets/builder-presentation.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -14,7 +15,7 @@ const payload=locale=>JSON.parse(renderBikeBuilder({...ctx,locale}).match(/id="b
 const bases=payload('en').bases;
 const base=id=>bases.find(x=>x.id===id);
 function messages(id,width,layout='double',shifting='electronic',bottom=false) {
- return vm.runInNewContext(`(${source.trim()})(base,new Map())`,{numberOrNull,base:base(id),state:{selections:{}},selectedPart:slot=>slot==='tires'?{compatibility:{nominal_tire_width_mm:width}}:slot==='drivetrain'?{compatibility:{drivetrain_layout:layout,shifting_type:shifting}}:slot==='bottom-bracket'&&bottom?{compatibility:{accepted_frame_shells:['bb86']}}:null});
+ return vm.runInNewContext(`(${source.trim()})(base,new Map())`,{numberOrNull,buildCompatibilityMessages,base:base(id),state:{selections:{}},selectedPart:slot=>slot==='tires'?{compatibility:{nominal_tire_width_mm:width}}:slot==='drivetrain'?{compatibility:{drivetrain_layout:layout,shifting_type:shifting}}:slot==='bottom-bracket'&&bottom?{compatibility:{accepted_frame_shells:['bb86']}}:null});
 }
 test('stock and fitted observations never become validated tire maxima',()=>{
  for(const id of ['camp-gx600-pes','twitter-v3-wheeltop-eds','candidate-xlab-rs9','candidate-triaero-a9']){
@@ -49,7 +50,7 @@ test('conflicting BB92 and BB86 evidence never certifies the selectable BB86 par
  const renderSource=fs.readFileSync(new URL('../src/render.mjs',import.meta.url),'utf8');
  const keySource=renderSource.slice(renderSource.indexOf('function builderBottomBracketKey('),renderSource.indexOf('function builderPriceBounds('));
  const key=vm.runInNewContext(`(${keySource.trim()})(value)`,{value:facts.bottom_bracket});assert.equal(key,null);
- const result=vm.runInNewContext(`(${source.trim()})(base,new Map())`,{numberOrNull,base:{bottomBracket:facts.bottom_bracket,bottomBracketKey:key,bottomBracketStatus:facts.bottom_bracket_standard.status},state:{selections:{}},selectedPart:slot=>slot==='bottom-bracket'?{compatibility:{accepted_frame_shells:['bb86']}}:null});
+ const result=vm.runInNewContext(`(${source.trim()})(base,new Map())`,{numberOrNull,buildCompatibilityMessages,base:{bottomBracket:facts.bottom_bracket,bottomBracketKey:key,bottomBracketStatus:facts.bottom_bracket_standard.status},state:{selections:{}},selectedPart:slot=>slot==='bottom-bracket'?{compatibility:{accepted_frame_shells:['bb86']}}:null});
  assert.match(result.join(' '),/shell is unresolved or conflicting/);
 });
 test('current AF01 geometry correction retains the two original cells in history',()=>{

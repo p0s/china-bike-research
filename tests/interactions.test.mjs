@@ -1,3 +1,4 @@
+import { buildCompatibilityMessages } from '../assets/builder-presentation.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -6,6 +7,7 @@ import { numberOrNull, compareNumbers, COMPARISON_SELECTION_LIMIT, normalizeSele
 
 const script = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
 const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
+const compatibilitySource = fs.readFileSync(new URL('../assets/builder-presentation.js', import.meta.url), 'utf8');
 
 function sourceNavigation(initialHash = '') {
   const listeners = new Map(), frames = [], pendingHashes = [], entries = [];
@@ -101,13 +103,12 @@ test('skip and ordinary section anchors retain their native default navigation',
 });
 
 test('builder applies 1x/2x clearance and fails conservatively for unknown layouts', () => {
-  const source = script.slice(script.indexOf('  function compatibilityMessages('), script.indexOf('  function updateUrl(', script.indexOf('  function compatibilityMessages(')));
-  const run = (layout, selections = {}) => vm.runInNewContext(`(${source.trim()})(base, new Map())`, {
-    numberOrNull,
-    base: { tireClearanceMm: 38, tireClearanceByDrivetrain: { single: 38, double: 32 }, drivetrainLayout: 'double' },
-    state: { selections },
-    selectedPart: (slot) => slot === 'tires' ? { compatibility: { nominal_tire_width_mm: 35 } } : slot === 'drivetrain' && layout ? { compatibility: { drivetrain_layout: layout } } : null
-  });
+  const run = (layout, selections = {}) => buildCompatibilityMessages(
+    { tireClearanceMm: 38, tireClearanceByDrivetrain: { single: 38, double: 32 }, drivetrainLayout: 'double' },
+    new Map(),
+    slot => slot === 'tires' ? { compatibility: { nominal_tire_width_mm: 35 } } : slot === 'drivetrain' && layout ? { compatibility: { drivetrain_layout: layout } } : null,
+    selections
+  );
   assert.equal(run('single').length, 0);
   assert.match(run('double').join(' '), /32 mm limit for 2×/);
   assert.match(run(null).join(' '), /Confirm drivetrain.*38\/32 mm.*unknown layout/ );
@@ -276,11 +277,11 @@ test('bike builder persists shareable state and avoids package double counting',
   assert.match(script, /removedWeightField\.hidden = !needsRemovedWeight/);
   assert.match(script, /const delta = partWeight - removedPartWeight/);
   assert.match(script, /missingWeights\.push\(`\$\{slot\} replacement delta`\)/);
-  assert.match(script, /accepted_frame_shells/);
-  assert.match(script, /does not list \$\{base\.bottomBracket\} frame compatibility/);
-  assert.match(script, /nominal_tire_width_mm/);
-  assert.match(script, /tires exceed the frame's published/);
-  assert.match(script, /the selected wheelset does not list it/);
+  assert.match(compatibilitySource, /accepted_frame_shells/);
+  assert.match(compatibilitySource, /does not list \$\{base\.bottomBracket\} frame compatibility/);
+  assert.match(compatibilitySource, /nominal_tire_width_mm/);
+  assert.match(compatibilitySource, /tires exceed the frame's published/);
+  assert.match(compatibilitySource, /the selected wheelset does not list it/);
   assert.match(styles, /\.builder-summary \{[\s\S]*?position: sticky;/);
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.builder-summary \{[\s\S]*?position: sticky;/);
 });

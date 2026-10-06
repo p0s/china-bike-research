@@ -29,25 +29,35 @@ for (const locale of ['en', 'zh-Hans', 'de']) for (const base of ['', '/china-bi
     for (const post of visible) {
       const html = renderPost({ ...ctx, locale, base }, post, visible);
       const placements = postVideos.articles[post.slug] ?? [];
-      assert.equal([...html.matchAll(/<iframe /g)].length, placements.length);
+      assert.equal([...html.matchAll(/<iframe /g)].length, 0);
+      assert.equal([...html.matchAll(/data-article-video=/g)].length, placements.length);
       if (!placements.length) assert.doesNotMatch(html, /class="article-videos"/);
       for (const placement of placements) {
         const video = videoById.get(placement.video_id);
         const start = html.indexOf(`<section id="${placement.section_id}">`);
-        const embed = html.indexOf(`https://www.youtube-nocookie.com/embed/${video.youtube_video_id}?rel=0`);
+        const embed = html.indexOf(`data-article-video="${video.youtube_video_id}"`);
         assert.ok(start >= 0 && embed > start && embed < html.indexOf('</section>', start));
         assert.ok(html.includes(escapeHtml(placement.context[locale])));
         assert.ok(html.includes(escapeHtml(video.title)));
         assert.ok(html.includes(escapeHtml(translate(video.disclosure, locale))));
         assert.ok(html.includes(`class="video-fallback" href="${video.url}"`));
-        assert.match(html.slice(embed, html.indexOf('</iframe>', embed)), /loading="lazy"/);
+        assert.match(html.slice(embed, html.indexOf('</div>', embed)), /class="video-load-button" type="button" aria-label="[^"]+" hidden/);
         assert.match(html, /data-original-language lang="en"/);
       }
-      assert.doesNotMatch(html, /autoplay|youtube\.com\/embed|<iframe src="[^h]/);
+      assert.doesNotMatch(html, /autoplay|youtube-nocookie\.com|<iframe/);
       assert.equal([...html.matchAll(/data-blog-bike-image/g)].length, postPhotos(post).length, `Retain model photographs: ${post.slug}`);
     }
   });
 }
+
+test('model players retain their existing lazy embed and metadata', () => {
+  const video = data.videos.find((video) => video.provider === 'youtube');
+  const html = renderVideoEntries([video]);
+  assert.ok(html.includes(`https://www.youtube-nocookie.com/embed/${video.youtube_video_id}?rel=0`));
+  assert.match(html, /loading="lazy"/);
+  assert.doesNotMatch(html, /data-article-video|autoplay/);
+  for (const text of [video.title, video.summary, video.disclosure]) assert.ok(html.includes(escapeHtml(text)));
+});
 
 test('invalid video identities, missing context, duplicated placements and XHS embeds fail before publication', () => {
   const mutate = (change) => { const registry = structuredClone(postVideos); change(registry); return registry; };
