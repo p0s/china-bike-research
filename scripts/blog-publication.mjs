@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {loadPosts} from '../src/lib/posts.mjs';
-import {loadSchedule, nextPublication, preparePublication, nextWakeRule, scheduleSeries} from '../src/lib/post-publication.mjs';
+import {loadSchedule, nextPublication, preparePublication, nextWakeRule, scheduleSeries, nextPendingArticles} from '../src/lib/post-publication.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const scheduleFile=path.join(root,'content/post-schedule.json');
 const stateFile=path.join(root,'.research/blog-publication-state.json');
@@ -17,7 +17,7 @@ const liveOptions=()=>({headers:{dnt:'1','sec-gpc':'1'},redirect:'error',signal:
 if(command==='status') {
  const next=nextPublication(queue,state.receipts);
  const progress=scheduleSeries(queue).map(series=>({id:series.id,total:series.entries.length,completed:series.entries.filter(entry=>entry.published_at&&state.receipts[entry.slug]?.published_at===entry.published_at).length}));
- console.log(JSON.stringify({...next,total:queue.entries.length,completed:progress.reduce((sum,item)=>sum+item.completed,0),series:progress,rrule:nextWakeRule(next)},null,2));
+ console.log(JSON.stringify({...next,total:queue.entries.length,completed:progress.reduce((sum,item)=>sum+item.completed,0),series:progress,cadence:queue.delivery?{min_gap_minutes:120,max_gap_minutes:180,remaining:queue.entries.filter(entry=>!entry.published_at||state.receipts[entry.slug]?.published_at!==entry.published_at).length}:undefined,rrule:nextWakeRule(next)},null,2));
 } else if(command==='prepare') {
  if(!slug || deployment) throw new Error('Usage: node scripts/blog-publication.mjs prepare EXACT-SLUG');
  write(scheduleFile,preparePublication(queue,state.receipts,slug));
@@ -37,10 +37,26 @@ if(command==='status') {
  const sitemapResponse=await fetch('https://chinesebikes.xyz/sitemap.xml',liveOptions());
  const sitemap=await sitemapResponse.text();
  if(sitemapResponse.status!==200||!proof.every(p=>sitemap.includes('https://chinesebikes.xyz'+p.route))) throw new Error('Live sitemap is missing the released article.');
- const indexResponse=await fetch('https://chinesebikes.xyz/blog/',liveOptions());
- const index=await indexResponse.text();
- if(indexResponse.status!==200||!index.includes('/blog/'+slug+'/')) throw new Error('Live blog index is missing the released article.');
- state.receipts[slug]={published_at:next.entry.published_at,verified_at:new Date().toISOString(),deployment_id:deployment,proof};
+ const indexProof=[],pendingProof=[];
+ const drafts=queue.entries.filter(entry=>!entry.published_at);
+ for(const prefix of LOCALES.map(locale=>LOCALE_PREFIXES[locale])) {
+  const route=prefix+'/blog/';
+  const response=await fetch('https://chinesebikes.xyz'+route,liveOptions());
+  const index=await response.text();
+  if(response.status!==200||!index.includes(prefix+'/blog/'+slug+'/')) throw new Error('Live blog index is missing the released article: '+route);
+  indexProof.push({route,sha256:digest(index)});
+  for(const draft of drafts) {
+   const draftRoute=prefix+'/blog/'+draft.slug+'/';
+   if(index.includes(draftRoute)||sitemap.includes('https://chinesebikes.xyz'+draftRoute)||fs.existsSync(path.join(root,'dist',draftRoute,'index.html'))) throw new Error('Unreleased article exposed early: '+draftRoute);
+  }
+  for(const draft of nextPendingArticles(queue)) {
+   const draftRoute=prefix+'/blog/'+draft.slug+'/';
+   const response=await fetch('https://chinesebikes.xyz'+draftRoute,liveOptions());
+   if(response.status!==404) throw new Error('Next draft is publicly available: '+draftRoute);
+   pendingProof.push({route:draftRoute,status:response.status});
+  }
+ }
+ state.receipts[slug]={published_at:next.entry.published_at,verified_at:new Date().toISOString(),deployment_id:deployment,proof,index_proof:indexProof,sitemap_sha256:digest(sitemap),pending_proof:pendingProof};
  write(stateFile,state);
  const following=nextPublication(queue,state.receipts);
  console.log(JSON.stringify({confirmed:slug,next:following,rrule:nextWakeRule(following)},null,2));

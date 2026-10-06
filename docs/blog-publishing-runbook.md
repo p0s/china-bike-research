@@ -1,79 +1,65 @@
-# Write and publish the China Bikes editorial series
+# Publish the China Bikes editorial series
 
-## Authority and fixed scope
-The user authorized writing and automatically publishing exactly twenty additional posts, starting three days after September 22, 2026, with randomized two-to-five-day gaps. The queue is `content/post-schedule.json`. The first release is September 25 at 20:20 Asia/Singapore. Current SPEC requires English, Simplified Chinese and German editions, a mascot cover and relevant credited bike photographs. Use the existing image-rights records and hosted assets.
+## Authority and scope
 
-The twenty original articles are scheduled drafts in `content/posts/`. On October 4, the user additionally authorized 100 distinct, high-quality articles and an eight-hour publishing cadence for that new series. Preserve the eighteen pending original articles and their original intervals. The two series share one coordinator and one heartbeat; the new series does not compress or replace the old one.
+All 120 queued articles are authored in English, Simplified Chinese and German. The user authorized a shared randomized two-to-three-hour cadence on October 6, 2026 for every remaining article, including the original September guides. This replaces the original two-to-five-day gaps and the October eight-hour cadence for pending delivery. Preserve every existing publication and live-confirmation timestamp.
 
-Article source files are deliberately visible in this public repository, but drafts stay absent from the website until explicitly released. Existing articles remain published. Never catch up by publishing several articles in one wake, rerandomize the original intervals or expose an unfinished article.
+The current queue uses schema version 3 in `content/post-schedule.json`. Original series entries and calendars remain historical metadata; `delivery.entries` is the active ordered plan. Its first slot starts immediately after activation. Every later slot has a once-selected 120–180-minute gap after the previous article's actual successful live confirmation. Neither queue can publish around an unverified release. Downtime shifts delivery later; no bulk catch-up or rerandomization.
 
-## Finish the additional hundred before activation
-
-Follow `docs/editorial-guidelines.md` and the 100 distinct briefs in `docs/editorial-series-2026-10.md`. Author English, Simplified Chinese and German editions with equivalent facts and section anchors, relevant existing mascot art and credited real-bike photographs. Reuse curated videos only where they explain the section. Do not invent current offers, experience, safety approvals, source dates or image rights.
-
-While writing, keep `publication_status: draft`, `series_id: october-2026` and the fixed `series_order` from the brief. The bounded private plan under `.research/editorial-100-2026-10-04/` tracks progress; it is not proof that an article is ready. Read each full edition, verify its material sources, check the promised contribution and overlap, and record `editorial_review` with `status: reviewed` and the actual ISO `reviewed_at` only after that review. Do not stamp reviews automatically.
-
-Continue writing in bounded groups of up to ten full articles per authoring wake. Keep one writer, preserve unfinished work and update the checkpoint. If writing remains, an original queue `wait` or `complete` state does not end the authoring task. Rearm this same heartbeat for a future continuation, normally two hours later. Stay quiet about unchanged waiting states. Report completion or an actionable failure.
-
-If an original article becomes due, preserve the exact authoring work on its owned feature branch before using a separate release branch from current main. Release that one article through the usual checks and live proof, then return to authoring and integrate the fresh main without overwriting the saved work. Never include incomplete authoring work in an article-release PR.
-
-After all 100 editions and reviews are complete, run `node scripts/blog-series-activate.mjs`. It requires exactly 100 reviewed articles in orders 1–100, preserves the original queue and receipts, and starts the first new slot eight hours after readiness. It enrolls the series in schedule schema version 2. An interrupted enrollment fails the build closed; rerun the activation command to recover the same private journal and first date. Run the complete repository gate and inspect the private draft preview on desktop and mobile, then deliver the ready series and scheduler through its signed PR, required checks and deployment. No new article is released by this preparation deployment.
-
-Subsequent new slots keep an eight-hour minimum after the preceding new article's actual live verification. Original releases may occur between new releases, according to their independent unchanged intervals. Provider or computer downtime shifts publication later. It never skips articles or creates a burst.
+The current already-authored series has completed editorial review, mascot covers and credited real-bike photographs. Recheck each article before release and repair missing or inaccurate material then. An unfinished article must wait. Existing source files on GitHub do not make a draft public on the website.
 
 ## Ownership and durable state
+
 - Repository: p0s/china-bike-research; production: https://chinesebikes.xyz.
-- Use this task's existing owned checkout, recorded in its local checkpoint and automation prompt. Do not edit the unrelated canonical checkout.
-- One same-thread heartbeat: `publish-china-bikes-editorial-series`. Keep this task and checkout available until the series ends.
-- Git records which articles were prepared for release. `.research/blog-publication-state.json` records actual successful live verification and deployment IDs. Preserve it across branch changes; do not add private machine state to the public repository.
-- The next heartbeat prompt must preserve the latest confirmed slug, verification timestamp and deployment ID as a second recovery record. If local receipt state is missing, verify all prepared articles again; use the new verification time conservatively, rather than inventing an earlier publication time.
-- Local automation needs the computer on, Codex running and authenticated CLI access. If a run is delayed, subsequent releases move later; the queue never compresses the selected intervals to catch up.
+- Use only the owned checkout recorded in the private checkpoint. Read its local `AGENTS.override.md`, `AGENTS.md`, `VISION.md`, `SPEC.md` and `docs/editorial-guidelines.md`. Preserve unrelated state and keep one writer.
+- Reuse the same-thread heartbeat `publish-china-bikes-editorial-series`; no duplicate coordinator, worker or watcher.
+- Git records prepared releases. Ignored `.research/blog-publication-state.json` records actual live receipts and deployment IDs. Never add private machine state or raw source evidence to Git.
+- Keep one private checkpoint of at most 25 lines, with the current baseline plus latest delta. Store historical proof in immutable dated private packages referenced by path and SHA256.
+- Local automation requires this computer on, Codex running and authenticated existing CLIs. Delays never compress a selected gap.
+
+## Cadence activation and recovery
+
+Run `node scripts/blog-cadence-activate.mjs` once in the owned feature branch. It requires the reviewed hundred already scheduled and refuses an unfinished exact release. It preserves all original queue entries, orders remaining articles by their original calendar while retaining each series' editorial order, and stores one random delivery plan in schema version 3. The private activation journal recovers the same intervals after an interrupted write. Rerunning an active migration is a no-op.
+
+Validate and deliver the migration through a signed feature PR and required checks. It may accompany the first exact article release; only that article may become newly public. Do not prepare a second article before the first is confirmed live.
 
 ## Every wake
-1. Read this runbook and the local `.research/blog-series-checkpoint.md`. Inspect Git status, branch ownership and current remote main before changing anything. Preserve any unfinished exact release and unrelated state.
-2. Run `node scripts/blog-publication.mjs status`. This returns one of: wait, publish, verify or complete. Do not infer state just from a date.
-3. After authoring/activation is finished: if wait, rearm the same heartbeat for the returned next time and stop. If complete, set the heartbeat PAUSED, report both series fully verified and stop. A `complete` result from the legacy queue alone must not stop unfinished authoring of the additional hundred.
-4. If verify, finish or recover that exact release before preparing another. A published_at value is a prepared release, not proof that production serves it. Recover the matching PR/merge/deployment using Git history and the checkpoint.
 
-## Prepare one due article
-1. Synchronize the owned checkout with remote main without overwriting dirty work. Create a feature branch for the exact due slug. Never push directly to main. Keep any prior failed release intact.
-2. Inspect all three language editions, relevant photo captions and inline sources. Reopen current purchasing routes and any import, shipping, warranty or stock claims material to this article. Verify owner anecdotes remain attributed to their original dates and models. Do not treat a page fetch failure as evidence of changed policy.
-3. Fix factual changes in all editions, cite the current source and record the actual review date. Never automatically refresh every research date; the original source-check date remains valid historical provenance. Do not fabricate stock, prices, personal testing or an overseas owner experience.
-4. Run `node scripts/blog-publication.mjs prepare EXACT-SLUG`. It refuses early, duplicate and out-of-order preparation, and enforces the gap after the previous live verification. This is the only queue mutation needed to expose the due article.
-5. Run the repository's complete `npm run check` gate once for the changed release (prefer `codex-pnpm-check check`). Inspect the released article on desktop and mobile. Run the image report if image sources or assets changed. Fix failures before proceeding.
-6. Run signing/GitHub preflight; report p0s account, repository and feature branch. Make a signed commit, push that exact branch, create a public pull request with validation and the due date, and attach it to this task. Wait for required checks, then merge through the PR. No direct-main push, force push or workflow/secret changes.
+1. Inspect owned Git status and current privacy-safe remote main. Preserve any unfinished candidate. Never use old rewritten ancestry.
+2. Run `node scripts/blog-publication.mjs status`. Follow its `wait`, `publish`, `verify` or `complete` result.
+3. If `wait`, rearm this heartbeat for its returned future one-shot rule. If `complete`, set it PAUSED and report all 120 receipts verified.
+4. If `verify`, finish or recover that exact PR, merge, deployment and live proof before any other article.
+5. Before a heavyweight gate or production build, run the installed live no-cache storage guard. If blocked, preserve the candidate and rearm one bounded retry. Never bypass the guard or remove protected files.
 
-## Deploy and prove the one release
-1. Fetch and fast-forward to the exact merged main commit in this owned checkout. Check it contains the intended queue change and no additional queued release. Inspect current deployment configuration; this site uses Cloudflare Worker Static Assets. Historical GitHub Pages wording does not authorize switching hosts.
-2. Use the existing authenticated local Wrangler and existing project/account to deploy. Require the owner-only, ignored `.research/cloudflare-account-id.env` file in this checkout; it contains the exact `CLOUDFLARE_ACCOUNT_ID` for the existing account. Load it without printing the value, then deploy in that same shell:
+## Review and prepare one due article
 
-   ```sh
-   set -eu
-   set -a
-   . .research/cloudflare-account-id.env
-   set +a
-   : "${CLOUDFLARE_ACCOUNT_ID:?missing Cloudflare account ID}"
-   read -r BLOG_WRANGLER_PROFILE < .research/blog-cloudflare-profile.txt
-   : "${BLOG_WRANGLER_PROFILE:?missing verified saved profile}"
-   env WRANGLER_LOG_PATH=/private/tmp/china-bikes-blog-publish npx --no-install wrangler deploy --profile "$BLOG_WRANGLER_PROFILE"
-   ```
+1. Start its feature branch from current remote main in the owned checkout, preserving any dirty candidate. Never push directly to main.
+2. Read all three editions as a reader. Check the opening, useful contribution, natural voice, distinct search purpose, section anchors and related links to already-published guides. Reuse relevant completed authoring review.
+3. Reopen linked primary sources for material seller, shipping, import, stock, warranty, technical and safety claims. Preserve dated owner anecdotes and original evidence dates. A failed fetch is not evidence that a policy changed.
+4. Check the mascot header and relevant real-bike photos, exact pictured configuration, rights/provenance, credits, localized alt text and fallback. Repair omissions before release; never invent image rights, specifications or experience.
+5. Make factual corrections in all three editions. Record actual review/modified dates without automatically refreshing older source observations. Publication dates must describe the actual release.
+6. Run `node scripts/blog-publication.mjs prepare EXACT-SLUG`. It rejects early, duplicate and out-of-order release and is the only per-article queue mutation needed.
+7. Run the complete `npm run check` gate once per changed release, preferably `developer-storage-cache run -- codex-pnpm-check check`. Inspect all three language pages on desktop and mobile; run `npm run image:report` once when image metadata/assets change. Reuse passing checks while relevant inputs remain unchanged.
+8. Run signing/GitHub preflight and report p0s, p0s/china-bike-research and the exact feature branch. Inspect every outgoing commit for private artifacts or future drafts. Sign, push only that branch, create and attach its PR, wait for required checks and merge through the PR.
 
-   The configured build command performs the production build. If the file is missing or the account cannot be verified, stop rather than selecting another account. Do not install a new CLI, change accounts or create credentials automatically.
-3. Record the returned Cloudflare deployment version. Run `node scripts/blog-publication.mjs confirm EXACT-SLUG CLOUDFLARE-VERSION-UUID`. It sends DNT/GPC headers to avoid counting verification as visits or receiving per-visitor analytics markup. It requires all three live language pages to match local production HTML, and requires the live sitemap and blog index to contain the article. The command stores the receipt only after all checks pass.
-4. Verify the next pending slug in each series still returns 404 in all three languages and is absent from every live language index and the sitemap. `nextPendingArticles` in the publication library returns these slugs. Confirm the due article's canonical, hreflang, cover and real-bike photo behavior. A deployed version alone is not proof of these public results.
-5. Update the <=25-line checkpoint with the exact merge SHA, deployment version, slug, live verification and next due time. Keep one current baseline plus the latest delta.
+## Deploy and prove the exact release
 
-## Rearm and recovery
-Use the same automation ID and preserve its full name, destination and prompt. The status/confirm command returns a one-shot rule for the next Singapore wall-clock time. Use `automation_update` to update the existing heartbeat with that rule and ACTIVE status, then view it to verify persistence. The rule is an annual calendar selector with BYSETPOS=1 and COUNT=1 to encode an exact upcoming date without a DTSTART timezone override; it is not an annually recurring publication. BYSETPOS keeps this calendar selector on the installed app's local-wall-clock path; a plain yearly selector is evaluated in UTC. Never omit it or rearm a date already in the past. Check the saved next-run instant against the intended timestamp after changing the timer.
+1. Fetch and fast-forward to its exact merged main commit. Confirm only the intended article became newly public. If concurrent main changed relevant validation inputs, validate that merged candidate.
+2. Inspect the Cloudflare deployment for the exact merge and reuse a successful matching GitHub deployment. Record its version UUID. Never claim success from a different run or commit.
+3. If that job is disabled or fails, use the existing local Wrangler route and verified saved profile only. Require the ignored owner-only `.research/cloudflare-account-id.env` and `.research/blog-cloudflare-profile.txt`; load the binding without printing it. Do not install a CLI, change accounts, create credentials or edit another checkout.
+4. Build the exact production source with `npm run build:cloudflare` under the installed cache lease. Run `node scripts/blog-publication.mjs confirm EXACT-SLUG CLOUDFLARE-VERSION-UUID`. It uses DNT/GPC, matches all three live article HTML hashes, checks the sitemap and every language index, checks all pending articles stay absent, and requires the next pending slug in each series to return 404 in every language. It writes a receipt only after those checks pass.
+5. Confirm canonical/hreflang, actual dates, byline, cover, photo captions and served image hashes/content types. Save immutable live proof and preserve all prior receipt timestamps.
+6. Update the bounded checkpoint with the exact merge, Cloudflare version, receipt hash and next due time. Never overwrite historical verification times during incidental readback.
 
-The next prompt must instruct the agent to follow this runbook and preserve the latest successful receipt. After all 120 queued releases are verified, use PAUSED instead of rearming. During authoring, preserve the original release receipts and continue the writing task. An expired COUNT=1 rule must not remain active.
+## Rearm and finish
 
-For a temporary provider/build/deploy failure, preserve the candidate and checkpoint and rearm the same heartbeat for a bounded retry (for example, two hours later). Do not repeatedly run the same failure without a relevant change, duplicate watchers or publish another article around it. If credential unlock, a policy conflict, concurrent ownership or a new authority boundary requires the user, report the concrete blocker and pause rather than inventing credentials or changing deployment targets.
+Use `automation_update` on the existing heartbeat ID and preserve its name, destination and full current prompt. Use the status/confirm returned future one-shot rule and ACTIVE status. Retain BYSETPOS=1 and COUNT=1 for the installed app's Singapore local-wall-clock path. Never schedule a past annual selector. Read back the saved rule and actual next-run instant after updating.
 
-If the app was off or a wake was missed, status is authoritative. Publish at most one overdue article, verify it, then use the selected gap after actual verification. If a prepared article never went live and its publication date is now stale, correct that date through the same PR workflow before publishing; do not backdate a newly released article.
+After all 120 releases have their own verified receipts, set PAUSED. For temporary storage/provider/build/deploy failures, preserve the exact candidate and rearm a bounded future retry, normally two hours later. Keep unchanged waiting states quiet. Report a human-only login, credential, ownership or new-authority blocker once; do not invent credentials or publish around an unverified release.
 
-## Preview and verification tools
-- `node scripts/blog-preview.mjs`: renders all drafts only into ignored `.research/blog-series-preview`, with noindex. It never writes dist and cannot be selected by the deploy configuration.
-- `node --test tests/post-publication.test.mjs`: scheduling, exclusion, delay, duplicate and completion tests.
-- `tests/bilingual-browser.py --site .research/blog-series-preview --case /blog/`: isolated desktop/mobile preview inspection in both languages.
-- `docs/blog-publication-calendar.md`: fixed planned calendar. Actual delivery can shift it later.
+## Verification tools
+
+- `node --test tests/post-publication.test.mjs tests/blog-publication-confirm.test.mjs tests/blog-series-activate.test.mjs tests/blog-cadence-activate.test.mjs`: cadence, exclusion, recovery, live confirmation and completion.
+- `node scripts/blog-preview.mjs`: ignored noindex draft preview; never dist or deployment input.
+- `tests/bilingual-browser.py`: isolated desktop/mobile checks for the selected language routes.
+- `docs/blog-publication-calendar.md`: original historical September calendar, superseded for remaining delivery by schema version 3.

@@ -32,9 +32,11 @@ First read each edition as a reader: does the opening earn attention, does the a
 
 Only then check search presentation: the title and description accurately promise the page's answer; headings describe its real sections; links help the reader continue; relevant photos have accurate captions; structured data, dates, canonical and language alternatives match the published page. SEO cannot compensate for a weak article, and no ranking result is promised.
 
-## Eight-hour series
+## Reviewed October series
 
 The October 2026 series contains 100 separately authored articles, each with a distinct brief and three complete editions. Keep work in `publication_status: draft` until the whole series has passed its editorial and technical review. Add the reviewed series to the publishing queue only after it is ready. A draft file or outline is not a completed post.
+
+The original eight-hour cadence was replaced on October 6 by one shared two-to-three-hour delivery plan covering all pending September and October articles. Final source, reader, image and search-presentation checks happen before each release. An unfinished article waits; a selected interval starts after actual live confirmation.
 
 Basis, consulted 2026-09-22:
 

@@ -1,6 +1,6 @@
 # October 2026 editorial series
 
-One hundred distinct reader decisions. All three editions must be written and individually reviewed before this series is scheduled. The eight-hour gap runs from verified publication; a missed wake shifts delivery later and never causes a burst. Existing September drafts retain their original schedule.
+One hundred distinct reader decisions. All three editions must be written and individually reviewed before this series is scheduled. Authoring is complete. On October 6, 2026, the user replaced both series' remaining delivery with one shared randomized 120–180-minute cadence after each actual successful live confirmation. A missed wake shifts delivery later and never causes a burst. Preserve the briefs, per-series editorial order and existing publication receipts; use schedule version 3 and the publishing runbook for current due times.
 
 1. **road-or-gravel-first-carbon-bike** (Choosing a bike): Choose from the surface and pace of real weekly rides, using a route split.
 2. **one-bike-road-and-gravel-two-wheelsets** (Choosing a bike): Decide whether one frame and two wheelsets simplify life after counting duplicated parts.
