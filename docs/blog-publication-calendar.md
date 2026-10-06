@@ -1,6 +1,8 @@
-# Planned publication calendar
+# Original publication calendar
 
-Twenty new bilingual articles. Times are Asia/Singapore (UTC+8). Random intervals were selected once and preserved. First release: September 25, 2026. Actual releases can move later when local automation or delivery is delayed; each next release retains its selected gap after live verification.
+This is the historical September calendar. On October 6, 2026, the user replaced remaining delivery in both series with one shared randomized two-to-three-hour cadence. `content/post-schedule.json` version 3 contains the active `delivery.entries`; its selected gaps follow actual successful live confirmation. Existing publication dates remain unchanged. The table below records the original plan, not current due times.
+
+Twenty articles, now available in English, Simplified Chinese and German. Original planned times are Asia/Singapore (UTC+8). First planned release: September 25, 2026.
 
 | # | Planned time | Gap from previous | Article |
 | --- | --- | --- | --- |

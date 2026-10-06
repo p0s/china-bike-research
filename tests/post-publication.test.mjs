@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadPosts,renderPost,renderBlogIndex,relatedArticleLinks} from '../src/lib/posts.mjs';
-import {loadSchedule,validateSchedule,publishedPosts,nextPublication,preparePublication,oneShotRule,scheduleSeries,nextWakeRule} from '../src/lib/post-publication.mjs';
+import {loadSchedule,validateSchedule,publishedPosts,nextPublication,preparePublication,oneShotRule,scheduleSeries,nextWakeRule,acceleratePublication} from '../src/lib/post-publication.mjs';
 import {loadDataset,joinProducts,joinCatalogCandidates} from '../src/lib/data.mjs';
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..');
@@ -138,4 +138,81 @@ test('an overdue next series uses a future one-shot instead of a past annual sel
  const now=new Date('2026-10-04T12:00:00.000Z');
  assert.equal(nextWakeRule({due_at:'2026-10-03T12:00:00.000Z'},now),oneShotRule('2026-10-04T12:01:00.000Z'));
  assert.equal(nextWakeRule({action:'complete'},now),null);
+});
+
+function acceleratedFixture(gap = 150) {
+ const f = expandedFixture();
+ const now = new Date('2026-10-06T00:00:00.000Z');
+ f.queue = acceleratePublication(f.queue, f.receipts, now, () => gap);
+ validateSchedule(f.queue, f.posts);
+ return {...f, now};
+}
+
+test('accelerating the remaining queue preserves prior releases and the original calendars',()=>{
+ const old = expandedFixture(), before = structuredClone(old.queue.entries);
+ const f = acceleratedFixture();
+ assert.deepEqual(f.queue.entries, before);
+ assert.equal(f.queue.delivery.entries.length, 118);
+ assert.equal(f.queue.delivery.entries[0].scheduled_at, f.now.toISOString());
+ assert.equal(nextPublication(f.queue, f.receipts, f.now).action, 'publish');
+ assert.equal(publishedPosts(f.posts, f.queue, f.now).length, 7);
+ assert.deepEqual(acceleratePublication(f.queue, f.receipts, new Date('2030-01-01'), () => 180), f.queue);
+});
+
+test('the shared delivery queue blocks both series until its exact release is verified',()=>{
+ const f = acceleratedFixture(), next = nextPublication(f.queue, f.receipts, f.now);
+ const prepared = preparePublication(f.queue, f.receipts, next.entry.slug, f.now);
+ validateSchedule(prepared, f.posts);
+ assert.equal(nextPublication(prepared, f.receipts, new Date('2030-01-01')).action, 'verify');
+ assert.throws(() => preparePublication(prepared, f.receipts, f.queue.delivery.entries[1].slug, new Date('2030-01-01')), /verify/);
+});
+
+test('two-to-three-hour intervals apply across series after actual live confirmation',()=>{
+ const f = acceleratedFixture();
+ const first = nextPublication(f.queue, f.receipts, f.now);
+ const prepared = preparePublication(f.queue, f.receipts, first.entry.slug, f.now);
+ const verified = '2026-10-07T10:00:00.000Z';
+ const receipts = {...f.receipts, [first.entry.slug]: {published_at: f.now.toISOString(), verified_at: verified}};
+ const expected = new Date(Date.parse(verified) + 150 * 60000);
+ assert.equal(nextPublication(prepared, receipts, new Date(+expected - 1)).action, 'wait');
+ const next = nextPublication(prepared, receipts, expected);
+ assert.equal(next.action, 'publish');
+ assert.equal(next.due_at, expected.toISOString());
+ assert.equal(next.interval_minutes, 150);
+ assert.throws(() => preparePublication(prepared, receipts, next.entry.slug, new Date(+expected - 1)), /Not due/);
+});
+
+test('accelerated delivery rejects missing articles, reordering, short or inconsistent gaps and early releases',()=>{
+ for (const mutate of [
+   q => {q.delivery.entries.pop();},
+   q => {q.delivery.entries[1].slug = q.delivery.entries[0].slug;},
+   q => {q.delivery.entries[1].gap_minutes = 119;},
+   q => {q.delivery.entries[1].gap_minutes = 181;},
+   q => {q.delivery.entries[1].scheduled_at = q.delivery.entries[0].scheduled_at;},
+   q => {q.entries.find(e => e.slug === q.delivery.entries[0].slug).published_at = '2026-10-05T23:59:59.000Z';},
+   q => {q.entries.find(e => e.slug === q.delivery.entries[1].slug).published_at = q.delivery.entries[1].scheduled_at;}
+ ]) {
+   const f = acceleratedFixture();mutate(f.queue);
+   assert.throws(() => validateSchedule(f.queue, f.posts));
+ }
+ const f = expandedFixture();
+ assert.throws(() => acceleratePublication(f.queue, f.receipts, new Date(f.start), () => 119), /120 to 180/);
+ const prepared = preparePublication(f.queue, f.receipts, nextPublication(f.queue, f.receipts, new Date(f.start)).entry.slug, new Date(f.start));
+ assert.throws(() => acceleratePublication(prepared, f.receipts), /prepared release/);
+});
+
+test('the entire accelerated queue delivers once per selected gap and ends only after every receipt',()=>{
+ const f = acceleratedFixture(120);let current = f.queue;const receipts = {...f.receipts};
+ for (const slot of current.delivery.entries) {
+   const next = nextPublication(current, receipts, new Date('2030-01-01'));
+   assert.equal(next.entry.slug, slot.slug);
+   const now = new Date(next.due_at);
+   current = preparePublication(current, receipts, slot.slug, now);
+   validateSchedule(current, f.posts);
+   assert.equal(nextPublication(current, receipts, now).action, 'verify');
+   receipts[slot.slug] = {published_at: now.toISOString(), verified_at: new Date(+now + 20 * 60000).toISOString()};
+ }
+ assert.equal(nextPublication(current, receipts).action, 'complete');
+ assert.equal(nextWakeRule(nextPublication(current, receipts)), null);
+ assert.equal(publishedPosts(f.posts, current, new Date('2030-01-01')).length, 125);
 });

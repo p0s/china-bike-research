@@ -16,7 +16,7 @@ export function activateSeries(root, now = new Date()) {
   const stateFile = path.join(root, '.research/blog-publication-state.json');
   const queue = JSON.parse(fs.readFileSync(scheduleFile, 'utf8'));
   const posts = loadPosts(root);
-  if (queue.schema_version === 2) {
+  if ([2, 3].includes(queue.schema_version)) {
     validateSchedule(queue, posts);
     return { activated: false, reason: 'The additional series is already scheduled.' };
   }

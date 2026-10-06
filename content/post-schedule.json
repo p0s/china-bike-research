@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "timezone": "Asia/Singapore",
   "series": [
     {
@@ -30,7 +30,7 @@
       "slug": "buy-winspace-bike",
       "gap_minutes": 6386,
       "scheduled_at": "2026-10-04T11:03:00.000Z",
-      "published_at": null,
+      "published_at": "2026-10-06T02:20:57.380Z",
       "series_id": "september-2026"
     },
     {
@@ -852,5 +852,583 @@
       "gap_minutes": 480,
       "published_at": null
     }
-  ]
+  ],
+  "delivery": {
+    "cadence": "random",
+    "min_gap_minutes": 120,
+    "max_gap_minutes": 180,
+    "activated_at": "2026-10-05T23:53:11.000Z",
+    "entries": [
+      {
+        "slug": "buy-winspace-bike",
+        "gap_minutes": 0,
+        "scheduled_at": "2026-10-05T23:53:11.000Z"
+      },
+      {
+        "slug": "carbon-or-aluminium-value",
+        "gap_minutes": 122,
+        "scheduled_at": "2026-10-06T01:55:11.000Z"
+      },
+      {
+        "slug": "first-carbon-bike-budget",
+        "gap_minutes": 129,
+        "scheduled_at": "2026-10-06T04:04:11.000Z"
+      },
+      {
+        "slug": "chinese-road-bike-for-long-rides",
+        "gap_minutes": 159,
+        "scheduled_at": "2026-10-06T06:43:11.000Z"
+      },
+      {
+        "slug": "chinese-gravel-bike-for-commuting",
+        "gap_minutes": 172,
+        "scheduled_at": "2026-10-06T09:35:11.000Z"
+      },
+      {
+        "slug": "chinese-bike-for-bikepacking-mounts",
+        "gap_minutes": 167,
+        "scheduled_at": "2026-10-06T12:22:11.000Z"
+      },
+      {
+        "slug": "chinese-bike-frame-sizing",
+        "gap_minutes": 155,
+        "scheduled_at": "2026-10-06T14:57:11.000Z"
+      },
+      {
+        "slug": "gravel-racing-bike-vs-adventure-bike",
+        "gap_minutes": 134,
+        "scheduled_at": "2026-10-06T17:11:11.000Z"
+      },
+      {
+        "slug": "used-chinese-carbon-bike",
+        "gap_minutes": 163,
+        "scheduled_at": "2026-10-06T19:54:11.000Z"
+      },
+      {
+        "slug": "race-bike-for-heavy-riders",
+        "gap_minutes": 177,
+        "scheduled_at": "2026-10-06T22:51:11.000Z"
+      },
+      {
+        "slug": "small-rider-bike-shopping",
+        "gap_minutes": 149,
+        "scheduled_at": "2026-10-07T01:20:11.000Z"
+      },
+      {
+        "slug": "bike-fit-without-test-ride",
+        "gap_minutes": 127,
+        "scheduled_at": "2026-10-07T03:27:11.000Z"
+      },
+      {
+        "slug": "second-bike-or-wheel-upgrade",
+        "gap_minutes": 174,
+        "scheduled_at": "2026-10-07T06:21:11.000Z"
+      },
+      {
+        "slug": "buy-elves-bike",
+        "gap_minutes": 179,
+        "scheduled_at": "2026-10-07T09:20:11.000Z"
+      },
+      {
+        "slug": "spend-on-tires-or-wheels",
+        "gap_minutes": 156,
+        "scheduled_at": "2026-10-07T11:56:11.000Z"
+      },
+      {
+        "slug": "budget-road-bike-upgrades-in-order",
+        "gap_minutes": 176,
+        "scheduled_at": "2026-10-07T14:52:11.000Z"
+      },
+      {
+        "slug": "bike-build-for-hilly-rides",
+        "gap_minutes": 159,
+        "scheduled_at": "2026-10-07T17:31:11.000Z"
+      },
+      {
+        "slug": "everyday-road-bike-with-fenders",
+        "gap_minutes": 120,
+        "scheduled_at": "2026-10-07T19:31:11.000Z"
+      },
+      {
+        "slug": "choosing-bike-when-specs-unknown",
+        "gap_minutes": 137,
+        "scheduled_at": "2026-10-07T21:48:11.000Z"
+      },
+      {
+        "slug": "stack-reach-vs-frame-size",
+        "gap_minutes": 145,
+        "scheduled_at": "2026-10-08T00:13:11.000Z"
+      },
+      {
+        "slug": "comparing-two-geometry-charts",
+        "gap_minutes": 164,
+        "scheduled_at": "2026-10-08T02:57:11.000Z"
+      },
+      {
+        "slug": "stem-length-with-integrated-handlebar",
+        "gap_minutes": 174,
+        "scheduled_at": "2026-10-08T05:51:11.000Z"
+      },
+      {
+        "slug": "chinese-bike-shipping-times",
+        "gap_minutes": 124,
+        "scheduled_at": "2026-10-08T07:55:11.000Z"
+      },
+      {
+        "slug": "handlebar-width-and-flare",
+        "gap_minutes": 176,
+        "scheduled_at": "2026-10-08T10:51:11.000Z"
+      },
+      {
+        "slug": "shorter-cranks-bike-fit",
+        "gap_minutes": 165,
+        "scheduled_at": "2026-10-08T13:36:11.000Z"
+      },
+      {
+        "slug": "saddle-height-marking-before-new-bike",
+        "gap_minutes": 142,
+        "scheduled_at": "2026-10-08T15:58:11.000Z"
+      },
+      {
+        "slug": "saddle-setback-vs-seat-tube-angle",
+        "gap_minutes": 136,
+        "scheduled_at": "2026-10-08T18:14:11.000Z"
+      },
+      {
+        "slug": "spacer-stack-and-aero-cockpits",
+        "gap_minutes": 151,
+        "scheduled_at": "2026-10-08T20:45:11.000Z"
+      },
+      {
+        "slug": "toe-overlap-small-gravel-bike",
+        "gap_minutes": 125,
+        "scheduled_at": "2026-10-08T22:50:11.000Z"
+      },
+      {
+        "slug": "standover-bikepacking-bags",
+        "gap_minutes": 137,
+        "scheduled_at": "2026-10-09T01:07:11.000Z"
+      },
+      {
+        "slug": "front-end-height-on-road-bike",
+        "gap_minutes": 168,
+        "scheduled_at": "2026-10-09T03:55:11.000Z"
+      },
+      {
+        "slug": "seatpost-offset-and-saddle-rails",
+        "gap_minutes": 166,
+        "scheduled_at": "2026-10-09T06:41:11.000Z"
+      },
+      {
+        "slug": "when-geometry-chart-does-not-add-up",
+        "gap_minutes": 131,
+        "scheduled_at": "2026-10-09T08:52:11.000Z"
+      },
+      {
+        "slug": "why-wheelbase-does-not-tell-whole-story",
+        "gap_minutes": 175,
+        "scheduled_at": "2026-10-09T11:47:11.000Z"
+      },
+      {
+        "slug": "making-bike-fit-appointment-useful",
+        "gap_minutes": 151,
+        "scheduled_at": "2026-10-09T14:18:11.000Z"
+      },
+      {
+        "slug": "buy-yoeleo-bike",
+        "gap_minutes": 153,
+        "scheduled_at": "2026-10-09T16:51:11.000Z"
+      },
+      {
+        "slug": "one-by-vs-two-by-gravel",
+        "gap_minutes": 143,
+        "scheduled_at": "2026-10-09T19:14:11.000Z"
+      },
+      {
+        "slug": "gear-ratios-gravel-climbing",
+        "gap_minutes": 136,
+        "scheduled_at": "2026-10-09T21:30:11.000Z"
+      },
+      {
+        "slug": "cassette-range-vs-gear-jumps",
+        "gap_minutes": 159,
+        "scheduled_at": "2026-10-10T00:09:11.000Z"
+      },
+      {
+        "slug": "chainring-size-for-mixed-riding",
+        "gap_minutes": 150,
+        "scheduled_at": "2026-10-10T02:39:11.000Z"
+      },
+      {
+        "slug": "subcompact-vs-compact-road-gearing",
+        "gap_minutes": 146,
+        "scheduled_at": "2026-10-10T05:05:11.000Z"
+      },
+      {
+        "slug": "mechanical-vs-electronic-shifting",
+        "gap_minutes": 157,
+        "scheduled_at": "2026-10-10T07:42:11.000Z"
+      },
+      {
+        "slug": "electronic-shifting-battery-travel",
+        "gap_minutes": 133,
+        "scheduled_at": "2026-10-10T09:55:11.000Z"
+      },
+      {
+        "slug": "wheeltop-sensah-shimano-choice",
+        "gap_minutes": 130,
+        "scheduled_at": "2026-10-10T12:05:11.000Z"
+      },
+      {
+        "slug": "mixing-shimano-and-sram-components",
+        "gap_minutes": 164,
+        "scheduled_at": "2026-10-10T14:49:11.000Z"
+      },
+      {
+        "slug": "chinese-frameset-order-checklist",
+        "gap_minutes": 150,
+        "scheduled_at": "2026-10-10T17:19:11.000Z"
+      },
+      {
+        "slug": "freehub-body-hg-xdr-microspline",
+        "gap_minutes": 156,
+        "scheduled_at": "2026-10-10T19:55:11.000Z"
+      },
+      {
+        "slug": "brake-rotor-size-and-frame-approval",
+        "gap_minutes": 149,
+        "scheduled_at": "2026-10-10T22:24:11.000Z"
+      },
+      {
+        "slug": "centerlock-vs-sixbolt",
+        "gap_minutes": 146,
+        "scheduled_at": "2026-10-11T00:50:11.000Z"
+      },
+      {
+        "slug": "hydraulic-vs-mechanical-disc-brakes",
+        "gap_minutes": 155,
+        "scheduled_at": "2026-10-11T03:25:11.000Z"
+      },
+      {
+        "slug": "bedding-in-disc-brakes",
+        "gap_minutes": 176,
+        "scheduled_at": "2026-10-11T06:21:11.000Z"
+      },
+      {
+        "slug": "disc-brake-rub-new-bike",
+        "gap_minutes": 144,
+        "scheduled_at": "2026-10-11T08:45:11.000Z"
+      },
+      {
+        "slug": "brake-hose-routing-and-service-cost",
+        "gap_minutes": 148,
+        "scheduled_at": "2026-10-11T11:13:11.000Z"
+      },
+      {
+        "slug": "chain-wear-and-expensive-cassettes",
+        "gap_minutes": 145,
+        "scheduled_at": "2026-10-11T13:38:11.000Z"
+      },
+      {
+        "slug": "chain-length-before-changing-gearing",
+        "gap_minutes": 128,
+        "scheduled_at": "2026-10-11T15:46:11.000Z"
+      },
+      {
+        "slug": "gravel-clutch-derailleur",
+        "gap_minutes": 156,
+        "scheduled_at": "2026-10-11T18:22:11.000Z"
+      },
+      {
+        "slug": "power-meter-build-planning",
+        "gap_minutes": 150,
+        "scheduled_at": "2026-10-11T20:52:11.000Z"
+      },
+      {
+        "slug": "tire-width-on-wide-rims",
+        "gap_minutes": 126,
+        "scheduled_at": "2026-10-11T22:58:11.000Z"
+      },
+      {
+        "slug": "hooked-vs-hookless-gravel",
+        "gap_minutes": 142,
+        "scheduled_at": "2026-10-12T01:20:11.000Z"
+      },
+      {
+        "slug": "buy-ican-bike",
+        "gap_minutes": 133,
+        "scheduled_at": "2026-10-12T03:33:11.000Z"
+      },
+      {
+        "slug": "tubeless-or-tubes-for-first-build",
+        "gap_minutes": 128,
+        "scheduled_at": "2026-10-12T05:41:11.000Z"
+      },
+      {
+        "slug": "tubeless-road-pressure",
+        "gap_minutes": 135,
+        "scheduled_at": "2026-10-12T07:56:11.000Z"
+      },
+      {
+        "slug": "gravel-tire-tread",
+        "gap_minutes": 134,
+        "scheduled_at": "2026-10-12T10:10:11.000Z"
+      },
+      {
+        "slug": "slick-tires-on-gravel-bike",
+        "gap_minutes": 152,
+        "scheduled_at": "2026-10-12T12:42:11.000Z"
+      },
+      {
+        "slug": "deep-wheels-crosswinds",
+        "gap_minutes": 173,
+        "scheduled_at": "2026-10-12T15:35:11.000Z"
+      },
+      {
+        "slug": "carbon-wheel-weight-vs-depth",
+        "gap_minutes": 165,
+        "scheduled_at": "2026-10-12T18:20:11.000Z"
+      },
+      {
+        "slug": "two-wheelsets-rotor-cassette-alignment",
+        "gap_minutes": 133,
+        "scheduled_at": "2026-10-12T20:33:11.000Z"
+      },
+      {
+        "slug": "650b-vs-700c",
+        "gap_minutes": 123,
+        "scheduled_at": "2026-10-12T22:36:11.000Z"
+      },
+      {
+        "slug": "wheelset-system-weight-limit",
+        "gap_minutes": 150,
+        "scheduled_at": "2026-10-13T01:06:11.000Z"
+      },
+      {
+        "slug": "spare-spokes-hubs-before-buying",
+        "gap_minutes": 137,
+        "scheduled_at": "2026-10-13T03:23:11.000Z"
+      },
+      {
+        "slug": "buying-a-groupset-for-frame-build",
+        "gap_minutes": 159,
+        "scheduled_at": "2026-10-13T06:02:11.000Z"
+      },
+      {
+        "slug": "tire-clearance-mud-and-fenders",
+        "gap_minutes": 138,
+        "scheduled_at": "2026-10-13T08:20:11.000Z"
+      },
+      {
+        "slug": "puncture-kit-tubeless-rides",
+        "gap_minutes": 126,
+        "scheduled_at": "2026-10-13T10:26:11.000Z"
+      },
+      {
+        "slug": "winter-tire-choice-road-gravel",
+        "gap_minutes": 154,
+        "scheduled_at": "2026-10-13T13:00:11.000Z"
+      },
+      {
+        "slug": "threaded-vs-pressfit-bottom-brackets",
+        "gap_minutes": 146,
+        "scheduled_at": "2026-10-13T15:26:11.000Z"
+      },
+      {
+        "slug": "bb86-bb92-t47-identify",
+        "gap_minutes": 131,
+        "scheduled_at": "2026-10-13T17:37:11.000Z"
+      },
+      {
+        "slug": "buying-headset-bearings",
+        "gap_minutes": 162,
+        "scheduled_at": "2026-10-13T20:19:11.000Z"
+      },
+      {
+        "slug": "spare-derailleur-hanger-order",
+        "gap_minutes": 149,
+        "scheduled_at": "2026-10-13T22:48:11.000Z"
+      },
+      {
+        "slug": "udh-frame-vs-traditional-hanger",
+        "gap_minutes": 143,
+        "scheduled_at": "2026-10-14T01:11:11.000Z"
+      },
+      {
+        "slug": "thru-axle-thread-length",
+        "gap_minutes": 121,
+        "scheduled_at": "2026-10-14T03:12:11.000Z"
+      },
+      {
+        "slug": "carbon-assembly-paste-torque",
+        "gap_minutes": 131,
+        "scheduled_at": "2026-10-14T05:23:11.000Z"
+      },
+      {
+        "slug": "torque-wrench-bike-build",
+        "gap_minutes": 123,
+        "scheduled_at": "2026-10-14T07:26:11.000Z"
+      },
+      {
+        "slug": "cutting-steerer-who-should-do-it",
+        "gap_minutes": 129,
+        "scheduled_at": "2026-10-14T09:35:11.000Z"
+      },
+      {
+        "slug": "first-bike-build-tool-budget",
+        "gap_minutes": 155,
+        "scheduled_at": "2026-10-14T12:10:11.000Z"
+      },
+      {
+        "slug": "local-bike-shop-for-imported-frame",
+        "gap_minutes": 178,
+        "scheduled_at": "2026-10-14T15:08:11.000Z"
+      },
+      {
+        "slug": "buy-lightcarbon-frame",
+        "gap_minutes": 154,
+        "scheduled_at": "2026-10-14T17:42:11.000Z"
+      },
+      {
+        "slug": "frame-paint-finish-inspection",
+        "gap_minutes": 155,
+        "scheduled_at": "2026-10-14T20:17:11.000Z"
+      },
+      {
+        "slug": "creaking-carbon-bike-diagnosis",
+        "gap_minutes": 172,
+        "scheduled_at": "2026-10-14T23:09:11.000Z"
+      },
+      {
+        "slug": "after-first-ride-bolt-check",
+        "gap_minutes": 143,
+        "scheduled_at": "2026-10-15T01:32:11.000Z"
+      },
+      {
+        "slug": "yearly-service-budget-carbon-bike",
+        "gap_minutes": 179,
+        "scheduled_at": "2026-10-15T04:31:11.000Z"
+      },
+      {
+        "slug": "eu-bike-price-vat-shipping-worksheet",
+        "gap_minutes": 144,
+        "scheduled_at": "2026-10-15T06:55:11.000Z"
+      },
+      {
+        "slug": "ddp-vs-dap-bike-delivery",
+        "gap_minutes": 156,
+        "scheduled_at": "2026-10-15T09:31:11.000Z"
+      },
+      {
+        "slug": "currency-conversion-bike-quotes",
+        "gap_minutes": 154,
+        "scheduled_at": "2026-10-15T12:05:11.000Z"
+      },
+      {
+        "slug": "frameset-import-vs-complete-bike-cost",
+        "gap_minutes": 122,
+        "scheduled_at": "2026-10-15T14:07:11.000Z"
+      },
+      {
+        "slug": "compare-brand-dealer-and-marketplace",
+        "gap_minutes": 127,
+        "scheduled_at": "2026-10-15T16:14:11.000Z"
+      },
+      {
+        "slug": "bike-preorders-and-production-windows",
+        "gap_minutes": 122,
+        "scheduled_at": "2026-10-15T18:16:11.000Z"
+      },
+      {
+        "slug": "bike-order-component-substitutions",
+        "gap_minutes": 132,
+        "scheduled_at": "2026-10-15T20:28:11.000Z"
+      },
+      {
+        "slug": "bike-sizing-email-template",
+        "gap_minutes": 180,
+        "scheduled_at": "2026-10-15T23:28:11.000Z"
+      },
+      {
+        "slug": "warranty-evidence-before-service",
+        "gap_minutes": 151,
+        "scheduled_at": "2026-10-16T01:59:11.000Z"
+      },
+      {
+        "slug": "damage-in-transit-bike-claim",
+        "gap_minutes": 180,
+        "scheduled_at": "2026-10-16T04:59:11.000Z"
+      },
+      {
+        "slug": "integrated-cockpit-before-you-buy",
+        "gap_minutes": 128,
+        "scheduled_at": "2026-10-16T07:07:11.000Z"
+      },
+      {
+        "slug": "replacement-parts-shipping-cost",
+        "gap_minutes": 159,
+        "scheduled_at": "2026-10-16T09:46:11.000Z"
+      },
+      {
+        "slug": "what-iso-4210-bike-claims-mean",
+        "gap_minutes": 140,
+        "scheduled_at": "2026-10-16T12:06:11.000Z"
+      },
+      {
+        "slug": "carbon-fiber-t700-t800-claims",
+        "gap_minutes": 171,
+        "scheduled_at": "2026-10-16T14:57:11.000Z"
+      },
+      {
+        "slug": "bike-weight-claims-real-build",
+        "gap_minutes": 153,
+        "scheduled_at": "2026-10-16T17:30:11.000Z"
+      },
+      {
+        "slug": "how-to-read-bike-review-videos",
+        "gap_minutes": 142,
+        "scheduled_at": "2026-10-16T19:52:11.000Z"
+      },
+      {
+        "slug": "buy-seka-bike",
+        "gap_minutes": 123,
+        "scheduled_at": "2026-10-16T21:55:11.000Z"
+      },
+      {
+        "slug": "how-to-read-chinese-bike-owner-reviews",
+        "gap_minutes": 160,
+        "scheduled_at": "2026-10-17T00:35:11.000Z"
+      },
+      {
+        "slug": "buy-tavelo-bike",
+        "gap_minutes": 167,
+        "scheduled_at": "2026-10-17T03:22:11.000Z"
+      },
+      {
+        "slug": "new-carbon-bike-unboxing-checklist",
+        "gap_minutes": 136,
+        "scheduled_at": "2026-10-17T05:38:11.000Z"
+      },
+      {
+        "slug": "buy-pardus-bike",
+        "gap_minutes": 127,
+        "scheduled_at": "2026-10-17T07:45:11.000Z"
+      },
+      {
+        "slug": "chinese-bike-warranty-and-spares",
+        "gap_minutes": 148,
+        "scheduled_at": "2026-10-17T10:13:11.000Z"
+      },
+      {
+        "slug": "buy-velobuild-frame",
+        "gap_minutes": 134,
+        "scheduled_at": "2026-10-17T12:27:11.000Z"
+      },
+      {
+        "slug": "buy-dengfu-frame",
+        "gap_minutes": 121,
+        "scheduled_at": "2026-10-17T14:28:11.000Z"
+      }
+    ]
+  }
 }

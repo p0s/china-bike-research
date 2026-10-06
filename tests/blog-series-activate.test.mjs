@@ -10,6 +10,8 @@ const root=path.resolve(import.meta.dirname,'..');
 const originals=loadPosts(root).filter(p=>p.series_id!=='october-2026');
 const source=JSON.parse(fs.readFileSync(path.join(root,'content/post-schedule.json'),'utf8'));
 const old={schema_version:1,timezone:'Asia/Singapore',entries:scheduleSeries(source).find(s=>s.id==='september-2026').entries.map(({series_id,...entry})=>entry)};
+// The historical activation fixture stops before accelerated delivery began.
+for(const entry of old.entries.slice(2))entry.published_at=null;
 function fixture(t,count=100){
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'china-bikes-activate-'));
  t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
