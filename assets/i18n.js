@@ -369,7 +369,7 @@ export const zh = {
   'Bikes':'整车', 'Framesets':'车架组', 'Frameset':'车架组', 'Build':'装车', 'Groupsets':'变速套件', 'Blog':'购车文章', 'Buying guides':'购车指南',
   'China Bikes home':'China Bikes 首页', 'Primary':'主导航', 'Footer':'页脚', 'Home':'首页', 'Menu':'菜单', 'Skip to content':'跳到主要内容',
   'System':'跟随系统', 'Light':'浅色', 'Dark':'深色', 'Theme: System':'主题：跟随系统', 'Theme: System. Switch to light theme':'主题：跟随系统。切换为浅色',
-  'Theme: Light':'主题：浅色', 'Theme: Light. Switch to dark theme':'主题：浅色。切换为深色', 'Theme: Dark':'主题：深色', 'Theme: Dark. Switch to system theme':'主题：深色。切换为跟随系统',
+  'Theme: Light':'主题：浅色', 'Theme: Light. Switch to dark theme':'主题：浅色。切换为深色', 'Theme: Dark':'主题：深色', 'Theme: Dark. Switch to light theme':'主题：深色。切换为浅色', 'Theme: Dark. Switch to system theme':'主题：深色。切换为跟随系统',
   'Bikes in China':'中国市场自行车对比', 'Chinese bikes, framesets and China-market prices':'中国市场整车、车架组与价格对比',
   'Compare China-market bikes and frame builds by price, category, and known specifications.':'按有日期记录的价格、车型与已知规格，对比中国市场整车和车架装车方案。',
   'A concise comparison of bicycles and frame builds available to riders in China.':'面向在中国购车的骑友，比较整车、车架组、价格、重量与轮胎空间，并查阅对应证据。',

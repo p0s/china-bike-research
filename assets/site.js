@@ -104,9 +104,9 @@ void import('./analytics-event.js').then((events) => {
   const comparisonSelectionLimit = COMPARISON_SELECTION_LIMIT;
   const buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1';
   const themeStorageKey = 'china-bikes-theme-v1';
-  const themeModes = ['system', 'light', 'dark'];
-  const themeLabels = { system: 'System', light: 'Light', dark: 'Dark' };
-  const themeIcons = { system: '◐', light: '☀', dark: '☾' };
+  const themeModes = ['light', 'dark'];
+  const themeLabels = { light: 'Light', dark: 'Dark' };
+  const themeIcons = { light: '☀', dark: '☾' };
   const systemDark = matchMedia('(prefers-color-scheme: dark)');
   const themeControl = document.querySelector('[data-theme-control]');
   const themeLabel = themeControl?.querySelector('[data-theme-label]');
@@ -130,12 +130,12 @@ void import('./analytics-event.js').then((events) => {
       try { localStorage.setItem(themeStorageKey, selected); } catch { /* the selected theme remains active for this page */ }
     }
     const resolved = selected === 'system' ? (systemDark.matches ? 'dark' : 'light') : selected;
-    const next = themeModes[(themeModes.indexOf(selected) + 1) % themeModes.length];
-    if (themeLabel) themeLabel.textContent = themeLabels[selected];
-    if (themeIcon) themeIcon.textContent = themeIcons[selected];
+    const next = resolved === 'light' ? 'dark' : 'light';
+    if (themeLabel) themeLabel.textContent = translate(themeLabels[resolved], locale);
+    if (themeIcon) themeIcon.textContent = themeIcons[resolved];
     if (themeControl instanceof HTMLButtonElement) {
-      themeControl.setAttribute('aria-label', `Theme: ${themeLabels[selected]}. Switch to ${themeLabels[next].toLowerCase()} theme`);
-      themeControl.title = `Theme: ${themeLabels[selected]}`;
+      themeControl.setAttribute('aria-label', translate(`Theme: ${themeLabels[resolved]}. Switch to ${themeLabels[next].toLowerCase()} theme`, locale));
+      themeControl.title = translate(`Theme: ${themeLabels[resolved]}`, locale);
     }
     const themeColor = document.querySelector('[data-theme-color]');
     if (themeColor instanceof HTMLMetaElement) themeColor.content = resolved === 'dark' ? '#111512' : '#f7f7f4';
@@ -143,14 +143,15 @@ void import('./analytics-event.js').then((events) => {
 
   applyTheme(activeTheme);
   themeControl?.addEventListener('click', () => {
-    const current = activeTheme;
-    applyTheme(themeModes[(themeModes.indexOf(current) + 1) % themeModes.length], { persist: true });
+    const current = activeTheme === 'system' ? (systemDark.matches ? 'dark' : 'light') : activeTheme;
+    applyTheme(current === 'light' ? 'dark' : 'light', { persist: true });
   });
   const syncSystemTheme = () => { if (activeTheme === 'system') applyTheme('system'); };
   if (typeof systemDark.addEventListener === 'function') systemDark.addEventListener('change', syncSystemTheme);
   else systemDark.addListener?.(syncSystemTheme);
   addEventListener('storage', (event) => {
-    if (event.key === themeStorageKey || event.key === null) applyTheme(readTheme());
+    if (event.key === themeStorageKey) applyTheme(event.newValue);
+    else if (event.key === null) applyTheme('system');
   });
 
   function readStoredSelection() {
@@ -448,10 +449,68 @@ void import('./analytics-event.js').then((events) => {
   tooltipPanel?.addEventListener('mouseenter', cancelTooltipDismiss);
   tooltipPanel?.addEventListener('mouseleave', scheduleTooltipClose);
   tooltipPanel?.addEventListener('pointerdown', (event) => event.preventDefault());
-  document.querySelectorAll('.catalog-row .product-image-link').forEach((link) => {
+  let activeImagePreview = null;
+  let pendingImagePreviewFocus = null;
+  let imagePreviewVersion = 0;
+  function closeImagePreview() {
+    imagePreviewVersion++;
+    pendingImagePreviewFocus = null;
+    activeImagePreview?.classList.remove('is-previewing');
+    activeImagePreview = null;
+  }
+  function openImagePreview(link) {
+    closeImagePreview();
+    const image = link.querySelector('img');
+    if (!image) return;
+    activeImagePreview = link;
+    if (!image.complete) {
+      const version = imagePreviewVersion;
+      image.addEventListener('load', () => {
+        if (version === imagePreviewVersion && (link.matches(':focus-visible') || (precisePointer.matches && link.matches(':hover')))) openImagePreview(link);
+      }, { once: true });
+      image.addEventListener('error', () => {
+        if (version === imagePreviewVersion) closeImagePreview();
+      }, { once: true });
+      return;
+    }
+    if (!image.naturalWidth) { closeImagePreview(); return; }
+    closeTooltip();
+    const box = link.getBoundingClientRect();
+    const topInset = Math.max(12, (stickyHeader?.getBoundingClientRect().bottom ?? 0) + 8);
+    const requestedScale = Number.parseFloat(getComputedStyle(link).getPropertyValue('--catalog-preview-scale')) || 2.6;
+    const scale = Math.min(requestedScale, (innerWidth - 24) / box.width, Math.max(1, innerHeight - topInset - 12) / box.height);
+    const left = Math.min(innerWidth - 12 - box.width * scale, Math.max(12, box.left));
+    const naturalTop = box.top + box.height / 2 - box.height * scale / 2;
+    const top = Math.min(innerHeight - 12 - box.height * scale, Math.max(topInset, naturalTop));
+    link.style.setProperty('--image-preview-scale', scale);
+    link.style.setProperty('--image-preview-x', `${left - box.left}px`);
+    link.style.setProperty('--image-preview-y', `${top - naturalTop}px`);
+    link.classList.add('is-previewing');
+  }
+  document.querySelectorAll('.catalog-row .product-image-link, .curated-group .product-image-link').forEach((link) => {
     link.addEventListener('mouseenter', () => {
-      if (precisePointer.matches) closeTooltip();
+      if (precisePointer.matches) openImagePreview(link);
     });
+    link.addEventListener('mouseleave', () => {
+      if (activeImagePreview === link && !(document.activeElement === link && link.matches(':focus-visible'))) closeImagePreview();
+    });
+    link.addEventListener('focus', () => {
+      const version = imagePreviewVersion;
+      pendingImagePreviewFocus = link;
+      requestAnimationFrame(() => {
+        if (version !== imagePreviewVersion || document.activeElement !== link || !link.matches(':focus-visible')) {
+          if (pendingImagePreviewFocus === link) pendingImagePreviewFocus = null;
+          return;
+        }
+        // Finish native smooth focus scrolling before measuring the preview.
+        link.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
+        requestAnimationFrame(() => {
+          if (version === imagePreviewVersion && document.activeElement === link && link.matches(':focus-visible')) openImagePreview(link);
+          if (pendingImagePreviewFocus === link) pendingImagePreviewFocus = null;
+        });
+      });
+    });
+    link.addEventListener('blur', closeImagePreview);
   });
 
   const copyStatus = document.querySelector('#copy-status');
@@ -504,17 +563,26 @@ void import('./analytics-event.js').then((events) => {
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     const hadTooltip = activeTooltipButton !== null;
+    const hadImagePreview = activeImagePreview !== null || pendingImagePreviewFocus !== null;
     const hadMenu = navigation instanceof HTMLElement && navigation.classList.contains('open');
-    if (!hadTooltip && !hadMenu) return;
+    if (!hadTooltip && !hadImagePreview && !hadMenu) return;
     closeTooltip();
+    closeImagePreview();
     closeMenu({ restoreFocus: hadMenu });
     event.preventDefault();
   });
   addEventListener('resize', () => {
     closeTooltip();
+    closeImagePreview();
     closeMenu();
   });
   addEventListener('scroll', closeTooltip, true);
+  addEventListener('scroll', () => {
+    // Native focus may scroll the link before its first animation frame. Let
+    // that frame position the preview; later scrolling dismisses it normally.
+    if (pendingImagePreviewFocus === document.activeElement && pendingImagePreviewFocus?.matches(':focus-visible')) return;
+    closeImagePreview();
+  }, true);
 
   document.querySelectorAll('[data-copy-target]').forEach((button) => {
     button.addEventListener('click', async () => {

@@ -142,6 +142,7 @@ export const de = {
   "Theme: Light": "Farbschema: Hell",
   "Theme: Light. Switch to dark theme": "Farbschema: Hell. Zu Dunkel wechseln",
   "Theme: Dark": "Farbschema: Dunkel",
+  "Theme: Dark. Switch to light theme": "Farbschema: Dunkel. Zu Hell wechseln",
   "Theme: Dark. Switch to system theme": "Farbschema: Dunkel. Zu System wechseln",
   "Bikes in China": "Fahrräder in China",
   "Explore the full catalog": "Zum vollständigen Katalog",

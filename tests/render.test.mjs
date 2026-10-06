@@ -97,11 +97,11 @@ test('homepage social preview is project-owned, crop-sized, and fully described'
   assert.deepEqual(provenance.output.dimensions, { width: 1200, height: 630 });
 });
 
-test('theme control supports system, light, and dark without delaying first paint', () => {
+test('theme control follows the OS by default and exposes only light and dark choices', () => {
   const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
   const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
   assert.match(html, /data-theme-control/);
-  assert.match(client, /const themeModes = \['system', 'light', 'dark'\]/);
+  assert.match(client, /const themeModes = \['light', 'dark'\]/);
   assert.match(client, /localStorage\.setItem\(themeStorageKey, selected\)/);
   assert.match(client, /delete document\.documentElement\.dataset\.theme/);
   assert.match(styles, /:root\[data-theme="dark"\]/);

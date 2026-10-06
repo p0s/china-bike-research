@@ -55,7 +55,10 @@ test('layout emits base-aware social and structured metadata without repository 
   assert.match(html, /property="og:type" content="product"/);
   assert.match(html, /property="og:site_name" content="China Bikes"/);
   assert.match(html, /aria-label="China Bikes home"/);
-  assert.match(html, /data-theme-control aria-label="Theme: System\. Switch to light theme"/);
+  assert.match(html, /data-theme-control>/);
+  assert.match(html, /class="theme-light">Light/);
+  assert.match(html, /class="theme-dark">Dark/);
+  assert.doesNotMatch(html, /Theme: System|data-theme-label>System/);
   assert.ok(html.indexOf('china-bikes-theme-v1') < html.indexOf('rel="stylesheet"'));
   assert.match(html, /<script type="module" src="\/guide\/assets\/site\.js"><\/script>/);
   assert.match(html, /Evidence-led China bike comparison\.[\s\S]*Dataset updated <time datetime="2026-08-30">2026-08-30<\/time>; catalog-wide review <time datetime="2026-08-08">2026-08-08<\/time>/);

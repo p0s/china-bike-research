@@ -34,7 +34,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta name="description" content="${escapeAttr(description)}">
   ${googleSiteVerification ? `<meta name="google-site-verification" content="${escapeAttr(googleSiteVerification)}">` : ''}
   <meta name="theme-color" content="#f7f7f4" data-theme-color>
-  <script data-site-theme>(()=>{try{const k='china-bikes-theme-v1',t=localStorage.getItem(k);if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;const d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.querySelector('[data-theme-color]').content=d?'#111512':'#f7f7f4'}catch{}})()</script>
+  <script data-site-theme>(()=>{let t;try{t=localStorage.getItem('china-bikes-theme-v1')}catch{}if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;const d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.querySelector('[data-theme-color]').content=d?'#111512':'#f7f7f4'})()</script>
   <meta name="robots" content="${noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'}">
   <link rel="icon" type="image/svg+xml" href="${url(base,'/assets/logo.svg')}">
   <link rel="stylesheet" href="${url(base,'/assets/site.css')}">
@@ -67,7 +67,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
           <a href="${url(base,'/blog/')}"${current==='blog'?' aria-current="page"':''}>Blog</a>
         </nav>
         <nav class="language-nav" aria-label="Language">${LOCALES.filter((lang) => lang !== locale).map((lang) => `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav>
-        <button class="theme-button" type="button" data-theme-control aria-label="Theme: System. Switch to light theme" title="Theme: System"><span aria-hidden="true" data-theme-icon>◐</span><span data-theme-label>System</span></button>
+        <button class="theme-button" type="button" data-theme-control><span aria-hidden="true" data-theme-icon><span class="theme-light">☀</span><span class="theme-dark">☾</span></span><span data-theme-label><span class="theme-light">Light</span><span class="theme-dark">Dark</span></span></button>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       </div>
     </div>
