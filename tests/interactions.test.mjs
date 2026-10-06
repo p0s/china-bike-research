@@ -128,16 +128,16 @@ test('shared tooltips distinguish hover from pinned click state', () => {
   assert.match(styles, /\.tooltip-content\[data-placement="above"\]::after/);
 });
 
-test('catalog previews enlarge the full hit target from a useful default size', () => {
+test('catalog and shortlist previews share uncropped paint while preserving link hit areas', () => {
   assert.match(styles, /\.catalog-product \{[^}]*grid-template-columns: 156px minmax\(0, 1fr\)/);
   assert.match(styles, /\.product-image \{[^}]*width: 156px/);
-  assert.match(styles, /\.catalog-row \.product-image-link:hover \{[\s\S]*?transform: scale\(var\(--catalog-preview-scale\)\)/);
-  assert.doesNotMatch(styles, /\.product-image-link:hover > img/);
+  assert.match(styles, /:is\(\.catalog-row, \.curated-group\) \.product-image-link\.is-previewing > img \{[\s\S]*?transform: translate\([^;]+scale\(var\(--image-preview-scale\)\)/);
+  assert.match(styles, /\.product-image-link > img \{ pointer-events: none; \}/);
   assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-table \{ display: grid; grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
   assert.match(styles, /@media \(max-width: 780px\)[\s\S]*?\.filter-primary \{ grid-template-columns: 1fr 1fr; \}[\s\S]*?\.catalog-table \{ grid-template-columns: 1fr; \}/);
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.product-image \{ width: 132px; \}/);
-  assert.match(script, /\.catalog-row \.product-image-link'[\s\S]*?addEventListener\('mouseenter'[\s\S]*?closeTooltip\(\)/);
-  assert.match(styles, /\.product-image:has\(\.product-image-link:hover\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
+  assert.match(script, /\.catalog-row \.product-image-link, \.curated-group \.product-image-link/);
+  assert.match(styles, /\.product-image:has\(\.product-image-link\.is-previewing\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
   assert.match(styles, /\.model-figure\.is-unavailable,[\s\S]*?\.gallery-thumb\[hidden\] \{ display: none; \}/);
   assert.match(styles, /\.model-grid\.has-no-image \{[^}]*grid-template-columns: minmax\(0, 760px\);[^}]*justify-content: center;/);
   assert.match(styles, /\.catalog-product\.has-no-image \{ grid-template-columns: minmax\(0, 1fr\); \}/);
