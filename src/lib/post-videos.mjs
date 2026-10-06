@@ -41,9 +41,9 @@ export function renderPostVideos(ctx, post, sectionId) {
   if (!placements.length) return '';
   const locale = ctx.locale ?? 'en';
   const labels = {
-    en: ['Related video', 'Related videos', 'Video titles in the original language', 'YouTube video', 'Watch on YouTube'],
-    'zh-Hans': ['相关视频', '相关视频', '视频标题保留原文', 'YouTube 视频', '在 YouTube 观看'],
-    de: ['Passendes Video', 'Passende Videos', 'Videotitel in der Originalsprache', 'YouTube-Video', 'Auf YouTube ansehen']
+    en: ['Related video', 'Related videos', 'Video titles in the original language', 'YouTube video', 'Watch on YouTube', 'Load video'],
+    'zh-Hans': ['相关视频', '相关视频', '视频标题保留原文', 'YouTube 视频', '在 YouTube 观看', '加载视频'],
+    de: ['Passendes Video', 'Passende Videos', 'Videotitel in der Originalsprache', 'YouTube-Video', 'Auf YouTube ansehen', 'Video laden']
   }[locale];
   const byId = new Map([...(ctx.data.videos ?? []), ...postVideos.article_only_videos].map((video) => [video.id, video]));
   const videos = placements.map((placement) => {
@@ -53,5 +53,5 @@ export function renderPostVideos(ctx, post, sectionId) {
   });
   const contexts = new Map(placements.map((placement) => [placement.video_id, placement.context[locale]]));
   const id = `videos-${sectionId}`;
-  return `<aside class="article-videos" aria-labelledby="${escapeAttr(id)}"><h3 id="${escapeAttr(id)}">${escapeHtml(labels[placements.length > 1 ? 1 : 0])}</h3><small class="article-video-language">${escapeHtml(labels[2])}</small><div class="video-list">${renderVideoEntries(videos, { contexts, article: true, playerLabel: labels[3], watchLabel: labels[4] })}</div></aside>`;
+  return `<aside class="article-videos" aria-labelledby="${escapeAttr(id)}"><h3 id="${escapeAttr(id)}">${escapeHtml(labels[placements.length > 1 ? 1 : 0])}</h3><small class="article-video-language">${escapeHtml(labels[2])}</small><div class="video-list">${renderVideoEntries(videos, { contexts, article: true, playerLabel: labels[3], watchLabel: labels[4], loadLabel: labels[5] })}</div></aside>`;
 }

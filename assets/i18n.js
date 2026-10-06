@@ -3,6 +3,20 @@ import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  "Static default preview": "默认配置的静态预览",
+  "Editing ready": "已可编辑",
+  "Editing, shared links and saved drafts require JavaScript to finish loading.": "编辑功能、分享链接及已保存草稿须等待 JavaScript 加载完成。",
+  "High-modulus carbon fiber per the manufacturer’s Gravel V3 (25yr) revision; exact fiber grade and layup are unpublished.": "制造商的 Gravel V3（25yr）修订资料称其使用高模量碳纤维；未公布具体纤维等级与铺层。",
+  "Geometry qualification": "几何尺寸说明",
+  "Drivetrain build": "传动系统配置",
+  "Fit range": "尺码范围",
+  "About Twitter": "关于 Twitter",
+  "high-modulus": "高模量",
+  "Current T47 Gravel V3 carbon chassis with internal routing, integrated carbon cockpit and hidden seatpost clamp. The storefront monocoque claim accompanies a BB86 listing; no exact T47 lay-up or molding protocol is published.": "当前 T47 Gravel V3 碳纤维车架采用内走线、一体式碳纤维把组及隐藏式座管夹。店铺的单体成型主张对应的是 BB86 商品条目；未公布目标 T47 版本的铺层或成型工艺。",
+  "No independent exact-current-platform stiffness or deflection result was found; seller response and bottom-bracket-flex descriptions are not treated as measured evidence": "未找到针对当前目标平台的独立刚性或变形测试结果；卖家对响应感及中轴区域形变的描述不视为实测证据。",
+  "The official factory-store page lists the V3 25yr RS-24S with Sensah RS 2×12 at US$1,289.99 and offers Add to bag with US/EU shipping estimates of 17-35 business days; Shenzhen manufacturer contact also provides a direct inquiry route. This establishes an international route only. A current Tmall-indexed Gravel V3 family listing identifies the TWITTER flagship seller in Shenzhen, but does not expose the retained RS/Sensah 2×12 option or its availability; direct access to the mainland manufacturer page timed out. Confirm the exact mainland SKU, stock and checkout before treating it as orderable in China.": "官方工厂店页面列出 V3 25yr RS-24S，搭载 Sensah RS 2×12，售价 US$1,289.99，并提供“Add to bag”按钮及发往美国／欧盟的 17–35 个工作日配送预估；深圳制造商的联系方式也提供直接询价渠道。这只能确立国际购买渠道。当前天猫索引中的 Gravel V3 系列商品条目指向深圳的 TWITTER 旗舰店卖家，但未展示本站保留的 RS/Sensah 2×12 选项或其供货情况；直接访问大陆制造商页面时超时。在将其视为可在中国购买之前，须核对目标大陆 SKU、库存及结算流程。",
+  "The official US store currently lists the WheelTop EDS TX 2×12 build in Holographic, size L/54 cm, at US$1,750 with Add to bag and a US three-day delivery claim. This is a US route only. Shenzhen manufacturer contact also provides a direct inquiry route. A current Tmall-indexed Gravel V3 family listing identifies the TWITTER flagship seller in Shenzhen, but does not expose the retained WheelTop EDS TX 2×12 option or its availability; the mainland manufacturer page index lists WheelTop but direct access timed out and showed no purchase control. Mainland stock and checkout remain unverified.": "官方美国商店当前列出 WheelTop EDS TX 2×12 配置，Holographic 涂装、L/54 cm 尺码，售价 US$1,750，提供“Add to bag”按钮，并宣称在美国三日送达。这仅是美国购买渠道。深圳制造商的联系方式也提供直接询价渠道。当前天猫索引中的 Gravel V3 系列商品条目指向深圳的 TWITTER 旗舰店卖家，但未展示本站保留的 WheelTop EDS TX 2×12 选项或其供货情况；大陆制造商页面的索引列出 WheelTop，但直接访问时超时，且未显示购买控件。大陆库存及结算流程仍未核实。",
+  "Required build parts": "装车所需部件",
   "All images": "全部图片",
   "Scroll image views or use arrow keys, Home and End.": "横向滚动图片，或使用方向键、Home 和 End 键。",
   "Geometry": "几何尺寸",
@@ -779,8 +793,8 @@ Object.assign(zh, {
   'We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google\'s tag through this site\'s first-party gateway, it sends a separate page_view with browser and device details. The tag\'s reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. Server analytics requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.': '我们已准备可选的 Google Analytics 4 并行测试。启用后，每次符合条件的页面响应，服务器会向 Google 发送一次 site_open，包括匿名浏览器标识、公开页面路径，以及可选的来源网站和国家或地区。浏览器能够通过本站的第一方网关加载 Google 标签时，会另外发送一次 page_view，并包含浏览器和设备信息。此后服务器事件使用标签报告的会话标识；首次打开页面和被拦截的访问不附加未经验证的 GA 会话标识。这是同一次访问的两种视角，不能相加。服务器请求不向 Google 发送你的 IP、User-Agent、搜索词、网址查询参数或所选车型列表；浏览器加载标签时，Google 可能收到你的网络地址。Google 标签 Cookie 和本站浏览器标识 Cookie 最长保留 30 天；标签运行后设置的会话 Cookie 保留 30 分钟。我们关闭广告信号和个性化。Google 自行管理其分析数据的处理与保留。',
   'Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.': '“请勿跟踪”、Global Privacy Control 和下方的退出选项会停止两路分析。退出时会清除本站的 GA 标识 Cookie 和此主机上的 Google 标签 Cookie。',
   'External media': '外部媒体',
-  "Displayed product photos load from this site's Cloudflare-hosted assets. Pages with videos embed a": '展示的产品照片从本站的 Cloudflare 资源加载。含视频的页面会嵌入',
-  'player. It may contact YouTube when the page loads or the video comes into view. Videos do not autoplay.': '播放器。页面加载或视频进入视野时，浏览器可能联系 YouTube。视频不会自动播放。',
+  "Displayed product photos load from this site's Cloudflare-hosted assets. Model pages with videos embed a": '展示的产品照片从本站的 Cloudflare 资源加载。含视频的车型页面会嵌入',
+  'player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.': '播放器，页面加载或视频进入视野时可能联系 YouTube。文章页面仅在你加载视频或打开观看链接时联系 YouTube。视频不会自动播放。',
   'Contributions': '公开贡献',
   'GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.': 'GitHub 问题和合并请求是公开的。发布图片或链接前请删除个人信息；需要更正或移除内容时可提交问题。'
 });

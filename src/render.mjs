@@ -1,3 +1,4 @@
+import { initialBuildPresentation, buildBaseFacts } from '../assets/builder-presentation.js';
 import { structuredGeometry, candidateGeometry, isGeometryTableFact } from './lib/model-geometry.mjs';
 import { translate } from '../assets/i18n.js';
 import { relatedArticleLinks, renderHomeArticles } from './lib/posts.mjs';
@@ -1275,7 +1276,7 @@ export function renderHome(ctx) {
         <button class="filter-panel-toggle" type="button" data-filter-panel-toggle aria-expanded="false" aria-controls="table-filters">+ Filter</button>
         <div class="filter-actions"><label class="compact-select sort-select"><span>Sort</span><select name="sort" data-sort><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="reset-button" type="button" data-reset hidden>Clear</button></div>
       </div>
-      <div class="filter-chips" data-filter-chips aria-label="Active table filters" hidden></div>
+      <div class="filter-chips" data-filter-chips role="group" aria-label="Active table filters" hidden></div>
       <section class="filter-panel" id="table-filters" data-filter-panel aria-label="Table filters" hidden>
         <div class="filter-panel-heading"><div><span>Table filters</span><small>Only rows with recorded values match numeric limits.</small></div><button class="text-button" type="button" data-filter-panel-close>Close</button></div>
         <div class="filter-panel-grid">
@@ -1886,22 +1887,22 @@ function builderParts(ctx) {
   });
 }
 
-function builderPartOptions(parts, slot) {
+function builderPartOptions(parts, slot, included = false) {
   const matching = parts.filter((part) => part.slot === slot);
   return [
-    '<option value="included" hidden disabled>Keep included bike part</option>',
+    `<option value="included"${included ? ' selected' : ' hidden disabled'}>Keep included bike part</option>`,
     '<option value="custom">Custom / enter values</option>',
-    ...matching.map((part) => `<option value="${escapeAttr(part.id)}"${part.default ? ' selected' : ''}>${escapeHtml(`${part.maker} ${part.name}`)}</option>`)
+    ...matching.map((part) => `<option value="${escapeAttr(part.id)}"${part.default && !included ? ' selected' : ''}>${escapeHtml(`${part.maker} ${part.name}`)}</option>`)
   ].join('');
 }
 
-function builderSlotRow(ctx, parts, slot) {
+function builderSlotRow(ctx, parts, slot, view) {
   const [label, help] = buildSlotCopy[slot];
-  return `<section class="builder-part-row" data-build-slot="${escapeAttr(slot)}">
+  return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" data-build-slot="${escapeAttr(slot)}">
     <div class="builder-part-label"><h2>${escapeHtml(label)}</h2><p>${escapeHtml(help)}</p></div>
-    <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select>${builderPartOptions(parts, slot)}</select></label><div class="builder-custom-values" data-build-custom-values hidden><label data-build-custom-price-field>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
-    <div class="builder-part-facts"><strong data-build-part-price>—</strong><span data-build-part-weight>—</span><small data-build-part-basis></small><a href="${url(ctx.base, '/methodology/')}" data-build-part-source hidden rel="noreferrer">Source</a></div>
-    <p class="builder-covered-note" data-build-covered-note hidden></p>
+    <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select${view.covered ? ' disabled' : ''}>${builderPartOptions(parts, slot, view.included)}</select></label><div class="builder-custom-values" data-build-custom-values${view.customHidden ? ' hidden' : ''}><label data-build-custom-price-field${view.priceHidden ? ' hidden' : ''}>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field${view.weightHidden ? ' hidden' : ''}>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
+    <div class="builder-part-facts"><strong data-build-part-price>${escapeHtml(view.price)}</strong><span data-build-part-weight>${escapeHtml(view.weight)}</span><small data-build-part-basis>${escapeHtml(view.basis)}</small><a href="${escapeAttr(view.source?.url || url(ctx.base, '/methodology/'))}" data-build-part-source${view.source?.url ? ` title="${escapeAttr(view.source.title || 'Source')}"` : ' hidden'} rel="noreferrer">Source</a></div>
+    <p class="builder-covered-note" data-build-covered-note${view.covered ? '' : ' hidden'}>${escapeHtml(view.coveredNote)}</p>
   </section>`;
 }
 
@@ -1909,20 +1910,21 @@ export function renderBikeBuilder(ctx) {
   const bases = builderBases(ctx);
   const parts = builderParts(ctx);
   const builderDescription = 'Configure a China-market frameset or complete bike with sourced components and transparent price, weight, package and compatibility totals.';
-  const initialBase = bases[0];
+  const initial = initialBuildPresentation({ slots: buildSlotIds, bases, parts });
+  const initialBase = initial?.base;
   const publishedBases = bases.filter((base) => base.stage === 'published');
-  const baseOptions = `<optgroup label="Published catalog">${publishedBases.map((base) => `<option value="${escapeAttr(base.id)}">${escapeHtml(base.name)}</option>`).join('')}</optgroup>`;
+  const baseOptions = `<option value="" disabled>Choose an exact starting point</option><optgroup label="Published catalog">${publishedBases.map((base) => `<option value="${escapeAttr(base.id)}"${base.id === initialBase?.id ? ' selected' : ''}>${escapeHtml(base.name)}</option>`).join('')}</optgroup>`;
   const payload = { schemaVersion: 2, slots: buildSlotIds, bases, parts };
   const originalNotes = ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Paket-, Preis- und Messnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
-  const body = `<section class="builder-intro"><div class="page">${breadcrumbs(ctx, 'Bike configurator')}<span class="builder-kicker">Component planner</span><h1>Configure a bike</h1><p>Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.</p>${originalNotes}</div></section>
-  <section class="builder-page page" data-bike-builder>
+  const body = `<section class="builder-intro"><div class="page">${breadcrumbs(ctx, 'Bike configurator')}<span class="builder-kicker">Component planner</span><h1>Configure a bike</h1><p>Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.</p>${originalNotes}<p class="builder-preview-note" id="builder-preview-note"><span class="builder-preview-status" data-build-preview-status><strong data-build-static-label>Static default preview</strong><strong data-build-ready-label aria-hidden="true">Editing ready</strong></span><span>Editing, shared links and saved drafts require JavaScript to finish loading.</span></p></div></section>
+  <fieldset class="builder-page page" data-bike-builder disabled aria-describedby="builder-preview-note"><legend class="sr-only">Bike configurator</legend>
     <div class="builder-workbench">
-      <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><p data-build-base-facts>${initialBase ? escapeHtml(`${initialBase.kind === 'complete-bike' ? 'Complete bike' : 'Frameset'} · ${initialBase.bottomBracket || 'bottom bracket unknown'} · ${initialBase.tireClearanceLabel ? `${initialBase.tireClearanceLabel} tire clearance` : initialBase.tireClearanceMm ? `${initialBase.tireClearanceMm} mm tire clearance` : 'tire clearance unknown'}`) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom hidden><label data-build-base-price-field>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field>Base weight g<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
-      <div class="builder-parts" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot)).join('')}</div>
+      <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><p data-build-base-facts>${initialBase ? escapeHtml(buildBaseFacts(initialBase, ctx.locale)) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom${initial?.isComplete && initialBase?.priceLow != null && initialBase?.baseWeightG != null ? ' hidden' : ''}><label data-build-base-price-field${initialBase?.priceLow != null ? ' hidden' : ''}>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field${initialBase?.baseWeightG != null ? ' hidden' : ''}>${initial?.isComplete ? 'Base bike weight g' : 'Frame-only weight g'}<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label><label class="builder-package-weight" data-build-package-weight-field${initial?.isComplete ? ' hidden' : ''}><span>Fork + remaining frame-package weight (g)</span><input type="number" min="0" step="any" placeholder="Unknown" data-build-package-weight aria-label="Fork and remaining frame-package weight in grams"><small>Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.</small></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
+      <div class="builder-parts" role="group" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot, initial?.rows.get(slot) ?? { customHidden: true, priceHidden: true, weightHidden: true, price: '—', weight: '—', basis: '', coveredNote: '' })).join('')}</div>
     </div>
-    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>Current build</span><h2 id="builder-summary-title" data-build-name>Build total</h2><dl><div><dt data-build-price-label>Full price</dt><dd data-build-total-price>—</dd></div><div><dt data-build-weight-label>Known weight</dt><dd data-build-total-weight>—</dd></div></dl><p data-build-completeness aria-live="polite"></p><div data-build-compatibility aria-live="polite"></div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
+    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
     <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
-  </section>`;
+  </fieldset>`;
   return page(ctx, {
     title: 'Bike configurator',
     description: builderDescription,
@@ -2155,7 +2157,7 @@ export function renderPrivacy(ctx) {
     <p>Product-link events include the public model and brand, source type, destination hostname, page path and interface language. Comparison events include the public page, interface language and comparison size. Queries, search text and selected bike lists stay excluded.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <p>Google processes analytics data outside your region. Its recipient and privacy information, contact options, and rights tools are described in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Allowing optional analytics includes this transfer. Advertising consent remains denied.</p>
-    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Pages with videos embed a <code>youtube-nocookie.com</code> player. It may contact YouTube when the page loads or the video comes into view. Videos do not autoplay.</p>
+    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Model pages with videos embed a <code>youtube-nocookie.com</code> player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
 }

@@ -1,3 +1,4 @@
+import { buildCompatibilityMessages } from '../assets/builder-presentation.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -16,7 +17,7 @@ const payload = JSON.parse(renderBikeBuilder({ ...ctx, locale: 'en' }).match(/id
 const base = id => payload.bases.find(item => item.id === `candidate-laget-discovery-one-${id}`);
 const part = (teeth = 40, type = 'electronic', layout = 'single', wireless = true, maker = 'Shimano') => ({ maker, name: 'test drivetrain', compatibility: { drivetrain_layout: layout, shifting_type: type, largest_chainring_teeth: teeth, wireless_shifting: wireless } });
 function messages(id, drivetrain) {
-  return Array.from(vm.runInNewContext(`(${source.trim()})(base,new Map())`, { numberOrNull, base: base(id), state: { selections: {} }, selectedPart: slot => slot === 'drivetrain' ? drivetrain : null }));
+  return Array.from(vm.runInNewContext(`(${source.trim()})(base,new Map())`, { numberOrNull, buildCompatibilityMessages, base: base(id), state: { selections: {} }, selectedPart: slot => slot === 'drivetrain' ? drivetrain : null }));
 }
 test('LAGET flagship enforces wireless electronic 1x and the exact 40T boundary', () => {
   assert.deepEqual(messages('flagship', part()), []);
