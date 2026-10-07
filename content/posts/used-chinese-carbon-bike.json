@@ -15,7 +15,9 @@
     "twitter-v3-official-2026-08-16"
   ],
   "editorial_references": [
-    "https://www.trekbikes.com/ca/en_CA/carbon_care/"
+    "https://www.trekbikes.com/ca/en_CA/carbon_care/",
+    "https://www.cannondale.com/-/media/files/manual-uploads/manuals/012_OMS_F_126709_EN.pdf",
+    "https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike"
   ],
   "photo_sections": [
     {
@@ -28,93 +30,192 @@
   "translations": {
     "en": {
       "title": "Buying a used Chinese carbon bike: check the history before the bargain",
-      "description": "A used-bike inspection brief covering exact model identity, provenance, fit, qualified carbon assessment and the cost of missing parts.",
-      "intro": "A used bike can offer a sensible route to a better build. It can also bundle several unknowns into one attractive price. Before negotiating, establish what the bike is, what happened to it and who can assess its condition.",
+      "description": "Questions to ask before buying a used Chinese carbon bike: ownership, exact build, fit, damage history, expert assessment and the full service bill.",
+      "intro": "Fresh bar tape and a tempting price can make a used carbon bike feel like a bargain before you have even seen it. Slow down for the boring questions. Model, history, fit and replacement parts decide whether the purchase makes sense; the shiny bits can wait.",
       "sections": [
         {
           "id": "identity",
-          "heading": "Identify the actual generation",
+          "heading": "Identify the bike before arranging the handover",
           "paragraphs": [
-            "Ask for the frame serial, purchase documentation, model year or revision and close photographs of interfaces and components. Cross-check the exact model record. The [Twitter Gravel V3](/models/twitter-v3-rs-sensah/) shows why a reused model name can be insufficient: do not transfer specifications or parts compatibility between generations.",
-            "Confirm the seller’s right to sell and record the agreed included parts. Check applicable registration or stolen-bike records where available. Keep private seller documents out of public posts and repositories."
-          ]
+            "Ask for the frame serial, purchase documentation, model year or revision, and clear photographs of the frame and fitted parts. Ask the seller to explain their ownership, record the agreed included parts and check available bike-registration or stolen-bike records. You need information about this bike, without collecting unrelated personal details.",
+            "A “V3” listing, for example, still needs a build check. Our [Twitter Gravel V3 record](/models/twitter-v3-rs-sensah/) carries dated build evidence, while the [regional US storefront](https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike) lists separate builds. The Shimano 105 bike pictured below is a regional reference image; it does not verify a second-hand seller’s parts or frame generation.",
+            "Compare the exact frame size and cockpit with a bike that fits you. Ask about cut or replaced parts and check the relevant manuals before assuming you can change the position. Our [frame-sizing guide](/blog/chinese-bike-frame-sizing/) gives you a practical comparison worksheet."
+          ],
+          "worksheet": {
+            "caption": "Four questions before travelling to see the bike",
+            "columns": [
+              "Ask about",
+              "Question for the seller",
+              "What you need next"
+            ],
+            "rows": [
+              [
+                "Identity and ownership",
+                "Which revision is it, and how did you acquire it?",
+                "Match the serial, documents, actual bike and included parts."
+              ],
+              [
+                "Damage history",
+                "Any crashes, impacts, repairs or unexplained noises?",
+                "History and repair records for a qualified assessment."
+              ],
+              [
+                "Fit",
+                "What size is the frame, and which parts have been cut or changed?",
+                "Exact measurements and the relevant adjustment limits."
+              ],
+              [
+                "Service and spares",
+                "What needs work, and are any original parts missing?",
+                "Quotes and a confirmed source for essential replacement parts."
+              ]
+            ]
+          }
         },
         {
           "id": "condition",
-          "heading": "Let condition be a separate decision",
+          "heading": "Give condition its own decision",
           "paragraphs": [
-            "Ask directly about impacts, crashes, repairs and unusual noises, then arrange an appropriate qualified inspection. [Trek’s carbon-care guidance](https://www.trekbikes.com/ca/en_CA/carbon_care/) warns that carbon damage can be hidden. A clean photograph or a reassuring tap sound does not establish structural safety.",
-            "If there is suspected structural damage, do not use a test ride to settle the doubt. Stop and get the appropriate assessment. A low price cannot make an unresolved frame or fork problem an acceptable riding plan."
+            "Ask directly about crashes, impacts, repairs and unusual noises. [Trek’s carbon-care guidance](https://www.trekbikes.com/ca/en_CA/carbon_care/) warns that impact damage may be hidden and advises stopping riding when damage is suspected. A tidy photograph cannot settle that doubt. Ask a qualified bicycle mechanic or carbon specialist what assessment is appropriate for the actual bike and its history.",
+            "[Cannondale’s carbon-frame supplement](https://www.cannondale.com/-/media/files/manual-uploads/manuals/012_OMS_F_126709_EN.pdf) also warns against riding damaged carbon parts. These are safety principles, not a warranty promise from either brand for a Twitter or another Chinese bike.",
+            "If structural integrity remains in doubt, follow the relevant manufacturer’s replacement advice. Do not use a test ride, a tap sound or an ordinary service as clearance. A lower price does not resolve the concern."
           ]
         },
         {
           "id": "total",
-          "heading": "Price the bike you will actually ride",
+          "heading": "Compare the complete cost, then negotiate",
           "paragraphs": [
-            "List the needed service, worn consumables, correct size changes and missing proprietary hardware. Get quotes. Verify warranty transfer rules with the relevant seller or manufacturer rather than assuming the original owner’s cover continues. If a crucial part cannot be identified or sourced, treat that as an unresolved purchase requirement.",
-            "Set your walk-away conditions before the negotiation: unclear ownership, unsuitable fit, unresolved damage or an incomplete parts path. When those checks pass, negotiate the complete cost with a much clearer picture of what the bargain contains."
+            "Write down the purchase price, assessment, needed service, worn consumables, fit changes and missing hardware. Get quotes before negotiating. Ask the relevant manufacturer or seller whether any warranty transfers to you and which documents a claim would need; do not budget around cover that has not been confirmed.",
+            "For example, a cheaper bike needing a chain, cassette and a proprietary hanger may cost more to put into use than a more expensive, recently serviced bike. Use actual quotes for that comparison, and assess each bike’s condition separately. If a crucial part cannot be identified or sourced, pause the purchase.",
+            "Our [first-carbon-bike budget guide](/blog/first-carbon-bike-budget/) helps you keep setup and ownership costs in the same calculation. Set your walk-away conditions before the conversation: unclear ownership, unsuitable fit, unresolved structural concerns or essential parts you cannot obtain. Negotiate the complete cost once those questions have proper answers."
           ]
         }
       ]
     },
     "zh-Hans": {
       "title": "买二手中国碳车：先查来历，再看便宜多少",
-      "description": "二手车检查需求清单：具体车型身份、来源、适配、专业碳件评估与缺失零件费用。",
-      "intro": "二手车可能让你用合理预算获得更好的配置，也可能把多个未知问题打包成一个漂亮价格。议价之前，先确定它到底是什么车、经历过什么，以及谁能评估车况。",
+      "description": "买二手中国碳纤维自行车前，问清车架代次、来源、尺码和损伤经历，再核算专业评估、保养与补齐零件的费用。",
+      "intro": "换上新把带、拍几张漂亮照片，二手碳车就很容易显得划算。先把好看的部分放一放：它是哪一代、经历过什么、是否合身、关键零件能不能补齐，才决定这笔交易值不值得。",
       "sections": [
         {
           "id": "identity",
-          "heading": "确认实际代次",
+          "heading": "约看车前，先认清这辆车",
           "paragraphs": [
-            "索取车架序列号、购买凭证、年份或版本，以及接口和零件细节照片，再对照具体车型记录。[Twitter Gravel V3](/models/twitter-v3-rs-sensah/)说明了重复使用的车型名为什么可能不够：不同代次之间，不能直接转移规格或零件兼容性。",
-            "确认卖家有权出售，并记录约定包含的零件；有适用的车辆登记或失窃记录时，应进行核查。卖家的私人文件不要放进公开文章或代码仓库。"
-          ]
+            "索取车架序列号、购买凭证、年份或版本，以及车架和实装零件的清晰照片。请卖家说明车辆来源，写清约定包含的零件；有可用的车辆登记或失窃记录时，也应核查。需要的是这辆车的信息，不必收集无关的个人资料。",
+            "卖家只写“V3”，还不足以确认配置。我们的 [Twitter Gravel V3 记录](/models/twitter-v3-rs-sensah/)保留了带日期的配置证据，[美国地区店铺](https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike)也列有不同配置。下方 Shimano 105 整车照片是地区版参考图，不能证明某辆二手车的实装零件或车架代次。",
+            "把具体车架尺码和把组尺寸，与一辆你骑着合身的车对照。问清哪些零件截短或换过，再按相关说明书确认调整范围，不能默认买回来就能改成合适的姿势。[车架尺码指南](/blog/chinese-bike-frame-sizing/)里有可直接填写的对照表。"
+          ],
+          "worksheet": {
+            "caption": "出发看车前，先问清这四件事",
+            "columns": [
+              "问什么",
+              "给卖家的问题",
+              "接下来需要什么"
+            ],
+            "rows": [
+              [
+                "车型与来源",
+                "是哪一代？这辆车是怎么来的？",
+                "对照序列号、凭证、实车与约定零件。"
+              ],
+              [
+                "损伤经历",
+                "有过摔车、碰撞、维修或不明异响吗？",
+                "整理经历和维修记录，供专业人员评估。"
+              ],
+              [
+                "是否合身",
+                "车架多大？哪些零件截短或换过？",
+                "准确尺寸和相关零件允许的调整范围。"
+              ],
+              [
+                "保养与备件",
+                "还有什么需要修？原装零件缺了哪些？",
+                "维修报价，以及关键替换件的可靠来源。"
+              ]
+            ]
+          }
         },
         {
           "id": "condition",
-          "heading": "把车况评估单独做决定",
+          "heading": "单独判断车况",
           "paragraphs": [
-            "直接询问碰撞、摔车、维修和异常声音，并安排合适的专业检查。[Trek的碳纤维养护说明](https://www.trekbikes.com/ca/en_CA/carbon_care/)提醒，碳件损伤可能隐藏在外观之下。干净的照片，或听起来正常的敲击声，都不能证明结构安全。",
-            "如果怀疑结构损伤，不要靠试骑来消除疑虑，应停止使用并取得适当评估。低价不能让未解决的车架或前叉问题变成可接受的骑行方案。"
+            "直接问清摔车、碰撞、维修和异常声音。[Trek 的碳纤维养护说明](https://www.trekbikes.com/ca/en_CA/carbon_care/)提醒，撞击损伤可能藏在外观之下，怀疑有损伤时应停止骑行。漂亮照片不能消除这种疑问。请熟悉碳纤维车架的自行车技师或专业机构，根据实车及其经历判断需要怎样评估。",
+            "[Cannondale 的碳车架说明书补充文件](https://www.cannondale.com/-/media/files/manual-uploads/manuals/012_OMS_F_126709_EN.pdf)也提醒，不要骑有损伤的碳纤维零件。这些是安全原则，不代表 Trek 或 Cannondale 为 Twitter 或其他中国品牌提供保修。",
+            "如果结构是否完好仍有疑问，应按相关厂家的更换建议处理。不要把试骑、敲击声或一次普通保养当成结构安全的证明。价格更低，也解决不了这个问题。"
           ]
         },
         {
           "id": "total",
-          "heading": "按最终可骑状态核算",
+          "heading": "算完整费用，再谈价格",
           "paragraphs": [
-            "列出必需保养、磨损耗材、尺码适配改动和缺失的专用五金，并取得报价。向相关卖家或厂家核对保修转移规则，不能默认原车主保修继续有效。若关键零件无法确认或买到，应把它保留为未解决的购买条件。",
-            "议价前先设定放弃条件：所有权不清、尺码不适合、损伤未排除，或关键零件没有解决路径。检查通过之后，再围绕完整费用议价，你会更清楚这个“划算”到底包含什么。"
+            "把车价、评估费、必要保养、磨损耗材、适配改动和缺失的专用零件都列出来，议价前先拿到报价。向相关厂家或卖家确认保修是否能转给你，以及索赔需要哪些文件；尚未确认的保修，不要当成已有保障。",
+            "比如，一辆便宜车还要换链条、飞轮，再找专用尾钩，整备后可能比一辆价格更高、刚做过保养的车还贵。要用实际报价比较，也不能因此认定其中任何一辆车结构完好。关键零件确认不了或买不到，就先暂停交易。",
+            "[第一辆碳车预算指南](/blog/first-carbon-bike-budget/)能帮你把装车和后续费用放进同一张账单。谈价前，先定好放弃条件：来源不清、尺码不合、结构仍有疑问，或关键零件无法补齐。把这些问题问明白，再围绕完整费用议价。"
           ]
         }
       ]
     },
     "de": {
       "title": "Gebrauchtes chinesisches Carbonrad: Erst die Geschichte, dann der Preis",
-      "description": "Prüfe Modellidentität, Herkunft, Passform, fachliche Carbonbewertung und fehlende Teile vor dem Gebrauchtkauf.",
-      "intro": "Ein Gebrauchtrad kann einen besseren Aufbau erschwinglich machen. Es kann aber auch mehrere Unbekannte in einem attraktiven Preis bündeln. Kläre vor dem Verhandeln, welches Rad es ist, was es erlebt hat und wer den Zustand beurteilen kann.",
+      "description": "Vor dem Gebrauchtkauf: Herkunft, genaue Ausstattung, Passform, Schäden, fachkundige Prüfung und vollständige Kosten eines chinesischen Carbonrads klären.",
+      "intro": "Der Lack glänzt, das Lenkerband ist neu und der Preis verlockend. Da wirkt ein gebrauchtes Carbonrad schnell wie ein Schnäppchen. Kläre zuerst die weniger hübschen Fragen: Modell, Vorgeschichte, Passform und Ersatzteile. Sie entscheiden, ob der Kauf sinnvoll ist.",
       "sections": [
         {
           "id": "identity",
-          "heading": "Die tatsächliche Generation bestimmen",
+          "heading": "Vor dem Besichtigungstermin das Rad bestimmen",
           "paragraphs": [
-            "Frage nach Seriennummer, Kaufbeleg, Modelljahr oder Revision und Detailfotos der Schnittstellen und Teile. Gleiche den konkreten Eintrag ab. Der [Twitter Gravel V3](/models/twitter-v3-rs-sensah/) zeigt, warum ein wiederverwendeter Name nicht genügt: Spezifikationen und Kompatibilität gelten nicht automatisch generationsübergreifend.",
-            "Kläre die Verkaufsberechtigung und den vereinbarten Lieferumfang. Prüfe verfügbare passende Registrierungs- oder Diebstahlregister. Private Verkäuferunterlagen gehören nicht in öffentliche Beiträge oder Repositories."
-          ]
+            "Frage nach Rahmennummer, Kaufbeleg, Modelljahr oder Version und klaren Fotos des Rahmens und der montierten Teile. Lass dir erklären, wie der Verkäufer das Rad erworben hat, und halte die vereinbarten Teile fest. Prüfe verfügbare Fahrrad- oder Diebstahlregister. Es geht um dieses Rad; unnötige persönliche Unterlagen brauchst du dafür nicht.",
+            "Auch eine Anzeige mit der Bezeichnung „V3“ braucht einen Abgleich der Ausstattung. Unser [Twitter-Gravel-V3-Eintrag](/models/twitter-v3-rs-sensah/) enthält datierte Belege; der [regionale US-Shop](https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike) führt mehrere Aufbauten. Das Shimano-105-Rad unten ist ein regionales Referenzfoto. Es belegt weder die Teile noch die Rahmengeneration eines angebotenen gebrauchten Rads.",
+            "Vergleiche die genaue Rahmengröße und das Cockpit mit einem Rad, das dir passt. Frage nach gekürzten oder ausgetauschten Teilen und prüfe die passenden Anleitungen, bevor du davon ausgehst, dass sich die Sitzposition passend einstellen lässt. Unser [Rahmengrößen-Ratgeber](/blog/chinese-bike-frame-sizing/) enthält eine praktische Vergleichstabelle."
+          ],
+          "worksheet": {
+            "caption": "Vier Fragen vor der Fahrt zur Besichtigung",
+            "columns": [
+              "Thema",
+              "Frage an den Verkäufer",
+              "Was du anschließend brauchst"
+            ],
+            "rows": [
+              [
+                "Modell und Herkunft",
+                "Welche Version ist es, und wie hast du das Rad erworben?",
+                "Rahmennummer, Belege, tatsächliches Rad und enthaltene Teile abgleichen."
+              ],
+              [
+                "Schadensgeschichte",
+                "Gab es Stürze, Stöße, Reparaturen oder ungeklärte Geräusche?",
+                "Vorgeschichte und Reparaturbelege für eine fachkundige Beurteilung."
+              ],
+              [
+                "Passform",
+                "Welche Rahmengröße, und welche Teile wurden gekürzt oder ersetzt?",
+                "Genaue Maße und zulässige Einstellbereiche."
+              ],
+              [
+                "Wartung und Ersatzteile",
+                "Was muss gemacht werden, und welche Originalteile fehlen?",
+                "Kostenvoranschläge und eine Bezugsquelle für nötige Ersatzteile."
+              ]
+            ]
+          }
         },
         {
           "id": "condition",
-          "heading": "Den Zustand gesondert beurteilen",
+          "heading": "Den Zustand getrennt beurteilen",
           "paragraphs": [
-            "Frage ausdrücklich nach Stößen, Stürzen, Reparaturen und ungewöhnlichen Geräuschen. Organisiere eine geeignete fachliche Prüfung. [Treks Carbonhinweise](https://www.trekbikes.com/ca/en_CA/carbon_care/) erklären, dass Schäden verborgen sein können. Ein sauberes Foto oder beruhigender Klopfton belegt keine strukturelle Sicherheit.",
-            "Bei Verdacht auf strukturelle Schäden ist eine Probefahrt kein geeigneter Klärungstest. Nicht fahren und fachlich bewerten lassen. Ein niedriger Preis macht ein ungeklärtes Rahmen- oder Gabelproblem nicht zu einem vertretbaren Fahrplan."
+            "Frage ausdrücklich nach Stürzen, Stößen, Reparaturen und ungewöhnlichen Geräuschen. [Treks Carbonhinweise](https://www.trekbikes.com/ca/en_CA/carbon_care/) erklären, dass Aufprallschäden verborgen sein können und bei Schadensverdacht nicht weitergefahren werden soll. Ein ordentliches Foto klärt diesen Zweifel nicht. Frage eine qualifizierte Fahrradwerkstatt oder einen Carbonfachbetrieb, welche Untersuchung zum Rad und seiner Vorgeschichte passt.",
+            "Auch [Cannondales Ergänzung zur Carbonrahmen-Anleitung](https://www.cannondale.com/-/media/files/manual-uploads/manuals/012_OMS_F_126709_EN.pdf) warnt davor, beschädigte Carbonteile zu fahren. Das sind Sicherheitshinweise, keine Garantiezusage dieser Marken für ein Twitter oder ein anderes chinesisches Rad.",
+            "Bleiben Zweifel an der strukturellen Unversehrtheit, beachte die Austauschempfehlung des jeweiligen Herstellers. Eine Probefahrt, ein Klopfgeräusch oder eine normale Wartung beweist keine strukturelle Sicherheit. Ein niedrigerer Preis beseitigt den Zweifel nicht."
           ]
         },
         {
           "id": "total",
-          "heading": "Das tatsächlich fahrbare Rad berechnen",
+          "heading": "Die vollständigen Kosten vergleichen und dann verhandeln",
           "paragraphs": [
-            "Liste nötige Wartung, verschlissene Verbrauchsteile, Passformänderungen und fehlende Spezialhardware auf und hole Angebote ein. Prüfe Garantieübertragung beim zuständigen Verkäufer oder Hersteller. Kann ein wichtiges Teil nicht identifiziert oder beschafft werden, bleibt eine Kaufvoraussetzung offen.",
-            "Lege Abbruchbedingungen vor der Verhandlung fest: unklare Eigentumsverhältnisse, ungeeignete Passform, ungeklärte Schäden oder fehlender Teileweg. Bestehen die Prüfungen, kannst du die vollständigen Kosten mit einem klareren Bild des Angebots verhandeln."
+            "Notiere Kaufpreis, Untersuchung, nötige Wartung, verschlissene Teile, Anpassungen und fehlende Befestigungsteile. Hole vor dem Verhandeln Angebote ein. Kläre beim zuständigen Hersteller oder Verkäufer, ob eine Garantie auf dich übergeht und welche Belege nötig wären. Rechne erst mit einer Garantie, wenn sie dir bestätigt wurde.",
+            "Ein günstigeres Rad, das Kette, Kassette und ein spezielles Schaltauge braucht, kann am Ende mehr kosten als ein teureres, frisch gewartetes Rad. Vergleiche dafür echte Angebote; daraus folgt noch keine Aussage zur strukturellen Unversehrtheit. Lässt sich ein wichtiges Teil nicht bestimmen oder beschaffen, warte mit dem Kauf.",
+            "Unser [Budget-Ratgeber fürs erste Carbonrad](/blog/first-carbon-bike-budget/) hilft dir, Aufbau und Folgekosten zusammenzurechnen. Lege vor dem Gespräch fest, wann du aussteigst: ungeklärte Herkunft, unpassende Größe, offene Zweifel am Rahmen oder fehlende wichtige Ersatzteile. Verhandle über die Gesamtkosten, wenn diese Fragen ordentlich geklärt sind."
           ]
         }
       ]
@@ -122,12 +223,12 @@
   },
   "editorial_review": {
     "status": "reviewed",
-    "reviewed_at": "2026-10-04T08:56:14.110Z",
+    "reviewed_at": "2026-10-07T17:15:47Z",
     "reviewed_languages": [
       "en",
       "zh-Hans",
       "de"
     ],
-    "contribution": "Generation identity, ownership, qualified damage assessment and complete service cost form independent used-bike purchase gates."
+    "contribution": "A four-question seller brief separates exact bike identity and ownership, qualified condition assessment, fit limits and quoted service/spares costs. Concrete hypothetical cost comparison and localized links support the used-bike purchase decision without certifying carbon safety."
   }
 }
