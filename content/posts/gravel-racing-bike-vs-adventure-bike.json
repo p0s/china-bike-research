@@ -29,91 +29,190 @@
   ],
   "translations": {
     "en": {
-      "title": "Gravel racing or adventure riding: give the bike one main job",
+      "title": "Gravel race bike vs adventure bike: choose your main job",
       "description": "Choose a gravel build from the event or journey it needs to support, with gearing, luggage and repair trade-offs made explicit.",
-      "intro": "A fast local gravel event and a week away from convenient bike shops can share the same scenery. They give a bicycle quite different jobs. Choose the main job first; “versatile” becomes useful only when you explain the compromises.",
+      "intro": "On Friday night, one rider is pinning on a race number. Another is trying to fit a cooking pot into a frame bag. Both want a gravel bike. Before comparing frames, decide which of those evenings looks more like yours: the answer changes what needs to fit, what needs to be easy to fix, and which compromises are worth paying for.",
       "sections": [
         {
           "id": "day",
-          "heading": "Write the difficult day",
+          "heading": "Start with your hardest day",
           "paragraphs": [
-            "For a race, describe duration, surface, climbs and access to help. For a journey, add daily load, water range and what a broken part would interrupt. Use actual event information or a planned route. A photo of a forest road gives neither the necessary gearing nor the size of your luggage."
-          ]
+            "For a race, use the actual event route and rider information: duration, surface, climbs, feed stops and access to help. For a trip, add your packed kit, the distance between water stops and what happens if a part fails. A lovely forest-road photo answers none of those questions.",
+            "Fill in both columns below. A race can be remote and rough; a touring day can be short and supported. Let your route set the requirements."
+          ],
+          "worksheet": {
+            "caption": "Two ride plans to compare before buying",
+            "columns": [
+              "Check",
+              "Your race",
+              "Your loaded trip"
+            ],
+            "rows": [
+              [
+                "Time on the bike",
+                "Expected duration and position you can sustain",
+                "Longest day, including time riding when tired"
+              ],
+              [
+                "Hardest climb",
+                "Gradient and surface; required low gear",
+                "Same check with your planned luggage load"
+              ],
+              [
+                "What must fit",
+                "Food, water and event-required kit",
+                "Packed bags, water and any camping kit"
+              ],
+              [
+                "Help after a mechanical",
+                "Event support and realistic exit points",
+                "Parts, tools and distance to practical help"
+              ]
+            ]
+          }
         },
         {
           "id": "frames",
           "heading": "Read beyond “race” and “adventure”",
           "paragraphs": [
-            "The [ICAN GRARO](/models/ican-graro-frameset/) and [LightCarbon LCG071S-PRO](/models/lightcarbon-lcg071s-pro-frameset/) provide concrete frames to investigate. Compare exact size geometry, approved tire packages and mounting/load documentation. A category name does not confirm that your packed bags fit, or that a racing position suits an eight-hour day.",
-            "Avoid treating a published maximum tire size as the preferred size for every surface. Your actual tire, rim and drivetrain must meet the limits, with appropriate room for the conditions."
+            "The [ICAN GRARO](/models/ican-graro-frameset/) and [LightCarbon LCG071S-PRO](/models/lightcarbon-lcg071s-pro-frameset/) are concrete frames to compare, not ready-made answers to either column. Check the geometry for your exact size, your intended tire and rim combination, and how you will carry the kit. A category label does not tell you whether a packed frame bag fits or whether the cockpit suits a long day.",
+            "Fork options matter. [LightCarbon's current page](https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html) describes fixing points on its default fork and a hole-free alternative. [ICAN's GRARO page](https://icanwheels.com/products/graro) describes a China-warehouse default without mounting bolts and asks for an order note for the alternative. Neither note supplies a luggage load rating. Confirm the exact supplied fork, hardware and permitted loads before choosing a carrying setup; our [bikepacking mounts guide](/blog/chinese-bike-for-bikepacking-mounts/) explains the questions to ask.",
+            "A published maximum tire size is a limit to check, not a recommendation for every ride. Check frame and fork clearance, tire–rim compatibility and space for mud with the actual parts. Likewise, choose a low gear for the climb you must ride, then check that the complete drivetrain combination is supported."
           ]
         },
         {
           "id": "tradeoffs",
           "heading": "Choose where you will accept a compromise",
           "paragraphs": [
-            "A light packed kit can still require carrying approvals; a racing build can still need a genuinely low gear. Make a list of changes required to move from your primary job to the secondary one. Include parts, shop work and storage. If the change is extensive, be honest about how often you will do it.",
-            "Before ordering, finish this sentence: “Most weeks this bike will do ___, so I accept ___ when I use it for ___.” That is a buying decision you can test. A promise to do everything perfectly usually needs a more expensive explanation."
+            "Write down what a change of job would involve: tires or wheels, bags and mounts, gearing, tools, setup work and storage. Separate a simple swap from work you would ask a shop to do. If wheel changes are part of the plan, read our [guide to one bike with two wheelsets](/blog/one-bike-road-and-gravel-two-wheelsets/) before assuming the swap will be trouble-free.",
+            "For example, if nearly every ride is a local gravel loop and camping happens once a year, build around the loop and work out a safe, realistic trip setup. If loaded trips are the reason you are buying the bike, make the luggage and climbing requirements part of the original build. This is a way to weigh your own use, not a rule that either frame wins.",
+            "Before ordering, finish this sentence: “Most weeks this bike will do ___, so I accept ___ when I use it for ___.” Then list the parts and work needed for that second use. The camping pot may stay at home on race day; the ability to carry it safely still needs an answer."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "砾石竞赛还是冒险骑游？先给车一个主要任务",
+      "title": "砾石竞赛车还是冒险骑游车？先定主要用途",
       "description": "按比赛或旅途需求选择砾石配置，明确齿比、行李和维修之间的取舍。",
-      "intro": "本地砾石比赛与远离便利车店的一周旅行，可能经过同样的风景，却给车提出很不同的任务。先确定主要任务；只有说明取舍，“多用途”才有实际意义。",
+      "intro": "周五晚上，有人在别号码布，有人在琢磨怎么把锅塞进车架包。两个人都想买砾石车。比较车架之前，先想想哪种准备工作更像你的日常：这会影响你要装什么、哪些零件需要便于维修，以及哪些取舍值得花钱。",
       "sections": [
         {
           "id": "day",
-          "heading": "把最难的一天写出来",
+          "heading": "先想清楚最难的一天",
           "paragraphs": [
-            "比赛需求应包括时长、路面、爬坡和救援条件；旅行则还要写上每日载荷、饮水续航，以及零件损坏会打断什么。使用真实赛事信息或计划路线。森林道路照片无法告诉你需要什么齿比，也无法决定行李容量。"
-          ]
+            "比赛需求应以实际路线和参赛指南为准：骑行时长、路面、爬坡、补给点，以及出问题后能得到什么帮助。旅行还要算上装好的行李、饮水补给点之间的距离，以及零件损坏后的应对方式。一张漂亮的林道照片，回答不了这些问题。",
+            "把下面两列都填出来。比赛也可能偏远而崎岖，旅行也可能路程短、补给方便。让具体路线决定需求。"
+          ],
+          "worksheet": {
+            "caption": "买车前，比较两份骑行计划",
+            "columns": [
+              "检查项目",
+              "你的比赛",
+              "你的负重旅行"
+            ],
+            "rows": [
+              [
+                "骑行时长",
+                "预计时长；能够持续保持的骑姿",
+                "最长一天；疲劳时仍需骑行多久"
+              ],
+              [
+                "最难的爬坡",
+                "坡度、路面与需要的低挡",
+                "带上计划中的行李，再做同样的检查"
+              ],
+              [
+                "需要装什么",
+                "食物、饮水及赛事规定装备",
+                "装满的车包、饮水与可能需要的露营装备"
+              ],
+              [
+                "机械故障后怎么办",
+                "赛事支援与可行的撤离点",
+                "备件、工具及到可获得帮助地点的距离"
+              ]
+            ]
+          }
         },
         {
           "id": "frames",
           "heading": "读懂“竞赛”和“冒险”标签背后的内容",
           "paragraphs": [
-            "[ICAN GRARO](/models/ican-graro-frameset/)和[LightCarbon LCG071S-PRO](/models/lightcarbon-lcg071s-pro-frameset/)提供了可具体调查的车架。应比较实际尺码几何、认可的轮胎组合，以及接口和载荷文件。车型标签无法确认装满后的车包是否合适，也无法保证竞赛骑姿适合八小时骑行。",
-            "不要把公布的最大轮胎尺寸，当成所有路面的首选尺寸。实际轮胎、轮圈和传动组合必须符合限制，并给所遇环境留出合适空间。"
+            "[ICAN GRARO](/models/ican-graro-frameset/)和[LightCarbon LCG071S-PRO](/models/lightcarbon-lcg071s-pro-frameset/)是可以具体比较的车架，但型号本身不是上面两列的答案。核对实际尺码的几何、打算使用的轮胎与轮圈，以及装备的携带方式。车型标签无法告诉你装满后的车架包是否放得下，也无法保证车把位置适合长时间骑行。",
+            "前叉选项会影响计划。[LightCarbon 当前页面](https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html)说明默认前叉带固定点，也可选择无孔版本。[ICAN GRARO 页面](https://icanwheels.com/products/graro)说明中国仓默认前叉不带安装螺栓，若需要另一种配置，应在订单中备注。两段说明都没有给出行李载荷上限。选择携带方案前，要确认实际供货的前叉、五金配件和允许载荷；[车包与安装点指南](/blog/chinese-bike-for-bikepacking-mounts/)列出了应问清的问题。",
+            "公布的最大轮胎尺寸是需要核对的限制，不是每次骑行都该用的尺寸。按实际零件检查车架与前叉的间隙、轮胎和轮圈的兼容性，以及泥地所需空间。低挡也应按必须骑上的坡来选，再核对整套传动组合是否受支持。"
           ]
         },
         {
           "id": "tradeoffs",
           "heading": "决定哪些地方可以妥协",
           "paragraphs": [
-            "轻量行李也需要载荷认可；竞赛配置也可能需要真正轻的低挡。列出从主要用途切换到次要用途所需的改动，包括零件、车店工时和存放。如果改动很多，应诚实估计你会多久切换一次。",
-            "下单前，把这句话填完整：“大多数时候这辆车会用来___，所以用于___时，我接受___。”这是可以验证的购买决定。承诺样样完美的方案，通常还需要一个更昂贵的解释。"
+            "列出切换用途需要做什么：换轮胎或轮组、加车包与支架、改齿比，以及工具、安装工时和存放空间。把容易自行完成的更换，与需要车店处理的工作分开。如果计划靠换轮组切换用途，先读[一辆车搭配两套轮组的指南](/blog/one-bike-road-and-gravel-two-wheelsets/)，不要预设换上就能顺利骑。",
+            "例如，大多数骑行都是本地砾石路线，一年只露营一次，可以围绕常骑路线组车，再规划安全、可行的旅行配置。如果负重旅行正是买车的原因，就应从一开始把行李和爬坡需求纳入组车方案。这是衡量自己用途的方法，并不代表某一款车架必然胜出。",
+            "下单前，把这句话填完整：“大多数时候这辆车会用来___，所以用于___时，我接受___。”再列出第二种用途需要的零件和工时。比赛当天可以把锅留在家里，但旅行时能不能安全地带上它，仍然要有答案。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Gravelrennen oder Abenteuer: Gib dem Rad eine Hauptaufgabe",
+      "title": "Gravel-Rennrad oder Reiserad: Was soll dein Rad vor allem können?",
       "description": "Wähle einen Gravelaufbau nach Rennen oder Reise und benenne Kompromisse bei Übersetzung, Gepäck und Reparatur.",
-      "intro": "Ein schnelles lokales Gravelrennen und eine Woche fern von Werkstätten können durch dieselbe Landschaft führen. Das Rad hat dabei unterschiedliche Aufgaben. Lege die Hauptaufgabe fest; „vielseitig“ hilft erst, wenn die Kompromisse klar sind.",
+      "intro": "Am Freitagabend befestigt jemand die Startnummer am Rad. Jemand anderes versucht, einen Kochtopf in der Rahmentasche unterzubringen. Beide suchen ein Gravelrad. Überlege vor dem Rahmenvergleich, welcher Abend eher zu dir passt: Davon hängt ab, was ans Rad muss, was sich unterwegs reparieren lassen soll und für welche Kompromisse du Geld ausgeben möchtest.",
       "sections": [
         {
           "id": "day",
-          "heading": "Den schwierigen Tag beschreiben",
+          "heading": "Plane den schwierigsten Tag",
           "paragraphs": [
-            "Beschreibe fürs Rennen Dauer, Untergrund, Anstiege und Hilfsmöglichkeiten. Ergänze für eine Reise Tageslast, Wasserbedarf und Folgen eines Defekts. Nutze echte Veranstaltungsdaten oder deine Strecke. Ein Waldwegfoto liefert weder die nötigen Gänge noch das Gepäckvolumen."
-          ]
+            "Nutze fürs Rennen die tatsächliche Strecke und die Veranstalterinformationen: Fahrdauer, Untergrund, Anstiege, Verpflegungsstellen und Hilfe bei Problemen. Ergänze für eine Reise das gepackte Gepäck, die Entfernung zwischen Wasserstellen und deinen Plan für einen Defekt. Ein schönes Waldwegfoto beantwortet diese Fragen nicht.",
+            "Fülle beide Spalten aus. Auch ein Rennen kann abgelegen und ruppig sein; eine Reiseetappe kann kurz sein und gute Versorgung bieten. Die konkrete Strecke bestimmt die Anforderungen."
+          ],
+          "worksheet": {
+          "caption": "Rennen und Reise vor dem Kauf vergleichen",
+            "columns": [
+              "Prüfpunkt",
+              "Dein Rennen",
+              "Deine Reise mit Gepäck"
+            ],
+            "rows": [
+              [
+                "Zeit im Sattel",
+                "Geplante Dauer und eine Haltung, die du durchhältst",
+                "Längste Etappe, auch wenn du bereits müde bist"
+              ],
+              [
+                "Schwerster Anstieg",
+                "Steigung, Untergrund und nötiger leichter Gang",
+                "Dieselbe Prüfung mit dem geplanten Gepäck"
+              ],
+              [
+                "Was muss mit?",
+                "Essen, Wasser und vorgeschriebene Ausrüstung",
+                "Gepackte Taschen, Wasser und mögliche Campingausrüstung"
+              ],
+              [
+                "Hilfe bei einem Defekt",
+                "Veranstalterhilfe und realistische Ausstiegspunkte",
+                "Ersatzteile, Werkzeug und Entfernung zu erreichbarer Hilfe"
+              ]
+            ]
+          }
         },
         {
           "id": "frames",
           "heading": "Hinter die Kategorienamen schauen",
           "paragraphs": [
-            "[ICAN GRARO](/models/ican-graro-frameset/) und [LightCarbon LCG071S-PRO](/models/lightcarbon-lcg071s-pro-frameset/) sind konkrete Prüfkandidaten. Vergleiche Größengeometrie, freigegebene Reifen und Montage- sowie Lastdokumentation. Der Kategoriename bestätigt weder die Taschenpassform noch eine für acht Stunden geeignete Rennposition.",
-            "Die maximale Reifengröße ist nicht automatisch für jeden Untergrund ideal. Reifen, Felge und Antrieb müssen die Vorgaben erfüllen und genügend Freiraum für die Bedingungen lassen."
+            "[ICAN GRARO](/models/ican-graro-frameset/) und [LightCarbon LCG071S-PRO](/models/lightcarbon-lcg071s-pro-frameset/) sind konkrete Rahmen für den Vergleich. Sie beantworten die beiden Spalten aber nicht von allein. Prüfe die Geometrie deiner Größe, die geplante Reifen-Felgen-Kombination und die Befestigung deiner Ausrüstung. Ein Kategoriename sagt nicht, ob die volle Rahmentasche hineinpasst oder die Lenkerposition für einen langen Tag taugt.",
+            "Die Gabeloptionen zählen. [LightCarbon beschreibt aktuell](https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html) Befestigungspunkte an der Standardgabel und eine Alternative ohne Bohrungen. [ICAN beschreibt beim GRARO](https://icanwheels.com/products/graro) eine Standardgabel ohne Befestigungsschrauben ab China-Lager und bittet für die Alternative um einen Bestellhinweis. Keine der beiden Angaben nennt eine Gepäcklastgrenze. Kläre die tatsächlich gelieferte Gabel, Befestigungsteile und zulässigen Lasten, bevor du das Gepäcksystem auswählst. Unser [Ratgeber zu Bikepacking-Befestigungen](/blog/chinese-bike-for-bikepacking-mounts/) hilft mit den passenden Fragen.",
+            "Die maximale Reifengröße ist eine zu prüfende Grenze, keine Empfehlung für jede Fahrt. Prüfe mit den tatsächlichen Teilen die Rahmen- und Gabelfreiheit, Reifen-Felgen-Kompatibilität und den Platz für Schlamm. Wähle auch den leichten Gang nach dem Anstieg, den du fahren musst, und prüfe anschließend die Freigabe der gesamten Antriebskombination."
           ]
         },
         {
           "id": "tradeoffs",
           "heading": "Den akzeptablen Kompromiss wählen",
           "paragraphs": [
-            "Auch leichtes Gepäck braucht passende Freigaben; auch ein Rennaufbau kann einen wirklich leichten Gang benötigen. Liste Änderungen für den Wechsel zur Nebenaufgabe auf: Teile, Arbeit und Lagerung. Ist der Umbau groß, schätze ehrlich, wie oft du ihn machen wirst.",
-            "Vervollständige vor dem Kauf: „Meistens nutze ich dieses Rad für ___, deshalb akzeptiere ich ___ beim Einsatz für ___.“ Diese Entscheidung lässt sich prüfen. Ein Versprechen, alles perfekt zu können, braucht meist eine teurere Erklärung."
+            "Schreibe auf, was ein Wechsel des Einsatzes braucht: Reifen oder Laufräder, Taschen und Halter, Übersetzung, Werkzeug, Montagearbeit und Lagerplatz. Trenne einfache Wechsel von Arbeiten, die du einer Werkstatt geben würdest. Wenn zwei Laufradsätze zum Plan gehören, lies unseren [Ratgeber zu einem Rad mit zwei Laufradsätzen](/blog/one-bike-road-and-gravel-two-wheelsets/), bevor du einen problemlosen Tausch voraussetzt.",
+            "Ein Beispiel: Fährst du fast immer lokale Gravelrunden und gehst einmal im Jahr mit dem Rad campen, plane den Aufbau für die üblichen Runden und suche eine sichere, praktikable Reiseausstattung. Kaufst du das Rad gerade wegen längerer Gepäckreisen, gehören Gepäck und Klettergänge von Anfang an zum Aufbau. So kannst du deine Nutzung abwägen; daraus folgt kein automatischer Sieger unter den beiden Rahmen.",
+            "Vervollständige vor dem Kauf: „Meistens nutze ich dieses Rad für ___, deshalb akzeptiere ich ___ beim Einsatz für ___.“ Liste danach die Teile und Arbeiten für diesen zweiten Einsatz auf. Am Renntag darf der Kochtopf zu Hause bleiben. Wie du ihn auf Reisen sicher transportierst, braucht trotzdem eine Antwort."
           ]
         }
       ]
@@ -121,12 +220,12 @@
   },
   "editorial_review": {
     "status": "reviewed",
-    "reviewed_at": "2026-10-04T08:56:14.105Z",
+    "reviewed_at": "2026-10-07T11:47:49.000Z",
     "reviewed_languages": [
       "en",
       "zh-Hans",
       "de"
     ],
-    "contribution": "A difficult race day versus loaded journey leads to an explicit primary-use compromise and changeover cost rather than a category winner."
+    "contribution": "A four-row race-versus-loaded-trip planning worksheet, current exact fork-option distinctions, and a practical primary-use/changeover example let readers choose their own build without inventing a frame winner."
   }
 }
