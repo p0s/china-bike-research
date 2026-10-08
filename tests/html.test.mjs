@@ -1,6 +1,35 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 import { escapeHtml, layout, url } from '../src/lib/html.mjs';
+
+test('the selected rider brand and browser icons use shared base-safe assets in every locale', () => {
+  for (const base of ['', '/guide']) for (const locale of ['en', 'zh-Hans', 'de']) {
+    const html = layout({ base, locale, repositoryUrl: 'https://github.com/example/guide', body: '' });
+    assert.ok(html.includes(`src="${base}/assets/branding/panda-rider-3b-256.webp"`));
+    assert.ok(html.includes(`href="${base}/assets/logo.svg"`));
+    assert.ok(html.includes(`href="${base}/assets/branding/favicon-32.png"`));
+    assert.ok(html.includes(`href="${base}/assets/branding/apple-touch-icon.png"`));
+    assert.match(html, /alt="" width="50" height="50"/);
+    assert.match(html, /class="brand-wordmark"[^>]*>China <span>Bikes<\/span>/);
+    assert.doesNotMatch(html, /(?:src|href)="[^"]*\/(?:zh|de)\/assets\/branding/);
+  }
+});
+
+test('published brand assets match their approved generation provenance', () => {
+  const provenance = JSON.parse(fs.readFileSync(new URL('../assets/branding/provenance.json', import.meta.url)));
+  assert.equal(provenance.selected_concept, '3B Gravel rider');
+  for (const asset of provenance.assets) {
+    const bytes = fs.readFileSync(new URL(`../${asset.path}`, import.meta.url));
+    assert.equal(bytes.length, asset.bytes);
+    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), asset.sha256);
+  }
+  const svg = fs.readFileSync(new URL('../assets/logo.svg', import.meta.url), 'utf8');
+  assert.match(svg, /fill="#f7f7f4"/);
+  assert.match(svg, /href="data:image\/png;base64,/);
+  assert.doesNotMatch(svg.replace('http://www.w3.org/2000/svg', ''), /<script|<foreignObject|https?:\/\//i);
+});
 
 test('HTML escaping prevents markup injection', () => {
   assert.equal(escapeHtml('<script>"x"</script>'), '&lt;script&gt;&quot;x&quot;&lt;/script&gt;');

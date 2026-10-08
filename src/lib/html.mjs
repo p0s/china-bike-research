@@ -37,6 +37,8 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <script data-site-theme>(()=>{let t;try{t=localStorage.getItem('china-bikes-theme-v1')}catch{}if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;const d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.querySelector('[data-theme-color]').content=d?'#111512':'#f7f7f4'})()</script>
   <meta name="robots" content="${noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'}">
   <link rel="icon" type="image/svg+xml" href="${url(base,'/assets/logo.svg')}">
+  <link rel="icon" type="image/png" sizes="32x32" href="${url(base,'/assets/branding/favicon-32.png')}">
+  <link rel="apple-touch-icon" sizes="180x180" href="${url(base,'/assets/branding/apple-touch-icon.png')}">
   <link rel="stylesheet" href="${url(base,'/assets/site.css')}">
   <link rel="canonical" href="${escapeAttr(canonical)}">
   ${languageLinks}
@@ -57,7 +59,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="page header-inner">
-      <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/logo.svg')}" alt="" width="30" height="30"><span>China Bikes</span></a>
+      <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/branding/panda-rider-3b-256.webp')}" alt="" width="50" height="50"><span class="brand-wordmark" data-original-language lang="en" translate="no">China <span>Bikes</span></span></a>
       <div class="header-actions">
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
