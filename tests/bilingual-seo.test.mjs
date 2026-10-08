@@ -186,14 +186,26 @@ for (const locale of ['en', 'zh-Hans']) test(`article photos stay beside their a
 });
 
 test('mascot cutouts and illustrated headers have provenance and immutable optimized files', () => {
-  assert.equal(editorialImages.length, 7);
-  assert.equal(new Set(editorialImages.map((image) => image.id)).size, 7);
+  const imageIds = new Set(editorialImages.map((image) => image.id));
+  assert.equal(imageIds.size, editorialImages.length, 'Every editorial image has a distinct identity');
+  for (const post of posts) assert.ok(imageIds.has(post.image_id), `Missing cover: ${post.slug}`);
+  for (const image of editorialImages.filter((image) => image.id.endsWith('-unique-mascot-cover'))) {
+    const slug = image.id.slice(0, -'-unique-mascot-cover'.length);
+    const matches = posts.filter((post) => post.image_id === image.id);
+    assert.equal(matches.length, 1, 'Article-specific covers belong to exactly one article');
+    assert.equal(matches[0].slug, slug);
+    if (matches[0].publication_status === 'scheduled') {
+      const schedule = JSON.parse(fs.readFileSync(new URL('../content/post-schedule.json', import.meta.url)));
+      assert.ok(schedule.entries.find((entry) => entry.slug === slug)?.published_at, 'Future unique covers remain local');
+    }
+  }
   for (const image of editorialImages) {
     assert.equal(image.source.kind, 'project-generated');
     assert.ok(image.alt.en && image.alt['zh-Hans'] && image.prompt);
     assert.deepEqual(image.files.map((file) => file.purpose), ['mascot']);
     assert.equal(image.header.source.kind, 'project-generated');
-    assert.ok(image.header.prompt && image.header.alt.en && image.header.alt['zh-Hans']);
+    assert.ok(image.header.prompt);
+    for (const locale of ['en', 'zh-Hans', 'de']) assert.ok(image.header.alt[locale], `Missing header alt: ${locale}`);
     assert.match(image.header.alt.en, /red panda/);
     assert.deepEqual(image.header.files.map((file) => file.purpose), ['card', 'hero', 'social']);
     for (const file of [...image.files, ...image.header.files]) {

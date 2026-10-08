@@ -987,6 +987,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "bike-fit-without-test-ride-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda records saddle-to-handlebar contact points on a parked road bike.",
+          "zh-Hans": "小熊猫记录停放的公路车上坐垫到车把的接触点位置。",
+          "de": "Ein roter Panda misst die Kontaktpunkte zwischen Sattel und Lenker an einem abgestellten Rennrad."
+        },
+        "prompt": "The China Bikes red panda measures between the saddle and brake hood of a conceptual bicycle in a warm workshop. A small clamp anchors the tape, and the mascot has two attached arms with its tail clear of the wheels.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "2f0bacfcdfee76d2eadcc06e178fcae31c0f52841ebe61f4c69eb9165515aea4",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 53794,
+            "sha256": "591128a80f0f33b1ac87fab82a73282efe354308870427e818c9b0d4cce1c37d"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 182746,
+            "sha256": "07f0a18171c8a653b2a17d8e4a24e6165122a646f0a27b6ece0dfa81ceb9ce57"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 221524,
+            "sha256": "2aed4f900905363b5efb47ecb61b9e853406cefe38c18bdcd282721af907b02d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "small-rider-bike-shopping-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda checks its reach to the brake hoods of a compact drop-bar bike.",
+          "zh-Hans": "小熊猫检查小尺寸弯把自行车的手变握位是否够得着。",
+          "de": "Ein roter Panda prüft die Erreichbarkeit der Bremsgriffe an einem kompakten Rad mit Rennlenker."
+        },
+        "prompt": "The China Bikes red panda checks the brake hoods of a small conceptual drop-bar bicycle in a warm workshop, with its tail safely outside the wheels.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "1f31547409fba23bc27d3614b2ccabaac16da46f467ce1c607db0de2ee19e7bb",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/small-rider-bike-shopping-mascot-cover-1f31547409-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 50066,
+            "sha256": "f6a6015a8455f77ce3d4fb578ac7dd7d102975f9355f0ca9f01ba41cccd452a0"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/small-rider-bike-shopping-mascot-cover-1f31547409-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 166174,
+            "sha256": "21505df38b4fa451a5aef97c41c29b1ad720d99e3f256ddc91ed565dd469f98e"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/small-rider-bike-shopping-mascot-cover-1f31547409-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 196694,
+            "sha256": "60f93550498324a46dfb245f3393c011c179d93b025f246a8fd2d7877da58e39"
+          }
+        ]
+      }
     }
   ]
 }

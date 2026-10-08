@@ -3,10 +3,10 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 14,
-  "image_id": "38mm-tires-on-aero-road-bikes",
+  "image_id": "bike-fit-without-test-ride-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
-  "researched_at": "2026-10-04",
+  "dateModified": "2026-10-08",
+  "researched_at": "2026-10-08",
   "model_ids": [
     "incolor-speedster-sr-frameset"
   ],
@@ -14,7 +14,9 @@
     "incolor-speedster-official-2026-08-29",
     "incolor-speedster-brochure-2026-08-29"
   ],
-  "editorial_references": [],
+  "editorial_references": [
+    "https://www.trekbikes.com/us/en_US/owners-manual/fitting-your-bicycle/"
+  ],
   "photo_sections": [
     {
       "section_id": "transfer",
@@ -39,14 +41,40 @@
             "Label every measurement with its endpoints and units.",
             "Keep the parts that define the position in the reference sheet.",
             "Write down what already feels good and what you want to change."
-          ]
+          ],
+          "worksheet": {
+            "caption": "A reference sheet the seller can actually use",
+            "columns": [
+              "Record",
+              "How to make it repeatable"
+            ],
+            "rows": [
+              [
+                "Saddle position",
+                "Name the saddle and the exact point measured. Record its height and setback relative to the bottom-bracket centre."
+              ],
+              [
+                "Hand position",
+                "Label the bar or hood point and its horizontal and vertical position relative to the same reference."
+              ],
+              [
+                "Parts and adjustment",
+                "List crank length, bar/stem dimensions, saddle and seatpost, plus the spacer arrangement."
+              ],
+              [
+                "Riding context",
+                "State your usual rides, what feels comfortable and what you want to change."
+              ]
+            ]
+          }
         },
         {
           "id": "transfer",
           "heading": "Check the parts needed to reproduce it",
           "paragraphs": [
             "Frame size alone does not reproduce the reference. The proposed seatpost must reach the saddle position within its limits; the bar and stem must put your hands where planned. For the [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/), check the actual available cockpit and post options rather than assuming the photographed combination suits you.",
-            "Ask the seller to specify the complete combination and leave approved adjustment room. Avoid cutting a steerer or fixing an irreversible setup before the fit is resolved."
+            "Ask the seller to specify the complete combination and leave approved adjustment room. Avoid cutting a steerer or fixing an irreversible setup before the fit is resolved.",
+            "Use the [frame-sizing worksheet](/blog/chinese-bike-frame-sizing/) to compare the proposed frame. If you need a small frame, the [small-rider checklist](/blog/small-rider-bike-shopping/) covers the cockpit and insertion questions that a size label misses."
           ]
         },
         {
@@ -54,7 +82,8 @@
           "heading": "Know when the reference is unsuitable",
           "paragraphs": [
             "A bike that causes problems is not a fit template. Neither is a comfortable upright commuter a complete prescription for an aggressive drop-bar position. If the use or position changes substantially, get an appropriate fit assessment. The measurements make that conversation better; they do not replace it.",
-            "Before paying, make sure the new build can reach the agreed position with available approved parts. Written dimensions are more useful than a promise that a certain size “should be fine.”"
+            "Before paying, make sure the new build can reach the agreed position with available approved parts. Written dimensions are more useful than a promise that a certain size “should be fine.”",
+            "Trek’s [fitting guidance](https://www.trekbikes.com/us/en_US/owners-manual/fitting-your-bicycle/) is a useful general check: you need a usable position and controls you can reach. Installation limits still come from the exact frame, fork, seatpost and cockpit instructions."
           ]
         }
       ]
@@ -74,14 +103,40 @@
             "每项测量都标出起止点和单位。",
             "把决定骑姿的零件列在参考表里。",
             "写下现有舒服之处，以及想改变的地方。"
-          ]
+          ],
+          "worksheet": {
+            "caption": "给卖家一张真正能用的参考表",
+            "columns": [
+              "记录项目",
+              "怎样让测量可复现"
+            ],
+            "rows": [
+              [
+                "坐垫位置",
+                "写明坐垫型号和具体测量点，以中轴中心为基准记录高度和后移。"
+              ],
+              [
+                "手的位置",
+                "标出车把或手变上的具体参考点，以及它相对同一基准的水平和垂直位置。"
+              ],
+              [
+                "零件与调整",
+                "列出曲柄长度、把立与车把尺寸、坐垫和座管，以及垫圈配置。"
+              ],
+              [
+                "骑行场景",
+                "说明平时怎么骑、哪些地方舒服，以及想改变什么。"
+              ]
+            ]
+          }
         },
         {
           "id": "transfer",
           "heading": "核对复现骑姿需要的零件",
           "paragraphs": [
             "只选对车架尺码，并不能复现参考骑姿。计划座管必须在允许范围内实现坐垫位置，车把和把立则要让手到达目标位置。以[INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/)为例，应核对实际可选把组和座管，不要默认照片组合就适合自己。",
-            "请卖家列出完整组合，并保留认可范围内的调整空间。适配未确定之前，不要切前叉舵管，也不要做难以撤回的配置决定。"
+            "请卖家列出完整组合，并保留认可范围内的调整空间。适配未确定之前，不要切前叉舵管，也不要做难以撤回的配置决定。",
+            "用[车架尺码核对表](/blog/chinese-bike-frame-sizing/)比较计划车架。如果需要小尺码，[小个子选车清单](/blog/small-rider-bike-shopping/)还涵盖尺码标签没说明的把组与插入深度问题。"
           ]
         },
         {
@@ -89,7 +144,8 @@
           "heading": "知道什么时候不能照搬",
           "paragraphs": [
             "有适配问题的车不适合作为模板。舒服的直立通勤车，也不能直接成为激进弯把骑姿的完整方案。用途或姿势变化明显时，应取得适当的适配评估。测量数据能让沟通更有效，但不能代替评估。",
-            "付款前，应确认新配置能用实际可供且认可的零件达到约定位置。书面尺寸比“这个码应该可以”的承诺更有用。"
+            "付款前，应确认新配置能用实际可供且认可的零件达到约定位置。书面尺寸比“这个码应该可以”的承诺更有用。",
+            "Trek 的[车辆适配指南](https://www.trekbikes.com/us/en_US/owners-manual/fitting-your-bicycle/)可用于一般核对：骑姿要可用，操控件要够得到。具体安装限制仍以对应车架、前叉、座管和把组说明为准。"
           ]
         }
       ]
@@ -109,14 +165,40 @@
             "Beschrifte jedes Maß mit Endpunkten und Einheit.",
             "Nenne die Teile, die die Position bestimmen.",
             "Notiere, was gut passt und was sich ändern soll."
-          ]
+          ],
+          "worksheet": {
+            "caption": "Eine Referenz, mit der der Verkäufer arbeiten kann",
+            "columns": [
+              "Angabe",
+              "So wird das Maß wiederholbar"
+            ],
+            "rows": [
+              [
+                "Sattelposition",
+                "Nenne Sattelmodell und genauen Messpunkt. Erfasse Höhe und Versatz relativ zum Tretlagerzentrum."
+              ],
+              [
+                "Handposition",
+                "Markiere den Bezugspunkt an Lenker oder Bremsgriff und seine horizontale und vertikale Lage zum selben Bezug."
+              ],
+              [
+                "Teile und Einstellung",
+                "Notiere Kurbellänge, Lenker- und Vorbaumaße, Sattel und Stütze sowie die Spacer-Anordnung."
+              ],
+              [
+                "Einsatz",
+                "Beschreibe deine üblichen Fahrten, was bequem ist und was du ändern möchtest."
+              ]
+            ]
+          }
         },
         {
           "id": "transfer",
           "heading": "Die nötigen Teile für die Position prüfen",
           "paragraphs": [
             "Die Rahmengröße allein reproduziert die Referenz nicht. Die Stütze muss die Sattelposition innerhalb ihrer Grenzen erreichen, Lenker und Vorbau die Hände richtig platzieren. Prüfe beim [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) die verfügbaren Cockpit- und Stützenoptionen statt die Fotokonfiguration zu übernehmen.",
-            "Lass den Verkäufer die gesamte Kombination nennen und freigegebenen Einstellraum einplanen. Kürze den Gabelschaft nicht und lege keine irreversible Einrichtung fest, solange die Passform offen ist."
+            "Lass den Verkäufer die gesamte Kombination nennen und freigegebenen Einstellraum einplanen. Kürze den Gabelschaft nicht und lege keine irreversible Einrichtung fest, solange die Passform offen ist.",
+            "Vergleiche den geplanten Rahmen mit der [Checkliste zur Rahmengröße](/blog/chinese-bike-frame-sizing/). Für kleine Rahmen ergänzt die [Checkliste für kleine Fahrer](/blog/small-rider-bike-shopping/) die Fragen zu Cockpit und Einstecktiefe, die ein Größenetikett offenlässt."
           ]
         },
         {
@@ -124,7 +206,8 @@
           "heading": "Die Grenzen der Referenz kennen",
           "paragraphs": [
             "Ein unpassendes Rad ist keine Vorlage. Ein bequemer aufrechter Pendler liefert ebenfalls keine vollständige Vorgabe für eine sportliche Dropbar-Position. Bei größerer Änderung von Einsatz oder Haltung ist eine passende fachliche Anpassung sinnvoll. Die Maße verbessern das Gespräch, ersetzen es aber nicht.",
-            "Kläre vor der Zahlung, dass verfügbare freigegebene Teile die vereinbarte Position ermöglichen. Schriftliche Maße helfen mehr als „Diese Größe dürfte passen“."
+            "Kläre vor der Zahlung, dass verfügbare freigegebene Teile die vereinbarte Position ermöglichen. Schriftliche Maße helfen mehr als „Diese Größe dürfte passen“.",
+            "Treks [Hinweise zur Passform](https://www.trekbikes.com/us/en_US/owners-manual/fitting-your-bicycle/) helfen bei der allgemeinen Prüfung: Die Position muss nutzbar sein und die Bedienelemente müssen erreichbar sein. Für Einbaugrenzen gelten weiterhin die Anleitungen des konkreten Rahmens, der Gabel, Stütze und des Cockpits."
           ]
         }
       ]
@@ -132,12 +215,12 @@
   },
   "editorial_review": {
     "status": "reviewed",
-    "reviewed_at": "2026-10-04T08:56:41.279Z",
+    "reviewed_at": "2026-10-08T10:39:40.799137Z",
     "reviewed_languages": [
       "en",
       "zh-Hans",
       "de"
     ],
-    "contribution": "Repeatable bottom-bracket and contact-point measurements make a remote fit reference useful while its comfort and use limitations stay explicit."
+    "contribution": "A repeatable four-part contact-point sheet and explicit installation limits make remote ordering actionable; localized sizing and small-rider guides cover the next decisions."
   }
 }
