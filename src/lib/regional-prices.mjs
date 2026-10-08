@@ -1,5 +1,6 @@
 import { priceEvidence, evidencePriceBounds } from './price-evidence.mjs';
 import { PRICE_MARKETS, PRICE_CURRENCIES, validCountry } from '../../assets/regional-prices.js';
+import { productLinkContext } from './analytics-context.mjs';
 
 // CNY denomination alone is insufficient: several catalog references are
 // converted overseas listings. Never call those the price of buying in China.
@@ -76,6 +77,8 @@ export function regionalPricePayload(data, asOf = new Date().toISOString().slice
       date: price.observed_at, conditions: price.conditions,
       countries: price.country_ids, supersedes: price.supersedes, delivery: price.delivery,
       source: sources.get(price.source_ids[0])?.url, sourceTitle: sources.get(price.source_ids[0])?.title,
+      ...(productLinkContext(sources.get(price.source_ids[0]))
+        ? { sourceId: price.source_ids[0], analyticsOfferId: price.id } : {}),
       deliverySources: (price.delivery?.source_ids ?? []).map((id) => ({ title: sources.get(id)?.title, url: sources.get(id)?.url }))
     }))
   };

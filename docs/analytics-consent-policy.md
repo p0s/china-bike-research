@@ -49,11 +49,18 @@ stays denied. No cookieless Google pings are intentionally sent before consent.
 [Google's ordering guidance](https://developers.google.com/tag-platform/security/guides/consent)
 requires defaults before measurement commands.
 
-Opt-out disables the current tag before saving the choice, suppresses late
+Opt-out disables the current tag and browser action requests before saving the choice, suppresses late
 collection/session callbacks, expires server cookies, and clears Google cookies
 after the response. Reloading retains the current comparison URL. The excluded
 document/config also clears residual identifiers so an old page's lifecycle
 event cannot leave a cookie active on the new page.
+
+Optional action loading keeps at most 20 public event contexts in document memory
+for five seconds. Deferred actions recheck the current stop flag, DNT and GPC;
+failed loading, expiry and departure discard them. Failed preference saving keeps
+the current document stopped. Product actions include allowlisted catalog offer
+links as well as marked model-page sources, with the actual page attribution;
+delivery-policy and general reference links are excluded.
 
 Google's **0% consent rate detected** diagnostic can remain because
 `ad_user_data` is always denied. It is not a reason to grant advertising consent.

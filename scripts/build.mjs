@@ -150,14 +150,16 @@ const payloadVersion = (payload) => createHash('sha256').update(payload).digest(
 const catalogPayloads = Object.fromEntries(LOCALES.map((locale) => [locale,
   `${JSON.stringify(localizedCatalogPayload(catalogSummaries({ ...ctx, locale }), { base, locale, siteUrl })).replaceAll('<', '\\u003c')}\n`
 ]));
-const regionalPayload = `${JSON.stringify(regionalPricePayload(data))}\n`;
+const regionalData = regionalPricePayload(data);
+const regionalPayload = `${JSON.stringify(regionalData)}\n`;
 // Keep cacheable data fast without combining a new UI with a prior deployment's
 // cached schema, prices or FX snapshot in a returning visitor's browser.
 ctx.catalogDataVersions = Object.fromEntries(Object.entries(catalogPayloads).map(([locale, payload]) => [locale, payloadVersion(payload)]));
 ctx.regionalPriceDataVersion = payloadVersion(regionalPayload);
 addLocalized('/', renderHome, true, { lastmod: latestDate([siteLastmod, '2026-09-22'], siteLastmod) });
 write('data/regional-prices.json', regionalPayload);
-write('data/analytics-context.json', `${JSON.stringify(publicActionManifest(products, candidates))}\n`);
+write('data/analytics-context.json', `${JSON.stringify(publicActionManifest(products, candidates,
+  { offers: regionalData.offers, sources: data.sources }))}\n`);
 for (const [locale, payload] of Object.entries(catalogPayloads)) write(`data/home-catalog-${locale}.json`, payload);
 for (const landing of landings.pages) {
   const lastmod = landingLastmod(landing);
