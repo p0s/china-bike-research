@@ -6,6 +6,8 @@ The interaction and build-safety rules in [the reliability contract](docs/reliab
 
 ## 1. Rider experience
 
+- The shared header uses the project-owned red panda riding a drop-bar bicycle from the selected 3B logo direction, with the site name as live text. Browser and Apple touch icons use the same rider on a cream backing. Brand assets are shared across languages and deployment base paths; the home link retains an accessible name.
+
 - The homepage presents three curated published buying-guide teasers, the existing criteria-led category comparison starting points, then the unified full catalog and inline comparison. A direct jump to the catalog is visible near the introduction. Teasers preserve localized article titles, descriptions and actual editorial dates and link to the full blog; unreleased drafts never appear. The catalog retains its images, every existing comparison field, evidence details, filters and compact selection checkboxes; it has no extra action column on the right. Frameset build controls sit with the catalog they affect.
 - Category is a first-class filter; generic project copy must describe bicycles broadly.
 - The category control groups catalog entries into broad road, gravel/all-road, MTB, e-road, folding, and triathlon families. Any category represented by a published product or a non-duplicate candidate is selectable; the control must not create dead-end filters.
