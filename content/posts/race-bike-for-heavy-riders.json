@@ -5,7 +5,7 @@
   "series_order": 12,
   "image_id": "cycling-guides-banner",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-08",
   "researched_at": "2026-10-04",
   "model_ids": [
     "ican-graro-frameset"
@@ -15,7 +15,8 @@
     "ican-graro-official-2026-08-27"
   ],
   "editorial_references": [
-    "https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut"
+    "https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut",
+    "https://d2a13k6araex7u.cloudfront.net/pmt/00/00/00/00/00/00/00/10/00/00/00/88/5/MAN_WXWASTMSWWRXXS_WEB_ZZ_001.pdf?v=61395"
   ],
   "photo_sections": [
     {
@@ -29,35 +30,70 @@
     "en": {
       "title": "Choosing a race bike as a heavier rider: find the actual load limits",
       "description": "Calculate the loaded bicycle’s mass and check frame, fork, wheels and component limits by exact model and intended use.",
-      "intro": "A weight limit labelled “system” needs a definition before it needs a comparison. You want to know what the number includes and which component sets the limit for your actual build. Frame weight and rider weight alone cannot answer that question.",
+      "intro": "A “100 kg limit” can look reassuring until you discover it includes the bike, bottles and saddlebag. If you’re a heavier rider shopping for a fast bike, start with your ready-to-ride load and what each manufacturer actually counts. A light frame is only one part of that calculation.",
       "sections": [
         {
           "id": "mass",
-          "heading": "Calculate your ready-to-ride load",
+          "heading": "Count everything that leaves the house",
           "paragraphs": [
-            "For an illustrative calculation, a 95 kg dressed rider, 9 kg bicycle and 4 kg of water and equipment total 108 kg. These are example inputs, not an approved limit for any frame. Use your own ready-to-ride measurements and the manufacturer’s stated definition, including anything the definition requires."
+            "For an illustrative calculation, a 95 kg dressed rider, 9 kg bicycle and 4 kg of water and equipment total 108 kg. These are example inputs, not an approved limit for any frame. Measure your own riding setup, including clothing and whatever equipment or luggage the relevant definition includes.",
+            "Keep rider weight and total system weight in separate boxes on your shopping list. A 100 kg rider limit and a 100 kg system limit are different statements. Don’t subtract bicycle weight from a rider-only allowance, or leave the bicycle out of a system-weight calculation. If the definition is unclear, ask before using the number."
           ]
         },
         {
           "id": "limits",
-          "heading": "Check every relevant limit",
+          "heading": "Make a load-limit sheet for the whole build",
           "paragraphs": [
-            "Get the frame and fork limits for the exact revision and intended riding conditions. Then check the wheels, cockpit, seatpost and other relevant components. The lowest applicable approved limit governs the combination; a higher frame allowance does not increase a wheel’s rating. Also respect any separate luggage or mounting limits.",
-            "The [ICAN GRARO record](/models/ican-graro-frameset/) identifies one frame to investigate. It is not a substitute for a written load approval for your complete build. If a limit is missing, ask for clarification; do not infer suitability from thick-looking tubes or a seller’s photograph of a rider."
-          ]
+            "Collect the limits for the exact frame revision, fork, wheels, cockpit, seatpost and other relevant components. Compare each with the load its own definition requires. Where limits use the same system-weight definition, the lowest applicable one constrains the build. A higher frame allowance does not increase a wheel’s rating.",
+            "Use this sheet before ordering a frameset or accepting a complete-bike specification. “Carbon,” a race-oriented name and thick-looking tubes don’t answer these questions.",
+            "The [ICAN GRARO record](/models/ican-graro-frameset/) identifies a gravel-race frameset to investigate. Its photograph and published frame mass are not a written load approval for your complete build. Ask ICAN about your exact frame, fork and intended use; don’t fill a missing limit with a guess."
+          ],
+          "worksheet": {
+            "caption": "Load-limit sheet to complete before ordering",
+            "columns": [
+              "Part",
+              "Question to resolve",
+              "Evidence to keep"
+            ],
+            "rows": [
+              [
+                "Frame and fork",
+                "Which revision, load definition and riding conditions are approved?",
+                "Exact manual or written manufacturer confirmation."
+              ],
+              [
+                "Front and rear wheels",
+                "What are the exact models, system limits and permitted use?",
+                "Product codes, rating definitions and relevant manual."
+              ],
+              [
+                "Cockpit and seatpost",
+                "Are these exact parts approved for the rider and setup?",
+                "Component limits and installation requirements."
+              ],
+              [
+                "Luggage and mounts",
+                "Are the intended bags, attachment points and loads approved?",
+                "Separate luggage limits and confirmed mounting configuration."
+              ]
+            ]
+          }
         },
         {
           "id": "wheel-spec",
-          "heading": "Read a wheel rating as a product-specific number",
+          "heading": "What an actual wheel rating changes",
           "paragraphs": [
-            "On October 4, 2026, [DT Swiss’s ARC 1100 DICUT rim-brake page](https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut) listed a 100 kg maximum system weight for variant WARC110HRQJCA19292. The illustrative 108 kg load shows why checking an actual rating matters. This rim-brake example is not a compatible wheel recommendation for the disc-brake GRARO; check your own exact wheels and the limit’s definition."
+            "On October 4, 2026, [DT Swiss’s ARC 1100 DICUT rim-brake page](https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut) listed a 100 kg maximum system weight for rear-wheel variant WARC110HRQJCA19292. The October 8 recheck still showed 100 kg for that exact variant.",
+            "DT Swiss’s [intended-use manual](https://d2a13k6araex7u.cloudfront.net/pmt/00/00/00/00/00/00/00/10/00/00/00/88/5/MAN_WXWASTMSWWRXXS_WEB_ZZ_001.pdf?v=61395) defines system weight as rider, bicycle, equipment and luggage. On that basis, the hypothetical 108 kg setup exceeds this example’s 100 kg rating. Comparing only the 95 kg rider would miss the problem.",
+            "This rim-brake wheel is not a compatible recommendation for the disc-brake GRARO. The example shows how to read a rating, not which wheels to buy. Check your own exact front and rear wheels, brake and axle interfaces, riding category and all additional manual conditions."
           ]
         },
         {
           "id": "decision",
-          "heading": "Finish with a supported build",
+          "heading": "Resolve the unanswered questions before paying",
           "paragraphs": [
-            "Make a one-page record of actual load, intended use and each applicable limit. Confirm fit, tire/rim compatibility and appropriate setup with the relevant professionals. Choose only a combination whose requirements are resolved. A missing limit is missing evidence, not proof of a bad brand or permission to proceed."
+            "Send the seller your load-limit sheet, actual riding load and intended use. Ask for the exact wheel and component models in the quotation, so a last-minute substitution does not leave you checking a different build. If a material limit stays unresolved, choose another configuration with documented requirements.",
+            "Fit and load approval are separate jobs. Use the [frame-sizing worksheet](/blog/chinese-bike-frame-sizing/) for position, and the [endurance-versus-aero guide](/blog/endurance-or-aero-frame/) to narrow the kind of bike you want. Then confirm tire/rim compatibility and correct installation with the relevant manuals and qualified help. A missing limit is missing evidence; it is neither a verdict against a brand nor permission to ride."
           ]
         }
       ]
@@ -65,35 +101,70 @@
     "zh-Hans": {
       "title": "体重较大的骑手怎么选竞赛车？先找真实载荷限制",
       "description": "计算满载系统重量，按具体型号与用途核对车架、前叉、轮组和零件限制。",
-      "intro": "标为“系统”的重量限制，需要先弄清定义，再进行比较。应知道数字包括什么，以及实际装车中由哪个零件决定上限。只看车架重量和骑手体重，无法回答这个问题。",
+      "intro": "看到“限重100公斤”，很容易先松一口气——直到发现它连车、水壶和尾包都算进去。体重较大的骑手挑一辆快车，先算好实际出发重量，再弄清每家厂商的数字包括什么。轻车架只是这笔账的一部分。",
       "sections": [
         {
           "id": "mass",
-          "heading": "计算实际出发时的重量",
+          "heading": "把出门时带走的重量算全",
           "paragraphs": [
-            "以假设计算为例：穿好装备的骑手95公斤，车辆9公斤，水和设备4公斤，合计108公斤。这些是示例输入，不是任何车架的认可上限。应使用自己的出发状态实测数据，并按厂家定义纳入所有要求的项目。"
+            "以假设计算为例：穿好装备的骑手95公斤，车辆9公斤，水和设备4公斤，合计108公斤。这些是示例输入，不是任何车架的认可上限。应称量自己的骑行配置，按相应定义计入衣物、装备和行李。",
+            "在购车清单上，把骑手重量和系统总重分开写。骑手限重100公斤，与系统总重限重100公斤，是两回事。不要从仅针对骑手的额度里减去车重，也不要在算系统总重时漏掉车辆。定义不清楚，先问清楚再用这个数字。"
           ]
         },
         {
           "id": "limits",
-          "heading": "核对每个相关限制",
+          "heading": "为整套配置做一张载荷核对表",
           "paragraphs": [
-            "取得具体版本车架和前叉在目标骑行条件下的限制，再检查轮组、把组、座管等相关零件。组合应满足所有适用认可限制；车架额度更高，不会提高轮组额度。此外还必须遵守独立的行李或安装点限制。",
-            "[ICAN GRARO记录](/models/ican-graro-frameset/)用于确认一个可调查的车架，并不能代替对你整套装车的书面载荷认可。限制缺失时应询问，不要依据看起来较粗的管型，或卖家的骑手照片来推断适用性。"
-          ]
+            "收集具体版本车架、前叉、轮组、把组、座管及其他相关零件的限制，再按各自定义核对载荷。只有采用相同系统总重定义的额度，才可以直接比较，由最低适用额度限制整车。车架额度更高，不会提高轮组额度。",
+            "订车架或接受整车配置单之前，先填这张表。“碳纤维”、偏竞赛的名称，以及看起来较粗的管型，都回答不了表中的问题。",
+            "[ICAN GRARO记录](/models/ican-graro-frameset/)确认了一个可继续调查的砾石竞赛车架。照片和公布的车架自重，都不是对你整套装车的书面载荷认可。应就具体车架、前叉和用途询问ICAN，不要自己补出缺失的上限。"
+          ],
+          "worksheet": {
+            "caption": "下单前填写的载荷核对表",
+            "columns": [
+              "部件",
+              "需要确认的问题",
+              "留下什么依据"
+            ],
+            "rows": [
+              [
+                "车架和前叉",
+                "认可哪个版本、载荷定义和骑行条件？",
+                "具体手册或厂商书面确认。"
+              ],
+              [
+                "前后轮组",
+                "具体型号、系统总重上限和允许用途是什么？",
+                "产品代码、限重定义及相应手册。"
+              ],
+              [
+                "把组和座管",
+                "这些具体零件适用于骑手及安装配置吗？",
+                "零件限制和安装要求。"
+              ],
+              [
+                "行李和安装点",
+                "计划使用的包、固定位置和载荷获得认可了吗？",
+                "独立行李限重与确认过的安装配置。"
+              ]
+            ]
+          }
         },
         {
           "id": "wheel-spec",
-          "heading": "把轮组额定值当成具体产品数据",
+          "heading": "一个真实轮组额定值能改变什么",
           "paragraphs": [
-            "2026年10月4日核对时，[DT Swiss的ARC 1100 DICUT圈刹页面](https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut)为WARC110HRQJCA19292版本列出100公斤系统总重上限。前面的108公斤假设说明了为什么必须核对真实额定值。这个圈刹例子不是适用于碟刹GRARO的轮组推荐；应核对你自己的具体轮组及限制定义。"
+            "2026年10月4日核对时，[DT Swiss的ARC 1100 DICUT圈刹页面](https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut)为后轮WARC110HRQJCA19292列出100公斤系统总重上限。10月8日复核时，这个具体版本仍为100公斤。",
+            "DT Swiss的[用途手册](https://d2a13k6araex7u.cloudfront.net/pmt/00/00/00/00/00/00/00/10/00/00/00/88/5/MAN_WXWASTMSWWRXXS_WEB_ZZ_001.pdf?v=61395)把系统总重定义为骑手、车辆、装备及行李之和。按这个定义，前面的108公斤假设配置超过了该例的100公斤额定值。如果只比较95公斤的骑手，就会漏掉问题。",
+            "这个圈刹轮组不是适用于碟刹GRARO的推荐。例子说明的是怎样读额定值，而不是应该买哪套轮组。应核对自己的具体前后轮、刹车及轴心接口、骑行类别，以及手册中的其他条件。"
           ]
         },
         {
           "id": "decision",
-          "heading": "形成有依据的完整配置",
+          "heading": "付款前，把未回答的问题解决",
           "paragraphs": [
-            "做一页记录，写明实际载荷、目标用途和所有适用限制。由相关专业人员确认适配、轮胎与轮圈兼容性及正确安装。只选择要求已经确认的组合。缺失限制代表证据缺失，既不能证明品牌差，也不能当成可以直接使用的许可。"
+            "把载荷核对表、实际出发重量和目标用途发给卖家，并要求报价写清轮组及零件的具体型号。这样，临时换件时不会拿旧配置的结论套用新配置。重要限制仍无法确认，就另选要求有据可查的配置。",
+            "姿势适配和载荷认可要分别解决。用[车架尺寸核对表](/blog/chinese-bike-frame-sizing/)检查位置，再用[耐力与气动车架指南](/blog/endurance-or-aero-frame/)缩小车型范围。轮胎与轮圈兼容性及正确安装，还要结合具体手册和专业协助确认。缺失限制代表证据缺失，既不能据此判定品牌不好，也不能当作可以骑行的许可。"
           ]
         }
       ]
@@ -101,35 +172,70 @@
     "de": {
       "title": "Rennrad für schwerere Fahrer: Die tatsächlichen Belastungsgrenzen prüfen",
       "description": "Berechne das beladene System und prüfe Grenzen von Rahmen, Gabel, Laufrädern und Komponenten für den genauen Einsatz.",
-      "intro": "Eine Grenze mit dem Zusatz „System“ braucht zuerst eine Definition. Kläre, was die Zahl umfasst und welches Teil deinen tatsächlichen Aufbau begrenzt. Rahmen- und Fahrergewicht allein beantworten diese Frage nicht.",
+      "intro": "„100 kg Belastungsgrenze“ klingt beruhigend – bis du feststellst, dass Rad, Flaschen und Satteltasche mitgezählt werden. Wenn du als schwererer Fahrer ein schnelles Rad suchst, beginne mit dem fahrfertigen Gewicht und der jeweiligen Herstellerdefinition. Der leichte Rahmen ist nur ein Teil dieser Rechnung.",
       "sections": [
         {
           "id": "mass",
-          "heading": "Das fahrfertige Gewicht berechnen",
+          "heading": "Alles zählen, was mit auf die Fahrt kommt",
           "paragraphs": [
-            "Eine Beispielrechnung: angezogener Fahrer 95 kg, Rad 9 kg, Wasser und Ausrüstung 4 kg ergeben 108 kg. Das sind Beispielwerte, keine Rahmenfreigabe. Nutze eigene fahrfertige Messungen und die Herstellerdefinition mit allen darin geforderten Posten."
+            "Eine Beispielrechnung: angezogener Fahrer 95 kg, Rad 9 kg, Wasser und Ausrüstung 4 kg ergeben 108 kg. Das sind Beispielwerte, keine Rahmenfreigabe. Wiege deinen eigenen Aufbau und berücksichtige Kleidung, Ausrüstung und Gepäck nach der jeweils geltenden Definition.",
+            "Notiere Fahrergewicht und Gesamtgewicht des Systems getrennt auf deiner Einkaufsliste. Eine Fahrergrenze von 100 kg bedeutet etwas anderes als 100 kg Systemgewicht. Ziehe das Radgewicht nicht von einer reinen Fahrergrenze ab und lasse das Rad bei einer Systemrechnung nicht weg. Ist die Definition unklar, frage nach, bevor du die Zahl verwendest."
           ]
         },
         {
           "id": "limits",
-          "heading": "Alle relevanten Grenzen prüfen",
+          "heading": "Ein Belastungsblatt für den ganzen Aufbau anlegen",
           "paragraphs": [
-            "Prüfe Rahmen und Gabel für Revision und Einsatzbedingungen, danach Laufräder, Cockpit, Sattelstütze und weitere relevante Teile. Die niedrigste anwendbare Freigabe begrenzt die Kombination; mehr erlaubte Rahmenlast erhöht keine Laufradgrenze. Separate Gepäck- und Montagegrenzen gelten ebenfalls.",
-            "Der [ICAN-GRARO-Eintrag](/models/ican-graro-frameset/) identifiziert einen Prüfkandidaten. Er ersetzt keine schriftliche Belastungsfreigabe deines kompletten Aufbaus. Fehlt eine Grenze, frage nach. Dick wirkende Rohre oder Fahrerfotos belegen keine Eignung."
-          ]
+            "Sammle die Grenzen für die genaue Rahmenrevision, Gabel, Laufräder, Cockpit, Sattelstütze und weitere relevante Komponenten. Prüfe jede Grenze anhand ihrer eigenen Definition. Bei derselben Systemgewichtsdefinition begrenzt die niedrigste anwendbare Freigabe den Aufbau. Eine höhere Rahmenfreigabe erhöht keine Laufradgrenze.",
+            "Fülle dieses Blatt aus, bevor du einen Rahmen bestellst oder eine Komplettradkonfiguration akzeptierst. „Carbon“, ein Rennradname und kräftig wirkende Rohre beantworten diese Fragen nicht.",
+            "Der [ICAN-GRARO-Eintrag](/models/ican-graro-frameset/) identifiziert einen Gravel-Rennrahmen für die weitere Prüfung. Foto und angegebenes Rahmengewicht ersetzen keine schriftliche Belastungsfreigabe deines kompletten Aufbaus. Frage ICAN nach genauem Rahmen, Gabel und Einsatz; ergänze fehlende Grenzen nicht durch Vermutungen."
+          ],
+          "worksheet": {
+            "caption": "Belastungsblatt vor der Bestellung",
+            "columns": [
+              "Bauteil",
+              "Was ist zu klären?",
+              "Beleg aufbewahren"
+            ],
+            "rows": [
+              [
+                "Rahmen und Gabel",
+                "Welche Revision, Lastdefinition und Einsatzbedingungen sind freigegeben?",
+                "Passendes Handbuch oder schriftliche Herstellerbestätigung."
+              ],
+              [
+                "Vorder- und Hinterrad",
+                "Welche genauen Modelle, Systemgrenzen und Einsätze sind erlaubt?",
+                "Produktcodes, Gewichtsdefinitionen und passendes Handbuch."
+              ],
+              [
+                "Cockpit und Sattelstütze",
+                "Sind genau diese Teile für Fahrer und Aufbau freigegeben?",
+                "Komponentengrenzen und Montagevorgaben."
+              ],
+              [
+                "Gepäck und Befestigungen",
+                "Sind Taschen, Befestigungspunkte und Lasten so freigegeben?",
+                "Separate Gepäckgrenzen und bestätigte Befestigungskonfiguration."
+              ]
+            ]
+          }
         },
         {
           "id": "wheel-spec",
-          "heading": "Eine Laufradgrenze produktspezifisch lesen",
+          "heading": "Was eine konkrete Laufradgrenze verändert",
           "paragraphs": [
-            "Am 4. Oktober 2026 nannte die [DT-Swiss-Seite zum ARC 1100 DICUT mit Felgenbremse](https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut) für WARC110HRQJCA19292 maximal 100 kg Systemgewicht. Die beispielhaften 108 kg zeigen, warum die konkrete Freigabe zählt. Dieses Felgenbremsbeispiel ist keine passende Laufradempfehlung für den GRARO mit Scheibenbremsen; prüfe deinen genauen Satz und die Definition der Grenze."
+            "Am 4. Oktober 2026 nannte die [DT-Swiss-Seite zum ARC 1100 DICUT mit Felgenbremse](https://www.dtswiss.com/en/wheels/wheels-road/aero/arc-1100-dicut) für das Hinterrad WARC110HRQJCA19292 maximal 100 kg Systemgewicht. Die erneute Prüfung am 8. Oktober zeigte für diese genaue Variante weiterhin 100 kg.",
+            "Das [Handbuch zum bestimmungsgemäßen Gebrauch](https://d2a13k6araex7u.cloudfront.net/pmt/00/00/00/00/00/00/00/10/00/00/00/88/5/MAN_WXWASTMSWWRXXS_WEB_ZZ_001.pdf?v=61395) von DT Swiss zählt Fahrer, Rad, Ausrüstung und Gepäck zum Systemgewicht. Damit überschreitet unser hypothetischer 108-kg-Aufbau die 100-kg-Grenze dieses Beispiels. Nur die 95 kg des Fahrers zu vergleichen, würde das Problem übersehen.",
+            "Dieses Felgenbremslaufrad ist keine passende Empfehlung für den GRARO mit Scheibenbremsen. Das Beispiel erklärt das Lesen einer Freigabe, nicht die Laufradwahl. Prüfe deine genauen Vorder- und Hinterräder, Brems- und Achsschnittstellen, Einsatzkategorie und alle weiteren Bedingungen im Handbuch."
           ]
         },
         {
           "id": "decision",
-          "heading": "Mit einem belegten Aufbau abschließen",
+          "heading": "Offene Fragen vor dem Bezahlen klären",
           "paragraphs": [
-            "Notiere Last, Einsatz und alle anwendbaren Grenzen auf einer Seite. Kläre Passform, Reifen-Felgen-Kompatibilität und richtige Einrichtung mit den zuständigen Fachleuten. Wähle einen Aufbau mit geklärten Anforderungen. Eine fehlende Grenze ist fehlende Information, weder ein schlechtes Markenurteil noch eine Freigabe."
+            "Schicke dem Verkäufer dein Belastungsblatt, die tatsächliche fahrfertige Last und den geplanten Einsatz. Lass genaue Laufrad- und Komponentenmodelle ins Angebot schreiben. Bei einem kurzfristigen Teilewechsel prüfst du sonst womöglich den falschen Aufbau. Bleibt eine wesentliche Grenze offen, wähle eine Konfiguration mit belegten Anforderungen.",
+            "Passform und Belastungsfreigabe sind getrennte Aufgaben. Nutze das [Arbeitsblatt zur Rahmengröße](/blog/chinese-bike-frame-sizing/) für die Sitzposition und den [Endurance-oder-Aero-Leitfaden](/blog/endurance-or-aero-frame/), um die Radwahl einzugrenzen. Reifen-Felgen-Kompatibilität und korrekte Montage klärst du anhand der jeweiligen Handbücher und mit qualifizierter Hilfe. Eine fehlende Grenze ist fehlende Information: weder ein Urteil gegen die Marke noch eine Freigabe für deinen Aufbau."
           ]
         }
       ]
@@ -137,12 +243,12 @@
   },
   "editorial_review": {
     "status": "reviewed",
-    "reviewed_at": "2026-10-04T08:56:14.110Z",
+    "reviewed_at": "2026-10-08T00:56:23Z",
     "reviewed_languages": [
       "en",
       "zh-Hans",
       "de"
     ],
-    "contribution": "The 108 kg loaded example and dated exact 100 kg rim-brake variant demonstrate product-specific limits without suggesting disc compatibility."
+    "contribution": "A ready-to-ride mass example, four-part load-limit worksheet and exact dated rim-brake rating show how to distinguish rider-only and system definitions, resolve every component's requirements and obtain the exact supplied build before purchase."
   }
 }
