@@ -1291,6 +1291,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "buy-elves-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda compares paint swatches beside an unbranded road frameset.",
+          "zh-Hans": "小熊猫在无品牌公路车架组旁比较涂装色卡。",
+          "de": "Ein roter Panda vergleicht Farbmuster neben einem Rennrad-Rahmenset ohne Markenkennzeichen."
+        },
+        "prompt": "Editorial scene: A red panda compares paint swatches beside an unbranded road frameset.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "fa6dbcf6c7061a05dd9afc41c61bd2de6b618269ce8dc71fd00b4ad2330d3a79",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/buy-elves-bike-mascot-cover-fa6dbcf6c7-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 51292,
+            "sha256": "10dedcacfa583d0fe27b191b37d134f6d2e4fd628c1c59be9f65ed80ccce5830"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/buy-elves-bike-mascot-cover-fa6dbcf6c7-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 165880,
+            "sha256": "09712595f28ff011d80d896cb1ea51b1f7e1235544e918b2b02e37318d5d30d7"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/buy-elves-bike-mascot-cover-fa6dbcf6c7-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 196799,
+            "sha256": "f4ebff892ccb9fac0a84cae734ec4317cbe4b854ca682ec15d1813ec6c81b058"
+          }
+        ]
+      }
+    },
+    {
+      "id": "used-chinese-carbon-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
+      },
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 20794,
+          "sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda photographs a used road bike beside service notes and tools.",
+          "zh-Hans": "小熊猫在维修记录和工具旁给二手公路车拍照。",
+          "de": "Ein roter Panda fotografiert ein gebrauchtes Rennrad neben Wartungsunterlagen und Werkzeug."
+        },
+        "prompt": "Editorial scene: A red panda photographs a used road bike beside service notes and tools.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "d81b39999fc967ddb463e94074475597418841e24e6a6b36a2e7e84464f15d6e",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 61426,
+            "sha256": "70a59b42590ff9ac70d12da6c98db0061255e10e5814e3e41170b61dd6c61613"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 203572,
+            "sha256": "8995738f3c899c08ce815237d5142304af1880217f166355614eb64a30179f24"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 227193,
+            "sha256": "653b4cf48467b54280a25bd0ad6e84665be98b5736cef236a19bda80beea5807"
+          }
+        ]
+      }
     }
   ]
 }

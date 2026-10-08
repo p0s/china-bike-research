@@ -41,11 +41,11 @@ test('R70 stiffness is an unverified AI intermediary lead, with different weight
  assert.equal(entry.candidate.observed_price.low_cny,8999);assert.equal(entry.candidate.observed_price.high_cny,9597.25);assert.equal(entry.candidate.observed_at,'2026-08-08');
  for(const locale of locales){const html=renderCandidateModel({...ctx,locale},entry);assert.match(html,locale==='en'?/secondary AI-generated summary/:locale==='zh-Hans'?/AI 转述摘要/:/sekundäre KI-Zusammenfassung/);}
 });
-test('chronology corrections preserve prior passages and schedules without releasing any of the three drafts',()=>{
+test('chronology corrections preserve prior passages and historical visibility after scheduled releases',()=>{
  const queue=loadSchedule(new URL('..',import.meta.url).pathname,posts);
  const visible=publishedPosts(posts,queue,new Date('2026-10-03T12:00:00.000Z')).map(p=>p.slug);
  for(const slug of ['buy-yoeleo-bike','buy-elves-bike','chinese-bike-shipping-times']){
-  const p=post(slug);assert.equal(p.publication_status,'scheduled');assert.ok(!visible.includes(slug));assert.equal(p.datePublished,'2026-09-22');assert.equal(p.researched_at,'2026-09-22');
+  const p=post(slug);assert.equal(p.publication_status,'scheduled');assert.ok(!visible.includes(slug));assert.equal(p.datePublished,'2026-09-22');assert.ok(p.researched_at>='2026-09-22'&&p.researched_at<=p.dateModified);
   assert.equal(p.audit_corrections.at(-1).reviewed_at,'2026-10-03');for(const locale of locales)assert.ok(p.audit_corrections.at(-1).prior_values.passages[locale]);
  }
  assert.equal(data.sources.find(x=>x.id==='smzdm-shimano-di2-market-observations-2026-08-24').accessed_at,'2026-08-24');
