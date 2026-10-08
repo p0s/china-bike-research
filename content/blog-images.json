@@ -1443,6 +1443,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "spend-on-tires-or-wheels-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda examines a tire beside a spare wheel in a bicycle workshop.",
+          "zh-Hans": "小熊猫在自行车工作间检查轮胎，旁边放着备用轮组。",
+          "de": "Ein roter Panda prüft einen Reifen neben einem Ersatzlaufrad in einer Fahrradwerkstatt."
+        },
+        "prompt": "Editorial scene: A red panda examines a tire beside a spare wheel in a bicycle workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "7ecc297f0fd73a5366c7076b61d99eab60cd31e340bd82ae1e443e6b29168459",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/spend-on-tires-or-wheels-mascot-cover-7ecc297f0f-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 54430,
+            "sha256": "e0c733278a38f03f7241020b0caf0f3224e967d5b0cbd3aad1b392fd39d39227"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/spend-on-tires-or-wheels-mascot-cover-7ecc297f0f-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 181552,
+            "sha256": "5fd3669f8ba208cdd751150dba9f6599d4606d5e832a9649838f61de86723837"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/spend-on-tires-or-wheels-mascot-cover-7ecc297f0f-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 205366,
+            "sha256": "d9bb3a22ba2e4113687b035131c90aed76dd424522cc9c3b189c5dc4b989d15e"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gravel-racing-bike-vs-adventure-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda preparing a ride with a floor pump",
+        "zh-Hans": "用打气筒准备出发的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is preparing for a gravel ride, leaning happily on a compact bicycle floor pump, one paw on the pump handle and one giving a small thumbs-up. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "c3a53156105d1bfcb296a12afe0c7f1a8a87e54ba97d7a7ab7e459c7c8ae66b3"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/gravel-bikes-around-5000-yuan-mascot-480.webp",
+          "width": 480,
+          "height": 475,
+          "type": "image/webp",
+          "bytes": 37246,
+          "sha256": "98d260e0d522d27a8d6a530568dcc5e6ee6585122a13944dcdc5378fccc4f775"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda compares a lightly equipped gravel bike and a bike packed for a trip on a forest trail.",
+          "zh-Hans": "小熊猫在林间小路比较轻装砾石车与装载旅行行李的自行车。",
+          "de": "Ein roter Panda vergleicht auf einem Waldweg ein leicht ausgestattetes Gravelrad mit einem für eine Reise bepackten Rad."
+        },
+        "prompt": "Editorial scene: A red panda compares a lightly equipped gravel bike and a bike packed for a trip on a forest trail.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "6b1117e59be379829fe8b92f18134275bb1c46c8a74a7b53565b417449043151",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/gravel-racing-bike-vs-adventure-bike-mascot-cover-6b1117e59b-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 68480,
+            "sha256": "c5f9dcf13260e39c2113225097786b3d2c194676db0552df7399a3f761e48352"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/gravel-racing-bike-vs-adventure-bike-mascot-cover-6b1117e59b-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 288262,
+            "sha256": "474b0ab2ef37a8c727236117a4c3e30a9afc70237bfc864b3bf3ea75cb56e7d9"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/gravel-racing-bike-vs-adventure-bike-mascot-cover-6b1117e59b-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 249151,
+            "sha256": "39a11414a21744763335c1b7045b97adb29c357766346f151af555b89dfa2bc8"
+          }
+        ]
+      }
     }
   ]
 }

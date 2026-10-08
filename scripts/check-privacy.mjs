@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/gravel-racing-bike-vs-adventure-bike-mascot-cover-6b1117e59b-640.webp', 'c5f9dcf13260e39c2113225097786b3d2c194676db0552df7399a3f761e48352'],
+  ['assets/blog/gravel-racing-bike-vs-adventure-bike-mascot-cover-6b1117e59b-1600.webp', '474b0ab2ef37a8c727236117a4c3e30a9afc70237bfc864b3bf3ea75cb56e7d9'],
+  ['assets/blog/gravel-racing-bike-vs-adventure-bike-mascot-cover-6b1117e59b-1200.jpg', '39a11414a21744763335c1b7045b97adb29c357766346f151af555b89dfa2bc8'],
+  ['assets/blog/spend-on-tires-or-wheels-mascot-cover-7ecc297f0f-640.webp', 'e0c733278a38f03f7241020b0caf0f3224e967d5b0cbd3aad1b392fd39d39227'],
+  ['assets/blog/spend-on-tires-or-wheels-mascot-cover-7ecc297f0f-1600.webp', '5fd3669f8ba208cdd751150dba9f6599d4606d5e832a9649838f61de86723837'],
+  ['assets/blog/spend-on-tires-or-wheels-mascot-cover-7ecc297f0f-1200.jpg', 'd9bb3a22ba2e4113687b035131c90aed76dd424522cc9c3b189c5dc4b989d15e'],
   ['assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-640.webp', '70a59b42590ff9ac70d12da6c98db0061255e10e5814e3e41170b61dd6c61613'],
   ['assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-1600.webp', '8995738f3c899c08ce815237d5142304af1880217f166355614eb64a30179f24'],
   ['assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-1200.jpg', '653b4cf48467b54280a25bd0ad6e84665be98b5736cef236a19bda80beea5807'],
