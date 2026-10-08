@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-640.webp', '10830e5214bda55788412f9454fcbf5ab97078f95d46452fe8311fc22bd9f6bd'],
+  ['assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-1600.webp', '94a003b5870e07e0b68ab38069230e47b3c9a3d5b68e1ac36f6ef435ee66a37e'],
+  ['assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-1200.jpg', '9511df1dd615364c43d44533945ae65c58047e663f61469623b452c239b4b17a'],
+  ['assets/blog/second-bike-or-wheel-upgrade-mascot-cover-fa163f2cdd-640.webp', 'c39f45cd7f2061aebb6014f18723cc2ac1406ace506a23da9233598a6b2a6918'],
+  ['assets/blog/second-bike-or-wheel-upgrade-mascot-cover-fa163f2cdd-1600.webp', 'e1231989d1b7be98c9f8eeef9a8c2d90eaa172ad3b8f0fcfcaf7037a1ec9fe4e'],
+  ['assets/blog/second-bike-or-wheel-upgrade-mascot-cover-fa163f2cdd-1200.jpg', '5b1e127c277b15b9f68a9f91b90fdbe3be0751a59076ae07f16a761628580a37'],
   ['assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-640.webp', '591128a80f0f33b1ac87fab82a73282efe354308870427e818c9b0d4cce1c37d'],
   ['assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-1600.webp', '07f0a18171c8a653b2a17d8e4a24e6165122a646f0a27b6ece0dfa81ceb9ce57'],
   ['assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-1200.jpg', '2aed4f900905363b5efb47ecb61b9e853406cefe38c18bdcd282721af907b02d'],
