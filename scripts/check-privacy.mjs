@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-640.webp', '70a59b42590ff9ac70d12da6c98db0061255e10e5814e3e41170b61dd6c61613'],
+  ['assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-1600.webp', '8995738f3c899c08ce815237d5142304af1880217f166355614eb64a30179f24'],
+  ['assets/blog/used-chinese-carbon-bike-mascot-cover-d81b39999f-1200.jpg', '653b4cf48467b54280a25bd0ad6e84665be98b5736cef236a19bda80beea5807'],
+  ['assets/blog/buy-elves-bike-mascot-cover-fa6dbcf6c7-640.webp', '10dedcacfa583d0fe27b191b37d134f6d2e4fd628c1c59be9f65ed80ccce5830'],
+  ['assets/blog/buy-elves-bike-mascot-cover-fa6dbcf6c7-1600.webp', '09712595f28ff011d80d896cb1ea51b1f7e1235544e918b2b02e37318d5d30d7'],
+  ['assets/blog/buy-elves-bike-mascot-cover-fa6dbcf6c7-1200.jpg', 'f4ebff892ccb9fac0a84cae734ec4317cbe4b854ca682ec15d1813ec6c81b058'],
   ['assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-640.webp', '10830e5214bda55788412f9454fcbf5ab97078f95d46452fe8311fc22bd9f6bd'],
   ['assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-1600.webp', '94a003b5870e07e0b68ab38069230e47b3c9a3d5b68e1ac36f6ef435ee66a37e'],
   ['assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-1200.jpg', '9511df1dd615364c43d44533945ae65c58047e663f61469623b452c239b4b17a'],
