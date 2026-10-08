@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-640.webp', '591128a80f0f33b1ac87fab82a73282efe354308870427e818c9b0d4cce1c37d'],
+  ['assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-1600.webp', '07f0a18171c8a653b2a17d8e4a24e6165122a646f0a27b6ece0dfa81ceb9ce57'],
+  ['assets/blog/bike-fit-without-test-ride-mascot-cover-2f0bacfcdf-1200.jpg', '2aed4f900905363b5efb47ecb61b9e853406cefe38c18bdcd282721af907b02d'],
+  ['assets/blog/small-rider-bike-shopping-mascot-cover-1f31547409-640.webp', 'f6a6015a8455f77ce3d4fb578ac7dd7d102975f9355f0ca9f01ba41cccd452a0'],
+  ['assets/blog/small-rider-bike-shopping-mascot-cover-1f31547409-1600.webp', '21505df38b4fa451a5aef97c41c29b1ad720d99e3f256ddc91ed565dd469f98e'],
+  ['assets/blog/small-rider-bike-shopping-mascot-cover-1f31547409-1200.jpg', '60f93550498324a46dfb245f3393c011c179d93b025f246a8fd2d7877da58e39'],
   ['assets/blog/europe-bike-delivery-640.webp', '2e6fcadf7f506c4ffdff4a4e7aa1ab3440ef6586a8a67d0ce45f5f4bc4a17e22'],
   ['assets/blog/europe-bike-delivery-1600.webp', '4ec87a888ab899abd5acf2fe861510d87ee441ab16c7232bb9f3047fbfaf4e92'],
   ['assets/blog/europe-bike-delivery-1200.jpg', 'a4a2a0512b51059054320666a11bc19b382c907d60e81637ed11a9a4c8680502'],
