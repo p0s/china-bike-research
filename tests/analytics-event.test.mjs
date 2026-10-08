@@ -1,8 +1,32 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/analytics-event.js';
+import { stopAnalytics } from '../assets/analytics-choice.js';
 
 const origin = 'https://chinesebikes.xyz';
+
+test('immediate opt-out suppresses both action helpers before the preference cookie is saved', () => {
+  const requests = [], windowRef = {};
+  const common = { windowRef, navigatorRef: {}, fetchImpl: (...args) => requests.push(args) };
+  stopAnalytics(windowRef);
+  assert.equal(sendComparisonOpenedEvent({ ...common, locationRef: new URL(origin + '/'), comparisonCount: 2 }), false);
+  assert.equal(sendProductOutboundClickEvent({ ...common, locationRef: new URL(origin + '/models/test-bike/'), sourceId: 'test-source' }), false);
+  assert.equal(sendProductOutboundClickEvent({ ...common, locationRef: new URL(origin + '/de/'), offerId: 'test-offer' }), false);
+  assert.equal(requests.length, 0);
+});
+
+test('catalog offer actions send only an offer ID and actual localized catalog pathname', () => {
+  const requests = [];
+  const common = { locationRef: new URL(origin + '/zh/?ship=US#private'), navigatorRef: {}, windowRef: {},
+    fetchImpl: (url, init) => requests.push({ url, init }) };
+  assert.equal(sendProductOutboundClickEvent({ ...common, offerId: 'test-offer' }), true);
+  assert.deepEqual(JSON.parse(requests[0].init.body), { actionId: 'product_outbound_click', pagePath: '/zh/', offerId: 'test-offer' });
+  for (const update of [{ offerId: 'user@example.com' }, { offerId: {} }, { sourceId: 'test-source' },
+    { locationRef: new URL(origin + '/models/test-bike/') }, { locationRef: new URL(origin + '/privacy/') }]) {
+    assert.equal(sendProductOutboundClickEvent({ ...common, offerId: 'test-offer', ...update }), false);
+  }
+  assert.equal(requests.length, 1);
+});
 
 test('action sender transmits only public IDs and comparison size, never URL query or fragment', () => {
   const requests = [];

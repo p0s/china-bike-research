@@ -4,14 +4,10 @@ import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
+import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
-let sendComparisonOpenedEvent = () => false;
-let sendProductOutboundClickEvent = () => false;
-void import('./analytics-event.js').then((events) => {
-  sendComparisonOpenedEvent = events.sendComparisonOpenedEvent;
-  sendProductOutboundClickEvent = events.sendProductOutboundClickEvent;
-}).catch(() => {});
+const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActionDispatcher();
 
 (async () => {
   const base = document.body.dataset.base ?? '';
@@ -63,7 +59,8 @@ void import('./analytics-event.js').then((events) => {
     if (!(event.target instanceof Element)) return;
     const link = event.target.closest('a[data-analytics-action="product_outbound_click"]');
     if (!link) return;
-    sendProductOutboundClickEvent({ sourceId: link.dataset.analyticsSource });
+    sendProductOutboundClickEvent(link.dataset.analyticsOffer
+      ? { offerId: link.dataset.analyticsOffer } : { sourceId: link.dataset.analyticsSource });
   });
   // A language change retains the current filter/comparison/builder state in the URL.
   document.querySelectorAll('[data-language-switch]').forEach((link) => {
@@ -908,6 +905,10 @@ void import('./analytics-event.js').then((events) => {
       if (offer) {
         const link = document.createElement('a');
         link.dataset.regionalOffer = '';
+        if (offer.analyticsOfferId) {
+          link.dataset.analyticsAction = 'product_outbound_click';
+          link.dataset.analyticsOffer = offer.analyticsOfferId;
+        }
         link.className = 'regional-offer-link';
         link.href = offer.source;
         link.rel = 'noreferrer';

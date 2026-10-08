@@ -3,12 +3,15 @@ import assert from 'node:assert/strict';
 import { publicActionManifest } from '../src/lib/analytics-context.mjs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
 import { handleRequest } from '../worker/index.mjs';
+import { regionalPricePayload } from '../src/lib/regional-prices.mjs';
 
 const origin = 'https://chinesebikes.xyz';
 const context = { page_path: '/de/models/test-bike/', page_type: 'model', interface_language: 'de',
   model_id: 'test-bike', brand_id: 'test-brand', link_type: 'manufacturer', destination_host: 'maker.example' };
 const manifest = { '/models/test-bike/': { model_id: 'test-bike', brand_id: 'test-brand',
-  sources: { 'test-source': { link_type: 'manufacturer', destination_host: 'maker.example' } } } };
+  sources: { 'test-source': { link_type: 'manufacturer', destination_host: 'maker.example' } } },
+  offers: { 'test-offer': { model_id: 'test-bike', brand_id: 'test-brand',
+    link_type: 'manufacturer', destination_host: 'maker.example' } } };
 const env = { GA4_ENABLED: 'true', GA4_MEASUREMENT_ID: 'G-TEST12345', GA4_API_SECRET: 'synthetic-secret',
   ANALYTICS_INGEST_TOKEN: 'synthetic-token', ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
   ASSETS: { fetch: async () => Response.json(manifest) } };
@@ -52,6 +55,18 @@ test('built context contains only real catalog models and product-link hosts', (
     }
   }
   assert.ok(sourceCount > 100);
+  const offers = regionalPricePayload(data).offers;
+  const withOffers = publicActionManifest(products, candidates, { offers, sources: data.sources });
+  assert.ok(Object.keys(withOffers.offers).length > 0);
+  for (const offer of offers.filter(offer => offer.analyticsOfferId)) {
+    const resolved = withOffers.offers[offer.id];
+    assert.equal(resolved.model_id, offer.productId);
+    assert.equal(resolved.destination_host, new URL(offer.source).hostname);
+    assert.deepEqual(Object.keys(resolved).sort(), ['brand_id', 'destination_host', 'link_type', 'model_id']);
+  }
+  const invented = publicActionManifest(products, candidates, { sources: data.sources,
+    offers: [{ ...offers[0], productId: 'invented' }, { ...offers[0], sourceId: 'invented' }] });
+  assert.deepEqual(invented.offers, {});
 });
 
 test('both collectors receive the same resolved product context; private or invented data is rejected', async () => {
@@ -69,7 +84,7 @@ test('both collectors receive the same resolved product context; private or inve
     assert.deepEqual(ga.events[0].params, { session_id: '1780000000', ...context,
       page_location: origin + context.page_path });
     assert.deepEqual(ga.consent, { ad_user_data: 'DENIED', ad_personalization: 'DENIED' });
-    for (const update of [{ sourceId: 'made-up-source' }, { pagePath: '/models/made-up/' },
+    for (const update of [{ sourceId: 'made-up-source' }, { sourceId: 'constructor' }, { pagePath: '/models/made-up/' },
       { pagePath: context.page_path + '?private=secret' }, { pagePath: context.page_path + '#private' },
       { destination_host: 'private.example' }, { model_id: 'private' }, { sourceId: {} }]) {
       const rejected = await handleRequest(request('/analytics/action', { method: 'POST',
@@ -87,6 +102,43 @@ test('both collectors receive the same resolved product context; private or inve
     env, { waitUntil: p => waits.push(p) });
     assert.equal(priorChoice.status, 204);
     assert.equal(sent.length, 2);
+  } finally { globalThis.fetch = originalFetch; }
+});
+
+test('catalog offer clicks resolve exact products while preserving the real page and privacy gates', async () => {
+  const originalFetch = globalThis.fetch, sent = [], waits = [];
+  let manifestReads = 0;
+  const offerEnv = { ...env, ASSETS: { fetch: async () => { manifestReads++; return Response.json(manifest); } } };
+  globalThis.fetch = async (url, init) => { sent.push(JSON.parse(init.body)); return new Response(null, { status: 204 }); };
+  const body = { actionId: 'product_outbound_click', pagePath: '/de/', offerId: 'test-offer' };
+  const post = (value, headers = {}, country = 'SG') => handleRequest(request('/analytics/action', {
+    method: 'POST', headers: { 'content-type': 'application/json', ...headers }, body: JSON.stringify(value)
+  }, country), offerEnv, { waitUntil: p => waits.push(p) });
+  try {
+    for (const headers of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: 'p0s_analytics_optout=1' }]) {
+      assert.equal((await post(body, headers)).status, 204);
+    }
+    assert.equal((await post(body, {}, 'DE')).status, 204);
+    assert.equal(manifestReads, 0);
+    assert.equal(sent.length, 0);
+    for (const pagePath of ['/', '/zh/', '/de/']) {
+      assert.equal((await post({ ...body, pagePath })).status, 204);
+      await Promise.all(waits);
+      const expected = { page_path: pagePath, page_type: 'catalog',
+        interface_language: pagePath === '/zh/' ? 'zh-Hans' : pagePath === '/de/' ? 'de' : 'en',
+        ...manifest.offers['test-offer'] };
+      const latest = sent.slice(-2);
+      assert.deepEqual(latest.find(x => x.actionId).context, expected);
+      assert.deepEqual(latest.find(x => x.events).events[0].params,
+        { session_id: '1780000000', ...expected, page_location: origin + pagePath });
+    }
+    for (const update of [{ offerId: 'invented' }, { offerId: 'constructor' }, { offerId: {} },
+      { pagePath: '/models/test-bike/' }, { pagePath: '/privacy/' }, { pagePath: '/de/?ship=US' },
+      { pagePath: '/de/#private' }, { sourceId: 'test-source' }, { destination_host: 'private.example' }]) {
+      assert.equal((await post({ ...body, ...update })).status, 400);
+    }
+    assert.equal(manifestReads, 1);
+    assert.equal(sent.length, 6);
   } finally { globalThis.fetch = originalFetch; }
 });
 

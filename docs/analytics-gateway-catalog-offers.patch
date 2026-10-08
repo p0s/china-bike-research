@@ -1,0 +1,63 @@
+--- a/gateway.py
++++ b/gateway.py
+@@ -146,7 +146,12 @@
+             raise ValueError("comparison count")
+     else:
+         match = re.fullmatch(r"(?:/(?:zh|de))?/models/([a-z0-9][a-z0-9-]{0,149})/", page)
+-        if not match or value["page_type"] != "model" or value.get("model_id") != match.group(1):
++        catalog_offer = page in ("/", "/zh/", "/de/") and value["page_type"] == "catalog"
++        if catalog_offer:
++            model_id = value.get("model_id")
++            if not isinstance(model_id, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,149}", model_id):
++                raise ValueError("offer model")
++        elif not match or value["page_type"] != "model" or value.get("model_id") != match.group(1):
+             raise ValueError("model page")
+         if "brand_id" in value and (not isinstance(value["brand_id"], str)
+                                     or not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,149}", value["brand_id"])):
+--- /dev/null
++++ b/test_catalog_offer_context.py
+@@ -0,0 +1,44 @@
++import unittest
++from gateway import prepare_action_event
++
++SITE = {"hostname": "chinesebikes.xyz", "websiteId": "00000000-0000-4000-8000-000000000001"}
++CONTEXT = {"page_path": "/", "page_type": "catalog", "interface_language": "en",
++           "model_id": "test-bike", "brand_id": "test-brand",
++           "link_type": "manufacturer", "destination_host": "maker.example"}
++
++class CatalogOfferContextTests(unittest.TestCase):
++    def test_localized_catalog_context_has_actual_page_and_no_visitor_fields(self):
++        for page, language in [("/", "en"), ("/zh/", "zh-Hans"), ("/de/", "de")]:
++            context = {**CONTEXT, "page_path": page, "interface_language": language}
++            event, headers = prepare_action_event(
++                {"actionId": "product_outbound_click", "context": context}, SITE)
++            self.assertEqual(event["payload"]["url"], page)
++            self.assertEqual(event["payload"]["data"], context)
++            self.assertEqual(set(event["payload"]), {"website", "hostname", "url", "name", "data"})
++            self.assertEqual(headers, {"User-Agent": "Mozilla/5.0 (p0s aggregate action)"})
++
++    def test_private_arbitrary_or_wrong_page_context_is_rejected(self):
++        for update in [{"page_path": "/privacy/"}, {"page_path": "/?ship=US"},
++                       {"page_path": "/#private"}, {"page_type": "model"},
++                       {"model_id": "user@example.com"}, {"model_id": None},
++                       {"interface_language": "de"}, {"destination_host": "maker.example/private"},
++                       {"visitor_id": "private"}, {"country": "US"}, {"link_type": "policy"}]:
++            with self.subTest(update=update), self.assertRaises(ValueError):
++                prepare_action_event({"actionId": "product_outbound_click",
++                                      "context": {**CONTEXT, **update}}, SITE)
++
++    def test_existing_model_path_must_still_match_the_model(self):
++        context = {**CONTEXT, "page_path": "/models/test-bike/", "page_type": "model"}
++        event, _ = prepare_action_event({"actionId": "product_outbound_click", "context": context}, SITE)
++        self.assertEqual(event["payload"]["data"], context)
++        with self.assertRaises(ValueError):
++            prepare_action_event({"actionId": "product_outbound_click",
++                                  "context": {**context, "model_id": "different-bike"}}, SITE)
++
++    def test_other_site_cannot_attach_catalog_context(self):
++        with self.assertRaises(ValueError):
++            prepare_action_event({"actionId": "product_outbound_click", "context": CONTEXT},
++                                 {**SITE, "hostname": "example.org"})
++
++if __name__ == "__main__":
++    unittest.main()

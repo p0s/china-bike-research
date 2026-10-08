@@ -4,6 +4,7 @@ import { analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COUNTRIES, need
 import { handleRequest } from '../worker/index.mjs';
 import { startGa4 } from '../assets/ga4.js';
 import { bindAnalyticsChoices, stopAnalytics } from '../assets/analytics-choice.js';
+import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/analytics-event.js';
 
 const origin = 'https://chinesebikes.xyz';
 const env = {
@@ -214,16 +215,23 @@ test('choice handling stops before POST, clears late cookies after success, and 
   assert.equal(prevented, true);
   assert.equal(win.p0sAnalyticsStopped, true);
   assert.equal(writes.length, 0);
+  const actionsStopped = () => {
+    const common = { windowRef: win, navigatorRef: win.navigator, locationRef: new URL(origin + '/'), fetchImpl: win.fetch };
+    assert.equal(sendComparisonOpenedEvent({ ...common, comparisonCount: 2 }), false);
+    assert.equal(sendProductOutboundClickEvent({ ...common, offerId: 'test-offer' }), false);
+  };
+  actionsStopped();
   resolvePost(new Response(null, { status: 200 }));
   await task;
   assert.equal(writes.length, 4);
   assert.ok(writes.every(value => value.startsWith('_ga')));
   assert.equal(reloads, 1);
-  form.action = origin + '/analytics/opt-in';
+  form.action = origin + '/analytics/opt-out';
   const failed = listener({ target: form, preventDefault() {} });
   resolvePost(new Response(null, { status: 503 }));
   await failed;
   assert.equal(reloads, 1);
   assert.equal(status.hidden, false);
   assert.ok(buttons.every(button => !button.disabled));
+  actionsStopped();
 });

@@ -278,8 +278,11 @@ function comparisonContext(request, path) {
 async function productActionContext(action, env) {
   if (!env.ASSETS?.fetch) return null;
   const path = action.pagePath;
-  if (typeof path !== 'string' || !/^(?:\/(?:zh|de))?\/models\/[a-z0-9][a-z0-9-]{0,149}\/$/.test(path)
-    || typeof action.sourceId !== 'string' || !/^[a-z0-9][a-z0-9-]{0,149}$/.test(action.sourceId)) return null;
+  const offer = Object.hasOwn(action, 'offerId');
+  const id = offer ? action.offerId : action.sourceId;
+  if (typeof id !== 'string' || !/^[a-z0-9][a-z0-9-]{0,149}$/.test(id)
+    || !(offer ? validEventPagePath(path)
+      : typeof path === 'string' && /^(?:\/(?:zh|de))?\/models\/[a-z0-9][a-z0-9-]{0,149}\/$/.test(path))) return null;
   try {
     let pending = actionManifestCache.get(env.ASSETS);
     if (!pending) {
@@ -289,10 +292,13 @@ async function productActionContext(action, env) {
     }
     const manifest = await pending;
     const canonicalPath = path.replace(/^\/(?:zh|de)(?=\/)/, '');
-    const model = manifest?.[canonicalPath];
-    const source = model?.sources?.[action.sourceId];
+    const model = offer
+      ? manifest?.offers && Object.hasOwn(manifest.offers, id) ? manifest.offers[id] : null
+      : manifest && Object.hasOwn(manifest, canonicalPath) ? manifest[canonicalPath] : null;
+    const source = offer ? model
+      : model?.sources && Object.hasOwn(model.sources, id) ? model.sources[id] : null;
     if (!model || !source) return null;
-    return { ...pageContext(path, 'model'), model_id: model.model_id,
+    return { ...pageContext(path, offer ? 'catalog' : 'model'), model_id: model.model_id,
       ...(model.brand_id ? { brand_id: model.brand_id } : {}),
       link_type: source.link_type, destination_host: source.destination_host };
   } catch {
@@ -380,8 +386,9 @@ async function readAction(request) {
     if (!body || typeof body !== 'object' || Array.isArray(body)) return null;
     const keys = Object.keys(body);
     if (keys.length !== 1 && keys.length !== 3) return null;
-    if (keys.some((key) => !['actionId', 'pagePath', 'sourceId'].includes(key))) return null;
-    if (keys.length === 3 && (!Object.hasOwn(body, 'pagePath') || !Object.hasOwn(body, 'sourceId'))) return null;
+    if (keys.some((key) => !['actionId', 'pagePath', 'sourceId', 'offerId'].includes(key))) return null;
+    if (keys.length === 3 && (!Object.hasOwn(body, 'pagePath')
+      || Object.hasOwn(body, 'sourceId') === Object.hasOwn(body, 'offerId'))) return null;
     return ANALYTICS_ACTION_IDS.has(body.actionId) ? body : null;
   } catch {
     return null;

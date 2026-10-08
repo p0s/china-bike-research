@@ -12,6 +12,7 @@ export function sendComparisonOpenedEvent({
   fetchImpl = globalThis.fetch
 } = {}) {
   if (locationRef?.hostname !== PRODUCTION_HOSTNAME || typeof fetchImpl !== 'function') return false;
+  if (windowRef?.p0sAnalyticsStopped) return false;
   if (navigatorRef?.globalPrivacyControl === true) return false;
   if ([navigatorRef?.doNotTrack, navigatorRef?.msDoNotTrack, windowRef?.doNotTrack].some(doNotTrackEnabled)) return false;
 
@@ -40,16 +41,20 @@ export function sendComparisonOpenedEvent({
 
 export function sendProductOutboundClickEvent({
   sourceId,
+  offerId,
   locationRef = globalThis.location,
   navigatorRef = globalThis.navigator,
   windowRef = globalThis.window,
   fetchImpl = globalThis.fetch
 } = {}) {
   if (locationRef?.hostname !== PRODUCTION_HOSTNAME || typeof fetchImpl !== 'function') return false;
+  if (windowRef?.p0sAnalyticsStopped) return false;
   if (navigatorRef?.globalPrivacyControl === true) return false;
   if ([navigatorRef?.doNotTrack, navigatorRef?.msDoNotTrack, windowRef?.doNotTrack].some(doNotTrackEnabled)) return false;
 
   const pagePath = String(locationRef.pathname ?? '');
+  if (offerId !== undefined && (sourceId !== undefined || typeof offerId !== 'string'
+    || !/^[a-z0-9][a-z0-9-]{0,149}$/.test(offerId) || !['/', '/zh/', '/de/'].includes(pagePath))) return false;
   if (sourceId !== undefined && (typeof sourceId !== 'string' || !/^[a-z0-9][a-z0-9-]{0,149}$/.test(sourceId)
     || !/^(?:\/(?:zh|de))?\/models\/[a-z0-9][a-z0-9-]{0,149}\/$/.test(pagePath))) return false;
 
@@ -64,7 +69,8 @@ export function sendProductOutboundClickEvent({
       referrerPolicy: 'no-referrer',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ actionId: 'product_outbound_click',
-        ...(sourceId ? { pagePath, sourceId } : {}) })
+        ...(sourceId ? { pagePath, sourceId } : {}),
+        ...(offerId ? { pagePath, offerId } : {}) })
     });
     if (result && typeof result.catch === 'function') result.catch(() => {});
   } catch {

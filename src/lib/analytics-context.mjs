@@ -17,10 +17,10 @@ export function productLinkContext(source) {
   } catch { return null; }
 }
 
-export function publicActionManifest(products, candidates) {
+export function publicActionManifest(products, candidates, { offers = [], sources = [] } = {}) {
   const models = [...products.map((item) => ({ id: item.variant.id, brand: item.brand, sources: item.sources })),
     ...candidates.map((item) => ({ id: item.candidate.id, brand: item.brand, sources: item.sources }))];
-  return Object.fromEntries(models.map((item) => [`/models/${item.id}/`, {
+  const manifest = Object.fromEntries(models.map((item) => [`/models/${item.id}/`, {
     model_id: item.id,
     ...(item.brand?.id ? { brand_id: item.brand.id } : {}),
     sources: Object.fromEntries(item.sources.flatMap((source) => {
@@ -28,4 +28,16 @@ export function publicActionManifest(products, candidates) {
       return context ? [[source.id, context]] : [];
     }))
   }]));
+  if (offers.length) {
+    const offerSources = new Map(sources.map(source => [source.id, source]));
+    const productIds = new Set(products.map(item => item.variant.id));
+    manifest.offers = Object.fromEntries(offers.flatMap(offer => {
+      const model = manifest[`/models/${offer.productId}/`];
+      const source = productLinkContext(offerSources.get(offer.sourceId));
+      return model && productIds.has(offer.productId) && source && offer.analyticsOfferId === offer.id ? [[offer.id, {
+        model_id: model.model_id, ...(model.brand_id ? { brand_id: model.brand_id } : {}), ...source
+      }]] : [];
+    }));
+  }
+  return manifest;
 }
