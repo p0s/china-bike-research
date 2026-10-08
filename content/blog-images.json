@@ -1139,6 +1139,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "second-bike-or-wheel-upgrade-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda reviews a notebook beside a bike, spare wheels and an empty repair stand in a sunny garage.",
+          "zh-Hans": "小熊猫在阳光充足的车库里翻看笔记，旁边有自行车、备用轮组和空维修架。",
+          "de": "Ein roter Panda betrachtet ein Notizbuch neben einem Rad, Ersatzlaufrädern und einem leeren Montageständer in einer sonnigen Garage."
+        },
+        "prompt": "Editorial scene: A red panda reviews a notebook beside a bike, spare wheels and an empty repair stand in a sunny garage.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "fa163f2cddf3bbf853f78b8ae90c02d4930b400dd35d41aad147e0158137e040",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/second-bike-or-wheel-upgrade-mascot-cover-fa163f2cdd-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 61356,
+            "sha256": "c39f45cd7f2061aebb6014f18723cc2ac1406ace506a23da9233598a6b2a6918"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/second-bike-or-wheel-upgrade-mascot-cover-fa163f2cdd-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 197886,
+            "sha256": "e1231989d1b7be98c9f8eeef9a8c2d90eaa172ad3b8f0fcfcaf7037a1ec9fe4e"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/second-bike-or-wheel-upgrade-mascot-cover-fa163f2cdd-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 226875,
+            "sha256": "5b1e127c277b15b9f68a9f91b90fdbe3be0751a59076ae07f16a761628580a37"
+          }
+        ]
+      }
+    },
+    {
+      "id": "race-bike-for-heavy-riders-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
+      },
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 20794,
+          "sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda considers a complete bike and luggage together on a platform scale.",
+          "zh-Hans": "小熊猫在平台秤旁一起考虑整车和行李的重量。",
+          "de": "Ein roter Panda betrachtet Rad und Gepäck gemeinsam auf einer Plattformwaage."
+        },
+        "prompt": "Editorial scene: A red panda considers a complete bike and luggage together on a platform scale.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "05138de05f6b9b2e467f9d9bdfd9c9c723cb0c3182099981530b06379247302b",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 52760,
+            "sha256": "10830e5214bda55788412f9454fcbf5ab97078f95d46452fe8311fc22bd9f6bd"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 172846,
+            "sha256": "94a003b5870e07e0b68ab38069230e47b3c9a3d5b68e1ac36f6ef435ee66a37e"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/race-bike-for-heavy-riders-mascot-cover-05138de05f-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 206504,
+            "sha256": "9511df1dd615364c43d44533945ae65c58047e663f61469623b452c239b4b17a"
+          }
+        ]
+      }
     }
   ]
 }
