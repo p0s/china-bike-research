@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-bike-frame-sizing-mascot-cover-c7f1ec7607-640.webp', '38751d5eb2c7ddbdcf40fcece3a7a5017d57cbf5c9fca7d67ee1370b28cb16fd'],
+  ['assets/blog/chinese-bike-frame-sizing-mascot-cover-c7f1ec7607-1600.webp', '03824ae38c6be03653a4079f334aba5ad9c74ce49f2c59a6fd181d42103709d2'],
+  ['assets/blog/chinese-bike-frame-sizing-mascot-cover-c7f1ec7607-1200.jpg', 'b04e5bae4637daf5fb7ccb17600503068d055a967d55e236818804f032667436'],
+  ['assets/blog/budget-road-bike-upgrades-in-order-mascot-cover-1fbb19efc3-640.webp', '681405467572d1696fa8b4b473d543b8c9bde8ed5e734a86daa3018565a7a190'],
+  ['assets/blog/budget-road-bike-upgrades-in-order-mascot-cover-1fbb19efc3-1600.webp', 'e363bebbe8d031c05b38a9cb69134cb40cacfa92f168491d16a9adbe525d4565'],
+  ['assets/blog/budget-road-bike-upgrades-in-order-mascot-cover-1fbb19efc3-1200.jpg', 'c7ccb8d729076016318d18148782baf998d5e36724e2d29914f37cf3c42debc0'],
   ["assets/branding/panda-rider-3b-256.webp", "55b7f962809c8fb2bb9951728d3563fc403a8aaa8d88acc3aa5397c064780175"],
   ["assets/branding/favicon-32.png", "80d1ce9715dc112ae33664e41c4d276070afdf96443e719252719e6b5968c645"],
   ["assets/branding/apple-touch-icon.png", "b717d115151d144911468ff586ac3ab54d09bb31cce82d6897531c818be6180f"],
