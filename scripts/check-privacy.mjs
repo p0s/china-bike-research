@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-gravel-bike-for-commuting-mascot-cover-68f8cd9114-640.webp', '7ff3c971583454d7d0afabd9f82dc0b45d00d4d4cb5f6a61ff755ca016c0b6e9'],
+  ['assets/blog/chinese-gravel-bike-for-commuting-mascot-cover-68f8cd9114-1600.webp', 'bf24badf1259a5c0717209b6bedc5ca3d9d7b501f750ca4e80fe169ceb1bfb04'],
+  ['assets/blog/chinese-gravel-bike-for-commuting-mascot-cover-68f8cd9114-1200.jpg', '7249ff9d596140192a9392cb74ee4b5526699e8846e659b73d1ebd93e1b49e4f'],
+  ['assets/blog/everyday-road-bike-with-fenders-mascot-cover-6410e6e765-640.webp', '593cde4da15a2af51a37165f8d24ad58f37be8775aaeaa90a630020cb0716958'],
+  ['assets/blog/everyday-road-bike-with-fenders-mascot-cover-6410e6e765-1600.webp', 'aead7f2469a88a4436554492296ee19489a78b0a6e34369701398c3ea123c692'],
+  ['assets/blog/everyday-road-bike-with-fenders-mascot-cover-6410e6e765-1200.jpg', '3f943da815e0bb38f5ea33e3535de5ed8e30a741b215c16ab1b53c206d97d8b0'],
   ['assets/blog/chinese-bike-for-bikepacking-mounts-mascot-cover-690fae6bd6-640.webp', 'be80681b41423103832e7b4bc6030f6868f75bdc68e2f0fd32f92ef6b3ab59c4'],
   ['assets/blog/chinese-bike-for-bikepacking-mounts-mascot-cover-690fae6bd6-1600.webp', 'a6da87535f0a56e718a79e75287c9791007429075be090679df8ac56236f8671'],
   ['assets/blog/chinese-bike-for-bikepacking-mounts-mascot-cover-690fae6bd6-1200.jpg', '10605bae998a2f6be74f70f85dc90bdee08b8df3b572fe5f1bc77e94ab675069'],
