@@ -1539,6 +1539,7 @@ function brandStory(brand) {
 
 export function renderCandidateModel(ctx, entry) {
   const { candidate, brand } = entry;
+  const pageCopy = candidate.page_copy?.[ctx.locale || 'en'];
   const facts = candidateFactRows(entry);
   const originalReason = candidatePublicText(candidate.why_interesting) || 'This bike is tracked while its exact configuration and market evidence are completed.';
   const chineseFacts = [
@@ -1610,22 +1611,23 @@ export function renderCandidateModel(ctx, entry) {
   </div>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
-    <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
+    <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(pageCopy?.opening ?? reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
     ${candidate.geometry_evidence ? `<p class="geometry-evidence-warning" role="note">${escapeHtml(translate(candidate.geometry_evidence.note, ctx.locale))}</p>` : ''}
     ${candidateAlternativeBuilds(entry)}
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.filter(fact => !isGeometryTableFact(fact)).map(([label, value]) => `<div><dt>${escapeHtml(label.replaceAll('_', ' '))}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     ${candidateGeometry(facts)}<section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
+    ${pageCopy ? `<section class="model-reading model-buyer-checks" aria-labelledby="model-buyer-checks-title"><h2 id="model-buyer-checks-title">${ctx.locale === 'zh-Hans' ? '购买前核对' : ctx.locale === 'de' ? 'Vor dem Kauf' : 'Buyer checks'}</h2><p>${escapeHtml(pageCopy.buyer_checks)}</p><p><a href="${url(ctx.base, pageCopy.guide_path)}">${escapeHtml(pageCopy.guide_text)}</a></p></section>` : ''}
     ${relatedArticleLinks(ctx, candidate.id)}
     ${brandStory(brand)}
     ${videoContext(entry.videos)}
     <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span><p>${escapeHtml([entry.price.original_currency ? `${entry.price.original_amount} ${entry.price.original_currency} · ${entry.price.conversion_rate_cny_per_original_unit} CNY/${entry.price.original_currency} · ${entry.price.conversion_rate_date}` : '', entry.price.price_basis, entry.price.conditions].filter(Boolean).join(' · '))}</p></div>${(candidate.prior_price_observations ?? []).map((prior) => `<div><strong>${escapeHtml(formatPrice(prior))}</strong><span>${escapeHtml(prior.observed_at)} · Historical reference${prior.price_type === 'official-conflict' ? ' · Official price conflict' : ''}</span><p>${escapeHtml(prior.price_basis ?? '')}</p></div>`).join('')}</div>` : ''}${candidateSourceList(ctx, entry)}</div></details>
   </div></div></section>`;
   return page(ctx, {
-    title: ctx.locale === 'zh-Hans' ? `${pageTitle}：${entry.kind === 'frameset' ? '车架组' : '整车配置'}研究与来源` : `${pageTitle} — ${entry.kind === 'frameset' ? 'frameset' : 'bike build'} research`,
+    title: pageCopy?.title ?? (ctx.locale === 'zh-Hans' ? `${pageTitle}：${entry.kind === 'frameset' ? '车架组' : '整车配置'}研究与来源` : `${pageTitle} — ${entry.kind === 'frameset' ? 'frameset' : 'bike build'} research`),
     current: 'catalog',
     path: `/models/${candidate.id}/`,
     noindex: !candidateIndexable(entry),
-    description: reason,
+    description: pageCopy?.description ?? reason,
     image: candidateHeroImage,
     imageAlt: entry.image?.alt ?? candidate.name,
     ogType: candidateSeoProduct ? 'product' : 'website',
@@ -1634,7 +1636,7 @@ export function renderCandidateModel(ctx, entry) {
       base: ctx.base,
       path: `/models/${candidate.id}/`,
       name: pageTitle,
-      description: reason,
+      description: pageCopy?.description ?? reason,
       image: candidateHeroImage,
       includeSubject: candidateSeoProduct
     }),

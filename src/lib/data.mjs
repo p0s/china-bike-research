@@ -577,6 +577,15 @@ export function validateDataset(data = loadDataset()) {
 
   for (const candidate of data.candidates) {
     requireFields('candidate', candidate, ['name', 'why_interesting', 'missing', 'status', 'last_reviewed']);
+    if (candidate.page_copy !== undefined) {
+      for (const locale of ['en', 'zh-Hans', 'de']) {
+        const copy = candidate.page_copy?.[locale];
+        if (!copy || !['title', 'description', 'opening', 'buyer_checks', 'guide_text'].every(key => typeof copy[key] === 'string' && copy[key].trim()) ||
+            typeof copy.guide_path !== 'string' || !/^\/(?:zh\/|de\/)?blog\/[a-z0-9-]+\/$/.test(copy.guide_path)) {
+          errors.push(`candidate ${candidate.id}: invalid page_copy for ${locale}`);
+        }
+      }
+    }
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
     if (candidate.reference_price_kind !== undefined && !['official', 'observed'].includes(candidate.reference_price_kind)) errors.push(`candidate ${candidate.id}: invalid reference_price_kind`);
