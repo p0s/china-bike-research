@@ -80,7 +80,7 @@ test('every published model has a German verdict and buying advice; research pro
   }
   for (const candidate of catalogCandidates) {
     const html = renderCandidateModel(ctx, candidate);
-    assert.ok(html.includes('Rechercheprofil.'));
+    assert.ok(html.includes(candidate.candidate.page_copy?.de ? escapeHtml(candidate.candidate.page_copy.de.opening) : 'Rechercheprofil.'));
     assert.ok(html.includes('data-original-language'));
     assert.ok(html.includes('Originale Recherchehinweise (Englisch)'));
     assert.doesNotMatch(html, /The displayed .* build allowance|complete-bike lead under review/);
