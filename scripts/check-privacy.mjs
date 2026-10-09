@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-bike-for-bikepacking-mounts-mascot-cover-690fae6bd6-640.webp', 'be80681b41423103832e7b4bc6030f6868f75bdc68e2f0fd32f92ef6b3ab59c4'],
+  ['assets/blog/chinese-bike-for-bikepacking-mounts-mascot-cover-690fae6bd6-1600.webp', 'a6da87535f0a56e718a79e75287c9791007429075be090679df8ac56236f8671'],
+  ['assets/blog/chinese-bike-for-bikepacking-mounts-mascot-cover-690fae6bd6-1200.jpg', '10605bae998a2f6be74f70f85dc90bdee08b8df3b572fe5f1bc77e94ab675069'],
+  ['assets/blog/bike-build-for-hilly-rides-mascot-cover-782e5bae78-640.webp', '6f8beaae456df439b39f75258931a95ea1f4907b9921febcfe93c1dfe191e905'],
+  ['assets/blog/bike-build-for-hilly-rides-mascot-cover-782e5bae78-1600.webp', '1e07968a79b6dbee7d4716258d59e954a1661488809673d80563e8152d37eec1'],
+  ['assets/blog/bike-build-for-hilly-rides-mascot-cover-782e5bae78-1200.jpg', 'f3bec2983053bb717e6e65369ed36cace037ff146ab29360aa5bff29a6bdf335'],
   ['assets/blog/chinese-bike-frame-sizing-mascot-cover-c7f1ec7607-640.webp', '38751d5eb2c7ddbdcf40fcece3a7a5017d57cbf5c9fca7d67ee1370b28cb16fd'],
   ['assets/blog/chinese-bike-frame-sizing-mascot-cover-c7f1ec7607-1600.webp', '03824ae38c6be03653a4079f334aba5ad9c74ce49f2c59a6fd181d42103709d2'],
   ['assets/blog/chinese-bike-frame-sizing-mascot-cover-c7f1ec7607-1200.jpg', 'b04e5bae4637daf5fb7ccb17600503068d055a967d55e236818804f032667436'],
