@@ -26,6 +26,7 @@ function fixture(t,mode='',base='') {
  export const maxClearance=()=>null;export const clearanceLongLabel=()=>'';
  `);
  fs.writeFileSync(path.join(root,'src/lib/posts.mjs'),"export const loadPosts=()=>[];export const validatePostReferences=()=>{};export const renderBlogIndex=()=>'<html>Blog</html>';export const renderPost=()=>'<html>Post</html>';export const postLastmod=()=> '2026-09-18';");
+ fs.writeFileSync(path.join(root,'src/lib/build-cost-reference.mjs'),"export const buildCostReferenceCsv=()=> 'id,recorded_cny\\nfixture,\\n';");
  fs.writeFileSync(path.join(root,'src/lib/i18n.mjs'),"export const LOCALES=['en','zh-Hans'];export const localePath=(route,locale)=>locale==='zh-Hans'?'/zh'+route:route;export const localizedCatalogPayload=(value)=>value;");
  fs.writeFileSync(path.join(root,'src/lib/indexing.mjs'),"export const candidateIndexable=()=>false;");
  fs.writeFileSync(path.join(root,'src/lib/post-publication.mjs'),"export const loadSchedule=()=>({entries:[]});export const publishedPosts=posts=>posts;");

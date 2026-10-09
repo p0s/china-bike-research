@@ -4,6 +4,7 @@ import { LOCALES, localePath, localizedCatalogPayload } from '../src/lib/i18n.mj
 import { candidateIndexable } from '../src/lib/indexing.mjs';
 import { publicActionManifest } from '../src/lib/analytics-context.mjs';
 import { regionalPricePayload } from '../src/lib/regional-prices.mjs';
+import { buildCostReferenceCsv } from '../src/lib/build-cost-reference.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -128,6 +129,7 @@ const landingLastmod = (landing) => latestDate([
 
 copyDir(path.join(root, 'assets'), path.join(dist, 'assets'));
 write('.nojekyll', '');
+write('data/china-build-cost-reference.csv', buildCostReferenceCsv(data));
 
 const pages = new Map();
 function add(route, html, includeInSitemap = true, metadata = {}) {

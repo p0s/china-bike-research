@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { escapeHtml, escapeAttr, url, layout } from './html.mjs';
 import { renderEvidenceTable, renderBuildExample } from './post-comparisons.mjs';
+import { renderBuildCostReference } from './build-cost-reference.mjs';
 import { collectionStructuredData, latestDate } from './seo.mjs';
 import { editorialImage, editorialImageMeta, renderEditorialImage, renderPostPhotos, postPhotos } from './editorial-images.mjs';
 import { renderPostVideos, validatePostVideoReferences } from './post-videos.mjs';
@@ -33,6 +34,7 @@ export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url)
     }
     if (LOCALES.some((locale) => post.translations.en.sections.map((s) => s.id).join() !== post.translations[locale].sections.map((s) => s.id).join())) throw new Error(`Unpaired sections: ${post.slug}`);
     const sections = new Set(post.translations.en.sections.map((section) => section.id));
+    if (post.cost_reference && (post.slug !== 'frameset-vs-complete-bike-cost-in-china' || !sections.has(post.cost_reference.section_id))) throw new Error(`Invalid cost reference placement: ${post.slug}`);
     if (post.comparison && (!['gravel', 'clearance', 'build', 'price-basis'].includes(post.comparison.kind) || !sections.has(post.comparison.section_id))) throw new Error(`Invalid comparison placement: ${post.slug}`);
     const placements = post.photo_sections ?? [];
     const placed = placements.flatMap((placement) => placement.ids);
@@ -76,7 +78,7 @@ function sourceList(ctx, post) {
 function renderSection(ctx, post, section) {
   const worksheet = section.worksheet;
   const photos = post.photo_sections.filter((placement) => placement.section_id === section.id).flatMap((placement) => placement.ids);
-  return `<section id="${section.id}"><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${inline(paragraph, ctx)}</p>`).join('')}${section.bullets?.length ? `<ul class="article-checklist">${section.bullets.map((item) => `<li>${inline(item, ctx)}</li>`).join('')}</ul>` : ''}${post.comparison?.section_id === section.id ? renderEvidenceTable(ctx, post) : ''}${post.example?.section_id === section.id ? renderBuildExample(ctx) : ''}${worksheet ? `<div class="article-table-wrap" role="region" tabindex="0" aria-label="${escapeAttr(worksheet.caption)}"><table class="article-table article-table-worksheet"><caption>${escapeHtml(worksheet.caption)}</caption><thead><tr>${worksheet.columns.map((column) => `<th scope="col">${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${worksheet.rows.map((row) => `<tr><th scope="row">${escapeHtml(row[0])}</th>${row.slice(1).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}${photos.length ? renderPostPhotos(ctx, post, photos) : ''}${renderPostVideos(ctx, post, section.id)}</section>`;
+  return `<section id="${section.id}"><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${inline(paragraph, ctx)}</p>`).join('')}${section.bullets?.length ? `<ul class="article-checklist">${section.bullets.map((item) => `<li>${inline(item, ctx)}</li>`).join('')}</ul>` : ''}${post.comparison?.section_id === section.id ? renderEvidenceTable(ctx, post) : ''}${post.example?.section_id === section.id ? renderBuildExample(ctx) : ''}${post.cost_reference?.section_id === section.id ? renderBuildCostReference(ctx) : ''}${worksheet ? `<div class="article-table-wrap" role="region" tabindex="0" aria-label="${escapeAttr(worksheet.caption)}"><table class="article-table article-table-worksheet"><caption>${escapeHtml(worksheet.caption)}</caption><thead><tr>${worksheet.columns.map((column) => `<th scope="col">${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${worksheet.rows.map((row) => `<tr><th scope="row">${escapeHtml(row[0])}</th>${row.slice(1).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}${photos.length ? renderPostPhotos(ctx, post, photos) : ''}${renderPostVideos(ctx, post, section.id)}</section>`;
 }
 function articleCard(ctx, post, heading = 'h2', compactCard = false) {
   const copy = copyFor(post, ctx);
