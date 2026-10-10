@@ -15,6 +15,7 @@ const ANALYTICS_EVENT_ROUTE = '/analytics/event';
 const ANALYTICS_ACTION_ROUTE = '/analytics/action';
 const GA4_CONFIG_ROUTE = '/analytics/ga-config';
 const GA4_SESSION_ROUTE = '/analytics/ga-session';
+const CATALOG_DOCUMENT_PATHS = new Set(['/', '/zh/', '/de/']);
 const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
 const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
 const MAX_ACTION_BODY_BYTES = 512;
@@ -538,7 +539,7 @@ export async function handleRequest(request, env = {}, ctx = {}) {
     }
     const showBanner = eligible && needsAnalyticsConsent(request) && !hasAnalyticsConsent(request)
       && !isAnalyticsOptedOut(request) && !hasPrefetchIntent(request) && !looksLikeBot(request);
-    const priceCountry = eligible ? requestCountry(request) : '';
+    const priceCountry = eligible && CATALOG_DOCUMENT_PATHS.has(url.pathname) ? requestCountry(request) : '';
     if (allowed || showBanner || priceCountry) {
       let html = await response.text();
       // Only a coarse country hint enters the catalog. No location permission,

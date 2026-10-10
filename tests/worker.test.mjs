@@ -35,6 +35,38 @@ test('catalog receives only the trusted coarse country hint, independently of an
   assert.match(await invalid.text(), /data-price-country=""/);
 });
 
+test('country hints do not buffer non-catalog HTML when analytics is excluded', async () => {
+  const document = '<!doctype html><html><body><main>Model page</main></body></html>';
+  const encoded = new TextEncoder().encode(document);
+  let allowRead = false;
+  let pulls = 0;
+  const assets = {
+    fetch: async () => new Response(new ReadableStream({
+      pull(controller) {
+        pulls += 1;
+        if (!allowRead) throw new Error('Worker buffered an unmodified document');
+        controller.enqueue(encoded);
+        controller.close();
+      }
+    }, { highWaterMark: 0 }), { headers: { 'content-type': 'text/html; charset=utf-8' } })
+  };
+  const waits = [];
+  const response = await handleRequest(
+    makeRequest('/image-sources/', { headers: { dnt: '1' } }, { country: 'SG' }),
+    { ASSETS: assets },
+    { waitUntil: (task) => waits.push(task) }
+  );
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('cache-control'), 'private, no-store');
+  assert.equal(response.headers.get('x-content-type-options'), 'nosniff');
+  assert.equal(pulls, 0);
+  assert.equal(waits.length, 0);
+  allowRead = true;
+  assert.equal(await response.text(), document);
+  assert.equal(pulls, 1);
+});
+
 test('analytics payload is minimized to the frozen ingestion fields', () => {
   const request = makeRequest('/models/example-bike/?q=private-value#fragment', {
     headers: {
