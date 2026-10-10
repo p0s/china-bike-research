@@ -2507,6 +2507,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "stem-length-with-integrated-handlebar-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda compares two one-piece drop-bar cockpits on padded workshop stands beside an open notebook.",
+          "zh-Hans": "小熊猫在车间比较放在软垫支架上的两副公路一体把，旁边摊着一本笔记本。",
+          "de": "Ein roter Panda vergleicht zwei einteilige Rennradcockpits auf gepolsterten Werkstattständern neben einem offenen Notizbuch."
+        },
+        "prompt": "Editorial scene: A red panda compares two one-piece drop-bar cockpits on padded workshop stands beside an open notebook.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "cb384a02af32402c0c5a6875ccff4b2b402d2bec802bf0de38897acf3c6c04a3",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/stem-length-with-integrated-handlebar-mascot-cover-cb384a02af-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 48740,
+            "sha256": "04b606a7d9c9f0a2176be94895f7ea364a941b5495e1ebce3b876da3d3775c07"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/stem-length-with-integrated-handlebar-mascot-cover-cb384a02af-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 162640,
+            "sha256": "b6492a4095d325917d8de20c285374faf625cbb1538d20af6765d8b2bf1e5f58"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/stem-length-with-integrated-handlebar-mascot-cover-cb384a02af-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 186353,
+            "sha256": "06cba5551efff536ff0b7a5f2fcb8b74d98b183aa2a263450828f3decaa1ebe8"
+          }
+        ]
+      }
+    },
+    {
+      "id": "buy-winspace-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
+      },
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 20794,
+          "sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda holds a folder between a complete road bicycle and an open box containing a frameset in a bicycle showroom.",
+          "zh-Hans": "在自行车展厅里，小熊猫拿着文件夹，站在一辆公路整车和装着车架套装的打开纸箱之间。",
+          "de": "Ein roter Panda hält eine Mappe zwischen einem kompletten Rennrad und einem offenen Karton mit einem Rahmenset in einem Fahrradladen."
+        },
+        "prompt": "Editorial scene: A red panda holds a folder between a complete road bicycle and an open box containing a frameset in a bicycle showroom.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "08a76443937b43f6ff56d363517763cca2ce41d6f0d70a8bfcad320f7fae09fc",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/buy-winspace-bike-mascot-cover-08a7644393-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 53290,
+            "sha256": "8bc05b6c292e758432a2a68d3e6cdb6509dfc890e86462baf870b23611485e59"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/buy-winspace-bike-mascot-cover-08a7644393-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 173042,
+            "sha256": "25a4504a9cac4171b394ff84cc77d8e8733d5ff74da8958d79c42ae9baaf7de7"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/buy-winspace-bike-mascot-cover-08a7644393-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 203871,
+            "sha256": "bdcca380d1b353c3ca0f233056b13a3416de293b2769d5ae4e034c4ae4394341"
+          }
+        ]
+      }
     }
   ]
 }

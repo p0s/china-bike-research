@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-winspace-bike-mascot-cover-08a7644393-640.webp', '8bc05b6c292e758432a2a68d3e6cdb6509dfc890e86462baf870b23611485e59'],
+  ['assets/blog/buy-winspace-bike-mascot-cover-08a7644393-1600.webp', '25a4504a9cac4171b394ff84cc77d8e8733d5ff74da8958d79c42ae9baaf7de7'],
+  ['assets/blog/buy-winspace-bike-mascot-cover-08a7644393-1200.jpg', 'bdcca380d1b353c3ca0f233056b13a3416de293b2769d5ae4e034c4ae4394341'],
+  ['assets/blog/stem-length-with-integrated-handlebar-mascot-cover-cb384a02af-640.webp', '04b606a7d9c9f0a2176be94895f7ea364a941b5495e1ebce3b876da3d3775c07'],
+  ['assets/blog/stem-length-with-integrated-handlebar-mascot-cover-cb384a02af-1600.webp', 'b6492a4095d325917d8de20c285374faf625cbb1538d20af6765d8b2bf1e5f58'],
+  ['assets/blog/stem-length-with-integrated-handlebar-mascot-cover-cb384a02af-1200.jpg', '06cba5551efff536ff0b7a5f2fcb8b74d98b183aa2a263450828f3decaa1ebe8'],
   ['assets/blog/carbon-or-aluminium-value-mascot-cover-ef812c8770-640.webp', '59c9ca8abf5d505427098ccf68fbd69588dad005ef1a3fa736265edafb8fbcae'],
   ['assets/blog/carbon-or-aluminium-value-mascot-cover-ef812c8770-1600.webp', '00031c42d9d08570ace27778c297f1c5fd2d8e7560fba2ade54196b362da5909'],
   ['assets/blog/carbon-or-aluminium-value-mascot-cover-ef812c8770-1200.jpg', 'c521ee2268a56ddb64305aaa81ec8f977200bd23d617c581fd3a04e4ff537103'],
