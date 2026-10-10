@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-640.webp', 'ed8b8e4c53c974bdcd316cec19da7442606de0abe4d420bf16d2e7044870a9aa'],
+  ['assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-1600.webp', 'd9ea5cc0db774cbd7f06e7080f7f2b1323e4fdd002e022ece566187917b32fb7'],
+  ['assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-1200.jpg', '2212da72115756822614146407e5d1b96e5cc23abfa547bd20b4b0d6a3e42490'],
+  ['assets/blog/choosing-bike-when-specs-unknown-mascot-cover-003b73890a-640.webp', '3ec2beebb9ea7a6ad9d1649ca191c8fb7bb34c73dc31c2d50c726d05e3bd223c'],
+  ['assets/blog/choosing-bike-when-specs-unknown-mascot-cover-003b73890a-1600.webp', '14dbb9bea19284d3d181b3d65932f78a7fe5297f7f3729c74607e15b71aa6333'],
+  ['assets/blog/choosing-bike-when-specs-unknown-mascot-cover-003b73890a-1200.jpg', 'd98dbb6c2c9d5c8e45658f47ebbfba6c2df48e1d7829439996322b291019e12d'],
   ['assets/blog/everyday-road-bike-with-fenders-mascot-cover-c5efb5ce82-640.webp', '1de08ccfae67a35d550f3b46f142f396a23713e6e7d045f2e762f994bddac3aa'],
   ['assets/blog/everyday-road-bike-with-fenders-mascot-cover-c5efb5ce82-1600.webp', '22fac07549feb82408102280f999178c14063ebc12fc44c36682259e419d588b'],
   ['assets/blog/everyday-road-bike-with-fenders-mascot-cover-c5efb5ce82-1200.jpg', '17631e58aa43ea57d53b5e07c9f7ca03891da784d4819b8bd8d00f48d039d70e'],
