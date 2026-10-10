@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/first-carbon-bike-budget-mascot-cover-d80403d806-640.webp', 'ba147befdf4e7810ed49931d1b3336fd55d674ab09dae8c870b1205c35378da6'],
+  ['assets/blog/first-carbon-bike-budget-mascot-cover-d80403d806-1600.webp', 'e0cfd120a6d0b647f34f676790730feb53a3e1ae31a100642d2f0551f62bb22f'],
+  ['assets/blog/first-carbon-bike-budget-mascot-cover-d80403d806-1200.jpg', 'e9269b0d99d4f501396308616cce02d6ec193751f80075ed880c9d5e0c9b7145'],
+  ['assets/blog/stack-reach-vs-frame-size-mascot-cover-7a179e4061-640.webp', 'ed9151885b99ecb51a0f67c9f1d2ae844260ee19a498a4fb19011d8d2963eb30'],
+  ['assets/blog/stack-reach-vs-frame-size-mascot-cover-7a179e4061-1600.webp', 'de4bd08ed4904b4ffbd9f62c8d5b343a0eebca0b165859aefa0ca5c138dab390'],
+  ['assets/blog/stack-reach-vs-frame-size-mascot-cover-7a179e4061-1200.jpg', '9c07e9f6243eec08dfcb3befdc1d5abf63fa27b41cac4d22196227310bed39b6'],
   ['assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-640.webp', 'ed8b8e4c53c974bdcd316cec19da7442606de0abe4d420bf16d2e7044870a9aa'],
   ['assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-1600.webp', 'd9ea5cc0db774cbd7f06e7080f7f2b1323e4fdd002e022ece566187917b32fb7'],
   ['assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-1200.jpg', '2212da72115756822614146407e5d1b96e5cc23abfa547bd20b4b0d6a3e42490'],
