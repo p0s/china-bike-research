@@ -167,12 +167,17 @@ test('deployment routing sends every locale document through the Worker and keep
     assert.equal(runsWorkerFirst(path), false, path);
   }
 });
-test('configured German document routing retains security, country and prior-consent behavior', async () => {
+test('configured German document routing personalizes only the catalog and keeps prior-consent behavior', async () => {
   const routedEnv = {
     ...env,
-    ASSETS: { fetch: async () => new Response('<html lang="de"><body><div data-catalog-root data-price-country=""></div></body></html>', {
-      headers: { 'content-type': 'text/html', 'cache-control': 'public, max-age=120' }
-    }) }
+    ASSETS: { fetch: async (request) => {
+      const catalog = new URL(request.url).pathname === '/de/';
+      return new Response(catalog
+        ? '<html lang="de"><body><div data-catalog-root data-price-country=""></div></body></html>'
+        : '<html lang="de"><body><main>Document</main></body></html>', {
+        headers: { 'content-type': 'text/html', 'cache-control': 'public, max-age=120' }
+      });
+    } }
   };
   for (const path of ['/de/', '/de/models/example/', '/de/build/']) {
     const req = request(path);
@@ -184,7 +189,8 @@ test('configured German document routing retains security, country and prior-con
     assert.equal(response.headers.get('cache-control'), 'private, no-store', path);
     assert.ok(response.headers.has('content-security-policy'), path);
     assert.equal(response.headers.get('x-content-type-options'), 'nosniff', path);
-    assert.match(html, /data-price-country="DE"/, path);
+    if (path === '/de/') assert.match(html, /data-price-country="DE"/, path);
+    else assert.doesNotMatch(html, /data-price-country=/, path);
     assert.match(html, /Analyse erlauben/, path);
     assert.equal(waits.length, 0, `Prior consent required: ${path}`);
   }
