@@ -2051,6 +2051,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "choosing-bike-when-specs-unknown-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda with a notebook considers a bare bicycle frame and separate parts on a workshop bench.",
+          "zh-Hans": "小熊猫拿着笔记本，思考工作台上的裸车架和分开放置的零件。",
+          "de": "Ein roter Panda mit Notizbuch betrachtet einen Fahrradrahmen und einzelne Teile auf einer Werkbank."
+        },
+        "prompt": "Editorial scene: A red panda with a notebook considers a bare bicycle frame and separate parts on a workshop bench.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "003b73890a64126aa82bf8c6a0487f0c6ecb9448c4ef805c043a4070418a07d0",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/choosing-bike-when-specs-unknown-mascot-cover-003b73890a-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 52384,
+            "sha256": "3ec2beebb9ea7a6ad9d1649ca191c8fb7bb34c73dc31c2d50c726d05e3bd223c"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/choosing-bike-when-specs-unknown-mascot-cover-003b73890a-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 175164,
+            "sha256": "14dbb9bea19284d3d181b3d65932f78a7fe5297f7f3729c74607e15b71aa6333"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/choosing-bike-when-specs-unknown-mascot-cover-003b73890a-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 198500,
+            "sha256": "d98dbb6c2c9d5c8e45658f47ebbfba6c2df48e1d7829439996322b291019e12d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chinese-road-bike-for-long-rides-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
+      },
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 20794,
+          "sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda drinks from a bottle during a lakeside rest stop beside a parked road bike.",
+          "zh-Hans": "小熊猫在湖边休息时喝水，公路车停在身旁。",
+          "de": "Ein roter Panda trinkt bei einer Pause am See aus einer Flasche; daneben steht sein Rennrad."
+        },
+        "prompt": "Editorial scene: A red panda drinks from a bottle during a lakeside rest stop beside a parked road bike.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "206519753ca279666f06cacb534e02e15e62a9b637cf65b7d191962882101212",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 64148,
+            "sha256": "ed8b8e4c53c974bdcd316cec19da7442606de0abe4d420bf16d2e7044870a9aa"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 223320,
+            "sha256": "d9ea5cc0db774cbd7f06e7080f7f2b1323e4fdd002e022ece566187917b32fb7"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/chinese-road-bike-for-long-rides-mascot-cover-206519753c-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 249338,
+            "sha256": "2212da72115756822614146407e5d1b96e5cc23abfa547bd20b4b0d6a3e42490"
+          }
+        ]
+      }
     }
   ]
 }
