@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/carbon-or-aluminium-value-mascot-cover-ef812c8770-640.webp', '59c9ca8abf5d505427098ccf68fbd69588dad005ef1a3fa736265edafb8fbcae'],
+  ['assets/blog/carbon-or-aluminium-value-mascot-cover-ef812c8770-1600.webp', '00031c42d9d08570ace27778c297f1c5fd2d8e7560fba2ade54196b362da5909'],
+  ['assets/blog/carbon-or-aluminium-value-mascot-cover-ef812c8770-1200.jpg', 'c521ee2268a56ddb64305aaa81ec8f977200bd23d617c581fd3a04e4ff537103'],
+  ['assets/blog/comparing-two-geometry-charts-mascot-cover-290c35c3e3-640.webp', '0f359bcea391343a1aa78354f9eda26c47013e246ff348cd7ac4fcc0d1b08de5'],
+  ['assets/blog/comparing-two-geometry-charts-mascot-cover-290c35c3e3-1600.webp', 'f56e78c7e0665c2d8f12fa4e19b31cb8deb52f8039524db0f50ea83bf5b34dab'],
+  ['assets/blog/comparing-two-geometry-charts-mascot-cover-290c35c3e3-1200.jpg', 'dd2d54623f4c698da7fde460c3d8d6ffd4f171f77bdbf7f2c5349fe50567e8a6'],
   ['assets/blog/first-carbon-bike-budget-mascot-cover-d80403d806-640.webp', 'ba147befdf4e7810ed49931d1b3336fd55d674ab09dae8c870b1205c35378da6'],
   ['assets/blog/first-carbon-bike-budget-mascot-cover-d80403d806-1600.webp', 'e0cfd120a6d0b647f34f676790730feb53a3e1ae31a100642d2f0551f62bb22f'],
   ['assets/blog/first-carbon-bike-budget-mascot-cover-d80403d806-1200.jpg', 'e9269b0d99d4f501396308616cce02d6ec193751f80075ed880c9d5e0c9b7145'],
