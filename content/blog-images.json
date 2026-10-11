@@ -2847,6 +2847,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "handlebar-width-and-flare-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda compares two drop handlebars on padded stands at a workshop bench, with a caliper in one paw.",
+          "zh-Hans": "小熊猫在维修台前比较支架上的两副弯把，一只爪子拿着游标卡尺。",
+          "de": "Ein Roter Panda vergleicht zwei Rennlenker auf gepolsterten Ständern an einer Werkbank und hält einen Messschieber."
+        },
+        "prompt": "Editorial scene: Red panda compares two drop handlebars on padded stands at a workshop bench, with a caliper in one paw.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "409d4c79fefa4d847d3f96562733234259f81126967420a970e6d20318eb60ba",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/handlebar-width-and-flare-mascot-cover-409d4c79fe-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 45368,
+            "sha256": "1512c442d9f01116990399a0b90b3da6f117b643a8980c64f2ae2f9c876ab6b8"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/handlebar-width-and-flare-mascot-cover-409d4c79fe-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 146288,
+            "sha256": "4960965d541d9192b10e40e699bf8b1c86879231555d3bb766042445a502f83d"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/handlebar-width-and-flare-mascot-cover-409d4c79fe-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 176925,
+            "sha256": "1828146a93eebd28dec85981da2b15268b77fae786dd935975cac02ec431e8e9"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gravel-bike-as-winter-road-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda preparing a ride with a floor pump",
+        "zh-Hans": "用打气筒准备出发的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is preparing for a gravel ride, leaning happily on a compact bicycle floor pump, one paw on the pump handle and one giving a small thumbs-up. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "c3a53156105d1bfcb296a12afe0c7f1a8a87e54ba97d7a7ab7e459c7c8ae66b3"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/gravel-bikes-around-5000-yuan-mascot-480.webp",
+          "width": 480,
+          "height": 475,
+          "type": "image/webp",
+          "bytes": 37246,
+          "sha256": "98d260e0d522d27a8d6a530568dcc5e6ee6585122a13944dcdc5378fccc4f775"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda wipes a gravel bike’s front mudguard with a cloth beside a wet autumn road.",
+          "zh-Hans": "小熊猫在湿润的秋日道路旁，用抹布擦拭砾石车的前挡泥板。",
+          "de": "Ein Roter Panda wischt das vordere Schutzblech eines Gravelbikes mit einem Tuch neben einer nassen Herbststraße ab."
+        },
+        "prompt": "Editorial scene: Red panda wipes a gravel bike’s front mudguard with a cloth beside a wet autumn road.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "50460c4e28152e0fe21a750df432534e71036e95d01c20a0234d22d0cbb9f6bd",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 66922,
+            "sha256": "9a87cf9b0fbd5900f1b1ebee1c9f41ea2a335b7fc7467008b1ab089754080d10"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 242382,
+            "sha256": "bf3604bd71915a237f2ecfb6f3e094036b3f9d5a02cdc1886f1bae2a0e38a4bc"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 263913,
+            "sha256": "d594cc7ae03510c0f6c2fccc6ebad6e5625ecdef29c41c6694fdd5797c796694"
+          }
+        ]
+      }
     }
   ]
 }
