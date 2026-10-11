@@ -1,3 +1,4 @@
+import { renderGeometryTool } from '../src/lib/geometry-tool.mjs';
 import { loadPosts, validatePostReferences, renderBlogIndex, renderPost, postLastmod } from '../src/lib/posts.mjs';
 import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
 import { LOCALES, localePath, localizedCatalogPayload } from '../src/lib/i18n.mjs';
@@ -170,7 +171,7 @@ for (const landing of landings.pages) {
 for (const product of products) addLocalized(`/models/${product.variant.id}/`, (localized) => renderModel(localized, product), true, { lastmod: productLastmod(product) });
 for (const candidate of candidates) addLocalized(`/models/${candidate.candidate.id}/`, (localized) => renderCandidateModel(localized, candidate), candidateIndexable(candidate), { lastmod: candidateLastmod(candidate) });
 for (const [route, render] of [
-  ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets],
+  ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets],
   ['/privacy/', renderPrivacy], ['/image-policy/', renderImagePolicy], ['/image-sources/', renderImageSources]
 ]) addLocalized(route, render, true, { lastmod: siteLastmod });
 addLocalized('/blog/', (localized) => renderBlogIndex(localized, posts), true, { lastmod: latestDate(posts.map((post) => postLastmod(ctx, post)), siteLastmod) });

@@ -515,3 +515,25 @@ test('document paths redirect to trailing slash while static assets remain asset
   assert.equal(assetResponse.headers.get('etag'), '"asset"');
   assert.equal(assets.calls.length, 1);
 });
+
+test('geometry routes use document privacy headers, canonical slashes and query-free analytics', async () => {
+  for (const prefix of ['', '/zh', '/de']) {
+    const path = `${prefix}/geometry/`;
+    assert.equal(isEligibleDocumentPath(path), true);
+    const assets = assetsBinding();
+    const redirect = await handleRequest(makeRequest(`${prefix}/geometry?a=manual&stackA=555`), { ASSETS: assets });
+    assert.equal(redirect.status, 308);
+    assert.equal(redirect.headers.get('location'), `https://chinesebikes.xyz${path}?a=manual&stackA=555`);
+    assert.equal(assets.calls.length, 0);
+    const request = makeRequest(`${path}?a=manual&stackA=555&reachA=380`, { headers: { dnt: '1' } });
+    const response = await handleRequest(request, { ASSETS: assets });
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get('cache-control'), 'private, no-store');
+    assert.equal(response.headers.has('set-cookie'), false);
+    assert.equal(analyticsPayload(request, new URL(request.url)), null, 'DNT suppresses analytics');
+    const eligible = makeRequest(`${path}?a=manual&stackA=555&reachA=380`, { headers: { 'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0' } });
+    const payload = analyticsPayload(eligible, new URL(eligible.url));
+    assert.equal(payload.path, path);
+    assert.ok(!JSON.stringify(payload).includes('555'));
+  }
+});
