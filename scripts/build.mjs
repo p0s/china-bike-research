@@ -38,6 +38,7 @@ import {
 } from '../src/render.mjs';
 import { buildLandingPages } from '../src/lib/landings.mjs';
 import { latestDate, sitemapXml } from '../src/lib/seo.mjs';
+import { indexNow, createIndexNowManifest } from '../src/lib/indexnow.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const output = createBuildOutput(root);
@@ -235,6 +236,11 @@ write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) =
 
 write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.meta.snapshot_date }));
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
+const indexNowManifest = createIndexNowManifest({ siteUrl, base, pages, readPage: file => fs.readFileSync(path.join(dist, file)) });
+if (indexNowManifest) {
+  write(`${indexNow.key}.txt`, `${indexNow.key}\n`);
+  write(indexNow.manifestPath.slice(1), `${JSON.stringify(indexNowManifest)}\n`);
+}
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // Keep the comparison data in its own cacheable resource and one model link in
 // every server-rendered row. The project-path build repeats its base in links.
