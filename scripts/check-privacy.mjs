@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-cover-e463bf31fc-640.webp', '6f275f139bf74e423d54fb5a79afd1f7ecbdef2393b86251de0a8a6ec4702981'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-cover-e463bf31fc-1600.webp', 'fa8b6864f51870da4e115dcf7fea87bf9bdd6de46b275bb2cc3305e4a42e457e'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-cover-e463bf31fc-1200.jpg', '2f122445228d592c165a658fd64f09dfdf28ef30ebe3d7073aa10ea0de2aa453'],
+  ['assets/blog/toe-overlap-small-gravel-bike-mascot-cover-a099f61f1b-640.webp', '7a53858c60c9cd825109938f1ab477e12544a0cd6504b49c2e33edfbc83d6ae7'],
+  ['assets/blog/toe-overlap-small-gravel-bike-mascot-cover-a099f61f1b-1600.webp', '978ad039c97e11448506e59ee09a18c2f521bddb170cf1470333921cc313b6c9'],
+  ['assets/blog/toe-overlap-small-gravel-bike-mascot-cover-a099f61f1b-1200.jpg', 'c378f18eb27b1f05a9d2c13489059df3677e3225b905f12bdaffa513059a1f2a'],
   ['assets/blog/buy-chinese-bikes-europe-mascot-cover-86b94913b2-640.webp', 'bec0e73db2c6342132f02a2f7f3a435dd29080f3e314e297c6d8c099b12759a8'],
   ['assets/blog/buy-chinese-bikes-europe-mascot-cover-86b94913b2-1600.webp', 'b46c1be0558967f7729bacd66a3ef32632364e21003ffe7c635cec0414b89046'],
   ['assets/blog/buy-chinese-bikes-europe-mascot-cover-86b94913b2-1200.jpg', '456a8adfdfb9f7c79770772b2d492cdfab5526f2a222e2f504a6dd1609c76366'],
