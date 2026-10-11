@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/road-or-gravel-first-carbon-bike-mascot-cover-eae8c1ee14-640.webp', 'bc12bb2b52f7688c7b0473387ee561fcbe6a6046481dcb0eff2f6d790a3ee5c6'],
+  ['assets/blog/road-or-gravel-first-carbon-bike-mascot-cover-eae8c1ee14-1600.webp', '96958686e70ace682d97bdc968bc999d271da7c05606b09f108cb214bee834c8'],
+  ['assets/blog/road-or-gravel-first-carbon-bike-mascot-cover-eae8c1ee14-1200.jpg', '99a50911186e417409a8448b4390d9272fe8889b46250d4a407a5d24ee41c38f'],
+  ['assets/blog/saddle-height-marking-before-new-bike-mascot-cover-d4d4dfac80-640.webp', '34549771446177bb078ff5ca604b0a6a7819aaff62c4f8041efddf7512397cf2'],
+  ['assets/blog/saddle-height-marking-before-new-bike-mascot-cover-d4d4dfac80-1600.webp', 'f57e97898e7134f38d669d544502792793a81fe35ac4880c9335b6acf7f38c80'],
+  ['assets/blog/saddle-height-marking-before-new-bike-mascot-cover-d4d4dfac80-1200.jpg', 'cf5fdde7c3a4347ebe3a8f034310281d74c18cbe9c2e99a296c6d89395dd01ce'],
   ['assets/blog/one-bike-road-and-gravel-two-wheelsets-mascot-cover-e5dd01900f-640.webp', '2f733802078d5b88ff0f50ca344505f64b8c7124f4aa318ec361dacb134c69b5'],
   ['assets/blog/one-bike-road-and-gravel-two-wheelsets-mascot-cover-e5dd01900f-1600.webp', '0658bd0b6556d5f160009cff1eba1ea9e6035b87afb993f3e68222ce5cfa4194'],
   ['assets/blog/one-bike-road-and-gravel-two-wheelsets-mascot-cover-e5dd01900f-1200.jpg', 'e753f60ce41e9687edb01db638ea0b62fa4ae9e9210f6021d769be11bac376d9'],
