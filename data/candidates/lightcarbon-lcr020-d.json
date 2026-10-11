@@ -4,7 +4,7 @@
   "model_id": "lightcarbon-lcr020-d",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "LightCarbon's current super-aero race frameset combines modern T47 and UDH standards with a 1,100 g size-54 frame and 35C tire limit.",
+  "why_interesting": "LightCarbon’s V5 catalog lists an aero road frame with T47, Light UDH, a 1,000 g size-54 frame claim and a nominal 35C tire limit; the exact ordered revision and package remain unconfirmed.",
   "missing": [
     "Current mainland quote, selected package, delivery and warranty route",
     "Independent aero and stiffness test data"
@@ -16,25 +16,28 @@
     "lightcarbon-road-catalog-2026-2027",
     "lightcarbon-road-frames-category-2026-08-29",
     "lightcarbon-about-official-2026-08-29",
-    "lightcarbon-catalog-v1-exact-recheck-2026-10-03"
+    "lightcarbon-catalog-v1-exact-recheck-2026-10-03",
+    "lightcarbon-catalog-v5-road-recheck-2026-10-11"
   ],
   "facts": {
     "frame": "LCR020-D super-aero carbon road disc frameset",
     "frame_material": "Toray T800, T1100 and M40J carbon",
-    "frame_weight_g": 1100,
-    "frame_weight_basis": "Official size-54 UD-matte frame weight, \u00b14%",
+    "frame_weight_g": 1000,
+    "frame_weight_basis": "V5 manufacturer catalog: size-54 UD-matte frame, ±4%; V1 separately retained 1,100 g at size 54. Neither is a weighed complete frameset.",
     "tire_clearance_mm": 35,
-    "tire_clearance_basis": "Official 700C\u00d735C maximum",
-    "bottom_bracket": "T47\u00d7P1.0, 85.5 mm",
+    "tire_clearance_basis": "Official 700C×35C maximum",
+    "bottom_bracket": "T47×P1.0, 85.5 mm",
     "hanger": "Light UDH",
-    "brakes": "Flat-mount disc, 160 mm front and rear",
-    "axles": "12\u00d7100 mm front; 12\u00d7142 mm rear",
-    "sizes": "49, 52, 54, 56 and 58",
-    "geometry": "Reach 375\u2013400 mm; stack 511\u2013589 mm; 410 mm chainstays; 70 mm BB drop; 57.4\u201368.1 mm trail",
+    "brakes": "V5 catalog flat-mount disc, 140/160 mm; confirm the exact frame/fork and adapter configuration. Prior V1 summary retained separately.",
+    "axles": "12×100 mm front; 12×142 mm rear",
+    "sizes": "V5: 47, 49, 52, 54, 56, 58 and 61; prior V1 five-size chart retained separately.",
+    "geometry": "V5: reach 370–409 mm; stack 501–602 mm; 410 mm chainstays; 70 mm BB drop; 58–76.2 mm trail. Manufacturer chart, not measured fit or proof of the delivered revision.",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded",
-    "geometry complete catalog table": "Official 2026\u20132027 V1 catalog page 1, exact LCR020-D five-size table. Column headings retained as printed: SIZE / C-T / TT / REACH / STACK / WB / RC / FC / BB DROP / BB HEIGHT / ST / HT / STIL / A / Standover Height (700\u00d735C) / Offset / FL / TRAIL. Printed rows: 490: 482 / 530 / 375 / 511 / 993.7 / 410 / 586.8 / 70 / 280 / 74.5\u00b0 / 71\u00b0 / 150 / 108 / 753.6 / 45 / 370 / 68.1; 520: 502 / 540 / 380 / 527 / 990.7 / 410 / 588.9 / 70 / 280 / 74\u00b0 / 72\u00b0 / 170 / 121 / 772 / 45 / 370 / 63.7; 540: 530 / 545 / 385 / 544 / 986 / 410 / 586 / 70 / 280 / 73.6\u00b0 / 72.5\u00b0 / 190 / 141 / 798.5 / 45 / 370 / 63; 560: 545 / 560 / 395 / 568 / 999 / 410 / 599 / 70 / 280 / 73.3\u00b0 / 73\u00b0 / 200 / 161 / 813 / 45 / 370 / 59.3; 580: 560 / 580 / 400 / 589 / 1008.6 / 410 / 607 / 70 / 280 / 73\u00b0 / 73.3\u00b0 / 230 / 181 / 831.3 / 45 / 370 / 57.4. Angles explicitly carry degree symbols; no general length-unit legend is printed in this table. Existing geometry range, claimed size-54 UD-matte 1,100 g \u00b14%, 35C maximum and package uncertainties are retained; no values are transferred to LCR017-D or SpeedZ."
+    "geometry complete catalog table": "Official 2026–2027 V1 catalog page 1, exact LCR020-D five-size table. Column headings retained as printed: SIZE / C-T / TT / REACH / STACK / WB / RC / FC / BB DROP / BB HEIGHT / ST / HT / STIL / A / Standover Height (700×35C) / Offset / FL / TRAIL. Printed rows: 490: 482 / 530 / 375 / 511 / 993.7 / 410 / 586.8 / 70 / 280 / 74.5° / 71° / 150 / 108 / 753.6 / 45 / 370 / 68.1; 520: 502 / 540 / 380 / 527 / 990.7 / 410 / 588.9 / 70 / 280 / 74° / 72° / 170 / 121 / 772 / 45 / 370 / 63.7; 540: 530 / 545 / 385 / 544 / 986 / 410 / 586 / 70 / 280 / 73.6° / 72.5° / 190 / 141 / 798.5 / 45 / 370 / 63; 560: 545 / 560 / 395 / 568 / 999 / 410 / 599 / 70 / 280 / 73.3° / 73° / 200 / 161 / 813 / 45 / 370 / 59.3; 580: 560 / 580 / 400 / 589 / 1008.6 / 410 / 607 / 70 / 280 / 73° / 73.3° / 230 / 181 / 831.3 / 45 / 370 / 57.4. Angles explicitly carry degree symbols; no general length-unit legend is printed in this table. Existing geometry range, claimed size-54 UD-matte 1,100 g ±4%, 35C maximum and package uncertainties are retained; no values are transferred to LCR017-D or SpeedZ.",
+    "package confirmation": "V5 lists cockpit dimensions and illustrates components but supplies no explicit order-specific inclusion list. Frame, fork, cockpit, seatpost, headset, spacers, axles, hanger and other hardware must be confirmed in a dated quote.",
+    "geometry complete V5 catalog table": "Exact V5 physical PDF page 1, left LCR020-D panel, reviewed 2026-10-11. Printed columns: SIZE / C-T / TT / REACH / STACK / WB / RC / FC / BB DROP / BB HEIGHT / ST / HT / STIL / A / Standover Height (700×35C) / Offset / FL / TRAIL. Rows: 470: 452 / 508.6 / 370 / 501 / 974.3 / 410 / 574.6 / 70 / 280 / 74.5° / 70.5° / 130 / 103 / 732 / 45 / 370 / 76.2; 490: 482 / 515 / 375 / 507 / 977.2 / 410 / 577.4 / 70 / 280 / 74.5° / 71° / 150 / 108 / 755.5 / 45 / 370 / 73; 520: 502 / 530 / 380 / 523 / 978.5 / 410 / 578.8 / 70 / 280 / 74° / 72° / 170 / 121 / 773.6 / 45 / 370 / 66.4; 540: 530 / 545 / 385 / 544 / 985.8 / 410 / 586 / 70 / 280 / 73.6° / 72.5° / 190 / 141 / 798.5 / 45 / 370 / 63; 560: 545 / 564 / 395 / 565 / 997.3 / 410 / 597.4 / 70 / 280 / 73.3° / 73° / 200 / 161 / 814.6 / 45 / 370 / 60; 580: 560 / 578.5 / 400 / 584.8 / 1005.4 / 410 / 605.5 / 70 / 280 / 73° / 73.3° / 210 / 181 / 830.5 / 45 / 370 / 58; 610: 573 / 598.5 / 409 / 602 / 1019.6 / 410 / 619.6 / 70 / 280 / 72.5° / 73.3° / 220 / 199 / 843.7 / 45 / 370 / 58. Angles retain degree symbols. The table has no general length-unit legend. V1 remains separately retained; do not mix revisions or transfer values to LCR017-D."
   },
-  "source_note": "The exact LCR020-D is current in the 2026\u20132027 manufacturer catalog, but the catalog contains no retail price and no attributable selected checkout or dated owner quote was found.",
+  "source_note": "The current V5 manufacturer catalog documents the LCR020-D, with different weight and size/geometry data from retained V1. The exact ordered production revision, complete package and current delivered price remain unconfirmed. A component drawing is not an inclusion list.",
   "last_reviewed": "2026-09-01",
   "enrichment_reviews": [
     {
@@ -46,13 +49,29 @@
         "geometry complete catalog table"
       ],
       "scope": "Exact V1 catalog pixel transcription; old summary and dates remain. CAD illustration is not displayed as a photograph."
+    },
+    {
+      "reviewed_at": "2026-10-11",
+      "source_ids": [
+        "lightcarbon-catalog-v5-road-recheck-2026-10-11"
+      ],
+      "fields": [
+        "frame_weight_g",
+        "frame_weight_basis",
+        "brakes",
+        "sizes",
+        "geometry",
+        "geometry complete V5 catalog table",
+        "package confirmation"
+      ],
+      "scope": "Exact V5 panel pixel review; prior V1 facts and historical collection dates retained. No seller offer or revision equivalence inferred."
     }
   ],
   "page_copy": {
     "en": {
       "title": "LightCarbon LCR020-D: geometry, frame weight and tire limit",
       "description": "Review the LCR020-D’s recorded geometry, qualified frame weight and 35C catalog limit, with price and package details still to confirm.",
-      "opening": "Start with the size chart and an exact package quote. Our retained V1 catalog record lists a 1,100 g size-54 UD-matte frame, with ±4% tolerance, and a nominal 700×35C tire limit. Neither figure establishes your finished bike’s weight or approves a particular tire-and-rim combination. A current mainland price remains unverified.",
+      "opening": "Start with the size chart and an exact package quote. The current V5 catalog lists a 1,000 g size-54 UD-matte frame, with ±4% tolerance, and seven sizes. Our retained V1 source listed 1,100 g and five sizes. That is a document revision difference, not proof that a delivered frame changed. The nominal 700×35C limit does not approve every tire-and-rim combination. The exact ordered revision, included components and current mainland price remain unverified.",
       "buyer_checks": "Match reach and stack to your requirements; confirm frame, fork, cockpit and hardware inclusions; obtain the delivered quote and warranty route. Check measured tire clearance with the actual rim and tire.",
       "guide_text": "Use our frame-sizing guide to prepare the measurements before requesting a size recommendation.",
       "guide_path": "/blog/chinese-bike-frame-sizing/"
@@ -60,7 +79,7 @@
     "zh-Hans": {
       "title": "LightCarbon LCR020-D：几何、车架重量与胎容限制",
       "description": "查看已记录的 LCR020-D 几何、重量口径及 35C 目录限制；当前价格与具体套餐仍需确认。",
-      "opening": "先看尺码表，再取得具体套餐报价。我们保留的 V1 目录记录标称 54 码 UD 哑光车架重 1,100 g，允许 ±4% 偏差，最大轮胎规格为 700×35C。这些数值不能确定整车重量，也不能认可任意轮胎与轮圈组合。目前中国大陆价格仍未核实。",
+      "opening": "先看尺码表，再取得具体套餐报价。当前 V5 目录标称 54 码 UD 哑光车架重 1,000 g，允许 ±4% 偏差，共列出七个尺码；保留的 V1 来源则标为 1,100 g、五个尺码。这是文件版本差异，不能据此认定交付车架已经变更。标称 700×35C 上限也不代表认可所有轮胎与轮圈组合。具体订购版本、包含零件及当前中国大陆价格仍未核实。",
       "buyer_checks": "用 reach 和 stack 对照需求；确认车架、前叉、车把及五金包含范围；取得到手报价和保修渠道。用实际轮圈、轮胎检查充气后的空间。",
       "guide_text": "询问尺码前，先用车架尺码指南整理测量数据。",
       "guide_path": "/zh/blog/chinese-bike-frame-sizing/"
@@ -68,10 +87,27 @@
     "de": {
       "title": "LightCarbon LCR020-D: Geometrie, Rahmengewicht und Reifenlimit",
       "description": "Prüfe die dokumentierte Geometrie, Gewichtsbasis und 35C-Kataloggrenze. Aktueller Preis und genauer Lieferumfang bleiben offen.",
-      "opening": "Beginne mit der Geometrietabelle und einem konkreten Paketangebot. Unser gespeicherter V1-Katalog nennt 1.100 g für Größe 54 in UD-Matt, mit ±4 % Toleranz, sowie maximal 700×35C. Das bestimmt weder das Komplettradgewicht noch die Freigabe einer bestimmten Reifen-Felgen-Kombination. Ein aktueller Preis für Festlandchina ist nicht verifiziert.",
+      "opening": "Beginne mit der Geometrietabelle und einem konkreten Paketangebot. Der aktuelle V5-Katalog nennt 1.000 g für Größe 54 in UD-Matt, mit ±4 % Toleranz, und sieben Größen. Unsere erhaltene V1-Quelle nannte 1.100 g und fünf Größen. Das ist ein Unterschied zwischen Dokumentversionen, kein Beleg für eine Änderung am gelieferten Rahmen. Die nominelle Grenze 700×35C gibt nicht jede Reifen-Felgen-Kombination frei. Genaue Bestellrevision, Lieferumfang und aktueller Festlandpreis bleiben unbestätigt.",
       "buyer_checks": "Reach und Stack abgleichen; Rahmen, Gabel, Cockpit und Kleinteile einzeln bestätigen; Endpreis und Garantieabwicklung erfragen. Reifenfreiheit mit den tatsächlichen Komponenten prüfen.",
       "guide_text": "Bereite deine Maße mit unserem Ratgeber zur Rahmengröße vor.",
       "guide_path": "/de/blog/chinese-bike-frame-sizing/"
     }
-  }
+  },
+  "prior_specification_observations": [
+    {
+      "reviewed_at": "2026-10-11",
+      "status": "retained-v1-manufacturer-catalog-observation",
+      "source_ids": [
+        "lightcarbon-catalog-v1-exact-recheck-2026-10-03"
+      ],
+      "values": {
+        "frame_weight_g": 1100,
+        "frame_weight_basis": "Official size-54 UD-matte frame weight, ±4%",
+        "brakes": "Flat-mount disc, 160 mm front and rear",
+        "sizes": "49, 52, 54, 56 and 58",
+        "geometry": "Reach 375–400 mm; stack 511–589 mm; 410 mm chainstays; 70 mm BB drop; 57.4–68.1 mm trail"
+      },
+      "note": "V1 retained as historical source data; V5 differs. Neither catalog alone identifies the exact ordered production revision."
+    }
+  ]
 }

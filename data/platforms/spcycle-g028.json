@@ -97,9 +97,7 @@
     "published_max_mm": 57
   },
   "mounts": [
-    "top-tube",
-    "fender",
-    "rack"
+    "top-tube"
   ],
   "internal_storage": true,
   "china_availability": "direct-factory",
@@ -107,7 +105,54 @@
     "spcycle-g028-official-2026-08-25",
     "spcycle-g028-geometry-bikeinsights-2026-08-25",
     "spcycle-gravel-catalog",
-    "spcycle-g028-official-recheck-2026-09-24"
+    "spcycle-g028-official-recheck-2026-09-24",
+    "spcycle-g028-mount-review-2026-10-11"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-08-28",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-11",
+      "prior_values": {
+        "mounts": [
+          "top-tube",
+          "fender",
+          "rack"
+        ]
+      },
+      "reason": "Remove unsupported rack/fender approval from active mount labels. Exact-source review leaves unestablished compatibility unknown, not false.",
+      "source_ids": [
+        "spcycle-g028-mount-review-2026-10-11"
+      ]
+    }
+  ],
+  "mount_approval": {
+    "reviewed_at": "2026-10-11",
+    "scope": "Documented feature screen only; confirm the exact ordered revision and complete installation.",
+    "rear_rack": {
+      "status": "unknown",
+      "source_ids": [
+        "spcycle-g028-mount-review-2026-10-11"
+      ]
+    },
+    "fender": {
+      "status": "unknown",
+      "source_ids": [
+        "spcycle-g028-mount-review-2026-10-11"
+      ]
+    },
+    "loads": {
+      "rear_rack_kg": null,
+      "fork_side_kg": null,
+      "source_ids": []
+    }
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-11",
+      "source_ids": [
+        "spcycle-g028-mount-review-2026-10-11"
+      ],
+      "scope": "Rack/fender feature approval and carrying-load basis only; other specification and price observation dates retained."
+    }
+  ]
 }
