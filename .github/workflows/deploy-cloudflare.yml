@@ -10,7 +10,8 @@ permissions:
 
 concurrency:
   group: cloudflare-production
-  cancel-in-progress: true
+  # Finish live verification/notification before the next publisher snapshots it.
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -28,6 +29,9 @@ jobs:
         run: npm ci
       - name: Validate and build
         run: npm run check
+      - name: Snapshot public pages before deployment
+        continue-on-error: true
+        run: node scripts/indexnow.mjs snapshot --output "$RUNNER_TEMP/indexnow-before.json"
       - name: Deploy Worker and Static Assets
         uses: cloudflare/wrangler-action@v3
         with:
@@ -35,3 +39,6 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           wranglerVersion: '4.135.0'
           command: deploy
+      - name: Notify IndexNow of deployed public page changes
+        continue-on-error: true
+        run: node scripts/indexnow.mjs notify --before "$RUNNER_TEMP/indexnow-before.json" --expected dist/indexnow-manifest.json

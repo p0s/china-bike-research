@@ -7,11 +7,11 @@ import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 const project=fileURLToPath(new URL('../',import.meta.url));
-function fixture(t,mode='',base='') {
+function fixture(t,mode='',base='',siteUrl='https://example.invalid') {
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'bike-build-driver-'));
  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  for(const dir of ['scripts','src/lib','assets','dist'])fs.mkdirSync(path.join(root,dir),{recursive:true});
- for(const f of ['scripts/build.mjs','src/lib/csv.mjs','src/lib/build-output.mjs','src/lib/regional-prices.mjs','src/lib/price-evidence.mjs','src/lib/analytics-context.mjs','assets/regional-prices.js'])fs.copyFileSync(path.join(project,f),path.join(root,f));
+ for(const f of ['scripts/build.mjs','src/lib/indexnow.mjs','src/lib/csv.mjs','src/lib/build-output.mjs','src/lib/regional-prices.mjs','src/lib/price-evidence.mjs','src/lib/analytics-context.mjs','assets/regional-prices.js'])fs.copyFileSync(path.join(project,f),path.join(root,f));
  fs.writeFileSync(path.join(root,'dist','previous.html'),'PREVIOUS GOOD BUILD');
  fs.writeFileSync(path.join(root,'src/lib/data.mjs'),`
  const platform={id:'p',category:'road',last_reviewed:'2026-09-01',frame:{},tire_clearance:{}};
@@ -44,7 +44,7 @@ function fixture(t,mode='',base='') {
  export const renderModel=()=>'<html>Bike</html>';
  export const renderCandidateModel=renderModel,renderBikeBuilder=renderModel,renderElectronicGroupsets=renderModel,renderLandingPage=renderModel,renderMethodology=renderModel,renderPrivacy=renderModel,renderImagePolicy=renderModel,renderImageSources=renderModel,render404=renderModel;
  `);
- const result=spawnSync(process.execPath,[path.join(root,'scripts/build.mjs')],{encoding:'utf8',env:{...process.env,FAIL_BUILD:mode,GITHUB_ACTIONS:'false',GITHUB_REPOSITORY:'',PUBLIC_BASE_PATH:base,PUBLIC_SITE_URL:'https://example.invalid'}});
+ const result=spawnSync(process.execPath,[path.join(root,'scripts/build.mjs')],{encoding:'utf8',env:{...process.env,FAIL_BUILD:mode,GITHUB_ACTIONS:'false',GITHUB_REPOSITORY:'',PUBLIC_BASE_PATH:base,PUBLIC_SITE_URL:siteUrl}});
  return{root,result};
 }
 for(const mode of ['validation','render','budget','links','escape'])test(`build driver preserves previous output after ${mode} failure`,t=>{
@@ -57,4 +57,15 @@ for(const base of ['','/china-bike-research'])test(`build driver success at base
  const json=JSON.parse(fs.readFileSync(path.join(root,'dist','data','catalog.json')));assert.equal(json.products[0].brand.name,'=unsafe-text');
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'dist','build-manifest.json')));assert.equal(manifest.base,base);
  const regional=JSON.parse(fs.readFileSync(path.join(root,'dist','data','regional-prices.json')));assert.deepEqual(regional.offers,[]);assert.equal(regional.rates,null);
+ assert.equal(fs.existsSync(path.join(root,'dist','indexnow-manifest.json')),false);
+});
+test('production build publishes a key and only indexable public page hashes',t=>{
+ const {root,result}=fixture(t,'','','https://chinesebikes.xyz');assert.equal(result.status,0,result.stderr);
+ const manifest=JSON.parse(fs.readFileSync(path.join(root,'dist','indexnow-manifest.json')));
+ const build=JSON.parse(fs.readFileSync(path.join(root,'dist','build-manifest.json')));
+ assert.equal(Object.keys(manifest.pages).length,build.counts.indexable_pages);
+ assert.ok(manifest.pages['https://chinesebikes.xyz/geometry/']);
+ assert.equal(Object.keys(manifest.pages).some(url=>url.includes('404')),false);
+ const keyFiles=fs.readdirSync(path.join(root,'dist')).filter(file=>/^[a-f0-9]{32}\.txt$/.test(file));
+ assert.equal(keyFiles.length,1);assert.equal(fs.readFileSync(path.join(root,'dist',keyFiles[0]),'utf8').trim(),keyFiles[0].slice(0,-4));
 });
