@@ -6,6 +6,7 @@ import { validateImageHealthCheck } from './image-health.mjs';
 import { editorialReviewIssues } from './editorial-review.mjs';
 import { priceEvidence } from './price-evidence.mjs';
 import { validateRegionalPricing } from './regional-prices.mjs';
+import { validateMountApproval } from './mount-evidence.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -460,6 +461,7 @@ export function validateDataset(data = loadDataset()) {
   }
 
   for (const platform of data.platforms) {
+    errors.push(...validateMountApproval(platform, data.sources));
     requireFields('platform', platform, ['brand_id', 'name', 'category', 'handlebar', 'frame', 'china_availability', 'source_ids', 'last_reviewed']);
     if (!brandIds.has(platform.brand_id)) errors.push(`platform ${platform.id}: missing brand ${platform.brand_id}`);
     if (!categorySet.has(platform.category)) errors.push(`platform ${platform.id}: unsupported category ${platform.category}`);

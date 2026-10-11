@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09",
+  "updated_at": "2026-10-11",
   "catalog_metrics": {
     "records": {
       "brands": 41,
@@ -8,7 +8,7 @@
       "variants": 41,
       "prices": 82,
       "exchangeRates": 1,
-      "sources": 1603,
+      "sources": 1609,
       "images": 737,
       "videos": 59,
       "groupsets": 11,
@@ -365,6 +365,7 @@
       "carbonda-cfr696-current-official-price-route-recheck-2026-09-24",
       "carbonda-cfr696-forum-us-price-context-recheck-2026-09-24",
       "carbonda-cfr696-geometry-bikeinsights-2026-08-25",
+      "carbonda-cfr696-mount-screen-2026-10-11",
       "carbonda-cfr696-official",
       "carbonda-cfr696-official-recheck-2026-09-23",
       "carbonda-cfr696-owner-forum-2026-08-28",
@@ -756,6 +757,7 @@
       "leinak-youlong-2-douyin-index-current-2026-09-23",
       "lightcarbon-about-official-2026-08-29",
       "lightcarbon-catalog-v1-exact-recheck-2026-10-03",
+      "lightcarbon-catalog-v5-road-recheck-2026-10-11",
       "lightcarbon-chinese-catalog-official-2026-08-29",
       "lightcarbon-company-official",
       "lightcarbon-faq-official-2026-09-01",
@@ -772,6 +774,8 @@
       "lightcarbon-lcg071s-pro-gallery-complete-2026-10-03",
       "lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30",
       "lightcarbon-lcg071s-pro-german-route-recheck-2026-09-25",
+      "lightcarbon-lcg071s-pro-load-diagram-2026-10-11",
+      "lightcarbon-lcg071s-pro-mount-review-2026-10-11",
       "lightcarbon-lcg071s-pro-owner-price-2026-09-01",
       "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23",
       "lightcarbon-lcg071s-pro-package-recheck-2026-09-23",
@@ -841,6 +845,7 @@
       "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
       "lightcarbon-lcr018-d-gallery-complete-2026-10-03",
       "lightcarbon-lcr018-d-official-2026-08-29",
+      "lightcarbon-lcr018-d-package-review-2026-10-11",
       "lightcarbon-lcr018-d-xianyu-2026-08-29",
       "lightcarbon-lcr0x-d-enrichment-2026-10-03",
       "lightcarbon-lcr0x-d-gallery-complete-2026-10-03",
@@ -1395,6 +1400,7 @@
       "spcycle-g026-official-route-recheck-2026-09-24",
       "spcycle-g028-geometry-bikeinsights-2026-08-25",
       "spcycle-g028-hb068-current-2026-09-01",
+      "spcycle-g028-mount-review-2026-10-11",
       "spcycle-g028-official-2026-08-25",
       "spcycle-g028-official-recheck-2026-09-24",
       "spcycle-g028-purchase-route-recheck-2026-09-24",
@@ -5621,6 +5627,7 @@
         "brand_id",
         "category",
         "china_availability",
+        "enrichment_reviews",
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
@@ -5639,6 +5646,12 @@
         "handlebar",
         "internal_storage",
         "last_reviewed",
+        "mount_approval.fender.source_ids",
+        "mount_approval.fender.status",
+        "mount_approval.rear_rack.source_ids",
+        "mount_approval.rear_rack.status",
+        "mount_approval.reviewed_at",
+        "mount_approval.scope",
         "mounts",
         "name",
         "name_zh",
@@ -5984,9 +5997,11 @@
         "tire_clearance.wheel_size"
       ],
       "lightcarbon-lcg071s-pro": [
+        "audit_corrections",
         "brand_id",
         "category",
         "china_availability",
+        "enrichment_reviews",
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
@@ -6015,6 +6030,15 @@
         "handlebar",
         "internal_storage",
         "last_reviewed",
+        "mount_approval.fender.source_ids",
+        "mount_approval.fender.status",
+        "mount_approval.loads.fork_side_kg",
+        "mount_approval.loads.rear_rack_kg",
+        "mount_approval.loads.source_ids",
+        "mount_approval.rear_rack.source_ids",
+        "mount_approval.rear_rack.status",
+        "mount_approval.reviewed_at",
+        "mount_approval.scope",
         "mounts",
         "name",
         "name_zh",
@@ -6422,9 +6446,11 @@
         "tire_clearance.wheel_size"
       ],
       "spcycle-g028": [
+        "audit_corrections",
         "brand_id",
         "category",
         "china_availability",
+        "enrichment_reviews",
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
@@ -6443,6 +6469,12 @@
         "handlebar",
         "internal_storage",
         "last_reviewed",
+        "mount_approval.fender.source_ids",
+        "mount_approval.fender.status",
+        "mount_approval.rear_rack.source_ids",
+        "mount_approval.rear_rack.status",
+        "mount_approval.reviewed_at",
+        "mount_approval.scope",
         "mounts",
         "name",
         "name_zh",
@@ -10327,6 +10359,18 @@
         "url"
       ],
       "carbonda-cfr696-geometry-bikeinsights-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "carbonda-cfr696-mount-screen-2026-10-11": [
         "accessed_at",
         "language",
         "notes",
@@ -15132,6 +15176,20 @@
         "type",
         "url"
       ],
+      "lightcarbon-catalog-v5-road-recheck-2026-10-11": [
+        "accessed_at",
+        "document_bytes",
+        "document_sha256",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "lightcarbon-chinese-catalog-official-2026-08-29": [
         "accessed_at",
         "language",
@@ -15343,6 +15401,34 @@
         "reliability.identity",
         "reliability.price",
         "reliability.route",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcg071s-pro-load-diagram-2026-10-11": [
+        "accessed_at",
+        "document_evidence.bytes",
+        "document_evidence.original_copy_policy",
+        "document_evidence.reviewed_at",
+        "document_evidence.sha256",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcg071s-pro-mount-review-2026-10-11": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -16337,6 +16423,18 @@
         "url"
       ],
       "lightcarbon-lcr018-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr018-d-package-review-2026-10-11": [
         "accessed_at",
         "language",
         "notes",
@@ -23275,6 +23373,18 @@
         "url"
       ],
       "spcycle-g028-hb068-current-2026-09-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "spcycle-g028-mount-review-2026-10-11": [
         "accessed_at",
         "language",
         "notes",
@@ -59607,6 +59717,7 @@
         "facts.bottom_bracket",
         "facts.brakes",
         "facts.cockpit",
+        "facts.current catalog conflict",
         "facts.frame",
         "facts.frame_construction",
         "facts.frame_material",
@@ -59614,6 +59725,7 @@
         "facts.frame_weight_g",
         "facts.geometry",
         "facts.geometry complete current manufacturer table",
+        "facts.manufacturer package",
         "facts.seatpost",
         "facts.sizes",
         "facts.stiffness_evidence",
@@ -59652,7 +59764,9 @@
         "facts.frame_weight_g",
         "facts.geometry",
         "facts.geometry complete catalog table",
+        "facts.geometry complete V5 catalog table",
         "facts.hanger",
+        "facts.package confirmation",
         "facts.sizes",
         "facts.stiffness_evidence",
         "facts.tire_clearance_basis",
@@ -59679,6 +59793,7 @@
         "page_copy.zh-Hans.opening",
         "page_copy.zh-Hans.title",
         "price_status",
+        "prior_specification_observations",
         "research_priority",
         "source_ids",
         "source_note",
@@ -101078,7 +101193,10 @@
       "carbonda-cfr696": [
         "brand_id=carbonda",
         "frame.geometry.source_id=carbonda-cfr696-geometry-bikeinsights-2026-08-25",
+        "mount_approval.fender.source_ids=carbonda-cfr696-mount-screen-2026-10-11",
+        "mount_approval.rear_rack.source_ids=carbonda-cfr696-mount-screen-2026-10-11",
         "source_ids=carbonda-cfr696-geometry-bikeinsights-2026-08-25",
+        "source_ids=carbonda-cfr696-mount-screen-2026-10-11",
         "source_ids=carbonda-cfr696-official",
         "source_ids=carbonda-cfr696-official-recheck-2026-09-23",
         "source_ids=carbonda-cfr696-owner-forum-2026-08-28"
@@ -101169,12 +101287,17 @@
         "brand_id=lightcarbon",
         "frame.geometry.evidence_review.source_ids=lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30",
         "frame.geometry.source_id=lightcarbon-lcg071s-official-2026-08-16",
+        "mount_approval.fender.source_ids=lightcarbon-lcg071s-pro-mount-review-2026-10-11",
+        "mount_approval.loads.source_ids=lightcarbon-lcg071s-pro-load-diagram-2026-10-11",
+        "mount_approval.rear_rack.source_ids=lightcarbon-lcg071s-pro-mount-review-2026-10-11",
         "source_ids=lightcarbon-company-official",
         "source_ids=lightcarbon-lcg071s-official",
         "source_ids=lightcarbon-lcg071s-official-2026-08-16",
         "source_ids=lightcarbon-lcg071s-order-options-2026-08-27",
         "source_ids=lightcarbon-lcg071s-pro-gallery-complete-2026-10-03",
-        "source_ids=lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30"
+        "source_ids=lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30",
+        "source_ids=lightcarbon-lcg071s-pro-load-diagram-2026-10-11",
+        "source_ids=lightcarbon-lcg071s-pro-mount-review-2026-10-11"
       ],
       "lightcarbon-speedz": [
         "brand_id=lightcarbon",
@@ -101302,7 +101425,10 @@
       "spcycle-g028": [
         "brand_id=spcycle",
         "frame.geometry.source_id=spcycle-g028-geometry-bikeinsights-2026-08-25",
+        "mount_approval.fender.source_ids=spcycle-g028-mount-review-2026-10-11",
+        "mount_approval.rear_rack.source_ids=spcycle-g028-mount-review-2026-10-11",
         "source_ids=spcycle-g028-geometry-bikeinsights-2026-08-25",
+        "source_ids=spcycle-g028-mount-review-2026-10-11",
         "source_ids=spcycle-g028-official-2026-08-25",
         "source_ids=spcycle-g028-official-recheck-2026-09-24",
         "source_ids=spcycle-gravel-catalog"
@@ -102370,6 +102496,7 @@
       "carbonda-cfr696-current-official-price-route-recheck-2026-09-24": [],
       "carbonda-cfr696-forum-us-price-context-recheck-2026-09-24": [],
       "carbonda-cfr696-geometry-bikeinsights-2026-08-25": [],
+      "carbonda-cfr696-mount-screen-2026-10-11": [],
       "carbonda-cfr696-official": [],
       "carbonda-cfr696-official-recheck-2026-09-23": [],
       "carbonda-cfr696-owner-forum-2026-08-28": [],
@@ -102761,6 +102888,7 @@
       "leinak-youlong-2-douyin-index-current-2026-09-23": [],
       "lightcarbon-about-official-2026-08-29": [],
       "lightcarbon-catalog-v1-exact-recheck-2026-10-03": [],
+      "lightcarbon-catalog-v5-road-recheck-2026-10-11": [],
       "lightcarbon-chinese-catalog-official-2026-08-29": [],
       "lightcarbon-company-official": [],
       "lightcarbon-faq-official-2026-09-01": [],
@@ -102781,6 +102909,8 @@
       ],
       "lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30": [],
       "lightcarbon-lcg071s-pro-german-route-recheck-2026-09-25": [],
+      "lightcarbon-lcg071s-pro-load-diagram-2026-10-11": [],
+      "lightcarbon-lcg071s-pro-mount-review-2026-10-11": [],
       "lightcarbon-lcg071s-pro-owner-price-2026-09-01": [],
       "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23": [],
       "lightcarbon-lcg071s-pro-package-recheck-2026-09-23": [],
@@ -102878,6 +103008,7 @@
         "gallery_review.model_id=lightcarbon-lcr018-d"
       ],
       "lightcarbon-lcr018-d-official-2026-08-29": [],
+      "lightcarbon-lcr018-d-package-review-2026-10-11": [],
       "lightcarbon-lcr018-d-xianyu-2026-08-29": [],
       "lightcarbon-lcr0x-d-enrichment-2026-10-03": [],
       "lightcarbon-lcr0x-d-gallery-complete-2026-10-03": [
@@ -103448,6 +103579,7 @@
       "spcycle-g026-official-route-recheck-2026-09-24": [],
       "spcycle-g028-geometry-bikeinsights-2026-08-25": [],
       "spcycle-g028-hb068-current-2026-09-01": [],
+      "spcycle-g028-mount-review-2026-10-11": [],
       "spcycle-g028-official-2026-08-25": [],
       "spcycle-g028-official-recheck-2026-09-24": [],
       "spcycle-g028-purchase-route-recheck-2026-09-24": [],
@@ -108719,9 +108851,11 @@
       "lightcarbon-lcr018-d": [
         "model_id=lightcarbon-lcr018-d",
         "source_ids=cyclistshub-lcr018-d-owner-2026-08-29",
+        "source_ids=lightcarbon-catalog-v5-road-recheck-2026-10-11",
         "source_ids=lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
         "source_ids=lightcarbon-lcr018-d-gallery-complete-2026-10-03",
         "source_ids=lightcarbon-lcr018-d-official-2026-08-29",
+        "source_ids=lightcarbon-lcr018-d-package-review-2026-10-11",
         "source_ids=lightcarbon-lcr018-d-xianyu-2026-08-29",
         "source_ids=usd-cny-central-parity-2026-07-31"
       ],
@@ -108729,6 +108863,7 @@
         "model_id=lightcarbon-lcr020-d",
         "source_ids=lightcarbon-about-official-2026-08-29",
         "source_ids=lightcarbon-catalog-v1-exact-recheck-2026-10-03",
+        "source_ids=lightcarbon-catalog-v5-road-recheck-2026-10-11",
         "source_ids=lightcarbon-road-catalog-2026-2027",
         "source_ids=lightcarbon-road-frames-category-2026-08-29"
       ],
@@ -118627,6 +118762,14 @@
         "specification": 2
       }
     },
+    "carbonda-cfr696-mount-screen-2026-10-11": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "carbonda-cfr696-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -121837,6 +121980,14 @@
         "specification": 3
       }
     },
+    "lightcarbon-catalog-v5-road-recheck-2026-10-11": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "lightcarbon-chinese-catalog-official-2026-08-29": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -121964,6 +122115,22 @@
         "price": 0,
         "route": 1,
         "specification": 1
+      }
+    },
+    "lightcarbon-lcg071s-pro-load-diagram-2026-10-11": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcg071s-pro-mount-review-2026-10-11": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
       }
     },
     "lightcarbon-lcg071s-pro-owner-price-2026-09-01": {
@@ -122511,6 +122678,14 @@
       }
     },
     "lightcarbon-lcr018-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr018-d-package-review-2026-10-11": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -126965,6 +127140,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
+        "specification": 3
+      }
+    },
+    "spcycle-g028-mount-review-2026-10-11": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
         "specification": 3
       }
     },

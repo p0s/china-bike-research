@@ -143,7 +143,6 @@
     "published_max_mm": 50
   },
   "mounts": [
-    "fender",
     "rack",
     "top-tube"
   ],
@@ -155,7 +154,59 @@
     "lightcarbon-lcg071s-official-2026-08-16",
     "lightcarbon-lcg071s-order-options-2026-08-27",
     "lightcarbon-lcg071s-pro-geometry-recheck-2026-09-30",
-    "lightcarbon-lcg071s-pro-gallery-complete-2026-10-03"
+    "lightcarbon-lcg071s-pro-gallery-complete-2026-10-03",
+    "lightcarbon-lcg071s-pro-mount-review-2026-10-11",
+    "lightcarbon-lcg071s-pro-load-diagram-2026-10-11"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-08-28",
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-11",
+      "prior_values": {
+        "mounts": [
+          "fender",
+          "rack",
+          "top-tube"
+        ]
+      },
+      "reason": "Remove unsupported rack/fender approval from active mount labels. Exact-source review leaves unestablished compatibility unknown, not false.",
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-mount-review-2026-10-11",
+        "lightcarbon-lcg071s-pro-load-diagram-2026-10-11"
+      ]
+    }
+  ],
+  "mount_approval": {
+    "reviewed_at": "2026-10-11",
+    "scope": "Documented feature screen only; confirm the exact ordered revision and complete installation.",
+    "rear_rack": {
+      "status": "documented",
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-mount-review-2026-10-11"
+      ]
+    },
+    "fender": {
+      "status": "unknown",
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-mount-review-2026-10-11"
+      ]
+    },
+    "loads": {
+      "rear_rack_kg": 25,
+      "fork_side_kg": 3,
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-load-diagram-2026-10-11"
+      ]
+    }
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-11",
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-mount-review-2026-10-11",
+        "lightcarbon-lcg071s-pro-load-diagram-2026-10-11"
+      ],
+      "scope": "Rack/fender feature approval and carrying-load basis only; other specification and price observation dates retained."
+    }
+  ]
 }

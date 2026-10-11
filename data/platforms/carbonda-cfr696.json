@@ -123,7 +123,7 @@
     "wheel_size": "700c",
     "evidence": "official",
     "eligibility": "pass",
-    "note": "Current page claim; older CFR696 generations may differ.",
+    "note": "Official CFR696 page indexed text and retained earlier source state 700×50C; direct access was unavailable on 2026-10-11. Confirm the exact ordered revision. No tire-with-fender maximum or carrying limit established.",
     "published_max_mm": 50
   },
   "mounts": [
@@ -137,7 +137,38 @@
     "carbonda-cfr696-official",
     "carbonda-cfr696-geometry-bikeinsights-2026-08-25",
     "carbonda-cfr696-owner-forum-2026-08-28",
-    "carbonda-cfr696-official-recheck-2026-09-23"
+    "carbonda-cfr696-official-recheck-2026-09-23",
+    "carbonda-cfr696-mount-screen-2026-10-11"
   ],
-  "last_reviewed": "2026-09-23"
+  "last_reviewed": "2026-09-23",
+  "mount_approval": {
+    "reviewed_at": "2026-10-11",
+    "scope": "Documented feature screen only; confirm the exact ordered revision and complete installation.",
+    "rear_rack": {
+      "status": "documented",
+      "source_ids": [
+        "carbonda-cfr696-mount-screen-2026-10-11"
+      ]
+    },
+    "fender": {
+      "status": "documented",
+      "source_ids": [
+        "carbonda-cfr696-mount-screen-2026-10-11"
+      ]
+    },
+    "loads": {
+      "rear_rack_kg": null,
+      "fork_side_kg": null,
+      "source_ids": []
+    }
+  },
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-11",
+      "source_ids": [
+        "carbonda-cfr696-mount-screen-2026-10-11"
+      ],
+      "scope": "Rack/fender feature approval and carrying-load basis only; other specification and price observation dates retained."
+    }
+  ]
 }

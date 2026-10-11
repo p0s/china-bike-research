@@ -4,17 +4,23 @@
   "series_id": "october-2026",
   "image_id": "chinese-bike-for-bikepacking-mounts-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-11",
   "researched_at": "2026-10-04",
   "model_ids": [
     "lightcarbon-lcg071s-pro-frameset",
-    "ican-graro-frameset"
+    "ican-graro-frameset",
+    "carbonda-cfr696-frameset",
+    "spcycle-g028-frameset"
   ],
   "source_ids": [
     "lightcarbon-lcg071s-official",
     "lightcarbon-company-official",
     "ican-graro-official",
-    "ican-graro-official-2026-08-27"
+    "ican-graro-official-2026-08-27",
+    "carbonda-cfr696-mount-screen-2026-10-11",
+    "lightcarbon-lcg071s-pro-mount-review-2026-10-11",
+    "lightcarbon-lcg071s-pro-load-diagram-2026-10-11",
+    "spcycle-g028-mount-review-2026-10-11"
   ],
   "editorial_references": [],
   "photo_sections": [
@@ -24,14 +30,40 @@
         "lightcarbon-lcg071s-pro",
         "ican-graro"
       ]
+    },
+    {
+      "section_id": "verified-50mm-framesets",
+      "ids": [
+        "carbonda-cfr696",
+        "spcycle-g028"
+      ]
     }
   ],
   "translations": {
     "en": {
-      "title": "Bikepacking with a Chinese gravel frame: map the luggage first",
-      "description": "Use a luggage-and-mount map to choose a bikepacking frame, with exact load approvals, bag clearance and spare-part planning.",
-      "intro": "“It has plenty of mounts” is not yet a bikepacking plan. Your tent, water and sleeping kit need specific places, and those places need to be approved for the loads. Draw the packed bike before ordering the empty frame.",
+      "title": "Chinese gravel frames for bikepacking: rack, fender and 50 mm evidence",
+      "description": "Compare CFR696, LCG071S-PRO and G028 against a strict rack-and-fender plus 50 mm screen, then map luggage to declared loads and the exact fork.",
+      "intro": "For a Chinese gravel frameset with at least 700×50C clearance AND documented rear-rack and fender compatibility, CFR696 is the only documented feature match among these three. LCG071S-PRO has useful rack-load evidence but unresolved fender approval; G028’s wider tire claim does not establish carrying approval. Use that difference to narrow enquiries, then draw the packed bike before ordering the empty frame.",
       "sections": [
+        {
+          "id": "verified-50mm-framesets",
+          "heading": "50 mm, rear rack and fenders: what is documented",
+          "paragraphs": [
+            "The screen requires all three features together. It does not require three winners. A documented feature match is a starting point for an exact-order check, not approval of your loaded build. “Unknown” means the inspected evidence does not establish the claim; it does not mean incompatible.",
+            "[Carbonda’s official CFR696 page](https://www.carbonda.com/road/cfr-696.html) states 700×50C and rack/fender compatibility. The direct page was unavailable in this review; indexed official text and our retained earlier record support that feature screen. Confirm the ordered revision and its load instructions. Neither the applicable carrying limits nor the maximum tire width with fenders is established here.",
+            "[LightCarbon’s linked diagram](https://www.lightcarbon.com/js/htmledit/kindeditor/attached/20250422/20250422160637_89754.jpg) declares 25 kg at the LCG071S-PRO rear rack and 3 kg per fork side. These are separate manufacturer limits, not a combined allowance or system-mass limit. Match the frame, riveted fork, carrier and fasteners to the instructions. Fender approval remains unknown, so it does not pass the strict screen.",
+            "The [exact SP-G028 listing](https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html) states 700×57C. Visible holes and a customer’s fork question do not approve a rear rack, fenders or a load. Keep it under investigation rather than counting it as a qualifying alternative."
+          ]
+        },
+        {
+          "id": "choose",
+          "heading": "Let the luggage decide the next enquiry",
+          "paragraphs": [
+            "Need both a rear rack and fenders? Start with CFR696’s documented features, then obtain the revision-specific limits and the tire-with-fender envelope. Need fork cargo as well? LCG071S-PRO gives a concrete load basis to discuss, provided you order the matching riveted fork and resolve fenders if required. For G028, request the missing approvals before choosing carriers.",
+            "A 50C or 57C maximum is not permission to run that size under a fender. Measure the inflated tire on your rim and obtain the required clearance for mud, fender and movement. Keep rack mass, carried luggage, rider mass and total system mass distinct.",
+            "Open the [three-frame comparison](/?compare=carbonda-cfr696-frameset,lightcarbon-lcg071s-pro-frameset,spcycle-g028-frameset) for the wider specification and dated cost context. Different frame-weight sizes, finishes and package contents do not support a lighter loaded-bike winner."
+          ]
+        },
         {
           "id": "map",
           "heading": "Make a luggage map",
@@ -39,7 +71,37 @@
             "Make four columns: bag or bottle, filled mass, attachment and approved load limit. Count water at the start of the longest section without supplies, not just an empty bottle. Include rider, bike and luggage when checking the total system limit. Check each attachment against the exact frame, fork and accessory instructions.",
             "Keep unknown load limits open. A seller saying “touring ready” does not resolve the permitted load on a particular fork boss or rack attachment. Get a written answer tied to the revision you will receive.",
             "If the same bike has to carry a laptop during the week, use our [gravel commuting checklist](/blog/chinese-gravel-bike-for-commuting/) to plan everyday luggage too."
-          ]
+          ],
+          "worksheet": {
+            "caption": "Order check: match each load to its actual attachment",
+            "columns": [
+              "Luggage position",
+              "Fill in before ordering",
+              "Evidence still needed"
+            ],
+            "rows": [
+              [
+                "Rear rack",
+                "Rack mass + luggage mass; exact rack and hardware",
+                "Frame/rack limits and revision-specific installation"
+              ],
+              [
+                "Fork sides",
+                "Mass on each side; exact fork and cages",
+                "Matching fork option, per-side limits and fasteners"
+              ],
+              [
+                "Fenders and tires",
+                "Inflated width, rim and selected fender",
+                "Approved tire/fender envelope and movement clearance"
+              ],
+              [
+                "Whole bicycle",
+                "Rider + bicycle + all luggage",
+                "Applicable total-system mass limit"
+              ]
+            ]
+          }
         },
         {
           "id": "examples",
@@ -68,10 +130,29 @@
       ]
     },
     "zh-Hans": {
-      "title": "中国砾石车架用于骑游：先把行李方案画出来",
-      "description": "用行李与接口清单选骑游车架，逐项核对载荷认可、车包空间和备件需求。",
-      "intro": "“安装孔很多”还不算骑游方案。帐篷、饮水和睡眠装备都需要明确的位置，而这些位置必须允许承受相应载荷。先画出装满行李的车，再订空车架。",
+      "title": "中国砾石车架用于骑游：货架、挡泥板与 50 mm 胎容证据",
+      "description": "用后货架、挡泥板和至少 50 mm 胎容的严格条件核对 CFR696、LCG071S-PRO 与 G028，再按厂家载荷和具体前叉规划行李。",
+      "intro": "如果你要的是至少支持 700×50C、且明确支持后货架和挡泥板的中国砾石车架，这三款中只有 CFR696 有证据符合全部功能条件。LCG071S-PRO 有具体货架载荷说明，但挡泥板认可仍未知；G028 胎容更大，也不能据此认定它支持载物。先用这些差别缩小询价范围，再画出装满行李的车，最后订空车架。",
       "sections": [
+        {
+          "id": "verified-50mm-framesets",
+          "heading": "50 mm、后货架和挡泥板：哪些有证据",
+          "paragraphs": [
+            "这里要求三项同时满足，不要求凑出三款入选车架。符合已记录功能，只是核对具体订单的起点，不等于认可你的满载装车方案。“未知”表示已检查证据尚不能确认，不代表不兼容。",
+            "[Carbonda 的 CFR696 官方页面](https://www.carbonda.com/road/cfr-696.html)标注 700×50C，并明确说明兼容货架和挡泥板。本次无法直接读取页面，筛选依据是官方页面的索引文本及保留的早期记录。仍须确认订购版本及其载荷说明；这里没有确认适用载荷，也没有确认安装挡泥板后的最大胎宽。",
+            "[LightCarbon 链接的载荷图](https://www.lightcarbon.com/js/htmledit/kindeditor/attached/20250422/20250422160637_89754.jpg)标注 LCG071S-PRO 后货架 25 kg、前叉每侧 3 kg。这是厂家分别给出的限制，不是可相加使用的额度，也不是系统总重上限。车架、带铆接孔前叉、载具和紧固件都要对应说明。挡泥板认可仍未知，因此未通过严格筛选。",
+            "[SP-G028 的具体商品页](https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html)标注 700×57C。可见安装孔，以及顾客关于前叉的提问，都不能认定厂家允许后货架、挡泥板或具体载荷。它仍是待调查对象，不能算作已符合条件的替代款。"
+          ]
+        },
+        {
+          "id": "choose",
+          "heading": "让行李方案决定下一步问什么",
+          "paragraphs": [
+            "同时需要后货架和挡泥板？从 CFR696 已说明的功能开始，再取得对应版本的限制及带挡泥板胎容。还要在前叉载物？LCG071S-PRO 给出了可具体讨论的载荷依据，但须订对带铆接孔前叉；若需要挡泥板，也必须补齐认可。考虑 G028 时，先取得缺失的认可，再选载具。",
+            "50C 或 57C 上限，不等于装挡泥板后仍能用同样胎宽。应测量实际轮圈上充气后的胎宽，并取得泥沙、挡泥板和运动所需的间隙要求。货架自重、行李、骑手和系统总重必须分开核对。",
+            "用[三款车架对比](/?compare=carbonda-cfr696-frameset,lightcarbon-lcg071s-pro-frameset,spcycle-g028-frameset)查看其他规格和有日期的费用口径。车架重量的尺码、涂装和套餐范围不同，不能据此评出更轻的满载整车。"
+          ]
+        },
         {
           "id": "map",
           "heading": "做一张行李位置图",
@@ -79,7 +160,37 @@
             "做四列：包或水壶、装满后的重量、固定方式、允许载荷。饮水按最长无补给路段开始时的实际水量计算，不能只算空瓶。核对系统总重上限时，要把骑手、车辆和行李都算进去，再依据具体车架、前叉和配件说明逐一检查安装点。",
             "未知载荷限制应保持待确认。“适合骑游”并不能说明某个前叉螺孔或货架接口允许承受多少重量。需要一份与实际收到版本对应的书面答复。",
             "如果这辆车平时还要载着电脑通勤，可以结合[砾石车通勤清单](/blog/chinese-gravel-bike-for-commuting/)，一起规划日常行李。"
-          ]
+          ],
+          "worksheet": {
+            "caption": "下单核对：让每项载荷对应实际安装点",
+            "columns": [
+              "行李位置",
+              "下单前填写",
+              "仍需取得的依据"
+            ],
+            "rows": [
+              [
+                "后货架",
+                "货架自重与行李重量；具体货架和五金",
+                "车架及货架限制、对应版本的安装说明"
+              ],
+              [
+                "前叉两侧",
+                "每侧重量；具体前叉和载物架",
+                "对应前叉选项、每侧限制及紧固件"
+              ],
+              [
+                "挡泥板与轮胎",
+                "实际胎宽、轮圈和所选挡泥板",
+                "认可的轮胎与挡泥板空间及运动间隙"
+              ],
+              [
+                "整车系统",
+                "骑手、车辆和全部行李",
+                "适用的系统总重上限"
+              ]
+            ]
+          }
         },
         {
           "id": "examples",
@@ -108,10 +219,29 @@
       ]
     },
     "de": {
-      "title": "Bikepacking mit chinesischem Gravelrahmen: Erst das Gepäck planen",
-      "description": "Wähle einen Bikepackingrahmen mit Gepäckplan, konkreten Traglastfreigaben, Taschenfreiheit und Ersatzteilplanung.",
-      "intro": "„Viele Ösen“ sind noch kein Bikepackingplan. Zelt, Wasser und Schlafausrüstung brauchen bestimmte Plätze, die für die Lasten freigegeben sein müssen. Zeichne das beladene Rad, bevor du den leeren Rahmen bestellst.",
+      "title": "Chinesische Gravelrahmen fürs Bikepacking: Träger, Schutzbleche und 50 mm",
+      "description": "Prüfe CFR696, LCG071S-PRO und G028 auf Heckträger, Schutzbleche und mindestens 50 mm Reifenfreiheit. Plane Gepäck mit Traglasten und genauer Gabel.",
+      "intro": "Suchst du einen chinesischen Gravelrahmen für mindestens 700×50C mit dokumentierter Heckträger- UND Schutzblechkompatibilität, erfüllt unter diesen drei Modellen nur der CFR696 die dokumentierten Merkmale. Der LCG071S-PRO bietet konkrete Traglastangaben, aber keine hier belegte Schutzblechfreigabe. Die größere Reifenangabe des G028 belegt keine Gepäckfreigabe. Grenze damit die Anfragen ein und zeichne das beladene Rad, bevor du den leeren Rahmen bestellst.",
       "sections": [
+        {
+          "id": "verified-50mm-framesets",
+          "heading": "50 mm, Heckträger und Schutzbleche: die Belege",
+          "paragraphs": [
+            "Alle drei Merkmale müssen zusammen belegt sein; drei Gewinner sind nicht erforderlich. Die dokumentierten Merkmale sind ein Ausgangspunkt für die konkrete Bestellung, keine Freigabe deines beladenen Aufbaus. „Unbekannt“ bedeutet, dass die geprüften Belege die Aussage nicht bestätigen. Es bedeutet nicht inkompatibel.",
+            "[Carbondas offizielle CFR696-Seite](https://www.carbonda.com/road/cfr-696.html) nennt 700×50C sowie Träger- und Schutzblechkompatibilität. Die Seite war beim direkten Abruf nicht verfügbar; indexierter Herstellertext und unser früherer Beleg stützen diese Merkmalsauswahl. Bestätige die bestellte Revision und deren Lastvorgaben. Weder die geltenden Traglasten noch die maximale Reifenbreite mit Schutzblechen sind hier geklärt.",
+            "[LightCarbons verlinkte Lastzeichnung](https://www.lightcarbon.com/js/htmledit/kindeditor/attached/20250422/20250422160637_89754.jpg) nennt 25 kg am Heckträger des LCG071S-PRO und 3 kg je Gabelseite. Das sind getrennte Herstellergrenzen, keine addierbare Zuladung und kein Systemgewicht. Rahmen, genietete Gabel, Träger und Befestigungsteile müssen zur Anleitung passen. Die Schutzblechfreigabe bleibt unbekannt; deshalb erfüllt er die strenge Auswahl nicht.",
+            "Das [genaue SP-G028-Angebot](https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html) nennt 700×57C. Sichtbare Ösen und eine Kundenfrage zur Gabel belegen keine Freigabe für Heckträger, Schutzbleche oder eine bestimmte Last. Er bleibt ein Prüfobjekt, keine belegte Alternative für diese Kriterien."
+          ]
+        },
+        {
+          "id": "choose",
+          "heading": "Der Gepäckplan bestimmt die nächste Anfrage",
+          "paragraphs": [
+            "Brauchst du Heckträger und Schutzbleche? Beginne mit den dokumentierten CFR696-Merkmalen und kläre die revisionsbezogenen Lastgrenzen sowie die Reifenfreiheit mit Schutzblechen. Soll auch Gepäck an die Gabel? Die LCG071S-PRO-Angaben schaffen eine konkrete Gesprächsgrundlage, sofern die passende genietete Gabel bestellt wird. Benötigte Schutzbleche bleiben zusätzlich zu klären. Beim G028 müssen die fehlenden Freigaben vor der Trägerwahl vorliegen.",
+            "Eine Grenze von 50C oder 57C erlaubt nicht automatisch dieselbe Breite unter einem Schutzblech. Miss den aufgepumpten Reifen auf deiner Felge und kläre den erforderlichen Raum für Schmutz, Schutzblech und Bewegung. Trägergewicht, Gepäck, Fahrer und Systemgewicht sind getrennte Größen.",
+            "Der [Vergleich der drei Rahmen](/?compare=carbonda-cfr696-frameset,lightcarbon-lcg071s-pro-frameset,spcycle-g028-frameset) zeigt weitere Spezifikationen und datierte Kostenbezüge. Unterschiedliche Größen, Lackierungen und Lieferumfänge erlauben keinen Gewichtssieger für das beladene Komplettrad."
+          ]
+        },
         {
           "id": "map",
           "heading": "Eine Gepäckkarte zeichnen",
@@ -119,7 +249,37 @@
             "Lege vier Spalten an: Tasche oder Flasche, Gewicht mit Inhalt, Befestigung und zulässige Last. Rechne mit dem Wasser zu Beginn des längsten Abschnitts ohne Versorgung, nicht nur mit leeren Flaschen. Fahrer, Rad und Gepäck zählen zum zulässigen Gesamtgewicht. Prüfe jede Befestigung anhand der genauen Anleitungen von Rahmen, Gabel und Zubehör.",
             "Lass ungeklärte Belastungsgrenzen offen. „Tourentauglich“ erklärt nicht die erlaubte Last an einer bestimmten Gabelöse oder Trägeraufnahme. Verlange eine schriftliche Antwort für die gelieferte Revision.",
             "Soll dasselbe Rad unter der Woche auch den Laptop transportieren, hilft unsere [Gravel-Pendelcheckliste](/blog/chinese-gravel-bike-for-commuting/) bei der Planung des Alltagsgepäcks."
-          ]
+          ],
+          "worksheet": {
+            "caption": "Bestellprüfung: jede Last der tatsächlichen Befestigung zuordnen",
+            "columns": [
+              "Gepäckposition",
+              "Vor der Bestellung eintragen",
+              "Noch benötigter Beleg"
+            ],
+            "rows": [
+              [
+                "Heckträger",
+                "Träger- und Gepäckgewicht; genauer Träger und Kleinteile",
+                "Rahmen-/Trägergrenzen und revisionsbezogene Montage"
+              ],
+              [
+                "Gabelseiten",
+                "Gewicht je Seite; genaue Gabel und Halter",
+                "Passende Gabeloption, Seitengrenzen und Befestigung"
+              ],
+              [
+                "Schutzbleche und Reifen",
+                "Aufgepumpte Breite, Felge und gewähltes Schutzblech",
+                "Freigegebener Reifen-/Schutzblechraum und Bewegungsabstand"
+              ],
+              [
+                "Gesamtes System",
+                "Fahrer, Rad und sämtliches Gepäck",
+                "Geltende Systemgewichtsgrenze"
+              ]
+            ]
+          }
         },
         {
           "id": "examples",
@@ -151,12 +311,20 @@
   "series_order": 9,
   "editorial_review": {
     "status": "reviewed",
-    "reviewed_at": "2026-10-07T06:02:52Z",
+    "reviewed_at": "2026-10-11T03:05:05.509030+00:00",
     "reviewed_languages": [
       "en",
       "zh-Hans",
       "de"
     ],
-    "contribution": "The loaded-bike map, system mass, bag interference and local shakedown give a practical bikepacking preparation sequence."
+    "contribution": "Strict three-feature evidence matrix, location-specific declared loads and order-specific luggage worksheet; original ICAN and practical workflow retained."
+  },
+  "mount_matrix": {
+    "section_id": "verified-50mm-framesets",
+    "model_ids": [
+      "carbonda-cfr696-frameset",
+      "lightcarbon-lcg071s-pro-frameset",
+      "spcycle-g028-frameset"
+    ]
   }
 }
