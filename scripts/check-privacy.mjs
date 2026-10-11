@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-chinese-bikes-us-canada-mascot-cover-677d361141-640.webp', 'f6e7b7c5cbd6fa867c2b3561b6e36ca48dabc5a666c7571823a26f1f83c4528b'],
+  ['assets/blog/buy-chinese-bikes-us-canada-mascot-cover-677d361141-1600.webp', '5f29ad564ddecf50a3a203e9969694baebf9e924203a62c3b00e3c0ea925b78c'],
+  ['assets/blog/buy-chinese-bikes-us-canada-mascot-cover-677d361141-1200.jpg', '444feaf1dfc0036bfc45caac33c46de9c989a52712cc7f365dc6ad96d74090d3'],
+  ['assets/blog/saddle-setback-vs-seat-tube-angle-mascot-cover-a0fe9899ae-640.webp', '079f7355912246efe45cd6e3428d57667e4c7a987985a875371db56cd957790d'],
+  ['assets/blog/saddle-setback-vs-seat-tube-angle-mascot-cover-a0fe9899ae-1600.webp', 'a95327f5414d5f66861c2c11e284cb878ec4bcdfa89564d2521205199b801c07'],
+  ['assets/blog/saddle-setback-vs-seat-tube-angle-mascot-cover-a0fe9899ae-1200.jpg', '4d9ac55796b47be37419be58e339e842de8677e5f934cc8ef763e51aec8bc823'],
   ['assets/blog/road-or-gravel-first-carbon-bike-mascot-cover-eae8c1ee14-640.webp', 'bc12bb2b52f7688c7b0473387ee561fcbe6a6046481dcb0eff2f6d790a3ee5c6'],
   ['assets/blog/road-or-gravel-first-carbon-bike-mascot-cover-eae8c1ee14-1600.webp', '96958686e70ace682d97bdc968bc999d271da7c05606b09f108cb214bee834c8'],
   ['assets/blog/road-or-gravel-first-carbon-bike-mascot-cover-eae8c1ee14-1200.jpg', '99a50911186e417409a8448b4390d9272fe8889b46250d4a407a5d24ee41c38f'],
