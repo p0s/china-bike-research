@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/one-bike-road-and-gravel-two-wheelsets-mascot-cover-e5dd01900f-640.webp', '2f733802078d5b88ff0f50ca344505f64b8c7124f4aa318ec361dacb134c69b5'],
+  ['assets/blog/one-bike-road-and-gravel-two-wheelsets-mascot-cover-e5dd01900f-1600.webp', '0658bd0b6556d5f160009cff1eba1ea9e6035b87afb993f3e68222ce5cfa4194'],
+  ['assets/blog/one-bike-road-and-gravel-two-wheelsets-mascot-cover-e5dd01900f-1200.jpg', 'e753f60ce41e9687edb01db638ea0b62fa4ae9e9210f6021d769be11bac376d9'],
+  ['assets/blog/shorter-cranks-bike-fit-mascot-cover-1832e8e7ec-640.webp', 'f300c4daaa7ec6bbf34fb672b594a8c8e53a5a3bcd96b2ba6a7e98c2cd195c02'],
+  ['assets/blog/shorter-cranks-bike-fit-mascot-cover-1832e8e7ec-1600.webp', '1b8c55f1e462babe24cdd9447f926ceb9f18ed140e32fea6e1180bf63185cac4'],
+  ['assets/blog/shorter-cranks-bike-fit-mascot-cover-1832e8e7ec-1200.jpg', '87c1d4cb8571b15425b8f23817b462c227c45efc94ef158db4f053150bf77153'],
   ['assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-640.webp', '9a87cf9b0fbd5900f1b1ebee1c9f41ea2a335b7fc7467008b1ab089754080d10'],
   ['assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-1600.webp', 'bf3604bd71915a237f2ecfb6f3e094036b3f9d5a02cdc1886f1bae2a0e38a4bc'],
   ['assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-1200.jpg', 'd594cc7ae03510c0f6c2fccc6ebad6e5625ecdef29c41c6694fdd5797c796694'],
