@@ -156,13 +156,13 @@ const runsWorkerFirst = (path) => workerFirstPatterns.some((pattern) => pattern.
   : path === pattern);
 test('deployment routing sends every locale document through the Worker and keeps shared assets asset-first', () => {
   for (const prefix of ['', '/zh', '/de']) {
-    for (const path of ['/', '/models/example/', '/brands/example/', '/build/', '/privacy/', '/blog/example/']) {
+    for (const path of ['/', '/models/example/', '/brands/example/', '/build/', '/geometry/', '/privacy/', '/blog/example/']) {
       const localized = prefix + path;
       assert.equal(isEligibleDocumentPath(localized), true, localized);
       assert.equal(runsWorkerFirst(localized), true, `Static document bypasses Worker: ${localized}`);
     }
   }
-  for (const path of ['/zh', '/de']) assert.equal(runsWorkerFirst(path), true, path);
+  for (const path of ['/zh', '/de', '/geometry']) assert.equal(runsWorkerFirst(path), true, path);
   for (const path of ['/assets/site.js', '/data/catalog.json', '/assets/images/example.webp']) {
     assert.equal(runsWorkerFirst(path), false, path);
   }

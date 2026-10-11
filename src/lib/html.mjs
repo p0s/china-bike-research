@@ -9,7 +9,7 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification=''}) {
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[]}) {
   const siteName='China Bikes';
   const t = (value) => translate(value, locale);
   title = t(title);
@@ -40,6 +40,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <link rel="icon" type="image/png" sizes="32x32" href="${url(base,'/assets/branding/favicon-32.png')}">
   <link rel="apple-touch-icon" sizes="180x180" href="${url(base,'/assets/branding/apple-touch-icon.png')}">
   <link rel="stylesheet" href="${url(base,'/assets/site.css')}">
+  ${styles.map(path => `<link rel="stylesheet" href="${url(base,path)}">`).join("\n  ")}
   <link rel="canonical" href="${escapeAttr(canonical)}">
   ${languageLinks}
   <meta property="og:site_name" content="${siteName}">
@@ -64,6 +65,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
           <a href="${url(base,'/framesets/')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
+          <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
           <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build</a>
           <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
           <a href="${url(base,'/blog/')}"${current==='blog'?' aria-current="page"':''}>Blog</a>
@@ -88,6 +90,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <a href="${url(base,'/prices/')}">Price ranges</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
         <a href="${url(base,'/build/')}">Build a bike</a>
+        <a href="${url(base,'/geometry/')}">Geometry comparison</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
         <a href="${url(base,'/privacy/')}#analytics">Privacy</a>
         <a href="${url(base,'/data/catalog.json')}">Data</a>
@@ -107,6 +110,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>
   <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
+  ${modules.map(path => `<script type="module" src="${url(base,path)}"></script>`).join("\n  ")}
   ${path.endsWith('/404.html') ? '' : `<script type="module" data-ga4-page src="${url(base,'/assets/ga4.js')}"></script>`}
 </body>
 </html>`;

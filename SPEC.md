@@ -202,6 +202,16 @@ A later retry of an extended-campaign field must link a `campaign_extension` to 
 - XHS video records retain validated canonical post IDs and immutable capture-archive digests for research, but are neither linked nor embedded on model pages, never rehosted, and never include captured signed stream URLs.
 - Do not publish names, accounts, contacts, addresses, order or tracking IDs, payment data, private messages, private permission correspondence, credentials, GPS, or EXIF metadata.
 
+## Geometry comparison tool
+
+`/geometry/`, `/zh/geometry/` and `/de/geometry/` compare exact recorded frame sizes, or manually entered stack/reach, on one coordinate scale. The homepage catalog and inline comparison remain the main buying surface. Geometry results link to existing model evidence, prices, catalog comparison and build planning.
+
+Derive the library from all published platforms with numeric stack/reach in millimeters and attributable geometry sources. Deduplicate shared platforms without discarding their build links. Never parse presentation-only text into numbers. Withhold unresolved geometry tables from calculations and similar-size search; preserve and link their original model tables. Missing secondary dimensions remain unknown.
+
+Nearby sizes must satisfy separate stack and reach tolerances (0–100 mm) and the selected category. Sort by Euclidean stack/reach distance in millimeters, with deterministic ties. Label this as dimensional similarity, never a fit score, personal size recommendation, stock claim or compatibility conclusion.
+
+Explicit URL state contains both model/size selections, manual dimensions, category and tolerance. It survives reload, language changes and browser Back/Forward. Incomplete or unavailable selections remain visible and suppress calculations; do not silently replace them. Manual dimensions are not persisted in a profile or sent in analytics. Without JavaScript, show a labeled sourced example and a complete readable size library with editing disabled.
+
 ## 7. Acceptance criteria
 
 Every change must preserve valid cross-references and pass:

@@ -955,3 +955,5 @@ Object.assign(zh, {
   "Chinese performance brand with attributed monocoque construction claims. The Quick USA storefront describes a North American authorized dealer; its legal relationship to the manufacturer and factory ownership remain unverified.": "中国运动自行车品牌，保留注明来源的一体成型结构主张。Quick USA 商店自称北美授权经销商；其与制造商的法律关系及工厂所有权仍未核实。",
   "Seller and market terms unverified": "卖家与市场交易条件未核实"
 });
+
+Object.assign(zh, { "Geometry": "几何", "Geometry comparison": "几何对比", "Compare this geometry ↗": "对比此车型几何 ↗" });

@@ -1680,3 +1680,5 @@ Object.assign(de, {
   "Chinese performance brand with attributed monocoque construction claims. The Quick USA storefront describes a North American authorized dealer; its legal relationship to the manufacturer and factory ownership remain unverified.": "Chinesische Sportfahrradmarke mit zugeordneten Angaben zur Monocoque-Konstruktion. Der Quick-USA-Shop bezeichnet sich als autorisierter Händler für Nordamerika; seine rechtliche Beziehung zum Hersteller und die Fabrikeigentümerschaft bleiben ungeprüft.",
   "Seller and market terms unverified": "Verkäufer- und Marktbedingungen ungeprüft"
 });
+
+Object.assign(de, { "Geometry": "Geometrie", "Geometry comparison": "Geometrievergleich", "Compare this geometry ↗": "Diese Geometrie vergleichen ↗" });

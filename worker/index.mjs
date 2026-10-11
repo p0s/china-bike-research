@@ -21,7 +21,7 @@ const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
 const MAX_ACTION_BODY_BYTES = 512;
 const actionManifestCache = new WeakMap();
 
-const publicDocumentPattern = /^(?:\/(?:zh|de))?\/(?:models|brands|prices|complete-bikes|framesets|build|methodology|privacy|image-policy|image-sources|electronic-shifting|blog)(?:\/|$)/;
+const publicDocumentPattern = /^(?:\/(?:zh|de))?\/(?:models|brands|prices|complete-bikes|framesets|build|geometry|methodology|privacy|image-policy|image-sources|electronic-shifting|blog)(?:\/|$)/;
 const privatePathPattern = /\/(?:account|admin|auth|login|logout|job|jobs|private|session|token|api)(?:\/|$)/i;
 const suspiciousPathPattern = /(?:@[\w.-]+\.[A-Za-z]{2,}|[0-9a-f]{32,}|(?:^|\/)\d{6,}(?:\/|$))/i;
 const botPattern = /(?:bot|crawler|spider|slurp|bingpreview|facebookexternalhit|headless|lighthouse|pagespeed|prerender|curl|wget|python-requests|go-http-client|uptimerobot|statuscake)/i;
