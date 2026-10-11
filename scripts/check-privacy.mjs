@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/endurance-or-aero-frame-mascot-cover-037754eed3-640.webp', 'd96ce9429bdd5a73ed9f2fdb0aadfb817325acccf1349e4a9fc3eee08d47f871'],
+  ['assets/blog/endurance-or-aero-frame-mascot-cover-037754eed3-1600.webp', '103ca7db4d54476aae6c42d9f548d725eee09245bc74fd92956ded148515cbc1'],
+  ['assets/blog/endurance-or-aero-frame-mascot-cover-037754eed3-1200.jpg', 'e7c669cdb311a738b5c55153c06bb4ae8ecf9a4d91ad8d83b58925b7287b3178'],
+  ['assets/blog/chinese-bike-shipping-times-mascot-cover-fdbaad6759-640.webp', 'ab3ef66169ce5883c4d165ada13470a902f7b680d881229a8ae84e294d6266a7'],
+  ['assets/blog/chinese-bike-shipping-times-mascot-cover-fdbaad6759-1600.webp', 'da8e28311810118583fb2e1767bdcc2db1140540d289c7e1aba1d35dfa9666ba'],
+  ['assets/blog/chinese-bike-shipping-times-mascot-cover-fdbaad6759-1200.jpg', 'dee7de924fddc9ec048b395b25ff3fc2a5ddba1eac1e1c398a42cd8062f1379d'],
   ['assets/blog/buy-winspace-bike-mascot-cover-08a7644393-640.webp', '8bc05b6c292e758432a2a68d3e6cdb6509dfc890e86462baf870b23611485e59'],
   ['assets/blog/buy-winspace-bike-mascot-cover-08a7644393-1600.webp', '25a4504a9cac4171b394ff84cc77d8e8733d5ff74da8958d79c42ae9baaf7de7'],
   ['assets/blog/buy-winspace-bike-mascot-cover-08a7644393-1200.jpg', 'bdcca380d1b353c3ca0f233056b13a3416de293b2769d5ae4e034c4ae4394341'],
