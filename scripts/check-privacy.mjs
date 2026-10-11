@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-640.webp', '9a87cf9b0fbd5900f1b1ebee1c9f41ea2a335b7fc7467008b1ab089754080d10'],
+  ['assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-1600.webp', 'bf3604bd71915a237f2ecfb6f3e094036b3f9d5a02cdc1886f1bae2a0e38a4bc'],
+  ['assets/blog/gravel-bike-as-winter-road-bike-mascot-cover-50460c4e28-1200.jpg', 'd594cc7ae03510c0f6c2fccc6ebad6e5625ecdef29c41c6694fdd5797c796694'],
+  ['assets/blog/handlebar-width-and-flare-mascot-cover-409d4c79fe-640.webp', '1512c442d9f01116990399a0b90b3da6f117b643a8980c64f2ae2f9c876ab6b8'],
+  ['assets/blog/handlebar-width-and-flare-mascot-cover-409d4c79fe-1600.webp', '4960965d541d9192b10e40e699bf8b1c86879231555d3bb766042445a502f83d'],
+  ['assets/blog/handlebar-width-and-flare-mascot-cover-409d4c79fe-1200.jpg', '1828146a93eebd28dec85981da2b15268b77fae786dd935975cac02ec431e8e9'],
   ['assets/blog/endurance-or-aero-frame-mascot-cover-037754eed3-640.webp', 'd96ce9429bdd5a73ed9f2fdb0aadfb817325acccf1349e4a9fc3eee08d47f871'],
   ['assets/blog/endurance-or-aero-frame-mascot-cover-037754eed3-1600.webp', '103ca7db4d54476aae6c42d9f548d725eee09245bc74fd92956ded148515cbc1'],
   ['assets/blog/endurance-or-aero-frame-mascot-cover-037754eed3-1200.jpg', 'e7c669cdb311a738b5c55153c06bb4ae8ecf9a4d91ad8d83b58925b7287b3178'],
