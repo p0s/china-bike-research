@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-chinese-bikes-europe-mascot-cover-86b94913b2-640.webp', 'bec0e73db2c6342132f02a2f7f3a435dd29080f3e314e297c6d8c099b12759a8'],
+  ['assets/blog/buy-chinese-bikes-europe-mascot-cover-86b94913b2-1600.webp', 'b46c1be0558967f7729bacd66a3ef32632364e21003ffe7c635cec0414b89046'],
+  ['assets/blog/buy-chinese-bikes-europe-mascot-cover-86b94913b2-1200.jpg', '456a8adfdfb9f7c79770772b2d492cdfab5526f2a222e2f504a6dd1609c76366'],
+  ['assets/blog/spacer-stack-and-aero-cockpits-mascot-cover-15619ff2ec-640.webp', 'aa71be3404cee4a7457739dd1b3663bf3bf95f9e3384a0163ff8b15767a2c4da'],
+  ['assets/blog/spacer-stack-and-aero-cockpits-mascot-cover-15619ff2ec-1600.webp', '275249223f18222aa7a39c79fdda8a799d19222e25e9bb0e40b8ff7da4fa2a14'],
+  ['assets/blog/spacer-stack-and-aero-cockpits-mascot-cover-15619ff2ec-1200.jpg', '7475dfaa8ef3d5e8c39a2e5daa863c82c35766feaacd9c802d869352ab0effeb'],
   ['assets/blog/buy-chinese-bikes-us-canada-mascot-cover-677d361141-640.webp', 'f6e7b7c5cbd6fa867c2b3561b6e36ca48dabc5a666c7571823a26f1f83c4528b'],
   ['assets/blog/buy-chinese-bikes-us-canada-mascot-cover-677d361141-1600.webp', '5f29ad564ddecf50a3a203e9969694baebf9e924203a62c3b00e3c0ea925b78c'],
   ['assets/blog/buy-chinese-bikes-us-canada-mascot-cover-677d361141-1200.jpg', '444feaf1dfc0036bfc45caac33c46de9c989a52712cc7f365dc6ad96d74090d3'],
