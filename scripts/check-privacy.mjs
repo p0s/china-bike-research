@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-cover-86ced7337b-640.webp', 'edf601ec9367e0742615f34eb2e2d70943ec5c7536645331a40a315e7c6dab8c'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-cover-86ced7337b-1600.webp', '03e9e753f205ec07d3e47fcc2f48cab9fb52df0678280d35027493d27df106a9'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-cover-86ced7337b-1200.jpg', 'ee7885005efe434ce48dbd3e8a7a93ca938fa2b72826c60a76cc9234115c9f4b'],
+  ['assets/blog/front-end-height-on-road-bike-mascot-cover-7a46c23a45-640.webp', 'd79cc0d73982a697c016e3269e53544af060a7eafe6e2c8e1816e9baec50baa1'],
+  ['assets/blog/front-end-height-on-road-bike-mascot-cover-7a46c23a45-1600.webp', '60f3be9960485360c4401eb4339380845956ef5623cf8ec0ebafb420087df5f5'],
+  ['assets/blog/front-end-height-on-road-bike-mascot-cover-7a46c23a45-1200.jpg', 'db5f4dc75253f921792bd0ae3dc164f610ba88bb3134bead63bf2bc47f95f811'],
   ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-cover-66a76afafe-640.webp', 'b2b182d9d208bc93829c9381008d792f6463027f0f838c14ee5d66b1837e1caa'],
   ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-cover-66a76afafe-1600.webp', '2976dc4a9c5c42235bc6c15dce8b570ca3c99755ae16bfcc1b008ce57b119fd1'],
   ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-cover-66a76afafe-1200.jpg', '581390fdf3dc038f277257c718ee46e889c5a6fed6b22e56cdebff7720f61f99'],
