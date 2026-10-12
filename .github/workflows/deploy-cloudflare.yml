@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read # Restore this publisher's public IndexNow state from its preceding run.
 
 concurrency:
   group: cloudflare-production
@@ -17,7 +18,7 @@ jobs:
   deploy:
     # Enable only after the dedicated deployment credential is configured.
     # Local Wrangler remains the documented deployment path until then.
-    if: vars.CLOUDFLARE_DEPLOY_ENABLED == 'true'
+    if: vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -29,10 +30,29 @@ jobs:
         run: npm ci
       - name: Validate and build
         run: npm run check
-      - name: Snapshot public pages before deployment
+      - name: Locate saved IndexNow delivery state
+        id: indexnow-state
         continue-on-error: true
-        run: node scripts/indexnow.mjs snapshot --output "$RUNNER_TEMP/indexnow-before.json"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/indexnow-artifact.mjs --output "$GITHUB_OUTPUT"
+      - name: Restore IndexNow delivery state
+        id: indexnow-restore
+        if: steps.indexnow-state.outcome == 'success' && steps.indexnow-state.outputs.run-id != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: indexnow-delivery-state-v1
+          path: ${{ runner.temp }}/indexnow-state
+          run-id: ${{ steps.indexnow-state.outputs.run-id }}
+          github-token: ${{ github.token }}
+      - name: Snapshot IndexNow delivery state
+        id: indexnow-snapshot
+        if: steps.indexnow-state.outcome == 'success' && (steps.indexnow-restore.outcome == 'success' || steps.indexnow-restore.outcome == 'skipped')
+        continue-on-error: true
+        run: node scripts/indexnow.mjs snapshot --output "$RUNNER_TEMP/indexnow-before.json" --state "$RUNNER_TEMP/indexnow-state/state.json"
       - name: Deploy Worker and Static Assets
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -40,5 +60,15 @@ jobs:
           wranglerVersion: '4.135.0'
           command: deploy
       - name: Notify IndexNow of deployed public page changes
+        if: steps.deploy.outcome == 'success' && steps.indexnow-snapshot.outcome == 'success'
         continue-on-error: true
-        run: node scripts/indexnow.mjs notify --before "$RUNNER_TEMP/indexnow-before.json" --expected dist/indexnow-manifest.json
+        run: node scripts/indexnow.mjs notify --before "$RUNNER_TEMP/indexnow-before.json" --expected dist/indexnow-manifest.json --state "$RUNNER_TEMP/indexnow-state/state.json"
+      - name: Save IndexNow delivery state
+        if: always() && steps.indexnow-snapshot.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-delivery-state-v1
+          path: ${{ runner.temp }}/indexnow-state/state.json
+          if-no-files-found: error
+          retention-days: 90
+          overwrite: true # A rerun restores this run's last acknowledgement before replacing its state.
