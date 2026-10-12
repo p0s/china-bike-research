@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-cover-66a76afafe-640.webp', 'b2b182d9d208bc93829c9381008d792f6463027f0f838c14ee5d66b1837e1caa'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-cover-66a76afafe-1600.webp', '2976dc4a9c5c42235bc6c15dce8b570ca3c99755ae16bfcc1b008ce57b119fd1'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-cover-66a76afafe-1200.jpg', '581390fdf3dc038f277257c718ee46e889c5a6fed6b22e56cdebff7720f61f99'],
+  ['assets/blog/standover-bikepacking-bags-mascot-cover-09f4ce83ba-640.webp', 'c6e78c70621a8170359b0cccaf2fd1efc74fe36a2d0a372e56177e49dbbfc75d'],
+  ['assets/blog/standover-bikepacking-bags-mascot-cover-09f4ce83ba-1600.webp', '2ac138a25477628ba22f0b10465ef6fb047f48532e408347ed2e11eab483af14'],
+  ['assets/blog/standover-bikepacking-bags-mascot-cover-09f4ce83ba-1200.jpg', '37e50cd0a595969c05036c80b8c35a6f24199768d92b55568dc9987dbe7dc01c'],
   ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-cover-e463bf31fc-640.webp', '6f275f139bf74e423d54fb5a79afd1f7ecbdef2393b86251de0a8a6ec4702981'],
   ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-cover-e463bf31fc-1600.webp', 'fa8b6864f51870da4e115dcf7fea87bf9bdd6de46b275bb2cc3305e4a42e457e'],
   ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-cover-e463bf31fc-1200.jpg', '2f122445228d592c165a658fd64f09dfdf28ef30ebe3d7073aa10ea0de2aa453'],
