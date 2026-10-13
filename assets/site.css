@@ -1243,6 +1243,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .catalog-scope { margin-top: 3px; font-size: var(--fs-xs); line-height: 1.45; }
   .family-chips { margin-top: 10px; }
   .result-bar { flex-wrap: nowrap; margin-top: 8px; }
+  .result-bar:has(.filter-chips:not([hidden])) { flex-wrap: wrap; }
+  .result-bar .filter-chips { flex: 1 0 100%; }
   .result-split { display: none; }
   .sort-control { height: 34px; padding-left: 8px; }
   .sort-control select { max-width: 190px; }

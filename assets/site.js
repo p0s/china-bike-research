@@ -1,4 +1,4 @@
-import { normalizeMaterialSearch } from './catalog-search.js';
+import { normalizeMaterialSearch, normalizeCatalogSearch, matchesCatalogSearch } from './catalog-search.js';
 import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
@@ -736,6 +736,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const byId = new Map(products.map((item) => [item.id, item]));
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
+  const searchIndex = new Map(rows.map((row) => [row, normalizeCatalogSearch(row.dataset.search)]));
   const regionalData = await regionalDataPromise;
   // Price settings live in the header popover; the catalog reads them from the document.
   const destinationControl = document.querySelector('[data-ship-country]');
@@ -1236,8 +1237,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function matchesQuery(row) {
-    const query = search?.value.trim().toLowerCase() ?? '';
-    return !query || row.dataset.search?.includes(query);
+    return matchesCatalogSearch(searchIndex.get(row) ?? '', search?.value);
   }
 
   function rowMatches(row) {

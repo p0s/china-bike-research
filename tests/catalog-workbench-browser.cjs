@@ -47,6 +47,46 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
         assert.equal(state.firstStage, 'published', name);
         assert.ok(state.first < (width >= 960 ? 330 : 420), `${name}: first result starts at ${state.first}`);
         if (locale === 'en' && theme === 'light' && [1440, 390].includes(width)) await page.screenshot({ path: path.join(reports, `catalog-${width}.png`) });
+        // Search aliases, reordered terms and URL/history behavior on desktop and phone.
+        if (theme === 'light' && [1440, 390].includes(width)) {
+          const foundIds = () => page.locator('[data-product-row]:not([hidden])').evaluateAll(rows => rows.map(row => row.dataset.id).sort());
+          await open('ship=CN&currency=CNY&q=x-lab');
+          const expected = await foundIds();
+          assert.ok(expected.includes('candidate-xlab-rs9'));
+          for (const query of ['xlab', 'xlabs', 'x lab', 'X–LAB', 'ＸＬＡＢＳ']) {
+            await page.locator('#site-search').fill(query);
+            await page.locator('#site-search').blur();
+            assert.deepEqual(await foundIds(), expected, query);
+            assert.equal(new URL(page.url()).searchParams.get('q'), query);
+          }
+          await page.locator('#site-search').fill('RS9 xlabs');
+          await page.locator('#site-search').blur();
+          assert.deepEqual(await foundIds(), ['candidate-xlab-rs9']);
+          await page.reload({ waitUntil: 'load' });
+          await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency);
+          assert.deepEqual(await foundIds(), ['candidate-xlab-rs9']);
+          await page.locator('#site-search').fill('RS8 xlabs');
+          await page.locator('#site-search').blur();
+          assert.deepEqual(await foundIds(), []);
+          await page.goBack();
+          await page.waitForFunction(() => document.querySelector('#site-search')?.value === 'RS9 xlabs');
+          assert.deepEqual(await foundIds(), ['candidate-xlab-rs9']);
+          await page.locator('[data-product-row]:not([hidden]) [data-model-link]').first().click();
+          await page.locator('#site-search').fill('xlabs');
+          await page.locator('#site-search').press('Enter');
+          await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency);
+          assert.equal(new URL(page.url()).pathname, `${prefix}/`);
+          assert.deepEqual(await foundIds(), expected);
+          if (width < 600) {
+            const chips = await page.locator('[data-filter-chips]').boundingBox();
+            const summary = await page.locator('[data-result-summary]').boundingBox();
+            assert.ok(chips.y + chips.height <= summary.y + 1, 'search chips must not overlap the result count');
+            assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+          }
+          if (locale === 'en') await page.screenshot({ path: path.join(reports, `search-${width}.png`) });
+          await open('ship=CN&currency=CNY&q=xlabs&max=0&maxCurrency=CNY');
+          assert.deepEqual(await foundIds(), [], 'search must still obey the budget filter');
+        }
         // Desktop and phone pricing: references do not enter delivered budgets.
         if (locale === 'en' && theme === 'light' && [1440, 390].includes(width)) {
           for (const [country, currency] of [['CN', 'CNY'], ['DE', 'EUR'], ['US', 'USD'], ['HK', 'USD']]) {
