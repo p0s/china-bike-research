@@ -23,47 +23,39 @@ const homeContext = {
 };
 const html = renderHome(homeContext);
 
-test('homepage puts published articles above category picks and the complete catalog', () => {
-  const articles = html.indexOf('class="homepage-articles page"');
-  const picks = html.indexOf('class="curated-picks page"');
+test('homepage opens on the catalog without guide teasers or curated card sections', () => {
   const catalog = html.indexOf('class="catalog-section"');
-  assert.ok(articles > 0 && articles < picks && picks < catalog);
-  assert.match(html, /class="catalog-jump" href="#catalog"/);
-  assert.ok(html.indexOf('data-frameset-build-preset') > catalog);
-  const teasers = html.slice(articles, picks);
-  assert.equal((teasers.match(/class="article-card"/g) ?? []).length, 3);
-  for (const slug of ['incolor-speedster-sr-vs-sr-plus', 'gravel-bikes-around-5000-yuan', 'buy-chinese-bikes-europe']) {
-    const post = posts.find((entry) => entry.slug === slug);
-    assert.ok(teasers.includes(`/china-bike-research/blog/${slug}/`));
-    assert.ok(teasers.includes(`<time datetime="${post.dateModified}">${post.dateModified}</time>`));
-  }
+  assert.ok(catalog > 0);
+  assert.doesNotMatch(html, /class="homepage-articles|class="curated-picks|class="catalog-jump"|class="article-card"/);
+  // Price and frame-build settings open from the header chip and apply to the catalog.
+  const settings = html.match(/<div class="settings-panel" id="price-settings-panel"[\s\S]*?<\/div>\s*<\/div>\s*<div class="header-actions">/)?.[0] ?? '';
+  assert.match(settings, /data-frameset-build-preset/);
+  assert.match(settings, /data-ship-country/);
+  assert.match(html, /data-settings-toggle/);
+  assert.ok(html.indexOf('<h1>Compare Chinese bikes and frame builds</h1>') > catalog);
   assert.match(html, /data-show-all-models/);
   assert.equal((html.match(/data-product-row/g) ?? []).length, products.length + candidates.length);
 });
 
-test('homepage article links follow the published feed, locale and deployment base', () => {
-  for (const [locale, prefix, heading] of [['en', '', 'Read before you buy'], ['zh-Hans', '/zh', '购车前阅读'], ['de', '/de', 'Vor dem Kauf lesen']]) {
+test('guides stay one header link away in every locale and drafts never appear', () => {
+  for (const [locale, prefix, label] of [['en', '', 'Guides'], ['zh-Hans', '/zh', '选购指南'], ['de', '/de', 'Ratgeber']]) {
     const localized = renderHome({ ...homeContext, locale });
-    assert.ok(localized.includes(`id="homepage-articles-title">${heading}</h2>`));
-    assert.ok(localized.includes(`href="/china-bike-research${prefix}/blog/gravel-bikes-around-5000-yuan/"`));
+    assert.ok(localized.includes(`href="/china-bike-research${prefix}/blog/" data-nav-guides>${label}</a>`), locale);
+    assert.ok(localized.includes(`action="/china-bike-research${prefix}/#catalog"`), locale);
     for (const draft of allPosts.filter((post) => !posts.some((published) => published.slug === post.slug))) {
       assert.ok(!localized.includes(`/blog/${draft.slug}/`));
     }
   }
-  const limited = renderHome({ ...homeContext, posts: posts.filter((post) => post.slug !== 'buy-chinese-bikes-europe') });
-  const teasers = limited.slice(limited.indexOf('class="homepage-articles page"'), limited.indexOf('class="curated-picks page"'));
-  assert.ok(!teasers.includes('/blog/buy-chinese-bikes-europe/'));
-  assert.equal((teasers.match(/class="article-card"/g) ?? []).length, 2);
 });
 
 test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /data-catalog-root/);
   assert.match(html, /data-inline-compare/);
-  assert.match(html, /Frame estimate/);
+  assert.match(html, /Frame build/);
   assert.match(html, /Est\. ¥9,987/);
-  assert.match(html, /Full-bike price/);
-  assert.match(html, /placeholder="Search model, use or drivetrain"/);
-  assert.match(html, /class="product-fit"><span>Best for<\/span>/);
+  assert.match(html, /Max full-bike price/);
+  assert.match(html, /placeholder="Search model, brand, drivetrain or 中文名"[^>]*data-filter-search/);
+  assert.match(html, /class="product-fit">Gravel<\/span>/);
   assert.match(html, /Select two to ten bikes to compare/);
   assert.match(html, /type="application\/ld\+json">[\s\S]*"@type":"WebSite"/);
   assert.doesNotMatch(html, /"itemListElement"/);
@@ -110,7 +102,7 @@ test('theme control follows the OS by default and exposes only light and dark ch
 });
 
 test('homepage offers compact criteria-led comparison starting points', () => {
-  assert.match(html, /Top bikes, with the criteria shown/);
+  assert.match(html, /id="starting-points-title">Starting points<\/h2>/);
   assert.doesNotMatch(html, /Three focused shortlists—not a universal score or a recommendation ranking/);
   for (const group of ['affordable-carbon-aero', 'electronic-gravel', 'wide-tire-aero']) {
     assert.match(html, new RegExp(`data-curated-group="${group}"`));
@@ -122,8 +114,8 @@ test('homepage offers compact criteria-led comparison starting points', () => {
   ]) {
     assert.match(html, new RegExp(`(?:models\\/${id}\\/|compare=[^"#]*${id})`));
   }
-  assert.match(html, /compare=incolor-speedster-sr-frameset%2Ccandidate-lightcarbon-lcr018-d%2Ccandidate-tavelo-arden#compare/);
-  assert.match(html, /Research<\/span>/);
+  assert.match(html, /compare=incolor-speedster-sr-frameset%2Ccandidate-lightcarbon-lcr018-d%2Ccandidate-tavelo-arden&amp;start=wide-tire-aero#compare/);
+  assert.match(html, /data-criteria="Aerodynamically shaped road frames with documented 38 mm clearance/);
 });
 
 test('homepage comparison payload keeps frameset pricing dynamic without serializing inactive fields', () => {
@@ -177,7 +169,7 @@ test('products without verified photos omit the image region and social placehol
 test('homepage omits developer-facing dashboards and legacy sections', () => {
   assert.doesNotMatch(html, /decision-ready configurations/i);
   assert.doesNotMatch(html, /Current quick picks/i);
-  assert.doesNotMatch(html, />Guides</i);
+  assert.doesNotMatch(html, /<h2[^>]*>Guides</i);
   assert.doesNotMatch(html, />Watchlist</i);
   assert.doesNotMatch(html, /href="[^"]*\/compare\//i);
   assert.doesNotMatch(html, /href="[^"]*\/guides\//i);
@@ -189,7 +181,8 @@ test('candidate leads share the catalog without a separate research queue', () =
   assert.match(html, /data-stage="candidate" data-default-visible="true" data-id="candidate-pardus-spark-sport-pes"/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
   assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+src="\/china-bike-research\/assets\/images\/sourced\/retailer\/xds-gt350-primary-image\/[^\"]+"[^>]+alt="XDS GT350 gravel bike shown from the drive side"/);
-  assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · Conditional price · 2026-08-08<\/span>/);
+  assert.match(html, /<span class="metric-main" data-calculated-price>¥8,597<\/span><span class="metric-sub price-state is-attention">China price · conditional · 2026-08-08<\/span>/);
+  assert.match(html, /data-id="candidate-pardus-spark-sport-pes"[\s\S]*?<span class="product-meta" data-label="Research lead">/);
   assert.match(html, /href="\/china-bike-research\/models\/missing-china-price-winspace-slc3\/" data-model-link/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
   assert.doesNotMatch(html, /Research queue/);
@@ -394,8 +387,8 @@ test('shared frameset platforms render variant-specific weight, basis, and carbo
   assert.match(srPlusDetail, /<dt>Frame material<\/dt><dd>80T pitch-based \+ T1100 carbon<\/dd>/);
   assert.match(srPlusDetail, />720 g frame with 38\/32 mm \(1×\/2×\) tire clearance<\/h2>/);
   assert.doesNotMatch(srPlusDetail, /frame frame/);
-  assert.match(html, /data-id="incolor-speedster-sr-frameset"[\s\S]*?785 g frame/);
-  assert.match(html, /data-id="incolor-speedster-sr-plus-frameset"[\s\S]*?720 g frame/);
+  assert.match(html, /data-id="incolor-speedster-sr-frameset"[\s\S]*?785 g<\/span><span class="metric-sub">frame<\/span>/);
+  assert.match(html, /data-id="incolor-speedster-sr-plus-frameset"[\s\S]*?720 g<\/span><span class="metric-sub">frame<\/span>/);
 });
 
 test('complete-bike pages expose researched build components and weight basis without another profile section', () => {
@@ -455,26 +448,27 @@ test('superseded published bikes show availability instead of a historical price
 });
 
 test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {
-  assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort="33940"[^>]*data-price-filter="33940"/);
-  assert.match(html, /Quick Pro ER:ONE[\s\S]*?Est\. ¥33,940[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
+  // FX references stay visible but never supply a price sort or budget value.
+  assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort=""[^>]*data-price-filter=""/);
+  assert.match(html, /Quick Pro ER:ONE[\s\S]*?≈ ¥33,940[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-tire-clearance-sort="50"/);
-  assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell" data-label="Tire clearance">50 mm<\/div>/);
+  assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell">50 mm<\/div>/);
   assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21980"[^>]*data-tire-clearance-sort="55"/);
-  assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?¥21,980[\s\S]*?Observed · 2026-08-21[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
-  assert.match(html, /data-id="candidate-specialized-roubaix-sl8-sport-105"[^>]*data-price-sort="23519"[^>]*data-tire-clearance-sort="40"/);
-  assert.match(html, /Specialized 2025 Roubaix SL8 Sport Shimano 105[\s\S]*?Est\. ¥23,519[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano 105 R7100\/R7120 mechanical 2×12[\s\S]*?9\.1 kg[\s\S]*?FACT 10R carbon/);
+  assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?¥21,980[\s\S]*?China price · 2026-08-21[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
+  assert.match(html, /data-id="candidate-specialized-roubaix-sl8-sport-105"[^>]*data-price-sort=""[^>]*data-tire-clearance-sort="40"/);
+  assert.match(html, /Specialized 2025 Roubaix SL8 Sport Shimano 105[\s\S]*?≈ ¥23,519[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano 105 R7100\/R7120 mechanical 2×12[\s\S]*?9\.1 kg[\s\S]*?FACT 10R carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"[^>]*data-type="frameset"[^>]*data-frame-price-low="9800"[^>]*data-frame-price-high="9800"/);
-  assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Frame ¥9,800 · Official FX estimate/);
+  assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Official FX estimate · frame ¥9,800 \+ ¥6,000 plan · 2026-08-17/);
   assert.match(html, /data-id="candidate-missing-china-price-giant-defy-advanced"[^>]*data-type="complete-bike"[^>]*data-price-sort="14800"[^>]*data-price-filter="14800"/);
-  assert.match(html, /Giant Defy Advanced 2[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17[\s\S]*?38 mm/);
+  assert.match(html, /Giant Defy Advanced 2[\s\S]*?¥14,800[\s\S]*?Official price · 2026-09-24[\s\S]*?38 mm/);
   assert.match(html, /data-id="candidate-missing-china-price-giant-defy-advanced"[^>]*data-tire-clearance-sort="38"/);
   assert.match(html, /data-id="candidate-missing-china-price-trek-domane"[^>]*data-tire-clearance-sort="38"/);
   assert.match(html, /data-id="candidate-missing-china-price-specialized-roubaix-sl8"[^>]*data-tire-clearance-sort="40"/);
   assert.match(html, /data-id="candidate-missing-china-price-merida-scultura"[^>]*data-type="complete-bike"[^>]*data-price-sort="16800"[^>]*data-price-filter="16800"/);
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
   assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?Exact build price unknown[\s\S]*?Unmatched price retained as reference/);
-  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥13,700[\s\S]*?Official · Conditional price · Purchase total incomplete · 2026-09-25/);
-  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-09-23/);
+  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥13,700[\s\S]*?Official price · conditional · total incomplete · 2026-09-25/);
+  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?frame ¥21,900 \+ ¥6,000 plan · 2026-09-23/);
 });
 
 test('candidate detail preserves official price conflicts and direct source links', () => {
@@ -534,9 +528,11 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /data-filter-panel/);
   assert.match(html, /data-filter-chips/);
   assert.doesNotMatch(html, /data-filter-capability/);
-  assert.match(html, /<option value="family:mtb">All mountain bikes<\/option>/);
-  assert.match(html, /<option value="category:e-road">E-road<\/option>/);
-  assert.match(html, /<option value="category:folding">Folding<\/option>/);
+  assert.match(html, /data-category-value="family:mtb"[^>]*>Mountain bikes<\/button>/);
+  assert.match(html, /data-category-value="category:e-road"[^>]*>E-road<\/button>/);
+  assert.match(html, /data-category-value="category:folding"[^>]*>Folding<\/button>/);
+  assert.doesNotMatch(html, /handlebar:flat|Flat-bar bikes/);
+  assert.match(html, /data-category-values="[^"]*\bfamily:mtb\b[^"]*\bcategory:e-road\b/);
   assert.doesNotMatch(html, /research queue/i);
   assert.match(html, /Triathlon/);
   assert.match(html, /role="tooltip"/);
@@ -544,14 +540,16 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /data-tooltip-lines=/);
   assert.match(html, /aria-controls="shared-tooltip"/);
   assert.match(html, /role="status" aria-live="polite" id="copy-status"/);
-  assert.match(html, /data-result-summary aria-live="polite" hidden/);
-  assert.match(html, /class="metric-sub price-state [^"]*">Promo · 2026-08-08<\/span>/);
+  assert.match(html, /data-result-summary aria-live="polite"/);
+  assert.match(html, /class="metric-sub price-state is-attention">China price · conditional · 2026-08-08<\/span>/);
   assert.match(html, /data-filter-category/);
   assert.match(html, /Category fact/);
   assert.match(html, /role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"/);
-  assert.match(html, /role="columnheader" aria-sort="ascending"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"/);
+  // The default "published first, then price" order is not a single-column sort.
+  assert.match(html, /role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"/);
+  assert.match(html, /<option value="published-asc">Published first, then price<\/option>/);
   assert.match(html, /data-sort-heading="capability" disabled/);
-  assert.match(html, /data-sort-heading="tire"><span>Tire clearance<\/span>/);
+  assert.match(html, /data-sort-heading="tire"><span>Tires<\/span>/);
   assert.match(html, /data-filter-heading="tire"/);
   assert.match(html, /<option value="tire-desc">Tire clearance: high to low<\/option>/);
   assert.match(html, /<option value="price-asc">Price: low to high<\/option>/);
@@ -677,10 +675,11 @@ test('primary navigation reflects catalog and exact model context', () => {
   };
   const completeDetail = renderModel(context, complete);
   const framesetDetail = renderModel(context, frameset);
+  // Frame builds are part of the one catalog; Framesets is no longer a header destination.
   assert.match(completeDetail, /data-nav-catalog aria-current="page"/);
-  assert.doesNotMatch(completeDetail, /data-nav-framesets aria-current="page"/);
-  assert.doesNotMatch(framesetDetail, /data-nav-catalog aria-current="page"/);
-  assert.match(framesetDetail, /data-nav-framesets aria-current="page"/);
+  assert.match(framesetDetail, /data-nav-catalog aria-current="page"/);
+  assert.doesNotMatch(framesetDetail, /data-nav-framesets/);
+  assert.match(framesetDetail, /href="\/china-bike-research\/framesets\/">Framesets<\/a>/);
 });
 
 test('build configurator renders every required slot with sourced package data', () => {
@@ -725,7 +724,8 @@ test('build configurator renders every required slot with sourced package data',
 });
 
 test('buyer controls preserve strict budget, category evidence, and valid row semantics', () => {
-  assert.match(html, /data-id="sava-gelaro-s4-grx400"[^>]*data-price-filter="12089"/);
+  // Budgets use the dated domestic China price, not the newer foreign conversion.
+  assert.match(html, /data-id="sava-gelaro-s4-grx400"[^>]*data-price-filter="7999"/);
   assert.match(html, /Triathlon storage \/ boxes: Unknown\./);
   assert.ok(catalogSummaries({ data, products }).some((item) => item.internalFrameStorage === 'No'));
   assert.doesNotMatch(html, /<article class="catalog-row" role="row"/);
@@ -743,7 +743,7 @@ test('brand names expose an exact, base-safe catalog filter', () => {
   const photoLinks = [...html.matchAll(/<a class="product-image-link"[^>]*>([\s\S]*?)<\/a>/g)];
   assert.ok(photoLinks.length > 0);
   assert.ok(photoLinks.every(([, image]) => /alt="[^"]+"/.test(image)), 'photo links keep an accessible name from the image description');
-  assert.match(html, /select name="category" data-filter-category/);
+  assert.match(html, /<input type="hidden" name="category" value="" data-filter-category/);
   assert.match(html, /data-id="candidate-basso-venta-disc" data-brand="candidate-brand-basso"/);
   assert.match(html, /data-brand-filter="candidate-brand-basso" aria-pressed="false" aria-label="BASSO — filter catalog to this brand"/);
 
@@ -817,7 +817,7 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /<span data-calculated-price>Est\. ¥9,987<\/span>/);
   assert.match(html, /data-frameset-price-tip=""/);
   assert.match(html, /data-stage="candidate"[^>]*data-id="candidate-hi-light-g0"[^>]*data-price-sort="[^"]+" data-price-filter="[^"]+" data-frame-price-low="[^"]+" data-frame-price-high="[^"]+"/);
-  assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<span class="metric-main" data-calculated-price>Est\. ¥[\d,]+(?:–[\d,]+)?<\/span><span class="metric-sub price-state">Frame ¥/);
+  assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<span class="metric-main" data-calculated-price>Est\. ¥[\d,]+(?:–[\d,]+)?<\/span><span class="metric-sub price-state">frame ¥[\d,]+ \+ ¥6,000 plan/);
   assert.doesNotMatch(html, /data-copy-catalog-view|>Copy view</);
 
   const context = {
@@ -981,7 +981,7 @@ test('XHS video records do not display as links or an empty video section', () =
 
 
 test('generic project copy is category-neutral', () => {
-  assert.match(html, /<h1>Bikes in China<\/h1>/);
+  assert.match(html, /<h1>Compare Chinese bikes and frame builds<\/h1>/);
   assert.doesNotMatch(html, /Carbon bikes in China|Gravel and all-road bikes|above 38 mm/i);
 });
 
@@ -1026,10 +1026,10 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 6);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 5);
   assert.match(primaryNav, /href="\/china-bike-research\/geometry\/"/);
-  assert.match(primaryNav, />Blog<\/a>/);
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Framesets<\/a>[\s\S]*>Build<\/a>[\s\S]*>Groupsets<\/a>/);
+  assert.match(primaryNav, />Guides<\/a>/);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/a>[\s\S]*>Groupsets<\/a>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);
@@ -1040,7 +1040,7 @@ test('Arden candidate keeps drivetrain clearance in catalog, profile and planner
   const context = { data, products, base: '/china-bike-research', repositoryUrl: 'https://github.com/p0s/china-bike-research' };
   const row = html.match(/<div class="catalog-row is-candidate"[^>]*data-id="candidate-tavelo-arden"[\s\S]*?(?=<div class="catalog-row|<\/div>\s*<\/div>\s*<\/section>)/)?.[0];
   assert.ok(row);
-  assert.match(row, /38\/34 mm \(1×\/2×\)/);
+  assert.match(row, /38\/34 mm<\/span><span class="metric-sub">1× \/ 2×<\/span>/);
   assert.match(row, /data-tire-clearance-sort="38"/);
   const profile = renderCandidateModel(context, entry);
   assert.match(profile, /38\/34 mm \(1×\/2×\)/);
@@ -1050,4 +1050,16 @@ test('Arden candidate keeps drivetrain clearance in catalog, profile and planner
   const base = payload.bases.find((item) => item.id === entry.id);
   assert.deepEqual(base.tireClearanceByDrivetrain, { single: 38, double: 34 });
   assert.equal(base.tireClearanceLabel, '38/34 mm (1×/2×)');
+});
+
+
+test('model decision panel links the exact purchase route instead of a broad availability claim', () => {
+  const product = products.find(item => item.variant.id === 'twitter-v3-wheeltop-eds');
+  const detail = renderModel(homeContext, product);
+  const panel = detail.match(/<dl class="model-facts">[\s\S]*?<\/dl>/)[0];
+  assert.match(panel, /Where to buy<\/dt><dd><a href="#model-purchase-route">Purchase route and checks<\/a>/);
+  assert.match(detail, /id="model-purchase-route">The official US store/);
+  assert.match(detail, /Mainland(?: China)? stock and checkout remain unverified/);
+  assert.doesNotMatch(panel, /Domestic sales in mainland China/);
+  assert.doesNotMatch(detail, /unpublished\. frame;/);
 });

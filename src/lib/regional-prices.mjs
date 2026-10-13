@@ -15,6 +15,7 @@ export function chinaPriceBasis(prices, asOf = new Date().toISOString().slice(0,
   const evidence = priceEvidence(price);
   return { id: price.id ?? null, ...evidencePriceBounds(price),
     date: price.observed_at, conditional: evidence.conditional, starting: evidence.starting, partial: evidence.partial,
+    official: /official/.test(price.price_type ?? '') || price.status === 'official-current',
     approximate: /reference|range|estimate/.test(price.price_type ?? ''),
     comparable: evidence.purchaseEligible && !/reference|range|estimate/.test(price.price_type ?? ''),
     conditions: [price.price_basis, price.conditions].filter(Boolean).join(' · ') };

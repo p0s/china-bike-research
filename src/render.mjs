@@ -1,13 +1,15 @@
 import { initialBuildPresentation, buildBaseFacts } from '../assets/builder-presentation.js';
 import { structuredGeometry, candidateGeometry, isGeometryTableFact } from './lib/model-geometry.mjs';
 import { translate } from '../assets/i18n.js';
-import { relatedArticleLinks, renderHomeArticles } from './lib/posts.mjs';
+import { relatedArticleLinks } from './lib/posts.mjs';
 import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
 import { renderVideoEntries } from './lib/videos.mjs';
-import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName } from '../assets/regional-prices.js';
+import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
+import { priceDisplay } from '../assets/price-display.js';
+import { clearanceParts, weightParts, normalizeSpeeds } from '../assets/catalog-format.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis } from './lib/regional-prices.mjs';
 import {
@@ -46,7 +48,7 @@ import {
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
-export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', ogType = 'website', structuredData = [] }) {
+export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', ogType = 'website', structuredData = [], headerTools = '' }) {
   return layout({
     base: ctx.base,
     locale: ctx.locale ?? 'en',
@@ -68,7 +70,8 @@ export function page(ctx, { title = '', current = '', path = '/', description: d
     structuredData,
     datasetUpdated: ctx.siteLastmod ?? ctx.data.meta.snapshot_date,
     catalogReviewed: ctx.data.meta.snapshot_date,
-    footerDescription
+    footerDescription,
+    headerTools
   });
 }
 
@@ -366,6 +369,15 @@ function publishedPriceState(product) {
     : priceState(product);
 }
 
+// Price records keep the recorded amount; only headlines round to whole yuan.
+function exactPriceLabel(price) {
+  const low = price?.amount_cny ?? price?.low_cny;
+  const high = price?.amount_cny ?? price?.high_cny ?? low;
+  if (!Number.isFinite(low)) return formatPrice(price);
+  const format = (value) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(value);
+  return Number.isFinite(high) && high !== low ? `¥${format(low)}–${format(high)}` : `¥${format(low)}`;
+}
+
 function priceTooltipLines(ctx, product) {
   const { variant, latestPrice, allInPrice } = product;
   const fresh = freshness(latestPrice?.observed_at, ctx.now);
@@ -435,7 +447,10 @@ function drivetrainLabel(ctx, product) {
 function drivetrainSubline(ctx, product) {
   if (product.variant.kind === 'frameset') return '';
   const drivetrain = product.variant.drivetrain;
-  return drivetrain ? `${drivetrain.speeds} · ${drivetrain.shifting.replaceAll('-', ' ')}` : '';
+  if (!drivetrain) return '';
+  // Omit the speed count when the model name already states it.
+  const speeds = normalizeSpeeds(drivetrain.speeds);
+  return [normalizeSpeeds(drivetrainLabel(ctx, product)).includes(speeds) ? '' : speeds, drivetrain.shifting.replaceAll('-', ' ')].filter(Boolean).join(' · ');
 }
 
 function gramRangeLabel(low, high) {
@@ -668,7 +683,47 @@ function productImage(ctx, product, { hero = false, href = '' } = {}) {
   return `<span class="product-image ${hero ? 'hero-image' : ''}">${visual}${needsNote ? infoTip('About this image', [accuracyLabel(accuracy), product.image?.display_note ?? 'The image identifies the product family but may not show the exact listed components.'], {}, 'image-info') : ''}</span>`;
 }
 
-function productRow(ctx, product) {
+// A catalog cell keeps a value with its basis; unknown values remain a quiet
+// dash. Plain values render as text so the 260-row page stays within budget.
+function catalogCell(name, label, { main, sub = '' }, { clamp = false, muted = false, extra = '' } = {}) {
+  const unknown = !main || main === '—';
+  const classes = ['catalog-cell', `${name}-cell`, unknown ? 'is-unknown' : '', muted ? 'is-muted' : '', clamp && !unknown ? 'is-clamped' : ''].filter(Boolean).join(' ');
+  const value = unknown ? '—' : escapeHtml(main);
+  const content = sub ? `<span class="metric-main">${value}${extra}</span><span class="metric-sub">${escapeHtml(sub)}</span>` : `${value}${extra}`;
+  return `<div class="${classes}" role="cell">${content}</div>`;
+}
+
+// The server renders the China/CNY default with the browser's price vocabulary.
+function catalogPriceProjection(ctx, summary) {
+  const allowance = buildAssumption(ctx).amount_cny;
+  const projection = regionalPrice(summary, { country: 'CN', currency: 'CNY' }, { rates: null, offers: [], asOf: '' }, allowance);
+  const unavailable = summary.priceUnavailable || !Number.isFinite(projection.display.low);
+  const shown = priceDisplay(projection, {
+    allowance,
+    referenceLabel: summary.referenceLabel,
+    referenceDate: summary.priceDate,
+    fallback: unavailable ? { headline: summary.price, basis: summary.priceState } : null
+  });
+  return { projection, shown, unavailable };
+}
+
+function catalogPriceCell(ctx, summary, tip) {
+  const { projection, shown } = catalogPriceProjection(ctx, summary);
+  const tone = shown.tone ? ` is-${shown.tone}` : '';
+  return {
+    sort: Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : '',
+    filter: Number.isFinite(projection.high) ? projection.high : '',
+    // Unknown prices stay a quiet dash, like every other unrecorded cell.
+    html: `<div class="catalog-cell price-cell" role="cell">${tip ? `<span class="metric-main"><span data-calculated-price>${escapeHtml(shown.headline)}</span>${tip}</span>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${shown.tone === 'unknown' && !summary.priceState ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
+  };
+}
+
+function catalogPriceOrder(ctx, summary) {
+  const { projection } = catalogPriceProjection(ctx, summary);
+  return Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : Number.POSITIVE_INFINITY;
+}
+
+function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
   const { variant, platform, brand, allInPrice } = product;
   const metric = categoryMetric(platform);
   const tireClearance = publishedTireClearance(product);
@@ -686,10 +741,8 @@ function productRow(ctx, product) {
     metric.value,
     tireClearance.value,
     ...(variant.editorial.best_for ?? [])
-  ].filter(Boolean).join(' ').toLowerCase();
+  ].filter(Boolean).map((value) => String(value).toLowerCase()).filter((value, index, all) => all.indexOf(value) === index).join(' ');
   const recommendation = recommendationFor(ctx, product);
-  const superseded = platformIsSuperseded(product);
-  const bestFor = bestForLabel(product);
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
   const framesetData = variant.kind === 'frameset'
     ? ` data-frame-price-low="${allInPrice.frameLow}" data-frame-price-high="${allInPrice.frameHigh}"`
@@ -697,23 +750,27 @@ function productRow(ctx, product) {
   const priceTipAttributes = variant.kind === 'frameset'
     ? { 'data-frameset-price-tip': '', 'data-frame-threshold': variant.editorial.price_thresholds_cny?.great_buy_below ?? '' }
     : {};
+  const price = catalogPriceCell(ctx, summary, infoTip('Price details', priceTooltipLines(ctx, product), priceTipAttributes));
   const tireClearanceData = tireClearance.sortValue ? ` data-tire-clearance-sort="${tireClearance.sortValue}"` : '';
-  return `<div class="catalog-row" role="row" data-product-row data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${superseded ? '' : allInPrice.midpoint}" data-price-filter="${superseded ? '' : allInPrice.high ?? ''}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
+  const drivetrain = variant.kind === 'frameset'
+    ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
+    : catalogCell('drivetrain', 'Drivetrain', { main: drivetrainLabel(ctx, product), sub: drivetrainSubline(ctx, product) });
+  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
-    <div class="catalog-product" role="cell">
+    <div class="catalog-product" role="rowheader">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
       <span class="product-copy">
-        <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${recommendationBadge(recommendation)}${statusFlag(product)}</span>
+        <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' ? '<span class="type-pill">Frame build</span>' : ''}${recommendationBadge(recommendation)}${statusFlag(product)}</span>
         <strong class="product-name"><a href="${url(ctx.base, `/models/${variant.id}/`)}" data-model-link>${escapeHtml(variant.name)}</a></strong>
-        ${bestFor ? `<span class="product-fit"><span>Best for</span> ${escapeHtml(bestFor)}</span>` : ''}
+        <span class="product-fit">${escapeHtml(categoryLabel(platform.category))}</span>
       </span>
     </div>
-    <div class="catalog-cell price-cell" role="cell" data-label="Price"><span class="metric-main"><span data-calculated-price>${escapeHtml(publishedPriceLabel(product))}</span>${infoTip('Price details', priceTooltipLines(ctx, product), priceTipAttributes)}</span><span class="metric-sub price-state ${priceStateClass(product)}">${escapeHtml(publishedPriceState(product))}</span></div>
-    <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}"><span class="metric-main">${escapeHtml(metric.value)}${infoTip(`${metric.label} details`, metric.details)}</span></div>
-    <div class="catalog-cell tire-clearance-cell" role="cell" data-label="Tire clearance">${escapeHtml(tireClearance.value)}</div>
-    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${variant.kind === 'frameset' ? '' : `<span class="metric-main compact-metric">${escapeHtml(drivetrainLabel(ctx, product))}</span><span class="metric-sub">${escapeHtml(drivetrainSubline(ctx, product))}</span>`}</div>
-    <div class="catalog-cell weight-cell" role="cell" data-label="Weight"><span class="metric-main">${escapeHtml(weightLabel(product))}</span></div>
-    <div class="catalog-cell frame-cell" role="cell" data-label="Frame"><span class="metric-main">${escapeHtml(frameStandard(product))}${infoTip('Frame details', frameTooltipLines(product))}</span></div>
+    ${price.html}
+    ${catalogCell('capability', metric.label, { main: metric.value }, { extra: metric.details.length ? infoTip(`${metric.label} details`, metric.details) : '' })}
+    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value))}
+    ${drivetrain}
+    ${catalogCell('weight', 'Weight', weightParts(weightLabel(product), variant.kind))}
+    ${catalogCell('frame', 'Frame', { main: frameStandard(product) }, { extra: infoTip('Frame details', frameTooltipLines(product)) })}
   </div>`;
 }
 
@@ -789,17 +846,18 @@ function candidatePriceState(entry) {
       ? `Superseded by ${successorLabel(entry.candidate)}`
       : '';
   }
-  const priceType = entry.price.price_type ?? '';
-  const basis = priceType === 'seller-listing-reference-conversion'
-    ? 'Foreign seller FX estimate'
-    : isReferenceConversionPrice(entry.price)
-      ? (priceType === 'reference-conversion' || /official-/.test(priceType)) ? 'Official FX estimate' : 'Foreign reference estimate'
-      : priceType === 'official-conflict'
-        ? 'Official price conflict'
-        : entry.priceKind === 'official' || priceType.startsWith('official-') ? 'Official' : 'Observed';
   const framePrice = entry.kind === 'frameset' ? `${candidateFramePriceTerm(entry)} ${formatPrice(entry.price)}` : '';
   const evidence = priceEvidence(entry.price);
-  return [framePrice, basis, evidence.conditional ? 'Conditional price' : '', evidence.starting ? 'Starting price; selected package unknown' : '', evidence.historical ? 'Historical reference' : '', evidence.partial ? 'Purchase total incomplete' : '', entry.price.observed_at].filter(Boolean).join(' · ');
+  return [framePrice, candidatePriceBasisLabel(entry), evidence.conditional ? 'conditional' : '', evidence.starting ? 'package unknown' : '', evidence.historical ? 'historical' : '', evidence.partial ? 'total incomplete' : '', entry.price.observed_at].filter(Boolean).join(' · ');
+}
+
+// The recorded basis of a candidate price, in the shared catalog vocabulary.
+function candidatePriceBasisLabel(entry) {
+  const priceType = entry.price?.price_type ?? '';
+  if (priceType === 'seller-listing-reference-conversion') return 'Foreign seller FX estimate';
+  if (isReferenceConversionPrice(entry.price)) return (priceType === 'reference-conversion' || /official-/.test(priceType)) ? 'Official FX estimate' : 'Foreign reference estimate';
+  if (priceType === 'official-conflict') return 'Official price conflict';
+  return entry.priceKind === 'official' || priceType.startsWith('official-') ? 'Official price' : 'China price';
 }
 
 function candidatePriceRecordLabel(entry) {
@@ -841,7 +899,7 @@ function candidateFrameWeight(entry) {
     ? null : entry.candidate.facts?.frame_weight_g ?? null;
 }
 
-function candidateRow(ctx, entry) {
+function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entry)) {
   const { candidate, brand } = entry;
   const metric = candidateMetric(entry);
   const tireClearance = candidateTireClearance(entry);
@@ -858,19 +916,11 @@ function candidateRow(ctx, entry) {
   const detailUrl = url(ctx.base, `/models/${candidate.id}/`);
   const sourceName = `<a href="${detailUrl}" data-model-link>${escapeHtml(candidate.name)}</a>`;
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
-  const allowance = buildAssumption(ctx).amount_cny;
   const isPricedFrameset = candidateFrameEstimateAllowed(entry) && Number.isFinite(frameLow);
-  const priceHigh = entry.kind === 'complete-bike'
-    ? frameHigh ?? ''
-    : isPricedFrameset ? frameHigh + allowance : '';
-  const priceSort = (entry.kind !== 'frameset' || candidateFrameEstimateAllowed(entry)) && Number.isFinite(entry.priceMidpoint)
-    ? entry.priceMidpoint + (isPricedFrameset ? allowance : 0)
-    : '';
   const framePriceData = isPricedFrameset
     ? ` data-frame-price-low="${frameLow}" data-frame-price-high="${frameHigh}"`
     : '';
-  const priceLabelData = isPricedFrameset ? ' data-calculated-price' : '';
-  const type = entry.kind === 'frameset' ? '<span class="type-pill">Frameset</span>' : '';
+  const type = entry.kind === 'frameset' ? `<span class="type-pill">${candidateFrameEstimateAllowed(entry) ? 'Frame build' : 'Frameset'}</span>` : '';
   const brandLabel = brand ? `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}` : '';
   const brandButton = brand
     ? `<button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>`
@@ -883,22 +933,26 @@ function candidateRow(ctx, entry) {
       : '—';
   const frame = facts.frame ?? candidate.manufacturing ?? '—';
   const tireClearanceData = tireClearance.sortValue ? ` data-tire-clearance-sort="${tireClearance.sortValue}"` : '';
-  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${priceSort}" data-price-filter="${priceHigh}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
+  const price = catalogPriceCell(ctx, summary, '');
+  const drivetrain = entry.kind === 'frameset'
+    ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
+    : catalogCell('drivetrain', 'Drivetrain', { main: facts.drivetrain ?? '—' }, { clamp: true });
+  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(entry.id)}" aria-label="Select ${escapeAttr(candidate.name)} for comparison"><span aria-hidden="true"></span></label></div>
-    <div class="catalog-product" role="cell">
+    <div class="catalog-product" role="rowheader">
       ${candidateImage(ctx, entry)}
       <span class="product-copy">
-        ${brandButton || type ? `<span class="product-meta">${brandButton}${type}</span>` : ''}
+        <span class="product-meta" data-label="Research lead">${brandButton}${type}</span>
         <strong class="product-name">${sourceName}</strong>
         ${entry.category ? `<span class="product-fit">${escapeHtml(entry.categories.map(categoryLabel).join(' · '))}</span>` : ''}
       </span>
     </div>
-    <div class="catalog-cell price-cell" role="cell" data-label="Full-bike price"><span class="metric-main"${priceLabelData}>${escapeHtml(candidatePriceLabel(ctx, entry))}</span>${candidatePriceState(entry) ? `<span class="metric-sub price-state">${escapeHtml(candidatePriceState(entry))}</span>` : ''}</div>
-    <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}">${escapeHtml(metric.value)}</div>
-    <div class="catalog-cell tire-clearance-cell" role="cell" data-label="Tire clearance">${escapeHtml(tireClearance.value)}</div>
-    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${entry.kind === 'frameset' ? '' : escapeHtml(facts.drivetrain ?? '—')}</div>
-    <div class="catalog-cell weight-cell" role="cell" data-label="Weight">${escapeHtml(weight)}</div>
-    <div class="catalog-cell frame-cell" role="cell" data-label="Frame">${escapeHtml(frame)}</div>
+    ${price.html}
+    ${catalogCell('capability', metric.label, { main: metric.value })}
+    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value))}
+    ${drivetrain}
+    ${catalogCell('weight', 'Weight', weightParts(weight, entry.kind))}
+    ${catalogCell('frame', 'Frame', { main: frame }, { clamp: true })}
   </div>`;
 }
 
@@ -918,7 +972,11 @@ function comparisonSummary(ctx, product) {
       imageRemote: product.image?.hosting.mode === 'remote',
       ...comparisonImageFields(ctx, product.image)
     } : {}),
-    type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
+    type: product.variant.kind === 'frameset' ? 'Frame build' : 'Complete bike',
+    kind: product.variant.kind,
+    family: categoryFamily(product.platform.category),
+    subcategory: categoryLabel(product.platform.category),
+    ...(product.platform.frame.geometry?.sizes?.length ? { geometryId: product.platform.id } : {}),
     buildBaseKind: product.variant.kind,
     builderEligible: true,
     price: publishedPriceLabel(product),
@@ -933,6 +991,8 @@ function comparisonSummary(ctx, product) {
       greatBuyFrameThreshold: platformIsSuperseded(product) ? null : product.variant.editorial.price_thresholds_cny?.great_buy_below ?? null
     } : {}),
     priceState: publishedPriceState(product),
+    referenceLabel: priceEvidence(product.latestPrice).historical ? 'Historical price' : product.variant.kind === 'frameset' ? 'Build reference' : 'Reference estimate',
+    ...(product.latestPrice?.observed_at ? { priceDate: product.latestPrice.observed_at } : {}),
     priceDetails: priceTooltipLines(ctx, product).join(' '),
     categoryMetric: metric.value,
     categoryMetricLabel: metric.label,
@@ -988,7 +1048,10 @@ function candidateComparisonSummary(ctx, entry) {
       imageRemote: entry.image?.hosting.mode === 'remote',
       ...comparisonImageFields(ctx, entry.image)
     } : {}),
-    type: entry.kind === 'frameset' ? estimated ? 'Frame estimate' : 'Frameset' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
+    type: entry.kind === 'frameset' ? estimated ? 'Frame build' : 'Frameset' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
+    kind: entry.kind,
+    family: categoryFamily(entry.category),
+    subcategory: entry.categories.map(categoryLabel).join(' · '),
     ...(entry.kind && entry.builderEligible && (entry.kind !== 'frameset' || candidateFrameEstimateAllowed(entry)) ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
     priceLowCny: (entry.kind !== 'frameset' || estimated) && Number.isFinite(frameLow) ? frameLow + (estimated ? assumption.amount_cny : 0) : null,
@@ -997,6 +1060,7 @@ function candidateComparisonSummary(ctx, entry) {
     chinaPrice: entry.identifiableModel && entry.candidate.comparison_eligibility?.price !== false && entry.price ? chinaPriceBasis([{ ...entry.price, observed_at: entry.price.observed_at ?? entry.candidate.observed_at }]) : null,
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
+    ...(entry.price ? { referenceLabel: priceEvidence(entry.price).historical ? 'Historical price' : candidatePriceBasisLabel(entry), ...(entry.price.observed_at ? { priceDate: entry.price.observed_at } : {}) } : {}),
     ...(entry.candidate.geometry_evidence ? { geometryFitEligible: false, geometryWarning: entry.candidate.geometry_evidence.note } : {}),
     ...(priceDetails ? { priceDetails } : {}),
     categoryMetric: metric.value,
@@ -1164,146 +1228,185 @@ function videoContext(videos) {
   </section>`;
 }
 
-function categorySelectOptions(ctx, candidates) {
-  const canonical = (category) => category === 'gravel-adventure' ? 'adventure-gravel' : category;
+const canonicalCategory = (category) => category === 'gravel-adventure' ? 'adventure-gravel' : category;
+const categoryFamilies = [
+  ['road', 'Road', 'Road bikes'],
+  ['gravel', 'Gravel & all-road', 'Gravel and all-road'],
+  ['triathlon', 'Triathlon / TT', 'Triathlon / time trial'],
+  ['mtb', 'Mountain bikes', 'Mountain bikes'],
+  ['e-road', 'E-road', 'E-road'],
+  ['folding', 'Folding', 'Folding'],
+  ['track', 'Track', 'Track bikes']
+];
+const minorCategoryFamilies = new Set(['mtb', 'e-road', 'folding', 'track']);
+
+function liveCategoryFamilies(ctx, candidates) {
   const available = new Set([
     ...ctx.products.map((product) => product.platform.category),
     ...candidates.flatMap((entry) => entry.categories)
-  ].map(canonical));
-  const categoryOrder = supportedCategories.map(canonical).filter((category, index, all) => all.indexOf(category) === index);
-  const families = [
-    ['road', 'Road bikes'],
-    ['gravel', 'Gravel and all-road'],
-    ['mtb', 'Mountain bikes'],
-    ['e-road', 'E-road'],
-    ['folding', 'Folding'],
-    ['triathlon', 'Triathlon / time trial'],
-    ['track', 'Track bikes']
-  ];
-  const groups = families.map(([family, label]) => {
-    const live = categoryOrder.filter((category) => categoryFamily(category) === family && available.has(category));
-    if (!live.length) return '';
-    const options = [];
-    if (live.length > 1) options.push(`<option value="family:${escapeAttr(family)}">All ${escapeHtml(label.toLowerCase())}</option>`);
-    for (const category of live) options.push(`<option value="category:${escapeAttr(category)}">${escapeHtml(categoryLabel(category))}</option>`);
-    return `<optgroup label="${escapeAttr(label)}">${options.join('')}</optgroup>`;
-  }).join('');
-  const flatBar = ctx.products.some((product) => product.platform.handlebar === 'flat')
-    ? '<optgroup label="Cockpit"><option value="handlebar:flat">Flat-bar bikes</option></optgroup>'
-    : '';
-  return `${groups}${flatBar}`;
+  ].map(canonicalCategory));
+  const categoryOrder = supportedCategories.map(canonicalCategory).filter((category, index, all) => all.indexOf(category) === index);
+  return categoryFamilies.map(([family, label, groupLabel]) => {
+    const categories = categoryOrder.filter((category) => categoryFamily(category) === family && available.has(category));
+    return categories.length ? { family, label, groupLabel, categories, value: categories.length > 1 ? `family:${family}` : `category:${categories[0]}` } : null;
+  }).filter(Boolean);
+}
+
+// A hidden field keeps the canonical, URL-addressable category state.
+function categoryValues(ctx, candidates) {
+  return liveCategoryFamilies(ctx, candidates).flatMap(({ family, categories }) => [
+    ...(categories.length > 1 ? [`family:${family}`] : []),
+    ...categories.map((category) => `category:${category}`)
+  ]);
+}
+
+// Category is the primary catalog navigation. Counts describe the focused
+// default view and are updated in the browser for every other filter state.
+function categoryTree(ctx, candidates) {
+  const entries = [
+    ...ctx.products.map((product) => ({ visible: true, family: categoryFamily(product.platform.category), categories: [product.platform.category] })),
+    ...candidates.map((entry) => ({ visible: entry.defaultVisible, family: categoryFamily(entry.category), categories: entry.categories }))
+  ].filter((entry) => entry.visible);
+  const count = (predicate) => entries.filter(predicate).length;
+  const option = (value, label, total, extra = '') => `<button type="button" class="category-option${extra}" data-category-value="${escapeAttr(value)}" aria-pressed="${value === '' ? 'true' : 'false'}"${total ? '' : ' disabled'} data-count="${total}">${escapeHtml(label)}</button>`;
+  const families = liveCategoryFamilies(ctx, candidates).map(({ family, label, categories, value }) => {
+    const subs = categories.length > 1
+      ? `<ul class="category-sub" data-category-sub="${escapeAttr(family)}" hidden>${categories.map((category) => `<li>${option(`category:${category}`, categoryLabel(category), count((entry) => entry.categories.map(canonicalCategory).includes(category)))}</li>`).join('')}</ul>`
+      : '';
+    return { family, html: `<li class="category-family${minorCategoryFamilies.has(family) ? ' is-minor' : ''}" data-category-family="${escapeAttr(family)}">${option(value, label, count((entry) => entry.family === family))}${subs}</li>` };
+  });
+  const major = families.filter((entry) => !minorCategoryFamilies.has(entry.family)).map((entry) => entry.html).join('');
+  const minor = families.filter((entry) => minorCategoryFamilies.has(entry.family)).map((entry) => entry.html).join('');
+  return `<ul class="category-tree"><li>${option('', 'All bikes', entries.length)}</li>${major}${minor ? `<li class="category-group-label" aria-hidden="true">More</li>${minor}` : ''}</ul>`;
+}
+
+function familyChips(ctx, candidates) {
+  const chips = liveCategoryFamilies(ctx, candidates).filter(({ family }) => !minorCategoryFamilies.has(family));
+  return `<div class="family-chips" role="group" aria-label="Category">${['', ...chips.map((chip) => chip.value)].map((value, index) => `<button type="button" class="pill" data-category-value="${escapeAttr(value)}" aria-pressed="${value === '' ? 'true' : 'false'}">${escapeHtml(index ? chips[index - 1].label : 'All bikes')}</button>`).join('')}<button type="button" class="pill" aria-controls="catalog-filters" aria-expanded="false" data-filter-sheet-toggle>More</button></div>`;
 }
 
 function catalogFilterShortcut(key, label) {
-  return `<button class="catalog-filter-button" type="button" data-filter-heading="${escapeAttr(key)}" aria-label="Filter ${escapeAttr(label)}" title="Filter ${escapeAttr(label)}"><span aria-hidden="true">+</span></button>`;
+  return `<button class="catalog-filter-button" type="button" data-filter-heading="${escapeAttr(key)}" aria-label="Filter ${escapeAttr(label)}" title="Filter ${escapeAttr(label)}">+</button>`;
 }
 
 const curatedComparisonGroups = [
   {
     id: 'affordable-carbon-aero',
     title: 'Affordable carbon aero',
+    summary: 'Dated complete price · named build · carbon aero platform',
     criteria: 'Dated complete-bike prices, named builds, and documented carbon aero platforms across three Chinese brands; research-stage status stays visible.',
     ids: ['candidate-cycletrack-phantom-rx24', 'twitter-cyclone-gen3-et', 'candidate-camp-ace-qed']
   },
   {
     id: 'electronic-gravel',
     title: 'Electronic gravel',
+    summary: 'Electronic build · dated price · recorded weight · ≥ 40 mm tires',
     criteria: 'Distinct electronic complete or frameset-build routes with dated pricing, recorded weight, and at least 40 mm documented tire capacity.',
     ids: ['twitter-v3-wheeltop-eds', 'pardus-super-sport-gen2-egr', 'incolor-voyager-frameset']
   },
   {
     id: 'wide-tire-aero',
     title: 'Wide-tire aero',
+    summary: 'Aero road frame · 38 mm documented clearance · dated price',
     criteria: 'Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price.',
     ids: ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden']
   }
 ];
 
-function curatedStartingPoints(ctx, summaries) {
+// Criteria-led starting points open their ordered three-bike comparison.
+function startingPoints(ctx, summaries) {
   const byId = new Map(summaries.map((item) => [item.id, item]));
-  const entries = new Map([
-    ...ctx.products.map((product) => [product.variant.id, product]),
-    ...(ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data)).map((entry) => [entry.id, entry])
-  ]);
-  const groups = curatedComparisonGroups.map((group) => {
-    const items = group.ids.map((id) => byId.get(id)).filter(Boolean);
-    if (items.length !== group.ids.length) throw new Error(`Curated comparison group ${group.id} has an unresolved catalog id`);
-    const params = new URLSearchParams({ compare: group.ids.join(',') });
-    return `<article class="curated-group" data-curated-group="${escapeAttr(group.id)}"><h3>${escapeHtml(group.title)}</h3><p><strong>Criteria:</strong> ${escapeHtml(group.criteria)}</p><ol>${items.map((item) => {
-      const itemName = item.brand && !item.name.toLowerCase().startsWith(item.brand.toLowerCase()) ? `${item.brand} ${item.name}` : item.name;
-      const facts = [item.price, item.tireClearance, item.stage === 'candidate' ? 'Research' : ''].filter(Boolean);
-      const entry = entries.get(item.id);
-      const image = entry?.image;
-      const visual = image?.hosting.mode === 'local' && imageUrl(ctx, image) ? renderedImageAttributes(ctx, image) : null;
-      const source = image?.source_media_page_url ?? entry?.imageSource?.url;
-      const thumbnail = visual ? `<span class="product-image curated-thumbnail"><a class="product-image-link" href="${escapeAttr(item.url)}"><img src="${escapeAttr(visual.source)}"${visual.attributes} alt="${escapeAttr(image.alt)}" width="${visual.width}" height="${visual.height}" loading="lazy" decoding="async"></a></span>` : '';
-      const credit = visual ? `<span class="curated-image-credit">${source ? `<a href="${escapeAttr(source)}" rel="noreferrer">${escapeHtml(imageCredit(image))}</a>` : escapeHtml(imageCredit(image))}</span>` : '';
-      const imageNote = visual ? `<details class="curated-image-note"><summary>Accuracy</summary><span>${escapeHtml([accuracyLabel(image.display_accuracy ?? image.subject_accuracy), image.display_note].filter(Boolean).join(' — '))}</span></details>` : '';
-      return `<li>${thumbnail}<div class="curated-copy"><a href="${escapeAttr(item.url)}">${escapeHtml(itemName)}</a><span>${escapeHtml(facts.join(' · '))}</span>${credit}${imageNote}</div></li>`;
-    }).join('')}</ol><a class="curated-compare-link" href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" aria-label="Compare the three ${escapeAttr(group.title.toLowerCase())} choices">Compare three <span aria-hidden="true">→</span></a></article>`;
+  const items = curatedComparisonGroups.map((group) => {
+    if (!group.ids.every((id) => byId.has(id))) throw new Error(`Curated comparison group ${group.id} has an unresolved catalog id`);
+    const params = new URLSearchParams({ compare: group.ids.join(','), start: group.id });
+    return `<li><a class="starting-point" href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" data-curated-group="${escapeAttr(group.id)}" data-criteria="${escapeAttr(group.criteria)}" aria-label="Compare the three ${escapeAttr(group.title.toLowerCase())} choices"><strong>${escapeHtml(group.title)}</strong><small>${escapeHtml(group.summary)}</small></a></li>`;
   }).join('');
-  return `<section class="curated-picks page" aria-labelledby="curated-picks-title"><div class="curated-picks-heading homepage-section-heading"><div><span class="section-label">Comparison starting points</span><h2 id="curated-picks-title">Top bikes, with the criteria shown</h2></div><a href="#catalog">Browse all bikes <span aria-hidden="true">↓</span></a></div><div class="curated-groups">${groups}</div></section>`;
+  return `<section class="rail-section rail-starting-points" aria-labelledby="starting-points-title"><h2 class="rail-label" id="starting-points-title">Starting points</h2><ul>${items}</ul><p class="rail-note">Each opens a three-bike comparison with its criteria. Not a ranking.</p></section>`;
+}
+
+function priceSettings(ctx) {
+  const assumption = buildAssumption(ctx);
+  return `<div class="price-settings" data-price-settings>
+    <button class="settings-chip" type="button" aria-expanded="false" aria-controls="price-settings-panel" data-settings-toggle><span class="settings-summary"><span class="settings-term">Ship to</span> <b data-settings-country>China</b><i aria-hidden="true"></i><b data-settings-currency>CNY</b><i aria-hidden="true"></i><span class="settings-term">Frame builds</span> <b data-settings-build>+${escapeHtml(formatCny(assumption.amount_cny))}</b></span></button>
+    <div class="settings-panel" id="price-settings-panel" role="dialog" aria-labelledby="price-settings-title" hidden data-settings-panel>
+      <div class="settings-head"><h2 id="price-settings-title">Prices &amp; builds</h2><button class="icon-button" type="button" aria-label="Close price settings" data-settings-close>×</button></div>
+      <p class="settings-sub">Applies to the catalog and comparison. Your choices stay on this device.</p>
+      <div class="price-preferences" hidden data-price-preferences>
+        <div class="price-destination-control"><label class="settings-field"><span>Ship to <small data-destination-suggestion hidden>suggested</small></span><select data-ship-country aria-label="Shipping destination"><option value="">Choose destination</option>${Object.entries(DESTINATION_GROUPS).map(([group, countries]) => `<optgroup label="${group}">${countries.map((code) => [code, countryName(code, ctx.locale ?? 'en')]).sort((a, b) => a[1].localeCompare(b[1], ctx.locale ?? 'en')).map(([code, name]) => `<option value="${code}">${escapeHtml(name)}</option>`).join('')}</optgroup>`).join('')}</select></label>${infoTip('Delivered price and China comparison', ['Delivered-price sorting and budgets require complete delivered totals. China-price sorting is separate and excludes shipping and import charges.', 'Where a seller documents a complete delivered total for your destination, the row shows it first. ≈ marks an estimate; a listing alone is not a delivery total.', 'China prices use domestic observations, never converted overseas listings.', 'Country, timezone and language only suggest a destination. Choose where you want delivery; language and currency stay independent.'])}</div>
+        <label class="settings-field currency-control"><span>Display currency</span><select data-display-currency aria-label="Display currency">${PRICE_CURRENCIES.map((currency) => `<option value="${currency}">${currency}</option>`).join('')}</select></label>
+        <label class="settings-field delivery-area-control" hidden data-delivery-area-control><span>US delivery area</span><select data-delivery-area aria-label="US delivery area"><option value="">Choose area</option><option value="contiguous">Contiguous US</option><option value="remote">Alaska / Hawaii / territories</option></select></label>
+      </div>
+      <div class="build-creator" role="group" aria-label="Frameset build plan"><label class="settings-field build-preset-control" for="frameset-build-preset"><span>Frame-build plan</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Total allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}<p class="settings-help">A planning allowance for drivetrain, wheels, tires, cockpit and assembly. Not a package quote.</p></div>
+      <p class="regional-price-note" data-price-region-note hidden aria-live="polite"></p>
+      <label class="switch" data-listing-filter-control hidden><input type="checkbox" role="switch" data-filter-listing><span data-listing-filter-label>Only bikes with a seller listing for this destination</span></label>
+    </div>
+  </div>`;
 }
 
 export function renderHome(ctx) {
-  const assumption = buildAssumption(ctx);
-  const candidates = joinCatalogCandidates(ctx.data);
+  const candidates = ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data);
   const defaultCandidateCount = candidates.filter((entry) => entry.defaultVisible).length;
+  const hiddenCandidateCount = candidates.length - defaultCandidateCount;
   const summaries = catalogSummaries(ctx);
+  const summaryById = new Map(summaries.map((item) => [item.id, item]));
+  // The static order matches the default "published first, then price" sort.
   const rows = [
-    ...ctx.products.map((product) => ({
-      price: platformIsSuperseded(product) ? Number.POSITIVE_INFINITY : product.allInPrice.midpoint,
-      html: productRow(ctx, product)
-    })),
-    ...candidates.map((entry) => ({
-      price: entry.priceMidpoint + (entry.kind === 'frameset' && Number.isFinite(entry.priceMidpoint) ? assumption.amount_cny : 0),
-      html: candidateRow(ctx, entry)
-    }))
-  ].sort((a, b) => a.price - b.price);
-  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><a class="catalog-jump" href="#catalog">Explore the full catalog <span aria-hidden="true">↓</span></a></div></section>
-  ${renderHomeArticles(ctx)}
-  ${curatedStartingPoints(ctx, summaries)}
-  <section class="catalog-section" id="catalog"><div class="page" data-catalog-root data-price-country="">
-    <div class="catalog-section-heading"><h2>Full catalog</h2><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Total allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div>
-    <div class="catalog-tools"><nav class="catalog-discovery" aria-label="Browse the catalog"><a href="${url(ctx.base, '/brands/')}">Brands</a><a href="${url(ctx.base, '/complete-bikes/')}">Complete bikes</a><a href="${url(ctx.base, '/framesets/')}">Framesets</a><a href="${url(ctx.base, '/prices/')}">Price ranges</a><a href="${url(ctx.base, '/methodology/')}">Sources and dataset</a></nav><div class="price-preferences" hidden data-price-preferences><div class="price-destination-control"><label class="compact-select"><span>Ship to <small data-destination-suggestion hidden>suggested</small></span><select data-ship-country aria-label="Shipping destination"><option value="">Choose destination</option>${Object.entries(DESTINATION_GROUPS).map(([group, countries]) => `<optgroup label="${group}">${countries.map((code) => [code, countryName(code, ctx.locale ?? 'en')]).sort((a, b) => a[1].localeCompare(b[1], ctx.locale ?? 'en')).map(([code, name]) => `<option value="${code}">${escapeHtml(name)}</option>`).join('')}</optgroup>`).join('')}</select></label>${infoTip('Delivered price and China comparison', ['Delivered totals include shipping and mandatory charges only where supported by the recorded evidence. ≈ marks an estimate; a listing alone is not a delivery total.', 'China prices use domestic observations, never converted overseas listings. The percentage compares the same complete build and is relative to its delivered total.', 'Country, timezone and language only suggest a destination. Choose where you want delivery; language and currency stay independent.', 'Frameset offers are separate. The China build allowance is not a regional complete-build quote.'])}</div><label class="compact-select currency-control"><span>Currency</span><select data-display-currency aria-label="Display currency">${PRICE_CURRENCIES.map((currency) => `<option value="${currency}">${currency}</option>`).join('')}</select></label><label class="compact-select delivery-area-control" hidden data-delivery-area-control><span>US delivery area</span><select data-delivery-area aria-label="US delivery area"><option value="">Choose area</option><option value="contiguous">Contiguous US</option><option value="remote">Alaska / Hawaii / territories</option></select></label></div></div>
-    <p class="regional-price-note" data-price-region-note hidden aria-live="polite"></p>
-    <div class="filter-bar">
-      <div class="filter-primary">
-        <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search model, use or drivetrain" autocomplete="off" data-filter-search></div>
-        <label class="compact-select category-select"><span>Category</span><select name="category" data-filter-category><option value="">All categories</option>${categorySelectOptions(ctx, candidates)}</select></label>
-        <label class="compact-number tire-filter"><span>Min tire clearance</span><span class="number-with-unit"><input id="catalog-tire-min" name="min-tire-clearance" type="number" min="0" max="100" step="1" inputmode="decimal" placeholder="Any" data-filter-tire aria-label="Minimum tire clearance"><span>mm</span></span></label>
-        <div class="segmented" role="group" aria-label="Product type" data-type-control><button type="button" data-type-value="" aria-pressed="true">All</button><button type="button" data-type-value="complete-bike" aria-pressed="false">Complete</button><button type="button" data-type-value="frameset" aria-pressed="false">Frame builds</button></div>
-        <button class="filter-panel-toggle" type="button" data-filter-panel-toggle aria-expanded="false" aria-controls="table-filters">+ Filter</button>
-        <div class="filter-actions"><label class="compact-select sort-select"><span>Sort</span><select name="sort" data-sort><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="reset-button" type="button" data-reset hidden>Clear</button></div>
-      </div>
-      <div class="filter-chips" data-filter-chips role="group" aria-label="Active table filters" hidden></div>
-      <section class="filter-panel" id="table-filters" data-filter-panel aria-label="Table filters" hidden>
-        <div class="filter-panel-heading"><div><span>Table filters</span><small>Only rows with recorded values match numeric limits.</small></div><button class="text-button" type="button" data-filter-panel-close>Close</button></div>
-        <div class="filter-panel-grid">
-          <label class="compact-number"><span data-price-budget-label>Max full-bike price</span><span class="number-with-unit prefix"><span data-price-currency>CNY</span><input name="max-price" type="number" min="0" max="1000000" step="any" inputmode="decimal" placeholder="Any" data-filter-price></span></label>
-          <label class="compact-number"><span>Max complete-bike weight</span><span class="number-with-unit"><input name="max-complete-weight" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Any" data-filter-complete-weight><span>kg</span></span></label>
-          <label class="compact-number"><span>Max frame weight</span><span class="number-with-unit"><input name="max-frame-weight" type="number" min="0" max="10000" step="10" inputmode="numeric" placeholder="Any" data-filter-frame-weight><span>g</span></span></label>
-          <label class="compact-text"><span>Drivetrain contains</span><input name="drivetrain" type="search" autocomplete="off" placeholder="Shimano, electronic…" data-filter-drivetrain></label>
-          <label class="compact-text"><span>Frame contains</span><input name="frame-fact" type="search" autocomplete="off" placeholder="T47, UDH, carbon…" data-filter-frame></label>
-          <label class="compact-number"><span data-category-min-label>Category minimum</span><span class="number-with-unit"><input name="category-min" type="number" min="0" max="2000" step="1" inputmode="decimal" placeholder="Choose a comparable category" data-filter-category-min disabled><span data-category-min-unit></span></span></label>
-          <label class="filter-check"><input type="checkbox" data-filter-tire-unknown disabled><span>Include unknown tire clearance when a minimum is set</span></label>
-        </div>
+    ...ctx.products.map((product) => {
+      const summary = summaryById.get(product.variant.id);
+      return { stage: 0, order: catalogPriceOrder(ctx, summary), name: `${product.brand.name} ${product.variant.name}`.toLowerCase(), html: productRow(ctx, product, summary) };
+    }),
+    ...candidates.map((entry) => {
+      const summary = summaryById.get(entry.id);
+      return { stage: 1, order: catalogPriceOrder(ctx, summary), name: entry.candidate.name.toLowerCase(), html: candidateRow(ctx, entry, summary) };
+    })
+  ].sort((a, b) => a.stage - b.stage || a.order - b.order || a.name.localeCompare(b.name));
+  const resultTotal = ctx.products.length + defaultCandidateCount;
+  const body = `<section class="catalog-section" id="catalog"><div class="catalog-shell" data-catalog-root data-price-country="" data-hidden-leads="${hiddenCandidateCount}">
+    <aside class="catalog-rail" id="catalog-filters" aria-labelledby="catalog-filters-title" data-filter-sheet>
+      <div class="rail-sheet-head"><h2 id="catalog-filters-title">Filters</h2><button class="text-button" type="button" data-reset-all>Reset</button><button class="icon-button" type="button" aria-label="Close filters" data-filter-sheet-close>×</button></div>
+      <nav class="rail-section" aria-labelledby="category-title"><h2 class="rail-label" id="category-title">Category</h2>${categoryTree(ctx, candidates)}<input type="hidden" name="category" value="" data-filter-category data-category-values="${escapeAttr(categoryValues(ctx, candidates).join(' '))}"></nav>
+      ${startingPoints(ctx, summaries)}
+      <section class="rail-section rail-refine" aria-labelledby="refine-title"><h2 class="rail-label" id="refine-title">Refine</h2>
+        <div class="segmented" role="group" aria-label="Product type" data-type-control><button type="button" data-type-value="" aria-pressed="true">All</button><button type="button" data-type-value="complete-bike" aria-pressed="false">Complete</button><button type="button" data-type-value="frameset" aria-pressed="false">Frame build</button></div>
+        <label class="field"><span data-price-budget-label>Max full-bike price</span><span class="number-with-unit prefix"><span data-price-currency>CNY</span><input name="max-price" type="number" min="0" max="1000000" step="any" inputmode="decimal" placeholder="Any" data-filter-price></span><small class="field-help" data-price-budget-help>China price. Frame builds include your plan.</small></label>
+        <label class="field"><span>Min tire clearance</span><span class="number-with-unit"><input id="catalog-tire-min" name="min-tire-clearance" type="number" min="0" max="100" step="1" inputmode="decimal" placeholder="Any" data-filter-tire aria-label="Minimum tire clearance"><span>mm</span></span></label>
+        <label class="filter-check"><input type="checkbox" data-filter-tire-unknown disabled><span>Also show unknown clearance</span></label>
+        <div class="field"><span id="drivetrain-quick-label">Drivetrain</span><div class="pills" role="group" aria-labelledby="drivetrain-quick-label"><button type="button" class="pill" data-drivetrain-chip="electronic" aria-pressed="false">Electronic</button><button type="button" class="pill" data-drivetrain-chip="mechanical" aria-pressed="false">Mechanical</button></div></div>
+        <details class="rail-more" id="table-filters" data-filter-panel><summary data-filter-panel-toggle>More filters</summary>
+          <div class="filter-panel-grid">
+            <label class="field"><span>Max complete-bike weight</span><span class="number-with-unit"><input name="max-complete-weight" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Any" data-filter-complete-weight><span>kg</span></span></label>
+            <label class="field"><span>Max frame weight</span><span class="number-with-unit"><input name="max-frame-weight" type="number" min="0" max="10000" step="10" inputmode="numeric" placeholder="Any" data-filter-frame-weight><span>g</span></span></label>
+            <label class="field"><span>Drivetrain contains</span><input name="drivetrain" type="search" autocomplete="off" placeholder="Shimano, electronic…" data-filter-drivetrain></label>
+            <label class="field"><span>Frame contains</span><input name="frame-fact" type="search" autocomplete="off" placeholder="T47, UDH, carbon…" data-filter-frame></label>
+            <label class="field"><span data-category-min-label>Category minimum</span><span class="number-with-unit"><input name="category-min" type="number" min="0" max="2000" step="1" inputmode="decimal" placeholder="Choose a comparable category" data-filter-category-min disabled><span data-category-min-unit></span></span></label>
+            <p class="field-help">Only rows with recorded values match numeric limits.</p>
+          </div>
+        </details>
+        <label class="switch"><input type="checkbox" role="switch" data-filter-published><span>Published models only</span></label>
       </section>
+      <div class="rail-sheet-foot"><button class="primary-button" type="button" data-filter-sheet-close><span data-sheet-result-count>Show ${resultTotal} results</span></button></div>
+    </aside>
+    <div class="catalog-main">
+      <header class="catalog-header"><h1>Compare Chinese bikes and frame builds</h1><p class="catalog-scope">Prices exclude shipping and import unless marked Delivered. <a href="${url(ctx.base, '/methodology/')}">How we source</a></p></header>
+      ${familyChips(ctx, candidates)}
+      <div class="result-bar">
+        <div class="filter-chips" data-filter-chips role="group" aria-label="Active filters" hidden></div>
+        <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> results<span data-result-context></span><span class="result-split" data-result-split> · ${ctx.products.length} published, then ${defaultCandidateCount} research leads</span><span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
+        <div class="result-actions"><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
+      </div>
+      <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
+        <div class="compare-heading"><h2 id="compare-title">Compare</h2><span class="compare-count" data-compare-heading-count></span><label class="switch compare-differences"><input type="checkbox" role="switch" data-compare-differences><span>Differences only</span></label><div class="compare-heading-actions"><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
+        <div data-compare-content></div>
+      </section>
+      <div class="catalog-table" id="catalog-rows" data-product-list role="table" aria-label="Bike comparison" aria-describedby="compare-hint">
+        <div class="catalog-head" role="row"><span role="columnheader" class="select-head"><span class="sr-only" id="compare-hint">Select two to ten bikes to compare</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button>${catalogFilterShortcut('search', 'bike')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Price</span></button>${catalogFilterShortcut('price', 'full-bike price')}</span></span><span role="columnheader" class="capability-head" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button>${catalogFilterShortcut('category', 'category fact')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tires</span></button>${catalogFilterShortcut('tire', 'tire clearance')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Drivetrain</span>${catalogFilterShortcut('drivetrain', 'drivetrain')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Weight</span>${catalogFilterShortcut('weight', 'weight')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Frame</span>${catalogFilterShortcut('frame', 'frame')}</span></span></div>
+        ${rows.map((row) => row.html).join('')}
+        <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
+      </div>
+      ${hiddenCandidateCount ? `<p class="catalog-more"><button class="text-button catalog-scope-button" type="button" data-show-all-models aria-pressed="false" aria-controls="catalog-rows">Show ${hiddenCandidateCount} more research leads</button></p>` : ''}
+      <script type="application/json" id="catalog-data" data-src="${url(ctx.base, `/data/home-catalog-${ctx.locale ?? 'en'}.json`)}?v=${ctx.catalogDataVersions?.[ctx.locale ?? 'en'] ?? 'regional-v1'}">[]</script>
+      <script type="application/json" id="regional-price-data" data-src="${url(ctx.base, '/data/regional-prices.json')}?v=${ctx.regionalPriceDataVersion ?? 'regional-v1'}">[]</script>
     </div>
-
-    <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
-      <div class="compare-heading"><div><h2 id="compare-title">Compare</h2></div><div><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
-      <div data-compare-content></div>
-    </section>
-
-    <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length + defaultCandidateCount}</strong> matches<span data-result-context></span><span data-filter-notice></span></span><div class="catalog-meta-actions"><span class="catalog-selection-hint">Select two to ten bikes to compare</span><button class="text-button catalog-scope-button" type="button" data-show-all-models aria-pressed="false" aria-controls="catalog-rows">Show all models</button></div></div>
-    <div class="catalog-table" id="catalog-rows" data-product-list role="table" aria-label="Bike comparison">
-      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button>${catalogFilterShortcut('search', 'bike')}</span></span><span role="columnheader" aria-sort="ascending"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Price</span></button>${catalogFilterShortcut('price', 'full-bike price')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button>${catalogFilterShortcut('category', 'category fact')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tire clearance</span></button>${catalogFilterShortcut('tire', 'tire clearance')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Drivetrain</span>${catalogFilterShortcut('drivetrain', 'drivetrain')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Weight</span>${catalogFilterShortcut('weight', 'weight')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Frame</span>${catalogFilterShortcut('frame', 'frame')}</span></span></div>
-      ${rows.map((row) => row.html).join('')}
-      <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
-    </div>
-    <script type="application/json" id="catalog-data" data-src="${url(ctx.base, `/data/home-catalog-${ctx.locale ?? 'en'}.json`)}?v=${ctx.catalogDataVersions?.[ctx.locale ?? 'en'] ?? 'regional-v1'}">[]</script>
-    <script type="application/json" id="regional-price-data" data-src="${url(ctx.base, '/data/regional-prices.json')}?v=${ctx.regionalPriceDataVersion ?? 'regional-v1'}">[]</script>
   </div></section>`;
   return page(ctx, {
     title: 'Chinese bikes, framesets and China-market prices',
@@ -1311,6 +1414,7 @@ export function renderHome(ctx) {
     current: 'catalog',
     path: '/',
     body,
+    headerTools: priceSettings(ctx),
     image: url(ctx.base, '/assets/social-preview.png'),
     imageAlt: 'AI-generated wind-tunnel editorial scene with one iridescent aero bike on a test rig and six unbranded bikes behind glass; not exact-model photography',
     imageWidth: 1200,
@@ -1336,9 +1440,11 @@ export function renderModel(ctx, product) {
   const assumption = buildAssumption(ctx);
   const metric = categoryMetric(platform);
   const superseded = platformIsSuperseded(product);
-  const priceSubline = superseded
-    ? publishedPriceState(product)
-    : [variant.kind === 'frameset' ? 'Estimated complete build' : '', priceState(product)].filter(Boolean).join(' · ');
+  // The decision panel uses the same price vocabulary as the catalog row.
+  const { shown: priceShown } = catalogPriceProjection(ctx, comparisonSummary(ctx, product));
+  const priceSubline = superseded ? publishedPriceState(product) : priceShown.basis;
+  const priceTone = superseded ? 'is-unknown' : priceShown.tone ? `is-${priceShown.tone}` : '';
+  const goodBuyThreshold = superseded ? null : variant.editorial.price_thresholds_cny?.great_buy_below;
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
   const bestFor = variant.editorial.best_for?.map((item) => translate(item, ctx.locale)).join(ctx.locale === 'zh-Hans' ? '、' : ', ');
   const weight = weightLabel(product);
@@ -1347,7 +1453,7 @@ export function renderModel(ctx, product) {
   const zh = ctx.locale === 'zh-Hans';
   const german = ctx.locale === 'de';
   const keyHardware = [
-    zh ? '碳纤维车架（材料等级及证据见下方规格）' : german ? `${translate(frameMaterial, 'de')} Rahmen` : `${frameMaterial} frame`,
+    zh ? '碳纤维车架（材料等级及证据见下方规格）' : german ? `Rahmen: ${translate(frameMaterial.replace(/[.;]+$/, ''), 'de')}` : `Frame: ${frameMaterial.replace(/[.;]+$/, '')}`,
     variant.kind === 'complete-bike' ? (german ? translate(drivetrainLabel(ctx, product), 'de') : drivetrainLabel(ctx, product)) : null,
     weight !== '—' ? (zh ? `${weight.endsWith(' frame') ? '车架' : '整车'}标注重量 ${weight.replace(/ frame$/, '')}` : german ? `Gewicht ${translate(weight, 'de')}` : `${weight} weight`) : null,
     tireClearance.value !== '—' ? (zh ? `轮胎空间 ${tireClearance.value}` : german ? `Reifenfreiheit ${tireClearance.value}` : `tire clearance ${tireClearance.value}`) : null,
@@ -1380,14 +1486,15 @@ export function renderModel(ctx, product) {
   }];
   const reviewedThrough = productEvidenceDate(ctx, product);
   const detailFacts = [
-    ...(metric.kind === 'tire' ? [] : [[metric.label, metric.value, infoTip(`${metric.label} details`, metric.details)]]),
+    ...(['tire', 'discipline'].includes(metric.kind) ? [] : [[metric.label, metric.value, infoTip(`${metric.label} details`, metric.details)]]),
     ['Tire clearance', tireClearance.value, tireClearance.details.length ? infoTip('Tire clearance details', tireClearance.details) : ''],
-    ...(variant.kind === 'complete-bike' ? [['Drivetrain', drivetrainLabel(ctx, product), '']] : []),
+    ...(variant.kind === 'complete-bike' ? [['Drivetrain', [drivetrainLabel(ctx, product), drivetrainSubline(ctx, product)].filter(Boolean).join(' · '), '']] : []),
     ['Weight', weightLabel(product), ''],
     ['Frame standard', frameStandard(product), ''],
-    ['Category', `${categoryLabel(platform.category)} · ${platform.handlebar}-bar`, ''],
-    ['Availability', availabilityLabel(platform.china_availability), '']
+    ...(geometrySummary(platform) ? [['Fit range', geometrySummary(platform), '']] : []),
+    ['Where to buy', variant.purchase_route ? '' : availabilityLabel(platform.china_availability), variant.purchase_route ? '<a href="#model-purchase-route">Purchase route and checks</a>' : '']
   ];
+  const verifyItems = (variant.editorial.caveats ?? []).map((item) => translate(String(item).trim().replace(/[.;]+$/, ''), ctx.locale)).filter(Boolean);
   const specificationRows = publishedSpecificationRows(product);
   const storyTitle = publishedStoryTitle(product, weight, tireClearance, ctx.locale);
   const reviewByline = variant.editorial.review
@@ -1395,23 +1502,24 @@ export function renderModel(ctx, product) {
     : '';
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
-  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1></header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
+  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([categoryLabel(platform.category), variant.kind === 'frameset' ? 'frame build' : 'complete bike', `${platform.handlebar}-bar`].join(' · '))}</p></header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
-    <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="primary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
+    <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#source-records">All price records</a>${goodBuyThreshold ? `<span>Below this model’s ${escapeHtml(formatCny(goodBuyThreshold))} good-buy reference</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl>${verifyItems.length ? `<section class="model-verify" aria-labelledby="model-verify-title"><h2 id="model-verify-title">Verify before paying</h2><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : ''}</div>
   </div>
+  <nav class="model-sections" aria-label="On this page"><a href="#model-story-title">Brief</a><a href="#specification-snapshot-title">Specifications &amp; evidence</a>${platform.frame.geometry?.sizes?.length ? '<a href="#model-geometry-title">Geometry</a>' : ''}<a href="#buying-context-title">Ride and buying context</a><a href="#source-records">Price records &amp; sources</a></nav>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? `${zh ? ' 适合重点考虑的用途：' : german ? ' Besonders geeignet für ' : ' Best suited to '}${escapeHtml(bestFor)}${zh ? '。' : '.'}` : ''}</p><p><strong>${zh ? '关键配置：' : 'Key hardware:'}</strong> ${escapeHtml(keyHardware)}${zh ? '。' : '.'}</p></section>
-    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div></dl></section>
-    ${structuredGeometry(platform.frame.geometry, product.sources)}${platform.frame.geometry?.sizes?.length ? `<p class="model-geometry-link"><a href="${url(ctx.base,'/geometry/')}?a=${escapeAttr(platform.id)}">Compare this geometry ↗</a></p>` : ''}<section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p><h3>What to verify</h3><p>${escapeHtml(sentenceList(variant.editorial.caveats, ctx.locale))}</p></section>
+    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd${label === 'Purchase route' ? ' id="model-purchase-route"' : ''}>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div>${metric.kind === 'discipline' ? '' : `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div>`}${metric.details.length ? `<div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' '))}</dd></div>` : ''}<div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div></dl></section>
+    ${structuredGeometry(platform.frame.geometry, product.sources)}${platform.frame.geometry?.sizes?.length ? `<p class="model-geometry-link"><a href="${url(ctx.base,'/geometry/')}?a=${escapeAttr(platform.id)}">Compare this geometry ↗</a></p>` : ''}<section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p></section>
     ${relatedArticleLinks(ctx, variant.id)}
     ${brandStory(brand)}
     ${videoContext(videos)}
-    <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(formatPrice(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
+    <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(exactPriceLabel(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
   </div></div></section>`;
   return page(ctx, {
     title: ctx.locale === 'zh-Hans' ? `${modelName}：价格与规格` : `${modelName} — price & specifications`,
-    current: variant.kind === 'frameset' ? 'framesets' : 'catalog',
+    current: 'catalog',
     path: `/models/${variant.id}/`,
     description: variant.editorial.verdict,
     image: heroImage,
