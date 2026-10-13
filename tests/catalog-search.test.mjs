@@ -1,10 +1,53 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeCatalogSearch, matchesCatalogSearch } from '../assets/catalog-search.js';
+import { createCatalogSearchIndex, compileCatalogQuery, scoreCatalogSearch, matchesCatalogSearch } from '../assets/catalog-search.js';
 import { loadDataset, joinProducts } from '../src/lib/data.mjs';
 import { renderHome } from '../src/render.mjs';
 
-const matches = (text, query) => matchesCatalogSearch(normalizeCatalogSearch(text), query);
+const matches = (text, query) => matchesCatalogSearch(createCatalogSearchIndex(text), query);
+const score = (text, query) => scoreCatalogSearch(createCatalogSearchIndex(text), compileCatalogQuery(query));
+
+test('general fuzzy search handles missing, extra, replaced and transposed letters', () => {
+  for (const [query, text] of [
+    ['twittr', 'Twitter Gravel'], ['twittter', 'Twitter Gravel'], ['twittar', 'Twitter Gravel'],
+    ['twtiter', 'Twitter Gravel'], ['shiamno', 'Shimano 105'], ['shmano', 'Shimano 105'],
+    ['gravle', 'Gravel bike'], ['carbn', 'Carbon frame'], ['velobulid', 'Velo-Build'],
+    ['lightcarbn', 'LightCarbon'], ['lightcrbn', 'LightCarbon'], ['winspcae', 'Winspace'],
+    ['canyons', 'Canyon'], ['merdia', 'Merida'],
+    ['shiamno', 'Shimano105 禧玛诺'], ['shiamno', '禧玛诺Shimano'],
+  ]) {
+    assert.ok(matches(text, query), `${query} → ${text}`);
+    assert.ok(score(text, query) > 0, `${query} is labelled a close match`);
+  }
+});
+
+test('direct matches rank before close matches, with fewer edits first', () => {
+  assert.equal(score('Twitter Gravel', 'twitter'), 0);
+  assert.equal(score('Twitter Gravel', 'twittr'), 1);
+  assert.equal(score('LightCarbon', 'lightcrbn'), 2);
+  assert.equal(score('X-LAB Shimano', 'xlabs'), 1, 'unrelated adjacent words cannot create a direct match');
+  assert.equal(score('Light Carbon', 'lightcarbon'), 0, 'complete names can still be joined');
+  assert.equal(score('Light Carbon', 'carbonlight'), Infinity, 'partial word joins are not search terms');
+  const query = compileCatalogQuery('carbon');
+  const ordered = ['Carbn frame', 'Carbon frame', 'Shimano'].map((name) => ({ name,
+    score: scoreCatalogSearch(createCatalogSearchIndex(name), query) }))
+    .filter((row) => Number.isFinite(row.score)).sort((a, b) => a.score - b.score).map((row) => row.name);
+  assert.deepEqual(ordered, ['Carbon frame', 'Carbn frame']);
+});
+
+test('every search word is required and fuzziness is bounded', () => {
+  assert.ok(matches('Twitter Gravel Shimano 105', 'shiamno twittr 105'));
+  assert.equal(matches('Twitter Gravel Shimano 105', 'shiamno twittr 106'), false);
+  assert.equal(matches('Twitter Gravel', 'twittr shimano'), false);
+  assert.equal(matches('Shimano', 'shmno'), false, 'two edits in a short word are too broad');
+  assert.equal(matches('CAMP road', 'lamp'), true);
+  assert.equal(matches('CAMP road', 'cam'), true, 'direct partial searches remain useful');
+  assert.equal(matches('CAMP road', 'cap'), false, 'short terms must not fuzzy-match');
+  assert.equal(matches('SRAM GX Eagle', 'gry'), false);
+  assert.equal(matches('喜德盛', '喜徳盛'), false);
+  assert.equal(matches('Mechanical RX explicitly labelled', 'x lab'), false, 'short words cannot match arbitrary inner letters');
+  assert.equal(matches('Carbon', 'z'.repeat(10000)), false, 'long input never enters edit distance');
+});
 
 test('search accepts punctuated, spaced, full-width and plural X-LAB spellings', () => {
   for (const query of ['x-lab', 'xlab', 'xlabs', 'x lab', 'x labs', 'X–LAB', 'ＸＬＡＢＳ', 'x-labs rs9', 'RS9 xlab']) {
@@ -29,18 +72,24 @@ test('search does not stem model suffixes or invent model matches', () => {
   assert.ok(matches('X-LAB RS9', ''));
 });
 
-test('all X-LAB query forms find the same real catalog entries in each language', () => {
+test('general fuzzy queries and punctuation work on real catalog entries in every language', () => {
   const data = loadDataset();
   const products = joinProducts(data);
   for (const locale of ['en', 'zh-Hans', 'de']) {
     const html = renderHome({ data, products, locale });
     const rows = [...html.matchAll(/data-product-row[^>]*data-id="([^"]+)"[^>]*data-search="([^"]*)"/g)]
-      .map(([, id, text]) => ({ id, index: normalizeCatalogSearch(text) }));
+      .map(([, id, text]) => ({ id, index: createCatalogSearchIndex(text) }));
     const find = (query) => rows.filter((row) => matchesCatalogSearch(row.index, query)).map((row) => row.id);
     const expected = find('x-lab');
     assert.ok(expected.includes('candidate-xlab-rs9'), locale);
     assert.ok(expected.includes('candidate-xlab-ad9'), locale);
     for (const query of ['xlab', 'xlabs', 'x lab', 'x labs', 'ＸＬＡＢ']) assert.deepEqual(find(query), expected, `${locale}: ${query}`);
     assert.deepEqual(find('RS9 xlabs'), ['candidate-xlab-rs9']);
+    for (const [query, exact] of [['twittr', 'twitter'], ['shiamno', 'shimano'], ['winspcae', 'winspace'], ['velobulid', 'velobuild'], ['carbn', 'carbon']]) {
+      const expectedIds = rows.filter((row) => row.index.tokens.includes(exact)).map((row) => row.id);
+      assert.ok(expectedIds.length, `${locale}: ${exact} has recorded examples`);
+      const actual = new Set(find(query));
+      for (const id of expectedIds) assert.ok(actual.has(id), `${locale}: ${query} includes ${id}`);
+    }
   }
 });

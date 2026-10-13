@@ -1028,6 +1028,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .catalog-row.is-candidate .product-meta::after { content: attr(data-label); padding: 0 6px; border: 1px dashed var(--line-strong); border-radius: 5px; color: var(--muted); font-size: .625rem; font-weight: 650; letter-spacing: .02em; line-height: 16px; text-transform: none; }
 .product-name { display: block; overflow: hidden; font-size: .9375rem; font-weight: 650; letter-spacing: -.006em; text-overflow: ellipsis; white-space: nowrap; }
 .product-name a { min-height: 0; }
+.search-close-match { color: var(--muted); font-size: .75rem; }
+.search-close-match[hidden] { display: none; }
 .catalog-row.is-candidate .product-name { font-weight: 560; }
 .product-fit { margin-top: 1px; font-size: var(--fs-xs); -webkit-line-clamp: 1; }
 .type-pill, .pick-pill, .verify-flag, .status-pill { font-size: .625rem; letter-spacing: .02em; }
