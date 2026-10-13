@@ -130,19 +130,19 @@ test('shared tooltips distinguish hover from pinned click state', () => {
 });
 
 test('catalog and shortlist previews share uncropped paint while preserving link hit areas', () => {
-  assert.match(styles, /\.catalog-product \{[^}]*grid-template-columns: 156px minmax\(0, 1fr\)/);
+  assert.match(styles, /\.catalog-product \{[^}]*grid-template-columns: 96px minmax\(0, 1fr\)/);
   assert.match(styles, /\.product-image \{[^}]*width: 156px/);
   assert.match(styles, /:is\(\.catalog-row, \.curated-group\) \.product-image-link\.is-previewing > img \{[\s\S]*?transform: translate\([^;]+scale\(var\(--image-preview-scale\)\)/);
   assert.match(styles, /\.product-image-link > img \{ pointer-events: none; \}/);
-  assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-table \{ display: grid; grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /@media \(max-width: 780px\)[\s\S]*?\.filter-primary \{ grid-template-columns: 1fr 1fr; \}[\s\S]*?\.catalog-table \{ grid-template-columns: 1fr; \}/);
-  assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.product-image \{ width: 132px; \}/);
+
+
+
   assert.match(script, /\.catalog-row \.product-image-link, \.curated-group \.product-image-link/);
   assert.match(styles, /\.product-image:has\(\.product-image-link\.is-previewing\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
   assert.match(styles, /\.model-figure\.is-unavailable,[\s\S]*?\.gallery-thumb\[hidden\] \{ display: none; \}/);
   assert.match(styles, /\.model-grid\.has-no-image \{[^}]*grid-template-columns: minmax\(0, 760px\);[^}]*justify-content: center;/);
-  assert.match(styles, /\.catalog-product\.has-no-image \{ grid-template-columns: minmax\(0, 1fr\); \}/);
-  assert.doesNotMatch(styles, /\.selection-actions \.text-button \{ display: none; \}/);
+  assert.match(styles, /\.catalog-product\.has-no-image, \.catalog-product:not\(:has\(\.product-image\)\) \{ grid-template-columns: minmax\(0, 1fr\); \}/);
+  assert.doesNotMatch(styles, /^\s*\.selection-actions \.text-button \{ display: none; \}/m);
 });
 
 test('failed product photos are hidden without substituting a placeholder', () => {
@@ -170,7 +170,7 @@ test('product galleries are explicit, keyboard-operable, and motion-safe', () =>
 test('catalog headings and compact control share directional sorting', () => {
   assert.match(script, /const defaultSortModes = \{ price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' \}/);
   assert.match(script, /function canonicalSortMode\(value\)/);
-  assert.match(script, /function updateSortHeadings\(\)/);
+  assert.match(script, /function updateSortHeadings\(items = rows\.filter\(rowMatches\)\)/);
   assert.match(script, /heading\?\.setAttribute\('aria-sort'/);
   assert.match(script, /sortHeadingButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
   const source = script.slice(script.indexOf('  function sortRows('), script.indexOf('  function openFilterPanel('));
@@ -183,8 +183,8 @@ test('catalog headings and compact control share directional sorting', () => {
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
   assert.match(styles, /\.catalog-head \{[\s\S]*?position: sticky;[\s\S]*?top: var\(--catalog-head-top, 144px\);[\s\S]*?z-index: 34;/);
   assert.match(script, /function syncCatalogHeadTop\(\)/);
-  assert.match(script, /new ResizeObserver\(syncCatalogHeadTop\)\.observe\(catalogFilterBar\)/);
-  assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-head \{ display: none; \}/);
+  assert.match(script, /new ResizeObserver\(syncCatalogHeadTop\)\.observe\(siteHeader\)/);
+  assert.match(styles, /@media \(max-width: 959px\)[\s\S]*?\.catalog-head \{ display: none; \}/);
 });
 
 test('typed catalog filters are numeric where appropriate, URL-addressable, and removable', () => {
@@ -212,8 +212,8 @@ test('candidate discovery stays URL-addressable without repeated missing-data wa
   assert.match(script, /const hasValue = \(key\) => items\.some/);
   assert.match(script, /if \(secondaryFields\.length\)/);
   assert.match(script, /remove\.setAttribute\('aria-label', `Remove \$\{label\}`\)/);
-  assert.match(script, /\['Tire clearance', \(item\) => valueCell\(item\.tireClearance\)\]/);
-  assert.match(script, /\['Weight', \(item\) => valueCell\(item\.weight\)\]/);
+  assert.match(script, /\['Tire clearance', clearance, 'tire'\]/);
+  assert.match(script, /\['Weight · complete bike', weightBy\('complete'\), 'weight-complete'\]/);
   assert.doesNotMatch(script, /\['What to verify'/);
   assert.doesNotMatch(styles, /\.compare-value\.is-warning strong/);
 });

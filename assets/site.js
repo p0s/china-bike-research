@@ -2,7 +2,9 @@ import { normalizeMaterialSearch } from './catalog-search.js';
 import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
-import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice } from './regional-prices.js';
+import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice, countryName } from './regional-prices.js';
+import { priceDisplay, deliveredLine } from './price-display.js';
+import { clearanceParts, weightParts } from './catalog-format.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
@@ -554,6 +556,40 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setMenuOpen(open);
   });
   navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
+  // Tools collapse into one header menu once scripts run; without them the links stay inline.
+  const toolsMenu = document.querySelector('[data-nav-tools]');
+  const toolsToggle = toolsMenu?.querySelector('[data-nav-tools-toggle]');
+  function setToolsOpen(open, { restoreFocus = false } = {}) {
+    if (!(toolsToggle instanceof HTMLButtonElement)) return;
+    toolsMenu.classList.toggle('is-open', open);
+    toolsToggle.setAttribute('aria-expanded', String(open));
+    if (!open && restoreFocus) toolsToggle.focus({ preventScroll: true });
+  }
+  if (toolsToggle instanceof HTMLButtonElement) {
+    toolsMenu.classList.add('is-enhanced');
+    toolsToggle.hidden = false;
+    toolsToggle.addEventListener('click', () => setToolsOpen(toolsToggle.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !toolsMenu.contains(event.target)) setToolsOpen(false);
+    });
+    toolsMenu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toolsToggle.getAttribute('aria-expanded') === 'true') {
+        setToolsOpen(false, { restoreFocus: true });
+        event.preventDefault();
+      }
+    });
+  }
+  // "/" focuses the header search unless the visitor is already typing.
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey) return;
+    const target = event.target;
+    if (target instanceof HTMLElement && (target.isContentEditable || target.closest('input, textarea, select'))) return;
+    const field = document.querySelector('#site-search');
+    if (!(field instanceof HTMLInputElement)) return;
+    event.preventDefault();
+    field.focus();
+    field.select();
+  });
   document.addEventListener('click', (event) => {
     const target = event.target instanceof Element ? event.target : null;
     if (!target?.closest('[data-tooltip-lines]')) closeTooltip();
@@ -671,6 +707,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const catalogRoot = document.querySelector('[data-catalog-root]');
   const catalogData = document.querySelector('#catalog-data');
   if (!catalogRoot || !catalogData) return;
+  document.body.classList.add('is-catalog-page');
 
   const regionalDataElement = document.querySelector('#regional-price-data');
   const regionalDataPromise = (async () => {
@@ -700,15 +737,17 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
   const regionalData = await regionalDataPromise;
-  const destinationControl = catalogRoot.querySelector('[data-ship-country]');
-  const currencyControl = catalogRoot.querySelector('[data-display-currency]');
-  const areaControl = catalogRoot.querySelector('[data-delivery-area]');
+  // Price settings live in the header popover; the catalog reads them from the document.
+  const destinationControl = document.querySelector('[data-ship-country]');
+  const currencyControl = document.querySelector('[data-display-currency]');
+  const areaControl = document.querySelector('[data-delivery-area]');
   const preferenceStorageKey = 'china-bikes-delivery-preference-v1';
   let savedPreference = {};
   try { savedPreference = JSON.parse(localStorage.getItem(preferenceStorageKey) ?? '{}') ?? {}; } catch { /* URL choices remain available */ }
   let timeZone = '';
   try { timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { /* a suggestion is optional */ }
   const suggestedDestination = resolveDestination({ stored: savedPreference.country, edgeCountry: catalogRoot.dataset.priceCountry, timeZone, languages: navigator.languages ?? [navigator.language] });
+  const today = new Date().toISOString().slice(0, 10);
   let activeCountry = 'CN';
   let activeCurrency = 'CNY';
   let currencyChosen = false;
@@ -716,13 +755,14 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let destinationReason = 'unknown';
   const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
   const originalPriceTips = new Map(rows.map((row) => [row.dataset.id, row.querySelector('.price-cell [data-tooltip-lines]')?.dataset.tooltipLines ?? '[]']));
-  if (regionalData) catalogRoot.querySelector('[data-price-preferences]').hidden = false;
+  if (regionalData) document.querySelector('[data-price-preferences]').hidden = false;
   const empty = catalogRoot.querySelector('[data-empty]');
   const resultCount = catalogRoot.querySelector('[data-result-count]');
   const resultSummary = catalogRoot.querySelector('[data-result-summary]');
   const resultContext = catalogRoot.querySelector('[data-result-context]');
+  const resultSplit = catalogRoot.querySelector('[data-result-split]');
   const filterNotice = catalogRoot.querySelector('[data-filter-notice]');
-  const search = catalogRoot.querySelector('[data-filter-search]');
+  const search = document.querySelector('[data-filter-search]');
   const price = catalogRoot.querySelector('[data-filter-price]');
   const tire = catalogRoot.querySelector('[data-filter-tire]');
   const tireUnknown = catalogRoot.querySelector('[data-filter-tire-unknown]');
@@ -734,6 +774,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const categoryMinimumLabel = catalogRoot.querySelector('[data-category-min-label]');
   const categoryMinimumUnit = catalogRoot.querySelector('[data-category-min-unit]');
   const category = catalogRoot.querySelector('[data-filter-category]');
+  const categoryValues = new Set((category?.dataset.categoryValues ?? '').split(' ').filter(Boolean));
+  const categoryButtons = [...document.querySelectorAll('[data-category-value]')];
+  const publishedFilter = catalogRoot.querySelector('[data-filter-published]');
+  const listingFilter = document.querySelector('[data-filter-listing]');
+  const listingFilterControl = document.querySelector('[data-listing-filter-control]');
+  const drivetrainChips = [...catalogRoot.querySelectorAll('[data-drivetrain-chip]')];
   const sort = catalogRoot.querySelector('[data-sort]');
   const buildPreset = document.querySelector('[data-frameset-build-preset]');
   const buildAllowance = document.querySelector('[data-frameset-build-allowance]');
@@ -745,18 +791,22 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const capabilityHeadingLabel = capabilitySortHeading?.querySelector('[data-capability-heading-label]');
   const filterHeadingButtons = [...catalogRoot.querySelectorAll('[data-filter-heading]')];
   const filterPanel = catalogRoot.querySelector('[data-filter-panel]');
-  const filterPanelToggle = catalogRoot.querySelector('[data-filter-panel-toggle]');
   const filterChips = catalogRoot.querySelector('[data-filter-chips]');
-  const catalogFilterBar = catalogRoot.querySelector('.filter-bar');
+  const filterSheet = catalogRoot.querySelector('[data-filter-sheet]');
+  const sheetToggles = [...document.querySelectorAll('[data-filter-sheet-toggle]')];
+  const sheetResultCount = catalogRoot.querySelector('[data-sheet-result-count]');
+  const activeFilterCount = document.querySelector('[data-active-filter-count]');
+  const settingsToggle = document.querySelector('[data-settings-toggle]');
+  const settingsPanel = document.querySelector('[data-settings-panel]');
   const reset = catalogRoot.querySelector('[data-reset]');
   const showAllModels = catalogRoot.querySelector('[data-show-all-models]');
+  const hiddenLeadCount = Number(catalogRoot.dataset.hiddenLeads || 0);
   const modelLinks = [...catalogRoot.querySelectorAll('[data-model-link]')];
   const typeButtons = [...catalogRoot.querySelectorAll('[data-type-value]')];
   const brandButtons = [...catalogRoot.querySelectorAll('[data-brand-filter]')];
-  const catalogNav = document.querySelector('[data-nav-catalog]');
-  const framesetNav = document.querySelector('[data-nav-framesets]');
   const brandValues = new Set(rows.map((row) => row.dataset.brand).filter(Boolean));
   const brandLabels = new Map(brandButtons.map((button) => [button.dataset.brandFilter, button.textContent.trim()]));
+  const narrowLayout = matchMedia('(max-width: 959px)');
   modelLinks.forEach((link) => { link.dataset.baseHref = link.getAttribute('href') ?? ''; });
   let activeType = '';
   let activeBrand = '';
@@ -767,15 +817,21 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let currentBuildPreset = defaultBuildPreset;
   let buildHighlightTimer = 0;
   const defaultPriceDetails = new Map(products.map((item) => [item.id, item.priceDetails ?? '']));
+  // Research leads follow published records in the default order.
+  const leadDivider = Object.assign(document.createElement('div'), { className: 'catalog-divider', hidden: true });
+  leadDivider.setAttribute('role', 'row');
+  leadDivider.append(Object.assign(document.createElement('span'), { textContent: translate('Research leads — identified bikes still missing publication evidence', locale) }));
+  leadDivider.firstElementChild.setAttribute('role', 'cell');
 
   const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' };
-  const legacySortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc' };
+  const legacySortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', published: 'published-asc' };
+  const defaultSort = 'published-asc';
 
   function canonicalSortMode(value) {
     const candidate = legacySortModes[value] ?? value;
-    return ['price-asc', 'price-desc', 'name-asc', 'name-desc', 'capability-asc', 'capability-desc', 'tire-asc', 'tire-desc'].includes(candidate)
+    return ['published-asc', 'china-asc', 'china-desc', 'price-asc', 'price-desc', 'name-asc', 'name-desc', 'capability-asc', 'capability-desc', 'tire-asc', 'tire-desc'].includes(candidate)
       ? candidate
-      : 'price-asc';
+      : defaultSort;
   }
 
   function sortModeParts(value = sort?.value) {
@@ -811,48 +867,67 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     return `≈ ${number(from)}${Math.abs(low - high) > 1e-8 ? `–${number(to)}` : ''}% ${translate(positive ? 'less in China' : 'more in China', locale)}`;
   }
 
+  function updateSettingsSummary() {
+    const country = document.querySelector('[data-settings-country]');
+    const currency = document.querySelector('[data-settings-currency]');
+    const build = document.querySelector('[data-settings-build]');
+    if (country) country.textContent = activeCountry ? countryName(activeCountry, locale) : translate('Choose destination', locale);
+    if (currency) currency.textContent = activeCurrency;
+    if (build) build.textContent = `+${formatYuan(currentBuildAllowance)}`;
+  }
+
   function updateRegionalPrices() {
     if (!regionalData) return;
     const currency = priceCurrency();
     destinationControl.value = activeCountry;
     currencyControl.value = currency;
     areaControl.value = activeArea;
-    catalogRoot.querySelector('[data-delivery-area-control]').hidden = activeCountry !== 'US';
-    catalogRoot.querySelector('[data-destination-suggestion]').hidden = destinationReason !== 'suggested';
+    document.querySelector('[data-delivery-area-control]').hidden = activeCountry !== 'US';
+    document.querySelector('[data-destination-suggestion]').hidden = destinationReason !== 'suggested';
     const heading = sortHeadingByKey.get('price')?.querySelector('span');
     if (heading) heading.textContent = `${translate('Price', locale)} · ${currency}`;
     const domestic = activeCountry === 'CN';
-    const priceSortLabel = domestic ? 'Price' : 'Delivered price';
     for (const [direction, words] of [['asc', 'low to high'], ['desc', 'high to low']]) {
       const option = sort?.querySelector(`option[value="price-${direction}"]`);
-      if (option) option.textContent = translate(`${priceSortLabel}: ${words}`, locale);
+      if (option) option.textContent = translate(`${domestic ? 'Price' : 'Delivered price'}: ${words}`, locale);
     }
     const budgetLabel = catalogRoot.querySelector('[data-price-budget-label]');
     if (budgetLabel) budgetLabel.textContent = translate(domestic ? 'Max full-bike price' : 'Max delivered price', locale);
+    const publishedOption = sort?.querySelector('option[value="published-asc"]');
+    if (publishedOption) publishedOption.textContent = translate(domestic ? 'Published first, then price' : 'Published first, then China price', locale);
+    const budgetHelp = catalogRoot.querySelector('[data-price-budget-help]');
+    if (budgetHelp) budgetHelp.textContent = translate(domestic ? 'China price. Frame builds include your plan.' : 'Budget filters require complete delivered totals.', locale);
     const sortButton = sortHeadingByKey.get('price');
     if (sortButton) sortButton.title = translate(domestic ? 'Sort by China totals; reference estimates follow.' : 'Sort by delivered totals; reference estimates follow.', locale);
     catalogRoot.querySelector('[data-price-currency]').textContent = currency;
-    const note = catalogRoot.querySelector('[data-price-region-note]');
+    const note = document.querySelector('[data-price-region-note]');
     note.hidden = false;
-    note.textContent = `${translate(domestic ? 'Buying in China. Prices retain their observation dates and conditions. Reference estimates are excluded from budget filters.' : 'Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.', locale)} `;
+    note.textContent = `${translate(domestic ? 'Buying in China. Prices keep their observation dates and conditions. References are not used for budgets.' : 'Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.', locale)} `;
     const exchangeSource = document.createElement('a');
     exchangeSource.href = regionalData.rates.source;
     exchangeSource.rel = 'noreferrer';
     exchangeSource.textContent = `ECB · ${regionalData.rates.rate_date}`;
     note.append(exchangeSource);
+    if (listingFilterControl instanceof HTMLElement) {
+      listingFilterControl.hidden = domestic || !activeCountry;
+      const label = listingFilterControl.querySelector('[data-listing-filter-label]');
+      if (label) label.textContent = translate(`Only bikes with a seller listing for ${countryName(activeCountry || 'CN', 'en')}`, locale).replace(countryName(activeCountry || 'CN', 'en'), countryName(activeCountry || 'CN', locale));
+      if (listingFilterControl.hidden && listingFilter instanceof HTMLInputElement) listingFilter.checked = false;
+    }
     rows.forEach((row) => {
       const item = byId.get(row.dataset.id);
       if (!item) return;
       const original = originalPrices.get(item.id);
       const cell = row.querySelector('.price-cell');
-      if (cell) cell.dataset.label = translate('Price', locale);
-      const primary = cell?.querySelector('[data-calculated-price]') ?? cell?.querySelector('.metric-main');
+      const primary = cell?.querySelector('[data-calculated-price]');
       const tip = cell?.querySelector('[data-tooltip-lines]');
       cell?.querySelectorAll('[data-regional-offer]').forEach((link) => link.remove());
       cell?.querySelector('[data-china-difference]')?.remove();
+      row.dataset.hasListing = 'false';
       if (item.priceUnavailable) {
         row.dataset.priceSort = '';
         row.dataset.priceFilter = '';
+        row.dataset.chinaSort = '';
         return;
       }
       const projection = regionalPrice(item, { country: activeCountry, currency, area: activeArea }, regionalData, currentBuildAllowance);
@@ -865,43 +940,44 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       }
       row.dataset.priceSort = Number.isFinite(projection.low) ? String((projection.low + projection.high) / 2) : '';
       row.dataset.priceFilter = Number.isFinite(projection.high) ? String(projection.high) : '';
-      const reference = projection.frame ? translate(formatEstimatedRange(item.frameLow + currentBuildAllowance, (item.frameHigh ?? item.frameLow) + currentBuildAllowance), locale) : original.price;
-      let chinaLine = '';
-      if (china) {
-        const native = formatMoneyRange(china.low, china.high, 'CNY', locale, { approximate: china.approximate });
-        const display = currency !== 'CNY' ? ` (${formatMoneyRange(projection.chinaLow, projection.chinaHigh, currency, locale, { approximate: true })})` : '';
-        chinaLine = `${translate(projection.frame ? 'Frame in China' : 'China', locale)}: ${native}${display}${china.conditional ? ` · ${translate('conditional', locale)}` : ''} · ${china.date}`;
-      } else chinaLine = `${translate('Catalog reference', locale)}: ${reference}`;
-      const display = projection.display;
-      const basisLabel = { china: 'China price', 'china-build': 'China build estimate', reference: 'Reference estimate', 'build-reference': 'Build reference' }[display.basis];
-      item.price = `${display.starting ? translate('From', locale) + ' ' : ''}${formatMoneyRange(display.low, display.high, currency, locale, { approximate: display.approximate })}`;
-      if (display.basis === 'delivered') item.price += ` ${translate(state === 'estimated' ? 'estimated delivered' : 'delivered', locale)}`;
-      if (primary) primary.textContent = item.price;
-      if (subline) subline.textContent = display.basis === 'delivered' ? chinaLine : [
-        translate(basisLabel, locale),
-        ...(currency !== 'CNY' ? [formatMoneyRange(display.nativeLow, display.nativeHigh, 'CNY', locale, { approximate: display.basis !== 'china' || china?.approximate })] : []),
-        ...(china ? [china.conditional ? translate('conditional', locale) : '', china.starting ? translate('Starting price; selected package unknown', locale) : '', china.partial ? translate('Purchase total incomplete', locale) : '', china.date] : [])
-      ].filter(Boolean).join(' · ');
+      row.dataset.chinaSort = Number.isFinite(projection.chinaTotal.low) ? String((projection.chinaTotal.low + projection.chinaTotal.high) / 2) : '';
+      row.dataset.hasListing = String(Boolean(offer));
+      const shown = priceDisplay(projection, {
+        currency, allowance: currentBuildAllowance, locale, today, translate,
+        referenceLabel: item.referenceLabel,
+        referenceDate: item.priceDate,
+        fallback: Number.isFinite(projection.display.low) ? null : { headline: original.price, basis: original.state }
+      });
+      item.price = shown.headline;
+      item.priceTone = shown.tone;
+      if (primary) primary.textContent = shown.headline;
+      if (subline) {
+        subline.textContent = shown.basis;
+        subline.className = `metric-sub price-state${shown.tone ? ` is-${shown.tone}` : ''}`;
+        subline.hidden = shown.tone === 'unknown' && !original.state;
+      }
+      const delivered = deliveredLine(projection, { currency, locale, translate });
       const difference = differenceLabel(projection.difference);
-      if (difference) {
-        const delta = document.createElement('span');
-        delta.className = 'china-price-difference';
-        delta.dataset.chinaDifference = '';
-        delta.textContent = difference;
-        cell.append(delta);
+      if (delivered || difference) {
+        const line = document.createElement('span');
+        line.className = 'china-price-difference';
+        line.dataset.chinaDifference = '';
+        line.textContent = [delivered, difference].filter(Boolean).join(' · ');
+        cell.append(line);
       }
       const scopeLabel = offer?.delivery?.scope === 'contiguous-us' ? 'Contiguous US only' : 'Standard addresses only';
+      // Popover lines add only what the row does not already say.
+      const exact = china && (china.low % 1 || (china.high ?? china.low) % 1)
+        ? `${translate('Recorded amount', locale)}: ${formatMoneyRange(china.low, china.high ?? china.low, 'CNY', locale, { exact: true })}` : '';
       const lines = [
-        `${translate('Catalog reference', locale)}: ${reference}. ${original.state}`,
-        chinaLine,
-        ...(!domestic ? [translate(state === 'choose-destination' ? 'Choose destination' : projection.frame ? 'Build delivery total unavailable' : !['confirmed', 'estimated'].includes(state) ? 'Delivery total unavailable' : 'Delivered price', locale)] : []),
-        ...(china?.conditions ? [translate(china.conditions, locale)] : []),
-        `${translate('ECB reference rates', locale)}: ${regionalData.rates.rate_date}.`,
-        translate('China difference = (delivered total − China equivalent) ÷ delivered total. It is a market price gap, not an importing saving.', locale),
+        exact,
+        ...(currency !== 'CNY' ? [`${translate('Converted at the ECB reference rate', locale)} · ${regionalData.rates.rate_date}.`] : []),
+        ...(!domestic && activeCountry ? [translate(state === 'choose-destination' ? 'Choose destination' : projection.frame ? 'Build delivery total unavailable' : !['confirmed', 'estimated'].includes(state) ? 'Delivery total unavailable' : 'Delivered price', locale)] : []),
+        ...(projection.difference ? [translate('China difference = (delivered total − China equivalent) ÷ delivered total. It is a market price gap, not an importing saving.', locale)] : []),
         ...(projection.frame ? [translate('The build estimate uses the China allowance, not a verified regional build cost.', locale)] : []),
         ...(offer ? [`${translate('Listing', locale)}: ${formatMoneyRange(offer.amount, offer.amount, offer.currency, locale)} · ${offer.date}.`, translate(offer.package, locale), translate(offer.conditions, locale)] : []),
         ...(offer?.delivery ? [translate(scopeLabel, locale), offer.delivery.basis] : [])
-      ];
+      ].filter(Boolean);
       if (offer) {
         const link = document.createElement('a');
         link.dataset.regionalOffer = '';
@@ -935,12 +1011,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         return line;
       });
       if (tip) tip.dataset.tooltipLines = JSON.stringify([...baseLines, ...lines]);
-      item.priceState = [subline?.textContent, difference].filter(Boolean).join(' · ');
+      item.priceState = [shown.basis, delivered, difference].filter(Boolean).join(' · ');
       const details = String(original.details).replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`);
       item.priceDetails = [details, ...lines].filter(Boolean).join(' ');
     });
     catalogRoot.dataset.activeShipCountry = activeCountry || 'unknown';
     catalogRoot.dataset.activePriceCurrency = currency;
+    updateSettingsSummary();
   }
 
   function normalizedBuildAllowance(value) {
@@ -1014,6 +1091,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
           : 'Great-buy reference: below complete');
     });
     updateRegionalPrices();
+    updateSettingsSummary();
     if (highlight) highlightBuildPrices();
   }
 
@@ -1051,7 +1129,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setParam(next, 'categoryMin', categoryMinimum?.value);
     next.searchParams.delete('capability');
     setParam(next, 'category', category?.value);
-    setParam(next, 'sort', sort?.value, 'price-asc');
+    setParam(next, 'published', publishedFilter?.checked ? '1' : '');
+    setParam(next, 'listing', listingFilter?.checked ? '1' : '');
+    setParam(next, 'sort', sort?.value, defaultSort);
     setParam(next, 'scope', allModelsVisible ? 'all' : '');
     setParam(next, 'buildPreset', currentBuildPreset, defaultBuildPreset);
     setParam(next, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
@@ -1063,14 +1143,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   function setType(value, { historyMode = 'push', update = true } = {}) {
     activeType = ['complete-bike', 'frameset'].includes(value) ? value : '';
     typeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.typeValue === activeType)));
-    if (catalogNav instanceof HTMLAnchorElement) {
-      if (activeType === 'frameset') catalogNav.removeAttribute('aria-current');
-      else catalogNav.setAttribute('aria-current', 'page');
-    }
-    if (framesetNav instanceof HTMLAnchorElement) {
-      if (activeType === 'frameset') framesetNav.setAttribute('aria-current', 'page');
-      else framesetNav.removeAttribute('aria-current');
-    }
     if (update) updateCatalog({ historyMode });
   }
 
@@ -1085,8 +1157,17 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (update) updateCatalog({ historyMode });
   }
 
+  function setCategory(value, { historyMode = 'push' } = {}) {
+    if (category) category.value = validCategory(value);
+    updateCatalog({ historyMode });
+  }
+
+  function validCategory(value) {
+    return categoryValues.has(value) ? value : '';
+  }
+
   function hasFilters() {
-    return Boolean(activeType || activeBrand || allModelsVisible || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== 'price-asc'));
+    return Boolean(activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
   }
 
   function numericValue(input, multiplier = 1) {
@@ -1115,7 +1196,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       weightMatches &&
       (!drivetrain || `${item?.drivetrain ?? ''} ${item?.drivetrainSubline ?? ''}`.toLowerCase().includes(drivetrain)) &&
       (!frame || String(item?.frameSearch ?? item?.frame ?? '').toLowerCase().includes(frame)) &&
-      (!categoryLimit || (row.dataset.capabilityKind === categoryKind && Number(row.dataset.capabilitySort || 0) >= categoryLimit));
+      (!categoryLimit || (row.dataset.capabilityKind === categoryKind && Number(row.dataset.capabilitySort || 0) >= categoryLimit)) &&
+      (!publishedFilter?.checked || row.dataset.stage !== 'candidate') &&
+      (!listingFilter?.checked || row.dataset.hasListing === 'true');
   }
 
   function syncTireUnknownAvailability() {
@@ -1146,19 +1229,37 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     return row.dataset.stage !== 'candidate' || row.dataset.defaultVisible === 'true' || allModelsVisible || Boolean(query);
   }
 
-  function matchesPrimaryContext(row) {
-    const categoryValue = category?.value ?? '';
+  function matchesPrimaryContext(row, categoryValue = category?.value ?? '') {
     return (!activeType || row.dataset.type === activeType) &&
       (!activeBrand || row.dataset.brand === activeBrand) &&
       matchesCategory(row, categoryValue);
   }
 
-  function rowMatches(row) {
+  function matchesQuery(row) {
     const query = search?.value.trim().toLowerCase() ?? '';
-    return rowInScope(row) &&
-      (!query || row.dataset.search?.includes(query)) &&
-      matchesPrimaryContext(row) &&
-      matchesTypedFilters(row);
+    return !query || row.dataset.search?.includes(query);
+  }
+
+  function rowMatches(row) {
+    return rowInScope(row) && matchesQuery(row) && matchesPrimaryContext(row) && matchesTypedFilters(row);
+  }
+
+  // Category counts describe every other active filter, so no option leads to an empty list.
+  function updateCategoryCounts() {
+    const eligible = rows.filter((row) => rowInScope(row) && matchesQuery(row) && matchesPrimaryContext(row, '') && matchesTypedFilters(row));
+    const active = category?.value ?? '';
+    const family = active.startsWith('family:') ? active.slice(7) : rows.find((row) => matchesCategory(row, active))?.dataset.family ?? '';
+    categoryButtons.forEach((button) => {
+      const value = button.dataset.categoryValue ?? '';
+      const total = eligible.filter((row) => matchesCategory(row, value)).length;
+      const pressed = value === active;
+      button.dataset.count = String(total);
+      button.setAttribute('aria-pressed', String(pressed));
+      button.disabled = total === 0 && !pressed;
+    });
+    catalogRoot.querySelectorAll('[data-category-sub]').forEach((list) => {
+      list.hidden = !active || list.dataset.categorySub !== family;
+    });
   }
 
   function updateCategoryMinimumAvailability() {
@@ -1184,6 +1285,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     return false;
   }
 
+  // The category-fact column appears only where a category has its own metric.
+  function updateCategoryFactColumn(items) {
+    const contextual = new Set(['suspension', 'motor', 'folding', 'triathlon']);
+    const kinds = new Set(items.map((row) => row.dataset.capabilityKind).filter((kind) => contextual.has(kind)));
+    catalogRoot.dataset.categoryFact = category?.value && kinds.size ? [...kinds].join(' ') : '';
+  }
+
   function updateSortAvailability(items) {
     const kinds = new Set(items.map((row) => row.dataset.capabilityKind).filter(Boolean));
     const sortableKinds = new Set(['tire', 'suspension', 'motor']);
@@ -1202,17 +1310,17 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     }
     if (capabilityHeadingLabel) capabilityHeadingLabel.textContent = label;
     if (!sortable && sortModeParts().key === 'capability') {
-      sort.value = 'price-asc';
+      sort.value = defaultSort;
       return true;
     }
     return false;
   }
 
-  function updateSortHeadings() {
+  function updateSortHeadings(items = rows.filter(rowMatches)) {
     const { key, direction } = sortModeParts();
     sortHeadingButtons.forEach((button) => {
       const heading = button.closest('[role="columnheader"]');
-      const isActive = button.dataset.sortHeading === key;
+      const isActive = button.dataset.sortHeading === key && (key !== 'price' || items.some((row) => numberOrNull(row.dataset.priceSort) !== null));
       heading?.setAttribute('aria-sort', isActive ? (direction === 'desc' ? 'descending' : 'ascending') : 'none');
       if (button instanceof HTMLButtonElement) {
         const defaultDirection = sortModeParts(defaultSortModes[button.dataset.sortHeading]).direction;
@@ -1228,10 +1336,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   function sortRows(items) {
     const { key, direction } = sortModeParts();
     const byName = (a, b) => (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '');
+    const stage = (row) => row.dataset.stage === 'candidate' ? 1 : 0;
     return [...items].sort((a, b) => {
       if (key === 'name') return byName(a, b) * (direction === 'desc' ? -1 : 1);
-      const field = key === 'tire' ? 'tireClearanceSort' : key === 'capability' ? 'capabilitySort' : 'priceSort';
-      const value = (row) => key === 'price' || Number(row.dataset[field]) > 0 ? row.dataset[field] : null;
+      if (key === 'published') return stage(a) - stage(b) || compareNumbers(a.dataset.chinaSort, b.dataset.chinaSort) || byName(a, b);
+      const field = key === 'tire' ? 'tireClearanceSort' : key === 'capability' ? 'capabilitySort' : key === 'china' ? 'chinaSort' : 'priceSort';
+      const value = (row) => ['price', 'china'].includes(key) || Number(row.dataset[field]) > 0 ? row.dataset[field] : null;
       return compareNumbers(value(a), value(b), direction)
         || (key === 'price' ? 0 : compareNumbers(a.dataset.priceSort, b.dataset.priceSort))
         || byName(a, b);
@@ -1239,23 +1349,15 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function openFilterPanel(field = '') {
-    if (!(filterPanel instanceof HTMLElement)) return;
-    filterPanel.hidden = false;
-    filterPanelToggle?.setAttribute('aria-expanded', 'true');
+    if (narrowLayout.matches) openFilterSheet();
     const target = field === 'price' ? price
       : field === 'drivetrain' ? drivetrainFilter
         : field === 'frame' ? frameFilter
           : field === 'category' ? categoryMinimum
             : field === 'weight' ? (activeType === 'frameset' ? frameWeight : completeWeight)
               : null;
-    if (target instanceof HTMLElement) target.focus({ preventScroll: true });
-  }
-
-  function closeFilterPanel({ restoreFocus = false } = {}) {
-    if (!(filterPanel instanceof HTMLElement)) return;
-    filterPanel.hidden = true;
-    filterPanelToggle?.setAttribute('aria-expanded', 'false');
-    if (restoreFocus && filterPanelToggle instanceof HTMLElement) filterPanelToggle.focus({ preventScroll: true });
+    if (filterPanel instanceof HTMLDetailsElement && target instanceof HTMLElement && filterPanel.contains(target)) filterPanel.open = true;
+    if (target instanceof HTMLElement) target.focus({ preventScroll: !narrowLayout.matches });
   }
 
   function clearTypedFilter(key) {
@@ -1267,15 +1369,30 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
               : key === 'drivetrain' ? drivetrainFilter
                 : key === 'frame' ? frameFilter
                   : key === 'category' ? categoryMinimum
-                    : null;
+                    : key === 'published' ? publishedFilter
+                      : key === 'listing' ? listingFilter
+                        : null;
     if (control instanceof HTMLInputElement) {
       if (control.type === 'checkbox') control.checked = false;
       else control.value = '';
     }
+    if (key === 'query' && search) search.value = '';
+    if (key === 'family' && category) category.value = '';
+    if (key === 'type') setType('', { update: false });
+    if (key === 'brand') setBrand('', { update: false });
+  }
+
+  function categoryChipLabel(value) {
+    const button = categoryButtons.find((item) => item.dataset.categoryValue === value && item.closest('.category-tree'));
+    return button ? button.textContent.trim() : value;
   }
 
   function typedFilterChips() {
     const chips = [];
+    if (search?.value.trim()) chips.push(['query', `“${search.value.trim()}”`]);
+    if (category?.value) chips.push(['family', categoryChipLabel(category.value)]);
+    if (activeType) chips.push(['type', translate(activeType === 'frameset' ? 'Frame build' : 'Complete', locale)]);
+    if (activeBrand) chips.push(['brand', brandLabels.get(activeBrand) ?? activeBrand]);
     if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
@@ -1284,6 +1401,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (drivetrainFilter?.value.trim()) chips.push(['drivetrain', `Drivetrain: ${drivetrainFilter.value.trim()}`]);
     if (frameFilter?.value.trim()) chips.push(['frame', `${translate('Frame', locale)}: ${frameFilter.value.trim()}`]);
     if (categoryMinimum?.value) chips.push(['category', `${categoryMinimumLabel?.textContent || 'Category'} ≥ ${categoryMinimum.value}${categoryMinimumUnit?.textContent ? ` ${categoryMinimumUnit.textContent}` : ''}`]);
+    if (publishedFilter?.checked) chips.push(['published', 'Published only']);
+    if (listingFilter?.checked) chips.push(['listing', `${translate('Listing', locale)}: ${countryName(activeCountry || 'CN', locale)}`]);
     return chips;
   }
 
@@ -1305,6 +1424,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       });
       filterChips.hidden = chips.length === 0;
     }
+    if (activeFilterCount instanceof HTMLElement) {
+      activeFilterCount.textContent = String(chips.length);
+      activeFilterCount.hidden = chips.length === 0;
+    }
     const activeKeys = new Set(chips.map(([key]) => key));
     filterHeadingButtons.forEach((button) => {
       const field = button.dataset.filterHeading;
@@ -1312,15 +1435,59 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         ? activeKeys.has('complete-weight') || activeKeys.has('frame-weight')
         : field === 'tire'
           ? activeKeys.has('tire') || activeKeys.has('tire-unknown')
-          : activeKeys.has(field);
+          : field === 'search' ? activeKeys.has('query') : activeKeys.has(field);
       button.classList.toggle('is-active', active);
     });
+    drivetrainChips.forEach((chip) => chip.setAttribute('aria-pressed', String((drivetrainFilter?.value.trim().toLowerCase() ?? '') === chip.dataset.drivetrainChip)));
+    return chips;
+  }
+
+  // Zero results offer the changes that restore the most bikes, without side effects.
+  function countWithout(key) {
+    const controls = { price, tire, 'tire-unknown': tireUnknown, 'complete-weight': completeWeight, 'frame-weight': frameWeight, drivetrain: drivetrainFilter, frame: frameFilter, category: categoryMinimum, published: publishedFilter, listing: listingFilter, query: search, family: category };
+    const control = controls[key];
+    const savedType = activeType;
+    const savedBrand = activeBrand;
+    const saved = control ? (control.type === 'checkbox' ? control.checked : control.value) : null;
+    if (control) {
+      if (control.type === 'checkbox') control.checked = false;
+      else control.value = '';
+    }
+    if (key === 'type') activeType = '';
+    if (key === 'brand') activeBrand = '';
+    const total = rows.filter(rowMatches).length;
+    if (control) {
+      if (control.type === 'checkbox') control.checked = saved;
+      else control.value = saved;
+    }
+    activeType = savedType;
+    activeBrand = savedBrand;
+    return total;
+  }
+
+  function renderEmptySuggestions(chips) {
+    if (!(empty instanceof HTMLElement)) return;
+    empty.replaceChildren(document.createTextNode(translate('No bikes match these filters.', locale)));
+    const options = chips.map(([key, label]) => ({ key, label, total: countWithout(key) }))
+      .filter((option) => option.total > 0).sort((a, b) => b.total - a.total).slice(0, 3);
+    for (const option of options) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'text-button';
+      button.textContent = `${translate('Remove', locale)} ${option.label} → ${option.total}`;
+      button.addEventListener('click', () => {
+        clearTypedFilter(option.key);
+        updateCatalog({ historyMode: 'push' });
+      });
+      empty.append(button);
+    }
   }
 
   function syncCatalogHeadTop() {
-    if (!(catalogFilterBar instanceof HTMLElement)) return;
-    const stickyTop = Number.parseFloat(getComputedStyle(catalogFilterBar).top) || 0;
-    catalogRoot.style.setProperty('--catalog-head-top', `${Math.round(stickyTop + catalogFilterBar.offsetHeight)}px`);
+    // The table header sticks directly below the sticky site header.
+    const header = document.querySelector('.site-header');
+    const sticky = header instanceof HTMLElement && getComputedStyle(header).position === 'sticky';
+    catalogRoot.style.setProperty('--catalog-head-top', `${sticky ? Math.round(header.offsetHeight) : 0}px`);
   }
 
   function updateCatalog({ historyMode = null } = {}) {
@@ -1328,8 +1495,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const categoryFilterCleared = updateCategoryMinimumAvailability();
     const matching = rows.filter(rowMatches);
     const sortCorrected = updateSortAvailability(matching);
-    updateSortHeadings();
-    renderFilterChips();
+    updateSortHeadings(matching);
+    const sortStatus = catalogRoot.querySelector('[data-sort-status]');
+    if (sortStatus) sortStatus.textContent = sortModeParts().key === 'price' && activeCountry !== 'CN' && !matching.some((row) => numberOrNull(row.dataset.priceSort) !== null) ? translate('No delivered totals in these results. Choose China price to compare references.', locale) : '';
+    updateCategoryCounts();
+    updateCategoryFactColumn(matching);
+    const chips = renderFilterChips();
     syncCatalogHeadTop();
     const ordered = sortRows(rows);
     const matchingSet = new Set(matching);
@@ -1342,16 +1513,26 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (matches) visible += 1;
       if (!alreadyOrdered) productList?.insertBefore(row, empty);
     });
-    const filtered = hasFilters();
+    const visiblePublished = matching.filter((row) => row.dataset.stage !== 'candidate').length;
+    const visibleLeads = visible - visiblePublished;
+    const publishedFirst = sortModeParts().key === 'published';
+    const firstLead = publishedFirst && visiblePublished && visibleLeads ? ordered.find((row) => matchingSet.has(row) && row.dataset.stage === 'candidate') : null;
+    leadDivider.hidden = !firstLead;
+    if (firstLead) productList?.insertBefore(leadDivider, firstLead);
     if (resultCount) resultCount.textContent = String(visible);
+    if (sheetResultCount) sheetResultCount.textContent = translate(`Show ${visible} results`, locale);
+    if (resultSplit) {
+      resultSplit.hidden = !publishedFirst || !visiblePublished || !visibleLeads;
+      resultSplit.textContent = ` ${translate(`· ${visiblePublished} published, then ${visibleLeads} research leads`, locale)}`;
+    }
     if (resultContext) resultContext.textContent = activeBrand ? ` for ${brandLabels.get(activeBrand) ?? activeBrand}` : '';
     if (filterNotice) filterNotice.textContent = categoryFilterCleared ? ' · incompatible category filter cleared' : '';
-    if (resultSummary) resultSummary.hidden = !filtered;
     if (empty) empty.hidden = visible !== 0;
-    if (reset) reset.hidden = !filtered;
+    if (visible === 0) renderEmptySuggestions(chips);
+    if (reset) reset.hidden = !hasFilters();
     if (showAllModels instanceof HTMLButtonElement) {
       showAllModels.setAttribute('aria-pressed', String(allModelsVisible));
-      showAllModels.textContent = allModelsVisible ? 'Show focused list' : 'Show all models';
+      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenLeadCount} more research leads`, locale);
     }
     if (historyMode) updateFilterUrl(historyMode);
     else if (tireUnknownCleared || categoryFilterCleared || sortCorrected) updateFilterUrl('replace');
@@ -1390,7 +1571,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const requestedCategory = params.get('category') ?? '';
     const requestedBrand = params.get('brand') ?? '';
     const requestedType = params.get('type') ?? '';
-    const requestedSort = params.get('sort') ?? 'price-asc';
+    const requestedSort = params.get('sort') ?? defaultSort;
+    const requestedPublished = params.get('published') === '1';
+    const requestedListing = params.get('listing') === '1';
     const requestedBuildAllowance = params.get('build') ?? String(defaultBuildAllowance);
     const requestedBuildPreset = validSelectValue(buildPreset, params.get('buildPreset') ?? defaultBuildPreset, defaultBuildPreset);
     allModelsVisible = params.get('scope') === 'all';
@@ -1402,8 +1585,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (frameWeight) frameWeight.value = params.get('frameWeight') ?? '';
     if (drivetrainFilter) drivetrainFilter.value = params.get('drivetrain') ?? '';
     if (frameFilter) frameFilter.value = params.get('frameFact') ?? '';
-    if (category) category.value = validSelectValue(category, requestedCategory);
+    if (category) category.value = validCategory(requestedCategory);
+    if (publishedFilter instanceof HTMLInputElement) publishedFilter.checked = requestedPublished;
     updateFramesetPrices(requestedBuildAllowance, { presetId: requestedBuildPreset });
+    // The listing filter exists only for a chosen non-China destination.
+    if (listingFilter instanceof HTMLInputElement) listingFilter.checked = requestedListing && Boolean(regionalData) && activeCountry !== 'CN' && Boolean(activeCountry);
     setBrand(requestedBrand, { update: false });
     setType(requestedType, { update: false });
     updateCategoryMinimumAvailability();
@@ -1421,18 +1607,30 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       requestedCategory !== (category?.value ?? '') ||
       requestedBrand !== activeBrand ||
       requestedType !== activeType ||
+      requestedListing !== Boolean(listingFilter?.checked) ||
       requestedBuildAllowance !== String(currentBuildAllowance) ||
       (params.get('buildPreset') ?? defaultBuildPreset) !== currentBuildPreset ||
       (params.get('scope') ?? '') !== (allModelsVisible ? 'all' : '') ||
       Boolean(legacyCapability) ||
       Boolean(legacyMarket) ||
-      requestedSort !== (sort?.value ?? 'price');
+      requestedSort !== (sort?.value ?? defaultSort);
     if (corrected) updateFilterUrl('replace');
   }
 
   const typedInputs = [search, price, tire, completeWeight, frameWeight, drivetrainFilter, frameFilter, categoryMinimum];
   typedInputs.forEach((element) => bindHistoryInput(element, (historyMode) => updateCatalog({ historyMode })));
-  [category, sort, tireUnknown].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
+  [sort, tireUnknown, publishedFilter, listingFilter].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
+  // The header search filters this catalog in place instead of reloading it.
+  search?.closest('form')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (narrowLayout.matches) catalogRoot.querySelector('.result-bar')?.scrollIntoView({ block: 'start' });
+  });
+  categoryButtons.forEach((button) => button.addEventListener('click', () => setCategory(button.dataset.categoryValue ?? '')));
+  drivetrainChips.forEach((chip) => chip.addEventListener('click', () => {
+    if (!(drivetrainFilter instanceof HTMLInputElement)) return;
+    drivetrainFilter.value = drivetrainFilter.value.trim().toLowerCase() === chip.dataset.drivetrainChip ? '' : chip.dataset.drivetrainChip ?? '';
+    updateCatalog({ historyMode: 'push' });
+  }));
   function updatePricePreference(control) {
     const previousCurrency = priceCurrency();
     if (control === destinationControl) {
@@ -1480,47 +1678,120 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setBrand(value === activeBrand ? '' : value, { historyMode: 'push' });
     button.focus({ preventScroll: true });
   }));
-  reset?.addEventListener('click', () => {
+  function resetCatalog() {
     if (search) search.value = '';
-    ['price', 'tire', 'tire-unknown', 'complete-weight', 'frame-weight', 'drivetrain', 'frame', 'category'].forEach(clearTypedFilter);
+    ['price', 'tire', 'tire-unknown', 'complete-weight', 'frame-weight', 'drivetrain', 'frame', 'category', 'published', 'listing'].forEach(clearTypedFilter);
     if (category) category.value = '';
-    if (sort) sort.value = 'price-asc';
+    if (sort) sort.value = defaultSort;
     updateFramesetPrices(defaultBuildAllowance, { highlight: true, presetId: defaultBuildPreset });
     allModelsVisible = false;
     setBrand('', { update: false });
     setType('', { update: false });
     updateCatalog({ historyMode: 'push' });
-  });
-  filterPanelToggle?.addEventListener('click', () => {
-    if (filterPanel instanceof HTMLElement && filterPanel.hidden) openFilterPanel();
-    else closeFilterPanel({ restoreFocus: true });
-  });
-  catalogRoot.querySelector('[data-filter-panel-close]')?.addEventListener('click', () => closeFilterPanel({ restoreFocus: true }));
+  }
+  reset?.addEventListener('click', resetCatalog);
+  catalogRoot.querySelector('[data-reset-all]')?.addEventListener('click', resetCatalog);
   filterHeadingButtons.forEach((button) => button.addEventListener('click', () => {
     const field = button.dataset.filterHeading ?? '';
     if (field === 'search') search?.focus({ preventScroll: true });
-    else if (field === 'tire') tire?.focus({ preventScroll: true });
-    else openFilterPanel(field);
+    else if (field === 'tire') {
+      if (narrowLayout.matches) openFilterSheet();
+      tire?.focus({ preventScroll: !narrowLayout.matches });
+    } else openFilterPanel(field);
   }));
-  document.addEventListener('pointerdown', (event) => {
-    if (!(filterPanel instanceof HTMLElement) || filterPanel.hidden) return;
-    const target = event.target;
-    if (target instanceof Node && !filterPanel.contains(target) && !filterPanelToggle?.contains(target) && !target.closest?.('[data-filter-heading]')) closeFilterPanel();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && filterPanel instanceof HTMLElement && !filterPanel.hidden) closeFilterPanel({ restoreFocus: true });
-  });
-  if ('ResizeObserver' in window && catalogFilterBar instanceof HTMLElement) new ResizeObserver(syncCatalogHeadTop).observe(catalogFilterBar);
+  syncCatalogHeadTop();
+  const siteHeader = document.querySelector('.site-header');
+  if ('ResizeObserver' in window && siteHeader instanceof HTMLElement) new ResizeObserver(syncCatalogHeadTop).observe(siteHeader);
   addEventListener('resize', syncCatalogHeadTop);
   showAllModels?.addEventListener('click', () => {
     allModelsVisible = !allModelsVisible;
     updateCatalog({ historyMode: 'push' });
   });
+
+  // Narrow layouts show the filter rail as a sheet; the page behind is inert.
+  let sheetReturnFocus = null;
+  const inertTargets = () => [document.querySelector('.site-header'), document.querySelector('.site-footer'), catalogRoot.querySelector('.catalog-main'), document.querySelector('[data-compare-tray]')].filter(Boolean);
+  function openFilterSheet() {
+    if (!(filterSheet instanceof HTMLElement) || filterSheet.classList.contains('is-open')) return;
+    sheetReturnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    filterSheet.classList.add('is-open');
+    filterSheet.setAttribute('role', 'dialog');
+    filterSheet.setAttribute('aria-modal', 'true');
+    document.body.classList.add('has-open-sheet');
+    inertTargets().forEach((element) => { element.inert = true; });
+    sheetToggles.forEach((toggle) => toggle.setAttribute('aria-expanded', 'true'));
+    requestAnimationFrame(() => filterSheet.querySelector('button, input, a[href], summary')?.focus({ preventScroll: true }));
+  }
+  function closeFilterSheet({ restoreFocus = true } = {}) {
+    if (!(filterSheet instanceof HTMLElement) || !filterSheet.classList.contains('is-open')) return;
+    filterSheet.classList.remove('is-open');
+    filterSheet.removeAttribute('role');
+    filterSheet.removeAttribute('aria-modal');
+    document.body.classList.remove('has-open-sheet');
+    inertTargets().forEach((element) => { element.inert = false; });
+    sheetToggles.forEach((toggle) => toggle.setAttribute('aria-expanded', 'false'));
+    if (restoreFocus) sheetReturnFocus?.focus({ preventScroll: true });
+    sheetReturnFocus = null;
+  }
+  sheetToggles.forEach((toggle) => {
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => openFilterSheet());
+  });
+  catalogRoot.querySelectorAll('[data-filter-sheet-close]').forEach((button) => button.addEventListener('click', () => closeFilterSheet()));
+  narrowLayout.addEventListener?.('change', () => {
+    if (!narrowLayout.matches) {
+      closeFilterSheet({ restoreFocus: false });
+      setSettingsOpen(false);
+    }
+  });
+
+  // Price and build settings open from the header chip.
+  function setSettingsOpen(open, { restoreFocus = false } = {}) {
+    if (!(settingsPanel instanceof HTMLElement) || !(settingsToggle instanceof HTMLButtonElement)) return;
+    settingsPanel.hidden = !open;
+    settingsToggle.setAttribute('aria-expanded', String(open));
+    const modal = open && narrowLayout.matches;
+    if (modal) settingsPanel.setAttribute('aria-modal', 'true');
+    else settingsPanel.removeAttribute('aria-modal');
+    const outside = [document.querySelector('main'), document.querySelector('.site-footer'), document.querySelector('[data-compare-tray]'), ...document.querySelectorAll('.header-inner > :not(.price-settings)')].filter(Boolean);
+    outside.forEach((element) => { element.inert = modal; });
+    document.body.classList.toggle('has-open-settings', open);
+    if (open) requestAnimationFrame(() => settingsPanel.querySelector('select, input, button:not([data-settings-close])')?.focus({ preventScroll: true }));
+    else if (restoreFocus) settingsToggle.focus({ preventScroll: true });
+  }
+  settingsToggle?.addEventListener('click', () => setSettingsOpen(settingsPanel?.hidden ?? false));
+  document.querySelector('[data-settings-close]')?.addEventListener('click', () => setSettingsOpen(false, { restoreFocus: true }));
+  document.addEventListener('pointerdown', (event) => {
+    if (!(settingsPanel instanceof HTMLElement) || settingsPanel.hidden) return;
+    const target = event.target;
+    if (target instanceof Node && !settingsPanel.contains(target) && !settingsToggle?.contains(target) && !(target instanceof Element && target.closest('#shared-tooltip'))) setSettingsOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.defaultPrevented) return;
+    const panel = filterSheet?.classList.contains('is-open') ? filterSheet : narrowLayout.matches && settingsPanel && !settingsPanel.hidden ? settingsPanel : null;
+    if (event.key === 'Tab' && panel) {
+      const focusable = [...panel.querySelectorAll('a[href], button, input, select, summary, [tabindex="0"]')].filter((item) => !item.disabled && item.getClientRects().length);
+      const next = event.shiftKey ? focusable.at(-1) : focusable[0];
+      if (next && (event.shiftKey ? document.activeElement === focusable[0] : document.activeElement === focusable.at(-1))) { next.focus(); event.preventDefault(); }
+      return;
+    }
+    if (event.key !== 'Escape') return;
+    if (settingsPanel instanceof HTMLElement && !settingsPanel.hidden) {
+      setSettingsOpen(false, { restoreFocus: true });
+      event.preventDefault();
+    } else if (filterSheet?.classList.contains('is-open')) {
+      closeFilterSheet();
+      event.preventDefault();
+    }
+  });
+
   addEventListener('popstate', () => {
     restoreFromParams(new URLSearchParams(location.search));
     const params = new URLSearchParams(location.search);
     const ids = normalizeSelection(params.get('compare'), { validIds: byId });
     selection = ids;
+    startingPoint = params.get('start') ?? '';
+    if (compareDifferences instanceof HTMLInputElement) compareDifferences.checked = params.get('diff') === '1';
     if (comparePanel) comparePanel.hidden = ids.length < 2;
     compareTray?.classList.toggle('is-comparing', ids.length >= 2);
     renderTray();
@@ -1540,13 +1811,17 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const compareBoxes = [...document.querySelectorAll('[data-compare-id]')];
   const comparePanel = catalogRoot.querySelector('[data-inline-compare]');
   const compareContent = catalogRoot.querySelector('[data-compare-content]');
+  const compareHeadingCount = catalogRoot.querySelector('[data-compare-heading-count]');
+  const compareDifferences = catalogRoot.querySelector('[data-compare-differences]');
   let selection = readStoredSelection().filter((id) => byId.has(id));
+  let startingPoint = initialParams.get('start') ?? '';
 
   function syncBoxes() {
     compareBoxes.forEach((box) => {
       const selected = selection.includes(box.dataset.compareId);
       box.checked = selected;
       box.disabled = !selected && selection.length >= comparisonSelectionLimit;
+      box.closest('[data-product-row]')?.classList.toggle('is-selected', selected);
     });
   }
 
@@ -1555,13 +1830,37 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (compareCount) compareCount.textContent = String(selection.length);
     if (selectionLabel) selectionLabel.textContent = selection.length >= comparisonSelectionLimit
       ? ` selected · ${comparisonSelectionLimit}-bike limit reached`
-      : ' selected';
-    if (selectionNames) selectionNames.textContent = selection.map((id) => byId.get(id)?.name).filter(Boolean).join(' · ');
+      : selection.length === 1 ? ' selected · choose one more to compare' : ' selected';
+    if (selectionNames) {
+      selectionNames.replaceChildren(...selection.map((id) => {
+        const item = byId.get(id);
+        const chip = element('span', 'tray-item');
+        if (item?.image) {
+          const image = document.createElement('img');
+          image.src = item.image;
+          image.alt = '';
+          image.width = 42;
+          image.height = 28;
+          image.loading = 'lazy';
+          if (item.imageRemote) image.referrerPolicy = 'no-referrer';
+          image.addEventListener('error', () => image.remove());
+          chip.append(image);
+        }
+        const label = [item?.brand, item?.name].filter(Boolean).join(' ');
+        chip.append(element('span', '', item?.name ?? id));
+        const remove = element('button', 'tray-remove', '×');
+        remove.type = 'button';
+        remove.setAttribute('aria-label', `Remove ${label}`);
+        remove.addEventListener('click', () => setSelection(selection.filter((value) => value !== id)));
+        chip.append(remove);
+        return chip;
+      }));
+    }
     compareTray?.classList.toggle('is-visible', selection.length > 0);
     if (openCompareButton instanceof HTMLButtonElement) {
       openCompareButton.hidden = selection.length < 2;
       openCompareButton.disabled = selection.length < 2;
-      openCompareButton.textContent = 'Compare';
+      openCompareButton.textContent = `${translate('Compare', locale)} ${selection.length}`;
     }
     if (openBuildLink instanceof HTMLAnchorElement) {
       const item = selection.length === 1 ? byId.get(selection[0]) : null;
@@ -1579,7 +1878,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function setSelection(next) {
-    selection = normalizeSelection(next, { validIds: byId });
+    const normalized = normalizeSelection(next, { validIds: byId });
+    if (normalized.join(',') !== selection.join(',')) startingPoint = '';
+    selection = normalized;
     renderTray();
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
   }
@@ -1622,7 +1923,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
       title.href = `${target.pathname}${target.search}`;
     }
-    const type = element('span', '', item.type);
+    const type = element('span', 'compare-type', [item.type, item.stage === 'candidate' ? translate('Research lead', locale) : ''].filter(Boolean).join(' · '));
     const orderControls = element('div', 'compare-order-controls');
     orderControls.setAttribute('role', 'group');
     orderControls.setAttribute('aria-label', `Reorder ${label}`);
@@ -1642,12 +1943,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     moveRight.setAttribute('aria-label', `Move ${label} right`);
     moveRight.title = 'Move right';
     moveRight.addEventListener('click', () => moveComparison(item, 1, 'right'));
-    orderControls.append(moveLeft, moveRight);
-    copy.append(title, type, orderControls);
     const remove = element('button', 'remove-compare', '×');
     remove.type = 'button';
     remove.setAttribute('aria-label', `Remove ${label}`);
     remove.addEventListener('click', () => setSelection(selection.filter((id) => id !== item.id)));
+    orderControls.append(moveLeft, moveRight, remove);
+    copy.append(title, type, orderControls);
     if (item.image) {
       const image = document.createElement('img');
       image.src = item.image;
@@ -1665,7 +1966,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     } else {
       head.classList.add('has-no-image');
     }
-    head.append(copy, remove);
+    head.append(copy);
     return head;
   }
 
@@ -1677,7 +1978,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     return cell;
   }
 
-  function comparisonGrid(items, fields, includeHeaders = false) {
+  // Grouped native table: one row per field, one group per buyer question.
+  function comparisonGrid(items, groups, includeHeaders = false) {
     const scroll = element('div', 'compare-scroll');
     scroll.tabIndex = 0;
     scroll.setAttribute('aria-label', translate('Bike comparison table; scroll horizontally to see every selected bike', locale));
@@ -1696,45 +1998,102 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       headerRow.append(header);
     });
     head.append(headerRow);
-    const body = element('tbody');
-    fields.forEach(([label, render]) => {
-      const row = element('tr');
-      const header = element('th', 'compare-label', translate(label, locale));
-      header.scope = 'row';
-      row.append(header);
-      items.forEach((item) => {
-        const cell = element('td');
-        cell.append(render(item));
-        row.append(cell);
+    table.append(head);
+    for (const [groupLabel, fields] of groups) {
+      if (!fields.length) continue;
+      const body = element('tbody');
+      if (groupLabel) {
+        const groupRow = element('tr', 'compare-group');
+        const groupHeader = element('th', '', translate(groupLabel, locale));
+        groupHeader.scope = 'rowgroup';
+        groupHeader.colSpan = items.length + 1;
+        groupRow.append(groupHeader);
+        body.append(groupRow);
+      }
+      fields.forEach(([label, render, key = '']) => {
+        const row = element('tr');
+        const header = element('th', 'compare-label', translate(label, locale));
+        header.scope = 'row';
+        row.append(header);
+        const values = items.map((item) => {
+          const cell = element('td');
+          cell.append(render(item));
+          row.append(cell);
+          return cell.textContent.trim();
+        });
+        // Rows where every bike has the same value can be hidden; nothing is ranked.
+        if (new Set(values).size === 1) row.classList.add('is-same');
+        if (key) row.dataset.compareField = key;
+        body.append(row);
       });
-      body.append(row);
-    });
-    table.append(head, body);
+      table.append(body);
+    }
     scroll.append(table);
     return scroll;
+  }
+
+  function comparePrice(item) {
+    const cell = valueCell(item.price, item.priceState);
+    if (item.priceTone === 'attention') cell.classList.add('is-attention');
+    return cell;
   }
 
   function renderComparison() {
     const items = selection.map((id) => byId.get(id)).filter(Boolean);
     if (!compareContent || items.length < 2) return;
     const metricKinds = [...new Set(items.map((item) => item.categoryMetricKind))];
-    const metricFields = metricKinds.filter((kind) => kind !== 'tire').map((kind) => {
+    // Discipline and tire metrics repeat the category and clearance rows.
+    const metricFields = metricKinds.filter((kind) => !['tire', 'discipline'].includes(kind)).map((kind) => {
       const sample = items.find((item) => item.categoryMetricKind === kind);
       return [sample?.categoryMetricLabel ?? 'Category fact', (item) => item.categoryMetricKind === kind
         ? valueCell(item.categoryMetric, item.categoryMetricDetails)
-        : valueCell('—')];
+        : valueCell('—'), `metric-${kind}`];
     });
     const hasValue = (key) => items.some((item) => item[key] && item[key] !== '—');
-    const coreFields = [
-      ['Price', (item) => valueCell(item.price, item.priceState)],
-      ['Category', (item) => valueCell(item.category)],
-      ...(hasValue('tireClearance') ? [['Tire clearance', (item) => valueCell(item.tireClearance)]] : []),
-      ...metricFields,
-      ...(hasValue('drivetrain') ? [['Drivetrain', (item) => valueCell(item.drivetrain, item.drivetrainSubline)]] : []),
-      ...(hasValue('weight') ? [['Weight', (item) => valueCell(item.weight)]] : []),
-      ...(hasValue('frame') ? [['Frame', (item) => valueCell(item.frame)]] : []),
-      ...(hasValue('bestFor') ? [['Best for', (item) => valueCell(item.bestFor)]] : []),
-      ...(hasValue('verdict') ? [['Verdict', (item) => valueCell(item.verdict)]] : [])
+    const clearance = (item) => {
+      const parts = clearanceParts(item.tireClearance);
+      return valueCell(parts.main, parts.sub);
+    };
+    // Complete-bike and frame-only weights never share a row.
+    const weightKindOf = (item) => !item.weight || item.weight === '—' ? '' : / frame$/.test(item.weight) ? 'frame' : 'complete';
+    const weightBy = (kind) => (item) => {
+      if (weightKindOf(item) !== kind) return valueCell('—');
+      const parts = weightParts(item.weight, item.kind);
+      return valueCell(parts.main, parts.sub === 'frame only' ? parts.sub : '');
+    };
+    const hasWeight = (kind) => items.some((item) => weightKindOf(item) === kind);
+    const geometryItems = items.filter((item) => item.geometryId);
+    const geometryLink = () => {
+      const cell = element('div', 'compare-value');
+      const link = element('a', '', translate('Compare stack and reach', locale));
+      const target = new URL(`${document.body.dataset.base || ''}/geometry/`, location.origin);
+      target.searchParams.set('a', geometryItems[0].geometryId);
+      if (geometryItems[1]) target.searchParams.set('b', geometryItems[1].geometryId);
+      link.href = `${target.pathname}${target.search}`;
+      cell.append(link);
+      return cell;
+    };
+    const groups = [
+      ['Cost', [['Full-bike price', comparePrice, 'price']]],
+      ['Use & fit', [
+        ['Category', (item) => valueCell(item.category), 'category'],
+        ...(hasValue('tireClearance') ? [['Tire clearance', clearance, 'tire']] : []),
+        ...metricFields
+      ]],
+      ['Equipment & weight', [
+        ...(hasValue('drivetrain') ? [['Drivetrain', (item) => item.kind === 'frameset' ? valueCell(translate('frame only', locale), item.type === 'Frame build' ? translate('priced with your build plan', locale) : '', 'is-muted') : valueCell(item.drivetrain, item.drivetrainSubline), 'drivetrain']] : []),
+        ...(hasWeight('complete') ? [['Weight · complete bike', weightBy('complete'), 'weight-complete']] : []),
+        ...(hasWeight('frame') ? [['Weight · frame', weightBy('frame'), 'weight-frame']] : [])
+      ]],
+      ['Frame & standards', [
+        ...(hasValue('frame') ? [['Frame', (item) => valueCell(item.frame), 'frame']] : [])
+      ]],
+      ['Assessment', [
+        ...(hasValue('bestFor') ? [['Best for', (item) => valueCell(item.bestFor), 'best-for']] : []),
+        ...(hasValue('verdict') ? [['Verdict', (item) => valueCell(item.verdict), 'verdict']] : []),
+        ...(hasValue('caveats') ? [['Verify before paying', (item) => valueCell(item.caveats && item.caveats !== 'None recorded' ? item.caveats : '—'), 'caveats']] : [])
+      ]],
+      ...(geometryItems.length >= 1 ? [['', [['Geometry', geometryLink, 'geometry']]]] : [])
     ];
     const secondaryFields = [
       ...(hasValue('priceDetails') ? [['Price details', (item) => valueCell(item.priceDetails)]] : []),
@@ -1743,17 +2102,27 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       ...(hasValue('manufacturing') ? [['Manufacturing', (item) => valueCell(item.manufacturing)]] : []),
       ...(hasValue('availability') ? [['Availability', (item) => valueCell(item.availability)]] : [])
     ];
-    const mixedCategories = metricKinds.length > 1;
-    const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, mixedCategories
-      ? 'These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.'
-      : `Category-specific facts are comparable across these ${items.length} selections.`);
+    const families = new Set(items.map((item) => item.family ?? '').filter(Boolean));
+    const mixedCategories = metricKinds.filter((kind) => !['tire', 'discipline'].includes(kind)).length > 1 || families.size > 1;
+    const start = startingPoint ? document.querySelector(`[data-curated-group="${CSS.escape(startingPoint)}"]`) : null;
+    const notes = [
+      start?.dataset.criteria ? `${translate('Starting point', locale)}: ${start.querySelector('strong')?.textContent?.trim() ?? ''} · ${translate('Criteria', locale)}: ${translate(start.dataset.criteria, locale)}` : '',
+      translate(mixedCategories
+        ? 'These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.'
+        : `Category-specific facts are comparable across these ${items.length} selections.`, locale),
+      translate('Prices exclude shipping and import unless marked Delivered. Nothing here is ranked.', locale)
+    ].filter(Boolean);
+    const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, notes.join(' '));
     const orderHint = element('p', 'compare-order-hint', 'Use the arrow controls to reorder columns. The comparison link keeps this order.');
-    compareContent.replaceChildren(context, orderHint, comparisonGrid(items, coreFields, true));
+    const grid = comparisonGrid(items, groups, true);
+    grid.classList.toggle('is-differences-only', Boolean(compareDifferences?.checked));
+    compareContent.replaceChildren(context, orderHint, grid);
     if (secondaryFields.length) {
       const more = element('details', 'compare-more');
-      more.append(element('summary', '', translate('More details', locale)), comparisonGrid(items, secondaryFields));
+      more.append(element('summary', '', translate('More details', locale)), comparisonGrid(items, [['', secondaryFields]]));
       compareContent.append(more);
     }
+    if (compareHeadingCount) compareHeadingCount.textContent = `${items.length} / ${comparisonSelectionLimit}`;
 
     const next = new URL(location.href);
     next.searchParams.set('compare', selection.join(','));
@@ -1761,6 +2130,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     next.searchParams.set('ship', activeCountry || 'unknown');
     next.searchParams.set('currency', activeCurrency);
     setParam(next, 'area', activeCountry === 'US' ? activeArea : '');
+    setParam(next, 'start', startingPoint);
+    setParam(next, 'diff', compareDifferences?.checked ? '1' : '');
     try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }
   }
 
@@ -1778,8 +2149,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   function closeComparison({ restoreFocus = false } = {}) {
     if (comparePanel) comparePanel.hidden = true;
     compareTray?.classList.remove('is-comparing');
+    startingPoint = '';
     const next = new URL(location.href);
     next.searchParams.delete('compare');
+    next.searchParams.delete('start');
+    next.searchParams.delete('diff');
     try { history.replaceState(null, '', `${next.pathname}${next.search}${location.hash === '#compare' ? '' : location.hash}`); } catch { /* normal navigation origin required */ }
     if (restoreFocus && openCompareButton instanceof HTMLButtonElement && !openCompareButton.disabled) openCompareButton.focus({ preventScroll: true });
   }
@@ -1787,6 +2161,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   openCompareButton?.addEventListener('click', () => openComparison());
   document.querySelector('[data-clear-selection]')?.addEventListener('click', () => setSelection([]));
   catalogRoot.querySelector('[data-close-compare]')?.addEventListener('click', () => closeComparison({ restoreFocus: true }));
+  compareDifferences?.addEventListener('change', () => { if (selection.length >= 2) renderComparison(); });
   catalogRoot.querySelector('[data-copy-comparison]')?.addEventListener('click', async (event) => {
     if (selection.length >= 2) renderComparison();
     if (event.currentTarget instanceof HTMLButtonElement) {
@@ -1796,6 +2171,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   const querySelection = normalizeSelection(initialParams.get('compare'), { validIds: byId });
   if (initialParams.has('compare')) selection = querySelection;
+  if (compareDifferences instanceof HTMLInputElement) compareDifferences.checked = initialParams.get('diff') === '1';
   renderTray();
   if (querySelection.length >= 2) openComparison({ scroll: false });
 
@@ -1822,6 +2198,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (!hasFixedAmount || !Number.isFinite(amount)) {
       syncBuildPreset();
       updateCatalog({ historyMode: 'push' });
+      updateSettingsSummary();
       if (buildAllowance instanceof HTMLInputElement) {
         buildAllowance.focus({ preventScroll: true });
         buildAllowance.select();

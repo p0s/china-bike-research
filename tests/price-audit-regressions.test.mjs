@@ -34,7 +34,7 @@ test('all nine foreign supplier and owner reference types stay out of planner pu
 test('seven genuine conditional observations retain their amounts and visible structured qualifier', () => {
   for (const id of ['qingsha-carbon-folding','java-vittoria-er7-2026','upland-r70','camp-gx700','cinelli-pressure','laget-discovery-one-flagship']) {
     assert.equal(summary(id).chinaPrice.conditional,true,id);
-    assert.match(summary(id).priceState,/Conditional price/,id);
+    assert.match(summary(id).priceState,/conditional/i,id);
   }
   const tfsa = data.prices.find(p=>p.id==='tfsa-jh37-taobao-selected-2026-08-27');
   assert.equal(chinaPriceBasis([tfsa]).conditional,true);

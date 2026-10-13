@@ -9,7 +9,7 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[]}) {
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[], headerTools=''}) {
   const siteName='China Bikes';
   const t = (value) => translate(value, locale);
   title = t(title);
@@ -58,17 +58,27 @@ export function layout({base='', repositoryUrl, title='', description, current='
 </head>
 <body data-base="${escapeAttr(base + (LOCALE_PREFIXES[locale] ?? ''))}" data-locale="${locale}">
   <a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header">
+  <header class="site-header${current === 'catalog' ? ' is-catalog' : ''}">
     <div class="page header-inner">
       <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/branding/panda-rider-3b-256.webp')}" alt="" width="50" height="50"><span class="brand-wordmark" data-original-language lang="en" translate="no">China <span>Bikes</span></span></a>
+      <form class="header-search" role="search" action="${url(base,localePath('/', locale))}#catalog" method="get" data-header-search>
+        <label class="sr-only" for="site-search">Search bikes</label>
+        <input id="site-search" name="q" type="search" placeholder="Search model, brand, drivetrain or 中文名" autocomplete="off" enterkeyhint="search"${current === 'catalog' ? ' data-filter-search' : ''}>
+        <kbd aria-hidden="true">/</kbd>
+      </form>
+      ${headerTools}
       <div class="header-actions">
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
-          <a href="${url(base,'/framesets/')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
-          <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
-          <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build</a>
-          <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
-          <a href="${url(base,'/blog/')}"${current==='blog'?' aria-current="page"':''}>Blog</a>
+          <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
+          <div class="nav-tools${['geometry','builder','groupsets'].includes(current) ? ' is-current' : ''}" data-nav-tools>
+            <button class="nav-tools-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-tools-toggle hidden>Tools</button>
+            <div class="nav-tools-menu" id="nav-tools-menu">
+              <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
+              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build planner</a>
+              <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
+            </div>
+          </div>
         </nav>
         <nav class="language-nav" aria-label="Language">${LOCALES.filter((lang) => lang !== locale).map((lang) => `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav>
         <button class="theme-button" type="button" data-theme-control><span aria-hidden="true" data-theme-icon><span class="theme-light">☀</span><span class="theme-dark">☾</span></span><span data-theme-label><span class="theme-light">Light</span><span class="theme-dark">Dark</span></span></button>
@@ -87,6 +97,8 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <a href="${url(base,'/methodology/')}">Methodology</a>
         <a href="${url(base,'/blog/')}">Buying guides</a>
         <a href="${url(base,'/brands/')}">Brands</a>
+        <a href="${url(base,'/complete-bikes/')}">Complete bikes</a>
+        <a href="${url(base,'/framesets/')}">Framesets</a>
         <a href="${url(base,'/prices/')}">Price ranges</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
         <a href="${url(base,'/build/')}">Build a bike</a>
@@ -100,6 +112,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
     </div>
   </footer>
   <aside class="selection-bar" data-compare-tray aria-live="polite" aria-label="Selected bikes">
+    <button class="tray-filters" type="button" aria-controls="catalog-filters" aria-expanded="false" data-filter-sheet-toggle hidden>Filters<span class="tray-filter-count" data-active-filter-count hidden></span></button>
     <div class="selection-summary"><strong data-compare-count>0</strong><span data-selection-label> selected</span><span class="selection-names" data-selection-names></span></div>
     <div class="selection-actions">
       <button class="text-button" type="button" data-clear-selection>Clear</button>

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
-import { escapeAttr, escapeHtml } from '../src/lib/html.mjs';
+import { escapeAttr } from '../src/lib/html.mjs';
 import { renderHome } from '../src/render.mjs';
 
 const data = loadDataset();
@@ -14,51 +14,45 @@ const groups = [
   ['wide-tire-aero', ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden']]
 ];
 const entries = new Map([...products.map(p => [p.variant.id, p]), ...catalogCandidates.map(e => [e.id, e])]);
-const picks = ctx => renderHome(ctx).match(/<section class="curated-picks page"[\s\S]*?<\/section>/)[0];
+const row = (html, id) => html.match(new RegExp(`<div class="catalog-row[^"]*"[^>]*data-id="${id}"[\\s\\S]*?(?=<div class="catalog-row|<div class="empty-state")`))?.[0];
 
-test('homepage shortlists reuse exact reviewed card assets, order, sources and full image notes', () => {
-  const html = picks(context);
-  assert.equal((html.match(/<img /g) ?? []).length, 9);
-  for (const [group, ids] of groups) {
-    const article = html.match(new RegExp(`<article class="curated-group" data-curated-group="${group}">([\\s\\S]*?)<\\/article>`))[1];
-    const choices = [...article.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(m => m[1]);
-    assert.equal(choices.length, ids.length);
-    ids.forEach((id, index) => {
-      const entry = entries.get(id), image = entry.image, choice = choices[index];
-      const modelId = entry.variant?.id ?? entry.candidate.id;
-      const card = image.hosting.variants.find(v => v.purpose === 'card');
-      assert.ok(choice.includes(`href="/preview/models/${modelId}/"`), id);
-      assert.ok(choice.includes(`src="/preview${card.url}"`), id);
-      assert.ok(!choice.includes(image.hosting.local_path), id);
-      assert.ok(choice.includes(`alt="${escapeAttr(image.alt)}"`), id);
-      assert.ok(choice.includes(`width="${card.width}" height="${card.height}" loading="lazy" decoding="async"`), id);
-      assert.ok(choice.includes(escapeHtml(image.display_note)), id);
-      assert.ok(choice.includes('<details class="curated-image-note"><summary>Accuracy</summary>'), id);
-      assert.ok(choice.includes(escapeHtml(image.credit)), id);
-      assert.ok(choice.includes(`href="${escapeAttr(image.source_media_page_url ?? entry.imageSource.url)}" rel="noreferrer"`), id);
-    });
-    assert.ok(article.includes(`compare=${ids.join('%2C')}#compare`));
-  }
-});
-
-test('unavailable, hidden and remote shortlist images omit only the image and preserve model facts', () => {
-  const originalFacts = picks(context).match(/<a href="\/preview\/models\/lightcarbon-lcr018-d\/">LightCarbon LCR018-D<\/a><span>([^<]+)<\/span>/)[1];
-  for (const image of [undefined, { ...entries.get('candidate-lightcarbon-lcr018-d').image, buyer_visibility: 'omit' }, { ...entries.get('candidate-lightcarbon-lcr018-d').image, hosting: { mode: 'remote', remote_url: 'https://example.invalid/unverified.webp' } }]) {
-    const html = picks({ ...context, catalogCandidates: catalogCandidates.map(e => e.id === 'candidate-lightcarbon-lcr018-d' ? { ...e, image } : e) });
-    const choice = html.match(/<li><div class="curated-copy"><a href="\/preview\/models\/lightcarbon-lcr018-d\/">([\s\S]*?)<\/li>/)?.[1];
-    assert.ok(choice?.includes('LightCarbon LCR018-D'));
-    assert.ok(choice?.includes(originalFacts));
-    assert.equal((html.match(/<img /g) ?? []).length, 8);
-    assert.ok(!html.includes('unverified.webp'));
-    assert.ok(html.includes('compare=incolor-speedster-sr-frameset%2Ccandidate-lightcarbon-lcr018-d%2Ccandidate-tavelo-arden#compare'));
-  }
-});
-
-test('shortlist card assets and model links retain locale and deployment-base routing', () => {
+// Criteria-led starting points open their ordered comparison; they are not a ranking.
+test('starting points open their ordered three-bike comparison with visible criteria in every locale', () => {
   for (const [locale, prefix] of [['en', ''], ['zh-Hans', '/zh'], ['de', '/de']]) {
-    const html = picks({ ...context, locale });
-    assert.equal((html.match(/<img /g) ?? []).length, 9);
-    assert.ok(html.includes(`href="/preview${prefix}/models/lightcarbon-lcr018-d/"`));
-    assert.ok(html.includes(`src="/preview${entries.get('candidate-lightcarbon-lcr018-d').image.hosting.variants.find(v => v.purpose === 'card').url}"`));
+    const html = renderHome({ ...context, locale });
+    const rail = html.match(/<section class="rail-section rail-starting-points"[\s\S]*?<\/section>/)[0];
+    for (const [group, ids] of groups) {
+      const link = rail.match(new RegExp(`<a class="starting-point" href="([^"]+)" data-curated-group="${group}" data-criteria="([^"]+)"`));
+      assert.ok(link, `${group} ${locale}`);
+      assert.ok(link[1].startsWith(`/preview${prefix}/?compare=${ids.join('%2C')}&amp;start=${group}#compare`), `${group} ${locale}`);
+      assert.ok(link[2].length > 40, group);
+    }
+    assert.doesNotMatch(rail, /<img /);
+  }
+});
+
+test('catalog rows reuse exact reviewed card assets with alt text, dimensions and lazy loading', () => {
+  const html = renderHome(context);
+  for (const [, ids] of groups) for (const id of ids) {
+    const entry = entries.get(id), image = entry.image, card = image.hosting.variants.find(v => v.purpose === 'card');
+    const markup = row(html, id);
+    assert.ok(markup, id);
+    assert.ok(markup.includes(`src="/preview${card.url}"`), id);
+    assert.ok(!markup.includes(image.hosting.local_path), id);
+    assert.ok(markup.includes(`alt="${escapeAttr(image.alt)}"`), id);
+    assert.ok(markup.includes('loading="lazy"'), id);
+  }
+});
+
+test('unavailable and hidden catalog images omit only the image and keep the row facts', () => {
+  const id = 'candidate-lightcarbon-lcr018-d';
+  const original = row(renderHome(context), id);
+  for (const image of [undefined, { ...entries.get(id).image, buyer_visibility: 'omit' }]) {
+    const html = renderHome({ ...context, catalogCandidates: catalogCandidates.map(e => e.id === id ? { ...e, image } : e) });
+    const markup = row(html, id);
+    assert.ok(markup.includes('LightCarbon LCR018-D'));
+    assert.ok(!markup.includes('<img '));
+    assert.ok(!markup.includes('placeholders'));
+    assert.equal(markup.match(/<div class="catalog-cell price-cell"[\s\S]*?<\/div>/)[0], original.match(/<div class="catalog-cell price-cell"[\s\S]*?<\/div>/)[0]);
   }
 });

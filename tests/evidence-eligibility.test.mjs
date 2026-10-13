@@ -31,7 +31,7 @@ test('unmapped measurements remain references and cannot drive complete-bike wei
     if (base) assert.equal(base.baseWeightG, null, id);
     const row = home.match(new RegExp(`data-id="${entry.id}"[\\s\\S]*?(?=<div class="catalog-row|</section>)`))?.[0];
     assert.ok(row, id);
-    assert.match(row, /class="catalog-cell weight-cell"[^>]*>—<\/div>/, id);
+    assert.match(row, /class="catalog-cell weight-cell is-unknown"[^>]*>—<\/div>/, id);
     for (const locale of ['en', 'zh-Hans', 'de']) {
       const profile = renderCandidateModel({ ...context, locale }, entry);
       assert.ok(profile.includes(translate('Reference complete weight; exact build unresolved', locale)), id + locale);
