@@ -23,6 +23,19 @@ const homeContext = {
 };
 const html = renderHome(homeContext);
 
+test('model decision panels describe price thresholds without claiming the current price is below them', () => {
+  for (const [id, kind, amount] of [['camp-gx600-pes', 'Complete-bike', '¥5,600'], ['af01-frameset', 'Frameset', '¥6,200']]) {
+    const product = products.find((item) => item.variant.id === id);
+    assert.ok(product.latestPrice.amount_cny > product.variant.editorial.price_thresholds_cny.great_buy_below);
+    const detail = renderModel(homeContext, product);
+    assert.ok(detail.includes(`${kind} good-buy reference: below ${amount}`));
+    assert.doesNotMatch(detail, /Below this model’s/);
+    for (const locale of ['zh-Hans', 'de']) {
+      assert.doesNotMatch(renderModel({ ...homeContext, locale }, product), /good-buy reference|Below this model’s/);
+    }
+  }
+});
+
 test('homepage opens on the catalog without guide teasers or curated card sections', () => {
   const catalog = html.indexOf('class="catalog-section"');
   assert.ok(catalog > 0);

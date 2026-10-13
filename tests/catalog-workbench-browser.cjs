@@ -109,6 +109,26 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           await page.reload({ waitUntil: 'load' });
           await page.waitForFunction(() => !document.querySelector('[data-inline-compare]').hidden);
           assert.equal(await page.locator('[data-compare-differences]').isChecked(), true);
+          assert.ok((await page.locator('.compare-context').textContent()).includes('unless marked Delivered'));
+          // Back/Forward must restore comparison options before rendering can rewrite the URL.
+          const startLink = await page.locator('.starting-point').first().getAttribute('href');
+          await page.goto(`http://preview.invalid${startLink}`, { waitUntil: 'load' });
+          await page.waitForFunction(() => !document.querySelector('[data-inline-compare]').hidden);
+          await page.locator('[data-compare-differences]').check();
+          const originalComparison = new URL(page.url()).searchParams;
+          await page.locator(`${width < 960 ? '.family-chips' : '.category-tree'} [data-category-value="family:gravel"]`).click();
+          await page.locator('[data-compare-differences]').uncheck();
+          await page.locator('[data-move-compare][data-direction="right"]').first().click();
+          const movedComparison = new URL(page.url()).searchParams.get('compare');
+          await page.goBack();
+          await page.waitForFunction(() => document.querySelector('[data-compare-differences]').checked);
+          assert.equal(new URL(page.url()).searchParams.get('start'), originalComparison.get('start'));
+          assert.equal(new URL(page.url()).searchParams.get('compare'), originalComparison.get('compare'));
+          assert.ok((await page.locator('.compare-context').textContent()).includes('Starting point:'));
+          await page.goForward();
+          await page.waitForFunction(() => !document.querySelector('[data-compare-differences]').checked);
+          assert.equal(new URL(page.url()).searchParams.get('compare'), movedComparison);
+          assert.equal(new URL(page.url()).searchParams.has('start'), false);
         }
         // The model decision panel retains identity, evidence and price history.
         if ([1440, 320].includes(width)) {

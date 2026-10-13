@@ -1790,6 +1790,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const params = new URLSearchParams(location.search);
     const ids = normalizeSelection(params.get('compare'), { validIds: byId });
     selection = ids;
+    startingPoint = params.get('start') ?? '';
+    if (compareDifferences instanceof HTMLInputElement) compareDifferences.checked = params.get('diff') === '1';
     if (comparePanel) comparePanel.hidden = ids.length < 2;
     compareTray?.classList.toggle('is-comparing', ids.length >= 2);
     renderTray();
@@ -2108,7 +2110,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       translate(mixedCategories
         ? 'These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.'
         : `Category-specific facts are comparable across these ${items.length} selections.`, locale),
-      translate('Prices exclude shipping and import. Nothing here is ranked.', locale)
+      translate('Prices exclude shipping and import unless marked Delivered. Nothing here is ranked.', locale)
     ].filter(Boolean);
     const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, notes.join(' '));
     const orderHint = element('p', 'compare-order-hint', 'Use the arrow controls to reorder columns. The comparison link keeps this order.');
