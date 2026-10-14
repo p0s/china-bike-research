@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/incolor-speedster-sr-vs-sr-plus-mascot-cover-970248db0e-640.webp', 'a46cbd64c9b6035d962eafaf3def2331b3288a4af4773fbac7836c3179c1aee9'],
+  ['assets/blog/incolor-speedster-sr-vs-sr-plus-mascot-cover-970248db0e-1600.webp', '2d195f9c1b52a289ddc1cd93b6fff483ba2f72454eb920ccaf3047ce70f1f379'],
+  ['assets/blog/incolor-speedster-sr-vs-sr-plus-mascot-cover-970248db0e-1200.jpg', '32c3deef93bbc882998c514fbf1e63403c8b6fec778c1b3f3d848d99a9401dba'],
+  ['assets/blog/when-geometry-chart-does-not-add-up-mascot-cover-78d85422ca-640.webp', '464655ff312fb8d32a76519dc3bd4243f92ae65f4608a0050217573b95388262'],
+  ['assets/blog/when-geometry-chart-does-not-add-up-mascot-cover-78d85422ca-1600.webp', 'b949bba0e64ab2f2b385e5a931002d90f606f3936641a50aedd8cd815e736331'],
+  ['assets/blog/when-geometry-chart-does-not-add-up-mascot-cover-78d85422ca-1200.jpg', '3e3913be6d00e87fba32681ff717a6aa143b69578c45556ca3d7b24d3816f9fd'],
   ['assets/blog/gravel-bikes-around-5000-yuan-mascot-cover-fd45ce1059-640.webp', '55f323b5816c0053b77893b70e132c436bd79ba63582c0800cc9bbd184731664'],
   ['assets/blog/gravel-bikes-around-5000-yuan-mascot-cover-fd45ce1059-1600.webp', '45d2e528acc9053b595f91c538b1fa5197ef8e8c1d7ae0700daf4a545cedd4ff'],
   ['assets/blog/gravel-bikes-around-5000-yuan-mascot-cover-fd45ce1059-1200.jpg', 'cdbe73c5b3b208cc8ee0ac2a9f93fd2bf648e2f3d00945051efdf4c67510e031'],
