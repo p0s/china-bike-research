@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/one-by-vs-two-by-gravel-mascot-cover-645c215930-640.webp', '2c1855448fb3f30fcb951c6fb871deb1a2245cbcbd5e3073f8751f8e708c4793'],
+  ['assets/blog/one-by-vs-two-by-gravel-mascot-cover-645c215930-1600.webp', '8c2acad1c305cbc542b101daa7a52bd0ff8b933f1e8f924f67f1bde12e537197'],
+  ['assets/blog/one-by-vs-two-by-gravel-mascot-cover-645c215930-1200.jpg', 'c34ab4261a0db5a1cd44be4e36526962ab8cd074bd2397e8d4866312d442ba71'],
   ['assets/blog/buy-yoeleo-bike-mascot-cover-e350d9c640-640.webp', '613f4963fdd3f2299adbdddbfa3799e8780dee7a459b2bd51864c2508f7e65b1'],
   ['assets/blog/buy-yoeleo-bike-mascot-cover-e350d9c640-1600.webp', '149c3e9bc3a98ac701f5002d20c68a9a806a3487b0e5f40e16ee673829b4047d'],
   ['assets/blog/buy-yoeleo-bike-mascot-cover-e350d9c640-1200.jpg', '8f645021f10c34aed2fbe891604221fc1845c7514c9c97fc96819ec02f438d7c'],
