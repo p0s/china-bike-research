@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-yoeleo-bike-mascot-cover-e350d9c640-640.webp', '613f4963fdd3f2299adbdddbfa3799e8780dee7a459b2bd51864c2508f7e65b1'],
+  ['assets/blog/buy-yoeleo-bike-mascot-cover-e350d9c640-1600.webp', '149c3e9bc3a98ac701f5002d20c68a9a806a3487b0e5f40e16ee673829b4047d'],
+  ['assets/blog/buy-yoeleo-bike-mascot-cover-e350d9c640-1200.jpg', '8f645021f10c34aed2fbe891604221fc1845c7514c9c97fc96819ec02f438d7c'],
   ['assets/blog/making-bike-fit-appointment-useful-mascot-cover-b38366d38b-640.webp', 'e28179aed7e67457d95be140fa3b24b03fb78604f28cedd08eafe220d0d0d370'],
   ['assets/blog/making-bike-fit-appointment-useful-mascot-cover-b38366d38b-1600.webp', 'b120b37664128d96d97281e3fd47d8cb958a6fa0315d65178be0dd8397968103'],
   ['assets/blog/making-bike-fit-appointment-useful-mascot-cover-b38366d38b-1200.jpg', '796aad5cf19868f530f63ce5bd4ebd4398b3c1cdcfd145750d617f09af83ada9'],
