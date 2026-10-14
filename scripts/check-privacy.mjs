@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/why-wheelbase-does-not-tell-whole-story-mascot-cover-928f4b89df-640.webp', '7c7c4a6039403bdd826066b994cd1d65d9e51c552ee8114ff49c2a64b8d41871'],
+  ['assets/blog/why-wheelbase-does-not-tell-whole-story-mascot-cover-928f4b89df-1600.webp', '3bb0e53afe77a90bc98edcfc339da8b0dc6a9684f76a90f03f2c1e2f19346cae'],
+  ['assets/blog/why-wheelbase-does-not-tell-whole-story-mascot-cover-928f4b89df-1200.jpg', 'd1e1d7160d510a966e3bbdb60649b94b0bf9c7ba70e7d93c0bcca08cea758a9f'],
   ['assets/blog/incolor-speedster-sr-vs-sr-plus-mascot-cover-970248db0e-640.webp', 'a46cbd64c9b6035d962eafaf3def2331b3288a4af4773fbac7836c3179c1aee9'],
   ['assets/blog/incolor-speedster-sr-vs-sr-plus-mascot-cover-970248db0e-1600.webp', '2d195f9c1b52a289ddc1cd93b6fff483ba2f72454eb920ccaf3047ce70f1f379'],
   ['assets/blog/incolor-speedster-sr-vs-sr-plus-mascot-cover-970248db0e-1200.jpg', '32c3deef93bbc882998c514fbf1e63403c8b6fec778c1b3f3d848d99a9401dba'],
