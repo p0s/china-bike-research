@@ -10,7 +10,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { csvCell, booleanCell } from '../src/lib/csv.mjs';
-import { createBuildOutput, internalRouteTarget } from '../src/lib/build-output.mjs';
+import { createBuildOutput } from '../src/lib/build-output.mjs';
+import { checkLinks } from './check-links.mjs';
 import {
   loadDataset,
   joinProducts,
@@ -280,22 +281,8 @@ write('build-manifest.json', `${JSON.stringify({
   performance_budget: performanceBudget
 }, null, 2)}\n`);
 
-const linkErrors = [];
-for (const [, info] of pages) {
-  const file = path.join(dist, info.file);
-  const html = fs.readFileSync(file, 'utf8');
-  const pageUrl = `https://local.invalid${base}/${info.file === 'index.html' ? '' : info.file}`;
-  for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
-    const value = match[1];
-    if (!value || value.startsWith('#') || /^(?:mailto:|tel:|javascript:|data:)/i.test(value)) continue;
-    let resolved;
-    try { resolved = new URL(value, pageUrl); } catch { linkErrors.push(`${info.file}: invalid link ${value}`); continue; }
-    if (resolved.origin !== 'https://local.invalid') continue;
-    const target = internalRouteTarget(dist, base, resolved.pathname);
-    if (!target) { linkErrors.push(`${info.file}: invalid or outside-base internal target ${value}`); continue; }
-    if (!fs.existsSync(target)) linkErrors.push(`${info.file}: missing internal target ${value} -> ${path.relative(dist, target)}`);
-  }
-}
+// Validate the staged output before replacing the last good build.
+const { errors: linkErrors, checked: checkedLinks } = checkLinks(dist);
 if (linkErrors.length) {
   console.error(`Internal link validation failed with ${linkErrors.length} error(s):`);
   for (const error of linkErrors) console.error(`- ${error}`);
@@ -304,5 +291,6 @@ if (linkErrors.length) {
 
 output.publish();
 console.log(`Built ${pages.size} pages for ${products.length} products.`);
+console.log(`Generated link check passed: ${checkedLinks} local links; no orphaned sitemap pages.`);
 console.log(`Base path: ${base || '/'}`);
 console.log(`Output: ${output.destination}`);

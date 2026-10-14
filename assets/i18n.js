@@ -505,6 +505,8 @@ Object.assign(zh, {
   "Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use": "失效的外部图片会隐藏，不会用通用自行车示意图替代。可通过",
   "to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.": "报告失效链接、署名疑问、图片不准确、移除请求或更好的替代图片。请勿在公开问题中留下私人联系方式。",
   "Bike configurator": "自行车配置器",
+  "Bike build cost and weight calculator": "自行车装车成本与重量计算器",
+  "How product images are checked and corrected": "产品图片如何核验与纠正",
   "Component planner": "部件规划",
   "Configure a bike": "配置自行车",
   "Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.": "从具体车架组或整车开始。每个套餐只计一次，并明确保留尚未确定的价格和重量。",

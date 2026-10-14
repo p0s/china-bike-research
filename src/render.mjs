@@ -2036,7 +2036,7 @@ export function renderBikeBuilder(ctx) {
     <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
   </fieldset>`;
   return page(ctx, {
-    title: 'Bike configurator',
+    title: 'Bike build cost and weight calculator',
     description: builderDescription,
     path: '/build/',
     current: 'builder',
@@ -2307,7 +2307,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 
