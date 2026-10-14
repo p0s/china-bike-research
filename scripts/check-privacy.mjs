@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/making-bike-fit-appointment-useful-mascot-cover-b38366d38b-640.webp', 'e28179aed7e67457d95be140fa3b24b03fb78604f28cedd08eafe220d0d0d370'],
+  ['assets/blog/making-bike-fit-appointment-useful-mascot-cover-b38366d38b-1600.webp', 'b120b37664128d96d97281e3fd47d8cb958a6fa0315d65178be0dd8397968103'],
+  ['assets/blog/making-bike-fit-appointment-useful-mascot-cover-b38366d38b-1200.jpg', '796aad5cf19868f530f63ce5bd4ebd4398b3c1cdcfd145750d617f09af83ada9'],
   ['assets/blog/why-wheelbase-does-not-tell-whole-story-mascot-cover-928f4b89df-640.webp', '7c7c4a6039403bdd826066b994cd1d65d9e51c552ee8114ff49c2a64b8d41871'],
   ['assets/blog/why-wheelbase-does-not-tell-whole-story-mascot-cover-928f4b89df-1600.webp', '3bb0e53afe77a90bc98edcfc339da8b0dc6a9684f76a90f03f2c1e2f19346cae'],
   ['assets/blog/why-wheelbase-does-not-tell-whole-story-mascot-cover-928f4b89df-1200.jpg', 'd1e1d7160d510a966e3bbdb60649b94b0bf9c7ba70e7d93c0bcca08cea758a9f'],
