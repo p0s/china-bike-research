@@ -519,6 +519,8 @@ export const de = {
   "Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use": "Defekte externe Bilder werden verborgen statt durch generische Fahrradzeichnungen ersetzt. Nutzen Sie",
   "to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.": "für defekte Links, Nachweise, falsche Bilder, Entfernungswünsche oder bessere Ersatzbilder. Keine privaten Kontakte in Issues veröffentlichen.",
   "Bike configurator": "Fahrradkonfigurator",
+  "Bike build cost and weight calculator": "Fahrradaufbau: Kosten und Gewicht berechnen",
+  "How product images are checked and corrected": "Wie Produktbilder geprüft und korrigiert werden",
   "Component planner": "Komponentenplaner",
   "Configure a bike": "Ein Rad konfigurieren",
   "Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.": "Beginnen Sie mit genauem Rahmenset oder Komplettrad. Summen zählen Pakete einmal und halten offene Preis- oder Gewichtsangaben sichtbar.",

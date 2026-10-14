@@ -1,5 +1,7 @@
 # China Bikes: SEO + Chinese + starter articles
 
+For current maintenance, use the [bounded SEO checklist and buyer-intent map](docs/seo/MAINTENANCE.md). Production is `https://chinesebikes.xyz/` with English, Simplified Chinese and German pages. The integration notes below describe the historical starter release.
+
 Integrated for publication on 2026-09-22 from the supplied September 18 source package. See [integration evidence](docs/seo/INTEGRATION-2026-09-22.md) for current validation and delivery boundaries.
 
 `docs/seo/RESULTS.md` and `docs/seo/CODEX-HANDOFF.md` preserve the preparation-stage results and handoff. Their deployment status describes that historical package, not the current release.
