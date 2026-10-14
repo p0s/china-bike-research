@@ -9,6 +9,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/gravel-bikes-around-5000-yuan-mascot-cover-fd45ce1059-640.webp', '55f323b5816c0053b77893b70e132c436bd79ba63582c0800cc9bbd184731664'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-mascot-cover-fd45ce1059-1600.webp', '45d2e528acc9053b595f91c538b1fa5197ef8e8c1d7ae0700daf4a545cedd4ff'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-mascot-cover-fd45ce1059-1200.jpg', 'cdbe73c5b3b208cc8ee0ac2a9f93fd2bf648e2f3d00945051efdf4c67510e031'],
+  ['assets/blog/seatpost-offset-and-saddle-rails-mascot-cover-db39a6133a-640.webp', '37f22b63b8824acff24fcf36a5cd8f07ca74c5857e0f727ce9201493cbe30b50'],
+  ['assets/blog/seatpost-offset-and-saddle-rails-mascot-cover-db39a6133a-1600.webp', '6ac2d8a0207f679ecea988d06438dde78b423dde6d3391a2e68a5ed06b9cf3b5'],
+  ['assets/blog/seatpost-offset-and-saddle-rails-mascot-cover-db39a6133a-1200.jpg', 'f4bc62009fbf7df19ca9f6c2d046c7830160e46b31f779d97b30c3ba141eed8d'],
   ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-cover-86ced7337b-640.webp', 'edf601ec9367e0742615f34eb2e2d70943ec5c7536645331a40a315e7c6dab8c'],
   ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-cover-86ced7337b-1600.webp', '03e9e753f205ec07d3e47fcc2f48cab9fb52df0678280d35027493d27df106a9'],
   ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-cover-86ced7337b-1200.jpg', 'ee7885005efe434ce48dbd3e8a7a93ca938fa2b72826c60a76cc9234115c9f4b'],
