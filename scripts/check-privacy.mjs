@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/gear-ratios-gravel-climbing-mascot-cover-735d57e3f2-640.webp', 'a0ab389da33e111e0e0a5e601208fa7faf2dd49586c667ffaa59f84cbc6d1be8'],
+  ['assets/blog/gear-ratios-gravel-climbing-mascot-cover-735d57e3f2-1600.webp', '402786b75cb925e2c3946cd1de21b602e0bdd4f9757b4a45f62d601fceea28cb'],
+  ['assets/blog/gear-ratios-gravel-climbing-mascot-cover-735d57e3f2-1200.jpg', 'a6e0ed37a6bbd3adf63e52768fd053b762fe803c392aeda3524ced06841b927f'],
   ['assets/blog/one-by-vs-two-by-gravel-mascot-cover-645c215930-640.webp', '2c1855448fb3f30fcb951c6fb871deb1a2245cbcbd5e3073f8751f8e708c4793'],
   ['assets/blog/one-by-vs-two-by-gravel-mascot-cover-645c215930-1600.webp', '8c2acad1c305cbc542b101daa7a52bd0ff8b933f1e8f924f67f1bde12e537197'],
   ['assets/blog/one-by-vs-two-by-gravel-mascot-cover-645c215930-1200.jpg', 'c34ab4261a0db5a1cd44be4e36526962ab8cd074bd2397e8d4866312d442ba71'],
