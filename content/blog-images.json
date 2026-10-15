@@ -5279,6 +5279,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "chinese-frameset-order-checklist-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda with a clipboard checks a frame, fork, seatpost, axles and headset pieces laid out on a workshop table.",
+          "zh-Hans": "小熊猫拿着写字板，核对工坊桌上分开放置的车架、前叉、座管、桶轴和碗组零件。",
+          "de": "Ein roter Panda prüft mit einem Klemmbrett Rahmen, Gabel, Sattelstütze, Achsen und Steuersatzteile auf einem Werkstatttisch."
+        },
+        "prompt": "Editorial scene: A red panda with a clipboard checks a frame, fork, seatpost, axles and headset pieces laid out on a workshop table.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "2f72d63c20d3260e7ff55fdaefab95bd7dd0ddca612747a4377df8743bdf6217",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 50926,
+            "sha256": "12c60d7764a010fe4696cbe3d8420aae8805f0673d2776e4945039aeeea9097a"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 175580,
+            "sha256": "6f82727854aa47508871a09e2fff7dba363adf9f8ffdead5607f42f6bed8df0b"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 201772,
+            "sha256": "a1131ec880b26c4f7086521a83a3c444b0b660809c6c2e58a630dd007c80b57b"
+          }
+        ]
+      }
     }
   ]
 }
