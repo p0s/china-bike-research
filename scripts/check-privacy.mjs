@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-640.webp', '12c60d7764a010fe4696cbe3d8420aae8805f0673d2776e4945039aeeea9097a'],
+  ['assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-1600.webp', '6f82727854aa47508871a09e2fff7dba363adf9f8ffdead5607f42f6bed8df0b'],
+  ['assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-1200.jpg', 'a1131ec880b26c4f7086521a83a3c444b0b660809c6c2e58a630dd007c80b57b'],
   ['assets/blog/mixing-shimano-and-sram-components-mascot-cover-9921a1555e-640.webp', '7eeace3218c0957f5e2eeae812701f2ea87b77c450504a746ede6321add10008'],
   ['assets/blog/mixing-shimano-and-sram-components-mascot-cover-9921a1555e-1600.webp', 'a073122f26d10f39cd94291b1844328b9aada04d8bb9af6aca29eaa3013ebf84'],
   ['assets/blog/mixing-shimano-and-sram-components-mascot-cover-9921a1555e-1200.jpg', '6d3bbd67cab3a762b6c1c03a12a4a48583810590fb78484559c18e1d71caa23f'],
