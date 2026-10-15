@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/mechanical-vs-electronic-shifting-mascot-cover-ff30f617ab-640.webp', '954f740c0df57c96e767d0329f4c2639d0893f18bc3db8c4ed03526a3f5e7a27'],
+  ['assets/blog/mechanical-vs-electronic-shifting-mascot-cover-ff30f617ab-1600.webp', '7a65f7b5d2e5bb541281be42ccfe428832b87269052dc9e7c81a76084c46067b'],
+  ['assets/blog/mechanical-vs-electronic-shifting-mascot-cover-ff30f617ab-1200.jpg', '75bd04e078eba081af3e9e41dc0d7aeb220295d1cd3dced969b3644bc371ae39'],
   ['assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-640.webp', 'e5baf87cc90818e9694ddc099ad68782a510f95d9e68242a6984bb5ca4d0ea2a'],
   ['assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-1600.webp', 'c5ab235704bb60d739f109c151c6ea9a16c2896add4eab425a7e1071aaf54668'],
   ['assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-1200.jpg', 'b4b028bbd38663522bf1845d0defee9fe0eb7cd2e3c581ca83e92dad85e22f9d'],
