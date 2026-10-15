@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/wheeltop-sensah-shimano-choice-mascot-cover-8290629bd2-640.webp', '9870bd655433097a289cf45d562d5b003af50fc7d3de58b0a363f76c7b4513df'],
+  ['assets/blog/wheeltop-sensah-shimano-choice-mascot-cover-8290629bd2-1600.webp', '718e23bad7a593de680c850cdc003103881e586b96e00fca68f26aa8c6ede0a3'],
+  ['assets/blog/wheeltop-sensah-shimano-choice-mascot-cover-8290629bd2-1200.jpg', '24f60c7a11df7e34a6a4078e55808dbb1c757d4067bfb01f034a3465ed324dbe'],
   ['assets/blog/electronic-shifting-battery-travel-mascot-cover-4400e053b5-640.webp', 'd22c31f13996f2807fdcd3a37b4ba67921c7680f132552ce28923c434b4dcb5f'],
   ['assets/blog/electronic-shifting-battery-travel-mascot-cover-4400e053b5-1600.webp', 'afd2d2ddcd85bc7d33bdfa7d68fd66056485e9b4031fab4bed95843e68591753'],
   ['assets/blog/electronic-shifting-battery-travel-mascot-cover-4400e053b5-1200.jpg', '21792717a4e951bef47fe34f41ae26c961d1f03d2f50583c6720d96ac81bdb29'],
