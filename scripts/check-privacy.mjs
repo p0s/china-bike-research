@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/mixing-shimano-and-sram-components-mascot-cover-9921a1555e-640.webp', '7eeace3218c0957f5e2eeae812701f2ea87b77c450504a746ede6321add10008'],
+  ['assets/blog/mixing-shimano-and-sram-components-mascot-cover-9921a1555e-1600.webp', 'a073122f26d10f39cd94291b1844328b9aada04d8bb9af6aca29eaa3013ebf84'],
+  ['assets/blog/mixing-shimano-and-sram-components-mascot-cover-9921a1555e-1200.jpg', '6d3bbd67cab3a762b6c1c03a12a4a48583810590fb78484559c18e1d71caa23f'],
   ['assets/blog/wheeltop-sensah-shimano-choice-mascot-cover-8290629bd2-640.webp', '9870bd655433097a289cf45d562d5b003af50fc7d3de58b0a363f76c7b4513df'],
   ['assets/blog/wheeltop-sensah-shimano-choice-mascot-cover-8290629bd2-1600.webp', '718e23bad7a593de680c850cdc003103881e586b96e00fca68f26aa8c6ede0a3'],
   ['assets/blog/wheeltop-sensah-shimano-choice-mascot-cover-8290629bd2-1200.jpg', '24f60c7a11df7e34a6a4078e55808dbb1c757d4067bfb01f034a3465ed324dbe'],
