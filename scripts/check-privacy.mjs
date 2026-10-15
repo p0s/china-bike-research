@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/cassette-range-vs-gear-jumps-mascot-cover-508fa1ffdf-640.webp', 'ceba5f2ff8578aa3e3aa1f679564a1db9f4cc3d9eb005bbef4aa64039501b1fd'],
+  ['assets/blog/cassette-range-vs-gear-jumps-mascot-cover-508fa1ffdf-1600.webp', '5978e4be73c2c88ebd2cf437ed94c49d82b2d7fbd22bf6fdb06628b8124bcc34'],
+  ['assets/blog/cassette-range-vs-gear-jumps-mascot-cover-508fa1ffdf-1200.jpg', '409bf695f917931bd0c6e05da90000a26d774583d5968dc2d39fde3309adccb3'],
   ['assets/blog/gear-ratios-gravel-climbing-mascot-cover-735d57e3f2-640.webp', 'a0ab389da33e111e0e0a5e601208fa7faf2dd49586c667ffaa59f84cbc6d1be8'],
   ['assets/blog/gear-ratios-gravel-climbing-mascot-cover-735d57e3f2-1600.webp', '402786b75cb925e2c3946cd1de21b602e0bdd4f9757b4a45f62d601fceea28cb'],
   ['assets/blog/gear-ratios-gravel-climbing-mascot-cover-735d57e3f2-1200.jpg', 'a6e0ed37a6bbd3adf63e52768fd053b762fe803c392aeda3524ced06841b927f'],
