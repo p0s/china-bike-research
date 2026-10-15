@@ -4899,6 +4899,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "subcompact-vs-compact-road-gearing-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda compares two double-chainring cranks on a cloth-covered picnic table above a winding road, with a bicycle nearby.",
+          "zh-Hans": "小熊猫在俯瞰蜿蜒公路的野餐桌旁，对比铺布上两套双盘曲柄，旁边停着自行车。",
+          "de": "Ein Roter Panda vergleicht zwei Zweifachkurbeln auf einem Tuch am Picknicktisch über einer kurvigen Straße; daneben steht ein Fahrrad."
+        },
+        "prompt": "Editorial scene: A red panda compares two double-chainring cranks on a cloth-covered picnic table above a winding road, with a bicycle nearby.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "764a7ea6a3981e2f16635655ccb719c21a482a13a77a6d66fdeb785be2898c49",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 65886,
+            "sha256": "e5baf87cc90818e9694ddc099ad68782a510f95d9e68242a6984bb5ca4d0ea2a"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 219512,
+            "sha256": "c5ab235704bb60d739f109c151c6ea9a16c2896add4eab425a7e1071aaf54668"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 241463,
+            "sha256": "b4b028bbd38663522bf1845d0defee9fe0eb7cd2e3c581ca83e92dad85e22f9d"
+          }
+        ]
+      }
     }
   ]
 }

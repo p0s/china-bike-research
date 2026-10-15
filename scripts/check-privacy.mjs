@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-640.webp', 'e5baf87cc90818e9694ddc099ad68782a510f95d9e68242a6984bb5ca4d0ea2a'],
+  ['assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-1600.webp', 'c5ab235704bb60d739f109c151c6ea9a16c2896add4eab425a7e1071aaf54668'],
+  ['assets/blog/subcompact-vs-compact-road-gearing-mascot-cover-764a7ea6a3-1200.jpg', 'b4b028bbd38663522bf1845d0defee9fe0eb7cd2e3c581ca83e92dad85e22f9d'],
   ['assets/blog/chainring-size-for-mixed-riding-mascot-cover-5e2b38cbfd-640.webp', 'ef7b978ef4682135e60b98b67f191fd000f8c09ba58ad276a4c67f4bb4b95e62'],
   ['assets/blog/chainring-size-for-mixed-riding-mascot-cover-5e2b38cbfd-1600.webp', '8e22b10341c98cb577b228b75207a6421d8b82b6e8b7c60fc5cf1ac46a9464ca'],
   ['assets/blog/chainring-size-for-mixed-riding-mascot-cover-5e2b38cbfd-1200.jpg', '361545099620c316de1e02d5e2e69eaaefbf463336fe3400ec4ac580311f29b0'],
