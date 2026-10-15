@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/electronic-shifting-battery-travel-mascot-cover-4400e053b5-640.webp', 'd22c31f13996f2807fdcd3a37b4ba67921c7680f132552ce28923c434b4dcb5f'],
+  ['assets/blog/electronic-shifting-battery-travel-mascot-cover-4400e053b5-1600.webp', 'afd2d2ddcd85bc7d33bdfa7d68fd66056485e9b4031fab4bed95843e68591753'],
+  ['assets/blog/electronic-shifting-battery-travel-mascot-cover-4400e053b5-1200.jpg', '21792717a4e951bef47fe34f41ae26c961d1f03d2f50583c6720d96ac81bdb29'],
   ['assets/blog/mechanical-vs-electronic-shifting-mascot-cover-ff30f617ab-640.webp', '954f740c0df57c96e767d0329f4c2639d0893f18bc3db8c4ed03526a3f5e7a27'],
   ['assets/blog/mechanical-vs-electronic-shifting-mascot-cover-ff30f617ab-1600.webp', '7a65f7b5d2e5bb541281be42ccfe428832b87269052dc9e7c81a76084c46067b'],
   ['assets/blog/mechanical-vs-electronic-shifting-mascot-cover-ff30f617ab-1200.jpg', '75bd04e078eba081af3e9e41dc0d7aeb220295d1cd3dced969b3644bc371ae39'],
