@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/freehub-body-hg-xdr-microspline-mascot-cover-f432f7e73c-640.webp', 'b641c486f2c468b40225aba94db44615a27b36b9d3b0cd4bd02ae4fa42e581a2'],
+  ['assets/blog/freehub-body-hg-xdr-microspline-mascot-cover-f432f7e73c-1600.webp', '994dbd564058508dfbbee27e1d5b4ecb1c7b9bcd6c37a387e88b1506f3cb3fe3'],
+  ['assets/blog/freehub-body-hg-xdr-microspline-mascot-cover-f432f7e73c-1200.jpg', '30db8281d7268a41c880eb5d9e79f2f4e1a789d9d37ee41e42dca98f6d629d33'],
   ['assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-640.webp', '12c60d7764a010fe4696cbe3d8420aae8805f0673d2776e4945039aeeea9097a'],
   ['assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-1600.webp', '6f82727854aa47508871a09e2fff7dba363adf9f8ffdead5607f42f6bed8df0b'],
   ['assets/blog/chinese-frameset-order-checklist-mascot-cover-2f72d63c20-1200.jpg', 'a1131ec880b26c4f7086521a83a3c444b0b660809c6c2e58a630dd007c80b57b'],
