@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/brake-rotor-size-and-frame-approval-mascot-cover-645bf1bb34-640.webp', 'd06600f66ced78cd904c8db44862690ad3fca98a3ed2d39ea44d5587ae99941a'],
+  ['assets/blog/brake-rotor-size-and-frame-approval-mascot-cover-645bf1bb34-1600.webp', 'cc3c840358e1449427162abfaf8ff5094b91c7da5cef0e51b3a7183fbd619991'],
+  ['assets/blog/brake-rotor-size-and-frame-approval-mascot-cover-645bf1bb34-1200.jpg', '6b1344f93ee70ff861c0e56f20112ab2a0548b6bf3b94e71193febee8b6de36b'],
   ['assets/blog/freehub-body-hg-xdr-microspline-mascot-cover-f432f7e73c-640.webp', 'b641c486f2c468b40225aba94db44615a27b36b9d3b0cd4bd02ae4fa42e581a2'],
   ['assets/blog/freehub-body-hg-xdr-microspline-mascot-cover-f432f7e73c-1600.webp', '994dbd564058508dfbbee27e1d5b4ecb1c7b9bcd6c37a387e88b1506f3cb3fe3'],
   ['assets/blog/freehub-body-hg-xdr-microspline-mascot-cover-f432f7e73c-1200.jpg', '30db8281d7268a41c880eb5d9e79f2f4e1a789d9d37ee41e42dca98f6d629d33'],
