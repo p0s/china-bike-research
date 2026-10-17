@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/bedding-in-disc-brakes-mascot-cover-d4a31d35ce-640.webp', '25ca95104b35aeac1324354b3c4148d7ac90c4264ccd1992ab329bfa10d232e2'],
+  ['assets/blog/bedding-in-disc-brakes-mascot-cover-d4a31d35ce-1600.webp', 'fc96c038f95114149c57276d14d2103773da357bc5c0e2ba3b31e241ebeeaec0'],
+  ['assets/blog/bedding-in-disc-brakes-mascot-cover-d4a31d35ce-1200.jpg', 'eed82f7184af97655e291280677b3d4caec4b4088a5531e30c6407e4b32c9b71'],
   ['assets/blog/hydraulic-vs-mechanical-disc-brakes-mascot-cover-828fcacd42-640.webp', 'd4d90bd534d558e7a113d3cb01e1f932ac465bfc58f935945375e64b85082786'],
   ['assets/blog/hydraulic-vs-mechanical-disc-brakes-mascot-cover-828fcacd42-1600.webp', 'b2c5b076c271d3aef4ac2c674134fcc4abbd7e8d7c25f68937dbbb07befbfd37'],
   ['assets/blog/hydraulic-vs-mechanical-disc-brakes-mascot-cover-828fcacd42-1200.jpg', '5fe04966dd44b447100dd9a5b495050d41edb07a07921e4771d7cd559890f85b'],
