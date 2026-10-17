@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/centerlock-vs-sixbolt-mascot-cover-2a17495694-640.webp', '4233fcd27a1796307bb285c92b990e9cda0c20bb89432dbedf6cf03b8015e168'],
+  ['assets/blog/centerlock-vs-sixbolt-mascot-cover-2a17495694-1600.webp', '3dbe820d2a8e17f3aa96fbcb86c14480301357b24a205f7a09e0696e0b365535'],
+  ['assets/blog/centerlock-vs-sixbolt-mascot-cover-2a17495694-1200.jpg', 'b67d955b82f19b65209b0669f3b7b109608b10983317c6e0578c1ccc43e074d1'],
   ['assets/blog/brake-rotor-size-and-frame-approval-mascot-cover-645bf1bb34-640.webp', 'd06600f66ced78cd904c8db44862690ad3fca98a3ed2d39ea44d5587ae99941a'],
   ['assets/blog/brake-rotor-size-and-frame-approval-mascot-cover-645bf1bb34-1600.webp', 'cc3c840358e1449427162abfaf8ff5094b91c7da5cef0e51b3a7183fbd619991'],
   ['assets/blog/brake-rotor-size-and-frame-approval-mascot-cover-645bf1bb34-1200.jpg', '6b1344f93ee70ff861c0e56f20112ab2a0548b6bf3b94e71193febee8b6de36b'],
