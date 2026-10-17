@@ -1,6 +1,8 @@
 import { translateImageText } from './image-i18n.js';
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
+  "Best match": "Beste Treffer",
+  "Close match": "Ähnlicher Treffer",
   "Prices exclude shipping and import unless marked Delivered.": "Versand und Einfuhrkosten nur bei Liefergesamtpreisen enthalten.",
   "Purchase route and checks": "Kaufweg und Prüfpunkte",
   "Published first, then China price": "Veröffentlicht zuerst, dann China-Preis",

@@ -3,6 +3,8 @@ import { translateGerman } from './i18n-de.js';
 // Shared build/browser vocabulary. Keys are English display text, never data IDs.
 // Exact evidence wording without a reviewed translation is preserved, not guessed.
 export const zh = {
+  "Best match": "最佳匹配",
+  "Close match": "近似匹配",
   "Prices exclude shipping and import unless marked Delivered.": "除标注到手总价外，价格不含运费和进口费用。",
   "Purchase route and checks": "购买渠道与核对事项",
   "Published first, then China price": "已发布优先，再按中国价格",

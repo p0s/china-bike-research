@@ -47,6 +47,87 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
         assert.equal(state.firstStage, 'published', name);
         assert.ok(state.first < (width >= 960 ? 330 : 420), `${name}: first result starts at ${state.first}`);
         if (locale === 'en' && theme === 'light' && [1440, 390].includes(width)) await page.screenshot({ path: path.join(reports, `catalog-${width}.png`) });
+        // General fuzzy search, relevance, filters and URL/history on desktop and phone.
+        if (theme === 'light' && [1440, 390].includes(width)) {
+          const foundIds = () => page.locator('[data-product-row]:not([hidden])').evaluateAll(rows => rows.map(row => row.dataset.id).sort());
+          await open('ship=CN&currency=CNY&q=x-lab');
+          const expected = await foundIds();
+          assert.ok(expected.includes('candidate-xlab-rs9'));
+          for (const query of ['xlab', 'xlabs', 'x lab', 'X–LAB', 'ＸＬＡＢＳ']) {
+            await page.locator('#site-search').fill(query);
+            await page.locator('#site-search').blur();
+            assert.deepEqual(await foundIds(), expected, query);
+            assert.equal(new URL(page.url()).searchParams.get('q'), query);
+          }
+          await page.locator('#site-search').fill('RS9 xlabs');
+          await page.locator('#site-search').blur();
+          assert.deepEqual(await foundIds(), ['candidate-xlab-rs9']);
+          await page.reload({ waitUntil: 'load' });
+          await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency);
+          assert.deepEqual(await foundIds(), ['candidate-xlab-rs9']);
+          await page.locator('#site-search').fill('RS8 xlabs');
+          await page.locator('#site-search').blur();
+          assert.deepEqual(await foundIds(), []);
+          await page.goBack();
+          await page.waitForFunction(() => document.querySelector('#site-search')?.value === 'RS9 xlabs');
+          assert.deepEqual(await foundIds(), ['candidate-xlab-rs9']);
+          await page.locator('[data-product-row]:not([hidden]) [data-model-link]').first().click();
+          await page.locator('#site-search').fill('xlabs');
+          await page.locator('#site-search').press('Enter');
+          await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency);
+          assert.equal(new URL(page.url()).pathname, `${prefix}/`);
+          assert.deepEqual(await foundIds(), expected);
+          if (width < 600) {
+            const chips = await page.locator('[data-filter-chips]').boundingBox();
+            const summary = await page.locator('[data-result-summary]').boundingBox();
+            assert.ok(chips.y + chips.height <= summary.y + 1, 'search chips must not overlap the result count');
+            assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+          }
+          if (locale === 'en') await page.screenshot({ path: path.join(reports, `search-${width}.png`) });
+          await open('ship=CN&currency=CNY&q=xlabs&max=0&maxCurrency=CNY');
+          assert.deepEqual(await foundIds(), [], 'search must still obey the budget filter');
+          await open('ship=CN&currency=CNY&q=twittr');
+          const twitterIds = await foundIds();
+          assert.ok(twitterIds.includes('twitter-v3-wheeltop-eds'));
+          assert.equal(await page.locator('[data-product-row]:not([hidden]) [data-search-close-match]:not([hidden])').count(), twitterIds.length);
+          const labels = { en: ['Best match', 'Close match'], zh: ['最佳匹配', '近似匹配'], de: ['Beste Treffer', 'Ähnlicher Treffer'] }[locale];
+          assert.equal(await page.locator('[data-sort] option:checked').textContent(), labels[0]);
+          assert.equal(await page.locator('[data-search-close-match]:not([hidden])').first().textContent(), labels[1]);
+          if (locale === 'en') await page.screenshot({ path: path.join(reports, `fuzzy-${width}.png`) });
+          await page.reload({ waitUntil: 'load' });
+          await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency);
+          assert.deepEqual(await foundIds(), twitterIds);
+          for (const [query, id] of [['shiamno', 'camp-gx700-grx820'], ['winspcae', 'winspace-g3-frameset'], ['velobulid', 'candidate-velobuild-cx-002-2023']]) {
+            await page.locator('#site-search').fill(query);
+            await page.locator('#site-search').blur();
+            assert.ok((await foundIds()).includes(id), `${query}: ${id}`);
+            assert.equal(new URL(page.url()).searchParams.get('q'), query);
+          }
+          // CAMP has direct and close matches; direct matches must all precede close ones.
+          await page.locator('#site-search').fill('camp');
+          await page.locator('#site-search').blur();
+          const closeness = await page.locator('[data-product-row]:not([hidden])').evaluateAll(rows => rows.map(row => Boolean(row.querySelector('[data-search-close-match]:not([hidden])'))));
+          assert.ok(closeness.includes(false) && closeness.includes(true));
+          assert.deepEqual(closeness, [...closeness].sort());
+          assert.ok(await page.locator('.catalog-divider').evaluateAll(dividers => dividers.every(divider => divider.hidden)));
+          assert.ok(await page.locator('[data-result-split]').evaluate(element => element.hidden));
+          // Explicit sorts still override relevance, while per-row labels remain clear.
+          await page.locator('[data-sort]').selectOption('name-desc');
+          const names = await page.locator('[data-product-row]:not([hidden])').evaluateAll(rows => rows.map(row => row.dataset.name));
+          assert.deepEqual(names, [...names].sort((a, b) => b.localeCompare(a)));
+          assert.equal(new URL(page.url()).searchParams.get('sort'), 'name-desc');
+          await page.locator('[data-sort]').selectOption('published-asc');
+          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+          await page.locator('#site-search').fill('');
+          await page.locator('#site-search').blur();
+          assert.equal(await page.locator('[data-search-close-match]:not([hidden])').count(), 0);
+          assert.notEqual(await page.locator('[data-sort] option:checked').textContent(), labels[0]);
+          await open('ship=CN&currency=CNY&q=shiamno&category=family%3Agravel');
+          assert.ok((await foundIds()).length);
+          assert.ok(await page.locator('[data-product-row]:not([hidden])').evaluateAll(rows => rows.every(row => row.dataset.family === 'gravel')));
+          await open('ship=CN&currency=CNY&q=shiamno&max=0&maxCurrency=CNY');
+          assert.deepEqual(await foundIds(), []);
+        }
         // Desktop and phone pricing: references do not enter delivered budgets.
         if (locale === 'en' && theme === 'light' && [1440, 390].includes(width)) {
           for (const [country, currency] of [['CN', 'CNY'], ['DE', 'EUR'], ['US', 'USD'], ['HK', 'USD']]) {
