@@ -3,7 +3,7 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 48,
-  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "image_id": "hydraulic-vs-mechanical-disc-brakes-unique-mascot-cover",
   "datePublished": "2026-10-04",
   "dateModified": "2026-10-04",
   "researched_at": "2026-10-04",
@@ -17,7 +17,9 @@
   ],
   "editorial_references": [
     "https://www.parktool.com/en-us/blog/repair-help/mechanical-disc-brake-alignment",
-    "https://productinfo.shimano.com/en/compatibility"
+    "https://productinfo.shimano.com/en/compatibility",
+    "https://trpcycling.com/products/hy-rd",
+    "https://www.sram.com/globalassets/document-hierarchy/safety-instructions/safety-instructions-for-disc-and-hydro-brakes.pdf"
   ],
   "photo_sections": [
     {
@@ -37,14 +39,15 @@
           "id": "identify",
           "heading": "Trace the connection to the caliper",
           "paragraphs": [
-            "A mechanical disc brake uses a cable to actuate the caliper; a hydraulic system transmits force through fluid in a hose. Cable-operated hydraulic calipers are a distinct hybrid arrangement. Ask for lever and caliper model codes. Our dated [Twitter V3 RS](/models/twitter-v3-rs-sensah/) record combines mechanical shifting with hydraulic brakes, while the [EDS version](/models/twitter-v3-wheeltop-eds/) has electronic shifting and hydraulic brakes."
+            "A mechanical disc brake uses a cable to actuate the caliper; a hydraulic system transmits force through fluid in a hose. Cable-operated hydraulic calipers are a distinct hybrid arrangement. Ask for lever and caliper model codes. Our dated [Twitter V3 RS](/models/twitter-v3-rs-sensah/) record combines mechanical shifting with hydraulic brakes, while the [EDS version](/models/twitter-v3-wheeltop-eds/) has electronic shifting and hydraulic brakes.",
+            "A cable at the caliper does not by itself settle the service question: [TRP’s HY/RD](https://trpcycling.com/products/hy-rd) is a cable-actuated hydraulic example. Identify the exact caliper before ordering spares or asking for a cable-only service quote; a hybrid also has a hydraulic section governed by its own instructions. This example does not establish compatibility with the V3 builds above."
           ]
         },
         {
           "id": "service",
           "heading": "Compare maintenance jobs you can obtain",
           "paragraphs": [
-            "Mechanical systems need suitable cables/housing and model-specific pad adjustment as they wear. Hydraulic systems require the prescribed fluid, fittings and bleed procedure when service is needed. “Mineral oil” is not permission to mix arbitrary fluids, and DOT fluid is not a substitute. Use the brake maker’s instructions, not another brand’s convenient video.",
+            "Mechanical systems need suitable cables/housing and model-specific pad adjustment as they wear. Hydraulic systems require the prescribed fluid, fittings and bleed procedure when service is needed. DOT and mineral-oil fluids are not interchangeable. Even one brand can have different fluid systems: [SRAM’s safety instructions](https://www.sram.com/globalassets/document-hierarchy/safety-instructions/safety-instructions-for-disc-and-hydro-brakes.pdf) distinguish its DOT brakes from its mineral-oil brakes. That does not specify the fluid for a Twitter build. Use the exact brake maker’s instructions, not another model’s convenient video.",
             "Ask your workshop for the installed price and a normal service quote for both complete options. [Park Tool’s mechanical alignment guide](https://www.parktool.com/en-us/blog/repair-help/mechanical-disc-brake-alignment) shows why pad setup is part of the job, not something settled by the brake’s brand name."
           ]
         },
@@ -52,7 +55,8 @@
           "id": "hands",
           "heading": "Try the lever with your hands",
           "paragraphs": [
-            "Check lever reach and secure braking from the positions you use, including with gloves. Judge a properly installed, bedded-in system; a poorly adjusted sample is not a fair category comparison. For long descents or heavy loads, have the assembler verify the complete approved brake/rotor setup for your use. A cheaper brake that you cannot operate or service comfortably is not a saving you will enjoy."
+            "Check lever reach and secure braking from the positions you use, including with gloves. Judge a properly installed, bedded-in system; a poorly adjusted sample is not a fair category comparison. For long descents or heavy loads, have the assembler verify the complete approved brake/rotor setup for your use. A cheaper brake that you cannot operate or service comfortably is not a saving you will enjoy.",
+            "Keep the [choice of shifting system](/blog/mechanical-vs-electronic-shifting/) separate from this brake decision, and confirm [rotor and frame/fork approval](/blog/brake-rotor-size-and-frame-approval/) for the finished build."
           ]
         }
       ]
@@ -66,14 +70,15 @@
           "id": "identify",
           "heading": "追踪到卡钳的连接",
           "paragraphs": [
-            "机械碟刹由拉线驱动卡钳，液压系统通过油管内液体传力；拉线驱动液压卡钳属于不同的混合安排。索取手变与卡钳编码。有日期的[Twitter V3 RS](/models/twitter-v3-rs-sensah/)记录是机械变速配液压刹车，[EDS版本](/models/twitter-v3-wheeltop-eds/)则是电子变速配液压刹车。"
+            "机械碟刹由拉线驱动卡钳，液压系统通过油管内液体传力；拉线驱动液压卡钳属于不同的混合安排。索取手变与卡钳编码。有日期的[Twitter V3 RS](/zh/models/twitter-v3-rs-sensah/)记录是机械变速配液压刹车，[EDS版本](/zh/models/twitter-v3-wheeltop-eds/)则是电子变速配液压刹车。",
+            "卡钳处看见拉线，仍不能直接决定维护方案：[TRP HY/RD](https://trpcycling.com/products/hy-rd)就是拉线驱动液压的例子。订备件或索取“只维护拉线”的报价前，要先辨认卡钳具体型号；混合系统还含液压部分，须遵循其自身说明。这个例子不代表它与上述V3配置兼容。"
           ]
         },
         {
           "id": "service",
           "heading": "比较能实际获得的维护",
           "paragraphs": [
-            "机械系统需要合适拉线、线管，以及磨损后按具体型号调来令片。液压系统维修时须用规定油液、接头与排气步骤。“矿物油”不允许随意混用，DOT油也不能代替。以刹车厂家说明为准，不能拿另一品牌方便的视频替代。",
+            "机械系统需要合适拉线、线管，以及磨损后按具体型号调整来令片。液压系统维修时须用规定油液、接头与排气步骤。DOT与矿物油不能互换，同一品牌也可能有不同油液系统：[SRAM安全说明](https://www.sram.com/globalassets/document-hierarchy/safety-instructions/safety-instructions-for-disc-and-hydro-brakes.pdf)就区分其DOT刹车与矿物油刹车。这不能确定Twitter配置应使用哪种油液。以具体刹车厂家的说明为准，不能拿另一型号方便的视频替代。",
             "请车店分别报价两套完整方案的装好费用与常规维护。[Park Tool机械刹车对齐指南](https://www.parktool.com/en-us/blog/repair-help/mechanical-disc-brake-alignment)说明来令片设置是实际工作，不是品牌名就能决定的事情。"
           ]
         },
@@ -81,7 +86,8 @@
           "id": "hands",
           "heading": "用自己的手试刹把",
           "paragraphs": [
-            "检查常用握位的刹把距离与可靠操作，也要戴手套试。比较正确安装、已磨合系统，失调样品不能代表整个类别。长下坡或重载，请装车者核对适合用途的完整认可刹车与碟片组合。无法舒服操作或维护的便宜刹车，不会带来愉快节省。"
+            "检查常用握位的刹把距离与可靠操作，也要戴手套试。比较正确安装、已磨合系统，失调样品不能代表整个类别。长下坡或重载，请装车者核对适合用途的完整认可刹车与碟片组合。无法舒服操作或维护的便宜刹车，不会带来愉快节省。",
+            "把[变速系统选择](/zh/blog/mechanical-vs-electronic-shifting/)与刹车选择分开，并核对完整装车的[碟片及车架、前叉认可](/zh/blog/brake-rotor-size-and-frame-approval/)。"
           ]
         }
       ]
@@ -95,14 +101,15 @@
           "id": "identify",
           "heading": "Die Verbindung zum Bremssattel verfolgen",
           "paragraphs": [
-            "Mechanische Scheibenbremsen betätigen den Sattel per Zug, hydraulische übertragen Kraft durch Flüssigkeit in einer Leitung. Zugbetätigte hydraulische Sättel sind Hybridsysteme. Frage nach Hebel- und Sattelkennung. Der datierte [Twitter-V3-RS](/models/twitter-v3-rs-sensah/)-Eintrag kombiniert mechanische Schaltung mit Hydraulikbremsen; die [EDS-Version](/models/twitter-v3-wheeltop-eds/) elektronische Schaltung mit Hydraulikbremsen."
+            "Mechanische Scheibenbremsen betätigen den Sattel per Zug, hydraulische übertragen Kraft durch Flüssigkeit in einer Leitung. Zugbetätigte hydraulische Sättel sind Hybridsysteme. Frage nach Hebel- und Sattelkennung. Der datierte [Twitter-V3-RS](/de/models/twitter-v3-rs-sensah/)-Eintrag kombiniert mechanische Schaltung mit Hydraulikbremsen; die [EDS-Version](/de/models/twitter-v3-wheeltop-eds/) elektronische Schaltung mit Hydraulikbremsen.",
+            "Ein Zug am Bremssattel beantwortet die Servicefrage noch nicht: [TRPs HY/RD](https://trpcycling.com/products/hy-rd) ist ein Beispiel für zugbetätigte Hydraulik. Identifiziere den genauen Sattel, bevor du Ersatzteile oder reinen Seilzugservice anfragst; ein Hybrid hat auch einen hydraulischen Teil mit eigenen Vorgaben. Das Beispiel belegt keine Kompatibilität mit den genannten V3-Aufbauten."
           ]
         },
         {
           "id": "service",
           "heading": "Verfügbaren Service vergleichen",
           "paragraphs": [
-            "Mechanische Systeme brauchen geeignete Züge/Hüllen und modellgerechte Belagnachstellung. Hydraulische benötigen bei Service die vorgeschriebene Flüssigkeit, Anschlüsse und Entlüftung. „Mineralöl“ erlaubt keine beliebige Mischung; DOT ist kein Ersatz. Maßgeblich ist die Anleitung des Bremsenherstellers.",
+            "Mechanische Systeme brauchen geeignete Züge/Hüllen und modellgerechte Belagnachstellung. Hydraulische benötigen beim Service die vorgeschriebene Flüssigkeit, Anschlüsse und Entlüftung. DOT-Flüssigkeit und Mineralöl sind nicht austauschbar. Selbst eine Marke kann unterschiedliche Flüssigkeitssysteme anbieten: [SRAMs Sicherheitshinweise](https://www.sram.com/globalassets/document-hierarchy/safety-instructions/safety-instructions-for-disc-and-hydro-brakes.pdf) trennen DOT- und Mineralölbremsen. Daraus folgt keine Flüssigkeitsvorgabe für einen Twitter-Aufbau. Maßgeblich ist die Anleitung des genauen Bremsenmodells.",
             "Lass beide kompletten Varianten samt Montage und normalem Service anbieten. [Park Tools Anleitung für mechanische Ausrichtung](https://www.parktool.com/en-us/blog/repair-help/mechanical-disc-brake-alignment) zeigt, warum Belageinstellung eine echte Arbeit ist und keine Markeneigenschaft."
           ]
         },
@@ -110,7 +117,8 @@
           "id": "hands",
           "heading": "Mit den eigenen Händen testen",
           "paragraphs": [
-            "Prüfe Hebelreichweite und sichere Bedienung aus deinen Griffpositionen, auch mit Handschuhen. Vergleiche korrekt montierte, eingebremste Systeme. Ein schlecht eingestelltes Muster bewertet keine Kategorie. Für lange Abfahrten oder Zuladung muss der Monteur die freigegebene Brems-/Scheibenkombination prüfen. Unpassende Bedienung oder Wartung macht einen niedrigen Preis wenig erfreulich."
+            "Prüfe Hebelreichweite und sichere Bedienung aus deinen Griffpositionen, auch mit Handschuhen. Vergleiche korrekt montierte, eingebremste Systeme. Ein schlecht eingestelltes Muster bewertet keine Kategorie. Für lange Abfahrten oder Zuladung muss der Monteur die freigegebene Brems-/Scheibenkombination prüfen. Unpassende Bedienung oder Wartung macht einen niedrigen Preis wenig erfreulich.",
+            "Trenne die [Wahl des Schaltsystems](/de/blog/mechanical-vs-electronic-shifting/) von dieser Bremsentscheidung und prüfe die [Scheiben- und Rahmen-/Gabelfreigabe](/de/blog/brake-rotor-size-and-frame-approval/) für den fertigen Aufbau."
           ]
         }
       ]
