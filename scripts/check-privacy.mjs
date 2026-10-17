@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chain-wear-and-expensive-cassettes-mascot-cover-b18970f8b9-640.webp', 'd8efbb60d8b0eb65086e5c5cb6ab6babb088563587994034b10a5ad2bd165766'],
+  ['assets/blog/chain-wear-and-expensive-cassettes-mascot-cover-b18970f8b9-1600.webp', '227ebd9de77e0a7dc06213ecd6236cc027b24e25c8de28f87bbed370c7622cfb'],
+  ['assets/blog/chain-wear-and-expensive-cassettes-mascot-cover-b18970f8b9-1200.jpg', 'aae7a7074087cd927bfb101f53de9edab950872b92f12817cc3670a9efc88fe3'],
   ['assets/blog/brake-hose-routing-and-service-cost-mascot-cover-99f38673ed-640.webp', '53d9461b34b40a8b20ad947221e52d5b0d04b135a1363eacad37febef700dafb'],
   ['assets/blog/brake-hose-routing-and-service-cost-mascot-cover-99f38673ed-1600.webp', '6897d3965e2ca488e59c93143dcb37330d2a4cbb16fdbf5c94038988a92eb0e0'],
   ['assets/blog/brake-hose-routing-and-service-cost-mascot-cover-99f38673ed-1200.jpg', '1157a0d48e54cc1f06cc986b16a5653dea5c113625b84cdffbe6e2b36a88f517'],
