@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-640.webp', 'c2d42c4d7891b62abdf65cbd9c9e36d09b07a93e7ab8787fcdc900c991f0fed1'],
+  ['assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-1600.webp', '4b1442bcaf5b1bb70965f49c29c886f3e49e9b2c1650563b551813f26c23e016'],
+  ['assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-1200.jpg', '8e744ee88c265c16f05773198d3b61f28500b9d64e69c484be1c79a121f64034'],
   ['assets/blog/bedding-in-disc-brakes-mascot-cover-d4a31d35ce-640.webp', '25ca95104b35aeac1324354b3c4148d7ac90c4264ccd1992ab329bfa10d232e2'],
   ['assets/blog/bedding-in-disc-brakes-mascot-cover-d4a31d35ce-1600.webp', 'fc96c038f95114149c57276d14d2103773da357bc5c0e2ba3b31e241ebeeaec0'],
   ['assets/blog/bedding-in-disc-brakes-mascot-cover-d4a31d35ce-1200.jpg', 'eed82f7184af97655e291280677b3d4caec4b4088a5531e30c6407e4b32c9b71'],
