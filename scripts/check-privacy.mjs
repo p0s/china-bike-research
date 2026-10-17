@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/hydraulic-vs-mechanical-disc-brakes-mascot-cover-828fcacd42-640.webp', 'd4d90bd534d558e7a113d3cb01e1f932ac465bfc58f935945375e64b85082786'],
+  ['assets/blog/hydraulic-vs-mechanical-disc-brakes-mascot-cover-828fcacd42-1600.webp', 'b2c5b076c271d3aef4ac2c674134fcc4abbd7e8d7c25f68937dbbb07befbfd37'],
+  ['assets/blog/hydraulic-vs-mechanical-disc-brakes-mascot-cover-828fcacd42-1200.jpg', '5fe04966dd44b447100dd9a5b495050d41edb07a07921e4771d7cd559890f85b'],
   ['assets/blog/centerlock-vs-sixbolt-mascot-cover-2a17495694-640.webp', '4233fcd27a1796307bb285c92b990e9cda0c20bb89432dbedf6cf03b8015e168'],
   ['assets/blog/centerlock-vs-sixbolt-mascot-cover-2a17495694-1600.webp', '3dbe820d2a8e17f3aa96fbcb86c14480301357b24a205f7a09e0696e0b365535'],
   ['assets/blog/centerlock-vs-sixbolt-mascot-cover-2a17495694-1200.jpg', 'b67d955b82f19b65209b0669f3b7b109608b10983317c6e0578c1ccc43e074d1'],
