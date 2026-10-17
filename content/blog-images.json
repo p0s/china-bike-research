@@ -5735,6 +5735,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "disc-brake-rub-new-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda uses a torch to inspect the disc rotor and caliper of a stationary supported bicycle in a workshop.",
+          "zh-Hans": "戴头盔的小熊猫在车间用手电筒查看固定支撑自行车的碟片和卡钳。",
+          "de": "Ein Roter Panda betrachtet in einer Werkstatt mit einer Taschenlampe die Bremsscheibe und den Bremssattel eines abgestützten, stillstehenden Fahrrads."
+        },
+        "prompt": "Editorial scene: A red panda uses a torch to inspect the disc rotor and caliper of a stationary supported bicycle in a workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "ea167ad258a3a17dc32d14f04097688ab6b39f7e2992fb7eaf51795e967612e1",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 44452,
+            "sha256": "c2d42c4d7891b62abdf65cbd9c9e36d09b07a93e7ab8787fcdc900c991f0fed1"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 146364,
+            "sha256": "4b1442bcaf5b1bb70965f49c29c886f3e49e9b2c1650563b551813f26c23e016"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 171991,
+            "sha256": "8e744ee88c265c16f05773198d3b61f28500b9d64e69c484be1c79a121f64034"
+          }
+        ]
+      }
     }
   ]
 }
