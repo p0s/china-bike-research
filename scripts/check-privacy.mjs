@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/brake-hose-routing-and-service-cost-mascot-cover-99f38673ed-640.webp', '53d9461b34b40a8b20ad947221e52d5b0d04b135a1363eacad37febef700dafb'],
+  ['assets/blog/brake-hose-routing-and-service-cost-mascot-cover-99f38673ed-1600.webp', '6897d3965e2ca488e59c93143dcb37330d2a4cbb16fdbf5c94038988a92eb0e0'],
+  ['assets/blog/brake-hose-routing-and-service-cost-mascot-cover-99f38673ed-1200.jpg', '1157a0d48e54cc1f06cc986b16a5653dea5c113625b84cdffbe6e2b36a88f517'],
   ['assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-640.webp', 'c2d42c4d7891b62abdf65cbd9c9e36d09b07a93e7ab8787fcdc900c991f0fed1'],
   ['assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-1600.webp', '4b1442bcaf5b1bb70965f49c29c886f3e49e9b2c1650563b551813f26c23e016'],
   ['assets/blog/disc-brake-rub-new-bike-mascot-cover-ea167ad258-1200.jpg', '8e744ee88c265c16f05773198d3b61f28500b9d64e69c484be1c79a121f64034'],
