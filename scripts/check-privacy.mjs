@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/tubeless-road-pressure-mascot-cover-a3d5cbe675-640.webp', 'c116871f8bd208e3ad860b10a3bcd418a901ec22e57dd05b025f9c43b2555190'],
+  ['assets/blog/tubeless-road-pressure-mascot-cover-a3d5cbe675-1600.webp', '4e525898c7c1d80e9444768bb0bde24775d14ac36f944bb38041bbadc7177b85'],
+  ['assets/blog/tubeless-road-pressure-mascot-cover-a3d5cbe675-1200.jpg', '9a10fdd2404776ef3b4b8b4ab829781d38b63e5c9931c71a09fdf6ac9bec0a47'],
   ['assets/blog/tubeless-or-tubes-for-first-build-mascot-cover-93c03ca2f2-640.webp', '1f3ea90007a2576bf85af65dee2f12bcd3d4dc6e78136bae362d973cee28370f'],
   ['assets/blog/tubeless-or-tubes-for-first-build-mascot-cover-93c03ca2f2-1600.webp', '42a0df7e964ccc33a37563a69caf549279486f7ec395fdb4dd9ce05aed170bfd'],
   ['assets/blog/tubeless-or-tubes-for-first-build-mascot-cover-93c03ca2f2-1200.jpg', 'f0e0c81e20a001c6f9fbbfd1b681d26734d1afdda40aaf9feb611f605b85a867'],
