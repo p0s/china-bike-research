@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-640.webp', '50e47f8817639284289394a417823168c5c09cb7b2cc300961431daf3246cac6'],
+  ['assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-1600.webp', 'af71c8d1116ba41e5adb6126829669633506a582fed5a346a9cc93ba64eac602'],
+  ['assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-1200.jpg', 'aca6271e7479ec63ffa8b1f9f0bc30bd2dadb756b312a828ac1ee4ac139c2df5'],
   ['assets/blog/hooked-vs-hookless-gravel-mascot-cover-34eb1008f1-640.webp', '253ca3063c26f859ae110cf840ed93f69ef87a474f69b5e147fe278cb6ddb307'],
   ['assets/blog/hooked-vs-hookless-gravel-mascot-cover-34eb1008f1-1600.webp', '416d31042177cb22ad0396cb9372b969fbc5401a4ec76d44c0e35239301a9c9c'],
   ['assets/blog/hooked-vs-hookless-gravel-mascot-cover-34eb1008f1-1200.jpg', '5f5efb74ea157e9c4f7372487255cf782e0f444d2c97205447f109a3fe584399'],
