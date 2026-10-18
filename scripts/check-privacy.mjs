@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/tubeless-or-tubes-for-first-build-mascot-cover-93c03ca2f2-640.webp', '1f3ea90007a2576bf85af65dee2f12bcd3d4dc6e78136bae362d973cee28370f'],
+  ['assets/blog/tubeless-or-tubes-for-first-build-mascot-cover-93c03ca2f2-1600.webp', '42a0df7e964ccc33a37563a69caf549279486f7ec395fdb4dd9ce05aed170bfd'],
+  ['assets/blog/tubeless-or-tubes-for-first-build-mascot-cover-93c03ca2f2-1200.jpg', 'f0e0c81e20a001c6f9fbbfd1b681d26734d1afdda40aaf9feb611f605b85a867'],
   ['assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-640.webp', '50e47f8817639284289394a417823168c5c09cb7b2cc300961431daf3246cac6'],
   ['assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-1600.webp', 'af71c8d1116ba41e5adb6126829669633506a582fed5a346a9cc93ba64eac602'],
   ['assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-1200.jpg', 'aca6271e7479ec63ffa8b1f9f0bc30bd2dadb756b312a828ac1ee4ac139c2df5'],
