@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-640.webp', 'a7fd186e55bebe690537470fa51a7862100559f1cddc0d3756c1ca88e11164ed'],
+  ['assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-1600.webp', '0b0f303976558273cd554132df885403ec99fad8b63e91717ce1080014878b33'],
+  ['assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-1200.jpg', '17f23f28665151d90d6c4dff9931882f2de5aeb312f0948537d94cc24865ef14'],
   ['assets/blog/gravel-clutch-derailleur-mascot-cover-a646640037-640.webp', 'd9547661639e495782ad9a47fa25dba7a6a2a37d3a36f3fedb6bf14439d07a95'],
   ['assets/blog/gravel-clutch-derailleur-mascot-cover-a646640037-1600.webp', 'c53afcc6080e9ca5b782fa8487b05e1be9dbeae7b607156c8319ae8872d3c27a'],
   ['assets/blog/gravel-clutch-derailleur-mascot-cover-a646640037-1200.jpg', '0ea3c3f30bce41229d20c6980bec5e182addc2f6d94268d9926a83070a52edfa'],
