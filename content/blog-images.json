@@ -5887,6 +5887,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "chain-wear-and-expensive-cassettes-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda holds a chain-wear gauge against the stationary chain of a bicycle supported on a workshop stand.",
+          "zh-Hans": "小熊猫在车间把链条磨损检测尺放在维修架上静止自行车的链条旁进行检查。",
+          "de": "Ein Roter Panda hält eine Kettenverschleißlehre an die stillstehende Kette eines Fahrrads im Montageständer."
+        },
+        "prompt": "Editorial scene: A red panda holds a chain-wear gauge against the stationary chain of a bicycle supported on a workshop stand.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "b18970f8b94395726cb99935667b85541fcd34e2979cd389fd8099a93d6a876f",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/chain-wear-and-expensive-cassettes-mascot-cover-b18970f8b9-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 56716,
+            "sha256": "d8efbb60d8b0eb65086e5c5cb6ab6babb088563587994034b10a5ad2bd165766"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/chain-wear-and-expensive-cassettes-mascot-cover-b18970f8b9-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 187994,
+            "sha256": "227ebd9de77e0a7dc06213ecd6236cc027b24e25c8de28f87bbed370c7622cfb"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/chain-wear-and-expensive-cassettes-mascot-cover-b18970f8b9-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 216322,
+            "sha256": "aae7a7074087cd927bfb101f53de9edab950872b92f12817cc3670a9efc88fe3"
+          }
+        ]
+      }
     }
   ]
 }
