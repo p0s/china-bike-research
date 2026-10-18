@@ -6191,6 +6191,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "tire-width-on-wide-rims-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "Helmeted red panda measuring a stationary bicycle tire with a caliper beside a spare wheel in a workshop.",
+          "zh-Hans": "戴头盔的小熊猫在工作室用卡尺测量静止自行车的轮胎，旁边放着备用车轮。",
+          "de": "Rotpanda mit Helm misst in einer Werkstatt einen stillstehenden Fahrradreifen mit einem Messschieber; daneben steht ein Ersatzlaufrad."
+        },
+        "prompt": "Editorial scene: Helmeted red panda measuring a stationary bicycle tire with a caliper beside a spare wheel in a workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "9d62c3263473c124d15a68ef50047c0b255a92e807cf2af35ab814fda1090296",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 63488,
+            "sha256": "32acc27515634992642fde5059dce0836ad0e13907ebf193f3592f9d3284fc76"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 215528,
+            "sha256": "fa2f8d66efc96a1df8601385115443a0080a062537ee07f27843b278bbc88505"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 241270,
+            "sha256": "e8b70f5c777ecbbcf541d4d8cb21a66f98b7bf0a53478d7a26180255d64b1865"
+          }
+        ]
+      }
     }
   ]
 }
