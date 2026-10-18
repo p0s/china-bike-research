@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/gravel-clutch-derailleur-mascot-cover-a646640037-640.webp', 'd9547661639e495782ad9a47fa25dba7a6a2a37d3a36f3fedb6bf14439d07a95'],
+  ['assets/blog/gravel-clutch-derailleur-mascot-cover-a646640037-1600.webp', 'c53afcc6080e9ca5b782fa8487b05e1be9dbeae7b607156c8319ae8872d3c27a'],
+  ['assets/blog/gravel-clutch-derailleur-mascot-cover-a646640037-1200.jpg', '0ea3c3f30bce41229d20c6980bec5e182addc2f6d94268d9926a83070a52edfa'],
   ['assets/blog/chain-length-before-changing-gearing-mascot-cover-0dfd7a3aaf-640.webp', 'a93ed23f46c9e74b997eae5a0f928540157a4441e55aeccad47f6e9fea238459'],
   ['assets/blog/chain-length-before-changing-gearing-mascot-cover-0dfd7a3aaf-1600.webp', 'a5ecb1679f0401e5bbf4be898e263734789b65b25653b8e7d2fbfbb60aa64d7d'],
   ['assets/blog/chain-length-before-changing-gearing-mascot-cover-0dfd7a3aaf-1200.jpg', '60405a02b2e51cb9b7adda858589fc57b74058aa0fb90a7963d8f06ef4b537c0'],
