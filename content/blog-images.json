@@ -6343,6 +6343,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "buy-ican-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
+      },
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 20794,
+          "sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "Helmeted red panda comparing a boxed frameset and a complete gravel bicycle in a warehouse.",
+          "zh-Hans": "戴头盔的小熊猫在仓库比较装箱的车架组与一辆砾石整车。",
+          "de": "Rotpanda mit Helm vergleicht in einem Lager ein verpacktes Rahmenset mit einem kompletten Gravelrad."
+        },
+        "prompt": "Editorial scene: Helmeted red panda comparing a boxed frameset and a complete gravel bicycle in a warehouse.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "d445a8d44dc9a452c218d2282a604ec0f25b20facf8d535e8238c47cbe7d1edf",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 50520,
+            "sha256": "50e47f8817639284289394a417823168c5c09cb7b2cc300961431daf3246cac6"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 166090,
+            "sha256": "af71c8d1116ba41e5adb6126829669633506a582fed5a346a9cc93ba64eac602"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/buy-ican-bike-mascot-cover-d445a8d44d-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 200154,
+            "sha256": "aca6271e7479ec63ffa8b1f9f0bc30bd2dadb756b312a828ac1ee4ac139c2df5"
+          }
+        ]
+      }
     }
   ]
 }
