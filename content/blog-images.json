@@ -6115,6 +6115,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "power-meter-build-planning-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda examines a detached crank beside bottom-bracket parts and an open build notebook in a workshop.",
+          "zh-Hans": "小熊猫在车间查看拆下的曲柄，工作台上放着五通零件和打开的装车笔记本。",
+          "de": "Ein Roter Panda betrachtet eine abgenommene Kurbel; auf der Werkbank liegen Tretlagerteile und ein offenes Planungsheft."
+        },
+        "prompt": "Editorial scene: A red panda examines a detached crank beside bottom-bracket parts and an open build notebook in a workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "1201dc54c6d21591e81031c25c68c7c995c5200162be5a3fb7a5a1a229d63325",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 51096,
+            "sha256": "a7fd186e55bebe690537470fa51a7862100559f1cddc0d3756c1ca88e11164ed"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 166438,
+            "sha256": "0b0f303976558273cd554132df885403ec99fad8b63e91717ce1080014878b33"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 195065,
+            "sha256": "17f23f28665151d90d6c4dff9931882f2de5aeb312f0948537d94cc24865ef14"
+          }
+        ]
+      }
     }
   ]
 }
