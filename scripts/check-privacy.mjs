@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-640.webp', '32acc27515634992642fde5059dce0836ad0e13907ebf193f3592f9d3284fc76'],
+  ['assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-1600.webp', 'fa2f8d66efc96a1df8601385115443a0080a062537ee07f27843b278bbc88505'],
+  ['assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-1200.jpg', 'e8b70f5c777ecbbcf541d4d8cb21a66f98b7bf0a53478d7a26180255d64b1865'],
   ['assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-640.webp', 'a7fd186e55bebe690537470fa51a7862100559f1cddc0d3756c1ca88e11164ed'],
   ['assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-1600.webp', '0b0f303976558273cd554132df885403ec99fad8b63e91717ce1080014878b33'],
   ['assets/blog/power-meter-build-planning-mascot-cover-1201dc54c6-1200.jpg', '17f23f28665151d90d6c4dff9931882f2de5aeb312f0948537d94cc24865ef14'],
