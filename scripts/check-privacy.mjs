@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/hooked-vs-hookless-gravel-mascot-cover-34eb1008f1-640.webp', '253ca3063c26f859ae110cf840ed93f69ef87a474f69b5e147fe278cb6ddb307'],
+  ['assets/blog/hooked-vs-hookless-gravel-mascot-cover-34eb1008f1-1600.webp', '416d31042177cb22ad0396cb9372b969fbc5401a4ec76d44c0e35239301a9c9c'],
+  ['assets/blog/hooked-vs-hookless-gravel-mascot-cover-34eb1008f1-1200.jpg', '5f5efb74ea157e9c4f7372487255cf782e0f444d2c97205447f109a3fe584399'],
   ['assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-640.webp', '32acc27515634992642fde5059dce0836ad0e13907ebf193f3592f9d3284fc76'],
   ['assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-1600.webp', 'fa2f8d66efc96a1df8601385115443a0080a062537ee07f27843b278bbc88505'],
   ['assets/blog/tire-width-on-wide-rims-mascot-cover-9d62c32634-1200.jpg', 'e8b70f5c777ecbbcf541d4d8cb21a66f98b7bf0a53478d7a26180255d64b1865'],
