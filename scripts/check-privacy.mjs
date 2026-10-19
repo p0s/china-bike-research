@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-640.webp', '7cf3f44d2824322d4f847f58980602cee2e561b391ce359566255fd493a00084'],
+  ['assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-1600.webp', '29bc0ac7b4b50dc8c3d1fc751ceb897ca2b63a8fb3b81a92c0b4804d93ed811f'],
+  ['assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-1200.jpg', '53fe4ba345b922a07b6e744eebe563b7c87e0f6dace58b0cf763261d2cfe0ba4'],
   ['assets/blog/tubeless-road-pressure-mascot-cover-a3d5cbe675-640.webp', 'c116871f8bd208e3ad860b10a3bcd418a901ec22e57dd05b025f9c43b2555190'],
   ['assets/blog/tubeless-road-pressure-mascot-cover-a3d5cbe675-1600.webp', '4e525898c7c1d80e9444768bb0bde24775d14ac36f944bb38041bbadc7177b85'],
   ['assets/blog/tubeless-road-pressure-mascot-cover-a3d5cbe675-1200.jpg', '9a10fdd2404776ef3b4b8b4ab829781d38b63e5c9931c71a09fdf6ac9bec0a47'],
