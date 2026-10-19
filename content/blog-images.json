@@ -7027,6 +7027,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "wheelset-system-weight-limit-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda checks luggage, a bottle and riding gear on a workshop table beside a loaded gravel bike.",
+          "zh-Hans": "戴头盔的小熊猫在工作台前核对行李、水瓶与骑行装备，旁边停着装有行李的砾石自行车。",
+          "de": "Ein Rotpanda mit Helm prüft Gepäck, Flasche und Fahrerausrüstung auf einem Werkstatttisch neben einem beladenen Gravelbike."
+        },
+        "prompt": "Editorial scene: A helmeted red panda checks luggage, a bottle and riding gear on a workshop table beside a loaded gravel bike.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "1d58ca5c13d35e48d64ecab3f82e8af84ec2f9f88b0c29a1ddf255945ccbde6b",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/wheelset-system-weight-limit-mascot-cover-1d58ca5c13-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 64618,
+            "sha256": "d6919ae57003cfb626e1c8e610600560ab016ec9befeb654029528f6fe67c377"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/wheelset-system-weight-limit-mascot-cover-1d58ca5c13-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 202010,
+            "sha256": "2f878a004238caeeca9c0591c74c15bf511a04f0369bdbef6631a9f73cfc6a9f"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/wheelset-system-weight-limit-mascot-cover-1d58ca5c13-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 233397,
+            "sha256": "e48ec3c257633d97a4f99b8c171e5a48345a233474d2e12f680fb0f01166af20"
+          }
+        ]
+      }
     }
   ]
 }
