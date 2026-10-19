@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/650b-vs-700c-mascot-cover-8162b7725d-640.webp', '65c3b6222d9de7464889a06791adf69d80df2f35e7a7c5d1c48464c8964242d5'],
+  ['assets/blog/650b-vs-700c-mascot-cover-8162b7725d-1600.webp', 'df11c4bbade09d4cc5edc7919da7f898eb0563888340556de69ca03907c25cc9'],
+  ['assets/blog/650b-vs-700c-mascot-cover-8162b7725d-1200.jpg', '7dac015959ca17028fa1d277b5a8403191c31d6d90cb7510234f3fb57111a561'],
   ['assets/blog/two-wheelsets-rotor-cassette-alignment-mascot-cover-049437d26d-640.webp', '92aa01240f370e27026a4e4766a94870be70c09ace40c7b2943b0d3e6478eadb'],
   ['assets/blog/two-wheelsets-rotor-cassette-alignment-mascot-cover-049437d26d-1600.webp', 'bacbb2d603409a2210dee21484cbacdf2e68fe1fea856eaadb8cb0133c76c63f'],
   ['assets/blog/two-wheelsets-rotor-cassette-alignment-mascot-cover-049437d26d-1200.jpg', 'fce97896e3adda04a514df2857796aca541a1375e42e27d98ff6063e780fdac1'],
