@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/two-wheelsets-rotor-cassette-alignment-mascot-cover-049437d26d-640.webp', '92aa01240f370e27026a4e4766a94870be70c09ace40c7b2943b0d3e6478eadb'],
+  ['assets/blog/two-wheelsets-rotor-cassette-alignment-mascot-cover-049437d26d-1600.webp', 'bacbb2d603409a2210dee21484cbacdf2e68fe1fea856eaadb8cb0133c76c63f'],
+  ['assets/blog/two-wheelsets-rotor-cassette-alignment-mascot-cover-049437d26d-1200.jpg', 'fce97896e3adda04a514df2857796aca541a1375e42e27d98ff6063e780fdac1'],
   ['assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-640.webp', '01248089627e551b57b869a69f1f42aa51a6e9b189cacc4d34d05190e8b15280'],
   ['assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-1600.webp', '824e9ef97291de9f731180b4cf51d6a15ea8b47ee5dc9d6d7164098ecf341ed2'],
   ['assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-1200.jpg', '691732c0a2bcd56192608b5ebc53365c11e6153cb527214683c748a67a63f340'],
