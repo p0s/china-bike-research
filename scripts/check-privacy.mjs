@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/deep-wheels-crosswinds-mascot-cover-7c5b276c54-640.webp', '217e756c8cd84bbd1bf475a7cec94a975e88e7406fe651627df1bf27a5ed4979'],
+  ['assets/blog/deep-wheels-crosswinds-mascot-cover-7c5b276c54-1600.webp', '81640320f4e4b6243ea85f67b2b7d7d82455216fe553381c3e7af5a2b9070db8'],
+  ['assets/blog/deep-wheels-crosswinds-mascot-cover-7c5b276c54-1200.jpg', '8f134b0bcc35543e18faefc03a82bfe682828b677616e8a1635d5294b83d980a'],
   ['assets/blog/slick-tires-on-gravel-bike-mascot-cover-225aba10da-640.webp', '3fb40eb80d909308af3c9e583f258cd946c31e93124224ae31db87dcb8f452a8'],
   ['assets/blog/slick-tires-on-gravel-bike-mascot-cover-225aba10da-1600.webp', '77ee69650076a651ace94b6348e40cd7a0b43b0fce340738664a71625a70b8eb'],
   ['assets/blog/slick-tires-on-gravel-bike-mascot-cover-225aba10da-1200.jpg', '54cfe73cd006e9667d2a667a0e370c7b02a975b114858e7c8e0e9a0b95730a4a'],
