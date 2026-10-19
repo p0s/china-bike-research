@@ -6571,6 +6571,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "gravel-tire-tread-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda preparing a ride with a floor pump",
+        "zh-Hans": "用打气筒准备出发的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is preparing for a gravel ride, leaning happily on a compact bicycle floor pump, one paw on the pump handle and one giving a small thumbs-up. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "c3a53156105d1bfcb296a12afe0c7f1a8a87e54ba97d7a7ab7e459c7c8ae66b3"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/gravel-bikes-around-5000-yuan-mascot-480.webp",
+          "width": 480,
+          "height": 475,
+          "type": "image/webp",
+          "bytes": 37246,
+          "sha256": "98d260e0d522d27a8d6a530568dcc5e6ee6585122a13944dcdc5378fccc4f775"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "Helmeted red panda comparing three tread samples on a bench beside a muddy, rocky forest trail",
+          "zh-Hans": "戴头盔的小熊猫在泥泞多石的林间小路旁，对比长凳上的三种胎纹样本",
+          "de": "Rotpanda mit Helm vergleicht drei Profilstücke auf einer Bank neben einem schlammigen, steinigen Waldweg"
+        },
+        "prompt": "Editorial scene: Helmeted red panda comparing three tread samples on a bench beside a muddy, rocky forest trail",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "fc39dddc19053437d74dc74c74017653c844531d7678ee5a772d91da8fca9c73",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 64774,
+            "sha256": "7cf3f44d2824322d4f847f58980602cee2e561b391ce359566255fd493a00084"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 248020,
+            "sha256": "29bc0ac7b4b50dc8c3d1fc751ceb897ca2b63a8fb3b81a92c0b4804d93ed811f"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 265998,
+            "sha256": "53fe4ba345b922a07b6e744eebe563b7c87e0f6dace58b0cf763261d2cfe0ba4"
+          }
+        ]
+      }
     }
   ]
 }
