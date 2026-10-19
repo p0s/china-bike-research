@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buying-a-groupset-for-frame-build-mascot-cover-77815deef3-640.webp', '27b5f6e8e2c77ab799c81785f8efcece71170e00575294f1fa19ebf8ba7a95f0'],
+  ['assets/blog/buying-a-groupset-for-frame-build-mascot-cover-77815deef3-1600.webp', '82113a429262b265156ca4446223949098c2e4dd7401069f6fed08e7425e4b14'],
+  ['assets/blog/buying-a-groupset-for-frame-build-mascot-cover-77815deef3-1200.jpg', 'f7539575986fe8a39328c01b2922e278978d0c4c7fa6d454e1d985f45df471e9'],
   ['assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-640.webp', 'b0cf434274ca85b9de4d37baedd7a484a89d184207220fc7b4a00d29e7ba3cfd'],
   ['assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-1600.webp', '1c3bf5af69087f6040586a3363abcb6cbe0528341854bfa9a37ff6ee9597f199'],
   ['assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-1200.jpg', '51345f331c8016b745e4ef266dbcbc2f9c4149609d9741a0096c1b5b63c7d214'],
