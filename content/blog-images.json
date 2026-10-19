@@ -6951,6 +6951,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "650b-vs-700c-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda compares two differently sized wheels on stands in a sunny courtyard workshop, with a gravel bike behind.",
+          "zh-Hans": "小熊猫在阳光下的庭院工坊里比较两只支架上大小不同的车轮，身后是一辆砾石车。",
+          "de": "Ein Roter Panda vergleicht zwei unterschiedlich große Räder auf Ständern in einer sonnigen Hofwerkstatt; dahinter steht ein Gravelbike."
+        },
+        "prompt": "Editorial scene: A red panda compares two differently sized wheels on stands in a sunny courtyard workshop, with a gravel bike behind.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "8162b7725d701e0f866381c0dcfe6890a4cf7df54c26848edd189387988587a7",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/650b-vs-700c-mascot-cover-8162b7725d-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 60650,
+            "sha256": "65c3b6222d9de7464889a06791adf69d80df2f35e7a7c5d1c48464c8964242d5"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/650b-vs-700c-mascot-cover-8162b7725d-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 202810,
+            "sha256": "df11c4bbade09d4cc5edc7919da7f898eb0563888340556de69ca03907c25cc9"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/650b-vs-700c-mascot-cover-8162b7725d-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 229576,
+            "sha256": "7dac015959ca17028fa1d277b5a8403191c31d6d90cb7510234f3fb57111a561"
+          }
+        ]
+      }
     }
   ]
 }
