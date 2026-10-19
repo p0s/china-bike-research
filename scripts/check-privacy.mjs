@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/slick-tires-on-gravel-bike-mascot-cover-225aba10da-640.webp', '3fb40eb80d909308af3c9e583f258cd946c31e93124224ae31db87dcb8f452a8'],
+  ['assets/blog/slick-tires-on-gravel-bike-mascot-cover-225aba10da-1600.webp', '77ee69650076a651ace94b6348e40cd7a0b43b0fce340738664a71625a70b8eb'],
+  ['assets/blog/slick-tires-on-gravel-bike-mascot-cover-225aba10da-1200.jpg', '54cfe73cd006e9667d2a667a0e370c7b02a975b114858e7c8e0e9a0b95730a4a'],
   ['assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-640.webp', '7cf3f44d2824322d4f847f58980602cee2e561b391ce359566255fd493a00084'],
   ['assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-1600.webp', '29bc0ac7b4b50dc8c3d1fc751ceb897ca2b63a8fb3b81a92c0b4804d93ed811f'],
   ['assets/blog/gravel-tire-tread-mascot-cover-fc39dddc19-1200.jpg', '53fe4ba345b922a07b6e744eebe563b7c87e0f6dace58b0cf763261d2cfe0ba4'],
