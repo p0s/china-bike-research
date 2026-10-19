@@ -6799,6 +6799,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "carbon-wheel-weight-vs-depth-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda preparing a ride with a floor pump",
+        "zh-Hans": "用打气筒准备出发的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is preparing for a gravel ride, leaning happily on a compact bicycle floor pump, one paw on the pump handle and one giving a small thumbs-up. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "c3a53156105d1bfcb296a12afe0c7f1a8a87e54ba97d7a7ab7e459c7c8ae66b3"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/gravel-bikes-around-5000-yuan-mascot-480.webp",
+          "width": 480,
+          "height": 475,
+          "type": "image/webp",
+          "bytes": 37246,
+          "sha256": "98d260e0d522d27a8d6a530568dcc5e6ee6585122a13944dcdc5378fccc4f775"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda in a workshop compares shallow and deep road wheels beside an unused hanging scale.",
+          "zh-Hans": "工坊里的小熊猫比较浅框与高框公路轮组，旁边挂着未使用的秤。",
+          "de": "Ein Roter Panda vergleicht in einer Werkstatt flache und hohe Rennradfelgen neben einer unbenutzten Hängewaage."
+        },
+        "prompt": "Editorial scene: A red panda in a workshop compares shallow and deep road wheels beside an unused hanging scale.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "12fc446441d39f6fa09f14224f6dcd6a231556af7d4cad0e81c74f196e95fa51",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 45270,
+            "sha256": "01248089627e551b57b869a69f1f42aa51a6e9b189cacc4d34d05190e8b15280"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 151126,
+            "sha256": "824e9ef97291de9f731180b4cf51d6a15ea8b47ee5dc9d6d7164098ecf341ed2"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 179968,
+            "sha256": "691732c0a2bcd56192608b5ebc53365c11e6153cb527214683c748a67a63f340"
+          }
+        ]
+      }
     }
   ]
 }
