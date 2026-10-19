@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-640.webp', '01248089627e551b57b869a69f1f42aa51a6e9b189cacc4d34d05190e8b15280'],
+  ['assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-1600.webp', '824e9ef97291de9f731180b4cf51d6a15ea8b47ee5dc9d6d7164098ecf341ed2'],
+  ['assets/blog/carbon-wheel-weight-vs-depth-mascot-cover-12fc446441-1200.jpg', '691732c0a2bcd56192608b5ebc53365c11e6153cb527214683c748a67a63f340'],
   ['assets/blog/deep-wheels-crosswinds-mascot-cover-7c5b276c54-640.webp', '217e756c8cd84bbd1bf475a7cec94a975e88e7406fe651627df1bf27a5ed4979'],
   ['assets/blog/deep-wheels-crosswinds-mascot-cover-7c5b276c54-1600.webp', '81640320f4e4b6243ea85f67b2b7d7d82455216fe553381c3e7af5a2b9070db8'],
   ['assets/blog/deep-wheels-crosswinds-mascot-cover-7c5b276c54-1200.jpg', '8f134b0bcc35543e18faefc03a82bfe682828b677616e8a1635d5294b83d980a'],
