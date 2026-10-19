@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-640.webp', 'b0cf434274ca85b9de4d37baedd7a484a89d184207220fc7b4a00d29e7ba3cfd'],
+  ['assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-1600.webp', '1c3bf5af69087f6040586a3363abcb6cbe0528341854bfa9a37ff6ee9597f199'],
+  ['assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-1200.jpg', '51345f331c8016b745e4ef266dbcbc2f9c4149609d9741a0096c1b5b63c7d214'],
   ['assets/blog/wheelset-system-weight-limit-mascot-cover-1d58ca5c13-640.webp', 'd6919ae57003cfb626e1c8e610600560ab016ec9befeb654029528f6fe67c377'],
   ['assets/blog/wheelset-system-weight-limit-mascot-cover-1d58ca5c13-1600.webp', '2f878a004238caeeca9c0591c74c15bf511a04f0369bdbef6631a9f73cfc6a9f'],
   ['assets/blog/wheelset-system-weight-limit-mascot-cover-1d58ca5c13-1200.jpg', 'e48ec3c257633d97a4f99b8c171e5a48345a233474d2e12f680fb0f01166af20'],

@@ -7103,6 +7103,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "spare-spokes-hubs-before-buying-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda holds a loose spoke beside a wheel in a workshop stand, with spare spokes and a freehub body on the bench.",
+          "zh-Hans": "戴头盔的小熊猫在工作台前拿着一根辐条，旁边的支架上固定着车轮，台面摆着备用辐条与塔基。",
+          "de": "Ein Rotpanda mit Helm hält eine lose Speiche neben einem Laufrad im Werkstattständer; Ersatzspeichen und ein Freilaufkörper liegen auf der Werkbank."
+        },
+        "prompt": "Editorial scene: A helmeted red panda holds a loose spoke beside a wheel in a workshop stand, with spare spokes and a freehub body on the bench.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "608533b018c0323b29cfa31eed3602c3222ea072af3a34fb6c4383cb66271257",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 46702,
+            "sha256": "b0cf434274ca85b9de4d37baedd7a484a89d184207220fc7b4a00d29e7ba3cfd"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 152450,
+            "sha256": "1c3bf5af69087f6040586a3363abcb6cbe0528341854bfa9a37ff6ee9597f199"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/spare-spokes-hubs-before-buying-mascot-cover-608533b018-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 186730,
+            "sha256": "51345f331c8016b745e4ef266dbcbc2f9c4149609d9741a0096c1b5b63c7d214"
+          }
+        ]
+      }
     }
   ]
 }
