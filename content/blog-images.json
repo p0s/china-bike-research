@@ -7483,6 +7483,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "threaded-vs-pressfit-bottom-brackets-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda compares two metal bottom-bracket cup samples beside a green frame shell in a sunlit workshop.",
+          "zh-Hans": "戴头盔的小熊猫在阳光照进的车间里，对比绿色车架五通旁的两个金属中轴杯体样件。",
+          "de": "Ein Rotpanda mit Helm vergleicht zwei metallene Innenlagerschalen neben einem grünen Rahmengehäuse in einer sonnigen Werkstatt."
+        },
+        "prompt": "Editorial scene: A helmeted red panda compares two metal bottom-bracket cup samples beside a green frame shell in a sunlit workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "1a208afd5dba48247419f974e951ca9cfe813441942f87131d9eda397e026c61",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 46702,
+            "sha256": "213a779bc5623198401fefb4100a312e5d41391b1c3c177e678f97a0e040d5ff"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 151514,
+            "sha256": "6440254310cc0dd3870fe718b21a6125ffd26f28faf8cbae7cadabcee8c9a5bc"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 180770,
+            "sha256": "b42bfbcf6d6db2ee22dc6c5a44655771c39bca15c952df231bc8a77b0e49bb12"
+          }
+        ]
+      }
     }
   ]
 }

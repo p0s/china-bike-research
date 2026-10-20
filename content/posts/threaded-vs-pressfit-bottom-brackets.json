@@ -3,7 +3,7 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 71,
-  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "image_id": "threaded-vs-pressfit-bottom-brackets-unique-mascot-cover",
   "datePublished": "2026-10-04",
   "dateModified": "2026-10-04",
   "researched_at": "2026-10-04",
@@ -18,7 +18,8 @@
     "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
   ],
   "editorial_references": [
-    "https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology"
+    "https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology",
+    "https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-tool-selection-threaded-and-thread-together"
   ],
   "photo_sections": [
     {
@@ -39,14 +40,15 @@
           "id": "parts",
           "heading": "Three components meet here",
           "paragraphs": [
-            "The frame supplies the shell, the bottom-bracket assembly supplies bearings and mounting, and the crank supplies its spindle. [Park Tool’s standards guide](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology) distinguishes threaded and press-fit systems. Cup design and required tools vary within those families. First identify the frame and crank; then choose the compatible assembly."
+            "The frame supplies the shell, the bottom-bracket assembly supplies bearings and mounting, and the crank supplies its spindle. [Park Tool’s standards guide](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology) distinguishes threaded and press-fit systems. Cup design and required tools vary within those families. First identify the frame and crank; then choose the compatible assembly.",
+            "One trap is a “thread-together” assembly sold for a press-fit frame. [Park Tool’s tool guide](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-tool-selection-threaded-and-thread-together) explains that these assemblies can have visible tool fittings just like a threaded bottom bracket. Threads joining the cups do not turn the frame’s smooth bore into a threaded shell. Before comparing installation quotes, ask whether “threaded” describes the frame or only the assembly, and give the workshop the exact part code."
           ]
         },
         {
           "id": "models",
           "heading": "T47 still needs a full specification",
           "paragraphs": [
-            "The [Speedster SR](/models/incolor-speedster-sr-frameset/) record specifies an asymmetric T47A arrangement, while the [LCR018-D](/models/lightcarbon-lcr018-d/) has its own T47 shell dimensions. Do not swap a bottom bracket between them from the “T47” label alone. Ask for shell width, symmetry, bearing arrangement and the exact part compatible with your crank."
+            "Our source record from 29 August lists T47A for the [Speedster SR](/models/incolor-speedster-sr-frameset/); the [LCR018-D](/models/lightcarbon-lcr018-d/) has its own T47 specification. Treat these as separate frame interfaces, not interchangeable purchases from the “T47” label alone. Ask for shell width, symmetry, bearing arrangement and the exact part compatible with your crank."
           ]
         },
         {
@@ -54,42 +56,43 @@
           "heading": "Ask who will install and replace it",
           "paragraphs": [
             "Price the compatible part, installation and future removal with the workshop. Proper preparation and the prescribed tools matter for both systems. A threaded shell does not eliminate all creaks; a press-fit shell is not proof of a future problem. Noise can originate elsewhere in the bike.",
-            "If the specification is unclear, resolve it before paying for a crank-and-bottom-bracket bundle. Buying an attractive complete deal is little help if the cups cannot be installed in the frame. Keep the final part code in the [build record](/blog/bb86-bb92-t47-identify/)."
+            "If the specification is unclear, resolve it before paying for a crank-and-bottom-bracket bundle. Buying an attractive complete deal is little help if the cups cannot be installed in the frame. Keep the final part code in the [groupset inventory](/blog/buying-a-groupset-for-frame-build/)."
           ]
         }
       ]
     },
     "zh-Hans": {
       "title": "螺纹还是压入中轴：先认接口，再买零件",
-      "description": "分清车架壳体、轴承组件与曲柄轴心，比较安装维护，不能保证某标准永不异响。",
+      "description": "分清车架壳体、轴承组件与曲柄轴心，比较安装和维护需求；任何标准都不能保证永无异响。",
       "intro": "“螺纹”听起来像中轴问题已经解决了，其实只是讨论的开始。车架五通尺寸、曲柄轴心和安装要求仍须匹配。同样标着一个标准，并不能保证每款中轴都能装上。",
       "sections": [
         {
           "id": "parts",
           "heading": "这里连接三个部分",
           "paragraphs": [
-            "车架提供壳体，中轴组件提供轴承与安装，曲柄提供轴心。[Park Tool标准指南](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology)区分螺纹、压入系统；各类内部杯体设计、工具要求也不同。先认车架与曲柄，再选兼容组件。"
+            "车架提供壳体，中轴组件提供轴承与安装，曲柄提供轴心。[Park Tool标准指南](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology)区分螺纹、压入系统；各类内部杯体设计、工具要求也不同。先认车架与曲柄，再选兼容组件。",
+            "一个容易混淆的例子，是供压入式车架使用的“对锁式”中轴。[Park Tool工具指南](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-tool-selection-threaded-and-thread-together)说明，这类杯体同样有供旋拧工具使用的接口。杯体之间靠螺纹连接，并不会把车架的光滑五通孔变成螺纹壳体。比较安装报价前，先问“螺纹”指车架还是仅指中轴组件，并把具体零件编码交给车店。"
           ]
         },
         {
           "id": "models",
           "heading": "T47也需要完整规格",
           "paragraphs": [
-            "[Speedster SR](/models/incolor-speedster-sr-frameset/)记录为非对称T47A，[LCR018-D](/models/lightcarbon-lcr018-d/)则有自己的T47壳体尺寸。不能只因“T47”就两者互换中轴；应问壳宽、对称性、轴承布局和适合曲柄的具体零件。"
+            "我们8月29日的来源记录把 [Speedster SR](/zh/models/incolor-speedster-sr-frameset/) 列为T47A；[LCR018-D](/zh/models/lightcarbon-lcr018-d/) 则有自己的T47规格。应把两者当作不同的车架接口核对，不能只因“T47”标签就互换购买。先问清壳宽、是否对称、轴承布局，以及适合具体曲柄的零件编码。"
           ]
         },
         {
           "id": "service",
           "heading": "问谁安装、谁替换",
           "paragraphs": [
-            "向车店报价兼容零件、安装与未来拆卸，两种系统都需要正确准备和规定工具。螺纹壳不会消灭所有异响，压入壳也不证明将来一定出问题；声音还可能来自别处。",
-            "规格不清时，买曲柄、中轴套装前先解决。杯体装不进车架，再漂亮整套优惠也没用；把最终编码保留在[装车记录](/blog/bb86-bb92-t47-identify/)。"
+            "请车店分别报价兼容零件、安装与将来拆卸的费用。两种系统都需要正确准备和规定工具。螺纹壳体不能保证永无异响，压入壳体也不意味着将来一定出问题；声音还可能来自车上其他位置。",
+            "规格不清时，买曲柄、中轴套装前先解决。杯体装不进车架，再漂亮整套优惠也没用；把最终编码保留在[套件清单](/zh/blog/buying-a-groupset-for-frame-build/)。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Geschraubt oder Pressfit: Das richtige Innenlager statt ein Schlagwort",
+      "title": "Geschraubt oder Pressfit: Das richtige Innenlager statt eines Schlagworts",
       "description": "Trenne Tretlagergehäuse, Lager und Kurbelachse und vergleiche Wartung ohne Knarzfrei-Versprechen.",
       "intro": "„Geschraubt“ klingt wie das Ende der Innenlagerfrage. Es ist erst der Anfang. Gehäusemaße, Kurbelachse und Montagevorgaben müssen trotzdem passen. Gleiche Buchstaben geben nicht jedes Lager frei.",
       "sections": [
@@ -97,14 +100,15 @@
           "id": "parts",
           "heading": "Drei Bauteile treffen hier zusammen",
           "paragraphs": [
-            "Der Rahmen liefert das Gehäuse, das Innenlager Lagerung und Aufnahme, die Kurbel ihre Achse. [Park Tools Standardübersicht](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology) unterscheidet Gewinde und Pressfit. Bauformen und Werkzeuge variieren innerhalb der Familien. Erst Rahmen und Kurbel bestimmen, dann das Lager."
+            "Der Rahmen liefert das Gehäuse, das Innenlager Lagerung und Aufnahme, die Kurbel ihre Achse. [Park Tools Standardübersicht](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology) unterscheidet Gewinde und Pressfit. Bauformen und Werkzeuge variieren innerhalb der Familien. Erst Rahmen und Kurbel bestimmen, dann das Lager.",
+            "Ein typischer Stolperstein ist ein „Thread-Together“-Innenlager für einen Pressfit-Rahmen. [Park Tools Werkzeuganleitung](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-tool-selection-threaded-and-thread-together) erklärt, dass auch solche Schalen Werkzeugaufnahmen zum Verschrauben haben. Das Gewinde zwischen den Schalen macht aus der glatten Rahmenbohrung kein Gewindegehäuse. Frage vor dem Vergleich von Montageangeboten, ob „geschraubt“ den Rahmen oder nur das Innenlager beschreibt, und nenne der Werkstatt die genaue Teilekennung."
           ]
         },
         {
           "id": "models",
           "heading": "Auch T47 braucht vollständige Maße",
           "paragraphs": [
-            "Der [Speedster SR](/models/incolor-speedster-sr-frameset/) hat laut Eintrag asymmetrisches T47A, der [LCR018-D](/models/lightcarbon-lcr018-d/) eigene T47-Gehäusemaße. „T47“ allein erlaubt keinen Tausch. Frage nach Breite, Symmetrie, Lageranordnung und konkretem Teil für die Kurbel."
+            "Unser Quellenstand vom 29. August nennt T47A für den [Speedster SR](/de/models/incolor-speedster-sr-frameset/); der [LCR018-D](/de/models/lightcarbon-lcr018-d/) hat seine eigene T47-Spezifikation. Prüfe beide Rahmen getrennt, statt allein wegen „T47“ austauschbare Teile zu bestellen. Kläre Gehäusebreite, Symmetrie, Lageranordnung und das genaue Teil für deine Kurbel."
           ]
         },
         {
@@ -112,7 +116,7 @@
           "heading": "Montage und Ersatzweg klären",
           "paragraphs": [
             "Lass passendes Teil, Einbau und späteren Ausbau anbieten. Vorbereitung und vorgeschriebene Werkzeuge zählen bei beiden. Gewinde beseitigt nicht jedes Knarzen; Pressfit beweist keinen künftigen Fehler. Geräusche können woanders entstehen.",
-            "Offene Maße vor dem Kurbel-Lager-Paket klären. Ein schönes Komplettangebot hilft wenig, wenn die Lagerschalen nicht in den Rahmen passen. Speichere die endgültige Kennung im [Aufbauprotokoll](/blog/bb86-bb92-t47-identify/)."
+            "Offene Maße vor dem Kurbel-Lager-Paket klären. Ein schönes Komplettangebot hilft wenig, wenn die Lagerschalen nicht in den Rahmen passen. Speichere die endgültige Kennung im [Gruppeninventar](/de/blog/buying-a-groupset-for-frame-build/)."
           ]
         }
       ]
