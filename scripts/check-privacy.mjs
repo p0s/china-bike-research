@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-640.webp', '213a779bc5623198401fefb4100a312e5d41391b1c3c177e678f97a0e040d5ff'],
+  ['assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-1600.webp', '6440254310cc0dd3870fe718b21a6125ffd26f28faf8cbae7cadabcee8c9a5bc'],
+  ['assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-1200.jpg', 'b42bfbcf6d6db2ee22dc6c5a44655771c39bca15c952df231bc8a77b0e49bb12'],
   ['assets/blog/winter-tire-choice-road-gravel-mascot-cover-511062b2ba-640.webp', '09bb54db06c5f16732725bcdc76af08423752ad44a3e2ffb868917b215d1aac6'],
   ['assets/blog/winter-tire-choice-road-gravel-mascot-cover-511062b2ba-1600.webp', 'd521382cee9b641cc53d58417c83d13a15db72f8c4df7f5d1e4880dee2452fc8'],
   ['assets/blog/winter-tire-choice-road-gravel-mascot-cover-511062b2ba-1200.jpg', '80396eb5ce74dd84133135de824b537721507142b5ac8c172235a961bb36048a'],
