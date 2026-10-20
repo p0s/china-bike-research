@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buying-headset-bearings-mascot-cover-e4891eb00e-640.webp', '86b35c8afe5e0652318ffdc39c1a4fba809080bdbbfcbd588d60331051708837'],
+  ['assets/blog/buying-headset-bearings-mascot-cover-e4891eb00e-1600.webp', 'b33e4713374770466a512b3e74764b5683f8f11edb8c89ab1ec26be4b4038f7b'],
+  ['assets/blog/buying-headset-bearings-mascot-cover-e4891eb00e-1200.jpg', 'e168717425960708137eb3899d3a3345f477fc58b458a90d938b1a51d98a6b87'],
   ['assets/blog/bb86-bb92-t47-identify-mascot-cover-3867a06cda-640.webp', '4030363a165b02493fa321ec77caf4b2a9c1ec651190c35146154798e1d81c63'],
   ['assets/blog/bb86-bb92-t47-identify-mascot-cover-3867a06cda-1600.webp', 'bb2ee3c12fcf34cf833ea96594898febdeb5e24ad7477ba7c79d8e9f82ff6f1d'],
   ['assets/blog/bb86-bb92-t47-identify-mascot-cover-3867a06cda-1200.jpg', 'ae45c23590cdb96c29983801ce3dbdaf7a26ca1c8d7fa6c114efd516b3812a95'],
