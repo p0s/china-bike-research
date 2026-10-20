@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/winter-tire-choice-road-gravel-mascot-cover-511062b2ba-640.webp', '09bb54db06c5f16732725bcdc76af08423752ad44a3e2ffb868917b215d1aac6'],
+  ['assets/blog/winter-tire-choice-road-gravel-mascot-cover-511062b2ba-1600.webp', 'd521382cee9b641cc53d58417c83d13a15db72f8c4df7f5d1e4880dee2452fc8'],
+  ['assets/blog/winter-tire-choice-road-gravel-mascot-cover-511062b2ba-1200.jpg', '80396eb5ce74dd84133135de824b537721507142b5ac8c172235a961bb36048a'],
   ['assets/blog/puncture-kit-tubeless-rides-mascot-cover-b0c777769d-640.webp', '510b0b2e37ff0eff36b871540f7ed3fdda23f1ecd0f8a95d1c86a1f650f5f26a'],
   ['assets/blog/puncture-kit-tubeless-rides-mascot-cover-b0c777769d-1600.webp', '6f0da32074de7c5aca94526df24e1e28dbab96b5be8f55780e1fe846ff4fcfd6'],
   ['assets/blog/puncture-kit-tubeless-rides-mascot-cover-b0c777769d-1200.jpg', 'db2ab8500fd17611b31b6828c416189bb543364b0cc13d1e49808e4f250f478c'],
