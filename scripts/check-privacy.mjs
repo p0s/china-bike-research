@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/udh-frame-vs-traditional-hanger-mascot-cover-6577a73aa4-640.webp', 'c54e14dbfe8b5a1987ebcf3ab1758861975cb96a151a0956adad21dd9e625696'],
+  ['assets/blog/udh-frame-vs-traditional-hanger-mascot-cover-6577a73aa4-1600.webp', 'ee64831aab31dc1f244993d0b7da0dd90dc637c0e8992dc0fba003bce34b26c9'],
+  ['assets/blog/udh-frame-vs-traditional-hanger-mascot-cover-6577a73aa4-1200.jpg', 'ca048662324bb234f2cc6a5296a620534ac82bb7e656a2597d7dad60dec7de1e'],
   ['assets/blog/spare-derailleur-hanger-order-mascot-cover-07e50fcc67-640.webp', 'cc316d73a1e6cdc388ab9970de06042601f1728c8b74500cdb79315d5ac2f0df'],
   ['assets/blog/spare-derailleur-hanger-order-mascot-cover-07e50fcc67-1600.webp', '7288c301d4e83652730df426f648316dc8f78d702cff40775d6ee27ff91c1a8e'],
   ['assets/blog/spare-derailleur-hanger-order-mascot-cover-07e50fcc67-1200.jpg', '58d378d6e40b5108597241c1abf32212fc9c8e8070dec5500ed28c1481098da3'],
