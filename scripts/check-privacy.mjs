@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/puncture-kit-tubeless-rides-mascot-cover-b0c777769d-640.webp', '510b0b2e37ff0eff36b871540f7ed3fdda23f1ecd0f8a95d1c86a1f650f5f26a'],
+  ['assets/blog/puncture-kit-tubeless-rides-mascot-cover-b0c777769d-1600.webp', '6f0da32074de7c5aca94526df24e1e28dbab96b5be8f55780e1fe846ff4fcfd6'],
+  ['assets/blog/puncture-kit-tubeless-rides-mascot-cover-b0c777769d-1200.jpg', 'db2ab8500fd17611b31b6828c416189bb543364b0cc13d1e49808e4f250f478c'],
   ['assets/blog/tire-clearance-mud-and-fenders-mascot-cover-6dbdcc711c-640.webp', 'c88347a7a3fc88e609ddd6076255d77d8b36c76090d0af6dd61ce9b36e338ea5'],
   ['assets/blog/tire-clearance-mud-and-fenders-mascot-cover-6dbdcc711c-1600.webp', '8d0bf75e286812fcc8493c2182eada00d36786940da8468f949cec4362b844c5'],
   ['assets/blog/tire-clearance-mud-and-fenders-mascot-cover-6dbdcc711c-1200.jpg', '03cbecf909405e16076f71f64c8d44dfa15f5d55ccfd779dcd78bfe7c5921323'],
