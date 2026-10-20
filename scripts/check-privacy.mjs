@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/thru-axle-thread-length-mascot-cover-95bfe48884-640.webp', '38c6d4833afbc277ce38dbaad7c42b2565bc5ef611ceeeda029f7a871233b327'],
+  ['assets/blog/thru-axle-thread-length-mascot-cover-95bfe48884-1600.webp', '56e202e657411c08246fb25ef18e28362557c25f73d4737a70111d6312ebf273'],
+  ['assets/blog/thru-axle-thread-length-mascot-cover-95bfe48884-1200.jpg', 'c149b3034e7158fbda69242d50ff6ca31fb9e307a41359c99fbcbb807b51c13e'],
   ['assets/blog/udh-frame-vs-traditional-hanger-mascot-cover-6577a73aa4-640.webp', 'c54e14dbfe8b5a1987ebcf3ab1758861975cb96a151a0956adad21dd9e625696'],
   ['assets/blog/udh-frame-vs-traditional-hanger-mascot-cover-6577a73aa4-1600.webp', 'ee64831aab31dc1f244993d0b7da0dd90dc637c0e8992dc0fba003bce34b26c9'],
   ['assets/blog/udh-frame-vs-traditional-hanger-mascot-cover-6577a73aa4-1200.jpg', 'ca048662324bb234f2cc6a5296a620534ac82bb7e656a2597d7dad60dec7de1e'],
