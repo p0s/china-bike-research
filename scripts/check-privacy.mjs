@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/bb86-bb92-t47-identify-mascot-cover-3867a06cda-640.webp', '4030363a165b02493fa321ec77caf4b2a9c1ec651190c35146154798e1d81c63'],
+  ['assets/blog/bb86-bb92-t47-identify-mascot-cover-3867a06cda-1600.webp', 'bb2ee3c12fcf34cf833ea96594898febdeb5e24ad7477ba7c79d8e9f82ff6f1d'],
+  ['assets/blog/bb86-bb92-t47-identify-mascot-cover-3867a06cda-1200.jpg', 'ae45c23590cdb96c29983801ce3dbdaf7a26ca1c8d7fa6c114efd516b3812a95'],
   ['assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-640.webp', '213a779bc5623198401fefb4100a312e5d41391b1c3c177e678f97a0e040d5ff'],
   ['assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-1600.webp', '6440254310cc0dd3870fe718b21a6125ffd26f28faf8cbae7cadabcee8c9a5bc'],
   ['assets/blog/threaded-vs-pressfit-bottom-brackets-mascot-cover-1a208afd5d-1200.jpg', 'b42bfbcf6d6db2ee22dc6c5a44655771c39bca15c952df231bc8a77b0e49bb12'],
