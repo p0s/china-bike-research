@@ -3,7 +3,7 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 72,
-  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "image_id": "bb86-bb92-t47-identify-unique-mascot-cover",
   "datePublished": "2026-10-04",
   "dateModified": "2026-10-04",
   "researched_at": "2026-10-04",
@@ -18,7 +18,8 @@
     "incolor-speedster-brochure-2026-08-29"
   ],
   "editorial_references": [
-    "https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology"
+    "https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology",
+    "https://wheelsmfg.com/blogs/bottom-brackets/how-to-select-the-correct-t47-bottom-bracket"
   ],
   "photo_sections": [
     {
@@ -46,7 +47,8 @@
           "id": "sheet",
           "heading": "Fill this sheet with the maker or assembler",
           "paragraphs": [
-            "For the [LCR018-D](/models/lightcarbon-lcr018-d/) and [Speedster SR](/models/incolor-speedster-sr-frameset/), use each exact generation’s drawing rather than another T47 frame’s dimensions. If the frame is already in your hands, have a competent assembler verify the shell without damaging threads or bearing seats."
+            "For the [LCR018-D](/models/lightcarbon-lcr018-d/) and [Speedster SR](/models/incolor-speedster-sr-frameset/), use each exact generation’s drawing rather than another T47 frame’s dimensions. If the frame is already in your hands, have a competent assembler verify the shell without damaging threads or bearing seats.",
+            "A width needs a label too. [Wheels Manufacturing’s selection guide](https://wheelsmfg.com/blogs/bottom-brackets/how-to-select-the-correct-t47-bottom-bracket) lists a 68 mm shell and a 90.8 mm over-seal width for its T47-OUT-30MM. Those measure different things. Ask which dimension a quoted width names before filling the Shell row. This is a dimension example, not a part recommendation for either pictured frame."
           ],
           "worksheet": {
             "caption": "Bottom-bracket order sheet",
@@ -82,7 +84,8 @@
           "id": "confirm",
           "heading": "Ask for the actual part code",
           "paragraphs": [
-            "Send the completed sheet and ask the supplier to confirm the compatible bottom-bracket model in writing. Include any required spacers, tool access and installation labour in the quote. If two sources disagree about the shell, hold the order until the frame maker resolves it. Averaging two widths does not produce a third useful standard."
+            "Send the completed sheet and ask the supplier to confirm the compatible bottom-bracket model in writing. Include any required spacers, tool access and installation labour in the quote. If two sources disagree about the shell, hold the order until the frame maker resolves it. Averaging two widths does not produce a third useful standard.",
+            "For the shell-versus-assembly distinction, use the [threaded-versus-pressfit guide](/blog/threaded-vs-pressfit-bottom-brackets/)."
           ]
         }
       ]
@@ -96,14 +99,15 @@
           "id": "identify",
           "heading": "先辨认壳体，再选轴承",
           "paragraphs": [
-            "[Park Tool术语指南](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology)把BB86、BB92归入PF41压入安排，应用还须按壳宽区分；T47是有不同宽度、布局的螺纹家族。曲柄轴径是另一尺寸，“24毫米曲柄”不能识别车架壳体。"
+            "[Park Tool术语指南](https://www.parktool.com/en-us/blog/repair-help/bottom-bracket-standards-and-terminology)把BB86、BB92归入PF41压入式系统，应用还须按壳宽区分；T47是包含不同宽度与布局的螺纹系列。曲柄轴径是另一尺寸，“24毫米曲柄”不能识别车架壳体。"
           ]
         },
         {
           "id": "sheet",
           "heading": "与厂家或装车者填这张表",
           "paragraphs": [
-            "[LCR018-D](/models/lightcarbon-lcr018-d/)与[Speedster SR](/models/incolor-speedster-sr-frameset/)应使用对应代际图纸，而非另一T47车架尺寸。车架已到手时，让合格装车者验证壳体，不损伤螺纹或轴承座。"
+            "[LCR018-D](/zh/models/lightcarbon-lcr018-d/)与[Speedster SR](/zh/models/incolor-speedster-sr-frameset/)应使用对应代际图纸，而非另一T47车架尺寸。车架已到手时，让合格装车者验证壳体，不损伤螺纹或轴承座。",
+            "宽度也要写清测量对象。[Wheels Manufacturing选型指南](https://wheelsmfg.com/blogs/bottom-brackets/how-to-select-the-correct-t47-bottom-bracket)把T47-OUT-30MM的壳体宽度列为68毫米，装配后两端密封面之间的宽度列为90.8毫米。这是两个不同尺寸。填写“壳体”一行前，先问清报价中的宽度指什么。这里只演示尺寸含义，不代表该零件适合图中任一车架。"
           ],
           "worksheet": {
             "caption": "中轴订货表",
@@ -122,7 +126,7 @@
               ],
               [
                 "布局",
-                "对称或非对称、轴承安排"
+                "对称或非对称、轴承布局"
               ],
               [
                 "曲柄",
@@ -130,7 +134,7 @@
               ],
               [
                 "最终装配",
-                "确认编码、垫片与安装方法"
+                "已确认的零件编码、垫片与安装方法"
               ]
             ]
           }
@@ -139,7 +143,8 @@
           "id": "confirm",
           "heading": "索取实际零件编码",
           "paragraphs": [
-            "发完整表，请供货方书面确认兼容中轴型号，报价包含必要垫片、工具空间与安装人工。两来源壳体资料矛盾时，等厂家解决后再订。两宽度取平均，不会产生第三种有用标准。"
+            "发完整表，请供货方书面确认兼容中轴型号，报价包含必要垫片、工具空间与安装人工。两来源壳体资料矛盾时，等厂家解决后再订。两宽度取平均，不会产生第三种有用标准。",
+            "要分清车架壳体与中轴组件，可看[螺纹与压入中轴指南](/zh/blog/threaded-vs-pressfit-bottom-brackets/)。"
           ]
         }
       ]
@@ -160,7 +165,8 @@
           "id": "sheet",
           "heading": "Das Blatt mit Hersteller oder Monteur ausfüllen",
           "paragraphs": [
-            "Für [LCR018-D](/models/lightcarbon-lcr018-d/) und [Speedster SR](/models/incolor-speedster-sr-frameset/) gilt die Zeichnung der Generation, nicht irgendeines T47-Rahmens. Vorhandene Gehäuse fachgerecht prüfen lassen, ohne Gewinde oder Lagersitze zu beschädigen."
+            "Für [LCR018-D](/de/models/lightcarbon-lcr018-d/) und [Speedster SR](/de/models/incolor-speedster-sr-frameset/) gilt die Zeichnung der Generation, nicht irgendeines T47-Rahmens. Vorhandene Gehäuse fachgerecht prüfen lassen, ohne Gewinde oder Lagersitze zu beschädigen.",
+            "Auch eine Breite braucht eine eindeutige Bezeichnung. [Wheels Manufacturings Auswahlhilfe](https://wheelsmfg.com/blogs/bottom-brackets/how-to-select-the-correct-t47-bottom-bracket) nennt für T47-OUT-30MM 68 mm Gehäusebreite und 90,8 mm Breite über die Dichtungen. Das sind verschiedene Maße. Kläre vor dem Eintrag im Feld „Gehäuse“, welches Maß gemeint ist. Dies ist ein Maßbeispiel, keine Teileempfehlung für einen der abgebildeten Rahmen."
           ],
           "worksheet": {
             "caption": "Innenlager-Bestellblatt",
@@ -196,7 +202,8 @@
           "id": "confirm",
           "heading": "Die konkrete Teilenummer bestätigen lassen",
           "paragraphs": [
-            "Sende das Blatt und lass das passende Lagermodell schriftlich bestätigen. Distanzteile, Werkzeugzugang und Arbeit mitkalkulieren. Widersprechen sich Gehäuseangaben, vor Bestellung mit dem Rahmenhersteller klären. Zwei Breiten zu mitteln ergibt keinen dritten brauchbaren Standard."
+            "Sende das Blatt und lass das passende Lagermodell schriftlich bestätigen. Distanzteile, Werkzeugzugang und Arbeit mitkalkulieren. Widersprechen sich Gehäuseangaben, vor Bestellung mit dem Rahmenhersteller klären. Zwei Breiten zu mitteln ergibt keinen dritten brauchbaren Standard.",
+            "Die Unterscheidung zwischen Rahmengehäuse und Lager erklärt der [Ratgeber zu Gewinde und Pressfit](/de/blog/threaded-vs-pressfit-bottom-brackets/)."
           ]
         }
       ]
