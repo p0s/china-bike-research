@@ -28,6 +28,7 @@ import {
   freshness,
   joinCatalogCandidates,
   maxClearance,
+  wheelsetFreehubLabels,
 } from './lib/data.mjs';
 import {
   escapeAttr,
@@ -1973,7 +1974,7 @@ function builderBases(ctx) {
 
 function builderParts(ctx) {
   const sources = new Map(ctx.data.sources.map((source) => [source.id, source]));
-  return ctx.data.buildParts.map((part) => {
+  const fileParts = ctx.data.buildParts.map((part) => {
     const primarySource = sources.get(part.price_observation?.source_id)
       ?? sources.get(part.weight?.source_id)
       ?? sources.get(part.source_ids?.[0]);
@@ -1995,6 +1996,39 @@ function builderParts(ctx) {
       source: primarySource ? { title: primarySource.title, url: primarySource.url ?? '' } : null,
     };
   });
+  // Carbon-wheel reference records are planner wheel options. Their official
+  // direct prices are foreign-currency listings, so the China price stays open.
+  const wheelsetParts = (ctx.data.wheelsets ?? []).map((wheelset) => {
+    const source = sources.get(wheelset.source_ids[0]);
+    const headline = wheelset.price_observations[0];
+    return {
+      id: wheelset.id,
+      maker: wheelset.maker,
+      name: `${wheelset.name} wheelset`,
+      slot: 'wheelset',
+      covers: [],
+      default: false,
+      priceCny: null,
+      priceDate: null,
+      priceBasis: '',
+      weightG: wheelset.weight.grams,
+      weightBasis: `${sentenceLabel(wheelset.weight.claim_type)} weight claim. ${wheelset.weight.basis}`,
+      compatibility: {
+        axles: wheelset.compatibility.axles,
+        rotor_mount: wheelset.compatibility.rotor_mount,
+        freehubs: wheelset.compatibility.freehubs,
+        tubeless_ready: wheelset.rim.tubeless_ready,
+        internal_rim_width_mm: wheelset.rim.internal_width_mm
+      },
+      includedComponents: ['front wheel', 'rear wheel'],
+      note: [
+        `Official direct price ${wheelsetAmount(headline)} on ${headline.observed_at} is not a mainland China price; enter a China quote.`,
+        wheelset.compatibility.rotor_mount ? '' : 'Rotor mount is not stated; confirm it before choosing rotors.'
+      ].filter(Boolean).join(' '),
+      source: source ? { title: source.title, url: source.url ?? '' } : null,
+    };
+  });
+  return [...fileParts, ...wheelsetParts];
 }
 
 function builderPartOptions(parts, slot, included = false) {
@@ -2220,6 +2254,88 @@ export function renderElectronicGroupsets(ctx) {
         ...ordered.map((groupset) => ({ name: groupset.name })),
         ...adjacentSources.map((source) => ({ name: source.adjacent_system.name }))
       ]
+    }),
+    html
+  });
+}
+
+const wheelsetUseLabels = { road: 'Road', gravel: 'Gravel' };
+const wheelsetBeadLabels = { hooked: 'Hooked', hookless: 'Hookless', unknown: 'Bead not stated' };
+
+function wheelsetAmount(observation) {
+  const symbol = { USD: 'US$', CNY: '¥', EUR: '€' }[observation.currency] ?? `${observation.currency} `;
+  return `${symbol}${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(observation.amount)}`;
+}
+
+function wheelsetDepth(rim) {
+  const { front, rear } = rim.depth_mm;
+  return front === rear ? `${front} mm` : `${front}/${rear} mm`;
+}
+
+function wheelsetGrams(weight) {
+  const tolerance = Number.isFinite(weight.tolerance_g) ? ` ±${weight.tolerance_g} g` : Number.isFinite(weight.tolerance_pct) ? ` ±${weight.tolerance_pct}%` : '';
+  return `${new Intl.NumberFormat('en-US').format(weight.grams)} g${tolerance}`;
+}
+
+function wheelsetLimit(limit) {
+  if (!Number.isFinite(limit.kg)) return 'Limit not stated';
+  return `${limit.kg} kg ${{ system: 'system limit', rider: 'rider limit', unspecified: 'limit, scope not stated' }[limit.scope]}`;
+}
+
+function wheelsetFreehubs(compatibility) {
+  return compatibility.freehubs.map((id) => wheelsetFreehubLabels[id]).join(' · ');
+}
+
+function wheelsetRotorAxle(compatibility) {
+  const rotor = { 'center-lock': 'Center Lock', '6-bolt': '6-bolt' }[compatibility.rotor_mount] ?? 'Rotor mount not stated';
+  return `${rotor} · ${compatibility.axles.join(' / ')} mm`;
+}
+
+function wheelsetRows(wheelset, sourcesById) {
+  const { rim, compatibility } = wheelset;
+  const headline = wheelset.price_observations[0];
+  const pressure = Number.isFinite(wheelset.max_pressure.psi) ? `${wheelset.max_pressure.psi} psi maximum. ${wheelset.max_pressure.note}` : wheelset.max_pressure.note;
+  const observations = wheelset.price_observations.map((observation) => `<div><strong>${escapeHtml(wheelsetAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
+  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-grid"><section><h3>Rim and tires</h3><dl><div><dt>Bead</dt><dd>${escapeHtml(rim.bead_note)}</dd></div><div><dt>Outer width</dt><dd>${escapeHtml(rim.external_width_mm.front === rim.external_width_mm.rear ? `${rim.external_width_mm.front} mm` : `${rim.external_width_mm.front} mm front / ${rim.external_width_mm.rear} mm rear`)}</dd></div><div><dt>Tires</dt><dd>${escapeHtml(rim.tire_range)}</dd></div><div><dt>Pressure</dt><dd>${escapeHtml(pressure)}</dd></div></dl></section><section><h3>Weight and limits</h3><dl><div><dt>Weight</dt><dd>${escapeHtml(`${wheelsetGrams(wheelset.weight)}. ${wheelset.weight.basis}`)}</dd></div><div><dt>Load limit</dt><dd>${escapeHtml(`${wheelsetLimit(wheelset.load_limit)}. ${wheelset.load_limit.note}`)}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(wheelset.warranty ?? 'Not stated')}</dd></div></dl></section><section><h3>Hub and spokes</h3><dl><div><dt>Hub</dt><dd>${escapeHtml(wheelset.hub)}</dd></div><div><dt>Spokes</dt><dd>${escapeHtml(`${sentenceLabel(wheelset.spokes.material)} · ${wheelset.spokes.summary}`)}</dd></div><div><dt>Freehubs</dt><dd>${escapeHtml(wheelsetFreehubs(compatibility))}</dd></div></dl></section></div><div class="groupset-detail-lower"><section><h3>Price observations</h3><div class="price-records">${observations}</div></section><section><h3>Confirm before buying</h3><ul>${wheelset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(wheelset.source_ids, sourcesById)}</span></div></div></details>`;
+  return `<tbody class="groupset-entry" id="${escapeAttr(wheelset.id)}" data-wheelset-entry><tr class="groupset-summary-row">
+    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(wheelset.name)}</strong><span>${escapeHtml(wheelset.maker)}</span></span></div></th>
+    <td data-label="Use" data-column="best"><strong>${escapeHtml(wheelsetUseLabels[wheelset.use])}</strong><span>${escapeHtml(wheelset.positioning)}</span></td>
+    <td data-label="Rim" data-column="rim"><strong>${escapeHtml(`${wheelsetDepth(rim)} · ${rim.internal_width_mm} mm inner`)}</strong><span>${escapeHtml(`${wheelsetBeadLabels[rim.bead]}${rim.tubeless_ready ? ' · tubeless ready' : ''}`)}</span></td>
+    <td data-label="Weight" data-column="weight"><strong>${escapeHtml(`${new Intl.NumberFormat('en-US').format(wheelset.weight.grams)} g`)}</strong><span>${escapeHtml(wheelsetLimit(wheelset.load_limit))}</span></td>
+    <td data-label="Fit" data-column="fit"><strong>${escapeHtml(wheelsetRotorAxle(compatibility))}</strong><span>${escapeHtml(wheelsetFreehubs(compatibility))}</span></td>
+    <td data-label="Price" data-column="price"><strong>${escapeHtml(wheelsetAmount(headline))}</strong><span>${escapeHtml(`${headline.market} · ${headline.observed_at}`)}</span></td>
+  </tr><tr class="groupset-detail-row"><td colspan="6">${details}</td></tr></tbody>`;
+}
+
+export function renderCarbonWheels(ctx) {
+  const title = 'Chinese carbon wheelsets';
+  const desc = 'Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.';
+  // Order by use, then by headline price only where currencies are comparable.
+  const byPrice = (a, b) => {
+    const [left, right] = [a.price_observations[0], b.price_observations[0]];
+    return left.currency === right.currency ? left.amount - right.amount : 0;
+  };
+  const wheelsets = [...(ctx.data.wheelsets ?? [])].sort((a, b) => b.use.localeCompare(a.use) || byPrice(a, b) || `${a.maker} ${a.name}`.localeCompare(`${b.maker} ${b.name}`));
+  const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
+  const reviewed = latestDate(wheelsets.map((wheelset) => wheelset.reviewed_at), '');
+  const originalNotes = ctx.locale === 'zh-Hans'
+    ? '<p class="locale-evidence-note">本页提供中文导航与规格标签；型号、来源标题及详细的规格、价格和限重备注保留原文。</p>'
+    : ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Preis-, Gewichts- und Grenzwertnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${wheelsets.length} wheelsets · reviewed ${escapeHtml(reviewed)}</span> Open a row for tire limits, pressure, hub, warranty and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison wheelset-comparison"><caption class="sr-only">Chinese carbon wheelsets compared</caption><thead><tr><th>Wheelset</th><th>Use</th><th>Rim</th><th>Weight</th><th>Fit</th><th>Price</th></tr></thead>${wheelsets.map((wheelset) => wheelsetRows(wheelset, sourcesById)).join('')}</table></div>
+  <details class="reference-guide"><summary>How rim, limit and price fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Weight</dt><dd>The maker's pair claim with its stated basis and tolerance.</dd></div><div><dt>Load limit</dt><dd>A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.</dd></div><div><dt>Not stated</dt><dd>The maker's page does not publish the value. It is not a negative finding.</dd></div><div><dt>Price</dt><dd>A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.</dd></div></dl><p>Freehub and rotor fit for these wheelsets is checked in the Build planner. <a href="${url(ctx.base, '/build/')}">Open the Build planner</a></p></div></details>`;
+  return prosePage(ctx, {
+    title,
+    desc,
+    path: '/carbon-wheels/',
+    current: 'wheels',
+    className: 'groupsets-prose',
+    structuredData: collectionStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: '/carbon-wheels/',
+      name: title,
+      description: desc,
+      items: wheelsets.map((wheelset) => ({ name: `${wheelset.maker} ${wheelset.name}` }))
     }),
     html
   });

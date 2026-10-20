@@ -762,6 +762,18 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    // Carbon-wheel reference (2026-10-20)
+    [/^(\d+) wheelsets · reviewed (.+)$/, (_, n, date) => `${n} 款轮组 · 复核于 ${date}`],
+    [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · 内宽 ${width} mm`],
+    [/^(\d+) kg system limit$/, (_, kg) => `系统限重 ${kg} kg`],
+    [/^(\d+) kg rider limit$/, (_, kg) => `骑手限重 ${kg} kg`],
+    [/^(\d+) kg limit, scope not stated$/, (_, kg) => `限重 ${kg} kg（未说明范围）`],
+    [/^Center Lock · (.+) mm$/, (_, axles) => `中锁 · ${axles} mm`],
+    [/^6-bolt · (.+) mm$/, (_, axles) => `六钉 · ${axles} mm`],
+    [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `未说明碟片安装方式 · ${axles} mm`],
+    [/^Official direct store · (\d{4}-\d{2}-\d{2})$/, (_, date) => `官方直营店 · ${date}`],
+    [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `官方直营店 · ${date} · ${kind === 'list' ? '官方直营标价' : '官方直营促销价'}`],
+    [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `官方直营价 ${amount}（${date}）不是中国大陆价格；请输入中国报价。${rotor ? zh['Rotor mount is not stated; confirm it before choosing rotors.'] : ''}`],
     // Catalog workbench (2026-10)
     [/^· (\d+) published, then (\d+) research leads$/, (_, published, leads) => `· ${published} 个已发布车型，其后 ${leads} 个研究线索`],
     [/^Show (\d+) more research leads$/, (_, n) => `再显示 ${n} 个研究线索`],
@@ -1077,4 +1089,42 @@ Object.assign(zh, {
   "Weight · frame": "重量 · 车架",
   "Full-bike price": "整车价格",
   "Tires": "轮胎"
+});
+
+// Carbon-wheel reference (2026-10-20)
+Object.assign(zh, {
+  "Carbon wheels": "碳纤维轮组",
+  "Chinese carbon wheelsets": "中国品牌碳纤维轮组",
+  "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "对比中国品牌的公路与 Gravel 碟刹轮组：轮圈、重量、限重、兼容性及注明日期的价格。",
+  "Open a row for tire limits, pressure, hub, warranty and sources.": "展开各行可查看轮胎范围、胎压、花鼓、保修及来源。",
+  "Chinese carbon wheelsets compared": "中国品牌碳纤维轮组对比",
+  "Rim": "轮圈",
+  "Hooked": "有钩",
+  "Hookless": "无钩",
+  "Bead not stated": "未说明有钩或无钩",
+  "Hooked · tubeless ready": "有钩 · 支持真空胎",
+  "Hookless · tubeless ready": "无钩 · 支持真空胎",
+  "Bead not stated · tubeless ready": "未说明有钩或无钩 · 支持真空胎",
+  "Limit not stated": "未说明限重",
+  "Rim and tires": "轮圈与轮胎",
+  "Bead": "胎唇结构",
+  "Outer width": "外宽",
+  "Pressure": "胎压",
+  "Weight and limits": "重量与限重",
+  "Load limit": "限重",
+  "Hub and spokes": "花鼓与辐条",
+  "Hub": "花鼓",
+  "Spokes": "辐条",
+  "Freehubs": "塔基",
+  "Not stated": "未说明",
+  "Price observations": "价格记录",
+  "How rim, limit and price fields are recorded": "轮圈、限重与价格字段的记录方式",
+  "The maker's pair claim with its stated basis and tolerance.": "制造商公布的整对重量，附其说明的计重口径与公差。",
+  "A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.": "制造商明确说明时，系统限重包括骑手、整车与行李；否则按其公布的范围显示。",
+  "The maker's page does not publish the value. It is not a negative finding.": "制造商页面未公布该数值；这并不代表负面结论。",
+  "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.": "注明日期的官方直营店价格，保留原币种。它不是中国大陆价格；运费、关税和税费以该店公布的条件为准。",
+  "Freehub and rotor fit for these wheelsets is checked in the Build planner.": "这些轮组的塔基与碟片兼容性可在装车规划中核对。",
+  "Open the Build planner": "打开装车规划",
+  "Official direct store": "官方直营店",
+  "Rotor mount is not stated; confirm it before choosing rotors.": "未说明碟片安装方式；选择碟片前请先确认。"
 });

@@ -1039,10 +1039,10 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 5);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 6);
   assert.match(primaryNav, /href="\/china-bike-research\/geometry\/"/);
   assert.match(primaryNav, />Guides<\/a>/);
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/a>[\s\S]*>Groupsets<\/a>/);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/a>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/a>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);

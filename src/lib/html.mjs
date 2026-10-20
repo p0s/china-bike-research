@@ -71,12 +71,13 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
           <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
-          <div class="nav-tools${['geometry','builder','groupsets'].includes(current) ? ' is-current' : ''}" data-nav-tools>
+          <div class="nav-tools${['geometry','builder','groupsets','wheels'].includes(current) ? ' is-current' : ''}" data-nav-tools>
             <button class="nav-tools-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-tools-toggle hidden>Tools</button>
             <div class="nav-tools-menu" id="nav-tools-menu">
               <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
               <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build planner</a>
               <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
+              <a href="${url(base,'/carbon-wheels/')}" data-nav-wheels${current==='wheels'?' aria-current="page"':''}>Carbon wheels</a>
             </div>
           </div>
         </nav>
@@ -101,6 +102,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <a href="${url(base,'/framesets/')}">Framesets</a>
         <a href="${url(base,'/prices/')}">Price ranges</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
+        <a href="${url(base,'/carbon-wheels/')}">Carbon wheels</a>
         <a href="${url(base,'/build/')}">Build a bike</a>
         <a href="${url(base,'/geometry/')}">Geometry comparison</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>

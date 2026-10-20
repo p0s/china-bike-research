@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-11",
+  "updated_at": "2026-10-20",
   "catalog_metrics": {
     "records": {
       "brands": 41,
@@ -8,11 +8,12 @@
       "variants": 41,
       "prices": 82,
       "exchangeRates": 1,
-      "sources": 1609,
+      "sources": 1615,
       "images": 737,
       "videos": 59,
       "groupsets": 11,
       "buildParts": 10,
+      "wheelsets": 6,
       "recommendations": 6,
       "candidates": 236,
       "exclusions": 16,
@@ -444,6 +445,9 @@
       "ecb-reference-rates-2026-09-22",
       "ecb-reference-rates-2026-09-23",
       "ecb-reference-rates-2026-10-01",
+      "elitewheels-drive-50d-ii-official-2026-10-20",
+      "elitewheels-drive-g36-official-2026-10-20",
+      "elitewheels-marvel-50d-ii-official-2026-10-20",
       "elitewheels-marvel-g35-brochure-2026-08-27",
       "elro-f1-photo-source-2026-10-03",
       "elves-falath-evo-frameset-official-2026-08-17",
@@ -612,6 +616,7 @@
       "hongfu-fm279-current-recheck-2026-09-25",
       "hongfu-gravel-category-current-recheck-2026-09-25",
       "huanyu-azone-jd-index-2026-09-23",
+      "ican-alpha-50-ii-disc-official-2026-10-20",
       "ican-company-official",
       "ican-gra04-alibaba-image",
       "ican-gra04-historical-usd-package-discussion-recheck-2026-09-24",
@@ -1756,6 +1761,7 @@
       "winspace-g5-pro-di2-official-2026-08-17",
       "winspace-g5-regional-offer-2026-10-02",
       "winspace-g5-weight-woods-cycles-2026-08-25",
+      "winspace-lun-routte-se-d45-official-2026-10-20",
       "winspace-m6-105-di2-2026-08-30",
       "winspace-m6-105-di2-current-recheck-2026-09-25",
       "winspace-m6-105-mechanical-2026-08-30",
@@ -1862,7 +1868,8 @@
       "yoeleo-altera-g21-frame-weight-current-recheck-2026-09-25",
       "yoeleo-altera-g21-official",
       "yoeleo-altera-g21-official-2026-08-16",
-      "yoeleo-altera-g21-official-recheck-2026-09-23"
+      "yoeleo-altera-g21-official-recheck-2026-09-23",
+      "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20"
     ],
     "images": [
       "af01-primary-image",
@@ -2703,6 +2710,14 @@
       "shimano-pd-rs500-pedals",
       "shimano-sm-bb72-41b-bb86",
       "shimano-sm-rt70-160-140-rotor-pair"
+    ],
+    "wheelsets": [
+      "elitewheels-drive-50d-ii",
+      "elitewheels-drive-g36",
+      "elitewheels-marvel-50d-ii",
+      "ican-alpha-50-ii-disc",
+      "winspace-lun-routte-se-d45",
+      "yoeleo-sat-c45-db-pro-nxt-gravel"
     ],
     "recommendations": [
       "best-budget-frame",
@@ -11324,6 +11339,42 @@
         "type",
         "url"
       ],
+      "elitewheels-drive-50d-ii-official-2026-10-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "elitewheels-drive-g36-official-2026-10-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "elitewheels-marvel-50d-ii-official-2026-10-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "elitewheels-marvel-g35-brochure-2026-08-27": [
         "accessed_at",
         "language",
@@ -13362,6 +13413,18 @@
         "url"
       ],
       "huanyu-azone-jd-index-2026-09-23": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ican-alpha-50-ii-disc-official-2026-10-20": [
         "accessed_at",
         "language",
         "notes",
@@ -27900,6 +27963,18 @@
         "type",
         "url"
       ],
+      "winspace-lun-routte-se-d45-official-2026-10-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "winspace-m6-105-di2-2026-08-30": [
         "accessed_at",
         "language",
@@ -29221,6 +29296,18 @@
         "url"
       ],
       "yoeleo-altera-g21-official-recheck-2026-09-23": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20": [
         "accessed_at",
         "language",
         "notes",
@@ -56857,6 +56944,217 @@
         "weight.grams",
         "weight.source_id",
         "weight.status"
+      ]
+    },
+    "wheelsets": {
+      "elitewheels-drive-50d-ii": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_g"
+      ],
+      "elitewheels-drive-g36": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_g"
+      ],
+      "elitewheels-marvel-50d-ii": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_g"
+      ],
+      "ican-alpha-50-ii-disc": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_g"
+      ],
+      "winspace-lun-routte-se-d45": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "max_pressure.psi",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_g"
+      ],
+      "yoeleo-sat-c45-db-pro-nxt-gravel": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "hub",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_pct"
       ]
     },
     "recommendations": {
@@ -102575,6 +102873,9 @@
       "ecb-reference-rates-2026-09-22": [],
       "ecb-reference-rates-2026-09-23": [],
       "ecb-reference-rates-2026-10-01": [],
+      "elitewheels-drive-50d-ii-official-2026-10-20": [],
+      "elitewheels-drive-g36-official-2026-10-20": [],
+      "elitewheels-marvel-50d-ii-official-2026-10-20": [],
       "elitewheels-marvel-g35-brochure-2026-08-27": [],
       "elro-f1-photo-source-2026-10-03": [],
       "elves-falath-evo-frameset-official-2026-08-17": [],
@@ -102743,6 +103044,7 @@
       "hongfu-fm279-current-recheck-2026-09-25": [],
       "hongfu-gravel-category-current-recheck-2026-09-25": [],
       "huanyu-azone-jd-index-2026-09-23": [],
+      "ican-alpha-50-ii-disc-official-2026-10-20": [],
       "ican-company-official": [],
       "ican-gra04-alibaba-image": [],
       "ican-gra04-historical-usd-package-discussion-recheck-2026-09-24": [],
@@ -103935,6 +104237,7 @@
       "winspace-g5-pro-di2-official-2026-08-17": [],
       "winspace-g5-regional-offer-2026-10-02": [],
       "winspace-g5-weight-woods-cycles-2026-08-25": [],
+      "winspace-lun-routte-se-d45-official-2026-10-20": [],
       "winspace-m6-105-di2-2026-08-30": [],
       "winspace-m6-105-di2-current-recheck-2026-09-25": [],
       "winspace-m6-105-mechanical-2026-08-30": [],
@@ -104041,7 +104344,8 @@
       "yoeleo-altera-g21-frame-weight-current-recheck-2026-09-25": [],
       "yoeleo-altera-g21-official": [],
       "yoeleo-altera-g21-official-2026-08-16": [],
-      "yoeleo-altera-g21-official-recheck-2026-09-23": []
+      "yoeleo-altera-g21-official-recheck-2026-09-23": [],
+      "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20": []
     },
     "images": {
       "af01-primary-image": [
@@ -107937,6 +108241,26 @@
       "shimano-sm-rt70-160-140-rotor-pair": [
         "source_ids=shimano-sm-rt70-official-2026-08-27",
         "weight.source_id=shimano-sm-rt70-official-2026-08-27"
+      ]
+    },
+    "wheelsets": {
+      "elitewheels-drive-50d-ii": [
+        "source_ids=elitewheels-drive-50d-ii-official-2026-10-20"
+      ],
+      "elitewheels-drive-g36": [
+        "source_ids=elitewheels-drive-g36-official-2026-10-20"
+      ],
+      "elitewheels-marvel-50d-ii": [
+        "source_ids=elitewheels-marvel-50d-ii-official-2026-10-20"
+      ],
+      "ican-alpha-50-ii-disc": [
+        "source_ids=ican-alpha-50-ii-disc-official-2026-10-20"
+      ],
+      "winspace-lun-routte-se-d45": [
+        "source_ids=winspace-lun-routte-se-d45-official-2026-10-20"
+      ],
+      "yoeleo-sat-c45-db-pro-nxt-gravel": [
+        "source_ids=yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20"
       ]
     },
     "recommendations": {
@@ -119401,6 +119725,30 @@
         "price": 3
       }
     },
+    "elitewheels-drive-50d-ii-official-2026-10-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "elitewheels-drive-g36-official-2026-10-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "elitewheels-marvel-50d-ii-official-2026-10-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "elitewheels-marvel-g35-brochure-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -120775,6 +121123,14 @@
         "identity": 0,
         "price": 0,
         "specification": 0
+      }
+    },
+    "ican-alpha-50-ii-disc-official-2026-10-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
       }
     },
     "ican-company-official": {
@@ -130050,6 +130406,14 @@
         "specification": 1
       }
     },
+    "winspace-lun-routte-se-d45-official-2026-10-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "winspace-m6-105-di2-2026-08-30": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -130938,6 +131302,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 1,
+        "specification": 3
+      }
+    },
+    "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
         "specification": 3
       }
     }

@@ -1462,6 +1462,18 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    // Carbon-wheel reference (2026-10-20)
+    [/^(\d+) wheelsets · reviewed (.+)$/, (_, n, date) => `${n} Laufradsätze · geprüft ${date}`],
+    [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · ${width} mm Innenweite`],
+    [/^(\d+) kg system limit$/, (_, kg) => `${kg} kg Systemgewicht`],
+    [/^(\d+) kg rider limit$/, (_, kg) => `${kg} kg Fahrergewicht`],
+    [/^(\d+) kg limit, scope not stated$/, (_, kg) => `${kg} kg Grenze, Umfang nicht angegeben`],
+    [/^Center Lock · (.+) mm$/, (_, axles) => `Center Lock · ${axles} mm`],
+    [/^6-bolt · (.+) mm$/, (_, axles) => `6-Loch · ${axles} mm`],
+    [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `Scheibenaufnahme nicht angegeben · ${axles} mm`],
+    [/^Official direct store · (\d{4}-\d{2}-\d{2})$/, (_, date) => `Offizieller Direktshop · ${date}`],
+    [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `Offizieller Direktshop · ${date} · ${kind === 'list' ? 'Offizieller Listenpreis' : 'Offizieller Aktionspreis'}`],
+    [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `Offizieller Direktpreis ${amount} am ${date} ist kein Preis in Festlandchina; bitte ein chinesisches Angebot eingeben.${rotor ? ` ${de['Rotor mount is not stated; confirm it before choosing rotors.']}` : ''}`],
     // Catalog workbench (2026-10)
     [/^· (\d+) published, then (\d+) research leads$/, (_, published, leads) => `· ${published} veröffentlicht, danach ${leads} Recherchehinweise`],
     [/^Show (\d+) more research leads$/, (_, n) => `${n} weitere Recherchehinweise zeigen`],
@@ -1793,4 +1805,42 @@ Object.assign(de, {
   "Weight · frame": "Gewicht · Rahmen",
   "Full-bike price": "Komplettradpreis",
   "Tires": "Reifen"
+});
+
+// Carbon-wheel reference (2026-10-20)
+Object.assign(de, {
+  "Carbon wheels": "Carbon-Laufräder",
+  "Chinese carbon wheelsets": "Chinesische Carbon-Laufradsätze",
+  "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "Straßen- und Gravel-Laufradsätze mit Scheibenbremse von chinesischen Marken, verglichen nach Felge, Gewicht, Grenzwerten, Kompatibilität und datiertem Preis.",
+  "Open a row for tire limits, pressure, hub, warranty and sources.": "Zeile öffnen für Reifenbereich, Luftdruck, Nabe, Garantie und Quellen.",
+  "Chinese carbon wheelsets compared": "Chinesische Carbon-Laufradsätze im Vergleich",
+  "Rim": "Felge",
+  "Hooked": "Mit Felgenhaken",
+  "Hookless": "Hakenlos",
+  "Bead not stated": "Felgenhaken nicht angegeben",
+  "Hooked · tubeless ready": "Mit Felgenhaken · tubeless-ready",
+  "Hookless · tubeless ready": "Hakenlos · tubeless-ready",
+  "Bead not stated · tubeless ready": "Felgenhaken nicht angegeben · tubeless-ready",
+  "Limit not stated": "Grenze nicht angegeben",
+  "Rim and tires": "Felge und Reifen",
+  "Bead": "Felgenhorn",
+  "Outer width": "Außenweite",
+  "Pressure": "Luftdruck",
+  "Weight and limits": "Gewicht und Grenzwerte",
+  "Load limit": "Belastungsgrenze",
+  "Hub and spokes": "Nabe und Speichen",
+  "Hub": "Nabe",
+  "Spokes": "Speichen",
+  "Freehubs": "Freilaufkörper",
+  "Not stated": "Nicht angegeben",
+  "Price observations": "Preisbeobachtungen",
+  "How rim, limit and price fields are recorded": "Wie Felgen-, Grenzwert- und Preisfelder erfasst werden",
+  "The maker's pair claim with its stated basis and tolerance.": "Paarangabe des Herstellers mit angegebener Basis und Toleranz.",
+  "A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.": "Ein Systemgewicht umfasst Fahrer, Rad und Gepäck, wenn der Hersteller das angibt; sonst wird der Umfang wie veröffentlicht gezeigt.",
+  "The maker's page does not publish the value. It is not a negative finding.": "Die Herstellerseite veröffentlicht den Wert nicht. Das ist kein negativer Befund.",
+  "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.": "Eine datierte Beobachtung im offiziellen Direktshop in Originalwährung. Sie ist kein Preis in Festlandchina; Versand, Zölle und Steuern folgen den Bedingungen des Shops.",
+  "Freehub and rotor fit for these wheelsets is checked in the Build planner.": "Freilauf- und Bremsscheibenkompatibilität dieser Laufradsätze wird im Aufbauplaner geprüft.",
+  "Open the Build planner": "Aufbauplaner öffnen",
+  "Official direct store": "Offizieller Direktshop",
+  "Rotor mount is not stated; confirm it before choosing rotors.": "Scheibenaufnahme nicht angegeben; vor der Wahl der Bremsscheiben bestätigen."
 });

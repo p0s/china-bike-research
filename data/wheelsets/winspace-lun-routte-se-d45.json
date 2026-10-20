@@ -1,0 +1,46 @@
+{
+  "id": "winspace-lun-routte-se-d45",
+  "maker": "Winspace",
+  "name": "Lún Routte SE D45",
+  "use": "road",
+  "status": "current",
+  "positioning": "Mixed-depth 46/54 mm road wheelset with a 21 mm inner width and published pressure caps.",
+  "rim": {
+    "depth_mm": { "front": 46, "rear": 54 },
+    "internal_width_mm": 21,
+    "external_width_mm": { "front": 27.6, "rear": 27.8 },
+    "bead": "unknown",
+    "bead_note": "Hooked or hookless is not stated; the maker says regular clincher tires with inner tubes are compatible.",
+    "tubeless_ready": true,
+    "tire_range": "25–47 mm; optimized for 25–28 mm"
+  },
+  "max_pressure": { "psi": 110, "note": "Tubeless riding: 95 psi maximum; 30 mm tires 85 psi, 35 mm 60 psi and 40–45 mm 40 psi maximum." },
+  "load_limit": { "kg": 120, "scope": "system", "note": "Rider, bike and luggage; riders above 90 kg should have the wheels inspected regularly." },
+  "weight": { "grams": 1710, "tolerance_g": 50, "basis": "Pair in black (1,715 g Chameleon); the specification table gives ±25 g per wheel.", "claim_type": "official" },
+  "hub": "Model and engagement not published · steel bearings",
+  "spokes": { "material": "steel", "summary": "Pillar 1423 · 21F/24R" },
+  "compatibility": {
+    "rotor_mount": "center-lock",
+    "axles": ["12x100", "12x142"],
+    "freehubs": ["hg-road", "sram-xdr", "campagnolo-10-12"]
+  },
+  "warranty": null,
+  "price_observations": [
+    {
+      "amount": 699,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-20",
+      "conditions": "Shipping is calculated at checkout from Brazil, US, EU or China warehouses; each warehouse ships only within its own region.",
+      "source_id": "winspace-lun-routte-se-d45-official-2026-10-20"
+    }
+  ],
+  "caveats": [
+    "Hub model, engagement and bead type are not published.",
+    "Keep to the size-specific pressure caps for wider tires.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "source_ids": ["winspace-lun-routte-se-d45-official-2026-10-20"],
+  "reviewed_at": "2026-10-20"
+}

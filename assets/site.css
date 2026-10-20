@@ -446,6 +446,12 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .reference-table th:nth-child(3) { width: 14%; }
 .reference-table th:nth-child(4) { width: 17%; }
 .reference-table th:nth-child(5) { width: 15%; }
+.wheelset-comparison { min-width: 1040px; }
+.wheelset-comparison th:nth-child(2) { width: 24%; }
+.wheelset-comparison th:nth-child(3) { width: 14%; }
+.wheelset-comparison th:nth-child(4) { width: 12%; }
+.wheelset-comparison th:nth-child(5) { width: 17%; }
+.wheelset-comparison th:nth-child(6) { width: 12%; }
 .groupset-entry:not(:last-of-type) .groupset-detail-row > td { border-bottom: 1px solid var(--line); }
 .groupset-summary-row { transition: background-color .14s ease; }
 .groupset-summary-row > * { border-bottom: 1px solid var(--line); }
@@ -664,7 +670,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .theme-button { min-height: 36px; padding-inline: 8px; }
   .theme-button [data-theme-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
   .menu-button { display: inline-flex; }
-  .main-nav { display: none; position: absolute; left: 11px; right: 11px; top: calc(100% + 2px); flex-direction: column; align-items: stretch; padding: 7px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); }
+  .main-nav { display: none; position: absolute; z-index: 70; left: 11px; right: 11px; top: calc(100% + 2px); flex-direction: column; align-items: stretch; padding: 7px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); }
   .main-nav.open { display: flex; }
   .main-nav a { padding: 10px; }
 }
@@ -750,6 +756,8 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .groupset-summary-row > td[data-column="best"],
   .groupset-summary-row > td[data-column="price"] { grid-column: 1 / -1; }
   .groupset-summary-row > td[data-column="gearing"] { border-right: 1px solid var(--line); }
+  .wheelset-comparison .groupset-summary-row > td[data-column="rim"] { border-right: 1px solid var(--line); }
+  .wheelset-comparison .groupset-summary-row > td[data-column="fit"] { grid-column: 1 / -1; }
   .groupset-summary-row:hover > td { background: transparent; }
   .groupset-identity.has-image { grid-template-columns: 98px minmax(0, 1fr); }
   .groupset-image { width: 98px; }
