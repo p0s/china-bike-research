@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/first-bike-build-tool-budget-mascot-cover-f4e6f5b337-640.webp', 'b2de17227c63dde8a68d613a65fe799428e5fdbbfba88e2a2caffdd6f6d9c1b7'],
+  ['assets/blog/first-bike-build-tool-budget-mascot-cover-f4e6f5b337-1600.webp', 'eea4a5c2c40d90b88adf14f1106a6aeac24ec0d2ba4719da9922c4977892c51d'],
+  ['assets/blog/first-bike-build-tool-budget-mascot-cover-f4e6f5b337-1200.jpg', '8a642a534c32ae1b495a9872fced822e232a51863c61f54e953d06494ba8d1e7'],
   ['assets/blog/cutting-steerer-who-should-do-it-mascot-cover-0f6eac9313-640.webp', '6af485f7d6c5f3da6b07ad9f11979434aad68db07b8b9c73a41b51177557cdd0'],
   ['assets/blog/cutting-steerer-who-should-do-it-mascot-cover-0f6eac9313-1600.webp', 'e105a99ee34d50093a379a29e1dcc0ade061d54f71ae5a915c2885b6ea26ea51'],
   ['assets/blog/cutting-steerer-who-should-do-it-mascot-cover-0f6eac9313-1200.jpg', '11945432892a415392cf9e8cbabccb3de6b66fd4f7e34eba1fc0f323fae230da'],
