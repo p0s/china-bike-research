@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-lightcarbon-frame-mascot-cover-58118767b6-640.webp', 'a49294f6cd4e893876dd39cb7e1333f0eb6830dc1e85c480e0f757a05a551222'],
+  ['assets/blog/buy-lightcarbon-frame-mascot-cover-58118767b6-1600.webp', '0273309262314857a61e0a98be07c394cfaec9cc24369dcfd66199d3fec4a1fd'],
+  ['assets/blog/buy-lightcarbon-frame-mascot-cover-58118767b6-1200.jpg', 'f78e70f197f8c50947a025f86680c71c65e18086d0ce8dfd56ffd6ecea8e640a'],
   ['assets/blog/local-bike-shop-for-imported-frame-mascot-cover-a082b5af0a-640.webp', 'd2b9d38f4ad6531a6d8a9baf0dc07d70df5d327ac57c0e113dd696328cc616f7'],
   ['assets/blog/local-bike-shop-for-imported-frame-mascot-cover-a082b5af0a-1600.webp', 'f6478ce4ad823a8f6e58bf7fdb694d0fb312c5b823634e3dcf864bea14740d60'],
   ['assets/blog/local-bike-shop-for-imported-frame-mascot-cover-a082b5af0a-1200.jpg', 'a0700819f03c041af34d6c36f0457fbaddcda8a29dbccdc309a3b5aea28f8baa'],
