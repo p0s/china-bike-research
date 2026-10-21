@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/local-bike-shop-for-imported-frame-mascot-cover-a082b5af0a-640.webp', 'd2b9d38f4ad6531a6d8a9baf0dc07d70df5d327ac57c0e113dd696328cc616f7'],
+  ['assets/blog/local-bike-shop-for-imported-frame-mascot-cover-a082b5af0a-1600.webp', 'f6478ce4ad823a8f6e58bf7fdb694d0fb312c5b823634e3dcf864bea14740d60'],
+  ['assets/blog/local-bike-shop-for-imported-frame-mascot-cover-a082b5af0a-1200.jpg', 'a0700819f03c041af34d6c36f0457fbaddcda8a29dbccdc309a3b5aea28f8baa'],
   ['assets/blog/first-bike-build-tool-budget-mascot-cover-f4e6f5b337-640.webp', 'b2de17227c63dde8a68d613a65fe799428e5fdbbfba88e2a2caffdd6f6d9c1b7'],
   ['assets/blog/first-bike-build-tool-budget-mascot-cover-f4e6f5b337-1600.webp', 'eea4a5c2c40d90b88adf14f1106a6aeac24ec0d2ba4719da9922c4977892c51d'],
   ['assets/blog/first-bike-build-tool-budget-mascot-cover-f4e6f5b337-1200.jpg', '8a642a534c32ae1b495a9872fced822e232a51863c61f54e953d06494ba8d1e7'],
