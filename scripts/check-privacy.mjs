@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/torque-wrench-bike-build-mascot-cover-74ec573368-640.webp', '7af6fdb1ef89354c92bbcbe87ebdcae1a86a0067740f0aee5be303a2644b7109'],
+  ['assets/blog/torque-wrench-bike-build-mascot-cover-74ec573368-1600.webp', 'a8f35610ebe1b48617466b698e6a0cc2fd0e76f54903c1a4047a1c5d0d43cdc0'],
+  ['assets/blog/torque-wrench-bike-build-mascot-cover-74ec573368-1200.jpg', 'aadb1f1d02c78ff64575cbebea54622ab3c9545e8ff8aa6d691086c0e2302151'],
   ['assets/blog/carbon-assembly-paste-torque-mascot-cover-90e3e43f8a-640.webp', '99cb267bf6440704c72c8b1b2274460a366712a20f09dc047949082c729a7455'],
   ['assets/blog/carbon-assembly-paste-torque-mascot-cover-90e3e43f8a-1600.webp', 'f8cbd3484aee6be7079e85f79423cf75ce04100497d0b6a5a29487660aebd8e7'],
   ['assets/blog/carbon-assembly-paste-torque-mascot-cover-90e3e43f8a-1200.jpg', 'cffb3285662a7b3897bffe1516e3ecd457397133627307ae123887fe57889cd0'],
