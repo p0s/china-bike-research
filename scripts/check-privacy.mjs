@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/carbon-assembly-paste-torque-mascot-cover-90e3e43f8a-640.webp', '99cb267bf6440704c72c8b1b2274460a366712a20f09dc047949082c729a7455'],
+  ['assets/blog/carbon-assembly-paste-torque-mascot-cover-90e3e43f8a-1600.webp', 'f8cbd3484aee6be7079e85f79423cf75ce04100497d0b6a5a29487660aebd8e7'],
+  ['assets/blog/carbon-assembly-paste-torque-mascot-cover-90e3e43f8a-1200.jpg', 'cffb3285662a7b3897bffe1516e3ecd457397133627307ae123887fe57889cd0'],
   ['assets/blog/thru-axle-thread-length-mascot-cover-95bfe48884-640.webp', '38c6d4833afbc277ce38dbaad7c42b2565bc5ef611ceeeda029f7a871233b327'],
   ['assets/blog/thru-axle-thread-length-mascot-cover-95bfe48884-1600.webp', '56e202e657411c08246fb25ef18e28362557c25f73d4737a70111d6312ebf273'],
   ['assets/blog/thru-axle-thread-length-mascot-cover-95bfe48884-1200.jpg', 'c149b3034e7158fbda69242d50ff6ca31fb9e307a41359c99fbcbb807b51c13e'],
