@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/cutting-steerer-who-should-do-it-mascot-cover-0f6eac9313-640.webp', '6af485f7d6c5f3da6b07ad9f11979434aad68db07b8b9c73a41b51177557cdd0'],
+  ['assets/blog/cutting-steerer-who-should-do-it-mascot-cover-0f6eac9313-1600.webp', 'e105a99ee34d50093a379a29e1dcc0ade061d54f71ae5a915c2885b6ea26ea51'],
+  ['assets/blog/cutting-steerer-who-should-do-it-mascot-cover-0f6eac9313-1200.jpg', '11945432892a415392cf9e8cbabccb3de6b66fd4f7e34eba1fc0f323fae230da'],
   ['assets/blog/torque-wrench-bike-build-mascot-cover-74ec573368-640.webp', '7af6fdb1ef89354c92bbcbe87ebdcae1a86a0067740f0aee5be303a2644b7109'],
   ['assets/blog/torque-wrench-bike-build-mascot-cover-74ec573368-1600.webp', 'a8f35610ebe1b48617466b698e6a0cc2fd0e76f54903c1a4047a1c5d0d43cdc0'],
   ['assets/blog/torque-wrench-bike-build-mascot-cover-74ec573368-1200.jpg', 'aadb1f1d02c78ff64575cbebea54622ab3c9545e8ff8aa6d691086c0e2302151'],
