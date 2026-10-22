@@ -134,7 +134,7 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
         }
         // A failed regional payload keeps an explicit foreign budget and destination through reload and history.
         if ([390, 320].includes(width) && theme === 'light') {
-          const held = 'max=2000&maxCurrency=EUR&ship=DE&compare=twitter-v3-wheeltop-eds,incolor-speedster-sr-frameset';
+          const held = 'max=2000&maxCurrency=EUR&ship=DE&currency=EUR&compare=twitter-v3-wheeltop-eds,incolor-speedster-sr-frameset';
           // Chips, the notice and every result-bar control stay inside a phone viewport.
           const fitsPhone = async (label) => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1
             && [...document.querySelectorAll('.result-bar > *:not([hidden]), .result-bar button:not([hidden])')].every(element => element.getBoundingClientRect().right <= innerWidth + 1)), `${label}: result bar overflow`);
@@ -149,8 +149,11 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           blockRegional = true;
           await page.goto(`http://preview.invalid${prefix}/?${held}`, { waitUntil: 'load' });
           await expectHeld('initial');
-          await page.locator('.family-chips [data-category-value="family:gravel"]').click();
-          assert.equal(new URL(page.url()).searchParams.get('ship'), 'DE');
+          // With no passing row the family chips are disabled; removing the held budget is the real enabled action.
+          assert.ok(await page.locator('.family-chips [data-category-value="family:gravel"]').isDisabled(), 'family chip guard');
+          await page.locator('[data-filter-chips] [data-clear-filter="price"]').click();
+          const released = new URL(page.url()).searchParams;
+          assert.deepEqual([released.get('max'), released.get('maxCurrency'), released.get('ship'), released.get('currency')], [null, null, 'DE', 'EUR'], 'budget removed, destination kept');
           await page.goBack();
           await expectHeld('back');
           await page.reload({ waitUntil: 'load' });
