@@ -25,11 +25,11 @@ async function fixture(browser, width, { delayed = false, blocked = false } = {}
       await route.fulfill({ contentType: 'text/html', body: '<p>External destination fixture</p>' });
       return;
     }
-    if (url.pathname.startsWith('/analytics/')) {
-      if (['/analytics/event', '/analytics/action'].includes(url.pathname)) {
+    if (url.pathname.startsWith('/analytics/') || url.pathname.startsWith('/site-events/')) {
+      if (['/site-events/action', '/site-events/engagement', '/analytics/event', '/analytics/action'].includes(url.pathname)) {
         requests.push({ path: url.pathname, headers: {
           page: request.headers()['x-analytics-path'], count: request.headers()['x-comparison-count']
-        }, body: request.postData() });
+        }, body: request.postData(), qa: request.headers()['x-measurement-qa'] });
       }
       await route.fulfill({ status: 204 }); return;
     }
@@ -47,8 +47,9 @@ async function fixture(browser, width, { delayed = false, blocked = false } = {}
   const page = await context.newPage();
   page.on('pageerror', error => errors.push(error.message));
   return { context, page, requests, errors, release: () => release?.(),
-    events: () => requests.filter(request => request.path === '/analytics/event'),
-    actions: () => requests.filter(request => request.path === '/analytics/action') };
+    events: () => requests.filter(request => request.path === '/site-events/action' && request.body === null),
+    actions: () => requests.filter(request => request.path === '/site-events/action' && request.body !== null),
+    engagements: () => requests.filter(request => request.path === '/site-events/engagement') };
 }
 
 async function waitFor(check) {

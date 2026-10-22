@@ -6,7 +6,9 @@ const MODEL_PATH = /^(?:\/(?:zh|de))?\/models\/[a-z0-9][a-z0-9-]{0,149}\/$/;
 
 function excluded(win) {
   const nav = win?.navigator;
+  const body = win?.document?.body;
   return win?.p0sAnalyticsStopped || win?.location?.hostname !== 'chinesebikes.xyz'
+    || body && body.dataset?.analyticsAllowed !== 'true'
     || nav?.globalPrivacyControl === true
     || [nav?.doNotTrack, nav?.msDoNotTrack, win?.doNotTrack]
       .some(value => ['1', 'yes'].includes(String(value ?? '').trim().toLowerCase()));
@@ -45,7 +47,7 @@ export function createActionDispatcher({
   function send(name, details = {}) {
     if (unavailable || excluded(windowRef)) return false;
     const path = windowRef.location.pathname;
-    const args = { locationRef: { hostname: windowRef.location.hostname, pathname: path } };
+    const args = { locationRef: { hostname: windowRef.location.hostname, pathname: path, search: windowRef.location.search } };
     if (name === 'sendComparisonOpenedEvent') {
       if (!CATALOG_PATHS.includes(path)) return false;
       if (details.comparisonCount !== undefined) {

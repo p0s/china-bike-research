@@ -166,6 +166,11 @@ test('deployment routing sends every locale document through the Worker and keep
   for (const path of ['/assets/site.js', '/data/catalog.json', '/assets/images/example.webp']) {
     assert.equal(runsWorkerFirst(path), false, path);
   }
+  for (const path of ['/analytics/ga-config', '/analytics/ga-session', '/analytics/event',
+    '/analytics/action', '/analytics/opt-in', '/analytics/opt-out', '/site-events/action',
+    '/site-events/engagement']) {
+    assert.equal(runsWorkerFirst(path), true, `Analytics route bypasses Worker: ${path}`);
+  }
 });
 test('configured German document routing personalizes only the catalog and keeps prior-consent behavior', async () => {
   const routedEnv = {

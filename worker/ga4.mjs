@@ -64,30 +64,15 @@ export function clearGa4CookieHeaders(measurementId = '') {
   });
 }
 
-export function ga4SiteOpenPayload(analytics, identity) {
-  const body = {
-    client_id: identity.clientId,
-    consent: { ad_user_data: 'DENIED', ad_personalization: 'DENIED' },
-    events: [{
-      name: 'site_open',
-      params: {
-        ...(identity.sessionId ? { session_id: identity.sessionId } : {}),
-        page_location: `https://chinesebikes.xyz${analytics.path}`,
-        ...(analytics.referrer ? { page_referrer: analytics.referrer } : {})
-      }
-    }]
-  };
-  if (analytics.country) body.user_location = { country_id: analytics.country };
-  return body;
-}
-
 export function ga4ActionPayload(name, identity, context = {}) {
-  if (!['compare_open', 'product_outbound_click'].includes(name)) return null;
+  if (!['compare_open', 'product_outbound_click'].includes(name)
+    || !CLIENT_ID_PATTERN.test(String(identity?.clientId ?? ''))
+    || !SESSION_ID_PATTERN.test(String(identity?.sessionId ?? ''))) return null;
   return {
     client_id: identity.clientId,
     consent: { ad_user_data: 'DENIED', ad_personalization: 'DENIED' },
     events: [{ name, params: {
-      ...(identity.sessionId ? { session_id: identity.sessionId } : {}),
+      session_id: identity.sessionId,
       ...context,
       ...(context.page_path ? { page_location: `https://chinesebikes.xyz${context.page_path}` } : {})
     } }]
@@ -96,7 +81,7 @@ export function ga4ActionPayload(name, identity, context = {}) {
 
 function reportDelivery(logger, payload, outcome, status = null) {
   const event = payload.events?.[0]?.name;
-  const eventName = ['site_open', 'compare_open', 'product_outbound_click'].includes(event) ? event : 'unknown';
+  const eventName = ['compare_open', 'product_outbound_click'].includes(event) ? event : 'unknown';
   // Never log the request URL (which contains the secret), payload, IDs, or errors.
   try { logger.info(JSON.stringify({ type: 'ga4_delivery', event: eventName, outcome, status })); } catch {}
 }

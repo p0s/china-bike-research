@@ -1,3 +1,5 @@
+> Historical record: the `site_open` references below describe the 2026-10-04 setup and its evidence. They do not define current measurement or reporting. Use `SPEC.md` and `docs/analytics-consent-policy.md` for the current contract; do not compare a current `site_open` stream.
+
 # Analytics setup batch, 2026-10-04
 
 The requested outcome is HTTPS-only public delivery, a fresh Search Console

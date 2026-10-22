@@ -100,3 +100,18 @@ test('only permitted public IDs and page types can enter the pending buffer', as
     actionId: 'product_outbound_click', pagePath: '/de/', offerId: 'test-offer' });
   assert.equal(f.requests.length, 1); f.dispose();
 });
+
+test('browser comparison QA header is fixed and appears only for the exact query', async () => {
+  for (const [search, expected] of [['?measurement_qa=1', '1'], ['?measurement_qa=1&run=private', undefined]]) {
+    const f = fixture();
+    f.win.location.search = search;
+    f.resolve(); await f.ready;
+    assert.equal(f.sendComparisonOpenedEvent({ comparisonCount: 2 }), true);
+    assert.equal(f.requests.length, 1);
+    assert.equal(f.requests[0].url, '/site-events/action');
+    assert.equal(f.requests[0].init.headers['X-Measurement-QA'], expected);
+    assert.equal(f.requests[0].init.headers['X-Analytics-Path'], '/de/');
+    assert.equal(Object.hasOwn(f.requests[0].init, 'body'), false);
+    f.dispose();
+  }
+});

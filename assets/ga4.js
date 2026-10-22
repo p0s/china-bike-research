@@ -78,17 +78,19 @@ export async function startGa4(win = globalThis.window) {
     gtag('js', new Date());
     const pageLocation = `${win.location.origin}${win.location.pathname}`;
     const pageReferrer = referringOrigin(win.document.referrer);
+    const measurementQa = win.location.search === '?measurement_qa=1';
     gtag('config', measurementId, {
       client_id: clientId,
       page_location: pageLocation,
       ...(pageReferrer ? { page_referrer: pageReferrer } : {}),
+      ...(measurementQa ? { traffic_type: 'internal', debug_mode: true } : {}),
       cookie_domain: 'none',
       cookie_expires: 30 * 24 * 60 * 60,
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
       send_page_view: false
     });
-    gtag('event', 'page_view', {
+    gtag('event', measurementQa ? 'measurement_qa' : 'page_view', {
       send_to: measurementId,
       page_location: pageLocation,
       ...(pageReferrer ? { page_referrer: pageReferrer } : {})
