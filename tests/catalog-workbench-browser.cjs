@@ -133,14 +133,18 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           assert.equal(new URL(page.url()).searchParams.has('start'), false);
         }
         // A failed regional payload keeps an explicit foreign budget and destination through reload and history.
-        if (width === 390 && theme === 'light') {
+        if ([390, 320].includes(width) && theme === 'light') {
           const held = 'max=2000&maxCurrency=EUR&ship=DE&compare=twitter-v3-wheeltop-eds,incolor-speedster-sr-frameset';
+          // Chips, the notice and every result-bar control stay inside a phone viewport.
+          const fitsPhone = async (label) => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1
+            && [...document.querySelectorAll('.result-bar > *:not([hidden]), .result-bar button:not([hidden])')].every(element => element.getBoundingClientRect().right <= innerWidth + 1)), `${label}: result bar overflow`);
           const expectHeld = async (label) => {
             await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.regionalPrices === 'unavailable');
             const kept = new URL(page.url()).searchParams;
             for (const [key, value] of new URLSearchParams(held)) assert.equal(kept.get(key), value, `${label}: ${key}`);
             assert.equal(await page.locator('[data-product-row]:not([hidden])').count(), 0, `${label}: unresolved totals pass a budget`);
             assert.ok((await page.locator('[data-filter-notice]').textContent()).trim(), `${label}: no regional notice`);
+            await fitsPhone(label);
           };
           blockRegional = true;
           await page.goto(`http://preview.invalid${prefix}/?${held}`, { waitUntil: 'load' });
@@ -164,6 +168,10 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
             const kept = new URL(page.url()).searchParams;
             assert.deepEqual([kept.get('max'), kept.get('maxCurrency'), kept.get('ship')], ['2000', 'EURO', 'DE'], `EURO blocked=${blocked}`);
             assert.equal(await page.locator('[data-product-row]:not([hidden])').count(), 0, `EURO blocked=${blocked}: budget broadened`);
+            await fitsPhone(`EURO blocked=${blocked}`);
+            await page.goto(`http://preview.invalid${prefix}/?max=2000&maxCurrency=EURO&ship=DE&currency=EUR&compare=twitter-v3-wheeltop-eds,incolor-speedster-sr-frameset`, { waitUntil: 'load' });
+            await page.waitForFunction(() => document.querySelector('[data-filter-notice]')?.textContent.trim());
+            await fitsPhone(`EURO + compare blocked=${blocked}`);
           }
           blockRegional = false;
         }
