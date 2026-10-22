@@ -46,7 +46,22 @@ test('chronology corrections preserve prior passages and historical visibility a
  const visible=publishedPosts(posts,queue,new Date('2026-10-03T12:00:00.000Z')).map(p=>p.slug);
  for(const slug of ['buy-yoeleo-bike','buy-elves-bike','chinese-bike-shipping-times']){
   const p=post(slug);assert.equal(p.publication_status,'scheduled');assert.ok(!visible.includes(slug));assert.equal(p.datePublished,'2026-09-22');assert.ok(p.researched_at>='2026-09-22'&&p.researched_at<=p.dateModified);
-  assert.equal(p.audit_corrections.at(-1).reviewed_at,'2026-10-03');for(const locale of locales)assert.ok(p.audit_corrections.at(-1).prior_values.passages[locale]);
+  const chronology=p.audit_corrections.find(c=>c.reviewed_at==='2026-10-03');assert.ok(chronology);for(const locale of locales)assert.ok(chronology.prior_values.passages[locale]);
+  for(const c of p.audit_corrections)for(const locale of locales)assert.ok(c.prior_values.passages[locale],slug+c.reviewed_at); // later corrections keep their history too
  }
  assert.equal(data.sources.find(x=>x.id==='smzdm-shimano-di2-market-observations-2026-08-24').accessed_at,'2026-08-24');
+});
+test('dated manufacturer-page claims cite recorded checks and keep their prior wording',()=>{
+ const sources=new Map(data.sources.map(s=>[s.id,s]));
+ for(const [slug,id] of [['brake-rotor-size-and-frame-approval','ican-graro-official-recheck-2026-10-22'],['seatpost-offset-and-saddle-rails','lightcarbon-lcr018-d-official-recheck-2026-10-22'],['one-by-vs-two-by-gravel','ican-graro-official-recheck-2026-10-22'],['subcompact-vs-compact-road-gearing','ican-graro-official-recheck-2026-10-22'],['choosing-bike-when-specs-unknown','twitter-v3-25yr-store-recheck-2026-10-22'],['when-geometry-chart-does-not-add-up','lightcarbon-lcr018-d-official-recheck-2026-10-22']]){
+  const p=post(slug),text=JSON.stringify(p.translations);
+  assert.equal(sources.get(id).accessed_at,'2026-10-22',id);
+  assert.doesNotMatch(text,/October (4|10|14)\b|10月(4|10|14)日|\b(4|10|14)\. Oktober/,slug);
+  assert.match(text,/October 22, 2026/,slug);
+  const corrections=p.audit_corrections.filter(c=>c.reviewed_at==='2026-10-22');
+  assert.ok(corrections.length&&corrections.every(c=>c.reason.length>40&&locales.every(l=>c.prior_values.passages[l])),slug);
+  assert.match(JSON.stringify(corrections.map(c=>c.prior_values.passages)),/October (4|10|14)\b/,slug);
+ }
+ const brochure=sources.get('incolor-speedster-brochure-2026-08-29').url;
+ for(const l of locales)assert.ok(post('incolor-speedster-sr-vs-sr-plus').translations[l].sections[0].paragraphs[0].includes(`](${brochure})`),l);
 });

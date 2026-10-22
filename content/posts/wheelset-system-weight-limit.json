@@ -5,7 +5,7 @@
   "series_order": 66,
   "image_id": "wheelset-system-weight-limit-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-22",
   "researched_at": "2026-10-04",
   "model_ids": [
     "ican-graro-frameset"
@@ -81,7 +81,7 @@
           "heading": "整车所有部件都要合格",
           "paragraphs": [
             "[GRARO整车](/zh/models/ican-graro-frameset/)中，轮组只是车架、前叉、把组、轮胎与行李安排核对的一部分，不能把一个部件限制套到其他部件。订货前让装车者列出所有相关限制及未知。",
-            "保留平常骑行总量与满载旅行总量，同套轮组两用时按较重用途选受支持组合。以后可以减行李，但旅行半途才发现限制，就没那么方便了。 [明确这些限制后，再比较轮组重量与框高](/zh/blog/carbon-wheel-weight-vs-depth/)."
+            "保留平常骑行总量与满载旅行总量，同套轮组两用时按较重用途选受支持组合。以后可以减行李，但旅行半途才发现限制，就没那么方便了。[明确这些限制后，再比较轮组重量与框高](/zh/blog/carbon-wheel-weight-vs-depth/)。"
           ]
         }
       ]
@@ -126,5 +126,20 @@
       "de"
     ],
     "contribution": "The 82+9+10 kg example separates rider mass from a hypothetical 100 kg system limit and keeps intended-use approval independent."
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-22",
+      "passage": "sections/2/paragraphs/1",
+      "prior_values": {
+        "dateModified": "2026-10-04",
+        "passages": {
+          "en": "Keep a normal-trip total and a fully loaded trip total. Choose a supported setup for the heavier ride if the same wheels must serve both. Removing luggage later is possible; discovering a limit halfway into a tour is a much less convenient planning method. [Check wheel weight and depth only after those limits are clear](/blog/carbon-wheel-weight-vs-depth/).",
+          "zh-Hans": "保留平常骑行总量与满载旅行总量，同套轮组两用时按较重用途选受支持组合。以后可以减行李，但旅行半途才发现限制，就没那么方便了。 [明确这些限制后，再比较轮组重量与框高](/zh/blog/carbon-wheel-weight-vs-depth/).",
+          "de": "Notiere Alltags- und Vollbeladungsgewicht. Soll derselbe Satz beides können, wähle für die schwerere Nutzung. Gepäck später zu reduzieren geht; die Grenze erst mitten auf Tour zu entdecken ist unpraktischer. [Vergleiche Laufradgewicht und Felgenhöhe erst nach diesen Prüfungen](/de/blog/carbon-wheel-weight-vs-depth/)."
+        }
+      },
+      "reason": "Chinese punctuation: stray space and ASCII full stop. Meaning unchanged."
+    }
+  ]
 }

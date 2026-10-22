@@ -5,7 +5,7 @@
   "series_order": 28,
   "image_id": "spacer-stack-and-aero-cockpits-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-12",
+  "dateModified": "2026-10-22",
   "researched_at": "2026-10-04",
   "model_ids": [
     "incolor-speedster-sr-frameset"
@@ -44,7 +44,7 @@
           "heading": "Match the fork and cockpit instructions",
           "paragraphs": [
             "For an [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) build, identify the actual fork, cockpit, cover and spacer kit supplied. Confirm maximum permitted setup, compression-plug position and clamp requirements from the matching instructions. The seller’s available stack height and the manufacturer’s approved stack height are not necessarily the same statement.",
-            "The [SR/SR+ manufacturer page](https://www.incolor.vip/sr) describes a recessed upper headset cover and an eccentric steerer. Those details identify parts to check; they do not establish a permitted spacer height for your fork and cockpit. This guide does not verify that limit.",
+            "The [SR/SR+ manufacturer page](https://www.incolor.vip/sr) describes a slightly recessed upper headset cover; its text did not confirm an eccentric steerer when rechecked on October 22, 2026, so ask whether your fork uses one. Those details identify parts to check; they do not establish a permitted spacer height for your fork and cockpit. This guide does not verify that limit.",
             "Avoid substituting a similarly shaped spacer whose interface and routing are unverified. A replacement should match the approved system, including the way hoses pass through it."
           ]
         },
@@ -77,7 +77,7 @@
           "heading": "把前叉与把组说明对应起来",
           "paragraphs": [
             "在[INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/)装车中，应确认实际附带的前叉、把组、上盖和垫圈套件，并依据对应说明核对最大允许配置、膨胀吊芯位置和夹持要求。卖家能提供多高，与厂家允许用多高，不一定是同一件事。",
-            "[SR/SR+ 厂家页面](https://www.incolor.vip/sr)介绍了微下沉上碗组压盖和偏心舵管。这些信息能帮助确定该核对哪些零件，却没有确认你这套前叉与把组允许多高的垫圈。本文未验证该上限。",
+            "[SR/SR+ 厂家页面](https://www.incolor.vip/sr)介绍了微下沉上碗组压盖；2026年10月22日复查时，页面文字未能确认偏心舵管，应向卖家询问你的前叉是否采用。这些信息能帮助确定该核对哪些零件，却没有确认你这套前叉与把组允许多高的垫圈。本文未验证该上限。",
             "不要换用接口与走线未验证、只是形状相似的垫圈。替换品应符合认可系统，包括油管穿过的方式。"
           ]
         },
@@ -110,7 +110,7 @@
           "heading": "Gabel- und Cockpitvorgaben zusammenführen",
           "paragraphs": [
             "Identifiziere beim [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) gelieferte Gabel, Cockpit, Abdeckung und Spacersatz. Prüfe erlaubte Höhe, Expanderposition und Klemmung anhand der passenden Anleitungen. Lieferbare und freigegebene Höhe sind nicht zwingend dieselbe Angabe.",
-            "Die [SR/SR+-Herstellerseite](https://www.incolor.vip/sr) beschreibt eine abgesenkte obere Steuersatzabdeckung und einen exzentrischen Gabelschaft. Das benennt zu prüfende Bauteile, legt aber keine erlaubte Spacerhöhe für deine Kombination aus Gabel und Cockpit fest. Diese Grenze ist hier nicht verifiziert.",
+            "Die [SR/SR+-Herstellerseite](https://www.incolor.vip/sr) beschreibt eine leicht abgesenkte obere Steuersatzabdeckung; einen exzentrischen Gabelschaft bestätigte ihr Text bei der Prüfung am 22. Oktober 2026 nicht. Frage nach, ob deine Gabel einen hat. Das benennt zu prüfende Bauteile, legt aber keine erlaubte Spacerhöhe für deine Kombination aus Gabel und Cockpit fest. Diese Grenze ist hier nicht verifiziert.",
             "Ersetze Teile nicht durch ähnlich geformte Spacer mit ungeklärter Schnittstelle und Leitungsführung. Ersatz muss zum freigegebenen System passen, auch zum Schlauchverlauf."
           ]
         },
@@ -135,5 +135,20 @@
       "de"
     ],
     "contribution": "A named cockpit-layer list separates supply options from approved spacer height and delays cutting until the actual fit is resolved."
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-22",
+      "passage": "sections/1/paragraphs/1",
+      "prior_values": {
+        "dateModified": "2026-10-12",
+        "passages": {
+          "en": "The [SR/SR+ manufacturer page](https://www.incolor.vip/sr) describes a recessed upper headset cover and an eccentric steerer. Those details identify parts to check; they do not establish a permitted spacer height for your fork and cockpit. This guide does not verify that limit.",
+          "zh-Hans": "[SR/SR+ 厂家页面](https://www.incolor.vip/sr)介绍了微下沉上碗组压盖和偏心舵管。这些信息能帮助确定该核对哪些零件，却没有确认你这套前叉与把组允许多高的垫圈。本文未验证该上限。",
+          "de": "Die [SR/SR+-Herstellerseite](https://www.incolor.vip/sr) beschreibt eine abgesenkte obere Steuersatzabdeckung und einen exzentrischen Gabelschaft. Das benennt zu prüfende Bauteile, legt aber keine erlaubte Spacerhöhe für deine Kombination aus Gabel und Cockpit fest. Diese Grenze ist hier nicht verifiziert."
+        }
+      },
+      "reason": "The manufacturer page supports the slightly recessed upper headset cover (incolor-speedster-official-recheck-2026-10-22). Its rendered text did not establish an eccentric steerer, so that detail is now presented as unresolved rather than attributed to the page; it is not disproved."
+    }
+  ]
 }

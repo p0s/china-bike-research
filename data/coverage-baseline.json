@@ -8,7 +8,7 @@
       "variants": 41,
       "prices": 82,
       "exchangeRates": 1,
-      "sources": 1609,
+      "sources": 1613,
       "images": 737,
       "videos": 59,
       "groupsets": 11,
@@ -624,6 +624,7 @@
       "ican-graro-official-2026-08-27",
       "ican-graro-official-current-2026-09-23",
       "ican-graro-official-current-recheck-2026-09-25",
+      "ican-graro-official-recheck-2026-10-22",
       "ican-graro-ready-to-ship-route-2026-09-25",
       "ican-sn04-corporate-product-2026-09-01",
       "ican-sn04-corporate-weight-material-recheck-2026-09-25",
@@ -645,6 +646,7 @@
       "incolor-services-official-2026-08-29",
       "incolor-speedster-brochure-2026-08-29",
       "incolor-speedster-official-2026-08-29",
+      "incolor-speedster-official-recheck-2026-10-22",
       "incolor-speedster-sr-plus-taobao-2026-08-29",
       "incolor-speedster-sr-taobao-2026-08-29",
       "incolor-speedster-ss-history-2025-05-05",
@@ -845,6 +847,7 @@
       "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
       "lightcarbon-lcr018-d-gallery-complete-2026-10-03",
       "lightcarbon-lcr018-d-official-2026-08-29",
+      "lightcarbon-lcr018-d-official-recheck-2026-10-22",
       "lightcarbon-lcr018-d-package-review-2026-10-11",
       "lightcarbon-lcr018-d-xianyu-2026-08-29",
       "lightcarbon-lcr0x-d-enrichment-2026-10-03",
@@ -1648,6 +1651,7 @@
       "twitter-v3-25yr-store-conflict-2026-09-22",
       "twitter-v3-25yr-store-current-recheck-2026-09-25",
       "twitter-v3-25yr-store-recheck-2026-09-25",
+      "twitter-v3-25yr-store-recheck-2026-10-22",
       "twitter-v3-bb86-manual-mirror-generation-exclusion-recheck-2026-09-24",
       "twitter-v3-cn-wheel-option-page-recheck-2026-09-24",
       "twitter-v3-factory-store-2026-08-25",
@@ -5856,6 +5860,10 @@
         "frame.claimed_frame_weight_g_by_size.54-ice-crack-black-white",
         "frame.claimed_frame_weight_g_by_size.basis",
         "frame.configuration_notes.chainring_limits",
+        "frame.configuration_notes.china_warehouse_defaults",
+        "frame.configuration_notes.groupset_restriction",
+        "frame.configuration_notes.package_options",
+        "frame.configuration_notes.rotor_sizes",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry_status",
@@ -13519,6 +13527,18 @@
         "type",
         "url"
       ],
+      "ican-graro-official-recheck-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "ican-graro-ready-to-ship-route-2026-09-25": [
         "accessed_at",
         "language",
@@ -13780,6 +13800,18 @@
         "publisher",
         "reliability.identity",
         "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-speedster-official-recheck-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -16423,6 +16455,18 @@
         "url"
       ],
       "lightcarbon-lcr018-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr018-d-official-recheck-2026-10-22": [
         "accessed_at",
         "language",
         "notes",
@@ -26531,6 +26575,17 @@
         "reliability.identity",
         "reliability.price",
         "reliability.selected_option",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "twitter-v3-25yr-store-recheck-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
         "reliability.specification",
         "title",
         "type",
@@ -59726,6 +59781,7 @@
         "facts.geometry",
         "facts.geometry complete current manufacturer table",
         "facts.manufacturer package",
+        "facts.manufacturer page recheck",
         "facts.seatpost",
         "facts.sizes",
         "facts.stiffness_evidence",
@@ -101256,14 +101312,16 @@
         "source_ids=ican-graro-manufacturer-geometry-chart-2026-09-22",
         "source_ids=ican-graro-official",
         "source_ids=ican-graro-official-2026-08-27",
-        "source_ids=ican-graro-official-current-2026-09-23"
+        "source_ids=ican-graro-official-current-2026-09-23",
+        "source_ids=ican-graro-official-recheck-2026-10-22"
       ],
       "incolor-speedster": [
         "brand_id=incolor",
         "frame.geometry.source_id=incolor-speedster-official-2026-08-29",
         "source_ids=incolor-services-official-2026-08-29",
         "source_ids=incolor-speedster-brochure-2026-08-29",
-        "source_ids=incolor-speedster-official-2026-08-29"
+        "source_ids=incolor-speedster-official-2026-08-29",
+        "source_ids=incolor-speedster-official-recheck-2026-10-22"
       ],
       "incolor-ssr": [
         "brand_id=incolor",
@@ -101672,6 +101730,7 @@
         "source_ids=ican-graro-official-2026-08-27",
         "source_ids=ican-graro-official-current-2026-09-23",
         "source_ids=ican-graro-official-current-recheck-2026-09-25",
+        "source_ids=ican-graro-official-recheck-2026-10-22",
         "source_ids=ican-graro-ready-to-ship-route-2026-09-25"
       ],
       "incolor-speedster-sr-frameset": [
@@ -101922,6 +101981,7 @@
         "source_ids=twitter-v3-25yr-rs-store-recheck-2026-09-24",
         "source_ids=twitter-v3-25yr-store-conflict-2026-09-22",
         "source_ids=twitter-v3-25yr-store-recheck-2026-09-25",
+        "source_ids=twitter-v3-25yr-store-recheck-2026-10-22",
         "source_ids=twitter-v3-cn-wheel-option-page-recheck-2026-09-24",
         "source_ids=twitter-v3-official",
         "source_ids=twitter-v3-official-2026-08-16",
@@ -102758,6 +102818,7 @@
       "ican-graro-official-2026-08-27": [],
       "ican-graro-official-current-2026-09-23": [],
       "ican-graro-official-current-recheck-2026-09-25": [],
+      "ican-graro-official-recheck-2026-10-22": [],
       "ican-graro-ready-to-ship-route-2026-09-25": [],
       "ican-sn04-corporate-product-2026-09-01": [],
       "ican-sn04-corporate-weight-material-recheck-2026-09-25": [],
@@ -102779,6 +102840,7 @@
       "incolor-services-official-2026-08-29": [],
       "incolor-speedster-brochure-2026-08-29": [],
       "incolor-speedster-official-2026-08-29": [],
+      "incolor-speedster-official-recheck-2026-10-22": [],
       "incolor-speedster-sr-plus-taobao-2026-08-29": [],
       "incolor-speedster-sr-taobao-2026-08-29": [],
       "incolor-speedster-ss-history-2025-05-05": [],
@@ -103011,6 +103073,7 @@
         "gallery_review.model_id=lightcarbon-lcr018-d"
       ],
       "lightcarbon-lcr018-d-official-2026-08-29": [],
+      "lightcarbon-lcr018-d-official-recheck-2026-10-22": [],
       "lightcarbon-lcr018-d-package-review-2026-10-11": [],
       "lightcarbon-lcr018-d-xianyu-2026-08-29": [],
       "lightcarbon-lcr0x-d-enrichment-2026-10-03": [],
@@ -103830,6 +103893,7 @@
       "twitter-v3-25yr-store-conflict-2026-09-22": [],
       "twitter-v3-25yr-store-current-recheck-2026-09-25": [],
       "twitter-v3-25yr-store-recheck-2026-09-25": [],
+      "twitter-v3-25yr-store-recheck-2026-10-22": [],
       "twitter-v3-bb86-manual-mirror-generation-exclusion-recheck-2026-09-24": [],
       "twitter-v3-cn-wheel-option-page-recheck-2026-09-24": [],
       "twitter-v3-factory-store-2026-08-25": [],
@@ -108858,6 +108922,7 @@
         "source_ids=lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
         "source_ids=lightcarbon-lcr018-d-gallery-complete-2026-10-03",
         "source_ids=lightcarbon-lcr018-d-official-2026-08-29",
+        "source_ids=lightcarbon-lcr018-d-official-recheck-2026-10-22",
         "source_ids=lightcarbon-lcr018-d-package-review-2026-10-11",
         "source_ids=lightcarbon-lcr018-d-xianyu-2026-08-29",
         "source_ids=usd-cny-central-parity-2026-07-31"
@@ -120878,6 +120943,14 @@
         "specification": 3
       }
     },
+    "ican-graro-official-recheck-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "ican-graro-ready-to-ship-route-2026-09-25": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -121055,6 +121128,14 @@
         "identity": 3,
         "image": 3,
         "price": 1,
+        "specification": 3
+      }
+    },
+    "incolor-speedster-official-recheck-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
         "specification": 3
       }
     },
@@ -122681,6 +122762,14 @@
       }
     },
     "lightcarbon-lcr018-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr018-d-official-recheck-2026-10-22": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -129159,6 +129248,13 @@
         "identity": 1,
         "price": 0,
         "selected_option": 0,
+        "specification": 1
+      }
+    },
+    "twitter-v3-25yr-store-recheck-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
         "specification": 1
       }
     },
