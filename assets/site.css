@@ -361,7 +361,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .model-content .detail-list dt, .model-content .detail-list dd { min-width: 0; overflow-wrap: anywhere; }
 .model-geometry { margin: 30px 0 12px; }
 .geometry-basis, .geometry-source, .geometry-scroll-hint { color: var(--muted); font-size: .8rem; }
-.geometry-evidence-warning { line-height: 1.65; overflow-wrap: anywhere; }
+.geometry-evidence-warning, .identity-note { line-height: 1.65; overflow-wrap: anywhere; }
 .geometry-scroll { max-width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; overscroll-behavior-x: contain; }
 .geometry-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; font-variant-numeric: tabular-nums; }
 .geometry-table caption { text-align: left; padding: 12px; font-weight: 680; }

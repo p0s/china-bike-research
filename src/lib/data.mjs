@@ -616,6 +616,14 @@ export function validateDataset(data = loadDataset()) {
         typeof eligibility.note !== 'string' || !eligibility.note.trim() || !isDate(eligibility.reviewed_at)) errors.push(`candidate ${candidate.id}: invalid comparison_eligibility`);
     }
     if (candidate.existing_record_id && !variantIds.has(candidate.existing_record_id) && !candidateIds.has(candidate.existing_record_id)) errors.push(`candidate ${candidate.id}: unresolved existing_record_id ${candidate.existing_record_id}`);
+    // Two retained records for one trim link each other instead of hiding either page or row.
+    if (candidate.same_identity_as !== undefined) {
+      const same = candidate.same_identity_as;
+      const target = isObject(same) ? data.candidates.find((item) => item.id === same.record_id) : null;
+      if (!isObject(same) || !isId(same.record_id) || same.record_id === candidate.id || (!variantIds.has(same.record_id) && !target)
+        || typeof same.note !== 'string' || !same.note.trim() || !isDate(same.reviewed_at)) errors.push(`candidate ${candidate.id}: invalid same_identity_as`);
+      else if (target && target.same_identity_as?.record_id !== candidate.id) errors.push(`candidate ${candidate.id}: same_identity_as must be reciprocal`);
+    }
     if (candidate.source_url !== undefined) {
       try {
         const sourceUrl = new URL(candidate.source_url);
