@@ -216,6 +216,9 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
         'content-type': 'application/json'
       },
       body: JSON.stringify(payload),
+      // Like the action and GA collectors: a redirect fails delivery instead of
+      // forwarding the bearer token and visitor-derived payload elsewhere.
+      redirect: 'manual',
       signal: controller.signal
     });
     return response.ok;
@@ -292,6 +295,8 @@ async function productActionContext(action, env) {
       actionManifestCache.set(env.ASSETS, pending);
     }
     const manifest = await pending;
+    // A failed asset read must not disable action context for the isolate's lifetime.
+    if (!manifest && actionManifestCache.get(env.ASSETS) === pending) actionManifestCache.delete(env.ASSETS);
     const canonicalPath = path.replace(/^\/(?:zh|de)(?=\/)/, '');
     const model = offer
       ? manifest?.offers && Object.hasOwn(manifest.offers, id) ? manifest.offers[id] : null
