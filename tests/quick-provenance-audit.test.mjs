@@ -83,11 +83,13 @@ test('published incomplete quote handling is explicit and does not change other 
   const before = new Map(bases(context(restored)).map(b => [b.id, b]));
   const after = bases(context());
   for (const base of after) if (base.id !== 'quick-gr-one-frameset') assert.deepEqual(base, before.get(base.id), base.id);
-  assert.equal(before.get('quick-gr-one-frameset').priceLow, 14105);
+  // A foreign-seller conversion is a reference either way; the incomplete-quote flag only changes the note.
+  assert.equal(before.get('quick-gr-one-frameset').priceLow, null);
+  assert.match(before.get('quick-gr-one-frameset').priceNote, /^Reference kept for planning.* · ¥14,105 \(.+\) · 2026-09-01$/);
   const fixture = structuredClone(data);
   const selected = product(context(fixture)).latestPrice;
   selected.purchase_total_complete = true;
-  assert.equal(bases(context(fixture)).find(b => b.id === 'quick-gr-one-frameset').priceLow, 14105);
+  assert.equal(bases(context(fixture)).find(b => b.id === 'quick-gr-one-frameset').priceLow, null);
 });
 
 test('all localized model pages visibly qualify buyer-facing relationship and preserve the dated references', () => {

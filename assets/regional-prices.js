@@ -65,6 +65,10 @@ export function convertPrice(amount, from, to, rates) {
   const source = rates?.per_eur?.[from], target = rates?.per_eur?.[to];
   return source > 0 && target > 0 ? amount / source * target : null;
 }
+/** A requested budget in an unsupported or malformed currency stays readable as typed instead of reaching Intl. */
+export function formatRequestedBudget(amount, currency, locale = 'en') {
+  return PRICE_CURRENCIES.includes(currency) ? formatMoneyRange(amount, amount, currency, locale) : `${amount} ${String(currency).slice(0, 24)}`;
+}
 // Headline amounts round to whole currency units; `exact` keeps recorded
 // fractions for evidence details such as coupon arithmetic.
 export function formatMoneyRange(low, high, currency, locale = 'en', { approximate = false, exact = false } = {}) {

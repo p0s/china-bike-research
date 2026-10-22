@@ -5,7 +5,7 @@
   "series_order": 99,
   "image_id": "frameset-vs-complete-bike-cost-in-china",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-22",
   "researched_at": "2026-10-04",
   "model_ids": [
     "ican-graro-frameset",
@@ -110,7 +110,7 @@
           "heading": "Die eigene Messung nachvollziehbar halten",
           "paragraphs": [
             "Nutze dieselbe Waage und Methode und notiere Datum und Aufbau: leere Flaschen, Dichtmittel und montiertes Zubehör eingeschlossen oder nicht? Fotografiere Aufbau und Anzeige privat. Eine Hängewaage hilft beim eigenen Vergleich; angezeigte Nachkommastellen sind keine Laborpräzision.",
-            "Frage anschließend nach dem Nutzen der Ersparnis. Reifen, Übersetzung und eine Sitzposition, die du dauerhaft beibehalten kannst können die Fahrt stärker prägen als ein kleiner Unterschied ungleich beschriebener Katalogräder. Zur Kletterrechnung: [Laufradgewicht und Felgenhöhe](/blog/carbon-wheel-weight-vs-depth/)."
+            "Frage anschließend nach dem Nutzen der Ersparnis. Reifen, Übersetzung und eine Sitzposition, die du dauerhaft beibehalten kannst, können die Fahrt stärker prägen als ein kleiner Unterschied ungleich beschriebener Katalogräder. Zur Kletterrechnung: [Laufradgewicht und Felgenhöhe](/blog/carbon-wheel-weight-vs-depth/)."
           ]
         }
       ]
@@ -125,5 +125,20 @@
       "de"
     ],
     "contribution": "Pedal inclusion arithmetic and repeatable weighing expose mismatched catalogue builds, without presenting a hanging scale as laboratory accuracy."
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-22",
+      "passage": "sections/2/paragraphs/1",
+      "prior_values": {
+        "dateModified": "2026-10-04",
+        "passages": {
+          "en": "Then ask what the weight saving buys you. Tyre choice, gearing and a position you can hold may change the ride more than a small difference between mismatched catalogue builds. For the climbing arithmetic, see [wheel weight versus depth](/blog/carbon-wheel-weight-vs-depth/).",
+          "zh-Hans": "再问减重带来什么。合适轮胎、齿比及能保持的姿势，可能比口径不一的目录配置间小幅重量差更影响骑行。爬坡的算账方法见[轮组重量与框高](/blog/carbon-wheel-weight-vs-depth/)。",
+          "de": "Frage anschließend nach dem Nutzen der Ersparnis. Reifen, Übersetzung und eine Sitzposition, die du dauerhaft beibehalten kannst können die Fahrt stärker prägen als ein kleiner Unterschied ungleich beschriebener Katalogräder. Zur Kletterrechnung: [Laufradgewicht und Felgenhöhe](/blog/carbon-wheel-weight-vs-depth/)."
+        }
+      },
+      "reason": "German punctuation: missing comma before the main verb. Meaning unchanged."
+    }
+  ]
 }

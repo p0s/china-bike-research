@@ -2,13 +2,16 @@
   "slug": "buy-winspace-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-10-06",
+  "dateModified": "2026-10-22",
   "researched_at": "2026-09-22",
   "image_id": "buy-winspace-bike-unique-mascot-cover",
   "model_ids": [
     "missing-china-price-winspace-t1550"
   ],
-  "source_ids": [],
+  "source_ids": [
+    "winspace-warranty-recheck-2026-10-22",
+    "winspace-return-policy-2026-10-22"
+  ],
   "photo_sections": [
     {
       "section_id": "route",
@@ -246,7 +249,7 @@
           "id": "experience",
           "heading": "Besitzerberichte zeigen Lücken im Angebot",
           "paragraphs": [
-            "Ein [T1550-Besitzer im November 2024](https://chinertown.com/index.php?topic=5449.0) war mit seinem Black-Friday-Kauf zufrieden. Ein anderer Käufer beschreibt im [April 2025](https://chinertown.com/index.php/topic,5878.0.html) eine umstrittene Rückgabe eines beschädigten Rahmens. Das ist ein ungeprüfter Einzelfall, keine rechtskräftige Feststellung. Praktisch folgt daraus: Vorgehen bei Transportschäden vorher vereinbaren und Verpackung vor der Montage dokumentieren.",
+            "Ein [T1550-Besitzer im November 2024](https://chinertown.com/index.php?topic=5449.0) war mit dem eigenen Black-Friday-Kauf zufrieden. Ein anderer Käufer beschreibt im [April 2025](https://chinertown.com/index.php/topic,5878.0.html) eine umstrittene Rückgabe eines beschädigten Rahmens. Das ist ein ungeprüfter Einzelfall, keine rechtskräftige Feststellung. Praktisch folgt daraus: Vorgehen bei Transportschäden vorher vereinbaren und Verpackung vor der Montage dokumentieren.",
             "Keiner der Beiträge belegt heutigen Bestand oder Serviceerfolg. Rechnung und aktuelle Verkäuferbedingungen müssen diese Fragen beantworten."
           ]
         },
@@ -272,5 +275,20 @@
     "https://www.winspace.cc/pages/size-chart",
     "https://www.winspace.cc/pages/warranty",
     "https://www.winspace.cc/pages/return-policy"
+  ],
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-22",
+      "passage": "sections/2/paragraphs/0",
+      "prior_values": {
+        "dateModified": "2026-10-06",
+        "passages": {
+          "en": "A [November 2024 T1550 owner](https://chinertown.com/index.php?topic=5449.0) liked their Black Friday purchase. Another buyer’s [April 2025 post](https://chinertown.com/index.php/topic,5878.0.html) describes a disputed damaged-frame return. The second is an unverified individual account, not an adjudicated finding. Together they suggest a practical step: agree the arrival-damage procedure and record the packaging before assembly.",
+          "zh-Hans": "[2024 年 11 月一位 T1550 车主](https://chinertown.com/index.php?topic=5449.0)满意此前黑五购买；另一位买家在[2025 年 4 月帖子](https://chinertown.com/index.php/topic,5878.0.html)描述损坏车架退货争议。后者是未经独立核实的个人叙述，并非裁决结论。两者给出的具体动作是：先问清到货损坏流程，并在装车前拍下包装。",
+          "de": "Ein [T1550-Besitzer im November 2024](https://chinertown.com/index.php?topic=5449.0) war mit seinem Black-Friday-Kauf zufrieden. Ein anderer Käufer beschreibt im [April 2025](https://chinertown.com/index.php/topic,5878.0.html) eine umstrittene Rückgabe eines beschädigten Rahmens. Das ist ein ungeprüfter Einzelfall, keine rechtskräftige Feststellung. Praktisch folgt daraus: Vorgehen bei Transportschäden vorher vereinbaren und Verpackung vor der Montage dokumentieren."
+        }
+      },
+      "reason": "The German edition assigned a gender to an anonymous owner; English uses “their”."
+    }
   ]
 }
