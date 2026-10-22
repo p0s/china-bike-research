@@ -8471,6 +8471,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "creaking-carbon-bike-diagnosis-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
+          "type": "image/webp",
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda kneels beside a stationary green bicycle and shines a flashlight at the crank area in a garage.",
+          "zh-Hans": "戴头盔的小熊猫跪在静止的绿色自行车旁，在车库里用手电筒查看曲柄附近。",
+          "de": "Ein Rotpanda mit Helm kniet in einer Garage neben einem stehenden grünen Fahrrad und leuchtet mit einer Taschenlampe auf den Kurbelbereich."
+        },
+        "prompt": "Editorial scene: A helmeted red panda kneels beside a stationary green bicycle and shines a flashlight at the crank area in a garage.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "0ab1ab9f9c6ecbe1b0e3c75dfa86f20461e560c7d624589f91491c80466ba40b",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 53086,
+            "sha256": "6ca7d9713621d945dd8f4fc412a0c3f142ac7ce7ea2dd2e7c34da9701dd5d1d9"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 166042,
+            "sha256": "f0a8e652854459a600b62b4a94055afd41e2885b4a7e350c1880e17730252102"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 195851,
+            "sha256": "211746d4a160b4fc571047c7fdfab042dfb66e06a27916037690769c26760d29"
+          }
+        ]
+      }
     }
   ]
 }
