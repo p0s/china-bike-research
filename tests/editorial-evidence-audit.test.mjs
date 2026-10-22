@@ -74,3 +74,12 @@ test('the source-supported Elves quiet-season shortening stays visible in every 
  const latest=p.audit_corrections.at(-1);assert.doesNotMatch(latest.reason,/unrecorded/);assert.match(latest.prior_values.passages['zh-Hans'],/淡季可能缩短/);
  assert.doesNotMatch(post('brake-rotor-size-and-frame-approval').translations.de.sections[1].paragraphs[0],/steht[^.]*steht/);
 });
+test('dated 2026-10-22 policy and reference readbacks back only articles that cite the same URL',()=>{
+ const sources=new Map(data.sources.map(s=>[s.id,s]));let linked=0;
+ for(const p of posts)for(const id of p.source_ids??[]){
+  const s=sources.get(id);if(!s||!/-2026-10-22$/.test(id)||!s.url)continue;linked++;
+  assert.equal(s.accessed_at,'2026-10-22',id);assert.match(s.notes,/^Live rendered-page readback on 2026-10-22\./,id);
+  assert.ok(JSON.stringify(p.translations).includes(s.url)||(p.editorial_references??[]).includes(s.url),`${p.slug} does not cite ${s.url}`);
+ }
+ assert.ok(linked>=24,String(linked));
+});

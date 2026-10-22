@@ -8,7 +8,7 @@
       "variants": 41,
       "prices": 82,
       "exchangeRates": 1,
-      "sources": 1623,
+      "sources": 1636,
       "images": 737,
       "videos": 59,
       "groupsets": 11,
@@ -677,6 +677,8 @@
       "irefox-profound-400-official-2026-08-28",
       "irefox-profound-400-official-current-2026-09-23",
       "irefox-support-reference-2026-10-03",
+      "iso-4210-2-2023-listing-2026-10-22",
+      "iso-4210-7-2023-listing-2026-10-22",
       "java-current-tt-products-2026-09-01",
       "java-fuoco-2025-photo-source-2026-10-03",
       "java-fuoco-top-105-current-regional-2026-08-30",
@@ -1040,6 +1042,9 @@
       "pardus-uragano-sport-cn-official-2026-08-27",
       "pardus-uragano-sport-official",
       "pardus-uragano-sport-official-current-2026-09-23",
+      "park-tool-atd-1-2-2026-10-22",
+      "park-tool-tw-5-2-2026-10-22",
+      "park-tool-tw-6-2-2026-10-22",
       "phillips-corporate-official-2026-08-30",
       "phillips-corporate-profile-recheck-2026-09-23",
       "phillips-sachem-888bike-2026-08-30",
@@ -1336,6 +1341,9 @@
       "sava-shipping-policy-2026-10-03",
       "sava-starship-105-official-2026-08-17",
       "sava-starship-r13-current-build-2026-09-22",
+      "schwalbe-motion-spike-2026-10-22",
+      "schwalbe-tire-pressure-faq-2026-10-22",
+      "schwalbe-tubeless-faq-2026-10-22",
       "scott-addict-2026-manual-2026-08-17",
       "scott-addict-2026-manual-recheck-2026-09-24",
       "scott-addict-40-official-2026-08-29",
@@ -1463,6 +1471,8 @@
       "sram-apex-xplr-axs-d1-official-2026-08-24",
       "sram-rival-axs-e1-official-2026-08-24",
       "sram-rival-xplr-axs-e1-official-2026-08-24",
+      "sram-rival-xplr-frame-fit-faq-2026-10-22",
+      "sram-udh-vs-full-mount-faq-2026-10-22",
       "sunpeed-invincible-2026-jd-2026-08-30",
       "sunpeed-invincible-2026-official-2026-08-30",
       "sunpeed-invincible-2026-review-2026-08-30",
@@ -1702,6 +1712,7 @@
       "upland-taylor-marketplace-2026-08-30",
       "upland-taylor-official-2026-08-30",
       "upland-taylor-supplementary-specs-2026-10-03",
+      "ups-claim-supporting-documents-2026-10-22",
       "ups-tracking-status-definitions-2026-10-22",
       "usd-cny-central-parity-2026-07-31",
       "van-rysel-rcr-f-family-official-2026-09-01",
@@ -1739,6 +1750,7 @@
       "west-biking-sl-one-taobao-search-index-2026-09-23",
       "west-biking-team-road-current-options-2026-08-30",
       "west-biking-team-road-jd-current-2026-09-23",
+      "wheels-mfg-t47-selection-guide-2026-10-22",
       "wheeltop-eds-gex-official-2026-08-24",
       "wheeltop-eds-tx-official-2026-08-24",
       "winspace-agile-current-recheck-2026-09-23",
@@ -1876,7 +1888,8 @@
       "yoeleo-altera-g21-official",
       "yoeleo-altera-g21-official-2026-08-16",
       "yoeleo-altera-g21-official-recheck-2026-09-23",
-      "yoeleo-shipping-delivery-2026-10-22"
+      "yoeleo-shipping-delivery-2026-10-22",
+      "zipp-tire-pressure-inputs-2026-10-22"
     ],
     "images": [
       "af01-primary-image",
@@ -14196,6 +14209,30 @@
         "type",
         "url"
       ],
+      "iso-4210-2-2023-listing-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "iso-4210-7-2023-listing-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "java-current-tt-products-2026-09-01": [
         "accessed_at",
         "language",
@@ -18923,6 +18960,42 @@
         "type",
         "url"
       ],
+      "park-tool-atd-1-2-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "park-tool-tw-5-2-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "park-tool-tw-6-2-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "phillips-corporate-official-2026-08-30": [
         "accessed_at",
         "language",
@@ -22626,6 +22699,42 @@
         "type",
         "url"
       ],
+      "schwalbe-motion-spike-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "schwalbe-tire-pressure-faq-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "schwalbe-tubeless-faq-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "scott-addict-2026-manual-2026-08-17": [
         "accessed_at",
         "language",
@@ -24151,6 +24260,30 @@
         "url"
       ],
       "sram-rival-xplr-axs-e1-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sram-rival-xplr-frame-fit-faq-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sram-udh-vs-full-mount-faq-2026-10-22": [
         "accessed_at",
         "language",
         "notes",
@@ -27255,6 +27388,18 @@
         "type",
         "url"
       ],
+      "ups-claim-supporting-documents-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.policy",
+        "reliability.price",
+        "title",
+        "type",
+        "url"
+      ],
       "ups-tracking-status-definitions-2026-10-22": [
         "accessed_at",
         "language",
@@ -27707,6 +27852,18 @@
         "reliability.identity",
         "reliability.price",
         "reliability.selected_option",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "wheels-mfg-t47-selection-guide-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -29414,6 +29571,18 @@
         "reliability.identity",
         "reliability.policy",
         "reliability.price",
+        "title",
+        "type",
+        "url"
+      ],
+      "zipp-tire-pressure-inputs-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
         "title",
         "type",
         "url"
@@ -103008,6 +103177,8 @@
       "irefox-profound-400-official-2026-08-28": [],
       "irefox-profound-400-official-current-2026-09-23": [],
       "irefox-support-reference-2026-10-03": [],
+      "iso-4210-2-2023-listing-2026-10-22": [],
+      "iso-4210-7-2023-listing-2026-10-22": [],
       "java-current-tt-products-2026-09-01": [],
       "java-fuoco-2025-photo-source-2026-10-03": [],
       "java-fuoco-top-105-current-regional-2026-08-30": [],
@@ -103419,6 +103590,9 @@
       "pardus-uragano-sport-cn-official-2026-08-27": [],
       "pardus-uragano-sport-official": [],
       "pardus-uragano-sport-official-current-2026-09-23": [],
+      "park-tool-atd-1-2-2026-10-22": [],
+      "park-tool-tw-5-2-2026-10-22": [],
+      "park-tool-tw-6-2-2026-10-22": [],
       "phillips-corporate-official-2026-08-30": [],
       "phillips-corporate-profile-recheck-2026-09-23": [],
       "phillips-sachem-888bike-2026-08-30": [],
@@ -103715,6 +103889,9 @@
       "sava-shipping-policy-2026-10-03": [],
       "sava-starship-105-official-2026-08-17": [],
       "sava-starship-r13-current-build-2026-09-22": [],
+      "schwalbe-motion-spike-2026-10-22": [],
+      "schwalbe-tire-pressure-faq-2026-10-22": [],
+      "schwalbe-tubeless-faq-2026-10-22": [],
       "scott-addict-2026-manual-2026-08-17": [],
       "scott-addict-2026-manual-recheck-2026-09-24": [],
       "scott-addict-40-official-2026-08-29": [],
@@ -103842,6 +104019,8 @@
       "sram-apex-xplr-axs-d1-official-2026-08-24": [],
       "sram-rival-axs-e1-official-2026-08-24": [],
       "sram-rival-xplr-axs-e1-official-2026-08-24": [],
+      "sram-rival-xplr-frame-fit-faq-2026-10-22": [],
+      "sram-udh-vs-full-mount-faq-2026-10-22": [],
       "sunpeed-invincible-2026-jd-2026-08-30": [],
       "sunpeed-invincible-2026-official-2026-08-30": [],
       "sunpeed-invincible-2026-review-2026-08-30": [],
@@ -104081,6 +104260,7 @@
       "upland-taylor-marketplace-2026-08-30": [],
       "upland-taylor-official-2026-08-30": [],
       "upland-taylor-supplementary-specs-2026-10-03": [],
+      "ups-claim-supporting-documents-2026-10-22": [],
       "ups-tracking-status-definitions-2026-10-22": [],
       "usd-cny-central-parity-2026-07-31": [],
       "van-rysel-rcr-f-family-official-2026-09-01": [],
@@ -104118,6 +104298,7 @@
       "west-biking-sl-one-taobao-search-index-2026-09-23": [],
       "west-biking-team-road-current-options-2026-08-30": [],
       "west-biking-team-road-jd-current-2026-09-23": [],
+      "wheels-mfg-t47-selection-guide-2026-10-22": [],
       "wheeltop-eds-gex-official-2026-08-24": [],
       "wheeltop-eds-tx-official-2026-08-24": [],
       "winspace-agile-current-recheck-2026-09-23": [],
@@ -104255,7 +104436,8 @@
       "yoeleo-altera-g21-official": [],
       "yoeleo-altera-g21-official-2026-08-16": [],
       "yoeleo-altera-g21-official-recheck-2026-09-23": [],
-      "yoeleo-shipping-delivery-2026-10-22": []
+      "yoeleo-shipping-delivery-2026-10-22": [],
+      "zipp-tire-pressure-inputs-2026-10-22": []
     },
     "images": {
       "af01-primary-image": [
@@ -121531,6 +121713,22 @@
         "specification": 3
       }
     },
+    "iso-4210-2-2023-listing-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "iso-4210-7-2023-listing-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "java-current-tt-products-2026-09-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -124492,6 +124690,30 @@
         "specification": 3
       }
     },
+    "park-tool-atd-1-2-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "park-tool-tw-5-2-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "park-tool-tw-6-2-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "phillips-corporate-official-2026-08-30": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -126848,6 +127070,30 @@
         "specification": 3
       }
     },
+    "schwalbe-motion-spike-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "schwalbe-tire-pressure-faq-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "schwalbe-tubeless-faq-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "scott-addict-2026-manual-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -127865,6 +128111,22 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
+        "specification": 3
+      }
+    },
+    "sram-rival-xplr-frame-fit-faq-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "sram-udh-vs-full-mount-faq-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
         "specification": 3
       }
     },
@@ -129823,6 +130085,14 @@
         "specification": 3
       }
     },
+    "ups-claim-supporting-documents-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "policy": 3,
+        "price": -1
+      }
+    },
     "ups-tracking-status-definitions-2026-10-22": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -130129,6 +130399,14 @@
         "price": -1,
         "selected_option": 1,
         "specification": 1
+      }
+    },
+    "wheels-mfg-t47-selection-guide-2026-10-22": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
       }
     },
     "wheeltop-eds-gex-official-2026-08-24": {
@@ -131268,6 +131546,14 @@
         "identity": 3,
         "policy": 3,
         "price": -1
+      }
+    },
+    "zipp-tire-pressure-inputs-2026-10-22": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
       }
     }
   },
