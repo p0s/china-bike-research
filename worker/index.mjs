@@ -230,6 +230,10 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
         'content-type': 'application/json'
       },
       body: JSON.stringify(payload),
+      // Cloudflare Workers rejects redirect: 'error'; manual keeps analytics
+      // payloads from being forwarded to a redirect target.
+      redirect: 'manual',
+      referrerPolicy: 'no-referrer',
       signal: controller.signal
     });
     return response.ok;

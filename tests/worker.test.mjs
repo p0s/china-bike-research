@@ -562,6 +562,25 @@ test('collector HTTP failures are reported as rejected ingestion', async () => {
   assert.equal(await responseFor(500), false);
 });
 
+test('collector redirects are rejected without following the target', async () => {
+  const payload = { hostname: 'chinesebikes.xyz', path: '/', eventName: 'page_engaged' };
+  const env = {
+    ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
+    ANALYTICS_INGEST_TOKEN: 'test-token'
+  };
+  const calls = [];
+  const accepted = await ingestAnalytics(payload, env, async (url, init) => {
+    calls.push({ url, init });
+    return new Response(null, { status: 302, headers: { location: 'https://redirect.invalid/collect' } });
+  });
+
+  assert.equal(accepted, false);
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].url, env.ANALYTICS_INGEST_URL);
+  assert.equal(calls[0].init.redirect, 'manual');
+  assert.equal(calls[0].init.referrerPolicy, 'no-referrer');
+});
+
 test('preference routes require same-origin POST and set host-only cookies', async () => {
   const origin = 'https://chinesebikes.xyz';
   const optOut = await handleRequest(new Request(`${origin}/analytics/opt-out`, {

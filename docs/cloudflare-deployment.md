@@ -174,11 +174,13 @@ Do not retry ambiguous deliveries automatically or fabricate engagement
 signals.
 
 The configured Cloudflare Workers runtime rejects `fetch` with
-`redirect: 'error'` before sending a request. Use `redirect: 'manual'` and reject non-2xx responses for both GA4 and
-product-action ingestion. This defect was reproduced in the local Workers
-runtime on 2026-09-29: the original sender threw `TypeError`; the corrected
-sender reached the collector and received HTTP 204. Node mocks alone did not
-expose the unsupported option.
+`redirect: 'error'` before sending a request. Every Worker-side analytics
+forwarder must use `redirect: 'manual'` and reject non-2xx responses. This
+includes GA4, product actions, page observations, comparison events, and
+foreground engagement. The GA4/product-action defect was reproduced in the
+local Workers runtime on 2026-09-29: the original sender threw `TypeError`; the
+corrected sender reached the collector and received HTTP 204. Node mocks alone
+did not expose the unsupported option.
 
 ### Reporting comparison procedure
 
