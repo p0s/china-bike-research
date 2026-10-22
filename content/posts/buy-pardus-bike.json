@@ -2,7 +2,7 @@
   "slug": "buy-pardus-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-10-22",
   "researched_at": "2026-09-22",
   "image_id": "europe-bike-delivery",
   "model_ids": [
@@ -125,7 +125,7 @@
           "id": "owner",
           "heading": "Ein chinesischer Ladenkauf belegt genau diesen Kauf",
           "paragraphs": [
-            "Ein [Spark-Besitzer im Juni 2026](https://www.reddit.com/r/bicycling/comments/1u6epd0/my_first_road_bike/) beschreibt einen Kauf im Laden nahe seinem Wohnort in China. Das belegt keinen Versand nach Europa oder Nordamerika. Im Material dieses Leitfadens wurde kein vergleichbarer Auslandskauf gefunden; holen Sie aktuelle regionale Angebote ein."
+            "Ein [Spark-Besitzer im Juni 2026](https://www.reddit.com/r/bicycling/comments/1u6epd0/my_first_road_bike/) beschreibt einen Kauf im Laden in der Nähe des eigenen Wohnorts in China. Das belegt keinen Versand nach Europa oder Nordamerika. Im Material dieses Leitfadens wurde kein vergleichbarer Auslandskauf gefunden; holen Sie aktuelle regionale Angebote ein."
           ]
         },
         {
@@ -158,5 +158,20 @@
     "https://pardusbicycle.com/dealers/",
     "https://parduscycle.com/find.aspx",
     "https://www.reddit.com/r/bicycling/comments/1u6epd0/my_first_road_bike/"
+  ],
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-22",
+      "passage": "sections/1/paragraphs/0",
+      "prior_values": {
+        "dateModified": "2026-09-27",
+        "passages": {
+          "en": "One [June 2026 Spark owner](https://www.reddit.com/r/bicycling/comments/1u6epd0/my_first_road_bike/) described buying at a shop near home in China. It shows a domestic dealer purchase, but says nothing about delivery to Europe or North America. We did not find a comparable overseas owner transaction in the material for this guide; obtain current regional quotes instead.",
+          "zh-Hans": "[2026 年 6 月一位 Spark 车主](https://www.reddit.com/r/bicycling/comments/1u6epd0/my_first_road_bike/)描述在中国附近车店购买。这能说明国内经销购买，却不能证明发往欧洲或北美的流程。本指南所用资料中没有可比的海外车主交易；应以当前区域报价为准。",
+          "de": "Ein [Spark-Besitzer im Juni 2026](https://www.reddit.com/r/bicycling/comments/1u6epd0/my_first_road_bike/) beschreibt einen Kauf im Laden nahe seinem Wohnort in China. Das belegt keinen Versand nach Europa oder Nordamerika. Im Material dieses Leitfadens wurde kein vergleichbarer Auslandskauf gefunden; holen Sie aktuelle regionale Angebote ein."
+        }
+      },
+      "reason": "The German edition assigned a gender to an anonymous owner; English and Chinese are neutral."
+    }
   ]
 }

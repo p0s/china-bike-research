@@ -361,7 +361,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .model-content .detail-list dt, .model-content .detail-list dd { min-width: 0; overflow-wrap: anywhere; }
 .model-geometry { margin: 30px 0 12px; }
 .geometry-basis, .geometry-source, .geometry-scroll-hint { color: var(--muted); font-size: .8rem; }
-.geometry-evidence-warning { line-height: 1.65; overflow-wrap: anywhere; }
+.geometry-evidence-warning, .identity-note { line-height: 1.65; overflow-wrap: anywhere; }
 .geometry-scroll { max-width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; overscroll-behavior-x: contain; }
 .geometry-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; font-variant-numeric: tabular-nums; }
 .geometry-table caption { text-align: left; padding: 12px; font-weight: 680; }
@@ -1243,6 +1243,10 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .catalog-scope { margin-top: 3px; font-size: var(--fs-xs); line-height: 1.45; }
   .family-chips { margin-top: 10px; }
   .result-bar { flex-wrap: nowrap; margin-top: 8px; }
+  /* Active filters or a notice/status get full rows instead of squeezing the count and sort controls. */
+  .result-bar:has(.filter-chips:not([hidden]), [data-filter-notice]:not(:empty), [data-sort-status]:not(:empty)) { flex-wrap: wrap; }
+  .result-bar .filter-chips:not([hidden]),
+  .result-bar:has([data-filter-notice]:not(:empty), [data-sort-status]:not(:empty)) .result-summary { flex: 1 0 100%; }
   .result-split { display: none; }
   .sort-control { height: 34px; padding-left: 8px; }
   .sort-control select { max-width: 190px; }
@@ -1277,6 +1281,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .model-summary { padding: 16px; }
   .model-summary .model-facts > div { grid-template-columns: 104px minmax(0, 1fr); }
 }
-.model-summary .model-price { grid-template-columns: max-content auto minmax(0, 1fr); align-items: center; column-gap: 6px; }
+/* The headline may wrap on phones; its note always takes the full row below. */
+.model-summary .model-price { grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr); align-items: center; column-gap: 6px; }
+.model-summary .model-price strong { overflow-wrap: break-word; }
 .model-summary .model-price > .tooltip { position: relative; }
-.model-summary .model-price .price-state, .model-summary .model-price-links { grid-column: 1 / -1; }
+.model-summary .model-price .price-state, .model-summary .model-price-links, .model-summary .model-price > span:last-child:not(.tooltip) { grid-column: 1 / -1; }

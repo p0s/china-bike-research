@@ -1645,6 +1645,21 @@ function brandStory(brand) {
   return `<section class="brand-story" aria-labelledby="about-${escapeAttr(brand.id)}-title"><h2 id="about-${escapeAttr(brand.id)}-title">About ${escapeHtml(brand.name)}</h2><p>${escapeHtml(paragraph)}</p>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">${escapeHtml(brand.website_label ?? `Visit the official ${brand.name} website`)}</a>` : ''}</section>`;
 }
 
+/** A retained twin record for the same trim stays reachable from this page; its own evidence is not merged here. */
+function candidateIdentityNote(ctx, candidate) {
+  const same = candidate.same_identity_as;
+  if (!same) return '';
+  const twin = ctx.data.candidates.find((item) => item.id === same.record_id);
+  const product = twin ? null : ctx.products?.find((item) => item.variant.id === same.record_id);
+  const name = twin?.name ?? (product ? `${product.brand.name} ${product.variant.name}` : same.record_id);
+  const link = `<a href="${url(ctx.base, `/models/${same.record_id}/`)}">${escapeHtml(name)}</a>`;
+  const lead = ctx.locale === 'zh-Hans' ? `与${link}为同一配置。两条记录均保留各自的来源与带日期的观察。`
+    : ctx.locale === 'de' ? `Dieselbe Ausstattung wie ${link}. Beide Einträge bleiben mit eigenen Quellen und datierten Beobachtungen erhalten.`
+      : `Same trim as ${link}. Both records are kept with their own sources and dated observations.`;
+  const note = ctx.locale === 'en' || !ctx.locale ? ` ${escapeHtml(same.note)}` : ` <span lang="en" data-original-language>${escapeHtml(same.note)}</span>`;
+  return `<p class="identity-note" role="note" data-same-identity="${escapeAttr(same.record_id)}">${lead}${note}</p>`;
+}
+
 export function renderCandidateModel(ctx, entry) {
   const { candidate, brand } = entry;
   const pageCopy = candidate.page_copy?.[ctx.locale || 'en'];
@@ -1721,6 +1736,7 @@ export function renderCandidateModel(ctx, entry) {
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(pageCopy?.opening ?? reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
     ${candidate.geometry_evidence ? `<p class="geometry-evidence-warning" role="note">${escapeHtml(translate(candidate.geometry_evidence.note, ctx.locale))}</p>` : ''}
+    ${candidateIdentityNote(ctx, candidate)}
     ${candidateAlternativeBuilds(entry)}
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.filter(fact => !isGeometryTableFact(fact)).map(([label, value]) => `<div><dt>${escapeHtml(label.replaceAll('_', ' '))}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     ${candidateGeometry(facts)}<section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
@@ -1874,6 +1890,16 @@ function builderConditionalPriceNote(price) {
   return `Conditional price; enter your eligible checkout quote. ${condition} · ${formatPrice(price)} · ${price.observed_at}`;
 }
 
+/** Reference, converted, historical and conflicting prices stay visible for planning; they are not purchase inputs. */
+function builderReferencePriceNote(price) {
+  const evidence = priceEvidence(price);
+  const label = evidence.historical ? 'Historical listing' : evidence.conflict ? 'Conflicting official prices'
+    : isReferenceConversionPrice(price) ? 'Converted reference' : /range/.test(price.price_type ?? '') ? 'Reference range' : 'Reference price';
+  const original = price.original_amount && price.original_currency && price.original_currency !== 'CNY'
+    ? ` (${price.original_currency} ${Number(price.original_amount).toLocaleString('en-US')})` : '';
+  return `Reference kept for planning, not a purchase quote; enter the exact purchase price. ${label} · ${formatPrice(price)}${original} · ${price.observed_at}`;
+}
+
 function builderCandidatePrice(price) {
   if (priceEvidence(price).conditional) return {low:null, high:null, note:builderConditionalPriceNote(price)};
   const evidence = priceEvidence(price);
@@ -1906,7 +1932,7 @@ function builderBases(ctx) {
     const isComplete = product.variant.kind === 'complete-bike';
     const weight = publishedWeightFilter(product);
     const price = priceEvidence(product.latestPrice);
-    const needsQuote = price.conditional || price.starting || price.partial;
+    const needsQuote = Boolean(product.latestPrice) && !price.purchaseEligible;
     return {
       id: product.variant.id,
       name: `${product.brand.name} ${product.variant.name}`,
@@ -1916,7 +1942,7 @@ function builderBases(ctx) {
       category: categoryFamily(product.platform.category),
       priceLow: needsQuote ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
       priceHigh: needsQuote ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
-      priceNote: price.conditional ? builderConditionalPriceNote(product.latestPrice) : price.starting ? 'Starting price; enter the exact selected-package purchase quote.' : price.partial ? translate(product.latestPrice.planner_quote_note ?? 'Reference or incomplete purchase price excluded; enter the exact purchase quote.', ctx.locale) : '',
+      priceNote: price.conditional ? builderConditionalPriceNote(product.latestPrice) : price.starting ? 'Starting price; enter the exact selected-package purchase quote.' : price.partial ? translate(product.latestPrice.planner_quote_note ?? 'Reference or incomplete purchase price excluded; enter the exact purchase quote.', ctx.locale) : needsQuote ? translate(builderReferencePriceNote(product.latestPrice), ctx.locale) : '',
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'

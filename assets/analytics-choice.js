@@ -34,7 +34,8 @@ export function bindAnalyticsChoices(win) {
     const buttons = [...form.parentElement.querySelectorAll('button')];
     buttons.forEach(button => { button.disabled = true; });
     try {
-      const response = await win.fetch(action.pathname + (action.searchParams.get('lang') === 'de' ? '?lang=de' : ''), {
+      const language = action.searchParams.get('lang');
+      const response = await win.fetch(action.pathname + (['de', 'zh'].includes(language) ? `?lang=${language}` : ''), {
         method: 'POST', credentials: 'same-origin', cache: 'no-store', referrerPolicy: 'no-referrer'
       });
       if (!response.ok) throw new Error('Preference not saved');

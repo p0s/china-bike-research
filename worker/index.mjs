@@ -216,6 +216,9 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
         'content-type': 'application/json'
       },
       body: JSON.stringify(payload),
+      // Like the action and GA collectors: a redirect fails delivery instead of
+      // forwarding the bearer token and visitor-derived payload elsewhere.
+      redirect: 'manual',
       signal: controller.signal
     });
     return response.ok;
@@ -292,6 +295,8 @@ async function productActionContext(action, env) {
       actionManifestCache.set(env.ASSETS, pending);
     }
     const manifest = await pending;
+    // A failed asset read must not disable action context for the isolate's lifetime.
+    if (!manifest && actionManifestCache.get(env.ASSETS) === pending) actionManifestCache.delete(env.ASSETS);
     const canonicalPath = path.replace(/^\/(?:zh|de)(?=\/)/, '');
     const model = offer
       ? manifest?.offers && Object.hasOwn(manifest.offers, id) ? manifest.offers[id] : null
@@ -479,10 +484,11 @@ function choiceResponse(request, url, optOut, env) {
     ? `${OPT_OUT_COOKIE}=1; Max-Age=${OPT_OUT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`
     : `${OPT_OUT_COOKIE}=; ${expiry}`;
   const action = optOut ? 'excluded from' : 'included in';
-  const german = url.searchParams.get('lang') === 'de';
-  const response = htmlResponse(german ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analyseauswahl gespeichert</h1><p>${optOut ? 'Dieser Browser ist jetzt von der optionalen Seitenanalyse ausgeschlossen.' : 'Dieser Browser nimmt jetzt an der optionalen Seitenanalyse teil.'}</p><p>Do Not Track und Global Privacy Control werden weiterhin beachtet.</p><p><a href="/de/privacy/">Zurück zum Datenschutz</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
+  const language = url.searchParams.get('lang');
+  const german = language === 'de', chinese = language === 'zh';
+  const response = htmlResponse(chinese ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>分析偏好已保存</h1><p>${optOut ? '此浏览器现已不参与可选的页面分析。' : '此浏览器现已参与可选的页面分析。'}</p><p>浏览器发出 Do Not Track 或 Global Privacy Control 信号时，我们仍会遵守。</p><p><a href="/zh/privacy/">返回隐私页面</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : german ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analyseauswahl gespeichert</h1><p>${optOut ? 'Dieser Browser ist jetzt von der optionalen Seitenanalyse ausgeschlossen.' : 'Dieser Browser nimmt jetzt an der optionalen Seitenanalyse teil.'}</p><p>Do Not Track und Global Privacy Control werden weiterhin beachtet.</p><p><a href="/de/privacy/">Zurück zum Datenschutz</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
     'set-cookie': cookie, 'content-security-policy': analyticsScriptPolicy(false)
-  }, german ? 'de' : 'en');
+  }, german ? 'de' : chinese ? 'zh-Hans' : 'en');
   response.headers.append('set-cookie', optOut
     ? `${CONSENT_COOKIE}=; ${expiry}`
     : `${CONSENT_COOKIE}=${CONSENT_VERSION}; Max-Age=${CONSENT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`);

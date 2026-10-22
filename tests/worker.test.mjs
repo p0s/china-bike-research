@@ -474,6 +474,13 @@ test('collector HTTP failures are reported as rejected ingestion', async () => {
   assert.equal(await responseFor(204), true);
   assert.equal(await responseFor(401), false);
   assert.equal(await responseFor(500), false);
+  let redirectCalls = 0;
+  assert.equal(await ingestAnalytics(payload, env, async (_url, init) => {
+    redirectCalls += 1;
+    assert.equal(init.redirect, 'manual');
+    return new Response(null, { status: 307, headers: { location: 'https://elsewhere.example/' } });
+  }), false);
+  assert.equal(redirectCalls, 1);
 });
 
 test('preference routes require same-origin POST and set host-only cookies', async () => {

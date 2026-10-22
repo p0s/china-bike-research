@@ -123,3 +123,32 @@ test('eligibility policies require a dated explanation and duplicate pointers mu
   assert.ok(!entries.some(entry => entry.candidate.id === pointer.id));
   assert.ok(entries.some(entry => entry.candidate.id === pointer.existing_record_id));
 });
+
+test('two retained records for one Cyclone R7120 trim link each other without losing either page, row or observation', () => {
+  const pair = ['twitter-cyclone-gen3-7170', 'twitter-cyclone-r7120'];
+  const summaries = catalogSummaries(context);
+  for (const [id, twin] of [pair, [...pair].reverse()]) {
+    const entry = find(id);
+    assert.ok(entry, `${id}: still a catalog record`);
+    assert.ok(summaries.some(summary => summary.id === `candidate-${id}`), `${id}: catalog row kept`);
+    assert.equal(entry.candidate.same_identity_as.record_id, twin);
+    for (const locale of ['en', 'zh-Hans', 'de']) {
+      const html = renderCandidateModel({ ...context, locale }, entry);
+      assert.ok(html.includes(`data-same-identity="${twin}"`) && html.includes(`/models/${twin}/`), `${id} ${locale}`);
+      if (locale !== 'en') assert.match(html, /<span lang="en" data-original-language>Both records describe/);
+    }
+  }
+  assert.equal(find(pair[0]).candidate.observed_price.amount_cny, 10961);
+  assert.equal(find(pair[1]).candidate.observed_price.amount_cny, 7769);
+  // A one-sided, self or unresolved link is rejected.
+  for (const mutate of [
+    d => { delete d.candidates.find(c => c.id === pair[1]).same_identity_as; },
+    d => { d.candidates.find(c => c.id === pair[0]).same_identity_as.record_id = pair[0]; },
+    d => { d.candidates.find(c => c.id === pair[0]).same_identity_as.record_id = 'missing-record'; },
+    d => { d.candidates.find(c => c.id === pair[0]).same_identity_as.note = ' '; },
+  ]) {
+    const copy = structuredClone(data);
+    mutate(copy);
+    assert.ok(validateDataset(copy).some(error => error.includes('same_identity_as')));
+  }
+});

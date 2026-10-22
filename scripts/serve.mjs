@@ -93,7 +93,8 @@ export function createPreviewServer({ root = defaultRoot, base } = {}) {
     if (candidate?.forbidden) return send(request, response, 403, 'Forbidden');
     if (candidate?.stats.isDirectory()) {
       if (!url.pathname.endsWith('/')) {
-        response.writeHead(308, { ...headers, location: `${url.pathname}/${url.search}` });
+        // Dot segments can normalize `/..//dir` to `//dir`; keep the redirect on this origin.
+        response.writeHead(308, { ...headers, location: `/${url.pathname.replace(/^\/+/, '')}/${url.search}` });
         return response.end();
       }
       candidate = await resolveFile(path.join(candidate.path, 'index.html'));
