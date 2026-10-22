@@ -18,7 +18,7 @@ function excluded(win) {
 // context while its module loads; failure or navigation discards pending work.
 export function createActionDispatcher({
   windowRef = globalThis.window,
-  loadModule = () => import('./analytics-event.js'),
+  loadModule = () => import('./site-interaction.js'),
   now = () => performance.now(),
   setTimer = globalThis.setTimeout,
   clearTimer = globalThis.clearTimeout

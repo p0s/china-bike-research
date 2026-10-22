@@ -40,7 +40,7 @@ export function sendComparisonOpenedEvent({
   try {
     const result = fetchImpl(SITE_EVENTS_ACTION_ROUTE, {
       method: 'POST',
-      mode: 'same-origin',
+      mode: 'cors',
       credentials: 'same-origin',
       cache: 'no-store',
       redirect: 'error',
@@ -77,7 +77,7 @@ export function sendProductOutboundClickEvent({
   try {
     const result = fetchImpl(SITE_EVENTS_ACTION_ROUTE, {
       method: 'POST',
-      mode: 'same-origin',
+      mode: 'cors',
       credentials: 'same-origin',
       cache: 'no-store',
       redirect: 'error',
@@ -110,7 +110,7 @@ export function sendPageEngagedEvent({
   try {
     const result = fetchImpl(SITE_EVENTS_ENGAGEMENT_ROUTE, {
       method: 'POST',
-      mode: 'same-origin',
+      mode: 'cors',
       credentials: 'same-origin',
       cache: 'no-store',
       redirect: 'error',

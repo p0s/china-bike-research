@@ -384,6 +384,17 @@ test('comparison events require same-origin bodyless POST and honor analytics ex
       method: 'POST', headers: { ...common, origin: 'null', referer: `${origin}/` }
     }), env);
     assert.equal(opaqueOrigin.status, 403);
+    const primaryOpaqueOrigin = await handleRequest(makeRequest('/site-events/action', {
+      method: 'POST', headers: { ...common, origin: 'null', referer: `${origin}/` }
+    }), env);
+    assert.equal(primaryOpaqueOrigin.status, 403);
+    const primaryOriginWaits = [];
+    const primarySameOrigin = await handleRequest(makeRequest('/site-events/action', {
+      method: 'POST', headers: common
+    }), env, { waitUntil: (promise) => primaryOriginWaits.push(promise) });
+    assert.equal(primarySameOrigin.status, 204);
+    assert.equal(primaryOriginWaits.length, 1);
+    await Promise.all(primaryOriginWaits);
 
     const body = await handleRequest(makeRequest('/analytics/event', {
       method: 'POST', headers: common, body: 'unexpected'
@@ -399,7 +410,7 @@ test('comparison events require same-origin bodyless POST and honor analytics ex
     assert.equal(query.status, 400);
     const get = await handleRequest(makeRequest('/analytics/event', { headers: common }), env);
     assert.equal(get.status, 405);
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
   } finally {
     globalThis.fetch = originalFetch;
   }

@@ -33,7 +33,7 @@ async function fixture(browser, width, { delayed = false, blocked = false } = {}
       }
       await route.fulfill({ status: 204 }); return;
     }
-    if (url.pathname === '/assets/analytics-event.js') {
+    if (url.pathname === '/assets/site-interaction.js') {
       if (blocked) { await route.abort('blockedbyclient'); return; }
       await gate;
     }

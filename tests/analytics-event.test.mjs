@@ -1,9 +1,33 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { sendComparisonOpenedEvent, sendPageEngagedEvent, sendProductOutboundClickEvent, startPageEngagement } from '../assets/analytics-event.js';
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { layout } from '../src/lib/html.mjs';
+import { sendComparisonOpenedEvent, sendPageEngagedEvent, sendProductOutboundClickEvent, startPageEngagement } from '../assets/site-interaction.js';
 import { stopAnalytics } from '../assets/analytics-choice.js';
 
 const origin = 'https://chinesebikes.xyz';
+
+test('rendered pages reference the available first-party interaction module', () => {
+  const html = layout({
+    repositoryUrl: 'https://github.com/p0s/china-bike-research',
+    title: 'Fixture',
+    description: 'Fixture description',
+    body: '<main>Fixture</main>'
+  });
+  assert.match(html, /src="\/assets\/site-interaction\.js"/);
+  assert.doesNotMatch(html, /analytics-event\.js/);
+  assert.equal(existsSync(fileURLToPath(new URL('../assets/site-interaction.js', import.meta.url))), true);
+});
+
+function assertSameSiteTransport(init) {
+  assert.equal(init.mode, 'cors');
+  assert.equal(init.credentials, 'same-origin');
+  assert.equal(init.cache, 'no-store');
+  assert.equal(init.redirect, 'error');
+  assert.equal(init.keepalive, true);
+  assert.equal(init.referrerPolicy, 'no-referrer');
+}
 
 test('immediate opt-out suppresses both action helpers before the preference cookie is saved', () => {
   const requests = [], windowRef = {};
@@ -58,7 +82,7 @@ test('comparison event sends a bodyless same-origin request with only the public
   assert.equal(requests[0].url, '/site-events/action');
   assert.deepEqual(requests[0].init, {
     method: 'POST',
-    mode: 'same-origin',
+    mode: 'cors',
     credentials: 'same-origin',
     cache: 'no-store',
     redirect: 'error',
@@ -113,7 +137,7 @@ test('product outbound action sends only the fixed action ID to the same-origin 
   assert.equal(sent, true);
   assert.equal(requests.length, 1);
   assert.equal(requests[0].url, '/site-events/action');
-  assert.equal(requests[0].init.referrerPolicy, 'no-referrer');
+  assertSameSiteTransport(requests[0].init);
   assert.deepEqual(JSON.parse(requests[0].init.body), { actionId: 'product_outbound_click' });
   assert.deepEqual(Object.keys(requests[0].init.headers), ['Content-Type']);
   assert.equal(Object.hasOwn(requests[0].init, 'referrer'), false);
@@ -169,6 +193,7 @@ test('foreground page engagement requires ten visible seconds and one trusted in
   assert.equal(f.requests.length, 1);
   assert.equal(f.requests[0].url, '/site-events/engagement');
   assert.equal(f.requests[0].init.method, 'POST');
+  assertSameSiteTransport(f.requests[0].init);
   assert.equal(f.requests[0].init.headers['X-Analytics-Path'], '/models/example-bike/');
   assert.equal(Object.hasOwn(f.requests[0].init, 'body'), false);
   f.fire('scroll', { isTrusted: true });

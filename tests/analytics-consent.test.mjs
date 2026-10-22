@@ -4,7 +4,7 @@ import { analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COUNTRIES, need
 import { handleRequest } from '../worker/index.mjs';
 import { startGa4 } from '../assets/ga4.js';
 import { bindAnalyticsChoices, stopAnalytics } from '../assets/analytics-choice.js';
-import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/analytics-event.js';
+import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/site-interaction.js';
 
 const origin = 'https://chinesebikes.xyz';
 const env = {

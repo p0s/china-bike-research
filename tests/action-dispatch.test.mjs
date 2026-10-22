@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createActionDispatcher } from '../assets/action-dispatch.js';
-import * as events from '../assets/analytics-event.js';
+import * as events from '../assets/site-interaction.js';
 import { stopAnalytics } from '../assets/analytics-choice.js';
 
 function fixture() {
