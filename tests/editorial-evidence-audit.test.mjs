@@ -65,3 +65,12 @@ test('dated manufacturer-page claims cite recorded checks and keep their prior w
  const brochure=sources.get('incolor-speedster-brochure-2026-08-29').url;
  for(const l of locales)assert.ok(post('incolor-speedster-sr-vs-sr-plus').translations[l].sections[0].paragraphs[0].includes(`](${brochure})`),l);
 });
+test('the source-supported Elves quiet-season shortening stays visible in every language',()=>{
+ const p=post('buy-elves-bike'),source=data.sources.find(s=>s.id==='elves-terms-recheck-2026-10-22');
+ assert.match(source.notes,/quieter times of the year when this estimate is significantly reduced/);
+ assert.ok(p.source_ids.includes(source.id));
+ const text=l=>p.translations[l].sections[1].paragraphs[0];
+ assert.match(text('en'),/quieter times of the year can significantly reduce/);assert.match(text('zh-Hans'),/淡季可能缩短/);assert.match(text('de'),/ruhigeren Zeiten des Jahres/);
+ const latest=p.audit_corrections.at(-1);assert.doesNotMatch(latest.reason,/unrecorded/);assert.match(latest.prior_values.passages['zh-Hans'],/淡季可能缩短/);
+ assert.doesNotMatch(post('brake-rotor-size-and-frame-approval').translations.de.sections[1].paragraphs[0],/steht[^.]*steht/);
+});
