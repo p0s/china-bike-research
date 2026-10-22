@@ -112,6 +112,7 @@ export const zh = {
   'more in China':'中国市场更贵',
   'Listing':'商品标价',
   'not checked':'未核对',
+  'This link’s budget currency is not supported, so the budget stays in the link but is not checked.':'此链接的预算币种不受支持，因此预算保留在链接中，但不作核对。',
   'Historical listing':'历史商品条目',
   'Converted reference':'换算参考价',
   'Reference price':'参考价',

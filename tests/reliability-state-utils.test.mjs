@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { numberOrNull, numericInput, normalizeSelection, compareNumbers, restoreBuildState, COMPARISON_SELECTION_LIMIT, regionalHold, regionalHoldBlocks, writeRegionalHold } from '../assets/state-utils.js';
+import { numberOrNull, numericInput, normalizeSelection, compareNumbers, restoreBuildState, COMPARISON_SELECTION_LIMIT, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from '../assets/state-utils.js';
+import { formatRequestedBudget } from '../assets/regional-prices.js';
 const data = {
   bases: [{ id: 'frame-a', kind: 'frameset' }, { id: 'bike-b', kind: 'complete-bike' }],
   slots: ['drivetrain', 'wheelset'],
@@ -137,4 +138,36 @@ test('China CNY budgets still apply offline; links without regional choices gain
   const eurOnly = regionalHold(new URLSearchParams('max=500&maxCurrency=EUR'));
   assert.deepEqual(eurOnly.limit, { amount: 500, currency: 'EUR' });
   assert.equal(regionalHoldBlocks(eurOnly), true);
+});
+
+test('comparison links keep a held destination and currency when regional prices fail', () => {
+  const hold = regionalHold(new URLSearchParams('max=2000&maxCurrency=EUR&ship=DE&currency=EUR'), { destination: true, country: 'DE' });
+  // The comparison writer sets fallback China values first; the hold restores the link's own values.
+  const url = new URL('https://example.test/?compare=bike-a%2Cbike-b&ship=CN&currency=CNY&max=2000&maxCurrency=EUR&diff=1');
+  writeRegionalHold(url, hold);
+  assert.deepEqual([url.searchParams.get('ship'), url.searchParams.get('currency'), url.searchParams.get('max'), url.searchParams.get('maxCurrency')], ['DE', 'EUR', '2000', 'EUR']);
+  assert.equal(url.searchParams.get('compare'), 'bike-a,bike-b');
+  assert.equal(url.searchParams.get('diff'), '1');
+});
+
+test('a malformed budget currency is held as typed, readable and never broadens results', () => {
+  for (const code of ['EURO', 'eur', '<b>', '']) assert.doesNotThrow(() => formatRequestedBudget(2000, code, 'de'), code);
+  assert.equal(formatRequestedBudget(2000, 'EURO'), '2000 EURO');
+  assert.equal(formatRequestedBudget(2000, 'X'.repeat(80)).length, 5 + 24);
+  assert.match(formatRequestedBudget(2000, 'EUR', 'en'), /€2,000/);
+  // Regional prices failed: the destination and the raw code stay, and no row passes.
+  const failed = regionalHold(new URLSearchParams('max=2000&maxCurrency=EURO&ship=DE'), { destination: true, country: 'DE' });
+  assert.deepEqual(failed.limit, { amount: 2000, currency: 'EURO' });
+  assert.equal(regionalHoldBlocks(failed), true);
+  // Regional prices loaded but no rate converts EURO: only the budget is held; delivery choices stay with the page.
+  const budget = regionalHold(new URLSearchParams('max=2000&maxCurrency=EURO&ship=DE&currency=EUR'), { keys: BUDGET_KEYS });
+  assert.equal(regionalHoldBlocks(budget), true);
+  const url = new URL('https://example.test/?ship=DE&currency=EUR&area=');
+  writeRegionalHold(url, budget);
+  assert.deepEqual([...url.searchParams], [['ship', 'DE'], ['currency', 'EUR'], ['area', ''], ['max', '2000'], ['maxCurrency', 'EURO']]);
+  const links = new URL('https://example.test/models/x/?ship=DE&currency=EUR');
+  writeRegionalHold(links, budget, ['ship', 'currency', 'area']);
+  assert.equal(links.search, '?ship=DE&currency=EUR');
+  budget.limit = null; // the shopper retyped or cleared the budget
+  assert.equal(regionalHoldBlocks(budget, 9000), false);
 });

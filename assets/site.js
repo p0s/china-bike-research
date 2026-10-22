@@ -2,10 +2,10 @@ import { normalizeMaterialSearch } from './catalog-search.js';
 import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
-import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice, countryName } from './regional-prices.js';
+import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
 import { priceDisplay, deliveredLine } from './price-display.js';
 import { clearanceParts, weightParts } from './catalog-format.js';
-import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold } from './state-utils.js';
+import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
@@ -754,7 +754,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let currencyChosen = false;
   let activeArea = '';
   let destinationReason = 'unknown';
-  let heldRegional = null; // link choices kept while the regional payload is unavailable
+  let heldRegional = null; // link choices kept while regional prices or a budget currency cannot be resolved
   const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
   const originalPriceTips = new Map(rows.map((row) => [row.dataset.id, row.querySelector('.price-cell [data-tooltip-lines]')?.dataset.tooltipLines ?? '[]']));
   if (regionalData) document.querySelector('[data-price-preferences]').hidden = false;
@@ -1401,7 +1401,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (activeType) chips.push(['type', translate(activeType === 'frameset' ? 'Frame build' : 'Complete', locale)]);
     if (activeBrand) chips.push(['brand', brandLabels.get(activeBrand) ?? activeBrand]);
     if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}${heldRegional?.destination ? ` · ${translate('not checked', locale)}` : ''}`]);
-    else if (heldRegional?.limit) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(heldRegional.limit.amount, heldRegional.limit.amount, heldRegional.limit.currency, locale)} · ${translate('not checked', locale)}`]);
+    else if (heldRegional?.limit) chips.push(['price', `${translate('Price', locale)} ≤ ${formatRequestedBudget(heldRegional.limit.amount, heldRegional.limit.currency, locale)} · ${translate('not checked', locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
@@ -1537,7 +1537,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (resultContext) resultContext.textContent = activeBrand ? ` for ${brandLabels.get(activeBrand) ?? activeBrand}` : '';
     if (filterNotice) filterNotice.textContent = (categoryFilterCleared ? ' · incompatible category filter cleared' : '')
       + (heldRegional && (heldRegional.destination || heldRegional.currency || heldRegional.limit)
-        ? ` · ${translate('Regional prices did not load, so China prices in CNY are shown. Your destination, currency and budget stay in the link; budgets are not checked until regional prices load.', locale)}` : '');
+        ? ` · ${translate(regionalData ? 'This link’s budget currency is not supported, so the budget stays in the link but is not checked.'
+          : 'Regional prices did not load, so China prices in CNY are shown. Your destination, currency and budget stay in the link; budgets are not checked until regional prices load.', locale)}` : '');
     if (empty) empty.hidden = visible !== 0;
     if (visible === 0) renderEmptySuggestions(chips);
     if (reset) reset.hidden = !hasFilters();
@@ -1575,6 +1576,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const limit = numberOrNull(requestedPrice);
     const inputCurrency = params.get('maxCurrency') || 'CNY';
     const convertedLimit = limit === null ? null : convertPrice(limit, inputCurrency, priceCurrency(), regionalData?.rates);
+    // A budget no loaded rate can convert stays in the link unresolved instead of being dropped.
+    if (regionalData && convertedLimit === null && limit !== null) heldRegional = regionalHold(params, { keys: BUDGET_KEYS });
     const legacyCapability = params.get('capability') ?? '';
     const [legacyKind, legacyThreshold] = legacyCapability.split(':');
     const requestedTire = params.get('tire') ?? (legacyKind === 'tire' ? legacyThreshold : '');
@@ -2144,6 +2147,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     next.searchParams.set('ship', activeCountry || 'unknown');
     next.searchParams.set('currency', activeCurrency);
     setParam(next, 'area', activeCountry === 'US' ? activeArea : '');
+    if (heldRegional) writeRegionalHold(next, heldRegional);
     setParam(next, 'start', startingPoint);
     setParam(next, 'diff', compareDifferences?.checked ? '1' : '');
     try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }

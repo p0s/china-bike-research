@@ -156,6 +156,16 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency === 'EUR');
           const restored = new URL(page.url()).searchParams;
           assert.deepEqual([restored.get('ship'), restored.get('max'), restored.get('maxCurrency')], ['DE', '2000', 'EUR']);
+          // A malformed budget currency stays as typed and passes no row, with or without regional prices.
+          for (const blocked of [true, false]) {
+            blockRegional = blocked;
+            await page.goto(`http://preview.invalid${prefix}/?max=2000&maxCurrency=EURO&ship=DE`, { waitUntil: 'load' });
+            await page.waitForFunction(() => document.querySelector('[data-filter-notice]')?.textContent.trim());
+            const kept = new URL(page.url()).searchParams;
+            assert.deepEqual([kept.get('max'), kept.get('maxCurrency'), kept.get('ship')], ['2000', 'EURO', 'DE'], `EURO blocked=${blocked}`);
+            assert.equal(await page.locator('[data-product-row]:not([hidden])').count(), 0, `EURO blocked=${blocked}: budget broadened`);
+          }
+          blockRegional = false;
         }
         // The model decision panel retains identity, evidence and price history.
         if ([1440, 320].includes(width)) {

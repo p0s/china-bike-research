@@ -108,6 +108,7 @@ export const de = {
   "more in China": "in China teurer",
   "Listing": "Listenpreis",
   "not checked": "nicht geprüft",
+  "This link’s budget currency is not supported, so the budget stays in the link but is not checked.": "Die Budgetwährung dieses Links wird nicht unterstützt; das Budget bleibt im Link erhalten, wird aber nicht geprüft.",
   "Historical listing": "Historisches Angebot",
   "Converted reference": "Umgerechnete Referenz",
   "Reference price": "Referenzpreis",
