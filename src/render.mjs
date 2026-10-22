@@ -1874,6 +1874,16 @@ function builderConditionalPriceNote(price) {
   return `Conditional price; enter your eligible checkout quote. ${condition} · ${formatPrice(price)} · ${price.observed_at}`;
 }
 
+/** Reference, converted, historical and conflicting prices stay visible for planning; they are not purchase inputs. */
+function builderReferencePriceNote(price) {
+  const evidence = priceEvidence(price);
+  const label = evidence.historical ? 'Historical listing' : evidence.conflict ? 'Conflicting official prices'
+    : isReferenceConversionPrice(price) ? 'Converted reference' : /range/.test(price.price_type ?? '') ? 'Reference range' : 'Reference price';
+  const original = price.original_amount && price.original_currency && price.original_currency !== 'CNY'
+    ? ` (${price.original_currency} ${Number(price.original_amount).toLocaleString('en-US')})` : '';
+  return `Reference kept for planning, not a purchase quote; enter the exact purchase price. ${label} · ${formatPrice(price)}${original} · ${price.observed_at}`;
+}
+
 function builderCandidatePrice(price) {
   if (priceEvidence(price).conditional) return {low:null, high:null, note:builderConditionalPriceNote(price)};
   const evidence = priceEvidence(price);
@@ -1906,7 +1916,7 @@ function builderBases(ctx) {
     const isComplete = product.variant.kind === 'complete-bike';
     const weight = publishedWeightFilter(product);
     const price = priceEvidence(product.latestPrice);
-    const needsQuote = price.conditional || price.starting || price.partial;
+    const needsQuote = Boolean(product.latestPrice) && !price.purchaseEligible;
     return {
       id: product.variant.id,
       name: `${product.brand.name} ${product.variant.name}`,
@@ -1916,7 +1926,7 @@ function builderBases(ctx) {
       category: categoryFamily(product.platform.category),
       priceLow: needsQuote ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
       priceHigh: needsQuote ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
-      priceNote: price.conditional ? builderConditionalPriceNote(product.latestPrice) : price.starting ? 'Starting price; enter the exact selected-package purchase quote.' : price.partial ? translate(product.latestPrice.planner_quote_note ?? 'Reference or incomplete purchase price excluded; enter the exact purchase quote.', ctx.locale) : '',
+      priceNote: price.conditional ? builderConditionalPriceNote(product.latestPrice) : price.starting ? 'Starting price; enter the exact selected-package purchase quote.' : price.partial ? translate(product.latestPrice.planner_quote_note ?? 'Reference or incomplete purchase price excluded; enter the exact purchase quote.', ctx.locale) : needsQuote ? translate(builderReferencePriceNote(product.latestPrice), ctx.locale) : '',
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'

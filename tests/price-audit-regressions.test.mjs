@@ -120,3 +120,25 @@ test('the exact-source CFR707 gravel classification permits a quote-only gravel 
  const html=renderCandidateModel(ctx,c);assert.doesNotMatch(html,/does not establish an MTB complete-build cost/);
  for(const id of ['icanian-p9','icanian-sn04'])assert.equal(base(id),undefined);
 });
+
+test('published and research planner bases treat only purchase-eligible latest prices as known inputs', () => {
+  for (const locale of ['en', 'zh-Hans', 'de']) {
+    const bases = new Map(JSON.parse(renderBikeBuilder({...ctx, locale}).match(/id="build-configurator-data">([\s\S]*?)<\/script>/)[1]).bases.map(b => [b.id, b]));
+    for (const product of ctx.products) {
+      const b = bases.get(product.variant.id), price = product.latestPrice;
+      if (!b || !price) continue;
+      if (priceEvidence(price).purchaseEligible) { assert.notEqual(b.priceLow, null, product.variant.id); continue; }
+      assert.equal(b.priceLow, null, product.variant.id + locale);
+      assert.equal(b.priceHigh, null, product.variant.id + locale);
+      const e = priceEvidence(price);
+      if (!e.starting && !e.partial) assert.ok(b.priceNote.includes(price.observed_at), `${product.variant.id} ${locale}: dated reference kept`);
+      else assert.ok(b.priceNote, `${product.variant.id} ${locale}: quote instruction kept`);
+    }
+    // Converted official-store reference: amount, original currency and date stay visible; the buyer enters the quote.
+    const graro = bases.get('ican-graro-frameset');
+    assert.ok(['¥6,023', 'USD 899', '2026-09-23'].every(part => graro.priceNote.includes(part)), locale);
+    assert.ok(bases.get('twitter-v3-2024-rs-sensah-alloy').priceNote.includes(translate('Historical listing', locale)), locale);
+    if (locale !== 'en') assert.ok(!graro.priceNote.startsWith('Reference kept'), locale);
+    assert.equal(bases.get('candidate-twitter-cyclone-gen3-7170')?.priceLow ?? null, null);
+  }
+});
