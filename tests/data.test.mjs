@@ -44,6 +44,34 @@ test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
 
+test('record links rendered as href values must use web schemes', () => {
+  for (const scheme of ['javascript:alert(1)', 'data:text/html,x', 'vbscript:x']) {
+    const copy = structuredClone(data);
+    const source = copy.sources.find((item) => item.url);
+    const brand = copy.brands.find((item) => item.website);
+    source.url = scheme;
+    brand.website = scheme;
+    const errors = validateDataset(copy);
+    assert.ok(errors.includes(`source ${source.id}: URL must use http or https`), scheme);
+    assert.ok(errors.includes(`brand ${brand.id}: website must be an http(s) URL`), scheme);
+  }
+});
+
+test('sourced image derivatives must match their recorded digest and size', () => {
+  const copy = structuredClone(data);
+  const image = copy.images.find((item) => item.hosting?.variants?.length === 2 && item.hosting.variants.every((variant) => variant.url?.startsWith('/assets/images/sourced/')));
+  const [card, detail] = image.hosting.variants;
+  card.sha256 = '0'.repeat(64);
+  detail.bytes += 1;
+  const errors = validateDataset(copy);
+  assert.ok(errors.includes(`image ${image.id}: sourced variant ${card.url} bytes do not match its recorded digest`));
+  assert.ok(errors.includes(`image ${image.id}: sourced variant ${detail.url} bytes do not match its recorded digest`));
+  const groupsets = structuredClone(data);
+  const groupset = groupsets.groupsets.find((item) => item.image?.variants?.length === 2);
+  groupset.image.variants[0].sha256 = 'f'.repeat(64);
+  assert.ok(validateDataset(groupsets).includes(`groupset ${groupset.id}: ${groupset.image.variants[0].purpose} variant bytes do not match its recorded digest`));
+});
+
 test('verified Chinese brand renderings remain source-faithful', () => {
   const names = Object.fromEntries(data.brands.map((brand) => [brand.id, brand.name_zh]));
   assert.deepEqual(

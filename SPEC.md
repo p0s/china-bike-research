@@ -126,7 +126,7 @@ Use `data/candidates/` when a promising product lacks enough evidence. A candida
 - An exact-variant frame compatibility fact such as a bottom-bracket label may live on the variant when evidence identifies only that build; keep the shared platform field unknown until the value is supported across that platform.
 - `prices/`: dated observations; never timeless product properties.
 - A foreign seller listing may be recorded as a dated candidate FX reference only with its original amount, currency, conversion rate, and market/package caveats; render it as a foreign seller estimate and never treat it as a mainland observed price.
-- `sources/`: source identity, date, reliability, and supported claims.
+- `sources/`: source identity, date, reliability, and supported claims. Source URLs and brand websites become links, so validation accepts only `http:` or `https:` schemes.
 - `images/`: subject accuracy, source, rights status, credit, and compatibility metadata for historical fallbacks; buyer-facing failure behavior is omission.
 - `videos/`: exact model/platform or candidate mapping, channel provenance, editorial format, commercial context, and privacy-safe embed identity.
 - `groupsets/`: compact evidence-backed references for recurring drivetrain families, their variants, package boundaries, compatibility, weights, batteries, price status, and caveats.
@@ -206,7 +206,7 @@ A later retry of an extended-campaign field must link a `campaign_extension` to 
 - Every image record targets exactly one published platform or one candidate. A candidate image may identify the model without promoting the candidate or resolving its missing publication evidence.
 - Never commit raw third-party image files or unreviewed gallery mirrors. Historical project-owned placeholder assets may remain in Git for data compatibility, but buyer-facing pages do not render them. A Git-hosted sourced derivative is allowed only through the exact path, size, privacy, source-link, attribution, removal-route, and validation contract above.
 - Never present another configuration as exact.
-- Dataset validation requires every displayed local image and responsive variant to exist. Release verification checks the Cloudflare-served assets and content types. Historical source-host failures do not affect buyer-facing delivery because displayed images are local.
+- Dataset validation requires every displayed local image and responsive variant to exist and to match its recorded SHA-256 digest, byte count and content-addressed file name. Release verification checks the Cloudflare-served assets and content types. Historical source-host failures do not affect buyer-facing delivery because displayed images are local.
 - Historical dated image-health checks remain provenance only. They do not establish model exactness, image rights, attribution, or future availability.
 - YouTube videos use a validated video ID and a `youtube-nocookie.com` iframe. Model players load lazily and may contact YouTube on page load or as the iframe approaches view. Article players contact YouTube only after intentional activation. The external YouTube link remains available as a fallback, and no player autoplays.
 - XHS video records retain validated canonical post IDs and immutable capture-archive digests for research, but are neither linked nor embedded on model pages, never rehosted, and never include captured signed stream URLs.

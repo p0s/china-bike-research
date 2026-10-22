@@ -1,4 +1,5 @@
 import { isCalendarDate as isDate } from './calendar-date.mjs';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
@@ -239,6 +240,21 @@ export function resetDatasetCache() { cache = undefined; }
 
 /** @param {unknown} value */
 function isObject(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }
+// Record links become `href` values on every page; script or data schemes never qualify.
+function isWebUrl(value) {
+  try { return ['https:', 'http:'].includes(new URL(value).protocol); } catch { return false; }
+}
+const derivativeDigests = new Map();
+/** Content-addressed derivatives must still contain the reviewed bytes their record describes. */
+function derivativeContentMismatch(variant) {
+  const file = path.join(root, String(variant?.url ?? '').replace(/^\//, ''));
+  let stats;
+  try { stats = fs.statSync(file); } catch { return false; } // Missing files have their own error.
+  const key = `${file}:${stats.size}:${stats.mtimeMs}`;
+  if (!derivativeDigests.has(key)) derivativeDigests.set(key, crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'));
+  const digest = derivativeDigests.get(key);
+  return digest !== variant.sha256 || stats.size !== variant.bytes || !path.basename(file).startsWith(`${digest.slice(0, 16)}-`);
+}
 /** @param {unknown} value */
 /** @param {unknown} value */
 function isId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]*$/.test(value); }
@@ -375,6 +391,7 @@ export function validateDataset(data = loadDataset()) {
               || !Number.isInteger(variant.bytes) || variant.bytes < 1 || variant.bytes > byteLimit
               || !Number.isInteger(variant.width) || variant.width < 1 || variant.width > widthLimit
               || !/^[a-f0-9]{64}$/.test(variant.sha256 ?? '') || variant.format !== 'image/webp') errors.push(`groupset ${groupset.id}: invalid local ${variant.purpose ?? 'unknown'} variant`);
+            else if (derivativeContentMismatch(variant)) errors.push(`groupset ${groupset.id}: ${variant.purpose} variant bytes do not match its recorded digest`);
           }
           if (image.rights?.status !== 'source-attributed-rehost' || image.privacy_review?.embedded_metadata !== 'stripped') errors.push(`groupset ${groupset.id}: incomplete local image review`);
           if (!image.source_media_url?.startsWith('https://') || !/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '')) errors.push(`groupset ${groupset.id}: missing source media provenance`);
@@ -458,6 +475,7 @@ export function validateDataset(data = loadDataset()) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);
     if (!isObject(brand.manufacturing)) errors.push(`brand ${brand.id}: manufacturing must be an object`);
     if (!isDate(brand.last_reviewed)) errors.push(`brand ${brand.id}: invalid last_reviewed`);
+    if (brand.website !== undefined && !isWebUrl(brand.website)) errors.push(`brand ${brand.id}: website must be an http(s) URL`);
   }
 
   for (const platform of data.platforms) {
@@ -555,6 +573,7 @@ export function validateDataset(data = loadDataset()) {
     if (source.url) {
       try {
         const parsed = new URL(source.url);
+        if (!isWebUrl(source.url)) errors.push(`source ${source.id}: URL must use http or https`);
         const privacyError = publicSourceUrlPrivacyError(parsed);
         if (privacyError) errors.push(`source ${source.id}: ${privacyError}`);
       } catch { errors.push(`source ${source.id}: invalid URL`); }
@@ -861,6 +880,7 @@ export function validateDataset(data = loadDataset()) {
             if (variant?.format !== 'image/webp') errors.push(`image ${image.id}: sourced variants must be WebP`);
             if (!/^[a-f0-9]{64}$/.test(variant?.sha256 ?? '')) errors.push(`image ${image.id}: sourced variant needs a SHA-256 digest`);
             if (match && !fs.existsSync(path.join(root, variant.url.replace(/^\//, '')))) errors.push(`image ${image.id}: missing sourced variant ${variant.url}`);
+            else if (match && /^[a-f0-9]{64}$/.test(variant?.sha256 ?? '') && derivativeContentMismatch(variant)) errors.push(`image ${image.id}: sourced variant ${variant.url} bytes do not match its recorded digest`);
           }
           if (purposes.size !== 2 || !purposes.has('card') || !purposes.has('detail')) errors.push(`image ${image.id}: sourced rehost needs one card and one detail variant`);
           const detail = variants.find((variant) => variant.purpose === 'detail');
