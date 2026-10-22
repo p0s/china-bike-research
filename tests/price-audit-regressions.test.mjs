@@ -142,3 +142,19 @@ test('published and research planner bases treat only purchase-eligible latest p
     assert.equal(bases.get('candidate-twitter-cyclone-gen3-7170')?.priceLow ?? null, null);
   }
 });
+
+test('planner subtotal, completeness and purchase-quote statuses are localized with numbers and unknowns intact', () => {
+  for (const [english, chinese] of [
+    ['¥4,518 known + 10 unknown', '¥4,518 已知 + 10 项未知'],
+    ['¥4,518 base / known deltas + 3 unknown', '¥4,518 基础价／已知差额 + 3 项未知'],
+    ['Complete price needs 10 more inputs; complete weight needs 6 more inputs.', '整车价格还需 10 项输入；整车重量还需 6 项输入。'],
+    ['Purchase total needs 1 more input; projected weight needs 1 more input.', '购买总价还需 1 项输入；预计重量还需 1 项输入。'],
+    ['Included in Shimano 105 R7170; not counted again.', '已包含在 Shimano 105 R7170 中，不重复计算。'],
+  ]) assert.equal(translate(english, 'zh-Hans'), chinese);
+  const english = ['Exact purchase price needed.', 'Converted reference price excluded; enter the exact purchase price.', 'Conflicting official prices excluded; enter the exact purchase price.'];
+  for (const locale of ['zh-Hans', 'de']) {
+    for (const note of english) assert.notEqual(translate(note, locale), note, `${locale}: ${note}`);
+    const notes = JSON.parse(renderBikeBuilder({...ctx, locale}).match(/id="build-configurator-data">([\s\S]*?)<\/script>/)[1]).bases.map(b => b.priceNote);
+    assert.ok(notes.every(note => !english.includes(note)), locale);
+  }
+});
