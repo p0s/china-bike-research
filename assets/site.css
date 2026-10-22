@@ -1277,6 +1277,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .model-summary { padding: 16px; }
   .model-summary .model-facts > div { grid-template-columns: 104px minmax(0, 1fr); }
 }
-.model-summary .model-price { grid-template-columns: max-content auto minmax(0, 1fr); align-items: center; column-gap: 6px; }
+/* The headline may wrap on phones; its note always takes the full row below. */
+.model-summary .model-price { grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr); align-items: center; column-gap: 6px; }
+.model-summary .model-price strong { overflow-wrap: break-word; }
 .model-summary .model-price > .tooltip { position: relative; }
-.model-summary .model-price .price-state, .model-summary .model-price-links { grid-column: 1 / -1; }
+.model-summary .model-price .price-state, .model-summary .model-price-links, .model-summary .model-price > span:last-child:not(.tooltip) { grid-column: 1 / -1; }

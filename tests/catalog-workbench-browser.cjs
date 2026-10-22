@@ -164,6 +164,9 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           assert.equal(await page.locator('h1').count(), 1);
           assert.ok(await page.locator('#source-records').count());
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+          // A long unknown-price headline wraps instead of widening the page.
+          await page.goto(`http://preview.invalid${prefix}/models/twitter-cyclone-gen3-7170/`, { waitUntil: 'load' });
+          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'candidate price headline overflow');
           if (locale === 'en' && width === 1440 && theme === 'light') await page.screenshot({ path: path.join(reports, 'model-desktop.png') });
         }
         assert.deepEqual(errors, [], name);
