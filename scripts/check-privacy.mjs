@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-640.webp', '6ca7d9713621d945dd8f4fc412a0c3f142ac7ce7ea2dd2e7c34da9701dd5d1d9'],
+  ['assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-1600.webp', 'f0a8e652854459a600b62b4a94055afd41e2885b4a7e350c1880e17730252102'],
+  ['assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-1200.jpg', '211746d4a160b4fc571047c7fdfab042dfb66e06a27916037690769c26760d29'],
   ['assets/blog/frame-paint-finish-inspection-mascot-cover-2fbf26cf2d-640.webp', 'c3e1e0da7edc624643858983151274becc6d3d0b3bb3f182c1ba4fcb24500a91'],
   ['assets/blog/frame-paint-finish-inspection-mascot-cover-2fbf26cf2d-1600.webp', 'bb1eb903dd2df472da150dd1cf2505210df3b956c030f03097e1924846f36aae'],
   ['assets/blog/frame-paint-finish-inspection-mascot-cover-2fbf26cf2d-1200.jpg', 'c6a37bc27fb412fd8876283567d306b483608d76dad765f7a580e8d5af9a7bbe'],

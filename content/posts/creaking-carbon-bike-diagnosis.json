@@ -3,7 +3,7 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 83,
-  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "image_id": "creaking-carbon-bike-diagnosis-unique-mascot-cover",
   "datePublished": "2026-10-04",
   "dateModified": "2026-10-04",
   "researched_at": "2026-10-04",
@@ -15,7 +15,8 @@
     "ican-graro-official-2026-08-27"
   ],
   "editorial_references": [
-    "https://www.trekbikes.com/ca/en_CA/carbon_care/"
+    "https://www.trekbikes.com/ca/en_CA/carbon_care/",
+    "https://www.parktool.com/en-int/blog/repair-help/troubleshooting-a-noisy-drivetrain"
   ],
   "photo_sections": [
     {
@@ -42,7 +43,8 @@
           "id": "notes",
           "heading": "Describe a pattern without provoking a failure",
           "paragraphs": [
-            "For a [GRARO build](/models/ican-graro-frameset/), note when the sound was first noticed and any recent wheel, pedal, seatpost or drivetrain work. Record observations from normal safe use; do not ride harder to reproduce a worrying fault. Keep a short audio/video if it can be obtained safely."
+            "For a [GRARO build](/models/ican-graro-frameset/), note when the sound was first noticed and any recent wheel, pedal, seatpost or drivetrain work. Record observations from normal safe use; do not ride harder to reproduce a worrying fault. Keep a short audio/video if it can be obtained safely.",
+            "Suppose the noise was present while seated and absent after standing. That makes the saddle and seatpost worth including in the inspection, but standing also changes how the bike is loaded. Write down the change; do not order a seatpost from that clue alone. [Park Tool’s diagnosis guide](https://www.parktool.com/en-int/blog/repair-help/troubleshooting-a-noisy-drivetrain) also separates noises by the conditions in which they occur, rather than treating every pedalling creak as a bottom-bracket fault."
           ],
           "worksheet": {
             "caption": "Clues to tell the workshop",
@@ -78,28 +80,30 @@
           "id": "diagnose",
           "heading": "Change one thing and verify the result",
           "paragraphs": [
-            "Have the workshop inspect the relevant interfaces and use the exact component procedures. Randomly tightening every bolt or spraying lubricant everywhere can add damage, contaminate brakes and erase clues. Record the confirmed cause and correction, then verify reliable function. If the cause remains unknown, keep it unresolved rather than turning a quiet test into a diagnosis."
+            "Have the workshop inspect the relevant interfaces and use the exact component procedures. Randomly tightening every bolt or spraying lubricant everywhere can add damage, contaminate brakes and erase clues. Record the confirmed cause and correction, then verify reliable function. If the cause remains unknown, keep it unresolved rather than turning a quiet test into a diagnosis.",
+            "Give the workshop the pattern, recent work and any impact history before agreeing to a replacement. The [local-shop enquiry guide](/blog/local-bike-shop-for-imported-frame/) helps define the inspection scope. If a bottom bracket is eventually implicated, the [bottom-bracket interface guide](/blog/threaded-vs-pressfit-bottom-brackets/) explains why the exact shell and assembly still matter; it does not diagnose the sound."
           ]
         }
       ]
     },
     "zh-Hans": {
       "title": "碳车异响：给技师线索，不先下结论",
-      "description": "记录异响发生条件，安全疑虑先停骑，经过受控车店诊断再归咎五通。",
-      "intro": "声音听起来像来自中轴，但沿着整辆车传来的声音并不是可靠的证人。有效诊断应该从“什么时候响”开始，而不是先决定换掉哪个昂贵零件。",
+      "description": "记录碳纤维自行车异响出现的条件，有安全疑虑先停骑，再让车店逐项排查，避免凭声音就换中轴。",
+      "intro": "声音听起来像从中轴传来，但声音会沿车身传播，听到的位置未必就是故障位置。有效排查应从“什么时候响”开始，再决定需要检查或更换什么零件。",
       "sections": [
         {
           "id": "stop",
           "heading": "先分清声音与安全疑虑",
           "paragraphs": [
-            "疑似结构损伤、转向或轮组异常松旷、松件或不可靠刹车时停骑。撞击后即使间歇异响，也要评估。[Trek碳纤指导](https://www.trekbikes.com/ca/en_CA/carbon_care/)提醒有些损伤不可见，远程凭异响不能证明或排除碳纤损伤。"
+            "疑似结构损伤、转向或轮组异常松旷、零件松动或刹车不可靠时，应停止骑行。撞击后出现异常，即使异响时有时无，也应先检查。[Trek的碳纤维使用指导](https://www.trekbikes.com/ca/en_CA/carbon_care/)提醒，有些损伤无法从外观看出。远程听一段异响，不能证明或排除碳纤维损伤。"
           ]
         },
         {
           "id": "notes",
-          "heading": "描述规律，不刻意制造失效",
+          "heading": "描述规律，不刻意复现危险故障",
           "paragraphs": [
-            "[GRARO装车](/models/ican-graro-frameset/)记首次察觉时间及最近轮组、脚踏、座管、传动工作。只记录正常安全使用观察，不为复现危险故障加大骑行强度；安全能拍时留短音视频。"
+            "以[GRARO装车](/zh/models/ican-graro-frameset/)为例，记下第一次察觉异响的时间，以及最近对轮组、脚踏、座管或传动部件做过什么。只记录正常、安全使用中已经观察到的情况，不要为复现可疑故障而加大骑行强度。只有在安全的情况下，才保留简短录音或视频。",
+            "假设坐姿骑行时有异响，站起来后消失，这会让车店把坐垫和座管列入检查范围，但站姿也改变了整车的受力。应记录这一变化，不要仅凭这条线索就订购座管。[Park Tool的异响排查指南](https://www.parktool.com/en-int/blog/repair-help/troubleshooting-a-noisy-drivetrain)也按异响发生的条件逐步缩小范围，而不是把所有踩踏异响都归咎于中轴。"
           ],
           "worksheet": {
             "caption": "给车店的线索",
@@ -135,28 +139,30 @@
           "id": "diagnose",
           "heading": "每次改变一项，再验证",
           "paragraphs": [
-            "让车店检查相关接触面，使用具体部件步骤。随便紧所有螺栓或到处喷油，可能新增损伤、污染刹车、抹掉线索。记录确认原因与修正，验证可靠功能。原因未知就保留未解决，不能把一次安静测试当诊断。"
+            "让车店按具体部件的要求检查相关接合部位。随意拧紧所有螺栓，或到处喷润滑剂，可能造成新损伤、污染刹车，并抹去原有线索。记录查明的原因和修正措施，再确认功能可靠。原因还不清楚时，应继续标记为未解决，不能把一次没有响声的测试当作诊断结论。",
+            "同意更换零件前，先把异响规律、近期维修和撞击经历交给车店。[进口车架车店沟通指南](/zh/blog/local-bike-shop-for-imported-frame/)可帮助约定检查范围。若最终查明问题涉及中轴，[螺纹与压入式中轴指南](/zh/blog/threaded-vs-pressfit-bottom-brackets/)解释了为什么仍须确认具体五通和装配方式；它本身不能诊断异响。"
           ]
         }
       ]
     },
     "de": {
       "title": "Knarrendes Carbonrad: Hinweise statt Vorabdiagnose liefern",
-      "description": "Notiere Bedingungen, stoppe bei Sicherheitsverdacht und lass gezielt prüfen statt sofort das Innenlager zu beschuldigen.",
-      "intro": "Das Geräusch scheint vom Innenlager zu kommen. Durch das Rad übertragener Schall ist ein schlechter Zeuge. Eine hilfreiche Diagnose beginnt mit dem Zeitpunkt, nicht dem bereits ausgewählten teuren Ersatzteil.",
+      "description": "Notiere, wann das Carbonrad knarrt, fahre bei Sicherheitsbedenken nicht weiter und lass die Ursache gezielt prüfen, bevor du das Innenlager ersetzt.",
+      "intro": "Das Geräusch scheint vom Innenlager zu kommen. Doch Schall überträgt sich durch das Rad; der hörbare Ort muss nicht die Ursache sein. Eine hilfreiche Diagnose beginnt damit, wann das Geräusch auftritt, bevor ein teures Ersatzteil ausgewählt wird.",
       "sections": [
         {
           "id": "stop",
           "heading": "Zuerst Geräusch und Sicherheitsverdacht trennen",
           "paragraphs": [
-            "Bei Strukturverdacht, Lenk-/Radspiel, losen Teilen oder unsicherer Bremse nicht weiterfahren. Nach Aufprall auch intermittierende Geräusche prüfen lassen. [Treks Carbonhinweise](https://www.trekbikes.com/ca/en_CA/carbon_care/) nennen verdeckte Schäden. Ein Geräusch beweist oder widerlegt aus der Ferne keinen Carbonschaden."
+            "Bei Verdacht auf Strukturschäden, Spiel an Lenkung oder Rädern, losen Teilen oder unzuverlässigen Bremsen nicht weiterfahren. Auffälligkeiten nach einem Aufprall müssen auch dann geprüft werden, wenn das Geräusch nur gelegentlich auftritt. [Treks Hinweise zu Carbon](https://www.trekbikes.com/ca/en_CA/carbon_care/) erklären, dass Schäden verborgen bleiben können. Aus der Ferne lässt sich ein Carbonschaden anhand eines Geräuschs weder bestätigen noch ausschließen."
           ]
         },
         {
           "id": "notes",
           "heading": "Muster beschreiben, ohne einen Fehler zu provozieren",
           "paragraphs": [
-            "Notiere am [GRARO](/models/ican-graro-frameset/) Beginn und jüngste Arbeiten an Rad, Pedal, Stütze oder Antrieb. Nur sichere Alltagsbeobachtungen festhalten, keinen besorgniserregenden Fehler durch stärkere Belastung erzwingen. Kurzen Clip nur sicher aufnehmen."
+            "Notiere bei einem [GRARO-Aufbau](/de/models/ican-graro-frameset/), wann das Geräusch erstmals auffiel und welche Arbeiten zuletzt an Laufrädern, Pedalen, Sattelstütze oder Antrieb stattfanden. Halte nur Beobachtungen aus sicherer, normaler Nutzung fest. Erzwinge einen besorgniserregenden Fehler nicht durch stärkere Belastung. Nimm einen kurzen Clip nur auf, wenn das sicher möglich ist.",
+            "Angenommen, das Geräusch tritt im Sitzen auf und verschwindet im Stehen. Dann gehören Sattel und Sattelstütze in die Prüfung, doch im Stehen ändert sich auch die Belastung des übrigen Rads. Notiere die Änderung; bestelle aufgrund dieses Hinweises allein keine Sattelstütze. Auch [Park Tools Diagnosehilfe](https://www.parktool.com/en-int/blog/repair-help/troubleshooting-a-noisy-drivetrain) grenzt Geräusche anhand ihrer Bedingungen ein, statt jedes Knarren beim Treten dem Innenlager zuzuordnen."
           ],
           "worksheet": {
             "caption": "Hinweise für die Werkstatt",
@@ -192,7 +198,8 @@
           "id": "diagnose",
           "heading": "Gezielt ändern und Ergebnis prüfen",
           "paragraphs": [
-            "Die Werkstatt prüft relevante Kontakte nach Bauteilvorgabe. Wahlloses Nachziehen oder Einsprühen kann Schäden, Bremsverschmutzung und verlorene Hinweise schaffen. Ursache und Korrektur dokumentieren, Funktion prüfen. Bleibt die Ursache offen, ist ein ruhiger Test noch keine Diagnose."
+            "Lass die Werkstatt die betreffenden Verbindungen nach den Vorgaben der konkreten Bauteile prüfen. Wahlloses Nachziehen oder Einsprühen kann Schäden verursachen, Bremsen verunreinigen und Hinweise verwischen. Dokumentiere die festgestellte Ursache und die Korrektur; anschließend muss die Funktion zuverlässig sein. Bleibt die Ursache offen, ist eine einzelne ruhige Prüfung noch keine Diagnose.",
+            "Gib der Werkstatt das Muster, die jüngsten Arbeiten und mögliche Aufprallereignisse mit, bevor du einem Austausch zustimmst. Der [Ratgeber zur Werkstattanfrage](/de/blog/local-bike-shop-for-imported-frame/) hilft beim Vereinbaren des Prüfumfangs. Wird das Innenlager als Ursache eingegrenzt, erklärt der [Ratgeber zu Gewinde- und Pressfit-Innenlagern](/de/blog/threaded-vs-pressfit-bottom-brackets/), warum das genaue Gehäuse und die Montage weiter entscheidend sind; er diagnostiziert das Geräusch nicht."
           ]
         }
       ]
