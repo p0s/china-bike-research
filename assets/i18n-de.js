@@ -107,6 +107,8 @@ export const de = {
   "less in China": "in China günstiger",
   "more in China": "in China teurer",
   "Listing": "Listenpreis",
+  "not checked": "nicht geprüft",
+  "Regional prices did not load, so China prices in CNY are shown. Your destination, currency and budget stay in the link; budgets are not checked until regional prices load.": "Regionale Preise wurden nicht geladen, daher werden China-Preise in CNY angezeigt. Lieferziel, Währung und Budget bleiben im Link erhalten; Budgets werden erst nach dem Laden regionaler Preise geprüft.",
   "Delivery policy": "Versandbedingungen",
   "Contiguous US only": "Nur zusammenhängende 48 US-Staaten",
   "Standard addresses only": "Nur reguläre Lieferadressen",

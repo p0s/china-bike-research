@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { numberOrNull, numericInput, normalizeSelection, compareNumbers, restoreBuildState, COMPARISON_SELECTION_LIMIT } from '../assets/state-utils.js';
+import { numberOrNull, numericInput, normalizeSelection, compareNumbers, restoreBuildState, COMPARISON_SELECTION_LIMIT, regionalHold, regionalHoldBlocks, writeRegionalHold } from '../assets/state-utils.js';
 const data = {
   bases: [{ id: 'frame-a', kind: 'frameset' }, { id: 'bike-b', kind: 'complete-bike' }],
   slots: ['drivetrain', 'wheelset'],
@@ -92,4 +92,49 @@ test('legacy frame URLs and drafts retain the unavailable requested identity', (
     assert.equal(result.requestedBaseId, 'removed-base');
     assert.equal(result.unavailableStartingPoint, true);
   }
+});
+
+test('a failed regional payload keeps an explicit foreign budget and destination instead of broadening results', () => {
+  const link = 'max=2000&maxCurrency=EUR&ship=DE&compare=bike-a,bike-b';
+  const hold = regionalHold(new URLSearchParams(link), { destination: true, country: 'DE' });
+  assert.deepEqual(hold.limit, { amount: 2000, currency: 'EUR' });
+  assert.equal(regionalHoldBlocks(hold), true); // unresolved delivered totals never pass the budget
+  // The fallback writer would otherwise canonicalize to China/CNY and drop the ceiling.
+  const url = new URL('https://example.test/?compare=bike-a%2Cbike-b&ship=CN&currency=CNY');
+  writeRegionalHold(url, hold);
+  assert.equal(url.searchParams.get('ship'), 'DE');
+  assert.equal(url.searchParams.get('currency'), null);
+  assert.equal(url.searchParams.get('max'), '2000');
+  assert.equal(url.searchParams.get('maxCurrency'), 'EUR');
+  assert.equal(url.searchParams.get('compare'), 'bike-a,bike-b');
+  // Reload and history read the same link back to the same hold.
+  assert.deepEqual(regionalHold(url.searchParams, { destination: true, country: 'DE' }), { ...hold, kept: hold.kept.filter(([key]) => key !== 'compare') });
+});
+
+test('regional holds release only on explicit budget or listing changes', () => {
+  const hold = regionalHold(new URLSearchParams('ship=US&area=remote&currency=USD&max=900&maxCurrency=USD&listing=1'), { destination: true, country: 'US' });
+  assert.equal(hold.listing, true);
+  hold.limit = null; // the shopper removed or retyped the budget
+  assert.equal(regionalHoldBlocks(hold, null), true); // listing is still unresolved
+  hold.listing = false;
+  assert.equal(regionalHoldBlocks(hold, null), false);
+  assert.equal(regionalHoldBlocks(hold, 5000), true); // a typed CNY budget cannot be checked against a foreign delivery
+  const url = new URL('https://example.test/?ship=CN&currency=CNY&max=5000&maxCurrency=CNY&listing=1');
+  writeRegionalHold(url, hold);
+  assert.deepEqual([...url.searchParams], [['max', '5000'], ['maxCurrency', 'CNY'], ['listing', '1'], ['ship', 'US'], ['currency', 'USD'], ['area', 'remote']]);
+  const links = new URL('https://example.test/models/x/?ship=CN&currency=CNY&build=1');
+  writeRegionalHold(links, hold, ['ship', 'currency', 'area']);
+  assert.equal(links.search, '?build=1&ship=US&currency=USD&area=remote');
+});
+
+test('China CNY budgets still apply offline; links without regional choices gain none', () => {
+  const china = regionalHold(new URLSearchParams('ship=CN&max=8000&maxCurrency=CNY'));
+  assert.equal(china.limit, null);
+  assert.equal(regionalHoldBlocks(china, 8000), false);
+  const plain = new URL('https://example.test/?q=gravel&ship=CN&currency=CNY');
+  writeRegionalHold(plain, regionalHold(new URLSearchParams('q=gravel')));
+  assert.equal(plain.search, '?q=gravel');
+  const eurOnly = regionalHold(new URLSearchParams('max=500&maxCurrency=EUR'));
+  assert.deepEqual(eurOnly.limit, { amount: 500, currency: 'EUR' });
+  assert.equal(regionalHoldBlocks(eurOnly), true);
 });

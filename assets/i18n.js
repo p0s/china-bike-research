@@ -111,6 +111,8 @@ export const zh = {
   'less in China':'中国市场更便宜',
   'more in China':'中国市场更贵',
   'Listing':'商品标价',
+  'not checked':'未核对',
+  'Regional prices did not load, so China prices in CNY are shown. Your destination, currency and budget stay in the link; budgets are not checked until regional prices load.':'地区价格未能加载，因此显示以人民币计的中国价格。你的目的地、币种和预算仍保留在链接中；地区价格加载前不会核对预算。',
   'Delivery policy':'配送政策',
   'Contiguous US only':'仅限美国本土相连的48州',
   'Standard addresses only':'仅限常规配送地址',

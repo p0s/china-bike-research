@@ -105,3 +105,34 @@ export function bindHistoryInput(input, update) {
   input.addEventListener('blur', () => { editing = false; });
   addEventListener('popstate', () => { editing = false; });
 }
+
+const REGIONAL_KEYS = ['ship', 'market', 'currency', 'area', 'listing', 'max', 'maxCurrency'];
+
+/**
+ * Without the regional payload only China CNY prices are known. Keep the link's own delivery
+ * choices instead of rewriting them to China, and mark budgets and listings that cannot be resolved.
+ */
+export function regionalHold(params, { destination = false, country = '' } = {}) {
+  const amount = numberOrNull(params.get('max') ?? '');
+  const limitCurrency = params.get('maxCurrency') || 'CNY';
+  return {
+    kept: REGIONAL_KEYS.filter((key) => params.has(key)).map((key) => [key, params.get(key)]),
+    destination, country,
+    currency: params.has('currency') && params.get('currency') !== 'CNY',
+    limit: amount !== null && (destination || limitCurrency !== 'CNY') ? { amount, currency: limitCurrency } : null,
+    listing: destination && params.get('listing') === '1',
+  };
+}
+
+/** A held budget or listing never passes a row: its delivered total is not known yet. */
+export function regionalHoldBlocks(hold, typedLimit = null) {
+  return Boolean(hold && (hold.limit || hold.listing || (hold.destination && typedLimit !== null)));
+}
+
+/** Write the held choices back exactly; a released budget is left to the visible input. */
+export function writeRegionalHold(url, hold, keys = REGIONAL_KEYS) {
+  const held = (key) => keys.includes(key) && (hold.limit || !['max', 'maxCurrency'].includes(key))
+    && (hold.listing || key !== 'listing');
+  REGIONAL_KEYS.filter(held).forEach((key) => url.searchParams.delete(key));
+  hold.kept.filter(([key]) => held(key)).forEach(([key, value]) => url.searchParams.set(key, value));
+}

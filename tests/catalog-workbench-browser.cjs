@@ -16,9 +16,11 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
   try {
     for (const locale of ['en', 'zh', 'de']) for (const width of [1440, 1024, 768, 390, 320]) for (const theme of ['light', 'dark']) {
       const context = await browser.newContext({ viewport: { width, height: width > 1000 ? 900 : 844 }, colorScheme: theme });
+      let blockRegional = false;
       await context.route('**/*', route => {
         const url = new URL(route.request().url());
         if (url.hostname !== 'preview.invalid') return route.abort();
+        if (blockRegional && url.pathname === '/data/regional-prices.json') return route.abort();
         let file = path.resolve(site, '.' + decodeURIComponent(url.pathname));
         if (!file.startsWith(site + path.sep) && file !== site) return route.abort();
         if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
@@ -129,6 +131,31 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           await page.waitForFunction(() => !document.querySelector('[data-compare-differences]').checked);
           assert.equal(new URL(page.url()).searchParams.get('compare'), movedComparison);
           assert.equal(new URL(page.url()).searchParams.has('start'), false);
+        }
+        // A failed regional payload keeps an explicit foreign budget and destination through reload and history.
+        if (width === 390 && theme === 'light') {
+          const held = 'max=2000&maxCurrency=EUR&ship=DE&compare=twitter-v3-wheeltop-eds,incolor-speedster-sr-frameset';
+          const expectHeld = async (label) => {
+            await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.regionalPrices === 'unavailable');
+            const kept = new URL(page.url()).searchParams;
+            for (const [key, value] of new URLSearchParams(held)) assert.equal(kept.get(key), value, `${label}: ${key}`);
+            assert.equal(await page.locator('[data-product-row]:not([hidden])').count(), 0, `${label}: unresolved totals pass a budget`);
+            assert.ok((await page.locator('[data-filter-notice]').textContent()).trim(), `${label}: no regional notice`);
+          };
+          blockRegional = true;
+          await page.goto(`http://preview.invalid${prefix}/?${held}`, { waitUntil: 'load' });
+          await expectHeld('initial');
+          await page.locator('.family-chips [data-category-value="family:gravel"]').click();
+          assert.equal(new URL(page.url()).searchParams.get('ship'), 'DE');
+          await page.goBack();
+          await expectHeld('back');
+          await page.reload({ waitUntil: 'load' });
+          await expectHeld('reload');
+          blockRegional = false;
+          await page.goto(`http://preview.invalid${prefix}/?${held}`, { waitUntil: 'load' });
+          await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency === 'EUR');
+          const restored = new URL(page.url()).searchParams;
+          assert.deepEqual([restored.get('ship'), restored.get('max'), restored.get('maxCurrency')], ['DE', '2000', 'EUR']);
         }
         // The model decision panel retains identity, evidence and price history.
         if ([1440, 320].includes(width)) {
