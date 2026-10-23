@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/eu-bike-price-vat-shipping-worksheet-mascot-cover-a0539bd823-640.webp', '912027ce82ee6dd8e9847ae610c033c3844af4d847aad0687a797db3742495e5'],
+  ['assets/blog/eu-bike-price-vat-shipping-worksheet-mascot-cover-a0539bd823-1600.webp', '6ceee95feb41de3730ebf2089c5cefe5686c814bdd66dec0580648f70b3985a5'],
+  ['assets/blog/eu-bike-price-vat-shipping-worksheet-mascot-cover-a0539bd823-1200.jpg', '1fff1daeeca9709f133c0dddeecf3ce74379fe9021f31cecd02b90bf32a6c748'],
   ['assets/blog/yearly-service-budget-carbon-bike-mascot-cover-8bd1b60934-640.webp', 'e6c6947fb321f53f9a7eb00844e7982c82b992fff444a37cdeb48ac7f5368922'],
   ['assets/blog/yearly-service-budget-carbon-bike-mascot-cover-8bd1b60934-1600.webp', 'd0c38f5c198af471e1487a72422aeb80a93e2a800e9be67484c554b04f928f48'],
   ['assets/blog/yearly-service-budget-carbon-bike-mascot-cover-8bd1b60934-1200.jpg', '80de96009066b710201861c948587ee184840e20114c361c43cf5f543f616512'],
