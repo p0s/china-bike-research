@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/ddp-vs-dap-bike-delivery-mascot-cover-e0169132e4-640.webp', '9746b9c8ec9d077e2a1b3ac73a8b5fd8c44e17e82205da8632250676f4489ae7'],
+  ['assets/blog/ddp-vs-dap-bike-delivery-mascot-cover-e0169132e4-1600.webp', 'dd14d8f31762d64d78395dc9b92a7654ff264cf30179569757659967a0729e26'],
+  ['assets/blog/ddp-vs-dap-bike-delivery-mascot-cover-e0169132e4-1200.jpg', '276ea5f79f09879eac3b5b0f811ba690c013f5495bf171875f0bcaf42c2764ac'],
   ['assets/blog/eu-bike-price-vat-shipping-worksheet-mascot-cover-a0539bd823-640.webp', '912027ce82ee6dd8e9847ae610c033c3844af4d847aad0687a797db3742495e5'],
   ['assets/blog/eu-bike-price-vat-shipping-worksheet-mascot-cover-a0539bd823-1600.webp', '6ceee95feb41de3730ebf2089c5cefe5686c814bdd66dec0580648f70b3985a5'],
   ['assets/blog/eu-bike-price-vat-shipping-worksheet-mascot-cover-a0539bd823-1200.jpg', '1fff1daeeca9709f133c0dddeecf3ce74379fe9021f31cecd02b90bf32a6c748'],
