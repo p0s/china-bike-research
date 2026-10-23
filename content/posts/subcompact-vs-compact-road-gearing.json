@@ -5,7 +5,7 @@
   "series_order": 40,
   "image_id": "subcompact-vs-compact-road-gearing-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-22",
   "researched_at": "2026-10-04",
   "model_ids": [
     "ican-graro-frameset",
@@ -50,7 +50,7 @@
           "heading": "The front derailleur has to reach the right place",
           "paragraphs": [
             "Check the exact crank and front derailleur in the manufacturer’s compatibility information, including chainline and chain specification. The frame’s mount must allow the specified derailleur position around the smaller outer ring. Confirm crank/chainring clearance and the correct bottom-bracket arrangement too. Spindle diameter alone does not settle the complete fit.",
-            "This matters on Chinese framesets just as it does on any other frame. [ICAN’s GRARO guidance](https://icanwheels.com/products/graro), checked October 4, 2026, recommends gravel groupsets and a maximum 48/31 double. Our 50/34 arithmetic example should therefore not be read as a GRARO build plan. The [LCR018-D](/models/lightcarbon-lcr018-d/) has its own component-specific limits, which must be checked separately."
+            "This matters on Chinese framesets just as it does on any other frame. [ICAN’s GRARO guidance](https://icanwheels.com/products/graro), rechecked October 22, 2026, recommends gravel groupsets and a maximum 48/31 double. Our 50/34 arithmetic example should therefore not be read as a GRARO build plan. The [LCR018-D](/models/lightcarbon-lcr018-d/) has its own component-specific limits, which must be checked separately."
           ]
         },
         {
@@ -81,7 +81,7 @@
           "heading": "前变必须能到正确位置",
           "paragraphs": [
             "按照厂家兼容信息核对具体曲柄与前变，包括链线和链条规格。车架安装座必须允许前变在较小大盘周围达到指定位置，同时确认曲柄与牙盘空间及正确五通安排。只看轴径，不能确定完整适配。",
-            "中国车架与其他车架一样需要这些核对。[ICAN GRARO说明](https://icanwheels.com/products/graro)在2026年10月4日查看时，建议使用砾石套件，双盘最大48/31。因此这里的50/34算术例子，不能读成GRARO装车方案。[LCR018-D](/zh/models/lightcarbon-lcr018-d/)有自己的部件相关限制，须另行检查。"
+            "中国车架与其他车架一样需要这些核对。[ICAN GRARO说明](https://icanwheels.com/products/graro)在2026年10月22日复查时，建议使用砾石套件，双盘最大48/31。因此这里的50/34算术例子，不能读成GRARO装车方案。[LCR018-D](/zh/models/lightcarbon-lcr018-d/)有自己的部件相关限制，须另行检查。"
           ]
         },
         {
@@ -112,7 +112,7 @@
           "heading": "Der Umwerfer muss die richtige Position erreichen",
           "paragraphs": [
             "Prüfe Kurbel und Umwerfer anhand der Herstellerkompatibilität samt Kettenlinie und Kette. Die Rahmenaufnahme muss die vorgeschriebene Position am kleineren Außenblatt ermöglichen. Dazu kommen Kurbel-/Blattfreiheit und passendes Innenlager. Der Achsdurchmesser allein klärt den Aufbau nicht.",
-            "Das gilt für chinesische Rahmensets wie für andere Rahmen. [ICAN empfiehlt beim GRARO](https://icanwheels.com/products/graro), geprüft am 4. Oktober 2026, Gravelgruppen und höchstens 48/31 zweifach. Das 50/34-Rechenbeispiel ist deshalb kein GRARO-Aufbauplan. Der [LCR018-D](/de/models/lightcarbon-lcr018-d/) hat eigene komponentenbezogene Grenzen."
+            "Das gilt für chinesische Rahmensets wie für andere Rahmen. [ICAN empfiehlt beim GRARO](https://icanwheels.com/products/graro), erneut geprüft am 22. Oktober 2026, Gravelgruppen und höchstens 48/31 zweifach. Das 50/34-Rechenbeispiel ist deshalb kein GRARO-Aufbauplan. Der [LCR018-D](/de/models/lightcarbon-lcr018-d/) hat eigene komponentenbezogene Grenzen."
           ]
         },
         {
@@ -135,5 +135,20 @@
       "de"
     ],
     "contribution": "Compact-to-subcompact maths distinguishes separate Shimano crank systems and explicitly excludes the 50/34 example from GRARO recommendations."
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-22",
+      "passage": "sections/1/paragraphs/1",
+      "prior_values": {
+        "dateModified": "2026-10-04",
+        "passages": {
+          "en": "This matters on Chinese framesets just as it does on any other frame. [ICAN’s GRARO guidance](https://icanwheels.com/products/graro), checked October 4, 2026, recommends gravel groupsets and a maximum 48/31 double. Our 50/34 arithmetic example should therefore not be read as a GRARO build plan. The [LCR018-D](/models/lightcarbon-lcr018-d/) has its own component-specific limits, which must be checked separately.",
+          "zh-Hans": "中国车架与其他车架一样需要这些核对。[ICAN GRARO说明](https://icanwheels.com/products/graro)在2026年10月4日查看时，建议使用砾石套件，双盘最大48/31。因此这里的50/34算术例子，不能读成GRARO装车方案。[LCR018-D](/zh/models/lightcarbon-lcr018-d/)有自己的部件相关限制，须另行检查。",
+          "de": "Das gilt für chinesische Rahmensets wie für andere Rahmen. [ICAN empfiehlt beim GRARO](https://icanwheels.com/products/graro), geprüft am 4. Oktober 2026, Gravelgruppen und höchstens 48/31 zweifach. Das 50/34-Rechenbeispiel ist deshalb kein GRARO-Aufbauplan. Der [LCR018-D](/de/models/lightcarbon-lcr018-d/) hat eigene komponentenbezogene Grenzen."
+        }
+      },
+      "reason": "The cited date had no repository source record. A live readback of the same manufacturer page on 2026-10-22 (source ican-graro-official-recheck-2026-10-22) shows the stated facts, so the text now cites that dated recheck; the earlier date is kept here, not presented as a verified observation."
+    }
+  ]
 }

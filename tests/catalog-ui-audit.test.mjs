@@ -34,7 +34,7 @@ test('the actual material filter treats localized carbon terms as the same 41 pu
  const byId=new Map(summaries.map(item=>[item.id,item]));
  let expected;
  for(const term of ['carbon','碳纤维','碳纖維','Kohlefaser','Kohlenstofffaser']){
-  const context={byId,frameFilter:{value:term},normalizeMaterialSearch,numberOrNull:()=>null,numericValue:()=>0,price:null,tire:null,tireUnknown:null,completeWeight:null,frameWeight:null,drivetrainFilter:null,categoryMinimum:null,category:null,publishedFilter:null,listingFilter:null,search:null,activeType:'',activeBrand:''};
+  const context={byId,frameFilter:{value:term},normalizeMaterialSearch,numberOrNull:()=>null,numericValue:()=>0,price:null,tire:null,tireUnknown:null,completeWeight:null,frameWeight:null,drivetrainFilter:null,categoryMinimum:null,category:null,publishedFilter:null,listingFilter:null,search:null,activeType:'',activeBrand:'',heldRegional:null,regionalHoldBlocks:()=>false};
   const actual=summaries.filter(item=>item.stage==='published'&&vm.runInNewContext(`(${matchSource.trim()})(row)`,{...context,row:{dataset:{id:item.id}}})).map(x=>x.id).sort();
   assert.equal(actual.length,41,term);if(expected)assert.deepEqual(actual,expected);expected=actual;
   for(const locale of ['zh-Hans','de']){const chips=vm.runInNewContext(`(${chipSource.trim()})()`,{...context,translate,locale,categoryMinimumLabel:null,categoryMinimumUnit:null});assert.ok(chips[0][1].startsWith(translate('Frame',locale)+':'));assert.ok(chips[0][1].endsWith(term));}

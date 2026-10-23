@@ -30,6 +30,11 @@
   ],
   "source_url": "https://twitterbikeusa.com/products/cyclone-3rd-r7120-small",
   "source_note": "The exact R7120 manufacturer page supports a qualitative aerodynamic-stability and efficient-power-delivery claim only, not measured frame stiffness. The candidate is named R7120 while its stored ID suffix is 7170; retain that identity caveat. Mainland checkout and warranty handling remain unresolved.",
+  "comparison_eligibility": {
+    "price": false,
+    "note": "Identity-unmatched reference: the retained 2026-08-08 ¥10,961 coupon observation is the Taobao/Tmall search card titled Cyclone Gen 3 7170 electronic (骓特龙卷风7170电变24) whose banner lists both 105 R7120 and R7170 packages, so it is not attributable to this R7120 trim. The observation and its date remain in the record; it no longer supplies this row's sort, budget or builder price.",
+    "reviewed_at": "2026-10-22"
+  },
   "facts": {
     "drivetrain": "Shimano 105 R7120 2×12",
     "complete_weight_g": 8700,
@@ -38,5 +43,10 @@
     "complete_weight_basis": "Current exact manufacturer estimate; size, pedals, accessories and weighing protocol unpublished",
     "frame_material": "High-modulus carbon frame with full-carbon fork; exact fiber grade and lay-up unpublished",
     "stiffness_evidence": "The exact Cyclone 3rd R7120 manufacturer page describes aerodynamic stability and efficient power delivery as design goals; this is qualitative marketing language, not a stiffness measurement or protocol. Candidate ID suffix 7170 differs from the R7120 trim designation."
+  },
+  "same_identity_as": {
+    "record_id": "twitter-cyclone-r7120",
+    "reviewed_at": "2026-10-22",
+    "note": "Both records describe the TWITTER Cyclone 3rd Shimano 105 R7120 complete bike (8.7 kg manufacturer estimate, 105 R7120 2×12, 700×28C fitted). This record keeps its own ID, URL and official R7120 sources, plus the 2026-08-08 ¥10,961 coupon observation from a Cyclone Gen 3 7170 search card that is not attributable to this trim. The 7170 suffix in its ID is historical, not the drivetrain."
   }
 }

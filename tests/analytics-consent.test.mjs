@@ -4,7 +4,8 @@ import { analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COUNTRIES, need
 import { handleRequest } from '../worker/index.mjs';
 import { startGa4 } from '../assets/ga4.js';
 import { bindAnalyticsChoices, stopAnalytics } from '../assets/analytics-choice.js';
-import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/analytics-event.js';
+import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/site-interaction.js';
+import { localizeHtml } from '../src/lib/i18n.mjs';
 
 const origin = 'https://chinesebikes.xyz';
 const env = {
@@ -40,7 +41,7 @@ test('trusted location requires a choice only in the policy regions; unknown loc
 });
 
 test('pending visitors get a choice, no collector dispatch or identities, and no executable Google bootstrap', async () => {
-  for (const [path, country, label] of [['/', 'FR', 'Allow analytics'], ['/zh/', 'CN', '允许分析']]) {
+  for (const [path, country, label, query] of [['/', 'FR', 'Allow analytics', ''], ['/zh/', 'CN', '允许分析', '\\?lang=zh']]) {
     const waits = [];
     const response = await handleRequest(request(path, country, { headers: { cookie: ids } }), env, { waitUntil: p => waits.push(p) });
     assert.equal(waits.length, 0);
@@ -49,8 +50,8 @@ test('pending visitors get a choice, no collector dispatch or identities, and no
     const html = await response.text();
     assert.match(html, /data-analytics-banner/);
     assert.ok(html.includes(label));
-    assert.match(html, /action="\/analytics\/opt-in"/);
-    assert.match(html, /action="\/analytics\/opt-out"/);
+    assert.match(html, new RegExp(`action="/analytics/opt-in${query}"`));
+    assert.match(html, new RegExp(`action="/analytics/opt-out${query}"`));
     assert.match(html, /method="post"/);
     assert.ok(response.headers.getSetCookie().some(value => value.startsWith('p0s_ga_cid=;')));
     assert.ok(response.headers.getSetCookie().every(value => value.includes('Max-Age=0')));
@@ -73,11 +74,10 @@ test('unknown locations and Switzerland allow automatically, while privacy signa
       const before = sent.length;
       const response = await handleRequest(request('/', country), env, { waitUntil: p => waits.push(p) });
       await Promise.all(waits);
-      assert.equal(sent.length - before, 2, country);
+      assert.equal(sent.length - before, 1, country);
       assert.doesNotMatch(await response.text(), /data-analytics-banner/);
-      assert.ok(response.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)));
-      const ga = sent.slice(before).find(item => item.url.includes('/mp/collect'));
-      assert.equal(Object.hasOwn(ga.body, 'user_location'), country === 'CH');
+      assert.equal(response.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)), false);
+      assert.equal(sent[before].url, env.ANALYTICS_INGEST_URL);
       for (const privacy of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: 'p0s_analytics_optout=1' }]) {
         const deniedWaits = [];
         const denied = await handleRequest(request('/', country, { headers: privacy }), env, { waitUntil: p => deniedWaits.push(p) });
@@ -113,6 +113,8 @@ test('config, session, comparison and product events cannot use old identifiers 
     ['/analytics/ga-config', 'GET', {}, undefined],
     ['/analytics/ga-session', 'POST', { 'x-ga4-session-id': '1780000000' }, undefined],
     ['/analytics/event', 'POST', { 'x-analytics-path': '/' }, undefined],
+    ['/site-events/engagement', 'POST', { 'x-analytics-path': '/' }, undefined],
+    ['/site-events/action', 'POST', { 'x-analytics-path': '/' }, undefined],
     ['/analytics/action', 'POST', { 'content-type': 'application/json' }, JSON.stringify({ actionId: 'product_outbound_click' })]
   ]) {
     const waits = [];
@@ -136,10 +138,10 @@ test('allow records versioned consent, while decline and privacy signals remain 
     const waits = [];
     const allowed = await handleRequest(request('/', 'FR', { headers: { cookie: consent } }), env, { waitUntil: p => waits.push(p) });
     await Promise.all(waits);
-    assert.equal(sent.length, 2);
+    assert.equal(sent.length, 1);
     assert.doesNotMatch(await allowed.text(), /data-analytics-banner/);
     assert.match(allowed.headers.get('content-security-policy'), /'nonce-[a-f0-9]{32}'/);
-    assert.ok(allowed.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)));
+    assert.equal(allowed.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)), false);
     for (const privacy of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: `${consent}; p0s_analytics_optout=1` }]) {
       const deniedWaits = [];
       const denied = await handleRequest(request('/', 'FR', { headers: { cookie: consent, ...privacy } }), env, { waitUntil: p => deniedWaits.push(p) });
@@ -234,4 +236,34 @@ test('choice handling stops before POST, clears late cookies after success, and 
   assert.equal(status.hidden, false);
   assert.ok(buttons.every(button => !button.disabled));
   actionsStopped();
+});
+
+test('Chinese privacy choices keep their language with and without JavaScript; other lang values stay English', async () => {
+  for (const base of ['', '/china-bike-research']) {
+    const form = localizeHtml(`<form method="post" action="${base}/analytics/opt-out" data-analytics-choice></form>`, { locale: 'zh-Hans', base });
+    assert.ok(form.includes(`action="${base}/analytics/opt-out?lang=zh"`));
+  }
+  const page = await (await handleRequest(request('/zh/', 'FR'), env, { waitUntil() {} })).text();
+  assert.ok(page.includes('action="/analytics/opt-in?lang=zh"') && page.includes('action="/analytics/opt-out?lang=zh"'));
+  for (const choice of ['in', 'out']) {
+    const saved = await handleRequest(request(`/analytics/opt-${choice}?lang=zh`, 'FR', { method: 'POST', headers: { origin } }), env);
+    const body = await saved.text();
+    assert.equal(saved.status, 200);
+    assert.ok(body.includes('<html lang="zh-Hans">') && body.includes('分析偏好已保存') && body.includes('href="/zh/privacy/"'));
+    assert.ok(saved.headers.getSetCookie().some(value => value.startsWith(choice === 'in' ? `${consent};` : 'p0s_analytics_optout=1;')));
+    assert.ok(saved.headers.getSetCookie().every(value => value.includes('Secure;') && value.includes('SameSite=Lax')));
+  }
+  assert.equal((await handleRequest(request('/analytics/opt-in?lang=zh', 'FR', { method: 'POST', headers: { origin: 'https://other.example' } }), env)).status, 403);
+  for (const lang of ['fr', 'zh-Hans', '<b>zh</b>']) {
+    const body = await (await handleRequest(request(`/analytics/opt-in?lang=${encodeURIComponent(lang)}`, 'FR', { method: 'POST', headers: { origin } }), env)).text();
+    assert.ok(body.includes('<html lang="en">') && body.includes('href="/privacy/"') && !body.includes('<b>'));
+  }
+  let listener;
+  const status = { hidden: true };
+  const called = [];
+  const doc = { documentElement: { lang: 'zh-Hans' }, addEventListener: (_, fn) => { listener = fn; }, querySelector: selector => selector === '[data-analytics-choice-status]' ? status : null };
+  bindAnalyticsChoices({ document: doc, location: { origin }, fetch: async url => { called.push(url); return new Response(null, { status: 500 }); } });
+  await listener({ target: { action: origin + '/analytics/opt-in?lang=zh&untrusted=discard', matches: () => true, parentElement: { querySelectorAll: () => [] } }, preventDefault() {} });
+  assert.deepEqual(called, ['/analytics/opt-in?lang=zh']);
+  assert.equal(status.textContent, '无法保存偏好，请重试。');
 });

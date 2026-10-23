@@ -142,6 +142,23 @@ test('catalog offer clicks resolve exact products while preserving the real page
   } finally { globalThis.fetch = originalFetch; }
 });
 
+test('a failed action manifest read is retried instead of cached for the isolate', async () => {
+  const originalFetch = globalThis.fetch, waits = [];
+  let manifestReads = 0;
+  const offerEnv = { ...env, ASSETS: { fetch: async () => (++manifestReads === 1 ? new Response(null, { status: 503 }) : Response.json(manifest)) } };
+  globalThis.fetch = async () => new Response(null, { status: 204 });
+  const post = () => handleRequest(request('/analytics/action', { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ actionId: 'product_outbound_click', pagePath: '/', offerId: 'test-offer' }) }, 'SG'),
+  offerEnv, { waitUntil: p => waits.push(p) });
+  try {
+    assert.equal((await post()).status, 400);
+    assert.equal((await post()).status, 204);
+    assert.equal((await post()).status, 204);
+    await Promise.all(waits);
+    assert.equal(manifestReads, 2);
+  } finally { globalThis.fetch = originalFetch; }
+});
+
 test('comparison size and public page context reach both collectors without selection lists', async () => {
   const originalFetch = globalThis.fetch, sent = [], waits = [];
   globalThis.fetch = async (url, init) => { sent.push(JSON.parse(init.body)); return new Response(null, { status: 204 }); };

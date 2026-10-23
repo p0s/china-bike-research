@@ -2,10 +2,10 @@ import { normalizeMaterialSearch } from './catalog-search.js';
 import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
-import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice, countryName } from './regional-prices.js';
+import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
 import { priceDisplay, deliveredLine } from './price-display.js';
 import { clearanceParts, weightParts } from './catalog-format.js';
-import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
+import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
@@ -737,6 +737,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
   const regionalData = await regionalDataPromise;
+  catalogRoot.dataset.regionalPrices = regionalData ? 'ready' : 'unavailable';
   // Price settings live in the header popover; the catalog reads them from the document.
   const destinationControl = document.querySelector('[data-ship-country]');
   const currencyControl = document.querySelector('[data-display-currency]');
@@ -753,6 +754,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let currencyChosen = false;
   let activeArea = '';
   let destinationReason = 'unknown';
+  let heldRegional = null; // link choices kept while regional prices or a budget currency cannot be resolved
   const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
   const originalPriceTips = new Map(rows.map((row) => [row.dataset.id, row.querySelector('.price-cell [data-tooltip-lines]')?.dataset.tooltipLines ?? '[]']));
   if (regionalData) document.querySelector('[data-price-preferences]').hidden = false;
@@ -1105,6 +1107,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       setParam(target, 'ship', activeCountry || 'unknown');
       setParam(target, 'currency', activeCurrency);
       setParam(target, 'area', activeCountry === 'US' ? activeArea : '');
+      if (heldRegional) writeRegionalHold(target, heldRegional, ['ship', 'currency', 'area']);
       link.href = `${target.pathname}${target.search}`;
     });
   }
@@ -1135,6 +1138,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setParam(next, 'scope', allModelsVisible ? 'all' : '');
     setParam(next, 'buildPreset', currentBuildPreset, defaultBuildPreset);
     setParam(next, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
+    if (heldRegional) writeRegionalHold(next, heldRegional);
     const target = `${next.pathname}${next.search}${next.hash}`;
     try { history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', target); } catch { /* normal navigation origin required */ }
     updateModelLinks();
@@ -1167,7 +1171,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function hasFilters() {
-    return Boolean(activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
+    return Boolean(heldRegional?.limit || heldRegional?.listing || activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
   }
 
   function numericValue(input, multiplier = 1) {
@@ -1191,7 +1195,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const frame = normalizeMaterialSearch(frameFilter?.value);
     const categoryLimit = numericValue(categoryMinimum);
     const categoryKind = categoryMinimum?.dataset.kind ?? '';
-    return (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
+    return !regionalHoldBlocks(heldRegional, maxPrice) &&
+      (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       (!minTire || tireValue >= minTire || (!tireValue && tireUnknown?.checked)) &&
       weightMatches &&
       (!drivetrain || `${item?.drivetrain ?? ''} ${item?.drivetrainSubline ?? ''}`.toLowerCase().includes(drivetrain)) &&
@@ -1380,6 +1385,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (key === 'family' && category) category.value = '';
     if (key === 'type') setType('', { update: false });
     if (key === 'brand') setBrand('', { update: false });
+    if (key === 'price' && heldRegional) heldRegional.limit = null;
+    if (key === 'listing' && heldRegional) heldRegional.listing = false;
   }
 
   function categoryChipLabel(value) {
@@ -1393,7 +1400,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (category?.value) chips.push(['family', categoryChipLabel(category.value)]);
     if (activeType) chips.push(['type', translate(activeType === 'frameset' ? 'Frame build' : 'Complete', locale)]);
     if (activeBrand) chips.push(['brand', brandLabels.get(activeBrand) ?? activeBrand]);
-    if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}`]);
+    if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}${heldRegional?.destination ? ` · ${translate('not checked', locale)}` : ''}`]);
+    else if (heldRegional?.limit) chips.push(['price', `${translate('Price', locale)} ≤ ${formatRequestedBudget(heldRegional.limit.amount, heldRegional.limit.currency, locale)} · ${translate('not checked', locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
@@ -1403,6 +1411,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (categoryMinimum?.value) chips.push(['category', `${categoryMinimumLabel?.textContent || 'Category'} ≥ ${categoryMinimum.value}${categoryMinimumUnit?.textContent ? ` ${categoryMinimumUnit.textContent}` : ''}`]);
     if (publishedFilter?.checked) chips.push(['published', 'Published only']);
     if (listingFilter?.checked) chips.push(['listing', `${translate('Listing', locale)}: ${countryName(activeCountry || 'CN', locale)}`]);
+    else if (heldRegional?.listing) chips.push(['listing', `${translate('Listing', locale)}: ${heldRegional.country ? countryName(heldRegional.country, locale) : '?'} · ${translate('not checked', locale)}`]);
     return chips;
   }
 
@@ -1526,7 +1535,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       resultSplit.textContent = ` ${translate(`· ${visiblePublished} published, then ${visibleLeads} research leads`, locale)}`;
     }
     if (resultContext) resultContext.textContent = activeBrand ? ` for ${brandLabels.get(activeBrand) ?? activeBrand}` : '';
-    if (filterNotice) filterNotice.textContent = categoryFilterCleared ? ' · incompatible category filter cleared' : '';
+    if (filterNotice) filterNotice.textContent = (categoryFilterCleared ? ' · incompatible category filter cleared' : '')
+      + (heldRegional && (heldRegional.destination || heldRegional.currency || heldRegional.limit)
+        ? ` · ${translate(regionalData ? 'This link’s budget currency is not supported, so the budget stays in the link but is not checked.'
+          : 'Regional prices did not load, so China prices in CNY are shown. Your destination, currency and budget stay in the link; budgets are not checked until regional prices load.', locale)}` : '');
     if (empty) empty.hidden = visible !== 0;
     if (visible === 0) renderEmptySuggestions(chips);
     if (reset) reset.hidden = !hasFilters();
@@ -1560,9 +1572,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       : PRICE_CURRENCIES.includes(savedPreference.currency) ? savedPreference.currency : defaultCurrency(activeCountry) : 'CNY';
     activeArea = activeCountry === 'US' ? ['contiguous', 'remote'].includes(params.get('area')) ? params.get('area')
       : !hasDestination && savedPreference.country === 'US' && ['contiguous', 'remote'].includes(savedPreference.area) ? savedPreference.area : '' : '';
+    heldRegional = regionalData ? null : regionalHold(params, { destination: hasDestination && resolved.country !== 'CN', country: resolved.country });
     const limit = numberOrNull(requestedPrice);
     const inputCurrency = params.get('maxCurrency') || 'CNY';
     const convertedLimit = limit === null ? null : convertPrice(limit, inputCurrency, priceCurrency(), regionalData?.rates);
+    // A budget no loaded rate can convert stays in the link unresolved instead of being dropped.
+    if (regionalData && convertedLimit === null && limit !== null) heldRegional = regionalHold(params, { keys: BUDGET_KEYS });
     const legacyCapability = params.get('capability') ?? '';
     const [legacyKind, legacyThreshold] = legacyCapability.split(':');
     const requestedTire = params.get('tire') ?? (legacyKind === 'tire' ? legacyThreshold : '');
@@ -1578,7 +1593,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const requestedBuildPreset = validSelectValue(buildPreset, params.get('buildPreset') ?? defaultBuildPreset, defaultBuildPreset);
     allModelsVisible = params.get('scope') === 'all';
     if (search) search.value = requestedSearch;
-    if (price) price.value = convertedLimit === null ? '' : String(convertedLimit);
+    if (price) price.value = heldRegional?.limit || convertedLimit === null ? '' : String(convertedLimit);
     if (tire) tire.value = requestedTire;
     if (tireUnknown instanceof HTMLInputElement) tireUnknown.checked = requestedTireUnknown;
     if (completeWeight) completeWeight.value = params.get('completeWeight') ?? '';
@@ -1617,6 +1632,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (corrected) updateFilterUrl('replace');
   }
 
+  // Typing a new budget replaces a held one; it must run before the history-bound update.
+  price?.addEventListener('input', () => { if (heldRegional) heldRegional.limit = null; });
   const typedInputs = [search, price, tire, completeWeight, frameWeight, drivetrainFilter, frameFilter, categoryMinimum];
   typedInputs.forEach((element) => bindHistoryInput(element, (historyMode) => updateCatalog({ historyMode })));
   [sort, tireUnknown, publishedFilter, listingFilter].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
@@ -2130,6 +2147,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     next.searchParams.set('ship', activeCountry || 'unknown');
     next.searchParams.set('currency', activeCurrency);
     setParam(next, 'area', activeCountry === 'US' ? activeArea : '');
+    if (heldRegional) writeRegionalHold(next, heldRegional);
     setParam(next, 'start', startingPoint);
     setParam(next, 'diff', compareDifferences?.checked ? '1' : '');
     try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }

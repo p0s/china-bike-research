@@ -5,7 +5,7 @@
   "series_order": 93,
   "image_id": "38mm-tires-on-aero-road-bikes",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-22",
   "researched_at": "2026-10-04",
   "model_ids": [
     "ican-graro-frameset",
@@ -112,7 +112,7 @@
           "heading": "Die Antwort als Aufbauvorschlag lesen",
           "paragraphs": [
             "Bei [GRARO](/models/ican-graro-frameset/) oder [LCR018-D](/models/lightcarbon-lcr018-d/) mit aktueller Geometrie und lieferbarem Cockpit abgleichen. Ohne nötige Komponenten bleibt die Empfehlung teilweise offen. Widersprüchliche Tabellen nicht mitteln; längerer Vorbau löst nicht jede Fehlgröße.",
-            "Schriftlichen Vorschlag bewahren und offene Punkte vor Bestellung prüfen lassen. Verkäuferempfehlung hilft, garantiert aber keine eine für dich bequeme Sitzposition. Stark ist eine innerhalb der Grenzen baubare Antwort mit klarem Positionsziel."
+            "Schriftlichen Vorschlag bewahren und offene Punkte vor Bestellung prüfen lassen. Verkäuferempfehlung hilft, garantiert aber keine für dich bequeme Sitzposition. Stark ist eine innerhalb der Grenzen baubare Antwort mit klarem Positionsziel."
           ]
         }
       ]
@@ -127,5 +127,20 @@
       "de"
     ],
     "contribution": "The sizing email gives reference contact points and required configuration; recommendations can be checked against geometry rather than copied from height alone."
-  }
+  },
+  "audit_corrections": [
+    {
+      "reviewed_at": "2026-10-22",
+      "passage": "sections/2/paragraphs/1",
+      "prior_values": {
+        "dateModified": "2026-10-04",
+        "passages": {
+          "en": "Keep the written proposal and have your fitter/assembler review unresolved points before ordering. A seller recommendation is useful evidence, not a guarantee of comfort for your body. The strongest answer is one you can build within the limits and assess against a clear position target.",
+          "zh-Hans": "保存书面建议，订货前让适配师、装车者评估未解问题。卖家建议是有用依据，不保证身体舒适。最好的答复是限制内能装，并能对照明确姿势目标评估。",
+          "de": "Schriftlichen Vorschlag bewahren und offene Punkte vor Bestellung prüfen lassen. Verkäuferempfehlung hilft, garantiert aber keine eine für dich bequeme Sitzposition. Stark ist eine innerhalb der Grenzen baubare Antwort mit klarem Positionsziel."
+        }
+      },
+      "reason": "German typo (double article). Meaning unchanged."
+    }
+  ]
 }

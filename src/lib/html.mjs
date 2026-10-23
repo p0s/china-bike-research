@@ -126,7 +126,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
   ${modules.map(path => `<script type="module" src="${url(base,path)}"></script>`).join("\n  ")}
-  ${path.endsWith('/404.html') ? '' : `<script type="module" data-ga4-page src="${url(base,'/assets/ga4.js')}"></script>`}
+  ${path.endsWith('/404.html') ? '' : `<script type="module" src="${url(base,'/assets/site-interaction.js')}"></script><script type="module" data-ga4-page src="${url(base,'/assets/ga4.js')}"></script>`}
 </body>
 </html>`;
   return clarifyMainlandInDisplayHtml(localizeHtml(html, { base, locale, siteUrl }));

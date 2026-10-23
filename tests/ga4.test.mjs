@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { collectionRequestUrl, startGa4 } from '../assets/ga4.js';
 import { layout } from '../src/lib/html.mjs';
-import { ga4Identity, ga4SiteOpenPayload, sendGa4 } from '../worker/ga4.mjs';
+import { ga4ActionPayload, ga4Identity, sendGa4 } from '../worker/ga4.mjs';
 import { handleRequest } from '../worker/index.mjs';
 
 const env = {
@@ -38,7 +38,7 @@ test('GA identity reuses valid first-party cookies and rejects invalid ones', ()
   assert.equal(ga4Identity(documentRequest('p0s_ga_cid=bad; p0s_ga_sid=1780000000')).sessionId, null);
 });
 
-test('eligible document schedules one minimized GA site_open alongside Umami', async () => {
+test('eligible document schedules one minimized Umami page observation without GA identity creation', async () => {
   const sent = [];
   const waits = [];
   const originalFetch = globalThis.fetch;
@@ -52,30 +52,33 @@ test('eligible document schedules one minimized GA site_open alongside Umami', a
     });
     assert.equal(response.status, 200);
     assert.equal(response.headers.get('cache-control'), 'private, no-store');
-    assert.equal(response.headers.getSetCookie().length, 1);
-    const cookies = response.headers.getSetCookie().map((cookie) => cookie.split(';')[0]).join('; ');
-    assert.match(cookies, /p0s_ga_cid=/);
-    assert.doesNotMatch(cookies, /p0s_ga_sid=/);
+    assert.equal(response.headers.getSetCookie().length, 0);
     await Promise.all(waits);
-    assert.equal(sent.length, 2);
-    const ga = sent.find((item) => item.url.startsWith('https://www.google-analytics.com/mp/collect?'));
-    assert.ok(ga);
-    assert.deepEqual(JSON.parse(ga.init.body).events.map((event) => event.name), ['site_open']);
-    const body = JSON.parse(ga.init.body);
-    assert.equal(body.events[0].params.page_location, 'https://chinesebikes.xyz/models/example/');
-    assert.equal(body.user_location.country_id, 'SG');
-    assert.equal(Object.hasOwn(body.events[0].params, 'session_id'), false);
-    assert.doesNotMatch(ga.init.body, /private|203\.0\.113|Mozilla/);
+    assert.equal(sent.length, 1);
+    assert.equal(sent[0].url, env.ANALYTICS_INGEST_URL);
+    const body = JSON.parse(sent[0].init.body);
+    assert.deepEqual(body, {
+      hostname: 'chinesebikes.xyz', path: '/models/example/', referrer: '',
+      ip: '203.0.113.10', userAgent: 'Mozilla/5.0', country: 'SG'
+    });
+    assert.doesNotMatch(JSON.stringify(body), /private|site_open|client_id/);
 
     const config = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-config', {
-      headers: { cookie: cookies, 'user-agent': 'Mozilla/5.0' }
+      headers: { 'user-agent': 'Mozilla/5.0' }
     }), env);
     assert.equal(config.status, 200);
     assert.equal(config.headers.get('cache-control'), 'no-store');
     const browserIds = await config.json();
-    assert.equal(browserIds.clientId, body.client_id);
+    assert.match(browserIds.clientId, /^[1-9]\d+\.[1-9]\d+$/);
     assert.equal(Object.hasOwn(browserIds, 'sessionId'), false);
     assert.equal(browserIds.measurementId, env.GA4_MEASUREMENT_ID);
+    assert.match(config.headers.get('set-cookie'), /^p0s_ga_cid=/);
+    assert.doesNotMatch(config.headers.get('set-cookie'), /p0s_ga_sid=/);
+    const reused = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-config', {
+      headers: { 'user-agent': 'Mozilla/5.0', cookie: `p0s_ga_cid=${browserIds.clientId}` }
+    }), env);
+    assert.equal((await reused.json()).clientId, browserIds.clientId);
+    assert.equal(reused.headers.get('set-cookie'), null);
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -112,8 +115,7 @@ test('a verified browser session is persisted and used on later server events', 
     assert.equal(skipped.status, 204);
     assert.equal(skipped.headers.get('set-cookie'), null);
   }
-  const payload = ga4SiteOpenPayload({ path: '/' }, ga4Identity(documentRequest(`${cookies}; p0s_ga_sid=1780000000`)));
-  assert.equal(payload.events[0].params.session_id, '1780000000');
+  assert.equal(ga4Identity(documentRequest(`${cookies}; p0s_ga_sid=1780000000`)).sessionId, '1780000000');
 });
 
 test('excluded requests do not receive GA cookies or dispatch and config stays closed', async () => {
@@ -125,9 +127,12 @@ test('excluded requests do not receive GA cookies or dispatch and config stays c
     assert.equal(response.headers.getSetCookie().length, 0);
     assert.equal(waits.length, 0);
   }
-  const noCookie = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-config'), env);
+  const noCookie = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/ga-config', {
+    headers: { dnt: '1', 'user-agent': 'Mozilla/5.0' }
+  }), env);
   assert.equal(noCookie.status, 204);
   assert.equal(noCookie.headers.get('cache-control'), 'no-store');
+  assert.equal(noCookie.headers.get('set-cookie'), null);
 });
 
 test('GA action relay uses existing identity only, and opt-out clears identifiers', async () => {
@@ -151,6 +156,34 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
     assert.equal(ga.length, 1);
     assert.equal(JSON.parse(ga[0].init.body).events[0].name, 'product_outbound_click');
     assert.equal(JSON.parse(ga[0].init.body).client_id, '123.456');
+    assert.equal(JSON.parse(ga[0].init.body).events[0].params.session_id, '1780000000');
+
+    const beforeNoSession = sent.length;
+    const withoutSession = await handleRequest(gaRequest('https://chinesebikes.xyz/site-events/action', {
+      method: 'POST', headers: { origin: 'https://chinesebikes.xyz', 'content-type': 'application/json',
+        'user-agent': 'Mozilla/5.0', cookie: 'p0s_ga_cid=123.456' },
+      body: JSON.stringify({ actionId: 'product_outbound_click' })
+    }), env, { waitUntil: promise => waits.push(promise) });
+    assert.equal(withoutSession.status, 204);
+    await Promise.all(waits.splice(0));
+    const noSessionRequests = sent.slice(beforeNoSession);
+    assert.equal(noSessionRequests.length, 1);
+    assert.equal(noSessionRequests[0].url, 'https://stats.p0s.eu/ingest/action/v1');
+    assert.deepEqual(JSON.parse(noSessionRequests[0].init.body), { actionId: 'product_outbound_click' });
+
+    const beforeQa = sent.length;
+    const qa = await handleRequest(gaRequest('https://chinesebikes.xyz/site-events/action', {
+      method: 'POST', headers: { origin: 'https://chinesebikes.xyz', 'content-type': 'application/json',
+        'user-agent': 'Mozilla/5.0', 'x-measurement-qa': '1', cookie },
+      body: JSON.stringify({ actionId: 'product_outbound_click' })
+    }), env, { waitUntil: promise => waits.push(promise) });
+    assert.equal(qa.status, 204);
+    await Promise.all(waits.splice(0));
+    const qaRequests = sent.slice(beforeQa);
+    assert.equal(qaRequests.length, 1);
+    assert.equal(qaRequests[0].url, 'https://stats.p0s.eu/ingest/action/v1');
+    assert.deepEqual(JSON.parse(qaRequests[0].init.body), { actionId: 'measurement_qa' });
+    assert.equal(ga4ActionPayload('product_outbound_click', { clientId: '123.456' }), null);
 
     const optOut = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/opt-out', {
       method: 'POST', headers: { origin: 'https://chinesebikes.xyz', cookie }
@@ -163,6 +196,45 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
   } finally {
     globalThis.fetch = originalFetch;
   }
+});
+
+test('compare_open joins GA only to a stored tag session while Umami still receives permitted events', async () => {
+  const originalFetch = globalThis.fetch, sent = [];
+  globalThis.fetch = async (url, init) => {
+    sent.push({ url: String(url), body: JSON.parse(init.body) });
+    return new Response(null, { status: 204 });
+  };
+  try {
+    async function compare(cookie, qa = false) {
+      const waits = [];
+      const response = await handleRequest(gaRequest('https://chinesebikes.xyz/site-events/action', {
+        method: 'POST', headers: { origin: 'https://chinesebikes.xyz', 'x-analytics-path': '/',
+          'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0', cookie,
+          ...(qa ? { 'x-measurement-qa': '1' } : {}) }
+      }), env, { waitUntil: promise => waits.push(promise) });
+      assert.equal(response.status, 204);
+      await Promise.all(waits);
+    }
+
+    await compare('p0s_ga_cid=123.456');
+    assert.equal(sent.length, 1);
+    assert.equal(sent[0].url, env.ANALYTICS_INGEST_URL);
+    assert.equal(sent[0].body.eventName, 'compare_open');
+
+    sent.length = 0;
+    await compare('p0s_ga_cid=123.456; p0s_ga_sid=1780000000');
+    assert.equal(sent.length, 2);
+    const ga = sent.find(item => item.url.startsWith('https://www.google-analytics.com/mp/collect?'));
+    assert.equal(ga.body.events[0].name, 'compare_open');
+    assert.equal(ga.body.events[0].params.session_id, '1780000000');
+
+    sent.length = 0;
+    await compare('p0s_ga_cid=123.456; p0s_ga_sid=1780000000', true);
+    assert.equal(sent.length, 1);
+    assert.equal(sent[0].url, env.ANALYTICS_INGEST_URL);
+    assert.equal(sent[0].body.eventName, 'compare_open');
+    assert.equal(sent[0].body.qa, true);
+  } finally { globalThis.fetch = originalFetch; }
 });
 
 test('collection URL ordering preserves values and repeated-key order only for this gateway and tag', () => {
@@ -230,6 +302,26 @@ test('browser tag uses shared IDs and queues one bounded page_view', async () =>
   assert.equal(requests[1].init.method, 'POST');
   assert.equal(await startGa4({ ...win, navigator: { doNotTrack: '1' } }), false);
   assert.equal(await startGa4({ ...win, navigator: { globalPrivacyControl: true } }), false);
+});
+
+test('measurement QA config marks only fixed internal debug traffic and replaces page_view', async () => {
+  for (const [search, expectedName] of [['?measurement_qa=1', 'measurement_qa'],
+    ['?measurement_qa=1&run=private', 'page_view'], ['?run=private', 'page_view']]) {
+    const win = {
+      location: { hostname: 'chinesebikes.xyz', origin: 'https://chinesebikes.xyz', pathname: '/models/example/', search },
+      navigator: {},
+      fetch: async () => Response.json({ measurementId: env.GA4_MEASUREMENT_ID, clientId: '123.456' }),
+      document: { querySelector: () => ({ nonce: 'a'.repeat(32) }), scripts: [], referrer: '', createElement: () => ({}), head: { appendChild() {} } }
+    };
+    assert.equal(await startGa4(win), true);
+    const config = win.dataLayer.find(args => args[0] === 'config')[2];
+    assert.equal(config.traffic_type, expectedName === 'measurement_qa' ? 'internal' : undefined);
+    assert.equal(config.debug_mode, expectedName === 'measurement_qa' ? true : undefined);
+    assert.equal(config.page_location, 'https://chinesebikes.xyz/models/example/');
+    const events = win.dataLayer.filter(args => args[0] === 'event' && ['page_view', 'measurement_qa'].includes(args[1]));
+    assert.deepEqual(events.map(args => args[1]), [expectedName]);
+    assert.deepEqual(Object.keys(events[0][2]).sort(), ['page_location', 'send_to']);
+  }
 });
 
 test('collection transport preserves fetch and beacon bodies, results, receivers and unrelated requests', async () => {
@@ -307,14 +399,14 @@ test('browser reuses only its explicit loader and concurrent initialization queu
 });
 
 test('Measurement Protocol failure never throws or reports receipt as processing proof', async () => {
-  const payload = ga4SiteOpenPayload({ path: '/', country: 'SG' }, { clientId: '123.456', sessionId: '1780000000' });
+  const payload = ga4ActionPayload('compare_open', { clientId: '123.456', sessionId: '1780000000' });
   assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 })), true);
   assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 500 })), false);
   assert.equal(await sendGa4(payload, env, async () => { throw new Error('blocked'); }), false);
 });
 
 test('GA sender uses Workers-compatible manual redirects and rejects a redirect without retrying', async () => {
-  const payload = ga4SiteOpenPayload({ path: '/' }, { clientId: '123.456' });
+  const payload = ga4ActionPayload('compare_open', { clientId: '123.456', sessionId: '1780000000' });
   let calls = 0;
   assert.equal(await sendGa4(payload, env, async (_url, init) => {
     calls += 1;
@@ -325,16 +417,16 @@ test('GA sender uses Workers-compatible manual redirects and rejects a redirect 
 });
 
 test('GA delivery diagnostics expose only bounded outcomes and never visitor data or credentials', async () => {
-  const payload = ga4SiteOpenPayload({ path: '/models/private-model/', country: 'SG' }, { clientId: '123.456' });
+  const payload = ga4ActionPayload('product_outbound_click', { clientId: '123.456', sessionId: '1780000000' }, { page_path: '/models/private-model/' });
   const messages = [];
   const logger = { info: (message) => messages.push(JSON.parse(message)) };
   assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), logger), true);
   assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 503 }), logger), false);
   assert.equal(await sendGa4(payload, env, async () => { throw new Error('test-secret 123.456 private-model'); }, logger), false);
   assert.deepEqual(messages, [
-    { type: 'ga4_delivery', event: 'site_open', outcome: 'http_received', status: 204 },
-    { type: 'ga4_delivery', event: 'site_open', outcome: 'http_rejected', status: 503 },
-    { type: 'ga4_delivery', event: 'site_open', outcome: 'network_error', status: null }
+    { type: 'ga4_delivery', event: 'product_outbound_click', outcome: 'http_received', status: 204 },
+    { type: 'ga4_delivery', event: 'product_outbound_click', outcome: 'http_rejected', status: 503 },
+    { type: 'ga4_delivery', event: 'product_outbound_click', outcome: 'network_error', status: null }
   ]);
   assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), { info() { throw new Error('logger unavailable'); } }), true);
 });

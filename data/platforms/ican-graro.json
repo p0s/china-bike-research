@@ -30,7 +30,11 @@
     },
     "claimed_fiber": "T700/T800/T1000-claimed",
     "configuration_notes": {
-      "chainring_limits": "2× up to 48/31T or 1× up to 42T"
+      "chainring_limits": "2× up to 48/31T or 1× up to 42T",
+      "groupset_restriction": "Manufacturer page: gravel groupsets only; chainring maxima are recommendations (observed 2026-10-22)",
+      "rotor_sizes": "Front 160 mm; rear 140 mm as listed (observed 2026-10-22; no larger rotor approval stated)",
+      "china_warehouse_defaults": "From 2025-11-17 the China-warehouse fork ships without mounting bolts and the seatpost with 0 mm offset by default; bolts or 15 mm offset on request by order note (observed 2026-10-22)",
+      "package_options": "Adding the integrated handlebar adds the handlebar and spacers; adding a separate stem adds spacers and a top cap (observed 2026-10-22)"
     },
     "geometry_status": "Manufacturer numeric geometry chart recorded for six nominal sizes46/49/52/54/56/58; storefront size availability is separate.",
     "stiffness_evidence_status": "No meaningful exact-model stiffness evidence found after 50 registered source areas; generic durability and versatility language is not treated as a result",
@@ -164,7 +168,8 @@
     "ican-graro-official-2026-08-27",
     "ican-graro-official-current-2026-09-23",
     "ican-company-official",
-    "ican-graro-manufacturer-geometry-chart-2026-09-22"
+    "ican-graro-manufacturer-geometry-chart-2026-09-22",
+    "ican-graro-official-recheck-2026-10-22"
   ],
   "last_reviewed": "2026-09-23"
 }
