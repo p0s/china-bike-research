@@ -45,6 +45,30 @@ test('carbon wheels reference renders one table with row details and no mainland
   assert.match(html, /href="\/china-bike-research\/carbon-wheels\/" data-nav-wheels aria-current="page">Carbon wheels<\/a>/);
 });
 
+test('wheelset videos are exact, capped and embedded only inside their own row details', () => {
+  const wheelsetVideos = data.videos.filter((video) => video.target.wheelset_id);
+  assert.ok(wheelsetVideos.length >= 1);
+  assert.ok(wheelsetVideos.every((video) => video.match === 'exact-wheelset' && video.provider === 'youtube'));
+  const retarget = (change) => {
+    const copy = structuredClone(data);
+    change(copy.videos.find((video) => video.id === 'lovemtb-elitewheels-drive-g36-tech-check'));
+    return validateDataset(copy);
+  };
+  assert.ok(retarget((video) => { video.match = 'exact-platform'; }).some((error) => /wheelset target must use exact-wheelset match/.test(error)));
+  assert.ok(retarget((video) => { video.target.wheelset_id = 'elitewheels-drive-50d-ii'; }).some((error) => /wheelset elitewheels-drive-50d-ii: more than two curated videos/.test(error)));
+  assert.ok(retarget((video) => { video.target = { wheelset_id: 'missing-wheelset' }; }).some((error) => /missing wheelset missing-wheelset/.test(error)));
+
+  const html = renderCarbonWheels(ctx);
+  for (const wheelset of data.wheelsets) {
+    const entry = html.match(new RegExp(`<tbody class="groupset-entry" id="${wheelset.id}"[\\s\\S]*?</tbody>`))[0];
+    for (const video of wheelsetVideos) {
+      assert.equal(entry.includes(`youtube-nocookie.com/embed/${video.youtube_video_id}`), video.target.wheelset_id === wheelset.id, `${video.id} in ${wheelset.id}`);
+    }
+  }
+  assert.doesNotMatch(html, /youtube\.com\/embed|autoplay=1/);
+  assert.match(html, /<details class="groupset-row-details">[\s\S]*?<section class="wheelset-videos"><h3>Videos<\/h3>[\s\S]*?loading="lazy"/);
+});
+
 test('carbon wheels reference is localized and linked from every page', () => {
   assert.match(renderCarbonWheels({ ...ctx, locale: 'zh-Hans' }), /<h1>中国品牌碳纤维轮组<\/h1>[\s\S]*系统限重 120 kg/);
   assert.match(renderCarbonWheels({ ...ctx, locale: 'de' }), /<h1>Chinesische Carbon-Laufradsätze<\/h1>[\s\S]*120 kg Systemgewicht/);

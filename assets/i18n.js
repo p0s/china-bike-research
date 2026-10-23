@@ -845,7 +845,7 @@ Object.assign(zh, {
   'When enabled, Google Analytics 4 runs only after the consented browser requests its same-origin configuration. The browser tag can then send one page_view through this site\'s first-party gateway. The page request itself does not create a Google identifier or send a site_open event. The configuration request creates a first-party client ID; the tag\'s reported session ID is stored only after its same-origin session handshake. Server comparison and product-link events reach Google only when both stored identifiers exist. If a blocker prevents the tag or handshake, first-party Umami measurement can still work while no server event is sent to Google. Server requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes after a verified tag handshake. We disable advertising signals and personalization. Google controls its own analytics processing and retention.': '启用时，Google Analytics 4 仅在已同意的浏览器请求同源配置后运行。浏览器标签随后可通过本站第一方网关发送一次 page_view。页面请求本身不会创建 Google 标识或发送 site_open。配置请求创建本站第一方客户端标识；只有标签通过同源会话握手报告会话标识后才会保存。服务器比较和产品链接事件只有在两种已保存标识都存在时才会发送给 Google。如果拦截器阻止标签或握手，第一方 Umami 仍可工作，但不会向 Google 发送服务器事件。服务器请求不会向 Google 发送你的 IP、User-Agent、搜索词、网址查询参数或所选车型列表；浏览器标签加载时，Google 可能收到你的网络地址。Google 标签 Cookie 和本站客户端标识 Cookie 最长保留 30 天；经过验证的标签握手后，会话 Cookie 保留 30 分钟。我们关闭广告信号和个性化。Google 自行管理其分析数据的处理与保留。',
   'Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.': '“请勿跟踪”、Global Privacy Control 和下方的退出选项会停止两路分析。退出时会清除本站的 GA 标识 Cookie 和此主机上的 Google 标签 Cookie。',
   'External media': '外部媒体',
-  "Displayed product photos load from this site's Cloudflare-hosted assets. Model pages with videos embed a": '展示的产品照片从本站的 Cloudflare 资源加载。含视频的车型页面会嵌入',
+  "Displayed product photos load from this site's Cloudflare-hosted assets. Model pages and the carbon-wheel reference embed a": '展示的产品照片从本站的 Cloudflare 资源加载。含视频的车型页面和碳纤维轮组参考页会嵌入',
   'player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.': '播放器，页面加载或视频进入视野时可能联系 YouTube。文章页面仅在你加载视频或打开观看链接时联系 YouTube。视频不会自动播放。',
   'Contributions': '公开贡献',
   'GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.': 'GitHub 问题和合并请求是公开的。发布图片或链接前请删除个人信息；需要更正或移除内容时可提交问题。'
@@ -1115,7 +1115,7 @@ Object.assign(zh, {
   "Carbon wheels": "碳纤维轮组",
   "Chinese carbon wheelsets": "中国品牌碳纤维轮组",
   "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "对比中国品牌的公路与 Gravel 碟刹轮组：轮圈、重量、限重、兼容性及注明日期的价格。",
-  "Open a row for tire limits, pressure, hub, warranty and sources.": "展开各行可查看轮胎范围、胎压、花鼓、保修及来源。",
+  "Open a row for tire limits, pressure, hub, warranty, videos and sources.": "展开各行可查看轮胎范围、胎压、花鼓、保修、视频及来源。",
   "Chinese carbon wheelsets compared": "中国品牌碳纤维轮组对比",
   "Rim": "轮圈",
   "Hooked": "有钩",
@@ -1146,4 +1146,31 @@ Object.assign(zh, {
   "Open the Build planner": "打开装车规划",
   "Official direct store": "官方直营店",
   "Rotor mount is not stated; confirm it before choosing rotors.": "未说明碟片安装方式；选择碟片前请先确认。"
+});
+
+// Carbon-wheel videos (2026-10-23)
+Object.assign(zh, {
+  "Videos": "视频",
+  "Indoor and mountain riding test of the Drive II 50D with a comparison to the first generation, plus checks of trueness, spoke tension and the rim interior. The linked written review identifies the 50 mm depth.": "在室内和山区骑行中测试 Drive II 50D，并与第一代对比，同时检查轮圈偏摆、辐条张力和轮圈内部。所附文字评测确认测试的是 50 mm 框高。",
+  "The linked written review states that the manufacturer supplied the wheels. The description carries a 15% discount code and an affiliate disclosure.": "所附文字评测说明轮组由制造商提供。视频简介附有 15% 折扣码及联盟推广声明。",
+  "Ride review of the Drive II 50D road wheels that weighs which concerns with the original Drive wheels were fixed and which one remains.": "Drive II 50D 公路轮组的骑行评测，讨论初代 Drive 的哪些问题已解决、哪一点仍然存在。",
+  "The description offers a 20% Elitewheels discount code and links the creator’s shop; it does not say how the wheels were obtained.": "视频简介提供 20% 的 Elitewheels 折扣码并链接作者自己的店铺；未说明轮组如何获得。",
+  "Unboxing and quick technical check of the 2025 Drive G36: rim design, tubeless setup, the new rear hub and weight, with a comparison to the cheaper Marvel G36.": "2025 款 Drive G36 的开箱与快速技术检查：轮圈设计、真空胎安装、新后花鼓和重量，并与更便宜的 Marvel G36 对比。",
+  "The description offers a 15% Elitewheels discount code and affiliate links; it does not say how the wheels were obtained.": "视频简介提供 15% 的 Elitewheels 折扣码和联盟链接；未说明轮组如何获得。",
+  "Shop staff compare the Elite Drive G36 with Zipp 303 XPLR, Hunt 40 Limitless and Secret Wheels gravel wheelsets. It is comparative opinion, not a laboratory test.": "车店员工将 Elite Drive G36 与 Zipp 303 XPLR、Hunt 40 Limitless 和 Secret Wheels 砾石轮组对比。这是对比意见，不是实验室测试。",
+  "Published by a bicycle shop that links its own store; how the test wheels were obtained is not stated.": "由一家链接自有店铺的自行车店发布；未说明测试轮组如何获得。",
+  "ICAN’s own start-to-finish hand build of the Alpha 50 II Disc, from lacing to tensioning and truing. The description lists the ceramic-bearing hub, one of the two bearing options.": "ICAN 自己从头到尾手工编制 Alpha 50 II Disc：穿辐条、上张力到校圈。视频简介列出的是陶瓷轴承花鼓，即两种轴承选项之一。",
+  "Published by ICAN on its own channel, with a store link and a discount code.": "由 ICAN 在自己的频道发布，附店铺链接和折扣码。",
+  "Detailed workshop evaluation of the SAT C45 DB Pro NxT gravel wheelset. The creator does not name the hub generation; the current store version lists NxT SL2 hubs.": "对 SAT C45 DB Pro NxT 砾石轮组的详细车间评测。作者未说明花鼓代次；当前店铺版本列为 NxT SL2 花鼓。",
+  "The creator states that YOELEO sent the wheels free of charge; the description also carries affiliate links and a discount code.": "作者说明 YOELEO 免费寄送了轮组；视频简介还附有联盟链接和折扣码。",
+  "Months-later follow-up on the same SAT C45 DB Pro NxT wheels after gravel riding in England. The hub generation is not named.": "在英格兰骑行砾石路数月后，对同一套 SAT C45 DB Pro NxT 轮组的跟进评测。未说明花鼓代次。",
+  "Follow-up on the wheels YOELEO supplied for the creator’s earlier review; the description carries affiliate links and a discount code.": "这是对 YOELEO 为作者早前评测所提供轮组的跟进；视频简介附有联盟链接和折扣码。",
+  "Unboxing": "开箱",
+  "Rim design and tubeless setup": "轮圈设计与真空胎安装",
+  "Rear wheel and new hub": "后轮与新花鼓",
+  "Weight savings": "减重",
+  "Verdict vs Marvel G36": "与 Marvel G36 对比的结论",
+  "Drive-side spokes": "传动侧辐条",
+  "Non-drive-side spokes": "非传动侧辐条",
+  "Initial adjustment": "初步调校"
 });

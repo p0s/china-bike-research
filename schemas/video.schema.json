@@ -37,11 +37,12 @@
       "properties": {
         "platform_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
         "variant_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
-        "candidate_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"}
+        "candidate_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "wheelset_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"}
       },
-      "oneOf": [{"required": ["platform_id"]}, {"required": ["variant_id"]}, {"required": ["candidate_id"]}]
+      "oneOf": [{"required": ["platform_id"]}, {"required": ["variant_id"]}, {"required": ["candidate_id"]}, {"required": ["wheelset_id"]}]
     },
-    "match": {"enum": ["exact-platform", "exact-variant", "exact-model-lead"]},
+    "match": {"enum": ["exact-platform", "exact-variant", "exact-model-lead", "exact-wheelset"]},
     "format": {"enum": ["hands-on-review", "long-term-review", "model-overview", "build-and-ride"]},
     "relationship": {
       "enum": [
@@ -107,6 +108,10 @@
     {
       "if": {"properties": {"target": {"required": ["candidate_id"]}}},
       "then": {"properties": {"match": {"const": "exact-model-lead"}}}
+    },
+    {
+      "if": {"properties": {"target": {"required": ["wheelset_id"]}}},
+      "then": {"properties": {"match": {"const": "exact-wheelset"}, "provider": {"const": "youtube"}}}
     }
   ]
 }

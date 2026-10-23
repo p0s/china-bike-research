@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1642,
       "images": 737,
-      "videos": 59,
+      "videos": 66,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 6,
@@ -2654,6 +2654,7 @@
     "videos": [
       "andrew-grabbs-carbonda-cfr696-build",
       "bicidastrada-seka-exaero-gr-review",
+      "bicycle-station-gravel-wheel-shootout-drive-g36",
       "bxt-store-055-overview",
       "cam-nicholls-falath-evo-inspection",
       "china-cycling-bigrock-sohtea-long-term",
@@ -2675,7 +2676,10 @@
       "crafted-cycles-incolor-sr-plus-build",
       "cycle-workshop-ican-graro-build",
       "cycle-workshop-ican-graro-ride-review",
+      "cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term",
+      "cycle-workshop-yoeleo-sat-c45-nxt-gravel-review",
       "cyclingnews-seka-spear-rdc-review",
+      "cyclists-hub-elitewheels-drive-50d-ii-review",
       "cyclists-hub-m6-review",
       "cyclists-hub-t1600-review",
       "daryl-pace-carbonda-cfr707-build",
@@ -2684,13 +2688,16 @@
       "gc-performance-falath-evo-ride-review",
       "gc-performance-winspace-g5",
       "hambini-t1600-long-term-review",
+      "ican-alpha-50-ii-disc-build",
       "jourdain-coleman-vanyar-pro-2024-unbox",
       "julius-domroes-gr-one-grow-comparison",
       "julius-domroes-quick-pro-gr-one-review",
       "lightcarbon-lcg071-pro-brand-overview",
+      "lovemtb-elitewheels-drive-g36-tech-check",
       "nero-tavelo-grow-review",
       "popeye-vanyar-pro-disc-2024-build",
       "sysadmin-carbonda-cfr707-owner-build",
+      "the-bike-sauce-elitewheels-drive-50d-ii-review",
       "tom-bowers-lightcarbon-lcg071-pro-build",
       "watt-life-t1550-gen2-build-cost",
       "xhs-camp-gx600-modified-flatbar",
@@ -55467,6 +55474,24 @@
         "url",
         "youtube_video_id"
       ],
+      "bicycle-station-gravel-wheel-shootout-drive-g36": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.wheelset_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "bxt-store-055-overview": [
         "accessed_at",
         "channel_name",
@@ -55847,6 +55872,42 @@
         "url",
         "youtube_video_id"
       ],
+      "cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.wheelset_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "cycle-workshop-yoeleo-sat-c45-nxt-gravel-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.wheelset_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "cyclingnews-seka-spear-rdc-review": [
         "accessed_at",
         "channel_name",
@@ -55861,6 +55922,24 @@
         "relationship",
         "summary",
         "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "cyclists-hub-elitewheels-drive-50d-ii-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.wheelset_id",
         "title",
         "url",
         "youtube_video_id"
@@ -56011,6 +56090,25 @@
         "url",
         "youtube_video_id"
       ],
+      "ican-alpha-50-ii-disc-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.wheelset_id",
+        "timestamps",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "jourdain-coleman-vanyar-pro-2024-unbox": [
         "accessed_at",
         "channel_name",
@@ -56084,6 +56182,25 @@
         "url",
         "youtube_video_id"
       ],
+      "lovemtb-elitewheels-drive-g36-tech-check": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.wheelset_id",
+        "timestamps",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "nero-tavelo-grow-review": [
         "accessed_at",
         "channel_name",
@@ -56135,6 +56252,24 @@
         "summary",
         "target.candidate_id",
         "timestamps",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "the-bike-sauce-elitewheels-drive-50d-ii-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.wheelset_id",
         "title",
         "url",
         "youtube_video_id"
@@ -108347,6 +108482,7 @@
       "bicidastrada-seka-exaero-gr-review": [
         "target.platform_id=seka-exaero-gr"
       ],
+      "bicycle-station-gravel-wheel-shootout-drive-g36": [],
       "bxt-store-055-overview": [
         "target.platform_id=bxt-055"
       ],
@@ -108410,9 +108546,12 @@
       "cycle-workshop-ican-graro-ride-review": [
         "target.platform_id=ican-graro"
       ],
+      "cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term": [],
+      "cycle-workshop-yoeleo-sat-c45-nxt-gravel-review": [],
       "cyclingnews-seka-spear-rdc-review": [
         "target.candidate_id=seka-spear-rdc"
       ],
+      "cyclists-hub-elitewheels-drive-50d-ii-review": [],
       "cyclists-hub-m6-review": [
         "target.candidate_id=winspace-m6"
       ],
@@ -108437,6 +108576,7 @@
       "hambini-t1600-long-term-review": [
         "target.candidate_id=winspace-t1600"
       ],
+      "ican-alpha-50-ii-disc-build": [],
       "jourdain-coleman-vanyar-pro-2024-unbox": [
         "target.candidate_id=missing-china-price-elves-vanyar"
       ],
@@ -108449,6 +108589,7 @@
       "lightcarbon-lcg071-pro-brand-overview": [
         "target.candidate_id=lightcarbon-lcg071-pro"
       ],
+      "lovemtb-elitewheels-drive-g36-tech-check": [],
       "nero-tavelo-grow-review": [
         "target.platform_id=tavelo-grow"
       ],
@@ -108458,6 +108599,7 @@
       "sysadmin-carbonda-cfr707-owner-build": [
         "target.candidate_id=carbonda-cfr707"
       ],
+      "the-bike-sauce-elitewheels-drive-50d-ii-review": [],
       "tom-bowers-lightcarbon-lcg071-pro-build": [
         "target.candidate_id=lightcarbon-lcg071-pro"
       ],

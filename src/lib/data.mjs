@@ -1001,6 +1001,8 @@ export function validateDataset(data = loadDataset()) {
   const youtubeIds = new Set();
   const xhsPostIds = new Set();
   const platformVideoCounts = new Map();
+  const wheelsetVideoCounts = new Map();
+  const wheelsetIds = new Set((data.wheelsets ?? []).map((wheelset) => wheelset.id));
   const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride']);
   const videoRelationships = new Set(['retailer-linked', 'brand-published', 'product-supplied', 'publication-review', 'owner-review', 'community-post', 'unknown']);
   for (const video of data.videos) {
@@ -1049,8 +1051,8 @@ export function validateDataset(data = loadDataset()) {
     } catch { errors.push(`video ${video.id}: invalid disclosure URL`); }
 
     const target = isObject(video.target) ? video.target : {};
-    const targetKeys = ['platform_id', 'variant_id', 'candidate_id'].filter((key) => target[key] !== undefined);
-    if (targetKeys.length !== 1) errors.push(`video ${video.id}: target must identify exactly one platform, variant, or candidate`);
+    const targetKeys = ['platform_id', 'variant_id', 'candidate_id', 'wheelset_id'].filter((key) => target[key] !== undefined);
+    if (targetKeys.length !== 1) errors.push(`video ${video.id}: target must identify exactly one platform, variant, candidate, or wheelset`);
     if (target.platform_id !== undefined) {
       if (!platformIds.has(target.platform_id)) errors.push(`video ${video.id}: missing platform ${target.platform_id}`);
       if (video.match !== 'exact-platform') errors.push(`video ${video.id}: platform target must use exact-platform match`);
@@ -1066,9 +1068,18 @@ export function validateDataset(data = loadDataset()) {
       const candidate = data.candidates.find((item) => item.id === target.candidate_id);
       if (candidate && !(candidate.video_ids ?? []).includes(video.id)) errors.push(`video ${video.id}: candidate ${target.candidate_id} does not link this video`);
     }
+    if (target.wheelset_id !== undefined) {
+      if (!wheelsetIds.has(target.wheelset_id)) errors.push(`video ${video.id}: missing wheelset ${target.wheelset_id}`);
+      if (video.match !== 'exact-wheelset') errors.push(`video ${video.id}: wheelset target must use exact-wheelset match`);
+      if (video.provider !== 'youtube') errors.push(`video ${video.id}: wheelset videos must be YouTube embeds`);
+      wheelsetVideoCounts.set(target.wheelset_id, (wheelsetVideoCounts.get(target.wheelset_id) ?? 0) + 1);
+    }
   }
   for (const [platformId, count] of platformVideoCounts) {
     if (count > 2) errors.push(`platform ${platformId}: more than two curated videos`);
+  }
+  for (const [wheelsetId, count] of wheelsetVideoCounts) {
+    if (count > 2) errors.push(`wheelset ${wheelsetId}: more than two curated videos`);
   }
 
   for (const recommendation of data.recommendations) if (!variantIds.has(recommendation.variant_id)) errors.push(`recommendation ${recommendation.id}: missing variant ${recommendation.variant_id}`);
