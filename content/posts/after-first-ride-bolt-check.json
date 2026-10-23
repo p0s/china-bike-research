@@ -3,7 +3,7 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 84,
-  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "image_id": "after-first-ride-bolt-check-unique-mascot-cover",
   "datePublished": "2026-10-04",
   "dateModified": "2026-10-04",
   "researched_at": "2026-10-04",
@@ -15,7 +15,8 @@
     "ican-graro-official-2026-08-27"
   ],
   "editorial_references": [
-    "https://www.trekbikes.com/us/en_US/owners-manual/torque/"
+    "https://www.trekbikes.com/us/en_US/owners-manual/torque/",
+    "https://www.parktool.com/en-us/blog/repair-help/torque-wrench-use-and-care"
   ],
   "photo_sections": [
     {
@@ -35,7 +36,8 @@
           "id": "inspect",
           "heading": "Compare with the build record",
           "paragraphs": [
-            "On a [GRARO](/models/ican-graro-frameset/), compare marked saddle/seatpost position, steering feel, wheel fastening, brakes and shifting with the pre-ride checks. Look for rubbing, hose interference, pressure loss or loose accessories. Inspect in a clean, well-lit place rather than diagnosing from the saddle while moving."
+            "On a [GRARO](/models/ican-graro-frameset/), compare marked saddle/seatpost position, steering feel, wheel fastening, brakes and shifting with the pre-ride checks. Look for rubbing, hose interference, pressure loss or loose accessories. Inspect in a clean, well-lit place rather than diagnosing from the saddle while moving.",
+            "For example, if a seatpost mark has moved relative to the clamp, photograph the new position and give the assembler the original setup record. Treat this as an unresolved change before the next ride. A reply to “tighten it to the number on the clamp” still leaves a question: is that number a maximum, and what checking method applies to this exact joint?"
           ],
           "bullets": [
             "Record what moved and when it was noticed.",
@@ -47,80 +49,88 @@
           "id": "fasteners",
           "heading": "Use the prescribed checking method",
           "paragraphs": [
-            "Consult the frame and component instructions for any settling-in checks or inspection intervals. A bolt’s original installation value is not automatically an instruction to loosen and retighten it after every ride. Threadlocked joints and specific tightening sequences may need a different service method. [Trek’s torque guidance](https://www.trekbikes.com/us/en_US/owners-manual/torque/) directs owners to the exact component specifications."
+            "Consult the frame and component instructions for any settling-in checks or inspection intervals. A bolt’s original installation value is not automatically an instruction to loosen and retighten it after every ride. Threadlocked joints and specific tightening sequences may need a different service method. [Trek’s torque guidance](https://www.trekbikes.com/us/en_US/owners-manual/torque/) directs owners to the exact component specifications.",
+            "[Park Tool’s torque-wrench guide](https://www.parktool.com/en-us/blog/repair-help/torque-wrench-use-and-care) explains that the tool measures resistance to rotation: even a cross-threaded bolt can resist turning without tightening the joint correctly. Reaching a wrench setting alone therefore does not explain or clear the moved seatpost in this example. Ask for the cause and the prescribed correction, rather than another turn of the bolt."
           ]
         },
         {
           "id": "followup",
           "heading": "Book the useful follow-up",
           "paragraphs": [
-            "Ask the assembler what it wants checked after the build and whether a follow-up is included. Bring your short fault list and setup record. A slipping seatpost or changing headset feel deserves diagnosis, not repeated tightening until the symptom becomes quiet. Keep the final corrections so future maintenance begins from a known setup."
+            "Ask the assembler what it wants checked after the build and whether a follow-up is included. Bring your short fault list and setup record. A slipping seatpost or changing headset feel deserves diagnosis, not repeated tightening until the symptom becomes quiet. Keep the final corrections so future maintenance begins from a known setup.",
+            "If the new symptom is a noise, use the [creak observation guide](/blog/creaking-carbon-bike-diagnosis/) to describe when it occurs. For a joint that needs reassembly, the [carbon assembly paste guide](/blog/carbon-assembly-paste-torque/) separates clamping surfaces from bolt threads; it does not supply this joint’s procedure."
           ]
         }
       ]
     },
     "zh-Hans": {
       "title": "首骑后：先检查，别把所有螺栓再拧一遍",
-      "description": "用装车后检查清单记录移动、故障，按规定检查紧固件，不盲目复拧所有螺栓。",
-      "intro": "第一次骑行后，适合检查装配完成以来发生了什么变化。它不是给每颗螺栓再加一点扭矩的邀请。按厂家规定检查，把移动、松动或表现不同的地方记下来。",
+      "description": "首骑后对照装车记录，记下位置、功能的变化，按具体部件要求复查，避免用反复加紧代替排查。",
+      "intro": "首骑后，先看看哪些地方与装车时不同，而不是把每颗螺栓再拧紧一点。按厂家的要求检查，记录位置移动、松动或功能变化，再把未解决的问题交给装车者。",
       "sections": [
         {
           "id": "inspect",
           "heading": "对照装车记录",
           "paragraphs": [
-            "以[GRARO](/models/ican-graro-frameset/)为例，对照骑前记录，检查标记的坐垫与座管位置是否变化，转向、轮组紧固、刹车和变速是否正常。再查蹭擦、油管干涉、漏气与松动附件。停车后在清洁、明亮处检查，不要边骑边找故障。"
+            "以[GRARO装车](/zh/models/ican-graro-frameset/)为例，对照骑前记录，查看坐垫、座管的标记位置是否改变，转向、轮组紧固、刹车和变速是否正常。留意蹭擦、油管干涉、漏气或附件松动。应停车后在清洁、明亮处检查，不要边骑边找故障。",
+            "例如，座管上的标记相对座管夹发生了移动，应拍下新位置，并把原来的设置记录交给装车者。下一次骑行前，这仍是需要解决的变化。若只得到“拧到夹环上标的扭矩”这样的答复，还需问清：标注的是上限吗？这个具体接合部位应采用什么复查方法？"
           ],
           "bullets": [
-            "记录哪处移动、何时发现。",
-            "疑似损伤、异常松旷或刹车不可靠时停用。",
-            "未解决问题在下一骑前交装车者处理。"
+            "记录哪里发生变化、何时发现。",
+            "疑似损伤、异常松旷或刹车不可靠时，停止使用。",
+            "下一次骑行前，先让装车者处理未解决的问题。"
           ]
         },
         {
           "id": "fasteners",
-          "heading": "使用规定检查方式",
+          "heading": "按具体部件规定的方法复查",
           "paragraphs": [
-            "查看车架、部件说明中的初期检查和周期。原始安装扭矩不自动等于每次骑后松开重紧；螺纹锁固连接与特定顺序可能需要不同维护方式。[Trek扭矩指导](https://www.trekbikes.com/us/en_US/owners-manual/torque/)引导车主查具体部件要求。"
+            "查看车架和部件说明中是否要求初期复查，以及规定的检查周期。安装时使用的扭矩，不代表每次骑行后都要松开再拧紧。使用螺纹锁固剂的连接，或有特定拧紧顺序的部件，可能有不同的维护要求。[Trek的扭矩指导](https://www.trekbikes.com/us/en_US/owners-manual/torque/)也要求查阅具体部件的规定。",
+            "[Park Tool的扭矩扳手指南](https://www.parktool.com/en-us/blog/repair-help/torque-wrench-use-and-care)解释，扳手测量的是转动阻力：螺栓即使拧歪、没有正确夹紧，也可能产生阻力。因此，在上述座管移动的例子中，扳手达到设定值并不能解释原因，也不能证明问题已经解决。应确认原因和规定的修正方法，而不是继续拧螺栓。"
           ]
         },
         {
           "id": "followup",
-          "heading": "预约有用的复查",
+          "heading": "带着变化记录预约复查",
           "paragraphs": [
-            "问装车者装好后要查什么、是否包含复查，带简短故障表与设置记录。座管滑动或碗组手感变化需要诊断，不是不停加紧直到安静。保留最终修正，未来维护从已知配置开始。"
+            "问清装车者希望首骑后检查哪些项目、是否包含复查。带上简短的问题清单和设置记录。座管下滑或碗组手感变化需要排查原因，不能反复加紧，直到症状暂时消失。保存最终的修正记录，便于以后维护时知道当前的实际设置。",
+            "如果新出现的是异响，可用[异响观察指南](/zh/blog/creaking-carbon-bike-diagnosis/)描述它在什么条件下发生。若某个接合部位需要重新装配，[碳纤维装配膏指南](/zh/blog/carbon-assembly-paste-torque/)区分了夹持面与螺栓螺纹；它不能代替该部位的具体装配说明。"
           ]
         }
       ]
     },
     "de": {
       "title": "Nach der ersten Fahrt: Prüfen statt alles nachziehen",
-      "description": "Nutze eine Aufbau-Nachkontrolle und dokumentiere Veränderungen, ohne jede Schraube blind nachzuziehen.",
-      "intro": "Die erste Fahrt zeigt mögliche Veränderungen nach der Montage. Sie lädt nicht dazu ein, jeder Schraube etwas mehr Drehmoment zu geben. Nutze Herstellervorgaben und melde Bewegung, Lockerung oder verändertes Verhalten.",
+      "description": "Vergleiche das Rad nach der ersten Fahrt mit dem Aufbauprotokoll. Halte Veränderungen fest und kläre die vorgeschriebenen Kontrollen, statt wahllos nachzuziehen.",
+      "intro": "Nach der ersten Fahrt lässt sich feststellen, was sich seit der Montage verändert hat. Das ist kein Anlass, jede Schraube etwas fester anzuziehen. Prüfe nach Herstellervorgabe und melde Teile, die sich verschoben oder gelockert haben oder anders funktionieren.",
       "sections": [
         {
           "id": "inspect",
           "heading": "Mit dem Aufbauprotokoll vergleichen",
           "paragraphs": [
-            "Vergleiche am [GRARO](/models/ican-graro-frameset/) markierte Sattel-/Stützenposition, Lenkung, Räder, Bremsen und Schaltung mit vorher. Suche Schleifen, Leitungsprobleme, Luftverlust oder lose Anbauteile. Sauber und gut beleuchtet prüfen, nicht während der Fahrt diagnostizieren."
+            "Vergleiche bei einem [GRARO-Aufbau](/de/models/ican-graro-frameset/) die markierte Sattel- und Stützenposition, das Lenkgefühl, die Laufradbefestigung, Bremsen und Schaltung mit den Kontrollen vor der Fahrt. Achte auf Schleifen, störende Leitungen, Luftverlust oder lose Anbauteile. Prüfe das stehende Rad an einem sauberen, gut beleuchteten Ort; suche nicht während der Fahrt nach Fehlern.",
+            "Hat sich beispielsweise die Markierung an der Sattelstütze gegenüber der Klemmung verschoben, fotografiere die neue Position und gib der Werkstatt das ursprüngliche Aufbauprotokoll. Vor der nächsten Fahrt muss diese Veränderung geklärt sein. Die Antwort „bis zum Wert auf der Klemme anziehen“ lässt noch offen: Ist der Wert eine Obergrenze, und welche Prüfmethode gilt für genau diese Verbindung?"
           ],
           "bullets": [
-            "Veränderung und Zeitpunkt notieren.",
-            "Bei Schadenverdacht, Spiel oder unsicherer Bremse nicht nutzen.",
-            "Offene Punkte vor der nächsten Fahrt zum Monteur geben."
+            "Notiere, was sich verändert hat und wann es auffiel.",
+            "Fahre bei Schadenverdacht, Spiel oder unzuverlässigen Bremsen nicht weiter.",
+            "Lass offene Fragen vor der nächsten Fahrt vom Monteur klären."
           ]
         },
         {
           "id": "fasteners",
           "heading": "Die vorgeschriebene Prüfmethode nutzen",
           "paragraphs": [
-            "Prüfe Rahmen-/Bauteilhinweise zu Anfangskontrolle und Intervallen. Ein Montagewert verlangt nicht automatisch Lösen und Wiederanziehen nach jeder Fahrt. Gesicherte Gewinde und Anzugsfolgen können andere Verfahren brauchen. [Treks Drehmomenthinweise](https://www.trekbikes.com/us/en_US/owners-manual/torque/) verweisen auf konkrete Bauteilvorgaben."
+            "Lies in den Rahmen- und Bauteilanleitungen nach, ob eine Kontrolle nach den ersten Fahrten vorgesehen ist und welche Intervalle gelten. Ein Montagewert ist nicht automatisch die Anweisung, eine Schraube nach jeder Fahrt zu lösen und erneut anzuziehen. Verbindungen mit Schraubensicherung oder bestimmten Anzugsfolgen können andere Wartungsverfahren verlangen. [Treks Drehmomenthinweise](https://www.trekbikes.com/us/en_US/owners-manual/torque/) verweisen auf die Vorgaben des konkreten Bauteils.",
+            "[Park Tools Hinweise zur Drehmomentschlüssel-Nutzung](https://www.parktool.com/en-us/blog/repair-help/torque-wrench-use-and-care) erklären, dass das Werkzeug den Drehwiderstand misst: Auch eine verkantet eingeschraubte Schraube kann Widerstand erzeugen, ohne die Verbindung korrekt zu verspannen. Das Erreichen des eingestellten Werts erklärt daher die verschobene Sattelstütze im Beispiel nicht und bestätigt keine erfolgreiche Korrektur. Frage nach Ursache und vorgeschriebener Abhilfe, statt die Schraube weiterzudrehen."
           ]
         },
         {
           "id": "followup",
           "heading": "Eine sinnvolle Nachkontrolle vereinbaren",
           "paragraphs": [
-            "Kläre mit dem Monteur nötige Nachkontrolle und enthaltenen Termin. Bringe Fehlerliste und Setupnotiz. Rutschende Stütze oder veränderte Lenkung brauchen Diagnose statt Nachziehen bis zur Ruhe. Endkorrekturen für spätere Wartung sichern."
+            "Kläre mit dem Monteur, was nach dem Aufbau kontrolliert werden soll und ob eine Nachkontrolle enthalten ist. Bringe eine kurze Fehlerliste und das Aufbauprotokoll mit. Eine rutschende Sattelstütze oder ein verändertes Lenkgefühl verlangt eine Diagnose, statt so lange nachzuziehen, bis das Symptom vorerst verschwindet. Halte die endgültigen Korrekturen für spätere Wartungen fest.",
+            "Bei einem neuen Geräusch hilft der [Ratgeber zur Beobachtung von Knarrgeräuschen](/de/blog/creaking-carbon-bike-diagnosis/), die Bedingungen zu beschreiben. Muss eine Verbindung neu montiert werden, unterscheidet der [Ratgeber zu Carbon-Montagepaste](/de/blog/carbon-assembly-paste-torque/) zwischen Klemmflächen und Schraubengewinden; er ersetzt nicht die Anleitung dieser Verbindung."
           ]
         }
       ]

@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/after-first-ride-bolt-check-mascot-cover-8b2f55dc28-640.webp', '56651512788519cdfb18b0ae0340ddfae26249c741a642ccf439fea71272c57d'],
+  ['assets/blog/after-first-ride-bolt-check-mascot-cover-8b2f55dc28-1600.webp', '71568e9f61d5b726aa390ea0d26bff2d1273f78f2ba70ce271ebab2e53cdce95'],
+  ['assets/blog/after-first-ride-bolt-check-mascot-cover-8b2f55dc28-1200.jpg', '70905ab4f31899b2347e9f38288c5e2c5665e9aa51ed7665d81641b5f9a84057'],
   ['assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-640.webp', '6ca7d9713621d945dd8f4fc412a0c3f142ac7ce7ea2dd2e7c34da9701dd5d1d9'],
   ['assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-1600.webp', 'f0a8e652854459a600b62b4a94055afd41e2885b4a7e350c1880e17730252102'],
   ['assets/blog/creaking-carbon-bike-diagnosis-mascot-cover-0ab1ab9f9c-1200.jpg', '211746d4a160b4fc571047c7fdfab042dfb66e06a27916037690769c26760d29'],
