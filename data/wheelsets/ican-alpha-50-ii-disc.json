@@ -1,0 +1,46 @@
+{
+  "id": "ican-alpha-50-ii-disc",
+  "maker": "ICAN",
+  "name": "Alpha 50 II Disc",
+  "use": "road",
+  "status": "current",
+  "positioning": "Lower-cost 50 mm road wheelset with steel spokes, a 6-pawl hub and a 23 mm inner width.",
+  "rim": {
+    "depth_mm": { "front": 50, "rear": 50 },
+    "internal_width_mm": 23,
+    "external_width_mm": { "front": 28, "rear": 28 },
+    "bead": "unknown",
+    "bead_note": "Hooked or hookless is not stated.",
+    "tubeless_ready": true,
+    "tire_range": "700×25–32 mm recommended in the summary; 25–42 mm in the specification table"
+  },
+  "max_pressure": { "psi": null, "note": "Not published on the product page." },
+  "load_limit": { "kg": 110, "scope": "unspecified", "note": "Listed as a rider weight limit; the page does not say whether bike weight is included." },
+  "weight": { "grams": 1459, "tolerance_g": 20, "basis": "Pair (front 671 g, rear 788 g); inclusion of rim tape and valves is not stated.", "claim_type": "official" },
+  "hub": "ICAN D21 · 6 pawls, 72 engagement points · NBK steel or S&S ceramic bearings",
+  "spokes": { "material": "steel", "summary": "Pillar SA1423 · 24/24" },
+  "compatibility": {
+    "rotor_mount": "center-lock",
+    "axles": ["12x100", "12x142"],
+    "freehubs": ["hg-road", "shimano-microspline", "sram-xdr"]
+  },
+  "warranty": "2-year guarantee.",
+  "price_observations": [
+    {
+      "amount": 490,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-sale",
+      "observed_at": "2026-10-20",
+      "conditions": "Sale price for steel-bearing variants; compare-at US$545–565 depending on freehub. Ceramic-bearing variants were US$520.",
+      "source_id": "ican-alpha-50-ii-disc-official-2026-10-20"
+    }
+  ],
+  "caveats": [
+    "Bead type and maximum tire pressure are not published.",
+    "The page gives two different tire ranges; confirm the limit for your tire size.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "source_ids": ["ican-alpha-50-ii-disc-official-2026-10-20"],
+  "reviewed_at": "2026-10-20"
+}

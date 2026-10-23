@@ -11,6 +11,7 @@ export const COVERAGE_COLLECTIONS = [
   'videos',
   'groupsets',
   'buildParts',
+  'wheelsets',
   'recommendations',
   'candidates',
   'exclusions',

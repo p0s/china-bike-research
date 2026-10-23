@@ -24,6 +24,15 @@ export const buildSlotIds = [
   'pedals', 'bar-tape', 'assembly'
 ];
 
+// Freehub IDs shared by the carbon-wheel reference and build-planner compatibility checks.
+export const wheelsetFreehubLabels = {
+  'hg-road': 'Shimano HG',
+  'shimano-microspline': 'Shimano Micro Spline',
+  'sram-xdr': 'SRAM XDR',
+  'campagnolo-10-12': 'Campagnolo 10–12s',
+  'campagnolo-n3w': 'Campagnolo N3W'
+};
+
 const categoryLabels = {
   road: 'Road',
   'road-race': 'Road race',
@@ -227,6 +236,7 @@ export function loadDataset() {
     videos: loadDirectory('videos'),
     groupsets: loadDirectory('groupsets'),
     buildParts: loadDirectory('build-parts'),
+    wheelsets: loadDirectory('wheelsets'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -293,6 +303,7 @@ export function validateDataset(data = loadDataset()) {
     video: data.videos,
     groupset: data.groupsets,
     buildPart: data.buildParts,
+    wheelset: data.wheelsets ?? [],
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
@@ -461,6 +472,57 @@ export function validateDataset(data = loadDataset()) {
   }
   for (const [slot, count] of defaultBuildPartsBySlot) {
     if (count > 1) errors.push(`build parts: slot ${slot} has ${count} defaults`);
+  }
+
+  const buildPartIds = new Set(data.buildParts.map((part) => part.id));
+  const inRange = (value, low, high) => Number.isFinite(value) && value >= low && value <= high;
+  for (const wheelset of data.wheelsets ?? []) {
+    requireFields('wheelset', wheelset, [
+      'maker', 'name', 'use', 'status', 'positioning', 'rim', 'max_pressure', 'load_limit',
+      'weight', 'hub', 'spokes', 'compatibility', 'price_observations', 'caveats', 'source_ids', 'reviewed_at'
+    ]);
+    const label = `wheelset ${wheelset.id}`;
+    // Planner options share one ID space with build-part records.
+    if (buildPartIds.has(wheelset.id)) errors.push(`${label}: id collides with a build part`);
+    if (!['road', 'gravel'].includes(wheelset.use)) errors.push(`${label}: use must be road or gravel`);
+    const rim = wheelset.rim ?? {};
+    for (const end of ['front', 'rear']) {
+      if (!inRange(rim.depth_mm?.[end], 15, 100)) errors.push(`${label}: invalid rim.depth_mm.${end}`);
+      if (!inRange(rim.external_width_mm?.[end], 15, 60) || rim.external_width_mm[end] <= rim.internal_width_mm) errors.push(`${label}: invalid rim.external_width_mm.${end}`);
+    }
+    if (!inRange(rim.internal_width_mm, 15, 40)) errors.push(`${label}: invalid rim.internal_width_mm`);
+    if (!['hooked', 'hookless', 'unknown'].includes(rim.bead)) errors.push(`${label}: rim.bead must be hooked, hookless or unknown`);
+    if (typeof rim.tubeless_ready !== 'boolean') errors.push(`${label}: rim.tubeless_ready must be boolean`);
+    if (typeof rim.tire_range !== 'string' || !rim.tire_range.trim()) errors.push(`${label}: missing rim.tire_range`);
+    const pressure = wheelset.max_pressure ?? {};
+    if (pressure.psi !== null && !inRange(pressure.psi, 20, 200)) errors.push(`${label}: invalid max_pressure.psi`);
+    if (typeof pressure.note !== 'string' || !pressure.note.trim()) errors.push(`${label}: missing max_pressure.note`);
+    // A hookless rim is safety-critical; publish it only with the maker's pressure limit.
+    if (rim.bead === 'hookless' && pressure.psi === null) errors.push(`${label}: hookless rim needs a published max_pressure.psi`);
+    const limit = wheelset.load_limit ?? {};
+    if (limit.kg !== null && !inRange(limit.kg, 50, 200)) errors.push(`${label}: invalid load_limit.kg`);
+    if (!['system', 'rider', 'unspecified'].includes(limit.scope)) errors.push(`${label}: invalid load_limit.scope`);
+    if (!inRange(wheelset.weight?.grams, 800, 2500)) errors.push(`${label}: invalid weight.grams`);
+    if (typeof wheelset.weight?.basis !== 'string' || !wheelset.weight.basis.trim()) errors.push(`${label}: missing weight.basis`);
+    if (!['measured', 'official', 'seller claim', 'community report'].includes(wheelset.weight?.claim_type)) errors.push(`${label}: invalid weight.claim_type`);
+    if (!['steel', 'carbon'].includes(wheelset.spokes?.material)) errors.push(`${label}: spokes.material must be steel or carbon`);
+    const fit = wheelset.compatibility ?? {};
+    if (![null, 'center-lock', '6-bolt'].includes(fit.rotor_mount)) errors.push(`${label}: invalid compatibility.rotor_mount`);
+    if (!Array.isArray(fit.axles) || !fit.axles.length) errors.push(`${label}: compatibility.axles must not be empty`);
+    if (!Array.isArray(fit.freehubs) || !fit.freehubs.length || fit.freehubs.some((id) => !wheelsetFreehubLabels[id])) errors.push(`${label}: compatibility.freehubs must use known freehub ids`);
+    if (!Array.isArray(wheelset.price_observations) || !wheelset.price_observations.length) errors.push(`${label}: price_observations must not be empty`);
+    for (const observation of wheelset.price_observations ?? []) {
+      if (!Number.isFinite(observation.amount) || observation.amount <= 0) errors.push(`${label}: invalid price amount`);
+      if (!/^[A-Z]{3}$/.test(observation.currency ?? '')) errors.push(`${label}: invalid price currency`);
+      if (!isDate(observation.observed_at)) errors.push(`${label}: invalid price observed_at`);
+      for (const field of ['market', 'price_type', 'conditions']) {
+        if (typeof observation[field] !== 'string' || !observation[field].trim()) errors.push(`${label}: missing price ${field}`);
+      }
+      if (!sourceIds.has(observation.source_id)) errors.push(`${label}: missing price source ${observation.source_id}`);
+    }
+    if (!Array.isArray(wheelset.caveats) || !wheelset.caveats.length) errors.push(`${label}: caveats must not be empty`);
+    for (const sourceId of wheelset.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${label}: missing source ${sourceId}`);
+    if (!isDate(wheelset.reviewed_at)) errors.push(`${label}: invalid reviewed_at`);
   }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));
@@ -939,6 +1001,8 @@ export function validateDataset(data = loadDataset()) {
   const youtubeIds = new Set();
   const xhsPostIds = new Set();
   const platformVideoCounts = new Map();
+  const wheelsetVideoCounts = new Map();
+  const wheelsetIds = new Set((data.wheelsets ?? []).map((wheelset) => wheelset.id));
   const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride']);
   const videoRelationships = new Set(['retailer-linked', 'brand-published', 'product-supplied', 'publication-review', 'owner-review', 'community-post', 'unknown']);
   for (const video of data.videos) {
@@ -987,8 +1051,8 @@ export function validateDataset(data = loadDataset()) {
     } catch { errors.push(`video ${video.id}: invalid disclosure URL`); }
 
     const target = isObject(video.target) ? video.target : {};
-    const targetKeys = ['platform_id', 'variant_id', 'candidate_id'].filter((key) => target[key] !== undefined);
-    if (targetKeys.length !== 1) errors.push(`video ${video.id}: target must identify exactly one platform, variant, or candidate`);
+    const targetKeys = ['platform_id', 'variant_id', 'candidate_id', 'wheelset_id'].filter((key) => target[key] !== undefined);
+    if (targetKeys.length !== 1) errors.push(`video ${video.id}: target must identify exactly one platform, variant, candidate, or wheelset`);
     if (target.platform_id !== undefined) {
       if (!platformIds.has(target.platform_id)) errors.push(`video ${video.id}: missing platform ${target.platform_id}`);
       if (video.match !== 'exact-platform') errors.push(`video ${video.id}: platform target must use exact-platform match`);
@@ -1004,9 +1068,18 @@ export function validateDataset(data = loadDataset()) {
       const candidate = data.candidates.find((item) => item.id === target.candidate_id);
       if (candidate && !(candidate.video_ids ?? []).includes(video.id)) errors.push(`video ${video.id}: candidate ${target.candidate_id} does not link this video`);
     }
+    if (target.wheelset_id !== undefined) {
+      if (!wheelsetIds.has(target.wheelset_id)) errors.push(`video ${video.id}: missing wheelset ${target.wheelset_id}`);
+      if (video.match !== 'exact-wheelset') errors.push(`video ${video.id}: wheelset target must use exact-wheelset match`);
+      if (video.provider !== 'youtube') errors.push(`video ${video.id}: wheelset videos must be YouTube embeds`);
+      wheelsetVideoCounts.set(target.wheelset_id, (wheelsetVideoCounts.get(target.wheelset_id) ?? 0) + 1);
+    }
   }
   for (const [platformId, count] of platformVideoCounts) {
     if (count > 2) errors.push(`platform ${platformId}: more than two curated videos`);
+  }
+  for (const [wheelsetId, count] of wheelsetVideoCounts) {
+    if (count > 2) errors.push(`wheelset ${wheelsetId}: more than two curated videos`);
   }
 
   for (const recommendation of data.recommendations) if (!variantIds.has(recommendation.variant_id)) errors.push(`recommendation ${recommendation.id}: missing variant ${recommendation.variant_id}`);

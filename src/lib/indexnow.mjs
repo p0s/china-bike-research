@@ -10,7 +10,7 @@ export const indexNow = Object.freeze({
   maxUrls: 10_000
 });
 export const indexNowKeyUrl = `${indexNow.origin}/${indexNow.key}.txt`;
-const publicPath = /^\/(?:(?:zh|de)\/)?(?:(?:models|brands|prices|complete-bikes|framesets|build|geometry|methodology|privacy|image-policy|image-sources|electronic-shifting|blog)(?:\/[a-z0-9-]+)*\/)?$/;
+const publicPath = /^\/(?:(?:zh|de)\/)?(?:(?:models|brands|prices|complete-bikes|framesets|build|geometry|methodology|privacy|image-policy|image-sources|electronic-shifting|carbon-wheels|blog)(?:\/[a-z0-9-]+)*\/)?$/;
 
 export function validatePublicUrl(value) {
   const parsed = new URL(value);
