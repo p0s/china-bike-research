@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/yearly-service-budget-carbon-bike-mascot-cover-8bd1b60934-640.webp', 'e6c6947fb321f53f9a7eb00844e7982c82b992fff444a37cdeb48ac7f5368922'],
+  ['assets/blog/yearly-service-budget-carbon-bike-mascot-cover-8bd1b60934-1600.webp', 'd0c38f5c198af471e1487a72422aeb80a93e2a800e9be67484c554b04f928f48'],
+  ['assets/blog/yearly-service-budget-carbon-bike-mascot-cover-8bd1b60934-1200.jpg', '80de96009066b710201861c948587ee184840e20114c361c43cf5f543f616512'],
   ['assets/blog/after-first-ride-bolt-check-mascot-cover-8b2f55dc28-640.webp', '56651512788519cdfb18b0ae0340ddfae26249c741a642ccf439fea71272c57d'],
   ['assets/blog/after-first-ride-bolt-check-mascot-cover-8b2f55dc28-1600.webp', '71568e9f61d5b726aa390ea0d26bff2d1273f78f2ba70ce271ebab2e53cdce95'],
   ['assets/blog/after-first-ride-bolt-check-mascot-cover-8b2f55dc28-1200.jpg', '70905ab4f31899b2347e9f38288c5e2c5665e9aa51ed7665d81641b5f9a84057'],
