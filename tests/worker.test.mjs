@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyticsEventPayload, analyticsPayload, handleRequest, hasOptOutCookie, ingestAction, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
+import { analyticsEngagementPayload, analyticsEventPayload, analyticsPayload, handleRequest, hasOptOutCookie, ingestAction, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
 
 function makeRequest(path, init = {}, cf = { country: 'SG' }) {
   const request = new Request(`https://chinesebikes.xyz${path}`, init);
-  Object.defineProperty(request, 'cf', { value: cf });
+  Object.defineProperty(request, 'cf', { value: cf, configurable: true });
   return request;
 }
 
@@ -90,6 +90,20 @@ test('analytics payload is minimized to the frozen ingestion fields', () => {
   assert.equal(isEligibleDocumentPath('/models/example-bike'), false);
 });
 
+test('measurement QA is a fixed boolean only for the exact document query', () => {
+  const exact = makeRequest('/models/example-bike/?measurement_qa=1', {
+    headers: { 'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0' }
+  });
+  assert.deepEqual(analyticsPayload(exact, new URL(exact.url)), {
+    hostname: 'chinesebikes.xyz', path: '/models/example-bike/', referrer: '', qa: true,
+    ip: '203.0.113.10', userAgent: 'Mozilla/5.0', country: 'SG'
+  });
+  for (const path of ['/models/example-bike/?measurement_qa=1&run=secret', '/models/example-bike/?run=secret']) {
+    const request = makeRequest(path, { headers: { 'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0' } });
+    assert.equal(Object.hasOwn(analyticsPayload(request, new URL(request.url)), 'qa'), false);
+  }
+});
+
 test('analytics accepts compressed IPv6 addresses from Cloudflare', () => {
   const request = makeRequest('/', {
     headers: {
@@ -128,6 +142,9 @@ test('analytics eligibility honors DNT, GPC, opt-out, prefetch, bots, and privat
   assert.equal(hasOptOutCookie('foo=1; p0s_analytics_optout=1; bar=2'), true);
   const privateRequest = makeRequest('/account/profile/', { headers: base });
   assert.equal(analyticsPayload(privateRequest, new URL(privateRequest.url)), null);
+  const verifiedBot = makeRequest('/models/example-bike/', { headers: base });
+  Object.defineProperty(verifiedBot, 'cf', { value: { country: 'SG', botManagement: { verifiedBot: true } } });
+  assert.equal(analyticsPayload(verifiedBot, new URL(verifiedBot.url)), null);
 });
 
 test('comparison event payload contains only the fixed event and validated public path', () => {
@@ -162,6 +179,36 @@ test('comparison event payload contains only the fixed event and validated publi
       }
     });
     assert.equal(analyticsEventPayload(invalid, new URL(invalid.url)), null, path);
+  }
+});
+
+test('comparison and engagement QA are boolean only, and engagement shares the server privacy gates', () => {
+  const headers = { origin: 'https://chinesebikes.xyz', 'x-analytics-path': '/models/example-bike/',
+    'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0' };
+  const compare = makeRequest('/site-events/action', { method: 'POST', headers: { ...headers, 'x-analytics-path': '/' , 'x-measurement-qa': '1' } });
+  assert.equal(analyticsEventPayload(compare, new URL(compare.url)).qa, true);
+  const engagement = makeRequest('/site-events/engagement', { method: 'POST', headers: { ...headers, 'x-measurement-qa': '1' } });
+  assert.deepEqual(analyticsEngagementPayload(engagement, new URL(engagement.url)), {
+    hostname: 'chinesebikes.xyz', path: '/models/example-bike/', ip: '203.0.113.10',
+    userAgent: 'Mozilla/5.0', country: 'SG', eventName: 'page_engaged', qa: true
+  });
+  for (const blocked of [
+    { dnt: '1' }, { 'sec-gpc': '1' }, { cookie: 'p0s_analytics_optout=1' },
+    { purpose: 'prefetch' }, { 'user-agent': 'ExampleBot/1.0' }
+  ]) {
+    const request = makeRequest('/site-events/engagement', { method: 'POST', headers: { ...headers, ...blocked } });
+    assert.equal(analyticsEngagementPayload(request, new URL(request.url)), null);
+  }
+  const verifiedBot = makeRequest('/site-events/engagement', { method: 'POST', headers });
+  Object.defineProperty(verifiedBot, 'cf', { value: { country: 'SG', botManagement: { verifiedBot: true } } });
+  assert.equal(analyticsEngagementPayload(verifiedBot, new URL(verifiedBot.url)), null);
+  for (const [path, extra] of [
+    ['/site-events/engagement?run=secret', {}], ['/site-events/engagement', { origin: 'https://attacker.example' }],
+    ['/site-events/engagement', { 'content-type': 'text/plain' }], ['/site-events/engagement', { 'x-measurement-qa': 'true' }],
+    ['/site-events/engagement', { 'x-analytics-path': '/private/' }]
+  ]) {
+    const request = makeRequest(path, { method: 'POST', headers: { ...headers, ...extra } });
+    assert.equal(analyticsEngagementPayload(request, new URL(request.url)), null);
   }
 });
 
@@ -208,6 +255,45 @@ test('same-origin comparison event reaches the gateway without browser-only fiel
   } finally {
     globalThis.fetch = originalFetch;
   }
+});
+
+test('engagement endpoint forwards one minimized page_engaged event and honors QA without creating a GA action', async () => {
+  const sent = [], waits = [];
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    sent.push({ url: String(url), body: JSON.parse(init.body) });
+    return new Response(null, { status: 204 });
+  };
+  const env = { ...{
+    GA4_ENABLED: 'true', GA4_MEASUREMENT_ID: 'G-TEST12345', GA4_API_SECRET: 'test-secret',
+    ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1', ANALYTICS_INGEST_TOKEN: 'test-token'
+  } };
+  try {
+    const response = await handleRequest(makeRequest('/site-events/engagement', {
+      method: 'POST', headers: { origin: 'https://chinesebikes.xyz', 'x-analytics-path': '/models/example-bike/',
+        'x-measurement-qa': '1', 'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0',
+        cookie: 'p0s_ga_cid=123.456; p0s_ga_sid=1780000000' }
+    }), env, { waitUntil: task => waits.push(task) });
+    assert.equal(response.status, 204);
+    assert.equal(waits.length, 1);
+    await Promise.all(waits);
+    assert.equal(sent.length, 1);
+    assert.equal(sent[0].url, env.ANALYTICS_INGEST_URL);
+    assert.deepEqual(sent[0].body, { hostname: 'chinesebikes.xyz', path: '/models/example-bike/',
+      ip: '203.0.113.10', userAgent: 'Mozilla/5.0', country: 'SG', eventName: 'page_engaged', qa: true });
+
+    const invalid = await handleRequest(makeRequest('/site-events/engagement', {
+      method: 'POST', headers: { origin: 'https://attacker.example', 'x-analytics-path': '/models/example-bike/',
+        'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0' }
+    }), env);
+    assert.equal(invalid.status, 403);
+    const blocked = await handleRequest(makeRequest('/site-events/engagement', {
+      method: 'POST', headers: { origin: 'https://chinesebikes.xyz', 'x-analytics-path': '/models/example-bike/',
+        dnt: '1', 'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0' }
+    }), env, { waitUntil: task => waits.push(task) });
+    assert.equal(blocked.status, 204);
+    assert.equal(waits.length, 1);
+  } finally { globalThis.fetch = originalFetch; }
 });
 
 test('an empty POST stream is accepted but a stream with bytes is rejected', async () => {
@@ -298,6 +384,17 @@ test('comparison events require same-origin bodyless POST and honor analytics ex
       method: 'POST', headers: { ...common, origin: 'null', referer: `${origin}/` }
     }), env);
     assert.equal(opaqueOrigin.status, 403);
+    const primaryOpaqueOrigin = await handleRequest(makeRequest('/site-events/action', {
+      method: 'POST', headers: { ...common, origin: 'null', referer: `${origin}/` }
+    }), env);
+    assert.equal(primaryOpaqueOrigin.status, 403);
+    const primaryOriginWaits = [];
+    const primarySameOrigin = await handleRequest(makeRequest('/site-events/action', {
+      method: 'POST', headers: common
+    }), env, { waitUntil: (promise) => primaryOriginWaits.push(promise) });
+    assert.equal(primarySameOrigin.status, 204);
+    assert.equal(primaryOriginWaits.length, 1);
+    await Promise.all(primaryOriginWaits);
 
     const body = await handleRequest(makeRequest('/analytics/event', {
       method: 'POST', headers: common, body: 'unexpected'
@@ -313,7 +410,7 @@ test('comparison events require same-origin bodyless POST and honor analytics ex
     assert.equal(query.status, 400);
     const get = await handleRequest(makeRequest('/analytics/event', { headers: common }), env);
     assert.equal(get.status, 405);
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -481,6 +578,25 @@ test('collector HTTP failures are reported as rejected ingestion', async () => {
     return new Response(null, { status: 307, headers: { location: 'https://elsewhere.example/' } });
   }), false);
   assert.equal(redirectCalls, 1);
+});
+
+test('collector redirects are rejected without following the target', async () => {
+  const payload = { hostname: 'chinesebikes.xyz', path: '/', eventName: 'page_engaged' };
+  const env = {
+    ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
+    ANALYTICS_INGEST_TOKEN: 'test-token'
+  };
+  const calls = [];
+  const accepted = await ingestAnalytics(payload, env, async (url, init) => {
+    calls.push({ url, init });
+    return new Response(null, { status: 302, headers: { location: 'https://redirect.invalid/collect' } });
+  });
+
+  assert.equal(accepted, false);
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].url, env.ANALYTICS_INGEST_URL);
+  assert.equal(calls[0].init.redirect, 'manual');
+  assert.equal(calls[0].init.referrerPolicy, 'no-referrer');
 });
 
 test('preference routes require same-origin POST and set host-only cookies', async () => {

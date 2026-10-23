@@ -927,7 +927,10 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   assert.match(privacy, /Comparison events exclude selected bike lists/);
   assert.match(privacy, /Product-link actions include only public catalog context, without visitor details/);
   assert.match(privacy, /Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal/);
-  assert.match(privacy, /optional Google Analytics 4 parallel test/);
+  assert.match(privacy, /page_engaged once when a page stays visible for at least 10 seconds/);
+  assert.match(privacy, /foreground interaction, not a verified human/);
+  assert.match(privacy, /page request itself does not create a Google identifier or send a site_open event/);
+  assert.match(privacy, /both stored identifiers exist/);
   assert.match(privacy, /Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams/);
   assert.match(privacy, /Opt out of optional analytics/);
 
@@ -935,7 +938,8 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   assert.match(localizedPrivacy, /可选流量分析/);
   assert.match(localizedPrivacy, /compare_open/);
   assert.match(localizedPrivacy, /实时数据保留 13 个月/);
-  assert.match(localizedPrivacy, /可选的 Google Analytics 4 并行测试/);
+  assert.match(localizedPrivacy, /页面请求本身不会创建 Google 标识或发送 site_open/);
+  assert.match(localizedPrivacy, /前台互动，不代表已验证的真人/);
   assert.match(localizedPrivacy, /外部媒体/);
 
   const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');

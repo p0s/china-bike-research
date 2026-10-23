@@ -4,7 +4,7 @@ import { analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COUNTRIES, need
 import { handleRequest } from '../worker/index.mjs';
 import { startGa4 } from '../assets/ga4.js';
 import { bindAnalyticsChoices, stopAnalytics } from '../assets/analytics-choice.js';
-import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/analytics-event.js';
+import { sendComparisonOpenedEvent, sendProductOutboundClickEvent } from '../assets/site-interaction.js';
 import { localizeHtml } from '../src/lib/i18n.mjs';
 
 const origin = 'https://chinesebikes.xyz';
@@ -74,11 +74,10 @@ test('unknown locations and Switzerland allow automatically, while privacy signa
       const before = sent.length;
       const response = await handleRequest(request('/', country), env, { waitUntil: p => waits.push(p) });
       await Promise.all(waits);
-      assert.equal(sent.length - before, 2, country);
+      assert.equal(sent.length - before, 1, country);
       assert.doesNotMatch(await response.text(), /data-analytics-banner/);
-      assert.ok(response.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)));
-      const ga = sent.slice(before).find(item => item.url.includes('/mp/collect'));
-      assert.equal(Object.hasOwn(ga.body, 'user_location'), country === 'CH');
+      assert.equal(response.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)), false);
+      assert.equal(sent[before].url, env.ANALYTICS_INGEST_URL);
       for (const privacy of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: 'p0s_analytics_optout=1' }]) {
         const deniedWaits = [];
         const denied = await handleRequest(request('/', country, { headers: privacy }), env, { waitUntil: p => deniedWaits.push(p) });
@@ -114,6 +113,8 @@ test('config, session, comparison and product events cannot use old identifiers 
     ['/analytics/ga-config', 'GET', {}, undefined],
     ['/analytics/ga-session', 'POST', { 'x-ga4-session-id': '1780000000' }, undefined],
     ['/analytics/event', 'POST', { 'x-analytics-path': '/' }, undefined],
+    ['/site-events/engagement', 'POST', { 'x-analytics-path': '/' }, undefined],
+    ['/site-events/action', 'POST', { 'x-analytics-path': '/' }, undefined],
     ['/analytics/action', 'POST', { 'content-type': 'application/json' }, JSON.stringify({ actionId: 'product_outbound_click' })]
   ]) {
     const waits = [];
@@ -137,10 +138,10 @@ test('allow records versioned consent, while decline and privacy signals remain 
     const waits = [];
     const allowed = await handleRequest(request('/', 'FR', { headers: { cookie: consent } }), env, { waitUntil: p => waits.push(p) });
     await Promise.all(waits);
-    assert.equal(sent.length, 2);
+    assert.equal(sent.length, 1);
     assert.doesNotMatch(await allowed.text(), /data-analytics-banner/);
     assert.match(allowed.headers.get('content-security-policy'), /'nonce-[a-f0-9]{32}'/);
-    assert.ok(allowed.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)));
+    assert.equal(allowed.headers.getSetCookie().some(value => /^p0s_ga_cid=[1-9]/.test(value)), false);
     for (const privacy of [{ dnt: '1' }, { 'sec-gpc': '1' }, { cookie: `${consent}; p0s_analytics_optout=1` }]) {
       const deniedWaits = [];
       const denied = await handleRequest(request('/', 'FR', { headers: { cookie: consent, ...privacy } }), env, { waitUntil: p => deniedWaits.push(p) });
