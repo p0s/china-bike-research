@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 133,
+      "videos": 138,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2903,6 +2903,7 @@
       "yoeleo-altera-g21-primary-image"
     ],
     "videos": [
+      "af-bicycles-af01-gravel-race-review",
       "andrew-grabbs-carbonda-696-first-look",
       "andrew-grabbs-carbonda-cfr696-build",
       "andy-broadhurst-elves-falath-pro-build-2025",
@@ -2918,6 +2919,7 @@
       "china-cycling-cima-long-term",
       "china-cycling-incolor-ssr",
       "china-cycling-incolor-ssr-published",
+      "china-cycling-kung-mach-vs-vfv-build",
       "china-cycling-quick-pro-er-one",
       "china-cycling-quick-pro-ur-one",
       "china-cycling-quick-pro-xr-one",
@@ -2951,6 +2953,7 @@
       "dwayne-pedals-incolor-ssr-first-look",
       "dwayne-pedals-seka-exaero-gr-unboxing",
       "elves-mori-aerox-brand-overview",
+      "gc-performance-evolve-cima-gr-unboxing",
       "gc-performance-falath-evo-ride-review",
       "gc-performance-incolor-ssr-walkaround",
       "gc-performance-seka-exaero-gr-build",
@@ -2970,6 +2973,7 @@
       "ide-schelling-tavelo-grow-uci-race",
       "its-all-about-racing-winspace-t1600-30-days",
       "its-all-about-racing-winspace-t1600-unboxing",
+      "jkt-sepeda-camp-gx700-walkaround",
       "jourdain-coleman-elves-falath-pro-2022-build",
       "jourdain-coleman-elves-falath-pro-disc-inspection",
       "jourdain-coleman-vanyar-pro-2024-unbox",
@@ -2988,6 +2992,7 @@
       "nero-tavelo-grow-review",
       "nimbus-cycles-carbonda-cfr696-49cm-review",
       "oompa-loompa-carbonda-cfr696-owner-interview",
+      "overbiked-randonneuring-af01-ssl-build",
       "oz-cycle-ican-graro-frameset-overview",
       "oz-cycle-yoeleo-g21-altera-overview",
       "patrick-lino-ican-graro-first-look",
@@ -6235,6 +6240,7 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.measured_weights",
         "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
@@ -61796,6 +61802,29 @@
       ]
     },
     "videos": {
+      "af-bicycles-af01-gravel-race-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "andrew-grabbs-carbonda-696-first-look": [
         "accessed_at",
         "channel_name",
@@ -62109,6 +62138,29 @@
         "youtube_video_id"
       ],
       "china-cycling-incolor-ssr-published": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "china-cycling-kung-mach-vs-vfv-build": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -62864,6 +62916,29 @@
         "url",
         "youtube_video_id"
       ],
+      "gc-performance-evolve-cima-gr-unboxing": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "gc-performance-falath-evo-ride-review": [
         "accessed_at",
         "channel_name",
@@ -63277,6 +63352,29 @@
         "url",
         "youtube_video_id"
       ],
+      "jkt-sepeda-camp-gx700-walkaround": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "jourdain-coleman-elves-falath-pro-2022-build": [
         "accessed_at",
         "channel_name",
@@ -63661,6 +63759,29 @@
         "youtube_video_id"
       ],
       "oompa-loompa-carbonda-cfr696-owner-interview": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "overbiked-randonneuring-af01-ssl-build": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -118692,6 +118813,9 @@
       ]
     },
     "videos": {
+      "af-bicycles-af01-gravel-race-review": [
+        "target.platform_id=af01"
+      ],
       "andrew-grabbs-carbonda-696-first-look": [
         "target.platform_id=carbonda-cfr696"
       ],
@@ -118734,6 +118858,9 @@
       ],
       "china-cycling-incolor-ssr-published": [
         "target.platform_id=incolor-ssr"
+      ],
+      "china-cycling-kung-mach-vs-vfv-build": [
+        "target.platform_id=kung-mach"
       ],
       "china-cycling-quick-pro-er-one": [
         "target.candidate_id=quick-pro-er-one"
@@ -118828,6 +118955,9 @@
       "elves-mori-aerox-brand-overview": [
         "target.platform_id=elves-mori-aerox"
       ],
+      "gc-performance-evolve-cima-gr-unboxing": [
+        "target.platform_id=evolve-cima-gr"
+      ],
       "gc-performance-falath-evo-ride-review": [
         "target.candidate_id=missing-china-price-elves-falath-evo"
       ],
@@ -118883,6 +119013,9 @@
       "its-all-about-racing-winspace-t1600-unboxing": [
         "target.candidate_id=winspace-t1600"
       ],
+      "jkt-sepeda-camp-gx700-walkaround": [
+        "target.platform_id=camp-gx700"
+      ],
       "jourdain-coleman-elves-falath-pro-2022-build": [
         "target.platform_id=elves-falath-r7170"
       ],
@@ -118934,6 +119067,9 @@
       ],
       "oompa-loompa-carbonda-cfr696-owner-interview": [
         "target.platform_id=carbonda-cfr696"
+      ],
+      "overbiked-randonneuring-af01-ssl-build": [
+        "target.platform_id=af01"
       ],
       "oz-cycle-ican-graro-frameset-overview": [
         "target.platform_id=ican-graro"

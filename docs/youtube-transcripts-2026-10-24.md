@@ -51,11 +51,27 @@ Delivered: transcript review of every linked video for these platforms and 12 ne
 - Mismatch (not added): BXT `PoBaCk0DQmE`, `6RmPw4_VbW0`, `XtxI6o0yUPQ` show the older BXT Gravel 135, not the 055; Twitter `MPmUqHWyhEs` shows a Gravel V1; Winspace `FyzUCmZK6XA` is the M6 road bike; Elves Falath EVO/EXP/rim-brake videos and Mori videos without AeroX identity.
 - Low value or duplicate (not added): promotional Twitter Gravel V3 voice-overs `LRiU3_9_8is`, `6lVsY_E9HW0`; music-only `HBgMo7lTljo`; SEKA `0gA8fsaMZ3U` (repeats the Ben_skillz clearance point), `rknUKahR3-s`, `4jwZGI_XOVA`, `UP-RSKanF9Y` (no decision-relevant facts beyond records added); Tavelo `vXKdfFYLfCg` (cap reached); Winspace `Jbwb3nOMfDY` (launch commentary).
 
+## Batch 4 — first videos for AF01, Bianchi Oltre Race, CAMP GX600/GX700, Evolve CIMA GR, Incolor Voyager, KUNG Mach, LightCarbon LCG071S-PRO/SPEEDZ, Pardus Super Sport Gen2
+
+Delivered: five new exact-model videos with transcript takeaways (AF01 2, Evolve CIMA GR 1, KUNG Mach 1, CAMP GX700 1) and reviewer-measured Evolve CIMA GR frame and fork weights (size ML: 974 g painted with hardware, 394 g uncut fork).
+
+- AF01: an owner's XXL build of the SSL premium layup (AF says about 200 g lighter across frame and fork) and AF's own race video, whose 700×54 mm fork-clearance statement is recorded as a maker claim, not as a change to the 50 mm maximum.
+- Evolve CIMA GR: GC Performance confirms 50 mm front and rear (printed on the fork), a 50T 1× maximum and electronic-only 2×.
+- KUNG Mach: China Cycling's four-month retailer review (size M build 7.93 kg with pedals; 73.5° seat angle with only a 10 mm-offset aero post).
+- CAMP GX700: Indonesian retailer walkaround with stock 45C tires showing room; the 9.9 kg size-48 figure was quoted, not weighed.
+- Mismatch (not added): Evolve CIMA road-frame reviews `RwC0DVcGDpY`, `wUP9U1tgk8U`, `QJzLBhC0qM0`, `pd_HiFezS0w`, `mjGbQI0W_p8`, `xl14yzDgiJI` (useful for the `evolve-cima-road` candidate later); Bianchi Oltre Comp `LMpkOo98leE` and Infinito `mIJVaiz6bv0`; Pardus Super Sport first-generation videos; CAMP Beijing shop tour `wQY8nGYGL9o` (no GX600 content).
+- Model not identified (not added): LightCarbon gravel and aero-road videos `aBRsiEQOSnI`, `LUlHihI24yI`, `-NYsVBXBj2o`, `8gNfullJAOI`, `Vcam2DBqAcQ` do not name LCG071S-PRO or SPEEDZ.
+- No caption track or no speech (not added): AF01 assembly `y4x2q-D5KGI`, CAMP GX600 `sKKgWAF_ZEI`, Pardus Super Sport Gen2 unboxing `wkbXHXhRn0M`, LightCarbon LCG071S launch `2wh59hUs7bw`, Incolor Voyager workshop build `TWtySwsjUho`.
+- Low value (not added): Bianchi Oltre Race 105 Di2 voice-over promo `iq_nj9IJE3A`; second CAMP GX700 retailer promo `EY3G43nT_Qk`. No exact KUNG Mach, Incolor Voyager or SPEEDZ review beyond these was found.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
 |---|---|---|---|
+| af01 | `af-bicycles-af01-gravel-race-review` | AFbicycles | automatic captions · 3 takeaways |
+| af01 | `overbiked-randonneuring-af01-ssl-build` | Overbiked Randonneuring | automatic captions · 6 takeaways |
 | bxt-055 | `bxt-store-055-overview` | BXT Official store | no caption track |
+| camp-gx700 | `jkt-sepeda-camp-gx700-walkaround` | JKT Sepeda | automatic captions · 4 takeaways |
 | carbonda-cfr696 | `andrew-grabbs-carbonda-696-first-look` | Andrew Grabbs | automatic captions · 6 takeaways |
 | carbonda-cfr696 | `andrew-grabbs-carbonda-cfr696-build` | Andrew Grabbs | automatic captions · 2 takeaways |
 | carbonda-cfr696 | `cycle-the-world-carbonda-cfr696-close-look` | Cycle The World | no caption track |
@@ -69,6 +85,7 @@ Delivered: transcript review of every linked video for these platforms and 12 ne
 | elves-falath-r7170 | `jourdain-coleman-elves-falath-pro-disc-inspection` | Jourdain Coleman | automatic captions · 5 takeaways |
 | elves-falath-r7170 | `rocky-pop-elves-falath-pro-disc-grx` | Rocky Pop | no speech in captions |
 | elves-mori-aerox | `elves-mori-aerox-brand-overview` | ELVES BIKE | no caption track |
+| evolve-cima-gr | `gc-performance-evolve-cima-gr-unboxing` | GC Performance | automatic captions · 5 takeaways |
 | ican-gra04 | `icanbikes-gra04-apex-xplr-build` | icanian | no speech in captions |
 | ican-gra04 | `icanbikes-gra04-race-build` | icanian | no speech in captions |
 | ican-graro | `cycle-workshop-ican-graro-build` | The Cycle Workshop | automatic captions · 6 takeaways |
@@ -91,6 +108,7 @@ Delivered: transcript review of every linked video for these platforms and 12 ne
 | incolor-ssr | `gc-performance-incolor-ssr-walkaround` | GC Performance | automatic captions · 3 takeaways |
 | incolor-ssr | `nero-show-incolor-ssr-review` | NERO Cycling | automatic captions · 7 takeaways |
 | incolor-ssr | `underdogs-cycling-incolor-ssr-build` | Underdogs Cycling | creator captions · 4 takeaways |
+| kung-mach | `china-cycling-kung-mach-vs-vfv-build` | China Cycling | automatic captions · 5 takeaways |
 | quick-gr-one | `beijing-feeling-quick-pro-gr-one-build` | Beijing FEELING-Bicycle Studio | no speech in captions |
 | quick-gr-one | `dream-build-quick-pro-gr-one` | Dream Build | no caption track |
 | quick-gr-one | `julius-domroes-gr-one-crit-road-build` | Julius Domroes | creator captions · 4 takeaways |
@@ -170,4 +188,4 @@ Delivered: transcript review of every linked video for these platforms and 12 ne
 | yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term` | The Cycle Workshop | not yet reviewed |
 | yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-review` | The Cycle Workshop | not yet reviewed |
 
-Published platforms with no linked YouTube video yet: `af01`, `bianchi-oltre-race`, `camp-gx600`, `camp-gx700`, `evolve-cima-gr`, `incolor-voyager`, `kung-mach`, `lightcarbon-lcg071s-pro`, `lightcarbon-speedz`, `pardus-super-sport-gen2`, `rinasclta-gr025`, `sava-a7l-r7100`, `sava-gelaro`, `sava-gelaro-s8`, `sava-gelaro-sf`, `scott-addict-rc-40`, `spcycle-g026`, `spcycle-g028`, `tfsa-jh37`, `twitter-cyclone-electronic`, `twitter-cyclone-gen3-et`, `twitter-gravel-v3-2024`, `twitter-t3-tt`, `xmcarbonspeed-cs-gr01`.
+Published platforms with no linked YouTube video yet: `bianchi-oltre-race`, `camp-gx600`, `incolor-voyager`, `lightcarbon-lcg071s-pro`, `lightcarbon-speedz`, `pardus-super-sport-gen2`, `rinasclta-gr025`, `sava-a7l-r7100`, `sava-gelaro`, `sava-gelaro-s8`, `sava-gelaro-sf`, `scott-addict-rc-40`, `spcycle-g026`, `spcycle-g028`, `tfsa-jh37`, `twitter-cyclone-electronic`, `twitter-cyclone-gen3-et`, `twitter-gravel-v3-2024`, `twitter-t3-tt`, `xmcarbonspeed-cs-gr01`.
