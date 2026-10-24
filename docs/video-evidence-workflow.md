@@ -26,6 +26,7 @@ Captures are immutable: set `VIDEO_CORPUS_ROOT` to a fresh ignored directory for
 - A visible measurement applies only to the exact configuration shown.
 - Ride impressions and owner experience are contextual reports, not universal facts.
 - A creator repeating a manufacturer claim still needs an exact primary source.
+- Takeaways and clearance field reports require a transcript read from the public YouTube transcript panel on the recorded `transcript.checked_at` date; decisive numbers are checked against playback when captions are ambiguous.
 - Titles, descriptions, chapters, and shop-tour lists are discovery evidence only.
 - Identity, generation, price, availability, fit, compatibility, safety, and recommendation-changing claims require exact-model evidence.
 - Never propagate a claim to a sibling model, size, generation, or regional build.

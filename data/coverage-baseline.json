@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 112,
+      "videos": 121,
       "opinions": 11,
       "groupsets": 11,
       "buildParts": 10,
@@ -2924,6 +2924,7 @@
       "china-cycling-tavelo-arow-2026-build",
       "china-cycling-voicevelo-g-major",
       "china-cycling-yoeleo-altera-g21",
+      "china-rides-incolor-speedster-shop",
       "china-rides-incolor-ssr",
       "china-rides-quick-pro-ur-one",
       "china-rides-winspace-m6-shop-tour",
@@ -2935,15 +2936,20 @@
       "cycle-workshop-ican-graro-ride-review",
       "cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term",
       "cycle-workshop-yoeleo-sat-c45-nxt-gravel-review",
+      "cyclingnews-incolor-ssr-review",
       "cyclingnews-seka-spear-rdc-review",
       "cyclists-hub-elitewheels-drive-50d-ii-review",
+      "cyclists-hub-incolor-engineer-interview",
       "cyclists-hub-m6-review",
       "cyclists-hub-t1600-review",
       "daryl-pace-carbonda-cfr707-build",
       "david-arthur-winspace-slc3-review",
       "dream-build-quick-pro-gr-one",
+      "dwayne-pedals-incolor-ssr-600-miles",
+      "dwayne-pedals-incolor-ssr-first-look",
       "elves-mori-aerox-brand-overview",
       "gc-performance-falath-evo-ride-review",
+      "gc-performance-incolor-ssr-walkaround",
       "gc-performance-winspace-g5",
       "gc-performance-winspace-t1600-build",
       "gc-performance-winspace-t1600-ride",
@@ -2967,6 +2973,7 @@
       "lovemtb-elitewheels-drive-g36-tech-check",
       "lukas-benka-carbonda-696-budget-build",
       "magazyn-bike-triaero-graro-six-month-test",
+      "nero-show-incolor-ssr-review",
       "nero-show-winspace-t1600-review",
       "nero-tavelo-grow-review",
       "nimbus-cycles-carbonda-cfr696-49cm-review",
@@ -2991,6 +2998,7 @@
       "tom-bowers-lightcarbon-lcg071-pro-build",
       "tom-bowers-yoeleo-altera-g21-build",
       "uk-bike-fit-yoeleo-altera-g21-custom-build",
+      "underdogs-cycling-incolor-ssr-build",
       "vadim-on-wheels-winspace-g3-150km",
       "victor-torres-quick-pro-gr-one-dream-build",
       "vitality-twitter-gravel-v3-2025-wheeltop-review",
@@ -3015,7 +3023,8 @@
       "xhs-xlab-ad9-mechanic-build",
       "xhs-xlab-rs9-brand",
       "xhs-xlab-rs9-owner",
-      "xhs-xlab-rs9-red-finish"
+      "xhs-xlab-rs9-red-finish",
+      "yocyclo-incolor-sr-plus-frameset"
     ],
     "opinions": [
       "carbonda-cfr696",
@@ -6351,6 +6360,7 @@
         "tire_clearance.drivetrain_limits_mm.single",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.field_reports",
         "tire_clearance.note",
         "tire_clearance.published_max_mm",
         "tire_clearance.wheel_size"
@@ -6390,6 +6400,7 @@
         "tire_clearance.drivetrain_limits_mm.single",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.field_reports",
         "tire_clearance.note",
         "tire_clearance.published_max_mm",
         "tire_clearance.wheel_size"
@@ -62027,8 +62038,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62178,6 +62194,29 @@
         "url",
         "youtube_video_id"
       ],
+      "china-rides-incolor-speedster-shop": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "china-rides-incolor-ssr": [
         "accessed_at",
         "channel_name",
@@ -62195,9 +62234,14 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "timestamps",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62283,8 +62327,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62400,6 +62449,29 @@
         "url",
         "youtube_video_id"
       ],
+      "cyclingnews-incolor-ssr-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "cyclingnews-seka-spear-rdc-review": [
         "accessed_at",
         "channel_name",
@@ -62437,6 +62509,29 @@
         "summary",
         "target.wheelset_id",
         "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "cyclists-hub-incolor-engineer-interview": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62540,6 +62635,52 @@
         "url",
         "youtube_video_id"
       ],
+      "dwayne-pedals-incolor-ssr-600-miles": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "dwayne-pedals-incolor-ssr-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "elves-mori-aerox-brand-overview": [
         "accessed_at",
         "channel_name",
@@ -62581,6 +62722,29 @@
         "summary",
         "target.candidate_id",
         "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "gc-performance-incolor-ssr-walkaround": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63014,6 +63178,29 @@
         "summary",
         "target.platform_id",
         "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "nero-show-incolor-ssr-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63463,6 +63650,29 @@
         "summary",
         "target.platform_id",
         "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "underdogs-cycling-incolor-ssr-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63919,6 +64129,29 @@
         "title",
         "url",
         "xhs_post_id"
+      ],
+      "yocyclo-incolor-sr-plus-frameset": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
       ]
     },
     "opinions": {
@@ -117965,6 +118198,9 @@
       "china-cycling-yoeleo-altera-g21": [
         "target.platform_id=yoeleo-altera-g21"
       ],
+      "china-rides-incolor-speedster-shop": [
+        "target.platform_id=incolor-speedster"
+      ],
       "china-rides-incolor-ssr": [
         "target.platform_id=incolor-ssr"
       ],
@@ -117994,10 +118230,16 @@
       ],
       "cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term": [],
       "cycle-workshop-yoeleo-sat-c45-nxt-gravel-review": [],
+      "cyclingnews-incolor-ssr-review": [
+        "target.platform_id=incolor-ssr"
+      ],
       "cyclingnews-seka-spear-rdc-review": [
         "target.candidate_id=seka-spear-rdc"
       ],
       "cyclists-hub-elitewheels-drive-50d-ii-review": [],
+      "cyclists-hub-incolor-engineer-interview": [
+        "target.platform_id=incolor-speedster"
+      ],
       "cyclists-hub-m6-review": [
         "target.candidate_id=winspace-m6"
       ],
@@ -118013,11 +118255,20 @@
       "dream-build-quick-pro-gr-one": [
         "target.platform_id=quick-gr-one"
       ],
+      "dwayne-pedals-incolor-ssr-600-miles": [
+        "target.platform_id=incolor-ssr"
+      ],
+      "dwayne-pedals-incolor-ssr-first-look": [
+        "target.platform_id=incolor-ssr"
+      ],
       "elves-mori-aerox-brand-overview": [
         "target.platform_id=elves-mori-aerox"
       ],
       "gc-performance-falath-evo-ride-review": [
         "target.candidate_id=missing-china-price-elves-falath-evo"
+      ],
+      "gc-performance-incolor-ssr-walkaround": [
+        "target.platform_id=incolor-ssr"
       ],
       "gc-performance-winspace-g5": [
         "target.platform_id=winspace-g5"
@@ -118083,6 +118334,9 @@
       ],
       "magazyn-bike-triaero-graro-six-month-test": [
         "target.platform_id=ican-graro"
+      ],
+      "nero-show-incolor-ssr-review": [
+        "target.platform_id=incolor-ssr"
       ],
       "nero-show-winspace-t1600-review": [
         "target.candidate_id=winspace-t1600"
@@ -118153,6 +118407,9 @@
       ],
       "uk-bike-fit-yoeleo-altera-g21-custom-build": [
         "target.platform_id=yoeleo-altera-g21"
+      ],
+      "underdogs-cycling-incolor-ssr-build": [
+        "target.platform_id=incolor-ssr"
       ],
       "vadim-on-wheels-winspace-g3-150km": [
         "target.platform_id=winspace-g3"
@@ -118228,6 +118485,9 @@
       ],
       "xhs-xlab-rs9-red-finish": [
         "target.candidate_id=xlab-rs9"
+      ],
+      "yocyclo-incolor-sr-plus-frameset": [
+        "target.platform_id=incolor-speedster"
       ]
     },
     "opinions": {
