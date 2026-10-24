@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 219,
+      "videos": 221,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2903,6 +2903,7 @@
       "yoeleo-altera-g21-primary-image"
     ],
     "videos": [
+      "5am-bicycle-studio-pardus-super-al-105-india",
       "active-hobo-merida-silex-7000-review",
       "af-bicycles-af01-gravel-race-review",
       "andrew-grabbs-carbonda-696-first-look",
@@ -2973,6 +2974,7 @@
       "cyclists-hub-incolor-engineer-interview",
       "cyclists-hub-m6-review",
       "cyclists-hub-t1600-review",
+      "dani-chika-pardus-super-sport-disc-climb-weigh",
       "darren-french-lightcarbon-lcr018-d-bottom-bracket",
       "darren-french-lightcarbon-lcr018-d-first-ride",
       "darren-french-lightcarbon-lcr018-d-unboxing-build",
@@ -61885,6 +61887,29 @@
       ]
     },
     "videos": {
+      "5am-bicycle-studio-pardus-super-al-105-india": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "active-hobo-merida-silex-7000-review": [
         "accessed_at",
         "channel_name",
@@ -63554,6 +63579,29 @@
         "takeaways",
         "target.candidate_id",
         "timestamps",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "dani-chika-pardus-super-sport-disc-climb-weigh": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
         "title",
         "transcript.checked_at",
         "transcript.language",
@@ -73987,6 +74035,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "pardus-super-sport": [
@@ -74014,6 +74063,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "pardus-super-sport-gen2": [
@@ -121003,6 +121053,9 @@
       ]
     },
     "videos": {
+      "5am-bicycle-studio-pardus-super-al-105-india": [
+        "target.candidate_id=pardus-super-al"
+      ],
       "active-hobo-merida-silex-7000-review": [
         "target.candidate_id=missing-china-price-merida-silex"
       ],
@@ -121204,6 +121257,9 @@
       ],
       "cyclists-hub-t1600-review": [
         "target.candidate_id=winspace-t1600"
+      ],
+      "dani-chika-pardus-super-sport-disc-climb-weigh": [
+        "target.candidate_id=pardus-super-sport"
       ],
       "darren-french-lightcarbon-lcr018-d-bottom-bracket": [
         "target.candidate_id=lightcarbon-lcr018-d"
@@ -123681,7 +123737,8 @@
       "pardus-super-al": [
         "brand_id=pardus",
         "model_id=pardus-super-al",
-        "source_ids=pardus-super-al-taobao-2026-10-24"
+        "source_ids=pardus-super-al-taobao-2026-10-24",
+        "video_ids=5am-bicycle-studio-pardus-super-al-105-india"
       ],
       "pardus-super-sport": [
         "model_id=pardus-super-sport",
@@ -123692,7 +123749,8 @@
         "source_ids=pardus-super-sport-original-official-2026-08-30",
         "source_ids=pardus-super-sport-review-biketo-2026-08-30",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=dani-chika-pardus-super-sport-disc-climb-weigh"
       ],
       "pardus-super-sport-gen2": [
         "existing_record_id=pardus-super-sport-gen2-egr",

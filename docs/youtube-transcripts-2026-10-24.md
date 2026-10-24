@@ -220,6 +220,19 @@ Delivered: six transcript-checked videos from Philippine, Indonesian and Chilean
 - Suprema 7120 (`java-suprema-7120`): no current-build video; David Mann's reviews (`g_k8JmIevyo`, `gNIj7Ojv56g`, `lcUJBexhysY`) and TTBok's 2022 bike check `b2vRYSLgLDE` predate the R7120 build.
 - JAVA carbon triathlon frameset with hydraulic brakes (`java-tt-frame-hydraulic`), carbon hydraulic road bike (`java-carbon-hydraulic-unknown`) and LAMPO full-carbon listing (`java-lampo-carbon-road`): no exact model identity, so unsuitable for exact-model video search. The aluminium 24-speed observation (`java-aluminum-24s`) is merged into the Vittoria ER7 record. China Rides' JAVA team-edition video `p8htrqH-GOs` and Jourdain Coleman's general Q&A `OCat2f03T6k` do not show candidate models.
 
+### Batch 18 — PARDUS Spark AL, Spark EVO Gen 4 (frameset and Ultegra Di2), Spark RS, Spark Sport PES, Spark Tourist, Spark family listing, Super AL, Super Sport (original), Super Sport Gen 2 price pointer, Gomera EVO
+
+Delivered: two transcript-checked videos (Tamil and Indonesian, with English paraphrased takeaways).
+
+- Super AL (`pardus-super-al`): 5AM Bicycle Studio's Indian launch unboxing (`X0kI6pwu7bk`; ₹89,000, 105 R7000 11-speed with mechanical discs), with the build difference disclosed.
+- Super Sport original generation (`pardus-super-sport`): Dani Chika's climbing test and weigh-in of a Super Sport disc 105 (`qiPy0FLInoA`; 9.5 kg with pedals and cages). Dwayne Cycles' `nArYkyY2Z7c` is a short bike check.
+- Super Sport Gen 2 (`pardus-super-sport-gen2`): the candidate points to the published platform, whose discovery outcome is in batch 4.
+- Spark EVO Gen 4 frameset and Ultegra Di2 (`pardus-spark-evo-gen4-frameset`, `pardus-spark-evo-gen4-ultegra-di2`): no usable transcript; 周四青年's fourth-generation launch and ride clips (`tf8rsnAl_m0`, `NEkMoT32_Es`) have no caption track, and Willie Smit's `QtT6Y7d5MAY` unboxes the 2024 third generation (mismatch).
+- Spark Sport PES (`pardus-spark-sport-pes`): no exact video; Ivan Stepanets' 2024 Spark Sport bike check `XQPwwbMaGHE` (32 mm fitted, he says 35 mm would fit) shows the prior platform, which the candidate keeps separate from the 2026 Gen 3 PES build. 骑不动的洋芋's `P5WqDbGZfzo` has no caption track.
+- Spark AL, Spark RS and Spark Tourist (`pardus-spark-al`, `pardus-spark-rs-community-lead`, `pardus-spark-tourist`): no exact-model review; Charlie Bike Channel's 2022 `N4fcrgkljPk` and FITAMIN's `ebmEf4D5jRQ` show earlier Spark builds without the AL, RS or Tourist identity.
+- Spark family listing (`pardus-spark`): an aggregate of several generations and trims, so unsuitable for an exact-model video.
+- Gomera EVO Dura-Ace Di2 (`pardus-gomera-evo-dura-ace-di2`): no exact video; WaterBear Cycles' `yOkzKegkgvE` is a used earlier Gomera with an 11-speed upgrade (mismatch), and Pinoy Katari's 2021 Gomera Ultra review predates the EVO.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -387,6 +400,8 @@ Delivered: six transcript-checked videos from Philippine, Indonesian and Chilean
 | missing-china-price-van-rysel-rcr (candidate/wheelset) | `cyclingnews-van-rysel-rcr-f-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
 | missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | automatic captions · 3 takeaways |
+| pardus-super-al (candidate/wheelset) | `5am-bicycle-studio-pardus-super-al-105-india` | 5AM BICYCLE STUDIO Cyclistlife | automatic captions · 3 takeaways |
+| pardus-super-sport (candidate/wheelset) | `dani-chika-pardus-super-sport-disc-climb-weigh` | Dani Chika | automatic captions · 2 takeaways |
 | pinarello-f5 (candidate/wheelset) | `approved-pinarello-f5-negative-points` | Approved | automatic captions · 3 takeaways |
 | pinarello-f5 (candidate/wheelset) | `bicycling-pinarello-f5-review` | Bicycling | creator captions · 4 takeaways |
 | quick-pro-er-one (candidate/wheelset) | `china-cycling-quick-pro-er-one` | China Cycling | automatic captions · 6 takeaways |
