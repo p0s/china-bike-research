@@ -2034,3 +2034,17 @@ Object.assign(de, {
   "Non-drive-side spokes": "Speichen auf der Nicht-Antriebsseite",
   "Initial adjustment": "Erste Einstellung"
 });
+
+Object.assign(de, {
+  "A low-cost aero race frameset with modern T47/UDH standards, 32 mm clearance and a stiff, direct ride, but its weighed frame is heavy and its fit, seatpost and mainland pricing need checking.": "Ein günstiges Aero-Rennrahmenset mit aktuellen T47/UDH-Standards, 32 mm Reifenfreiheit und steifem, direktem Fahrgefühl; der gewogene Rahmen ist jedoch schwer, und Passform, Sattelstütze sowie der Preis in Festlandchina müssen geprüft werden.",
+  "aero-focused road racing on a budget": "aerodynamisch ausgerichtetes Straßenrennen mit begrenztem Budget",
+  "riders who want a deep-head-tube aero frame with a matching KUNG cockpit": "Fahrer, die einen Aero-Rahmen mit tiefem Steuerrohr und passendem KUNG-Cockpit wollen",
+  "US$1,549 export price with an integrated cockpit": "Exportpreis von 1.549 US-Dollar mit integriertem Cockpit",
+  "T47, UDH and 12 mm thru-axles": "T47, UDH und 12-mm-Steckachsen",
+  "32 mm road tire clearance": "Freiheit für 32-mm-Straßenreifen",
+  "Five-size geometry with reach and stack": "Geometrie in fünf Größen mit Reach und Stack",
+  "Retailer-weighed size-M white frame: 1,150 g, well above the 972 g painted claim": "Vom Händler gewogener weißer Rahmen in Größe M: 1.150 g, deutlich über der Angabe von 972 g lackiert",
+  "Only a 10 mm-offset seatpost; non-round bar-end plugs": "Nur eine Sattelstütze mit 10 mm Versatz; nicht runde Lenkerendstopfen",
+  "No mainland price visible without JD login; export price excludes shipping and tax": "Kein Festlandpreis ohne JD-Anmeldung sichtbar; der Exportpreis enthält weder Versand noch Steuern",
+  "Stiffness and ride evidence comes from the selling retailer, not an independent test": "Belege zu Steifigkeit und Fahrgefühl stammen vom verkaufenden Händler, nicht aus einem unabhängigen Test"
+});

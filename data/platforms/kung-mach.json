@@ -1,0 +1,62 @@
+{
+  "id": "kung-mach",
+  "brand_id": "kung",
+  "name": "MACH",
+  "name_zh": "马赫 MACH",
+  "aliases": ["KUNG MACH AERO", "攻队马赫"],
+  "category": "road-aero",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Current KUNG aero road frame with a deep head tube, dropped seatstays, T47, UDH and 32 mm tire clearance; the retailer weighed a white size-M frame at 1,150 g against a 972 g painted claim.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "construction": "Aero tube shapes with a deep head tube under the relaxed UCI 8:1 rule, dropped seatstays, integrated cockpit routing and a KUNG aero seatpost (10 mm offset only)",
+    "stiffness_evidence": "A seller-published ride review describes stiffness and very direct power transfer as the frame's defining trait, with a firm but not harsh ride. No numeric or independent stiffness test is published.",
+    "bottom_bracket": "T47 x 86.5",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal-electronic-only",
+    "headset": "52/40 mm upper and lower bearings",
+    "axles": "12 x 100 mm front, 12 x 142 mm rear",
+    "brake": "disc only",
+    "system_weight_limit_kg": 110,
+    "claimed_frame_weight_g": 972,
+    "claimed_frame_weight_basis": "Maker claim for a painted frame; size not stated",
+    "measured_frame_weight_g": 1150,
+    "measured_frame_weight_basis": "Retailer weighing of a size-M frame in white paint, which the reviewer calls the heaviest paint option",
+    "warranty_claim": {
+      "duration_years": 5,
+      "duration_text": "5 years",
+      "basis": "Export-retailer product page",
+      "note": "Covers manufacturing defects in materials and workmanship; crashes, misuse and normal wear excluded. Mainland warranty handling through the JD flagship store is unverified."
+    },
+    "geometry": {
+      "basis": "exact-model export-retailer geometry table and labelled diagram",
+      "source_id": "kung-mach-pandapodium-2026-10-24",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "XS", "rider_height": "155–165 cm", "stack_mm": 500, "reach_mm": 365, "seat_tube_mm": 430, "top_tube_mm": 503.6, "head_tube_mm": 95, "chainstay_mm": 412, "front_center_mm": 576.5, "seat_angle_deg": 74.5, "head_angle_deg": 72, "bb_drop_mm": 74.5, "fork_length_mm": 375, "fork_offset_mm": 57.5, "wheelbase_mm": 977.5, "standover_mm": 708 },
+        { "size": "S", "rider_height": "165–175 cm", "stack_mm": 525, "reach_mm": 375, "seat_tube_mm": 470, "top_tube_mm": 525.5, "head_tube_mm": 116, "chainstay_mm": 412, "front_center_mm": 581, "seat_angle_deg": 74, "head_angle_deg": 72, "bb_drop_mm": 74.5, "fork_length_mm": 375, "fork_offset_mm": 51.5, "wheelbase_mm": 981, "standover_mm": 750 },
+        { "size": "M", "rider_height": "173–182 cm", "stack_mm": 545, "reach_mm": 385, "seat_tube_mm": 500, "top_tube_mm": 546.5, "head_tube_mm": 135, "chainstay_mm": 412, "front_center_mm": 581.5, "seat_angle_deg": 73.5, "head_angle_deg": 73, "bb_drop_mm": 72, "fork_length_mm": 375, "fork_offset_mm": 45.5, "wheelbase_mm": 983, "standover_mm": 775 },
+        { "size": "L", "rider_height": "183–188 cm", "stack_mm": 565, "reach_mm": 390, "seat_tube_mm": 520, "top_tube_mm": 558, "head_tube_mm": 156, "chainstay_mm": 412, "front_center_mm": 593.5, "seat_angle_deg": 73.5, "head_angle_deg": 73, "bb_drop_mm": 72, "fork_length_mm": 375, "fork_offset_mm": 45.5, "wheelbase_mm": 994, "standover_mm": 800 },
+        { "size": "XL", "rider_height": "185–192 cm", "stack_mm": 590, "reach_mm": 395, "seat_tube_mm": 550, "top_tube_mm": 570, "head_tube_mm": 184, "chainstay_mm": 412, "front_center_mm": 605.6, "seat_angle_deg": 73.5, "head_angle_deg": 73, "bb_drop_mm": 70, "fork_length_mm": 375, "fork_offset_mm": 45.5, "wheelbase_mm": 1008, "standover_mm": 825 }
+      ],
+      "note": "Rows A–L are mapped from the retailer's labelled diagram. The listed fork offsets change by size (57.5, 51.5, then 45.5 mm) and the size-S stack/reach step is large; confirm exact fit values with the seller before ordering."
+    }
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "published_max_mm": 32,
+    "note": "Export-retailer specification: up to 32 mm road tires. Actual mounted width depends on tire and rim."
+  },
+  "internal_storage": false,
+  "china_availability": "mainland-and-direct",
+  "source_ids": [
+    "kung-mach-pandapodium-2026-10-24",
+    "kung-mach-pandapodium-review-2026-10-24",
+    "kung-jd-flagship-index-2026-10-24"
+  ],
+  "last_reviewed": "2026-10-24"
+}

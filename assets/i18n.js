@@ -1326,3 +1326,18 @@ Object.assign(zh, {
   "Non-drive-side spokes": "非传动侧辐条",
   "Initial adjustment": "初步调校"
 });
+
+Object.assign(zh, {
+  "A low-cost aero race frameset with modern T47/UDH standards, 32 mm clearance and a stiff, direct ride, but its weighed frame is heavy and its fit, seatpost and mainland pricing need checking.": "价格较低的气动竞赛车架组，采用 T47/UDH 等现行标准，可装 32 mm 轮胎，骑感硬朗直接；但实称车架偏重，尺码、座管和国内价格仍需确认。",
+  "aero-focused road racing on a budget": "预算有限的气动公路竞赛",
+  "riders who want a deep-head-tube aero frame with a matching KUNG cockpit": "想要深头管气动车架并搭配攻队原厂一体把的车手",
+  "US$1,549 export price with an integrated cockpit": "含一体把的出口售价为 1,549 美元",
+  "T47, UDH and 12 mm thru-axles": "T47 中轴、UDH 挂耳与 12 mm 桶轴",
+  "32 mm road tire clearance": "可装 32 mm 公路外胎",
+  "Five-size geometry with reach and stack": "五个尺码的几何表，含 Reach 与 Stack",
+  "Retailer-weighed size-M white frame: 1,150 g, well above the 972 g painted claim": "零售商实称 M 码白色车架 1,150 g，明显高于 972 g 的含漆宣称值",
+  "Only a 10 mm-offset seatpost; non-round bar-end plugs": "仅有 10 mm 后移座管；把堵为非圆形专用件",
+  "Electronic shifting only": "仅支持电子变速",
+  "No mainland price visible without JD login; export price excludes shipping and tax": "京东价格需登录才可见；出口售价不含运费和税费",
+  "Stiffness and ride evidence comes from the selling retailer, not an independent test": "刚性与骑感证据来自销售该车架的零售商，并非独立测试"
+});
