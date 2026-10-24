@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 211,
+      "videos": 213,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2916,11 +2916,13 @@
       "bicycle-station-gravel-wheel-shootout-drive-g36",
       "bicycling-pinarello-f5-review",
       "bike-cabin-laget-aero-one-introduction",
+      "bike-content-twitter-r10-pro-season-review",
       "bikelabhq-sava-a7l-pro-review",
       "bikelabhq-trek-domane-sl5-gen4-six-months",
       "bikeradar-giant-propel-2026-first-look",
       "bikeradar-winspace-m6-review",
       "bikeroom-de-rosa-new-838-cristiano-de-rosa",
+      "bkbike-twitter-t10-pro-r7120",
       "bxt-store-055-overview",
       "cam-nicholls-falath-evo-inspection",
       "cam-nicholls-seka-exceed-rdc-first-impressions",
@@ -62183,6 +62185,29 @@
         "url",
         "youtube_video_id"
       ],
+      "bike-content-twitter-r10-pro-season-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "bikelabhq-sava-a7l-pro-review": [
         "accessed_at",
         "channel_name",
@@ -62276,6 +62301,29 @@
         "youtube_video_id"
       ],
       "bikeroom-de-rosa-new-838-cristiano-de-rosa": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "bkbike-twitter-t10-pro-r7120": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -75918,6 +75966,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "twitter-storm-knight": [
@@ -75975,6 +76024,7 @@
         "source_snapshot_id",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "twitter-t8-closed-wheel": [
@@ -120840,6 +120890,9 @@
       "bike-cabin-laget-aero-one-introduction": [
         "target.candidate_id=laget-aero-one"
       ],
+      "bike-content-twitter-r10-pro-season-review": [
+        "target.candidate_id=twitter-r10-pro-gen3"
+      ],
       "bikelabhq-sava-a7l-pro-review": [
         "target.candidate_id=sava-a7l-pro-2026"
       ],
@@ -120854,6 +120907,9 @@
       ],
       "bikeroom-de-rosa-new-838-cristiano-de-rosa": [
         "target.candidate_id=de-rosa-new-838"
+      ],
+      "bkbike-twitter-t10-pro-r7120": [
+        "target.candidate_id=twitter-t10-pro"
       ],
       "bxt-store-055-overview": [
         "target.platform_id=bxt-055"
@@ -124115,7 +124171,8 @@
         "source_ids=twitter-r10-pro-gen3-current-options-2026-08-30",
         "source_ids=twitter-r10-pro-gen3-photo-source-2026-10-03",
         "source_ids=twitter-r10pro-frame-official-2026-08-30",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=bike-content-twitter-r10-pro-season-review"
       ],
       "twitter-storm-knight": [
         "brand_id=twitter",
@@ -124132,7 +124189,8 @@
         "source_ids=twitter-t10-pro-official-2026-08-17",
         "source_ids=twitter-t10-pro-official-live-recheck-2026-09-25",
         "source_ids=twitter-t10-pro-official-recheck-2026-09-24",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=bkbike-twitter-t10-pro-r7120"
       ],
       "twitter-t8-closed-wheel": [
         "brand_id=twitter",

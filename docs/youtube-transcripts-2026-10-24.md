@@ -196,6 +196,17 @@ Delivered: nine transcript-checked videos (one in Italian with English paraphras
 - SEKA ExAero road (`seka-exaero-road`): Cycling_Boon's Malaysian shop look at the new ExAero RDC (`8V7YQyTIzF0`); SEKA's spec short `fMnx1Wqkph0` was not added.
 - Seraph / TanTan TT-X68 new UDH (`seraph-tt-x68-new-udh`): no video added. Patrick Lino's `WhVb730XtTk` shows the earlier BSA frame, and Tom Bowers (`s4MdcxUSNGw`), Jack's Coaching (`NH_cto3UxyA`) and Nico Kühn (`ekN3dvSTudc`) do not identify the T47/UDH revision.
 
+### Batch 16 — TWITTER Cyclone (3rd R7120, R7120 aero, Sport), Gravel V3 (105, 2024 RS, unknown RS listing), R10 Pro (Gen 3 and Storm Knight), T10 Pro, T8, X7, Little White Rabbit; Cyctrac / TWITTER R18
+
+Delivered: two transcript-checked videos (Russian and Vietnamese, with English paraphrased takeaways).
+
+- R10 Pro Gen 3 (`twitter-r10-pro-gen3`): Bike Content's one-season owner report (`oRk92nDl-es`; an electronic shift lever failed after water ingress and the seller replaced it at shipping cost; heavy stock bar). The generation is not stated, which the record discloses. R10 Pro Storm Knight (`twitter-storm-knight`): no exact video; 阿冬玩三鐵's `itQTk57DrlA` and Gowes Dadakan's `C3kbkSRJb9o` show the non-Pro R10 with Shuntai 12-speed, a different trim and possibly frame. Bike Content's `DBsowE25re4` is a short test-ride clip.
+- T10 Pro (`twitter-t10-pro`): Vietnamese retailer BKBIKE's walkaround of the full 105 R7120 build (`ztBuwOG4Iu8`). Older T10 Pro clips from 2019–2021 (`lu3LqE7HoXs`, `j-6p1ZQ_yYo`, `KcIQUewjI4k`) predate the current specification.
+- Cyclone third generation (`twitter-cyclone-gen3-7170`, `twitter-cyclone-r7120`, `twitter-cyclone-sport`): no exact video beyond TWITTER's own promo shorts (`PjiYBuhB1Rw`, `4y8aaaUrVao`); owner reviews show the 2021 and 2024 Cyclone Pro (`qTpp-tqdvW4`, `eY3E2BQDPWM`, `tNX3P5R1Sn0`), an earlier generation.
+- Gravel V3 105 (`twitter-gravel-v3-105`), the superseded 2024 RS build (`twitter-gravel-v3-2024-rs-carbon-wave`) and the unresolved RS listing (`twitter-carbon-road-gravel-unknown`): the usable Gravel V3 reviews are already linked to the published `twitter-gravel-v3` platform; the remaining results are promos, empty transcript panels (`BV6G8wQDF6Q`, `jlURjof_mFw`) or an older-generation review (`QAeZAoofY6c`). No separate video added.
+- T8 (`twitter-t8-closed-wheel`), X7 (`twitter-x7`) and Little White Rabbit (`twitter-little-white-rabbit`): no exact-model review; only TWITTER promo shorts (`HjnaaOTOhFA`, `hwbnXYgIdhQ`, `v3WLZe6Pfrs`, `fkRpemcrvV4`) or nothing.
+- Cyctrac / TWITTER R18 (`cyctrac-r18`): no exact-model review; BikeVibes' "TT-R18" review `nKKJzRcpGgM` is the Seraph/TanTan TT-R18 (mismatch) and TWITTER's own R18 clip `mOw_dfNJxL4` is a promo short.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -377,6 +388,8 @@ Delivered: nine transcript-checked videos (one in Italian with English paraphras
 | specialized-roubaix-sl8-comp-105 (candidate/wheelset) | `david-arthur-specialized-roubaix-sl8-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | specialized-s-works-crux-2024-sram-red-xplr (candidate/wheelset) | `david-arthur-specialized-s-works-crux-long-term` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | specialized-s-works-crux-frameset (candidate/wheelset) | `road-bike-action-specialized-s-works-crux` | Road Bike Action Magazine | automatic captions · 3 takeaways |
+| twitter-r10-pro-gen3 (candidate/wheelset) | `bike-content-twitter-r10-pro-season-review` | Bike Content | automatic captions · 5 takeaways |
+| twitter-t10-pro (candidate/wheelset) | `bkbike-twitter-t10-pro-r7120` | BKBIKE - GIÁ TỐT 1.0.2 | automatic captions · 3 takeaways |
 | voicevelo-g-major (candidate/wheelset) | `china-cycling-voicevelo-g-major` | China Cycling | automatic captions · 5 takeaways |
 | winspace-m6 (candidate/wheelset) | `bikeradar-winspace-m6-review` | BikeRadar | automatic captions · 7 takeaways |
 | winspace-m6 (candidate/wheelset) | `china-rides-winspace-m6-shop-tour` | China Rides | automatic captions · 3 takeaways |
