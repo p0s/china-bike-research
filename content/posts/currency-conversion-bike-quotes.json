@@ -3,7 +3,7 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 88,
-  "image_id": "chinese-bike-prices-for-international-buyers",
+  "image_id": "currency-conversion-bike-quotes-unique-mascot-cover",
   "datePublished": "2026-10-04",
   "dateModified": "2026-10-04",
   "researched_at": "2026-10-04",
@@ -42,7 +42,8 @@
           "id": "payment",
           "heading": "Ask which conversion you are accepting",
           "paragraphs": [
-            "For a [GRARO quote](/models/ican-graro-frameset/), identify invoice currency and final payment currency. A merchant conversion and your card issuer’s conversion are different offers. [Visa’s DCC explanation](https://www.visa.co.uk/travel-with-visa/dynamic-currency-conversion.html) describes the need to show rates and markups when that conversion is offered. Compare the actual stated costs; do not assume your card has no foreign-transaction fee."
+            "For a [GRARO quote](/models/ican-graro-frameset/), identify invoice currency and final payment currency. A merchant conversion and your card issuer’s conversion are different offers. [Visa’s DCC explanation](https://www.visa.co.uk/travel-with-visa/dynamic-currency-conversion.html) describes the need to show rates and markups when that conversion is offered. Compare the actual stated costs; do not assume your card has no foreign-transaction fee.",
+            "Suppose the merchant instead offers a final converted amount of €940 for the same invoice, including its conversion charge. The illustrative card calculation above is €938.40, only €1.60 lower. An additional card fee could remove that difference. Compare documented totals covering the same charges, and do not add a markup twice when it is already included in the quoted amount."
           ]
         },
         {
@@ -50,65 +51,70 @@
           "heading": "Preserve the quote; update the calculation",
           "paragraphs": [
             "Record dated quote, rate source/time, fees, shipping and tax basis. Mark a planning conversion as an estimate and keep quote validity visible. A refund can have a different converted value and fee treatment; check payment terms before assuming it restores the same home-currency amount.",
-            "Compare all offers on the same cost basis. If shipping or import charges remain unknown, the converted amount is a partial subtotal. Precision to two decimals does not make an incomplete purchase price complete."
+            "Compare all offers on the same cost basis. If shipping or import charges remain unknown, the converted amount is a partial subtotal. Precision to two decimals does not make an incomplete purchase price complete.",
+            "Use the [EU landed-cost worksheet](/blog/eu-bike-price-vat-shipping-worksheet/) for the remaining delivery and import lines. Currency conversion checks the payment amount; it does not establish the whole landed cost."
           ]
         }
       ]
     },
     "zh-Hans": {
       "title": "用同一币种比车价，别藏汇兑费用",
-      "description": "记录报价币种、换算方向与付款费用，分清规划汇率与最终扣款。",
-      "intro": "把美元报价换成欧元后，数字变小了，却不代表车便宜了。汇率、刷卡费用、交付币种和报价有效期都可能改变实际支出。先统一比较口径，再看价差。",
+      "description": "给汇率标清单位，保留原币报价，并把商户换汇与银行卡换汇的费用放在同一口径下比较。示例金额不是实际扣款报价。",
+      "intro": "美元报价换成欧元后，数字变小，并不代表车价更便宜。比较前，先记下汇率日期、换算方向和实际付款费用，并把原始报价保留下来。",
       "sections": [
         {
           "id": "math",
           "heading": "给汇率写单位",
           "paragraphs": [
-            "示例US$1000 × 每美元€0.92 = €920；假设2%兑换费加€18.40，未计其他费用前€938.40。这是虚构汇率，不是今日汇率或银行卡报价。若写每欧元多少美元，则应美元金额除该汇率。"
+            "以下仅用虚构数字演算：1000美元×每美元0.92欧元＝920欧元；假设兑换费为这920欧元的2%，即18.40欧元，未计其他费用前合计938.40欧元。这不是今日汇率，也不是银行卡报价。若汇率写成“每欧元多少美元”，就要用美元金额除以该汇率，而不是相乘。"
           ]
         },
         {
           "id": "payment",
           "heading": "问清接受的是哪次兑换",
           "paragraphs": [
-            "[GRARO报价](/models/ican-graro-frameset/)确认发票币种与最终付款币种。商户换汇与发卡方换汇是不同方案。[Visa DCC说明](https://www.visa.co.uk/travel-with-visa/dynamic-currency-conversion.html)描述提供此转换时展示汇率、加价的重要性。比实际成本，不假定银行卡没有境外交易费。"
+            "拿到[GRARO车架组报价](/zh/models/ican-graro-frameset/)后，先确认发票币种和最终付款币种。商户换汇与发卡方换汇是不同方案。[Visa的DCC说明](https://www.visa.co.uk/travel-with-visa/dynamic-currency-conversion.html)列出了应展示的币种金额、汇率和附加费或加价。比较实际列明的费用，不要默认银行卡没有境外交易费。",
+            "假设商户对同一张发票提供940欧元的最终换算金额，已包含其兑换费。上面的银行卡演算为938.40欧元，只低1.60欧元；若银行卡还有其他费用，差额就可能消失。应比较覆盖相同费用的书面总额。报价已含某项加价时，不要再重复加一次。"
           ]
         },
         {
           "id": "record",
           "heading": "保留报价，更新计算",
           "paragraphs": [
-            "记录有日期报价、汇率来源时间、费用、运费与税务口径。规划换算标估算，保留报价有效期。退款换算值、费用处理可能不同，别假定能恢复同样本币金额，先查付款条款。",
-            "所有方案同费用口径比较。运费、进口费未知时，换算金额只是部分小计；两位小数的精确，不会让不完整购价变完整。"
+            "记录报价日期、汇率来源和时间、手续费、运费及税费口径。用于规划的换算应标为估算，报价有效期也要保留。退款时的换算金额和手续费处理可能不同，付款前先查具体条款，不要假定一定收回相同的本币金额。",
+            "所有方案应按相同费用范围比较。运费或进口费用尚未确认时，换算金额只是部分小计；保留两位小数，也不能补齐缺失的费用。",
+            "其余配送和进口项目可用[欧盟到手费用表](/zh/blog/eu-bike-price-vat-shipping-worksheet/)核对。换汇计算解决的是付款金额，不是完整到手成本。"
           ]
         }
       ]
     },
     "de": {
       "title": "Radangebote in einer Währung vergleichen, ohne Gebühren zu verstecken",
-      "description": "Notiere Währung, Umrechnungsrichtung und Zahlungsgebühren und trenne Planungskurs vom abgerechneten Betrag.",
-      "intro": "Ein Dollarangebot wird nicht automatisch günstiger, weil die Eurozahl kleiner aussieht. Umrechnung braucht Datum, Richtung und tatsächliche Gebühren. Bewahre das Original neben dem Vergleich auf.",
+      "description": "Notiere Kursrichtung und Originalwährung und vergleiche Händler- und Kartenumrechnung mit denselben Gebühren. Die Beispielbeträge sind keine Zahlungsangebote.",
+      "intro": "Ein Dollarangebot wird nicht automatisch günstiger, weil nach der Umrechnung eine kleinere Eurozahl erscheint. Notiere Datum, Kursrichtung und tatsächliche Gebühren. Bewahre das Originalangebot neben deiner Vergleichsrechnung auf.",
       "sections": [
         {
           "id": "math",
           "heading": "Den Kurs mit Einheiten schreiben",
           "paragraphs": [
-            "Beispiel: US$1.000 × 0,92 € je US$1 = 920 €. Angenommene 2 % Gebühr ergeben 18,40 €, zusammen 938,40 € vor weiteren Kosten. Das sind erfundene Rechenkurse. Bei Dollar je Euro musst du den Dollarbetrag durch den Kurs teilen."
+            "Ein Beispiel mit erfundenen Werten: 1.000 US-Dollar × 0,92 € je US-Dollar = 920 €. Eine angenommene Umrechnungsgebühr von 2 % auf diese 920 € beträgt 18,40 €; zusammen sind das 938,40 € vor weiteren Kosten. Das ist weder der heutige Wechselkurs noch ein Kartenangebot. Ist der Kurs als US-Dollar je Euro angegeben, musst du den Dollarbetrag durch diesen Kurs teilen."
           ]
         },
         {
           "id": "payment",
           "heading": "Die gewählte Umrechnung klären",
           "paragraphs": [
-            "Bei einem [GRARO-Angebot](/models/ican-graro-frameset/) Rechnung und Zahlungswährung bestimmen. Händlerumrechnung und Kartenherausgeber-Umrechnung sind verschiedene Angebote. [Visa erklärt DCC](https://www.visa.co.uk/travel-with-visa/dynamic-currency-conversion.html) samt offenzulegenden Kursen/Aufschlägen. Vergleiche tatsächliche Kosten; Fremdwährungsgebühren nicht einfach ausschließen."
+            "Kläre bei einem [GRARO-Rahmenset-Angebot](/de/models/ican-graro-frameset/) Rechnungs- und Zahlungswährung. Die Umrechnung des Händlers und die deines Kartenherausgebers sind unterschiedliche Angebote. [Visa erläutert DCC](https://www.visa.co.uk/travel-with-visa/dynamic-currency-conversion.html) und die dabei anzuzeigenden Währungsbeträge, Kurse und zusätzlichen Gebühren oder Aufschläge. Vergleiche die genannten Kosten und unterstelle nicht, dass deine Karte keine Fremdwährungsgebühr erhebt.",
+            "Angenommen, der Händler bietet für dieselbe Rechnung einen endgültigen umgerechneten Betrag von 940 € einschließlich seiner Umrechnungsgebühr an. Die beispielhafte Kartenrechnung oben ergibt 938,40 € und liegt nur 1,60 € darunter. Eine zusätzliche Kartengebühr könnte den Unterschied aufheben. Vergleiche belegte Endbeträge mit demselben Gebührenumfang. Addiere einen bereits enthaltenen Aufschlag nicht nochmals."
           ]
         },
         {
           "id": "record",
           "heading": "Angebot bewahren, Berechnung aktualisieren",
           "paragraphs": [
-            "Notiere Angebotdatum, Kursquelle/-zeit, Gebühren, Versand und Steuerbasis. Planung als Schätzung kennzeichnen und Angebotsfrist behalten. Rückzahlung kann anders umgerechnet oder gebührenmäßig behandelt werden; nicht dieselbe Heimatwährungssumme voraussetzen.",
-            "Vergleiche gleiche Kostenumfänge. Bei unbekannter Lieferung oder Einfuhr bleibt die Umrechnung eine Teilsumme. Zwei Nachkommastellen vervollständigen keinen unvollständigen Kaufpreis."
+            "Notiere Angebotsdatum, Kursquelle und Zeitpunkt, Gebühren, Versand und Steuerumfang. Kennzeichne eine Planungsumrechnung als Schätzung und halte die Gültigkeitsfrist des Angebots fest. Eine Erstattung kann anders umgerechnet werden; auch die Gebührenbehandlung kann abweichen. Prüfe vor der Zahlung die Bedingungen, statt denselben Betrag in deiner Heimatwährung vorauszusetzen.",
+            "Vergleiche Angebote mit demselben Kostenumfang. Sind Versand oder Einfuhrkosten unbekannt, bleibt der umgerechnete Betrag eine Teilsumme. Zwei Nachkommastellen ergänzen keine fehlenden Kosten.",
+            "Prüfe die übrigen Versand- und Einfuhrposten mit dem [EU-Gesamtkostenblatt](/de/blog/eu-bike-price-vat-shipping-worksheet/). Die Währungsrechnung prüft den Zahlungsbetrag, nicht die gesamten Kosten bis zur Ankunft."
           ]
         }
       ]

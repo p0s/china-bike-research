@@ -8851,6 +8851,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "currency-conversion-bike-quotes-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda packing a bicycle parts parcel",
+        "zh-Hans": "打包自行车零件的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is packing a small plain cardboard parcel, kneeling beside it and using a tape dispenser to close it. Cheerful competent expression. Unprinted box with no labels or text. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "5e7d345dec565f7168665259bd95e4ad84a2ca8ee5ec736de725dd2dc80ce3b4"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 23606,
+          "sha256": "d6938593bb2e80fad4982fb375f44491bdeef2ae6160390f5c37ca629f83d390"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda uses a calculator at a wooden budgeting desk beside blank quote folders and neutral coins, with a bicycle in the background.",
+          "zh-Hans": "戴头盔的小熊猫在木桌旁使用计算器，旁边放着空白报价文件夹和无标识硬币，背景中有自行车。",
+          "de": "Ein Rotpanda mit Helm bedient einen Taschenrechner an einem Holztisch neben unbeschrifteten Angebotsmappen und neutralen Münzen; im Hintergrund steht ein Fahrrad."
+        },
+        "prompt": "Editorial scene: A helmeted red panda uses a calculator at a wooden budgeting desk beside blank quote folders and neutral coins, with a bicycle in the background.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "6c60bc31391fca201200dfeaf37574280520088d5099093f76f13a0af8370784",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 37392,
+            "sha256": "ebef84a1ee13318062955e8728043bedce3b1ac96c8e933ffc946b3e7d97455d"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 121468,
+            "sha256": "02e63cb57c3dd81bab39f262272e434d20e6057c9d333c73b961aa2ecca66932"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 150250,
+            "sha256": "2289dddf1216efaf10f12c63021db6d11879157029d328456f2cf5d75fef82eb"
+          }
+        ]
+      }
     }
   ]
 }
