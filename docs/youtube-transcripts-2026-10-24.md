@@ -322,6 +322,19 @@ No video added; every result was a brand clip, a retailer promo already covered,
 - AERO LITE (`gios-aerolite`): the candidate's generation is unresolved. The results (2017 trade-show walkarounds `t_6y4baOwLo` and `E4GOL69GyGw`, PelotonTV's build `FGcpNqZdyTM` without captions, CYCLE SHOP POPEYE's music-only 2023 105 Di2 clip `EwGSaHu47lE`) cannot be tied to a candidate generation.
 - Tornado 900 (`trinx-tornado-900`) and GTR C6 (`trinx-gtr-c6`): only a line-up clip without captions (`OWPxWzLeylA`), alloy GTR 2.0 videos and dealer clips of other TRINX models.
 
+### Batch 27 — Airwolf YFR068; CYCLETRACK Phantom, TIME TT; OBIKE F1 (ELRO-marked); HUANYU AZ ONE; IREFOX BY446, Profound 400; KOSEEA Pioneer SLR+; KONTAX RS80 POWER EVO; LEINAK 雷娜
+
+No video added.
+
+- YFR068 / A5 (`airwolf-yfr068`): as in batch 7, Andiamo Endurance's Airwolf gravel videos show the YFR045 frame, and the other results are AliExpress listicles and a 29er hardtail.
+- Phantom (`cycletrack-phantom-rx24`) and TIME TT (`cycletrack-time-tt`): CYCLETRACK's own clips (`o4Uyj5O8kXY`, `83dXICsldFE`, `ul3nas-PGps`, `Ya6r6ZrPubk`, `35UxqkoWy68`) show other or unnamed models, and "TIME TT" searches return generic time-trial content.
+- F1 (`elro-f1`): searches return Mercedes-AMG F1 e-bikes and unrelated e-bikes.
+- AZ ONE (`huanyu-az-one`): no bicycle result.
+- BY446 (`irefox-by446`) and Profound 400 (`irefox-profound-400`): results are the Firefox browser and India's Firefox bicycle brand, which is unrelated.
+- Pioneer SLR+ (`koseea-pioneer-slr-plus`): KOSEEA's channel shows team racing, not a product review.
+- RS80 POWER EVO (`kontax-power-evo`): KONTAX results are e-bikes and Stirling-engine kits; Charlie's "KONTAX carbon fiber road bike" (`kG96jf86vI4`) is a 49-second music clip that does not identify the RS80.
+- 雷娜 (`leinax-leina-road`): 杨弟's 雷纳克 105 build clip (`2gJnZ6cnCH4`) has no caption track and does not name the model.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
