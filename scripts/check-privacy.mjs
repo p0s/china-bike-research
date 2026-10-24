@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-640.webp', 'ebef84a1ee13318062955e8728043bedce3b1ac96c8e933ffc946b3e7d97455d'],
+  ['assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-1600.webp', '02e63cb57c3dd81bab39f262272e434d20e6057c9d333c73b961aa2ecca66932'],
+  ['assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-1200.jpg', '2289dddf1216efaf10f12c63021db6d11879157029d328456f2cf5d75fef82eb'],
   ['assets/blog/ddp-vs-dap-bike-delivery-mascot-cover-e0169132e4-640.webp', '9746b9c8ec9d077e2a1b3ac73a8b5fd8c44e17e82205da8632250676f4489ae7'],
   ['assets/blog/ddp-vs-dap-bike-delivery-mascot-cover-e0169132e4-1600.webp', 'dd14d8f31762d64d78395dc9b92a7654ff264cf30179569757659967a0729e26'],
   ['assets/blog/ddp-vs-dap-bike-delivery-mascot-cover-e0169132e4-1200.jpg', '276ea5f79f09879eac3b5b0f811ba690c013f5495bf171875f0bcaf42c2764ac'],
