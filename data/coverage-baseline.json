@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 213,
+      "videos": 219,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -3027,6 +3027,8 @@
       "jamesthebikeguy-specialized-roubaix-sl8-base",
       "jenson-usa-scott-foil-rc-10-ride-review",
       "jkt-sepeda-camp-gx700-walkaround",
+      "jkt-sepeda-java-siluro-6-top-2025",
+      "jkt-sepeda-java-vittoria-er7-alloy",
       "jonathan-simmons-sava-a7l-pro-owner",
       "jourdain-coleman-elves-falath-evo-500-miles",
       "jourdain-coleman-elves-falath-pro-2022-build",
@@ -3086,6 +3088,7 @@
       "tsp52-lightcarbon-lcr017-d-owner",
       "uk-bike-fit-yoeleo-altera-g21-custom-build",
       "underdogs-cycling-incolor-ssr-build",
+      "unli-ahon-java-fuoco-top-105",
       "vadim-on-wheels-winspace-g3-150km",
       "velographer-alvas-da54-review",
       "victor-torres-quick-pro-gr-one-dream-build",
@@ -3116,6 +3119,9 @@
       "xhs-xlab-rs9-owner",
       "xhs-xlab-rs9-red-finish",
       "yocyclo-incolor-sr-plus-frameset",
+      "zona3-java-vega-tt",
+      "zona3-java-vittoria-105-di2-disc-wheel",
+      "zona3-java-volata-review",
       "zzefol-spcycle-g028-owner-review"
     ],
     "opinions": [
@@ -64815,6 +64821,52 @@
         "url",
         "youtube_video_id"
       ],
+      "jkt-sepeda-java-siluro-6-top-2025": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "jkt-sepeda-java-vittoria-er7-alloy": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "jonathan-simmons-sava-a7l-pro-owner": [
         "accessed_at",
         "channel_name",
@@ -66191,6 +66243,29 @@
         "url",
         "youtube_video_id"
       ],
+      "unli-ahon-java-fuoco-top-105": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "vadim-on-wheels-winspace-g3-150km": [
         "accessed_at",
         "channel_name",
@@ -66780,6 +66855,75 @@
         "summary",
         "takeaways",
         "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "zona3-java-vega-tt": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "zona3-java-vittoria-105-di2-disc-wheel": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "zona3-java-volata-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
         "title",
         "transcript.checked_at",
         "transcript.language",
@@ -70500,6 +70644,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "java-lampo-carbon-road": [
@@ -70548,6 +70693,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "java-suprema-7120": [
@@ -70629,6 +70775,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "java-vittoria-7170": [
@@ -70660,6 +70807,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "java-vittoria-er7-2026": [
@@ -70691,6 +70839,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "java-volata-r7120": [
@@ -70713,6 +70862,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "kontax-power-evo": [
@@ -121215,6 +121365,12 @@
       "jkt-sepeda-camp-gx700-walkaround": [
         "target.platform_id=camp-gx700"
       ],
+      "jkt-sepeda-java-siluro-6-top-2025": [
+        "target.candidate_id=java-siluro6-top-r7120"
+      ],
+      "jkt-sepeda-java-vittoria-er7-alloy": [
+        "target.candidate_id=java-vittoria-er7-2026"
+      ],
       "jonathan-simmons-sava-a7l-pro-owner": [
         "target.candidate_id=sava-a7l-pro-2026"
       ],
@@ -121388,6 +121544,9 @@
       "underdogs-cycling-incolor-ssr-build": [
         "target.platform_id=incolor-ssr"
       ],
+      "unli-ahon-java-fuoco-top-105": [
+        "target.candidate_id=java-fuoco-2025"
+      ],
       "vadim-on-wheels-winspace-g3-150km": [
         "target.platform_id=winspace-g3"
       ],
@@ -121477,6 +121636,15 @@
       ],
       "yocyclo-incolor-sr-plus-frameset": [
         "target.platform_id=incolor-speedster"
+      ],
+      "zona3-java-vega-tt": [
+        "target.candidate_id=java-vega-tt-24s"
+      ],
+      "zona3-java-vittoria-105-di2-disc-wheel": [
+        "target.candidate_id=java-vittoria-7170"
+      ],
+      "zona3-java-volata-review": [
+        "target.candidate_id=java-volata-r7120"
       ],
       "zzefol-spcycle-g028-owner-review": [
         "target.platform_id=spcycle-g028"
@@ -122459,7 +122627,8 @@
         "source_ids=java-fuoco-top-105-official-2026-08-09",
         "source_ids=java-fuoco-top-105-owner-weight-2026-08-30",
         "source_ids=java-fuoco-top-105-retailer-weight-2026-08-30",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=unli-ahon-java-fuoco-top-105"
       ],
       "java-lampo-carbon-road": [
         "model_id=java-lampo-carbon-road",
@@ -122471,7 +122640,8 @@
       "java-siluro6-top-r7120": [
         "brand_id=java",
         "model_id=java-siluro6-top-r7120",
-        "source_ids=java-siluro6-top-tmall-2026-10-24"
+        "source_ids=java-siluro6-top-tmall-2026-10-24",
+        "video_ids=jkt-sepeda-java-siluro-6-top-2025"
       ],
       "java-suprema-7120": [
         "brand_id=java",
@@ -122503,7 +122673,8 @@
         "source_ids=java-vega-mexico-2026-08-29",
         "source_ids=java-vega-tt-24s-enrichment-2026-10-03",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=zona3-java-vega-tt"
       ],
       "java-vittoria-7170": [
         "brand_id=java",
@@ -122516,7 +122687,8 @@
         "source_ids=java-vittoria-r7170-chile-2026-08-29",
         "source_ids=java-vittoria-r7170-chile-current-2026-09-23",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=zona3-java-vittoria-105-di2-disc-wheel"
       ],
       "java-vittoria-er7-2026": [
         "brand_id=java",
@@ -122530,12 +122702,14 @@
         "source_ids=java-vittoria-eurobike-2026-08-29",
         "source_ids=java-vittoria-jd-2026-08-29",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=jkt-sepeda-java-vittoria-er7-alloy"
       ],
       "java-volata-r7120": [
         "brand_id=java",
         "model_id=java-volata-r7120",
-        "source_ids=java-volata-r7120-taobao-2026-10-24"
+        "source_ids=java-volata-r7120-taobao-2026-10-24",
+        "video_ids=zona3-java-volata-review"
       ],
       "kontax-power-evo": [
         "model_id=kontax-power-evo",

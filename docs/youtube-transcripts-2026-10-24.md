@@ -207,6 +207,19 @@ Delivered: two transcript-checked videos (Russian and Vietnamese, with English p
 - T8 (`twitter-t8-closed-wheel`), X7 (`twitter-x7`) and Little White Rabbit (`twitter-little-white-rabbit`): no exact-model review; only TWITTER promo shorts (`HjnaaOTOhFA`, `hwbnXYgIdhQ`, `v3WLZe6Pfrs`, `fkRpemcrvV4`) or nothing.
 - Cyctrac / TWITTER R18 (`cyctrac-r18`): no exact-model review; BikeVibes' "TT-R18" review `nKKJzRcpGgM` is the Seraph/TanTan TT-R18 (mismatch) and TWITTER's own R18 clip `mOw_dfNJxL4` is a promo short.
 
+### Batch 17 — JAVA Fuoco 2025, Siluro6-Top, Suprema 7120, Vittoria 7170 and ER7 2026, Volata, Vega TT, Auriga 2027, carbon TT frameset; unresolved JAVA listings
+
+Delivered: six transcript-checked videos from Philippine, Indonesian and Chilean shops (Filipino, Indonesian and Spanish captions, English paraphrased takeaways).
+
+- Fuoco 2025 (`java-fuoco-2025`): Unli Ahon's unboxing of the updated full-105 Fuoco Top (`Q5Xmr5RTr18`). JC Bikes (`JIXX7WCGRRI`), Palm Paramet (`y6kWF5ydHsY`) and My Wild Hobby (`Bq7nLGeal_k`) cover the same or earlier Fuoco Top builds and were not needed.
+- Siluro6-Top (`java-siluro6-top-r7120`): JKT Sepeda's 2025 first look (`dj0UvuebGnA`; aluminium aero frame, about 10.6 kg). Unli Ahon's `4ltvZoyLSQ8` shows the earlier build; 杨弟's `EZtzfWqv6HI` has no caption track.
+- Vittoria 7170 closed-wheel (`java-vittoria-7170`): Zona3's Chilean walkaround of the carbon 105 Di2 build with a disc rear wheel (`a6cJNO0j6EI`). Vittoria ER7 2026 (`java-vittoria-er7-2026`): JKT Sepeda's look at the aluminium-frame ER7 (`xfqO5dMmKFU`; 28 mm tires already tight), with the frame version disclosed.
+- Volata (`java-volata-r7120`): Zona3's ride review (`zCfBWj3b_Nk`), built with 105 Di2 rather than mechanical R7120.
+- Vega TT 24S (`java-vega-tt-24s`): Zona3's walkaround with L-TWOO R9 (`O55aVYYIvPk`). A Vietnamese shop review `HUS5sUKxY48` was not needed; 브이맨's `ZfCLsi3aw40` has an empty transcript panel.
+- Auriga 2027 (`java-auriga-2027`): no usable transcript; EverydayBikes' `fWRDZZJ1JfE` has no caption track and Cycle Omania's `2RCIP3kdBSQ` an empty panel.
+- Suprema 7120 (`java-suprema-7120`): no current-build video; David Mann's reviews (`g_k8JmIevyo`, `gNIj7Ojv56g`, `lcUJBexhysY`) and TTBok's 2022 bike check `b2vRYSLgLDE` predate the R7120 build.
+- JAVA carbon triathlon frameset with hydraulic brakes (`java-tt-frame-hydraulic`), carbon hydraulic road bike (`java-carbon-hydraulic-unknown`) and LAMPO full-carbon listing (`java-lampo-carbon-road`): no exact model identity, so unsuitable for exact-model video search. The aluminium 24-speed observation (`java-aluminum-24s`) is merged into the Vittoria ER7 record. China Rides' JAVA team-edition video `p8htrqH-GOs` and Jourdain Coleman's general Q&A `OCat2f03T6k` do not show candidate models.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -323,6 +336,12 @@ Delivered: two transcript-checked videos (Russian and Vietnamese, with English p
 | giant-propel-gen4-community-lead (candidate/wheelset) | `bikeradar-giant-propel-2026-first-look` | BikeRadar | automatic captions · 4 takeaways |
 | hi-light-g7-2 (candidate/wheelset) | `carlo-villarica-hi-light-g7-2-titanium` | Carlo Villarica - No Boring Days | automatic captions · 5 takeaways |
 | ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
+| java-fuoco-2025 (candidate/wheelset) | `unli-ahon-java-fuoco-top-105` | Unli Ahon | automatic captions · 4 takeaways |
+| java-siluro6-top-r7120 (candidate/wheelset) | `jkt-sepeda-java-siluro-6-top-2025` | JKT Sepeda | automatic captions · 3 takeaways |
+| java-vega-tt-24s (candidate/wheelset) | `zona3-java-vega-tt` | Zona3 | automatic captions · 3 takeaways |
+| java-vittoria-7170 (candidate/wheelset) | `zona3-java-vittoria-105-di2-disc-wheel` | Zona3 | automatic captions · 4 takeaways |
+| java-vittoria-er7-2026 (candidate/wheelset) | `jkt-sepeda-java-vittoria-er7-alloy` | JKT Sepeda | automatic captions · 4 takeaways |
+| java-volata-r7120 (candidate/wheelset) | `zona3-java-volata-review` | Zona3 | automatic captions · 4 takeaways |
 | laget-aero-one (candidate/wheelset) | `bike-cabin-laget-aero-one-introduction` | Bike Cabin | automatic captions · 4 takeaways |
 | laget-aero-one (candidate/wheelset) | `gravel-cyclist-laget-aero-one-eurobike` | Gravel Cyclist | automatic captions · 2 takeaways |
 | laget-aero-one (candidate/wheelset) | `king-bike-laget-aero-one-test-ride-talk` | 자전거news | automatic captions · 4 takeaways |
