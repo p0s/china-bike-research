@@ -359,7 +359,7 @@ test('published frame pages show exact-model galleries and component weight cont
   const quick = products.find((entry) => entry.variant.id === 'quick-gr-one-frameset');
   const quickDetail = renderModel(context, quick);
   assert.match(quickDetail, /data-image-gallery/);
-  assert.equal((quickDetail.match(/data-gallery-thumb/g) ?? []).length, 4);
+  assert.equal((quickDetail.match(/data-gallery-thumb/g) ?? []).length, 6);
   assert.match(quickDetail, /Ice Crack Silver/);
   assert.match(quickDetail, /<dt>Frame weight<\/dt><dd>919 g<\/dd>/);
   assert.match(quickDetail, /<dt>Fork weight<\/dt><dd>459 g<\/dd>/);
@@ -372,7 +372,7 @@ test('published frame pages show exact-model galleries and component weight cont
 
   const incolor = products.find((entry) => entry.variant.id === 'incolor-voyager-frameset');
   const incolorDetail = renderModel(context, incolor);
-  assert.equal((incolorDetail.match(/data-gallery-thumb/g) ?? []).length, 6);
+  assert.equal((incolorDetail.match(/data-gallery-thumb/g) ?? []).length, 7);
   assert.match(incolorDetail, /Est\. ¥13,800/);
   assert.match(incolorDetail, /5 sizes \(45–57\) · stack 515–580 mm · reach 358–397 mm/);
 });

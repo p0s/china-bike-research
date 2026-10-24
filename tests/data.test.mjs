@@ -2020,11 +2020,11 @@ test('publication gates reject incomplete builds and category-mismatched framese
 });
 
 test('public dataset has the expected coverage', () => {
-  assert.equal(data.brands.length, 42);
-  assert.equal(data.platforms.length, 38);
-  assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 83);
-  assert.equal(data.prices.filter((price) => !price.market_ids).length, 78);
+  assert.equal(data.brands.length, 43);
+  assert.equal(data.platforms.length, 39);
+  assert.equal(data.variants.length, 42);
+  assert.equal(data.prices.length, 84);
+  assert.equal(data.prices.filter((price) => !price.market_ids).length, 79);
   assert.equal(data.prices.filter((price) => price.market_ids).length, 5);
   assert.equal(data.exchangeRates.length, 1);
   assert.ok(data.images.length >= 213);
@@ -2032,7 +2032,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 112);
   assert.ok(data.sources.length >= 313);
-  assert.equal(data.candidates.length, 281);
+  assert.equal(data.candidates.length, 283);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
   assert.ok(data.researchAttempts.length >= 1844, 'retain the existing research ledger while allowing additive evidence');
@@ -2338,8 +2338,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 267);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 261);
+  assert.equal(catalogCandidates.length, 269);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 263);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -2882,9 +2882,11 @@ test('published products expose ordered exact-model gallery images', () => {
   assert.deepEqual(quick.galleryImages.map((image) => image.label), [
     'Ice Crack Silver',
     'Diamond Black',
-    'Fresh Grass Green'
+    'Fresh Grass Green',
+    'GR:ONE geometry and height guide',
+    'Community spec card'
   ]);
-  assert.ok(quick.galleryImages.every((image) => image.source?.id === 'quick-gr-one-official'));
+  assert.ok(quick.galleryImages.slice(0, 3).every((image) => image.source?.id === 'quick-gr-one-official'));
 });
 
 test('buyer-hidden public-post embeds remain valid while sourced rehosts use the bounded local contract', () => {

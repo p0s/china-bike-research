@@ -1,0 +1,59 @@
+{
+  "id": "girder-dash-2023-xhs-dealer-pair-gallery",
+  "candidate_id": "girder-dash-105-di2-2023-reference",
+  "role": "gallery",
+  "label": "2023 dealer photo, two DASH finishes",
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/girder-dash-2023-xhs-dealer-pair/a34e927bf0299712-detail-w880.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/girder-dash-2023-xhs-dealer-pair/824e30b42c372a68-card-w480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 37068,
+        "sha256": "824e30b42c372a6845ff0ef12b051c41974341fc9be094e40dfd96bd2a93f5f0",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/girder-dash-2023-xhs-dealer-pair/a34e927bf0299712-detail-w880.webp",
+        "width": 880,
+        "height": 660,
+        "bytes": 85364,
+        "sha256": "a34e927bf029971246c9fd7a12ccf1775ece34c8c8cc05c1e3fea0aa4a4f2636",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-girder-dash-105-di2-retail-2023-03-2026-10-24",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS dealer post creator",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS dealer post; see source",
+  "alt": "Two GIRDER DASH carbon road bikes, one red and one ice-crack silver, on stands in a paved plaza",
+  "display_note": "March 2023 dealer post for the documented 105 Di2 build; the two bikes show finish options, not two confirmed packages.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/640605ca00000000130085ac",
+  "source_media_sha256": "384edc3f2a92a94eb43c1753d5790f7331c854d885836b2b39828b44638d329d",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "girder-tsar-2023-xhs-dealer-side-gallery",
+  "candidate_id": "girder-tsar-105-di2-2023-reference",
+  "role": "gallery",
+  "label": "2023 dealer photo, drive side",
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/girder-tsar-2023-xhs-dealer-side/8624981b3d939746-detail-w1200.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/girder-tsar-2023-xhs-dealer-side/d22f0e9ce85026ec-card-w480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 20744,
+        "sha256": "d22f0e9ce85026ecacd61a201fcf6dc43664513b67ea309d6f98ebe39374744f",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/girder-tsar-2023-xhs-dealer-side/8624981b3d939746-detail-w1200.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 87386,
+        "sha256": "8624981b3d939746acc4e5d649de480eb058386effed72f0f639d15701d037a3",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-girder-tsar-105-di2-retail-2023-10-2026-10-24",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS dealer post creator",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS dealer post; see source",
+  "alt": "GIRDER TSAR carbon aero road bike in grey with deep wavy-rim wheels, drive-side view",
+  "display_note": "October 2023 dealer post for the documented 105 Di2 build.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/651e662b000000001f037123",
+  "source_media_sha256": "a2240376f4ac3be72a427ae7d1b85ed65c7c164034ba5aecab992347a97241fa",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}

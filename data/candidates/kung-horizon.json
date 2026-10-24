@@ -4,11 +4,14 @@
   "model_id": "kung-horizon",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "The retained card and current marketplace range establish a full-carbon HORIZON / 天际 complete bike, but the selected CNY 6,999 trim remains unresolved.",
+  "why_interesting": "KUNG's own June 2026 post lists a full-carbon HORIZON 天际 entry complete bike from CNY 6,999 with Shimano 105 R7120 hydraulic, REGO 50 mm carbon wheels and a FEO carbon integrated bar, matching the retained CNY 6,999 card.",
   "facts": {
-    "frame_material": "The retained seller card and the JD index last observed 2026-08-30 describe full-carbon HORIZON complete-bike listings; the 2026-09-23 direct JD page exposed no exact-model text.",
-    "drivetrain": "JD's last indexed HORIZON reference build (crawl about three months old) lists Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes; the retained CNY 6,999 seller option is not identified.",
-    "stiffness_evidence": "No transferable current-generation numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+    "frame_material": "Full-carbon HORIZON disc frame and fork (KUNG post: 天际碳纤维碟刹车架)",
+    "drivetrain": "Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes on the CNY 6,999 entry complete bike (KUNG post graphic: SHIMANO R7120油碟大套)",
+    "wheels": "REGO STANDARD 50 mm carbon disc wheels with Continental Ultra Sport tires",
+    "cockpit": "KUNG FEO one-piece carbon bar; FEO carbon-rail saddle",
+    "bottom_bracket": "T47 (景晔 T47 in the entry build)",
+    "stiffness_evidence": "No transferable current-generation numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep or the October 2026 XHS review"
   },
   "alternative_builds": [
     {
@@ -18,20 +21,50 @@
       "source_ids": [
         "kung-horizon-jd-2026-08-30"
       ],
-      "notes": "The indexed current full-carbon reference build is not assigned to the retained CNY 6,999 card, whose visible title omits the drivetrain generation."
+      "notes": "The indexed current full-carbon reference build from the 2026-08-30 JD index; KUNG's later-reviewed June 2026 post identifies the CNY 6,999 entry build with the same drivetrain."
+    },
+    {
+      "id": "kung-entry-r7120-white-black",
+      "label": "全碳入门整车, white or black",
+      "drivetrain": "Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes",
+      "source_ids": [
+        "public-xhs-kung-horizon-entry-brand-2026-06-30"
+      ],
+      "notes": "KUNG post (30 June 2026): CNY 6,999 starting price for 纯白 and 黑梦 paints; REGO 50 mm carbon wheels, FEO bar and saddle, Continental Ultra Sport tires, T47 bottom bracket."
+    },
+    {
+      "id": "kung-entry-r7120-art-paint",
+      "label": "全碳入门整车, 星空 art paint",
+      "drivetrain": "Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes",
+      "source_ids": [
+        "public-xhs-kung-horizon-entry-brand-2026-06-30"
+      ],
+      "notes": "Same package with the 星空 art-paint frame at CNY 7,799 starting price."
+    },
+    {
+      "id": "jd-horizon-r7170",
+      "label": "JD HORIZON 7170 全碳整车",
+      "drivetrain": "Shimano 105 Di2 R7170 electronic 2×12 with hydraulic disc brakes",
+      "source_ids": [
+        "kung-jd-flagship-index-2026-10-24"
+      ],
+      "notes": "JD flagship listing title; price hidden behind login on 24 October 2026. A dealer post on 22 October 2026 quotes mechanical builds from 'just over CNY 7,000' and R7170 builds from 'just over CNY 9,000' without a full BOM."
     }
   ],
   "missing": [
-    "Exact selected CNY 6,999 SKU, complete BOM and complete-bike weight with measurement basis",
+    "Complete-bike weight with size and pedal basis",
     "Maximum tire clearance and current complete geometry",
     "Meaningful current-generation stiffness evidence, domestic warranty route and final checkout conditions"
   ],
-  "status": "exact-model-current-range-selected-build-unresolved",
+  "status": "exact-trim-identified-brand-price-dated",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "kung-horizon-jd-2026-08-30",
     "kung-horizon-biketo-2018",
-    "kung-horizon-jd-index-recheck-2026-09-23"
+    "kung-horizon-jd-index-recheck-2026-09-23",
+    "public-xhs-kung-horizon-entry-brand-2026-06-30",
+    "public-xhs-kung-horizon-dealer-2026-10-22",
+    "kung-jd-flagship-index-2026-10-24"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -44,6 +77,25 @@
   },
   "source_refs": "IMG_6885.png#R2",
   "source_url": "https://www.jd.com/jiage/1318d5556559cbbb311f.html",
-  "source_note": "The retained card supplies the CNY 6,999 complete-bike lead and visible HORIZON frame. JD's 2026-08-30 index listed KUNG 攻 / HORIZON 天际 full-carbon and R7120 mechanical reference builds across multiple distinct trims; a 2026-09-23 direct recheck exposed no HORIZON text and the current index snippet is about three months stale. Do not assign the reference BOM to the retained card. The 2018 review is an older generation and does not supply current weight, clearance, or stiffness evidence.",
-  "last_reviewed": "2026-09-23"
+  "source_note": "The retained card supplies the CNY 6,999 complete-bike lead and visible HORIZON frame. KUNG's own XHS post (30 June 2026) lists the full-carbon entry complete bike from CNY 6,999 in white or black (CNY 7,799 in 星空 art paint) with Shimano R7120 hydraulic, REGO 50 mm carbon wheels, FEO bar and saddle, Continental Ultra Sport tires and a T47 bottom bracket; the retained card most likely shows this build, but its exact SKU is not printed. JD's 2026-08-30 index listed KUNG 攻 / HORIZON 天际 builds across multiple distinct trims, and the October flagship index also lists R7170 and FEO DISC builds and framesets. The 2018 review is an older generation and does not supply current weight, clearance, or stiffness evidence.",
+  "last_reviewed": "2026-10-24",
+  "brand_id": "kung",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-24",
+      "source_ids": [
+        "public-xhs-kung-horizon-entry-brand-2026-06-30",
+        "public-xhs-kung-horizon-dealer-2026-10-22",
+        "kung-jd-flagship-index-2026-10-24"
+      ],
+      "fields": [
+        "drivetrain",
+        "wheels",
+        "cockpit",
+        "bottom_bracket",
+        "alternative_builds"
+      ],
+      "scope": "Brand-published entry complete-bike BOM and starting prices; dealer price ranges kept as qualitative notes. The retained 2026-08-08 price observation is unchanged."
+    }
+  ]
 }

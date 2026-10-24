@@ -1,0 +1,59 @@
+{
+  "id": "quick-gr-one-xhs-roundup-spec-gallery",
+  "platform_id": "quick-gr-one",
+  "role": "gallery",
+  "label": "Community spec card",
+  "subject_accuracy": "exact-platform",
+  "media_type": "community-post-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/quick-gr-one-xhs-roundup-spec/19f15006a88aaafe-detail-w920.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/quick-gr-one-xhs-roundup-spec/dcc338b0c95e0e96-card-w480.webp",
+        "width": 480,
+        "height": 611,
+        "bytes": 37906,
+        "sha256": "dcc338b0c95e0e96864d51fb349624905f7aeee232ced2a501501ebfb5b589f0",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/quick-gr-one-xhs-roundup-spec/19f15006a88aaafe-detail-w920.webp",
+        "width": 920,
+        "height": 1171,
+        "bytes": 84970,
+        "sha256": "19f15006a88aaafe08697c1f6ea1b74618368c08e23af4dde2a0a7d9923897f8",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-race-gravel-china-roundup-2026-09-28",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator; product photo by the brand",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS community roundup; product photo by the brand",
+  "alt": "Quick Pro GR:ONE gravel bike with a spec overlay listing 45 mm tire clearance, size-M stack and reach, chainstay, BB drop and a 48T chainring limit",
+  "display_note": "Community-compiled 2026 race-gravel roundup page using a brand photo; check values against Quick's own specification. Footer credit line removed for privacy.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/6aba129d000000001a026bc7",
+  "source_media_sha256": "5b6f7ba2d26c1fadf6dc87783d73366a11562071cf1bd552f7922179baf4d8a1",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}

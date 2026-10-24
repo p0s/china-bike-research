@@ -1,0 +1,59 @@
+{
+  "id": "girder-fame-2023-xhs-black-nondrive-gallery",
+  "candidate_id": "girder-fame-105-di2-2023-reference",
+  "role": "gallery",
+  "label": "2023 dealer photo, black non-drive side",
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/girder-fame-2023-xhs-black-nondrive/43b72f775bd4be2c-detail-w880.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/girder-fame-2023-xhs-black-nondrive/53b7f238bb341bdc-card-w480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 39994,
+        "sha256": "53b7f238bb341bdc0206a24103949fd5b0f298c72f6bcb609422b9834ab90038",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/girder-fame-2023-xhs-black-nondrive/43b72f775bd4be2c-detail-w880.webp",
+        "width": 880,
+        "height": 660,
+        "bytes": 85240,
+        "sha256": "43b72f775bd4be2ce292da38a45aea5b7512fdb72c30254f773087534fceaa5c",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-girder-fame-105-di2-spec-2023-08-2026-10-24",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS dealer post creator",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS dealer post; see source",
+  "alt": "GIRDER FAME from its black non-drive side on a stand",
+  "display_note": "August 2023 dealer post; same two-tone bike from the other side.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/64dcf1bb000000000301c575",
+  "source_media_sha256": "c9beb8ab937e1d5f42deef9b431da63db1c1de1d0ab2208c2e6f690ae102dfbd",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}

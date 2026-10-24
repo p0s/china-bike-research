@@ -1,0 +1,59 @@
+{
+  "id": "girder-fame-2023-xhs-geometry-gallery",
+  "candidate_id": "girder-fame-105-di2-2023-reference",
+  "role": "gallery",
+  "label": "2023 dealer geometry table",
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/girder-fame-2023-xhs-geometry/b5c5bcd134d2d520-detail-w526.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/girder-fame-2023-xhs-geometry/4b445623f15793db-card-w480.webp",
+        "width": 480,
+        "height": 917,
+        "bytes": 16312,
+        "sha256": "4b445623f15793db12445db29c92fd5721a1c99a224247858021836d3713faa2",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/girder-fame-2023-xhs-geometry/b5c5bcd134d2d520-detail-w526.webp",
+        "width": 526,
+        "height": 1004,
+        "bytes": 19340,
+        "sha256": "b5c5bcd134d2d520cc2ceae4ebbfcc17834edf3fa8c52b97af720a56eb64e5d1",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-girder-fame-105-di2-retail-2023-06-2026-10-24",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS dealer post creator",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS dealer post; see source",
+  "alt": "GIRDER FAME geometry table for three sizes with top tube, seat tube, angles, stack, reach and wheelbase",
+  "display_note": "Dealer-posted factory table dated 2022; columns carry both S/M/L and smaller XS/S/M labels, so confirm size naming with GIRDER. Drawing panel and drafter details removed for privacy.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/647aa374000000000703a50c",
+  "source_media_sha256": "39e656da8a6fc8d94dc270fb8387c995d29cd8531f84493466d73946e5903605",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}
