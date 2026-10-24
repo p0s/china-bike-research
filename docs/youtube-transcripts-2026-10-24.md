@@ -166,6 +166,21 @@ Delivered: nine transcript-checked videos. Generations were matched by clearance
 - Specialized Roubaix SL8: Jamesthebikeguy's 2026 base-model walkaround (`9xGQvpdt5ac`; Tiagra, 9.7 kg size 56) for the Tiagra price target, and David Arthur's launch ride (`uTZcm5BjEho`; grade not stated) for the Comp 105. The Sport 105 (`specialized-roubaix-sl8-sport-105`) shares the FACT 10r frame; no trim-specific review was found and the base-model video is not duplicated. The Bicycle Station's owner review `33vA1MQsMs8` does not state the frame grade.
 - Specialized Tarmac SL8 Comp 105 Di2 (`missing-china-price-specialized-tarmac-sl8`): road.cc's review of the entry FACT 10r SL8 with 105 Di2 (`d537VnXsEto`; 7.9 kg size 52) and GC Performance's 2026 US Comp walkaround (`tREYq4W4-_U`; 7.68 kg size 50, SRAM Rival). Crank & Sprints' owner chat `dEYkQGwf42M` adds little.
 
+### Batch 14 — Trek Checkpoint SL 5 Gen 3, Domane SL 5 Gen 4, Madone SL 5 Gen 8; Van Rysel RCR-F Pro; SCOTT Addict 40, Foil RC 10; Pinarello F5; Cervélo Áspero-5; Cinelli Pressure, Pressure ADR
+
+Delivered: nine transcript-checked videos.
+
+- Trek Checkpoint SL 5 Gen 3: Terra Riders' 12,000 km owner review (`gdAHP2VUgEo`; water ingress and a creaking IsoSpeed fixed by servicing). Their 2025 first review `B463Ys_TN-Y` is covered by the long-term video.
+- Trek Domane SL 5 Gen 4: BikeLabHQ's six-month owner review (`r7acx4pcfG4`; seatpost slipping, plug falling out). Hiker Biker Omar's `9PIjSdivoLo` was not needed; the 2026 Domane Gen 5 videos are a newer generation (mismatch).
+- Trek Madone SL 5 Gen 8: GC Performance's walkaround (`TMA8Mx_g7o0`; 8.65 kg size M). Cycling Insider's `gYvhmN9P-L0` reads the specification.
+- Van Rysel RCR-F Pro 105 Di2: Cyclingnews' wind-tunnel and ride review of the RCR-F frame in Ultegra spec (`FahPsErb-24`; low, stiff front end; about 8.5 kg in 105 spec). road.cc's first ride `TOkRl4nyUPg` was not needed.
+- SCOTT Addict 40: Sam Rates Bikes' review of the 2026 Addict in Addict 10 trim (`um1O_TDrcpo`; frame grade not stated). Cycling Insider's Addict 40 buyer's guide `YaRyNVGnbPA` reads the specification.
+- SCOTT Foil RC 10: Jenson USA's short retailer review (`NhsffxoW3cw`; 7.9 kg Ultegra). GC Performance's 2023 walkaround `8e5tpWSlp1E` is an alternative.
+- Pinarello F5: Bicycling's review (`cjv41gIDbWw`; 990 g claimed frame; he says 30 mm, against 32 mm in the candidate's MY26 reference, a conflict left visible) and Approved's follow-up (`-JZmG8RJa_c`; slight flex above about 800 W). Victory Bicycle Studio's dealer clip `e1Ym9D3YaYc` is promotional.
+- Cervélo Áspero-5: Ben Delaney's review (`X-hVsq37ar8`; 45 mm with about 6 mm per side). David Arthur's `qPyGQBORh5s` was not needed.
+- Cinelli Pressure (first generation, `cinelli-pressure`): no video added. OtomoRide's `UyG1R-j2iZM` re-narrates a magazine review rather than presenting its own test, and Cycling Insider's `JCZwWTvZyUw` reads the specification; the 2025 Pressure II videos (`6ySzYnuG7To`, `iNu0901g0No`) are the newer generation.
+- Cinelli Pressure ADR (`cinelli-pressure-adr`): no video added; ridemedia's two videos (`bg5rUNekDWk`, `SfXRxEcMLoQ`) cover parts, the cockpit and ride scenery without frame-specific observations.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -265,6 +280,7 @@ Delivered: nine transcript-checked videos. Generations were matched by clearance
 | bxt-gravel-complete (candidate/wheelset) | `jackalope-dave-bxt-gravel-135-frame-review` | Jackalope Dave | automatic captions · 3 takeaways |
 | carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-build` | Daryl Pace | automatic captions · 3 takeaways |
 | carbonda-cfr707 (candidate/wheelset) | `sysadmin-carbonda-cfr707-owner-build` | Sysadmin | automatic captions · 4 takeaways |
+| cervelo-aspero-5-current (candidate/wheelset) | `ben-delaney-cervelo-aspero-5-review` | The Ride with Ben Delaney | automatic captions · 5 takeaways |
 | elitewheels-drive-50d-ii (candidate/wheelset) | `cyclists-hub-elitewheels-drive-50d-ii-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
 | elitewheels-drive-50d-ii (candidate/wheelset) | `the-bike-sauce-elitewheels-drive-50d-ii-review` | The Bike Sauce | automatic captions · 4 takeaways |
 | elitewheels-drive-g36 (candidate/wheelset) | `bicycle-station-gravel-wheel-shootout-drive-g36` | The Bicycle Station | automatic captions · 3 takeaways |
@@ -317,14 +333,22 @@ Delivered: nine transcript-checked videos. Generations were matched by clearance
 | missing-china-price-specialized-tarmac-sl8 (candidate/wheelset) | `gc-performance-specialized-tarmac-sl8-comp-2026` | GC Performance | automatic captions · 3 takeaways |
 | missing-china-price-specialized-tarmac-sl8 (candidate/wheelset) | `road-cc-cheapest-specialized-tarmac-sl8` | road.cc | creator captions · 4 takeaways |
 | missing-china-price-tavelo-arow (candidate/wheelset) | `china-cycling-tavelo-arow-2026-build` | China Cycling | automatic captions · 3 takeaways |
+| missing-china-price-trek-checkpoint (candidate/wheelset) | `terra-riders-trek-checkpoint-sl5-gen3-long-term` | Terra Riders | automatic captions · 5 takeaways |
+| missing-china-price-trek-domane (candidate/wheelset) | `bikelabhq-trek-domane-sl5-gen4-six-months` | BikeLabHQ | automatic captions · 5 takeaways |
+| missing-china-price-trek-madone-gen-8 (candidate/wheelset) | `gc-performance-trek-madone-sl5-gen8` | GC Performance | automatic captions · 4 takeaways |
+| missing-china-price-van-rysel-rcr (candidate/wheelset) | `cyclingnews-van-rysel-rcr-f-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
 | missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | automatic captions · 3 takeaways |
+| pinarello-f5 (candidate/wheelset) | `approved-pinarello-f5-negative-points` | Approved | automatic captions · 3 takeaways |
+| pinarello-f5 (candidate/wheelset) | `bicycling-pinarello-f5-review` | Bicycling | creator captions · 4 takeaways |
 | quick-pro-er-one (candidate/wheelset) | `china-cycling-quick-pro-er-one` | China Cycling | automatic captions · 6 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-cycling-quick-pro-ur-one` | China Cycling | automatic captions · 3 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-rides-quick-pro-ur-one` | China Rides | automatic captions · 4 takeaways |
 | sava-a7l-pro-2026 (candidate/wheelset) | `bikelabhq-sava-a7l-pro-review` | BikeLabHQ | automatic captions · 6 takeaways |
 | sava-a7l-pro-2026 (candidate/wheelset) | `jonathan-simmons-sava-a7l-pro-owner` | Jonathan Simmons | automatic captions · 4 takeaways |
 | sava-f20-hawkeye (candidate/wheelset) | `china-cycling-sava-f20-hawkeye` | China Cycling | automatic captions · 4 takeaways |
+| scott-addict-40 (candidate/wheelset) | `sam-rates-bikes-scott-addict-2026-review` | Sam Rates Bikes | automatic captions · 4 takeaways |
+| scott-foil-rc-10 (candidate/wheelset) | `jenson-usa-scott-foil-rc-10-ride-review` | Jenson USA | automatic captions · 3 takeaways |
 | seka-spear-rdc (candidate/wheelset) | `cyclingnews-seka-spear-rdc-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
 | specialized-roubaix-sl8-comp-105 (candidate/wheelset) | `david-arthur-specialized-roubaix-sl8-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | specialized-s-works-crux-2024-sram-red-xplr (candidate/wheelset) | `david-arthur-specialized-s-works-crux-long-term` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
