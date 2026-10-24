@@ -1,0 +1,56 @@
+{
+  "id": "seka-spear-standard-105-di2",
+  "name": "SEKA Spear (standard frame) 105 Di2 dealer build",
+  "model_id": "seka-spear-standard-105-di2",
+  "brand_id": "seka",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "A fully itemised dealer build on the standard Spear frame with 105 Di2 and Magene carbon wheels.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 full groupset",
+    "wheels": "Magene Ultra Dark 508 carbon-spoke, 50 mm front / 58 mm rear",
+    "tires": "Michelin Power Cup clincher with Magene TPU tubes",
+    "complete_weight_g": 7000,
+    "complete_weight_basis": "Dealer-stated build weight; size not stated"
+  },
+  "missing": [
+    "Cockpit and seatpost",
+    "Maximum tire clearance",
+    "Exact selected-size stock, warranty and checkout total"
+  ],
+  "status": "taobao-listing-observed",
+  "source_ids": [
+    "seka-spear-homebike-taobao-2026-10-24",
+    "seka-spear-rdc-taobao-dealer-2026-10-24"
+  ],
+  "observed_at": "2026-10-24",
+  "observed_price": {
+    "amount_cny": 20800,
+    "currency": "CNY",
+    "observed_at": "2026-10-24",
+    "price_type": "listing-option",
+    "price_basis": "HomeBike custom-build listing, any size",
+    "conditions": "Made to order with a deposit; ¥20,800 is the full price.",
+    "observation_count": 1
+  },
+  "source_url": "https://item.taobao.com/item.htm?id=951501392434",
+  "last_reviewed": "2026-10-24",
+  "alternative_builds": [
+    {
+      "id": "dealer-ultegra-di2-arc1100",
+      "label": "Different dealer: standard frame Ultegra Di2 + DT Swiss ARC 1100 50",
+      "drivetrain": "Shimano Ultegra Di2 R8170",
+      "wheels": "DT Swiss ARC 1100 50 mm",
+      "price": {
+        "amount_cny": 32999,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "苏州波波单车 standard-frame option"
+      },
+      "source_ids": [
+        "seka-spear-rdc-taobao-dealer-2026-10-24"
+      ]
+    }
+  ]
+}

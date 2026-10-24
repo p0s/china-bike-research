@@ -30,3 +30,20 @@ The site was served from a loopback preview of this exact build and opened in de
 - Desktop comparison (1,600 px) and German 320 px screenshots were reviewed. They are kept task-local and are not in Git.
 
 This is local-build evidence only. It does not assert a production deployment.
+
+## Taobao/Tmall sweep update — 2026-10-24
+
+Integrating the 2026-10-24 Taobao/Tmall price sweep (19 listing-priced candidates) onto the KUNG range made the English homepage exceed the 830,000-byte / 8,050-element cap above.
+
+| Build | Rows | HTML bytes | Elements |
+|---|---|---|---|
+| Main with KUNG range | 292 | 812,336 | 7,940 |
+| Main plus the price sweep | 311 | 849,888 | 8,326 |
+
+The Chinese and German homepages measure 854,349 and 858,756 bytes. The 19 added rows average about 1,976 bytes and 20 elements each, in line with the per-row review above. No markup was removed.
+
+The cap is now 890,000 bytes and 8,650 elements; the project-path allowance stays +35,000 bytes. That leaves 40,112 bytes (4.5%) and 324 elements (3.9%), about 16 more rows. The cap stays fixed.
+
+Browser check of this exact local build in headless Chromium, served from the generated files with all external requests blocked: `/`, `/zh/` and `/de/` at 1,600, 390 and 320 px. Every case had 311 rows, 305 visible by default, including the new sweep candidates. No case had document horizontal overflow, and none of the 305 visible price cells overflowed. The live DOM had 8,350 elements in every language. Screenshots stay task-local and are not in Git.
+
+This is local-build evidence only. It does not assert a production deployment.

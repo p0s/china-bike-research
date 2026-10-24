@@ -1,0 +1,53 @@
+{
+  "id": "pardus-spark-evo-gen4-ultegra-di2",
+  "name": "PARDUS 瑞豹 Spark EVO Gen 4 Ultegra Di2 (2026)",
+  "model_id": "pardus-spark-evo-gen4-ultegra-di2",
+  "brand_id": "pardus",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "Fourth-generation official Spark EVO complete with a stated Ultegra Di2 and MVMT 50 mm carbon wheel build.",
+  "facts": {
+    "drivetrain": "Shimano Ultegra R8170 Di2 2×12",
+    "wheels": "MVMT 50 mm carbon race wheels",
+    "tires": "Michelin Power Cup tubeless"
+  },
+  "missing": [
+    "Complete weight",
+    "Maximum tire clearance",
+    "Exact selected-size stock, warranty and checkout total"
+  ],
+  "status": "taobao-listing-observed",
+  "source_ids": [
+    "pardus-spark-evo-gen4-tmall-2026-10-24"
+  ],
+  "observed_at": "2026-10-24",
+  "observed_price": {
+    "amount_cny": 39999,
+    "currency": "CNY",
+    "observed_at": "2026-10-24",
+    "price_type": "listing-option",
+    "price_basis": "Official Tmall ULTEGRA option",
+    "conditions": "Pre-order with negotiated delivery; 0 units shown.",
+    "observation_count": 1
+  },
+  "source_url": "https://detail.tmall.com/item.htm?id=1033740824539",
+  "last_reviewed": "2026-10-24",
+  "alternative_builds": [
+    {
+      "id": "dura-ace-di2",
+      "label": "Dura-Ace Di2 R9270 build",
+      "drivetrain": "Shimano Dura-Ace R9270 Di2 2×12",
+      "wheels": "MVMT 50 mm carbon",
+      "price": {
+        "amount_cny": 59999,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "Official Tmall DURA ACE option"
+      },
+      "source_ids": [
+        "pardus-spark-evo-gen4-tmall-2026-10-24"
+      ]
+    }
+  ]
+}

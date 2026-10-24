@@ -1,0 +1,55 @@
+{
+  "id": "pardus-robin-evo-force-axs",
+  "name": "PARDUS 瑞豹 知更鸟 Robin EVO Force AXS (gen 3)",
+  "model_id": "pardus-robin-evo-force-axs",
+  "brand_id": "pardus",
+  "category": "road-climbing",
+  "type": "complete-bike",
+  "why_interesting": "Official third-generation Robin EVO complete with an itemised SRAM Force AXS and Zipp 303 S build.",
+  "facts": {
+    "drivetrain": "SRAM Force AXS 2×12",
+    "wheels": "Zipp 303 S carbon tubeless",
+    "tires": "Maxxis High Road 700×28C",
+    "cockpit": "MVMT M-Silver B-Type carbon integrated bar; MVMT M-Silver carbon seatpost",
+    "brakes": "SRAM Force hydraulic; CLX-R 160 mm rotors"
+  },
+  "missing": [
+    "Complete weight with size basis",
+    "Maximum tire clearance",
+    "Exact selected-size stock, warranty and checkout total"
+  ],
+  "status": "taobao-listing-observed",
+  "source_ids": [
+    "pardus-robin-evo-force-tmall-2026-10-24"
+  ],
+  "observed_at": "2026-10-24",
+  "observed_price": {
+    "amount_cny": 34999,
+    "currency": "CNY",
+    "observed_at": "2026-10-24",
+    "price_type": "listing-option",
+    "price_basis": "Official Tmall RTP raw-carbon FORCE AXS option",
+    "conditions": "4 units; the RED AXS option is ¥54,999 with Zipp 454 NSW.",
+    "observation_count": 1
+  },
+  "source_url": "https://detail.tmall.com/item.htm?id=877541610376",
+  "last_reviewed": "2026-10-24",
+  "alternative_builds": [
+    {
+      "id": "red-axs-454",
+      "label": "RTP Red AXS + Zipp 454 NSW",
+      "drivetrain": "SRAM Red AXS",
+      "wheels": "Zipp 454 NSW",
+      "price": {
+        "amount_cny": 54999,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "Official Tmall RED AXS option"
+      },
+      "source_ids": [
+        "pardus-robin-evo-force-tmall-2026-10-24"
+      ]
+    }
+  ]
+}

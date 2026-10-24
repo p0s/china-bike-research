@@ -23,7 +23,8 @@
     "winspace-t1600-105-di2-current-recheck-2026-09-25",
     "winspace-t1600-regional-spec-current-recheck-2026-09-25",
     "winspace-t1600-ultegra-di2-current-recheck-2026-09-25",
-    "winspace-t1600-dura-ace-di2-current-recheck-2026-09-25"
+    "winspace-t1600-dura-ace-di2-current-recheck-2026-09-25",
+    "winspace-t1600-tmall-2026-10-24"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -34,7 +35,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6858.png#R1",
-  "last_reviewed": "2026-09-25",
+  "last_reviewed": "2026-10-24",
   "facts": {
     "listing_identity": "WINSPACE / 银贝斯 original T1600 complete-bike family; retained CNY 22,400 coupon card; T1600 Ultra excluded",
     "complete_weight_references": "Approximately 8.0 kg 105 Di2, 7.6 kg Ultegra Di2 and 7.2 kg Dura-Ace Di2; each size M without pedals; retained trim unresolved",
@@ -55,5 +56,24 @@
     "gc-performance-winspace-t1600-ride",
     "gc-performance-winspace-t1600-build",
     "ridemedia-winspace-t1600-try-before-you-buy"
+  ],
+  "alternative_builds": [
+    {
+      "id": "tmall-2025-105-di2-hyper23",
+      "label": "2025 战机T1600 105 Di2 + HYPER aero bar + HYPER 23",
+      "drivetrain": "Shimano 105 Di2 R7170 2×12",
+      "wheels": "Winspace HYPER 23 carbon",
+      "price": {
+        "amount_cny": 22800,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "Official Tmall ¥28,500 option after a ¥5,700 official reduction"
+      },
+      "notes": "The listing never uses the word Ultra. Ultegra ¥34,750 and Dura-Ace ¥41,000 before reduction.",
+      "source_ids": [
+        "winspace-t1600-tmall-2026-10-24"
+      ]
+    }
   ]
 }

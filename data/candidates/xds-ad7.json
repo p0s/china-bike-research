@@ -22,7 +22,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6865.png#R2",
-  "last_reviewed": "2026-09-25",
+  "last_reviewed": "2026-10-24",
   "source_ids": [
     "xds-ad7-105-di2-official-image-2026-08-17",
     "xds-ad7-jd-smzdm-search",
@@ -31,7 +31,8 @@
     "xds-ad7-green-demon-vbike-2026-08-30",
     "xds-ad7-green-demon-hk-current-recheck-2026-09-25",
     "xds-ad7-green-demon-taiwan-current-recheck-2026-09-25",
-    "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25"
+    "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25",
+    "xds-ad7-taobao-2026-10-24"
   ],
   "source_note": "Current exact Green Demon listings agree on 105 Di2 and carbon construction but differ at 8.2 versus approximately 8.5 kg and 25C versus 30C fitted tires. Fitted sizes are not promoted to a maximum.",
   "source_url": "https://24h.pchome.com.tw/prod/DEAOP3-A900HRCVX",
@@ -43,5 +44,24 @@
     "frame_material": "T700+T800 carbon aero frame with carbon fork; fiber proportions and lay-up are unpublished",
     "fitted_tire_references": "Current regional Green Demon builds show 25C and 30C fitted tires; neither establishes the frame maximum",
     "frame_stiffness_status": "No controlled exact-model stiffness magnitude or reproducible protocol found after 50 registered source areas"
-  }
+  },
+  "alternative_builds": [
+    {
+      "id": "taobao-26-105-di2-twilight",
+      "label": "26新款 AD7 105 Di2 (暮光/合金)",
+      "drivetrain": "Shimano 105 Di2 2×12",
+      "wheels": "Carbon (model not named), 700×28C",
+      "price": {
+        "amount_cny": 13980,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "Dealer option after a ¥3,000 shop reduction from ¥16,980"
+      },
+      "notes": "Not the Green Demon colour; M almost sold out; reduction ends 29 October 2026.",
+      "source_ids": [
+        "xds-ad7-taobao-2026-10-24"
+      ]
+    }
+  ]
 }

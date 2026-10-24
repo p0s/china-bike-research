@@ -29,7 +29,8 @@
     "winspace-m6-105-di2-current-recheck-2026-09-25",
     "winspace-m6-105-mechanical-current-recheck-2026-09-25",
     "winspace-m6-regional-spec-current-recheck-2026-09-25",
-    "winspace-m6-ultegra-di2-current-recheck-2026-09-25"
+    "winspace-m6-ultegra-di2-current-recheck-2026-09-25",
+    "winspace-m6-tmall-2026-10-24"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -40,7 +41,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6864.png#R2",
-  "last_reviewed": "2026-09-25",
+  "last_reviewed": "2026-10-24",
   "facts": {
     "listing_identity": "WINSPACE / 银贝斯 M6 complete-bike family; retained CNY 13,599.20 coupon card",
     "complete_weight_references": "Approximately 8.6 kg 105 mechanical, 8.1 kg 105 Di2 and 7.8 kg Ultegra Di2; each size M without pedals; retained trim unresolved",
@@ -51,5 +52,24 @@
     "stiffness_evidence": "Exact M6 ride reviews describe effective power transfer; the 105 Di2 Cyclingnews tester wanted a more direct response during hard out-of-saddle climbs, while the Ultegra Di2 CyclistsHub tester found more vibration fatigue than on the T1600. These are mixed, build-specific qualitative comparisons, not controlled frame-only measurements."
   },
   "source_url": "https://www.winspace.cc/products/m6-105-mechanic",
-  "source_note": "Current manufacturer build pages define the shared M6 carbon construction and option-specific weights and drivetrains; none selects the retained mainland coupon card. The 32C value remains a manufacturer regional maximum, not an inference from fitted 28C tires. No controlled exact M6 frame-stiffness result was established. September 22 independent reviews add meaningful qualitative stiffness comparisons for documented M6 builds; they do not resolve the retained coupon trim or establish a numeric ranking."
+  "source_note": "Current manufacturer build pages define the shared M6 carbon construction and option-specific weights and drivetrains; none selects the retained mainland coupon card. The 32C value remains a manufacturer regional maximum, not an inference from fitted 28C tires. No controlled exact M6 frame-stiffness result was established. September 22 independent reviews add meaningful qualitative stiffness comparisons for documented M6 builds; they do not resolve the retained coupon trim or establish a numeric ranking.",
+  "alternative_builds": [
+    {
+      "id": "tmall-2026-105-di2-hard",
+      "label": "2026 Tmall 105 Di2 + integrated bar + HARD carbon",
+      "drivetrain": "Shimano 105 Di2 R7170 2×12",
+      "wheels": "Winspace HARD carbon",
+      "price": {
+        "amount_cny": 21249,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "Official Tmall option before an unstated checkout discount"
+      },
+      "notes": "Same listing: 7120 + HARD SE ¥17,499; Ultegra Di2 + PRO SE carbon-spoke ¥24,999.",
+      "source_ids": [
+        "winspace-m6-tmall-2026-10-24"
+      ]
+    }
+  ]
 }
