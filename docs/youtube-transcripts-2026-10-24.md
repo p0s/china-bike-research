@@ -267,9 +267,23 @@ Delivered: six transcript-checked videos.
 - TT ONE (`quick-pro-tt-one`), QUICK T10 (`quick-t10`), KUNG HORIZON (`kung-horizon`) and KUNG MACH X (`kung-mach-x-ultegra-di2`): no exact-model review with a usable transcript. waT Nguyen's HORIZON video `PK4m6YEEyB4` has no caption track; KUNG's MACH X clips (`lv75oHNbGOA`, `EyXspDXvjXg`) are promos; Trace Velo's Shanghai show walk `O7sPq_qz_yc` covers many brands.
 - XDS GT600 (`xds-gt600`): the only exact review, 公路车和山地车's `S92m-G90_L8`, has no caption track.
 
-### Batch 22 — GIRDER Aero Team, Arrow, Bison, Bison Pro, Corsa, Dash, Dash Pro, Fame, Fame Pro (19 trim and generation records)
+### Batch 22 — GIRDER Aero Team, Arrow, Bison, Bison Pro, Corsa, Dash, Dash Pro, Fame, Fame Pro (18 trim and generation records)
 
 No video added. Searches in English and Chinese ("Girder bike 格拉德", "格拉德 公路车 评测", "格拉德 碳纤维 公路车 测评", "Girder Fame/Dash/Bison bike", "GIRDER road bike review", "格拉德 Girder 自行车") returned no review of any GIRDER model. Results were Praxis Works' unrelated "Girder" crankset (`6EgQa5cUfOg`, `iyYfEUS46cE`), 2018 Taiwanese dealer clips of unnamed GIRDER carbon road bikes (`RlXPokS9uxE`, `giEZISJJLN4`, `cKBbyRUYILo`, `ZELd1771gjA`, `Y-ub4fDLqb8`) and an alloy AR3 (`ogsvp8G68mc`) that cannot be tied to these models or generations, and unrelated "girder fork" and Bison e-bike videos. Records: `girder-aero-team-dura-ace-di2`, `girder-arrow-2025-105-di2`, `girder-arrow-pf-105-di2`, `girder-bison-2025-105`, `girder-bison-pf-ultegra-r8020`, `girder-bison-r7020-2023-reference`, `girder-bison-pro-2025-105-di2`, `girder-corsa-2025-105`, `girder-corsa-pf-105-alloy`, `girder-dash-105-di2-2023-reference`, `girder-dash-2025-ultegra-di2`, `girder-dash-frameset-unresolved-generation`, `girder-dash-pf-ultegra-di2`, `girder-dash-pro-2025-dura-ace-di2`, `girder-fame-105-di2-2023-reference`, `girder-fame-2025-ultegra-di2`, `girder-fame-pf-ultegra-r8020`, `girder-fame-pro-2025-dura-ace-di2`. The Dash frameset record's generation is unresolved in any case.
+
+### Batch 23 — Tavelo Arow Race, Arow disc frameset, Arow SL (frameset and custom build), Attack, Arden; Winspace Agile, SLC3.0, T1550 Gen 2; ELVES Vanyar Pro Disc 2024; Carbonda CFR707
+
+Delivered: 15 transcript-checked videos.
+
+- Arow Race Polestar frameset (`missing-china-price-tavelo-arow`): four 2024–25 reviews of the original Arow frameset, linked with the disclosure that none says whether it matches the current Race or SL version. They are Peak Torque's build and one-month review (`Q8zviojFgKU`: reworked PF86 shell, tight or loose seatposts, slipping saddle clamp, very low stack, 32 mm rear limit and an estimated 35 mm front), Patrick Lino's 5,000 km final thoughts (`cvgnv99Tons`: no creaks or failures, 7 kg loaded build, 34 mm at the rim by his report), Jesse Coyle's six-month update (`upXaUHCP1bk`) and NorCal Cycling's build and Foil comparison (`34LekYly8FM`: brake bolts had to be cut, clamp slipped below 6 Nm with paste, same-course result within the margin of error). The clearance field reports are added to `tire_clearance_basis` as reviewer observations; the 32 mm manufacturer maximum is unchanged. Patrick Lino's spoken frame weight ("1,16 g") is ambiguous and omitted.
+- Arow disc frameset (`tavelo-arow-disc-frameset`), Arow SL frameset (`tavelo-arow-sl-frameset`) and Arow SL custom build (`tavelo-arow-sl-community-lead`): no generation- or SL-specific review found. The original-Arow videos above are not linked to these records because their version is unstated.
+- Attack frameset (`missing-china-price-tavelo-attack`): Patrick Lino's first look (`BJ04IufcWEs`: US$1,580; painted size-L frame 1,041 g, uncut fork 443 g, seatpost 156 g; weights added to `frame_weight_basis`) and his follow-up review (`SkkdK4poqLE`: about 7.1 kg built, short reach, comfortable all-rounder).
+- Arden Race frameset (`tavelo-arden`): TheItalianCyclingVLOG's Italian unboxing (`LFH-i2Zdckc`: UDH, BSA 68, taller stack than the Arow; US$1,899 Race and US$2,299 SL). His claim that a 1× setup takes 40 mm is shown only as his claim, beside the official 38 mm 1× and 34 mm 2× figures.
+- Agile frameset (`missing-china-price-winspace-agile`): Cyclists Hub's 2,000 km review (`E-PBkxfmi9k`: inconsistent size-M geometry, rough seatstay joint, 7.8 kg build, narrow T47 flanges, US$1,980 plus US$290 bar), Klein Concept's ride review with Hyper wheels (`SPs0h_2d5ck`) and GC Performance's pre-production walkaround (`UHEFGeeJ9po`: about 930 g size-M pre-production frame, added to `frame_weight_basis` with that caveat).
+- SLC3.0 frameset (`missing-china-price-winspace-slc3`): Hambini's inspection and 2,000 km review (`dCx4PdKQfFg`: fork 418 g, seatpost 182 g, frame "around 820 g" with size unstated; flat brake mounts; an oversized FSA headset bearing replaced by Winspace UK within a day) and The Watt Life's SLC3-versus-SLC5 video (`BBRT0XHIy2Y`: owner-weighed size-M frames around 710–720 g; fork flex and brake rub on hard descents). These are added to `frame_weight_basis` and `stiffness_evidence`; the SLC5 weigh-in in the same video is a different model and is not used.
+- T1550 Gen 2 (`missing-china-price-winspace-t1550`): NorCal Cycling's December 2023 T1550 review (`pmAuDYHKRdw`) does not say which generation it shows, so it is not linked; the record keeps its exact Gen 2 video.
+- Vanyar Pro Disc 2024 frameset (`missing-china-price-elves-vanyar`): David Arthur's launch-day first look at the second-generation frame (`Uwi5klEo0Tw`: claimed 950 g size 56, £858 frameset, 30 mm, BB386, 7.6 kg showcase build, five-year warranty) and Jourdain Coleman's 1,000-mile follow-up (`_jAg22F_JyU`: loose seatpost cover, one seatpost slip cured by the supplied grip strip). UK Bike Fit's 2025 build (`0QWq0ON0Zx4`) states a 32 mm maximum, which conflicts with the 30 mm figure for the 2024 frame, and does not give a model year, so it is not linked.
+- CFR707 (`carbonda-cfr707`): Daryl Pace's frameset contents and build video (`xhMFfjnvSHI`: package contents, brake mounts needing facing, native 160 mm rotors), alongside his existing build video.
 
 ## Coverage ledger
 
@@ -369,6 +383,7 @@ No video added. Searches in English and Chinese ("Girder bike 格拉德", "格�
 | bxt-gravel-complete (candidate/wheelset) | `cycling-cameras-coffee-bxt-gravel-135-six-months` | Cycling, Cameras and Coffee. | automatic captions · 6 takeaways |
 | bxt-gravel-complete (candidate/wheelset) | `jackalope-dave-bxt-gravel-135-frame-review` | Jackalope Dave | automatic captions · 3 takeaways |
 | carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-build` | Daryl Pace | automatic captions · 3 takeaways |
+| carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-frameset-build` | Daryl Pace | automatic captions · 3 takeaways |
 | carbonda-cfr707 (candidate/wheelset) | `sysadmin-carbonda-cfr707-owner-build` | Sysadmin | automatic captions · 4 takeaways |
 | cervelo-aspero-5-current (candidate/wheelset) | `ben-delaney-cervelo-aspero-5-review` | The Ride with Ben Delaney | automatic captions · 5 takeaways |
 | colnago-y1rs (candidate/wheelset) | `cyclingnews-colnago-y1rs-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
@@ -418,6 +433,8 @@ No video added. Searches in English and Chinese ("Girder bike 格拉德", "格�
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `cam-nicholls-falath-evo-inspection` | Cam Nicholls | automatic captions · 4 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `gc-performance-falath-evo-ride-review` | GC Performance | automatic captions · 5 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `jourdain-coleman-elves-falath-evo-500-miles` | Jourdain Coleman | automatic captions · 6 takeaways |
+| missing-china-price-elves-vanyar (candidate/wheelset) | `david-arthur-elves-vanyar-pro-disc-first-look` | David Arthur - Just Ride Bikes | automatic captions · 5 takeaways |
+| missing-china-price-elves-vanyar (candidate/wheelset) | `jourdain-coleman-vanyar-pro-1000-miles` | Jourdain Coleman | automatic captions · 4 takeaways |
 | missing-china-price-elves-vanyar (candidate/wheelset) | `jourdain-coleman-vanyar-pro-2024-unbox` | Jourdain Coleman | automatic captions · 5 takeaways |
 | missing-china-price-elves-vanyar (candidate/wheelset) | `popeye-vanyar-pro-disc-2024-build` | CYCLE SHOP POPEYE Channel | no speech in captions |
 | missing-china-price-giant-defy-advanced (candidate/wheelset) | `david-arthur-giant-defy-advanced-1-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
@@ -432,11 +449,22 @@ No video added. Searches in English and Chinese ("Girder bike 格拉德", "格�
 | missing-china-price-specialized-tarmac-sl8 (candidate/wheelset) | `gc-performance-specialized-tarmac-sl8-comp-2026` | GC Performance | automatic captions · 3 takeaways |
 | missing-china-price-specialized-tarmac-sl8 (candidate/wheelset) | `road-cc-cheapest-specialized-tarmac-sl8` | road.cc | creator captions · 4 takeaways |
 | missing-china-price-tavelo-arow (candidate/wheelset) | `china-cycling-tavelo-arow-2026-build` | China Cycling | automatic captions · 3 takeaways |
+| missing-china-price-tavelo-arow (candidate/wheelset) | `jesse-coyle-tavelo-arow-six-months` | Jesse Coyle | automatic captions · 4 takeaways |
+| missing-china-price-tavelo-arow (candidate/wheelset) | `norcal-cycling-tavelo-arow-race-bike` | NorCal Cycling | automatic captions · 5 takeaways |
+| missing-china-price-tavelo-arow (candidate/wheelset) | `patrick-lino-tavelo-arow-5000km` | Patrick Lino | automatic captions · 7 takeaways |
+| missing-china-price-tavelo-arow (candidate/wheelset) | `peak-torque-tavelo-arow-build-one-month` | Peak Torque | automatic captions · 6 takeaways |
+| missing-china-price-tavelo-attack (candidate/wheelset) | `patrick-lino-tavelo-attack-first-look` | Patrick Lino | automatic captions · 4 takeaways |
+| missing-china-price-tavelo-attack (candidate/wheelset) | `patrick-lino-tavelo-attack-review` | Patrick Lino | automatic captions · 5 takeaways |
 | missing-china-price-trek-checkpoint (candidate/wheelset) | `terra-riders-trek-checkpoint-sl5-gen3-long-term` | Terra Riders | automatic captions · 5 takeaways |
 | missing-china-price-trek-domane (candidate/wheelset) | `bikelabhq-trek-domane-sl5-gen4-six-months` | BikeLabHQ | automatic captions · 5 takeaways |
 | missing-china-price-trek-madone-gen-8 (candidate/wheelset) | `gc-performance-trek-madone-sl5-gen8` | GC Performance | automatic captions · 4 takeaways |
 | missing-china-price-van-rysel-rcr (candidate/wheelset) | `cyclingnews-van-rysel-rcr-f-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
+| missing-china-price-winspace-agile (candidate/wheelset) | `cyclists-hub-winspace-agile-2000km` | Cyclists Hub \| Petr Minarik | automatic captions · 7 takeaways |
+| missing-china-price-winspace-agile (candidate/wheelset) | `gc-performance-winspace-agile-preproduction` | GC Performance | automatic captions · 4 takeaways |
+| missing-china-price-winspace-agile (candidate/wheelset) | `klein-concept-winspace-agile-hyper-review` | Klein Concept | automatic captions · 3 takeaways |
 | missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| missing-china-price-winspace-slc3 (candidate/wheelset) | `hambini-winspace-slc3-2000km` | Hambini | automatic captions · 7 takeaways |
+| missing-china-price-winspace-slc3 (candidate/wheelset) | `watt-life-winspace-slc3-vs-slc5` | The Watt Life | automatic captions · 4 takeaways |
 | missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | automatic captions · 3 takeaways |
 | missing-china-price-x-lab-xds-gt8 (candidate/wheelset) | `velovelovelo-x-lab-gt8-review` | VeloVeloVelo | automatic captions · 5 takeaways |
 | pardus-super-al (candidate/wheelset) | `5am-bicycle-studio-pardus-super-al-105-india` | 5AM BICYCLE STUDIO Cyclistlife | automatic captions · 3 takeaways |
@@ -471,6 +499,7 @@ No video added. Searches in English and Chinese ("Girder bike 格拉德", "格�
 | sunpeed-mars-a-pro-2026 (candidate/wheelset) | `bruce-vilas-sunpeed-mars-a-negatives` | BRUCE VILAS | automatic captions · 4 takeaways |
 | sunpeed-victory-e-2026 (candidate/wheelset) | `cus-baker-sunpeed-victory-sport-review` | Cus Baker | automatic captions · 5 takeaways |
 | sunpeed-wudi-e-2026 (candidate/wheelset) | `trace-velo-sunpeed-invincible-sport` | Trace Velo | automatic captions · 6 takeaways |
+| tavelo-arden (candidate/wheelset) | `italian-cycling-vlog-tavelo-arden-unboxing` | TheItalianCyclingVLOG🇮🇹 | automatic captions · 6 takeaways |
 | twitter-r10-pro-gen3 (candidate/wheelset) | `bike-content-twitter-r10-pro-season-review` | Bike Content | automatic captions · 5 takeaways |
 | twitter-t10-pro (candidate/wheelset) | `bkbike-twitter-t10-pro-r7120` | BKBIKE - GIÁ TỐT 1.0.2 | automatic captions · 3 takeaways |
 | voicevelo-g-major (candidate/wheelset) | `china-cycling-voicevelo-g-major` | China Cycling | automatic captions · 5 takeaways |
