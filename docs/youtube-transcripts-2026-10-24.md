@@ -285,6 +285,13 @@ Delivered: 15 transcript-checked videos.
 - Vanyar Pro Disc 2024 frameset (`missing-china-price-elves-vanyar`): David Arthur's launch-day first look at the second-generation frame (`Uwi5klEo0Tw`: claimed 950 g size 56, £858 frameset, 30 mm, BB386, 7.6 kg showcase build, five-year warranty) and Jourdain Coleman's 1,000-mile follow-up (`_jAg22F_JyU`: loose seatpost cover, one seatpost slip cured by the supplied grip strip). UK Bike Fit's 2025 build (`0QWq0ON0Zx4`) states a 32 mm maximum, which conflicts with the 30 mm figure for the 2024 frame, and does not give a model year, so it is not linked.
 - CFR707 (`carbonda-cfr707`): Daryl Pace's frameset contents and build video (`xhMFfjnvSHI`: package contents, brake mounts needing facing, native 160 mm rotors), alongside his existing build video.
 
+### Batch 24 — GIRDER Glare, Jaunt, Tsar, Titanium road, gravel and MTB (8 records); GITO G320, G325, G525, G530 and Wave (6 records)
+
+No video added. Additional searches ("Girder Tsar bike", "格拉德 Tsar 公路车", "Girder titanium bike", "格拉德 钛合金 自行车", "Girder Jaunt gravel", "Girder Glare road bike", "GIRDERCYCLE", "GITO GTV5", "GITO bike review", "捷拓 公路车 评测", "GITO Wave bike", plus the earlier "GITO 捷拓 公路车", "捷拓 GITO 自行车", "GITO G530 bike" and "GITO G525") found no review of these models.
+
+- GIRDER: the GIRDERCYCLE channel's `7nXZCOad3SU` and `bbfOj_YjbBU` and a short owner clip titled "格拉德dash公路车" (`9aQwvUdN570`) have no caption track and do not identify a candidate trim or generation. Vietnamese shop videos cover an alloy R100 (`dB3RlFLWN-c`), which is not a candidate, and a used Arrow 105 Di2 sale listing (`HQ9tG1aOx-I`: 50/34 chainrings, generation unstated) that does not match the 52/36 2025 Arrow build or the press-fit Arrow; resale pitches are not used as evidence. Records: `girder-glare-ultegra-r8000-rim`, `girder-jaunt-apex-axs`, `girder-titanium-gravel-2025-apex-axs`, `girder-titanium-mtb-2025-xt-1x12`, `girder-titanium-road-2025-105-di2`, `girder-titanium-road-2025-apex-1x12`, `girder-tsar-105-di2-2023-reference`, `girder-tsar-ultegra-di2`.
+- GITO: results were unrelated (Giro helmets, GTA 5, fashion, geophysics equipment and other bike brands). `gito-wave` is a wheel-descriptor listing without an exact frame model and is unsuitable for exact video search regardless. Records: `gito-carbon-aero-entry`, `gito-carbon-hydraulic-unknown`, `gito-carbon-road-high-unknown`, `gito-carbon-road-plus`, `gito-gtv5-plus`, `gito-wave`.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
