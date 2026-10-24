@@ -267,6 +267,10 @@ Delivered: six transcript-checked videos.
 - TT ONE (`quick-pro-tt-one`), QUICK T10 (`quick-t10`), KUNG HORIZON (`kung-horizon`) and KUNG MACH X (`kung-mach-x-ultegra-di2`): no exact-model review with a usable transcript. waT Nguyen's HORIZON video `PK4m6YEEyB4` has no caption track; KUNG's MACH X clips (`lv75oHNbGOA`, `EyXspDXvjXg`) are promos; Trace Velo's Shanghai show walk `O7sPq_qz_yc` covers many brands.
 - XDS GT600 (`xds-gt600`): the only exact review, 公路车和山地车's `S92m-G90_L8`, has no caption track.
 
+### Batch 22 — GIRDER Aero Team, Arrow, Bison, Bison Pro, Corsa, Dash, Dash Pro, Fame, Fame Pro (19 trim and generation records)
+
+No video added. Searches in English and Chinese ("Girder bike 格拉德", "格拉德 公路车 评测", "格拉德 碳纤维 公路车 测评", "Girder Fame/Dash/Bison bike", "GIRDER road bike review", "格拉德 Girder 自行车") returned no review of any GIRDER model. Results were Praxis Works' unrelated "Girder" crankset (`6EgQa5cUfOg`, `iyYfEUS46cE`), 2018 Taiwanese dealer clips of unnamed GIRDER carbon road bikes (`RlXPokS9uxE`, `giEZISJJLN4`, `cKBbyRUYILo`, `ZELd1771gjA`, `Y-ub4fDLqb8`) and an alloy AR3 (`ogsvp8G68mc`) that cannot be tied to these models or generations, and unrelated "girder fork" and Bison e-bike videos. Records: `girder-aero-team-dura-ace-di2`, `girder-arrow-2025-105-di2`, `girder-arrow-pf-105-di2`, `girder-bison-2025-105`, `girder-bison-pf-ultegra-r8020`, `girder-bison-r7020-2023-reference`, `girder-bison-pro-2025-105-di2`, `girder-corsa-2025-105`, `girder-corsa-pf-105-alloy`, `girder-dash-105-di2-2023-reference`, `girder-dash-2025-ultegra-di2`, `girder-dash-frameset-unresolved-generation`, `girder-dash-pf-ultegra-di2`, `girder-dash-pro-2025-dura-ace-di2`, `girder-fame-105-di2-2023-reference`, `girder-fame-2025-ultegra-di2`, `girder-fame-pf-ultegra-r8020`, `girder-fame-pro-2025-dura-ace-di2`. The Dash frameset record's generation is unresolved in any case.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
