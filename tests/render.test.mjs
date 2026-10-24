@@ -1053,7 +1053,9 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 6);
   assert.match(primaryNav, /href="\/china-bike-research\/geometry\/"/);
   assert.match(primaryNav, />Guides<\/a>/);
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/a>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/a>/);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/span>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/span>/);
+  // Tools stay inline; the script folds them into the menu only when the header row is crowded.
+  assert.match(primaryNav, /<span class="nav-short" aria-hidden="true">Planner<\/span>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);

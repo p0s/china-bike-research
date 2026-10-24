@@ -1,4 +1,4 @@
-import { initialBuildPresentation, buildBaseFacts } from '../assets/builder-presentation.js';
+import { initialBuildPresentation, buildBaseFacts, formatBuildYuan, formatBuildWeight } from '../assets/builder-presentation.js';
 import { structuredGeometry, candidateGeometry, isGeometryTableFact } from './lib/model-geometry.mjs';
 import { translate } from '../assets/i18n.js';
 import { relatedArticleLinks } from './lib/posts.mjs';
@@ -7,6 +7,7 @@ import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
 import { openGraphVideo, renderVideoEntries } from './lib/videos.mjs';
+import { opinionAggregate } from './lib/opinions.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay } from '../assets/price-display.js';
 import { clearanceParts, weightParts, normalizeSpeeds } from '../assets/catalog-format.js';
@@ -1221,12 +1222,67 @@ function sourceList(ctx, product) {
   }).join('')}</div>`;
 }
 
+// The first two players embed lazily; further videos load only when requested.
+const EMBEDDED_MODEL_VIDEOS = 2;
 function videoContext(videos) {
   const youtubeVideos = videos?.filter((video) => video.provider === 'youtube') ?? [];
   if (!youtubeVideos.length) return '';
-  return `<section class="video-context" aria-labelledby="video-context-title">
+  const featured = youtubeVideos.slice(0, EMBEDDED_MODEL_VIDEOS);
+  const more = youtubeVideos.slice(EMBEDDED_MODEL_VIDEOS);
+  return `<section class="video-context" id="model-videos" aria-labelledby="video-context-title">
     <h2 id="video-context-title">Videos</h2>
-    <div class="video-list">${renderVideoEntries(youtubeVideos)}</div>
+    <div class="video-list">${renderVideoEntries(featured)}</div>
+    ${more.length ? `<h3 class="video-more-title">More videos</h3><div class="video-list video-list-more">${renderVideoEntries(more, { article: true })}</div>` : ''}
+  </section>`;
+}
+
+const opinionStanceLabels = { positive: 'Positive', mixed: 'Mixed', negative: 'Negative' };
+const opinionRoleLabels = { owner: 'Owner', reviewer: 'Reviewer', 'test-rider': 'Test ride', 'shop-mechanic': 'Shop mechanic' };
+const opinionRelationshipLabels = { independent: 'Independent', 'product-supplied': 'Product supplied', 'affiliate-linked': 'Affiliate links', unknown: 'Relationship not stated', 'brand-published': 'Brand published · not counted', seller: 'Seller · not counted' };
+const VISIBLE_OPINIONS = 6;
+
+function opinionEntry(opinion) {
+  const counted = !opinion.duplicate_of && !['brand-published', 'seller'].includes(opinion.relationship);
+  return `<li class="opinion-entry" id="opinion-${escapeAttr(opinion.id)}" data-stance="${escapeAttr(opinion.stance)}">
+    <div class="opinion-meta"><span class="opinion-stance" data-stance="${escapeAttr(opinion.stance)}"><span aria-hidden="true"></span>${escapeHtml(opinionStanceLabels[opinion.stance])}</span><span>${escapeHtml(opinionRoleLabels[opinion.author_role])}</span><span>${escapeHtml(opinionRelationshipLabels[opinion.relationship])}</span>${counted ? '' : opinion.duplicate_of ? '<span>Same author · counted once</span>' : ''}</div>
+    <p class="opinion-summary" data-original-language lang="en">${escapeHtml(opinion.summary)}</p>
+    <p class="opinion-config"><span>Configuration</span> <span data-original-language lang="en">${escapeHtml(opinion.configuration)}</span></p>
+    ${opinion.caveat ? `<p class="opinion-caveat"><span>Caveat</span> <span data-original-language lang="en">${escapeHtml(opinion.caveat)}</span></p>` : ''}
+    <p class="opinion-source"><a href="${escapeAttr(opinion.url)}" rel="noreferrer"><span data-original-language lang="${escapeAttr(opinion.language)}">${escapeHtml(opinion.title)}</span></a> <span>${escapeHtml(opinion.publisher)}${opinion.published_at ? ` · ${escapeHtml(opinion.published_at)}` : ''}</span>${opinion.video_id ? ' · <a href="#model-videos">Video on this page</a>' : ''}</p>
+  </li>`;
+}
+
+function opinionSummary(ctx, collection) {
+  const aggregate = opinionAggregate(collection.opinions);
+  const methodology = url(ctx.base, '/methodology/#opinion-summaries');
+  const share = (count) => aggregate.n ? (count / aggregate.n) * 100 : 0;
+  if (!aggregate.eligible) {
+    return `<p class="opinion-status"><strong>${aggregate.n}</strong> <span>${aggregate.n === 1 ? 'independent opinion' : 'independent opinions'} recorded. A sentiment summary appears at ${aggregate.threshold}; until then each opinion stands on its own.</span> <a href="${methodology}">How opinions are counted</a></p>`;
+  }
+  const [low, high] = aggregate.interval;
+  return `<div class="opinion-score" role="group" aria-labelledby="opinion-score-label">
+    <div class="opinion-score-value"><strong>${aggregate.score}</strong><span>/100</span></div>
+    <div class="opinion-score-copy"><p id="opinion-score-label"><strong>Opinion sentiment</strong> from ${aggregate.n} independent owners and reviewers</p>
+      <div class="opinion-distribution" aria-hidden="true">${['positive', 'mixed', 'negative'].map((stance) => `<span data-stance="${stance}" style="flex-grow:${share(aggregate.counts[stance]).toFixed(2)}"></span>`).join('')}</div>
+      <p class="opinion-counts">${['positive', 'mixed', 'negative'].map((stance) => `<span data-stance="${stance}"><span aria-hidden="true"></span>${escapeHtml(opinionStanceLabels[stance])} ${aggregate.counts[stance]}</span>`).join('')}</p>
+      <p class="opinion-method">95% interval ${low}–${high}. Share of positive opinions, with mixed counted as half. It summarizes sentiment for this exact model only; it is not a quality rating or comparable across models. <a href="${methodology}">Method</a></p>
+    </div>
+  </div>`;
+}
+
+function opinionSection(ctx, collection) {
+  if (!collection?.opinions?.length) return '';
+  const ordered = [...collection.opinions].sort((a, b) => Number(Boolean(a.duplicate_of)) - Number(Boolean(b.duplicate_of))
+    || (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.id.localeCompare(b.id));
+  const visible = ordered.slice(0, VISIBLE_OPINIONS);
+  const rest = ordered.slice(VISIBLE_OPINIONS);
+  return `<section class="opinion-section" id="opinions" aria-labelledby="opinions-title">
+    <h2 id="opinions-title">Owner and reviewer opinions</h2>
+    <p class="opinion-intro">Brief paraphrases of substantive exact-model opinions on ride, fit, build, weight, compatibility and support. Open each source for the full context. Reviewed ${escapeHtml(collection.reviewed_at)}.</p>
+    ${collection.coverage_note ? `<p class="opinion-coverage"><strong>Coverage</strong> <span data-original-language lang="en">${escapeHtml(collection.coverage_note)}</span></p>` : ''}
+    ${opinionSummary(ctx, collection)}
+    <ol class="opinion-list">${visible.map(opinionEntry).join('')}</ol>
+    ${rest.length ? `<details class="opinion-more"><summary>Show ${rest.length} more ${rest.length === 1 ? 'opinion' : 'opinions'}</summary><ol class="opinion-list" start="${visible.length + 1}">${rest.map(opinionEntry).join('')}</ol></details>` : ''}
   </section>`;
 }
 
@@ -1394,7 +1450,7 @@ export function renderHome(ctx) {
       <div class="result-bar">
         <div class="filter-chips" data-filter-chips role="group" aria-label="Active filters" hidden></div>
         <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> results<span data-result-context></span><span class="result-split" data-result-split> · ${ctx.products.length} published, then ${defaultCandidateCount} research leads</span><span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
-        <div class="result-actions"><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
+        <div class="result-actions"><div class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden><button type="button" data-view-value="table" aria-pressed="true"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button><button type="button" data-view-value="gallery" aria-pressed="false"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button></div><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
       </div>
       <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
         <div class="compare-heading"><h2 id="compare-title">Compare</h2><span class="compare-count" data-compare-heading-count></span><label class="switch compare-differences"><input type="checkbox" role="switch" data-compare-differences><span>Differences only</span></label><div class="compare-heading-actions"><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
@@ -1508,7 +1564,7 @@ export function renderModel(ctx, product) {
     ${imageFigure}
     <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#source-records">All price records</a>${goodBuyThreshold ? `<span>${variant.kind === 'frameset' ? 'Frameset' : 'Complete-bike'} good-buy reference: below ${escapeHtml(formatCny(goodBuyThreshold))}</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl>${verifyItems.length ? `<section class="model-verify" aria-labelledby="model-verify-title"><h2 id="model-verify-title">Verify before paying</h2><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : ''}</div>
   </div>
-  <nav class="model-sections" aria-label="On this page"><a href="#model-story-title">Brief</a><a href="#specification-snapshot-title">Specifications &amp; evidence</a>${platform.frame.geometry?.sizes?.length ? '<a href="#model-geometry-title">Geometry</a>' : ''}<a href="#buying-context-title">Ride and buying context</a><a href="#source-records">Price records &amp; sources</a></nav>
+  <nav class="model-sections" aria-label="On this page"><a href="#model-story-title">Brief</a><a href="#specification-snapshot-title">Specifications &amp; evidence</a>${platform.frame.geometry?.sizes?.length ? '<a href="#model-geometry-title">Geometry</a>' : ''}<a href="#buying-context-title">Ride and buying context</a>${product.opinions?.opinions?.length ? '<a href="#opinions">Opinions</a>' : ''}${videos?.some((video) => video.provider === 'youtube') ? '<a href="#model-videos">Videos</a>' : ''}<a href="#source-records">Price records &amp; sources</a></nav>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? `${zh ? ' 适合重点考虑的用途：' : german ? ' Besonders geeignet für ' : ' Best suited to '}${escapeHtml(bestFor)}${zh ? '。' : '.'}` : ''}</p><p><strong>${zh ? '关键配置：' : 'Key hardware:'}</strong> ${escapeHtml(keyHardware)}${zh ? '。' : '.'}</p></section>
@@ -1516,6 +1572,7 @@ export function renderModel(ctx, product) {
     ${structuredGeometry(platform.frame.geometry, product.sources)}${platform.frame.geometry?.sizes?.length ? `<p class="model-geometry-link"><a href="${url(ctx.base,'/geometry/')}?a=${escapeAttr(platform.id)}">Compare this geometry ↗</a></p>` : ''}<section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p></section>
     ${relatedArticleLinks(ctx, variant.id)}
     ${brandStory(brand)}
+    ${opinionSection(ctx, product.opinions)}
     ${videoContext(videos)}
     <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(exactPriceLabel(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
   </div></div></section>`;
@@ -1746,6 +1803,7 @@ export function renderCandidateModel(ctx, entry) {
     ${pageCopy ? `<section class="model-reading model-buyer-checks" aria-labelledby="model-buyer-checks-title"><h2 id="model-buyer-checks-title">${ctx.locale === 'zh-Hans' ? '购买前核对' : ctx.locale === 'de' ? 'Vor dem Kauf' : 'Buyer checks'}</h2><p>${escapeHtml(pageCopy.buyer_checks)}</p><p><a href="${url(ctx.base, pageCopy.guide_path)}">${escapeHtml(pageCopy.guide_text)}</a></p></section>` : ''}
     ${relatedArticleLinks(ctx, candidate.id)}
     ${brandStory(brand)}
+    ${opinionSection(ctx, entry.opinions)}
     ${videoContext(entry.videos)}
     <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span><p>${escapeHtml([entry.price.original_currency ? `${entry.price.original_amount} ${entry.price.original_currency} · ${entry.price.conversion_rate_cny_per_original_unit} CNY/${entry.price.original_currency} · ${entry.price.conversion_rate_date}` : '', entry.price.price_basis, entry.price.conditions].filter(Boolean).join(' · '))}</p></div>${(candidate.prior_price_observations ?? []).map((prior) => `<div><strong>${escapeHtml(formatPrice(prior))}</strong><span>${escapeHtml(prior.observed_at)} · Historical reference${prior.price_type === 'official-conflict' ? ' · Official price conflict' : ''}</span><p>${escapeHtml(prior.price_basis ?? '')}</p></div>`).join('')}</div>` : ''}${candidateSourceList(ctx, entry)}</div></details>
   </div></div></section>`;
@@ -1869,6 +1927,53 @@ const buildSlotCopy = {
   'bar-tape': ['Bar tape', 'One complete drop-bar wrapping kit.'],
   assembly: ['Assembly', 'Labor and small consumables; weight may legitimately be zero.']
 };
+
+// Hotspot positions on the project-drawn schematic (viewBox 600×340). The
+// drawing is a generic drop-bar layout that locates slots; it shows no product.
+const buildMapPoints = {
+  frame: [345, 168], saddle: [244, 84], cockpit: [446, 92], 'bar-tape': [492, 136], brakes: [436, 206],
+  rotors: [474, 254], wheelset: [450, 172], tires: [550, 240], 'tubes-sealant': [72, 240], cassette: [150, 240],
+  drivetrain: [176, 292], chain: [222, 263], crankset: [318, 272], 'bottom-bracket': [284, 236], pedals: [338, 306], assembly: [566, 34]
+};
+const buildStateLabels = { known: 'priced', partial: 'needs one input', open: 'needs price and weight', included: 'included' };
+
+function buildMapSvg() {
+  return `<svg class="build-map-drawing" viewBox="0 0 600 340" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="150" cy="240" r="90" stroke-width="7" class="map-tire"/><circle cx="450" cy="240" r="90" stroke-width="7" class="map-tire"/>
+    <circle cx="150" cy="240" r="78" stroke-width="2"/><circle cx="450" cy="240" r="78" stroke-width="2"/>
+    <path d="M150 240 L284 250 L258 118 Z M258 118 L418 110 L432 152 L284 250 M432 152 L450 240" stroke-width="5" class="map-frame"/>
+    <path d="M258 118 L250 90 M224 86 L272 84 M418 110 L452 100 Q474 98 480 112 L486 140 Q486 152 472 152" stroke-width="4"/>
+    <circle cx="284" cy="250" r="26" stroke-width="3"/><circle cx="150" cy="240" r="15" stroke-width="3"/>
+    <path d="M284 224 L150 225 M284 276 L178 282 L150 255 M284 250 L318 276 M308 300 L336 300" stroke-width="2.5"/>
+    <circle cx="450" cy="240" r="18" stroke-width="2.5"/><circle cx="150" cy="240" r="21" stroke-width="1.5" stroke-dasharray="3 3"/>
+  </g></svg>`;
+}
+
+function buildMap(initial) {
+  const hotspot = (id, label, state) => {
+    const [x, y] = buildMapPoints[id];
+    return `<button class="build-hotspot" type="button" data-build-hotspot="${escapeAttr(id)}" data-state="${escapeAttr(state)}" style="--x:${(x / 6).toFixed(2)}%;--y:${(y / 3.4).toFixed(2)}%" aria-label="${escapeAttr(`${label}: ${buildStateLabels[state] ?? state}`)}"><span class="build-hotspot-mark" aria-hidden="true"></span><span class="build-hotspot-label" aria-hidden="true">${escapeHtml(label)}</span></button>`;
+  };
+  const states = buildSlotIds.map((slot) => initial?.rows.get(slot)?.state ?? 'open');
+  const count = (state) => states.filter((value) => value === state).length;
+  return `<section class="build-map" aria-labelledby="build-map-title"><div class="build-map-head"><h2 id="build-map-title">Build map</h2><p>Select a part to jump to its row.</p></div>
+    <div class="build-map-canvas">${buildMapSvg()}${hotspot('frame', initial?.isComplete ? 'Base bike' : 'Frameset', 'base')}${buildSlotIds.map((slot) => hotspot(slot, buildSlotCopy[slot][0], initial?.rows.get(slot)?.state ?? 'open')).join('')}</div>
+    <ul class="build-map-legend" data-build-map-legend>${['known', 'included', 'partial', 'open'].map((state) => `<li data-state="${state}"><span class="build-hotspot-mark" aria-hidden="true"></span><span>${escapeHtml(sentenceLabel(buildStateLabels[state]))}</span> <strong data-build-state-count="${state}">${count(state)}</strong></li>`).join('')}</ul>
+  </section>`;
+}
+
+function buildCompositionBlock(kind, summary, format) {
+  if (!summary) return '';
+  const title = kind === 'price' ? 'Known price by part group' : 'Known weight by part group';
+  const segments = summary.segments.map((segment, index) => {
+    const share = summary.known > 0 ? segment.value / summary.known : 0;
+    return { ...segment, index: index + 1, share };
+  });
+  return `<figure class="build-composition" data-build-composition="${kind}"><figcaption>${escapeHtml(title)}</figcaption>
+    <div class="composition-bar" aria-hidden="true">${segments.map((segment) => `<span class="composition-segment" data-group="${escapeAttr(segment.id)}" data-series="${segment.index}" style="flex-grow:${segment.value}"${segment.value > 0 ? '' : ' hidden'}></span>`).join('')}</div>
+    <ul class="composition-legend">${segments.map((segment) => `<li data-group="${escapeAttr(segment.id)}" data-series="${segment.index}"><span class="composition-swatch" aria-hidden="true"></span><span data-composition-label>${escapeHtml(segment.label)}</span><strong data-composition-value>${segment.value > 0 ? escapeHtml(segment.high > segment.value ? `${format(segment.value)}–${format(segment.high)}` : format(segment.value)) : '—'}</strong><small data-composition-unknown${segment.unknown ? '' : ' hidden'}>${segment.unknown} unknown</small></li>`).join('')}</ul>
+  </figure>`;
+}
 
 function builderBottomBracketKey(value) {
   const text = String(value || '').toLowerCase();
@@ -2071,7 +2176,7 @@ function builderPartOptions(parts, slot, included = false) {
 
 function builderSlotRow(ctx, parts, slot, view) {
   const [label, help] = buildSlotCopy[slot];
-  return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" data-build-slot="${escapeAttr(slot)}">
+  return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" id="build-slot-${escapeAttr(slot)}" tabindex="-1" data-build-slot="${escapeAttr(slot)}">
     <div class="builder-part-label"><h2>${escapeHtml(label)}</h2><p>${escapeHtml(help)}</p></div>
     <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select${view.covered ? ' disabled' : ''}>${builderPartOptions(parts, slot, view.included)}</select></label><div class="builder-custom-values" data-build-custom-values${view.customHidden ? ' hidden' : ''}><label data-build-custom-price-field${view.priceHidden ? ' hidden' : ''}>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field${view.weightHidden ? ' hidden' : ''}>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
     <div class="builder-part-facts"><strong data-build-part-price>${escapeHtml(view.price)}</strong><span data-build-part-weight>${escapeHtml(view.weight)}</span><small data-build-part-basis>${escapeHtml(view.basis)}</small><a href="${escapeAttr(view.source?.url || url(ctx.base, '/methodology/'))}" data-build-part-source${view.source?.url ? ` title="${escapeAttr(view.source.title || 'Source')}"` : ' hidden'} rel="noreferrer">Source</a></div>
@@ -2093,9 +2198,10 @@ export function renderBikeBuilder(ctx) {
   <fieldset class="builder-page page" data-bike-builder disabled aria-describedby="builder-preview-note"><legend class="sr-only">Bike configurator</legend>
     <div class="builder-workbench">
       <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><p data-build-base-facts>${initialBase ? escapeHtml(buildBaseFacts(initialBase, ctx.locale)) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom${initial?.isComplete && initialBase?.priceLow != null && initialBase?.baseWeightG != null ? ' hidden' : ''}><label data-build-base-price-field${initialBase?.priceLow != null ? ' hidden' : ''}>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field${initialBase?.baseWeightG != null ? ' hidden' : ''}>${initial?.isComplete ? 'Base bike weight g' : 'Frame-only weight g'}<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label><label class="builder-package-weight" data-build-package-weight-field${initial?.isComplete ? ' hidden' : ''}><span>Fork + remaining frame-package weight (g)</span><input type="number" min="0" step="any" placeholder="Unknown" data-build-package-weight aria-label="Fork and remaining frame-package weight in grams"><small>Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.</small></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
+      ${buildMap(initial)}
       <div class="builder-parts" role="group" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot, initial?.rows.get(slot) ?? { customHidden: true, priceHidden: true, weightHidden: true, price: '—', weight: '—', basis: '', coveredNote: '' })).join('')}</div>
     </div>
-    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
+    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><div class="build-compositions" data-build-compositions>${buildCompositionBlock('price', initial?.composition.price, formatBuildYuan)}${buildCompositionBlock('weight', initial?.composition.weight, formatBuildWeight)}</div><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
     <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
   </fieldset>`;
   return page(ctx, {
@@ -2383,7 +2489,7 @@ export function renderMethodology(ctx) {
     { name: 'Catalog CSV', encodingFormat: 'text/csv', path: '/data/catalog.csv' },
     { name: 'Source records JSON', encodingFormat: 'application/json', path: '/data/sources.json' }
   ];
-  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2 id="opinion-summaries">Owner and reviewer opinions</h2><p>Model pages may list brief paraphrases of substantive exact-model opinions from owners, reviewers and test riders on ride, fit, build, weight, compatibility, faults and support. Each links its public source and keeps the configuration, date and any supplied-product or affiliate relationship. Brand and seller material can appear but is never counted. One person or publication counts once per model; repeat comments and syndicated copies are marked and counted once. Each opinion's overall stance is classified as positive, mixed or negative from what its author wrote; no star ratings are invented.</p><p>With at least 21 independent opinions on one exact model, the page shows an opinion sentiment summary: the share of positive opinions with mixed ones counted as half, on a 0–100 scale, with its 95% Wilson interval and the number of opinions behind it. It describes sentiment about that model only. It is not a quality score, recommendation or cross-model ranking, and it never feeds sorting, filters or structured data. Below 21 opinions the collection is shown without a summary.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
   return prosePage(ctx, {
     title: 'Methodology',
     desc: methodologyDescription,
