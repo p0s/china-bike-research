@@ -38,10 +38,10 @@
     "frame_construction": "3D latex-mandrel monocoque with full internal routing, optional down-tube storage and replaceable UDH",
     "stiffness_evidence": "LightCarbon publishes qualitative stiffness and load-path claims for its Eagle Eye tube shaping; no independent measured exact-model stiffness result is included",
     "frame_weight_g": 1100,
-    "frame_weight_basis": "Official size-52 frame weight, 1,100 g ±4%; the size range is 1,040–1,190 g, fork 430 g ±4% and seatpost 180 g ±10 g",
-    "bottom_bracket": "T47×P1, 85.5 mm on the manufacturer page; the Xianyu listing says 86.5 mm, so the 1 mm conflict remains explicit",
+    "frame_weight_basis": "Official size-52 frame weight, 1,100 g ±4%; the size range is 1,040–1,190 g, fork 430 g ±4% and seatpost 180 g ±10 g Reviewer weigh-ins (videos): Trace Velo, size 58, 1,236 g frame; Darren French, uncut fork 453 g with through-axle.",
+    "bottom_bracket": "T47×P1, 85.5 mm on the manufacturer page; the Xianyu listing says 86.5 mm, so the 1 mm conflict remains explicit Hambini's inspection video (2026-06-15) states T47 86.5 mm.",
     "tire_clearance_mm": 38,
-    "tire_clearance_basis": "Manufacturer measured-width 38 mm maximum, also repeated by the exact Xianyu listing; larger owner fits are not treated as a universal limit",
+    "tire_clearance_basis": "Manufacturer measured-width 38 mm maximum, also repeated by the exact Xianyu listing; larger owner fits are not treated as a universal limit Video field report (Trace Velo, 2026-05-22): on a size-58 2× build with 26 mm-internal rims, 700×40 Schwalbe G-One tires measuring about 40 mm rubbed the front derailleur with little rear room, while 700×38 tires cleared with modest room.",
     "brakes": "Flat-mount disc, compatible with 140 or 160 mm rotors according to the exact Xianyu listing",
     "cockpit": "HBR17 integrated carbon cockpit, approximately 300 g according to the exact Xianyu listing",
     "storage": "Optional integrated down-tube storage",
@@ -118,5 +118,13 @@
       "status": "historical-unmapped-revision",
       "note": "Earlier retained size labels; historical source-version date is unknown and these sizes are not equated to the current chart."
     }
+  ],
+  "video_ids": [
+    "darren-french-lightcarbon-lcr018-d-unboxing-build",
+    "darren-french-lightcarbon-lcr018-d-first-ride",
+    "darren-french-lightcarbon-lcr018-d-bottom-bracket",
+    "trace-velo-lightcarbon-lcr018-d-overview",
+    "trace-velo-lightcarbon-lcr018-d-all-road-build",
+    "hambini-lightcarbon-lcr018-d-inspection"
   ]
 }

@@ -103,6 +103,17 @@ Delivered: 17 new transcript-checked candidate videos and attributed field repor
 - Bianchi Sprint ICR (`bianchi-sprint-icr`): added an owner's customized 2024 Sprint ICR (`4Dm0luL76F0`). The Endurance Hub short `mfW43vIVljI` and BT Bikestore short `6AC-14FqynY` have no caption track; Sam Rates Bikes `mIJVaiz6bv0` is the Infinito (mismatch).
 - Airwolf YF-R003 (`airwolf-yf-r003`): no suitable result. Andiamo Endurance's Airwolf gravel videos (`RXKidCMpJd4`, `-bCKelOmt04`, `LK5bNAWCJxw`) show the YFR045 frame; other results are generic AliExpress listicles.
 
+### Batch 8 — LightCarbon LCR017-D, LCR017S-D, LCR018-D, LCR020-D, LCR007-V, LCG087-D, LCG087S-D, LCG074-D, LCG074S-D, LCG071-PRO
+
+Delivered: 13 new transcript-checked candidate videos; LCR018-D gains a tire-fit field report, reviewer weigh-ins and a bottom-bracket width statement.
+
+- LCR017-D (`lightcarbon-lcr017-d`): added Hambini (`c5nIgQ-UxDA`), Selected Components (`2Q6H8sMhubY`), tsp52 (`sLVea8yoAxA`) and Coach Daniel (`3shKfVWA8aw`). Owners report 30–32 mm tires fitting, a seatpost that needs carbon paste, split spacers that open slightly, and a bar wider at the drops than ordered; Hambini found 0.02 mm bottom-bracket alignment. The frame and fork weights Hambini speaks around 11:44 are garbled in the captions and a playback frame check did not show a legible scale, so they are not used. Greg Fisher's `33wvybkW1ZY` (2.5-minute LCR017-D vs LCR018-D comment) adds nothing decision-relevant.
+- LCR018-D (`lightcarbon-lcr018-d`): added Trace Velo's inspection and all-road build (`Vcam2DBqAcQ`, `nQv-9un6Cd8`; size-58 frame 1,236 g; 700×40 tires rubbed the 2× front derailleur, 38 mm fitted), Hambini (`aBRsiEQOSnI`; T47 86.5 mm, EPS front triangle) and three Darren French videos (`XhjC0B_QZe8`, `dmuZ2tExb8U`, `u90AxrSVuPw`; 95-day delivery, storage-cover bolts loosening, a creaking optional bottom bracket). Trace Velo's inspection and Hambini's video were found in batch 4 but not then identified; their descriptions name the LCR018-D. LightCarbon's own build `YoK2zUibV-U` and Michael Prewitt's short `tRF5Ah_UVPw` have no caption track; Lloyd Rogers' `SBQKMRFmgvc` is an unfinished build teaser.
+- LCR007-V (`lightcarbon-lcr007-v`): added durianrider (`ksEL5EuFSYc`; uncut fork 368 g, seatpost 215 g) and MAE Bikr (`TBlGplEKqNI`; 28 mm tires with 4–5 mm room, and LightCarbon telling him the model is no longer made). `SB64Eo2YfW4` is a 2026 re-upload of the same durianrider video (duplicate); Cycling in the Alps `QpAXSuVtq2M` has ten caption lines of first thoughts only.
+- LCG087-D (`lightcarbon-lcg087-d`): added White Beard Reviews (`6V9nSV6B2Sk`): L-TWOO calipers need spacers or do not fit, 47 mm tires with room, micro-suspension without bob.
+- LCG074-D, LCG074S-D, LCG087S-D, LCR017S-D, LCR020-D: no exact-model review found; results are LightCarbon promo shorts (`B_lZBtXyGKA`, `lpaf4PgGf80`, `OlMC-cbyhB8`) or other models. Samuel Black's LightCarbon builds (`LUlHihI24yI`, `NwwvDuLvlME`) never name the frame model and were not mapped.
+- LCG071-PRO (`lightcarbon-lcg071-pro`): no new exact video; Jourdain Coleman's `-NYsVBXBj2o` and LightCarbon's `DAhY06YkWEs` show the LCG071-D, a different frame.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -215,6 +226,19 @@ Delivered: 17 new transcript-checked candidate videos and attributed field repor
 | ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
 | lightcarbon-lcg071-pro (candidate/wheelset) | `lightcarbon-lcg071-pro-brand-overview` | LightCarbon | no caption track |
 | lightcarbon-lcg071-pro (candidate/wheelset) | `tom-bowers-lightcarbon-lcg071-pro-build` | Tom Bowers Cycling | creator captions · 3 takeaways |
+| lightcarbon-lcg087-d (candidate/wheelset) | `white-beard-lightcarbon-lcg087-d-first-look` | White Beard Reviews | automatic captions · 5 takeaways |
+| lightcarbon-lcr007-v (candidate/wheelset) | `durianrider-lightcarbon-lcr007-v-unboxing` | durianrider | automatic captions · 4 takeaways |
+| lightcarbon-lcr007-v (candidate/wheelset) | `mae-bikr-lightcarbon-lcr007-v-owner` | MAE Bikr | automatic captions · 4 takeaways |
+| lightcarbon-lcr017-d (candidate/wheelset) | `coach-daniel-lightcarbon-lcr017-d-first-look` | Coach Daniel, PhD | creator captions · 3 takeaways |
+| lightcarbon-lcr017-d (candidate/wheelset) | `hambini-lightcarbon-lcr017-d-inspection` | Hambini | automatic captions · 7 takeaways |
+| lightcarbon-lcr017-d (candidate/wheelset) | `selected-components-lightcarbon-lcr017-d-review` | Selected Components | automatic captions · 6 takeaways |
+| lightcarbon-lcr017-d (candidate/wheelset) | `tsp52-lightcarbon-lcr017-d-owner` | tsp52 | automatic captions · 5 takeaways |
+| lightcarbon-lcr018-d (candidate/wheelset) | `darren-french-lightcarbon-lcr018-d-bottom-bracket` | Darren French | automatic captions · 2 takeaways |
+| lightcarbon-lcr018-d (candidate/wheelset) | `darren-french-lightcarbon-lcr018-d-first-ride` | Darren French | automatic captions · 4 takeaways |
+| lightcarbon-lcr018-d (candidate/wheelset) | `darren-french-lightcarbon-lcr018-d-unboxing-build` | Darren French | automatic captions · 5 takeaways |
+| lightcarbon-lcr018-d (candidate/wheelset) | `hambini-lightcarbon-lcr018-d-inspection` | Hambini | automatic captions · 5 takeaways |
+| lightcarbon-lcr018-d (candidate/wheelset) | `trace-velo-lightcarbon-lcr018-d-all-road-build` | Trace Velo | automatic captions · 6 takeaways |
+| lightcarbon-lcr018-d (candidate/wheelset) | `trace-velo-lightcarbon-lcr018-d-overview` | Trace Velo | automatic captions · 4 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `cam-nicholls-falath-evo-inspection` | Cam Nicholls | automatic captions · 4 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `gc-performance-falath-evo-ride-review` | GC Performance | automatic captions · 5 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `jourdain-coleman-elves-falath-evo-500-miles` | Jourdain Coleman | automatic captions · 6 takeaways |
