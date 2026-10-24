@@ -1,0 +1,60 @@
+{
+  "id": "girder-arrow-pf-105-di2",
+  "name": "GIRDER 格拉德 Arrow press-fit T700/T800 105 Di2",
+  "model_id": "girder-arrow-pf-105-di2",
+  "brand_id": "girder",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "The earlier official Arrow generation remains listed beside the 2025 bike with a different frame, bottom bracket, sizing, weight and price; it is kept separate so buyers can identify which Arrow a seller offers.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 2×12; FC-R7100 52-36T 170 mm crank, CS-R7100 11-36T cassette, CN-M7100 chain",
+    "brakes": "Shimano 105 R7170 hydraulic disc",
+    "frame": "Earlier Arrow T700 + T800 carbon aero frame and fork, 12 mm thru-axles, fully internal routing",
+    "frame_material": "T700 + T800 carbon frame and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded aero frame and fork with internal routing and press-fit bottom bracket",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "bottom_bracket": "Press-fit shell per manufacturer; supplied ceramic-bearing BB is described as 'PF386 to T47 tool compatible', so confirm the exact shell standard before ordering parts",
+    "wheels": "Adler Augen wavy-rim carbon wheels with ceramic bearings, 50 mm front / 60 mm rear",
+    "tires": "Maxxis 700C×28C with TPU inner tubes fitted; maximum clearance is not published",
+    "cockpit": "T700 + T800 integrated carbon handlebar with internal routing",
+    "seatpost": "Not specified; Selle Italia saddle and bar tape listed",
+    "sizes": "S (476 mm), M (503 mm), L (533 mm); the size dimension is not labelled",
+    "complete_weight_g": 9100,
+    "complete_weight_basis": "Manufacturer-listed weight for this 105 Di2 complete bike; size, pedals and weighing method are not stated",
+    "community_build_context": "Public XHS Arrow listings also name mechanical 7020 and 7120 builds. Historical used or condition-qualified asking prices of CNY 4,999 (2025-11-26) and CNY 5,350 (2026-09-09) are different-build references; neither identifies this frame generation or prices this Di2 trim.",
+    "historical_owner_context": "One Arrow owner in February 2023 reported a purchase a little over CNY 10,000 and arranging shop assembly and adjustment after delivery. The exact generation and 105 configuration are unknown; confirm current delivery and assembly terms with the seller rather than treating this as a policy for this trim."
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Geometry chart (the official image did not load on 2026-10-23)",
+    "Exact bottom-bracket shell standard",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-arrow-pf-official-2026-10-23",
+    "girder-contact-official-2026-10-23",
+    "girder-jufair-exhibitor-2024-2026-10-23",
+    "public-xhs-girder-arrow-used-r7170-2026-10-24",
+    "public-xhs-girder-arrow-used-r7120-2026-10-24",
+    "public-xhs-girder-arrow-used-r7020-2026-10-24",
+    "public-xhs-girder-arrow-owner-assembly-2026-10-24",
+    "public-xhs-girder-arrow-used-r7020-2026-09-2026-10-24"
+  ],
+  "official_price": {
+    "amount_cny": 14800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-23",
+    "price_basis": "Manufacturer-listed price on the exact ROAD-section ARROW page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "The official ROAD-section ARROW page lists the T700 + T800 press-fit generation with 105 Di2 at 9.1 kg and ¥14,800. A 2024 exhibitor profile describes an Arrow with a mechanical Shimano 2×12 group, so seller listings may mix builds. The 2025 T47/UDH frame, geometry and weight do not apply to this generation.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 14,800 list price observed 2026-10-23; no marketplace listing or checkout amount verified"
+}

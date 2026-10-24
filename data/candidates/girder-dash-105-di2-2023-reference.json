@@ -1,0 +1,71 @@
+{
+  "id": "girder-dash-105-di2-2023-reference",
+  "name": "GIRDER 格拉德 Dash 105 Di2 — documented 2023 build",
+  "model_id": "girder-dash-105-di2-2023-reference",
+  "brand_id": "girder",
+  "category": "road",
+  "type": "complete-bike",
+  "why_interesting": "Several early-2023 dealer posts document a DASH 105 Di2 with an all-carbon cockpit and wheels at a claimed CNY 17,800 and a dealer-reported 8.39 kg, a build that no current official DASH page lists.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 2×12 (as listed)",
+    "brakes": "Shimano 105 hydraulic disc (one listing names the 105 Di2 hydraulic-disc group)",
+    "frame": "DASH carbon frame and fork; generation and shell not identified",
+    "frame_material": "Carbon frame, fork and seatpost per the listing; fiber grade and lay-up not stated",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "wheels": "Carbon wheels with ceramic bearings (as listed); depth not stated for this listing",
+    "cockpit": "Integrated carbon cockpit",
+    "complete_weight_g": 8390,
+    "complete_weight_basis": "Dealer-reported weight for this R7170 build (2023-03-06); a 2023-02-19 retailer post repeats 8.39 kg as weighed for an electronic 2×12 DASH. Size, pedals and weighing method are not stated, and the two posts may not be independent.",
+    "marketplace_labels": "帝狮 and 帝师 are observed marketplace transliterations, not evidence of a separate model.",
+    "year_note": "The year in the name is the date of the source posts, not an established manufacturer model year."
+  },
+  "alternative_builds": [
+    {
+      "id": "dash-105-di2-2023-02-45-65-wheels",
+      "label": "DASH 105 Di2 listing with 45/65 mm wheels (2023-02-20)",
+      "source_ids": [
+        "public-xhs-girder-dash-105-di2-package-2023-02-2026-10-24"
+      ],
+      "drivetrain": "Shimano 105 Di2 hydraulic-disc group",
+      "wheels": "Carbon wheels, 45 mm front / 65 mm rear, ceramic hubs",
+      "tires": "Schwalbe tires (model and width not stated)",
+      "price": {
+        "amount_cny": 17800,
+        "currency": "CNY",
+        "observed_at": "2023-02-20",
+        "price_basis": "historical dealer listing price"
+      },
+      "notes": "Package-specific dealer listing. Its wheels are not assumed for the reference row, and the 8.39 kg claim from other posts is not attached to it."
+    }
+  ],
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 17800,
+    "currency": "CNY",
+    "price_type": "historical-dealer-claimed-official-retail",
+    "observed_at": "2023-03-06",
+    "price_basis": "Dealer-claimed official price on a 2023 XHS post, with better offers invited in private. Not verified against a 2023 manufacturer page; historical reference, not a current offer or checkout.",
+    "observation_count": 1,
+    "historical": true
+  },
+  "missing": [
+    "Size, pedal and weighing basis of the 8.39 kg claim",
+    "Frame generation, geometry and bottom-bracket shell standard",
+    "Manufacturer-published maximum tire clearance",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current new-bike availability, exact-build price, purchase route and warranty terms",
+    "Rights-cleared exact product image"
+  ],
+  "status": "historical-dealer-documented-build",
+  "source_ids": [
+    "public-xhs-girder-dash-105-di2-retail-2023-03-2026-10-24",
+    "public-xhs-girder-dash-electronic-weight-2023-02-2026-10-24",
+    "public-xhs-girder-dash-105-di2-package-2023-02-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "source_note": "The reference row follows the explicitly R7170 dealer post of 2023-03-06. The 8.39 kg figure is a dealer report; it is not a weight for the official NEW 2025 DASH or ROAD endurance DASH builds. A 2023-02-20 listing with 45/65 mm wheels stays a separate documented package.",
+  "price_status": "Historical dealer-claimed CNY 17,800 on 2023-03-06; no current price or checkout verified",
+  "last_reviewed": "2026-10-24"
+}

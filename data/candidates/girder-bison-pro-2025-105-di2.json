@@ -1,0 +1,54 @@
+{
+  "id": "girder-bison-pro-2025-105-di2",
+  "name": "GIRDER 格拉德 Bison Pro 2025 105 Di2",
+  "model_id": "girder-bison-pro-2025-105-di2",
+  "brand_id": "girder",
+  "category": "road",
+  "type": "complete-bike",
+  "why_interesting": "A 105 Di2 build on the 2025 T800 + T1000 all-round frame family with 50 mm carbon wheels at an official ¥17,800.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 2×12; FC-R7100 52-36T 170 mm crank, CS-R7100 11-36T cassette, CN-M7100 chain",
+    "brakes": "Shimano 105 R7170 hydraulic disc",
+    "frame": "2025 BISON Toray T800 + T1000 lightweight all-round carbon frame and fork, 12 mm thru-axles, UDH dropout, fully hidden routing",
+    "frame_material": "Toray T800 + T1000 carbon frame (reinforced bottom-bracket area) and fork; lay-up is not published",
+    "frame_construction": "EPS-molded frame and fork with fully hidden cable routing",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found; the reinforced bottom-bracket wording is manufacturer construction copy, not a test result",
+    "bottom_bracket": "Threaded BSA per manufacturer; the page lists '68mm/73mm' shell widths without saying which applies, so confirm the shell before ordering parts",
+    "derailleur_hanger": "UDH",
+    "wheels": "Adler Augen unpainted Classic carbon wavy-rim wheels, 50 mm, ceramic-bearing hubs, Sapim spokes",
+    "tires": "Maxxis 700C×28C folding tires fitted; maximum clearance is not published",
+    "cockpit": "Adler Augen integrated carbon handlebar, unpainted 3K finish",
+    "saddle": "3D-printed saddle",
+    "sizes": "XS (440 mm), S (490 mm), M (520 mm), L (540 mm)",
+    "geometry": "Official chart (shared by the DASH and BISON pages), stack/reach mm for listed sizes: 440 500/366, 490 514/375, 520 527/380, 540 545/384; seat angle 75.5–74°, head angle 70.5–73°, chainstay 410 mm, wheelbase 970–980 mm. The chart also lists 560 and 580 rows that the page does not offer and leaves BB drop blank.",
+    "complete_weight_g": 8080,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Exact bottom-bracket shell width (page lists 68 mm/73 mm)",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-bison-pro-2025-105-di2-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "official_price": {
+    "amount_cny": 17800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact NEW 2025 BISON PRO page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official NEW 2025 BISON PRO page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 17,800 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}

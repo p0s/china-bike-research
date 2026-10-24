@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-corsa-r7120-carbon-2025-04-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER CORSA 7120 carbon road bike store post (2025-04)",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/67eb47ff000000001201e417",
+  "accessed_at": "2026-10-24",
+  "published_date": "2025-04-01",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A bike-store post titled as a value carbon GIRDER CORSA road bike states only '7120' equipment and full-carbon construction. Both official CORSA builds use Shimano 105 R7120 mechanical 2×12 on a carbon frame, so this post cannot distinguish the NEW 2025 T47 generation with 50 mm carbon wheels from the earlier press-fit generation with alloy wheels. No price, size, wheel package, weight, clearance or shell standard is stated. Two captured comments only ask the price and about the frame; no answer was captured. Value-claim wording is not accepted.",
+  "reference_claims": [
+    {
+      "kind": "family-identity-reference",
+      "claim": "A 2025-04-01 bike-store post identifies a carbon GIRDER CORSA with 7120 equipment.",
+      "confidence": "low",
+      "limitations": "Frame generation, wheel package, price, weight and clearance unresolved; adds no fact to either official CORSA build.",
+      "canonical_target_id": "girder-corsa-2025-105",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "b803a49a2198b0ef3c93c46009bdd54d01132350140f59f9066834026525b3f9",
+    "archive_bytes": 2713361,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive (query '格拉德 CORSA'); public text and captured comments reviewed. Raw posts, account identifiers and media remain local outside Git. No video was watched, and no product-image or measured-weight pixel claim is made."
+  }
+}

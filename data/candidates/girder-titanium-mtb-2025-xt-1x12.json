@@ -1,0 +1,55 @@
+{
+  "id": "girder-titanium-mtb-2025-xt-1x12",
+  "name": "GIRDER 格拉德 Titanium MTB 2025 27.5 XT 1×12",
+  "model_id": "girder-titanium-mtb-2025-xt-1x12",
+  "brand_id": "girder",
+  "category": "mtb-xc",
+  "type": "complete-bike",
+  "why_interesting": "A titanium 27.5-inch hardtail complete with XT 1×12 rear derailleur at an official ¥8,800; listed in one 17-inch size.",
+  "facts": {
+    "drivetrain": "Shimano 1×12; XT RD-M8100 rear derailleur, Deore FC-MT510-1 34T 170 mm crank, Deore CS-M6100-12 cassette (written 'CS-6100-12'); shifter and chain not listed",
+    "brakes": "Shimano MT200 hydraulic disc",
+    "frame": "27.5-inch titanium hardtail frame, internal routing, 12×148 mm Boost rear thru-axle, UDH dropout, anodized segmented-colour finish",
+    "frame_material": "3Al-2.5V titanium frame; tube butting and wall thickness are not published",
+    "frame_construction": "Welded titanium hardtail frame",
+    "fork": "SR Suntour Boost 110 fork; the page states 120 mm travel. Model, damper, axle and lockout details are not listed",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "bottom_bracket": "T47 threaded, P1.0 thread, 86.5 mm shell width, 52×52 mm bearing cups",
+    "derailleur_hanger": "UDH",
+    "wheels": "Aluminium double-wall rims, four-bearing thru-axle hubs",
+    "tires": "Maxxis 27.5×2.2 fitted; maximum clearance is not published",
+    "cockpit": "3Al-2.5V titanium tapered flat handlebar; welded 6Al-4V titanium stem",
+    "sizes": "27.5 × 17 in only on the product page",
+    "geometry": "Official chart for 15/17/19 in (17 in listed for sale): seat tube 381/430/480 mm, top tube 587/615/638 mm, chainstay 426 mm, seat angle 73°, head angle 69.5°, wheelbase 1088/1116/1140 mm, BB drop 56 mm, head tube 90/100/110 mm, stack 596/606/615 mm; reach is not given",
+    "complete_weight_g": 13320,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Exact fork model and whether travel is 110 mm or 120 mm",
+    "Sizes beyond 17 in and reach",
+    "Manufacturer-published maximum tire width",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-titanium-mtb-2025-xt-1x12-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "official_price": {
+    "amount_cny": 8800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact NEW 2025 Titanium alloy MTB page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official NEW 2025 Titanium alloy MTB page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 8,800 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}

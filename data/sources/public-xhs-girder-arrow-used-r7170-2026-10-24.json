@@ -1,0 +1,51 @@
+{
+  "id": "public-xhs-girder-arrow-used-r7170-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER Arrow used R7170 electronic build listing",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/6913fc6300000000070176ac",
+  "accessed_at": "2026-10-24",
+  "published_date": "2025-11-12",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A public used-bike listing describes an S-size Arrow with Shimano R7170 electronic shifting, carbon wavy-rim wheels and an integrated handlebar, asking CNY 7,999 including advertised domestic shipping. This is a historical used asking price, not a completed sale, checkout, current new-bike offer or verified stock. No T47/UDH or press-fit identity is shown in the text; the exact generation remains unresolved. Seller fit-height advice is not accepted. A later public listing posted 2026-06-06 (retrieved by the '格拉德 GLARE' query, not by an Arrow query) repeats the same terms: S size, R7170 electronic hydraulic-disc group, carbon wheels, integrated bar, used condition and CNY 7,999 with advertised shipping. It may be a relisting of the same offer; it is not independent corroboration and does not resolve the generation or show that the bike sold or remained available.",
+  "reference_claims": [
+    {
+      "kind": "historical-used-asking-price",
+      "claim": "R7170 electronic Arrow used asking price CNY 7,999, posted 2025-11-12; size S.",
+      "confidence": "low",
+      "limitations": "Used condition and generation unresolved; not attachable to either exact candidate's official price or selected-build purchase input.",
+      "canonical_target_id": "girder-arrow-2025-105-di2",
+      "selected_build_fact": false,
+      "gap_closed": false
+    },
+    {
+      "kind": "historical-used-asking-price",
+      "claim": "The same S-size R7170 Arrow used-listing terms, including CNY 7,999 with shipping, appeared again on 2026-06-06.",
+      "confidence": "low",
+      "limitations": "Dependent repeat of the 2025-11-12 terms; generation unresolved; not a current new-bike price, sale or availability check.",
+      "canonical_target_id": "girder-arrow-2025-105-di2",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "260ddb3f3b649c0d73b987f1873a8ad811639cd3912ff5fac58b00e8329d6ec7",
+    "archive_bytes": 5029864,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive; public text reviewed. Raw posts, account identifiers and media remain local outside Git. No product-image or measured-weight pixel claim is made."
+  },
+  "related_public_posts": [
+    {
+      "url": "https://www.xiaohongshu.com/explore/6a23d7f9000000001702b164",
+      "published_date": "2026-06-06",
+      "relation": "dependent repeat listing",
+      "archive_sha256": "5de3151b6ef7dc799d9ce33d0ae03a59e13d800c1fb9526ca23eb8da1542a240",
+      "archive_bytes": 1905719
+    }
+  ]
+}

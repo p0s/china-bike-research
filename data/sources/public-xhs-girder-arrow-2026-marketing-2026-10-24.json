@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-arrow-2026-marketing-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER Arrow marketed as 2026 with an 8.4 kg claim",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/689edce3000000001b022180",
+  "accessed_at": "2026-10-24",
+  "published_date": "2025-08-15",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A promotional public post markets a purple Arrow as the 2026 model and lists Shimano 105 R7170 electronic shifting, carbon handlebar, wavy-rim carbon wheels, XS/S/M/L sizes, reinforced rear stays and EPS molding, with an 8.4 kg complete-bike claim. Size, pedals, weighing method, T47/UDH identity and price are unstated. A second captured same-day post repeats substantially the same copy; it is not independent corroboration. This may refer to a related or renamed generation, but equivalence to the official NEW 2025 ARROW is unverified. Retain the official exact-page 8.44 kg value and model name; do not convert this rounded promotional number into an owner measurement. Generic strength, handling and noise-prevention wording does not establish measured stiffness or freedom from faults. Captured comments are partial.",
+  "reference_claims": [
+    {
+      "kind": "unresolved-model-year-marketing-reference",
+      "claim": "A 2025-08-15 promotional post labels an R7170-equipped Arrow as 2026 and states 8.4 kg.",
+      "confidence": "low",
+      "limitations": "Publisher authority and exact frame generation unverified; weight basis absent. Near-identical repost is dependent evidence. Not a replacement for the official exact 2025 trim weight.",
+      "canonical_target_id": "girder-arrow-2025-105-di2",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "c7f64fcd3699c56abf75ae86c39bc155aa5bb206f0e7a8ca7602668d7d892f96",
+    "archive_bytes": 5268822,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive; public text reviewed. Raw posts, account identifiers and media remain local outside Git. No product-image or measured-weight pixel claim is made."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "girder-jaunt-apex-axs",
+  "name": "GIRDER 格拉德 Jaunt carbon gravel SRAM Apex AXS",
+  "model_id": "girder-jaunt-apex-axs",
+  "brand_id": "girder",
+  "category": "gravel",
+  "type": "complete-bike",
+  "why_interesting": "GIRDER's carbon gravel bike: a T700 + T800 press-fit frame with SRAM Apex AXS 1×12 and 45C tires at a 9.7 kg claim; the official page leaves the price blank.",
+  "facts": {
+    "drivetrain": "SRAM Apex AXS electronic 1×12; KUGGIS integrated CNC 44T chainring (crank arms not specified), 11-44T cassette (brand not stated); chain not listed",
+    "brakes": "SRAM Apex (brake type not stated)",
+    "frame": "ROAD-section JAUNT T700 + T800 carbon gravel frame and fork, 12 mm thru-axles, fully internal routing",
+    "frame_material": "T700 + T800 carbon frame and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded gravel frame and fork with internal routing and press-fit bottom bracket",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "bottom_bracket": "Press-fit shell per manufacturer; the supplied in-house ceramic-bearing BB (19 G5 silicon-nitride balls) has no standard named, so confirm the shell before ordering parts",
+    "wheels": "Alloy double-wall rims, four-bearing thru-axle hubs",
+    "tires": "Maxxis 700C×45C folding tires fitted; maximum clearance is not published",
+    "cockpit": "Gravel-specific integrated carbon handlebar with internal routing, 12° flare",
+    "saddle": "Selle Italia saddle and silicone bar tape",
+    "sizes": "490 mm, 520 mm; the size dimension is not labelled",
+    "complete_weight_g": 9700,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "missing": [
+    "Price (the official page shows '￥：' with no amount on 2026-10-24)",
+    "Geometry chart (the official chart image was refused to a non-browser read on 2026-10-24)",
+    "Exact bottom-bracket shell standard",
+    "Brake type and crank arm model",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-jaunt-apex-axs-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "source_note": "Official ROAD JAUNT page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "The exact official page shows no price on 2026-10-24; no marketplace listing, quote or checkout amount was found, and no price record was added"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-arrow-used-r7020-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER Arrow used mechanical 7020 build listing",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/69266fbe000000001b021541",
+  "accessed_at": "2026-10-24",
+  "published_date": "2025-11-26",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A public used-bike listing names an S-size Arrow with 7020 hydraulic-disc equipment, carbon frame, carbon wheels and integrated carbon bar, asking CNY 4,999 with advertised shipping. Normal-use marks are disclosed. This historical mechanically shifted used build does not establish a current new-bike price or identify either retained frame generation. Seller height-fit advice is not accepted.",
+  "reference_claims": [
+    {
+      "kind": "different-build-market-reference",
+      "claim": "A used 7020-labelled Arrow was publicly offered at CNY 4,999 on 2025-11-26.",
+      "confidence": "low",
+      "limitations": "No exact frame generation, complete BOM, checkout or availability verification. Not a Di2 reference-trim price.",
+      "canonical_target_id": "girder-arrow-pf-105-di2",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "260ddb3f3b649c0d73b987f1873a8ad811639cd3912ff5fac58b00e8329d6ec7",
+    "archive_bytes": 5029864,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive; public text reviewed. Raw posts, account identifiers and media remain local outside Git. No product-image or measured-weight pixel claim is made."
+  }
+}

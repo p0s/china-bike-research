@@ -10,7 +10,7 @@ const data = loadDataset(), products = joinProducts(data), candidates = joinCata
 const ctx = { data, products, base: '', siteUrl: 'https://example.invalid', repositoryUrl: 'https://github.com/p0s/china-bike-research', now: new Date('2026-10-05') };
 
 test('every model keeps its identity before images and its full evidence records', () => {
-  assert.equal(products.length + candidates.length, 263);
+  assert.equal(products.length + candidates.length, 289);
   for (const entry of [...products, ...candidates]) {
     const html = entry.variant ? renderModel(ctx, entry) : renderCandidateModel(ctx, entry);
     const identity = html.indexOf('class="model-identity"'), gallery = html.indexOf('class="model-gallery"');

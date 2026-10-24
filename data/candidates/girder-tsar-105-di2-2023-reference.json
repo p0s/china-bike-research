@@ -1,0 +1,65 @@
+{
+  "id": "girder-tsar-105-di2-2023-reference",
+  "name": "GIRDER 格拉德 Tsar 105 Di2 — documented 2023 build",
+  "model_id": "girder-tsar-105-di2-2023-reference",
+  "brand_id": "girder",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "A 2023 retailer post documents a TSAR aero bike with 105 Di2 and 50/60 mm wavy carbon wheels at CNY 18,800, a different build from the official ROAD TSAR Ultegra Di2 at the same list amount.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 2×12 (as listed)",
+    "frame": "TSAR carbon aero frame with a two-sided finish (grey lace / matte black); generation not identified",
+    "frame_material": "Carbon frame per the listing; fiber grade and lay-up not stated",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found; promotional adjectives are not accepted as stiffness evidence",
+    "wheels": "Wavy-rim carbon wheels, 50 mm front / 60 mm rear (as listed)",
+    "year_note": "The year in the name is the date of the source posts, not an established manufacturer model year."
+  },
+  "alternative_builds": [
+    {
+      "id": "tsar-r7170-2025-06-asking",
+      "label": "TSAR R7170 asking-price listing, size M (2025-06-12)",
+      "source_ids": [
+        "public-xhs-girder-tsar-105-di2-asking-2025-06-2026-10-24"
+      ],
+      "drivetrain": "Shimano R7170 electronic group",
+      "wheels": "Wavy-rim carbon wheels with ceramic hubs",
+      "price": {
+        "amount_cny": 9999,
+        "currency": "CNY",
+        "observed_at": "2025-06-12",
+        "price_basis": "asking price including shipping; condition and package not stated"
+      },
+      "notes": "An asking price, not a sale. Whether the bike is new or used is not stated, and it is not a current new-bike price."
+    }
+  ],
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 18800,
+    "currency": "CNY",
+    "price_type": "historical-dealer-retail-advertisement",
+    "observed_at": "2023-10-05",
+    "price_basis": "Retailer-advertised price on a 2023 XHS post with unspecified in-stock discounting; historical reference, not a current offer or checkout.",
+    "observation_count": 1,
+    "historical": true
+  },
+  "missing": [
+    "Brake and crank/cassette details",
+    "Complete weight with size, pedal and measurement basis",
+    "Frame generation, geometry and bottom-bracket shell standard",
+    "Manufacturer-published maximum tire clearance",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current new-bike availability, exact-build price, purchase route and warranty terms",
+    "Rights-cleared exact product image"
+  ],
+  "status": "historical-dealer-documented-build",
+  "source_ids": [
+    "public-xhs-girder-tsar-105-di2-retail-2023-10-2026-10-24",
+    "public-xhs-girder-tsar-105-di2-asking-2025-06-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "source_note": "The reference row uses the 2023-10-05 retailer post. The 2025-06-12 CNY 9,999 asking price stays a separate listing; neither price applies to the official ROAD TSAR Ultegra Di2.",
+  "price_status": "Historical retailer advertisement CNY 18,800 on 2023-10-05; no current price or checkout verified",
+  "last_reviewed": "2026-10-24"
+}

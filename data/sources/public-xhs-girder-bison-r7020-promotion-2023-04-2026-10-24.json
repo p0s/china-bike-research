@@ -1,0 +1,42 @@
+{
+  "id": "public-xhs-girder-bison-r7020-promotion-2023-04-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER BISON R7020 store promotion post (2023-04)",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/6434f1d9000000001203db87",
+  "accessed_at": "2026-10-24",
+  "published_date": "2023-04-11",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A store post presents BISON as a new GIRDER model after Arrow and Corsa, with a full carbon frame and carbon wheels, Shimano R7020 2×11 hydraulic-disc group, Schwalbe tires and an orange finish, at a CNY 11,800 in-store promotion with extra gifts. The dealer states a lifetime frame warranty and one-year parts warranty; that is a dealer claim, not a verified current manufacturer policy. A commenter's lower-price recollection and an unanswered weight question are not accepted as facts.",
+  "reference_claims": [
+    {
+      "kind": "historical-store-promotion",
+      "claim": "BISON R7020 2×11 hydraulic disc with carbon wheels, CNY 11,800 store promotion on 2023-04-11.",
+      "confidence": "low",
+      "limitations": "Historical promotion; no checkout. Different build from ROAD R8020 and NEW 2025 R7120/R7170 BISON records.",
+      "canonical_target_id": "girder-bison-r7020-2023-reference",
+      "selected_build_fact": true,
+      "gap_closed": false
+    },
+    {
+      "kind": "seller-warranty-claim",
+      "claim": "Dealer states lifetime frame and one-year parts warranty for this 2023 BISON.",
+      "confidence": "low",
+      "limitations": "Not verified against a manufacturer policy; no current warranty term is inferred.",
+      "canonical_target_id": "girder-bison-r7020-2023-reference",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "2cc2f6076c9c64d93bedec727f4d3b712cd721c002744201b88408b1dd477efd",
+    "archive_bytes": 4397193,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive (query '格拉德 BISON'); public text reviewed. Raw posts, account identifiers and media remain local outside Git. No video was watched or transcribed, and no product-image or measured-weight pixel claim is made."
+  }
+}

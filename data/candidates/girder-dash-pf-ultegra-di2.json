@@ -1,0 +1,53 @@
+{
+  "id": "girder-dash-pf-ultegra-di2",
+  "name": "GIRDER 格拉德 Dash endurance press-fit T700/T800 Ultegra Di2",
+  "model_id": "girder-dash-pf-ultegra-di2",
+  "brand_id": "girder",
+  "category": "road-endurance",
+  "type": "complete-bike",
+  "why_interesting": "The earlier ROAD-section DASH is an endurance bike, not the 2025 DASH all-rounder: Ultegra Di2 R8170 on a T700 + T800 frame with 50 mm wheels at an official ¥18,800.",
+  "facts": {
+    "drivetrain": "Shimano Ultegra Di2 R8170 2×12; FC-R8100 52-36T 170 mm crank, CS-R8100 11-34T cassette, CN-M8100 chain",
+    "brakes": "Shimano Ultegra R8170 hydraulic disc",
+    "frame": "ROAD-section DASH T700 + T800 carbon endurance frame and fork, 12 mm thru-axles, fully hidden routing",
+    "frame_material": "T700 + T800 carbon frame and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded endurance frame and fork with hidden routing; the frame line does not name the BB type",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "bottom_bracket": "Shell standard not named in the frame line; the supplied in-house ceramic-bearing BB (19 G5 silicon-nitride balls) is described as 'PF386 to T47 tool interface', so confirm the exact shell before ordering parts",
+    "wheels": "Adler Augen wavy-rim ceramic-bearing wheels, 50 mm front and rear",
+    "tires": "Maxxis M228 700C×28C skinwall folding tires with TPU tubes fitted; maximum clearance is not published",
+    "cockpit": "T700 + T800 integrated carbon handlebar with hidden routing",
+    "saddle": "Selle Italia saddle and silicone bar tape",
+    "sizes": "S (448 mm), M (459 mm), L (497 mm); the size dimension is not labelled",
+    "complete_weight_g": 8300,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Geometry chart (the official chart image was refused to a non-browser read on 2026-10-24)",
+    "Exact bottom-bracket shell standard",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-dash-pf-ultegra-di2-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "official_price": {
+    "amount_cny": 18800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact ROAD DASH page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official ROAD DASH page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 18,800 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}
