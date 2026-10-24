@@ -2030,7 +2030,7 @@ test('public dataset has the expected coverage', () => {
   assert.ok(data.images.length >= 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
-  assert.equal(data.videos.length, 59);
+  assert.equal(data.videos.length, 66);
   assert.ok(data.sources.length >= 313);
   assert.equal(data.candidates.length, 262);
   assert.equal(data.exclusions.length, 16);

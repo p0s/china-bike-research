@@ -7,7 +7,7 @@ export function localePath(route = '/', locale = 'en') {
   return `${LOCALE_PREFIXES[locale] ?? ''}${route}`;
 }
 export function isPagePath(route) {
-  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
+  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|carbon-wheels|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
 }
 function escape(value) { return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'); }
 function decode(value) { return value.replaceAll('&quot;', '"').replaceAll('&#039;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&'); }

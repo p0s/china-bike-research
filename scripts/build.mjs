@@ -30,6 +30,7 @@ import {
   renderCandidateModel,
   renderBikeBuilder,
   renderElectronicGroupsets,
+  renderCarbonWheels,
   renderLandingPage,
   renderMethodology,
   renderPrivacy,
@@ -173,7 +174,7 @@ for (const landing of landings.pages) {
 for (const product of products) addLocalized(`/models/${product.variant.id}/`, (localized) => renderModel(localized, product), true, { lastmod: productLastmod(product) });
 for (const candidate of candidates) addLocalized(`/models/${candidate.candidate.id}/`, (localized) => renderCandidateModel(localized, candidate), candidateIndexable(candidate), { lastmod: candidateLastmod(candidate) });
 for (const [route, render] of [
-  ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets],
+  ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets], ['/carbon-wheels/', renderCarbonWheels],
   ['/privacy/', renderPrivacy], ['/image-policy/', renderImagePolicy], ['/image-sources/', renderImageSources]
 ]) addLocalized(route, render, true, { lastmod: siteLastmod });
 addLocalized('/blog/', (localized) => renderBlogIndex(localized, posts), true, { lastmod: latestDate(posts.map((post) => postLastmod(ctx, post)), siteLastmod) });
@@ -208,6 +209,7 @@ write('data/sources.json', `${JSON.stringify({ generated_at: catalog.generated_a
 write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images.filter((image) => image.buyer_visibility !== 'omit') }, null, 2)}\n`);
 write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
 write('data/groupsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, groupsets: data.groupsets }, null, 2)}\n`);
+write('data/wheelsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, wheelsets: data.wheelsets }, null, 2)}\n`);
 write('data/build-parts.json', `${JSON.stringify({ generated_at: catalog.generated_at, build_parts: data.buildParts }, null, 2)}\n`);
 
 const headers = [
@@ -271,6 +273,7 @@ write('build-manifest.json', `${JSON.stringify({
     videos: data.videos.length,
     groupsets: data.groupsets.length,
     build_parts: data.buildParts.length,
+    wheelsets: data.wheelsets.length,
     pages: pages.size,
     locales: LOCALES.length,
     articles: posts.length,

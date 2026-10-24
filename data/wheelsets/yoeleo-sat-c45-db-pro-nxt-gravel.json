@@ -1,0 +1,46 @@
+{
+  "id": "yoeleo-sat-c45-db-pro-nxt-gravel",
+  "maker": "YOELEO",
+  "name": "SAT C45 DB Pro NxT Gravel",
+  "use": "gravel",
+  "status": "current",
+  "positioning": "45 mm gravel wheelset with a 27 mm hooked rim for 35–53 mm tires and a 36T ratchet hub.",
+  "rim": {
+    "depth_mm": { "front": 45, "rear": 45 },
+    "internal_width_mm": 27,
+    "external_width_mm": { "front": 34.3, "rear": 34.3 },
+    "bead": "hooked",
+    "bead_note": "Listed as a hooked rim; tubeless-ready bed without spoke holes.",
+    "tubeless_ready": true,
+    "tire_range": "35–53 mm suggested; 35 mm and wider"
+  },
+  "max_pressure": { "psi": null, "note": "Not published on the product page." },
+  "load_limit": { "kg": 125, "scope": "system", "note": "System weight limit for NxT SL2 wheels." },
+  "weight": { "grams": 1380, "tolerance_pct": 5, "basis": "Pair; inclusion of valves is not stated.", "claim_type": "official" },
+  "hub": "YOELEO NxT · 36T ratchet",
+  "spokes": { "material": "steel", "summary": "Black Aero 2.0 · 24/24" },
+  "compatibility": {
+    "rotor_mount": null,
+    "axles": ["12x100", "12x142"],
+    "freehubs": ["hg-road", "campagnolo-n3w", "sram-xdr"]
+  },
+  "warranty": "3-year warranty.",
+  "price_observations": [
+    {
+      "amount": 999,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-20",
+      "conditions": "Price shown in the store's USD currency; worldwide shipping from China, with shipping cost set at checkout.",
+      "source_id": "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20"
+    }
+  ],
+  "caveats": [
+    "Rotor mount is not stated; confirm Center Lock or 6-bolt before ordering rotors.",
+    "No maximum tire pressure is published.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "source_ids": ["yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20"],
+  "reviewed_at": "2026-10-20"
+}

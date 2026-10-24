@@ -920,6 +920,12 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   assert.match(detail, /Disclosure basis/);
   assert.match(detail, /href="https:\/\/www\.youtube\.com\/watch\?v=jmdVakRJPQ8" rel="noreferrer"/);
   assert.doesNotMatch(detail, /autoplay=1|data-load-video|Play video/);
+  assert.match(detail, /<meta property="og:video" content="https:\/\/www\.youtube\.com\/embed\/jmdVakRJPQ8"><meta property="og:video:secure_url" content="https:\/\/www\.youtube\.com\/embed\/jmdVakRJPQ8"><meta property="og:video:type" content="text\/html"><meta property="og:video:width" content="1280"><meta property="og:video:height" content="720">/);
+  assert.equal(detail.match(/property="og:video"/g).length, 1);
+  assert.match(detail, /property="og:image" content="https:\/\/example\.github\.io\//);
+  assert.doesNotMatch(detail, /og:video:type" content="video\/|twitter:player/);
+  const withoutVideo = products.find((item) => !item.videos.some((video) => video.provider === 'youtube'));
+  assert.doesNotMatch(renderModel(context, withoutVideo), /og:video/);
 
   const privacy = renderPrivacy(context);
   assert.match(privacy, /compare_open when the comparison opens/);
@@ -974,6 +980,7 @@ test('candidate videos render as disclosed context with timestamp links', () => 
   assert.match(detail, /watch\?v=rRZ6zr4hfow&amp;t=66/);
   assert.match(detail, /<iframe src="https:\/\/www\.youtube-nocookie\.com\/embed\/rRZ6zr4hfow\?rel=0"/);
   assert.doesNotMatch(detail, /data-load-video|autoplay=1/);
+  assert.match(detail, /<meta property="og:video" content="https:\/\/www\.youtube\.com\/embed\/rRZ6zr4hfow">/);
 });
 
 test('XHS video records do not display as links or an empty video section', () => {
@@ -987,7 +994,7 @@ test('XHS video records do not display as links or an empty video section', () =
     now: new Date('2026-09-29T00:00:00Z')
   };
   const detail = renderCandidateModel(context, entry);
-  assert.doesNotMatch(detail, /class="video-context"|class="video-external-list"/);
+  assert.doesNotMatch(detail, /class="video-context"|class="video-external-list"|og:video/);
   assert.doesNotMatch(detail, /href="https:\/\/www\.xiaohongshu\.com\/explore\/69e8f860000000001f001363"/);
 
   const youtube = data.videos.find((video) => video.provider === 'youtube');
@@ -1043,10 +1050,10 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 5);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 6);
   assert.match(primaryNav, /href="\/china-bike-research\/geometry\/"/);
   assert.match(primaryNav, />Guides<\/a>/);
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/a>[\s\S]*>Groupsets<\/a>/);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/a>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/a>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);

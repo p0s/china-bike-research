@@ -18,7 +18,7 @@ function fixture(t,mode='',base='',siteUrl='https://example.invalid') {
  const brand={id:'brand',name:'=unsafe-text',manufacturing:{},last_reviewed:'2026-09-01'};
  const variant={id:'bike',name:'Bike',kind:'complete-bike',editorial:{verdict:'Known'}};
  const product={brand,platform,variant,prices:[],sources:[],videos:[],allInPrice:{low:100,high:200}};
- export const loadDataset=()=>({meta:{snapshot_date:'2026-09-01'},brands:[brand],platforms:[platform],variants:[variant],prices:[],sources:[],candidates:[],videos:[],images:[],groupsets:[],buildParts:[]});
+ export const loadDataset=()=>({meta:{snapshot_date:'2026-09-01'},brands:[brand],platforms:[platform],variants:[variant],prices:[],sources:[],candidates:[],videos:[],images:[],groupsets:[],buildParts:[],wheelsets:[]});
  export const joinProducts=()=>[product]; export const joinCatalogCandidates=()=>[];
  export const validateDataset=()=>process.env.FAIL_BUILD==='validation'?['fixture failure']:[];
  export const categoryMetric=()=>({label:'Tire',value:'',details:[]});
@@ -45,7 +45,7 @@ function fixture(t,mode='',base='',siteUrl='https://example.invalid') {
  }
  export const catalogSummaries=()=>[];
  export const renderModel=()=>'<html>Bike</html>';
- export const renderCandidateModel=renderModel,renderBikeBuilder=renderModel,renderElectronicGroupsets=renderModel,renderLandingPage=renderModel,renderMethodology=renderModel,renderPrivacy=renderModel,renderImagePolicy=renderModel,renderImageSources=renderModel,render404=renderModel;
+ export const renderCandidateModel=renderModel,renderBikeBuilder=renderModel,renderElectronicGroupsets=renderModel,renderCarbonWheels=renderModel,renderLandingPage=renderModel,renderMethodology=renderModel,renderPrivacy=renderModel,renderImagePolicy=renderModel,renderImageSources=renderModel,render404=renderModel;
  `);
  const result=spawnSync(process.execPath,[path.join(root,'scripts/build.mjs')],{encoding:'utf8',env:{...process.env,FAIL_BUILD:mode,GITHUB_ACTIONS:'false',GITHUB_REPOSITORY:'',PUBLIC_BASE_PATH:base,PUBLIC_SITE_URL:siteUrl}});
  return{root,result};

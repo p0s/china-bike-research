@@ -692,7 +692,7 @@ export const de = {
   "When enabled, Google Analytics 4 runs only after the consented browser requests its same-origin configuration. The browser tag can then send one page_view through this site's first-party gateway. The page request itself does not create a Google identifier or send a site_open event. The configuration request creates a first-party client ID; the tag's reported session ID is stored only after its same-origin session handshake. Server comparison and product-link events reach Google only when both stored identifiers exist. If a blocker prevents the tag or handshake, first-party Umami measurement can still work while no server event is sent to Google. Server requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes after a verified tag handshake. We disable advertising signals and personalization. Google controls its own analytics processing and retention.": "Wenn aktiviert, läuft Google Analytics 4 erst, nachdem der eingewilligte Browser die gleichursprüngliche Konfiguration abruft. Das Tag kann danach über das First-Party-Gateway dieser Website ein page_view senden. Die Seitenanfrage selbst erzeugt keine Google-Kennung und sendet kein site_open-Ereignis. Die Konfigurationsanfrage erstellt eine First-Party-Client-ID; die vom Tag gemeldete Sitzungs-ID wird erst nach dem gleichursprünglichen Sitzungsabgleich gespeichert. Serverereignisse zu Vergleichen und Produktlinks erreichen Google nur, wenn beide gespeicherten Kennungen vorliegen. Verhindert ein Blocker das Tag oder den Abgleich, kann die First-Party-Umami-Messung weiterlaufen, während kein Serverereignis an Google gesendet wird. Serveranfragen senden Google weder IP noch User-Agent, Suchtexte, URL-Abfragen oder ausgewählte Fahrradlisten; beim Laden des Browser-Tags kann Google Ihre Netzwerkadresse erhalten. Google-Tag-Cookies und unsere Client-ID-Cookies können bis zu 30 Tage bestehen; ein Sitzungscookie bleibt nach einem verifizierten Tag-Abgleich 30 Minuten bestehen. Werbesignale und Personalisierung sind deaktiviert. Google bestimmt seine eigene Verarbeitung und Aufbewahrung.",
   "Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.": "Do Not Track, Global Privacy Control und die Abwahl unten unterdrücken beide Analyseströme. Die Abwahl löscht unsere GA-ID-Cookies und die auf diesem Host gesetzten Google-Tag-Cookies.",
   "External media": "Externe Medien",
-  "Displayed product photos load from this site's Cloudflare-hosted assets. Model pages with videos embed a": "Produktfotos laden aus den Cloudflare-gehosteten Dateien dieser Website. Modellseiten mit Videos betten einen",
+  "Displayed product photos load from this site's Cloudflare-hosted assets. Model pages and the carbon-wheel reference embed a": "Produktfotos laden aus den Cloudflare-gehosteten Dateien dieser Website. Modellseiten mit Videos und die Carbon-Laufrad-Übersicht betten einen",
   "player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.": "Player ein, der YouTube beim Seitenladen oder beim Sichtbarwerden kontaktieren kann. Artikel kontaktieren YouTube erst, wenn du ein Video lädst oder dessen Link zum Ansehen öffnest. Videos starten nicht automatisch.",
   "Contributions": "Beiträge",
   "GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.": "GitHub-Issues und Pull Requests sind öffentlich. Entfernen Sie persönliche Details aus Bildern und Links; beantragen Sie Korrekturen oder Entfernung per Issue.",
@@ -1469,6 +1469,18 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    // Carbon-wheel reference (2026-10-20)
+    [/^(\d+) wheelsets · reviewed (.+)$/, (_, n, date) => `${n} Laufradsätze · geprüft ${date}`],
+    [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · ${width} mm Innenweite`],
+    [/^(\d+) kg system limit$/, (_, kg) => `${kg} kg Systemgewicht`],
+    [/^(\d+) kg rider limit$/, (_, kg) => `${kg} kg Fahrergewicht`],
+    [/^(\d+) kg limit, scope not stated$/, (_, kg) => `${kg} kg Grenze, Umfang nicht angegeben`],
+    [/^Center Lock · (.+) mm$/, (_, axles) => `Center Lock · ${axles} mm`],
+    [/^6-bolt · (.+) mm$/, (_, axles) => `6-Loch · ${axles} mm`],
+    [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `Scheibenaufnahme nicht angegeben · ${axles} mm`],
+    [/^Official direct store · (\d{4}-\d{2}-\d{2})$/, (_, date) => `Offizieller Direktshop · ${date}`],
+    [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `Offizieller Direktshop · ${date} · ${kind === 'list' ? 'Offizieller Listenpreis' : 'Offizieller Aktionspreis'}`],
+    [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `Offizieller Direktpreis ${amount} am ${date} ist kein Preis in Festlandchina; bitte ein chinesisches Angebot eingeben.${rotor ? ` ${de['Rotor mount is not stated; confirm it before choosing rotors.']}` : ''}`],
     // Catalog workbench (2026-10)
     [/^· (\d+) published, then (\d+) research leads$/, (_, published, leads) => `· ${published} veröffentlicht, danach ${leads} Recherchehinweise`],
     [/^Show (\d+) more research leads$/, (_, n) => `${n} weitere Recherchehinweise zeigen`],
@@ -1804,4 +1816,69 @@ Object.assign(de, {
   "Weight · frame": "Gewicht · Rahmen",
   "Full-bike price": "Komplettradpreis",
   "Tires": "Reifen"
+});
+
+// Carbon-wheel reference (2026-10-20)
+Object.assign(de, {
+  "Carbon wheels": "Carbon-Laufräder",
+  "Chinese carbon wheelsets": "Chinesische Carbon-Laufradsätze",
+  "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "Straßen- und Gravel-Laufradsätze mit Scheibenbremse von chinesischen Marken, verglichen nach Felge, Gewicht, Grenzwerten, Kompatibilität und datiertem Preis.",
+  "Open a row for tire limits, pressure, hub, warranty, videos and sources.": "Zeile öffnen für Reifenbereich, Luftdruck, Nabe, Garantie, Videos und Quellen.",
+  "Chinese carbon wheelsets compared": "Chinesische Carbon-Laufradsätze im Vergleich",
+  "Rim": "Felge",
+  "Hooked": "Mit Felgenhaken",
+  "Hookless": "Hakenlos",
+  "Bead not stated": "Felgenhaken nicht angegeben",
+  "Hooked · tubeless ready": "Mit Felgenhaken · tubeless-ready",
+  "Hookless · tubeless ready": "Hakenlos · tubeless-ready",
+  "Bead not stated · tubeless ready": "Felgenhaken nicht angegeben · tubeless-ready",
+  "Limit not stated": "Grenze nicht angegeben",
+  "Rim and tires": "Felge und Reifen",
+  "Bead": "Felgenhorn",
+  "Outer width": "Außenweite",
+  "Pressure": "Luftdruck",
+  "Weight and limits": "Gewicht und Grenzwerte",
+  "Load limit": "Belastungsgrenze",
+  "Hub and spokes": "Nabe und Speichen",
+  "Hub": "Nabe",
+  "Spokes": "Speichen",
+  "Freehubs": "Freilaufkörper",
+  "Not stated": "Nicht angegeben",
+  "Price observations": "Preisbeobachtungen",
+  "How rim, limit and price fields are recorded": "Wie Felgen-, Grenzwert- und Preisfelder erfasst werden",
+  "The maker's pair claim with its stated basis and tolerance.": "Paarangabe des Herstellers mit angegebener Basis und Toleranz.",
+  "A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.": "Ein Systemgewicht umfasst Fahrer, Rad und Gepäck, wenn der Hersteller das angibt; sonst wird der Umfang wie veröffentlicht gezeigt.",
+  "The maker's page does not publish the value. It is not a negative finding.": "Die Herstellerseite veröffentlicht den Wert nicht. Das ist kein negativer Befund.",
+  "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.": "Eine datierte Beobachtung im offiziellen Direktshop in Originalwährung. Sie ist kein Preis in Festlandchina; Versand, Zölle und Steuern folgen den Bedingungen des Shops.",
+  "Freehub and rotor fit for these wheelsets is checked in the Build planner.": "Freilauf- und Bremsscheibenkompatibilität dieser Laufradsätze wird im Aufbauplaner geprüft.",
+  "Open the Build planner": "Aufbauplaner öffnen",
+  "Official direct store": "Offizieller Direktshop",
+  "Rotor mount is not stated; confirm it before choosing rotors.": "Scheibenaufnahme nicht angegeben; vor der Wahl der Bremsscheiben bestätigen."
+});
+
+// Carbon-wheel videos (2026-10-23)
+Object.assign(de, {
+  "Videos": "Videos",
+  "Indoor and mountain riding test of the Drive II 50D with a comparison to the first generation, plus checks of trueness, spoke tension and the rim interior. The linked written review identifies the 50 mm depth.": "Test des Drive II 50D drinnen und in den Bergen mit Vergleich zur ersten Generation sowie Prüfung von Rundlauf, Speichenspannung und Felgeninnerem. Der verlinkte Textbericht nennt die 50-mm-Felgenhöhe.",
+  "The linked written review states that the manufacturer supplied the wheels. The description carries a 15% discount code and an affiliate disclosure.": "Laut verlinktem Textbericht hat der Hersteller die Laufräder bereitgestellt. Die Beschreibung enthält einen 15-%-Rabattcode und einen Affiliate-Hinweis.",
+  "Ride review of the Drive II 50D road wheels that weighs which concerns with the original Drive wheels were fixed and which one remains.": "Fahrbericht zu den Drive-II-50D-Straßenlaufrädern: welche Kritikpunkte der ersten Drive-Laufräder behoben sind und welcher bleibt.",
+  "The description offers a 20% Elitewheels discount code and links the creator’s shop; it does not say how the wheels were obtained.": "Die Beschreibung bietet einen 20-%-Rabattcode für Elitewheels und verlinkt den Shop des Erstellers; wie die Laufräder bezogen wurden, wird nicht gesagt.",
+  "Unboxing and quick technical check of the 2025 Drive G36: rim design, tubeless setup, the new rear hub and weight, with a comparison to the cheaper Marvel G36.": "Auspacken und kurzer Technik-Check des Drive G36 (2025): Felgendesign, Tubeless-Montage, neue Hinterradnabe und Gewicht, mit Vergleich zum günstigeren Marvel G36.",
+  "The description offers a 15% Elitewheels discount code and affiliate links; it does not say how the wheels were obtained.": "Die Beschreibung bietet einen 15-%-Rabattcode für Elitewheels und Affiliate-Links; wie die Laufräder bezogen wurden, wird nicht gesagt.",
+  "Shop staff compare the Elite Drive G36 with Zipp 303 XPLR, Hunt 40 Limitless and Secret Wheels gravel wheelsets. It is comparative opinion, not a laboratory test.": "Mitarbeitende eines Fahrradladens vergleichen den Elite Drive G36 mit Gravel-Laufradsätzen von Zipp 303 XPLR, Hunt 40 Limitless und Secret Wheels. Es ist eine vergleichende Einschätzung, kein Labortest.",
+  "Published by a bicycle shop that links its own store; how the test wheels were obtained is not stated.": "Veröffentlicht von einem Fahrradladen, der seinen eigenen Shop verlinkt; wie die Testlaufräder bezogen wurden, wird nicht gesagt.",
+  "ICAN’s own start-to-finish hand build of the Alpha 50 II Disc, from lacing to tensioning and truing. The description lists the ceramic-bearing hub, one of the two bearing options.": "ICANs eigener Handaufbau des Alpha 50 II Disc von Anfang bis Ende, vom Einspeichen über die Spannung bis zum Zentrieren. Die Beschreibung nennt die Nabe mit Keramiklagern, eine der zwei Lageroptionen.",
+  "Published by ICAN on its own channel, with a store link and a discount code.": "Von ICAN auf dem eigenen Kanal veröffentlicht, mit Shop-Link und Rabattcode.",
+  "Detailed workshop evaluation of the SAT C45 DB Pro NxT gravel wheelset. The creator does not name the hub generation; the current store version lists NxT SL2 hubs.": "Ausführliche Werkstattbewertung des Gravel-Laufradsatzes SAT C45 DB Pro NxT. Der Ersteller nennt die Nabengeneration nicht; die aktuelle Shop-Version führt NxT-SL2-Naben.",
+  "The creator states that YOELEO sent the wheels free of charge; the description also carries affiliate links and a discount code.": "Laut Ersteller hat YOELEO die Laufräder kostenlos geschickt; die Beschreibung enthält außerdem Affiliate-Links und einen Rabattcode.",
+  "Months-later follow-up on the same SAT C45 DB Pro NxT wheels after gravel riding in England. The hub generation is not named.": "Nachbericht nach Monaten Gravel-Fahrten in England zu denselben SAT-C45-DB-Pro-NxT-Laufrädern. Die Nabengeneration wird nicht genannt.",
+  "Follow-up on the wheels YOELEO supplied for the creator’s earlier review; the description carries affiliate links and a discount code.": "Nachbericht zu den Laufrädern, die YOELEO für den früheren Test des Erstellers bereitgestellt hat; die Beschreibung enthält Affiliate-Links und einen Rabattcode.",
+  "Unboxing": "Auspacken",
+  "Rim design and tubeless setup": "Felgendesign und Tubeless-Montage",
+  "Rear wheel and new hub": "Hinterrad und neue Nabe",
+  "Weight savings": "Gewichtsersparnis",
+  "Verdict vs Marvel G36": "Fazit gegenüber Marvel G36",
+  "Drive-side spokes": "Speichen auf der Antriebsseite",
+  "Non-drive-side spokes": "Speichen auf der Nicht-Antriebsseite",
+  "Initial adjustment": "Erste Einstellung"
 });
