@@ -1885,6 +1885,8 @@ Object.assign(de, {
   "Owner: 45 mm tires fit with 2× road Di2": "Besitzer: 45-mm-Reifen passen mit 2× Road-Di2",
   "Reviewer: 29×2.2 in rear tire with room": "Praxistest: 29×2,2-Zoll-Reifen hinten mit Luft",
   "Owner: 50 mm rear close on Zipp 303 XPLR S": "Besitzer: 50 mm hinten knapp auf Zipp 303 XPLR S",
+  "Mechanic: ~48 mm front, 50 mm rear usable": "Mechaniker: vorn ~48 mm, hinten 50 mm nutzbar",
+  "Owner: 48 mm tires leave ample room": "Besitzer: 48-mm-Reifen mit reichlich Luft",
   "Reviewer: 34 mm tire left ~6 mm per side": "Praxistest: 34-mm-Reifen ließ je Seite ~6 mm",
   "Reviewers disagree on comfort: Cyclingnews called it the harshest bike it had ridden and NERO found the stock front end harsh, while one owner found it comfortable after 600 miles": "Die Komfortbewertungen gehen auseinander: Cyclingnews nannte es das härteste getestete Rad, NERO fand die Serienfront hart, ein Besitzer dagegen empfand es nach 600 Meilen als komfortabel",
   "Seat-mast height spacers were not supplied to one reviewer, so later height changes may need spacers cut from the mast off-cut": "Ein Tester erhielt keine Höhen-Distanzstücke für den integrierten Sattelmast; spätere Höhenänderungen können aus dem Mastabschnitt gefertigte Distanzstücke erfordern",

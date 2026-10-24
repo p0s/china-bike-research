@@ -1260,6 +1260,8 @@ Object.assign(zh, {
   "Owner: 45 mm tires fit with 2× road Di2": "车主：2× 公路 Di2 下可装 45 mm 轮胎",
   "Reviewer: 29×2.2 in rear tire with room": "评测：后轮 29×2.2 英寸轮胎仍有余量",
   "Owner: 50 mm rear close on Zipp 303 XPLR S": "车主：Zipp 303 XPLR S 上后 50 mm 很紧",
+  "Mechanic: ~48 mm front, 50 mm rear usable": "技师估计：前约 48 mm、后 50 mm 可用",
+  "Owner: 48 mm tires leave ample room": "车主：48 mm 轮胎仍有充足余量",
   "Reviewer: 34 mm tire left ~6 mm per side": "评测实测：34 mm 轮胎两侧各余约 6 mm",
   "Reviewers disagree on comfort: Cyclingnews called it the harshest bike it had ridden and NERO found the stock front end harsh, while one owner found it comfortable after 600 miles": "评测对舒适性看法不一：Cyclingnews 称其为骑过最硬的车，NERO 认为原装车头偏硬，而一位车主骑行 600 英里后认为它很舒适",
   "Seat-mast height spacers were not supplied to one reviewer, so later height changes may need spacers cut from the mast off-cut": "一位评测者未随车收到座杆高度垫片，之后调整高度可能需要用切下的座杆余料自制垫片",

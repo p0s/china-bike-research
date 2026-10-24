@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 138,
+      "videos": 141,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2984,6 +2984,7 @@
       "kdot-tavelo-grow-owner-build",
       "lightcarbon-lcg071-pro-brand-overview",
       "lorenzo-del-sant-ican-triaero-graro-review",
+      "love-bike-sava-gelaro-s4-express-review",
       "lovemtb-elitewheels-drive-g36-tech-check",
       "lukas-benka-carbonda-696-budget-build",
       "magazyn-bike-triaero-graro-six-month-test",
@@ -3017,6 +3018,7 @@
       "underdogs-cycling-incolor-ssr-build",
       "vadim-on-wheels-winspace-g3-150km",
       "victor-torres-quick-pro-gr-one-dream-build",
+      "victory-bicycle-studio-addict-rc-40-2023",
       "vitality-twitter-gravel-v3-2025-wheeltop-review",
       "watt-life-t1550-gen2-build-cost",
       "woods-cycles-tavelo-grow-demo",
@@ -3041,7 +3043,8 @@
       "xhs-xlab-rs9-brand",
       "xhs-xlab-rs9-owner",
       "xhs-xlab-rs9-red-finish",
-      "yocyclo-incolor-sr-plus-frameset"
+      "yocyclo-incolor-sr-plus-frameset",
+      "zzefol-spcycle-g028-owner-review"
     ],
     "opinions": [
       "carbonda-cfr696",
@@ -6773,6 +6776,7 @@
         "summary",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.field_reports",
         "tire_clearance.note",
         "tire_clearance.published_max_mm",
         "tire_clearance.stock_nominal_mm",
@@ -7004,6 +7008,7 @@
         "summary",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.field_reports",
         "tire_clearance.note",
         "tire_clearance.published_max_mm",
         "tire_clearance.wheel_size"
@@ -63603,6 +63608,29 @@
         "url",
         "youtube_video_id"
       ],
+      "love-bike-sava-gelaro-s4-express-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "lovemtb-elitewheels-drive-g36-tech-check": [
         "accessed_at",
         "channel_name",
@@ -64338,6 +64366,29 @@
         "url",
         "youtube_video_id"
       ],
+      "victory-bicycle-studio-addict-rc-40-2023": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "vitality-twitter-gravel-v3-2025-wheeltop-review": [
         "accessed_at",
         "channel_name",
@@ -64795,6 +64846,29 @@
         "xhs_post_id"
       ],
       "yocyclo-incolor-sr-plus-frameset": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "zzefol-spcycle-g028-owner-review": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -119046,6 +119120,9 @@
       "lorenzo-del-sant-ican-triaero-graro-review": [
         "target.platform_id=ican-graro"
       ],
+      "love-bike-sava-gelaro-s4-express-review": [
+        "target.platform_id=sava-gelaro"
+      ],
       "lovemtb-elitewheels-drive-g36-tech-check": [],
       "lukas-benka-carbonda-696-budget-build": [
         "target.platform_id=carbonda-cfr696"
@@ -119141,6 +119218,9 @@
       "victor-torres-quick-pro-gr-one-dream-build": [
         "target.platform_id=quick-gr-one"
       ],
+      "victory-bicycle-studio-addict-rc-40-2023": [
+        "target.platform_id=scott-addict-rc-40"
+      ],
       "vitality-twitter-gravel-v3-2025-wheeltop-review": [
         "target.platform_id=twitter-gravel-v3"
       ],
@@ -119215,6 +119295,9 @@
       ],
       "yocyclo-incolor-sr-plus-frameset": [
         "target.platform_id=incolor-speedster"
+      ],
+      "zzefol-spcycle-g028-owner-review": [
+        "target.platform_id=spcycle-g028"
       ]
     },
     "opinions": {

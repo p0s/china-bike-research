@@ -64,6 +64,18 @@ Delivered: five new exact-model videos with transcript takeaways (AF01 2, Evolve
 - No caption track or no speech (not added): AF01 assembly `y4x2q-D5KGI`, CAMP GX600 `sKKgWAF_ZEI`, Pardus Super Sport Gen2 unboxing `wkbXHXhRn0M`, LightCarbon LCG071S launch `2wh59hUs7bw`, Incolor Voyager workshop build `TWtySwsjUho`.
 - Low value (not added): Bianchi Oltre Race 105 Di2 voice-over promo `iq_nj9IJE3A`; second CAMP GX700 retailer promo `EY3G43nT_Qk`. No exact KUNG Mach, Incolor Voyager or SPEEDZ review beyond these was found.
 
+## Batch 5 — first videos for the remaining zero-video platforms (Rinasclta GR025, SAVA A7L/Gelaro/S8/SF, SCOTT Addict RC 40, SPCYCLE G026/G028, TFSA JH37, Twitter Cyclone/Gravel V3 2024/T3 TT, XMCS CS-GR01)
+
+Delivered: three new exact-model videos with transcript takeaways and two clearance field reports.
+
+- SAVA Gelaro (S4 GRX400 build): a Russian workshop inspection estimates about 50 mm usable at the rear and 47–48 mm at the front against SAVA's 45C figure, and records QC faults (paint flaking at brake mounts, out-of-round rear axle hole, out-of-true 140 mm rotor) and heavy 19 mm-internal stock wheels.
+- SPCYCLE G028: a Russian owner's 800 km review shows ample room with 48 mm tires (maker claims 57 mm); a 170 mm SRAM crank with a 40T ring touched the frame, a 165 mm crank fitted; the size L Rival XPLR build weighed 8.8 kg.
+- SCOTT Addict RC 40: a short 2023 US retailer walkaround confirming HMX frame, 105 Di2 and internal routing.
+- Trim mismatch (not added): SAVA A7L Pro videos `elgWayjQS70`, `D-mH_qaRoag` (full Shimano 105 R7120, not the SENSAH-mixed A7L); SAVA R08 105 Di2 build `czU9d2rQThg`. Model mismatch: Rinasclta Granite all-road videos (not GR025); XMCS GRT videos (not CS-GR01); TFSA JH-10/JH33/JH-35 videos (not JH37); Twitter Cyclone Pro 2021/2024 videos (not the 3rd ET).
+- No caption track, empty panel or music only (not added): SAVA China Rides review `YqpgfRfd6PQ`, Gelaro R21 `F48gzddLfA8`, SPCYCLE G026 `ERebFPFYXGk`, Twitter Gravel V3 2024-era `RJ-uXTCwebY` and `W0wfaCUz1H8`, Twitter Cyclone-3rd and T3 promos `PjiYBuhB1Rw`, `yVXBlSi_yMg`, `lkZfngOaPt4`, `b6fzS4p-u3g`.
+- Low value (not added): A7L promo shorts and first-bike vlog `S5nRuoitRKQ`, `EMCP03QcV5c`; Nairobi dealer handover of a Gelaro S4 `RV7OczD-knA`.
+- Still without a linked YouTube video after this search: Rinasclta GR025, SAVA A7L R7100, Gelaro S8, Gelaro SF, SPCYCLE G026, TFSA JH37, Twitter Cyclone (both records), Gravel V3 2024, T3 TT, XMCS CS-GR01, plus the batch-4 leftovers.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -117,11 +129,14 @@ Delivered: five new exact-model videos with transcript takeaways (AF01 2, Evolve
 | quick-gr-one | `pedaler-quick-pro-gr-one-buyer-guide` | Pedaler | automatic captions · 4 takeaways |
 | quick-gr-one | `pedaler-quick-pro-gr-one-review-test-ride` | Pedaler | automatic captions · 3 takeaways |
 | quick-gr-one | `victor-torres-quick-pro-gr-one-dream-build` | victor torres | no caption track |
+| sava-gelaro | `love-bike-sava-gelaro-s4-express-review` | Веломастерская love.bike | automatic captions · 6 takeaways |
+| scott-addict-rc-40 | `victory-bicycle-studio-addict-rc-40-2023` | Victory Bicycle Studio | automatic captions · 2 takeaways |
 | seka-exaero-gr | `ben-skillz-seka-exaero-gr-build` | Ben_skillz | automatic captions · 5 takeaways |
 | seka-exaero-gr | `bicidastrada-seka-exaero-gr-review` | BiciDaStrada | automatic captions · 5 takeaways |
 | seka-exaero-gr | `dwayne-pedals-seka-exaero-gr-unboxing` | Dwayne Pedals | automatic captions · 4 takeaways |
 | seka-exaero-gr | `gc-performance-seka-exaero-gr-build` | GC Performance | automatic captions · 4 takeaways |
 | seka-exaero-gr | `power-meter-city-seka-exaero-gr-guide` | Power Meter City | automatic captions · 4 takeaways |
+| spcycle-g028 | `zzefol-spcycle-g028-owner-review` | zzefol | automatic captions · 4 takeaways |
 | tavelo-grow | `cus-baker-tavelo-grow-build` | Cus Baker | automatic captions · 2 takeaways |
 | tavelo-grow | `gc-performance-tavelo-grow-all-road-build` | GC Performance | automatic captions · 3 takeaways |
 | tavelo-grow | `gc-performance-tavelo-grow-unboxing` | GC Performance | automatic captions · 4 takeaways |
@@ -188,4 +203,4 @@ Delivered: five new exact-model videos with transcript takeaways (AF01 2, Evolve
 | yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term` | The Cycle Workshop | not yet reviewed |
 | yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-review` | The Cycle Workshop | not yet reviewed |
 
-Published platforms with no linked YouTube video yet: `bianchi-oltre-race`, `camp-gx600`, `incolor-voyager`, `lightcarbon-lcg071s-pro`, `lightcarbon-speedz`, `pardus-super-sport-gen2`, `rinasclta-gr025`, `sava-a7l-r7100`, `sava-gelaro`, `sava-gelaro-s8`, `sava-gelaro-sf`, `scott-addict-rc-40`, `spcycle-g026`, `spcycle-g028`, `tfsa-jh37`, `twitter-cyclone-electronic`, `twitter-cyclone-gen3-et`, `twitter-gravel-v3-2024`, `twitter-t3-tt`, `xmcarbonspeed-cs-gr01`.
+Published platforms with no linked YouTube video yet: `bianchi-oltre-race`, `camp-gx600`, `incolor-voyager`, `lightcarbon-lcg071s-pro`, `lightcarbon-speedz`, `pardus-super-sport-gen2`, `rinasclta-gr025`, `sava-a7l-r7100`, `sava-gelaro-s8`, `sava-gelaro-sf`, `spcycle-g026`, `tfsa-jh37`, `twitter-cyclone-electronic`, `twitter-cyclone-gen3-et`, `twitter-gravel-v3-2024`, `twitter-t3-tt`, `xmcarbonspeed-cs-gr01`.
