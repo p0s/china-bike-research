@@ -2882,9 +2882,11 @@ test('published products expose ordered exact-model gallery images', () => {
   assert.deepEqual(quick.galleryImages.map((image) => image.label), [
     'Ice Crack Silver',
     'Diamond Black',
-    'Fresh Grass Green'
+    'Fresh Grass Green',
+    'GR:ONE geometry and height guide',
+    'Community spec card'
   ]);
-  assert.ok(quick.galleryImages.every((image) => image.source?.id === 'quick-gr-one-official'));
+  assert.ok(quick.galleryImages.slice(0, 3).every((image) => image.source?.id === 'quick-gr-one-official'));
 });
 
 test('buyer-hidden public-post embeds remain valid while sourced rehosts use the bounded local contract', () => {

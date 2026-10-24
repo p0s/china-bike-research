@@ -1,0 +1,59 @@
+{
+  "id": "winspace-g5-xhs-roundup-spec-gallery",
+  "platform_id": "winspace-g5",
+  "role": "gallery",
+  "label": "Community spec card",
+  "subject_accuracy": "exact-platform",
+  "media_type": "community-post-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/winspace-g5-xhs-roundup-spec/7d2aaf2d1e7ea2f4-detail-w920.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/winspace-g5-xhs-roundup-spec/f179704043aa12dc-card-w480.webp",
+        "width": 480,
+        "height": 611,
+        "bytes": 39580,
+        "sha256": "f179704043aa12dc419a491a89768ccff931454d7ddb27dfb52d663cf9807f0d",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/winspace-g5-xhs-roundup-spec/7d2aaf2d1e7ea2f4-detail-w920.webp",
+        "width": 920,
+        "height": 1171,
+        "bytes": 84688,
+        "sha256": "7d2aaf2d1e7ea2f48b10fd13e1dc847ac249b5f076c356dcbc85b9c411bd44d4",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-race-gravel-china-roundup-2026-09-28",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator; product photo by the brand",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS community roundup; product photo by the brand",
+  "alt": "Winspace G5 gravel bike with a spec overlay listing tire clearance, size-M stack and reach, chainstay, BB drop and wheelbase",
+  "display_note": "Community-compiled 2026 race-gravel roundup page using a brand photo; check values against Winspace's own specification. Footer credit line removed for privacy.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/6aba129d000000001a026bc7",
+  "source_media_sha256": "3f1a00a967a608c7169184bc66730b1077728c0ddedb58a22ce2aedc8bd4376d",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}
