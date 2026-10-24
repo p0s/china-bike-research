@@ -1,4 +1,4 @@
-import { normalizeMaterialSearch } from './catalog-search.js';
+import { normalizeMaterialSearch, createCatalogSearchIndex, compileCatalogQuery, scoreCatalogSearch } from './catalog-search.js';
 import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
@@ -862,6 +862,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   });
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
+  const searchIndex = new Map(rows.map((row) => [row, createCatalogSearchIndex(row.dataset.search)]));
+  const searchScores = new Map();
+  let scoredQuery = null;
+  let searchTerms = [];
   const regionalData = await regionalDataPromise;
   catalogRoot.dataset.regionalPrices = regionalData ? 'ready' : 'unavailable';
   // Price settings live in the header popover; the catalog reads them from the document.
@@ -1404,9 +1408,19 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       matchesCategory(row, categoryValue);
   }
 
+  function searchScore(row) {
+    const query = search?.value ?? '';
+    if (query !== scoredQuery) {
+      scoredQuery = query;
+      searchTerms = compileCatalogQuery(query);
+      searchScores.clear();
+    }
+    if (!searchScores.has(row)) searchScores.set(row, scoreCatalogSearch(searchIndex.get(row), searchTerms));
+    return searchScores.get(row);
+  }
+
   function matchesQuery(row) {
-    const query = search?.value.trim().toLowerCase() ?? '';
-    return !query || row.dataset.search?.includes(query);
+    return Number.isFinite(searchScore(row));
   }
 
   function rowMatches(row) {
@@ -1508,7 +1522,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const stage = (row) => row.dataset.stage === 'candidate' ? 1 : 0;
     return [...items].sort((a, b) => {
       if (key === 'name') return byName(a, b) * (direction === 'desc' ? -1 : 1);
-      if (key === 'published') return stage(a) - stage(b) || compareNumbers(a.dataset.chinaSort, b.dataset.chinaSort) || byName(a, b);
+      if (key === 'published') return searchScore(a) - searchScore(b) || stage(a) - stage(b) || compareNumbers(a.dataset.chinaSort, b.dataset.chinaSort) || byName(a, b);
       const field = key === 'tire' ? 'tireClearanceSort' : key === 'capability' ? 'capabilitySort' : key === 'china' ? 'chinaSort' : 'priceSort';
       const value = (row) => ['price', 'china'].includes(key) || Number(row.dataset[field]) > 0 ? row.dataset[field] : null;
       return compareNumbers(value(a), value(b), direction)
@@ -1667,6 +1681,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const tireUnknownCleared = syncTireUnknownAvailability();
     const categoryFilterCleared = updateCategoryMinimumAvailability();
     const matching = rows.filter(rowMatches);
+    const searching = searchTerms.length > 0;
+    const defaultSortOption = sort?.querySelector('option[value="published-asc"]');
+    if (defaultSortOption) defaultSortOption.textContent = translate(searching ? 'Best match'
+      : activeCountry === 'CN' ? 'Published first, then price' : 'Published first, then China price', locale);
     const sortCorrected = updateSortAvailability(matching);
     updateSortHeadings(matching);
     const sortStatus = catalogRoot.querySelector('[data-sort-status]');
@@ -1683,12 +1701,20 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     ordered.forEach((row) => {
       const matches = matchingSet.has(row);
       row.hidden = !matches;
+      const closeMatch = matches && searchScore(row) > 0;
+      let matchLabel = row.querySelector('[data-search-close-match]');
+      if (closeMatch && !matchLabel) {
+        matchLabel = Object.assign(document.createElement('span'), { className: 'search-close-match', textContent: translate('Close match', locale) });
+        matchLabel.dataset.searchCloseMatch = '';
+        row.querySelector('.product-copy')?.append(matchLabel);
+      }
+      if (matchLabel) matchLabel.hidden = !closeMatch;
       if (matches) visible += 1;
       if (!alreadyOrdered) productList?.insertBefore(row, empty);
     });
     const visiblePublished = matching.filter((row) => row.dataset.stage !== 'candidate').length;
     const visibleLeads = visible - visiblePublished;
-    const publishedFirst = sortModeParts().key === 'published';
+    const publishedFirst = sortModeParts().key === 'published' && !searching;
     const firstLead = publishedFirst && visiblePublished && visibleLeads ? ordered.find((row) => matchingSet.has(row) && row.dataset.stage === 'candidate') : null;
     leadDivider.hidden = !firstLead;
     if (firstLead) productList?.insertBefore(leadDivider, firstLead);
