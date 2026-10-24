@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 221,
+      "videos": 222,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -3093,6 +3093,7 @@
       "unli-ahon-java-fuoco-top-105",
       "vadim-on-wheels-winspace-g3-150km",
       "velographer-alvas-da54-review",
+      "veloville-pardus-uragano-sport-unboxing",
       "victor-torres-quick-pro-gr-one-dream-build",
       "victory-bicycle-studio-addict-rc-40-2023",
       "vitality-twitter-gravel-v3-2025-wheeltop-review",
@@ -66359,6 +66360,29 @@
         "url",
         "youtube_video_id"
       ],
+      "veloville-pardus-uragano-sport-unboxing": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "victor-torres-quick-pro-gr-one-dream-build": [
         "accessed_at",
         "channel_name",
@@ -74204,6 +74228,7 @@
         "facts.seatpost",
         "facts.sizes",
         "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
         "facts.tire_clearance_mm",
         "facts.wheels",
         "last_reviewed",
@@ -74219,6 +74244,7 @@
         "source_note",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "phillips-carbon-road-unknown": [
@@ -121609,6 +121635,9 @@
       "velographer-alvas-da54-review": [
         "target.candidate_id=alums-da54"
       ],
+      "veloville-pardus-uragano-sport-unboxing": [
+        "target.candidate_id=pardus-uragano-sport"
+      ],
       "victor-torres-quick-pro-gr-one-dream-build": [
         "target.platform_id=quick-gr-one"
       ],
@@ -123797,7 +123826,8 @@
         "source_ids=pardus-uragano-sport-105-cycle-omania-2026-08-29",
         "source_ids=pardus-uragano-sport-cn-official-2026-08-27",
         "source_ids=pardus-uragano-sport-official",
-        "source_ids=pardus-uragano-sport-official-current-2026-09-23"
+        "source_ids=pardus-uragano-sport-official-current-2026-09-23",
+        "video_ids=veloville-pardus-uragano-sport-unboxing"
       ],
       "phillips-carbon-road-unknown": [
         "model_id=phillips-carbon-road-unknown",

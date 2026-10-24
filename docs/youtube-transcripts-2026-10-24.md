@@ -233,6 +233,17 @@ Delivered: two transcript-checked videos (Tamil and Indonesian, with English par
 - Spark family listing (`pardus-spark`): an aggregate of several generations and trims, so unsuitable for an exact-model video.
 - Gomera EVO Dura-Ace Di2 (`pardus-gomera-evo-dura-ace-di2`): no exact video; WaterBear Cycles' `yOkzKegkgvE` is a used earlier Gomera with an 11-speed upgrade (mismatch), and Pinoy Katari's 2021 Gomera Ultra review predates the EVO.
 
+### Batch 19 — PARDUS Robin EVO (Force AXS and competition lead), Robin Sport PES, Uragano EVO (and merged lead), Uragano F, Uragano Sport; SAVA A4, Dream Maker, R8 R8170, R9, Starship R13; SAVA pointers
+
+Delivered: one transcript-checked video (Russian, English paraphrased takeaways) with a tire-fit field report.
+
+- Uragano Sport (`pardus-uragano-sport`): Veloville's workshop build of a size-XL Uragano Sport 105 (`jHGGa82cm_E`; 9.76 kg without pedals; loose spokes retensioned; 42 mm expected to fit, 45 mm tight). NUBIKE TV's GRX-equipped Uragano `vyEoznb0a-w` does not identify the Sport, EVO or F version, and FITAMIN's 2022 clip `pKrU31x6kg8` is a short earlier build.
+- Uragano EVO (`pardus-uragano-evo`, merged lead `pardus-uragano-evo-community-lead`) and Uragano F (`pardus-uragano-f`): no exact-model video found.
+- Robin EVO third generation (`pardus-robin-evo-force-axs`, `pardus-robin-evo-community-lead`): no exact video; Somtam Rider's 2022 `FbWlvJirFXk` and the 2022–2023 rim and Shuntai builds (`um4fBz7dYcg`, `NTtO6R9gcVw`, the latter two without caption tracks) predate the third generation.
+- Robin Sport PES (`pardus-robin-sport-pes`): no exact video; the Robin Sport reviews found are 2020–2024 mechanical builds (`xrqA_JkZZis`, `knXFHj6XNGE`, `ZBg9JvwCz8c`, `r66GeiAVCYU`), not the current Magene PES model with 40 mm clearance.
+- SAVA A4, Dream Maker, R8 R8170, R9 and Starship R13 (`sava-a4`, `sava-dream-maker`, `sava-r8-r8170`, `sava-r9`, `sava-starship-r13`): no exact-model review. Results are SAVA's own shorts (`xGeUsw9PqQU`, `clNqoK3cw4I`, `3WJScOLpytg`, `I-bLD5V3ong`), a reseller's narrated specification read-out for a "Blade R9" (`Qb_k9LpcTCc`) that cannot be tied to the candidate, the R08 7170 vlog rejected in batch 7, and other SAVA models (AeroX SLR8 `zMGDwPd4e5Y`, Pulse and Voyager `ie7OPQpcj0Q`, an unnamed 2022 test `2JN3W6eiAic`).
+- SAVA F20 Hawkeye (`sava-f20-hawkeye`): keeps its China Cycling review; Nicolai Andreasen's unboxing `OnTUF6XoHJQ` has no caption track. The Gelaro S4 and A7L 2026 observations are merged into their exact records, and the Gelaro SF candidate points to the published platform.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -402,6 +413,7 @@ Delivered: two transcript-checked videos (Tamil and Indonesian, with English par
 | missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | automatic captions · 3 takeaways |
 | pardus-super-al (candidate/wheelset) | `5am-bicycle-studio-pardus-super-al-105-india` | 5AM BICYCLE STUDIO Cyclistlife | automatic captions · 3 takeaways |
 | pardus-super-sport (candidate/wheelset) | `dani-chika-pardus-super-sport-disc-climb-weigh` | Dani Chika | automatic captions · 2 takeaways |
+| pardus-uragano-sport (candidate/wheelset) | `veloville-pardus-uragano-sport-unboxing` | Veloville | automatic captions · 4 takeaways |
 | pinarello-f5 (candidate/wheelset) | `approved-pinarello-f5-negative-points` | Approved | automatic captions · 3 takeaways |
 | pinarello-f5 (candidate/wheelset) | `bicycling-pinarello-f5-review` | Bicycling | creator captions · 4 takeaways |
 | quick-pro-er-one (candidate/wheelset) | `china-cycling-quick-pro-er-one` | China Cycling | automatic captions · 6 takeaways |
