@@ -9,7 +9,7 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[], headerTools=''}) {
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', video=null, ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[], headerTools=''}) {
   const siteName='China Bikes';
   const t = (value) => translate(value, locale);
   title = t(title);
@@ -53,6 +53,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta name="twitter:title" content="${escapeAttr(pageTitle)}">
   <meta name="twitter:description" content="${escapeAttr(description)}">
   ${socialImage ? `<meta property="og:image" content="${escapeAttr(socialImage)}"><meta property="og:image:alt" content="${escapeAttr(imageAlt || description)}">${imageWidth ? `<meta property="og:image:width" content="${escapeAttr(imageWidth)}">` : ''}${imageHeight ? `<meta property="og:image:height" content="${escapeAttr(imageHeight)}">` : ''}${imageType ? `<meta property="og:image:type" content="${escapeAttr(imageType)}">` : ''}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${escapeAttr(socialImage)}"><meta name="twitter:image:alt" content="${escapeAttr(imageAlt || description)}">` : `<meta name="twitter:card" content="summary">`}
+  ${video ? `<meta property="og:video" content="${escapeAttr(video.url)}"><meta property="og:video:secure_url" content="${escapeAttr(video.url)}"><meta property="og:video:type" content="${escapeAttr(video.type)}"><meta property="og:video:width" content="${escapeAttr(video.width)}"><meta property="og:video:height" content="${escapeAttr(video.height)}">` : ''}
   ${jsonLd}
   <title>${escapeHtml(pageTitle)}</title>
 </head>

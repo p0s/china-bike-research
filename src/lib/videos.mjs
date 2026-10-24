@@ -17,6 +17,15 @@ export function validateYouTubeEmbed(video) {
     || video.url !== `https://www.youtube.com/watch?v=${video.youtube_video_id}`) throw new Error(`Invalid YouTube embed: ${video.id}`);
 }
 
+// The first featured YouTube video with a verified record of YouTube's own og:video player metadata.
+export function openGraphVideo(videos = []) {
+  const video = videos.find((item) => item.provider === 'youtube' && item.open_graph_player);
+  if (!video) return null;
+  validateYouTubeEmbed(video);
+  const { type, width, height } = video.open_graph_player;
+  return { url: `https://www.youtube.com/embed/${video.youtube_video_id}`, type, width, height };
+}
+
 export function renderVideoEntries(videos, { contexts = new Map(), article = false, playerLabel = 'YouTube video', watchLabel = 'Watch on YouTube', loadLabel = 'Load video' } = {}) {
   const heading = article ? 'h4' : 'h3';
   return videos.filter((video) => video.provider === 'youtube').map((video) => {

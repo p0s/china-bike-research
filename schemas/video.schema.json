@@ -64,6 +64,18 @@
         "properties": {"label": {"type": "string", "minLength": 1}, "at_seconds": {"type": "number", "minimum": 0}}
       }
     },
+    "open_graph_player": {
+      "description": "YouTube's own published og:video player metadata for this video, checked on verified_at; renders the embed player as og:video on pages featuring the video.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "width", "height", "verified_at"],
+      "properties": {
+        "type": {"const": "text/html"},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "verified_at": {"type": "string", "format": "date"}
+      }
+    },
     "disclosure": {"type": "string", "minLength": 20},
     "disclosure_url": {"type": "string", "format": "uri", "pattern": "^https://"},
     "summary": {"type": "string", "minLength": 30},
@@ -94,7 +106,7 @@
       "then": {
         "required": ["xhs_post_id", "source_capture_archive", "source_archive_sha256"],
         "properties": {"url": {"pattern": "^https://www\\.xiaohongshu\\.com/explore/[a-f0-9]{24}$"}},
-        "not": {"anyOf": [{"required": ["youtube_video_id"]}, {"required": ["timestamps"]}]}
+        "not": {"anyOf": [{"required": ["youtube_video_id"]}, {"required": ["timestamps"]}, {"required": ["open_graph_player"]}]}
       }
     },
     {
