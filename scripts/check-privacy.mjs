@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-640.webp', '73dc10731fa514dadbe2aa0ae4043d473cb13e390c5c8a2cce78076c42c4459c'],
+  ['assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-1600.webp', 'c4d7b7964d16ded002f72c445ca7e144578f71f7dedb179a76d22e8ad8314bf3'],
+  ['assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-1200.jpg', 'e14e381da2b6c3138a53d7f17c416570fb55cd9bb699f598f8e8aa9a881f7f87'],
   ['assets/blog/bike-preorders-and-production-windows-mascot-cover-6b7073caa2-640.webp', '24ec3b14dbb7f0f67c92fbcf65a9f73643aa8b1a093fa5f11fdb206fb1c8ddda'],
   ['assets/blog/bike-preorders-and-production-windows-mascot-cover-6b7073caa2-1600.webp', 'd1422b324026bca8dff62ea82b828b3425304cc400165d7eed5fa75306e76754'],
   ['assets/blog/bike-preorders-and-production-windows-mascot-cover-6b7073caa2-1200.jpg', '4f4919f2061b2dc6a61348406af44e4fe5f05e54d1d7a3e1d7db7b9afe7713e2'],
