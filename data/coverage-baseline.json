@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 222,
+      "videos": 226,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2924,6 +2924,7 @@
       "bikeradar-winspace-m6-review",
       "bikeroom-de-rosa-new-838-cristiano-de-rosa",
       "bkbike-twitter-t10-pro-r7120",
+      "bruce-vilas-sunpeed-mars-a-negatives",
       "bxt-store-055-overview",
       "cam-nicholls-falath-evo-inspection",
       "cam-nicholls-seka-exceed-rdc-first-impressions",
@@ -2955,6 +2956,7 @@
       "coach-daniel-lightcarbon-lcr017-d-first-look",
       "crafted-cycles-incolor-sr-plus-build",
       "cus-baker-evolve-cima-road-ride",
+      "cus-baker-sunpeed-victory-sport-review",
       "cus-baker-tavelo-grow-build",
       "cus-baker-winspace-g3-review",
       "cycle-the-world-carbonda-cfr696-close-look",
@@ -3073,6 +3075,7 @@
       "ridemedia-winspace-t1600-try-before-you-buy",
       "road-bike-action-specialized-s-works-crux",
       "road-cc-cheapest-specialized-tarmac-sl8",
+      "road700c-sunpeed-galaxy-2026",
       "rocky-pop-elves-falath-pro-disc-grx",
       "sam-rates-bikes-scott-addict-2026-review",
       "selected-components-lightcarbon-lcr017-d-review",
@@ -3087,6 +3090,7 @@
       "tom-bowers-yoeleo-altera-g21-build",
       "trace-velo-lightcarbon-lcr018-d-all-road-build",
       "trace-velo-lightcarbon-lcr018-d-overview",
+      "trace-velo-sunpeed-invincible-sport",
       "tsp52-lightcarbon-lcr017-d-owner",
       "uk-bike-fit-yoeleo-altera-g21-custom-build",
       "underdogs-cycling-incolor-ssr-build",
@@ -62378,6 +62382,29 @@
         "url",
         "youtube_video_id"
       ],
+      "bruce-vilas-sunpeed-mars-a-negatives": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "bxt-store-055-overview": [
         "accessed_at",
         "channel_name",
@@ -63117,6 +63144,29 @@
         "youtube_video_id"
       ],
       "cus-baker-evolve-cima-road-ride": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "cus-baker-sunpeed-victory-sport-review": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -65895,6 +65945,29 @@
         "url",
         "youtube_video_id"
       ],
+      "road700c-sunpeed-galaxy-2026": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "rocky-pop-elves-falath-pro-disc-grx": [
         "accessed_at",
         "channel_name",
@@ -66201,6 +66274,29 @@
         "youtube_video_id"
       ],
       "trace-velo-lightcarbon-lcr018-d-overview": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "trace-velo-sunpeed-invincible-sport": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -75567,6 +75663,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "sunpeed-mars-a-pro-2026": [
@@ -75592,6 +75689,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "sunpeed-space": [
@@ -75651,6 +75749,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "sunpeed-wudi-e-2026": [
@@ -75679,6 +75778,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "tavelo-arden": [
@@ -121140,6 +121240,9 @@
       "bkbike-twitter-t10-pro-r7120": [
         "target.candidate_id=twitter-t10-pro"
       ],
+      "bruce-vilas-sunpeed-mars-a-negatives": [
+        "target.candidate_id=sunpeed-mars-a-pro-2026"
+      ],
       "bxt-store-055-overview": [
         "target.platform_id=bxt-055"
       ],
@@ -121232,6 +121335,9 @@
       ],
       "cus-baker-evolve-cima-road-ride": [
         "target.candidate_id=evolve-cima-road"
+      ],
+      "cus-baker-sunpeed-victory-sport-review": [
+        "target.candidate_id=sunpeed-victory-e-2026"
       ],
       "cus-baker-tavelo-grow-build": [
         "target.platform_id=tavelo-grow"
@@ -121577,6 +121683,9 @@
       "road-cc-cheapest-specialized-tarmac-sl8": [
         "target.candidate_id=missing-china-price-specialized-tarmac-sl8"
       ],
+      "road700c-sunpeed-galaxy-2026": [
+        "target.candidate_id=sunpeed-galaxy-2026-r7120"
+      ],
       "rocky-pop-elves-falath-pro-disc-grx": [
         "target.platform_id=elves-falath-r7170"
       ],
@@ -121616,6 +121725,9 @@
       ],
       "trace-velo-lightcarbon-lcr018-d-overview": [
         "target.candidate_id=lightcarbon-lcr018-d"
+      ],
+      "trace-velo-sunpeed-invincible-sport": [
+        "target.candidate_id=sunpeed-wudi-e-2026"
       ],
       "tsp52-lightcarbon-lcr017-d-owner": [
         "target.candidate_id=lightcarbon-lcr017-d"
@@ -124235,12 +124347,14 @@
       "sunpeed-galaxy-2026-r7120": [
         "brand_id=sunpeed",
         "model_id=sunpeed-galaxy-2026-r7120",
-        "source_ids=sunpeed-galaxy-2026-tmall-2026-10-24"
+        "source_ids=sunpeed-galaxy-2026-tmall-2026-10-24",
+        "video_ids=road700c-sunpeed-galaxy-2026"
       ],
       "sunpeed-mars-a-pro-2026": [
         "brand_id=sunpeed",
         "model_id=sunpeed-mars-a-pro-2026",
-        "source_ids=sunpeed-mars-a-pro-tmall-2026-10-24"
+        "source_ids=sunpeed-mars-a-pro-tmall-2026-10-24",
+        "video_ids=bruce-vilas-sunpeed-mars-a-negatives"
       ],
       "sunpeed-space": [
         "brand_id=sunpeed",
@@ -124257,7 +124371,8 @@
         "source_ids=sunpeed-victory-expert-jd-2026-08-30",
         "source_ids=sunpeed-victory-expert-official-2026-08-30",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=cus-baker-sunpeed-victory-sport-review"
       ],
       "sunpeed-wudi-e-2026": [
         "brand_id=sunpeed",
@@ -124269,7 +124384,8 @@
         "source_ids=sunpeed-wudi-2026-tmall-2026-10-24",
         "source_ids=sunpeed-wudi-e-2026-photo-source-2026-10-03",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_snapshot_id=taobao-snapshot-2026-08-08"
+        "source_snapshot_id=taobao-snapshot-2026-08-08",
+        "video_ids=trace-velo-sunpeed-invincible-sport"
       ],
       "tavelo-arden": [
         "observed_price.package_components.source_id=tavelo-arden-china-launch-2026-08-17",
