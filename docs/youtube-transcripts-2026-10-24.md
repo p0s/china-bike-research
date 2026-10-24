@@ -255,6 +255,18 @@ Delivered: five transcript-checked videos (two in Portuguese with English paraph
 - Charon 2026 (`sunpeed-charon-2026`) and Space (`sunpeed-space`): no exact-model review; Niktography's 2022 Charon check `StcuKu1W3b4` predates the 2026 alloy 13-speed bike, BlueBike's `E8QkcwRDCiI` has no caption track, and Trace Velo's £399 Sunpeed `UVmn2BC4VfA` is the Triton rim-brake bike (mismatch). Benjamin Le Chappers' London shop video `1ZotAUGHw_Q` is a store tour.
 - XDS AD350, AD7 and GT350 (`xds-ad350-2026`, `xds-ad7`, `xds-gt350`): the only exact-model reviews (公路车和山地车 `kRheY_K9W1A`, `BJiABcF3Xvs`, `NnNa3WMIno8`, `QTI7zRULZso`) have no caption track; 32六's XDS store tour `8PNZndji_tI` only reads shop prices. XDS AD500 (`xds-ad500-2025`): no exact-model video.
 
+### Batch 21 — Quick Pro TR:ONE (frameset and Dura-Ace Di2), TT ONE, UR:ONE (frameset and complete), ER:ONE, XR:ONE (frameset and complete), GR:ONE GRX Di2 pointer; QUICK T10; KUNG HORIZON, MACH X, MACH complete pointer; X-LAB GT8; XDS GT600
+
+Delivered: six transcript-checked videos.
+
+- TR:ONE frameset (`quick-pro-tr-one`): China Cycling's launch first look (`iU_CBldBUmo`; about 1,200 g frame, 32 mm, T47 68). TR:ONE Dura-Ace Di2 complete (`quick-pro-tr-one-dura-ace-di2`): Al Rides' owner review of the Rival build (`drBLzK92H1o`; about ¥35,000, a little over 8 kg), build difference disclosed. Simon Shi's Quick Pro vs Quintana Roo comparison `cyLg6kYeGN0`, W family's build `Int7Tdv8l0c` and Quick Pro USA's build `ezzI3Pa5upA` were not needed; Dream Build's `q9riMroPJic` is mainly music.
+- UR:ONE frameset (`quick-pro-ur-one-frameset`): GC Performance's first ride (`CSFV1ofIAEw`; 6.61 kg size L with pedals and cages; taller stack than an SL8) and Pedaler's relay of the launch briefing (`BWKA9PGjzkA`; claimed 685 g painted medium frame). The complete UR:ONE keeps its two existing videos.
+- ER:ONE (`quick-pro-er-one`): Grant Ritchie's six-month owner review (`F5TPEfnww24`; 6.8 kg build, low 538 mm stack, stiff thru-axle and headset creak). GC Performance's `GLp07aFTnWY` and Channing Smith's 14,000 km short `dRY_u0Vozyo` were not needed.
+- X-LAB GT8 GRX Di2 (`missing-china-price-x-lab-xds-gt8`): VeloVeloVelo's review (`JpAs1AEthy0`; 55 mm clearance, US$3,200, crank power meter reading 8–10 W high). Further GT8 reviews (CADE Media, The Bicycle Station, Grava Adventure, GC Performance) were not needed.
+- XR:ONE frameset with Aelous Gravel cockpit (`quick-pro-xr-one-frameset-aelous-gravel`): no decision-relevant video; EverydayBikes' `OiUXBeomTuw` is a purchase anecdote. The XR:ONE complete keeps its two videos; the GR:ONE GRX Di2 and KUNG MACH complete candidates point to published platforms.
+- TT ONE (`quick-pro-tt-one`), QUICK T10 (`quick-t10`), KUNG HORIZON (`kung-horizon`) and KUNG MACH X (`kung-mach-x-ultegra-di2`): no exact-model review with a usable transcript. waT Nguyen's HORIZON video `PK4m6YEEyB4` has no caption track; KUNG's MACH X clips (`lv75oHNbGOA`, `EyXspDXvjXg`) are promos; Trace Velo's Shanghai show walk `O7sPq_qz_yc` covers many brands.
+- XDS GT600 (`xds-gt600`): the only exact review, 公路车和山地车's `S92m-G90_L8`, has no caption track.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -422,14 +434,20 @@ Delivered: five transcript-checked videos (two in Portuguese with English paraph
 | missing-china-price-van-rysel-rcr (candidate/wheelset) | `cyclingnews-van-rysel-rcr-f-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
 | missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | automatic captions · 3 takeaways |
+| missing-china-price-x-lab-xds-gt8 (candidate/wheelset) | `velovelovelo-x-lab-gt8-review` | VeloVeloVelo | automatic captions · 5 takeaways |
 | pardus-super-al (candidate/wheelset) | `5am-bicycle-studio-pardus-super-al-105-india` | 5AM BICYCLE STUDIO Cyclistlife | automatic captions · 3 takeaways |
 | pardus-super-sport (candidate/wheelset) | `dani-chika-pardus-super-sport-disc-climb-weigh` | Dani Chika | automatic captions · 2 takeaways |
 | pardus-uragano-sport (candidate/wheelset) | `veloville-pardus-uragano-sport-unboxing` | Veloville | automatic captions · 4 takeaways |
 | pinarello-f5 (candidate/wheelset) | `approved-pinarello-f5-negative-points` | Approved | automatic captions · 3 takeaways |
 | pinarello-f5 (candidate/wheelset) | `bicycling-pinarello-f5-review` | Bicycling | creator captions · 4 takeaways |
 | quick-pro-er-one (candidate/wheelset) | `china-cycling-quick-pro-er-one` | China Cycling | automatic captions · 6 takeaways |
+| quick-pro-er-one (candidate/wheelset) | `grant-ritchie-quick-pro-er-one-six-months` | Grant Ritchie | automatic captions · 5 takeaways |
+| quick-pro-tr-one (candidate/wheelset) | `china-cycling-quick-pro-tr-one-first-look` | China Cycling | automatic captions · 4 takeaways |
+| quick-pro-tr-one-dura-ace-di2 (candidate/wheelset) | `al-rides-quick-pro-tr-one-owner-review` | Al Rides | automatic captions · 4 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-cycling-quick-pro-ur-one` | China Cycling | automatic captions · 3 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-rides-quick-pro-ur-one` | China Rides | automatic captions · 4 takeaways |
+| quick-pro-ur-one-frameset (candidate/wheelset) | `gc-performance-quick-pro-ur-one-first-ride` | GC Performance | automatic captions · 3 takeaways |
+| quick-pro-ur-one-frameset (candidate/wheelset) | `pedaler-quick-pro-ur-one-launch-briefing` | Pedaler | automatic captions · 3 takeaways |
 | sava-a7l-pro-2026 (candidate/wheelset) | `bikelabhq-sava-a7l-pro-review` | BikeLabHQ | automatic captions · 6 takeaways |
 | sava-a7l-pro-2026 (candidate/wheelset) | `jonathan-simmons-sava-a7l-pro-owner` | Jonathan Simmons | automatic captions · 4 takeaways |
 | sava-f20-hawkeye (candidate/wheelset) | `china-cycling-sava-f20-hawkeye` | China Cycling | automatic captions · 4 takeaways |
