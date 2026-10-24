@@ -38,6 +38,10 @@ test('directory redirect preserves query; missing directory index and missing 40
   const {get}=await fixture(t);const r=await get('/models?q=1');assert.equal(r.status,308);assert.equal(r.headers.location,'/models/?q=1');
   assert.equal((await get('/empty/')).status,404);assert.equal((await get('/missing')).status,404);assert.equal((await get('/')).status,200);
 });
+test('dot-segment directory redirects stay on the preview origin',async t=>{
+  const {get}=await fixture(t);
+  for(const raw of ['/..//models?q=1','/.//models?q=1','/x/..//models?q=1']){const r=await get(raw);assert.equal(r.status,308,raw);assert.equal(r.headers.location,'/models/?q=1',raw);}
+});
 test('custom 404 status and HEAD behavior',async t=>{
   const {get,root}=await fixture(t);await fs.writeFile(path.join(root,'404.html'),'Custom missing');
   assert.deepEqual((await get('/none')).body,'Custom missing');assert.equal((await get('/404.html')).status,404);

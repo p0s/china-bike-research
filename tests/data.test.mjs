@@ -44,6 +44,34 @@ test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
 
+test('record links rendered as href values must use web schemes', () => {
+  for (const scheme of ['javascript:alert(1)', 'data:text/html,x', 'vbscript:x']) {
+    const copy = structuredClone(data);
+    const source = copy.sources.find((item) => item.url);
+    const brand = copy.brands.find((item) => item.website);
+    source.url = scheme;
+    brand.website = scheme;
+    const errors = validateDataset(copy);
+    assert.ok(errors.includes(`source ${source.id}: URL must use http or https`), scheme);
+    assert.ok(errors.includes(`brand ${brand.id}: website must be an http(s) URL`), scheme);
+  }
+});
+
+test('sourced image derivatives must match their recorded digest and size', () => {
+  const copy = structuredClone(data);
+  const image = copy.images.find((item) => item.hosting?.variants?.length === 2 && item.hosting.variants.every((variant) => variant.url?.startsWith('/assets/images/sourced/')));
+  const [card, detail] = image.hosting.variants;
+  card.sha256 = '0'.repeat(64);
+  detail.bytes += 1;
+  const errors = validateDataset(copy);
+  assert.ok(errors.includes(`image ${image.id}: sourced variant ${card.url} bytes do not match its recorded digest`));
+  assert.ok(errors.includes(`image ${image.id}: sourced variant ${detail.url} bytes do not match its recorded digest`));
+  const groupsets = structuredClone(data);
+  const groupset = groupsets.groupsets.find((item) => item.image?.variants?.length === 2);
+  groupset.image.variants[0].sha256 = 'f'.repeat(64);
+  assert.ok(validateDataset(groupsets).includes(`groupset ${groupset.id}: ${groupset.image.variants[0].purpose} variant bytes do not match its recorded digest`));
+});
+
 test('verified Chinese brand renderings remain source-faithful', () => {
   const names = Object.fromEntries(data.brands.map((brand) => [brand.id, brand.name_zh]));
   assert.deepEqual(
@@ -1992,19 +2020,19 @@ test('publication gates reject incomplete builds and category-mismatched framese
 });
 
 test('public dataset has the expected coverage', () => {
-  assert.equal(data.brands.length, 41);
-  assert.equal(data.platforms.length, 38);
-  assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 82);
-  assert.equal(data.prices.filter((price) => !price.market_ids).length, 77);
+  assert.equal(data.brands.length, 43);
+  assert.equal(data.platforms.length, 39);
+  assert.equal(data.variants.length, 42);
+  assert.equal(data.prices.length, 83);
+  assert.equal(data.prices.filter((price) => !price.market_ids).length, 78);
   assert.equal(data.prices.filter((price) => price.market_ids).length, 5);
   assert.equal(data.exchangeRates.length, 1);
   assert.ok(data.images.length >= 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
-  assert.equal(data.videos.length, 59);
+  assert.equal(data.videos.length, 112);
   assert.ok(data.sources.length >= 313);
-  assert.equal(data.candidates.length, 236);
+  assert.equal(data.candidates.length, 264);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
   assert.ok(data.researchAttempts.length >= 1844, 'retain the existing research ledger while allowing additive evidence');
@@ -2310,8 +2338,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 222);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 216);
+  assert.equal(catalogCandidates.length, 250);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 244);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -2854,9 +2882,11 @@ test('published products expose ordered exact-model gallery images', () => {
   assert.deepEqual(quick.galleryImages.map((image) => image.label), [
     'Ice Crack Silver',
     'Diamond Black',
-    'Fresh Grass Green'
+    'Fresh Grass Green',
+    'GR:ONE geometry and height guide',
+    'Community spec card'
   ]);
-  assert.ok(quick.galleryImages.every((image) => image.source?.id === 'quick-gr-one-official'));
+  assert.ok(quick.galleryImages.slice(0, 3).every((image) => image.source?.id === 'quick-gr-one-official'));
 });
 
 test('buyer-hidden public-post embeds remain valid while sourced rehosts use the bounded local contract', () => {
@@ -2941,8 +2971,8 @@ test('public-post quotations require bounded immutable media and a completed pri
 test('curated videos stay exact, disclosed, and separate from publication evidence', () => {
   const publishedVideos = data.videos.filter((video) => video.target.platform_id || video.target.variant_id);
   const candidateVideos = data.videos.filter((video) => video.target.candidate_id);
-  assert.equal(publishedVideos.length, 22);
-  assert.equal(candidateVideos.length, 37);
+  assert.equal(publishedVideos.length, 62);
+  assert.equal(candidateVideos.length, 43);
   assert.ok(publishedVideos.every((video) => video.match === 'exact-platform'));
   assert.ok(candidateVideos.every((video) => video.match === 'exact-model-lead'));
   assert.ok(data.videos.every((video) => video.disclosure.length >= 20));

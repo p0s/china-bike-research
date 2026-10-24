@@ -2,10 +2,10 @@ import { normalizeMaterialSearch, createCatalogSearchIndex, compileCatalogQuery,
 import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
-import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, regionalPrice, countryName } from './regional-prices.js';
+import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
 import { priceDisplay, deliveredLine } from './price-display.js';
 import { clearanceParts, weightParts } from './catalog-format.js';
-import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
+import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
@@ -450,17 +450,68 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   tooltipPanel?.addEventListener('mouseenter', cancelTooltipDismiss);
   tooltipPanel?.addEventListener('mouseleave', scheduleTooltipClose);
   tooltipPanel?.addEventListener('pointerdown', (event) => event.preventDefault());
+  // One shared, pointer-transparent layer shows a large uncropped photo beside
+  // the hovered or focused thumbnail. The row and its link never change size,
+  // so neighbouring facts stay put and remain reachable.
+  const imagePreviewSources = new Map(); // row id -> largest reviewed derivative
   let activeImagePreview = null;
   let pendingImagePreviewFocus = null;
   let imagePreviewVersion = 0;
+  let imagePreviewLayer = null;
+  let imagePreviewTimer = null;
+  let lastImagePreviewScroll = -Infinity;
+  const imagePreviewLinks = () => document.querySelectorAll('.catalog-row .product-image-link, .curated-group .product-image-link');
+  function imagePreviewDisabled(link) {
+    return Boolean(link.closest?.('[data-catalog-view="gallery"]'));
+  }
+  function previewSource(link, image) {
+    const id = link.closest?.('[data-product-row]')?.dataset.id;
+    return (id && imagePreviewSources.get(id)) || image.currentSrc || image.src;
+  }
   function closeImagePreview() {
     imagePreviewVersion++;
     pendingImagePreviewFocus = null;
+    clearTimeout(imagePreviewTimer);
+    imagePreviewTimer = null;
     activeImagePreview?.classList.remove('is-previewing');
     activeImagePreview = null;
+    if (imagePreviewLayer) {
+      imagePreviewLayer.hidden = true;
+      imagePreviewLayer.classList.remove('is-visible');
+    }
+  }
+  // Prefer the free space to the right of the thumbnail, then the left, and
+  // only as a last resort overlap it; always stay beneath the sticky header.
+  function imagePreviewBox(box, ratio, viewport, topInset) {
+    const gap = 14, edge = 12, maxWidth = 880;
+    const maxHeight = Math.max(80, viewport.height - topInset - edge);
+    const fit = (room) => {
+      let width = Math.max(0, Math.min(maxWidth, room));
+      let height = width / ratio;
+      if (height > maxHeight) { height = maxHeight; width = height * ratio; }
+      return { width, height };
+    };
+    const right = viewport.width - edge - (box.left + box.width + gap);
+    const left = box.left - gap - edge;
+    let size, x;
+    if (right >= 320 || right >= left) {
+      size = fit(right);
+      x = box.left + box.width + gap;
+    } else {
+      size = fit(left);
+      x = box.left - gap - size.width;
+    }
+    if (size.width < Math.min(320, viewport.width - 2 * edge)) {
+      size = fit(viewport.width - 2 * edge);
+      x = (viewport.width - size.width) / 2;
+    }
+    const centered = box.top + box.height / 2 - size.height / 2;
+    const y = Math.min(viewport.height - edge - size.height, Math.max(topInset, centered));
+    return { x: Math.round(x), y: Math.round(y), width: Math.round(size.width), height: Math.round(size.height) };
   }
   function openImagePreview(link) {
     closeImagePreview();
+    if (imagePreviewDisabled(link)) return;
     const image = link.querySelector('img');
     if (!image) return;
     activeImagePreview = link;
@@ -476,23 +527,56 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     }
     if (!image.naturalWidth) { closeImagePreview(); return; }
     closeTooltip();
+    if (!imagePreviewLayer) {
+      imagePreviewLayer = document.createElement('div');
+      imagePreviewLayer.className = 'image-preview-layer';
+      imagePreviewLayer.setAttribute('aria-hidden', 'true');
+      imagePreviewLayer.hidden = true;
+      imagePreviewLayer.append(document.createElement('img'));
+      document.body.append(imagePreviewLayer);
+    }
     const box = link.getBoundingClientRect();
     const topInset = Math.max(12, (stickyHeader?.getBoundingClientRect().bottom ?? 0) + 8);
-    const requestedScale = Number.parseFloat(getComputedStyle(link).getPropertyValue('--catalog-preview-scale')) || 2.6;
-    const scale = Math.min(requestedScale, (innerWidth - 24) / box.width, Math.max(1, innerHeight - topInset - 12) / box.height);
-    const left = Math.min(innerWidth - 12 - box.width * scale, Math.max(12, box.left));
-    const naturalTop = box.top + box.height / 2 - box.height * scale / 2;
-    const top = Math.min(innerHeight - 12 - box.height * scale, Math.max(topInset, naturalTop));
-    link.style.setProperty('--image-preview-scale', scale);
-    link.style.setProperty('--image-preview-x', `${left - box.left}px`);
-    link.style.setProperty('--image-preview-y', `${top - naturalTop}px`);
+    const ratio = image.naturalWidth / Math.max(1, image.naturalHeight || image.naturalWidth / 1.5);
+    const place = imagePreviewBox(box, ratio, { width: innerWidth, height: innerHeight }, topInset);
+    const largeImage = imagePreviewLayer.firstElementChild;
+    const source = previewSource(link, image);
+    const version = imagePreviewVersion;
+    // Show the already-decoded thumbnail at once; swap to the detail file when it arrives.
+    largeImage.src = image.currentSrc || image.src;
+    if (source && source !== largeImage.src) {
+      const detail = new Image();
+      detail.decoding = 'async';
+      detail.addEventListener('load', () => { if (version === imagePreviewVersion) largeImage.src = source; }, { once: true });
+      detail.src = source;
+    }
+    imagePreviewLayer.style.left = `${place.x}px`;
+    imagePreviewLayer.style.top = `${place.y}px`;
+    imagePreviewLayer.style.width = `${place.width}px`;
+    imagePreviewLayer.style.height = `${place.height}px`;
+    imagePreviewLayer.style.setProperty('--preview-origin-x', `${box.left + box.width / 2 - place.x}px`);
+    imagePreviewLayer.style.setProperty('--preview-origin-y', `${box.top + box.height / 2 - place.y}px`);
+    imagePreviewLayer.hidden = false;
     link.classList.add('is-previewing');
+    requestAnimationFrame(() => { if (version === imagePreviewVersion) imagePreviewLayer.classList.add('is-visible'); });
   }
-  document.querySelectorAll('.catalog-row .product-image-link, .curated-group .product-image-link').forEach((link) => {
-    link.addEventListener('mouseenter', () => {
-      if (precisePointer.matches) openImagePreview(link);
+  // Scrolling slides new rows under a resting cursor. Those rows receive
+  // pointer enter events, so a preview waits for real pointer movement.
+  function requestImagePreview(link) {
+    if (!precisePointer.matches || activeImagePreview === link || imagePreviewTimer !== null) return;
+    if (performance.now() - lastImagePreviewScroll < 180) return;
+    imagePreviewTimer = setTimeout(() => {
+      imagePreviewTimer = null;
+      if (link.matches(':hover') && performance.now() - lastImagePreviewScroll >= 180) openImagePreview(link);
+    }, 70);
+  }
+  imagePreviewLinks().forEach((link) => {
+    link.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'mouse' || event.pointerType === 'pen') requestImagePreview(link);
     });
-    link.addEventListener('mouseleave', () => {
+    link.addEventListener('pointerleave', () => {
+      clearTimeout(imagePreviewTimer);
+      imagePreviewTimer = null;
       if (activeImagePreview === link && !(document.activeElement === link && link.matches(':focus-visible'))) closeImagePreview();
     });
     link.addEventListener('focus', () => {
@@ -556,18 +640,42 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setMenuOpen(open);
   });
   navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
-  // Tools collapse into one header menu once scripts run; without them the links stay inline.
+  // Tools stay visible in the header. They fold into one Tools menu only when
+  // the measured header row would otherwise overflow or squeeze the search.
   const toolsMenu = document.querySelector('[data-nav-tools]');
   const toolsToggle = toolsMenu?.querySelector('[data-nav-tools-toggle]');
+  const headerRow = document.querySelector('.site-header .header-inner');
   function setToolsOpen(open, { restoreFocus = false } = {}) {
     if (!(toolsToggle instanceof HTMLButtonElement)) return;
     toolsMenu.classList.toggle('is-open', open);
     toolsToggle.setAttribute('aria-expanded', String(open));
     if (!open && restoreFocus) toolsToggle.focus({ preventScroll: true });
   }
+  function headerCrowded() {
+    if (!(headerRow instanceof HTMLElement)) return false;
+    if (headerRow.scrollWidth > headerRow.clientWidth + 1) return true;
+    const searchBox = headerRow.querySelector('.header-search');
+    if (searchBox instanceof HTMLElement && searchBox.getBoundingClientRect().width < 230) return true;
+    const summary = headerRow.querySelector('.settings-summary');
+    return summary instanceof HTMLElement && summary.scrollWidth > summary.clientWidth + 1;
+  }
+  function fitTools() {
+    if (!(toolsToggle instanceof HTMLButtonElement)) return;
+    // Narrow layouts list every tool inside the main menu sheet instead.
+    const menuMode = menuButton instanceof HTMLElement && getComputedStyle(menuButton).display !== 'none';
+    const wasCollapsed = toolsMenu.classList.contains('is-collapsed');
+    toolsMenu.classList.remove('is-collapsed');
+    stickyHeader?.classList.remove('is-compact-nav');
+    // First shorten two tool labels and the theme label, then fold the tools.
+    if (!menuMode && headerCrowded()) stickyHeader?.classList.add('is-compact-nav');
+    const collapse = !menuMode && headerCrowded();
+    if (collapse) stickyHeader?.classList.remove('is-compact-nav');
+    toolsMenu.classList.toggle('is-collapsed', collapse);
+    toolsToggle.hidden = !collapse;
+    if (!collapse && wasCollapsed) setToolsOpen(false);
+  }
   if (toolsToggle instanceof HTMLButtonElement) {
     toolsMenu.classList.add('is-enhanced');
-    toolsToggle.hidden = false;
     toolsToggle.addEventListener('click', () => setToolsOpen(toolsToggle.getAttribute('aria-expanded') !== 'true'));
     document.addEventListener('click', (event) => {
       if (event.target instanceof Node && !toolsMenu.contains(event.target)) setToolsOpen(false);
@@ -578,6 +686,15 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         event.preventDefault();
       }
     });
+    let fitFrame = 0;
+    const scheduleFit = () => { cancelAnimationFrame(fitFrame); fitFrame = requestAnimationFrame(fitTools); };
+    fitTools();
+    addEventListener('resize', scheduleFit);
+    document.fonts?.ready.then(scheduleFit);
+    // Observe the row and the settings text, never the elements this fit resizes.
+    if (headerRow && typeof ResizeObserver !== 'undefined') new ResizeObserver(scheduleFit).observe(headerRow);
+    const settingsSummary = headerRow?.querySelector('.settings-summary');
+    if (settingsSummary && typeof MutationObserver !== 'undefined') new MutationObserver(scheduleFit).observe(settingsSummary, { childList: true, characterData: true, subtree: true });
   }
   // "/" focuses the header search unless the visitor is already typing.
   document.addEventListener('keydown', (event) => {
@@ -613,6 +730,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   });
   addEventListener('scroll', closeTooltip, true);
   addEventListener('scroll', () => {
+    lastImagePreviewScroll = performance.now();
     // Native focus may scroll the link before its first animation frame. Let
     // that frame position the preview; later scrolling dismisses it normally.
     if (pendingImagePreviewFocus === document.activeElement && pendingImagePreviewFocus?.matches(':focus-visible')) return;
@@ -734,6 +852,14 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
   catalogRoot.dataset.catalogReady = 'true';
   const byId = new Map(products.map((item) => [item.id, item]));
+  products.forEach((item) => {
+    const largest = String(item.imageSrcset ?? '').split(',')
+      .map((entry) => entry.trim().split(/\s+/))
+      .map(([source, width]) => ({ source, width: Number.parseInt(width, 10) || 0 }))
+      .filter((entry) => entry.source)
+      .sort((a, b) => b.width - a.width)[0];
+    if (largest) imagePreviewSources.set(item.id, largest.source);
+  });
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
   const searchIndex = new Map(rows.map((row) => [row, createCatalogSearchIndex(row.dataset.search)]));
@@ -741,6 +867,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let scoredQuery = null;
   let searchTerms = [];
   const regionalData = await regionalDataPromise;
+  catalogRoot.dataset.regionalPrices = regionalData ? 'ready' : 'unavailable';
   // Price settings live in the header popover; the catalog reads them from the document.
   const destinationControl = document.querySelector('[data-ship-country]');
   const currencyControl = document.querySelector('[data-display-currency]');
@@ -757,6 +884,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let currencyChosen = false;
   let activeArea = '';
   let destinationReason = 'unknown';
+  let heldRegional = null; // link choices kept while regional prices or a budget currency cannot be resolved
   const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
   const originalPriceTips = new Map(rows.map((row) => [row.dataset.id, row.querySelector('.price-cell [data-tooltip-lines]')?.dataset.tooltipLines ?? '[]']));
   if (regionalData) document.querySelector('[data-price-preferences]').hidden = false;
@@ -814,6 +942,43 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   modelLinks.forEach((link) => { link.dataset.baseHref = link.getAttribute('href') ?? ''; });
   let activeType = '';
   let activeBrand = '';
+  // Gallery is a second layout of the same rows: filters, sort, selection and
+  // comparison keep working because nothing is duplicated or re-rendered.
+  const viewControl = catalogRoot.querySelector('[data-view-control]');
+  const viewButtons = [...(viewControl?.querySelectorAll('[data-view-value]') ?? [])];
+  let activeView = 'table';
+  let galleryPrepared = false;
+  function prepareGallery() {
+    if (galleryPrepared || !(productList instanceof HTMLElement)) return;
+    galleryPrepared = true;
+    const headings = [...(productList.querySelector('.catalog-head')?.children ?? [])].map((cell) => (cell.querySelector('.catalog-heading-tools > :first-child') ?? cell).textContent.trim());
+    // Column headings are already localized; gallery cards reuse them as labels.
+    ['price', 'capability', 'tires', 'drivetrain', 'weight', 'frame'].forEach((key, index) => {
+      const text = headings[index + 2] ?? '';
+      if (text) productList.style.setProperty(`--gallery-label-${key}`, JSON.stringify(text));
+    });
+    rows.forEach((row) => {
+      const image = row.querySelector('.product-image-link > img');
+      const item = byId.get(row.dataset.id);
+      if (!(image instanceof HTMLImageElement) || !item?.imageSrcset) return;
+      image.sizes = '(max-width: 599px) calc(50vw - 24px), 320px';
+      image.srcset = item.imageSrcset;
+    });
+  }
+  function setView(value, { historyMode = 'push', update = true } = {}) {
+    activeView = value === 'gallery' ? 'gallery' : 'table';
+    if (activeView === 'gallery') prepareGallery();
+    closeImagePreview();
+    if (productList instanceof HTMLElement) productList.dataset.catalogView = activeView;
+    viewButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.viewValue === activeView)));
+    if (update) updateFilterUrl(historyMode);
+  }
+  if (viewControl instanceof HTMLElement) {
+    viewControl.hidden = false;
+    viewButtons.forEach((button) => button.addEventListener('click', () => {
+      if (button.dataset.viewValue !== activeView) setView(button.dataset.viewValue);
+    }));
+  }
   let allModelsVisible = false;
   const defaultBuildAllowance = Number(buildAllowance?.dataset.defaultValue || 0);
   const defaultBuildPreset = buildPreset instanceof HTMLSelectElement ? buildPreset.value : '';
@@ -1109,6 +1274,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       setParam(target, 'ship', activeCountry || 'unknown');
       setParam(target, 'currency', activeCurrency);
       setParam(target, 'area', activeCountry === 'US' ? activeArea : '');
+      if (heldRegional) writeRegionalHold(target, heldRegional, ['ship', 'currency', 'area']);
       link.href = `${target.pathname}${target.search}`;
     });
   }
@@ -1136,9 +1302,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setParam(next, 'published', publishedFilter?.checked ? '1' : '');
     setParam(next, 'listing', listingFilter?.checked ? '1' : '');
     setParam(next, 'sort', sort?.value, defaultSort);
+    setParam(next, 'view', activeView === 'gallery' ? 'gallery' : '');
     setParam(next, 'scope', allModelsVisible ? 'all' : '');
     setParam(next, 'buildPreset', currentBuildPreset, defaultBuildPreset);
     setParam(next, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
+    if (heldRegional) writeRegionalHold(next, heldRegional);
     const target = `${next.pathname}${next.search}${next.hash}`;
     try { history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', target); } catch { /* normal navigation origin required */ }
     updateModelLinks();
@@ -1171,7 +1339,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function hasFilters() {
-    return Boolean(activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
+    return Boolean(heldRegional?.limit || heldRegional?.listing || activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
   }
 
   function numericValue(input, multiplier = 1) {
@@ -1195,7 +1363,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const frame = normalizeMaterialSearch(frameFilter?.value);
     const categoryLimit = numericValue(categoryMinimum);
     const categoryKind = categoryMinimum?.dataset.kind ?? '';
-    return (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
+    return !regionalHoldBlocks(heldRegional, maxPrice) &&
+      (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       (!minTire || tireValue >= minTire || (!tireValue && tireUnknown?.checked)) &&
       weightMatches &&
       (!drivetrain || `${item?.drivetrain ?? ''} ${item?.drivetrainSubline ?? ''}`.toLowerCase().includes(drivetrain)) &&
@@ -1394,6 +1563,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (key === 'family' && category) category.value = '';
     if (key === 'type') setType('', { update: false });
     if (key === 'brand') setBrand('', { update: false });
+    if (key === 'price' && heldRegional) heldRegional.limit = null;
+    if (key === 'listing' && heldRegional) heldRegional.listing = false;
   }
 
   function categoryChipLabel(value) {
@@ -1407,7 +1578,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (category?.value) chips.push(['family', categoryChipLabel(category.value)]);
     if (activeType) chips.push(['type', translate(activeType === 'frameset' ? 'Frame build' : 'Complete', locale)]);
     if (activeBrand) chips.push(['brand', brandLabels.get(activeBrand) ?? activeBrand]);
-    if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}`]);
+    if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}${heldRegional?.destination ? ` · ${translate('not checked', locale)}` : ''}`]);
+    else if (heldRegional?.limit) chips.push(['price', `${translate('Price', locale)} ≤ ${formatRequestedBudget(heldRegional.limit.amount, heldRegional.limit.currency, locale)} · ${translate('not checked', locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
@@ -1417,6 +1589,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (categoryMinimum?.value) chips.push(['category', `${categoryMinimumLabel?.textContent || 'Category'} ≥ ${categoryMinimum.value}${categoryMinimumUnit?.textContent ? ` ${categoryMinimumUnit.textContent}` : ''}`]);
     if (publishedFilter?.checked) chips.push(['published', 'Published only']);
     if (listingFilter?.checked) chips.push(['listing', `${translate('Listing', locale)}: ${countryName(activeCountry || 'CN', locale)}`]);
+    else if (heldRegional?.listing) chips.push(['listing', `${translate('Listing', locale)}: ${heldRegional.country ? countryName(heldRegional.country, locale) : '?'} · ${translate('not checked', locale)}`]);
     return chips;
   }
 
@@ -1552,7 +1725,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       resultSplit.textContent = ` ${translate(`· ${visiblePublished} published, then ${visibleLeads} research leads`, locale)}`;
     }
     if (resultContext) resultContext.textContent = activeBrand ? ` for ${brandLabels.get(activeBrand) ?? activeBrand}` : '';
-    if (filterNotice) filterNotice.textContent = categoryFilterCleared ? ' · incompatible category filter cleared' : '';
+    if (filterNotice) filterNotice.textContent = (categoryFilterCleared ? ' · incompatible category filter cleared' : '')
+      + (heldRegional && (heldRegional.destination || heldRegional.currency || heldRegional.limit)
+        ? ` · ${translate(regionalData ? 'This link’s budget currency is not supported, so the budget stays in the link but is not checked.'
+          : 'Regional prices did not load, so China prices in CNY are shown. Your destination, currency and budget stay in the link; budgets are not checked until regional prices load.', locale)}` : '');
     if (empty) empty.hidden = visible !== 0;
     if (visible === 0) renderEmptySuggestions(chips);
     if (reset) reset.hidden = !hasFilters();
@@ -1572,6 +1748,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   function restoreFromParams(params) {
     const requestedSearch = params.get('q') ?? '';
+    const requestedView = params.get('view') ?? '';
     const requestedPrice = params.get('max') ?? '';
     const legacyMarket = Object.hasOwn(PRICE_MARKETS, params.get('market') ?? '') ? params.get('market') : '';
     const hasDestination = params.has('ship') || Boolean(legacyMarket);
@@ -1586,9 +1763,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       : PRICE_CURRENCIES.includes(savedPreference.currency) ? savedPreference.currency : defaultCurrency(activeCountry) : 'CNY';
     activeArea = activeCountry === 'US' ? ['contiguous', 'remote'].includes(params.get('area')) ? params.get('area')
       : !hasDestination && savedPreference.country === 'US' && ['contiguous', 'remote'].includes(savedPreference.area) ? savedPreference.area : '' : '';
+    heldRegional = regionalData ? null : regionalHold(params, { destination: hasDestination && resolved.country !== 'CN', country: resolved.country });
     const limit = numberOrNull(requestedPrice);
     const inputCurrency = params.get('maxCurrency') || 'CNY';
     const convertedLimit = limit === null ? null : convertPrice(limit, inputCurrency, priceCurrency(), regionalData?.rates);
+    // A budget no loaded rate can convert stays in the link unresolved instead of being dropped.
+    if (regionalData && convertedLimit === null && limit !== null) heldRegional = regionalHold(params, { keys: BUDGET_KEYS });
     const legacyCapability = params.get('capability') ?? '';
     const [legacyKind, legacyThreshold] = legacyCapability.split(':');
     const requestedTire = params.get('tire') ?? (legacyKind === 'tire' ? legacyThreshold : '');
@@ -1604,7 +1784,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const requestedBuildPreset = validSelectValue(buildPreset, params.get('buildPreset') ?? defaultBuildPreset, defaultBuildPreset);
     allModelsVisible = params.get('scope') === 'all';
     if (search) search.value = requestedSearch;
-    if (price) price.value = convertedLimit === null ? '' : String(convertedLimit);
+    if (price) price.value = heldRegional?.limit || convertedLimit === null ? '' : String(convertedLimit);
     if (tire) tire.value = requestedTire;
     if (tireUnknown instanceof HTMLInputElement) tireUnknown.checked = requestedTireUnknown;
     if (completeWeight) completeWeight.value = params.get('completeWeight') ?? '';
@@ -1618,6 +1798,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (listingFilter instanceof HTMLInputElement) listingFilter.checked = requestedListing && Boolean(regionalData) && activeCountry !== 'CN' && Boolean(activeCountry);
     setBrand(requestedBrand, { update: false });
     setType(requestedType, { update: false });
+    setView(requestedView, { update: false });
     updateCategoryMinimumAvailability();
     if (categoryMinimum && !categoryMinimum.disabled) categoryMinimum.value = requestedCategoryMinimum;
     else if (categoryMinimum) categoryMinimum.value = '';
@@ -1639,10 +1820,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       (params.get('scope') ?? '') !== (allModelsVisible ? 'all' : '') ||
       Boolean(legacyCapability) ||
       Boolean(legacyMarket) ||
-      requestedSort !== (sort?.value ?? defaultSort);
+      requestedSort !== (sort?.value ?? defaultSort) ||
+      requestedView !== (activeView === 'gallery' ? 'gallery' : '');
     if (corrected) updateFilterUrl('replace');
   }
 
+  // Typing a new budget replaces a held one; it must run before the history-bound update.
+  price?.addEventListener('input', () => { if (heldRegional) heldRegional.limit = null; });
   const typedInputs = [search, price, tire, completeWeight, frameWeight, drivetrainFilter, frameFilter, categoryMinimum];
   typedInputs.forEach((element) => bindHistoryInput(element, (historyMode) => updateCatalog({ historyMode })));
   [sort, tireUnknown, publishedFilter, listingFilter].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
@@ -2156,6 +2340,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     next.searchParams.set('ship', activeCountry || 'unknown');
     next.searchParams.set('currency', activeCurrency);
     setParam(next, 'area', activeCountry === 'US' ? activeArea : '');
+    if (heldRegional) writeRegionalHold(next, heldRegional);
     setParam(next, 'start', startingPoint);
     setParam(next, 'diff', compareDifferences?.checked ? '1' : '');
     try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }
@@ -2247,7 +2432,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   let presentation;
   try { presentation = await import('./builder-presentation.js'); } catch { return; }
-  const { buildBaseFacts, buildCompatibilityMessages, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
+  const { buildBaseFacts, buildCompatibilityMessages, buildComposition, buildSlotState, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
 
   const storageKey = 'china-bike-builder-v2';
   const bases = new Map(data.bases.map((base) => [base.id, base]));
@@ -2392,6 +2577,72 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch { /* URL remains shareable */ }
   }
 
+  // The map and composition bars restate the row results; rows remain the full text record.
+  const buildStateText = { known: 'priced', partial: 'needs one input', open: 'needs price and weight', included: 'included' };
+  const hotspots = [...root.querySelectorAll('[data-build-hotspot]')];
+  function renderBuildVisual(base, isComplete, model) {
+    const lang = document.documentElement.lang;
+    const stateFor = new Map(model.slots.map((entry) => [entry.slot, entry.state]));
+    hotspots.forEach((hotspot) => {
+      const id = hotspot.dataset.buildHotspot;
+      const label = id === 'frame'
+        ? translate(isComplete ? 'Base bike' : 'Frameset', lang)
+        : rows.get(id)?.querySelector('h2')?.textContent ?? id;
+      const next = id === 'frame' ? 'base' : stateFor.get(id) ?? 'open';
+      hotspot.dataset.state = next;
+      hotspot.querySelector('.build-hotspot-label').textContent = label;
+      hotspot.setAttribute('aria-label', `${label}: ${translate(buildStateText[next] ?? (model.basePrice === null ? 'needs price and weight' : 'priced'), lang)}`);
+    });
+    root.querySelectorAll('[data-build-state-count]').forEach((count) => {
+      count.textContent = String(model.slots.filter((entry) => entry.state === count.dataset.buildStateCount).length);
+    });
+    const composition = buildComposition(model);
+    for (const kind of ['price', 'weight']) {
+      const figure = root.querySelector(`[data-build-composition="${kind}"]`);
+      if (!(figure instanceof HTMLElement)) continue;
+      const summary = composition[kind];
+      figure.hidden = !summary;
+      if (!summary) continue;
+      const format = kind === 'price' ? formatYuan : formatWeight;
+      summary.segments.forEach((segment) => {
+        const bar = figure.querySelector(`.composition-segment[data-group="${segment.id}"]`);
+        if (bar instanceof HTMLElement) { bar.style.flexGrow = String(segment.value); bar.hidden = !(segment.value > 0); }
+        const item = figure.querySelector(`li[data-group="${segment.id}"]`);
+        if (!(item instanceof HTMLElement)) return;
+        const name = item.querySelector('[data-composition-label]');
+        if (name && segment.id === 'base') name.textContent = translate(segment.label, lang);
+        const value = item.querySelector('[data-composition-value]');
+        if (value) value.textContent = segment.value > 0
+          ? (kind === 'price' && segment.high > segment.value ? formatPriceRange(segment.value, segment.high) : format(segment.value))
+          : '—';
+        const unknown = item.querySelector('[data-composition-unknown]');
+        if (unknown instanceof HTMLElement) {
+          unknown.hidden = segment.unknown === 0;
+          unknown.textContent = `${segment.unknown} ${translate('unknown', lang)}`;
+        }
+      });
+    }
+  }
+  hotspots.forEach((hotspot) => hotspot.addEventListener('click', () => {
+    const id = hotspot.dataset.buildHotspot;
+    const row = id === 'frame' ? root.querySelector('.builder-frame-row') : rows.get(id);
+    if (!(row instanceof HTMLElement)) return;
+    const control = row.querySelector('select:not(:disabled), input:not([hidden]):not(:disabled)');
+    row.scrollIntoView({ block: 'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    (control instanceof HTMLElement && control.offsetParent !== null ? control : row).focus({ preventScroll: true });
+    row.classList.remove('is-located');
+    void row.offsetWidth;
+    row.classList.add('is-located');
+  }));
+  // Hovering or focusing a row highlights its place on the map.
+  rows.forEach((row, slot) => {
+    const hotspot = hotspots.find((item) => item.dataset.buildHotspot === slot);
+    if (!hotspot) return;
+    const on = () => hotspot.classList.add('is-linked'), off = () => hotspot.classList.remove('is-linked');
+    row.addEventListener('pointerenter', on); row.addEventListener('pointerleave', off);
+    row.addEventListener('focusin', on); row.addEventListener('focusout', off);
+  });
+
   function render({ historyMode = 'replace' } = {}) {
     const base = bases.get(state.baseId) || data.bases[0];
     if (!base) return;
@@ -2448,6 +2699,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     }
     let removedWeightTotal = 0;
     const covered = coveredSlots();
+    const visualSlots = [];
 
     for (const slot of slots) {
       const row = rows.get(slot);
@@ -2488,6 +2740,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (coveringPart) {
         if (customValues instanceof HTMLElement) customValues.hidden = true;
         setPartFacts(row, { price: 'Included', weight: 'Counted once' });
+        visualSlots.push({ slot, state: 'included', price: null, weight: null });
         continue;
       }
 
@@ -2498,6 +2751,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         setPartFacts(row, isComplete
           ? { price: 'Included', weight: 'In base weight', basis: 'Included in the complete-bike package' }
           : { price: 'In base price', weight: 'In frame-package weight', basis: 'Buyer confirmed this part is included. Include its weight in the frame-package remainder above, not twice here.' });
+        visualSlots.push({ slot, state: 'included', price: null, weight: null });
         continue;
       }
 
@@ -2545,6 +2799,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
             isComplete && part.covers?.length ? `Removed weight must include the entire replaced package: ${[slot, ...part.covers].join(', ')}` : '',
             part.note || '',
           ].filter(Boolean).join(' · ');
+      const resolvedWeight = isComplete
+        ? (partWeight === null || removedPartWeight === null ? null : partWeight - removedPartWeight)
+        : partWeight;
+      visualSlots.push({ slot, state: buildSlotState({ price: partPrice, weight: resolvedWeight }), price: partPrice, weight: isComplete ? null : partWeight });
       setPartFacts(row, {
         price: partPrice === null ? '—' : formatYuan(partPrice),
         weight: weightDisplay,
@@ -2553,6 +2811,15 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       });
     }
 
+    const packageRemainder = isComplete ? null : numberOrNull(state.baseCustom.packageWeight);
+    renderBuildVisual(base, isComplete, {
+      isComplete,
+      basePrice: basePriceLow,
+      basePriceHigh,
+      baseWeight: baseWeightValue === null ? null : baseWeightValue + (packageRemainder ?? 0),
+      baseWeightMissing: !isComplete && packageRemainder === null ? 1 : 0,
+      slots: visualSlots
+    });
     const impossibleWeight = isComplete && baseWeightValue !== null && removedWeightTotal > baseWeightValue;
     if (impossibleWeight) missingWeights.push('inconsistent removed-part weights');
     if (totalPrice) totalPrice.textContent = missingPrices.length

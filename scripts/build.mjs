@@ -10,7 +10,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { csvCell, booleanCell } from '../src/lib/csv.mjs';
-import { createBuildOutput, internalRouteTarget } from '../src/lib/build-output.mjs';
+import { createBuildOutput } from '../src/lib/build-output.mjs';
+import { checkLinks } from './check-links.mjs';
 import {
   loadDataset,
   joinProducts,
@@ -29,6 +30,7 @@ import {
   renderCandidateModel,
   renderBikeBuilder,
   renderElectronicGroupsets,
+  renderCarbonWheels,
   renderLandingPage,
   renderMethodology,
   renderPrivacy,
@@ -172,7 +174,7 @@ for (const landing of landings.pages) {
 for (const product of products) addLocalized(`/models/${product.variant.id}/`, (localized) => renderModel(localized, product), true, { lastmod: productLastmod(product) });
 for (const candidate of candidates) addLocalized(`/models/${candidate.candidate.id}/`, (localized) => renderCandidateModel(localized, candidate), candidateIndexable(candidate), { lastmod: candidateLastmod(candidate) });
 for (const [route, render] of [
-  ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets],
+  ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets], ['/carbon-wheels/', renderCarbonWheels],
   ['/privacy/', renderPrivacy], ['/image-policy/', renderImagePolicy], ['/image-sources/', renderImageSources]
 ]) addLocalized(route, render, true, { lastmod: siteLastmod });
 addLocalized('/blog/', (localized) => renderBlogIndex(localized, posts), true, { lastmod: latestDate(posts.map((post) => postLastmod(ctx, post)), siteLastmod) });
@@ -207,6 +209,7 @@ write('data/sources.json', `${JSON.stringify({ generated_at: catalog.generated_a
 write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images.filter((image) => image.buyer_visibility !== 'omit') }, null, 2)}\n`);
 write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
 write('data/groupsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, groupsets: data.groupsets }, null, 2)}\n`);
+write('data/wheelsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, wheelsets: data.wheelsets }, null, 2)}\n`);
 write('data/build-parts.json', `${JSON.stringify({ generated_at: catalog.generated_at, build_parts: data.buildParts }, null, 2)}\n`);
 
 const headers = [
@@ -244,7 +247,7 @@ if (indexNowManifest) {
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // Keep the comparison data in its own cacheable resource and one model link in
 // every server-rendered row. The project-path build repeats its base in links.
-const performanceBudget = { home_html_bytes: 750_000 + (base ? 35_000 : 0), home_elements: 7_400 };
+const performanceBudget = { home_html_bytes: 830_000 + (base ? 35_000 : 0), home_elements: 8_050 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length
@@ -270,6 +273,7 @@ write('build-manifest.json', `${JSON.stringify({
     videos: data.videos.length,
     groupsets: data.groupsets.length,
     build_parts: data.buildParts.length,
+    wheelsets: data.wheelsets.length,
     pages: pages.size,
     locales: LOCALES.length,
     articles: posts.length,
@@ -280,22 +284,8 @@ write('build-manifest.json', `${JSON.stringify({
   performance_budget: performanceBudget
 }, null, 2)}\n`);
 
-const linkErrors = [];
-for (const [, info] of pages) {
-  const file = path.join(dist, info.file);
-  const html = fs.readFileSync(file, 'utf8');
-  const pageUrl = `https://local.invalid${base}/${info.file === 'index.html' ? '' : info.file}`;
-  for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
-    const value = match[1];
-    if (!value || value.startsWith('#') || /^(?:mailto:|tel:|javascript:|data:)/i.test(value)) continue;
-    let resolved;
-    try { resolved = new URL(value, pageUrl); } catch { linkErrors.push(`${info.file}: invalid link ${value}`); continue; }
-    if (resolved.origin !== 'https://local.invalid') continue;
-    const target = internalRouteTarget(dist, base, resolved.pathname);
-    if (!target) { linkErrors.push(`${info.file}: invalid or outside-base internal target ${value}`); continue; }
-    if (!fs.existsSync(target)) linkErrors.push(`${info.file}: missing internal target ${value} -> ${path.relative(dist, target)}`);
-  }
-}
+// Validate the staged output before replacing the last good build.
+const { errors: linkErrors, checked: checkedLinks } = checkLinks(dist);
 if (linkErrors.length) {
   console.error(`Internal link validation failed with ${linkErrors.length} error(s):`);
   for (const error of linkErrors) console.error(`- ${error}`);
@@ -304,5 +294,6 @@ if (linkErrors.length) {
 
 output.publish();
 console.log(`Built ${pages.size} pages for ${products.length} products.`);
+console.log(`Generated link check passed: ${checkedLinks} local links; no orphaned sitemap pages.`);
 console.log(`Base path: ${base || '/'}`);
 console.log(`Output: ${output.destination}`);

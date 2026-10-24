@@ -1,0 +1,54 @@
+{
+  "id": "girder-corsa-2025-105",
+  "name": "GIRDER 格拉德 Corsa 2025 105 mechanical",
+  "model_id": "girder-corsa-2025-105",
+  "brand_id": "girder",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "GIRDER's lowest-priced current carbon road complete: 105 R7120 mechanical, T47 and 50 mm carbon wheels at an official ¥9,999, with its own three-size geometry.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7120 mechanical 2×12; FC-R7100 52-36T 170 mm crank, CS-R7100 11-34T cassette; chain not listed",
+    "brakes": "Shimano 105 R7120 hydraulic disc",
+    "frame": "2025 CORSA T800 + T1000 carbon aero frame and fork, 12 mm thru-axles, UDH dropout, fully hidden routing (the page repeats the Shimano battery-storage line on this mechanical build)",
+    "frame_material": "T800 + T1000 carbon frame (reinforced bottom-bracket area) and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded aero frame and fork with fully hidden routing",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found; the reinforced bottom-bracket wording is manufacturer construction copy, not a test result",
+    "bottom_bracket": "T47 threaded, P1.0 thread, 84.5 mm shell width supplied with two 1 mm shims (the frame line separately says 'BSA'; the BB row is the more specific value)",
+    "derailleur_hanger": "UDH",
+    "wheels": "Adler Augen matte unpainted Obsidian carbon wheels, 50 mm, four-bearing 90-point six-pawl hubs, flattened steel spokes",
+    "tires": "Maxxis 700C×28C folding tires fitted; maximum clearance is not published",
+    "cockpit": "Adler Augen integrated carbon handlebar",
+    "sizes": "S (440 mm), M (470 mm), L (500 mm)",
+    "geometry": "Official chart, stack/reach mm: 440 535/382, 470 545/384, 500 569/397; seat angle 75.5–74°, head angle 72–73°, chainstay 410 mm, BB drop 72 mm, wheelbase 984–999 mm, head tube 115–147 mm",
+    "complete_weight_g": 8800,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-corsa-2025-105-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23",
+    "public-xhs-girder-corsa-r7120-carbon-2025-04-2026-10-24",
+    "public-xhs-girder-corsa-used-tiagra-2026-04-2026-10-24"
+  ],
+  "official_price": {
+    "amount_cny": 9999,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact NEW 2025 CORSA page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official NEW 2025 CORSA page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate. Two XHS posts are CORSA family context only: a 2025 bike-store post naming 7120 carbon without generation or wheels, and a 2026 used listing with Tiagra 4720 and a 105 crank whose original or modified package is unknown; neither changes this build's specification or price.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 9,999 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}

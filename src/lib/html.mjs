@@ -9,7 +9,7 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[], headerTools=''}) {
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', video=null, ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[], headerTools=''}) {
   const siteName='China Bikes';
   const t = (value) => translate(value, locale);
   title = t(title);
@@ -53,6 +53,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta name="twitter:title" content="${escapeAttr(pageTitle)}">
   <meta name="twitter:description" content="${escapeAttr(description)}">
   ${socialImage ? `<meta property="og:image" content="${escapeAttr(socialImage)}"><meta property="og:image:alt" content="${escapeAttr(imageAlt || description)}">${imageWidth ? `<meta property="og:image:width" content="${escapeAttr(imageWidth)}">` : ''}${imageHeight ? `<meta property="og:image:height" content="${escapeAttr(imageHeight)}">` : ''}${imageType ? `<meta property="og:image:type" content="${escapeAttr(imageType)}">` : ''}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${escapeAttr(socialImage)}"><meta name="twitter:image:alt" content="${escapeAttr(imageAlt || description)}">` : `<meta name="twitter:card" content="summary">`}
+  ${video ? `<meta property="og:video" content="${escapeAttr(video.url)}"><meta property="og:video:secure_url" content="${escapeAttr(video.url)}"><meta property="og:video:type" content="${escapeAttr(video.type)}"><meta property="og:video:width" content="${escapeAttr(video.width)}"><meta property="og:video:height" content="${escapeAttr(video.height)}">` : ''}
   ${jsonLd}
   <title>${escapeHtml(pageTitle)}</title>
 </head>
@@ -71,12 +72,13 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
           <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
-          <div class="nav-tools${['geometry','builder','groupsets'].includes(current) ? ' is-current' : ''}" data-nav-tools>
+          <div class="nav-tools${['geometry','builder','groupsets','wheels'].includes(current) ? ' is-current' : ''}" data-nav-tools>
             <button class="nav-tools-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-tools-toggle hidden>Tools</button>
             <div class="nav-tools-menu" id="nav-tools-menu">
               <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
-              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build planner</a>
+              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}><span class="nav-long">Build planner</span><span class="nav-short" aria-hidden="true">Planner</span></a>
               <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
+              <a href="${url(base,'/carbon-wheels/')}" data-nav-wheels${current==='wheels'?' aria-current="page"':''}><span class="nav-long">Carbon wheels</span><span class="nav-short" aria-hidden="true">Wheels</span></a>
             </div>
           </div>
         </nav>
@@ -101,6 +103,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <a href="${url(base,'/framesets/')}">Framesets</a>
         <a href="${url(base,'/prices/')}">Price ranges</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
+        <a href="${url(base,'/carbon-wheels/')}">Carbon wheels</a>
         <a href="${url(base,'/build/')}">Build a bike</a>
         <a href="${url(base,'/geometry/')}">Geometry comparison</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
@@ -124,7 +127,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
   ${modules.map(path => `<script type="module" src="${url(base,path)}"></script>`).join("\n  ")}
-  ${path.endsWith('/404.html') ? '' : `<script type="module" data-ga4-page src="${url(base,'/assets/ga4.js')}"></script>`}
+  ${path.endsWith('/404.html') ? '' : `<script type="module" src="${url(base,'/assets/site-interaction.js')}"></script><script type="module" data-ga4-page src="${url(base,'/assets/ga4.js')}"></script>`}
 </body>
 </html>`;
   return clarifyMainlandInDisplayHtml(localizeHtml(html, { base, locale, siteUrl }));

@@ -1,0 +1,53 @@
+{
+  "id": "girder-glare-ultegra-r8000-rim",
+  "name": "GIRDER 格拉德 Glare rim-brake Ultegra R8000",
+  "model_id": "girder-glare-ultegra-r8000-rim",
+  "brand_id": "girder",
+  "category": "road-endurance",
+  "type": "complete-bike",
+  "why_interesting": "GIRDER's only official rim-brake road bike: a T700 + T800 BB386 quick-release endurance frame with mechanical Ultegra R8000 2×11 and alloy wheels on 25C tires at ¥7,200.",
+  "facts": {
+    "drivetrain": "Shimano Ultegra R8000 mechanical 2×11; FC-R8000 52-36T 170 mm crank, CS-R8000 11-32T cassette; chain not listed",
+    "brakes": "Shimano Ultegra R8000 rim caliper brakes",
+    "frame": "ROAD-section GLARE T700 + T800 carbon endurance frame and fork, quick-release dropouts, fully internal routing",
+    "frame_material": "T700 + T800 carbon frame and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded rim-brake endurance frame and fork with internal routing and press-fit bottom bracket",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "bottom_bracket": "BB386 press-fit system, 46 mm × 86 mm per the manufacturer's BB row",
+    "axles": "Quick-release front and rear",
+    "wheels": "Aluminium rims, 20-hole front / 24-hole rear, quick-release straight-pull bearing hubs",
+    "tires": "CST C-1406 700C×25C skinwall fitted; maximum clearance is not published",
+    "cockpit": "T700 + T800 integrated carbon handlebar with internal routing",
+    "sizes": "440 mm, 470 mm, 500 mm, 530 mm; the size dimension is not labelled",
+    "complete_weight_g": 7800,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Geometry chart (the official chart image was refused to a non-browser read on 2026-10-24)",
+    "Saddle",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-glare-ultegra-r8000-rim-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "official_price": {
+    "amount_cny": 7200,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact ROAD GLARE page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official ROAD GLARE page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 7,200 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}

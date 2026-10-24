@@ -1,4 +1,5 @@
 import { isCalendarDate as isDate } from './calendar-date.mjs';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
@@ -7,6 +8,7 @@ import { editorialReviewIssues } from './editorial-review.mjs';
 import { priceEvidence } from './price-evidence.mjs';
 import { validateRegionalPricing } from './regional-prices.mjs';
 import { validateMountApproval } from './mount-evidence.mjs';
+import { validateOpinionCollection } from './opinions.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -22,6 +24,15 @@ export const buildSlotIds = [
   'rotors', 'wheelset', 'tires', 'tubes-sealant', 'cockpit', 'saddle',
   'pedals', 'bar-tape', 'assembly'
 ];
+
+// Freehub IDs shared by the carbon-wheel reference and build-planner compatibility checks.
+export const wheelsetFreehubLabels = {
+  'hg-road': 'Shimano HG',
+  'shimano-microspline': 'Shimano Micro Spline',
+  'sram-xdr': 'SRAM XDR',
+  'campagnolo-10-12': 'Campagnolo 10–12s',
+  'campagnolo-n3w': 'Campagnolo N3W'
+};
 
 const categoryLabels = {
   road: 'Road',
@@ -224,8 +235,10 @@ export function loadDataset() {
     sources: loadDirectory('sources'),
     images: loadDirectory('images'),
     videos: loadDirectory('videos'),
+    opinions: loadDirectory('opinions'),
     groupsets: loadDirectory('groupsets'),
     buildParts: loadDirectory('build-parts'),
+    wheelsets: loadDirectory('wheelsets'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -239,6 +252,21 @@ export function resetDatasetCache() { cache = undefined; }
 
 /** @param {unknown} value */
 function isObject(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }
+// Record links become `href` values on every page; script or data schemes never qualify.
+function isWebUrl(value) {
+  try { return ['https:', 'http:'].includes(new URL(value).protocol); } catch { return false; }
+}
+const derivativeDigests = new Map();
+/** Content-addressed derivatives must still contain the reviewed bytes their record describes. */
+function derivativeContentMismatch(variant) {
+  const file = path.join(root, String(variant?.url ?? '').replace(/^\//, ''));
+  let stats;
+  try { stats = fs.statSync(file); } catch { return false; } // Missing files have their own error.
+  const key = `${file}:${stats.size}:${stats.mtimeMs}`;
+  if (!derivativeDigests.has(key)) derivativeDigests.set(key, crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'));
+  const digest = derivativeDigests.get(key);
+  return digest !== variant.sha256 || stats.size !== variant.bytes || !path.basename(file).startsWith(`${digest.slice(0, 16)}-`);
+}
 /** @param {unknown} value */
 /** @param {unknown} value */
 function isId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]*$/.test(value); }
@@ -247,6 +275,13 @@ function categoryValues(value) {
   return String(value).split('|').map((item) => item.trim()).filter(Boolean);
 }
 function hasSupportedCategory(value, categorySet) { return categoryValues(value).every((category) => categorySet.has(category)); }
+
+export const MAX_MODEL_VIDEOS = 8;
+
+export function featuredVideoOrder(a, b) {
+  return Number(Boolean(b.open_graph_player)) - Number(Boolean(a.open_graph_player))
+    || (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title);
+}
 
 export function validateDataset(data = loadDataset()) {
   const errors = [];
@@ -275,8 +310,10 @@ export function validateDataset(data = loadDataset()) {
     source: data.sources,
     image: data.images,
     video: data.videos,
+    opinions: data.opinions ?? [],
     groupset: data.groupsets,
     buildPart: data.buildParts,
+    wheelset: data.wheelsets ?? [],
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
@@ -375,6 +412,7 @@ export function validateDataset(data = loadDataset()) {
               || !Number.isInteger(variant.bytes) || variant.bytes < 1 || variant.bytes > byteLimit
               || !Number.isInteger(variant.width) || variant.width < 1 || variant.width > widthLimit
               || !/^[a-f0-9]{64}$/.test(variant.sha256 ?? '') || variant.format !== 'image/webp') errors.push(`groupset ${groupset.id}: invalid local ${variant.purpose ?? 'unknown'} variant`);
+            else if (derivativeContentMismatch(variant)) errors.push(`groupset ${groupset.id}: ${variant.purpose} variant bytes do not match its recorded digest`);
           }
           if (image.rights?.status !== 'source-attributed-rehost' || image.privacy_review?.embedded_metadata !== 'stripped') errors.push(`groupset ${groupset.id}: incomplete local image review`);
           if (!image.source_media_url?.startsWith('https://') || !/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '')) errors.push(`groupset ${groupset.id}: missing source media provenance`);
@@ -445,6 +483,57 @@ export function validateDataset(data = loadDataset()) {
   for (const [slot, count] of defaultBuildPartsBySlot) {
     if (count > 1) errors.push(`build parts: slot ${slot} has ${count} defaults`);
   }
+
+  const buildPartIds = new Set(data.buildParts.map((part) => part.id));
+  const inRange = (value, low, high) => Number.isFinite(value) && value >= low && value <= high;
+  for (const wheelset of data.wheelsets ?? []) {
+    requireFields('wheelset', wheelset, [
+      'maker', 'name', 'use', 'status', 'positioning', 'rim', 'max_pressure', 'load_limit',
+      'weight', 'hub', 'spokes', 'compatibility', 'price_observations', 'caveats', 'source_ids', 'reviewed_at'
+    ]);
+    const label = `wheelset ${wheelset.id}`;
+    // Planner options share one ID space with build-part records.
+    if (buildPartIds.has(wheelset.id)) errors.push(`${label}: id collides with a build part`);
+    if (!['road', 'gravel'].includes(wheelset.use)) errors.push(`${label}: use must be road or gravel`);
+    const rim = wheelset.rim ?? {};
+    for (const end of ['front', 'rear']) {
+      if (!inRange(rim.depth_mm?.[end], 15, 100)) errors.push(`${label}: invalid rim.depth_mm.${end}`);
+      if (!inRange(rim.external_width_mm?.[end], 15, 60) || rim.external_width_mm[end] <= rim.internal_width_mm) errors.push(`${label}: invalid rim.external_width_mm.${end}`);
+    }
+    if (!inRange(rim.internal_width_mm, 15, 40)) errors.push(`${label}: invalid rim.internal_width_mm`);
+    if (!['hooked', 'hookless', 'unknown'].includes(rim.bead)) errors.push(`${label}: rim.bead must be hooked, hookless or unknown`);
+    if (typeof rim.tubeless_ready !== 'boolean') errors.push(`${label}: rim.tubeless_ready must be boolean`);
+    if (typeof rim.tire_range !== 'string' || !rim.tire_range.trim()) errors.push(`${label}: missing rim.tire_range`);
+    const pressure = wheelset.max_pressure ?? {};
+    if (pressure.psi !== null && !inRange(pressure.psi, 20, 200)) errors.push(`${label}: invalid max_pressure.psi`);
+    if (typeof pressure.note !== 'string' || !pressure.note.trim()) errors.push(`${label}: missing max_pressure.note`);
+    // A hookless rim is safety-critical; publish it only with the maker's pressure limit.
+    if (rim.bead === 'hookless' && pressure.psi === null) errors.push(`${label}: hookless rim needs a published max_pressure.psi`);
+    const limit = wheelset.load_limit ?? {};
+    if (limit.kg !== null && !inRange(limit.kg, 50, 200)) errors.push(`${label}: invalid load_limit.kg`);
+    if (!['system', 'rider', 'unspecified'].includes(limit.scope)) errors.push(`${label}: invalid load_limit.scope`);
+    if (!inRange(wheelset.weight?.grams, 800, 2500)) errors.push(`${label}: invalid weight.grams`);
+    if (typeof wheelset.weight?.basis !== 'string' || !wheelset.weight.basis.trim()) errors.push(`${label}: missing weight.basis`);
+    if (!['measured', 'official', 'seller claim', 'community report'].includes(wheelset.weight?.claim_type)) errors.push(`${label}: invalid weight.claim_type`);
+    if (!['steel', 'carbon'].includes(wheelset.spokes?.material)) errors.push(`${label}: spokes.material must be steel or carbon`);
+    const fit = wheelset.compatibility ?? {};
+    if (![null, 'center-lock', '6-bolt'].includes(fit.rotor_mount)) errors.push(`${label}: invalid compatibility.rotor_mount`);
+    if (!Array.isArray(fit.axles) || !fit.axles.length) errors.push(`${label}: compatibility.axles must not be empty`);
+    if (!Array.isArray(fit.freehubs) || !fit.freehubs.length || fit.freehubs.some((id) => !wheelsetFreehubLabels[id])) errors.push(`${label}: compatibility.freehubs must use known freehub ids`);
+    if (!Array.isArray(wheelset.price_observations) || !wheelset.price_observations.length) errors.push(`${label}: price_observations must not be empty`);
+    for (const observation of wheelset.price_observations ?? []) {
+      if (!Number.isFinite(observation.amount) || observation.amount <= 0) errors.push(`${label}: invalid price amount`);
+      if (!/^[A-Z]{3}$/.test(observation.currency ?? '')) errors.push(`${label}: invalid price currency`);
+      if (!isDate(observation.observed_at)) errors.push(`${label}: invalid price observed_at`);
+      for (const field of ['market', 'price_type', 'conditions']) {
+        if (typeof observation[field] !== 'string' || !observation[field].trim()) errors.push(`${label}: missing price ${field}`);
+      }
+      if (!sourceIds.has(observation.source_id)) errors.push(`${label}: missing price source ${observation.source_id}`);
+    }
+    if (!Array.isArray(wheelset.caveats) || !wheelset.caveats.length) errors.push(`${label}: caveats must not be empty`);
+    for (const sourceId of wheelset.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${label}: missing source ${sourceId}`);
+    if (!isDate(wheelset.reviewed_at)) errors.push(`${label}: invalid reviewed_at`);
+  }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));
   const categorySet = new Set(supportedCategories);
@@ -458,6 +547,7 @@ export function validateDataset(data = loadDataset()) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);
     if (!isObject(brand.manufacturing)) errors.push(`brand ${brand.id}: manufacturing must be an object`);
     if (!isDate(brand.last_reviewed)) errors.push(`brand ${brand.id}: invalid last_reviewed`);
+    if (brand.website !== undefined && !isWebUrl(brand.website)) errors.push(`brand ${brand.id}: website must be an http(s) URL`);
   }
 
   for (const platform of data.platforms) {
@@ -555,6 +645,7 @@ export function validateDataset(data = loadDataset()) {
     if (source.url) {
       try {
         const parsed = new URL(source.url);
+        if (!isWebUrl(source.url)) errors.push(`source ${source.id}: URL must use http or https`);
         const privacyError = publicSourceUrlPrivacyError(parsed);
         if (privacyError) errors.push(`source ${source.id}: ${privacyError}`);
       } catch { errors.push(`source ${source.id}: invalid URL`); }
@@ -597,6 +688,14 @@ export function validateDataset(data = loadDataset()) {
         typeof eligibility.note !== 'string' || !eligibility.note.trim() || !isDate(eligibility.reviewed_at)) errors.push(`candidate ${candidate.id}: invalid comparison_eligibility`);
     }
     if (candidate.existing_record_id && !variantIds.has(candidate.existing_record_id) && !candidateIds.has(candidate.existing_record_id)) errors.push(`candidate ${candidate.id}: unresolved existing_record_id ${candidate.existing_record_id}`);
+    // Two retained records for one trim link each other instead of hiding either page or row.
+    if (candidate.same_identity_as !== undefined) {
+      const same = candidate.same_identity_as;
+      const target = isObject(same) ? data.candidates.find((item) => item.id === same.record_id) : null;
+      if (!isObject(same) || !isId(same.record_id) || same.record_id === candidate.id || (!variantIds.has(same.record_id) && !target)
+        || typeof same.note !== 'string' || !same.note.trim() || !isDate(same.reviewed_at)) errors.push(`candidate ${candidate.id}: invalid same_identity_as`);
+      else if (target && target.same_identity_as?.record_id !== candidate.id) errors.push(`candidate ${candidate.id}: same_identity_as must be reciprocal`);
+    }
     if (candidate.source_url !== undefined) {
       try {
         const sourceUrl = new URL(candidate.source_url);
@@ -861,6 +960,7 @@ export function validateDataset(data = loadDataset()) {
             if (variant?.format !== 'image/webp') errors.push(`image ${image.id}: sourced variants must be WebP`);
             if (!/^[a-f0-9]{64}$/.test(variant?.sha256 ?? '')) errors.push(`image ${image.id}: sourced variant needs a SHA-256 digest`);
             if (match && !fs.existsSync(path.join(root, variant.url.replace(/^\//, '')))) errors.push(`image ${image.id}: missing sourced variant ${variant.url}`);
+            else if (match && /^[a-f0-9]{64}$/.test(variant?.sha256 ?? '') && derivativeContentMismatch(variant)) errors.push(`image ${image.id}: sourced variant ${variant.url} bytes do not match its recorded digest`);
           }
           if (purposes.size !== 2 || !purposes.has('card') || !purposes.has('detail')) errors.push(`image ${image.id}: sourced rehost needs one card and one detail variant`);
           const detail = variants.find((variant) => variant.purpose === 'detail');
@@ -911,6 +1011,8 @@ export function validateDataset(data = loadDataset()) {
   const youtubeIds = new Set();
   const xhsPostIds = new Set();
   const platformVideoCounts = new Map();
+  const wheelsetVideoCounts = new Map();
+  const wheelsetIds = new Set((data.wheelsets ?? []).map((wheelset) => wheelset.id));
   const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride']);
   const videoRelationships = new Set(['retailer-linked', 'brand-published', 'product-supplied', 'publication-review', 'owner-review', 'community-post', 'unknown']);
   for (const video of data.videos) {
@@ -928,6 +1030,9 @@ export function validateDataset(data = loadDataset()) {
         const channel = new URL(video.channel_url);
         if (channel.protocol !== 'https:' || !['www.youtube.com', 'youtube.com'].includes(channel.hostname)) errors.push(`video ${video.id}: invalid YouTube channel URL`);
       } catch { errors.push(`video ${video.id}: invalid channel URL`); }
+      const player = video.open_graph_player;
+      if (player !== undefined && (player?.type !== 'text/html' || !Number.isInteger(player.width) || player.width < 1
+        || !Number.isInteger(player.height) || player.height < 1 || !isDate(player.verified_at))) errors.push(`video ${video.id}: invalid open_graph_player`);
     } else if (video.provider === 'xhs') {
       requireFields('XHS video', video, ['xhs_post_id', 'source_capture_archive', 'source_archive_sha256']);
       if (typeof video.xhs_post_id !== 'string' || !/^[a-f0-9]{24}$/.test(video.xhs_post_id)) errors.push(`video ${video.id}: invalid XHS post ID`);
@@ -937,7 +1042,7 @@ export function validateDataset(data = loadDataset()) {
       if (video.disclosure_url !== video.url) errors.push(`video ${video.id}: XHS disclosure must link to its source post`);
       if (typeof video.source_capture_archive !== 'string' || !/^xhs-complete-[^/]+\.zip$/.test(video.source_capture_archive)) errors.push(`video ${video.id}: invalid source archive name`);
       if (typeof video.source_archive_sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(video.source_archive_sha256)) errors.push(`video ${video.id}: invalid source archive hash`);
-      if (video.youtube_video_id !== undefined || video.timestamps !== undefined) errors.push(`video ${video.id}: XHS link must not carry YouTube player metadata`);
+      if (video.youtube_video_id !== undefined || video.timestamps !== undefined || video.open_graph_player !== undefined) errors.push(`video ${video.id}: XHS link must not carry YouTube player metadata`);
     } else errors.push(`video ${video.id}: unsupported provider ${video.provider}`);
     if (!isDate(video.accessed_at)) errors.push(`video ${video.id}: invalid accessed_at`);
     if (video.published_at !== undefined && !isDate(video.published_at)) errors.push(`video ${video.id}: invalid published_at`);
@@ -959,8 +1064,8 @@ export function validateDataset(data = loadDataset()) {
     } catch { errors.push(`video ${video.id}: invalid disclosure URL`); }
 
     const target = isObject(video.target) ? video.target : {};
-    const targetKeys = ['platform_id', 'variant_id', 'candidate_id'].filter((key) => target[key] !== undefined);
-    if (targetKeys.length !== 1) errors.push(`video ${video.id}: target must identify exactly one platform, variant, or candidate`);
+    const targetKeys = ['platform_id', 'variant_id', 'candidate_id', 'wheelset_id'].filter((key) => target[key] !== undefined);
+    if (targetKeys.length !== 1) errors.push(`video ${video.id}: target must identify exactly one platform, variant, candidate, or wheelset`);
     if (target.platform_id !== undefined) {
       if (!platformIds.has(target.platform_id)) errors.push(`video ${video.id}: missing platform ${target.platform_id}`);
       if (video.match !== 'exact-platform') errors.push(`video ${video.id}: platform target must use exact-platform match`);
@@ -976,9 +1081,31 @@ export function validateDataset(data = loadDataset()) {
       const candidate = data.candidates.find((item) => item.id === target.candidate_id);
       if (candidate && !(candidate.video_ids ?? []).includes(video.id)) errors.push(`video ${video.id}: candidate ${target.candidate_id} does not link this video`);
     }
+    if (target.wheelset_id !== undefined) {
+      if (!wheelsetIds.has(target.wheelset_id)) errors.push(`video ${video.id}: missing wheelset ${target.wheelset_id}`);
+      if (video.match !== 'exact-wheelset') errors.push(`video ${video.id}: wheelset target must use exact-wheelset match`);
+      if (video.provider !== 'youtube') errors.push(`video ${video.id}: wheelset videos must be YouTube embeds`);
+      wheelsetVideoCounts.set(target.wheelset_id, (wheelsetVideoCounts.get(target.wheelset_id) ?? 0) + 1);
+    }
   }
+  // Model pages embed the first two videos lazily and load the rest only on request.
   for (const [platformId, count] of platformVideoCounts) {
-    if (count > 2) errors.push(`platform ${platformId}: more than two curated videos`);
+    if (count > MAX_MODEL_VIDEOS) errors.push(`platform ${platformId}: more than ${MAX_MODEL_VIDEOS} curated videos`);
+  }
+  for (const candidate of data.candidates ?? []) {
+    if ((candidate.video_ids ?? []).length > MAX_MODEL_VIDEOS) errors.push(`candidate ${candidate.id}: more than ${MAX_MODEL_VIDEOS} curated videos`);
+  }
+  for (const collection of data.opinions ?? []) {
+    errors.push(...validateOpinionCollection(collection, { platformIds, candidateIds, variantIds, videoIds: new Set(data.videos.map((video) => video.id)), isDate }));
+  }
+  const opinionTargets = new Set();
+  for (const collection of data.opinions ?? []) {
+    const key = collection.target?.platform_id ?? collection.target?.candidate_id;
+    if (opinionTargets.has(key)) errors.push(`opinions ${collection.id}: duplicate collection for ${key}`);
+    opinionTargets.add(key);
+  }
+  for (const [wheelsetId, count] of wheelsetVideoCounts) {
+    if (count > 2) errors.push(`wheelset ${wheelsetId}: more than two curated videos`);
   }
 
   for (const recommendation of data.recommendations) if (!variantIds.has(recommendation.variant_id)) errors.push(`recommendation ${recommendation.id}: missing variant ${recommendation.variant_id}`);
@@ -1074,9 +1201,11 @@ export function joinProducts(data = loadDataset()) {
       ...(image?.source_id ? [image.source_id] : []),
       ...galleryImages.map((item) => item.source_id)
     ]);
+    // Videos with verified Open Graph player data stay featured; the rest follow by date.
     const videos = data.videos
       .filter((video) => video.target?.platform_id === platform.id || video.target?.variant_id === variant.id)
-      .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
+      .sort(featuredVideoOrder);
+    const opinions = (data.opinions ?? []).find((collection) => collection.target?.platform_id === platform.id) ?? null;
     return {
       variant,
       platform,
@@ -1088,6 +1217,7 @@ export function joinProducts(data = loadDataset()) {
       imageSource: image ? sources.get(image.source_id) ?? null : null,
       galleryImages,
       videos,
+      opinions,
       sources: [...sourceIds].map((id) => sources.get(id)).filter(Boolean)
     };
   }).sort((a, b) => a.allInPrice.midpoint - b.allInPrice.midpoint);
@@ -1171,7 +1301,8 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const videos = (candidate.video_ids ?? [])
         .map((id) => videosById.get(id))
         .filter(Boolean)
-        .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
+        .sort(featuredVideoOrder);
+      const opinions = (data.opinions ?? []).find((collection) => collection.target?.candidate_id === candidate.id) ?? null;
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
         !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
@@ -1192,6 +1323,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         imageSource: image ? sources.get(image.source_id) ?? null : null,
         galleryImages,
         videos,
+        opinions,
         identifiableModel: hasIdentifiableModel,
         builderEligible,
         defaultVisible: Boolean(

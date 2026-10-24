@@ -88,16 +88,24 @@ export function initialBuildPresentation(data) {
     const coveringPart = covered.get(slot), part = selectedPart(slot);
     const included = isComplete && state.selections[slot] === 'included';
     if (coveringPart || included) {
-      rows.set(slot, { covered: Boolean(coveringPart), included, price: 'Included', weight: coveringPart ? 'Counted once' : 'In base weight', basis: included ? 'Included in the complete-bike package' : '', coveredNote: coveringPart ? `Included in ${coveringPart.maker} ${coveringPart.name}; not counted again.` : '', customHidden: true, priceHidden: true, weightHidden: true, source: null });
+      rows.set(slot, { state: 'included', priceValue: null, weightValue: null, covered: Boolean(coveringPart), included, price: 'Included', weight: coveringPart ? 'Counted once' : 'In base weight', basis: included ? 'Included in the complete-bike package' : '', coveredNote: coveringPart ? `Included in ${coveringPart.maker} ${coveringPart.name}; not counted again.` : '', customHidden: true, priceHidden: true, weightHidden: true, source: null });
       continue;
     }
     const price = numberOrNull(part?.priceCny), grams = numberOrNull(part?.weightG);
     if (price === null) missingPrices++; else { priceLow += price; priceHigh += price; }
     if (grams === null) missingWeights++; else weight += grams;
-    rows.set(slot, { covered: false, included: false, price: price === null ? '—' : formatBuildYuan(price), weight: grams === null ? '—' : formatBuildWeight(grams), basis: part ? [part.priceDate, part.priceBasis, part.weightBasis, part.note].filter(Boolean).join(' · ') : 'Buyer-entered value', coveredNote: '', customHidden: price !== null && grams !== null, priceHidden: price !== null, weightHidden: grams !== null, source: part?.source ?? null });
+    rows.set(slot, { state: buildSlotState({ price, weight: grams }), priceValue: price, weightValue: grams, covered: false, included: false, price: price === null ? '—' : formatBuildYuan(price), weight: grams === null ? '—' : formatBuildWeight(grams), basis: part ? [part.priceDate, part.priceBasis, part.weightBasis, part.note].filter(Boolean).join(' · ') : 'Buyer-entered value', coveredNote: '', customHidden: price !== null && grams !== null, priceHidden: price !== null, weightHidden: grams !== null, source: part?.source ?? null });
   }
+  const composition = buildComposition({
+    isComplete,
+    basePrice: numberOrNull(base.priceLow),
+    basePriceHigh: numberOrNull(base.priceHigh ?? base.priceLow),
+    baseWeight: numberOrNull(base.baseWeightG),
+    baseWeightMissing: isComplete ? 0 : 1, // the buyer-entered fork/package remainder starts unknown
+    slots: [...rows].map(([slot, row]) => ({ slot, state: row.state, price: row.priceValue, weight: isComplete ? null : row.weightValue }))
+  });
   return {
-    base, isComplete, state, rows,
+    base, isComplete, state, rows, composition,
     price: `${formatBuildPriceRange(priceLow, priceHigh)}${missingPrices ? ` known + ${missingPrices} unknown` : ''}`,
     weight: `${formatBuildWeight(weight)}${missingWeights ? ` ${isComplete ? 'base / known deltas' : 'known'} + ${missingWeights} unknown` : ''}`,
     completeness: missingPrices || missingWeights ? `${isComplete ? 'Purchase total' : 'Complete price'} needs ${missingPrices} more input${missingPrices === 1 ? '' : 's'}; ${isComplete ? 'projected weight' : 'complete weight'} needs ${missingWeights} more input${missingWeights === 1 ? '' : 's'}.` : isComplete ? 'Purchase price and every replacement weight delta are resolved.' : 'Every required slot has a price and weight.',
@@ -115,4 +123,46 @@ export function buildBaseFacts(base, locale) {
     base.drivetrainCompatibility?.note ? translate(base.drivetrainCompatibility.note, locale) : '',
     base.forkCaliperNote || ''
   ].filter(Boolean).join(' · ');
+}
+
+// Visual planner model: slot states and grouped composition of the known totals.
+// Unknown values stay counted as unknown; they never become zero-width "known" parts.
+export const BUILD_GROUPS = Object.freeze([
+  Object.freeze({ id: 'base', slots: Object.freeze([]) }),
+  Object.freeze({ id: 'drivetrain', label: 'Drivetrain & brakes', slots: Object.freeze(['drivetrain', 'brakes', 'crankset', 'cassette', 'chain', 'bottom-bracket', 'rotors']) }),
+  Object.freeze({ id: 'wheels', label: 'Wheels & tires', slots: Object.freeze(['wheelset', 'tires', 'tubes-sealant']) }),
+  Object.freeze({ id: 'finishing', label: 'Cockpit, contact points & assembly', slots: Object.freeze(['cockpit', 'saddle', 'pedals', 'bar-tape', 'assembly']) })
+]);
+
+export function buildSlotState({ included = false, price = null, weight = null }) {
+  if (included) return 'included';
+  const known = [price, weight].filter(value => value !== null && Number.isFinite(value)).length;
+  return known === 2 ? 'known' : known === 1 ? 'partial' : 'open';
+}
+
+// `slots` holds { slot, state, price, weight } where price/weight are numbers or null.
+// Complete bikes report replacement prices only; their weight changes are deltas,
+// so no weight composition is drawn for them.
+export function buildComposition({ isComplete, basePrice = null, basePriceHigh = basePrice, baseWeight = null, baseWeightMissing = 0, slots = [] }) {
+  const bySlot = new Map(slots.map(entry => [entry.slot, entry]));
+  const measure = (key, baseValue, extraUnknown = 0, baseHigh = baseValue) => BUILD_GROUPS.map(group => {
+    if (group.id === 'base') return { id: 'base', label: isComplete ? 'Base bike' : 'Frameset', value: baseValue ?? 0, high: baseHigh ?? baseValue ?? 0, unknown: (baseValue === null ? 1 : 0) + extraUnknown };
+    let value = 0, unknown = 0;
+    for (const slot of group.slots) {
+      const entry = bySlot.get(slot);
+      if (!entry || entry.state === 'included') continue;
+      if (entry[key] === null || !Number.isFinite(entry[key])) unknown++;
+      else value += entry[key];
+    }
+    return { id: group.id, label: group.label, value, unknown };
+  });
+  const summarize = segments => ({
+    segments,
+    known: segments.reduce((sum, segment) => sum + segment.value, 0),
+    unknown: segments.reduce((sum, segment) => sum + segment.unknown, 0)
+  });
+  return {
+    price: summarize(measure('price', basePrice, 0, basePriceHigh)),
+    weight: isComplete ? null : summarize(measure('weight', baseWeight, baseWeightMissing))
+  };
 }

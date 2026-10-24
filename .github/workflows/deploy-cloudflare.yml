@@ -53,7 +53,7 @@ jobs:
         run: node scripts/indexnow.mjs snapshot --output "$RUNNER_TEMP/indexnow-before.json" --state "$RUNNER_TEMP/indexnow-state/state.json"
       - name: Deploy Worker and Static Assets
         id: deploy
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

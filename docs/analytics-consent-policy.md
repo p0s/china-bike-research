@@ -1,6 +1,6 @@
 # Optional analytics choices
 
-Reviewed 2026-09-30. This is the site's operational policy for its current GA4
+Reviewed 2026-10-22. This is the site's operational policy for its current GA4
 and Umami implementation, not a complete assessment of every country's law.
 
 The site offers a small banner with equally visible **Allow analytics** and
@@ -40,9 +40,7 @@ conditions; removing advertising alone does not establish the exception.
 
 Cloudflare's injected `/sitedelivery/` bootstrap can execute before the site's
 asynchronous module. The HTML CSP blocks it. Each allowed HTML response gives only the site theme and GA module a fresh CSP
-nonce; the injected gateway commands and bootstrap receive none. The site queues
-all-denied consent defaults synchronously, obtains an eligible config, grants
-analytics only, and then inserts a nonce-bearing `/sitedelivery/` library. The
+nonce; the injected gateway commands and bootstrap receive none. The browser queues all-denied consent defaults before requesting uncached `/analytics/ga-config`. Only a permitted config response exposes a client ID, creates the first-party GA cookie, and allows the nonce-bearing `/sitedelivery/` library to load. The eligible HTML request itself never creates a GA ID or sends `site_open`. A session cookie is saved only after the same-origin handshake reports a real tag session ID. The
 managed gateway serves its configured tag at this root; `/sitedelivery/js` is
 unsupported and returns 400. Advertising consent
 stays denied. No cookieless Google pings are intentionally sent before consent.
@@ -69,13 +67,21 @@ distinguishes this from the actionable late-default warning. After a correction,
 console diagnostics can take [48–72 hours](https://support.google.com/analytics/answer/14275483?hl=en)
 to refresh; live tag behavior is checked immediately.
 
+## Current measurement contract
+
+Each eligible successful HTML document request schedules one server Umami page observation. The first-party browser module independently records at most one `page_engaged` per document after 10 seconds of visible time and a trusted click, keydown, or scroll. It sends no interaction details or new persistent identifier. This is a foreground interaction signal, not proof that a person viewed the page.
+
+Comparison and product actions use `/site-events/action`; engagement uses `/site-events/engagement`. The older `/analytics/event` and `/analytics/action` routes remain for cached assets. Both paths use the same consent, DNT, GPC, opt-out, bot, origin, and public-path checks. When available, Cloudflare's trusted `verifiedBot` signal also excludes a request; no uncalibrated bot score is used.
+
+For the exact query `?measurement_qa=1`, the document payload carries only `qa:true`. The browser adds `X-Measurement-QA: 1` to its event or action request only for that exact query. Umami receives a fixed `measurement_qa` custom event or action instead of a normal page or product action. Google receives `measurement_qa` instead of `page_view`, with fixed `traffic_type: internal` and `debug_mode: true`; no arbitrary query or run labels are forwarded. QA remains subject to all privacy gates. The GA internal filter is currently in Testing, so QA is not claimed to be absent from default GA active-user totals until that filter is activated.
+
 ## Verification
 
 `tests/analytics-consent.test.mjs` covers the trusted-country boundary, unknown
 location, stale identifiers, every server event/config route, choices, overriding
 privacy signals, startup ordering and late callbacks. `tests/ga4.test.mjs`
 covers one tag/page view, client/session matching and collection transport.
-Before delivery, run the repository's `npm run check`. After deployment, verify
+Focused verification covers engagement timing, trusted interaction, visibility pauses, one event per document, consent and privacy exclusions, bot gates, fixed QA signals, the no-GA-cookie document request, and config/session identity creation. Before delivery, run the repository's `npm run check`. After deployment, verify
 the actual gateway library and collection response, consent order, first
 opt-out cookie cleanup and re-enabling in a disposable research context.
 Regional unit/fixture proof is separate from a real visitor's Cloudflare country.

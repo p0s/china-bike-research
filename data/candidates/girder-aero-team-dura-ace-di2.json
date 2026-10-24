@@ -1,0 +1,53 @@
+{
+  "id": "girder-aero-team-dura-ace-di2",
+  "name": "GIRDER 格拉德 Aero Team press-fit T700/T800 Dura-Ace Di2",
+  "model_id": "girder-aero-team-dura-ace-di2",
+  "brand_id": "girder",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "The hand-painted floral ROAD-section aero flagship: Dura-Ace Di2 R9270 on the earlier T700 + T800 press-fit frame with 60 mm wheels at an official ¥28,800, distinct from the T800 + T1000 NEW 2025 bikes.",
+  "facts": {
+    "drivetrain": "Shimano Dura-Ace Di2 R9270 2×12; FC-R9200 52-36T crank (length not listed), CS-R9200 11-34T cassette, CN-M9100 chain",
+    "brakes": "Shimano Dura-Ace R9270 hydraulic disc",
+    "frame": "ROAD-section AERO TEAM T700 carbon aero frame with T800 bottom-bracket reinforcement and T700 + T800 fork, 12 mm thru-axles, fully internal routing, hand-painted floral finish",
+    "frame_material": "T700 carbon frame with T800 bottom-bracket reinforcement; T700 + T800 fork; the page says Toray fiber; lay-up is not published",
+    "frame_construction": "EPS-molded aero frame and fork with internal routing and press-fit bottom bracket",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found; 'balance between strength and rigidity' is manufacturer copy",
+    "bottom_bracket": "Press-fit shell per manufacturer; the supplied in-house ceramic-bearing BB (19 G5 silicon-nitride balls) is described as 'PF386 Locking T47 Tool', so confirm the exact shell standard before ordering parts",
+    "wheels": "Adler Augen ('Eagle Eye') wavy-rim ceramic-bearing wheels, 60 mm front and rear",
+    "tires": "Maxxis M228 700C×28C skinwall folding tires with TPU tubes fitted; maximum clearance is not published",
+    "cockpit": "T700 integrated carbon handlebar, internal routing, 4° flare",
+    "saddle": "Selle Italia saddle and silicone bar tape",
+    "sizes": "S (476 mm), M (503 mm), L (533 mm); the size dimension is not labelled",
+    "complete_weight_g": 8100,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Geometry chart (the official chart image was refused to a non-browser read on 2026-10-24)",
+    "Exact bottom-bracket shell standard",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-aero-team-dura-ace-di2-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "official_price": {
+    "amount_cny": 28800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact ROAD AERO TEAM page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official ROAD AERO TEAM page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 28,800 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}

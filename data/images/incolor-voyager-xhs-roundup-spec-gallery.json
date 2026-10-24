@@ -1,0 +1,59 @@
+{
+  "id": "incolor-voyager-xhs-roundup-spec-gallery",
+  "platform_id": "incolor-voyager",
+  "role": "gallery",
+  "label": "Community spec card",
+  "subject_accuracy": "exact-platform",
+  "media_type": "community-post-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/incolor-voyager-xhs-roundup-spec/a2443a4cd910f3e6-detail-w920.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/incolor-voyager-xhs-roundup-spec/f0db5b1ca79d29d2-card-w480.webp",
+        "width": 480,
+        "height": 611,
+        "bytes": 36340,
+        "sha256": "f0db5b1ca79d29d2040c9a1e453f47e8784a13cbf4b08b81d5b9c76eb9036537",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/incolor-voyager-xhs-roundup-spec/a2443a4cd910f3e6-detail-w920.webp",
+        "width": 920,
+        "height": 1171,
+        "bytes": 85706,
+        "sha256": "a2443a4cd910f3e6890b964d465f97c6bbb22459f917a7e2698bd5847d778db2",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-race-gravel-china-roundup-2026-09-28",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator; product photo by the brand",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS community roundup; product photo by the brand",
+  "alt": "INCOLOR Voyager gravel bike with a spec overlay listing tire clearance, size-54 stack and reach, chainstay, BB drop, wheelbase and chainring limit",
+  "display_note": "Community-compiled 2026 race-gravel roundup page using a brand photo; check values against INCOLOR's own specification. Footer credit line removed for privacy.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/6aba129d000000001a026bc7",
+  "source_media_sha256": "0c06c39c28bfa3ed732f3fe51e7e278c93218776ebac6e764cd416fb3b10ce68",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}

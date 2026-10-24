@@ -1,0 +1,54 @@
+{
+  "id": "kung-mach-complete",
+  "name": "KUNG 攻 MACH 马赫 aero complete bike (105 R7120 / 105 Di2 R7170)",
+  "model_id": "kung-mach",
+  "brand_id": "kung",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "KUNG's JD flagship store sells the aero MACH as complete bikes with mechanical 105 R7120 or 105 Di2 R7170; a builder reports two such builds just under 8 kg.",
+  "facts": {
+    "frame_material": "Carbon MACH aero frame and fork (same platform as the published frameset)",
+    "drivetrain": "Shimano 105 R7120 mechanical or 105 Di2 R7170 electronic 2×12 with hydraulic disc brakes (JD flagship titles)",
+    "complete_weight": "A builder reports a size-L R7170 build and a size-XS R7120 build each just under 8 kg; wheels, pedals and package contents not stated",
+    "stiffness_evidence": "Retailer ride review reports very direct power transfer; one owner comment reports fork flex with rotor rub when sprinting. No measured test",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Export-retailer MACH frame specification: up to 32 mm road tires; the JD complete-bike packages do not state their fitted tire"
+  },
+  "alternative_builds": [
+    {
+      "id": "jd-mach-r7120",
+      "label": "MACH 7120 全碳整车",
+      "drivetrain": "Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes",
+      "source_ids": [
+        "kung-jd-flagship-index-2026-10-24"
+      ],
+      "notes": "JD flagship listing title; price hidden behind login on 24 October 2026."
+    },
+    {
+      "id": "jd-mach-r7170",
+      "label": "MACH 7170 全碳整车",
+      "drivetrain": "Shimano 105 Di2 R7170 electronic 2×12 with hydraulic disc brakes",
+      "source_ids": [
+        "kung-jd-flagship-index-2026-10-24"
+      ],
+      "notes": "JD flagship listing title; price hidden behind login on 24 October 2026."
+    }
+  ],
+  "missing": [
+    "Dated mainland price for each complete build",
+    "Factory wheel, tire, cockpit and saddle specification for each JD package",
+    "Package weight with size and pedal basis"
+  ],
+  "status": "exact-model-complete-builds-price-unresolved",
+  "existing_record_id": "kung-mach-frameset",
+  "catalog_distinct_reason": "Tracks KUNG's complete-bike packages alongside the published frameset-only record; the frameset's export price does not apply to these builds.",
+  "source_ids": [
+    "kung-jd-flagship-index-2026-10-24",
+    "public-xhs-kung-mach-dealer-builds-2026-09-30",
+    "public-xhs-kung-mach-vs-bross-2026-04-14",
+    "kung-mach-pandapodium-2026-10-24"
+  ],
+  "source_url": "https://www.jd.com/jiage/13182df9fbe0567b03bf.html",
+  "source_note": "JD flagship titles identify the MACH complete-bike drivetrains. A builder's post (30 September 2026) reports a silver size-L R7170 build and a black-gold size-XS R7120 build each just under 8 kg; these were custom-assembled builds, so the weights are community reports rather than package specifications.",
+  "last_reviewed": "2026-10-24"
+}

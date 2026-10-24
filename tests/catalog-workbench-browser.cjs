@@ -16,9 +16,11 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
   try {
     for (const locale of ['en', 'zh', 'de']) for (const width of [1440, 1024, 768, 390, 320]) for (const theme of ['light', 'dark']) {
       const context = await browser.newContext({ viewport: { width, height: width > 1000 ? 900 : 844 }, colorScheme: theme });
+      let blockRegional = false;
       await context.route('**/*', route => {
         const url = new URL(route.request().url());
         if (url.hostname !== 'preview.invalid') return route.abort();
+        if (blockRegional && url.pathname === '/data/regional-prices.json') return route.abort();
         let file = path.resolve(site, '.' + decodeURIComponent(url.pathname));
         if (!file.startsWith(site + path.sep) && file !== site) return route.abort();
         if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
@@ -211,6 +213,52 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           assert.equal(new URL(page.url()).searchParams.get('compare'), movedComparison);
           assert.equal(new URL(page.url()).searchParams.has('start'), false);
         }
+        // A failed regional payload keeps an explicit foreign budget and destination through reload and history.
+        if ([390, 320].includes(width) && theme === 'light') {
+          const held = 'max=2000&maxCurrency=EUR&ship=DE&currency=EUR&compare=twitter-v3-wheeltop-eds,incolor-speedster-sr-frameset';
+          // Chips, the notice and every result-bar control stay inside a phone viewport.
+          const fitsPhone = async (label) => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1
+            && [...document.querySelectorAll('.result-bar > *:not([hidden]), .result-bar button:not([hidden])')].every(element => element.getBoundingClientRect().right <= innerWidth + 1)), `${label}: result bar overflow`);
+          const expectHeld = async (label) => {
+            await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.regionalPrices === 'unavailable');
+            const kept = new URL(page.url()).searchParams;
+            for (const [key, value] of new URLSearchParams(held)) assert.equal(kept.get(key), value, `${label}: ${key}`);
+            assert.equal(await page.locator('[data-product-row]:not([hidden])').count(), 0, `${label}: unresolved totals pass a budget`);
+            assert.ok((await page.locator('[data-filter-notice]').textContent()).trim(), `${label}: no regional notice`);
+            await fitsPhone(label);
+          };
+          blockRegional = true;
+          await page.goto(`http://preview.invalid${prefix}/?${held}`, { waitUntil: 'load' });
+          await expectHeld('initial');
+          // With no passing row the family chips are disabled; removing the held budget is the real enabled action.
+          assert.ok(await page.locator('.family-chips [data-category-value="family:gravel"]').isDisabled(), 'family chip guard');
+          await page.locator('[data-filter-chips] [data-clear-filter="price"]').click();
+          const released = new URL(page.url()).searchParams;
+          assert.deepEqual([released.get('max'), released.get('maxCurrency'), released.get('ship'), released.get('currency')], [null, null, 'DE', 'EUR'], 'budget removed, destination kept');
+          await page.goBack();
+          await expectHeld('back');
+          await page.reload({ waitUntil: 'load' });
+          await expectHeld('reload');
+          blockRegional = false;
+          await page.goto(`http://preview.invalid${prefix}/?${held}`, { waitUntil: 'load' });
+          await page.waitForFunction(() => document.querySelector('[data-catalog-root]')?.dataset.activePriceCurrency === 'EUR');
+          const restored = new URL(page.url()).searchParams;
+          assert.deepEqual([restored.get('ship'), restored.get('max'), restored.get('maxCurrency')], ['DE', '2000', 'EUR']);
+          // A malformed budget currency stays as typed and passes no row, with or without regional prices.
+          for (const blocked of [true, false]) {
+            blockRegional = blocked;
+            await page.goto(`http://preview.invalid${prefix}/?max=2000&maxCurrency=EURO&ship=DE`, { waitUntil: 'load' });
+            await page.waitForFunction(() => document.querySelector('[data-filter-notice]')?.textContent.trim());
+            const kept = new URL(page.url()).searchParams;
+            assert.deepEqual([kept.get('max'), kept.get('maxCurrency'), kept.get('ship')], ['2000', 'EURO', 'DE'], `EURO blocked=${blocked}`);
+            assert.equal(await page.locator('[data-product-row]:not([hidden])').count(), 0, `EURO blocked=${blocked}: budget broadened`);
+            await fitsPhone(`EURO blocked=${blocked}`);
+            await page.goto(`http://preview.invalid${prefix}/?max=2000&maxCurrency=EURO&ship=DE&currency=EUR&compare=twitter-v3-wheeltop-eds,incolor-speedster-sr-frameset`, { waitUntil: 'load' });
+            await page.waitForFunction(() => document.querySelector('[data-filter-notice]')?.textContent.trim());
+            await fitsPhone(`EURO + compare blocked=${blocked}`);
+          }
+          blockRegional = false;
+        }
         // The model decision panel retains identity, evidence and price history.
         if ([1440, 320].includes(width)) {
           await page.goto(`http://preview.invalid${prefix}/models/twitter-v3-wheeltop-eds/`, { waitUntil: 'load' });
@@ -218,6 +266,9 @@ const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
           assert.equal(await page.locator('h1').count(), 1);
           assert.ok(await page.locator('#source-records').count());
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+          // A long unknown-price headline wraps instead of widening the page.
+          await page.goto(`http://preview.invalid${prefix}/models/twitter-cyclone-gen3-7170/`, { waitUntil: 'load' });
+          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'candidate price headline overflow');
           if (locale === 'en' && width === 1440 && theme === 'light') await page.screenshot({ path: path.join(reports, 'model-desktop.png') });
         }
         assert.deepEqual(errors, [], name);

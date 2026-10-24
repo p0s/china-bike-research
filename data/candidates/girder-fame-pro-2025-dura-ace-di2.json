@@ -1,0 +1,53 @@
+{
+  "id": "girder-fame-pro-2025-dura-ace-di2",
+  "name": "GIRDER 格拉德 Fame Pro 2025 Dura-Ace Di2",
+  "model_id": "girder-fame-pro-2025-dura-ace-di2",
+  "brand_id": "girder",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "A Dura-Ace Di2 build on the 2025 T47/UDH aero frame family shared in specification and geometry with the 2025 Arrow, with 60 mm carbon wheels at an official ¥28,800.",
+  "facts": {
+    "drivetrain": "Shimano Dura-Ace Di2 R9270 2×12; FC-R9200 52-36T 170 mm crank, CS-R9200 11-34T cassette, CN-M9100 chain",
+    "brakes": "Shimano Dura-Ace R9270 hydraulic disc",
+    "frame": "2025 FAME T800 + T1000 carbon aero frame and fork, 12 mm thru-axles, UDH dropout, fully hidden routing, separate Shimano battery storage",
+    "frame_material": "T800 carbon with T1000 bottom-bracket reinforcement, frame and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded aero frame and fork with fully hidden routing",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found; the reinforced bottom-bracket wording is manufacturer construction copy, not a test result",
+    "bottom_bracket": "T47 threaded, P1.0 thread, 84.5 mm shell width supplied with two 1 mm shims (the frame line separately says 'BSA'; the BB row is the more specific value)",
+    "derailleur_hanger": "UDH",
+    "wheels": "Adler Augen unpainted Golden Eagle carbon wavy-rim wheels, 60 mm, ceramic-bearing hubs, Sapim spokes",
+    "tires": "Maxxis 700C×28C folding tires fitted; maximum clearance is not published",
+    "cockpit": "Adler Augen 2025 unpainted aero integrated handlebar, internal routing, 6° offset",
+    "saddle": "3D-printed carbon-rail saddle",
+    "sizes": "XS (420 mm), S (450 mm), M (480 mm), L (510 mm)",
+    "geometry": "Official chart, stack/reach mm: XS 497/371, S 506/380, M 517/385, L 529/393.6; head angle 70–72°, seat angle 74.5–75°, chainstay 410 mm, BB drop 72 mm, wheelbase 977–993 mm. These values are identical to the NEW 2025 ARROW chart.",
+    "complete_weight_g": 7860,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-fame-pro-2025-dura-ace-di2-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "official_price": {
+    "amount_cny": 28800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact NEW 2025 FAME PRO page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official NEW 2025 FAME PRO page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 28,800 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}

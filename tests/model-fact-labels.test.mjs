@@ -29,7 +29,7 @@ test('new unmapped fact keys get readable labels while source values remain lite
 });
 
 test('every model renders fact labels without raw underscore keys in all three languages', () => {
-  assert.equal(products.length + candidates.length, 263);
+  assert.equal(products.length + candidates.length, 292);
   for (const locale of ['en', 'zh-Hans', 'de']) {
     for (const entry of [...products, ...candidates]) {
       const html = entry.variant ? renderModel({ ...ctx, locale }, entry) : renderCandidateModel({ ...ctx, locale }, entry);

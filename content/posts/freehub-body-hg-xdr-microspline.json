@@ -3,7 +3,7 @@
   "publication_status": "scheduled",
   "series_id": "october-2026",
   "series_order": 45,
-  "image_id": "frameset-vs-complete-bike-cost-in-china",
+  "image_id": "freehub-body-hg-xdr-microspline-unique-mascot-cover",
   "datePublished": "2026-10-04",
   "dateModified": "2026-10-04",
   "researched_at": "2026-10-04",
@@ -16,7 +16,10 @@
   ],
   "editorial_references": [
     "https://bike.shimano.com/en-NA/stories/article/a-guide-to-shimanos-12-speed-freehubs-and-compatibility.html",
-    "https://support.sram.com/hc/en-us/articles/6129210475035-What-is-the-difference-between-XD-and-XDR-driver-bodies"
+    "https://support.sram.com/hc/en-us/articles/6129210475035-What-is-the-difference-between-XD-and-XDR-driver-bodies",
+    "https://bike.shimano.com/en-NZ/products/components/pdp.P-CS-R7101-12.html",
+    "https://bike.shimano.com/en-AU/products/components/pdp.P-CS-M8100-12.html",
+    "https://support.sram.com/hc/en-us/articles/6129160760347-Where-do-I-get-an-XD-or-XDR-driver-for-my-wheel"
   ],
   "photo_sections": [
     {
@@ -36,7 +39,8 @@
           "id": "identify",
           "heading": "Read the cassette requirement, not the brand guess",
           "paragraphs": [
-            "HG, XDR and Micro Spline name different interfaces. Even “HG” needs the correct body version and length. Shimano’s [freehub guide](https://bike.shimano.com/en-NA/stories/article/a-guide-to-shimanos-12-speed-freehubs-and-compatibility.html) explains why its twelve-speed road and mountain offerings do not all use the same interface. Save the cassette code and the relevant compatibility row with your order."
+            "HG, XDR and Micro Spline name different interfaces. Even “HG” needs the correct body version and length. Shimano’s [freehub guide](https://bike.shimano.com/en-NA/stories/article/a-guide-to-shimanos-12-speed-freehubs-and-compatibility.html) explains why its twelve-speed road and mountain offerings do not all use the same interface. Save the cassette code and the relevant compatibility row with your order.",
+            "For a concrete contrast, Shimano lists its [CS-R7101-12 11–34T](https://bike.shimano.com/en-NZ/products/components/pdp.P-CS-R7101-12.html) as compatible with a road 11-speed FREEHUB body, while the [CS-M8100-12 10–51T](https://bike.shimano.com/en-AU/products/components/pdp.P-CS-M8100-12.html) uses Micro Spline. Both have twelve sprockets. If a wheel quote says only “Shimano 12-speed,” it has not resolved which cassette can mount. Send the exact code before approving the body; passing this mounting check still does not approve the rest of the drivetrain."
           ]
         },
         {
@@ -50,8 +54,9 @@
           "id": "hub",
           "heading": "Make the replacement body a real part number",
           "paragraphs": [
-            "For a [GRARO build](/models/ican-graro-frameset/), list wheel/hub model, cassette model, freehub part number and any specified spacer. A replacement body is usually hub-specific; a loose “XDR body” found online is not automatically useful. Ask whether the conversion also needs an end cap, seal or other hardware.",
-            "If you expect to change drivetrain later, price the supported conversion before buying the wheels. If no replacement can be identified, record that limitation. It may be cheaper to order the correct wheel configuration now than to discover that the future upgrade requires another wheelset."
+            "For a [GRARO build](/models/ican-graro-frameset/), list wheel/hub model, cassette model, freehub part number and any specified spacer. A replacement body is usually hub-specific; a loose “XDR body” found online is not automatically useful. Ask whether the conversion also needs an end cap, seal or other hardware. SRAM’s [conversion guidance](https://support.sram.com/hc/en-us/articles/6129160760347-Where-do-I-get-an-XD-or-XDR-driver-for-my-wheel) directs you to the hub manufacturer for a kit for the existing rear hub.",
+            "If you expect to change drivetrain later, price the supported conversion before buying the wheels. If no replacement can be identified, record that limitation. It may be cheaper to order the correct wheel configuration now than to discover that the future upgrade requires another wheelset.",
+            "For the next checks, use the [Shimano/SRAM compatibility-chain guide](/blog/mixing-shimano-and-sram-components/) and the [cassette range and gear-jump guide](/blog/cassette-range-vs-gear-jumps/)."
           ]
         }
       ]
@@ -65,7 +70,8 @@
           "id": "identify",
           "heading": "读飞轮要求，不凭品牌猜",
           "paragraphs": [
-            "HG、XDR与Micro Spline是不同接口；即使写HG，也要确认塔基版本与长度。Shimano的[塔基指南](https://bike.shimano.com/en-NA/stories/article/a-guide-to-shimanos-12-speed-freehubs-and-compatibility.html)说明了为什么其12速公路、山地产品并非都用同一接口。订货时保存飞轮编码与对应兼容行。"
+            "HG、XDR与Micro Spline是不同接口；即使写HG，也要确认塔基版本与长度。Shimano的[塔基指南](https://bike.shimano.com/en-NA/stories/article/a-guide-to-shimanos-12-speed-freehubs-and-compatibility.html)说明了为什么其12速公路、山地产品并非都用同一接口。订货时保存飞轮编码与对应兼容行。",
+            "看两个具体例子：Shimano注明，[CS-R7101-12 11–34T](https://bike.shimano.com/en-NZ/products/components/pdp.P-CS-R7101-12.html)可装在公路11速FREEHUB塔基上，而[CS-M8100-12 10–51T](https://bike.shimano.com/en-AU/products/components/pdp.P-CS-M8100-12.html)使用Micro Spline。两者都有12片齿轮。轮组报价若只写“Shimano 12速”，仍未回答哪只飞轮能装上去。确认塔基前先发准确编码；安装接口通过，也不等于整套传动已获认可。"
           ]
         },
         {
@@ -79,8 +85,9 @@
           "id": "hub",
           "heading": "让替换塔基有实际零件号",
           "paragraphs": [
-            "为[GRARO装车](/models/ican-graro-frameset/)列出轮组或花鼓型号、飞轮型号、塔基零件号及规定垫片。替换塔基通常对应具体花鼓，网上找到一个“XDR塔基”未必有用。询问转换是否还需要端盖、密封或其他五金。",
-            "若未来准备换传动，买轮组前先给受支持的转换报价。找不到明确替换件，就记录这个限制。现在选对轮组配置，可能比日后发现升级必须再买整套轮组更省钱。"
+            "为[GRARO装车](/zh/models/ican-graro-frameset/)列出轮组或花鼓型号、飞轮型号、塔基零件号及规定垫片。替换塔基通常对应具体花鼓，网上找到一个“XDR塔基”未必有用。询问转换是否还需要端盖、密封或其他五金。 SRAM的[转换说明](https://support.sram.com/hc/en-us/articles/6129160760347-Where-do-I-get-an-XD-or-XDR-driver-for-my-wheel)要求向花鼓厂家确认现有后花鼓对应的转换套件。",
+            "若未来准备换传动，买轮组前先给受支持的转换报价。找不到明确替换件，就记录这个限制。现在选对轮组配置，可能比日后发现升级必须再买整套轮组更省钱。",
+            "后续可用[Shimano与SRAM混搭兼容链指南](/zh/blog/mixing-shimano-and-sram-components/)继续核对，并用[飞轮范围与档位跳幅指南](/zh/blog/cassette-range-vs-gear-jumps/)比较齿数。"
           ]
         }
       ]
@@ -94,7 +101,8 @@
           "id": "identify",
           "heading": "Die Kassettenvorgabe statt die Marke lesen",
           "paragraphs": [
-            "HG, XDR und Micro Spline bezeichnen verschiedene Aufnahmen. Selbst bei HG zählen Version und Länge. Shimanos [Freilaufleitfaden](https://bike.shimano.com/en-NA/stories/article/a-guide-to-shimanos-12-speed-freehubs-and-compatibility.html) erklärt die unterschiedlichen Aufnahmen seiner Zwölffachsysteme für Straße und MTB. Speichere Kassettenkennung und passende Kompatibilitätszeile."
+            "HG, XDR und Micro Spline bezeichnen verschiedene Aufnahmen. Selbst bei HG zählen Version und Länge. Shimanos [Freilaufleitfaden](https://bike.shimano.com/en-NA/stories/article/a-guide-to-shimanos-12-speed-freehubs-and-compatibility.html) erklärt die unterschiedlichen Aufnahmen seiner Zwölffachsysteme für Straße und MTB. Speichere Kassettenkennung und passende Kompatibilitätszeile.",
+            "Ein konkreter Vergleich: Shimano nennt für die [CS-R7101-12 mit 11–34Z](https://bike.shimano.com/en-NZ/products/components/pdp.P-CS-R7101-12.html) Kompatibilität mit einem Rennrad-11-fach-FREEHUB-Körper; die [CS-M8100-12 mit 10–51Z](https://bike.shimano.com/en-AU/products/components/pdp.P-CS-M8100-12.html) nutzt Micro Spline. Beide haben zwölf Ritzel. „Shimano 12-fach“ im Laufradangebot klärt daher die Aufnahme noch nicht. Sende vor der Freigabe die genaue Kassettenkennung; eine passende Aufnahme bestätigt noch nicht den übrigen Antrieb."
           ]
         },
         {
@@ -108,8 +116,9 @@
           "id": "hub",
           "heading": "Den Ersatzfreilauf als konkrete Teilenummer sichern",
           "paragraphs": [
-            "Notiere für einen [GRARO-Aufbau](/models/ican-graro-frameset/) Laufrad/Nabe, Kassette, Freilauf-Teilenummer und vorgeschriebene Distanzringe. Ersatzkörper sind meist nabenspezifisch. Ein beliebiger XDR-Körper aus dem Netz hilft nicht automatisch. Kläre zusätzliche Endkappen, Dichtungen oder Montageteile.",
-            "Bei geplantem Antriebswechsel ermittle den Preis einer unterstützten Umrüstung vor dem Laufradkauf. Fehlt eine identifizierbare Ersatzaufnahme, halte das fest. Jetzt richtig zu bestellen kann günstiger sein, als später einen weiteren Laufradsatz zu brauchen."
+            "Notiere für einen [GRARO-Aufbau](/de/models/ican-graro-frameset/) Laufrad/Nabe, Kassette, Freilauf-Teilenummer und vorgeschriebene Distanzringe. Ersatzkörper sind meist nabenspezifisch. Ein beliebiger XDR-Körper aus dem Netz hilft nicht automatisch. Kläre zusätzliche Endkappen, Dichtungen oder Montageteile. SRAMs [Umrüsthinweis](https://support.sram.com/hc/en-us/articles/6129160760347-Where-do-I-get-an-XD-or-XDR-driver-for-my-wheel) verweist für ein passendes Kit der vorhandenen Hinterradnabe an deren Hersteller.",
+            "Bei geplantem Antriebswechsel ermittle den Preis einer unterstützten Umrüstung vor dem Laufradkauf. Fehlt eine identifizierbare Ersatzaufnahme, halte das fest. Jetzt richtig zu bestellen kann günstiger sein, als später einen weiteren Laufradsatz zu brauchen.",
+            "Prüfe anschließend mit dem [Leitfaden zur Shimano/SRAM-Kompatibilitätskette](/de/blog/mixing-shimano-and-sram-components/) weiter; für die Abstufung hilft der [Vergleich von Kassettenbandbreite und Gangsprüngen](/de/blog/cassette-range-vs-gear-jumps/)."
           ]
         }
       ]

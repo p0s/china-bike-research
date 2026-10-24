@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-tsar-105-di2-retail-2023-10-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER TSAR 105 Di2 retailer post (2023-10)",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/651e662b000000001f037123",
+  "accessed_at": "2026-10-24",
+  "published_date": "2023-10-05",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A retailer post presents a TSAR aero road bike with a Shimano 7170 electronic group, wavy carbon wheels of 50 mm front / 60 mm rear depth, and a two-sided finish (grey lace on one side, matte black on the other), at CNY 18,800 with in-stock discounting unspecified. Subjective descriptions of stiffness are not stiffness evidence. No weight, size, clearance or frame generation is given.",
+  "reference_claims": [
+    {
+      "kind": "historical-seller-retail-advertisement",
+      "claim": "TSAR R7170 with 50/60 mm wavy carbon wheels advertised at CNY 18,800 on 2023-10-05.",
+      "confidence": "low",
+      "limitations": "Historical dealer price; discount unspecified. Not a price for the official ROAD TSAR Ultegra Di2 build.",
+      "canonical_target_id": "girder-tsar-105-di2-2023-reference",
+      "selected_build_fact": true,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "6e75493314ea903c378c79d486ae184b14372b733a37b39701e822cbd1be4bd1",
+    "archive_bytes": 2689245,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive (query '格拉德 TSAR'); public text reviewed. Raw posts, account identifiers and media remain local outside Git. No video was watched or transcribed, and no product-image or measured-weight pixel claim is made."
+  }
+}

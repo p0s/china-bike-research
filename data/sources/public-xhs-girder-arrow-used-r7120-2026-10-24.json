@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-arrow-used-r7120-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER Arrow used mechanical 7120 build listing",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/6aa0e0eb000000002601e41a",
+  "accessed_at": "2026-10-24",
+  "published_date": "2026-09-09",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A public Arrow listing says carbon construction, 24-speed 7120 hydraulic-disc equipment, size M and an asking price of CNY 5,350. The wording describes condition rather than a verified new retail offer. The listing does not establish the frame generation, shell or full component package. It must not supply a price for either retained 105 Di2 trim.",
+  "reference_claims": [
+    {
+      "kind": "different-build-market-reference",
+      "claim": "A mechanically shifted 7120-labelled Arrow was publicly offered at CNY 5,350 on 2026-09-09.",
+      "confidence": "low",
+      "limitations": "Historical asking price; exact generation and new/used terms not fully established. Mechanical build differs from both retained Di2 reference trims.",
+      "canonical_target_id": "girder-arrow-pf-105-di2",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "260ddb3f3b649c0d73b987f1873a8ad811639cd3912ff5fac58b00e8329d6ec7",
+    "archive_bytes": 5029864,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive; public text reviewed. Raw posts, account identifiers and media remain local outside Git. No product-image or measured-weight pixel claim is made."
+  }
+}

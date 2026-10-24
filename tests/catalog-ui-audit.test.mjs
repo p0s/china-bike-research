@@ -2,8 +2,8 @@ import {normalizeMaterialSearch} from '../assets/catalog-search.js';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
 import {loadDataset,joinProducts} from '../src/lib/data.mjs';import {catalogSummaries} from '../src/render.mjs';import {translate} from '../assets/i18n.js';
 const data=loadDataset(),products=joinProducts(data),summaries=catalogSummaries({data,products});
-test('normalized carbon material search retains all 41 published records and appropriate candidate facts',()=>{
- const matched=summaries.filter(x=>x.frameSearch?.toLowerCase().includes('carbon'));assert.equal(matched.filter(x=>x.stage==='published').length,41);assert.ok(matched.some(x=>x.id==='candidate-xlab-rs9'));assert.ok(summaries.find(x=>x.id==='af01-frameset').frameSearch.includes('T47'));
+test('normalized carbon material search retains all 42 published records and appropriate candidate facts',()=>{
+ const matched=summaries.filter(x=>x.frameSearch?.toLowerCase().includes('carbon'));assert.equal(matched.filter(x=>x.stage==='published').length,42);assert.ok(matched.some(x=>x.id==='candidate-xlab-rs9'));assert.ok(summaries.find(x=>x.id==='af01-frameset').frameSearch.includes('T47'));
 });
 test('both comparison sections construct native tables with scoped model and field headers',()=>{
  const script=fs.readFileSync(new URL('../assets/site.js',import.meta.url),'utf8');const source=script.slice(script.indexOf('  function comparisonGrid('),script.indexOf('  function comparePrice(',script.indexOf('  function comparisonGrid(')));
@@ -27,16 +27,16 @@ test('completed TT/track transcriptions retain literal source units and historic
  assert.match(data.candidates.find(x=>x.id==='lightcarbon-lctt001').facts['geometry numeric table'],/45°.*source-unit ambiguity/);
 });
 
-test('the actual material filter treats localized carbon terms as the same 41 published matches and localizes its chip',()=>{
+test('the actual material filter treats localized carbon terms as the same 42 published matches and localizes its chip',()=>{
  const script=fs.readFileSync(new URL('../assets/site.js',import.meta.url),'utf8');
  const matchSource=script.slice(script.indexOf('  function matchesTypedFilters('),script.indexOf('  function syncTireUnknownAvailability('));
  const chipSource=script.slice(script.indexOf('  function typedFilterChips('),script.indexOf('\n  function ',script.indexOf('  function typedFilterChips(')+5));
  const byId=new Map(summaries.map(item=>[item.id,item]));
  let expected;
  for(const term of ['carbon','碳纤维','碳纖維','Kohlefaser','Kohlenstofffaser']){
-  const context={byId,frameFilter:{value:term},normalizeMaterialSearch,numberOrNull:()=>null,numericValue:()=>0,price:null,tire:null,tireUnknown:null,completeWeight:null,frameWeight:null,drivetrainFilter:null,categoryMinimum:null,category:null,publishedFilter:null,listingFilter:null,search:null,activeType:'',activeBrand:''};
+  const context={byId,frameFilter:{value:term},normalizeMaterialSearch,numberOrNull:()=>null,numericValue:()=>0,price:null,tire:null,tireUnknown:null,completeWeight:null,frameWeight:null,drivetrainFilter:null,categoryMinimum:null,category:null,publishedFilter:null,listingFilter:null,search:null,activeType:'',activeBrand:'',heldRegional:null,regionalHoldBlocks:()=>false};
   const actual=summaries.filter(item=>item.stage==='published'&&vm.runInNewContext(`(${matchSource.trim()})(row)`,{...context,row:{dataset:{id:item.id}}})).map(x=>x.id).sort();
-  assert.equal(actual.length,41,term);if(expected)assert.deepEqual(actual,expected);expected=actual;
+  assert.equal(actual.length,42,term);if(expected)assert.deepEqual(actual,expected);expected=actual;
   for(const locale of ['zh-Hans','de']){const chips=vm.runInNewContext(`(${chipSource.trim()})()`,{...context,translate,locale,categoryMinimumLabel:null,categoryMinimumUnit:null});assert.ok(chips[0][1].startsWith(translate('Frame',locale)+':'));assert.ok(chips[0][1].endsWith(term));}
  }
  assert.equal(normalizeMaterialSearch('  Ｔ４７ '),'t47');

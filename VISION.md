@@ -29,6 +29,7 @@ Within minutes, a buyer should be able to:
 ## Scope
 
 - Chinese bicycles and framesets relevant to buyers in Europe, North America and mainland China.
+- Compact component references, such as electronic groupsets and carbon wheelsets, when they help buyers compare or build those bicycles.
 - Priority to products where China-market research adds real value, especially Chinese brands, strong value, and carbon construction.
 - Categories expand incrementally when the products and comparison fields are decision-ready.
 

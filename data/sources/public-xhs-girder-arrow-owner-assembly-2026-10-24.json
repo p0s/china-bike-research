@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-arrow-owner-assembly-2026-10-24",
+  "type": "public-product-post",
+  "title": "Early GIRDER Arrow owner report on delivery and assembly",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/63eae687000000001300a97b",
+  "accessed_at": "2026-10-24",
+  "published_date": "2023-02-14",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A self-described new owner reports paying a little over CNY 10,000 for an Arrow with carbon frame, carbon wheels, integrated carbon bar and a Shimano 105 group, and says the delivered bicycle required derailleur installation and shop adjustment. This is a single historical community report, not a universal shipping policy or proof of the later PF/Di2 package. The post does not identify electronic versus mechanical shifting, frame generation, size, a measured weight or maximum clearance. Subjective favorable ride impressions are not comparative stiffness evidence. Captured comments are partial; unanswered questions do not establish missing specifications.",
+  "reference_claims": [
+    {
+      "kind": "historical-owner-assembly-report",
+      "claim": "One 2023 Arrow owner reported arranging shop assembly and adjustment after delivery.",
+      "confidence": "low",
+      "limitations": "Pre-2025 owner report; trim and frame standards unknown. Confirm assembly requirements with the exact current seller; no general defect or shipping-policy finding.",
+      "canonical_target_id": "girder-arrow-pf-105-di2",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "77149ef21ef7e441378f54ccf677f132f53e8dced2e946721155dc848cdd9a09",
+    "archive_bytes": 3270346,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive; public text reviewed. Raw posts, account identifiers and media remain local outside Git. No product-image or measured-weight pixel claim is made."
+  }
+}

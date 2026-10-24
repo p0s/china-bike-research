@@ -7,7 +7,7 @@ export function localePath(route = '/', locale = 'en') {
   return `${LOCALE_PREFIXES[locale] ?? ''}${route}`;
 }
 export function isPagePath(route) {
-  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
+  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|carbon-wheels|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
 }
 function escape(value) { return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'); }
 function decode(value) { return value.replaceAll('&quot;', '"').replaceAll('&#039;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&'); }
@@ -108,7 +108,7 @@ export function localizeHtml(html, options = {}) {
         const translated = attr === 'data-tooltip-lines' ? JSON.stringify(JSON.parse(decoded).map((line) => translate(line, options.locale))) : translate(decoded, options.locale);
         return `${attr}="${escape(translated)}"`;
       });
-      if (options.locale === 'de') part = part.replace(/action="([^"?]*\/analytics\/opt-(?:in|out))"/g, 'action="$1?lang=de"');
+      if (options.locale === 'de' || options.locale === 'zh-Hans') part = part.replace(/action="([^"?]*\/analytics\/opt-(?:in|out))"/g, `action="$1?lang=${options.locale === 'de' ? 'de' : 'zh'}"`);
       if (!/data-language-switch|rel="(?:alternate|canonical)"/.test(part)) part = part.replace(/\b(href|data-model-url)="([^"]*)"/g, (_, attr, value) => `${attr}="${escape(localizedHref(decode(value), options))}"`);
       return part;
     }

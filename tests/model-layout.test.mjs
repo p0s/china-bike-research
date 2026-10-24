@@ -10,14 +10,14 @@ const data = loadDataset(), products = joinProducts(data), candidates = joinCata
 const ctx = { data, products, base: '', siteUrl: 'https://example.invalid', repositoryUrl: 'https://github.com/p0s/china-bike-research', now: new Date('2026-10-05') };
 
 test('every model keeps its identity before images and its full evidence records', () => {
-  assert.equal(products.length + candidates.length, 263);
+  assert.equal(products.length + candidates.length, 292);
   for (const entry of [...products, ...candidates]) {
     const html = entry.variant ? renderModel(ctx, entry) : renderCandidateModel(ctx, entry);
     const identity = html.indexOf('class="model-identity"'), gallery = html.indexOf('class="model-gallery"');
     assert.ok(identity >= 0 && (gallery < 0 || identity < gallery));
     assert.match(html, /id="source-records" open/);
     if (gallery < 0) continue;
-    const images = [entry.image, ...(entry.galleryImages ?? [])];
+    const images = [entry.image, ...(entry.galleryImages ?? [])].filter(Boolean);
     for (const image of images) {
       assert.ok(html.includes(escapeHtml(image.alt)), image.id);
       if (image.credit) {

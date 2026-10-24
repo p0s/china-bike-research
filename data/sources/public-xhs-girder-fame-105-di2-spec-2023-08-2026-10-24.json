@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-fame-105-di2-spec-2023-08-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER FAME two-tone 105 Di2 specification post (2023-08)",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/64dcf1bb000000000301c575",
+  "accessed_at": "2026-10-24",
+  "published_date": "2023-08-16",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A dealer post lists a FAME disc-brake road bike with a full carbon frame, integrated carbon handlebar, carbon wavy-rim wheels, Shimano 7170 electronic 2×12 (24-speed) shifting and a two-sided two-colour finish. No price, weight, size, clearance or frame generation is given.",
+  "reference_claims": [
+    {
+      "kind": "historical-seller-specification",
+      "claim": "FAME build with carbon frame, integrated carbon bar, carbon wavy-rim wheels and Shimano R7170 2×12, posted 2023-08-16.",
+      "confidence": "medium",
+      "limitations": "Dealer claim; frame generation and standards unidentified.",
+      "canonical_target_id": "girder-fame-105-di2-2023-reference",
+      "selected_build_fact": true,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "1b78be453a0ea3464c51d61df580a9b7015768a7b85cb40dd0797e824f94730c",
+    "archive_bytes": 10068199,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive (query '格拉德 FAME'); public text reviewed. Raw posts, account identifiers and media remain local outside Git. No video was watched or transcribed, and no product-image or measured-weight pixel claim is made."
+  }
+}

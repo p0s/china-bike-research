@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-fame-105-di2-retail-2023-06-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER FAME two-tone 105 Di2 retail post (2023-06)",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/647aa374000000000703a50c",
+  "accessed_at": "2026-10-24",
+  "published_date": "2023-06-03",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A dealer post describes a two-tone FAME with a Shimano 105 electronic 2×12 (7170) group and wavy-rim wheels, and states a retail price of CNY 17,800 with any discount handled privately. The dealer calls FAME an upgraded Arrow frame; that wording does not prove shared geometry or standards. This is a historical retail advertisement, not a checkout, completed sale or current offer. No weight, size, clearance or frame generation is stated.",
+  "reference_claims": [
+    {
+      "kind": "historical-seller-retail-advertisement",
+      "claim": "FAME 105 Di2 (R7170 2×12) with wavy-rim wheels advertised at CNY 17,800 retail on 2023-06-03.",
+      "confidence": "low",
+      "limitations": "Dealer claim; discount unspecified and not inferred. Not a price for the official ROAD R8020 or NEW 2025 R8170 FAME.",
+      "canonical_target_id": "girder-fame-105-di2-2023-reference",
+      "selected_build_fact": true,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "1b78be453a0ea3464c51d61df580a9b7015768a7b85cb40dd0797e824f94730c",
+    "archive_bytes": 10068199,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive (query '格拉德 FAME'); public text reviewed. Raw posts, account identifiers and media remain local outside Git. No video was watched or transcribed, and no product-image or measured-weight pixel claim is made."
+  }
+}

@@ -1,4 +1,4 @@
-import { initialBuildPresentation, buildBaseFacts } from '../assets/builder-presentation.js';
+import { initialBuildPresentation, buildBaseFacts, formatBuildYuan, formatBuildWeight } from '../assets/builder-presentation.js';
 import { structuredGeometry, candidateGeometry, isGeometryTableFact } from './lib/model-geometry.mjs';
 import { translate } from '../assets/i18n.js';
 import { relatedArticleLinks } from './lib/posts.mjs';
@@ -6,7 +6,8 @@ import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
-import { renderVideoEntries } from './lib/videos.mjs';
+import { openGraphVideo, renderVideoEntries } from './lib/videos.mjs';
+import { opinionAggregate } from './lib/opinions.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay } from '../assets/price-display.js';
 import { clearanceParts, weightParts, normalizeSpeeds } from '../assets/catalog-format.js';
@@ -28,6 +29,7 @@ import {
   freshness,
   joinCatalogCandidates,
   maxClearance,
+  wheelsetFreehubLabels,
 } from './lib/data.mjs';
 import {
   escapeAttr,
@@ -48,7 +50,7 @@ import {
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
-export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', ogType = 'website', structuredData = [], headerTools = '' }) {
+export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '' }) {
   return layout({
     base: ctx.base,
     locale: ctx.locale ?? 'en',
@@ -66,6 +68,7 @@ export function page(ctx, { title = '', current = '', path = '/', description: d
     imageWidth,
     imageHeight,
     imageType,
+    video,
     ogType,
     structuredData,
     datasetUpdated: ctx.siteLastmod ?? ctx.data.meta.snapshot_date,
@@ -1219,12 +1222,67 @@ function sourceList(ctx, product) {
   }).join('')}</div>`;
 }
 
+// The first two players embed lazily; further videos load only when requested.
+const EMBEDDED_MODEL_VIDEOS = 2;
 function videoContext(videos) {
   const youtubeVideos = videos?.filter((video) => video.provider === 'youtube') ?? [];
   if (!youtubeVideos.length) return '';
-  return `<section class="video-context" aria-labelledby="video-context-title">
+  const featured = youtubeVideos.slice(0, EMBEDDED_MODEL_VIDEOS);
+  const more = youtubeVideos.slice(EMBEDDED_MODEL_VIDEOS);
+  return `<section class="video-context" id="model-videos" aria-labelledby="video-context-title">
     <h2 id="video-context-title">Videos</h2>
-    <div class="video-list">${renderVideoEntries(youtubeVideos)}</div>
+    <div class="video-list">${renderVideoEntries(featured)}</div>
+    ${more.length ? `<h3 class="video-more-title">More videos</h3><div class="video-list video-list-more">${renderVideoEntries(more, { article: true })}</div>` : ''}
+  </section>`;
+}
+
+const opinionStanceLabels = { positive: 'Positive', mixed: 'Mixed', negative: 'Negative' };
+const opinionRoleLabels = { owner: 'Owner', reviewer: 'Reviewer', 'test-rider': 'Test ride', 'shop-mechanic': 'Shop mechanic' };
+const opinionRelationshipLabels = { independent: 'Independent', 'product-supplied': 'Product supplied', 'affiliate-linked': 'Affiliate links', unknown: 'Relationship not stated', 'brand-published': 'Brand published · not counted', seller: 'Seller · not counted' };
+const VISIBLE_OPINIONS = 6;
+
+function opinionEntry(opinion) {
+  const counted = !opinion.duplicate_of && !['brand-published', 'seller'].includes(opinion.relationship);
+  return `<li class="opinion-entry" id="opinion-${escapeAttr(opinion.id)}" data-stance="${escapeAttr(opinion.stance)}">
+    <div class="opinion-meta"><span class="opinion-stance" data-stance="${escapeAttr(opinion.stance)}"><span aria-hidden="true"></span>${escapeHtml(opinionStanceLabels[opinion.stance])}</span><span>${escapeHtml(opinionRoleLabels[opinion.author_role])}</span><span>${escapeHtml(opinionRelationshipLabels[opinion.relationship])}</span>${counted ? '' : opinion.duplicate_of ? '<span>Same author · counted once</span>' : ''}</div>
+    <p class="opinion-summary" data-original-language lang="en">${escapeHtml(opinion.summary)}</p>
+    <p class="opinion-config"><span>Configuration</span> <span data-original-language lang="en">${escapeHtml(opinion.configuration)}</span></p>
+    ${opinion.caveat ? `<p class="opinion-caveat"><span>Caveat</span> <span data-original-language lang="en">${escapeHtml(opinion.caveat)}</span></p>` : ''}
+    <p class="opinion-source"><a href="${escapeAttr(opinion.url)}" rel="noreferrer"><span data-original-language lang="${escapeAttr(opinion.language)}">${escapeHtml(opinion.title)}</span></a> <span>${escapeHtml(opinion.publisher)}${opinion.published_at ? ` · ${escapeHtml(opinion.published_at)}` : ''}</span>${opinion.video_id ? ' · <a href="#model-videos">Video on this page</a>' : ''}</p>
+  </li>`;
+}
+
+function opinionSummary(ctx, collection) {
+  const aggregate = opinionAggregate(collection.opinions);
+  const methodology = url(ctx.base, '/methodology/#opinion-summaries');
+  const share = (count) => aggregate.n ? (count / aggregate.n) * 100 : 0;
+  if (!aggregate.eligible) {
+    return `<p class="opinion-status"><strong>${aggregate.n}</strong> <span>${aggregate.n === 1 ? 'independent opinion' : 'independent opinions'} recorded. A sentiment summary appears at ${aggregate.threshold}; until then each opinion stands on its own.</span> <a href="${methodology}">How opinions are counted</a></p>`;
+  }
+  const [low, high] = aggregate.interval;
+  return `<div class="opinion-score" role="group" aria-labelledby="opinion-score-label">
+    <div class="opinion-score-value"><strong>${aggregate.score}</strong><span>/100</span></div>
+    <div class="opinion-score-copy"><p id="opinion-score-label"><strong>Opinion sentiment</strong> from ${aggregate.n} independent owners and reviewers</p>
+      <div class="opinion-distribution" aria-hidden="true">${['positive', 'mixed', 'negative'].map((stance) => `<span data-stance="${stance}" style="flex-grow:${share(aggregate.counts[stance]).toFixed(2)}"></span>`).join('')}</div>
+      <p class="opinion-counts">${['positive', 'mixed', 'negative'].map((stance) => `<span data-stance="${stance}"><span aria-hidden="true"></span>${escapeHtml(opinionStanceLabels[stance])} ${aggregate.counts[stance]}</span>`).join('')}</p>
+      <p class="opinion-method">95% interval ${low}–${high}. Share of positive opinions, with mixed counted as half. It summarizes sentiment for this exact model only; it is not a quality rating or comparable across models. <a href="${methodology}">Method</a></p>
+    </div>
+  </div>`;
+}
+
+function opinionSection(ctx, collection) {
+  if (!collection?.opinions?.length) return '';
+  const ordered = [...collection.opinions].sort((a, b) => Number(Boolean(a.duplicate_of)) - Number(Boolean(b.duplicate_of))
+    || (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.id.localeCompare(b.id));
+  const visible = ordered.slice(0, VISIBLE_OPINIONS);
+  const rest = ordered.slice(VISIBLE_OPINIONS);
+  return `<section class="opinion-section" id="opinions" aria-labelledby="opinions-title">
+    <h2 id="opinions-title">Owner and reviewer opinions</h2>
+    <p class="opinion-intro">Brief paraphrases of substantive exact-model opinions on ride, fit, build, weight, compatibility and support. Open each source for the full context. Reviewed ${escapeHtml(collection.reviewed_at)}.</p>
+    ${collection.coverage_note ? `<p class="opinion-coverage"><strong>Coverage</strong> <span data-original-language lang="en">${escapeHtml(collection.coverage_note)}</span></p>` : ''}
+    ${opinionSummary(ctx, collection)}
+    <ol class="opinion-list">${visible.map(opinionEntry).join('')}</ol>
+    ${rest.length ? `<details class="opinion-more"><summary>Show ${rest.length} more ${rest.length === 1 ? 'opinion' : 'opinions'}</summary><ol class="opinion-list" start="${visible.length + 1}">${rest.map(opinionEntry).join('')}</ol></details>` : ''}
   </section>`;
 }
 
@@ -1392,7 +1450,7 @@ export function renderHome(ctx) {
       <div class="result-bar">
         <div class="filter-chips" data-filter-chips role="group" aria-label="Active filters" hidden></div>
         <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> results<span data-result-context></span><span class="result-split" data-result-split> · ${ctx.products.length} published, then ${defaultCandidateCount} research leads</span><span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
-        <div class="result-actions"><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
+        <div class="result-actions"><div class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden><button type="button" data-view-value="table" aria-pressed="true"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button><button type="button" data-view-value="gallery" aria-pressed="false"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button></div><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
       </div>
       <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
         <div class="compare-heading"><h2 id="compare-title">Compare</h2><span class="compare-count" data-compare-heading-count></span><label class="switch compare-differences"><input type="checkbox" role="switch" data-compare-differences><span>Differences only</span></label><div class="compare-heading-actions"><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
@@ -1506,7 +1564,7 @@ export function renderModel(ctx, product) {
     ${imageFigure}
     <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#source-records">All price records</a>${goodBuyThreshold ? `<span>${variant.kind === 'frameset' ? 'Frameset' : 'Complete-bike'} good-buy reference: below ${escapeHtml(formatCny(goodBuyThreshold))}</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl>${verifyItems.length ? `<section class="model-verify" aria-labelledby="model-verify-title"><h2 id="model-verify-title">Verify before paying</h2><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : ''}</div>
   </div>
-  <nav class="model-sections" aria-label="On this page"><a href="#model-story-title">Brief</a><a href="#specification-snapshot-title">Specifications &amp; evidence</a>${platform.frame.geometry?.sizes?.length ? '<a href="#model-geometry-title">Geometry</a>' : ''}<a href="#buying-context-title">Ride and buying context</a><a href="#source-records">Price records &amp; sources</a></nav>
+  <nav class="model-sections" aria-label="On this page"><a href="#model-story-title">Brief</a><a href="#specification-snapshot-title">Specifications &amp; evidence</a>${platform.frame.geometry?.sizes?.length ? '<a href="#model-geometry-title">Geometry</a>' : ''}<a href="#buying-context-title">Ride and buying context</a>${product.opinions?.opinions?.length ? '<a href="#opinions">Opinions</a>' : ''}${videos?.some((video) => video.provider === 'youtube') ? '<a href="#model-videos">Videos</a>' : ''}<a href="#source-records">Price records &amp; sources</a></nav>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? `${zh ? ' 适合重点考虑的用途：' : german ? ' Besonders geeignet für ' : ' Best suited to '}${escapeHtml(bestFor)}${zh ? '。' : '.'}` : ''}</p><p><strong>${zh ? '关键配置：' : 'Key hardware:'}</strong> ${escapeHtml(keyHardware)}${zh ? '。' : '.'}</p></section>
@@ -1514,6 +1572,7 @@ export function renderModel(ctx, product) {
     ${structuredGeometry(platform.frame.geometry, product.sources)}${platform.frame.geometry?.sizes?.length ? `<p class="model-geometry-link"><a href="${url(ctx.base,'/geometry/')}?a=${escapeAttr(platform.id)}">Compare this geometry ↗</a></p>` : ''}<section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p></section>
     ${relatedArticleLinks(ctx, variant.id)}
     ${brandStory(brand)}
+    ${opinionSection(ctx, product.opinions)}
     ${videoContext(videos)}
     <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(exactPriceLabel(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
   </div></div></section>`;
@@ -1524,6 +1583,7 @@ export function renderModel(ctx, product) {
     description: variant.editorial.verdict,
     image: heroImage,
     imageAlt: product.image?.alt ?? `${brand.name} ${variant.name}`,
+    video: openGraphVideo(videos),
     ogType: 'product',
     structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
@@ -1645,6 +1705,21 @@ function brandStory(brand) {
   return `<section class="brand-story" aria-labelledby="about-${escapeAttr(brand.id)}-title"><h2 id="about-${escapeAttr(brand.id)}-title">About ${escapeHtml(brand.name)}</h2><p>${escapeHtml(paragraph)}</p>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">${escapeHtml(brand.website_label ?? `Visit the official ${brand.name} website`)}</a>` : ''}</section>`;
 }
 
+/** A retained twin record for the same trim stays reachable from this page; its own evidence is not merged here. */
+function candidateIdentityNote(ctx, candidate) {
+  const same = candidate.same_identity_as;
+  if (!same) return '';
+  const twin = ctx.data.candidates.find((item) => item.id === same.record_id);
+  const product = twin ? null : ctx.products?.find((item) => item.variant.id === same.record_id);
+  const name = twin?.name ?? (product ? `${product.brand.name} ${product.variant.name}` : same.record_id);
+  const link = `<a href="${url(ctx.base, `/models/${same.record_id}/`)}">${escapeHtml(name)}</a>`;
+  const lead = ctx.locale === 'zh-Hans' ? `与${link}为同一配置。两条记录均保留各自的来源与带日期的观察。`
+    : ctx.locale === 'de' ? `Dieselbe Ausstattung wie ${link}. Beide Einträge bleiben mit eigenen Quellen und datierten Beobachtungen erhalten.`
+      : `Same trim as ${link}. Both records are kept with their own sources and dated observations.`;
+  const note = ctx.locale === 'en' || !ctx.locale ? ` ${escapeHtml(same.note)}` : ` <span lang="en" data-original-language>${escapeHtml(same.note)}</span>`;
+  return `<p class="identity-note" role="note" data-same-identity="${escapeAttr(same.record_id)}">${lead}${note}</p>`;
+}
+
 export function renderCandidateModel(ctx, entry) {
   const { candidate, brand } = entry;
   const pageCopy = candidate.page_copy?.[ctx.locale || 'en'];
@@ -1721,12 +1796,14 @@ export function renderCandidateModel(ctx, entry) {
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(pageCopy?.opening ?? reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
     ${candidate.geometry_evidence ? `<p class="geometry-evidence-warning" role="note">${escapeHtml(translate(candidate.geometry_evidence.note, ctx.locale))}</p>` : ''}
+    ${candidateIdentityNote(ctx, candidate)}
     ${candidateAlternativeBuilds(entry)}
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.filter(fact => !isGeometryTableFact(fact)).map(([label, value]) => `<div><dt>${escapeHtml(label.replaceAll('_', ' '))}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     ${candidateGeometry(facts)}<section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
     ${pageCopy ? `<section class="model-reading model-buyer-checks" aria-labelledby="model-buyer-checks-title"><h2 id="model-buyer-checks-title">${ctx.locale === 'zh-Hans' ? '购买前核对' : ctx.locale === 'de' ? 'Vor dem Kauf' : 'Buyer checks'}</h2><p>${escapeHtml(pageCopy.buyer_checks)}</p><p><a href="${url(ctx.base, pageCopy.guide_path)}">${escapeHtml(pageCopy.guide_text)}</a></p></section>` : ''}
     ${relatedArticleLinks(ctx, candidate.id)}
     ${brandStory(brand)}
+    ${opinionSection(ctx, entry.opinions)}
     ${videoContext(entry.videos)}
     <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span><p>${escapeHtml([entry.price.original_currency ? `${entry.price.original_amount} ${entry.price.original_currency} · ${entry.price.conversion_rate_cny_per_original_unit} CNY/${entry.price.original_currency} · ${entry.price.conversion_rate_date}` : '', entry.price.price_basis, entry.price.conditions].filter(Boolean).join(' · '))}</p></div>${(candidate.prior_price_observations ?? []).map((prior) => `<div><strong>${escapeHtml(formatPrice(prior))}</strong><span>${escapeHtml(prior.observed_at)} · Historical reference${prior.price_type === 'official-conflict' ? ' · Official price conflict' : ''}</span><p>${escapeHtml(prior.price_basis ?? '')}</p></div>`).join('')}</div>` : ''}${candidateSourceList(ctx, entry)}</div></details>
   </div></div></section>`;
@@ -1738,6 +1815,7 @@ export function renderCandidateModel(ctx, entry) {
     description: pageCopy?.description ?? reason,
     image: candidateHeroImage,
     imageAlt: entry.image?.alt ?? candidate.name,
+    video: openGraphVideo(entry.videos),
     ogType: candidateSeoProduct ? 'product' : 'website',
     structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
@@ -1850,6 +1928,53 @@ const buildSlotCopy = {
   assembly: ['Assembly', 'Labor and small consumables; weight may legitimately be zero.']
 };
 
+// Hotspot positions on the project-drawn schematic (viewBox 600×340). The
+// drawing is a generic drop-bar layout that locates slots; it shows no product.
+const buildMapPoints = {
+  frame: [345, 168], saddle: [244, 84], cockpit: [446, 92], 'bar-tape': [492, 136], brakes: [436, 206],
+  rotors: [474, 254], wheelset: [450, 172], tires: [550, 240], 'tubes-sealant': [72, 240], cassette: [150, 240],
+  drivetrain: [176, 292], chain: [222, 263], crankset: [318, 272], 'bottom-bracket': [284, 236], pedals: [338, 306], assembly: [566, 34]
+};
+const buildStateLabels = { known: 'priced', partial: 'needs one input', open: 'needs price and weight', included: 'included' };
+
+function buildMapSvg() {
+  return `<svg class="build-map-drawing" viewBox="0 0 600 340" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="150" cy="240" r="90" stroke-width="7" class="map-tire"/><circle cx="450" cy="240" r="90" stroke-width="7" class="map-tire"/>
+    <circle cx="150" cy="240" r="78" stroke-width="2"/><circle cx="450" cy="240" r="78" stroke-width="2"/>
+    <path d="M150 240 L284 250 L258 118 Z M258 118 L418 110 L432 152 L284 250 M432 152 L450 240" stroke-width="5" class="map-frame"/>
+    <path d="M258 118 L250 90 M224 86 L272 84 M418 110 L452 100 Q474 98 480 112 L486 140 Q486 152 472 152" stroke-width="4"/>
+    <circle cx="284" cy="250" r="26" stroke-width="3"/><circle cx="150" cy="240" r="15" stroke-width="3"/>
+    <path d="M284 224 L150 225 M284 276 L178 282 L150 255 M284 250 L318 276 M308 300 L336 300" stroke-width="2.5"/>
+    <circle cx="450" cy="240" r="18" stroke-width="2.5"/><circle cx="150" cy="240" r="21" stroke-width="1.5" stroke-dasharray="3 3"/>
+  </g></svg>`;
+}
+
+function buildMap(initial) {
+  const hotspot = (id, label, state) => {
+    const [x, y] = buildMapPoints[id];
+    return `<button class="build-hotspot" type="button" data-build-hotspot="${escapeAttr(id)}" data-state="${escapeAttr(state)}" style="--x:${(x / 6).toFixed(2)}%;--y:${(y / 3.4).toFixed(2)}%" aria-label="${escapeAttr(`${label}: ${buildStateLabels[state] ?? state}`)}"><span class="build-hotspot-mark" aria-hidden="true"></span><span class="build-hotspot-label" aria-hidden="true">${escapeHtml(label)}</span></button>`;
+  };
+  const states = buildSlotIds.map((slot) => initial?.rows.get(slot)?.state ?? 'open');
+  const count = (state) => states.filter((value) => value === state).length;
+  return `<section class="build-map" aria-labelledby="build-map-title"><div class="build-map-head"><h2 id="build-map-title">Build map</h2><p>Select a part to jump to its row.</p></div>
+    <div class="build-map-canvas">${buildMapSvg()}${hotspot('frame', initial?.isComplete ? 'Base bike' : 'Frameset', 'base')}${buildSlotIds.map((slot) => hotspot(slot, buildSlotCopy[slot][0], initial?.rows.get(slot)?.state ?? 'open')).join('')}</div>
+    <ul class="build-map-legend" data-build-map-legend>${['known', 'included', 'partial', 'open'].map((state) => `<li data-state="${state}"><span class="build-hotspot-mark" aria-hidden="true"></span><span>${escapeHtml(sentenceLabel(buildStateLabels[state]))}</span> <strong data-build-state-count="${state}">${count(state)}</strong></li>`).join('')}</ul>
+  </section>`;
+}
+
+function buildCompositionBlock(kind, summary, format) {
+  if (!summary) return '';
+  const title = kind === 'price' ? 'Known price by part group' : 'Known weight by part group';
+  const segments = summary.segments.map((segment, index) => {
+    const share = summary.known > 0 ? segment.value / summary.known : 0;
+    return { ...segment, index: index + 1, share };
+  });
+  return `<figure class="build-composition" data-build-composition="${kind}"><figcaption>${escapeHtml(title)}</figcaption>
+    <div class="composition-bar" aria-hidden="true">${segments.map((segment) => `<span class="composition-segment" data-group="${escapeAttr(segment.id)}" data-series="${segment.index}" style="flex-grow:${segment.value}"${segment.value > 0 ? '' : ' hidden'}></span>`).join('')}</div>
+    <ul class="composition-legend">${segments.map((segment) => `<li data-group="${escapeAttr(segment.id)}" data-series="${segment.index}"><span class="composition-swatch" aria-hidden="true"></span><span data-composition-label>${escapeHtml(segment.label)}</span><strong data-composition-value>${segment.value > 0 ? escapeHtml(segment.high > segment.value ? `${format(segment.value)}–${format(segment.high)}` : format(segment.value)) : '—'}</strong><small data-composition-unknown${segment.unknown ? '' : ' hidden'}>${segment.unknown} unknown</small></li>`).join('')}</ul>
+  </figure>`;
+}
+
 function builderBottomBracketKey(value) {
   const text = String(value || '').toLowerCase();
   const shells = [/(?:bb86|pf86)/.test(text) ? 'bb86' : null, /bb92/.test(text) ? 'bb92' : null, /t47/.test(text) ? 't47' : null, /(?:bsa|english)/.test(text) ? 'bsa-68' : null].filter(Boolean);
@@ -1872,6 +1997,16 @@ function builderConditionalPriceNote(price) {
     : price.price_basis === 'subsidy' ? 'Subsidy offer'
       : 'Coupon or selected-offer eligibility';
   return `Conditional price; enter your eligible checkout quote. ${condition} · ${formatPrice(price)} · ${price.observed_at}`;
+}
+
+/** Reference, converted, historical and conflicting prices stay visible for planning; they are not purchase inputs. */
+function builderReferencePriceNote(price) {
+  const evidence = priceEvidence(price);
+  const label = evidence.historical ? 'Historical listing' : evidence.conflict ? 'Conflicting official prices'
+    : isReferenceConversionPrice(price) ? 'Converted reference' : /range/.test(price.price_type ?? '') ? 'Reference range' : 'Reference price';
+  const original = price.original_amount && price.original_currency && price.original_currency !== 'CNY'
+    ? ` (${price.original_currency} ${Number(price.original_amount).toLocaleString('en-US')})` : '';
+  return `Reference kept for planning, not a purchase quote; enter the exact purchase price. ${label} · ${formatPrice(price)}${original} · ${price.observed_at}`;
 }
 
 function builderCandidatePrice(price) {
@@ -1906,7 +2041,7 @@ function builderBases(ctx) {
     const isComplete = product.variant.kind === 'complete-bike';
     const weight = publishedWeightFilter(product);
     const price = priceEvidence(product.latestPrice);
-    const needsQuote = price.conditional || price.starting || price.partial;
+    const needsQuote = Boolean(product.latestPrice) && !price.purchaseEligible;
     return {
       id: product.variant.id,
       name: `${product.brand.name} ${product.variant.name}`,
@@ -1916,7 +2051,7 @@ function builderBases(ctx) {
       category: categoryFamily(product.platform.category),
       priceLow: needsQuote ? null : isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
       priceHigh: needsQuote ? null : isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
-      priceNote: price.conditional ? builderConditionalPriceNote(product.latestPrice) : price.starting ? 'Starting price; enter the exact selected-package purchase quote.' : price.partial ? translate(product.latestPrice.planner_quote_note ?? 'Reference or incomplete purchase price excluded; enter the exact purchase quote.', ctx.locale) : '',
+      priceNote: price.conditional ? builderConditionalPriceNote(product.latestPrice) : price.starting ? 'Starting price; enter the exact selected-package purchase quote.' : price.partial ? translate(product.latestPrice.planner_quote_note ?? 'Reference or incomplete purchase price excluded; enter the exact purchase quote.', ctx.locale) : needsQuote ? translate(builderReferencePriceNote(product.latestPrice), ctx.locale) : '',
       baseWeightG: weight.grams,
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'
@@ -1973,7 +2108,7 @@ function builderBases(ctx) {
 
 function builderParts(ctx) {
   const sources = new Map(ctx.data.sources.map((source) => [source.id, source]));
-  return ctx.data.buildParts.map((part) => {
+  const fileParts = ctx.data.buildParts.map((part) => {
     const primarySource = sources.get(part.price_observation?.source_id)
       ?? sources.get(part.weight?.source_id)
       ?? sources.get(part.source_ids?.[0]);
@@ -1995,6 +2130,39 @@ function builderParts(ctx) {
       source: primarySource ? { title: primarySource.title, url: primarySource.url ?? '' } : null,
     };
   });
+  // Carbon-wheel reference records are planner wheel options. Their official
+  // direct prices are foreign-currency listings, so the China price stays open.
+  const wheelsetParts = (ctx.data.wheelsets ?? []).map((wheelset) => {
+    const source = sources.get(wheelset.source_ids[0]);
+    const headline = wheelset.price_observations[0];
+    return {
+      id: wheelset.id,
+      maker: wheelset.maker,
+      name: `${wheelset.name} wheelset`,
+      slot: 'wheelset',
+      covers: [],
+      default: false,
+      priceCny: null,
+      priceDate: null,
+      priceBasis: '',
+      weightG: wheelset.weight.grams,
+      weightBasis: `${sentenceLabel(wheelset.weight.claim_type)} weight claim. ${wheelset.weight.basis}`,
+      compatibility: {
+        axles: wheelset.compatibility.axles,
+        rotor_mount: wheelset.compatibility.rotor_mount,
+        freehubs: wheelset.compatibility.freehubs,
+        tubeless_ready: wheelset.rim.tubeless_ready,
+        internal_rim_width_mm: wheelset.rim.internal_width_mm
+      },
+      includedComponents: ['front wheel', 'rear wheel'],
+      note: [
+        `Official direct price ${wheelsetAmount(headline)} on ${headline.observed_at} is not a mainland China price; enter a China quote.`,
+        wheelset.compatibility.rotor_mount ? '' : 'Rotor mount is not stated; confirm it before choosing rotors.'
+      ].filter(Boolean).join(' '),
+      source: source ? { title: source.title, url: source.url ?? '' } : null,
+    };
+  });
+  return [...fileParts, ...wheelsetParts];
 }
 
 function builderPartOptions(parts, slot, included = false) {
@@ -2008,7 +2176,7 @@ function builderPartOptions(parts, slot, included = false) {
 
 function builderSlotRow(ctx, parts, slot, view) {
   const [label, help] = buildSlotCopy[slot];
-  return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" data-build-slot="${escapeAttr(slot)}">
+  return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" id="build-slot-${escapeAttr(slot)}" tabindex="-1" data-build-slot="${escapeAttr(slot)}">
     <div class="builder-part-label"><h2>${escapeHtml(label)}</h2><p>${escapeHtml(help)}</p></div>
     <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select${view.covered ? ' disabled' : ''}>${builderPartOptions(parts, slot, view.included)}</select></label><div class="builder-custom-values" data-build-custom-values${view.customHidden ? ' hidden' : ''}><label data-build-custom-price-field${view.priceHidden ? ' hidden' : ''}>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field${view.weightHidden ? ' hidden' : ''}>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
     <div class="builder-part-facts"><strong data-build-part-price>${escapeHtml(view.price)}</strong><span data-build-part-weight>${escapeHtml(view.weight)}</span><small data-build-part-basis>${escapeHtml(view.basis)}</small><a href="${escapeAttr(view.source?.url || url(ctx.base, '/methodology/'))}" data-build-part-source${view.source?.url ? ` title="${escapeAttr(view.source.title || 'Source')}"` : ' hidden'} rel="noreferrer">Source</a></div>
@@ -2030,13 +2198,14 @@ export function renderBikeBuilder(ctx) {
   <fieldset class="builder-page page" data-bike-builder disabled aria-describedby="builder-preview-note"><legend class="sr-only">Bike configurator</legend>
     <div class="builder-workbench">
       <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><p data-build-base-facts>${initialBase ? escapeHtml(buildBaseFacts(initialBase, ctx.locale)) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom${initial?.isComplete && initialBase?.priceLow != null && initialBase?.baseWeightG != null ? ' hidden' : ''}><label data-build-base-price-field${initialBase?.priceLow != null ? ' hidden' : ''}>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field${initialBase?.baseWeightG != null ? ' hidden' : ''}>${initial?.isComplete ? 'Base bike weight g' : 'Frame-only weight g'}<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label><label class="builder-package-weight" data-build-package-weight-field${initial?.isComplete ? ' hidden' : ''}><span>Fork + remaining frame-package weight (g)</span><input type="number" min="0" step="any" placeholder="Unknown" data-build-package-weight aria-label="Fork and remaining frame-package weight in grams"><small>Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.</small></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
+      ${buildMap(initial)}
       <div class="builder-parts" role="group" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot, initial?.rows.get(slot) ?? { customHidden: true, priceHidden: true, weightHidden: true, price: '—', weight: '—', basis: '', coveredNote: '' })).join('')}</div>
     </div>
-    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
+    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><div class="build-compositions" data-build-compositions>${buildCompositionBlock('price', initial?.composition.price, formatBuildYuan)}${buildCompositionBlock('weight', initial?.composition.weight, formatBuildWeight)}</div><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
     <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
   </fieldset>`;
   return page(ctx, {
-    title: 'Bike configurator',
+    title: 'Bike build cost and weight calculator',
     description: builderDescription,
     path: '/build/',
     current: 'builder',
@@ -2225,6 +2394,91 @@ export function renderElectronicGroupsets(ctx) {
   });
 }
 
+const wheelsetUseLabels = { road: 'Road', gravel: 'Gravel' };
+const wheelsetBeadLabels = { hooked: 'Hooked', hookless: 'Hookless', unknown: 'Bead not stated' };
+
+function wheelsetAmount(observation) {
+  const symbol = { USD: 'US$', CNY: '¥', EUR: '€' }[observation.currency] ?? `${observation.currency} `;
+  return `${symbol}${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(observation.amount)}`;
+}
+
+function wheelsetDepth(rim) {
+  const { front, rear } = rim.depth_mm;
+  return front === rear ? `${front} mm` : `${front}/${rear} mm`;
+}
+
+function wheelsetGrams(weight) {
+  const tolerance = Number.isFinite(weight.tolerance_g) ? ` ±${weight.tolerance_g} g` : Number.isFinite(weight.tolerance_pct) ? ` ±${weight.tolerance_pct}%` : '';
+  return `${new Intl.NumberFormat('en-US').format(weight.grams)} g${tolerance}`;
+}
+
+function wheelsetLimit(limit) {
+  if (!Number.isFinite(limit.kg)) return 'Limit not stated';
+  return `${limit.kg} kg ${{ system: 'system limit', rider: 'rider limit', unspecified: 'limit, scope not stated' }[limit.scope]}`;
+}
+
+function wheelsetFreehubs(compatibility) {
+  return compatibility.freehubs.map((id) => wheelsetFreehubLabels[id]).join(' · ');
+}
+
+function wheelsetRotorAxle(compatibility) {
+  const rotor = { 'center-lock': 'Center Lock', '6-bolt': '6-bolt' }[compatibility.rotor_mount] ?? 'Rotor mount not stated';
+  return `${rotor} · ${compatibility.axles.join(' / ')} mm`;
+}
+
+function wheelsetRows(wheelset, sourcesById, videos = []) {
+  const { rim, compatibility } = wheelset;
+  const headline = wheelset.price_observations[0];
+  const pressure = Number.isFinite(wheelset.max_pressure.psi) ? `${wheelset.max_pressure.psi} psi maximum. ${wheelset.max_pressure.note}` : wheelset.max_pressure.note;
+  const observations = wheelset.price_observations.map((observation) => `<div><strong>${escapeHtml(wheelsetAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
+  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-grid"><section><h3>Rim and tires</h3><dl><div><dt>Bead</dt><dd>${escapeHtml(rim.bead_note)}</dd></div><div><dt>Outer width</dt><dd>${escapeHtml(rim.external_width_mm.front === rim.external_width_mm.rear ? `${rim.external_width_mm.front} mm` : `${rim.external_width_mm.front} mm front / ${rim.external_width_mm.rear} mm rear`)}</dd></div><div><dt>Tires</dt><dd>${escapeHtml(rim.tire_range)}</dd></div><div><dt>Pressure</dt><dd>${escapeHtml(pressure)}</dd></div></dl></section><section><h3>Weight and limits</h3><dl><div><dt>Weight</dt><dd>${escapeHtml(`${wheelsetGrams(wheelset.weight)}. ${wheelset.weight.basis}`)}</dd></div><div><dt>Load limit</dt><dd>${escapeHtml(`${wheelsetLimit(wheelset.load_limit)}. ${wheelset.load_limit.note}`)}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(wheelset.warranty ?? 'Not stated')}</dd></div></dl></section><section><h3>Hub and spokes</h3><dl><div><dt>Hub</dt><dd>${escapeHtml(wheelset.hub)}</dd></div><div><dt>Spokes</dt><dd>${escapeHtml(`${sentenceLabel(wheelset.spokes.material)} · ${wheelset.spokes.summary}`)}</dd></div><div><dt>Freehubs</dt><dd>${escapeHtml(wheelsetFreehubs(compatibility))}</dd></div></dl></section></div><div class="groupset-detail-lower"><section><h3>Price observations</h3><div class="price-records">${observations}</div></section><section><h3>Confirm before buying</h3><ul>${wheelset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div>${videos.length ? `<section class="wheelset-videos"><h3>Videos</h3><div class="video-list">${renderVideoEntries(videos)}</div></section>` : ''}<div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(wheelset.source_ids, sourcesById)}</span></div></div></details>`;
+  return `<tbody class="groupset-entry" id="${escapeAttr(wheelset.id)}" data-wheelset-entry><tr class="groupset-summary-row">
+    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(wheelset.name)}</strong><span>${escapeHtml(wheelset.maker)}</span></span></div></th>
+    <td data-label="Use" data-column="best"><strong>${escapeHtml(wheelsetUseLabels[wheelset.use])}</strong><span>${escapeHtml(wheelset.positioning)}</span></td>
+    <td data-label="Rim" data-column="rim"><strong>${escapeHtml(`${wheelsetDepth(rim)} · ${rim.internal_width_mm} mm inner`)}</strong><span>${escapeHtml(`${wheelsetBeadLabels[rim.bead]}${rim.tubeless_ready ? ' · tubeless ready' : ''}`)}</span></td>
+    <td data-label="Weight" data-column="weight"><strong>${escapeHtml(`${new Intl.NumberFormat('en-US').format(wheelset.weight.grams)} g`)}</strong><span>${escapeHtml(wheelsetLimit(wheelset.load_limit))}</span></td>
+    <td data-label="Fit" data-column="fit"><strong>${escapeHtml(wheelsetRotorAxle(compatibility))}</strong><span>${escapeHtml(wheelsetFreehubs(compatibility))}</span></td>
+    <td data-label="Price" data-column="price"><strong>${escapeHtml(wheelsetAmount(headline))}</strong><span>${escapeHtml(`${headline.market} · ${headline.observed_at}`)}</span></td>
+  </tr><tr class="groupset-detail-row"><td colspan="6">${details}</td></tr></tbody>`;
+}
+
+export function renderCarbonWheels(ctx) {
+  const title = 'Chinese carbon wheelsets';
+  const desc = 'Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.';
+  // Order by use, then by headline price only where currencies are comparable.
+  const byPrice = (a, b) => {
+    const [left, right] = [a.price_observations[0], b.price_observations[0]];
+    return left.currency === right.currency ? left.amount - right.amount : 0;
+  };
+  const wheelsets = [...(ctx.data.wheelsets ?? [])].sort((a, b) => b.use.localeCompare(a.use) || byPrice(a, b) || `${a.maker} ${a.name}`.localeCompare(`${b.maker} ${b.name}`));
+  const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
+  const videosFor = (wheelset) => ctx.data.videos
+    .filter((video) => video.target?.wheelset_id === wheelset.id)
+    .sort((a, b) => (a.published_at ?? '').localeCompare(b.published_at ?? ''));
+  const reviewed = latestDate(wheelsets.map((wheelset) => wheelset.reviewed_at), '');
+  const originalNotes = ctx.locale === 'zh-Hans'
+    ? '<p class="locale-evidence-note">本页提供中文导航与规格标签；型号、来源标题及详细的规格、价格和限重备注保留原文。</p>'
+    : ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Preis-, Gewichts- und Grenzwertnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${wheelsets.length} wheelsets · reviewed ${escapeHtml(reviewed)}</span> Open a row for tire limits, pressure, hub, warranty, videos and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison wheelset-comparison"><caption class="sr-only">Chinese carbon wheelsets compared</caption><thead><tr><th>Wheelset</th><th>Use</th><th>Rim</th><th>Weight</th><th>Fit</th><th>Price</th></tr></thead>${wheelsets.map((wheelset) => wheelsetRows(wheelset, sourcesById, videosFor(wheelset))).join('')}</table></div>
+  <details class="reference-guide"><summary>How rim, limit and price fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Weight</dt><dd>The maker's pair claim with its stated basis and tolerance.</dd></div><div><dt>Load limit</dt><dd>A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.</dd></div><div><dt>Not stated</dt><dd>The maker's page does not publish the value. It is not a negative finding.</dd></div><div><dt>Price</dt><dd>A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.</dd></div></dl><p>Freehub and rotor fit for these wheelsets is checked in the Build planner. <a href="${url(ctx.base, '/build/')}">Open the Build planner</a></p></div></details>`;
+  return prosePage(ctx, {
+    title,
+    desc,
+    path: '/carbon-wheels/',
+    current: 'wheels',
+    className: 'groupsets-prose',
+    structuredData: collectionStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: '/carbon-wheels/',
+      name: title,
+      description: desc,
+      items: wheelsets.map((wheelset) => ({ name: `${wheelset.maker} ${wheelset.name}` }))
+    }),
+    html
+  });
+}
+
 export function renderMethodology(ctx) {
   const assumption = buildAssumption(ctx);
   const methodologyDescription = 'How prices, frameset estimates, specifications, and evidence are handled.';
@@ -2235,7 +2489,7 @@ export function renderMethodology(ctx) {
     { name: 'Catalog CSV', encodingFormat: 'text/csv', path: '/data/catalog.csv' },
     { name: 'Source records JSON', encodingFormat: 'application/json', path: '/data/sources.json' }
   ];
-  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2 id="opinion-summaries">Owner and reviewer opinions</h2><p>Model pages may list brief paraphrases of substantive exact-model opinions from owners, reviewers and test riders on ride, fit, build, weight, compatibility, faults and support. Each links its public source and keeps the configuration, date and any supplied-product or affiliate relationship. Brand and seller material can appear but is never counted. One person or publication counts once per model; repeat comments and syndicated copies are marked and counted once. Each opinion's overall stance is classified as positive, mixed or negative from what its author wrote; no star ratings are invented.</p><p>With at least 21 independent opinions on one exact model, the page shows an opinion sentiment summary: the share of positive opinions with mixed ones counted as half, on a 0–100 scale, with its 95% Wilson interval and the number of opinions behind it. It describes sentiment about that model only. It is not a quality score, recommendation or cross-model ranking, and it never feeds sorting, filters or structured data. Below 21 opinions the collection is shown without a summary.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
   return prosePage(ctx, {
     title: 'Methodology',
     desc: methodologyDescription,
@@ -2261,13 +2515,13 @@ export function renderPrivacy(ctx) {
     <h2 id="analytics">Optional analytics</h2>
     <p>Where prior consent is required, optional analytics stays off until you choose Allow analytics. Elsewhere it runs by default. You can allow or withdraw it here at any time; no account is needed. Your choice is remembered in a necessary preference cookie for up to six months when allowing, or one year when declining.</p>
     <div class="privacy-choice"><form method="post" action="${url(ctx.base, '/analytics/opt-in')}" data-analytics-choice><button class="text-button" type="submit">Allow analytics</button></form><form method="post" action="${url(ctx.base, '/analytics/opt-out')}" data-analytics-choice><button class="text-button" type="submit">Opt out of optional analytics</button></form><p role="status" data-analytics-choice-status hidden></p></div>
-    <p>We count eligible public HTML page views, compare_open when the comparison opens, and product_outbound_click when a marked product link on a model page or in the catalog is activated. These are approximate actions, not people or purchases.</p>
+    <p>We count eligible public HTML page requests, compare_open when the comparison opens, product_outbound_click when a marked product link on a model page or in the catalog is activated, and page_engaged once when a page stays visible for at least 10 seconds and a trusted click, key press, or scroll occurs. page_engaged records foreground interaction, not a verified human. These counts describe approximate activity, not people or purchases.</p>
     <p>Umami page counts keep the public path, referring site, country, and estimated sessions. Its collector briefly uses IP and User-Agent, then discards them. Comparison events exclude selected bike lists. Product-link actions include only public catalog context, without visitor details. Umami live data remains for 13 months; encrypted backups expire within 30 days of live removal.</p>
-    <p>We have prepared an optional Google Analytics 4 parallel test. When enabled, our server sends Google one site_open for an eligible page response with a pseudonymous browser ID, public page path, and optional referring site and country. When the browser can load Google's tag through this site's first-party gateway, it sends a separate page_view with browser and device details. The tag's reported session ID is used for later server events; first opens and blocked visits have no asserted GA session ID. These are two views of the same visit, not counts to add together. Server analytics requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes when the tag works. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
+    <p>When enabled, Google Analytics 4 runs only after the consented browser requests its same-origin configuration. The browser tag can then send one page_view through this site's first-party gateway. The page request itself does not create a Google identifier or send a site_open event. The configuration request creates a first-party client ID; the tag's reported session ID is stored only after its same-origin session handshake. Server comparison and product-link events reach Google only when both stored identifiers exist. If a blocker prevents the tag or handshake, first-party Umami measurement can still work while no server event is sent to Google. Server requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes after a verified tag handshake. We disable advertising signals and personalization. Google controls its own analytics processing and retention.</p>
     <p>Product-link events include the public model and brand, source type, destination hostname, page path and interface language. Comparison events include the public page, interface language and comparison size. Queries, search text and selected bike lists stay excluded.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <p>Google processes analytics data outside your region. Its recipient and privacy information, contact options, and rights tools are described in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Allowing optional analytics includes this transfer. Advertising consent remains denied.</p>
-    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Model pages with videos embed a <code>youtube-nocookie.com</code> player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.</p>
+    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets. Model pages and the carbon-wheel reference embed a <code>youtube-nocookie.com</code> player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
 }
@@ -2307,7 +2561,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

@@ -1,4 +1,4 @@
-import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SessionCookieHeader, ga4SiteOpenPayload, ga4StoredIdentity, sendGa4, validGa4SessionId } from './ga4.mjs';
+import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SessionCookieHeader, ga4StoredIdentity, sendGa4, validGa4SessionId } from './ga4.mjs';
 import { analyticsBanner, analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COOKIE, CONSENT_MAX_AGE, CONSENT_VERSION, hasAnalyticsConsent, needsAnalyticsConsent } from './consent.mjs';
 
 const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
@@ -15,9 +15,12 @@ const ANALYTICS_EVENT_ROUTE = '/analytics/event';
 const ANALYTICS_ACTION_ROUTE = '/analytics/action';
 const GA4_CONFIG_ROUTE = '/analytics/ga-config';
 const GA4_SESSION_ROUTE = '/analytics/ga-session';
+const SITE_EVENTS_ACTION_ROUTE = '/site-events/action';
+const SITE_EVENTS_ENGAGEMENT_ROUTE = '/site-events/engagement';
 const CATALOG_DOCUMENT_PATHS = new Set(['/', '/zh/', '/de/']);
 const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
-const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click']);
+const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click', 'measurement_qa']);
+const CUSTOMER_ACTION_IDS = new Set(['product_outbound_click']);
 const MAX_ACTION_BODY_BYTES = 512;
 const actionManifestCache = new WeakMap();
 
@@ -63,6 +66,15 @@ function plainResponse(body, status, extra = {}) {
 
 function normalizeBooleanHeader(value) {
   return String(value ?? '').trim().toLowerCase() === '1';
+}
+
+function validMeasurementQaHeader(request) {
+  const value = request.headers.get('x-measurement-qa');
+  return value === null || value === '1';
+}
+
+function isMeasurementQa(request) {
+  return request.headers.get('x-measurement-qa') === '1';
 }
 
 export function hasOptOutCookie(cookieHeader = '') {
@@ -152,7 +164,8 @@ function hasPrefetchIntent(request) {
 }
 
 function looksLikeBot(request) {
-  return botPattern.test(request.headers.get('user-agent') ?? '');
+  return request.cf?.botManagement?.verifiedBot === true
+    || botPattern.test(request.headers.get('user-agent') ?? '');
 }
 
 function isAnalyticsOptedOut(request) {
@@ -193,6 +206,7 @@ export function analyticsPayload(request, url) {
     hostname: PRODUCTION_HOSTNAME,
     path: url.pathname,
     referrer: referrerOrigin(request.headers.get('referer') ?? request.headers.get('referrer') ?? ''),
+    ...(url.search === '?measurement_qa=1' ? { qa: true } : {}),
     ...identity
   };
   return payload;
@@ -216,6 +230,10 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
         'content-type': 'application/json'
       },
       body: JSON.stringify(payload),
+      // Cloudflare Workers rejects redirect: 'error'; manual keeps analytics
+      // payloads from being forwarded to a redirect target.
+      redirect: 'manual',
+      referrerPolicy: 'no-referrer',
       signal: controller.signal
     });
     return response.ok;
@@ -292,6 +310,8 @@ async function productActionContext(action, env) {
       actionManifestCache.set(env.ASSETS, pending);
     }
     const manifest = await pending;
+    // A failed asset read must not disable action context for the isolate's lifetime.
+    if (!manifest && actionManifestCache.get(env.ASSETS) === pending) actionManifestCache.delete(env.ASSETS);
     const canonicalPath = path.replace(/^\/(?:zh|de)(?=\/)/, '');
     const model = offer
       ? manifest?.offers && Object.hasOwn(manifest.offers, id) ? manifest.offers[id] : null
@@ -309,8 +329,10 @@ async function productActionContext(action, env) {
 }
 
 export function analyticsEventPayload(request, url) {
-  if (request.method !== 'POST' || url.hostname !== PRODUCTION_HOSTNAME || url.pathname !== ANALYTICS_EVENT_ROUTE) return null;
-  if (url.search || url.hash || request.headers.has('content-type') || !sameOriginPost(request, url)) return null;
+  if (request.method !== 'POST' || url.hostname !== PRODUCTION_HOSTNAME
+    || ![ANALYTICS_EVENT_ROUTE, SITE_EVENTS_ACTION_ROUTE].includes(url.pathname)) return null;
+  if (url.search || url.hash || request.headers.has('content-type') || !sameOriginPost(request, url)
+    || !validMeasurementQaHeader(request)) return null;
 
   const path = request.headers.get('x-analytics-path') ?? '';
   if (!validEventPagePath(path) || isExcludedAnalyticsRequest(request)) return null;
@@ -324,7 +346,28 @@ export function analyticsEventPayload(request, url) {
     path,
     ...identity,
     eventName: COMPARISON_OPEN_EVENT_NAME,
-    context
+    context,
+    ...(isMeasurementQa(request) ? { qa: true } : {})
+  };
+}
+
+export function analyticsEngagementPayload(request, url) {
+  if (request.method !== 'POST' || url.hostname !== PRODUCTION_HOSTNAME
+    || url.pathname !== SITE_EVENTS_ENGAGEMENT_ROUTE) return null;
+  if (url.search || url.hash || request.headers.has('content-type') || !sameOriginPost(request, url)
+    || !validMeasurementQaHeader(request)) return null;
+
+  const path = request.headers.get('x-analytics-path') ?? '';
+  if (!isEligibleDocumentPath(path) || isExcludedAnalyticsRequest(request)) return null;
+  const identity = analyticsIdentity(request);
+  if (!identity) return null;
+
+  return {
+    hostname: PRODUCTION_HOSTNAME,
+    path,
+    ...identity,
+    eventName: 'page_engaged',
+    ...(isMeasurementQa(request) ? { qa: true } : {})
   };
 }
 
@@ -390,7 +433,7 @@ async function readAction(request) {
     if (keys.some((key) => !['actionId', 'pagePath', 'sourceId', 'offerId'].includes(key))) return null;
     if (keys.length === 3 && (!Object.hasOwn(body, 'pagePath')
       || Object.hasOwn(body, 'sourceId') === Object.hasOwn(body, 'offerId'))) return null;
-    return ANALYTICS_ACTION_IDS.has(body.actionId) ? body : null;
+    return CUSTOMER_ACTION_IDS.has(body.actionId) ? body : null;
   } catch {
     return null;
   }
@@ -404,7 +447,7 @@ function isExcludedActionRequest(request) {
 async function actionResponse(request, url, env, ctx) {
   if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
   if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
-  if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash) return plainResponse('Invalid action request', 400);
+  if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash || !validMeasurementQaHeader(request)) return plainResponse('Invalid action request', 400);
   if (isExcludedActionRequest(request)) return noContentResponse();
 
   const contentType = request.headers.get('content-type') ?? '';
@@ -414,9 +457,11 @@ async function actionResponse(request, url, env, ctx) {
   const context = Object.hasOwn(action, 'pagePath') ? await productActionContext(action, env) : null;
   if (Object.hasOwn(action, 'pagePath') && !context) return plainResponse('Invalid action request', 400);
   if (typeof ctx.waitUntil === 'function') {
-    ctx.waitUntil(ingestAction(action.actionId, env, globalThis.fetch, context));
+    const measurementQa = isMeasurementQa(request);
+    ctx.waitUntil(ingestAction(measurementQa ? 'measurement_qa' : action.actionId, env, globalThis.fetch,
+      measurementQa ? null : context));
     const identity = ga4Configured(env) && ga4StoredIdentity(request);
-    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(action.actionId, identity, context ?? {}), env));
+    if (identity?.sessionId && !measurementQa) ctx.waitUntil(sendGa4(ga4ActionPayload(action.actionId, identity, context ?? {}), env));
   }
   return noContentResponse();
 }
@@ -424,7 +469,8 @@ async function actionResponse(request, url, env, ctx) {
 async function comparisonEventResponse(request, url, env, ctx) {
   if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
   if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
-  if (url.search || request.headers.has('content-type') || await hasEventBodyBytes(request)) return plainResponse('Invalid event request', 400);
+  if (url.search || !validMeasurementQaHeader(request) || request.headers.has('content-type')
+    || await hasEventBodyBytes(request)) return plainResponse('Invalid event request', 400);
 
   const path = request.headers.get('x-analytics-path') ?? '';
   if (!validEventPagePath(path) || !comparisonContext(request, path)) return plainResponse('Invalid event request', 400);
@@ -432,8 +478,24 @@ async function comparisonEventResponse(request, url, env, ctx) {
   if (payload && typeof ctx.waitUntil === 'function') {
     ctx.waitUntil(ingestAnalytics(payload, env));
     const identity = ga4Configured(env) && ga4StoredIdentity(request);
-    if (identity) ctx.waitUntil(sendGa4(ga4ActionPayload(COMPARISON_OPEN_EVENT_NAME, identity, payload.context), env));
+    if (identity?.sessionId && !isMeasurementQa(request)) {
+      ctx.waitUntil(sendGa4(ga4ActionPayload(COMPARISON_OPEN_EVENT_NAME, identity, payload.context), env));
+    }
   }
+  return noContentResponse();
+}
+
+async function engagementResponse(request, url, env, ctx) {
+  if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
+  if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
+  if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash || !validMeasurementQaHeader(request)
+    || request.headers.has('content-type') || await hasEventBodyBytes(request)) {
+    return plainResponse('Invalid engagement request', 400);
+  }
+  const path = request.headers.get('x-analytics-path') ?? '';
+  if (!isEligibleDocumentPath(path)) return plainResponse('Invalid engagement request', 400);
+  const payload = analyticsEngagementPayload(request, url);
+  if (payload && typeof ctx.waitUntil === 'function') ctx.waitUntil(ingestAnalytics(payload, env));
   return noContentResponse();
 }
 
@@ -447,14 +509,16 @@ function ga4ConfigResponse(request, url, env) {
     }
     return response;
   }
-  const identity = ga4StoredIdentity(request);
-  if (!identity) return responseWithHeaders(noContentResponse(), { 'cache-control': 'no-store' });
-  return responseWithHeaders(new Response(JSON.stringify({
+  const existingIdentity = ga4StoredIdentity(request);
+  const identity = existingIdentity ?? ga4Identity(request);
+  const response = responseWithHeaders(new Response(JSON.stringify({
     measurementId: env.GA4_MEASUREMENT_ID,
     clientId: identity.clientId,
   }), { headers: { 'content-type': 'application/json; charset=utf-8' } }), {
     'cache-control': 'no-store'
   });
+  if (!existingIdentity) response.headers.append('set-cookie', ga4CookieHeaders(identity)[0]);
+  return response;
 }
 
 async function ga4SessionResponse(request, url, env) {
@@ -479,10 +543,11 @@ function choiceResponse(request, url, optOut, env) {
     ? `${OPT_OUT_COOKIE}=1; Max-Age=${OPT_OUT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`
     : `${OPT_OUT_COOKIE}=; ${expiry}`;
   const action = optOut ? 'excluded from' : 'included in';
-  const german = url.searchParams.get('lang') === 'de';
-  const response = htmlResponse(german ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analyseauswahl gespeichert</h1><p>${optOut ? 'Dieser Browser ist jetzt von der optionalen Seitenanalyse ausgeschlossen.' : 'Dieser Browser nimmt jetzt an der optionalen Seitenanalyse teil.'}</p><p>Do Not Track und Global Privacy Control werden weiterhin beachtet.</p><p><a href="/de/privacy/">Zurück zum Datenschutz</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
+  const language = url.searchParams.get('lang');
+  const german = language === 'de', chinese = language === 'zh';
+  const response = htmlResponse(chinese ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>分析偏好已保存</h1><p>${optOut ? '此浏览器现已不参与可选的页面分析。' : '此浏览器现已参与可选的页面分析。'}</p><p>浏览器发出 Do Not Track 或 Global Privacy Control 信号时，我们仍会遵守。</p><p><a href="/zh/privacy/">返回隐私页面</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : german ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analyseauswahl gespeichert</h1><p>${optOut ? 'Dieser Browser ist jetzt von der optionalen Seitenanalyse ausgeschlossen.' : 'Dieser Browser nimmt jetzt an der optionalen Seitenanalyse teil.'}</p><p>Do Not Track und Global Privacy Control werden weiterhin beachtet.</p><p><a href="/de/privacy/">Zurück zum Datenschutz</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
     'set-cookie': cookie, 'content-security-policy': analyticsScriptPolicy(false)
-  }, german ? 'de' : 'en');
+  }, german ? 'de' : chinese ? 'zh-Hans' : 'en');
   response.headers.append('set-cookie', optOut
     ? `${CONSENT_COOKIE}=; ${expiry}`
     : `${CONSENT_COOKIE}=${CONSENT_VERSION}; Max-Age=${CONSENT_MAX_AGE}; Path=/; Secure; HttpOnly; SameSite=Lax`);
@@ -518,6 +583,12 @@ export async function handleRequest(request, env = {}, ctx = {}) {
   if (url.pathname === GA4_SESSION_ROUTE) return ga4SessionResponse(request, url, env);
   if (url.pathname === ANALYTICS_EVENT_ROUTE) return comparisonEventResponse(request, url, env, ctx);
   if (url.pathname === ANALYTICS_ACTION_ROUTE) return actionResponse(request, url, env, ctx);
+  if (url.pathname === SITE_EVENTS_ACTION_ROUTE) {
+    return request.headers.has('content-type')
+      ? actionResponse(request, url, env, ctx)
+      : comparisonEventResponse(request, url, env, ctx);
+  }
+  if (url.pathname === SITE_EVENTS_ENGAGEMENT_ROUTE) return engagementResponse(request, url, env, ctx);
 
   const redirect = trailingSlashRedirect(url);
   if (redirect) return redirect;
@@ -527,7 +598,8 @@ export async function handleRequest(request, env = {}, ctx = {}) {
   if ((response.headers.get('content-type') ?? '').toLowerCase().startsWith('text/html')) {
     const eligible = response.status === 200 && request.method === 'GET'
       && url.hostname === PRODUCTION_HOSTNAME && isEligibleDocumentPath(url.pathname);
-    const allowed = eligible && !isExcludedAnalyticsRequest(request) && ga4Configured(env);
+    const firstPartyAnalyticsAllowed = eligible && !isExcludedAnalyticsRequest(request);
+    const allowed = firstPartyAnalyticsAllowed && ga4Configured(env);
     const nonce = allowed ? crypto.randomUUID().replaceAll('-', '') : '';
     response = responseWithHeaders(response, {
       'content-security-policy': analyticsScriptPolicy(allowed, nonce),
@@ -540,11 +612,14 @@ export async function handleRequest(request, env = {}, ctx = {}) {
     const showBanner = eligible && needsAnalyticsConsent(request) && !hasAnalyticsConsent(request)
       && !isAnalyticsOptedOut(request) && !hasPrefetchIntent(request) && !looksLikeBot(request);
     const priceCountry = eligible && CATALOG_DOCUMENT_PATHS.has(url.pathname) ? requestCountry(request) : '';
-    if (allowed || showBanner || priceCountry) {
+    if (firstPartyAnalyticsAllowed || allowed || showBanner || priceCountry) {
       let html = await response.text();
       // Only a coarse country hint enters the catalog. No location permission,
       // additional lookup, persistence, or shopping-choice consent override.
       if (priceCountry) html = html.replace('data-price-country=""', `data-price-country="${priceCountry}"`);
+      if (firstPartyAnalyticsAllowed) {
+        html = html.replace(/<body(?=[\s>])/, '<body data-analytics-allowed="true"');
+      }
       if (allowed) {
         // Only site-owned markers receive a nonce. Cloudflare's injected inline
         // commands and external bootstrap must not start the tag first.
@@ -563,13 +638,6 @@ export async function handleRequest(request, env = {}, ctx = {}) {
     if (payload) {
       const task = ingestAnalytics(payload, env);
       if (typeof ctx.waitUntil === 'function') ctx.waitUntil(task);
-      if (ga4Configured(env)) {
-        const identity = ga4Identity(request);
-        if (typeof ctx.waitUntil === 'function') ctx.waitUntil(sendGa4(ga4SiteOpenPayload(payload, identity), env));
-        const ga4Response = responseWithHeaders(response, { 'cache-control': 'private, no-store' });
-        for (const header of ga4CookieHeaders(identity)) ga4Response.headers.append('set-cookie', header);
-        return ga4Response;
-      }
     }
   }
   return response;

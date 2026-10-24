@@ -1,0 +1,46 @@
+{
+  "id": "elitewheels-marvel-50d-ii",
+  "maker": "Elitewheels",
+  "name": "Marvel 50D II",
+  "use": "road",
+  "status": "current",
+  "positioning": "Steel-spoke 50 mm road wheelset with reduced ETRTO-compliant hooks and an in-house pawl hub.",
+  "rim": {
+    "depth_mm": { "front": 50, "rear": 50 },
+    "internal_width_mm": 23,
+    "external_width_mm": { "front": 31, "rear": 31 },
+    "bead": "hooked",
+    "bead_note": "ETRTO-compliant reduced hooks.",
+    "tubeless_ready": true,
+    "tire_range": "700×28–45C compatible; 28–30C recommended"
+  },
+  "max_pressure": { "psi": null, "note": "Not published on the product page; the maker refers to its user guide." },
+  "load_limit": { "kg": 120, "scope": "system", "note": "Includes rider, bike, gear and accessories." },
+  "weight": { "grams": 1500, "tolerance_g": 30, "basis": "Pair without tubeless valves and rim tape, although both ship installed.", "claim_type": "official" },
+  "hub": "Elitewheels Motion · 4 pawls · S&S ceramic bearings",
+  "spokes": { "material": "steel", "summary": "Alpina Ultralite Aero · 21F/24R" },
+  "compatibility": {
+    "rotor_mount": "center-lock",
+    "axles": ["12x100", "12x142"],
+    "freehubs": ["hg-road", "sram-xdr", "campagnolo-10-12", "campagnolo-n3w"]
+  },
+  "warranty": "3-year carbon rim warranty; a crash replacement policy is offered on a separate page.",
+  "price_observations": [
+    {
+      "amount": 839,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-20",
+      "conditions": "The store advertises free shipping and customs duties for the US, EU, UK and Australia. Thru-axles are not included.",
+      "source_id": "elitewheels-marvel-50d-ii-official-2026-10-20"
+    }
+  ],
+  "caveats": [
+    "Freehub bodies are made by Elitewheels; other brands' freehubs do not fit.",
+    "No maximum tire pressure is printed on the product page.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "source_ids": ["elitewheels-marvel-50d-ii-official-2026-10-20"],
+  "reviewed_at": "2026-10-20"
+}

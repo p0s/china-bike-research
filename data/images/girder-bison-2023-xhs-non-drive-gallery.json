@@ -1,0 +1,59 @@
+{
+  "id": "girder-bison-2023-xhs-non-drive-gallery",
+  "candidate_id": "girder-bison-r7020-2023-reference",
+  "role": "gallery",
+  "label": "2023 dealer photo, non-drive side",
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/girder-bison-2023-xhs-non-drive/09f6ad0a1a052179-detail-w880.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/girder-bison-2023-xhs-non-drive/af7182134e17e21f-card-w480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 39610,
+        "sha256": "af7182134e17e21f4cae7c9dee1601ed231fc283aba6efc4a28be03a5ec1b498",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/girder-bison-2023-xhs-non-drive/09f6ad0a1a052179-detail-w880.webp",
+        "width": 880,
+        "height": 660,
+        "bytes": 87534,
+        "sha256": "09f6ad0a1a052179c06248142f591df557a685b6148898c1ec45903049a98f51",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-girder-bison-r7020-promotion-2023-04-2026-10-24",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS dealer post creator",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS dealer post; see source",
+  "alt": "Orange GIRDER BISON carbon road bike from the non-drive side on a display stand",
+  "display_note": "April 2023 dealer promotion.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/6434f1d9000000001203db87",
+  "source_media_sha256": "9c29a30b5148a55a8b5b2c35c2a68a129c50aa30809242c2357e8a559d813e87",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}

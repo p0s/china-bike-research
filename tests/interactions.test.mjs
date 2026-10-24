@@ -132,7 +132,9 @@ test('shared tooltips distinguish hover from pinned click state', () => {
 test('catalog and shortlist previews share uncropped paint while preserving link hit areas', () => {
   assert.match(styles, /\.catalog-product \{[^}]*grid-template-columns: 96px minmax\(0, 1fr\)/);
   assert.match(styles, /\.product-image \{[^}]*width: 156px/);
-  assert.match(styles, /:is\(\.catalog-row, \.curated-group\) \.product-image-link\.is-previewing > img \{[\s\S]*?transform: translate\([^;]+scale\(var\(--image-preview-scale\)\)/);
+  assert.match(styles, /\.image-preview-layer \{[\s\S]*?position: fixed;[\s\S]*?pointer-events: none;/);
+  assert.match(styles, /\.product-image > \.image-info \{ position: absolute;/);
+  assert.doesNotMatch(styles, /--image-preview-scale/);
   assert.match(styles, /\.product-image-link > img \{ pointer-events: none; \}/);
 
 

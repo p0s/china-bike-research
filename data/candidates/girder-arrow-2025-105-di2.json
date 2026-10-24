@@ -1,0 +1,56 @@
+{
+  "id": "girder-arrow-2025-105-di2",
+  "name": "GIRDER 格拉德 Arrow 2025 105 Di2",
+  "model_id": "girder-arrow-2025-105-di2",
+  "brand_id": "girder",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "A current official mainland aero-road complete with Shimano 105 Di2, T47 threaded bottom bracket, UDH, carbon wheels and a full size chart at a ¥12,800 list price.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 2×12; FC-R7100 52-36T 170 mm crank, CS-R7100 11-36T cassette, CN-M7100 chain",
+    "brakes": "Shimano 105 R7170 hydraulic disc",
+    "frame": "2025 Arrow T800 + T1000 carbon aero frame and fork, 12 mm thru-axles, UDH dropout, fully hidden cable routing",
+    "frame_material": "T800 + T1000 carbon frame (reinforced bottom-bracket area) and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded aero frame and fork with fully hidden routing and a separate Shimano Di2 battery storage design",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found; the reinforced bottom-bracket wording is manufacturer construction copy, not a test result",
+    "bottom_bracket": "T47 threaded, P1.0 thread, 84.5 mm shell width supplied with two 1 mm shims",
+    "derailleur_hanger": "UDH",
+    "wheels": "Adler Augen Classic unpainted carbon wavy-rim wheels, 50 mm front / 60 mm rear, ceramic-bearing hubs, Sapim spokes",
+    "tires": "Maxxis 700C×28C folding tires fitted; maximum clearance is not published",
+    "cockpit": "Adler Augen 2025 unpainted aero integrated carbon handlebar with internal routing and 6° offset",
+    "sizes": "XS (420 mm), S (450 mm), M (480 mm), L (510 mm)",
+    "geometry": "Official chart, stack/reach mm: XS 497/371, S 506/380, M 517/385, L 529/393.6; head angle 70–72°, seat angle 74.5–75°, chainstay 410 mm, BB drop 72 mm, wheelbase 977–993 mm",
+    "complete_weight_g": 8440,
+    "complete_weight_basis": "Manufacturer-listed weight for the 105 Di2 complete bike; size, pedals and weighing method are not stated",
+    "community_model_year_context": "A promotional XHS post dated 2025-08-15 calls an R7170 Arrow the 2026 model and states 8.4 kg without a size or pedal basis. Equivalence to this official 2025 T47/UDH generation is unverified; the official 8.44 kg reference remains unchanged.",
+    "used_market_context": "An XHS listing dated 2025-11-12 asked CNY 7,999 for a used S-size R7170 Arrow with carbon wheels and an integrated bar. Its frame generation is unidentified; this historical asking price is not a current new-bike or exact-trim quote."
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-arrow-2025-official-2026-10-23",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23",
+    "public-xhs-girder-arrow-used-r7170-2026-10-24",
+    "public-xhs-girder-arrow-2026-marketing-2026-10-24"
+  ],
+  "official_price": {
+    "amount_cny": 12800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-23",
+    "price_basis": "Manufacturer-listed price on the exact NEW 2025 ARROW page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "The official NEW 2025 ARROW page publishes the complete 105 Di2 build, T800 + T1000 frame and fork, T47 BB, UDH, 8.44 kg claim, geometry chart and a ¥12,800 price. The official route is a direct sales inquiry; no mainland marketplace listing was verified. This is not the older press-fit T700 + T800 Arrow, which has different sizes, weight and price.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 12,800 list price observed 2026-10-23; no marketplace listing or checkout amount verified"
+}
