@@ -53,5 +53,5 @@ export function renderPostVideos(ctx, post, sectionId) {
   });
   const contexts = new Map(placements.map((placement) => [placement.video_id, placement.context[locale]]));
   const id = `videos-${sectionId}`;
-  return `<aside class="article-videos" aria-labelledby="${escapeAttr(id)}"><h3 id="${escapeAttr(id)}">${escapeHtml(labels[placements.length > 1 ? 1 : 0])}</h3><small class="article-video-language">${escapeHtml(labels[2])}</small><div class="video-list">${renderVideoEntries(videos, { contexts, article: true, playerLabel: labels[3], watchLabel: labels[4], loadLabel: labels[5] })}</div></aside>`;
+  return `<aside class="article-videos" aria-labelledby="${escapeAttr(id)}"><h3 id="${escapeAttr(id)}">${escapeHtml(labels[placements.length > 1 ? 1 : 0])}</h3><small class="article-video-language">${escapeHtml(labels[2])}</small><div class="video-list">${renderVideoEntries(videos, { contexts, article: true, playerLabel: labels[3], watchLabel: labels[4], loadLabel: labels[5], takeaways: false })}</div></aside>`;
 }

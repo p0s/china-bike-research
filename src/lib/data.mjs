@@ -580,6 +580,7 @@ export function validateDataset(data = loadDataset()) {
         const value = clearance[key];
         if (value !== undefined && (typeof value !== 'number' || value <= 0 || value > 100)) errors.push(`platform ${platform.id}: invalid ${key}`);
       }
+      errors.push(...validateClearanceFieldReports(platform, data, isDate));
     }
     if (platform.category.startsWith('mtb-') && platform.handlebar !== 'flat') errors.push(`platform ${platform.id}: MTB platform must use a flat handlebar`);
     if (platform.category.startsWith('mtb-') && !isObject(platform.category_details?.suspension)) errors.push(`platform ${platform.id}: MTB platform needs category_details.suspension`);
@@ -1056,6 +1057,7 @@ export function validateDataset(data = loadDataset()) {
         }
       }
     }
+    errors.push(...validateVideoEvidence(video, isDate));
     if (typeof video.summary !== 'string' || video.summary.trim().length < 30) errors.push(`video ${video.id}: summary is too short`);
     if (typeof video.disclosure !== 'string' || video.disclosure.trim().length < 20) errors.push(`video ${video.id}: disclosure is too short`);
     try {
@@ -1393,4 +1395,53 @@ export function freshness(observedAt, now = new Date()) {
   if (days <= 90) return { label: 'Recent', key: 'recent', days };
   if (days <= 180) return { label: 'Historical', key: 'historical', days };
   return { label: 'Old', key: 'old', days };
+}
+
+const TRANSCRIPT_STATUSES = new Set(['creator-captions', 'auto-captions', 'no-speech', 'unavailable']);
+const TAKEAWAY_KINDS = new Set(['measured', 'fit', 'build', 'ride', 'quality', 'support', 'price', 'claim']);
+
+// Takeaways are paraphrases checked against a locally reviewed transcript; a
+// video without an available transcript keeps its summary only.
+export function validateVideoEvidence(video, isDate) {
+  const errors = [];
+  const where = `video ${video.id}`;
+  const transcript = video.transcript;
+  if (transcript !== undefined) {
+    if (video.provider !== 'youtube') errors.push(`${where}: transcript status applies only to YouTube videos`);
+    if (!isObject(transcript) || !TRANSCRIPT_STATUSES.has(transcript.status) || transcript.method !== 'youtube-transcript-panel' || !isDate(transcript.checked_at)) errors.push(`${where}: invalid transcript record`);
+    else if (['creator-captions', 'auto-captions'].includes(transcript.status) && (typeof transcript.language !== 'string' || transcript.language.length < 2)) errors.push(`${where}: transcript needs its caption language`);
+    if (transcript?.note !== undefined && (typeof transcript.note !== 'string' || transcript.note.trim().length < 10)) errors.push(`${where}: transcript note is too short`);
+  }
+  if (video.takeaways !== undefined) {
+    if (!['creator-captions', 'auto-captions'].includes(transcript?.status)) errors.push(`${where}: takeaways need a reviewed transcript`);
+    if (!Array.isArray(video.takeaways) || !video.takeaways.length || video.takeaways.length > 8) errors.push(`${where}: takeaways must list one to eight points`);
+    else for (const item of video.takeaways) {
+      if (!isObject(item) || !TAKEAWAY_KINDS.has(item.kind) || typeof item.text !== 'string' || item.text.trim().length < 20 || item.text.length > 320
+        || (item.at_seconds !== undefined && (!Number.isFinite(item.at_seconds) || item.at_seconds < 0))
+        || Object.keys(item).some((key) => !['kind', 'at_seconds', 'text'].includes(key))) errors.push(`${where}: invalid takeaway`);
+    }
+  }
+  return errors;
+}
+
+// A field report records what a reviewer saw on one exact build. It never
+// replaces the recorded maximum and must point at a transcript-checked video
+// of the same platform.
+export function validateClearanceFieldReports(platform, data, isDate) {
+  const reports = platform.tire_clearance?.field_reports;
+  if (reports === undefined) return [];
+  const where = `platform ${platform.id}`;
+  if (!Array.isArray(reports) || !reports.length) return [`${where}: field_reports must be a non-empty array`];
+  const variantIds = new Set(data.variants.filter((variant) => variant.platform_id === platform.id).map((variant) => variant.id));
+  const errors = [];
+  for (const report of reports) {
+    const video = data.videos.find((item) => item.id === report?.video_id);
+    if (!isObject(report) || Object.keys(report).some((key) => !['video_id', 'at_seconds', 'configuration', 'short', 'summary'].includes(key))) { errors.push(`${where}: invalid clearance field report`); continue; }
+    if (!video || !(video.target?.platform_id === platform.id || variantIds.has(video.target?.variant_id))) errors.push(`${where}: field report must cite a video of this platform`);
+    else if (!['creator-captions', 'auto-captions'].includes(video.transcript?.status)) errors.push(`${where}: field report video needs a reviewed transcript`);
+    if (!Number.isFinite(report.at_seconds) || report.at_seconds < 0) errors.push(`${where}: field report needs a timestamp`);
+    if (typeof report.short !== 'string' || !report.short.trim() || report.short.length > 60) errors.push(`${where}: field report short label must be 1-60 characters`);
+    for (const key of ['configuration', 'summary']) if (typeof report[key] !== 'string' || report[key].trim().length < 20) errors.push(`${where}: field report ${key} is too short`);
+  }
+  return errors;
 }

@@ -6,7 +6,7 @@ import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
-import { openGraphVideo, renderVideoEntries } from './lib/videos.mjs';
+import { clockLabel, openGraphVideo, renderVideoEntries, timestampUrl } from './lib/videos.mjs';
 import { opinionAggregate } from './lib/opinions.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay } from '../assets/price-display.js';
@@ -405,6 +405,19 @@ function priceTooltipLines(ctx, product) {
   return lines;
 }
 
+// Reviewer and owner fit checks from transcript-verified videos stay beside,
+// never inside, the recorded maximum.
+function clearanceFieldReports(product) {
+  const videos = new Map((product.videos ?? []).map((video) => [video.id, video]));
+  return (product.platform.tire_clearance?.field_reports ?? [])
+    .map((report) => ({ ...report, video: videos.get(report.video_id) }))
+    .filter((report) => report.video);
+}
+
+function fieldReportLine(report) {
+  return `Field check (${report.video.channel_name} video, ${clockLabel(report.at_seconds)}): ${report.summary} Build: ${report.configuration}.`;
+}
+
 function clearanceTooltipLines(product) {
   const clearance = product.platform.tire_clearance;
   if (!clearance) return ['Tire clearance is not a common comparison field for this category.'];
@@ -412,8 +425,13 @@ function clearanceTooltipLines(product) {
     `${clearanceLongLabel(product.platform)}.`,
     `Evidence: ${evidenceLabel(clearance.evidence)}.`,
     clearance.note,
+    ...clearanceFieldReports(product).map(fieldReportLine),
     clearance.eligibility !== 'pass' ? `Eligibility: ${clearance.eligibility}. Verify the exact SKU before buying.` : ''
   ];
+}
+
+function clearanceFieldReportNote(product) {
+  return clearanceFieldReports(product).map((report) => `<small class="fact-field-report">${escapeHtml(report.short)} · <a href="${escapeAttr(timestampUrl(report.video, report.at_seconds))}" rel="noreferrer">${escapeHtml(report.video.channel_name)} ${escapeHtml(clockLabel(report.at_seconds))}</a></small>`).join('');
 }
 
 function publishedTireClearance(product) {
@@ -421,7 +439,8 @@ function publishedTireClearance(product) {
   return {
     value: recorded ? clearanceLabel(product.platform) : '—',
     sortValue: maxClearance(product.platform) ?? 0,
-    details: recorded ? clearanceTooltipLines(product) : []
+    details: recorded ? clearanceTooltipLines(product) : [],
+    fieldReport: clearanceFieldReports(product).map((report) => report.short).join(' · ')
   };
 }
 
@@ -770,7 +789,7 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
     </div>
     ${price.html}
     ${catalogCell('capability', metric.label, { main: metric.value }, { extra: metric.details.length ? infoTip(`${metric.label} details`, metric.details) : '' })}
-    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value))}
+    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value), { extra: tireClearance.fieldReport ? infoTip('Tire clearance field check', tireClearance.details) : '' })}
     ${drivetrain}
     ${catalogCell('weight', 'Weight', weightParts(weightLabel(product), variant.kind))}
     ${catalogCell('frame', 'Frame', { main: frameStandard(product) }, { extra: infoTip('Frame details', frameTooltipLines(product)) })}
@@ -952,7 +971,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
     </div>
     ${price.html}
     ${catalogCell('capability', metric.label, { main: metric.value })}
-    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value))}
+    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value), { extra: tireClearance.fieldReport ? infoTip('Tire clearance field check', tireClearance.details) : '' })}
     ${drivetrain}
     ${catalogCell('weight', 'Weight', weightParts(weight, entry.kind))}
     ${catalogCell('frame', 'Frame', { main: frame }, { clamp: true })}
@@ -1002,6 +1021,7 @@ function comparisonSummary(ctx, product) {
     categoryMetricKind: metric.kind,
     categoryMetricDetails: metric.details.join(' '),
     ...(tireClearance.value !== '—' ? { tireClearance: tireClearance.value } : {}),
+    ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightFilter.grams) ? { weightGrams: weightFilter.grams, weightKind: weightFilter.kind } : {}),
     ...(product.variant.kind === 'complete-bike' ? { drivetrain: drivetrainLabel(ctx, product), drivetrainSubline: drivetrainSubline(ctx, product) } : {}),
     weight: weightLabel(product),
@@ -1070,6 +1090,7 @@ function candidateComparisonSummary(ctx, entry) {
     categoryMetricLabel: metric.label,
     categoryMetricKind: metric.kind,
     ...(tireClearance.value !== '—' ? { tireClearance: tireClearance.value } : {}),
+    ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightGrams) ? { weightGrams, weightKind: entry.kind === 'complete-bike' ? 'complete' : 'frame' } : {}),
     ...(entry.kind === 'complete-bike' && facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
     ...(weight !== '—' ? { weight } : {}),
@@ -1545,7 +1566,7 @@ export function renderModel(ctx, product) {
   const reviewedThrough = productEvidenceDate(ctx, product);
   const detailFacts = [
     ...(['tire', 'discipline'].includes(metric.kind) ? [] : [[metric.label, metric.value, infoTip(`${metric.label} details`, metric.details)]]),
-    ['Tire clearance', tireClearance.value, tireClearance.details.length ? infoTip('Tire clearance details', tireClearance.details) : ''],
+    ['Tire clearance', tireClearance.value, `${tireClearance.details.length ? infoTip('Tire clearance details', tireClearance.details) : ''}${clearanceFieldReportNote(product)}`],
     ...(variant.kind === 'complete-bike' ? [['Drivetrain', [drivetrainLabel(ctx, product), drivetrainSubline(ctx, product)].filter(Boolean).join(' · '), '']] : []),
     ['Weight', weightLabel(product), ''],
     ['Frame standard', frameStandard(product), ''],
@@ -2061,7 +2082,7 @@ function builderBases(ctx) {
       tireClearanceMm: maxClearance(product.platform) ?? null,
       tireClearanceLabel: clearanceLabel(product.platform),
       tireClearanceByDrivetrain: product.platform.tire_clearance?.drivetrain_limits_mm ?? null,
-      tireClearanceNote: product.platform.tire_clearance?.note ?? '',
+      tireClearanceNote: [product.platform.tire_clearance?.note ?? '', ...clearanceFieldReports(product).map(fieldReportLine)].filter(Boolean).join(' '),
       tireClearanceStatus: product.platform.tire_clearance?.limits_status ?? '',
       drivetrainCompatibility: product.platform.frame.drivetrain_compatibility ?? null,
       drivetrainLayout: isComplete ? product.variant.drivetrain?.layout ?? null : null,

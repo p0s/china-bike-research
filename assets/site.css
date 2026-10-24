@@ -413,6 +413,16 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .article-video-language { color: var(--muted); font-size: .72rem; }
 .article-videos .video-copy { min-width: 0; overflow-wrap: anywhere; }
 .video-fallback { display: inline-block; margin-top: 10px; font-size: .8rem; }
+.video-takeaways { grid-column: 1 / -1; min-width: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; }
+.video-takeaways h4 { margin: 0 0 6px; font-size: .78rem; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
+.video-takeaways ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: .8rem; line-height: 1.45; }
+.video-takeaways li { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; overflow-wrap: anywhere; }
+.video-takeaways li > span:last-child { flex: 1 1 18rem; }
+.video-takeaway-kind { flex: 0 0 auto; color: var(--muted); font-size: .66rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+.video-takeaways li > a { flex: 0 0 auto; color: var(--accent); font-size: .74rem; font-variant-numeric: tabular-nums; text-underline-offset: 3px; }
+.video-takeaways small { display: block; margin-top: 8px; color: var(--muted); font-size: .66rem; }
+.fact-field-report { display: block; margin-top: 4px; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+.fact-field-report a { color: var(--accent); text-underline-offset: 2px; }
 .detail-section { margin: 28px 0 6px; padding: 24px 0 10px; border-top: 1px solid var(--line); }
 .detail-section > p { max-width: 760px; margin: 8px 0 0; color: var(--muted); line-height: 1.65; }
 .detail-panel { border-top: 1px solid var(--line); }

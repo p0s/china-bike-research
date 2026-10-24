@@ -2262,7 +2262,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const hasValue = (key) => items.some((item) => item[key] && item[key] !== '—');
     const clearance = (item) => {
       const parts = clearanceParts(item.tireClearance);
-      return valueCell(parts.main, parts.sub);
+      const cell = valueCell(parts.main, parts.sub);
+      // A transcript-checked reviewer fit observation stays visibly separate from the maximum.
+      if (item.tireClearanceFieldReport) cell.append(element('small', 'compare-field-report', translate(item.tireClearanceFieldReport, locale)));
+      return cell;
     };
     // Complete-bike and frame-only weights never share a row.
     const weightKindOf = (item) => !item.weight || item.weight === '—' ? '' : / frame$/.test(item.weight) ? 'frame' : 'complete';
