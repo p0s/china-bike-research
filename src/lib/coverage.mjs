@@ -9,6 +9,7 @@ export const COVERAGE_COLLECTIONS = [
   'sources',
   'images',
   'videos',
+  'opinions',
   'groupsets',
   'buildParts',
   'wheelsets',

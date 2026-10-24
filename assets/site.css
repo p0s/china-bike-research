@@ -1469,3 +1469,47 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .builder-part-row.is-located { animation: none; }
   .build-hotspot-mark, .build-hotspot-label { transition: none; }
 }
+
+/* Owner and reviewer opinions. Stance uses a glyph and text, never colour alone. */
+.opinion-section { margin: 30px 0 22px; padding: 24px 0; border-top: 1px solid var(--line); }
+.opinion-section > h2 { margin: 0; font-size: 1.35rem; }
+.opinion-intro { max-width: 70ch; margin: 6px 0 0; color: var(--muted); font-size: var(--fs-sm); }
+.opinion-status { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: 14px 0 0; padding: 12px 14px; border: 1px dashed var(--line-strong); border-radius: 10px; color: var(--muted); font-size: var(--fs-sm); }
+.opinion-status > strong { color: var(--ink); font-size: 1.1rem; }
+.opinion-score { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; margin-top: 16px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-soft); }
+.opinion-score-value { display: flex; align-items: baseline; gap: 2px; }
+.opinion-score-value strong { font-size: 2.6rem; font-weight: 780; line-height: 1; font-variant-numeric: tabular-nums; }
+.opinion-score-value span { color: var(--muted); font-weight: 650; }
+.opinion-score-copy p { margin: 0; }
+.opinion-distribution { display: flex; gap: 2px; height: 10px; margin: 10px 0 6px; border-radius: 4px; overflow: hidden; }
+.opinion-distribution [data-stance] { flex-basis: 0; min-width: 0; }
+[data-stance="positive"] { --stance: var(--accent); --stance-glyph: '+'; }
+[data-stance="mixed"] { --stance: #b07a12; --stance-glyph: '±'; }
+[data-stance="negative"] { --stance: #b3402a; --stance-glyph: '−'; }
+:root[data-theme="dark"] [data-stance="mixed"] { --stance: #e2b66e; }
+:root[data-theme="dark"] [data-stance="negative"] { --stance: #f08a72; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-stance="mixed"] { --stance: #e2b66e; }
+  :root:not([data-theme="light"]) [data-stance="negative"] { --stance: #f08a72; }
+}
+.opinion-distribution [data-stance] { background: var(--stance); }
+.opinion-counts { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--fs-sm); }
+.opinion-counts > span, .opinion-stance { display: inline-flex; align-items: center; gap: 5px; }
+.opinion-counts > span > span, .opinion-stance > span { display: inline-grid; place-items: center; width: 15px; height: 15px; border-radius: 50%; background: var(--stance); color: var(--surface); font-size: 11px; font-weight: 800; line-height: 1; }
+.opinion-counts > span > span::before, .opinion-stance > span::before { content: var(--stance-glyph); }
+.opinion-method { margin-top: 8px !important; color: var(--muted); font-size: var(--fs-xs); }
+.opinion-list { display: grid; gap: 0; margin: 14px 0 0; padding: 0; list-style: none; }
+.opinion-entry { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.opinion-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--muted); font-size: var(--fs-xs); font-weight: 680; }
+.opinion-stance { color: var(--ink); }
+.opinion-summary { max-width: 72ch; margin: 6px 0 0; }
+.opinion-config, .opinion-caveat, .opinion-source { max-width: 72ch; margin: 4px 0 0; color: var(--muted); font-size: var(--fs-sm); }
+.opinion-config > span:first-child { font-weight: 700; }
+.opinion-caveat > span:first-child { font-weight: 700; }
+.opinion-source a { font-weight: 650; }
+.opinion-more { margin-top: 6px; }
+.opinion-more > summary { padding: 10px 0; color: var(--accent); font-weight: 700; cursor: pointer; }
+.video-more-title { margin: 22px 0 10px; font-size: 1rem; }
+@media (max-width: 600px) {
+  .opinion-score { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+}

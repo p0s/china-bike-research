@@ -8,6 +8,7 @@ import { editorialReviewIssues } from './editorial-review.mjs';
 import { priceEvidence } from './price-evidence.mjs';
 import { validateRegionalPricing } from './regional-prices.mjs';
 import { validateMountApproval } from './mount-evidence.mjs';
+import { validateOpinionCollection } from './opinions.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -234,6 +235,7 @@ export function loadDataset() {
     sources: loadDirectory('sources'),
     images: loadDirectory('images'),
     videos: loadDirectory('videos'),
+    opinions: loadDirectory('opinions'),
     groupsets: loadDirectory('groupsets'),
     buildParts: loadDirectory('build-parts'),
     wheelsets: loadDirectory('wheelsets'),
@@ -274,6 +276,8 @@ function categoryValues(value) {
 }
 function hasSupportedCategory(value, categorySet) { return categoryValues(value).every((category) => categorySet.has(category)); }
 
+export const MAX_MODEL_VIDEOS = 8;
+
 export function validateDataset(data = loadDataset()) {
   const errors = [];
   const requireFields = (kind, record, fields) => {
@@ -301,6 +305,7 @@ export function validateDataset(data = loadDataset()) {
     source: data.sources,
     image: data.images,
     video: data.videos,
+    opinions: data.opinions ?? [],
     groupset: data.groupsets,
     buildPart: data.buildParts,
     wheelset: data.wheelsets ?? [],
@@ -1078,8 +1083,21 @@ export function validateDataset(data = loadDataset()) {
       wheelsetVideoCounts.set(target.wheelset_id, (wheelsetVideoCounts.get(target.wheelset_id) ?? 0) + 1);
     }
   }
+  // Model pages embed the first two videos lazily and load the rest only on request.
   for (const [platformId, count] of platformVideoCounts) {
-    if (count > 2) errors.push(`platform ${platformId}: more than two curated videos`);
+    if (count > MAX_MODEL_VIDEOS) errors.push(`platform ${platformId}: more than ${MAX_MODEL_VIDEOS} curated videos`);
+  }
+  for (const candidate of data.candidates ?? []) {
+    if ((candidate.video_ids ?? []).length > MAX_MODEL_VIDEOS) errors.push(`candidate ${candidate.id}: more than ${MAX_MODEL_VIDEOS} curated videos`);
+  }
+  for (const collection of data.opinions ?? []) {
+    errors.push(...validateOpinionCollection(collection, { platformIds, candidateIds, variantIds, videoIds: new Set(data.videos.map((video) => video.id)), isDate }));
+  }
+  const opinionTargets = new Set();
+  for (const collection of data.opinions ?? []) {
+    const key = collection.target?.platform_id ?? collection.target?.candidate_id;
+    if (opinionTargets.has(key)) errors.push(`opinions ${collection.id}: duplicate collection for ${key}`);
+    opinionTargets.add(key);
   }
   for (const [wheelsetId, count] of wheelsetVideoCounts) {
     if (count > 2) errors.push(`wheelset ${wheelsetId}: more than two curated videos`);
@@ -1181,6 +1199,7 @@ export function joinProducts(data = loadDataset()) {
     const videos = data.videos
       .filter((video) => video.target?.platform_id === platform.id || video.target?.variant_id === variant.id)
       .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
+    const opinions = (data.opinions ?? []).find((collection) => collection.target?.platform_id === platform.id) ?? null;
     return {
       variant,
       platform,
@@ -1192,6 +1211,7 @@ export function joinProducts(data = loadDataset()) {
       imageSource: image ? sources.get(image.source_id) ?? null : null,
       galleryImages,
       videos,
+      opinions,
       sources: [...sourceIds].map((id) => sources.get(id)).filter(Boolean)
     };
   }).sort((a, b) => a.allInPrice.midpoint - b.allInPrice.midpoint);
@@ -1276,6 +1296,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         .map((id) => videosById.get(id))
         .filter(Boolean)
         .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
+      const opinions = (data.opinions ?? []).find((collection) => collection.target?.candidate_id === candidate.id) ?? null;
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
         !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
@@ -1296,6 +1317,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         imageSource: image ? sources.get(image.source_id) ?? null : null,
         galleryImages,
         videos,
+        opinions,
         identifiableModel: hasIdentifiableModel,
         builderEligible,
         defaultVisible: Boolean(
