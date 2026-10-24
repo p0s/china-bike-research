@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/bike-preorders-and-production-windows-mascot-cover-6b7073caa2-640.webp', '24ec3b14dbb7f0f67c92fbcf65a9f73643aa8b1a093fa5f11fdb206fb1c8ddda'],
+  ['assets/blog/bike-preorders-and-production-windows-mascot-cover-6b7073caa2-1600.webp', 'd1422b324026bca8dff62ea82b828b3425304cc400165d7eed5fa75306e76754'],
+  ['assets/blog/bike-preorders-and-production-windows-mascot-cover-6b7073caa2-1200.jpg', '4f4919f2061b2dc6a61348406af44e4fe5f05e54d1d7a3e1d7db7b9afe7713e2'],
   ['assets/blog/compare-brand-dealer-and-marketplace-mascot-cover-e5e9dc1752-640.webp', '43045d75a9dfa358b3250c661b3a73bb4d52e3446127e0718c4767d40fc55267'],
   ['assets/blog/compare-brand-dealer-and-marketplace-mascot-cover-e5e9dc1752-1600.webp', '98f0b70014937bf50e2df07463e2da1ca440dc9e5c88188c218cec7604d9608b'],
   ['assets/blog/compare-brand-dealer-and-marketplace-mascot-cover-e5e9dc1752-1200.jpg', '53af075475464e2ebab7b13a87450d3080cabda1f643ce674944fd08e4cfb929'],
