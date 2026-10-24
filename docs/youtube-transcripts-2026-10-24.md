@@ -84,6 +84,25 @@ Delivered: transcript review and takeaways for all 20 linked videos of these ten
 
 Delivered: transcript review of the last 19 linked videos, closing the frozen 93-record scope. Takeaways for all videos with speech; Popeye's Vanyar Pro build has no speech in its captions; ICAN's Alpha 50 II build and LightCarbon's LCG071-PRO overview have no caption track. The X-LAB AD8 frame weight spoken around 2:40 was garbled in the captions and is not used.
 
+## Candidate discovery continuation (from 2026-10-25)
+
+The first campaign searched for new videos only for published platforms. This continuation freezes the 283 research-stage candidate records as of main `22ad6ff9` and searches YouTube for each identifiable exact model, including candidates that already had videos. Records are grouped by exact identity: trims of one physical platform share a search, merged or superseded pointers inherit their target's outcome, and generic or model-unclear records are marked unsuitable for exact-model video search instead of being given an invented identity. Search result cards are discovery only; every selected video is transcript-checked, and a video is linked only to the exact candidate model it shows. Sibling generations, trims with a different frame and look-alike OEM frames are recorded as mismatches.
+
+### Batch 7 — Evolve CIMA road, SAVA A7L Pro, BXT Gravel 135, Winspace M6, Elves Falath EVO, ALVAS DA54, Argon 18 Krypton Pro, BASSO Venta Disc, Bianchi Sprint ICR, Airwolf YF-R003
+
+Delivered: 17 new transcript-checked candidate videos and attributed field reports in the candidates' clearance, weight and stiffness notes.
+
+- Evolve CIMA road (`evolve-cima-road`): added Cyclists Hub (`wUP9U1tgk8U`), Hambini (`pd_HiFezS0w`), Cus Baker (`xl14yzDgiJI`) and Peak Torque (`RwC0DVcGDpY`), the batch-4 road-frame leads. Weigh-ins: size ML 765 g frame, 385 g uncut fork (Cyclists Hub); 775 g frame, about 363 g fork, size not stated (Hambini). Cyclists Hub's 32 mm tires measured about 34 mm on wide rims, near the limit. Two reviewers and a retailer report the Di2 battery holder in the seatpost losing grip. Evolve's own build video `mjGbQI0W_p8` has music only (not added); China Cycling's `x82UHOASTxc` was not added because the record already holds two China Cycling videos.
+- SAVA A7L Pro (`sava-a7l-pro-2026`): added BikeLabHQ (`elgWayjQS70`) and an owner walkaround (`D-mH_qaRoag`), both rejected earlier for the published A7L R7100 because the Pro is the full-105 trim. The owner fitted 28 mm GP5000 tires with a tight rear against SAVA's 25C figure; recorded as a community report only. SAVA R08 7170 unboxing vlog `czU9d2rQThg` (trim unclear; build and music only) was not added to `sava-r8-r8170`.
+- BXT Gravel 135 (`bxt-gravel-complete`): the three BXT 135 frame videos rejected for the BXT-055 platform now map to the candidate's 135 frame (`PoBaCk0DQmE`, `6RmPw4_VbW0`, `XtxI6o0yUPQ`): painted size-56 frame about 1,330 g with a 500 g fork, and 45 mm tires fitting with room in two builds.
+- Winspace M6 (`winspace-m6`): added BikeRadar's review (`FyzUCmZK6XA`): size-L 105 Di2 just over 8.3 kg with pedals and cages, low stack with a slack 72.3° head angle, and toe overlap on 28 mm tires.
+- Elves Falath EVO (`missing-china-price-elves-falath-evo`): added Jourdain Coleman's 500-mile review of a 2023 frame (`YY7ZSH18tDI`), 8.79 kg on 32 mm tires. Cam Nicholls' `Ucf-h48Mbuc` (2022 Falath before the EVO) and David Arthur's Falath EXP review `bZL_AtGYFe8` are sibling-model mismatches.
+- ALVAS DA54 (`alums-da54`): added The Velographer (`JeyM3VJJ2QY`; stock size S Ultegra Di2 8.4 kg with pedals) and two China Rides videos (`K76Ho12PHS8`, `VDHvlYO6if8`; ¥28,000 and 7.7 kg as built), with China Rides' brand relationship disclosed. China Rides' build `dCjKrKa1HSo` repeats the same bike and was not added.
+- Argon 18 Krypton Pro (`argon18-krypton-pro`): added Chris Hall's sponsored review (`PynzfKYcwEI`); his 500 km bike check `yGTUVSnKD5Y` repeats it. Krypton (non-Pro) videos `FiX5tQ_wooM` and `ucTDcOZf3fg` cover a different layup and were not mapped.
+- BASSO Venta Disc (`basso-venta-disc`): added Mapdec's 2023 old-generation Venta Disc 105 review and teardown (`Wynu488WepM`); `mu03UhYeoKg` is a music-only build.
+- Bianchi Sprint ICR (`bianchi-sprint-icr`): added an owner's customized 2024 Sprint ICR (`4Dm0luL76F0`). The Endurance Hub short `mfW43vIVljI` and BT Bikestore short `6AC-14FqynY` have no caption track; Sam Rates Bikes `mIJVaiz6bv0` is the Infinito (mismatch).
+- Airwolf YF-R003 (`airwolf-yf-r003`): no suitable result. Andiamo Endurance's Airwolf gravel videos (`RXKidCMpJd4`, `-bCKelOmt04`, `LK5bNAWCJxw`) show the YFR045 frame; other results are generic AliExpress listicles.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -171,7 +190,16 @@ Delivered: transcript review of the last 19 linked videos, closing the frozen 93
 | yoeleo-altera-g21 | `peak-torque-yoeleo-altera-g21-slovenia-final-review` | Peak Torque | automatic captions · 4 takeaways |
 | yoeleo-altera-g21 | `tom-bowers-yoeleo-altera-g21-build` | Tom Bowers Cycling | creator captions · 6 takeaways |
 | yoeleo-altera-g21 | `uk-bike-fit-yoeleo-altera-g21-custom-build` | UK Bike Fit | automatic captions · 4 takeaways |
+| alums-da54 (candidate/wheelset) | `china-rides-alvas-da54-hainan-700km` | China Rides | automatic captions · 3 takeaways |
+| alums-da54 (candidate/wheelset) | `china-rides-alvas-da54-vs-canyon-aeroad` | China Rides | automatic captions · 3 takeaways |
+| alums-da54 (candidate/wheelset) | `velographer-alvas-da54-review` | The Velographer | automatic captions · 5 takeaways |
+| argon18-krypton-pro (candidate/wheelset) | `chris-hall-argon18-krypton-pro-review` | Chris Hall | automatic captions · 6 takeaways |
+| basso-venta-disc (candidate/wheelset) | `mapdec-basso-venta-disc-105-review` | Mapdec Cycle Works | creator captions · 6 takeaways |
+| bianchi-sprint-icr (candidate/wheelset) | `eyeguy-bianchi-sprint-icr-custom` | Eyeguy’s Dropbar Bikes | automatic captions · 3 takeaways |
 | bigrock-sohtea (candidate/wheelset) | `china-cycling-bigrock-sohtea-long-term` | China Cycling | automatic captions · 7 takeaways |
+| bxt-gravel-complete (candidate/wheelset) | `carlo-villarica-bxt-gravel-135-build` | Carlo Villarica - No Boring Days | automatic captions · 3 takeaways |
+| bxt-gravel-complete (candidate/wheelset) | `cycling-cameras-coffee-bxt-gravel-135-six-months` | Cycling, Cameras and Coffee. | automatic captions · 6 takeaways |
+| bxt-gravel-complete (candidate/wheelset) | `jackalope-dave-bxt-gravel-135-frame-review` | Jackalope Dave | automatic captions · 3 takeaways |
 | carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-build` | Daryl Pace | automatic captions · 3 takeaways |
 | carbonda-cfr707 (candidate/wheelset) | `sysadmin-carbonda-cfr707-owner-build` | Sysadmin | automatic captions · 4 takeaways |
 | elitewheels-drive-50d-ii (candidate/wheelset) | `cyclists-hub-elitewheels-drive-50d-ii-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
@@ -180,11 +208,16 @@ Delivered: transcript review of the last 19 linked videos, closing the frozen 93
 | elitewheels-drive-g36 (candidate/wheelset) | `lovemtb-elitewheels-drive-g36-tech-check` | LoveMTB | creator captions · 3 takeaways |
 | evolve-cima-road (candidate/wheelset) | `china-cycling-cima-lightweight-build` | China Cycling | automatic captions · 3 takeaways |
 | evolve-cima-road (candidate/wheelset) | `china-cycling-cima-long-term` | China Cycling | automatic captions · 5 takeaways |
+| evolve-cima-road (candidate/wheelset) | `cus-baker-evolve-cima-road-ride` | Cus Baker | automatic captions · 6 takeaways |
+| evolve-cima-road (candidate/wheelset) | `cyclists-hub-evolve-cima-road-review` | Cyclists Hub \| Petr Minarik | automatic captions · 8 takeaways |
+| evolve-cima-road (candidate/wheelset) | `hambini-evolve-cima-road-inspection` | Hambini | automatic captions · 5 takeaways |
+| evolve-cima-road (candidate/wheelset) | `peak-torque-evolve-cima-road-ten-months` | Peak Torque | automatic captions · 8 takeaways |
 | ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
 | lightcarbon-lcg071-pro (candidate/wheelset) | `lightcarbon-lcg071-pro-brand-overview` | LightCarbon | no caption track |
 | lightcarbon-lcg071-pro (candidate/wheelset) | `tom-bowers-lightcarbon-lcg071-pro-build` | Tom Bowers Cycling | creator captions · 3 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `cam-nicholls-falath-evo-inspection` | Cam Nicholls | automatic captions · 4 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `gc-performance-falath-evo-ride-review` | GC Performance | automatic captions · 5 takeaways |
+| missing-china-price-elves-falath-evo (candidate/wheelset) | `jourdain-coleman-elves-falath-evo-500-miles` | Jourdain Coleman | automatic captions · 6 takeaways |
 | missing-china-price-elves-vanyar (candidate/wheelset) | `jourdain-coleman-vanyar-pro-2024-unbox` | Jourdain Coleman | automatic captions · 5 takeaways |
 | missing-china-price-elves-vanyar (candidate/wheelset) | `popeye-vanyar-pro-disc-2024-build` | CYCLE SHOP POPEYE Channel | no speech in captions |
 | missing-china-price-quick-pro-xr-one (candidate/wheelset) | `china-cycling-quick-pro-xr-one` | China Cycling | automatic captions · 2 takeaways |
@@ -194,9 +227,12 @@ Delivered: transcript review of the last 19 linked videos, closing the frozen 93
 | quick-pro-er-one (candidate/wheelset) | `china-cycling-quick-pro-er-one` | China Cycling | automatic captions · 6 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-cycling-quick-pro-ur-one` | China Cycling | automatic captions · 3 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-rides-quick-pro-ur-one` | China Rides | automatic captions · 4 takeaways |
+| sava-a7l-pro-2026 (candidate/wheelset) | `bikelabhq-sava-a7l-pro-review` | BikeLabHQ | automatic captions · 6 takeaways |
+| sava-a7l-pro-2026 (candidate/wheelset) | `jonathan-simmons-sava-a7l-pro-owner` | Jonathan Simmons | automatic captions · 4 takeaways |
 | sava-f20-hawkeye (candidate/wheelset) | `china-cycling-sava-f20-hawkeye` | China Cycling | automatic captions · 4 takeaways |
 | seka-spear-rdc (candidate/wheelset) | `cyclingnews-seka-spear-rdc-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
 | voicevelo-g-major (candidate/wheelset) | `china-cycling-voicevelo-g-major` | China Cycling | automatic captions · 5 takeaways |
+| winspace-m6 (candidate/wheelset) | `bikeradar-winspace-m6-review` | BikeRadar | automatic captions · 7 takeaways |
 | winspace-m6 (candidate/wheelset) | `china-rides-winspace-m6-shop-tour` | China Rides | automatic captions · 3 takeaways |
 | winspace-m6 (candidate/wheelset) | `cyclists-hub-m6-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
 | winspace-t1600 (candidate/wheelset) | `cyclists-hub-t1600-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
