@@ -80,6 +80,10 @@ Delivered: three new exact-model videos with transcript takeaways and two cleara
 
 Delivered: transcript review and takeaways for all 20 linked videos of these ten candidate models (Winspace T1600 holds eight embeds on its model page). Candidate records stay unpublished in the comparison table; takeaways appear only on their model pages. No new candidate videos were added in this batch; the six Evolve CIMA road videos found in batch 4 remain a later addition.
 
+## Batch 6b — remaining candidates and wheelsets: Winspace SLC3 and T1550 Gen 2, Carbonda CFR707, SEKA Spear RDC, X-LAB AD8, Elves Falath EVO and Vanyar Pro, LightCarbon LCG071-PRO; Elitewheels Drive 50D II and Drive G36, ICAN Alpha 50 II Disc, Yoeleo SAT C45 NXT Gravel
+
+Delivered: transcript review of the last 19 linked videos, closing the frozen 93-record scope. Takeaways for all videos with speech; Popeye's Vanyar Pro build has no speech in its captions; ICAN's Alpha 50 II build and LightCarbon's LCG071-PRO overview have no caption track. The X-LAB AD8 frame weight spoken around 2:40 was garbled in the captions and is not used.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -168,30 +172,30 @@ Delivered: transcript review and takeaways for all 20 linked videos of these ten
 | yoeleo-altera-g21 | `tom-bowers-yoeleo-altera-g21-build` | Tom Bowers Cycling | creator captions · 6 takeaways |
 | yoeleo-altera-g21 | `uk-bike-fit-yoeleo-altera-g21-custom-build` | UK Bike Fit | automatic captions · 4 takeaways |
 | bigrock-sohtea (candidate/wheelset) | `china-cycling-bigrock-sohtea-long-term` | China Cycling | automatic captions · 7 takeaways |
-| carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-build` | Daryl Pace | not yet reviewed |
-| carbonda-cfr707 (candidate/wheelset) | `sysadmin-carbonda-cfr707-owner-build` | Sysadmin | not yet reviewed |
-| elitewheels-drive-50d-ii (candidate/wheelset) | `cyclists-hub-elitewheels-drive-50d-ii-review` | Cyclists Hub \| Petr Minarik | not yet reviewed |
-| elitewheels-drive-50d-ii (candidate/wheelset) | `the-bike-sauce-elitewheels-drive-50d-ii-review` | The Bike Sauce | not yet reviewed |
-| elitewheels-drive-g36 (candidate/wheelset) | `bicycle-station-gravel-wheel-shootout-drive-g36` | The Bicycle Station | not yet reviewed |
-| elitewheels-drive-g36 (candidate/wheelset) | `lovemtb-elitewheels-drive-g36-tech-check` | LoveMTB | not yet reviewed |
+| carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-build` | Daryl Pace | automatic captions · 3 takeaways |
+| carbonda-cfr707 (candidate/wheelset) | `sysadmin-carbonda-cfr707-owner-build` | Sysadmin | automatic captions · 4 takeaways |
+| elitewheels-drive-50d-ii (candidate/wheelset) | `cyclists-hub-elitewheels-drive-50d-ii-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
+| elitewheels-drive-50d-ii (candidate/wheelset) | `the-bike-sauce-elitewheels-drive-50d-ii-review` | The Bike Sauce | automatic captions · 4 takeaways |
+| elitewheels-drive-g36 (candidate/wheelset) | `bicycle-station-gravel-wheel-shootout-drive-g36` | The Bicycle Station | automatic captions · 3 takeaways |
+| elitewheels-drive-g36 (candidate/wheelset) | `lovemtb-elitewheels-drive-g36-tech-check` | LoveMTB | creator captions · 3 takeaways |
 | evolve-cima-road (candidate/wheelset) | `china-cycling-cima-lightweight-build` | China Cycling | automatic captions · 3 takeaways |
 | evolve-cima-road (candidate/wheelset) | `china-cycling-cima-long-term` | China Cycling | automatic captions · 5 takeaways |
-| ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | not yet reviewed |
-| lightcarbon-lcg071-pro (candidate/wheelset) | `lightcarbon-lcg071-pro-brand-overview` | LightCarbon | not yet reviewed |
-| lightcarbon-lcg071-pro (candidate/wheelset) | `tom-bowers-lightcarbon-lcg071-pro-build` | Tom Bowers Cycling | not yet reviewed |
-| missing-china-price-elves-falath-evo (candidate/wheelset) | `cam-nicholls-falath-evo-inspection` | Cam Nicholls | not yet reviewed |
-| missing-china-price-elves-falath-evo (candidate/wheelset) | `gc-performance-falath-evo-ride-review` | GC Performance | not yet reviewed |
-| missing-china-price-elves-vanyar (candidate/wheelset) | `jourdain-coleman-vanyar-pro-2024-unbox` | Jourdain Coleman | not yet reviewed |
-| missing-china-price-elves-vanyar (candidate/wheelset) | `popeye-vanyar-pro-disc-2024-build` | CYCLE SHOP POPEYE Channel | not yet reviewed |
+| ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
+| lightcarbon-lcg071-pro (candidate/wheelset) | `lightcarbon-lcg071-pro-brand-overview` | LightCarbon | no caption track |
+| lightcarbon-lcg071-pro (candidate/wheelset) | `tom-bowers-lightcarbon-lcg071-pro-build` | Tom Bowers Cycling | creator captions · 3 takeaways |
+| missing-china-price-elves-falath-evo (candidate/wheelset) | `cam-nicholls-falath-evo-inspection` | Cam Nicholls | automatic captions · 4 takeaways |
+| missing-china-price-elves-falath-evo (candidate/wheelset) | `gc-performance-falath-evo-ride-review` | GC Performance | automatic captions · 5 takeaways |
+| missing-china-price-elves-vanyar (candidate/wheelset) | `jourdain-coleman-vanyar-pro-2024-unbox` | Jourdain Coleman | automatic captions · 5 takeaways |
+| missing-china-price-elves-vanyar (candidate/wheelset) | `popeye-vanyar-pro-disc-2024-build` | CYCLE SHOP POPEYE Channel | no speech in captions |
 | missing-china-price-quick-pro-xr-one (candidate/wheelset) | `china-cycling-quick-pro-xr-one` | China Cycling | automatic captions · 2 takeaways |
 | missing-china-price-tavelo-arow (candidate/wheelset) | `china-cycling-tavelo-arow-2026-build` | China Cycling | automatic captions · 3 takeaways |
-| missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | not yet reviewed |
-| missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | not yet reviewed |
+| missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | automatic captions · 3 takeaways |
 | quick-pro-er-one (candidate/wheelset) | `china-cycling-quick-pro-er-one` | China Cycling | automatic captions · 6 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-cycling-quick-pro-ur-one` | China Cycling | automatic captions · 3 takeaways |
 | quick-pro-ur-one (candidate/wheelset) | `china-rides-quick-pro-ur-one` | China Rides | automatic captions · 4 takeaways |
 | sava-f20-hawkeye (candidate/wheelset) | `china-cycling-sava-f20-hawkeye` | China Cycling | automatic captions · 4 takeaways |
-| seka-spear-rdc (candidate/wheelset) | `cyclingnews-seka-spear-rdc-review` | Cyclingnews Tech | not yet reviewed |
+| seka-spear-rdc (candidate/wheelset) | `cyclingnews-seka-spear-rdc-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
 | voicevelo-g-major (candidate/wheelset) | `china-cycling-voicevelo-g-major` | China Cycling | automatic captions · 5 takeaways |
 | winspace-m6 (candidate/wheelset) | `china-rides-winspace-m6-shop-tour` | China Rides | automatic captions · 3 takeaways |
 | winspace-m6 (candidate/wheelset) | `cyclists-hub-m6-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
@@ -203,8 +207,8 @@ Delivered: transcript review and takeaways for all 20 linked videos of these ten
 | winspace-t1600 (candidate/wheelset) | `its-all-about-racing-winspace-t1600-unboxing` | It's all about racing | automatic captions · 1 takeaways |
 | winspace-t1600 (candidate/wheelset) | `nero-show-winspace-t1600-review` | NERO Cycling | automatic captions · 5 takeaways |
 | winspace-t1600 (candidate/wheelset) | `ridemedia-winspace-t1600-try-before-you-buy` | ridemedia | automatic captions · 1 takeaways |
-| xlab-ad8 (candidate/wheelset) | `china-rides-xlab-ad8-build` | China Rides | not yet reviewed |
-| yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term` | The Cycle Workshop | not yet reviewed |
-| yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-review` | The Cycle Workshop | not yet reviewed |
+| xlab-ad8 (candidate/wheelset) | `china-rides-xlab-ad8-build` | China Rides | automatic captions · 3 takeaways |
+| yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term` | The Cycle Workshop | automatic captions · 3 takeaways |
+| yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-review` | The Cycle Workshop | automatic captions · 5 takeaways |
 
 Published platforms with no linked YouTube video yet: `bianchi-oltre-race`, `camp-gx600`, `incolor-voyager`, `lightcarbon-lcg071s-pro`, `lightcarbon-speedz`, `pardus-super-sport-gen2`, `rinasclta-gr025`, `sava-a7l-r7100`, `sava-gelaro-s8`, `sava-gelaro-sf`, `spcycle-g026`, `tfsa-jh37`, `twitter-cyclone-electronic`, `twitter-cyclone-gen3-et`, `twitter-gravel-v3-2024`, `twitter-t3-tt`, `xmcarbonspeed-cs-gr01`.
