@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 171,
+      "videos": 174,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2911,6 +2911,7 @@
       "ben-skillz-seka-exaero-gr-build",
       "bicidastrada-seka-exaero-gr-review",
       "bicycle-station-gravel-wheel-shootout-drive-g36",
+      "bike-cabin-laget-aero-one-introduction",
       "bikelabhq-sava-a7l-pro-review",
       "bikeradar-winspace-m6-review",
       "bxt-store-055-overview",
@@ -2978,6 +2979,7 @@
       "gc-performance-winspace-t1600-build",
       "gc-performance-winspace-t1600-ride",
       "gc-performance-yoeleo-altera-g21-singletrack",
+      "gravel-cyclist-laget-aero-one-eurobike",
       "gravel-trash-panda-winspace-g3-build",
       "hambini-evolve-cima-road-inspection",
       "hambini-ican-graro-inspection",
@@ -3003,6 +3005,7 @@
       "julius-domroes-quick-pro-gr-one-review",
       "julius-domroes-tavelo-grow-inspection",
       "kdot-tavelo-grow-owner-build",
+      "king-bike-laget-aero-one-test-ride-talk",
       "lightcarbon-lcg071-pro-brand-overview",
       "lorenzo-del-sant-ican-triaero-graro-review",
       "love-bike-sava-gelaro-s4-express-review",
@@ -62028,6 +62031,29 @@
         "url",
         "youtube_video_id"
       ],
+      "bike-cabin-laget-aero-one-introduction": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "bikelabhq-sava-a7l-pro-review": [
         "accessed_at",
         "channel_name",
@@ -63644,6 +63670,29 @@
         "url",
         "youtube_video_id"
       ],
+      "gravel-cyclist-laget-aero-one-eurobike": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "gravel-trash-panda-winspace-g3-build": [
         "accessed_at",
         "channel_name",
@@ -64220,6 +64269,29 @@
         "summary",
         "takeaways",
         "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "king-bike-laget-aero-one-test-ride-talk": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
         "title",
         "transcript.checked_at",
         "transcript.language",
@@ -69864,6 +69936,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "laget-discovery-one-flagship": [
@@ -119831,6 +119904,9 @@
         "target.platform_id=seka-exaero-gr"
       ],
       "bicycle-station-gravel-wheel-shootout-drive-g36": [],
+      "bike-cabin-laget-aero-one-introduction": [
+        "target.candidate_id=laget-aero-one"
+      ],
       "bikelabhq-sava-a7l-pro-review": [
         "target.candidate_id=sava-a7l-pro-2026"
       ],
@@ -120026,6 +120102,9 @@
       "gc-performance-yoeleo-altera-g21-singletrack": [
         "target.platform_id=yoeleo-altera-g21"
       ],
+      "gravel-cyclist-laget-aero-one-eurobike": [
+        "target.candidate_id=laget-aero-one"
+      ],
       "gravel-trash-panda-winspace-g3-build": [
         "target.platform_id=winspace-g3"
       ],
@@ -120098,6 +120177,9 @@
       ],
       "kdot-tavelo-grow-owner-build": [
         "target.platform_id=tavelo-grow"
+      ],
+      "king-bike-laget-aero-one-test-ride-talk": [
+        "target.candidate_id=laget-aero-one"
       ],
       "lightcarbon-lcg071-pro-brand-overview": [
         "target.candidate_id=lightcarbon-lcg071-pro"
@@ -121412,7 +121494,10 @@
         "model_id=laget-aero-one",
         "source_ids=laget-aero-one-enrichment-2026-10-03",
         "source_ids=laget-aero-one-official-current-2026-09-23",
-        "source_ids=titanium-laget-aero-one-official"
+        "source_ids=titanium-laget-aero-one-official",
+        "video_ids=bike-cabin-laget-aero-one-introduction",
+        "video_ids=gravel-cyclist-laget-aero-one-eurobike",
+        "video_ids=king-bike-laget-aero-one-test-ride-talk"
       ],
       "laget-discovery-one-flagship": [
         "brand_id=laget",

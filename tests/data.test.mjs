@@ -2030,7 +2030,7 @@ test('public dataset has the expected coverage', () => {
   assert.ok(data.images.length >= 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
-  assert.equal(data.videos.length, 171);
+  assert.equal(data.videos.length, 174);
   assert.ok(data.sources.length >= 313);
   assert.equal(data.candidates.length, 283);
   assert.equal(data.exclusions.length, 16);
@@ -2972,7 +2972,7 @@ test('curated videos stay exact, disclosed, and separate from publication eviden
   const publishedVideos = data.videos.filter((video) => video.target.platform_id || video.target.variant_id);
   const candidateVideos = data.videos.filter((video) => video.target.candidate_id);
   assert.equal(publishedVideos.length, 91);
-  assert.equal(candidateVideos.length, 73);
+  assert.equal(candidateVideos.length, 76);
   assert.ok(publishedVideos.every((video) => video.match === 'exact-platform'));
   assert.ok(candidateVideos.every((video) => video.match === 'exact-model-lead'));
   assert.ok(data.videos.every((video) => video.disclosure.length >= 20));
