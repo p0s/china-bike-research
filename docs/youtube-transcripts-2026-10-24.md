@@ -154,6 +154,18 @@ Delivered: nine transcript-checked videos. For these widely reviewed models one 
 - Merida Silex 7000 (`missing-china-price-merida-silex`): Active Hobo Podcast's 30-day review (`L8rLQSQTJAY`; 9.55 kg size XL; mudguards reduce clearance to 42 mm).
 - Merida Scultura Endurance 4000 (`merida-scultura-endurance-4000-community-lead`): no video added. Damian Harris Cycles' `L05BYhVquWY` is a two-minute dealer preview of the current 12-speed model, which the candidate distinguishes from its older 11-speed build; Marky's Bike Lab `4sNdzRQ0vx4` weighs the race Scultura 4000 (mismatch).
 
+### Batch 13 — Giant Propel Advanced 3, Propel Advanced SL 1 (Gen 4), Defy Advanced SL 1; Specialized Crux Comp, Crux 10r and S-Works Crux (bike and frameset), Roubaix SL8 (Tiagra, Sport 105, Comp 105), Tarmac SL8 Comp 105 Di2
+
+Delivered: nine transcript-checked videos. Generations were matched by clearance and frame details: the Propel Advanced 3 (30 mm) is the third-generation frame and the SL 1 lead is the 2026 fourth generation (32 mm); the Crux candidates (47 mm) are the 2022–2025 round-tube Crux, not the 2026 Crux 5 (55 mm).
+
+- Giant Propel Advanced 3 (`giant-propel-advanced-3`): David Arthur's 2023 Propel Advanced review (`o-fyu512kc0`). His 2022 Propel Advanced SL first ride `0i-GRqSpcyY` and Patrick Lino's long-term review `Li-oZAGrZrg` are the SL grade of that generation and were not mapped.
+- Giant Propel Advanced SL 1 Gen 4 (`giant-propel-gen4-community-lead`): BikeRadar's 2026 launch overview (`NSxPItz2h6I`) with the Advanced SL 0 on the same frame grade. Cycling Weekly's launch `hIkiy1bWjIA` repeats it.
+- Giant Defy Advanced SL 1 (`giant-defy-advanced-sl1-community-lead`): no video added. The candidate's 2026 reference describes an integrated seatpost and 40 mm clearance, while David Arthur's 2024 Defy Advanced SL videos (`u98PcWnbQIM`, `datVi0tqAa0`) show a clamped D-Fuse seatpost and 38 mm, so the generation mapping stays unresolved.
+- Specialized Crux Comp (`missing-china-price-specialized-crux`): GC Performance's 2024 Crux Comp walkaround (`qWegz_XEP9g`; 8.77 kg size 54). Crux 10r frameset (`specialized-crux-10r-frameset`): no separate video; it shares the Comp's FACT 10r frame. The 2026 Crux 5 reviews (`h3zgUxeVXFw`, `l2c0o_Z_muM`) are the new generation (mismatch); Patrick Delorenzi's `1RHuyLKlccw` does not name the frame grade.
+- Specialized S-Works Crux 2024 and frameset: David Arthur's two-month review of the same FACT 12r S-Works frame (`Thl2mal0ATs`; 7.25 kg size 56) for the complete bike and Road Bike Action's launch review (`rHJn4dmapLE`) for the frameset.
+- Specialized Roubaix SL8: Jamesthebikeguy's 2026 base-model walkaround (`9xGQvpdt5ac`; Tiagra, 9.7 kg size 56) for the Tiagra price target, and David Arthur's launch ride (`uTZcm5BjEho`; grade not stated) for the Comp 105. The Sport 105 (`specialized-roubaix-sl8-sport-105`) shares the FACT 10r frame; no trim-specific review was found and the base-model video is not duplicated. The Bicycle Station's owner review `33vA1MQsMs8` does not state the frame grade.
+- Specialized Tarmac SL8 Comp 105 Di2 (`missing-china-price-specialized-tarmac-sl8`): road.cc's review of the entry FACT 10r SL8 with 105 Di2 (`d537VnXsEto`; 7.9 kg size 52) and GC Performance's 2026 US Comp walkaround (`tREYq4W4-_U`; 7.68 kg size 50, SRAM Rival). Crank & Sprints' owner chat `dEYkQGwf42M` adds little.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -263,6 +275,8 @@ Delivered: nine transcript-checked videos. For these widely reviewed models one 
 | evolve-cima-road (candidate/wheelset) | `cyclists-hub-evolve-cima-road-review` | Cyclists Hub \| Petr Minarik | automatic captions · 8 takeaways |
 | evolve-cima-road (candidate/wheelset) | `hambini-evolve-cima-road-inspection` | Hambini | automatic captions · 5 takeaways |
 | evolve-cima-road (candidate/wheelset) | `peak-torque-evolve-cima-road-ten-months` | Peak Torque | automatic captions · 8 takeaways |
+| giant-propel-advanced-3 (candidate/wheelset) | `david-arthur-giant-propel-advanced-2023-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| giant-propel-gen4-community-lead (candidate/wheelset) | `bikeradar-giant-propel-2026-first-look` | BikeRadar | automatic captions · 4 takeaways |
 | hi-light-g7-2 (candidate/wheelset) | `carlo-villarica-hi-light-g7-2-titanium` | Carlo Villarica - No Boring Days | automatic captions · 5 takeaways |
 | ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
 | laget-aero-one (candidate/wheelset) | `bike-cabin-laget-aero-one-introduction` | Bike Cabin | automatic captions · 4 takeaways |
@@ -298,6 +312,10 @@ Delivered: nine transcript-checked videos. For these widely reviewed models one 
 | missing-china-price-merida-scultura (candidate/wheelset) | `david-arthur-merida-scultura-7000-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | missing-china-price-merida-silex (candidate/wheelset) | `active-hobo-merida-silex-7000-review` | Active Hobo Podcast | automatic captions · 4 takeaways |
 | missing-china-price-quick-pro-xr-one (candidate/wheelset) | `china-cycling-quick-pro-xr-one` | China Cycling | automatic captions · 2 takeaways |
+| missing-china-price-specialized-crux (candidate/wheelset) | `gc-performance-specialized-crux-comp-2024` | GC Performance | automatic captions · 4 takeaways |
+| missing-china-price-specialized-roubaix-sl8 (candidate/wheelset) | `jamesthebikeguy-specialized-roubaix-sl8-base` | Jamesthebikeguy | automatic captions · 5 takeaways |
+| missing-china-price-specialized-tarmac-sl8 (candidate/wheelset) | `gc-performance-specialized-tarmac-sl8-comp-2026` | GC Performance | automatic captions · 3 takeaways |
+| missing-china-price-specialized-tarmac-sl8 (candidate/wheelset) | `road-cc-cheapest-specialized-tarmac-sl8` | road.cc | creator captions · 4 takeaways |
 | missing-china-price-tavelo-arow (candidate/wheelset) | `china-cycling-tavelo-arow-2026-build` | China Cycling | automatic captions · 3 takeaways |
 | missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | missing-china-price-winspace-t1550 (candidate/wheelset) | `watt-life-t1550-gen2-build-cost` | The Watt Life | automatic captions · 3 takeaways |
@@ -308,6 +326,9 @@ Delivered: nine transcript-checked videos. For these widely reviewed models one 
 | sava-a7l-pro-2026 (candidate/wheelset) | `jonathan-simmons-sava-a7l-pro-owner` | Jonathan Simmons | automatic captions · 4 takeaways |
 | sava-f20-hawkeye (candidate/wheelset) | `china-cycling-sava-f20-hawkeye` | China Cycling | automatic captions · 4 takeaways |
 | seka-spear-rdc (candidate/wheelset) | `cyclingnews-seka-spear-rdc-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
+| specialized-roubaix-sl8-comp-105 (candidate/wheelset) | `david-arthur-specialized-roubaix-sl8-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| specialized-s-works-crux-2024-sram-red-xplr (candidate/wheelset) | `david-arthur-specialized-s-works-crux-long-term` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| specialized-s-works-crux-frameset (candidate/wheelset) | `road-bike-action-specialized-s-works-crux` | Road Bike Action Magazine | automatic captions · 3 takeaways |
 | voicevelo-g-major (candidate/wheelset) | `china-cycling-voicevelo-g-major` | China Cycling | automatic captions · 5 takeaways |
 | winspace-m6 (candidate/wheelset) | `bikeradar-winspace-m6-review` | BikeRadar | automatic captions · 7 takeaways |
 | winspace-m6 (candidate/wheelset) | `china-rides-winspace-m6-shop-tour` | China Rides | automatic captions · 3 takeaways |
