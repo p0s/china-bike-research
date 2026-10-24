@@ -118,6 +118,16 @@ Delivered: 13 new transcript-checked candidate videos; LCR018-D gains a tire-fit
 
 No video added. Searches by model code, by "review"/"build" and by family ("LightCarbon aero road frame") returned only LightCarbon's own promo clips for these frames: `kUYEgGy7b48` (LCR015-V), `I9dGefXfBto` and `NUfqp4FCAYg` (LCR015S-D), `nW9V40ZxlgA` (unnamed super-aero frame), `OWl8KUhnsuY` (LCR014-V), `CSMdv1gyQ48` and `ctAjyhusFNQ` (LCR0X-D; the latter's captions are music only) and `Z-396vcNYCI` (LCRXS-D). These are 30–80-second showcases without decision-relevant claims, so none was added. Cam Nicholls' "two cheap Chinese aero frames" (`jzAghikGHzo`) compares an Elves Falath and a Trifox, not a LightCarbon frame. The remaining LightCarbon review videos map only to the LCR017-D, LCR018-D, LCR007-V and LCG087-D handled in batch 8.
 
+### Batch 10 — LightCarbon LCTT001, LCTT004, LCTT05-D, LCTR003, Speed7 complete and frameset; LongTeng LTK266-D-SL; LAGET AERO ONE, PIONEER, PIONEER ONE
+
+Delivered: three LAGET AERO ONE videos, two with Korean automatic captions (takeaways are English paraphrases of the Korean speech).
+
+- LAGET AERO ONE (`laget-aero-one`): added Korean retailer Bike Cabin's introduction (`tL2DooXKcsE`; ₩17.9 million, SRAM wireless only, two-to-three-month lead time), King Bike's test-ride discussion with a bike fitter (`1GFthrFA7fE`; high stack with a steep head angle, stable seated but demanding out of the saddle) and Gravel Cyclist's Eurobike booth clip (`jZi8o4DfEMk`; €19,999, TSB Technology as maker). Bike Cabin's second clip `hXi-1fD3MJ0` has no caption track. GCN Tech's Eurobike day-2 roundup `QrnH4-jxQGk` covers the bike for about a minute (claimed 1.6 kg frame, 2.3 kg with fork and seatpost) among many products and was not linked; GCN's Rouleur Live roundup `W1wRmY1NXw0` shows the Number 22 titanium aero bike, not LAGET (mismatch).
+- LAGET PIONEER (`laget-pioneer`): Dream Build's Pioneer LTD build `1k_3rZWybAc` has only a spoken parts list before music; LAGET's own "Pioneer Matte Blue" archive clip `GWZukndTutY` repeats catalogue specs (32 mm maximum tire). Neither was added.
+- LAGET PIONEER ONE (`laget-pioneer-one`): no exact-model video; TSB's clips (`vhXUahCNT6c`, `mUS9XrXTyY0`) are untitled under-20-second shorts. Mapdec's anodised titanium aero frame `XjVmkPIk3_g` is a Reilly Fusion (mismatch).
+- LightCarbon LCTT001, LCTT004, LCTT05-D (triathlon), LCTR003 (track) and Speed7 complete bike and frameset: no exact-model review. Results are LightCarbon promo clips (`fn0kQS5soP4`, `yl0ioYmbcEI`) without model-specific claims or other brands' triathlon builds (ICAN TT017, Winowcycle).
+- LongTeng LTK266-D-SL (`longteng-ltk266-d-sl`): no exact-model video; Man of a Certain Age's videos (`UbQkuAkxCgQ`, `eT8vtAXO97c`) show the LongTeng RD301-D (mismatch).
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -228,6 +238,9 @@ No video added. Searches by model code, by "review"/"build" and by family ("Ligh
 | evolve-cima-road (candidate/wheelset) | `hambini-evolve-cima-road-inspection` | Hambini | automatic captions · 5 takeaways |
 | evolve-cima-road (candidate/wheelset) | `peak-torque-evolve-cima-road-ten-months` | Peak Torque | automatic captions · 8 takeaways |
 | ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
+| laget-aero-one (candidate/wheelset) | `bike-cabin-laget-aero-one-introduction` | Bike Cabin | automatic captions · 4 takeaways |
+| laget-aero-one (candidate/wheelset) | `gravel-cyclist-laget-aero-one-eurobike` | Gravel Cyclist | automatic captions · 2 takeaways |
+| laget-aero-one (candidate/wheelset) | `king-bike-laget-aero-one-test-ride-talk` | 자전거news | automatic captions · 4 takeaways |
 | lightcarbon-lcg071-pro (candidate/wheelset) | `lightcarbon-lcg071-pro-brand-overview` | LightCarbon | no caption track |
 | lightcarbon-lcg071-pro (candidate/wheelset) | `tom-bowers-lightcarbon-lcg071-pro-build` | Tom Bowers Cycling | creator captions · 3 takeaways |
 | lightcarbon-lcg087-d (candidate/wheelset) | `white-beard-lightcarbon-lcg087-d-first-look` | White Beard Reviews | automatic captions · 5 takeaways |
