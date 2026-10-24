@@ -9155,6 +9155,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "bike-order-component-substitutions-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda packing a bicycle parts parcel",
+        "zh-Hans": "打包自行车零件的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is packing a small plain cardboard parcel, kneeling beside it and using a tape dispenser to close it. Cheerful competent expression. Unprinted box with no labels or text. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "5e7d345dec565f7168665259bd95e4ad84a2ca8ee5ec736de725dd2dc80ce3b4"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-mascot-480.webp",
+          "width": 480,
+          "height": 320,
+          "type": "image/webp",
+          "bytes": 23606,
+          "sha256": "d6938593bb2e80fad4982fb375f44491bdeef2ae6160390f5c37ca629f83d390"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda studies two different unbranded brake-shifter assemblies on padded blocks beside a blank order binder, with a partly assembled bicycle behind.",
+          "zh-Hans": "戴头盔的小熊猫观察软垫上两个不同的无品牌刹车变速组件，旁边是空白订单夹，后方有一辆尚未装完的自行车。",
+          "de": "Ein Rotpanda mit Helm betrachtet zwei unterschiedliche Brems-Schalthebel ohne Markenlogo auf Polstern neben einer leeren Bestellmappe; dahinter steht ein teilweise aufgebautes Fahrrad."
+        },
+        "prompt": "Editorial scene: A helmeted red panda studies two different unbranded brake-shifter assemblies on padded blocks beside a blank order binder, with a partly assembled bicycle behind.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "5afcd5a55a2f920469ff400d14fc39b661e3e7181e9f1fed48dd95ee9844e7e0",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 47728,
+            "sha256": "73dc10731fa514dadbe2aa0ae4043d473cb13e390c5c8a2cce78076c42c4459c"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 154794,
+            "sha256": "c4d7b7964d16ded002f72c445ca7e144578f71f7dedb179a76d22e8ad8314bf3"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 183460,
+            "sha256": "e14e381da2b6c3138a53d7f17c416570fb55cd9bb699f598f8e8aa9a881f7f87"
+          }
+        ]
+      }
     }
   ]
 }
