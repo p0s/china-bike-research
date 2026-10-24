@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 174,
+      "videos": 175,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2917,6 +2917,7 @@
       "bxt-store-055-overview",
       "cam-nicholls-falath-evo-inspection",
       "carlo-villarica-bxt-gravel-135-build",
+      "carlo-villarica-hi-light-g7-2-titanium",
       "charles-ouimet-yoeleo-g21-altera-first-look",
       "china-cycling-bigrock-sohtea-long-term",
       "china-cycling-cima-lightweight-build",
@@ -62172,6 +62173,29 @@
         "url",
         "youtube_video_id"
       ],
+      "carlo-villarica-hi-light-g7-2-titanium": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "charles-ouimet-yoeleo-g21-altera-first-look": [
         "accessed_at",
         "channel_name",
@@ -69144,6 +69168,7 @@
         "facts.mounts",
         "facts.sizes",
         "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
         "facts.tire_clearance_mm",
         "last_reviewed",
         "manufacturing",
@@ -69164,6 +69189,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "hi-light-g7-2-grx-gr1600": [
@@ -119922,6 +119948,9 @@
       "carlo-villarica-bxt-gravel-135-build": [
         "target.candidate_id=bxt-gravel-complete"
       ],
+      "carlo-villarica-hi-light-g7-2-titanium": [
+        "target.candidate_id=hi-light-g7-2"
+      ],
       "charles-ouimet-yoeleo-g21-altera-first-look": [
         "target.platform_id=yoeleo-altera-g21"
       ],
@@ -121232,7 +121261,8 @@
         "source_ids=hi-light-g7-2-enrichment-2026-10-03",
         "source_ids=hi-light-g7-2-official-current-2026-09-01",
         "source_ids=hi-light-g7-2-villain-retailer-2026-08-27",
-        "source_ids=titanium-hi-light-g7-2-official"
+        "source_ids=titanium-hi-light-g7-2-official",
+        "video_ids=carlo-villarica-hi-light-g7-2-titanium"
       ],
       "hi-light-g7-2-grx-gr1600": [
         "brand_id=hi-light",

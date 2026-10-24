@@ -128,6 +128,17 @@ Delivered: three LAGET AERO ONE videos, two with Korean automatic captions (take
 - LightCarbon LCTT001, LCTT004, LCTT05-D (triathlon), LCTR003 (track) and Speed7 complete bike and frameset: no exact-model review. Results are LightCarbon promo clips (`fn0kQS5soP4`, `yl0ioYmbcEI`) without model-specific claims or other brands' triathlon builds (ICAN TT017, Winowcycle).
 - LongTeng LTK266-D-SL (`longteng-ltk266-d-sl`): no exact-model video; Man of a Certain Age's videos (`UbQkuAkxCgQ`, `eT8vtAXO97c`) show the LongTeng RD301-D (mismatch).
 
+### Batch 11 — LAGET DISCOVERY ONE flagship and PRO, DISCOVERY SLR, G0 PRO; TSB PIONEER ONE; Hi-Light G0, G7.2, R6, R9; Dengfu R20
+
+Delivered: one Hi-Light G7.2 video with a tire-fit field report.
+
+- Hi-Light G7.2 (`hi-light-g7-2`): added Carlo Villarica's distributor-supplied titanium build (`KU8iO807E10`): 700×40 tires measuring 43–44 mm with plenty of room against the 45 mm rating, about 10 kg built, stable long-trail handling. The video shows a frameset build, so it is linked to the frameset record, not to the separate G7.2 GRX complete bike (`hi-light-g7-2-grx-gr1600`), which has no exact-build video.
+- Hi-Light G0, R6 and R9 (`hi-light-g0`, `hi-light-r6-105-al`, `hi-light-r9-2025`, `hi-light-r9-force-pr1600`): no exact-model video. Chinese results show the G6 and G9 flat-bar titanium bikes (`pwqOR3_wROk`, `nkrom0Uo2pE`, `micO428zpe8`, `Xtf6Gfm93JA`) and Hi-Light's catalogue film `CGDBut-QKOg`; English "R9" searches return motorcycles.
+- LAGET DISCOVERY ONE flagship and PRO, DISCOVERY SLR and G0 PRO (`laget-discovery-one-flagship`, `laget-discovery-one-pro`, `laget-discovery-slr`, `missing-china-price-laget-g0-pro`): no exact-model video; the Discovery One appears only in the background of Gravel Cyclist's Eurobike clip linked to the AERO ONE.
+- TSB / Titan Super Bond PIONEER ONE (`tsb-titan-super-bond-pioneer-one` and its price pointer `missing-china-price-tsb-titan-super-bond-pioneer-one`): no exact-model video; TSB's shorts carry no model claims.
+- Dengfu R20 gravel frame (`dengfu-gravel`): no exact-model video; results show the Dengfu R01 road frame (`umwMwygTJCY`) and Dengfu e-bikes.
+- Hongfu current gravel frame (`hongfu-gravel`): generic record without an exact model identity; unsuitable for exact-model video search.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -237,6 +248,7 @@ Delivered: three LAGET AERO ONE videos, two with Korean automatic captions (take
 | evolve-cima-road (candidate/wheelset) | `cyclists-hub-evolve-cima-road-review` | Cyclists Hub \| Petr Minarik | automatic captions · 8 takeaways |
 | evolve-cima-road (candidate/wheelset) | `hambini-evolve-cima-road-inspection` | Hambini | automatic captions · 5 takeaways |
 | evolve-cima-road (candidate/wheelset) | `peak-torque-evolve-cima-road-ten-months` | Peak Torque | automatic captions · 8 takeaways |
+| hi-light-g7-2 (candidate/wheelset) | `carlo-villarica-hi-light-g7-2-titanium` | Carlo Villarica - No Boring Days | automatic captions · 5 takeaways |
 | ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
 | laget-aero-one (candidate/wheelset) | `bike-cabin-laget-aero-one-introduction` | Bike Cabin | automatic captions · 4 takeaways |
 | laget-aero-one (candidate/wheelset) | `gravel-cyclist-laget-aero-one-eurobike` | Gravel Cyclist | automatic captions · 2 takeaways |
