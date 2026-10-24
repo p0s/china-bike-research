@@ -1,0 +1,33 @@
+{
+  "id": "public-xhs-girder-arrow-used-r7020-2026-09-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER Arrow used 7020 owner listing (2026-09)",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/6a96ce21000000002a0066bf",
+  "accessed_at": "2026-10-24",
+  "published_date": "2026-09-01",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "An owner listing offers a GIRDER Arrow (爱路) with a 7020 group, bought in 2023, at an asking price of CNY 4,500 for local pickup. The bike has been fitted with aftermarket carbon-spoke wheels, so it is not an original GIRDER package. Frame generation, size, weight and clearance are not stated; a captured size question went unanswered in the capture. The owner's wheel-value claim and pickup location are not product facts and are not recorded. This is a historical used asking price, not a sale, current new-bike price or Di2 reference-trim price.",
+  "reference_claims": [
+    {
+      "kind": "historical-used-asking-price",
+      "claim": "A 2023-purchased 7020 Arrow with aftermarket wheels was asked at CNY 4,500 on 2026-09-01.",
+      "confidence": "low",
+      "limitations": "Modified wheels, used condition and unresolved generation; mechanical build differs from both retained Di2 trims. Not a price input.",
+      "canonical_target_id": "girder-arrow-pf-105-di2",
+      "selected_build_fact": false,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "6ba6918b33c5f6957423a09190bb6847124a1092a68bb858267921b9f4785c4d",
+    "archive_bytes": 6397443,
+    "extension_version": "1.5.0",
+    "scope": "Validated broad-query detail archive (query '格拉德 公路车'); public text and partial captured comments reviewed. Raw posts, account identifiers and media remain local outside Git. No video was watched, and no product-image or measured-weight pixel claim is made."
+  }
+}

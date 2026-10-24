@@ -245,7 +245,7 @@ if (indexNowManifest) {
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // Keep the comparison data in its own cacheable resource and one model link in
 // every server-rendered row. The project-path build repeats its base in links.
-const performanceBudget = { home_html_bytes: 750_000 + (base ? 35_000 : 0), home_elements: 7_400 };
+const performanceBudget = { home_html_bytes: 830_000 + (base ? 35_000 : 0), home_elements: 8_050 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length

@@ -1,0 +1,52 @@
+{
+  "id": "girder-dash-frameset-unresolved-generation",
+  "name": "GIRDER 格拉德 Dash carbon frameset — generation unresolved",
+  "model_id": "girder-dash-frameset-unresolved-generation",
+  "brand_id": "girder",
+  "category": "road",
+  "type": "frameset",
+  "why_interesting": "A 2026 listing offers a new black-and-gold GIRDER DASH carbon frameset on its own, the only frameset-only GIRDER offer found in the captured posts.",
+  "facts": {
+    "frame": "DASH carbon disc-brake frame and matching fork, gloss black with gold-leaf accents; GIRDER and DASH decals visible in the listing photos",
+    "frame_material": "Carbon per the listing; fiber grade and lay-up not stated",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "package_note": "The listing does not state what is included. The photos show a frame and fork; headset, seatpost, axles and hardware are unconfirmed.",
+    "identity_note": "The listing text reads 'RIDER DASH'. The photos show the stylised GIRDER wordmark, so it is treated as a GIRDER DASH. Whether it matches the NEW 2025 DASH (threaded BSA) or the ROAD endurance DASH (press-fit) is not established."
+  },
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 3499,
+    "currency": "CNY",
+    "price_type": "listing-new-asking-partial-package",
+    "observed_at": "2026-04-02",
+    "price_basis": "New-condition asking price including domestic shipping; included parts not stated. Not a sale, checkout or complete-build quote.",
+    "observation_count": 1,
+    "purchase_total_complete": false
+  },
+  "comparison_eligibility": {
+    "price": false,
+    "builder_base": false,
+    "frame_weight": false,
+    "reviewed_at": "2026-10-24",
+    "note": "Frameset package and generation unresolved: the CNY 3,499 asking price stays a dated reference and does not feed price sorting, budgets, build estimates or the builder."
+  },
+  "missing": [
+    "DASH generation and bottom-bracket shell standard",
+    "Included package (headset, seatpost, axles, hardware)",
+    "Sizes and geometry",
+    "Frameset weight",
+    "Manufacturer-published maximum tire clearance",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current stock, listing authority, warranty route and checkout amount",
+    "Rights-cleared exact product image"
+  ],
+  "status": "listing-documented-frameset-generation-unresolved",
+  "source_ids": [
+    "public-xhs-girder-dash-frameset-new-2026-04-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "source_note": "One 2026-04-02 XHS listing; its photos were checked locally for the GIRDER and DASH decals and are not published.",
+  "price_status": "Listed asking price CNY 3,499 for a new frameset on 2026-04-02; package unknown, no checkout verified",
+  "last_reviewed": "2026-10-24"
+}

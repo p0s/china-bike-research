@@ -1,0 +1,53 @@
+{
+  "id": "girder-bison-pf-ultegra-r8020",
+  "name": "GIRDER 格拉德 Bison press-fit T700/T800 Ultegra R8020",
+  "model_id": "girder-bison-pf-ultegra-r8020",
+  "brand_id": "girder",
+  "category": "road",
+  "type": "complete-bike",
+  "why_interesting": "The earlier ROAD-section BISON: mechanical Ultegra R8020 2×11 hydraulic on a T700 + T800 BB386 integrated frame with unbranded 50/60 mm carbon wheels at an official ¥14,800 and a 7.8 kg claim.",
+  "facts": {
+    "drivetrain": "Shimano Ultegra R8020 mechanical 2×11 per the specification table; FC-R8000 52-36T 170 mm crank, CS-R8000 11-32T cassette; chain not listed. The page's intro text instead describes a Shimano 105 R7100 mechanical 2×12 group and names the AERO TEAM",
+    "brakes": "Shimano Ultegra R8020 hydraulic disc",
+    "frame": "ROAD-section BISON T700 + T800 carbon 'integrated' frame and fork, 12 mm thru-axles, fully internal routing",
+    "frame_material": "T700 + T800 carbon frame and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded frame and fork with internal routing and press-fit bottom bracket",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "bottom_bracket": "BB386 press-fit system, 46 mm × 86 mm per the manufacturer's BB row",
+    "wheels": "T700 carbon wavy-rim wheels, 50 mm front / 60 mm rear, straight-pull ceramic-bearing hubs, Center Lock rotors; wheel brand not stated",
+    "tires": "Maxxis M228 700C×28C skinwall folding tires fitted; maximum clearance is not published",
+    "cockpit": "T700 + T800 integrated carbon handlebar with internal routing",
+    "sizes": "S (448 mm), M (459 mm), L (497 mm); the size dimension is not labelled",
+    "complete_weight_g": 7800,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Which groupset is actually supplied (specification table Ultegra R8020 2×11; intro text 105 R7100 2×12)",
+    "Geometry chart (the official chart image was refused to a non-browser read on 2026-10-24)",
+    "Saddle",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-bison-pf-ultegra-r8020-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23"
+  ],
+  "official_price": {
+    "amount_cny": 14800,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact ROAD BISON page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official ROAD BISON page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 14,800 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}

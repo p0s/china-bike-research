@@ -1,0 +1,42 @@
+{
+  "id": "public-xhs-girder-dash-105-di2-retail-2023-03-2026-10-24",
+  "type": "public-product-post",
+  "title": "GIRDER DASH 105 Di2 seller post with 8.39 kg claim (2023-03)",
+  "publisher": "XHS public post; publisher authority unverified",
+  "language": "zh-CN",
+  "url": "https://www.xiaohongshu.com/explore/640605ca00000000130085ac",
+  "accessed_at": "2026-10-24",
+  "published_date": "2023-03-06",
+  "reliability": {
+    "identity": "medium",
+    "specification": "low",
+    "price": "low"
+  },
+  "notes": "A dealer post (labelled 帝狮) lists a GIRDER DASH disc road bike with carbon frame, fork, seatpost and integrated cockpit, carbon wheels with ceramic bearings, and Shimano 7170 electronic 2×12. It states a complete weight of 8.39 kg without size, pedals or weighing method, and claims an official price of CNY 17,800 while inviting private offers. This is a historical dealer claim, not a verified manufacturer price, checkout or independent measurement.",
+  "reference_claims": [
+    {
+      "kind": "historical-seller-specification",
+      "claim": "DASH with R7170 2×12, carbon frame/fork/seatpost/cockpit/wheels, 8.39 kg (basis unstated), posted 2023-03-06.",
+      "confidence": "medium",
+      "limitations": "Dealer claim; size, pedal and weighing basis unknown; frame generation unidentified. Not a weight for either official 2025 DASH build or the ROAD endurance DASH.",
+      "canonical_target_id": "girder-dash-105-di2-2023-reference",
+      "selected_build_fact": true,
+      "gap_closed": false
+    },
+    {
+      "kind": "historical-seller-official-price-claim",
+      "claim": "Dealer-claimed official price CNY 17,800 for this DASH 105 Di2 build on 2023-03-06.",
+      "confidence": "low",
+      "limitations": "Historical dealer statement; no manufacturer page from 2023 was checked and no discount is inferred.",
+      "canonical_target_id": "girder-dash-105-di2-2023-reference",
+      "selected_build_fact": true,
+      "gap_closed": false
+    }
+  ],
+  "capture": {
+    "archive_sha256": "9cfaeece46acde4dd3421478d0ae8b93a4a3b98bc6e97149f160714dabbe99a2",
+    "archive_bytes": 3435606,
+    "extension_version": "1.5.0",
+    "scope": "Validated exact-query detail archive (query '格拉德 DASH'); public text reviewed. Raw posts, account identifiers and media remain local outside Git. No video was watched or transcribed, and no product-image or measured-weight pixel claim is made."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "girder-corsa-pf-105-alloy",
+  "name": "GIRDER 格拉德 Corsa press-fit T700/T800 105 alloy wheels",
+  "model_id": "girder-corsa-pf-105-alloy",
+  "brand_id": "girder",
+  "category": "road",
+  "type": "complete-bike",
+  "why_interesting": "GIRDER's lowest-priced official carbon disc road complete: the earlier T700 + T800 CORSA with 105 R7120 mechanical 2×12 and alloy wheels at ¥7,999, distinct from the 2025 CORSA with carbon wheels.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7120 mechanical 2×12; FC-R7100 52-36T 170 mm crank, cassette written 'CS-7100' 11-34T, YBN 12-speed chain",
+    "brakes": "Shimano 105 R7120 hydraulic disc, 160 mm Center Lock rotors front and rear",
+    "frame": "ROAD-section CORSA T700 + T800 carbon 'integrated' frame and fork, 12 mm thru-axles, fully internal routing",
+    "frame_material": "T700 + T800 carbon frame and fork; fiber supplier and lay-up are not published",
+    "frame_construction": "EPS-molded frame and fork with internal routing and press-fit bottom bracket",
+    "stiffness_evidence": "No measured or comparative stiffness evidence found",
+    "bottom_bracket": "Press-fit shell per manufacturer; the supplied in-house ceramic-bearing BB (19 G5 silicon-nitride balls) is described as 'PF386 to T47 tool compatible', so confirm the exact shell standard before ordering parts",
+    "wheels": "Aluminium rims, bearing disc hubs, Center Lock rotors",
+    "tires": "Maxxis M203 700C×28C fitted; maximum clearance is not published",
+    "cockpit": "T700 + T800 integrated carbon handlebar with internal routing; silicone bar tape",
+    "sizes": "S (448 mm), M (459 mm), L (497 mm); the size dimension is not labelled",
+    "complete_weight_g": 8800,
+    "complete_weight_basis": "Manufacturer-listed weight for this complete bike; size, pedals and weighing method are not stated"
+  },
+  "reference_price_kind": "official",
+  "missing": [
+    "Geometry chart (the official chart image was refused to a non-browser read on 2026-10-24)",
+    "Exact bottom-bracket shell standard",
+    "Saddle",
+    "Manufacturer-published maximum tire clearance",
+    "Complete-weight size, pedal and measurement basis",
+    "Frame or frameset weight",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland marketplace listing or checkout amount, warranty issuer, warranty term and invoice handling",
+    "Frame production factory",
+    "Rights-cleared exact product image"
+  ],
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "girder-corsa-pf-105-alloy-official-2026-10-24",
+    "girder-contact-official-2026-10-23",
+    "girder-about-official-2026-10-23",
+    "public-xhs-girder-corsa-r7120-carbon-2025-04-2026-10-24",
+    "public-xhs-girder-corsa-used-tiagra-2026-04-2026-10-24"
+  ],
+  "official_price": {
+    "amount_cny": 7999,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-10-24",
+    "price_basis": "Manufacturer-listed price on the exact ROAD CORSA page; no mainland marketplace listing or checkout amount was observed"
+  },
+  "source_note": "Official ROAD CORSA page; GIRDER sells by direct inquiry and no mainland marketplace listing was verified. See docs/research-girder-range-inventory-2026-10-24.md for related generations kept separate. Two XHS posts are CORSA family context only: a 2025 bike-store post naming 7120 carbon without generation or wheels, and a 2026 used listing with Tiagra 4720 and a 105 crank whose original or modified package is unknown; neither changes this build's specification or price.",
+  "last_reviewed": "2026-10-24",
+  "price_status": "Official CNY 7,999 list price observed 2026-10-24; no marketplace listing or checkout amount verified"
+}
