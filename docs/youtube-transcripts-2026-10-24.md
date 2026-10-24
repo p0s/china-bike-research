@@ -350,6 +350,305 @@ No video added.
 - Q-AERO GR (`rinasclta-q-aero-gr`): Rinasclta results are the Granite all-road frame and a 2019 RL8.0 clip, which are different models.
 - COMPASS (`rolling-stone-comp`): no COMPASS result. NERO Cycling's Shanghai show walk (`st7jCNtgBwo`) shows a different, unnamed Rolling Stone aero frame.
 
+### Batch 29 — ViQi R8000; WEST BIKING SL-ONE, Team edition; Meihanda Phantom P10; model-unclear records
+
+No video added.
+
+- R8000 (`viqi-r8000`): "ViQi" searches return unrelated products.
+- SL-ONE (`west-biking-sl-one`) and Team edition (`west-biking-team-road`): WEST BIKING results are accessory listings. "WEST BIKING Carbon Road Bike 700C 22 Speed" (`VePouyC6xyo`) has no caption track and does not identify either model.
+- Phantom P10 (`meihanda-phantom-p10`): no Meihanda bicycle result; 美涵达 searches return Merida.
+- Unsuitable for exact-model video search because the record's model is unidentified, mixed or generic: `cosmosworks-carbon-e-road` (mixed NOMAD / Oi! lead), `flying-pigeon-carbon-road-unknown`, `frrx-carbon-road-unknown`, `generic-custom-carbon-road`, `my-way-custom-carbon-frame`, `viqi-integrated-road-unknown`, `meihanda-xtreme-gravel`, `meinier-superlight-2` (MEINIER's own ZR674 and Snake clips cannot be matched to the unidentified listing), `nscr-carbon-gravel-storage` and `elves-mori-community-lead`. For the last, Mori GTX and other Mori videos exist (for example `id7w8tqGQa4`, `ihwetsxQLf4`, `RcszBTra3Co`), but the record's subtrim is unconfirmed; the Mori AeroX pointer is covered by the published platform (batch 3).
+
+## Frozen candidate ledger
+
+Every one of the 283 candidate records frozen at main `22ad6ff9`, with the batch that recorded its outcome and its linked-video count after the campaign. "No suitable video" means a search was made and no exact, transcript-usable video was found, or the record is unsuitable for exact-model search; see the batch section for the evidence.
+
+| Candidate | Batch | Outcome |
+| --- | --- | --- |
+| `airwolf-yf-r003` | 7 | no suitable video |
+| `airwolf-yfr068` | 27 | no suitable video |
+| `alums-da54` | 7 | 3 linked |
+| `argon18-krypton-pro` | 7 | 1 linked |
+| `basso-venta-disc` | 7 | 1 linked |
+| `bianchi-sprint-icr` | 7 | 1 linked |
+| `bigrock-sohtea` | 25 | 2 linked |
+| `bxt-gravel-complete` | 7 | 3 linked |
+| `camp-ace-gen3-105` | 26 | no suitable video |
+| `camp-ace-qed` | 26 | no suitable video |
+| `camp-gx700-travel` | 26 | no suitable video |
+| `camp-gx700` | 26 | no suitable video; the matching published GX700 platform carries the transcript-checked video |
+| `carbonda-cfr707` | 23 | 3 linked |
+| `cervelo-aspero-5-current` | 14 | 1 linked; recorded by model name |
+| `cinelli-pressure-adr` | 14 | no suitable video |
+| `cinelli-pressure` | 14 | no suitable video |
+| `colnago-y1rs` | 15 | 1 linked |
+| `cosmosworks-carbon-e-road` | 29 | no suitable video |
+| `cycletrack-phantom-rx24` | 27 | no suitable video |
+| `cycletrack-time-tt` | 27 | no suitable video |
+| `cyctrac-r18` | 16 | no suitable video |
+| `de-rosa-idol` | 15 | no suitable video |
+| `de-rosa-new-838` | 15 | 1 linked |
+| `dengfu-gravel` | 11 | no suitable video |
+| `elro-f1` | 27 | no suitable video |
+| `elves-mori-community-lead` | 29 | no suitable video |
+| `evolve-cima-road` | 4 | 6 linked |
+| `falco-t91-t912` | 26 | no suitable video |
+| `felt-ia-2` | 15 | no suitable video |
+| `flying-pigeon-carbon-road-unknown` | 29 | no suitable video |
+| `frrx-carbon-road-unknown` | 29 | no suitable video |
+| `generic-custom-carbon-road` | 29 | no suitable video |
+| `giant-defy-advanced-sl1-community-lead` | 13 | no suitable video |
+| `giant-propel-advanced-3` | 13 | 1 linked |
+| `giant-propel-gen4-community-lead` | 13 | 1 linked |
+| `gios-aerolite` | 26 | no suitable video |
+| `girder-aero-team-dura-ace-di2` | 22 | no suitable video |
+| `girder-arrow-2025-105-di2` | 22 | no suitable video |
+| `girder-arrow-pf-105-di2` | 22 | no suitable video |
+| `girder-bison-2025-105` | 22 | no suitable video |
+| `girder-bison-pf-ultegra-r8020` | 22 | no suitable video |
+| `girder-bison-pro-2025-105-di2` | 22 | no suitable video |
+| `girder-bison-r7020-2023-reference` | 22 | no suitable video |
+| `girder-corsa-2025-105` | 22 | no suitable video |
+| `girder-corsa-pf-105-alloy` | 22 | no suitable video |
+| `girder-dash-105-di2-2023-reference` | 22 | no suitable video |
+| `girder-dash-2025-ultegra-di2` | 22 | no suitable video |
+| `girder-dash-frameset-unresolved-generation` | 22 | no suitable video |
+| `girder-dash-pf-ultegra-di2` | 22 | no suitable video |
+| `girder-dash-pro-2025-dura-ace-di2` | 22 | no suitable video |
+| `girder-fame-105-di2-2023-reference` | 22 | no suitable video |
+| `girder-fame-2025-ultegra-di2` | 22 | no suitable video |
+| `girder-fame-pf-ultegra-r8020` | 22 | no suitable video |
+| `girder-fame-pro-2025-dura-ace-di2` | 22 | no suitable video |
+| `girder-glare-ultegra-r8000-rim` | 24 | no suitable video |
+| `girder-jaunt-apex-axs` | 24 | no suitable video |
+| `girder-titanium-gravel-2025-apex-axs` | 24 | no suitable video |
+| `girder-titanium-mtb-2025-xt-1x12` | 24 | no suitable video |
+| `girder-titanium-road-2025-105-di2` | 24 | no suitable video |
+| `girder-titanium-road-2025-apex-1x12` | 24 | no suitable video |
+| `girder-tsar-105-di2-2023-reference` | 24 | no suitable video |
+| `girder-tsar-ultegra-di2` | 24 | no suitable video |
+| `gito-carbon-aero-entry` | 24 | no suitable video |
+| `gito-carbon-hydraulic-unknown` | 24 | no suitable video |
+| `gito-carbon-road-high-unknown` | 24 | no suitable video |
+| `gito-carbon-road-plus` | 24 | no suitable video |
+| `gito-gtv5-plus` | 24 | no suitable video |
+| `gito-wave` | 24 | no suitable video |
+| `hi-light-g0` | 11 | no suitable video |
+| `hi-light-g7-2-grx-gr1600` | 11 | no suitable video |
+| `hi-light-g7-2` | 11 | 1 linked |
+| `hi-light-r6-105-al` | 11 | no suitable video |
+| `hi-light-r9-2025` | 11 | no suitable video |
+| `hi-light-r9-force-pr1600` | 11 | no suitable video |
+| `hongfu-gravel` | 11 | no suitable video |
+| `huanyu-az-one` | 27 | no suitable video |
+| `icanian-p9` | 25 | 1 linked |
+| `icanian-sn04` | 25 | 2 linked |
+| `irefox-by446` | 27 | no suitable video |
+| `irefox-profound-400` | 27 | no suitable video |
+| `java-aluminum-24s` | 17 | no suitable video |
+| `java-auriga-2027` | 17 | no suitable video |
+| `java-carbon-hydraulic-unknown` | 17 | no suitable video |
+| `java-fuoco-2025` | 17 | 1 linked |
+| `java-lampo-carbon-road` | 17 | no suitable video |
+| `java-siluro6-top-r7120` | 17 | 1 linked |
+| `java-suprema-7120` | 17 | no suitable video |
+| `java-tt-frame-hydraulic` | 17 | no suitable video |
+| `java-vega-tt-24s` | 17 | 1 linked |
+| `java-vittoria-7170` | 17 | 1 linked |
+| `java-vittoria-er7-2026` | 17 | 1 linked |
+| `java-volata-r7120` | 17 | 1 linked |
+| `kontax-power-evo` | 27 | no suitable video |
+| `koseea-pioneer-slr-plus` | 27 | no suitable video |
+| `kung-horizon` | 21 | no suitable video |
+| `kung-mach-complete` | 21 | no suitable video; pointer to a published platform |
+| `kung-mach-x-ultegra-di2` | 21 | no suitable video |
+| `laget-aero-one` | 10 | 3 linked |
+| `laget-discovery-one-flagship` | 11 | no suitable video |
+| `laget-discovery-one-pro` | 11 | no suitable video |
+| `laget-discovery-slr` | 11 | no suitable video |
+| `laget-pioneer-one` | 10 | no suitable video |
+| `laget-pioneer` | 10 | no suitable video |
+| `legit-ac1` | 26 | no suitable video |
+| `leinax-leina-road` | 27 | no suitable video |
+| `leinax-youlong-2` | 28 | no suitable video |
+| `lightcarbon-lcg071-pro` | 8 | 2 linked |
+| `lightcarbon-lcg074-d` | 8 | no suitable video; recorded by model code |
+| `lightcarbon-lcg074s-d` | 8 | no suitable video; recorded by model code |
+| `lightcarbon-lcg087-d` | 8 | 1 linked |
+| `lightcarbon-lcg087s-d` | 8 | no suitable video; recorded by model code |
+| `lightcarbon-lcr007-v` | 8 | 2 linked |
+| `lightcarbon-lcr014-d` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcr014-v` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcr015-d` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcr015-v` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcr015s-d` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcr015s-v` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcr017-d` | 8 | 4 linked |
+| `lightcarbon-lcr017s-d` | 8 | no suitable video; recorded by model code |
+| `lightcarbon-lcr018-d` | 8 | 6 linked |
+| `lightcarbon-lcr020-d` | 8 | no suitable video; recorded by model code |
+| `lightcarbon-lcr0x-d` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcr0x-v` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcrxs-d` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lcrxs-v` | 9 | no suitable video; recorded by model code |
+| `lightcarbon-lctr003` | 10 | no suitable video; recorded by model code |
+| `lightcarbon-lctt001` | 10 | no suitable video; recorded by model code |
+| `lightcarbon-lctt004` | 10 | no suitable video; recorded by model code |
+| `lightcarbon-lctt05-d` | 10 | no suitable video; recorded by model code |
+| `lightcarbon-speed7-complete` | 10 | no suitable video; recorded by model code |
+| `lightcarbon-speed7-frameset` | 10 | no suitable video; recorded by model code |
+| `longteng-ltk266-d-sl` | 10 | no suitable video |
+| `look-765-electronic` | 15 | 1 linked |
+| `meihanda-phantom-p10` | 29 | no suitable video |
+| `meihanda-xtreme-gravel` | 29 | no suitable video |
+| `meinier-superlight-2` | 29 | no suitable video |
+| `merida-scultura-endurance-4000-community-lead` | 12 | no suitable video |
+| `missile-e6000` | 28 | no suitable video |
+| `missing-china-price-canyon-aeroad` | 12 | 1 linked |
+| `missing-china-price-canyon-grail` | 12 | 1 linked |
+| `missing-china-price-canyon-ultimate` | 12 | 1 linked |
+| `missing-china-price-elves-falath-evo` | 7 | 3 linked |
+| `missing-china-price-elves-mori-aerox` | 3 | no suitable video; pointer to the published platform covered there |
+| `missing-china-price-elves-vanyar` | 23 | 4 linked |
+| `missing-china-price-evolve-cima-gr` | 4 | no suitable video; pointer to the published Evolve CIMA GR platform |
+| `missing-china-price-giant-defy-advanced` | 12 | 2 linked |
+| `missing-china-price-giant-revolt-advanced` | 12 | 1 linked |
+| `missing-china-price-giant-tcr-advanced` | 12 | no suitable video |
+| `missing-china-price-laget-g0-pro` | 11 | no suitable video |
+| `missing-china-price-merida-reacto` | 12 | 1 linked |
+| `missing-china-price-merida-scultura` | 12 | 1 linked |
+| `missing-china-price-merida-silex` | 12 | 1 linked |
+| `missing-china-price-quick-pro-gr-one` | 2 | no suitable video; pointer to the published Quick Pro GR:ONE platform |
+| `missing-china-price-quick-pro-xr-one` | 21 | 2 linked; recorded by model name |
+| `missing-china-price-seka-exaero-gr` | 3 | no suitable video; pointer to the published platform covered there |
+| `missing-china-price-specialized-crux` | 13 | 1 linked |
+| `missing-china-price-specialized-roubaix-sl8` | 13 | 1 linked; recorded by model name |
+| `missing-china-price-specialized-tarmac-sl8` | 13 | 2 linked |
+| `missing-china-price-tavelo-arow` | 23 | 5 linked |
+| `missing-china-price-tavelo-attack` | 23 | 2 linked |
+| `missing-china-price-tavelo-grow` | 3 | no suitable video; pointer to the published platform covered there |
+| `missing-china-price-trek-checkpoint` | 14 | 1 linked; recorded by model name |
+| `missing-china-price-trek-domane` | 14 | 1 linked; recorded by model name |
+| `missing-china-price-trek-madone-gen-8` | 14 | 1 linked; recorded by model name |
+| `missing-china-price-tsb-titan-super-bond-pioneer-one` | 11 | no suitable video |
+| `missing-china-price-van-rysel-rcr` | 14 | 1 linked; recorded by model name |
+| `missing-china-price-winspace-agile` | 23 | 3 linked |
+| `missing-china-price-winspace-g3` | 3 | no suitable video; pointer to the published platform covered there |
+| `missing-china-price-winspace-g5` | 3 | no suitable video; pointer to the published platform covered there |
+| `missing-china-price-winspace-slc3` | 23 | 3 linked |
+| `missing-china-price-winspace-t1550` | 23 | 1 linked |
+| `missing-china-price-x-lab-xds-gt8` | 21 | 1 linked |
+| `missing-china-price-yoeleo-altera-g21` | 3 | no suitable video; pointer to the published platform covered there |
+| `mondince-fm316` | 28 | no suitable video |
+| `muidler-ashius-s7` | 28 | no suitable video |
+| `my-way-custom-carbon-frame` | 29 | no suitable video |
+| `nscr-carbon-gravel-storage` | 29 | no suitable video |
+| `paragon-jazz-2026` | 28 | no suitable video |
+| `pardus-gomera-evo-dura-ace-di2` | 18 | no suitable video |
+| `pardus-robin-evo-community-lead` | 19 | no suitable video |
+| `pardus-robin-evo-force-axs` | 19 | no suitable video |
+| `pardus-robin-sport-pes` | 19 | no suitable video |
+| `pardus-spark-al` | 18 | no suitable video |
+| `pardus-spark-evo-gen4-frameset` | 18 | no suitable video |
+| `pardus-spark-evo-gen4-ultegra-di2` | 18 | no suitable video |
+| `pardus-spark-rs-community-lead` | 18 | no suitable video |
+| `pardus-spark-sport-pes` | 18 | no suitable video |
+| `pardus-spark-tourist` | 18 | no suitable video |
+| `pardus-spark` | 18 | no suitable video |
+| `pardus-super-al` | 18 | 1 linked |
+| `pardus-super-sport-gen2` | 18 | no suitable video |
+| `pardus-super-sport` | 18 | 1 linked |
+| `pardus-uragano-evo-community-lead` | 19 | no suitable video |
+| `pardus-uragano-evo` | 19 | no suitable video |
+| `pardus-uragano-f` | 19 | no suitable video |
+| `pardus-uragano-sport` | 19 | 1 linked |
+| `phillips-carbon-road-unknown` | 28 | no suitable video |
+| `phoenix-700c-carbon-e-road` | 28 | no suitable video |
+| `pinarello-f5` | 14 | 2 linked; recorded by model name |
+| `qingsha-carbon-folding` | 28 | no suitable video |
+| `quick-pro-er-one` | 21 | 2 linked |
+| `quick-pro-gr-one-grx-di2` | 21 | no suitable video; pointer to a published platform |
+| `quick-pro-tr-one-dura-ace-di2` | 21 | 1 linked |
+| `quick-pro-tr-one` | 21 | 1 linked |
+| `quick-pro-tt-one` | 21 | no suitable video |
+| `quick-pro-ur-one-frameset` | 21 | 2 linked |
+| `quick-pro-ur-one` | 21 | 2 linked; recorded by model name |
+| `quick-pro-xr-one-frameset-aelous-gravel` | 21 | no suitable video |
+| `quick-t10` | 21 | no suitable video |
+| `rinasclta-q-aero-gr` | 28 | no suitable video |
+| `rockbros-pegasus-road` | 25 | 1 linked |
+| `rolling-stone-comp` | 28 | no suitable video |
+| `sava-a4` | 19 | no suitable video |
+| `sava-a7l-2026` | 19 | no suitable video; merged into its exact SAVA record |
+| `sava-a7l-pro-2026` | 7 | 2 linked |
+| `sava-dream-maker` | 19 | no suitable video |
+| `sava-f20-hawkeye` | 19 | 1 linked |
+| `sava-gelaro-s4` | 19 | no suitable video; merged into its exact SAVA record |
+| `sava-gelaro-sf` | 29 | no suitable video |
+| `sava-r8-r8170` | 7 | no suitable video |
+| `sava-r9` | 19 | no suitable video |
+| `sava-starship-r13` | 19 | no suitable video |
+| `scott-addict-40` | 14 | 1 linked; recorded by model name |
+| `scott-foil-rc-10` | 14 | 1 linked; recorded by model name |
+| `seka-exaero-road` | 15 | 1 linked |
+| `seka-exceed-105-di2-dealer-build` | 15 | 2 linked |
+| `seka-spear-rdc-frameset` | 15 | 1 linked |
+| `seka-spear-rdc` | 15 | 1 linked |
+| `seka-spear-standard-105-di2` | 15 | 2 linked |
+| `seraph-tt-x68-new-udh` | 15 | no suitable video |
+| `specialized-crux-10r-frameset` | 13 | no suitable video |
+| `specialized-roubaix-sl8-comp-105` | 13 | 1 linked; recorded by model name |
+| `specialized-roubaix-sl8-sport-105` | 13 | no suitable video |
+| `specialized-s-works-crux-2024-sram-red-xplr` | 13 | 1 linked; recorded by model name |
+| `specialized-s-works-crux-frameset` | 13 | 1 linked; recorded by model name |
+| `spect-mira` | 25 | no suitable video |
+| `sunpeed-charon-2026` | 20 | no suitable video |
+| `sunpeed-galaxy-2026-r7120` | 20 | 1 linked |
+| `sunpeed-mars-a-pro-2026` | 20 | 1 linked |
+| `sunpeed-space` | 20 | no suitable video |
+| `sunpeed-victory-e-2026` | 20 | 1 linked |
+| `sunpeed-wudi-e-2026` | 20 | 1 linked |
+| `tavelo-arden` | 23 | 1 linked |
+| `tavelo-arow-disc-frameset` | 23 | no suitable video |
+| `tavelo-arow-sl-community-lead` | 23 | no suitable video |
+| `tavelo-arow-sl-frameset` | 23 | no suitable video |
+| `triaero-a9` | 25 | no suitable video |
+| `trinx-gtr-c6` | 26 | no suitable video |
+| `trinx-tornado-900` | 26 | no suitable video |
+| `tsb-titan-super-bond-pioneer-one` | 11 | no suitable video |
+| `twitter-carbon-road-gravel-unknown` | 16 | no suitable video |
+| `twitter-cyclone-gen3-7170` | 16 | no suitable video |
+| `twitter-cyclone-r7120` | 16 | no suitable video |
+| `twitter-cyclone-sport` | 16 | no suitable video |
+| `twitter-gravel-v3-105` | 16 | no suitable video |
+| `twitter-gravel-v3-2024-rs-carbon-wave` | 16 | no suitable video |
+| `twitter-little-white-rabbit` | 16 | no suitable video |
+| `twitter-r10-pro-gen3` | 16 | 1 linked |
+| `twitter-storm-knight` | 16 | no suitable video |
+| `twitter-t10-pro` | 16 | 1 linked |
+| `twitter-t8-closed-wheel` | 16 | no suitable video |
+| `twitter-x7` | 16 | no suitable video |
+| `upland-r70` | 25 | no suitable video |
+| `upland-r80` | 25 | no suitable video |
+| `upland-taylor` | 25 | no suitable video |
+| `velobuild-cx-002-2023` | 25 | 2 linked |
+| `viqi-integrated-road-unknown` | 29 | no suitable video |
+| `viqi-r8000` | 29 | no suitable video |
+| `voicevelo-g-major` | 25 | 2 linked |
+| `vook-v8e-pro` | 25 | 1 linked |
+| `west-biking-sl-one` | 29 | no suitable video |
+| `west-biking-team-road` | 29 | no suitable video |
+| `winspace-m6` | 7 | 3 linked |
+| `winspace-t1600` | 6a | 8 linked; already at the eight-video limit |
+| `xds-ad350-2026` | 20 | no suitable video |
+| `xds-ad500-2025` | 20 | no suitable video |
+| `xds-ad7` | 20 | no suitable video |
+| `xds-gt350` | 20 | no suitable video |
+| `xds-gt600` | 21 | no suitable video |
+| `xlab-ad8` | 25 | 5 linked |
+| `xlab-ad9` | 25 | 5 linked |
+| `xlab-rs9` | 25 | 3 linked |
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
