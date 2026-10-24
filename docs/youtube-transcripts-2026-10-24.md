@@ -335,6 +335,21 @@ No video added.
 - RS80 POWER EVO (`kontax-power-evo`): KONTAX results are e-bikes and Stirling-engine kits; Charlie's "KONTAX carbon fiber road bike" (`kG96jf86vI4`) is a 49-second music clip that does not identify the RS80.
 - 雷娜 (`leinax-leina-road`): 杨弟's 雷纳克 105 build clip (`2gJnZ6cnCH4`) has no caption track and does not name the model.
 
+### Batch 28 — LEINAK 游龙 2.0; MISSILE 水星6000; Mondince FM316; MUIDLER 阿修斯 S7; PARAGON JAZZ 2026; PHILLIPS SACHEM; Phoenix 799 e-road; QingSha QS91-20; Rinasclta Q-AERO GR; ROLLING STONE COMPASS
+
+No video added.
+
+- 游龙 2.0 (`leinax-youlong-2`): no model-specific result.
+- 水星6000 (`missile-e6000`): results are Philippine MISSILE models (Atlas, Stacato), which are not this model.
+- FM316 (`mondince-fm316`): Mondince's channel shows only FM296, FM336, FM366 and FM376 product shots.
+- 阿修斯 S7 (`muidler-ashius-s7`): no bicycle result.
+- JAZZ 2026 (`paragon-jazz-2026`): results are music.
+- SACHEM (`phillips-carbon-road-unknown`): Varipolis' French "review" (`Zr6r9w8X5W8`) reads a generic product description with an affiliate link and gives no independent observation, so it is not used.
+- 799 e-road (`phoenix-700c-carbon-e-road`): results are generic e-bike unboxings, not this model.
+- QS91-20 (`qingsha-carbon-folding`): results are other carbon folders (SAVA Z2/Z3, Urtopia, LiDrop, MOBOT).
+- Q-AERO GR (`rinasclta-q-aero-gr`): Rinasclta results are the Granite all-road frame and a 2019 RL8.0 clip, which are different models.
+- COMPASS (`rolling-stone-comp`): no COMPASS result. NERO Cycling's Shanghai show walk (`st7jCNtgBwo`) shows a different, unnamed Rolling Stone aero frame.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
