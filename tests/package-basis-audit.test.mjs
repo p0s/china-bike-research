@@ -9,7 +9,7 @@ const data=loadDataset(),products=joinProducts(data),candidates=joinCatalogCandi
 const ctx={data,products,base:'',posts:[],siteUrl:'https://chinesebikes.xyz',repositoryUrl:'https://github.com/p0s/china-bike-research'};
 const payload=JSON.parse(renderBikeBuilder(ctx).match(/id="build-configurator-data">([\s\S]*?)<\/script>/)[1]);
 const entry=id=>candidates.find(x=>x.candidate.id===id);
-test('all 23 numeric published frame defaults retain their exact measurement bases',()=>{
+test('all 24 numeric published frame defaults retain their exact measurement bases',()=>{
  let checked=0;
  for(const p of products.filter(x=>x.variant.kind==='frameset')){
   const b=payload.bases.find(x=>x.id===p.variant.id);if(b.baseWeightG===null)continue;checked++;
@@ -17,7 +17,7 @@ test('all 23 numeric published frame defaults retain their exact measurement bas
   const recorded=p.variant.claimed_frame_weight_basis??p.platform.frame.claimed_frame_weight_basis??p.platform.frame.claimed_frame_weight_g_by_size?.basis;
   if(recorded)assert.ok(b.weightBasis.includes(recorded),p.variant.id);
  }
- assert.equal(checked,23);
+ assert.equal(checked,24);
 });
 test('conservative maximum defaults keep size and finish distinct from another recorded example',()=>{
  const cima=payload.bases.find(x=>x.id==='evolve-cima-gr-frameset');assert.equal(cima.baseWeightG,940);assert.match(cima.weightBasis,/Conservative maximum.*XL — 940 g/);assert.match(cima.weightBasis,/Sahara Nude painted finish/);assert.match(cima.weightBasis,/Separate 820 g frame claim/);

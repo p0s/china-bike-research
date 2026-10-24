@@ -68,7 +68,7 @@ test('translation preserves original-source quotations, HTML entities, raw scrip
   assert.equal(json.inLanguage, 'zh-Hans');
 });
 test('every published model has a reviewed Chinese verdict without rewriting the original data', () => {
-  assert.equal(products.length, 41);
+  assert.equal(products.length, 42);
   for (const { variant } of products) {
     assert.ok(zh[variant.editorial.verdict], `Missing native summary for ${variant.id}`);
     assert.match(translate(variant.editorial.verdict, 'zh-Hans'), /[\u3400-\u9fff]/);

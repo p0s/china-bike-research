@@ -1,0 +1,42 @@
+{
+  "id": "kung-mach-x-ultegra-di2",
+  "name": "KUNG 攻 MACH X 马赫X Ultegra Di2 complete bike",
+  "model_id": "kung-mach-x",
+  "brand_id": "kung",
+  "category": "road",
+  "type": "complete-bike",
+  "why_interesting": "KUNG's newer lightweight all-round race bike, sold beside the aero MACH; the brand quotes a 7.2 kg Ultegra Di2 build and replied CNY 16,999 to a public price question.",
+  "facts": {
+    "frame_material": "Carbon frame and fork; KUNG's own post claims T1000 high-modulus carbon and a matte finish without extra paint weight",
+    "drivetrain": "Shimano Ultegra Di2 electronic 2×12 with hydraulic disc brakes (JD title: 禧玛诺UT电变; KUNG post: Shimano UT)",
+    "complete_weight_g": 7200,
+    "complete_weight_basis": "Brand claim in KUNG's July 2026 post; size, pedals and measurement method not stated",
+    "wheels": "KUNG K-POWER carbon wheels in the brand's build photos",
+    "stiffness_evidence": "Brand marketing describes high structural rigidity for climbing and sprinting; no test or comparative result is published"
+  },
+  "missing": [
+    "Exact Ultegra Di2 generation, complete BOM and size-specific weight with pedals basis",
+    "Maximum tire clearance and geometry table",
+    "Frame weight, mainland checkout price and warranty terms"
+  ],
+  "status": "exact-model-brand-price-reply-specification-sparse",
+  "existing_record_id": "kung-mach-frameset",
+  "catalog_distinct_reason": "MACH X is a separate lightweight all-round frame with its own name and shapes, not the aero MACH frameset tracked in the published record.",
+  "source_ids": [
+    "public-xhs-kung-mach-x-ut-brand-2026-07-16",
+    "public-xhs-kung-mach-x-black-white-brand-2026-08-31",
+    "public-xhs-kung-mach-x-blue-brand-2026-06-05",
+    "kung-jd-flagship-index-2026-10-24"
+  ],
+  "observed_at": "2026-07-20",
+  "observed_price": {
+    "amount_cny": 16999,
+    "currency": "CNY",
+    "observed_at": "2026-07-20",
+    "price_basis": "brand reply in a public post",
+    "observation_count": 1
+  },
+  "source_url": "https://www.xiaohongshu.com/explore/6a5849fb000000001303f9d1",
+  "source_note": "KUNG's own XHS post (16 July 2026) presents the MACH X with a Shimano UT group, a 7.2 kg complete weight and T1000 carbon; the brand account replied CNY 16,999 when asked the price on 20 July. JD titles call it 马赫X 综合超轻 with Shimano UT electronic shifting. Weight basis, size and checkout conditions are not stated.",
+  "last_reviewed": "2026-10-24"
+}

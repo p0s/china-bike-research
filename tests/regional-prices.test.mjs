@@ -180,7 +180,7 @@ test('validation rejects incomplete delivered claims and country/package mismatc
   assert.ok(errors.some((error) => error.includes('package must match')));
 });
 test('native observations append without replacing CNY catalog or build history', () => {
-  assert.equal(data.prices.filter((price) => !price.market_ids).length, 77);
+  assert.equal(data.prices.filter((price) => !price.market_ids).length, 78);
   assert.ok(product.prices.every((price) => !price.market_ids));
   assert.equal(product.latestPrice.currency, 'CNY');
 });
