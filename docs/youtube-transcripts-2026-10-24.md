@@ -292,6 +292,24 @@ No video added. Additional searches ("Girder Tsar bike", "格拉德 Tsar 公路�
 - GIRDER: the GIRDERCYCLE channel's `7nXZCOad3SU` and `bbfOj_YjbBU` and a short owner clip titled "格拉德dash公路车" (`9aQwvUdN570`) have no caption track and do not identify a candidate trim or generation. Vietnamese shop videos cover an alloy R100 (`dB3RlFLWN-c`), which is not a candidate, and a used Arrow 105 Di2 sale listing (`HQ9tG1aOx-I`: 50/34 chainrings, generation unstated) that does not match the 52/36 2025 Arrow build or the press-fit Arrow; resale pitches are not used as evidence. Records: `girder-glare-ultegra-r8000-rim`, `girder-jaunt-apex-axs`, `girder-titanium-gravel-2025-apex-axs`, `girder-titanium-mtb-2025-xt-1x12`, `girder-titanium-road-2025-105-di2`, `girder-titanium-road-2025-apex-1x12`, `girder-tsar-105-di2-2023-reference`, `girder-tsar-ultegra-di2`.
 - GITO: results were unrelated (Giro helmets, GTA 5, fashion, geophysics equipment and other bike brands). `gito-wave` is a wheel-descriptor listing without an exact frame model and is unsuitable for exact video search regardless. Records: `gito-carbon-aero-entry`, `gito-carbon-hydraulic-unknown`, `gito-carbon-road-high-unknown`, `gito-carbon-road-plus`, `gito-gtv5-plus`, `gito-wave`.
 
+### Batch 25 — X-LAB AD8, AD9, RS9; BIGROCK Sohtea; Voicevelo G Major; TRIAERO A9; ICANIAN P9 and SN04; VeloBuild CX-002 (2023); VOOK V8E Pro; ROCKBROS Pegasus; Spect Mira; UPLAND R70, R80, Taylor
+
+Delivered: 11 transcript-checked videos.
+
+- AD8 (`xlab-ad8`): Patrick Lino's first look at the US-market 105 Di2 bike (`WRr_kJJ9IEs`: 7.9 kg all-in size XL, US$4,499, small sizing, no creaks). The 45 mm wheels he describes differ from the mainland build's Branta C50, so the weight is not copied to the candidate.
+- AD9 (`xlab-ad9`): Cyclingnews' wind-tunnel review (`3g8qDLxksrI`: 7.79 kg as ridden; 33.94 W bike-only saving against their baseline, mid-field with a rider; X-LAB's 0.4 W Aeroad claim is within the margin of error; thinks 32 mm will fit). The test bike's wheels differ from the mainland Vision build, so the figures stay with the video.
+- RS9 (`xlab-rs9`): no exact video. CADE Media's `jBM9M-FCtl0` covers the alloy RS5, a different model.
+- Sohtea (`bigrock-sohtea`): China Cycling's first look (`-cGIAs1yhZ0`: lowered seat tube, clean build, XS Team Edition frame 673 g with hanger and bolts, added to `frame_weight_basis`). It shows the same frames as the existing long-term video, though it does not say "Sohtea".
+- G Major (`voicevelo-g-major`): Ide Schelling's build and first rides (`otiQPjVVYKg`: US$2,999, 45 mm tires measure 47 mm at the stated maximum, T47, UDH, largest size 57).
+- TRIAERO A9 105 Di2 (`triaero-a9`): John Knowles' 2019 ICAN A9 review (`r3Wj8gH7n6c`) predates the 105 Di2 R7170 build and does not establish the same frame generation, so it is not linked.
+- P9 (`icanian-p9`): Trailside Medic's 2020 owner notes (`6PEpXcIIHtY`: 150 mm travel, pivot bearing needed threadlock, shock-hardware sizes, crank-length limit). That this is the current generation is disclosed as unestablished. Two other owner videos (`F4OoZNfgfVo`, `mKtofHmYVg4`) have no caption track.
+- SN04 (`icanian-sn04`): bikesales' 2017 review (`RbERh5NqMRw`: 4.8 in tires fitted, 31 lb build) and Dicking About's six-month owner review (`pVjGJF3wzYU`). Charles Ouimet's build `rTRT_8SLW8s` is mainly music.
+- CX-002 2023 (`velobuild-cx-002-2023`): Patrick Lino's first look (`rkbVGQLP-v0`: US$599, 42 mm target, size-54 frame 1,261 g, added to `frame_weight_basis`) and first ride (`K3r_Tl0d2n4`: through-headset routing, no creaks). His later update `66LPR8sXSjU` was not needed.
+- V8E Pro (`vook-v8e-pro`): ian how's Filipino first ride (`ebZ9zg78ocQ`), mostly the stated specification. Bike Talk with PapaDyak's `VejCtdC_io4` shows the non-Pro V8E (a 7.3 kg shop weighing) and is not linked.
+- Pegasus (`rockbros-pegasus-road`): The Velographer's review of the Australian PGZ RH 105 Di2 build (`5fcB1Fito1A`: AU$3,500, 7.88 kg without pedals in size small, estimated 32–34 mm clearance), linked with the disclosure that the candidate's seller option is unresolved.
+- Mira (`spect-mira`): no exact video. The only result, Cycling_Boon's `8V7YQyTIzF0`, is already used for the ExAero.
+- UPLAND R70, R80, Taylor (`upland-r70`, `upland-r80`, `upland-taylor`): China Rides' Upland review (`GfksIep6kJw`) covers the Thor, which is not a candidate; no exact video was found for these three.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -385,6 +403,7 @@ No video added. Additional searches ("Girder Tsar bike", "格拉德 Tsar 公路�
 | argon18-krypton-pro (candidate/wheelset) | `chris-hall-argon18-krypton-pro-review` | Chris Hall | automatic captions · 6 takeaways |
 | basso-venta-disc (candidate/wheelset) | `mapdec-basso-venta-disc-105-review` | Mapdec Cycle Works | creator captions · 6 takeaways |
 | bianchi-sprint-icr (candidate/wheelset) | `eyeguy-bianchi-sprint-icr-custom` | Eyeguy’s Dropbar Bikes | automatic captions · 3 takeaways |
+| bigrock-sohtea (candidate/wheelset) | `china-cycling-bigrock-sohtea-first-look` | China Cycling | automatic captions · 4 takeaways |
 | bigrock-sohtea (candidate/wheelset) | `china-cycling-bigrock-sohtea-long-term` | China Cycling | automatic captions · 7 takeaways |
 | bxt-gravel-complete (candidate/wheelset) | `carlo-villarica-bxt-gravel-135-build` | Carlo Villarica - No Boring Days | automatic captions · 3 takeaways |
 | bxt-gravel-complete (candidate/wheelset) | `cycling-cameras-coffee-bxt-gravel-135-six-months` | Cycling, Cameras and Coffee. | automatic captions · 6 takeaways |
@@ -409,6 +428,9 @@ No video added. Additional searches ("Girder Tsar bike", "格拉德 Tsar 公路�
 | giant-propel-gen4-community-lead (candidate/wheelset) | `bikeradar-giant-propel-2026-first-look` | BikeRadar | automatic captions · 4 takeaways |
 | hi-light-g7-2 (candidate/wheelset) | `carlo-villarica-hi-light-g7-2-titanium` | Carlo Villarica - No Boring Days | automatic captions · 5 takeaways |
 | ican-alpha-50-ii-disc (candidate/wheelset) | `ican-alpha-50-ii-disc-build` | ICAN Cycling | no caption track |
+| icanian-p9 (candidate/wheelset) | `trailside-medic-ican-p9-owner-notes` | Trailside Medic | automatic captions · 6 takeaways |
+| icanian-sn04 (candidate/wheelset) | `bikesales-ican-sn04-review` | bikesales | automatic captions · 3 takeaways |
+| icanian-sn04 (candidate/wheelset) | `dicking-about-ican-sn04-six-months` | DICKING ABOUT TV | automatic captions · 2 takeaways |
 | java-fuoco-2025 (candidate/wheelset) | `unli-ahon-java-fuoco-top-105` | Unli Ahon | automatic captions · 4 takeaways |
 | java-siluro6-top-r7120 (candidate/wheelset) | `jkt-sepeda-java-siluro-6-top-2025` | JKT Sepeda | automatic captions · 3 takeaways |
 | java-vega-tt-24s (candidate/wheelset) | `zona3-java-vega-tt` | Zona3 | automatic captions · 3 takeaways |
@@ -487,6 +509,7 @@ No video added. Additional searches ("Girder Tsar bike", "格拉德 Tsar 公路�
 | quick-pro-ur-one (candidate/wheelset) | `china-rides-quick-pro-ur-one` | China Rides | automatic captions · 4 takeaways |
 | quick-pro-ur-one-frameset (candidate/wheelset) | `gc-performance-quick-pro-ur-one-first-ride` | GC Performance | automatic captions · 3 takeaways |
 | quick-pro-ur-one-frameset (candidate/wheelset) | `pedaler-quick-pro-ur-one-launch-briefing` | Pedaler | automatic captions · 3 takeaways |
+| rockbros-pegasus-road (candidate/wheelset) | `velographer-rockbros-pegasus-review` | The Velographer | automatic captions · 6 takeaways |
 | sava-a7l-pro-2026 (candidate/wheelset) | `bikelabhq-sava-a7l-pro-review` | BikeLabHQ | automatic captions · 6 takeaways |
 | sava-a7l-pro-2026 (candidate/wheelset) | `jonathan-simmons-sava-a7l-pro-owner` | Jonathan Simmons | automatic captions · 4 takeaways |
 | sava-f20-hawkeye (candidate/wheelset) | `china-cycling-sava-f20-hawkeye` | China Cycling | automatic captions · 4 takeaways |
@@ -509,7 +532,11 @@ No video added. Additional searches ("Girder Tsar bike", "格拉德 Tsar 公路�
 | tavelo-arden (candidate/wheelset) | `italian-cycling-vlog-tavelo-arden-unboxing` | TheItalianCyclingVLOG🇮🇹 | automatic captions · 6 takeaways |
 | twitter-r10-pro-gen3 (candidate/wheelset) | `bike-content-twitter-r10-pro-season-review` | Bike Content | automatic captions · 5 takeaways |
 | twitter-t10-pro (candidate/wheelset) | `bkbike-twitter-t10-pro-r7120` | BKBIKE - GIÁ TỐT 1.0.2 | automatic captions · 3 takeaways |
+| velobuild-cx-002-2023 (candidate/wheelset) | `patrick-lino-velobuild-cx-002-first-look` | Patrick Lino | automatic captions · 3 takeaways |
+| velobuild-cx-002-2023 (candidate/wheelset) | `patrick-lino-velobuild-cx-002-first-ride` | Patrick Lino | automatic captions · 4 takeaways |
 | voicevelo-g-major (candidate/wheelset) | `china-cycling-voicevelo-g-major` | China Cycling | automatic captions · 5 takeaways |
+| voicevelo-g-major (candidate/wheelset) | `ide-schelling-voicevelo-g-major-build` | Ide Schelling | automatic captions · 5 takeaways |
+| vook-v8e-pro (candidate/wheelset) | `ian-how-vook-v8e-pro-first-ride` | ian how | automatic captions · 4 takeaways |
 | winspace-m6 (candidate/wheelset) | `bikeradar-winspace-m6-review` | BikeRadar | automatic captions · 7 takeaways |
 | winspace-m6 (candidate/wheelset) | `china-rides-winspace-m6-shop-tour` | China Rides | automatic captions · 3 takeaways |
 | winspace-m6 (candidate/wheelset) | `cyclists-hub-m6-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
@@ -522,6 +549,8 @@ No video added. Additional searches ("Girder Tsar bike", "格拉德 Tsar 公路�
 | winspace-t1600 (candidate/wheelset) | `nero-show-winspace-t1600-review` | NERO Cycling | automatic captions · 5 takeaways |
 | winspace-t1600 (candidate/wheelset) | `ridemedia-winspace-t1600-try-before-you-buy` | ridemedia | automatic captions · 1 takeaways |
 | xlab-ad8 (candidate/wheelset) | `china-rides-xlab-ad8-build` | China Rides | automatic captions · 3 takeaways |
+| xlab-ad8 (candidate/wheelset) | `patrick-lino-xlab-ad8-first-look` | Patrick Lino | automatic captions · 6 takeaways |
+| xlab-ad9 (candidate/wheelset) | `cyclingnews-xlab-ad9-wind-tunnel-review` | Cyclingnews Tech | automatic captions · 7 takeaways |
 | yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term` | The Cycle Workshop | automatic captions · 3 takeaways |
 | yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-review` | The Cycle Workshop | automatic captions · 5 takeaways |
 
