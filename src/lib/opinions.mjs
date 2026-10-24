@@ -58,6 +58,9 @@ export function validateOpinionCollection(collection, { platformIds = new Set(),
   if (target.candidate_id !== undefined && !candidateIds.has(target.candidate_id)) errors.push(`${label}: missing candidate ${target.candidate_id}`);
   if (collection.id !== (target.platform_id ?? target.candidate_id)) errors.push(`${label}: id must equal its target id`);
   if (!isDate(collection.reviewed_at)) errors.push(`${label}: invalid reviewed_at`);
+  if (collection.coverage_note !== undefined && (typeof collection.coverage_note !== 'string' || collection.coverage_note.trim().length < 40 || collection.coverage_note.length > 420)) errors.push(`${label}: coverage_note must be 40–420 characters`);
+  // A shown summary must state where its opinions come from and how they may skew.
+  if (opinionAggregate(collection.opinions ?? []).eligible && !collection.coverage_note) errors.push(`${label}: a collection with a sentiment summary needs a coverage_note`);
   if (!Array.isArray(collection.opinions) || !collection.opinions.length) return [...errors, `${label}: opinions must be a non-empty array`];
   const ids = new Set(), urls = new Set();
   for (const opinion of collection.opinions) {

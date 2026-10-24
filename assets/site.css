@@ -1473,6 +1473,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
 /* Owner and reviewer opinions. Stance uses a glyph and text, never colour alone. */
 .opinion-section { margin: 30px 0 22px; padding: 24px 0; border-top: 1px solid var(--line); }
 .opinion-section > h2 { margin: 0; font-size: 1.35rem; }
+.opinion-coverage { max-width: 70ch; margin: 6px 0 0; color: var(--muted); font-size: var(--fs-sm); }
+.opinion-coverage > strong { color: var(--ink); }
 .opinion-intro { max-width: 70ch; margin: 6px 0 0; color: var(--muted); font-size: var(--fs-sm); }
 .opinion-status { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: 14px 0 0; padding: 12px 14px; border: 1px dashed var(--line-strong); border-radius: 10px; color: var(--muted); font-size: var(--fs-sm); }
 .opinion-status > strong { color: var(--ink); font-size: 1.1rem; }

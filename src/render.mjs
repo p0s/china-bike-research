@@ -1279,6 +1279,7 @@ function opinionSection(ctx, collection) {
   return `<section class="opinion-section" id="opinions" aria-labelledby="opinions-title">
     <h2 id="opinions-title">Owner and reviewer opinions</h2>
     <p class="opinion-intro">Brief paraphrases of substantive exact-model opinions on ride, fit, build, weight, compatibility and support. Open each source for the full context. Reviewed ${escapeHtml(collection.reviewed_at)}.</p>
+    ${collection.coverage_note ? `<p class="opinion-coverage"><strong>Coverage</strong> <span data-original-language lang="en">${escapeHtml(collection.coverage_note)}</span></p>` : ''}
     ${opinionSummary(ctx, collection)}
     <ol class="opinion-list">${visible.map(opinionEntry).join('')}</ol>
     ${rest.length ? `<details class="opinion-more"><summary>Show ${rest.length} more ${rest.length === 1 ? 'opinion' : 'opinions'}</summary><ol class="opinion-list" start="${visible.length + 1}">${rest.map(opinionEntry).join('')}</ol></details>` : ''}

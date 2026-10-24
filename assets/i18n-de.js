@@ -1746,6 +1746,7 @@ Object.assign(de, {
   "Tools": "Werkzeuge",
   "Build planner": "Aufbauplaner",
   "Planner": "Planer",
+  "Coverage": "Abdeckung",
   "independent opinions recorded. A sentiment summary appears at 21; until then each opinion stands on its own.": "unabhängige Meinungen erfasst. Ab 21 erscheint eine Stimmungszusammenfassung; bis dahin steht jede Meinung für sich.",
   "independent opinion recorded. A sentiment summary appears at 21; until then each opinion stands on its own.": "unabhängige Meinung erfasst. Ab 21 erscheint eine Stimmungszusammenfassung; bis dahin steht jede Meinung für sich.",
   "Video on this page": "Video auf dieser Seite",

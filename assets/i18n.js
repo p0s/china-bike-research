@@ -1121,6 +1121,7 @@ Object.assign(zh, {
 Object.assign(zh, {
   "Carbon wheels": "碳纤维轮组",
   "Planner": "规划",
+  "Coverage": "覆盖范围",
   "independent opinions recorded. A sentiment summary appears at 21; until then each opinion stands on its own.": "条独立意见。达到 21 条后显示意见倾向汇总；在此之前每条意见单独呈现。",
   "independent opinion recorded. A sentiment summary appears at 21; until then each opinion stands on its own.": "条独立意见。达到 21 条后显示意见倾向汇总；在此之前每条意见单独呈现。",
   "Video on this page": "本页视频",
