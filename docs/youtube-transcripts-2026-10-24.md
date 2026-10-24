@@ -139,6 +139,21 @@ Delivered: one Hi-Light G7.2 video with a tire-fit field report.
 - Dengfu R20 gravel frame (`dengfu-gravel`): no exact-model video; results show the Dengfu R01 road frame (`umwMwygTJCY`) and Dengfu e-bikes.
 - Hongfu current gravel frame (`hongfu-gravel`): generic record without an exact model identity; unsuitable for exact-model video search.
 
+### Batch 12 — Canyon Aeroad CFR, Ultimate CFR, Grail CF 7; Giant Defy Advanced 2, Revolt Advanced 2, TCR Advanced 3-GC; Merida Reacto 6000, Scultura 6000, Silex 7000, Scultura Endurance 4000
+
+Delivered: nine transcript-checked videos. For these widely reviewed models one or two reviews that match the candidate's generation and frame grade were selected; launch roundups and reviews of other frame grades were skipped.
+
+- Canyon Aeroad CFR (`missing-china-price-canyon-aeroad`): David Arthur's first ride on the 2024 fourth-generation CFR (`o68gCuTqZ98`; 32 mm, 7.1 kg size M with SRAM Red). GC Performance's walkaround `etzACmxfS-Q` repeats the same changes; Crank & Sprints' `SHm_cvDNuos` does not identify the frame grade; GCN's `hSLOZkhyInw` is the Endurace CFR (mismatch).
+- Canyon Ultimate CFR (`missing-china-price-canyon-ultimate`): Cycling Unboxed's close-up at Canyon UK (`r5nQ6m2YzlE`; size M 6.75 kg without pedals). TriathlonDan's used-bike chat `yG7rgNkRMyU`, Moloko's range Q&A `CAJEHRhL6t0` and Cycling Weekly's 2023 long-term review `oZaLsAf1IB0` (frame grade not stated) were not added.
+- Canyon Grail CF 7 (`missing-china-price-canyon-grail`): David Arthur's clearance test on the 2024-generation Grail (`vwWx09avNxk`; a 45 mm tire fits the fork but rubs the rear chainstay). The grade he rode is not stated, so the observation stays on the video and is not copied into the candidate's clearance notes. The September 2026 Grail videos (`8cSqQFEgk2U`, `y2-sz7qjxR0`) and English Cyclist's CF 7 Speed review `i3MocVqECug` show the new 2027 generation (mismatch); GCN Tech's 2023 launch `d8UlZmvbT-E` covers the whole range.
+- Giant Defy Advanced 2 (`missing-china-price-giant-defy-advanced`): Jamesthebikeguy's 2024 overview (`4AHuEoH20iY`; 860 g Advanced frame, 38 mm) and David Arthur's Defy Advanced 1 review (`GdcesbYBfm4`), which uses the same Advanced frame and fork grade. RATATA's `HtJx_LF4sK4` is the previous generation (mismatch); Josh Reid's `gQcXC-g6_dw` is a short promotional-style recap.
+- Giant Revolt Advanced 2 (`missing-china-price-giant-revolt-advanced`): The Indy Cyclist's shop walkthrough of the 2026 bike (`Y5No2wQT2cc`). Review Genesis `uJF3BwfTwlU` and Jamesthebikeguy `zLv4F_6ry-U` are short spec read-throughs.
+- Giant TCR Advanced 3-GC (`missing-china-price-giant-tcr-advanced`): the candidate is a rim-brake Tiagra build whose frame generation is unresolved; current disc-generation TCR reviews (`HFrSUsE2nnY`, `-aMNm4MYo1c`, `1EeDLhZPuCo`) are excluded as the candidate already excludes them, and Thomas Verdonck's 2017 rim-brake bike check `aNmZobxMIUY` cannot be tied to the 3-GC generation. No video added.
+- Merida Reacto 6000 (`missing-china-price-merida-reacto`): Lohem's owner first impressions of the fifth-generation 6000 (`FIXyQnfT6UE`). David Arthur `oCiTJcnPG7E` and Cycling Weekly `qKOinNROpXw` review the Reacto 9000 on the lighter CF5 frame (different frame grade); Cycling Weekly's launch `sWNZfafqVBM` covers the range.
+- Merida Scultura 6000 (`missing-china-price-merida-scultura`): David Arthur's Scultura 7000 review (`q2xRf8ITXk8`), which uses the same CF3 frame. Cycling Insider's 6000 Di2 buyer's guide `u82zQOUqqrg` only reads the specification.
+- Merida Silex 7000 (`missing-china-price-merida-silex`): Active Hobo Podcast's 30-day review (`L8rLQSQTJAY`; 9.55 kg size XL; mudguards reduce clearance to 42 mm).
+- Merida Scultura Endurance 4000 (`merida-scultura-endurance-4000-community-lead`): no video added. Damian Harris Cycles' `L05BYhVquWY` is a two-minute dealer preview of the current 12-speed model, which the candidate distinguishes from its older 11-speed build; Marky's Bike Lab `4sNdzRQ0vx4` weighs the race Scultura 4000 (mismatch).
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -268,11 +283,20 @@ Delivered: one Hi-Light G7.2 video with a tire-fit field report.
 | lightcarbon-lcr018-d (candidate/wheelset) | `hambini-lightcarbon-lcr018-d-inspection` | Hambini | automatic captions · 5 takeaways |
 | lightcarbon-lcr018-d (candidate/wheelset) | `trace-velo-lightcarbon-lcr018-d-all-road-build` | Trace Velo | automatic captions · 6 takeaways |
 | lightcarbon-lcr018-d (candidate/wheelset) | `trace-velo-lightcarbon-lcr018-d-overview` | Trace Velo | automatic captions · 4 takeaways |
+| missing-china-price-canyon-aeroad (candidate/wheelset) | `david-arthur-canyon-aeroad-cfr-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 6 takeaways |
+| missing-china-price-canyon-grail (candidate/wheelset) | `david-arthur-canyon-grail-tire-clearance` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| missing-china-price-canyon-ultimate (candidate/wheelset) | `cycling-unboxed-canyon-ultimate-cfr-close-up` | Cycling unboxed | automatic captions · 3 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `cam-nicholls-falath-evo-inspection` | Cam Nicholls | automatic captions · 4 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `gc-performance-falath-evo-ride-review` | GC Performance | automatic captions · 5 takeaways |
 | missing-china-price-elves-falath-evo (candidate/wheelset) | `jourdain-coleman-elves-falath-evo-500-miles` | Jourdain Coleman | automatic captions · 6 takeaways |
 | missing-china-price-elves-vanyar (candidate/wheelset) | `jourdain-coleman-vanyar-pro-2024-unbox` | Jourdain Coleman | automatic captions · 5 takeaways |
 | missing-china-price-elves-vanyar (candidate/wheelset) | `popeye-vanyar-pro-disc-2024-build` | CYCLE SHOP POPEYE Channel | no speech in captions |
+| missing-china-price-giant-defy-advanced (candidate/wheelset) | `david-arthur-giant-defy-advanced-1-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| missing-china-price-giant-defy-advanced (candidate/wheelset) | `jamesthebikeguy-giant-defy-advanced-2024-overview` | Jamesthebikeguy | automatic captions · 4 takeaways |
+| missing-china-price-giant-revolt-advanced (candidate/wheelset) | `indy-cyclist-giant-revolt-advanced-2-review` | The Indy Cyclist | automatic captions · 5 takeaways |
+| missing-china-price-merida-reacto (candidate/wheelset) | `lohem-merida-reacto-6000-v5-first-impressions` | Lohem | automatic captions · 2 takeaways |
+| missing-china-price-merida-scultura (candidate/wheelset) | `david-arthur-merida-scultura-7000-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| missing-china-price-merida-silex (candidate/wheelset) | `active-hobo-merida-silex-7000-review` | Active Hobo Podcast | automatic captions · 4 takeaways |
 | missing-china-price-quick-pro-xr-one (candidate/wheelset) | `china-cycling-quick-pro-xr-one` | China Cycling | automatic captions · 2 takeaways |
 | missing-china-price-tavelo-arow (candidate/wheelset) | `china-cycling-tavelo-arow-2026-build` | China Cycling | automatic captions · 3 takeaways |
 | missing-china-price-winspace-slc3 (candidate/wheelset) | `david-arthur-winspace-slc3-review` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
