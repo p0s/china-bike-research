@@ -110,14 +110,33 @@
         }
       ]
     },
-    "stiffness_evidence": "Two seller-hosted exact-model owner reviews explicitly describe the GR:ONE as stiff, fast under power and having impressive stiffness. This is qualitative hosted testimony, not an independent review or instrumented deflection test."
+    "stiffness_evidence": "Two seller-hosted exact-model owner reviews explicitly describe the GR:ONE as stiff, fast under power and having impressive stiffness. This is qualitative hosted testimony, not an independent review or instrumented deflection test.",
+    "measured_weights": [
+      {
+        "part": "frame-and-fork",
+        "grams": 1450,
+        "size": "L",
+        "basis": "owner's frame and fork combined",
+        "video_id": "julius-domroes-gr-one-grow-comparison",
+        "at_seconds": 74
+      }
+    ]
   },
   "tire_clearance": {
     "wheel_size": "700c",
     "evidence": "seller claim",
     "eligibility": "pass",
     "note": "Quick USA exact-model product page states a nominal 45 mm maximum; seller/manufacturer relationship remains unverified. Confirm mounted tire width and clearance for the exact frame.",
-    "published_max_mm": 45
+    "published_max_mm": 45,
+    "field_reports": [
+      {
+        "video_id": "julius-domroes-gr-one-grow-comparison",
+        "at_seconds": 107,
+        "configuration": "Owner's size-L GR:ONE (SRAM Force 1×), front tire; Julius Domroes comparison video (published 2026-09-01)",
+        "short": "Owner: 50 mm front fitted; about 46.5 mm overall",
+        "summary": "Against Quick Pro's official 45 mm, the owner reports fitting a front tire that measured 50 mm in dry conditions. In his earlier review he called his 44 mm Tufos, measuring 46.5 mm, about the maximum the frame takes. No larger rear tire was tested."
+      }
+    ]
   },
   "mounts": [
     "top-tube"

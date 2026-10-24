@@ -587,6 +587,7 @@ export function validateDataset(data = loadDataset()) {
     if (platform.category === 'e-road' && !isObject(platform.category_details?.motor)) errors.push(`platform ${platform.id}: e-road platform needs category_details.motor`);
     if (platform.category === 'folding' && !isObject(platform.category_details?.folding)) errors.push(`platform ${platform.id}: folding platform needs category_details.folding`);
     if (platform.category === 'triathlon' && typeof platform.category_details?.discipline !== 'string') errors.push(`platform ${platform.id}: triathlon platform needs category_details.discipline`);
+    errors.push(...validateMeasuredWeights(platform, data));
     for (const sourceId of platform.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`platform ${platform.id}: missing source ${sourceId}`);
   }
 
@@ -1442,6 +1443,27 @@ export function validateClearanceFieldReports(platform, data, isDate) {
     if (!Number.isFinite(report.at_seconds) || report.at_seconds < 0) errors.push(`${where}: field report needs a timestamp`);
     if (typeof report.short !== 'string' || !report.short.trim() || report.short.length > 60) errors.push(`${where}: field report short label must be 1-60 characters`);
     for (const key of ['configuration', 'summary']) if (typeof report[key] !== 'string' || report[key].trim().length < 20) errors.push(`${where}: field report ${key} is too short`);
+  }
+  return errors;
+}
+
+// A reviewer's weigh-in of one exact frame, cited to a transcript-checked
+// video of the same platform; claimed weights stay separate.
+export function validateMeasuredWeights(platform, data) {
+  const weights = platform.frame?.measured_weights;
+  if (weights === undefined) return [];
+  const where = `platform ${platform.id}`;
+  if (!Array.isArray(weights) || !weights.length) return [`${where}: measured_weights must be a non-empty array`];
+  const variantIds = new Set(data.variants.filter((variant) => variant.platform_id === platform.id).map((variant) => variant.id));
+  const errors = [];
+  for (const item of weights) {
+    if (!isObject(item) || Object.keys(item).some((key) => !['part', 'grams', 'size', 'basis', 'video_id', 'at_seconds'].includes(key))
+      || !['frame', 'fork', 'frame-and-fork'].includes(item.part) || !Number.isFinite(item.grams) || item.grams <= 0 || item.grams > 5000
+      || typeof item.size !== 'string' || !item.size.trim() || typeof item.basis !== 'string' || item.basis.trim().length < 5
+      || !Number.isFinite(item.at_seconds) || item.at_seconds < 0) { errors.push(`${where}: invalid measured weight`); continue; }
+    const video = data.videos.find((entry) => entry.id === item.video_id);
+    if (!video || !(video.target?.platform_id === platform.id || variantIds.has(video.target?.variant_id))) errors.push(`${where}: measured weight must cite a video of this platform`);
+    else if (!['creator-captions', 'auto-captions'].includes(video.transcript?.status)) errors.push(`${where}: measured weight video needs a reviewed transcript`);
   }
   return errors;
 }

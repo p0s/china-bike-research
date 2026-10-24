@@ -149,14 +149,57 @@
           "bb_height_mm": 288.5
         }
       ]
-    }
+    },
+    "measured_weights": [
+      {
+        "part": "frame",
+        "grams": 1020,
+        "size": "54",
+        "basis": "2× Shimano-routed frame as delivered",
+        "video_id": "hambini-ican-graro-inspection",
+        "at_seconds": 125
+      },
+      {
+        "part": "fork",
+        "grams": 528,
+        "size": "54",
+        "basis": "cut steerer",
+        "video_id": "hambini-ican-graro-inspection",
+        "at_seconds": 125
+      },
+      {
+        "part": "frame",
+        "grams": 1111,
+        "size": "54",
+        "basis": "gloss silver, mounting bolts fitted",
+        "video_id": "patrick-lino-ican-graro-first-look",
+        "at_seconds": 309
+      },
+      {
+        "part": "fork",
+        "grams": 455,
+        "size": "54",
+        "basis": "uncut steerer",
+        "video_id": "patrick-lino-ican-graro-first-look",
+        "at_seconds": 309
+      }
+    ]
   },
   "tire_clearance": {
     "wheel_size": "700c",
     "evidence": "official",
     "eligibility": "pass",
     "note": "Official nominal 45C maximum.",
-    "published_max_mm": 45
+    "published_max_mm": 45,
+    "field_reports": [
+      {
+        "video_id": "magazyn-bike-triaero-graro-six-month-test",
+        "at_seconds": 399,
+        "configuration": "Size S52 Graro with SRAM 1×12, 30 mm-deep wheels and Tufo 45 mm tires; Magazyn BIKE six-month test (Polish, published 2026-10-16)",
+        "short": "Reviewer: about 49 mm tire width fits",
+        "summary": "The tester gives ICAN's official 45 mm and says, per the automatic captions, that about 49 mm fits and that his 45 mm tires leave plenty of room front and rear. This is one reviewer's fit check, not a manufacturer rating; rim width and tire model change actual width."
+      }
+    ]
   },
   "mounts": [
     "top-tube"
