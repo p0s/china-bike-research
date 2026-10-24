@@ -29,33 +29,43 @@ Incolor discovery outcomes (searched 2026-10-24):
 | `T5lfUVXmK8o`, `2wgEP-6UIWE` | Earlier SS / SS+ naming; not mapped to the current platform without Incolor confirmation |
 | `TWtySwsjUho` | Voyager workshop clip without speech; no suitable Voyager review found |
 
+## Batch 2 — Carbonda CFR696, ICAN Graro, Quick GR:ONE
+
+Delivered: transcript review of all 24 linked videos for these platforms, reviewer-measured frame and fork weights in the specification table (new `frame.measured_weights`), two clearance field reports and Incolor opinion collections.
+
+- ICAN Graro: Magazyn BIKE's six-month test says about 49 mm fits against ICAN's 45 mm (spoken figure from automatic captions; no measurement shown on screen). Hambini (size 54: 1,020 g frame, 528 g cut fork) and Patrick Lino (size 54: 1,111 g with bolts, 455 g uncut fork) weigh-ins added.
+- Quick GR:ONE: Julius Domroes fitted a front tire measuring 50 mm in dry use but calls his 46.5 mm-wide tires about the maximum overall; his size-L frame and fork weighed 1,450 g.
+- Carbonda CFR696: Andrew Grabbs' 2020 BB86 size-56 frame weighed 1,320 g with hardware and the fork 568 g; earlier generation details (BB86/BSA) are labelled with their year.
+- No speech in captions: Lukáš Benka CFR696 build, Beijing FEELING GR:ONE build. No caption track: Cycle The World and Simon Eizenhöfer CFR696, theDropCycling CFR696, ICAN Graro assembly guide, Dream Build and Victor Torres GR:ONE.
+- Discovery: all three platforms already hold the eight-video maximum. Exact-model candidates not added for that reason: CFR696 `cUhWudJzemU`, `JYK2vyZgZ9I`, `Dza-H7gwrvE`, `q5ScTw3dklk`, `bgGvbcUtqv8`, `o1gRx291jNg`; Graro `hkkuOgqxujY`, `-VvHFSzZzv8`, `kEXgcRnfcEA`, `k_fDqHTBEso`, `meTkkcVeumc`, `YcHC5OTn3ME`, `Qdv8TncG4XQ`, `4Jfof423-d4`; GR:ONE `Z-B0KsYbZ1Y`, `rAhu2ohADlI`, `WbKfXeFWyrI`, `mbz3Em10QlQ`, `Yh1vsGS6k3k`, `jzkaVwTRyI0`. Swapping out caption-less records would need a documented retirement and is left for a curation pass.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
 |---|---|---|---|
 | bxt-055 | `bxt-store-055-overview` | BXT Official store | not yet reviewed |
-| carbonda-cfr696 | `andrew-grabbs-carbonda-696-first-look` | Andrew Grabbs | not yet reviewed |
-| carbonda-cfr696 | `andrew-grabbs-carbonda-cfr696-build` | Andrew Grabbs | not yet reviewed |
-| carbonda-cfr696 | `cycle-the-world-carbonda-cfr696-close-look` | Cycle The World | not yet reviewed |
-| carbonda-cfr696 | `lukas-benka-carbonda-696-budget-build` | Lukáš Benka | not yet reviewed |
-| carbonda-cfr696 | `nimbus-cycles-carbonda-cfr696-49cm-review` | Nimbus Cycles | not yet reviewed |
-| carbonda-cfr696 | `oompa-loompa-carbonda-cfr696-owner-interview` | Oompa Loompa Cycling | not yet reviewed |
-| carbonda-cfr696 | `simon-eizenhofer-carbonda-cfr696-living-room-build` | Simon Eizenhöfer | not yet reviewed |
-| carbonda-cfr696 | `thedropcycling-carbonda-cfr696-grx-di2-build` | theDropCycling | not yet reviewed |
+| carbonda-cfr696 | `andrew-grabbs-carbonda-696-first-look` | Andrew Grabbs | automatic captions · 6 takeaways |
+| carbonda-cfr696 | `andrew-grabbs-carbonda-cfr696-build` | Andrew Grabbs | automatic captions · 2 takeaways |
+| carbonda-cfr696 | `cycle-the-world-carbonda-cfr696-close-look` | Cycle The World | no caption track |
+| carbonda-cfr696 | `lukas-benka-carbonda-696-budget-build` | Lukáš Benka | no speech in captions |
+| carbonda-cfr696 | `nimbus-cycles-carbonda-cfr696-49cm-review` | Nimbus Cycles | automatic captions · 5 takeaways |
+| carbonda-cfr696 | `oompa-loompa-carbonda-cfr696-owner-interview` | Oompa Loompa Cycling | automatic captions · 4 takeaways |
+| carbonda-cfr696 | `simon-eizenhofer-carbonda-cfr696-living-room-build` | Simon Eizenhöfer | no caption track |
+| carbonda-cfr696 | `thedropcycling-carbonda-cfr696-grx-di2-build` | theDropCycling | no caption track |
 | elves-falath-r7170 | `andy-broadhurst-elves-falath-pro-build-2025` | Andy Broadhurst | not yet reviewed |
 | elves-falath-r7170 | `jourdain-coleman-elves-falath-pro-disc-inspection` | Jourdain Coleman | not yet reviewed |
 | elves-falath-r7170 | `rocky-pop-elves-falath-pro-disc-grx` | Rocky Pop | not yet reviewed |
 | elves-mori-aerox | `elves-mori-aerox-brand-overview` | ELVES BIKE | not yet reviewed |
 | ican-gra04 | `icanbikes-gra04-apex-xplr-build` | icanian | not yet reviewed |
 | ican-gra04 | `icanbikes-gra04-race-build` | icanian | not yet reviewed |
-| ican-graro | `cycle-workshop-ican-graro-build` | The Cycle Workshop | not yet reviewed |
-| ican-graro | `cycle-workshop-ican-graro-ride-review` | The Cycle Workshop | not yet reviewed |
-| ican-graro | `hambini-ican-graro-inspection` | Hambini | not yet reviewed |
-| ican-graro | `ican-graro-assembly-guide` | ICAN Cycling | not yet reviewed |
-| ican-graro | `lorenzo-del-sant-ican-triaero-graro-review` | Lorenzo Del Sant | not yet reviewed |
-| ican-graro | `magazyn-bike-triaero-graro-six-month-test` | Magazyn BIKE | not yet reviewed |
-| ican-graro | `oz-cycle-ican-graro-frameset-overview` | oz cycle | not yet reviewed |
-| ican-graro | `patrick-lino-ican-graro-first-look` | Patrick Lino | not yet reviewed |
+| ican-graro | `cycle-workshop-ican-graro-build` | The Cycle Workshop | automatic captions · 6 takeaways |
+| ican-graro | `cycle-workshop-ican-graro-ride-review` | The Cycle Workshop | automatic captions · 5 takeaways |
+| ican-graro | `hambini-ican-graro-inspection` | Hambini | automatic captions · 6 takeaways |
+| ican-graro | `ican-graro-assembly-guide` | ICAN Cycling | no caption track |
+| ican-graro | `lorenzo-del-sant-ican-triaero-graro-review` | Lorenzo Del Sant | automatic captions · 4 takeaways |
+| ican-graro | `magazyn-bike-triaero-graro-six-month-test` | Magazyn BIKE | automatic captions · 6 takeaways |
+| ican-graro | `oz-cycle-ican-graro-frameset-overview` | oz cycle | automatic captions · 5 takeaways |
+| ican-graro | `patrick-lino-ican-graro-first-look` | Patrick Lino | automatic captions · 4 takeaways |
 | incolor-speedster | `china-rides-incolor-speedster-shop` | China Rides | automatic captions · 2 takeaways |
 | incolor-speedster | `crafted-cycles-incolor-sr-plus-build` | Crafted Cycles | automatic captions · 7 takeaways |
 | incolor-speedster | `cyclists-hub-incolor-engineer-interview` | Cyclists Hub \| Petr Minarik | creator captions · 3 takeaways |
@@ -68,14 +78,14 @@ Incolor discovery outcomes (searched 2026-10-24):
 | incolor-ssr | `gc-performance-incolor-ssr-walkaround` | GC Performance | automatic captions · 3 takeaways |
 | incolor-ssr | `nero-show-incolor-ssr-review` | NERO Cycling | automatic captions · 7 takeaways |
 | incolor-ssr | `underdogs-cycling-incolor-ssr-build` | Underdogs Cycling | creator captions · 4 takeaways |
-| quick-gr-one | `beijing-feeling-quick-pro-gr-one-build` | Beijing FEELING-Bicycle Studio | not yet reviewed |
-| quick-gr-one | `dream-build-quick-pro-gr-one` | Dream Build | not yet reviewed |
-| quick-gr-one | `julius-domroes-gr-one-crit-road-build` | Julius Domroes | not yet reviewed |
-| quick-gr-one | `julius-domroes-gr-one-grow-comparison` | Julius Domroes | not yet reviewed |
-| quick-gr-one | `julius-domroes-quick-pro-gr-one-review` | Julius Domroes | not yet reviewed |
-| quick-gr-one | `pedaler-quick-pro-gr-one-buyer-guide` | Pedaler | not yet reviewed |
-| quick-gr-one | `pedaler-quick-pro-gr-one-review-test-ride` | Pedaler | not yet reviewed |
-| quick-gr-one | `victor-torres-quick-pro-gr-one-dream-build` | victor torres | not yet reviewed |
+| quick-gr-one | `beijing-feeling-quick-pro-gr-one-build` | Beijing FEELING-Bicycle Studio | no speech in captions |
+| quick-gr-one | `dream-build-quick-pro-gr-one` | Dream Build | no caption track |
+| quick-gr-one | `julius-domroes-gr-one-crit-road-build` | Julius Domroes | creator captions · 4 takeaways |
+| quick-gr-one | `julius-domroes-gr-one-grow-comparison` | Julius Domroes | creator captions · 4 takeaways |
+| quick-gr-one | `julius-domroes-quick-pro-gr-one-review` | Julius Domroes | creator captions · 5 takeaways |
+| quick-gr-one | `pedaler-quick-pro-gr-one-buyer-guide` | Pedaler | automatic captions · 4 takeaways |
+| quick-gr-one | `pedaler-quick-pro-gr-one-review-test-ride` | Pedaler | automatic captions · 3 takeaways |
+| quick-gr-one | `victor-torres-quick-pro-gr-one-dream-build` | victor torres | no caption track |
 | seka-exaero-gr | `bicidastrada-seka-exaero-gr-review` | BiciDaStrada | not yet reviewed |
 | tavelo-grow | `nero-tavelo-grow-review` | NERO Cycling | not yet reviewed |
 | twitter-gravel-v3 | `vitality-twitter-gravel-v3-2025-wheeltop-review` | VITALITY | not yet reviewed |

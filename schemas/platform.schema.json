@@ -28,7 +28,56 @@
       "type": "string"
     },
     "frame": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "measured_weights": {
+          "description": "Weights a reviewer measured on one exact frame in a transcript-checked video of this platform; they sit beside, never replace, the claimed weights.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "part",
+              "grams",
+              "size",
+              "basis",
+              "video_id",
+              "at_seconds"
+            ],
+            "properties": {
+              "part": {
+                "enum": [
+                  "frame",
+                  "fork",
+                  "frame-and-fork"
+                ]
+              },
+              "grams": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 5000
+              },
+              "size": {
+                "type": "string",
+                "minLength": 1
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 5
+              },
+              "video_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]*$"
+              },
+              "at_seconds": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
     },
     "tire_clearance": {
       "type": "object",

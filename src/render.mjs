@@ -618,6 +618,15 @@ function geometrySummary(platform) {
   return parts.join(' · ');
 }
 
+const measuredPartLabels = { frame: 'frame', fork: 'fork', 'frame-and-fork': 'frame and fork' };
+function measuredWeightDescription(product) {
+  const videos = new Map((product.videos ?? []).map((video) => [video.id, video]));
+  return (product.platform.frame.measured_weights ?? [])
+    .filter((item) => videos.has(item.video_id))
+    .map((item) => `${item.grams.toLocaleString('en-US')} g ${measuredPartLabels[item.part]}, size ${item.size}, ${item.basis} (${videos.get(item.video_id).channel_name} video, ${clockLabel(item.at_seconds)})`)
+    .join('; ');
+}
+
 function publishedSpecificationRows(product) {
   const frameWeight = Number.isFinite(product.variant.claimed_frame_weight_g)
     ? gramRangeLabel(product.variant.claimed_frame_weight_g, product.variant.claimed_frame_weight_g)
@@ -632,6 +641,7 @@ function publishedSpecificationRows(product) {
     ['Fork weight', forkWeight],
     ['Seatpost weight', seatpostWeight],
     ['Weight basis', weightBasisDescription(product)],
+    ['Reviewer-measured weights', measuredWeightDescription(product)],
     ['Drivetrain build', product.variant.kind === 'complete-bike' ? drivetrainBuildDescription(product.variant.drivetrain) : ''],
     ['Brakes', product.variant.kind === 'complete-bike' ? brakeDescription(product.variant.brakes) : ''],
     ['Included package', product.variant.kind === 'frameset' ? product.variant.included?.join(', ') : ''],

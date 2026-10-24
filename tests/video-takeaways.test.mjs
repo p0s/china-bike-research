@@ -53,3 +53,13 @@ test('the Incolor Speedster reviewer fit check stays beside the official maximum
   assert.equal(summary.tireClearanceFieldReport, 'Reviewer fit check: 38 mm unlikely, 35 mm tight');
   assert.equal(product.platform.tire_clearance.published_max_mm, 38, 'the official maximum is preserved');
 });
+
+test('reviewer-measured weights cite a transcript-checked video of the same platform and render beside claimed weights', async () => {
+  const { validateMeasuredWeights } = await import('../src/lib/data.mjs');
+  const platform = { id: 'frame-a', frame: { measured_weights: [{ part: 'frame', grams: 1111, size: '54', basis: 'mounting bolts fitted', video_id: 'creator-frame-build', at_seconds: 309 }] } };
+  assert.deepEqual(validateMeasuredWeights(platform, { variants: [], videos: [video({ transcript })] }), []);
+  assert.match(validateMeasuredWeights(platform, { variants: [], videos: [video()] }).join(), /reviewed transcript/);
+  assert.match(validateMeasuredWeights({ ...platform, frame: { measured_weights: [{ ...platform.frame.measured_weights[0], part: 'wheel' }] } }, { variants: [], videos: [video({ transcript })] }).join(), /invalid measured weight/);
+  const graro = products.find((item) => item.platform.id === 'ican-graro');
+  assert.match(renderModel(ctx, graro), /Reviewer-measured weights<\/dt><dd>1,020 g frame, size 54, [^<]*\(Hambini video, 2:05\)/);
+});
