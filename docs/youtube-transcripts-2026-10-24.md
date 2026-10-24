@@ -39,11 +39,23 @@ Delivered: transcript review of all 24 linked videos for these platforms, review
 - No speech in captions: Lukáš Benka CFR696 build, Beijing FEELING GR:ONE build. No caption track: Cycle The World and Simon Eizenhöfer CFR696, theDropCycling CFR696, ICAN Graro assembly guide, Dream Build and Victor Torres GR:ONE.
 - Discovery: all three platforms already hold the eight-video maximum. Exact-model candidates not added for that reason: CFR696 `cUhWudJzemU`, `JYK2vyZgZ9I`, `Dza-H7gwrvE`, `q5ScTw3dklk`, `bgGvbcUtqv8`, `o1gRx291jNg`; Graro `hkkuOgqxujY`, `-VvHFSzZzv8`, `kEXgcRnfcEA`, `k_fDqHTBEso`, `meTkkcVeumc`, `YcHC5OTn3ME`, `Qdv8TncG4XQ`, `4Jfof423-d4`; GR:ONE `Z-B0KsYbZ1Y`, `rAhu2ohADlI`, `WbKfXeFWyrI`, `mbz3Em10QlQ`, `Yh1vsGS6k3k`, `jzkaVwTRyI0`. Swapping out caption-less records would need a documented retirement and is left for a curation pass.
 
+## Batch 3 — Yoeleo Altera G21, Winspace G3/G5, Elves, Tavelo Grow, SEKA ExAero GR, Twitter Gravel V3, BXT-055, ICAN GRA04
+
+Delivered: transcript review of every linked video for these platforms and 12 new exact-model videos (Tavelo Grow 7, SEKA ExAero GR 4, Elves Falath Pro 2022 1), five new clearance field reports and reviewer-measured weights for Tavelo Grow, SEKA ExAero GR and Yoeleo Altera G21.
+
+- Yoeleo Altera G21: Patrick Lino's 45 mm tires measured 45 mm and fitted with 2× road Di2 (he expects 53 mm would hit the front-derailleur wire, consistent with Yoeleo's 1×-only 53 mm figure); UK Bike Fit's owner runs 55 mm front / 50 mm rear on 28 mm-internal rims. Oz Cycle weighed a size-56 frame at 1,320 g and fork at 420 g. Builders found the 42T chainring limit realistic with a standard spindle; 46–48T rings needed spacers and sat close to the chainstay.
+- Tavelo Grow: against Tavelo's 55 mm front / 50 mm rear, NERO fitted a 2.1 in tire measuring about 54 mm and Woods Cycles fitted about 57 mm front / 54 mm rear on 25 mm-internal rims. Weigh-ins: size S frame 987 g and fork 464 g (Julius Domroes); size 51.5 frame 1,070 g with hardware and uncut fork 481 g (GC Performance). Repeated caveats: limited seatpost insertion (often needs cutting), electronic-groupset routing only, one poorly faced BB shell.
+- SEKA ExAero GR: GC Performance ran 29×2.2 in tires (his ~55 mm estimate) with room; Ben_skillz found a 50 mm rear close on wide Zipp 303 XPLR S rims, and the US dealer warns wide rims can push 50 mm tires past the 52 mm rear rating. A size-58 painted frame weighed 1,220 g (SEKA's 980 g claim is size 54 unpainted).
+- Winspace G3/G5 and Elves Falath: takeaways only (build notes, fit and finish, seatpost slip fix, routing difficulty); no new numeric clearance evidence beyond the official figures.
+- No speech in captions: Rocky Pop Falath build, both ICAN GRA04 factory build videos, Sherry Xie GRA04 build (not added). No caption track: BXT Official 055 overview, Elves Mori AeroX brand video, Pierre Staub G5 unboxing, Vadim on Wheels G3. Empty transcript panel on repeat (not added): Twitter Gravel V3 `jlURjof_mFw`, `zRo7Wf5Blug`, `BV6G8wQDF6Q`.
+- Mismatch (not added): BXT `PoBaCk0DQmE`, `6RmPw4_VbW0`, `XtxI6o0yUPQ` show the older BXT Gravel 135, not the 055; Twitter `MPmUqHWyhEs` shows a Gravel V1; Winspace `FyzUCmZK6XA` is the M6 road bike; Elves Falath EVO/EXP/rim-brake videos and Mori videos without AeroX identity.
+- Low value or duplicate (not added): promotional Twitter Gravel V3 voice-overs `LRiU3_9_8is`, `6lVsY_E9HW0`; music-only `HBgMo7lTljo`; SEKA `0gA8fsaMZ3U` (repeats the Ben_skillz clearance point), `rknUKahR3-s`, `4jwZGI_XOVA`, `UP-RSKanF9Y` (no decision-relevant facts beyond records added); Tavelo `vXKdfFYLfCg` (cap reached); Winspace `Jbwb3nOMfDY` (launch commentary).
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
 |---|---|---|---|
-| bxt-055 | `bxt-store-055-overview` | BXT Official store | not yet reviewed |
+| bxt-055 | `bxt-store-055-overview` | BXT Official store | no caption track |
 | carbonda-cfr696 | `andrew-grabbs-carbonda-696-first-look` | Andrew Grabbs | automatic captions · 6 takeaways |
 | carbonda-cfr696 | `andrew-grabbs-carbonda-cfr696-build` | Andrew Grabbs | automatic captions · 2 takeaways |
 | carbonda-cfr696 | `cycle-the-world-carbonda-cfr696-close-look` | Cycle The World | no caption track |
@@ -52,12 +64,13 @@ Delivered: transcript review of all 24 linked videos for these platforms, review
 | carbonda-cfr696 | `oompa-loompa-carbonda-cfr696-owner-interview` | Oompa Loompa Cycling | automatic captions · 4 takeaways |
 | carbonda-cfr696 | `simon-eizenhofer-carbonda-cfr696-living-room-build` | Simon Eizenhöfer | no caption track |
 | carbonda-cfr696 | `thedropcycling-carbonda-cfr696-grx-di2-build` | theDropCycling | no caption track |
-| elves-falath-r7170 | `andy-broadhurst-elves-falath-pro-build-2025` | Andy Broadhurst | not yet reviewed |
-| elves-falath-r7170 | `jourdain-coleman-elves-falath-pro-disc-inspection` | Jourdain Coleman | not yet reviewed |
-| elves-falath-r7170 | `rocky-pop-elves-falath-pro-disc-grx` | Rocky Pop | not yet reviewed |
-| elves-mori-aerox | `elves-mori-aerox-brand-overview` | ELVES BIKE | not yet reviewed |
-| ican-gra04 | `icanbikes-gra04-apex-xplr-build` | icanian | not yet reviewed |
-| ican-gra04 | `icanbikes-gra04-race-build` | icanian | not yet reviewed |
+| elves-falath-r7170 | `andy-broadhurst-elves-falath-pro-build-2025` | Andy Broadhurst | automatic captions · 2 takeaways |
+| elves-falath-r7170 | `jourdain-coleman-elves-falath-pro-2022-build` | Jourdain Coleman | automatic captions · 3 takeaways |
+| elves-falath-r7170 | `jourdain-coleman-elves-falath-pro-disc-inspection` | Jourdain Coleman | automatic captions · 5 takeaways |
+| elves-falath-r7170 | `rocky-pop-elves-falath-pro-disc-grx` | Rocky Pop | no speech in captions |
+| elves-mori-aerox | `elves-mori-aerox-brand-overview` | ELVES BIKE | no caption track |
+| ican-gra04 | `icanbikes-gra04-apex-xplr-build` | icanian | no speech in captions |
+| ican-gra04 | `icanbikes-gra04-race-build` | icanian | no speech in captions |
 | ican-graro | `cycle-workshop-ican-graro-build` | The Cycle Workshop | automatic captions · 6 takeaways |
 | ican-graro | `cycle-workshop-ican-graro-ride-review` | The Cycle Workshop | automatic captions · 5 takeaways |
 | ican-graro | `hambini-ican-graro-inspection` | Hambini | automatic captions · 6 takeaways |
@@ -86,26 +99,37 @@ Delivered: transcript review of all 24 linked videos for these platforms, review
 | quick-gr-one | `pedaler-quick-pro-gr-one-buyer-guide` | Pedaler | automatic captions · 4 takeaways |
 | quick-gr-one | `pedaler-quick-pro-gr-one-review-test-ride` | Pedaler | automatic captions · 3 takeaways |
 | quick-gr-one | `victor-torres-quick-pro-gr-one-dream-build` | victor torres | no caption track |
-| seka-exaero-gr | `bicidastrada-seka-exaero-gr-review` | BiciDaStrada | not yet reviewed |
-| tavelo-grow | `nero-tavelo-grow-review` | NERO Cycling | not yet reviewed |
-| twitter-gravel-v3 | `vitality-twitter-gravel-v3-2025-wheeltop-review` | VITALITY | not yet reviewed |
-| winspace-g3 | `cus-baker-winspace-g3-review` | Cus Baker | not yet reviewed |
-| winspace-g3 | `gravel-trash-panda-winspace-g3-build` | gravel trash panda | not yet reviewed |
-| winspace-g3 | `spindatt-winspace-g3-mechanical-build` | Spindatt | not yet reviewed |
-| winspace-g3 | `spindatt-winspace-g3-off-road` | Spindatt | not yet reviewed |
-| winspace-g3 | `vadim-on-wheels-winspace-g3-150km` | Vadim on wheels | not yet reviewed |
-| winspace-g3 | `woods-cycles-winspace-g3-unboxing` | Woods Cycles | not yet reviewed |
-| winspace-g5 | `gc-performance-winspace-g5` | GC Performance | not yet reviewed |
-| winspace-g5 | `pierre-staub-winspace-g5-unboxing-quality-check` | Pierre Staub | not yet reviewed |
-| winspace-g5 | `woods-cycles-winspace-g5-rival-walkaround` | Woods Cycles | not yet reviewed |
-| yoeleo-altera-g21 | `charles-ouimet-yoeleo-g21-altera-first-look` | Charles Ouimet | not yet reviewed |
-| yoeleo-altera-g21 | `china-cycling-yoeleo-altera-g21` | China Cycling | not yet reviewed |
-| yoeleo-altera-g21 | `gc-performance-yoeleo-altera-g21-singletrack` | GC Performance | not yet reviewed |
-| yoeleo-altera-g21 | `oz-cycle-yoeleo-g21-altera-overview` | oz cycle | not yet reviewed |
-| yoeleo-altera-g21 | `patrick-lino-yoeleo-g21-altera-finished` | Patrick Lino | not yet reviewed |
-| yoeleo-altera-g21 | `peak-torque-yoeleo-altera-g21-slovenia-final-review` | Peak Torque | not yet reviewed |
-| yoeleo-altera-g21 | `tom-bowers-yoeleo-altera-g21-build` | Tom Bowers Cycling | not yet reviewed |
-| yoeleo-altera-g21 | `uk-bike-fit-yoeleo-altera-g21-custom-build` | UK Bike Fit | not yet reviewed |
+| seka-exaero-gr | `ben-skillz-seka-exaero-gr-build` | Ben_skillz | automatic captions · 5 takeaways |
+| seka-exaero-gr | `bicidastrada-seka-exaero-gr-review` | BiciDaStrada | automatic captions · 5 takeaways |
+| seka-exaero-gr | `dwayne-pedals-seka-exaero-gr-unboxing` | Dwayne Pedals | automatic captions · 4 takeaways |
+| seka-exaero-gr | `gc-performance-seka-exaero-gr-build` | GC Performance | automatic captions · 4 takeaways |
+| seka-exaero-gr | `power-meter-city-seka-exaero-gr-guide` | Power Meter City | automatic captions · 4 takeaways |
+| tavelo-grow | `cus-baker-tavelo-grow-build` | Cus Baker | automatic captions · 2 takeaways |
+| tavelo-grow | `gc-performance-tavelo-grow-all-road-build` | GC Performance | automatic captions · 3 takeaways |
+| tavelo-grow | `gc-performance-tavelo-grow-unboxing` | GC Performance | automatic captions · 4 takeaways |
+| tavelo-grow | `ide-schelling-tavelo-grow-uci-race` | Ide Schelling | automatic captions · 5 takeaways |
+| tavelo-grow | `julius-domroes-tavelo-grow-inspection` | Julius Domroes | creator captions · 6 takeaways |
+| tavelo-grow | `kdot-tavelo-grow-owner-build` | kdot | automatic captions · 3 takeaways |
+| tavelo-grow | `nero-tavelo-grow-review` | NERO Cycling | automatic captions · 7 takeaways |
+| tavelo-grow | `woods-cycles-tavelo-grow-demo` | Woods Cycles | automatic captions · 4 takeaways |
+| twitter-gravel-v3 | `vitality-twitter-gravel-v3-2025-wheeltop-review` | VITALITY | automatic captions · 4 takeaways |
+| winspace-g3 | `cus-baker-winspace-g3-review` | Cus Baker | automatic captions · 5 takeaways |
+| winspace-g3 | `gravel-trash-panda-winspace-g3-build` | gravel trash panda | automatic captions · 2 takeaways |
+| winspace-g3 | `spindatt-winspace-g3-mechanical-build` | Spindatt | automatic captions · 2 takeaways |
+| winspace-g3 | `spindatt-winspace-g3-off-road` | Spindatt | automatic captions · 3 takeaways |
+| winspace-g3 | `vadim-on-wheels-winspace-g3-150km` | Vadim on wheels | no caption track |
+| winspace-g3 | `woods-cycles-winspace-g3-unboxing` | Woods Cycles | automatic captions · 3 takeaways |
+| winspace-g5 | `gc-performance-winspace-g5` | GC Performance | automatic captions · 5 takeaways |
+| winspace-g5 | `pierre-staub-winspace-g5-unboxing-quality-check` | Pierre Staub | no caption track |
+| winspace-g5 | `woods-cycles-winspace-g5-rival-walkaround` | Woods Cycles | automatic captions · 3 takeaways |
+| yoeleo-altera-g21 | `charles-ouimet-yoeleo-g21-altera-first-look` | Charles Ouimet | automatic captions · 7 takeaways |
+| yoeleo-altera-g21 | `china-cycling-yoeleo-altera-g21` | China Cycling | automatic captions · 7 takeaways |
+| yoeleo-altera-g21 | `gc-performance-yoeleo-altera-g21-singletrack` | GC Performance | automatic captions · 3 takeaways |
+| yoeleo-altera-g21 | `oz-cycle-yoeleo-g21-altera-overview` | oz cycle | automatic captions · 5 takeaways |
+| yoeleo-altera-g21 | `patrick-lino-yoeleo-g21-altera-finished` | Patrick Lino | automatic captions · 5 takeaways |
+| yoeleo-altera-g21 | `peak-torque-yoeleo-altera-g21-slovenia-final-review` | Peak Torque | automatic captions · 4 takeaways |
+| yoeleo-altera-g21 | `tom-bowers-yoeleo-altera-g21-build` | Tom Bowers Cycling | creator captions · 6 takeaways |
+| yoeleo-altera-g21 | `uk-bike-fit-yoeleo-altera-g21-custom-build` | UK Bike Fit | automatic captions · 4 takeaways |
 | bigrock-sohtea (candidate/wheelset) | `china-cycling-bigrock-sohtea-long-term` | China Cycling | not yet reviewed |
 | carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-build` | Daryl Pace | not yet reviewed |
 | carbonda-cfr707 (candidate/wheelset) | `sysadmin-carbonda-cfr707-owner-build` | Sysadmin | not yet reviewed |
@@ -147,5 +171,3 @@ Delivered: transcript review of all 24 linked videos for these platforms, review
 | yoeleo-sat-c45-db-pro-nxt-gravel (candidate/wheelset) | `cycle-workshop-yoeleo-sat-c45-nxt-gravel-review` | The Cycle Workshop | not yet reviewed |
 
 Published platforms with no linked YouTube video yet: `af01`, `bianchi-oltre-race`, `camp-gx600`, `camp-gx700`, `evolve-cima-gr`, `incolor-voyager`, `kung-mach`, `lightcarbon-lcg071s-pro`, `lightcarbon-speedz`, `pardus-super-sport-gen2`, `rinasclta-gr025`, `sava-a7l-r7100`, `sava-gelaro`, `sava-gelaro-s8`, `sava-gelaro-sf`, `scott-addict-rc-40`, `spcycle-g026`, `spcycle-g028`, `tfsa-jh37`, `twitter-cyclone-electronic`, `twitter-cyclone-gen3-et`, `twitter-gravel-v3-2024`, `twitter-t3-tt`, `xmcarbonspeed-cs-gr01`.
-
-Rows marked "not yet reviewed" belong to later batches of this campaign.

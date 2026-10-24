@@ -136,7 +136,17 @@
           "trail_mm": 60
         }
       ]
-    }
+    },
+    "measured_weights": [
+      {
+        "part": "frame",
+        "grams": 1220,
+        "size": "58",
+        "basis": "Stardust paint, as unboxed",
+        "video_id": "dwayne-pedals-seka-exaero-gr-unboxing",
+        "at_seconds": 854
+      }
+    ]
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -144,7 +154,23 @@
     "eligibility": "pass",
     "note": "Official front 56 mm and rear 52 mm maxima.",
     "published_front_max_mm": 56,
-    "published_rear_max_mm": 52
+    "published_rear_max_mm": 52,
+    "field_reports": [
+      {
+        "video_id": "gc-performance-seka-exaero-gr-build",
+        "at_seconds": 691,
+        "configuration": "Size 56 ExAero GR with SRAM Force XPLR 1×13, 48T ring and 29×2.2 in tires on Elitewheels Drive G42 wheels; GC Performance build (published 2026-07-03)",
+        "short": "Reviewer: 29×2.2 in rear tire with room",
+        "summary": "The presenter ran 29×2.2 in tires, which he puts at about 55 mm, front and rear and showed what he called a good amount of room at the seatstays and chainstays; SEKA rates 56 mm front and 52 mm rear. The tire width was not measured on camera."
+      },
+      {
+        "video_id": "ben-skillz-seka-exaero-gr-build",
+        "at_seconds": 997,
+        "configuration": "ExAero GR with 50 mm rear tire on Zipp 303 XPLR S wheels and a Schwalbe Thunder Burt up front; size not stated; Ben_skillz build (published 2026-02-20)",
+        "short": "Owner: 50 mm rear close on Zipp 303 XPLR S",
+        "summary": "The 50 mm rear tire cleared but was called a little close, while the front had ample room; SEKA rates 52 mm rear. Tire widths were not measured on camera."
+      }
+    ]
   },
   "mounts": [
     "top-tube"

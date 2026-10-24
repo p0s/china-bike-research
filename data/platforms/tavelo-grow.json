@@ -149,7 +149,41 @@
       ]
     },
     "drivetrain_compatibility": "1x-only",
-    "drivetrain_compatibility_basis": "Two exact retailer listings specify single-ring only; BikeStudio explicitly states no front-derailleur mount. Retailer corroboration, not a new manufacturer declaration; verify selected-frame compatibility before assembly."
+    "drivetrain_compatibility_basis": "Two exact retailer listings specify single-ring only; BikeStudio explicitly states no front-derailleur mount. Retailer corroboration, not a new manufacturer declaration; verify selected-frame compatibility before assembly.",
+    "measured_weights": [
+      {
+        "part": "frame",
+        "grams": 987,
+        "size": "S",
+        "basis": "bare frame as delivered",
+        "video_id": "julius-domroes-tavelo-grow-inspection",
+        "at_seconds": 286
+      },
+      {
+        "part": "fork",
+        "grams": 464,
+        "size": "S",
+        "basis": "uncut fork",
+        "video_id": "julius-domroes-tavelo-grow-inspection",
+        "at_seconds": 286
+      },
+      {
+        "part": "frame",
+        "grams": 1070,
+        "size": "51.5",
+        "basis": "painted, with FIDLOCK cover, bolts and UDH hanger",
+        "video_id": "gc-performance-tavelo-grow-unboxing",
+        "at_seconds": 394
+      },
+      {
+        "part": "fork",
+        "grams": 481,
+        "size": "51.5",
+        "basis": "uncut steerer",
+        "video_id": "gc-performance-tavelo-grow-unboxing",
+        "at_seconds": 314
+      }
+    ]
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -157,7 +191,23 @@
     "eligibility": "pass",
     "note": "Front 55 mm and rear 50 mm published maxima.",
     "published_front_max_mm": 55,
-    "published_rear_max_mm": 50
+    "published_rear_max_mm": 50,
+    "field_reports": [
+      {
+        "video_id": "nero-tavelo-grow-review",
+        "at_seconds": 164,
+        "configuration": "Size 49 Grow, SRAM 1×, Schwalbe Thunder Burt 2.1 in on wide-internal gravel wheels; NERO Show review (published 2026-06-17)",
+        "short": "Reviewer: 2.1 in tire measuring 54 mm fitted",
+        "summary": "Against Tavelo's 55 mm front / 50 mm rear figures, a Schwalbe Thunder Burt 2.1 in measuring about 54 mm fitted; the reviewer saw lots of room at the front and a few millimetres left at the rear. The rear figure was not measured on camera."
+      },
+      {
+        "video_id": "woods-cycles-tavelo-grow-demo",
+        "at_seconds": 374,
+        "configuration": "Size L demo bike with 25 mm-internal carbon wheels, 2.25 in Thunder Burt front and 2.10 in rear, 46T 1× ring; Woods Cycles (published 2026-08-21)",
+        "short": "Dealer: 57 mm front / 54 mm rear fitted",
+        "summary": "Against Tavelo's 55 mm front and 50 mm rear figures, a 2.25 in tire the dealer says measures 57 mm fitted up front with plenty of room and a 2.10 in (about 54 mm) fitted at the rear with a little room; he would not go bigger. Widths were not measured on camera."
+      }
+    ]
   },
   "mounts": [
     "top-tube"
