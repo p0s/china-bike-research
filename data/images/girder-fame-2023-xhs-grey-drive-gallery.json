@@ -1,0 +1,59 @@
+{
+  "id": "girder-fame-2023-xhs-grey-drive-gallery",
+  "candidate_id": "girder-fame-105-di2-2023-reference",
+  "role": "gallery",
+  "label": "2023 dealer photo, grey drive side",
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/girder-fame-2023-xhs-grey-drive/8fd3093609ccdcbe-detail-w640.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/girder-fame-2023-xhs-grey-drive/9ace15c867c1bf63-card-w480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 38908,
+        "sha256": "9ace15c867c1bf6324be4224fbf3b1e90c409371b195f0e1665457289935f8de",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/girder-fame-2023-xhs-grey-drive/8fd3093609ccdcbe-detail-w640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 84438,
+        "sha256": "8fd3093609ccdcbe978467728fccbac1c42894b2eb5fd8afac0a4196be5be59d",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-girder-fame-105-di2-spec-2023-08-2026-10-24",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS dealer post creator",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS dealer post; see source",
+  "alt": "GIRDER FAME in a grey drive-side finish with deep carbon wheels on a stand",
+  "display_note": "August 2023 dealer post; the two sides use different finishes.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/64dcf1bb000000000301c575",
+  "source_media_sha256": "610bd0518235e0f6ce35db8d58c48e55216b96768c91f0ac5212ba345de3189f",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}

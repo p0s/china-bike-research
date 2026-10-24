@@ -17,7 +17,7 @@ test('every model keeps its identity before images and its full evidence records
     assert.ok(identity >= 0 && (gallery < 0 || identity < gallery));
     assert.match(html, /id="source-records" open/);
     if (gallery < 0) continue;
-    const images = [entry.image, ...(entry.galleryImages ?? [])];
+    const images = [entry.image, ...(entry.galleryImages ?? [])].filter(Boolean);
     for (const image of images) {
       assert.ok(html.includes(escapeHtml(image.alt)), image.id);
       if (image.credit) {

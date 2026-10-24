@@ -1,0 +1,59 @@
+{
+  "id": "seka-exaero-gr-xhs-roundup-spec-gallery",
+  "platform_id": "seka-exaero-gr",
+  "role": "gallery",
+  "label": "Community spec card",
+  "subject_accuracy": "exact-platform",
+  "media_type": "community-post-photo",
+  "hosting": {
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/seka-exaero-gr-xhs-roundup-spec/03170af91ef6700b-detail-w1080.webp",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/seka-exaero-gr-xhs-roundup-spec/56dfc2c2b9624464-card-w480.webp",
+        "width": 480,
+        "height": 611,
+        "bytes": 32384,
+        "sha256": "56dfc2c2b962446482cc86140020fed845009a9f43d92e653b32c5c757d55907",
+        "format": "image/webp"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/seka-exaero-gr-xhs-roundup-spec/03170af91ef6700b-detail-w1080.webp",
+        "width": 1080,
+        "height": 1374,
+        "bytes": 83998,
+        "sha256": "03170af91ef6700b1b76a817f76f906be14cf01bbec0e81656e0934b23ed0779",
+        "format": "image/webp"
+      }
+    ]
+  },
+  "source_id": "public-xhs-race-gravel-china-roundup-2026-09-28",
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator; product photo by the brand",
+    "usage_note": "Small source-attributed editorial derivative for model identification or decision-relevant detail; attribution does not assert a redistribution license."
+  },
+  "credit": "XHS community roundup; product photo by the brand",
+  "alt": "SEKA ExAero GR gravel bike with a spec overlay listing front 56 mm and rear 52 mm tire clearance, size-54 stack and reach, chainstay, BB drop and wheelbase",
+  "display_note": "Community-compiled 2026 race-gravel roundup page using a brand photo; check values against SEKA's own specification. Footer credit line removed for privacy.",
+  "source_media_page_url": "https://www.xiaohongshu.com/explore/6aba129d000000001a026bc7",
+  "source_media_sha256": "e0b2092e08c8eb7df3c9a357497cfa6ad8854f1eae3eefb36446e0ac59e276c5",
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-10-24",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  },
+  "reviewed_at": "2026-10-24"
+}
