@@ -310,6 +310,18 @@ Delivered: 11 transcript-checked videos.
 - Mira (`spect-mira`): no exact video. The only result, Cycling_Boon's `8V7YQyTIzF0`, is already used for the ExAero.
 - UPLAND R70, R80, Taylor (`upland-r70`, `upland-r80`, `upland-taylor`): China Rides' Upland review (`GfksIep6kJw`) covers the Thor, which is not a candidate; no exact video was found for these three.
 
+### Batch 26 — CAMP ACE Gen 3 105, ACE QED, GX700, GX700 travel-loaded build; UPLAND R70 recheck; LEGIT AC1; FALCO T912; GIOS AERO LITE; TRINX Tornado 900, GTR C6
+
+No video added; every result was a brand clip, a retailer promo already covered, or a multi-brand show walk.
+
+- ACE Gen 3 105 (`camp-ace-gen3-105`) and ACE QED (`camp-ace-qed`): CAMP's ACE III launch and version clips (`X0AzTAor6RY`, `cuUIBJmkfXs`, `EPeHG6uFplY`, `oH_DDvlIGSk`) are music-only. China Rides' Beijing CAMP shop tour (`wQY8nGYGL9o`) arrived before the ACE III and shows other models. NERO Cycling's Shanghai show walk (`st7jCNtgBwo`) gives the ACE Gen 3 under a minute among many brands. 杨弟's ACE 7000 Pro clip (`I58SURL3PPM`) has no caption track and covers a different model.
+- GX700 (`camp-gx700`): this candidate matches the published CAMP GX700 platform, which already carries JKT Sepeda's transcript-checked walkaround (`iJJF4vtkDBk`, batch 4). SerbaSepeda's `EY3G43nT_Qk` remains a retailer promo without measured data, and CAMP's `enJu9ndwXjY` is a music-only short. The travel-loaded listing (`camp-gx700-travel`) has no video of its own bundle; its base frame is the same GX700.
+- UPLAND R70 (`upland-r70`): a recheck found UPLAND's own R70 video (`LV_UL91euPs`), but it has no caption track. Two Vietnamese used-sale listings (`hPR1fPQxt88`, `h9yz__bzNbs`) are resale pitches and are not used. The batch 25 outcome for R70 stands.
+- AC1 (`legit-ac1`): WINSPACE JAPAN's "LEGiT AC1" clip (`9BJKtBZEbOk`) is music-only.
+- T912 (`falco-t91-t912`): Falcotriathlon's assembly clip (`a2akYflHR_U`) is music-only, and `NQ51TGG7Snk` is a K859 race clip.
+- AERO LITE (`gios-aerolite`): the candidate's generation is unresolved. The results (2017 trade-show walkarounds `t_6y4baOwLo` and `E4GOL69GyGw`, PelotonTV's build `FGcpNqZdyTM` without captions, CYCLE SHOP POPEYE's music-only 2023 105 Di2 clip `EwGSaHu47lE`) cannot be tied to a candidate generation.
+- Tornado 900 (`trinx-tornado-900`) and GTR C6 (`trinx-gtr-c6`): only a line-up clip without captions (`OWPxWzLeylA`), alloy GTR 2.0 videos and dealer clips of other TRINX models.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
