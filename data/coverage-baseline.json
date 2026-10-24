@@ -10,7 +10,8 @@
       "exchangeRates": 1,
       "sources": 1687,
       "images": 737,
-      "videos": 66,
+      "videos": 112,
+      "opinions": 10,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 6,
@@ -2698,11 +2699,15 @@
       "yoeleo-altera-g21-primary-image"
     ],
     "videos": [
+      "andrew-grabbs-carbonda-696-first-look",
       "andrew-grabbs-carbonda-cfr696-build",
+      "andy-broadhurst-elves-falath-pro-build-2025",
+      "beijing-feeling-quick-pro-gr-one-build",
       "bicidastrada-seka-exaero-gr-review",
       "bicycle-station-gravel-wheel-shootout-drive-g36",
       "bxt-store-055-overview",
       "cam-nicholls-falath-evo-inspection",
+      "charles-ouimet-yoeleo-g21-altera-first-look",
       "china-cycling-bigrock-sohtea-long-term",
       "china-cycling-cima-lightweight-build",
       "china-cycling-cima-long-term",
@@ -2720,6 +2725,8 @@
       "china-rides-winspace-m6-shop-tour",
       "china-rides-xlab-ad8-build",
       "crafted-cycles-incolor-sr-plus-build",
+      "cus-baker-winspace-g3-review",
+      "cycle-the-world-carbonda-cfr696-close-look",
       "cycle-workshop-ican-graro-build",
       "cycle-workshop-ican-graro-ride-review",
       "cycle-workshop-yoeleo-sat-c45-nxt-gravel-long-term",
@@ -2730,22 +2737,62 @@
       "cyclists-hub-t1600-review",
       "daryl-pace-carbonda-cfr707-build",
       "david-arthur-winspace-slc3-review",
+      "dream-build-quick-pro-gr-one",
       "elves-mori-aerox-brand-overview",
       "gc-performance-falath-evo-ride-review",
       "gc-performance-winspace-g5",
+      "gc-performance-winspace-t1600-build",
+      "gc-performance-winspace-t1600-ride",
+      "gc-performance-yoeleo-altera-g21-singletrack",
+      "gravel-trash-panda-winspace-g3-build",
+      "hambini-ican-graro-inspection",
       "hambini-t1600-long-term-review",
       "ican-alpha-50-ii-disc-build",
+      "ican-graro-assembly-guide",
+      "icanbikes-gra04-apex-xplr-build",
+      "icanbikes-gra04-race-build",
+      "its-all-about-racing-winspace-t1600-30-days",
+      "its-all-about-racing-winspace-t1600-unboxing",
+      "jourdain-coleman-elves-falath-pro-disc-inspection",
       "jourdain-coleman-vanyar-pro-2024-unbox",
+      "julius-domroes-gr-one-crit-road-build",
       "julius-domroes-gr-one-grow-comparison",
       "julius-domroes-quick-pro-gr-one-review",
       "lightcarbon-lcg071-pro-brand-overview",
+      "lorenzo-del-sant-ican-triaero-graro-review",
       "lovemtb-elitewheels-drive-g36-tech-check",
+      "lukas-benka-carbonda-696-budget-build",
+      "magazyn-bike-triaero-graro-six-month-test",
+      "nero-show-winspace-t1600-review",
       "nero-tavelo-grow-review",
+      "nimbus-cycles-carbonda-cfr696-49cm-review",
+      "oompa-loompa-carbonda-cfr696-owner-interview",
+      "oz-cycle-ican-graro-frameset-overview",
+      "oz-cycle-yoeleo-g21-altera-overview",
+      "patrick-lino-ican-graro-first-look",
+      "patrick-lino-yoeleo-g21-altera-finished",
+      "peak-torque-yoeleo-altera-g21-slovenia-final-review",
+      "pedaler-quick-pro-gr-one-buyer-guide",
+      "pedaler-quick-pro-gr-one-review-test-ride",
+      "pierre-staub-winspace-g5-unboxing-quality-check",
       "popeye-vanyar-pro-disc-2024-build",
+      "ridemedia-winspace-t1600-try-before-you-buy",
+      "rocky-pop-elves-falath-pro-disc-grx",
+      "simon-eizenhofer-carbonda-cfr696-living-room-build",
+      "spindatt-winspace-g3-mechanical-build",
+      "spindatt-winspace-g3-off-road",
       "sysadmin-carbonda-cfr707-owner-build",
       "the-bike-sauce-elitewheels-drive-50d-ii-review",
+      "thedropcycling-carbonda-cfr696-grx-di2-build",
       "tom-bowers-lightcarbon-lcg071-pro-build",
+      "tom-bowers-yoeleo-altera-g21-build",
+      "uk-bike-fit-yoeleo-altera-g21-custom-build",
+      "vadim-on-wheels-winspace-g3-150km",
+      "victor-torres-quick-pro-gr-one-dream-build",
+      "vitality-twitter-gravel-v3-2025-wheeltop-review",
       "watt-life-t1550-gen2-build-cost",
+      "woods-cycles-winspace-g3-unboxing",
+      "woods-cycles-winspace-g5-rival-walkaround",
       "xhs-camp-gx600-modified-flatbar",
       "xhs-pardus-gen2-launch",
       "xhs-pardus-gen2-teardown",
@@ -2765,6 +2812,18 @@
       "xhs-xlab-rs9-brand",
       "xhs-xlab-rs9-owner",
       "xhs-xlab-rs9-red-finish"
+    ],
+    "opinions": [
+      "carbonda-cfr696",
+      "elves-falath-r7170",
+      "ican-gra04",
+      "ican-graro",
+      "quick-gr-one",
+      "twitter-gravel-v3",
+      "winspace-g3",
+      "winspace-g5",
+      "winspace-t1600",
+      "yoeleo-altera-g21"
     ],
     "groupsets": [
       "ltwoo-egr",
@@ -56180,6 +56239,24 @@
       ]
     },
     "videos": {
+      "andrew-grabbs-carbonda-696-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "andrew-grabbs-carbonda-cfr696-build": [
         "accessed_at",
         "channel_name",
@@ -56193,6 +56270,42 @@
         "open_graph_player.type",
         "open_graph_player.verified_at",
         "open_graph_player.width",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "andy-broadhurst-elves-falath-pro-build-2025": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "beijing-feeling-quick-pro-gr-one-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
         "provider",
         "published_at",
         "relationship",
@@ -56278,6 +56391,24 @@
         "relationship",
         "summary",
         "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "charles-ouimet-yoeleo-g21-altera-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
         "title",
         "url",
         "youtube_video_id"
@@ -56638,6 +56769,42 @@
         "url",
         "youtube_video_id"
       ],
+      "cus-baker-winspace-g3-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "cycle-the-world-carbonda-cfr696-close-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "cycle-workshop-ican-graro-build": [
         "accessed_at",
         "channel_name",
@@ -56836,6 +57003,24 @@
         "url",
         "youtube_video_id"
       ],
+      "dream-build-quick-pro-gr-one": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "elves-mori-aerox-brand-overview": [
         "accessed_at",
         "channel_name",
@@ -56902,6 +57087,96 @@
         "url",
         "youtube_video_id"
       ],
+      "gc-performance-winspace-t1600-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "gc-performance-winspace-t1600-ride": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "gc-performance-yoeleo-altera-g21-singletrack": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "gravel-trash-panda-winspace-g3-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "hambini-ican-graro-inspection": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "hambini-t1600-long-term-review": [
         "accessed_at",
         "channel_name",
@@ -56943,6 +57218,116 @@
         "url",
         "youtube_video_id"
       ],
+      "ican-graro-assembly-guide": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "timestamps",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "icanbikes-gra04-apex-xplr-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "icanbikes-gra04-race-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "its-all-about-racing-winspace-t1600-30-days": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "its-all-about-racing-winspace-t1600-unboxing": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "jourdain-coleman-elves-falath-pro-disc-inspection": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "timestamps",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "jourdain-coleman-vanyar-pro-2024-unbox": [
         "accessed_at",
         "channel_name",
@@ -56957,6 +57342,25 @@
         "relationship",
         "summary",
         "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "julius-domroes-gr-one-crit-road-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "timestamps",
         "title",
         "url",
         "youtube_video_id"
@@ -57020,6 +57424,25 @@
         "url",
         "youtube_video_id"
       ],
+      "lorenzo-del-sant-ican-triaero-graro-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "timestamps",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "lovemtb-elitewheels-drive-g36-tech-check": [
         "accessed_at",
         "channel_name",
@@ -57039,6 +57462,60 @@
         "url",
         "youtube_video_id"
       ],
+      "lukas-benka-carbonda-696-budget-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "magazyn-bike-triaero-graro-six-month-test": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "nero-show-winspace-t1600-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "nero-tavelo-grow-review": [
         "accessed_at",
         "channel_name",
@@ -57052,6 +57529,186 @@
         "open_graph_player.type",
         "open_graph_player.verified_at",
         "open_graph_player.width",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "nimbus-cycles-carbonda-cfr696-49cm-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "oompa-loompa-carbonda-cfr696-owner-interview": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "oz-cycle-ican-graro-frameset-overview": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "oz-cycle-yoeleo-g21-altera-overview": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "patrick-lino-ican-graro-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "patrick-lino-yoeleo-g21-altera-finished": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "peak-torque-yoeleo-altera-g21-slovenia-final-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "pedaler-quick-pro-gr-one-buyer-guide": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "pedaler-quick-pro-gr-one-review-test-ride": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "pierre-staub-winspace-g5-unboxing-quality-check": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
         "provider",
         "published_at",
         "relationship",
@@ -57079,6 +57736,96 @@
         "relationship",
         "summary",
         "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "ridemedia-winspace-t1600-try-before-you-buy": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "rocky-pop-elves-falath-pro-disc-grx": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "simon-eizenhofer-carbonda-cfr696-living-room-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "spindatt-winspace-g3-mechanical-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "spindatt-winspace-g3-off-road": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
         "title",
         "url",
         "youtube_video_id"
@@ -57124,6 +57871,24 @@
         "url",
         "youtube_video_id"
       ],
+      "thedropcycling-carbonda-cfr696-grx-di2-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "tom-bowers-lightcarbon-lcg071-pro-build": [
         "accessed_at",
         "channel_name",
@@ -57146,6 +57911,96 @@
         "url",
         "youtube_video_id"
       ],
+      "tom-bowers-yoeleo-altera-g21-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "uk-bike-fit-yoeleo-altera-g21-custom-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "vadim-on-wheels-winspace-g3-150km": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "victor-torres-quick-pro-gr-one-dream-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "vitality-twitter-gravel-v3-2025-wheeltop-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
       "watt-life-t1550-gen2-build-cost": [
         "accessed_at",
         "channel_name",
@@ -57164,6 +58019,42 @@
         "relationship",
         "summary",
         "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "woods-cycles-winspace-g3-unboxing": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "woods-cycles-winspace-g5-rival-walkaround": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
         "title",
         "url",
         "youtube_video_id"
@@ -57509,6 +58400,62 @@
         "title",
         "url",
         "xhs_post_id"
+      ]
+    },
+    "opinions": {
+      "carbonda-cfr696": [
+        "coverage_note",
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "elves-falath-r7170": [
+        "coverage_note",
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "ican-gra04": [
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "ican-graro": [
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "quick-gr-one": [
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "twitter-gravel-v3": [
+        "coverage_note",
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "winspace-g3": [
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "winspace-g5": [
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
+      ],
+      "winspace-t1600": [
+        "opinions",
+        "reviewed_at",
+        "target.candidate_id"
+      ],
+      "yoeleo-altera-g21": [
+        "coverage_note",
+        "opinions",
+        "reviewed_at",
+        "target.platform_id"
       ]
     },
     "groupsets": {
@@ -110242,8 +111189,17 @@
       ]
     },
     "videos": {
+      "andrew-grabbs-carbonda-696-first-look": [
+        "target.platform_id=carbonda-cfr696"
+      ],
       "andrew-grabbs-carbonda-cfr696-build": [
         "target.platform_id=carbonda-cfr696"
+      ],
+      "andy-broadhurst-elves-falath-pro-build-2025": [
+        "target.platform_id=elves-falath-r7170"
+      ],
+      "beijing-feeling-quick-pro-gr-one-build": [
+        "target.platform_id=quick-gr-one"
       ],
       "bicidastrada-seka-exaero-gr-review": [
         "target.platform_id=seka-exaero-gr"
@@ -110254,6 +111210,9 @@
       ],
       "cam-nicholls-falath-evo-inspection": [
         "target.candidate_id=missing-china-price-elves-falath-evo"
+      ],
+      "charles-ouimet-yoeleo-g21-altera-first-look": [
+        "target.platform_id=yoeleo-altera-g21"
       ],
       "china-cycling-bigrock-sohtea-long-term": [
         "target.candidate_id=bigrock-sohtea"
@@ -110306,6 +111265,12 @@
       "crafted-cycles-incolor-sr-plus-build": [
         "target.platform_id=incolor-speedster"
       ],
+      "cus-baker-winspace-g3-review": [
+        "target.platform_id=winspace-g3"
+      ],
+      "cycle-the-world-carbonda-cfr696-close-look": [
+        "target.platform_id=carbonda-cfr696"
+      ],
       "cycle-workshop-ican-graro-build": [
         "target.platform_id=ican-graro"
       ],
@@ -110330,6 +111295,9 @@
       "david-arthur-winspace-slc3-review": [
         "target.candidate_id=missing-china-price-winspace-slc3"
       ],
+      "dream-build-quick-pro-gr-one": [
+        "target.platform_id=quick-gr-one"
+      ],
       "elves-mori-aerox-brand-overview": [
         "target.platform_id=elves-mori-aerox"
       ],
@@ -110339,12 +111307,48 @@
       "gc-performance-winspace-g5": [
         "target.platform_id=winspace-g5"
       ],
+      "gc-performance-winspace-t1600-build": [
+        "target.candidate_id=winspace-t1600"
+      ],
+      "gc-performance-winspace-t1600-ride": [
+        "target.candidate_id=winspace-t1600"
+      ],
+      "gc-performance-yoeleo-altera-g21-singletrack": [
+        "target.platform_id=yoeleo-altera-g21"
+      ],
+      "gravel-trash-panda-winspace-g3-build": [
+        "target.platform_id=winspace-g3"
+      ],
+      "hambini-ican-graro-inspection": [
+        "target.platform_id=ican-graro"
+      ],
       "hambini-t1600-long-term-review": [
         "target.candidate_id=winspace-t1600"
       ],
       "ican-alpha-50-ii-disc-build": [],
+      "ican-graro-assembly-guide": [
+        "target.platform_id=ican-graro"
+      ],
+      "icanbikes-gra04-apex-xplr-build": [
+        "target.platform_id=ican-gra04"
+      ],
+      "icanbikes-gra04-race-build": [
+        "target.platform_id=ican-gra04"
+      ],
+      "its-all-about-racing-winspace-t1600-30-days": [
+        "target.candidate_id=winspace-t1600"
+      ],
+      "its-all-about-racing-winspace-t1600-unboxing": [
+        "target.candidate_id=winspace-t1600"
+      ],
+      "jourdain-coleman-elves-falath-pro-disc-inspection": [
+        "target.platform_id=elves-falath-r7170"
+      ],
       "jourdain-coleman-vanyar-pro-2024-unbox": [
         "target.candidate_id=missing-china-price-elves-vanyar"
+      ],
+      "julius-domroes-gr-one-crit-road-build": [
+        "target.platform_id=quick-gr-one"
       ],
       "julius-domroes-gr-one-grow-comparison": [
         "target.platform_id=quick-gr-one"
@@ -110355,22 +111359,103 @@
       "lightcarbon-lcg071-pro-brand-overview": [
         "target.candidate_id=lightcarbon-lcg071-pro"
       ],
+      "lorenzo-del-sant-ican-triaero-graro-review": [
+        "target.platform_id=ican-graro"
+      ],
       "lovemtb-elitewheels-drive-g36-tech-check": [],
+      "lukas-benka-carbonda-696-budget-build": [
+        "target.platform_id=carbonda-cfr696"
+      ],
+      "magazyn-bike-triaero-graro-six-month-test": [
+        "target.platform_id=ican-graro"
+      ],
+      "nero-show-winspace-t1600-review": [
+        "target.candidate_id=winspace-t1600"
+      ],
       "nero-tavelo-grow-review": [
         "target.platform_id=tavelo-grow"
       ],
+      "nimbus-cycles-carbonda-cfr696-49cm-review": [
+        "target.platform_id=carbonda-cfr696"
+      ],
+      "oompa-loompa-carbonda-cfr696-owner-interview": [
+        "target.platform_id=carbonda-cfr696"
+      ],
+      "oz-cycle-ican-graro-frameset-overview": [
+        "target.platform_id=ican-graro"
+      ],
+      "oz-cycle-yoeleo-g21-altera-overview": [
+        "target.platform_id=yoeleo-altera-g21"
+      ],
+      "patrick-lino-ican-graro-first-look": [
+        "target.platform_id=ican-graro"
+      ],
+      "patrick-lino-yoeleo-g21-altera-finished": [
+        "target.platform_id=yoeleo-altera-g21"
+      ],
+      "peak-torque-yoeleo-altera-g21-slovenia-final-review": [
+        "target.platform_id=yoeleo-altera-g21"
+      ],
+      "pedaler-quick-pro-gr-one-buyer-guide": [
+        "target.platform_id=quick-gr-one"
+      ],
+      "pedaler-quick-pro-gr-one-review-test-ride": [
+        "target.platform_id=quick-gr-one"
+      ],
+      "pierre-staub-winspace-g5-unboxing-quality-check": [
+        "target.platform_id=winspace-g5"
+      ],
       "popeye-vanyar-pro-disc-2024-build": [
         "target.candidate_id=missing-china-price-elves-vanyar"
+      ],
+      "ridemedia-winspace-t1600-try-before-you-buy": [
+        "target.candidate_id=winspace-t1600"
+      ],
+      "rocky-pop-elves-falath-pro-disc-grx": [
+        "target.platform_id=elves-falath-r7170"
+      ],
+      "simon-eizenhofer-carbonda-cfr696-living-room-build": [
+        "target.platform_id=carbonda-cfr696"
+      ],
+      "spindatt-winspace-g3-mechanical-build": [
+        "target.platform_id=winspace-g3"
+      ],
+      "spindatt-winspace-g3-off-road": [
+        "target.platform_id=winspace-g3"
       ],
       "sysadmin-carbonda-cfr707-owner-build": [
         "target.candidate_id=carbonda-cfr707"
       ],
       "the-bike-sauce-elitewheels-drive-50d-ii-review": [],
+      "thedropcycling-carbonda-cfr696-grx-di2-build": [
+        "target.platform_id=carbonda-cfr696"
+      ],
       "tom-bowers-lightcarbon-lcg071-pro-build": [
         "target.candidate_id=lightcarbon-lcg071-pro"
       ],
+      "tom-bowers-yoeleo-altera-g21-build": [
+        "target.platform_id=yoeleo-altera-g21"
+      ],
+      "uk-bike-fit-yoeleo-altera-g21-custom-build": [
+        "target.platform_id=yoeleo-altera-g21"
+      ],
+      "vadim-on-wheels-winspace-g3-150km": [
+        "target.platform_id=winspace-g3"
+      ],
+      "victor-torres-quick-pro-gr-one-dream-build": [
+        "target.platform_id=quick-gr-one"
+      ],
+      "vitality-twitter-gravel-v3-2025-wheeltop-review": [
+        "target.platform_id=twitter-gravel-v3"
+      ],
       "watt-life-t1550-gen2-build-cost": [
         "target.candidate_id=missing-china-price-winspace-t1550"
+      ],
+      "woods-cycles-winspace-g3-unboxing": [
+        "target.platform_id=winspace-g3"
+      ],
+      "woods-cycles-winspace-g5-rival-walkaround": [
+        "target.platform_id=winspace-g5"
       ],
       "xhs-camp-gx600-modified-flatbar": [
         "target.platform_id=camp-gx600"
@@ -110428,6 +111513,38 @@
       ],
       "xhs-xlab-rs9-red-finish": [
         "target.candidate_id=xlab-rs9"
+      ]
+    },
+    "opinions": {
+      "carbonda-cfr696": [
+        "target.platform_id=carbonda-cfr696"
+      ],
+      "elves-falath-r7170": [
+        "target.platform_id=elves-falath-r7170"
+      ],
+      "ican-gra04": [
+        "target.platform_id=ican-gra04"
+      ],
+      "ican-graro": [
+        "target.platform_id=ican-graro"
+      ],
+      "quick-gr-one": [
+        "target.platform_id=quick-gr-one"
+      ],
+      "twitter-gravel-v3": [
+        "target.platform_id=twitter-gravel-v3"
+      ],
+      "winspace-g3": [
+        "target.platform_id=winspace-g3"
+      ],
+      "winspace-g5": [
+        "target.platform_id=winspace-g5"
+      ],
+      "winspace-t1600": [
+        "target.candidate_id=winspace-t1600"
+      ],
+      "yoeleo-altera-g21": [
+        "target.platform_id=yoeleo-altera-g21"
       ]
     },
     "groupsets": {
@@ -113053,7 +114170,13 @@
         "source_ids=winspace-t1600-ultegra-di2-current-recheck-2026-09-25",
         "source_snapshot_id=taobao-snapshot-2026-08-08",
         "video_ids=cyclists-hub-t1600-review",
-        "video_ids=hambini-t1600-long-term-review"
+        "video_ids=gc-performance-winspace-t1600-build",
+        "video_ids=gc-performance-winspace-t1600-ride",
+        "video_ids=hambini-t1600-long-term-review",
+        "video_ids=its-all-about-racing-winspace-t1600-30-days",
+        "video_ids=its-all-about-racing-winspace-t1600-unboxing",
+        "video_ids=nero-show-winspace-t1600-review",
+        "video_ids=ridemedia-winspace-t1600-try-before-you-buy"
       ],
       "xds-ad350-2026": [
         "model_id=xds-ad350-2026",

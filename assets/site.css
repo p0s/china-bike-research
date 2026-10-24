@@ -1515,3 +1515,7 @@ html:has([data-analytics-banner]){overflow-x:clip}
 @media (max-width: 600px) {
   .opinion-score { grid-template-columns: minmax(0, 1fr); gap: 8px; }
 }
+/* Further model videos load on request in a denser two-column grid. */
+.video-list.video-list-more { align-items: start; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 18px; }
+.video-list-more > .video-entry { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; align-content: start; gap: 10px; margin: 0; padding: 0; border: 0; }
+.video-list-more .video-copy h4 { font-size: .95rem; }

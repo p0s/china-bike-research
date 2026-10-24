@@ -278,6 +278,11 @@ function hasSupportedCategory(value, categorySet) { return categoryValues(value)
 
 export const MAX_MODEL_VIDEOS = 8;
 
+export function featuredVideoOrder(a, b) {
+  return Number(Boolean(b.open_graph_player)) - Number(Boolean(a.open_graph_player))
+    || (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title);
+}
+
 export function validateDataset(data = loadDataset()) {
   const errors = [];
   const requireFields = (kind, record, fields) => {
@@ -1196,9 +1201,10 @@ export function joinProducts(data = loadDataset()) {
       ...(image?.source_id ? [image.source_id] : []),
       ...galleryImages.map((item) => item.source_id)
     ]);
+    // Videos with verified Open Graph player data stay featured; the rest follow by date.
     const videos = data.videos
       .filter((video) => video.target?.platform_id === platform.id || video.target?.variant_id === variant.id)
-      .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
+      .sort(featuredVideoOrder);
     const opinions = (data.opinions ?? []).find((collection) => collection.target?.platform_id === platform.id) ?? null;
     return {
       variant,
@@ -1295,7 +1301,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const videos = (candidate.video_ids ?? [])
         .map((id) => videosById.get(id))
         .filter(Boolean)
-        .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
+        .sort(featuredVideoOrder);
       const opinions = (data.opinions ?? []).find((collection) => collection.target?.candidate_id === candidate.id) ?? null;
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
