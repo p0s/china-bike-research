@@ -181,6 +181,21 @@ Delivered: nine transcript-checked videos.
 - Cinelli Pressure (first generation, `cinelli-pressure`): no video added. OtomoRide's `UyG1R-j2iZM` re-narrates a magazine review rather than presenting its own test, and Cycling Insider's `JCZwWTvZyUw` reads the specification; the 2025 Pressure II videos (`6ySzYnuG7To`, `iNu0901g0No`) are the newer generation.
 - Cinelli Pressure ADR (`cinelli-pressure-adr`): no video added; ridemedia's two videos (`bg5rUNekDWk`, `SfXRxEcMLoQ`) cover parts, the cockpit and ride scenery without frame-specific observations.
 
+### Batch 15 — Colnago Y1Rs; De Rosa Idol, New 838; Felt IA 2.0; LOOK 765 electronic; SEKA Exceed, Spear RDC (bike and frameset), Spear standard, ExAero road; Seraph TT-X68 new UDH
+
+Delivered: nine transcript-checked videos (one in Italian with English paraphrased takeaways).
+
+- Colnago Y1Rs (`colnago-y1rs`): Cyclingnews' wind-tunnel and ride review (`PypDvxWdcFM`; flexible front end and speed wobble noted). David Arthur's `F8aZDfd0qL8` was not needed.
+- De Rosa New 838 (`de-rosa-new-838`): Cristiano De Rosa's two-minute presentation on Bikeroom (`fKeh4-xFLp4`; claimed 900 g frame), recorded as maker claims. BicycleTube's `ioPgL24VDcU` is a music-only walkaround.
+- De Rosa Idol (`de-rosa-idol`): no video added because the candidate's generation is unresolved; a Japanese shop's 2026 Idol look `zavF9WWUbbI` (34 mm, T47, UDH) shows the redesigned generation and cannot be tied to the retained listing.
+- Felt IA 2.0 (`felt-ia-2`): no video added; results are pro-bike features (`a5TwW_essno`, `Kq444u9lAp0`) and a dealer's custom build showcase (`W5CCWMKXkLA`) without buyer-relevant findings for a stock trim.
+- LOOK 765 electronic (`look-765-electronic`): Mapdec's launch analysis of the 2023 765 Optimum (`4PBpEm1Veiw`; 34 mm, T47, 27.2 mm post, about 1,400 g frame and fork claimed). Jamesthebikeguy's `thM_bE6r6VM` is the previous 765 Optimum+ and Mapdec's custom build `Id9QkaPNc5s` was not needed.
+- SEKA Exceed 105 Di2 dealer build (`seka-exceed-105-di2-dealer-build`): Cam Nicholls' Exceed RDC first impressions (`TlMnJmZckr4`; 885 g medium frame) and his warning about the former retailer's service (`P3igLjAP9mE`); both disclose that the dealer build's frame grade is not stated. Veloville's 105 Di2 build `2XIgKogT2-U` has an empty transcript panel.
+- SEKA Spear (standard) 105 Di2 (`seka-spear-standard-105-di2`): David Arthur's first ride and 10,000 km follow-up (`eWgD06hvF_4`, `5MhtQR2Wtk0`); his £2,250 frameset price and weight comparison indicate the standard frame. His nine-month review `Tfn73UFq4jw` has an empty transcript panel.
+- SEKA Spear RDC frameset (`seka-spear-rdc-frameset`): Klein Concept's first impressions of the RDC edition (`hN2RcvmAjvc`). The complete Spear RDC (`seka-spear-rdc`) keeps its existing Cyclingnews record; Cycling Unboxed's `jdmXjwfoFkw` discusses that review, and GC Performance's `yjpOvfPDTXw` and NERO's `zJwKiLosihI` do not state the frame version.
+- SEKA ExAero road (`seka-exaero-road`): Cycling_Boon's Malaysian shop look at the new ExAero RDC (`8V7YQyTIzF0`); SEKA's spec short `fMnx1Wqkph0` was not added.
+- Seraph / TanTan TT-X68 new UDH (`seraph-tt-x68-new-udh`): no video added. Patrick Lino's `WhVb730XtTk` shows the earlier BSA frame, and Tom Bowers (`s4MdcxUSNGw`), Jack's Coaching (`NH_cto3UxyA`) and Nico Kühn (`ekN3dvSTudc`) do not identify the T47/UDH revision.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -281,6 +296,8 @@ Delivered: nine transcript-checked videos.
 | carbonda-cfr707 (candidate/wheelset) | `daryl-pace-carbonda-cfr707-build` | Daryl Pace | automatic captions · 3 takeaways |
 | carbonda-cfr707 (candidate/wheelset) | `sysadmin-carbonda-cfr707-owner-build` | Sysadmin | automatic captions · 4 takeaways |
 | cervelo-aspero-5-current (candidate/wheelset) | `ben-delaney-cervelo-aspero-5-review` | The Ride with Ben Delaney | automatic captions · 5 takeaways |
+| colnago-y1rs (candidate/wheelset) | `cyclingnews-colnago-y1rs-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
+| de-rosa-new-838 (candidate/wheelset) | `bikeroom-de-rosa-new-838-cristiano-de-rosa` | Bikeroom | creator captions · 2 takeaways |
 | elitewheels-drive-50d-ii (candidate/wheelset) | `cyclists-hub-elitewheels-drive-50d-ii-review` | Cyclists Hub \| Petr Minarik | automatic captions · 5 takeaways |
 | elitewheels-drive-50d-ii (candidate/wheelset) | `the-bike-sauce-elitewheels-drive-50d-ii-review` | The Bike Sauce | automatic captions · 4 takeaways |
 | elitewheels-drive-g36 (candidate/wheelset) | `bicycle-station-gravel-wheel-shootout-drive-g36` | The Bicycle Station | automatic captions · 3 takeaways |
@@ -313,6 +330,7 @@ Delivered: nine transcript-checked videos.
 | lightcarbon-lcr018-d (candidate/wheelset) | `hambini-lightcarbon-lcr018-d-inspection` | Hambini | automatic captions · 5 takeaways |
 | lightcarbon-lcr018-d (candidate/wheelset) | `trace-velo-lightcarbon-lcr018-d-all-road-build` | Trace Velo | automatic captions · 6 takeaways |
 | lightcarbon-lcr018-d (candidate/wheelset) | `trace-velo-lightcarbon-lcr018-d-overview` | Trace Velo | automatic captions · 4 takeaways |
+| look-765-electronic (candidate/wheelset) | `mapdec-look-765-optimum-2023-launch` | Mapdec Cycle Works | automatic captions · 4 takeaways |
 | missing-china-price-canyon-aeroad (candidate/wheelset) | `david-arthur-canyon-aeroad-cfr-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 6 takeaways |
 | missing-china-price-canyon-grail (candidate/wheelset) | `david-arthur-canyon-grail-tire-clearance` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | missing-china-price-canyon-ultimate (candidate/wheelset) | `cycling-unboxed-canyon-ultimate-cfr-close-up` | Cycling unboxed | automatic captions · 3 takeaways |
@@ -349,7 +367,13 @@ Delivered: nine transcript-checked videos.
 | sava-f20-hawkeye (candidate/wheelset) | `china-cycling-sava-f20-hawkeye` | China Cycling | automatic captions · 4 takeaways |
 | scott-addict-40 (candidate/wheelset) | `sam-rates-bikes-scott-addict-2026-review` | Sam Rates Bikes | automatic captions · 4 takeaways |
 | scott-foil-rc-10 (candidate/wheelset) | `jenson-usa-scott-foil-rc-10-ride-review` | Jenson USA | automatic captions · 3 takeaways |
+| seka-exaero-road (candidate/wheelset) | `cycling-boon-seka-exaero-road-shop-look` | Cycling_Boon | automatic captions · 2 takeaways |
+| seka-exceed-105-di2-dealer-build (candidate/wheelset) | `cam-nicholls-seka-exceed-rdc-first-impressions` | Cam Nicholls | automatic captions · 4 takeaways |
+| seka-exceed-105-di2-dealer-build (candidate/wheelset) | `cam-nicholls-seka-exceed-retailer-warning` | Cam Nicholls | automatic captions · 1 takeaways |
 | seka-spear-rdc (candidate/wheelset) | `cyclingnews-seka-spear-rdc-review` | Cyclingnews Tech | automatic captions · 5 takeaways |
+| seka-spear-rdc-frameset (candidate/wheelset) | `klein-concept-seka-spear-rdc-first-impressions` | Klein Concept | automatic captions · 4 takeaways |
+| seka-spear-standard-105-di2 (candidate/wheelset) | `david-arthur-seka-spear-10000km` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
+| seka-spear-standard-105-di2 (candidate/wheelset) | `david-arthur-seka-spear-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 5 takeaways |
 | specialized-roubaix-sl8-comp-105 (candidate/wheelset) | `david-arthur-specialized-roubaix-sl8-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | specialized-s-works-crux-2024-sram-red-xplr (candidate/wheelset) | `david-arthur-specialized-s-works-crux-long-term` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | specialized-s-works-crux-frameset (candidate/wheelset) | `road-bike-action-specialized-s-works-crux` | Road Bike Action Magazine | automatic captions · 3 takeaways |
