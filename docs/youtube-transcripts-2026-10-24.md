@@ -244,6 +244,17 @@ Delivered: one transcript-checked video (Russian, English paraphrased takeaways)
 - SAVA A4, Dream Maker, R8 R8170, R9 and Starship R13 (`sava-a4`, `sava-dream-maker`, `sava-r8-r8170`, `sava-r9`, `sava-starship-r13`): no exact-model review. Results are SAVA's own shorts (`xGeUsw9PqQU`, `clNqoK3cw4I`, `3WJScOLpytg`, `I-bLD5V3ong`), a reseller's narrated specification read-out for a "Blade R9" (`Qb_k9LpcTCc`) that cannot be tied to the candidate, the R08 7170 vlog rejected in batch 7, and other SAVA models (AeroX SLR8 `zMGDwPd4e5Y`, Pulse and Voyager `ie7OPQpcj0Q`, an unnamed 2022 test `2JN3W6eiAic`).
 - SAVA F20 Hawkeye (`sava-f20-hawkeye`): keeps its China Cycling review; Nicolai Andreasen's unboxing `OnTUF6XoHJQ` has no caption track. The Gelaro S4 and A7L 2026 observations are merged into their exact records, and the Gelaro SF candidate points to the published platform.
 
+### Batch 20 — SUNPEED Charon, Galaxy, Mars-A PRO, Space, Victory E, Invincible Sport (无敌); XDS AD350, AD500, AD7, GT350
+
+Delivered: five transcript-checked videos (two in Portuguese with English paraphrased takeaways).
+
+- Invincible Sport (`sunpeed-wudi-e-2026`): Trace Velo's ride review and teardown (`xpwFFpwLZug`; 8.9 kg size XL, 32 mm clearance, internal seat-tube ridge limiting post insertion). 杨弟's `_jnx9bduLvM` has no caption track.
+- Victory E (`sunpeed-victory-e-2026`): Cus Baker's Victory Sport review (`u17mA4l7q1I`), with the Sport-versus-Expert build difference disclosed. Eco BikeFit's comparison `PvpsBJbFBKw` was not needed; 杨弟's `008i6joDMao` has no caption track.
+- Galaxy 2026 (`sunpeed-galaxy-2026-r7120`): Road700c's Brazilian walkaround and weigh-in (`hNvDm4S7boM`). Cycle Paradise's `epNQbO8fnxo` is a 13-line unboxing.
+- Mars-A PRO (`sunpeed-mars-a-pro-2026`): BRUCE VILAS' unridden negatives list (`tuRdY0XFzaQ`), noting that the A vs A PRO trim is not stated.
+- Charon 2026 (`sunpeed-charon-2026`) and Space (`sunpeed-space`): no exact-model review; Niktography's 2022 Charon check `StcuKu1W3b4` predates the 2026 alloy 13-speed bike, BlueBike's `E8QkcwRDCiI` has no caption track, and Trace Velo's £399 Sunpeed `UVmn2BC4VfA` is the Triton rim-brake bike (mismatch). Benjamin Le Chappers' London shop video `1ZotAUGHw_Q` is a store tour.
+- XDS AD350, AD7 and GT350 (`xds-ad350-2026`, `xds-ad7`, `xds-gt350`): the only exact-model reviews (公路车和山地车 `kRheY_K9W1A`, `BJiABcF3Xvs`, `NnNa3WMIno8`, `QTI7zRULZso`) have no caption track; 32六's XDS store tour `8PNZndji_tI` only reads shop prices. XDS AD500 (`xds-ad500-2025`): no exact-model video.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
@@ -434,6 +445,10 @@ Delivered: one transcript-checked video (Russian, English paraphrased takeaways)
 | specialized-roubaix-sl8-comp-105 (candidate/wheelset) | `david-arthur-specialized-roubaix-sl8-first-ride` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | specialized-s-works-crux-2024-sram-red-xplr (candidate/wheelset) | `david-arthur-specialized-s-works-crux-long-term` | David Arthur - Just Ride Bikes | automatic captions · 4 takeaways |
 | specialized-s-works-crux-frameset (candidate/wheelset) | `road-bike-action-specialized-s-works-crux` | Road Bike Action Magazine | automatic captions · 3 takeaways |
+| sunpeed-galaxy-2026-r7120 (candidate/wheelset) | `road700c-sunpeed-galaxy-2026` | Road700c Bikes | automatic captions · 4 takeaways |
+| sunpeed-mars-a-pro-2026 (candidate/wheelset) | `bruce-vilas-sunpeed-mars-a-negatives` | BRUCE VILAS | automatic captions · 4 takeaways |
+| sunpeed-victory-e-2026 (candidate/wheelset) | `cus-baker-sunpeed-victory-sport-review` | Cus Baker | automatic captions · 5 takeaways |
+| sunpeed-wudi-e-2026 (candidate/wheelset) | `trace-velo-sunpeed-invincible-sport` | Trace Velo | automatic captions · 6 takeaways |
 | twitter-r10-pro-gen3 (candidate/wheelset) | `bike-content-twitter-r10-pro-season-review` | Bike Content | automatic captions · 5 takeaways |
 | twitter-t10-pro (candidate/wheelset) | `bkbike-twitter-t10-pro-r7120` | BKBIKE - GIÁ TỐT 1.0.2 | automatic captions · 3 takeaways |
 | voicevelo-g-major (candidate/wheelset) | `china-cycling-voicevelo-g-major` | China Cycling | automatic captions · 5 takeaways |
