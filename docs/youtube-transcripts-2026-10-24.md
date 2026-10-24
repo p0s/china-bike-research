@@ -114,6 +114,10 @@ Delivered: 13 new transcript-checked candidate videos; LCR018-D gains a tire-fit
 - LCG074-D, LCG074S-D, LCG087S-D, LCR017S-D, LCR020-D: no exact-model review found; results are LightCarbon promo shorts (`B_lZBtXyGKA`, `lpaf4PgGf80`, `OlMC-cbyhB8`) or other models. Samuel Black's LightCarbon builds (`LUlHihI24yI`, `NwwvDuLvlME`) never name the frame model and were not mapped.
 - LCG071-PRO (`lightcarbon-lcg071-pro`): no new exact video; Jourdain Coleman's `-NYsVBXBj2o` and LightCarbon's `DAhY06YkWEs` show the LCG071-D, a different frame.
 
+### Batch 9 — LightCarbon LCR014-D, LCR014-V, LCR015-D, LCR015-V, LCR015S-D, LCR015S-V, LCR0X-D, LCR0X-V, LCRXS-D, LCRXS-V
+
+No video added. Searches by model code, by "review"/"build" and by family ("LightCarbon aero road frame") returned only LightCarbon's own promo clips for these frames: `kUYEgGy7b48` (LCR015-V), `I9dGefXfBto` and `NUfqp4FCAYg` (LCR015S-D), `nW9V40ZxlgA` (unnamed super-aero frame), `OWl8KUhnsuY` (LCR014-V), `CSMdv1gyQ48` and `ctAjyhusFNQ` (LCR0X-D; the latter's captions are music only) and `Z-396vcNYCI` (LCRXS-D). These are 30–80-second showcases without decision-relevant claims, so none was added. Cam Nicholls' "two cheap Chinese aero frames" (`jzAghikGHzo`) compares an Elves Falath and a Trifox, not a LightCarbon frame. The remaining LightCarbon review videos map only to the LCR017-D, LCR018-D, LCR007-V and LCG087-D handled in batch 8.
+
 ## Coverage ledger
 
 | Target | Video record | Channel | Transcript outcome |
