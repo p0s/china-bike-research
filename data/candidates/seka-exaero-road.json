@@ -22,7 +22,8 @@
     "seka-exaero-road-cn-official-recheck-2026-09-24",
     "seka-exaero-road-launch-weibo-report-2026-09-24",
     "seka-exaero-road-smzdm-price-lead-2026-09-24",
-    "seka-exaero-road-enrichment-2026-10-03"
+    "seka-exaero-road-enrichment-2026-10-03",
+    "seka-exaero-road-taobao-2026-10-24"
   ],
   "facts": {
     "frame": "T1100/M46J-claimed carbon with one-piece molding, fully internal routing and UDH",
@@ -40,7 +41,7 @@
   },
   "price_status": "Unresolved: the current official China page shows no frameset price; the dated \u00a511,900\u8d77 launch post describes complete-system prices by cockpit, not an exact RDC or Standard frameset checkout. A distinct secondary launch article surfaced Standard starting-price and RDC maximum-price references, but its page timed out and its indexed figures do not identify a selected package or current checkout.",
   "source_note": "Current China manufacturer page confirms distinct RDC and Standard road frames, 54-size bare-frame weights (820 g RDC and 935 g Standard, \u00b135 g, excluding paint and metal parts) and 32 mm nominal clearance. The page links its official Taobao store but shows no price; the linked store failed to open. The 2026-08-14 \u00a511,900\u8d77 public headline is not assignable to an exact frameset because the post describes its table as complete-system retail by cockpit configuration. A separate secondary launch article surfaced indexed Standard starting-price and RDC maximum-price references, but the page timed out and no selected-package or current-checkout price could be verified. No eligible public non-XHS owner build with exact trim, components and weighing basis was found; the prior 6.67 kg lead is not promoted as a normalized build weight.",
-  "last_reviewed": "2026-09-24",
+  "last_reviewed": "2026-10-24",
   "enrichment_reviews": [
     {
       "reviewed_at": "2026-10-03",
@@ -62,5 +63,15 @@
       ],
       "note": "Original missing clause retained verbatim; exact product-linked seven-size chart is transcribed, with original URL/hash retained in the added source."
     }
-  ]
+  ],
+  "current_observed_price": {
+    "low_cny": 11990,
+    "high_cny": 20290,
+    "currency": "CNY",
+    "observed_at": "2026-10-24",
+    "price_type": "listing-option",
+    "price_basis": "Nanjing agent frameset options: standard \u00a511,990/\u00a512,290, RDC \u00a518,990/\u00a519,290, RDC titanium-silver limited \u00a519,990/\u00a520,290 (Gladius regular / ALTA riser bar)",
+    "conditions": "Stock displayed as 99 per option; seatpost and hardware not itemised beyond seller photos.",
+    "purchase_total_complete": false
+  }
 }

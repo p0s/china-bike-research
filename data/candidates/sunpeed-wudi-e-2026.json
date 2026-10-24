@@ -28,7 +28,8 @@
     "sunpeed-invincible-2026-jd-2026-08-30",
     "sunpeed-invincible-2026-smzdm-2026-08-30",
     "sunpeed-invincible-2026-review-2026-08-30",
-    "sunpeed-wudi-e-2026-photo-source-2026-10-03"
+    "sunpeed-wudi-e-2026-photo-source-2026-10-03",
+    "sunpeed-wudi-2026-tmall-2026-10-24"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -41,5 +42,24 @@
   },
   "source_url": "https://www.jd.com/jiage/131839548897f3d043e9.html",
   "source_note": "The generic indexed listing title mentions electronic shifting, but the exact star-grey R7120 alloy-wheel option is mechanical and is separately identified as Invincible Sport. R7170 electronic options are not mixed into this catalog row.",
-  "last_reviewed": "2026-08-30"
+  "last_reviewed": "2026-10-24",
+  "alternative_builds": [
+    {
+      "id": "tmall-7120-carbon-wheels",
+      "label": "2026 listing 105 R7120 + carbon wheels",
+      "drivetrain": "Shimano 105 R7120 mechanical 2×12",
+      "wheels": "Carbon (model not named)",
+      "price": {
+        "amount_cny": 9399,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "Official Tmall option before an unstated checkout discount"
+      },
+      "notes": "Same listing: R7120 alloy wheels ¥7,799; 105 Di2 alloy ¥10,799, carbon ¥12,399.",
+      "source_ids": [
+        "sunpeed-wudi-2026-tmall-2026-10-24"
+      ]
+    }
+  ]
 }

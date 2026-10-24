@@ -24,7 +24,8 @@
     "xlab-ad9-official-global-2026-08-27",
     "xlab-ad9-taobao-2026-08-27",
     "public-xlab-ad9-build-2026-08-27",
-    "xlab-ad9-cyclingnews-review-2026-09-01"
+    "xlab-ad9-cyclingnews-review-2026-09-01",
+    "xlab-ad9-tmall-2026-10-24"
   ],
   "official_price": {
     "amount_cny": 53980,
@@ -79,8 +80,25 @@
         "public-xlab-ad9-build-2026-08-27"
       ],
       "notes": "Exact custom build context only; it is not the official Dura-Ace catalog trim."
+    },
+    {
+      "id": "tmall-30th-anniversary",
+      "label": "AD9 30th-anniversary edition",
+      "drivetrain": "Shimano Dura-Ace Di2 2×12, 36-52 crank, 11-34 cassette",
+      "wheels": "Branta C50 ULR carbon",
+      "price": {
+        "amount_cny": 38888,
+        "currency": "CNY",
+        "price_type": "listing-option",
+        "observed_at": "2026-10-24",
+        "price_basis": "Official Tmall ¥59,999 option after a ¥21,111 time-limited reduction"
+      },
+      "notes": "Only M and L in stock; about 30 working days to ship.",
+      "source_ids": [
+        "xlab-ad9-tmall-2026-10-24"
+      ]
     }
   ],
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-10-24",
   "reference_price_kind": "official"
 }

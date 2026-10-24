@@ -133,6 +133,8 @@ test('research queue suppresses a rechecked conflict while preserving its unreso
 
 test('research queue keeps a candidate price visible after a later blocked attempt reopens source reuse', () => {
   const data = structuredClone(loadDataset());
+  // Scope the check to the blocked-attempt history; the later 2026-10-24 listing price would otherwise close the gap.
+  delete data.candidates.find((record) => record.id === 'seka-exaero-road').current_observed_price;
   const attempt = data.researchAttempts.find((record) => record.id === 'candidate-seka-exaero-road-price-2026-08-27');
   assert.equal(attempt.resolution?.kind, 'source-reuse');
   const laterAttempt = data.researchAttempts.find((record) => record.id === 'candidate-seka-exaero-road-mainland-observed-price-2026-09-24');
