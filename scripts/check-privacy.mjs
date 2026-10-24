@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/frameset-import-vs-complete-bike-cost-mascot-cover-258f81bc81-640.webp', '3907da96cdbee11420cdabbc1218cf93c43e6f6f6058d721cfdf6a4aad63ffb5'],
+  ['assets/blog/frameset-import-vs-complete-bike-cost-mascot-cover-258f81bc81-1600.webp', 'b62c6e3c11fa95a49f79ec4cb10dd5e1471837a99df32d52c73f6ed9e8a4f186'],
+  ['assets/blog/frameset-import-vs-complete-bike-cost-mascot-cover-258f81bc81-1200.jpg', '27c91b990691870f257cf71a98adc2f83dd6b487ec6032d3f88b79678243d280'],
   ['assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-640.webp', 'ebef84a1ee13318062955e8728043bedce3b1ac96c8e933ffc946b3e7d97455d'],
   ['assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-1600.webp', '02e63cb57c3dd81bab39f262272e434d20e6057c9d333c73b961aa2ecca66932'],
   ['assets/blog/currency-conversion-bike-quotes-mascot-cover-6c60bc3139-1200.jpg', '2289dddf1216efaf10f12c63021db6d11879157029d328456f2cf5d75fef82eb'],
