@@ -148,7 +148,25 @@
       "duration_years": 6,
       "basis": "official platform guide",
       "note": "Manufacturer direct/global claim; verify mainland seller and exact SKU terms."
-    }
+    },
+    "measured_weights": [
+      {
+        "part": "frame",
+        "grams": 1320,
+        "size": "56 (L)",
+        "basis": "as supplied; hardware fitted not stated",
+        "video_id": "oz-cycle-yoeleo-g21-altera-overview",
+        "at_seconds": 454
+      },
+      {
+        "part": "fork",
+        "grams": 420,
+        "size": "56 (L)",
+        "basis": "as supplied; steerer length not stated",
+        "video_id": "oz-cycle-yoeleo-g21-altera-overview",
+        "at_seconds": 454
+      }
+    ]
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -170,7 +188,23 @@
       "double": null
     },
     "limits_status": "current-manufacturer",
-    "limits_reviewed_at": "2026-10-03"
+    "limits_reviewed_at": "2026-10-03",
+    "field_reports": [
+      {
+        "video_id": "patrick-lino-yoeleo-g21-altera-finished",
+        "at_seconds": 530,
+        "configuration": "Size 56 Altera G21 with 2× Shimano road Di2 (50/34, 11–34), Continental Terra Speed 45 mm on 27 mm-internal Yoeleo wheels; Patrick Lino (published 2025-07-22)",
+        "short": "Owner: 45 mm tires fit with 2× road Di2",
+        "summary": "Tires sold as 45 mm measured exactly 45 mm and fitted with a 2× road Di2 crank and no extra bottom-bracket spacers. The owner expects a 53 mm tire would hit the front-derailleur wire, matching Yoeleo's statement that 53 mm is for 1× only; the 2× maximum remains unpublished."
+      },
+      {
+        "video_id": "uk-bike-fit-yoeleo-altera-g21-custom-build",
+        "at_seconds": 215,
+        "configuration": "Custom-painted Altera G21 with 1× 42T and Schwalbe G-One tires on 28 mm-internal wheels; UK Bike Fit owner build (published 2026-04-08)",
+        "short": "Owner: runs 55 mm front and 50 mm rear tires",
+        "summary": "The owner races a 55 mm front and 50 mm rear tire on 28 mm-internal rims, beyond Yoeleo's 53 mm 1× figure at the front; he cites the frame as rated 2.2 in front and 2.1 in rear and thinks slightly wider may fit with some combinations. Actual width depends on tire and rim; he did not measure remaining clearance on camera."
+      }
+    ]
   },
   "mounts": [
     "top-tube",

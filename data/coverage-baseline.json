@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1748,
       "images": 875,
-      "videos": 121,
+      "videos": 133,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2907,6 +2907,7 @@
       "andrew-grabbs-carbonda-cfr696-build",
       "andy-broadhurst-elves-falath-pro-build-2025",
       "beijing-feeling-quick-pro-gr-one-build",
+      "ben-skillz-seka-exaero-gr-build",
       "bicidastrada-seka-exaero-gr-review",
       "bicycle-station-gravel-wheel-shootout-drive-g36",
       "bxt-store-055-overview",
@@ -2930,6 +2931,7 @@
       "china-rides-winspace-m6-shop-tour",
       "china-rides-xlab-ad8-build",
       "crafted-cycles-incolor-sr-plus-build",
+      "cus-baker-tavelo-grow-build",
       "cus-baker-winspace-g3-review",
       "cycle-the-world-carbonda-cfr696-close-look",
       "cycle-workshop-ican-graro-build",
@@ -2947,9 +2949,13 @@
       "dream-build-quick-pro-gr-one",
       "dwayne-pedals-incolor-ssr-600-miles",
       "dwayne-pedals-incolor-ssr-first-look",
+      "dwayne-pedals-seka-exaero-gr-unboxing",
       "elves-mori-aerox-brand-overview",
       "gc-performance-falath-evo-ride-review",
       "gc-performance-incolor-ssr-walkaround",
+      "gc-performance-seka-exaero-gr-build",
+      "gc-performance-tavelo-grow-all-road-build",
+      "gc-performance-tavelo-grow-unboxing",
       "gc-performance-winspace-g5",
       "gc-performance-winspace-t1600-build",
       "gc-performance-winspace-t1600-ride",
@@ -2961,13 +2967,17 @@
       "ican-graro-assembly-guide",
       "icanbikes-gra04-apex-xplr-build",
       "icanbikes-gra04-race-build",
+      "ide-schelling-tavelo-grow-uci-race",
       "its-all-about-racing-winspace-t1600-30-days",
       "its-all-about-racing-winspace-t1600-unboxing",
+      "jourdain-coleman-elves-falath-pro-2022-build",
       "jourdain-coleman-elves-falath-pro-disc-inspection",
       "jourdain-coleman-vanyar-pro-2024-unbox",
       "julius-domroes-gr-one-crit-road-build",
       "julius-domroes-gr-one-grow-comparison",
       "julius-domroes-quick-pro-gr-one-review",
+      "julius-domroes-tavelo-grow-inspection",
+      "kdot-tavelo-grow-owner-build",
       "lightcarbon-lcg071-pro-brand-overview",
       "lorenzo-del-sant-ican-triaero-graro-review",
       "lovemtb-elitewheels-drive-g36-tech-check",
@@ -2987,6 +2997,7 @@
       "pedaler-quick-pro-gr-one-review-test-ride",
       "pierre-staub-winspace-g5-unboxing-quality-check",
       "popeye-vanyar-pro-disc-2024-build",
+      "power-meter-city-seka-exaero-gr-guide",
       "ridemedia-winspace-t1600-try-before-you-buy",
       "rocky-pop-elves-falath-pro-disc-grx",
       "simon-eizenhofer-carbonda-cfr696-living-room-build",
@@ -3003,6 +3014,7 @@
       "victor-torres-quick-pro-gr-one-dream-build",
       "vitality-twitter-gravel-v3-2025-wheeltop-review",
       "watt-life-t1550-gen2-build-cost",
+      "woods-cycles-tavelo-grow-demo",
       "woods-cycles-winspace-g3-unboxing",
       "woods-cycles-winspace-g5-rival-walkaround",
       "xhs-camp-gx600-modified-flatbar",
@@ -6891,6 +6903,7 @@
         "frame.geometry.units.length",
         "frame.material",
         "frame.material_grade",
+        "frame.measured_weights",
         "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
@@ -6903,6 +6916,7 @@
         "summary",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.field_reports",
         "tire_clearance.note",
         "tire_clearance.published_front_max_mm",
         "tire_clearance.published_rear_max_mm",
@@ -7018,6 +7032,7 @@
         "frame.geometry.units.length",
         "frame.material",
         "frame.material_grade",
+        "frame.measured_weights",
         "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
@@ -7030,6 +7045,7 @@
         "summary",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.field_reports",
         "tire_clearance.note",
         "tire_clearance.published_front_max_mm",
         "tire_clearance.published_rear_max_mm",
@@ -7374,6 +7390,7 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.measured_weights",
         "frame.stiffness_evidence",
         "frame.warranty_claim.basis",
         "frame.warranty_claim.duration_years",
@@ -7391,6 +7408,7 @@
         "tire_clearance.drivetrain_limits_mm.single",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.field_reports",
         "tire_clearance.limits_reviewed_at",
         "tire_clearance.limits_status",
         "tire_clearance.note",
@@ -61841,8 +61859,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -61868,6 +61891,29 @@
         "url",
         "youtube_video_id"
       ],
+      "ben-skillz-seka-exaero-gr-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "bicidastrada-seka-exaero-gr-review": [
         "accessed_at",
         "channel_name",
@@ -61885,8 +61931,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -61927,6 +61978,10 @@
         "summary",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.method",
+        "transcript.note",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -61961,8 +62016,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62212,8 +62272,13 @@
         "provider",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62360,6 +62425,29 @@
         "url",
         "youtube_video_id"
       ],
+      "cus-baker-tavelo-grow-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "cus-baker-winspace-g3-review": [
         "accessed_at",
         "channel_name",
@@ -62373,8 +62461,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62722,6 +62815,29 @@
         "url",
         "youtube_video_id"
       ],
+      "dwayne-pedals-seka-exaero-gr-unboxing": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "elves-mori-aerox-brand-overview": [
         "accessed_at",
         "channel_name",
@@ -62741,6 +62857,10 @@
         "summary",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.method",
+        "transcript.note",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62789,6 +62909,75 @@
         "url",
         "youtube_video_id"
       ],
+      "gc-performance-seka-exaero-gr-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "gc-performance-tavelo-grow-all-road-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "gc-performance-tavelo-grow-unboxing": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "gc-performance-winspace-g5": [
         "accessed_at",
         "channel_name",
@@ -62806,8 +62995,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62860,8 +63054,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62878,8 +63077,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -62985,6 +63189,10 @@
         "summary",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.method",
+        "transcript.note",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63003,6 +63211,33 @@
         "summary",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.method",
+        "transcript.note",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "ide-schelling-tavelo-grow-uci-race": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63042,6 +63277,29 @@
         "url",
         "youtube_video_id"
       ],
+      "jourdain-coleman-elves-falath-pro-2022-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "jourdain-coleman-elves-falath-pro-disc-inspection": [
         "accessed_at",
         "channel_name",
@@ -63055,9 +63313,14 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "timestamps",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63132,6 +63395,52 @@
         "youtube_video_id"
       ],
       "julius-domroes-quick-pro-gr-one-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "julius-domroes-tavelo-grow-inspection": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "kdot-tavelo-grow-owner-build": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -63318,8 +63627,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63405,8 +63719,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63446,8 +63765,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63464,8 +63788,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63530,6 +63859,10 @@
         "summary",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.method",
+        "transcript.note",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63552,6 +63885,29 @@
         "summary",
         "target.candidate_id",
         "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "power-meter-city-seka-exaero-gr-guide": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63588,6 +63944,10 @@
         "summary",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.method",
+        "transcript.note",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63626,8 +63986,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63644,8 +64009,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63747,8 +64117,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63765,8 +64140,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63808,6 +64188,10 @@
         "summary",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.method",
+        "transcript.note",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63846,8 +64230,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63873,6 +64262,29 @@
         "url",
         "youtube_video_id"
       ],
+      "woods-cycles-tavelo-grow-demo": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "woods-cycles-winspace-g3-unboxing": [
         "accessed_at",
         "channel_name",
@@ -63886,8 +64298,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -63904,8 +64321,13 @@
         "published_at",
         "relationship",
         "summary",
+        "takeaways",
         "target.platform_id",
         "title",
+        "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
         "url",
         "youtube_video_id"
       ],
@@ -118282,6 +118704,9 @@
       "beijing-feeling-quick-pro-gr-one-build": [
         "target.platform_id=quick-gr-one"
       ],
+      "ben-skillz-seka-exaero-gr-build": [
+        "target.platform_id=seka-exaero-gr"
+      ],
       "bicidastrada-seka-exaero-gr-review": [
         "target.platform_id=seka-exaero-gr"
       ],
@@ -118349,6 +118774,9 @@
       "crafted-cycles-incolor-sr-plus-build": [
         "target.platform_id=incolor-speedster"
       ],
+      "cus-baker-tavelo-grow-build": [
+        "target.platform_id=tavelo-grow"
+      ],
       "cus-baker-winspace-g3-review": [
         "target.platform_id=winspace-g3"
       ],
@@ -118394,6 +118822,9 @@
       "dwayne-pedals-incolor-ssr-first-look": [
         "target.platform_id=incolor-ssr"
       ],
+      "dwayne-pedals-seka-exaero-gr-unboxing": [
+        "target.platform_id=seka-exaero-gr"
+      ],
       "elves-mori-aerox-brand-overview": [
         "target.platform_id=elves-mori-aerox"
       ],
@@ -118402,6 +118833,15 @@
       ],
       "gc-performance-incolor-ssr-walkaround": [
         "target.platform_id=incolor-ssr"
+      ],
+      "gc-performance-seka-exaero-gr-build": [
+        "target.platform_id=seka-exaero-gr"
+      ],
+      "gc-performance-tavelo-grow-all-road-build": [
+        "target.platform_id=tavelo-grow"
+      ],
+      "gc-performance-tavelo-grow-unboxing": [
+        "target.platform_id=tavelo-grow"
       ],
       "gc-performance-winspace-g5": [
         "target.platform_id=winspace-g5"
@@ -118434,11 +118874,17 @@
       "icanbikes-gra04-race-build": [
         "target.platform_id=ican-gra04"
       ],
+      "ide-schelling-tavelo-grow-uci-race": [
+        "target.platform_id=tavelo-grow"
+      ],
       "its-all-about-racing-winspace-t1600-30-days": [
         "target.candidate_id=winspace-t1600"
       ],
       "its-all-about-racing-winspace-t1600-unboxing": [
         "target.candidate_id=winspace-t1600"
+      ],
+      "jourdain-coleman-elves-falath-pro-2022-build": [
+        "target.platform_id=elves-falath-r7170"
       ],
       "jourdain-coleman-elves-falath-pro-disc-inspection": [
         "target.platform_id=elves-falath-r7170"
@@ -118454,6 +118900,12 @@
       ],
       "julius-domroes-quick-pro-gr-one-review": [
         "target.platform_id=quick-gr-one"
+      ],
+      "julius-domroes-tavelo-grow-inspection": [
+        "target.platform_id=tavelo-grow"
+      ],
+      "kdot-tavelo-grow-owner-build": [
+        "target.platform_id=tavelo-grow"
       ],
       "lightcarbon-lcg071-pro-brand-overview": [
         "target.candidate_id=lightcarbon-lcg071-pro"
@@ -118510,6 +118962,9 @@
       "popeye-vanyar-pro-disc-2024-build": [
         "target.candidate_id=missing-china-price-elves-vanyar"
       ],
+      "power-meter-city-seka-exaero-gr-guide": [
+        "target.platform_id=seka-exaero-gr"
+      ],
       "ridemedia-winspace-t1600-try-before-you-buy": [
         "target.candidate_id=winspace-t1600"
       ],
@@ -118555,6 +119010,9 @@
       ],
       "watt-life-t1550-gen2-build-cost": [
         "target.candidate_id=missing-china-price-winspace-t1550"
+      ],
+      "woods-cycles-tavelo-grow-demo": [
+        "target.platform_id=tavelo-grow"
       ],
       "woods-cycles-winspace-g3-unboxing": [
         "target.platform_id=winspace-g3"
