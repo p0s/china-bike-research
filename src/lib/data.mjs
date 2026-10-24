@@ -1020,6 +1020,9 @@ export function validateDataset(data = loadDataset()) {
         const channel = new URL(video.channel_url);
         if (channel.protocol !== 'https:' || !['www.youtube.com', 'youtube.com'].includes(channel.hostname)) errors.push(`video ${video.id}: invalid YouTube channel URL`);
       } catch { errors.push(`video ${video.id}: invalid channel URL`); }
+      const player = video.open_graph_player;
+      if (player !== undefined && (player?.type !== 'text/html' || !Number.isInteger(player.width) || player.width < 1
+        || !Number.isInteger(player.height) || player.height < 1 || !isDate(player.verified_at))) errors.push(`video ${video.id}: invalid open_graph_player`);
     } else if (video.provider === 'xhs') {
       requireFields('XHS video', video, ['xhs_post_id', 'source_capture_archive', 'source_archive_sha256']);
       if (typeof video.xhs_post_id !== 'string' || !/^[a-f0-9]{24}$/.test(video.xhs_post_id)) errors.push(`video ${video.id}: invalid XHS post ID`);
@@ -1029,7 +1032,7 @@ export function validateDataset(data = loadDataset()) {
       if (video.disclosure_url !== video.url) errors.push(`video ${video.id}: XHS disclosure must link to its source post`);
       if (typeof video.source_capture_archive !== 'string' || !/^xhs-complete-[^/]+\.zip$/.test(video.source_capture_archive)) errors.push(`video ${video.id}: invalid source archive name`);
       if (typeof video.source_archive_sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(video.source_archive_sha256)) errors.push(`video ${video.id}: invalid source archive hash`);
-      if (video.youtube_video_id !== undefined || video.timestamps !== undefined) errors.push(`video ${video.id}: XHS link must not carry YouTube player metadata`);
+      if (video.youtube_video_id !== undefined || video.timestamps !== undefined || video.open_graph_player !== undefined) errors.push(`video ${video.id}: XHS link must not carry YouTube player metadata`);
     } else errors.push(`video ${video.id}: unsupported provider ${video.provider}`);
     if (!isDate(video.accessed_at)) errors.push(`video ${video.id}: invalid accessed_at`);
     if (video.published_at !== undefined && !isDate(video.published_at)) errors.push(`video ${video.id}: invalid published_at`);

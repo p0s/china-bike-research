@@ -6,7 +6,7 @@ import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
-import { renderVideoEntries } from './lib/videos.mjs';
+import { openGraphVideo, renderVideoEntries } from './lib/videos.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay } from '../assets/price-display.js';
 import { clearanceParts, weightParts, normalizeSpeeds } from '../assets/catalog-format.js';
@@ -49,7 +49,7 @@ import {
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
-export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', ogType = 'website', structuredData = [], headerTools = '' }) {
+export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '' }) {
   return layout({
     base: ctx.base,
     locale: ctx.locale ?? 'en',
@@ -67,6 +67,7 @@ export function page(ctx, { title = '', current = '', path = '/', description: d
     imageWidth,
     imageHeight,
     imageType,
+    video,
     ogType,
     structuredData,
     datasetUpdated: ctx.siteLastmod ?? ctx.data.meta.snapshot_date,
@@ -1525,6 +1526,7 @@ export function renderModel(ctx, product) {
     description: variant.editorial.verdict,
     image: heroImage,
     imageAlt: product.image?.alt ?? `${brand.name} ${variant.name}`,
+    video: openGraphVideo(videos),
     ogType: 'product',
     structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
@@ -1755,6 +1757,7 @@ export function renderCandidateModel(ctx, entry) {
     description: pageCopy?.description ?? reason,
     image: candidateHeroImage,
     imageAlt: entry.image?.alt ?? candidate.name,
+    video: openGraphVideo(entry.videos),
     ogType: candidateSeoProduct ? 'product' : 'website',
     structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
