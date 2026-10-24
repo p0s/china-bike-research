@@ -42,7 +42,7 @@ test('carbon wheels reference renders one table with row details and no mainland
   assert.match(html, /120 kg system limit/);
   assert.match(html, /Rotor mount not stated · 12x100 \/ 12x142 mm/);
   assert.doesNotMatch(html, /¥\d/);
-  assert.match(html, /href="\/china-bike-research\/carbon-wheels\/" data-nav-wheels aria-current="page">Carbon wheels<\/a>/);
+  assert.match(html, /href="\/china-bike-research\/carbon-wheels\/" data-nav-wheels aria-current="page"><span class="nav-long">Carbon wheels<\/span>/);
 });
 
 test('wheelset videos are exact, capped and embedded only inside their own row details', () => {
