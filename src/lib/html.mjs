@@ -76,9 +76,9 @@ export function layout({base='', repositoryUrl, title='', description, current='
             <button class="nav-tools-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-tools-toggle hidden>Tools</button>
             <div class="nav-tools-menu" id="nav-tools-menu">
               <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
-              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build planner</a>
+              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}><span class="nav-long">Build planner</span><span class="nav-short" aria-hidden="true">Planner</span></a>
               <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
-              <a href="${url(base,'/carbon-wheels/')}" data-nav-wheels${current==='wheels'?' aria-current="page"':''}>Carbon wheels</a>
+              <a href="${url(base,'/carbon-wheels/')}" data-nav-wheels${current==='wheels'?' aria-current="page"':''}><span class="nav-long">Carbon wheels</span><span class="nav-short" aria-hidden="true">Wheels</span></a>
             </div>
           </div>
         </nav>

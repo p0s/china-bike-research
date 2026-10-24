@@ -4,41 +4,66 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const script = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
-const previewSource = script.slice(script.indexOf('  let activeImagePreview ='), script.indexOf('  const copyStatus ='));
+const previewSource = script.slice(script.indexOf('  const imagePreviewSources = new Map();'), script.indexOf('  const copyStatus ='));
 const dismissalSource = script.slice(script.indexOf("  document.addEventListener('keydown', (event) => {"), script.indexOf("  document.querySelectorAll('[data-copy-target]')"));
 
-function preview({ loaded = true, fine = true } = {}) {
-  const events = new Map(), frames = [], linkEvents = new Map(), imageEvents = new Map(), classes = new Set(), properties = new Map();
-  const image = { complete: loaded, naturalWidth: loaded ? 800 : 0, addEventListener: (event, fn) => imageEvents.set(event, fn) };
+function element() {
+  const classes = new Set(), style = { setProperty() {} };
+  return {
+    hidden: false, style, children: [], className: '', attributes: {},
+    classList: { add: name => classes.add(name), remove: name => classes.delete(name), has: name => classes.has(name) },
+    setAttribute(name, value) { this.attributes[name] = value; },
+    append(child) { this.children.push(child); },
+    get firstElementChild() { return this.children[0]; }
+  };
+}
+
+function preview({ loaded = true, fine = true, gallery = false, viewport = { width: 1440, height: 900 }, box = { left: 329, top: 438, width: 96, height: 64 } } = {}) {
+  const events = new Map(), frames = [], timers = [], linkEvents = new Map(), imageEvents = new Map(), classes = new Set();
+  let now = 1000;
+  const image = { complete: loaded, naturalWidth: loaded ? 480 : 0, naturalHeight: 320, currentSrc: 'card.webp', src: 'card.webp', addEventListener: (event, fn) => imageEvents.set(event, fn) };
+  const row = { dataset: { id: 'bike-a' } };
   const link = {
     focused: false, hovered: false,
     classList: { add: name => classes.add(name), remove: name => classes.delete(name) },
-    style: { setProperty: (name, value) => properties.set(name, value) },
     querySelector: () => image,
-    getBoundingClientRect: () => ({ left: 240, top: 70, width: 88, height: 58 }),
+    closest: selector => selector === '[data-product-row]' ? row : (gallery && selector.includes('gallery') ? {} : null),
+    getBoundingClientRect: () => ({ ...box, right: box.left + box.width, bottom: box.top + box.height }),
     scrollIntoView() {},
     matches: selector => selector === ':focus-visible' ? link.focused : link.hovered,
     addEventListener: (event, fn) => linkEvents.set(event, fn)
   };
-  const document = { activeElement: null, querySelectorAll: () => [link], addEventListener: (event, fn) => events.set(event, fn) };
+  const body = element();
+  const document = {
+    activeElement: null, body,
+    querySelectorAll: () => [link],
+    createElement: () => element(),
+    addEventListener: (event, fn) => events.set(event, fn)
+  };
+  class FakeImage { addEventListener(event, fn) { this.onload = fn; } set src(value) { this.value = value; this.onload?.(); } }
   vm.runInNewContext(previewSource + dismissalSource, {
-    document, innerWidth: 320, innerHeight: 844,
+    document, innerWidth: viewport.width, innerHeight: viewport.height, Image: FakeImage,
     stickyHeader: { getBoundingClientRect: () => ({ bottom: 60 }) },
-    getComputedStyle: () => ({ getPropertyValue: () => '4.6' }),
+    performance: { now: () => now },
+    setTimeout: (fn) => { timers.push(fn); return timers.length; }, clearTimeout: () => {},
     precisePointer: { matches: fine },
     closeTooltip() {}, closeMenu() {}, activeTooltipButton: null, navigation: null, HTMLElement: Object,
     requestAnimationFrame: fn => frames.push(fn), addEventListener: (event, fn) => events.set(event, fn)
   });
+  const layer = () => body.children[0];
   return {
-    properties, active: () => classes.has('is-previewing'),
+    active: () => classes.has('is-previewing') && layer()?.hidden === false,
+    layer,
     focus() { document.activeElement = link; link.focused = true; linkEvents.get('focus')(); },
-    flush() { while (frames.length) frames.shift()(); },
-    hover() { link.hovered = true; linkEvents.get('mouseenter')(); },
-    leave() { link.hovered = false; linkEvents.get('mouseleave')(); },
+    flush() { while (frames.length) frames.shift()(); while (timers.length) timers.shift()(); },
+    move() { link.hovered = true; linkEvents.get('pointermove')({ pointerType: 'mouse' }); },
+    touch() { link.hovered = true; linkEvents.get('pointermove')({ pointerType: 'touch' }); },
+    leave() { link.hovered = false; linkEvents.get('pointerleave')(); },
     blur() { link.focused = false; document.activeElement = null; linkEvents.get('blur')(); },
     scroll: () => events.get('scroll')(), resize: () => events.get('resize')(),
+    advance(ms) { now += ms; },
     escape() { events.get('keydown')({ key: 'Escape', preventDefault() {} }); },
-    load() { image.complete = true; image.naturalWidth = 800; imageEvents.get('load')?.(); },
+    load() { image.complete = true; image.naturalWidth = 480; imageEvents.get('load')?.(); },
     fail() { imageEvents.get('error')?.(); }
   };
 }
@@ -60,28 +85,46 @@ test('delayed photos preview only while the original focus or hover request rema
     if (cancel === 'scroll') ui.scroll();
     if (cancel === 'resize') ui.resize();
     if (cancel === 'failure') ui.fail();
-    ui.load(); assert.equal(ui.active(), cancel === 'none', cancel);
+    ui.load(); ui.flush(); assert.equal(ui.active(), cancel === 'none', cancel);
   }
-  const ui = preview({ loaded: false });
-  ui.hover(); ui.leave(); ui.load(); assert.equal(ui.active(), false);
 });
 
-test('preview paint fits a narrow viewport without enlarging the original link box', () => {
-  const ui = preview(); ui.hover();
+test('the large preview sits beside the thumbnail inside the viewport and below the header', () => {
+  const ui = preview(); ui.move(); ui.flush();
   assert.equal(ui.active(), true);
-  const scale = ui.properties.get('--image-preview-scale');
-  assert.equal(88 * scale, 296);
-  const left = 240 + Number.parseFloat(ui.properties.get('--image-preview-x'));
-  assert.equal(left, 12);
-  const top = 70 + 58 / 2 - 58 * scale / 2 + Number.parseFloat(ui.properties.get('--image-preview-y'));
-  assert.equal(top, 68);
-  assert.ok(top + 58 * scale <= 832);
+  const style = ui.layer().style;
+  const left = Number.parseFloat(style.left), top = Number.parseFloat(style.top), width = Number.parseFloat(style.width), height = Number.parseFloat(style.height);
+  assert.ok(left >= 329 + 96, 'preview does not cover the hovered thumbnail');
+  assert.ok(width >= 600, `preview is substantially larger than the old 2.6x paint (${width})`);
+  assert.ok(left + width <= 1440 - 12 && top >= 68 && top + height <= 900 - 12);
+  assert.equal(ui.layer().attributes['aria-hidden'], 'true');
   ui.leave(); assert.equal(ui.active(), false);
 });
 
-test('coarse pointer hover leaves direct navigation alone while keyboard focus still previews', () => {
+test('narrow viewports fit the preview within the screen', () => {
+  const ui = preview({ viewport: { width: 320, height: 844 }, box: { left: 240, top: 70, width: 88, height: 58 } });
+  ui.focus(); ui.flush();
+  const style = ui.layer().style;
+  assert.ok(Number.parseFloat(style.left) >= 12 && Number.parseFloat(style.left) + Number.parseFloat(style.width) <= 308);
+});
+
+test('rows that slide under a resting cursor during scrolling do not flash a preview', () => {
+  const ui = preview();
+  ui.scroll(); ui.move(); ui.flush();
+  assert.equal(ui.active(), false);
+  ui.advance(300); ui.move(); ui.flush();
+  assert.equal(ui.active(), true);
+});
+
+test('touch and coarse pointers keep direct navigation while keyboard focus still previews', () => {
+  const touch = preview(); touch.touch(); touch.flush(); assert.equal(touch.active(), false);
   const ui = preview({ fine: false });
-  ui.hover(); assert.equal(ui.active(), false);
+  ui.move(); ui.flush(); assert.equal(ui.active(), false);
   ui.focus(); ui.flush(); assert.equal(ui.active(), true);
   ui.blur(); assert.equal(ui.active(), false);
+});
+
+test('gallery view shows large photos already, so it does not open the preview', () => {
+  const ui = preview({ gallery: true }); ui.move(); ui.flush();
+  assert.equal(ui.active(), false);
 });

@@ -1,4 +1,4 @@
-import { initialBuildPresentation, buildBaseFacts } from '../assets/builder-presentation.js';
+import { initialBuildPresentation, buildBaseFacts, formatBuildYuan, formatBuildWeight } from '../assets/builder-presentation.js';
 import { structuredGeometry, candidateGeometry, isGeometryTableFact } from './lib/model-geometry.mjs';
 import { translate } from '../assets/i18n.js';
 import { relatedArticleLinks } from './lib/posts.mjs';
@@ -1394,7 +1394,7 @@ export function renderHome(ctx) {
       <div class="result-bar">
         <div class="filter-chips" data-filter-chips role="group" aria-label="Active filters" hidden></div>
         <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> results<span data-result-context></span><span class="result-split" data-result-split> · ${ctx.products.length} published, then ${defaultCandidateCount} research leads</span><span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
-        <div class="result-actions"><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
+        <div class="result-actions"><div class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden><button type="button" data-view-value="table" aria-pressed="true"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button><button type="button" data-view-value="gallery" aria-pressed="false"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button></div><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
       </div>
       <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
         <div class="compare-heading"><h2 id="compare-title">Compare</h2><span class="compare-count" data-compare-heading-count></span><label class="switch compare-differences"><input type="checkbox" role="switch" data-compare-differences><span>Differences only</span></label><div class="compare-heading-actions"><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
@@ -1870,6 +1870,53 @@ const buildSlotCopy = {
   assembly: ['Assembly', 'Labor and small consumables; weight may legitimately be zero.']
 };
 
+// Hotspot positions on the project-drawn schematic (viewBox 600×340). The
+// drawing is a generic drop-bar layout that locates slots; it shows no product.
+const buildMapPoints = {
+  frame: [345, 168], saddle: [244, 84], cockpit: [446, 92], 'bar-tape': [492, 136], brakes: [436, 206],
+  rotors: [474, 254], wheelset: [450, 172], tires: [550, 240], 'tubes-sealant': [72, 240], cassette: [150, 240],
+  drivetrain: [176, 292], chain: [222, 263], crankset: [318, 272], 'bottom-bracket': [284, 236], pedals: [338, 306], assembly: [566, 34]
+};
+const buildStateLabels = { known: 'priced', partial: 'needs one input', open: 'needs price and weight', included: 'included' };
+
+function buildMapSvg() {
+  return `<svg class="build-map-drawing" viewBox="0 0 600 340" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="150" cy="240" r="90" stroke-width="7" class="map-tire"/><circle cx="450" cy="240" r="90" stroke-width="7" class="map-tire"/>
+    <circle cx="150" cy="240" r="78" stroke-width="2"/><circle cx="450" cy="240" r="78" stroke-width="2"/>
+    <path d="M150 240 L284 250 L258 118 Z M258 118 L418 110 L432 152 L284 250 M432 152 L450 240" stroke-width="5" class="map-frame"/>
+    <path d="M258 118 L250 90 M224 86 L272 84 M418 110 L452 100 Q474 98 480 112 L486 140 Q486 152 472 152" stroke-width="4"/>
+    <circle cx="284" cy="250" r="26" stroke-width="3"/><circle cx="150" cy="240" r="15" stroke-width="3"/>
+    <path d="M284 224 L150 225 M284 276 L178 282 L150 255 M284 250 L318 276 M308 300 L336 300" stroke-width="2.5"/>
+    <circle cx="450" cy="240" r="18" stroke-width="2.5"/><circle cx="150" cy="240" r="21" stroke-width="1.5" stroke-dasharray="3 3"/>
+  </g></svg>`;
+}
+
+function buildMap(initial) {
+  const hotspot = (id, label, state) => {
+    const [x, y] = buildMapPoints[id];
+    return `<button class="build-hotspot" type="button" data-build-hotspot="${escapeAttr(id)}" data-state="${escapeAttr(state)}" style="--x:${(x / 6).toFixed(2)}%;--y:${(y / 3.4).toFixed(2)}%" aria-label="${escapeAttr(`${label}: ${buildStateLabels[state] ?? state}`)}"><span class="build-hotspot-mark" aria-hidden="true"></span><span class="build-hotspot-label" aria-hidden="true">${escapeHtml(label)}</span></button>`;
+  };
+  const states = buildSlotIds.map((slot) => initial?.rows.get(slot)?.state ?? 'open');
+  const count = (state) => states.filter((value) => value === state).length;
+  return `<section class="build-map" aria-labelledby="build-map-title"><div class="build-map-head"><h2 id="build-map-title">Build map</h2><p>Select a part to jump to its row.</p></div>
+    <div class="build-map-canvas">${buildMapSvg()}${hotspot('frame', initial?.isComplete ? 'Base bike' : 'Frameset', 'base')}${buildSlotIds.map((slot) => hotspot(slot, buildSlotCopy[slot][0], initial?.rows.get(slot)?.state ?? 'open')).join('')}</div>
+    <ul class="build-map-legend" data-build-map-legend>${['known', 'included', 'partial', 'open'].map((state) => `<li data-state="${state}"><span class="build-hotspot-mark" aria-hidden="true"></span><span>${escapeHtml(sentenceLabel(buildStateLabels[state]))}</span> <strong data-build-state-count="${state}">${count(state)}</strong></li>`).join('')}</ul>
+  </section>`;
+}
+
+function buildCompositionBlock(kind, summary, format) {
+  if (!summary) return '';
+  const title = kind === 'price' ? 'Known price by part group' : 'Known weight by part group';
+  const segments = summary.segments.map((segment, index) => {
+    const share = summary.known > 0 ? segment.value / summary.known : 0;
+    return { ...segment, index: index + 1, share };
+  });
+  return `<figure class="build-composition" data-build-composition="${kind}"><figcaption>${escapeHtml(title)}</figcaption>
+    <div class="composition-bar" aria-hidden="true">${segments.map((segment) => `<span class="composition-segment" data-group="${escapeAttr(segment.id)}" data-series="${segment.index}" style="flex-grow:${segment.value}"${segment.value > 0 ? '' : ' hidden'}></span>`).join('')}</div>
+    <ul class="composition-legend">${segments.map((segment) => `<li data-group="${escapeAttr(segment.id)}" data-series="${segment.index}"><span class="composition-swatch" aria-hidden="true"></span><span data-composition-label>${escapeHtml(segment.label)}</span><strong data-composition-value>${segment.value > 0 ? escapeHtml(segment.high > segment.value ? `${format(segment.value)}–${format(segment.high)}` : format(segment.value)) : '—'}</strong><small data-composition-unknown${segment.unknown ? '' : ' hidden'}>${segment.unknown} unknown</small></li>`).join('')}</ul>
+  </figure>`;
+}
+
 function builderBottomBracketKey(value) {
   const text = String(value || '').toLowerCase();
   const shells = [/(?:bb86|pf86)/.test(text) ? 'bb86' : null, /bb92/.test(text) ? 'bb92' : null, /t47/.test(text) ? 't47' : null, /(?:bsa|english)/.test(text) ? 'bsa-68' : null].filter(Boolean);
@@ -2071,7 +2118,7 @@ function builderPartOptions(parts, slot, included = false) {
 
 function builderSlotRow(ctx, parts, slot, view) {
   const [label, help] = buildSlotCopy[slot];
-  return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" data-build-slot="${escapeAttr(slot)}">
+  return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" id="build-slot-${escapeAttr(slot)}" tabindex="-1" data-build-slot="${escapeAttr(slot)}">
     <div class="builder-part-label"><h2>${escapeHtml(label)}</h2><p>${escapeHtml(help)}</p></div>
     <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select${view.covered ? ' disabled' : ''}>${builderPartOptions(parts, slot, view.included)}</select></label><div class="builder-custom-values" data-build-custom-values${view.customHidden ? ' hidden' : ''}><label data-build-custom-price-field${view.priceHidden ? ' hidden' : ''}>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field${view.weightHidden ? ' hidden' : ''}>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
     <div class="builder-part-facts"><strong data-build-part-price>${escapeHtml(view.price)}</strong><span data-build-part-weight>${escapeHtml(view.weight)}</span><small data-build-part-basis>${escapeHtml(view.basis)}</small><a href="${escapeAttr(view.source?.url || url(ctx.base, '/methodology/'))}" data-build-part-source${view.source?.url ? ` title="${escapeAttr(view.source.title || 'Source')}"` : ' hidden'} rel="noreferrer">Source</a></div>
@@ -2093,9 +2140,10 @@ export function renderBikeBuilder(ctx) {
   <fieldset class="builder-page page" data-bike-builder disabled aria-describedby="builder-preview-note"><legend class="sr-only">Bike configurator</legend>
     <div class="builder-workbench">
       <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><p data-build-base-facts>${initialBase ? escapeHtml(buildBaseFacts(initialBase, ctx.locale)) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom${initial?.isComplete && initialBase?.priceLow != null && initialBase?.baseWeightG != null ? ' hidden' : ''}><label data-build-base-price-field${initialBase?.priceLow != null ? ' hidden' : ''}>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field${initialBase?.baseWeightG != null ? ' hidden' : ''}>${initial?.isComplete ? 'Base bike weight g' : 'Frame-only weight g'}<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label><label class="builder-package-weight" data-build-package-weight-field${initial?.isComplete ? ' hidden' : ''}><span>Fork + remaining frame-package weight (g)</span><input type="number" min="0" step="any" placeholder="Unknown" data-build-package-weight aria-label="Fork and remaining frame-package weight in grams"><small>Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.</small></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
+      ${buildMap(initial)}
       <div class="builder-parts" role="group" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot, initial?.rows.get(slot) ?? { customHidden: true, priceHidden: true, weightHidden: true, price: '—', weight: '—', basis: '', coveredNote: '' })).join('')}</div>
     </div>
-    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
+    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><div class="build-compositions" data-build-compositions>${buildCompositionBlock('price', initial?.composition.price, formatBuildYuan)}${buildCompositionBlock('weight', initial?.composition.weight, formatBuildWeight)}</div><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
     <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
   </fieldset>`;
   return page(ctx, {
