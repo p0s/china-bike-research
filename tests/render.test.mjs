@@ -984,7 +984,8 @@ test('candidate videos render as disclosed context with timestamp links', () => 
 });
 
 test('XHS video records do not display as links or an empty video section', () => {
-  const entry = candidates.find((item) => item.candidate.id === 'xlab-ad9');
+  const ad9 = candidates.find((item) => item.candidate.id === 'xlab-ad9');
+  const entry = { ...ad9, videos: ad9.videos.filter((video) => video.provider === 'xhs') };
   const context = {
     data,
     products,
