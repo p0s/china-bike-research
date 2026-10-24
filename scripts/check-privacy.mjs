@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/compare-brand-dealer-and-marketplace-mascot-cover-e5e9dc1752-640.webp', '43045d75a9dfa358b3250c661b3a73bb4d52e3446127e0718c4767d40fc55267'],
+  ['assets/blog/compare-brand-dealer-and-marketplace-mascot-cover-e5e9dc1752-1600.webp', '98f0b70014937bf50e2df07463e2da1ca440dc9e5c88188c218cec7604d9608b'],
+  ['assets/blog/compare-brand-dealer-and-marketplace-mascot-cover-e5e9dc1752-1200.jpg', '53af075475464e2ebab7b13a87450d3080cabda1f643ce674944fd08e4cfb929'],
   ['assets/blog/frameset-import-vs-complete-bike-cost-mascot-cover-258f81bc81-640.webp', '3907da96cdbee11420cdabbc1218cf93c43e6f6f6058d721cfdf6a4aad63ffb5'],
   ['assets/blog/frameset-import-vs-complete-bike-cost-mascot-cover-258f81bc81-1600.webp', 'b62c6e3c11fa95a49f79ec4cb10dd5e1471837a99df32d52c73f6ed9e8a4f186'],
   ['assets/blog/frameset-import-vs-complete-bike-cost-mascot-cover-258f81bc81-1200.jpg', '27c91b990691870f257cf71a98adc2f83dd6b487ec6032d3f88b79678243d280'],
