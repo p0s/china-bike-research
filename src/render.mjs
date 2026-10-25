@@ -722,7 +722,7 @@ function catalogPriceCell(ctx, summary) {
     sort: Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : '',
     filter: Number.isFinite(projection.high) ? projection.high : '',
     // Unknown prices stay a quiet dash, like every other unrecorded cell.
-    html: `<div class="catalog-cell price-cell" role="cell">${summary.priceDetails || summary.priceDate ? `<button type="button" class="metric-main price-button" data-calculated-price data-price-details="${escapeAttr(summary.priceDate ?? '')}" aria-expanded="false">${escapeHtml(shown.headline)}</button>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${shown.tone === 'unknown' && !summary.priceState ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
+    html: `<div class="catalog-cell price-cell" role="cell">${summary.priceDetails || summary.priceDate ? `<button type="button" class="metric-main price-button" data-calculated-price data-price-details="${escapeAttr(summary.priceDate ?? '')}" aria-expanded="false">${escapeHtml(shown.headline)}</button>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${!shown.basis || (shown.tone === 'unknown' && !summary.priceState) ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
   };
 }
 
