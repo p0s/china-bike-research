@@ -122,7 +122,7 @@ test('shared tooltips distinguish hover from pinned click state', () => {
   assert.match(script, /button\.matches\(':focus-visible'\)/);
   assert.match(script, /tooltipPanel\?\.addEventListener\('mouseenter', cancelTooltipDismiss\)/);
   assert.match(script, /tooltipPanel\?\.addEventListener\('mouseleave', scheduleTooltipClose\)/);
-  assert.match(script, /tooltipPanel\?\.addEventListener\('pointerdown', \(event\) => event\.preventDefault\(\)\)/);
+  assert.match(script, /tooltipPanel\?\.addEventListener\('pointerdown', \(event\) => \{ if \(!event\.target\.closest\('a'\)\) event\.preventDefault\(\); \}\)/);
   assert.match(script, /button\.addEventListener\('click', \(\) => toggleTooltip\(button\)\)/);
   assert.doesNotMatch(script, /button\.addEventListener\('click', \(\) => openTooltip\(button\)\)/);
   assert.match(styles, /\.tooltip-content \{[\s\S]*?pointer-events: auto;/);

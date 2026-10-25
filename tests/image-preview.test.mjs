@@ -47,7 +47,7 @@ function preview({ loaded = true, fine = true, gallery = false, viewport = { wid
     performance: { now: () => now },
     setTimeout: (fn) => { timers.push(fn); return timers.length; }, clearTimeout: () => {},
     precisePointer: { matches: fine },
-    closeTooltip() {}, closeMenu() {}, activeTooltipButton: null, navigation: null, HTMLElement: Object,
+    closeTooltip() {}, closeMenu() {}, activeTooltipButton: null, tooltipPanel: null, navigation: null, HTMLElement: Object,
     requestAnimationFrame: fn => frames.push(fn), addEventListener: (event, fn) => events.set(event, fn)
   });
   const layer = () => body.children[0];

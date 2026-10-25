@@ -771,6 +771,12 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    [/^Show (\d+) more models$/, (_, n) => `再显示 ${n} 款车型`],
+    [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translate(value, 'zh-Hans')} — ${translate(label, 'zh-Hans')}`],
+    [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? '前轮' : '后轮'}`],
+    [/^unknown (1×|2×)$/, (_, layout) => `${layout} 未知`],
+    [/^Buying checks \((\d+)\)$/, (_, n) => `购买前核对（${n}）`],
+    [/^(\d+) published profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} 份已发布资料；${b} 份部分资料。缺失信息保留为未知。`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `报价记录于 ${date}。`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `历史报价记录于 ${date}。`],
     // Carbon-wheel reference (2026-10-20)
@@ -1384,3 +1390,32 @@ Object.assign(zh, {
 });
 
 Object.assign(zh, { "Frame + build": "车架＋装车预算", "Value assessment": "价格与配置评价" });
+
+Object.assign(zh, {
+  "models": "款车型",
+  "Profile coverage": "资料完整度",
+  "Partial profiles": "部分资料",
+  "Full evidence": "完整证据",
+  "Full price record and conditions": "完整报价记录与条件",
+  "Tire clearance evidence": "轮胎空间证据",
+  "Frame evidence": "车架证据",
+  "Trade-offs and buying checks": "取舍与购买前核对",
+  "Buying checks": "购买前核对",
+  "Tire fit for": "轮胎空间适用传动",
+  "Tire clearance drivetrain": "轮胎空间对应传动",
+  "Any drivetrain": "不限传动",
+  "1× drivetrain": "1× 单盘传动",
+  "2× drivetrain": "2× 双盘传动",
+  "bare frame": "未涂装车架",
+  "painted frame": "涂装车架",
+  "Overview": "概览"
+});
+
+Object.assign(zh, {
+  "Handlebar": "车把",
+  "Weight basis": "重量口径",
+  "Tire fit: 1×": "轮胎适配：1×",
+  "Tire fit: 2×": "轮胎适配：2×",
+  "1× unsupported": "不支持 1×",
+  "2× unsupported": "不支持 2×"
+});

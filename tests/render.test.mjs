@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { escapeHtml } from '../src/lib/html.mjs';
+import { clarifyMainlandInDisplayHtml } from '../src/lib/i18n.mjs';
 import { priceEvidenceLines } from '../assets/price-display.js';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
 import { loadPosts } from '../src/lib/posts.mjs';
@@ -196,7 +198,7 @@ test('candidate leads share the catalog without a separate research queue', () =
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
   assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+src="\/china-bike-research\/assets\/images\/sourced\/retailer\/xds-gt350-primary-image\/[^\"]+"[^>]+alt="XDS GT350 gravel bike shown from the drive side"/);
   assert.match(html, /<button[^>]*data-calculated-price[^>]*>¥8,597<\/button><\/div>/);
-  assert.match(html, /data-id="candidate-pardus-spark-sport-pes"[\s\S]*?<span class="product-meta" data-label="Research lead">/);
+  assert.match(html, /data-id="candidate-pardus-spark-sport-pes"[\s\S]*?<span class="product-meta">/);
   assert.match(html, /href="\/china-bike-research\/models\/missing-china-price-winspace-slc3\/" data-model-link/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
   assert.doesNotMatch(html, /Research queue/);
@@ -279,7 +281,7 @@ test('sparse candidate pages read as concise model articles without repeating em
   };
   const cyclone = candidates.find((entry) => entry.candidate.id === 'twitter-cyclone-sport');
   const detail = renderCandidateModel(context, cyclone);
-  assert.match(detail, /¥3,387 complete-bike lead under review/);
+  assert.match(detail, />Overview<\/h2>/);
   assert.match(detail, /Specifications and evidence/);
   assert.match(detail, /Buying context/);
   assert.match(detail, /About Twitter/i);
@@ -394,15 +396,15 @@ test('shared frameset platforms render variant-specific weight, basis, and carbo
   assert.ok(srPlus);
   const srDetail = renderModel(context, sr);
   const srPlusDetail = renderModel(context, srPlus);
-  assert.match(srDetail, /<dt>Weight<\/dt><dd>785 g frame<\/dd>/);
+  assert.match(srDetail, /<dt>Weight<\/dt><dd>785 g · bare frame/);
   assert.match(srDetail, /<dt>Weight basis<\/dt><dd>Size 54, unpainted, excluding paint and metal hardware<\/dd>/);
   assert.match(srDetail, /<dt>Frame material<\/dt><dd>M60 \+ T800 carbon<\/dd>/);
-  assert.match(srPlusDetail, /<dt>Weight<\/dt><dd>720 g frame<\/dd>/);
+  assert.match(srPlusDetail, /<dt>Weight<\/dt><dd>720 g · bare frame/);
   assert.match(srPlusDetail, /<dt>Frame material<\/dt><dd>80T pitch-based \+ T1100 carbon<\/dd>/);
-  assert.match(srPlusDetail, />720 g frame with 38\/32 mm \(1×\/2×\) tire clearance<\/h2>/);
+  assert.match(srPlusDetail, />Overview<\/h2>/);
   assert.doesNotMatch(srPlusDetail, /frame frame/);
-  assert.match(html, /data-id="incolor-speedster-sr-frameset"[\s\S]*?785 g<\/span><span class="metric-sub">frame<\/span>/);
-  assert.match(html, /data-id="incolor-speedster-sr-plus-frameset"[\s\S]*?720 g<\/span><span class="metric-sub">frame<\/span>/);
+  assert.match(html, /data-id="incolor-speedster-sr-frameset"[\s\S]*?785 g[\s\S]*?<span class="metric-sub">bare frame<\/span>/);
+  assert.match(html, /data-id="incolor-speedster-sr-plus-frameset"[\s\S]*?720 g[\s\S]*?<span class="metric-sub">bare frame<\/span>/);
 });
 
 test('complete-bike pages expose researched build components and weight basis without another profile section', () => {
@@ -456,7 +458,7 @@ test('superseded published bikes show availability instead of a historical price
   const detail = renderModel(context, oldTwitterAlloy);
   assert.match(detail, /<strong>Not sold new<\/strong>/);
   assert.match(detail, /Superseded by 2025 Gravel V3/);
-  assert.match(detail, /The dated price record below is historical only/);
+  assert.match(detail, /Historical price for a superseded model/);
   assert.match(detail, /¥3,991[\s\S]*Historical listing option · Historical price for a superseded model/);
   assert.doesNotMatch(detail, /The recorded complete-bike price is ¥3,991/);
 });
@@ -527,7 +529,7 @@ test('local builds use the live repository for public contribution links', () =>
 });
 
 test('category-specific details stay accessible while price state is visible', () => {
-  assert.match(html, /data-price-details="2026-08-08" aria-expanded="false"/);
+  assert.match(html, /data-price-details="2026-08-08"[^>]*aria-expanded="false"/);
   assert.doesNotMatch(html, /data-capability-kind="tire"/);
   assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"/);
   assert.doesNotMatch(html.match(/<div class="catalog-row[^>]*data-id="twitter-v3-wheeltop-eds"[^>]*>/)[0], /data-tire-clearance-sort=/);
@@ -589,17 +591,17 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
     siteUrl: 'https://example.github.io',
     now: new Date('2026-08-09T00:00:00Z')
   }, product);
-  assert.match(detail, /<dt>Weight<\/dt><dd>9\.9 kg<\/dd>/);
+  assert.match(detail, /<dt>Weight<\/dt><dd>9\.9 kg/);
   assert.match(detail, /Each source is labelled by what it supports/);
   assert.match(detail, /Twitter Bike USA · Regional distributor storefront · Image/);
   assert.match(detail, /Regional US distributor source/);
   assert.match(detail, /Historical source annotation:/);
   assert.match(detail, /Image: High/);
   assert.match(detail, /Archived evidence; no public link/);
-  assert.match(detail, /<section class="model-story"[^>]*>[\s\S]*9\.9 kg complete bike/);
+  assert.match(detail, /<section class="model-story"[^>]*>[\s\S]*>Overview<\/h2>/);
   assert.doesNotMatch(detail, /The short version/);
-  assert.match(detail, /The recorded complete-bike price is ¥4,951/);
-  assert.match(detail, /Best suited to electronic shifting value, budget performance, drop-bar gravel/);
+  assert.match(detail, /¥4,951/);
+  assert.match(detail, /Best for:<\/strong> electronic shifting value, budget performance, drop-bar gravel/);
   assert.match(detail, /<section class="detail-section specification-snapshot"[^>]*>[\s\S]*Specifications and evidence/);
   assert.match(detail, /Ride and buying context/);
   assert.match(detail, /About Twitter/i);
@@ -626,7 +628,7 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
     siteUrl: 'https://example.github.io',
     now: new Date('2026-08-09T00:00:00Z')
   }, falath);
-  assert.match(falathDetail, /<dt>Weight<\/dt><dd>1,080 g frame<\/dd>/);
+  assert.match(falathDetail, /<dt>Weight<\/dt><dd>1,080 g · frame/);
   assert.match(falathDetail, /<dt>Frame weight<\/dt><dd>1,080 g<\/dd>/);
 });
 
@@ -848,7 +850,7 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   const publishedDetail = renderModel(context, publishedFrame);
   assert.match(publishedDetail, /data-model-frame-price-low="3987" data-model-frame-price-high="3987" data-model-default-allowance="6000"/);
   assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,987/);
-  assert.match(publishedDetail, /data-model-price-brief/);
+  assert.match(publishedDetail, /data-evidence-href="#source-records"/);
   assert.match(publishedDetail, /Included package/);
   assert.doesNotMatch(publishedDetail, /<dt>Drivetrain<\/dt>/);
 
@@ -1070,7 +1072,7 @@ test('Arden candidate keeps drivetrain clearance in catalog, profile and planner
   const context = { data, products, base: '/china-bike-research', repositoryUrl: 'https://github.com/p0s/china-bike-research' };
   const row = html.match(/<div class="catalog-row is-candidate"[^>]*data-id="candidate-tavelo-arden"[\s\S]*?(?=<div class="catalog-row|<\/div>\s*<\/div>\s*<\/section>)/)?.[0];
   assert.ok(row);
-  assert.match(row, /38\/34 mm<\/span><span class="metric-sub">1× \/ 2×<\/span>/);
+  assert.match(row, /38 mm 1×<\/span><span class="metric-sub">34 mm 2×<\/span>/);
   assert.match(row, /data-tire-clearance-sort="38"/);
   const profile = renderCandidateModel(context, entry);
   assert.match(profile, /38\/34 mm \(1×\/2×\)/);
@@ -1103,4 +1105,24 @@ test('catalog price dates stay in accessible evidence and not repeated in the vi
   const priced = catalogSummaries({ data, products }).filter((item) => item.priceDate);
   assert.ok(priced.length > 20);
   assert.ok(priced.every((item) => priceEvidenceLines(item).join(' ').includes(item.priceDate)));
+});
+
+
+test('compact model presentation retains complete source observations and editorial caveats', () => {
+  const escape = (value) => clarifyMainlandInDisplayHtml(escapeHtml(value));
+  for (const product of products) {
+    const detail = renderModel({ data, products, base: '' }, product);
+    for (const report of product.platform.tire_clearance?.field_reports ?? []) {
+      assert.ok(detail.includes(escape(report.summary)), `${product.variant.id}: complete field observation`);
+      assert.ok(detail.includes(escape(report.configuration)), `${product.variant.id}: tested setup`);
+    }
+    for (const caveat of product.variant.editorial.caveats ?? []) {
+      assert.ok(detail.includes(escape(String(caveat).trim().replace(/[.;]+$/, ''))), `${product.variant.id}: buying caveat`);
+    }
+    for (const price of product.prices) {
+      if (price.conditions) assert.ok(detail.includes(escape(price.conditions)), `${product.variant.id}: price conditions`);
+    }
+    assert.match(detail, /id="frame-evidence"/);
+    if (product.platform.tire_clearance) assert.match(detail, /id="tire-clearance-evidence"/);
+  }
 });

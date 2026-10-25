@@ -3,8 +3,8 @@ import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
-import { priceDisplay, deliveredLine, priceEvidenceLines, compactPriceBasis } from './price-display.js';
-import { clearanceParts, weightParts } from './catalog-format.js';
+import { priceDisplay, deliveredLine, pricePopoverLines, compactPriceBasis } from './price-display.js';
+import { clearanceParts, weightParts, catalogClearance } from './catalog-format.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
@@ -101,6 +101,15 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       }
     }).observe(document.body, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'title', 'placeholder', 'alt'] });
   }
+  function revealEvidenceTarget() {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    let detail = target?.closest('details');
+    while (detail) { detail.open = true; detail = detail.parentElement?.closest('details'); }
+  }
+  addEventListener('hashchange', revealEvidenceTarget);
+  revealEvidenceTarget();
   const selectionStorageKey = 'china-bike-guide-selection-v2';
   const comparisonSelectionLimit = COMPARISON_SELECTION_LIMIT;
   const buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1';
@@ -300,6 +309,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const precisePointer = matchMedia('(hover: hover) and (pointer: fine)');
   let activeTooltipButton = null;
   let tooltipPinned = false;
+  let tooltipFocusSuppressed = false;
   let tooltipDismissTimer = null;
 
   function cancelTooltipDismiss() {
@@ -314,7 +324,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       tooltipDismissTimer = null;
       if (tooltipPinned) return;
       if (activeTooltipButton?.matches(':hover') || document.activeElement === activeTooltipButton) return;
-      if (tooltipPanel instanceof HTMLElement && tooltipPanel.matches(':hover')) return;
+      if (tooltipPanel instanceof HTMLElement && (tooltipPanel.matches(':hover') || tooltipPanel.contains(document.activeElement))) return;
       closeTooltip();
     }, 140);
   }
@@ -416,13 +426,22 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
           ?? (/^\d{4}-\d{2}-\d{2}$/.test(button.dataset.priceDetails) ? [translate(`Price observed ${button.dataset.priceDetails}.`, locale)] : [])
         : JSON.parse(button.dataset.tooltipLines ?? '[]');
     } catch { lines = []; }
-    if (!Array.isArray(lines) || !lines.length) return;
+    if (!Array.isArray(lines) || (!lines.length && !button.dataset.evidenceHref)) return;
     if (activeTooltipButton && activeTooltipButton !== button) closeTooltip();
     tooltipPanel.replaceChildren(...lines.map((line) => {
       const span = document.createElement('span');
       span.textContent = String(line);
       return span;
     }));
+    if (button.dataset.evidenceHref) {
+      const link = document.createElement('a');
+      link.href = button.dataset.evidenceHref;
+      link.textContent = translate(button.dataset.evidenceLabel || 'Full evidence', locale);
+      tooltipPanel.append(link);
+    }
+    tooltipPanel.setAttribute('role', button.dataset.evidenceHref ? 'dialog' : 'tooltip');
+    if (button.dataset.evidenceHref) tooltipPanel.setAttribute('aria-label', button.getAttribute('aria-label') || translate('Price details', locale));
+    else tooltipPanel.removeAttribute('aria-label');
     tooltipPanel.hidden = false;
     activeTooltipButton = button;
     tooltipPinned = pinned;
@@ -445,10 +464,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (precisePointer.matches && activeTooltipButton === button && !tooltipPinned) scheduleTooltipClose();
     });
     button.addEventListener('focus', () => requestAnimationFrame(() => {
-      if (document.activeElement === button && button.matches(':focus-visible') && activeTooltipButton !== button) openTooltip(button);
+      if (!tooltipFocusSuppressed && document.activeElement === button && button.matches(':focus-visible') && activeTooltipButton !== button) openTooltip(button);
     }));
     button.addEventListener('blur', () => requestAnimationFrame(() => {
-      if (activeTooltipButton === button && document.activeElement !== button && !(tooltipPanel instanceof HTMLElement && tooltipPanel.matches(':hover'))) closeTooltip();
+      if (activeTooltipButton === button && document.activeElement !== button && !(tooltipPanel instanceof HTMLElement && (tooltipPanel.matches(':hover') || tooltipPanel.contains(document.activeElement)))) closeTooltip();
     }));
     button.addEventListener('click', () => toggleTooltip(button));
   }
@@ -456,7 +475,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   tooltipPanel?.addEventListener('mouseenter', cancelTooltipDismiss);
   tooltipPanel?.addEventListener('mouseleave', scheduleTooltipClose);
-  tooltipPanel?.addEventListener('pointerdown', (event) => event.preventDefault());
+  tooltipPanel?.addEventListener('pointerdown', (event) => { if (!event.target.closest('a')) event.preventDefault(); });
+  tooltipPanel?.addEventListener('focusout', () => requestAnimationFrame(() => { if (!tooltipPanel.contains(document.activeElement) && document.activeElement !== activeTooltipButton) closeTooltip(); }));
   // One shared, pointer-transparent layer shows a large uncropped photo beside
   // the hovered or focused thumbnail. The row and its link never change size,
   // so neighbouring facts stay put and remain reachable.
@@ -716,16 +736,36 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   });
   document.addEventListener('click', (event) => {
     const target = event.target instanceof Element ? event.target : null;
-    if (!target?.closest('[data-tooltip-lines], [data-price-details]')) closeTooltip();
+    if (!target?.closest('[data-tooltip-lines], [data-price-details], #shared-tooltip')) closeTooltip();
     if (!target?.closest('.menu-button') && !target?.closest('#main-nav')) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab' && activeTooltipButton?.dataset.evidenceHref && !tooltipPanel?.hidden) {
+      if (document.activeElement === activeTooltipButton && !event.shiftKey) {
+        tooltipPanel.querySelector('a')?.focus();
+        event.preventDefault();
+        return;
+      }
+      if (tooltipPanel.contains(document.activeElement)) {
+        const button = activeTooltipButton;
+        if (!event.shiftKey) closeTooltip();
+        button.focus({ preventScroll: true });
+        if (event.shiftKey) event.preventDefault();
+        return;
+      }
+    }
     if (event.key !== 'Escape') return;
+    const returnFocus = tooltipPanel?.contains(document.activeElement) ? activeTooltipButton : null;
     const hadTooltip = activeTooltipButton !== null;
     const hadImagePreview = activeImagePreview !== null || pendingImagePreviewFocus !== null;
     const hadMenu = navigation instanceof HTMLElement && navigation.classList.contains('open');
     if (!hadTooltip && !hadImagePreview && !hadMenu) return;
     closeTooltip();
+    if (returnFocus) {
+      tooltipFocusSuppressed = true;
+      returnFocus.focus({ preventScroll: true });
+      requestAnimationFrame(() => { tooltipFocusSuppressed = false; });
+    }
     closeImagePreview();
     closeMenu({ restoreFocus: hadMenu });
     event.preventDefault();
@@ -811,6 +851,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const priceLabel = `${modelFramePrice.hasAttribute('data-model-price-starting') ? translate('From', locale) + ' ' : ''}${formatEstimatedRange(frameLow + allowance, frameHigh + allowance)}`;
     const calculated = modelFramePrice.querySelector('[data-model-calculated-price]');
     if (calculated) calculated.textContent = priceLabel;
+    const priceTip = modelFramePrice.querySelector('[data-tooltip-lines]');
+    if (priceTip) {
+      try {
+        priceTip.dataset.tooltipLines = JSON.stringify(JSON.parse(priceTip.dataset.tooltipLines).map((line) =>
+          line.startsWith('Estimated complete adds') ? `Estimated complete adds ${formatYuan(allowance)} for the selected build.` : line));
+      } catch { /* The complete price record remains accessible. */ }
+    }
     const brief = document.querySelector('[data-model-price-brief]');
     if (brief) {
       const current = String(brief.textContent ?? '');
@@ -860,7 +907,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   catalogRoot.dataset.catalogReady = 'true';
   const byId = new Map(products.map((item) => [item.id, item]));
   products.forEach((item) => {
-    priceTooltipContent.set(item.id, priceEvidenceLines(item).map((line) => translate(line, locale)));
+    priceTooltipContent.set(item.id, pricePopoverLines(item).map((line) => translate(line, locale)));
     item.priceState = compactPriceBasis(item.priceState ?? '');
   });
   products.forEach((item) => {
@@ -901,18 +948,19 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let destinationReason = 'unknown';
   let heldRegional = null; // link choices kept while regional prices or a budget currency cannot be resolved
   const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
-  const originalPriceTips = new Map(products.map((item) => [item.id, priceEvidenceLines(item)]));
+  const originalPriceTips = new Map(products.map((item) => [item.id, pricePopoverLines(item)]));
   if (regionalData) document.querySelector('[data-price-preferences]').hidden = false;
   const empty = catalogRoot.querySelector('[data-empty]');
   const resultCount = catalogRoot.querySelector('[data-result-count]');
   const resultSummary = catalogRoot.querySelector('[data-result-summary]');
   const resultContext = catalogRoot.querySelector('[data-result-context]');
-  const resultSplit = catalogRoot.querySelector('[data-result-split]');
+  const resultCoverage = catalogRoot.querySelector('[data-result-coverage]');
   const filterNotice = catalogRoot.querySelector('[data-filter-notice]');
   const search = document.querySelector('[data-filter-search]');
   const price = catalogRoot.querySelector('[data-filter-price]');
   const tire = catalogRoot.querySelector('[data-filter-tire]');
   const tireUnknown = catalogRoot.querySelector('[data-filter-tire-unknown]');
+  const tireLayout = catalogRoot.querySelector('[data-filter-tire-layout]');
   const completeWeight = catalogRoot.querySelector('[data-filter-complete-weight]');
   const frameWeight = catalogRoot.querySelector('[data-filter-frame-weight]');
   const drivetrainFilter = catalogRoot.querySelector('[data-filter-drivetrain]');
@@ -1004,7 +1052,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   // Research leads follow published records in the default order.
   const leadDivider = Object.assign(document.createElement('div'), { className: 'catalog-divider', hidden: true });
   leadDivider.setAttribute('role', 'row');
-  leadDivider.append(Object.assign(document.createElement('span'), { textContent: translate('Research leads — identified bikes still missing publication evidence', locale) }));
+  leadDivider.append(Object.assign(document.createElement('span'), { textContent: translate('Partial profiles', locale) }));
   leadDivider.firstElementChild.setAttribute('role', 'cell');
 
   const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' };
@@ -1256,7 +1304,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         .replace(/Great-buy reference: below ¥[\d,]+ complete/, item.greatBuyFrameThreshold
           ? `Great-buy reference: below ${formatYuan(Number(item.greatBuyFrameThreshold) + currentBuildAllowance)} complete`
           : 'Great-buy reference: below complete');
-      priceTooltipContent.set(item.id, priceEvidenceLines(item).map((line) => translate(line, locale)));
+      priceTooltipContent.set(item.id, pricePopoverLines(item).map((line) => translate(line, locale)));
     });
     updateRegionalPrices();
     updateSettingsSummary();
@@ -1265,8 +1313,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   function updateModelLinks() {
     const from = `${location.pathname}${location.search}#catalog`;
-    modelLinks.forEach((link) => {
-      const target = new URL(link.dataset.baseHref || link.getAttribute('href') || '', location.origin);
+    [...modelLinks, ...document.querySelectorAll('[data-evidence-href]')].forEach((link) => {
+      const evidence = link.hasAttribute('data-evidence-href');
+      const target = new URL(evidence ? link.dataset.evidenceHref : link.dataset.baseHref || link.getAttribute('href') || '', location.origin);
       target.searchParams.set('from', from);
       setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
       target.searchParams.delete('market');
@@ -1274,7 +1323,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       setParam(target, 'currency', activeCurrency);
       setParam(target, 'area', activeCountry === 'US' ? activeArea : '');
       if (heldRegional) writeRegionalHold(target, heldRegional, ['ship', 'currency', 'area']);
-      link.href = `${target.pathname}${target.search}`;
+      if (evidence) link.dataset.evidenceHref = `${target.pathname}${target.search}${target.hash}`;
+      else link.href = `${target.pathname}${target.search}`;
     });
   }
 
@@ -1290,6 +1340,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setParam(next, 'currency', activeCurrency);
     setParam(next, 'area', activeCountry === 'US' ? activeArea : '');
     setParam(next, 'tire', tire?.value);
+    setParam(next, 'tireLayout', tireLayout?.value);
     setParam(next, 'tireUnknown', tireUnknown?.checked ? '1' : '');
     setParam(next, 'completeWeight', completeWeight?.value);
     setParam(next, 'frameWeight', frameWeight?.value);
@@ -1338,12 +1389,40 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function hasFilters() {
-    return Boolean(heldRegional?.limit || heldRegional?.listing || activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
+    return Boolean(heldRegional?.limit || heldRegional?.listing || activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tireLayout?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
   }
 
   function numericValue(input, multiplier = 1) {
     const value = Number(input?.value || 0);
     return Number.isFinite(value) && value > 0 ? value * multiplier : 0;
+  }
+
+  let appliedTireLayout = null;
+  function updateTireLayout() {
+    const layout = tireLayout?.value || '';
+    if (layout === appliedTireLayout) return;
+    appliedTireLayout = layout;
+    rows.forEach((row) => {
+      const item = byId.get(row.dataset.id);
+      if (!item) return;
+      const shown = catalogClearance(item, tireLayout?.value);
+      row.dataset.tireClearanceSort = shown.sortValue ? String(shown.sortValue) : '';
+      row.dataset.tireLayoutUnsupported = String(Boolean(shown.unsupported));
+      const cell = row.querySelector('.tire-clearance-cell');
+      if (!cell) return;
+      const tip = cell.querySelector('.tooltip');
+      const parts = clearanceParts(shown.label);
+      const factButton = tip?.querySelector('.fact-button');
+      const main = element('span', 'metric-main', factButton ? '' : translate(parts.main, locale));
+      if (factButton) {
+        factButton.textContent = translate(parts.main, locale);
+        factButton.setAttribute('aria-label', `${translate(parts.main, locale)} — ${translate('Tire clearance details', locale)}`);
+      }
+      if (tip) main.append(tip);
+      cell.replaceChildren(main);
+      if (parts.sub) cell.append(element('span', 'metric-sub', translate(parts.sub, locale)));
+      cell.classList.toggle('is-unknown', shown.label === '—');
+    });
   }
 
   function matchesTypedFilters(row) {
@@ -1362,7 +1441,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const frame = normalizeMaterialSearch(frameFilter?.value);
     const categoryLimit = numericValue(categoryMinimum);
     const categoryKind = categoryMinimum?.dataset.kind ?? '';
-    return !regionalHoldBlocks(heldRegional, maxPrice) &&
+    return row.dataset.tireLayoutUnsupported !== 'true' && !regionalHoldBlocks(heldRegional, maxPrice) &&
       (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       (!minTire || tireValue >= minTire || (!tireValue && tireUnknown?.checked)) &&
       weightMatches &&
@@ -1545,6 +1624,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   function clearTypedFilter(key) {
     const control = key === 'price' ? price
       : key === 'tire' ? tire
+        : key === 'tire-layout' ? tireLayout
         : key === 'tire-unknown' ? tireUnknown
           : key === 'complete-weight' ? completeWeight
             : key === 'frame-weight' ? frameWeight
@@ -1554,7 +1634,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
                     : key === 'published' ? publishedFilter
                       : key === 'listing' ? listingFilter
                         : null;
-    if (control instanceof HTMLInputElement) {
+    if (control instanceof HTMLInputElement || control instanceof HTMLSelectElement) {
       if (control.type === 'checkbox') control.checked = false;
       else control.value = '';
     }
@@ -1580,6 +1660,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}${heldRegional?.destination ? ` · ${translate('not checked', locale)}` : ''}`]);
     else if (heldRegional?.limit) chips.push(['price', `${translate('Price', locale)} ≤ ${formatRequestedBudget(heldRegional.limit.amount, heldRegional.limit.currency, locale)} · ${translate('not checked', locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
+    if (tireLayout?.value) chips.push(['tire-layout', tireLayout.value === 'single' ? 'Tire fit: 1×' : 'Tire fit: 2×']);
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
     if (frameWeight?.value) chips.push(['frame-weight', `Frame ≤ ${frameWeight.value} g`]);
@@ -1620,7 +1701,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const active = field === 'weight'
         ? activeKeys.has('complete-weight') || activeKeys.has('frame-weight')
         : field === 'tire'
-          ? activeKeys.has('tire') || activeKeys.has('tire-unknown')
+          ? activeKeys.has('tire') || activeKeys.has('tire-unknown') || activeKeys.has('tire-layout')
           : field === 'search' ? activeKeys.has('query') : activeKeys.has(field);
       button.classList.toggle('is-active', active);
     });
@@ -1630,7 +1711,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   // Zero results offer the changes that restore the most bikes, without side effects.
   function countWithout(key) {
-    const controls = { price, tire, 'tire-unknown': tireUnknown, 'complete-weight': completeWeight, 'frame-weight': frameWeight, drivetrain: drivetrainFilter, frame: frameFilter, category: categoryMinimum, published: publishedFilter, listing: listingFilter, query: search, family: category };
+    const controls = { price, tire, 'tire-layout': tireLayout, 'tire-unknown': tireUnknown, 'complete-weight': completeWeight, 'frame-weight': frameWeight, drivetrain: drivetrainFilter, frame: frameFilter, category: categoryMinimum, published: publishedFilter, listing: listingFilter, query: search, family: category };
     const control = controls[key];
     const savedType = activeType;
     const savedBrand = activeBrand;
@@ -1641,11 +1722,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     }
     if (key === 'type') activeType = '';
     if (key === 'brand') activeBrand = '';
+    if (key === 'tire-layout') updateTireLayout();
     const total = rows.filter(rowMatches).length;
     if (control) {
       if (control.type === 'checkbox') control.checked = saved;
       else control.value = saved;
     }
+    if (key === 'tire-layout') updateTireLayout();
     activeType = savedType;
     activeBrand = savedBrand;
     return total;
@@ -1677,6 +1760,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function updateCatalog({ historyMode = null } = {}) {
+    updateTireLayout();
     const tireUnknownCleared = syncTireUnknownAvailability();
     const categoryFilterCleared = updateCategoryMinimumAvailability();
     const matching = rows.filter(rowMatches);
@@ -1719,9 +1803,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (firstLead) productList?.insertBefore(leadDivider, firstLead);
     if (resultCount) resultCount.textContent = String(visible);
     if (sheetResultCount) sheetResultCount.textContent = translate(`Show ${visible} results`, locale);
-    if (resultSplit) {
-      resultSplit.hidden = !publishedFirst || !visiblePublished || !visibleLeads;
-      resultSplit.textContent = ` ${translate(`· ${visiblePublished} published, then ${visibleLeads} research leads`, locale)}`;
+    if (resultCoverage) {
+      const visiblePublished = matching.filter((row) => row.dataset.stage !== 'candidate').length;
+      const visibleLeads = visible - visiblePublished;
+      resultCoverage.dataset.tooltipLines = JSON.stringify([translate(`${visiblePublished} published profiles; ${visibleLeads} partial profiles. Missing facts remain unknown.`, locale)]);
     }
     if (resultContext) resultContext.textContent = activeBrand ? ` for ${brandLabels.get(activeBrand) ?? activeBrand}` : '';
     if (filterNotice) filterNotice.textContent = (categoryFilterCleared ? ' · incompatible category filter cleared' : '')
@@ -1733,7 +1818,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (reset) reset.hidden = !hasFilters();
     if (showAllModels instanceof HTMLButtonElement) {
       showAllModels.setAttribute('aria-pressed', String(allModelsVisible));
-      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenLeadCount} more research leads`, locale);
+      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenLeadCount} more models`, locale);
     }
     if (historyMode) updateFilterUrl(historyMode);
     else if (tireUnknownCleared || categoryFilterCleared || sortCorrected) updateFilterUrl('replace');
@@ -1785,6 +1870,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (search) search.value = requestedSearch;
     if (price) price.value = heldRegional?.limit || convertedLimit === null ? '' : String(convertedLimit);
     if (tire) tire.value = requestedTire;
+    if (tireLayout) tireLayout.value = validSelectValue(tireLayout, params.get('tireLayout') ?? '');
     if (tireUnknown instanceof HTMLInputElement) tireUnknown.checked = requestedTireUnknown;
     if (completeWeight) completeWeight.value = params.get('completeWeight') ?? '';
     if (frameWeight) frameWeight.value = params.get('frameWeight') ?? '';
@@ -1808,6 +1894,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const corrected = requestedSearch !== (search?.value ?? '') ||
       requestedPrice !== (price?.value ?? '') ||
       requestedTire !== (tire?.value ?? '') ||
+      (params.get('tireLayout') ?? '') !== (tireLayout?.value ?? '') ||
       requestedTireUnknown !== Boolean(tireUnknown?.checked) ||
       requestedCategoryMinimum !== (categoryMinimum?.value ?? '') ||
       requestedCategory !== (category?.value ?? '') ||
@@ -1889,7 +1976,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }));
   function resetCatalog() {
     if (search) search.value = '';
-    ['price', 'tire', 'tire-unknown', 'complete-weight', 'frame-weight', 'drivetrain', 'frame', 'category', 'published', 'listing'].forEach(clearTypedFilter);
+    ['price', 'tire', 'tire-layout', 'tire-unknown', 'complete-weight', 'frame-weight', 'drivetrain', 'frame', 'category', 'published', 'listing'].forEach(clearTypedFilter);
     if (category) category.value = '';
     if (sort) sort.value = defaultSort;
     updateFramesetPrices(defaultBuildAllowance, { highlight: true, presetId: defaultBuildPreset });
@@ -2132,7 +2219,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
       title.href = `${target.pathname}${target.search}`;
     }
-    const type = element('span', 'compare-type', [item.type, item.stage === 'candidate' ? translate('Research lead', locale) : ''].filter(Boolean).join(' · '));
+    const type = element('span', 'compare-type', item.type);
     const orderControls = element('div', 'compare-order-controls');
     orderControls.setAttribute('role', 'group');
     orderControls.setAttribute('aria-label', `Reorder ${label}`);
@@ -2243,10 +2330,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   function comparePrice(item) {
     const cell = valueCell(item.price, item.priceState);
-    if (priceTooltipContent.get(item.id)?.length) {
+    if ((priceTooltipContent.get(item.id)?.length || item.priceDetails)) {
       const button = element('button', 'price-button', item.price);
       button.type = 'button';
       button.dataset.priceDetails = item.id;
+      button.dataset.evidenceHref = `${item.url}#source-records`;
+      button.dataset.evidenceLabel = 'Full price record and conditions';
       button.setAttribute('aria-expanded', 'false');
       cell.firstElementChild.replaceWith(button);
       bindTooltip(button);
@@ -2268,23 +2357,24 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     });
     const hasValue = (key) => items.some((item) => item[key] && item[key] !== '—');
     const clearance = (item) => {
-      const parts = clearanceParts(item.tireClearance);
+      const parts = clearanceParts(catalogClearance(item, tireLayout?.value).label);
       const cell = valueCell(parts.main, parts.sub);
       // A transcript-checked reviewer fit observation stays visibly separate from the maximum.
       if (item.tireClearanceFieldReport) cell.append(element('small', 'compare-field-report', translate(item.tireClearanceFieldReport, locale)));
       return cell;
     };
     // Complete-bike and frame-only weights never share a row.
-    const weightKindOf = (item) => !item.weight || item.weight === '—' ? '' : / frame$/.test(item.weight) ? 'frame' : 'complete';
+    const weightKindOf = (item) => item.weightKind || (!item.weight || item.weight === '—' ? '' : / (?:frame|Rahmen|车架)$/.test(item.weight) ? 'frame' : 'complete');
     const weightBy = (kind) => (item) => {
       if (weightKindOf(item) !== kind) return valueCell('—');
-      const parts = weightParts(item.weight, item.kind);
-      return valueCell(parts.main, parts.sub === 'frame only' ? parts.sub : '');
+      const parts = weightParts(item.weight, item.kind, item.weightBasis);
+      return valueCell(parts.main, parts.sub === 'frame' ? '' : parts.sub);
     };
     const hasWeight = (kind) => items.some((item) => weightKindOf(item) === kind);
     const geometryItems = items.filter((item) => item.geometryId);
-    const geometryLink = () => {
+    const geometryLink = (item) => {
       const cell = element('div', 'compare-value');
+      if (item.id !== items[0].id) return cell;
       const link = element('a', '', translate('Compare stack and reach', locale));
       const target = new URL(`${document.body.dataset.base || ''}/geometry/`, location.origin);
       target.searchParams.set('a', geometryItems[0].geometryId);
@@ -2308,12 +2398,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       ['Frame & standards', [
         ...(hasValue('frame') ? [['Frame', (item) => valueCell(item.frame), 'frame']] : [])
       ]],
-      ['Assessment', [
-        ...(hasValue('bestFor') ? [['Best for', (item) => valueCell(item.bestFor), 'best-for']] : []),
-        ...(hasValue('verdict') ? [['Verdict', (item) => valueCell(item.verdict), 'verdict']] : []),
-        ...(hasValue('caveats') ? [['Verify before paying', (item) => valueCell(item.caveats && item.caveats !== 'None recorded' ? item.caveats : '—'), 'caveats']] : [])
-      ]],
       ...(geometryItems.length >= 1 ? [['', [['Geometry', geometryLink, 'geometry']]]] : [])
+    ];
+    const assessmentFields = [
+      ...(hasValue('bestFor') ? [['Best for', (item) => valueCell(item.bestFor)]] : []),
+      ...(hasValue('verdict') ? [['Verdict', (item) => valueCell(item.verdict)]] : []),
+      ...(hasValue('caveats') ? [['Buying checks', (item) => valueCell(item.caveats && item.caveats !== 'None recorded' ? item.caveats : '—')]] : [])
     ];
     const secondaryFields = [
       ...(hasValue('internalFrameStorage') ? [['Internal frame storage', (item) => valueCell(item.internalFrameStorage)]] : []),
@@ -2329,13 +2419,18 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       translate(mixedCategories
         ? 'These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.'
         : '', locale),
-      translate('Prices exclude shipping and import unless marked Delivered. Nothing here is ranked.', locale)
+      translate('Prices exclude shipping and import unless marked Delivered.', locale)
     ].filter(Boolean);
     const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, notes.join(' '));
-    const orderHint = element('p', 'compare-order-hint', 'Use the arrow controls to reorder columns. The comparison link keeps this order.');
+    const orderHint = element('p', 'compare-order-hint sr-only', 'Use the arrow controls to reorder columns. The comparison link keeps this order.');
     const grid = comparisonGrid(items, groups, true);
     grid.classList.toggle('is-differences-only', Boolean(compareDifferences?.checked));
     compareContent.replaceChildren(context, orderHint, grid);
+    if (assessmentFields.length) {
+      const assessment = element('details', 'compare-more');
+      assessment.append(element('summary', '', translate('Trade-offs and buying checks', locale)), comparisonGrid(items, [['', assessmentFields]]));
+      compareContent.append(assessment);
+    }
     if (secondaryFields.length) {
       const more = element('details', 'compare-more');
       more.append(element('summary', '', translate('More details', locale)), comparisonGrid(items, [['', secondaryFields]]));
@@ -2353,6 +2448,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setParam(next, 'start', startingPoint);
     setParam(next, 'diff', compareDifferences?.checked ? '1' : '');
     try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }
+    updateModelLinks();
   }
 
   function openComparison({ scroll = true, focus = scroll } = {}) {
@@ -2381,6 +2477,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   openCompareButton?.addEventListener('click', () => openComparison());
   document.querySelector('[data-clear-selection]')?.addEventListener('click', () => setSelection([]));
   catalogRoot.querySelector('[data-close-compare]')?.addEventListener('click', () => closeComparison({ restoreFocus: true }));
+  tireLayout?.addEventListener('change', () => { updateCatalog({ historyMode: 'push' }); if (comparePanel && !comparePanel.hidden) renderComparison(); });
   compareDifferences?.addEventListener('change', () => { if (selection.length >= 2) renderComparison(); });
   catalogRoot.querySelector('[data-copy-comparison]')?.addEventListener('click', async (event) => {
     if (selection.length >= 2) renderComparison();

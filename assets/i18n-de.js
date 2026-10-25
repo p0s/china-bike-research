@@ -1471,6 +1471,12 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    [/^Show (\d+) more models$/, (_, n) => `${n} weitere Modelle zeigen`],
+    [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translateGerman(value)} — ${translateGerman(label)}`],
+    [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? 'vorn' : 'hinten'}`],
+    [/^unknown (1×|2×)$/, (_, layout) => `${layout} unbekannt`],
+    [/^Buying checks \((\d+)\)$/, (_, n) => `Kaufprüfung (${n})`],
+    [/^(\d+) published profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} veröffentlichte Profile; ${b} Teilprofile. Fehlende Angaben bleiben unbekannt.`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Preis erfasst am ${date}.`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Historischer Preis erfasst am ${date}.`],
     // Carbon-wheel reference (2026-10-20)
@@ -2090,3 +2096,32 @@ Object.assign(de, {
 });
 
 Object.assign(de, { "Frame + build": "Rahmen + Aufbau", "Value assessment": "Preis-Leistungs-Einschätzung" });
+
+Object.assign(de, {
+  "models": "Modelle",
+  "Profile coverage": "Profilumfang",
+  "Partial profiles": "Teilprofile",
+  "Full evidence": "Vollständige Belege",
+  "Full price record and conditions": "Preisbeleg und Bedingungen",
+  "Tire clearance evidence": "Belege zur Reifenfreiheit",
+  "Frame evidence": "Rahmenbelege",
+  "Trade-offs and buying checks": "Abwägungen und Kaufprüfung",
+  "Buying checks": "Kaufprüfung",
+  "Tire fit for": "Reifenfreiheit für",
+  "Tire clearance drivetrain": "Antrieb für Reifenfreiheit",
+  "Any drivetrain": "Alle Antriebe",
+  "1× drivetrain": "1×-Antrieb",
+  "2× drivetrain": "2×-Antrieb",
+  "bare frame": "Unlackierter Rahmen",
+  "painted frame": "Lackierter Rahmen",
+  "Overview": "Überblick"
+});
+
+Object.assign(de, {
+  "Handlebar": "Lenker",
+  "Weight basis": "Gewichtsgrundlage",
+  "Tire fit: 1×": "Reifenfreiheit: 1×",
+  "Tire fit: 2×": "Reifenfreiheit: 2×",
+  "1× unsupported": "1× nicht unterstützt",
+  "2× unsupported": "2× nicht unterstützt"
+});
