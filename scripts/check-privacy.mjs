@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/carbon-fiber-t700-t800-claims-mascot-cover-4c9cf0dc30-640-e800668530.avif', 'e80066853067c746fc14aa1816cb6159595d06182014b6d7395ba81c2d0dd6ff'],
+  ['assets/blog/carbon-fiber-t700-t800-claims-mascot-cover-4c9cf0dc30-1600-b359f20619.avif', 'b359f20619fd0bf6ad89d50eb84fc4a387a9af17a7abf6bb736903c84a18fd1b'],
+  ['assets/blog/carbon-fiber-t700-t800-claims-mascot-cover-4c9cf0dc30-1200.jpg', '65d2aee2921f7970885b0c0b5f45c196cb81a3d1222edbeac10c5f284bd7fe3a'],
   ['assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-640-87f9f465ba.avif', '87f9f465bae8174ec3b2e9d85a9b526c096c6e08c4982a5bb816e57cda0e972a'],
   ['assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-1600-a43ff6d877.avif', 'a43ff6d8770d5258725cbe7a4e1ba76bf70a52a6fe33db801de544a17911b375'],
   ['assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-1200.jpg', '4d712c7920e741987533dc951cbf5cbeb71d0ea5becb12345adfb61d7ab8907d'],
