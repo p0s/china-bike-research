@@ -12,8 +12,15 @@ export function priceAgeLabel(date, today = '') {
   return `${Math.max(3, Math.round(days / 30.4))} mo old`;
 }
 
-function yuan(value, locale) {
-  return formatMoneyRange(value, value, 'CNY', locale);
+// Dates remain in the evidence payload and price popover, not every table row.
+export function compactPriceBasis(basis = '') {
+  return basis.split(' · ').filter((part) => !/^\d{4}-\d{2}-\d{2}$/.test(part)).join(' · ');
+}
+
+export function priceEvidenceLines(item) {
+  const details = item.priceDetails || '';
+  const dated = details.match(/(?:Historical price|Price) observed \d{4}-\d{2}-\d{2}\./)?.[0];
+  return [dated || (item.priceDate ? `Price observed ${item.priceDate}.` : ''), dated ? details.replace(dated, '').trim() : details].filter(Boolean);
 }
 
 /**
@@ -32,17 +39,18 @@ export function priceDisplay(projection, { currency = 'CNY', allowance = 0, loca
   if (!Number.isFinite(display?.low) || !Number.isFinite(display?.high)) {
     return {
       headline: t(fallback?.headline || '—'),
-      basis: fallback?.basis ? t(fallback.basis) : t('No comparable price'),
+      basis: fallback?.basis ? t(compactPriceBasis(fallback.basis)) : t('No comparable price'),
+      date: referenceDate,
       tone: 'unknown',
       stale: false
     };
   }
   if (display.basis === 'delivered') {
-    const basis = [t(projection.state === 'confirmed' ? 'Delivered' : 'Delivered, seller estimate'), projection.offer?.date];
+    const basis = [t(projection.state === 'confirmed' ? 'Delivered' : 'Delivered, seller estimate')];
     if (china) basis.push(`${t('China price')} ${formatMoneyRange(china.low, china.high ?? china.low, 'CNY', locale)}`);
     return {
       headline: formatMoneyRange(display.low, display.high, currency, locale, { approximate: display.approximate }),
-      basis: basis.filter(Boolean).join(' · '), tone: projection.state === 'estimated' ? 'attention' : '', stale: false
+      basis: basis.filter(Boolean).join(' · '), date: projection.offer?.date || '', tone: projection.state === 'estimated' ? 'attention' : '', stale: false
     };
   }
   const converted = currency !== 'CNY';
@@ -52,13 +60,11 @@ export function priceDisplay(projection, { currency = 'CNY', allowance = 0, loca
   const prefix = display.starting ? `${t('From')} ` : frame ? `${t('Est.')} ` : '';
   const headline = `${prefix}${formatMoneyRange(display.low, display.high, currency, locale, { approximate })}`;
   const native = converted ? formatMoneyRange(display.nativeLow, display.nativeHigh, 'CNY', locale, { approximate: reference || Boolean(china?.approximate) }) : '';
-  // Frame builds state the frame amount and the plan that makes up the estimate.
-  const frameAmount = frame ? formatMoneyRange(display.nativeLow - allowance, display.nativeHigh - allowance, 'CNY', locale) : '';
-  const buildBasis = converted ? `frame ${frameAmount} + plan` : `frame ${frameAmount} + ${yuan(allowance, locale)} plan`;
+  // The frame/parts split is available in the price popover.
   const parts = [];
   if (display.basis === 'china') parts.push(converted ? `China ${native}` : china?.official ? 'Official price' : 'China price');
-  else if (display.basis === 'china-build') parts.push(...(converted ? [`China build ${native}`, buildBasis] : [buildBasis]));
-  else parts.push(...[referenceLabel || (display.basis === 'build-reference' ? 'Build reference' : 'Reference estimate'), frame ? buildBasis : '', native].filter(Boolean));
+  else if (display.basis === 'china-build') parts.push(converted ? `China build ${native}` : 'Frame + build');
+  else parts.push(...[referenceLabel || (display.basis === 'build-reference' ? 'Build reference' : 'Reference estimate'), native].filter(Boolean));
   if (china && ['china', 'china-build'].includes(display.basis)) {
     if (china.conditional) parts.push('conditional');
     if (china.starting) parts.push('package unknown');
@@ -66,12 +72,12 @@ export function priceDisplay(projection, { currency = 'CNY', allowance = 0, loca
   }
   const date = ['china', 'china-build'].includes(display.basis) ? china?.date : referenceDate;
   const age = priceAgeLabel(date, today);
-  if (date) parts.push(date);
   if (age) parts.push(age);
   const attention = Boolean(age || china?.conditional || china?.starting || china?.partial);
   return {
     headline,
     basis: parts.map((part) => /^\d{4}-\d{2}-\d{2}$/.test(part) ? part : t(part)).join(' · '),
+    date: date || '',
     tone: reference ? 'reference' : attention ? 'attention' : '',
     stale: Boolean(age)
   };

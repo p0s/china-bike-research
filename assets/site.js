@@ -3,7 +3,7 @@ import { initArticleVideos } from './article-video.js';
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
-import { priceDisplay, deliveredLine } from './price-display.js';
+import { priceDisplay, deliveredLine, priceEvidenceLines, compactPriceBasis } from './price-display.js';
 import { clearanceParts, weightParts } from './catalog-format.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
@@ -295,7 +295,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   });
 
   const tooltipPanel = document.querySelector('#shared-tooltip');
-  const tooltipButtons = [...document.querySelectorAll('[data-tooltip-lines]')];
+  const tooltipButtons = [...document.querySelectorAll('[data-tooltip-lines], [data-price-details]')];
+  const priceTooltipContent = new Map();
   const precisePointer = matchMedia('(hover: hover) and (pointer: fine)');
   let activeTooltipButton = null;
   let tooltipPinned = false;
@@ -409,7 +410,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (!(button instanceof HTMLButtonElement) || !(tooltipPanel instanceof HTMLElement)) return;
     cancelTooltipDismiss();
     let lines = [];
-    try { lines = JSON.parse(button.dataset.tooltipLines ?? '[]'); } catch { lines = []; }
+    try {
+      lines = button.hasAttribute('data-price-details')
+        ? priceTooltipContent.get(button.closest('[data-product-row]')?.dataset.id || button.dataset.priceDetails)
+          ?? (/^\d{4}-\d{2}-\d{2}$/.test(button.dataset.priceDetails) ? [translate(`Price observed ${button.dataset.priceDetails}.`, locale)] : [])
+        : JSON.parse(button.dataset.tooltipLines ?? '[]');
+    } catch { lines = []; }
     if (!Array.isArray(lines) || !lines.length) return;
     if (activeTooltipButton && activeTooltipButton !== button) closeTooltip();
     tooltipPanel.replaceChildren(...lines.map((line) => {
@@ -431,7 +437,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     else openTooltip(button, { pinned: true });
   }
 
-  tooltipButtons.forEach((button) => {
+  function bindTooltip(button) {
     button.addEventListener('mouseenter', () => {
       if (precisePointer.matches && !tooltipPinned) openTooltip(button);
     });
@@ -445,7 +451,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (activeTooltipButton === button && document.activeElement !== button && !(tooltipPanel instanceof HTMLElement && tooltipPanel.matches(':hover'))) closeTooltip();
     }));
     button.addEventListener('click', () => toggleTooltip(button));
-  });
+  }
+  tooltipButtons.forEach(bindTooltip);
 
   tooltipPanel?.addEventListener('mouseenter', cancelTooltipDismiss);
   tooltipPanel?.addEventListener('mouseleave', scheduleTooltipClose);
@@ -709,7 +716,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   });
   document.addEventListener('click', (event) => {
     const target = event.target instanceof Element ? event.target : null;
-    if (!target?.closest('[data-tooltip-lines]')) closeTooltip();
+    if (!target?.closest('[data-tooltip-lines], [data-price-details]')) closeTooltip();
     if (!target?.closest('.menu-button') && !target?.closest('#main-nav')) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
@@ -853,6 +860,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   catalogRoot.dataset.catalogReady = 'true';
   const byId = new Map(products.map((item) => [item.id, item]));
   products.forEach((item) => {
+    priceTooltipContent.set(item.id, priceEvidenceLines(item).map((line) => translate(line, locale)));
+    item.priceState = compactPriceBasis(item.priceState ?? '');
+  });
+  products.forEach((item) => {
     const largest = String(item.imageSrcset ?? '').split(',')
       .map((entry) => entry.trim().split(/\s+/))
       .map(([source, width]) => ({ source, width: Number.parseInt(width, 10) || 0 }))
@@ -862,6 +873,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   });
   const productList = catalogRoot.querySelector('[data-product-list]');
   const rows = [...catalogRoot.querySelectorAll('[data-product-row]')];
+  rows.forEach((row) => {
+    const item = byId.get(row.dataset.id);
+    if (item) item.priceState = row.querySelector('.price-state')?.textContent ?? item.priceState;
+  });
   const searchIndex = new Map(rows.map((row) => [row, createCatalogSearchIndex(row.dataset.search)]));
   const searchScores = new Map();
   let scoredQuery = null;
@@ -886,7 +901,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let destinationReason = 'unknown';
   let heldRegional = null; // link choices kept while regional prices or a budget currency cannot be resolved
   const originalPrices = new Map(products.map((item) => [item.id, { price: item.price, state: item.priceState ?? '', details: item.priceDetails ?? '' }]));
-  const originalPriceTips = new Map(rows.map((row) => [row.dataset.id, row.querySelector('.price-cell [data-tooltip-lines]')?.dataset.tooltipLines ?? '[]']));
+  const originalPriceTips = new Map(products.map((item) => [item.id, priceEvidenceLines(item)]));
   if (regionalData) document.querySelector('[data-price-preferences]').hidden = false;
   const empty = catalogRoot.querySelector('[data-empty]');
   const resultCount = catalogRoot.querySelector('[data-result-count]');
@@ -1089,7 +1104,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const original = originalPrices.get(item.id);
       const cell = row.querySelector('.price-cell');
       const primary = cell?.querySelector('[data-calculated-price]');
-      const tip = cell?.querySelector('[data-tooltip-lines]');
       cell?.querySelectorAll('[data-regional-offer]').forEach((link) => link.remove());
       cell?.querySelector('[data-china-difference]')?.remove();
       row.dataset.hasListing = 'false';
@@ -1140,8 +1154,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         ? `${translate('Recorded amount', locale)}: ${formatMoneyRange(china.low, china.high ?? china.low, 'CNY', locale, { exact: true })}` : '';
       const lines = [
         exact,
-        ...(currency !== 'CNY' ? [`${translate('Converted at the ECB reference rate', locale)} · ${regionalData.rates.rate_date}.`] : []),
-        ...(!domestic && activeCountry ? [translate(state === 'choose-destination' ? 'Choose destination' : projection.frame ? 'Build delivery total unavailable' : !['confirmed', 'estimated'].includes(state) ? 'Delivery total unavailable' : 'Delivered price', locale)] : []),
         ...(projection.difference ? [translate('China difference = (delivered total − China equivalent) ÷ delivered total. It is a market price gap, not an importing saving.', locale)] : []),
         ...(projection.frame ? [translate('The build estimate uses the China allowance, not a verified regional build cost.', locale)] : []),
         ...(offer ? [`${translate('Listing', locale)}: ${formatMoneyRange(offer.amount, offer.amount, offer.currency, locale)} · ${offer.date}.`, translate(offer.package, locale), translate(offer.conditions, locale)] : []),
@@ -1171,15 +1183,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
           cell?.append(policy);
         }
       }
-      let baseLines = [];
-      try { baseLines = JSON.parse(originalPriceTips.get(item.id)); } catch { /* model page retains original details */ }
+      let baseLines = originalPriceTips.get(item.id) ?? [];
       baseLines = baseLines.map((line) => {
-        if (line.startsWith('Estimated complete adds')) return `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`;
-        const threshold = Number(tip?.dataset.frameThreshold || 0);
-        if (threshold && line.startsWith('Great-buy reference:')) return `Great-buy reference: below ${formatYuan(threshold + currentBuildAllowance)} complete (${formatYuan(threshold)} frameset).`;
+        line = line.replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`);
         return line;
       });
-      if (tip) tip.dataset.tooltipLines = JSON.stringify([...baseLines, ...lines]);
+      priceTooltipContent.set(item.id, [...new Set([...baseLines.map((line) => translate(line, locale)), ...lines])]);
       item.priceState = [shown.basis, delivered, difference].filter(Boolean).join(' · ');
       const details = String(original.details).replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`);
       item.priceDetails = [details, ...lines].filter(Boolean).join(' ');
@@ -1236,17 +1245,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       row.dataset.priceFilter = String(high);
       const priceLabel = row.querySelector('[data-calculated-price]');
       if (priceLabel) priceLabel.textContent = formatEstimatedRange(low, high);
-      const priceTip = row.querySelector('[data-frameset-price-tip]');
-      if (priceTip instanceof HTMLButtonElement) {
-        let lines = [];
-        try { lines = JSON.parse(priceTip.dataset.tooltipLines ?? '[]'); } catch { lines = []; }
-        const threshold = Number(priceTip.dataset.frameThreshold || 0);
-        priceTip.dataset.tooltipLines = JSON.stringify(lines.map((line) => {
-          if (line.startsWith('Estimated complete adds')) return `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`;
-          if (threshold && line.startsWith('Great-buy reference:')) return `Great-buy reference: below ${formatYuan(threshold + currentBuildAllowance)} complete (${formatYuan(threshold)} frameset).`;
-          return line;
-        }));
-      }
     });
     products.forEach((item) => {
       if (!item.estimated || !Number.isFinite(item.frameLow)) return;
@@ -1258,6 +1256,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         .replace(/Great-buy reference: below ¥[\d,]+ complete/, item.greatBuyFrameThreshold
           ? `Great-buy reference: below ${formatYuan(Number(item.greatBuyFrameThreshold) + currentBuildAllowance)} complete`
           : 'Great-buy reference: below complete');
+      priceTooltipContent.set(item.id, priceEvidenceLines(item).map((line) => translate(line, locale)));
     });
     updateRegionalPrices();
     updateSettingsSummary();
@@ -2244,6 +2243,14 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   function comparePrice(item) {
     const cell = valueCell(item.price, item.priceState);
+    if (priceTooltipContent.get(item.id)?.length) {
+      const button = element('button', 'price-button', item.price);
+      button.type = 'button';
+      button.dataset.priceDetails = item.id;
+      button.setAttribute('aria-expanded', 'false');
+      cell.firstElementChild.replaceWith(button);
+      bindTooltip(button);
+    }
     if (item.priceTone === 'attention') cell.classList.add('is-attention');
     return cell;
   }
@@ -2309,7 +2316,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       ...(geometryItems.length >= 1 ? [['', [['Geometry', geometryLink, 'geometry']]]] : [])
     ];
     const secondaryFields = [
-      ...(hasValue('priceDetails') ? [['Price details', (item) => valueCell(item.priceDetails)]] : []),
       ...(hasValue('internalFrameStorage') ? [['Internal frame storage', (item) => valueCell(item.internalFrameStorage)]] : []),
       ...(hasValue('mounts') ? [['Mounts', (item) => valueCell(item.mounts)]] : []),
       ...(hasValue('manufacturing') ? [['Manufacturing', (item) => valueCell(item.manufacturing)]] : []),
@@ -2322,7 +2328,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       start?.dataset.criteria ? `${translate('Starting point', locale)}: ${start.querySelector('strong')?.textContent?.trim() ?? ''} · ${translate('Criteria', locale)}: ${translate(start.dataset.criteria, locale)}` : '',
       translate(mixedCategories
         ? 'These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.'
-        : `Category-specific facts are comparable across these ${items.length} selections.`, locale),
+        : '', locale),
       translate('Prices exclude shipping and import unless marked Delivered. Nothing here is ranked.', locale)
     ].filter(Boolean);
     const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, notes.join(' '));

@@ -771,6 +771,8 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `报价记录于 ${date}。`],
+    [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `历史报价记录于 ${date}。`],
     // Carbon-wheel reference (2026-10-20)
     [/^(\d+) wheelsets · reviewed (.+)$/, (_, n, date) => `${n} 款轮组 · 复核于 ${date}`],
     [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · 内宽 ${width} mm`],
@@ -1380,3 +1382,5 @@ Object.assign(zh, {
   "No mainland price visible without JD login; export price excludes shipping and tax": "京东价格需登录才可见；出口售价不含运费和税费",
   "Stiffness and ride evidence comes from the selling retailer, not an independent test": "刚性与骑感证据来自销售该车架的零售商，并非独立测试"
 });
+
+Object.assign(zh, { "Frame + build": "车架＋装车预算", "Value assessment": "价格与配置评价" });
