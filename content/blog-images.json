@@ -9459,6 +9459,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "integrated-cockpit-before-you-buy-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480-a2ea11d518.avif",
+          "width": 480,
+          "height": 320,
+          "type": "image/avif",
+          "bytes": 14021,
+          "sha256": "a2ea11d5181e5ce646cc15ea729b39b6b16aa1c6cd09f706e45f865dbcc1edbd"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda holds a one-piece drop-bar cockpit above a padded counter, with a separate handlebar-and-stem assembly resting beside it.",
+          "zh-Hans": "戴头盔的小熊猫在铺有软垫的工作台上方拿着一体弯把，旁边放着分体车把与把立组合。",
+          "de": "Ein Rotpanda mit Helm hält ein einteiliges Rennradcockpit über einer gepolsterten Werkbank; daneben liegt eine separate Lenker-Vorbau-Kombination."
+        },
+        "prompt": "Editorial scene: A helmeted red panda holds a one-piece drop-bar cockpit above a padded counter, with a separate handlebar-and-stem assembly resting beside it.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "c4ee0504882df4f9394274a6e56d7a70754372bde6b73f087e611cf57eca2d62",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-640-fd115a4cf1.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 26970,
+            "sha256": "fd115a4cf106d5e3d4569b9674d289273f9f19912fe5c6de2c14c0d9cd2ff465"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-1600-90acb01d15.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 105098,
+            "sha256": "90acb01d15767e9811c8f94deb9fdc2fff85da8c79b21aaf1c19c17e045ceed2"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 172299,
+            "sha256": "a989423e27424fc126cc94c8d9b4016447ba66a662c30472a59860c12ab2fed7"
+          }
+        ]
+      }
     }
   ]
 }
