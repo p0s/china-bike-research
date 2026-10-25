@@ -418,6 +418,11 @@ function fieldReportLine(report) {
   return `Field check (${report.video.channel_name} video, ${clockLabel(report.at_seconds)}): ${report.summary} Build: ${report.configuration}.`;
 }
 
+function clearanceSetupHint(platform) {
+  return platform.tire_clearance?.drivetrain_limits_mm
+    ? 'Front-derailleur, rim and tire choice affect fit.' : '';
+}
+
 function clearanceTooltipLines(product) {
   const clearance = product.platform.tire_clearance;
   if (!clearance) return ['Tire clearance is not a common comparison field for this category.'];
@@ -425,13 +430,14 @@ function clearanceTooltipLines(product) {
     `${clearanceLongLabel(product.platform)}.`,
     `Evidence: ${evidenceLabel(clearance.evidence)}.`,
     clearance.note,
+    clearanceSetupHint(product.platform),
     ...clearanceFieldReports(product).map(fieldReportLine),
     clearance.eligibility !== 'pass' ? `Eligibility: ${clearance.eligibility}. Verify the exact SKU before buying.` : ''
   ];
 }
 
 function clearanceFieldReportNote(product) {
-  return clearanceFieldReports(product).map((report) => `<small class="fact-field-report">${escapeHtml(report.short)} · <a href="${escapeAttr(timestampUrl(report.video, report.at_seconds))}" rel="noreferrer">${escapeHtml(report.video.channel_name)} ${escapeHtml(clockLabel(report.at_seconds))}</a></small>`).join('');
+  return clearanceFieldReports(product).map((report) => `<small class="fact-field-report"><span>${escapeHtml(report.short)}</span> · <a href="${escapeAttr(timestampUrl(report.video, report.at_seconds))}" rel="noreferrer">${escapeHtml(report.video.channel_name)} ${escapeHtml(clockLabel(report.at_seconds))}</a></small>`).join('');
 }
 
 function publishedTireClearance(product) {
@@ -2092,7 +2098,7 @@ function builderBases(ctx) {
       tireClearanceMm: maxClearance(product.platform) ?? null,
       tireClearanceLabel: clearanceLabel(product.platform),
       tireClearanceByDrivetrain: product.platform.tire_clearance?.drivetrain_limits_mm ?? null,
-      tireClearanceNote: [product.platform.tire_clearance?.note ?? '', ...clearanceFieldReports(product).map(fieldReportLine)].filter(Boolean).join(' '),
+      tireClearanceNote: [product.platform.tire_clearance?.note ?? '', clearanceSetupHint(product.platform), ...clearanceFieldReports(product).map(fieldReportLine)].filter(Boolean).map((line) => translate(line, ctx.locale)).join(' '),
       tireClearanceStatus: product.platform.tire_clearance?.limits_status ?? '',
       drivetrainCompatibility: product.platform.frame.drivetrain_compatibility ?? null,
       drivetrainLayout: isComplete ? product.variant.drivetrain?.layout ?? null : null,
