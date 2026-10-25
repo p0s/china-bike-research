@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-640-fd115a4cf1.avif', 'fd115a4cf106d5e3d4569b9674d289273f9f19912fe5c6de2c14c0d9cd2ff465'],
+  ['assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-1600-90acb01d15.avif', '90acb01d15767e9811c8f94deb9fdc2fff85da8c79b21aaf1c19c17e045ceed2'],
+  ['assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-1200.jpg', 'a989423e27424fc126cc94c8d9b4016447ba66a662c30472a59860c12ab2fed7'],
   ['assets/blog/damage-in-transit-bike-claim-mascot-cover-389fe5d251-640-633d74c27b.avif', '633d74c27b14b33bb922a5f632479e626284e3cc57051e42fb4a9300bedbf415'],
   ['assets/blog/damage-in-transit-bike-claim-mascot-cover-389fe5d251-1600-67ced8c73d.avif', '67ced8c73d16e9e4c9a7f195aa03d808d367e174717b41f430654194e3d586d2'],
   ['assets/blog/damage-in-transit-bike-claim-mascot-cover-389fe5d251-1200.jpg', '71d6ab2037b0a5d3fdae38353f7d8688303f0b02f20e48d17f8c0a5aec12b6cd'],
