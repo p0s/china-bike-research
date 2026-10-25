@@ -9535,6 +9535,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "replacement-parts-shipping-cost-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda packing a bicycle parts parcel",
+        "zh-Hans": "打包自行车零件的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is packing a small plain cardboard parcel, kneeling beside it and using a tape dispenser to close it. Cheerful competent expression. Unprinted box with no labels or text. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "5e7d345dec565f7168665259bd95e4ad84a2ca8ee5ec736de725dd2dc80ce3b4"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-mascot-480-ab2c6205b2.avif",
+          "width": 480,
+          "height": 320,
+          "type": "image/avif",
+          "bytes": 14181,
+          "sha256": "ab2c6205b28e04038000ed2529477c28c9246064eb88658d783e0705ee09e85b"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda examines a small metal spare part beside a large shipping carton, padded parts box and blank budget folder.",
+          "zh-Hans": "戴头盔的小熊猫查看一枚小金属备件，旁边是大运输纸箱、带衬垫的零件盒和空白预算文件夹。",
+          "de": "Ein Rotpanda mit Helm betrachtet ein kleines Metallersatzteil neben einem großen Versandkarton, einer gepolsterten Teilebox und einer leeren Budgetmappe."
+        },
+        "prompt": "Editorial scene: A helmeted red panda examines a small metal spare part beside a large shipping carton, padded parts box and blank budget folder.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "69c74ed13347054c60d0b421ba230be21913e62ec08745c033d3ed9ca0c01dce",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-640-09517dfc1f.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 24462,
+            "sha256": "09517dfc1f4a808d88567e84b06983e67f30bbe5cf1abb7ab7173688b660a4df"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-1600-fb31e58618.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 98496,
+            "sha256": "fb31e58618dccb2befec8cfab1155ff5effb8a173e557bca6762e68e6a3e5de8"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 159652,
+            "sha256": "241a6e0081a4fd6d9eb176b84a017ea210b98b637d0b413e35e91e5685fa7d95"
+          }
+        ]
+      }
     }
   ]
 }
