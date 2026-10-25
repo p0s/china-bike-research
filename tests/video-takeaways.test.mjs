@@ -46,7 +46,7 @@ test('clearance field reports must cite a transcript-checked video of the same p
 test('the Incolor Speedster reviewer fit check stays beside the official maximum', () => {
   const product = products.find((item) => item.variant.id === 'incolor-speedster-sr-plus-frameset');
   const html = renderModel(ctx, product);
-  assert.match(html, /<dd>38\/32 mm \(1×\/2×\)/);
+  assert.match(html, /<dd>38 mm 1× · 32 mm 2×/);
   assert.match(html, /class="fact-field-report"><span>SR\+ 2× review: ~32.5 mm measured, little room<\/span> · <a href="https:\/\/www\.youtube\.com\/watch\?v=H7SQgMrzg8Y&amp;t=952"/);
   assert.match(html, /Field check \(Crafted Cycles video, 15:52\)/);
   assert.match(html, /expected 35 mm to be tight; neither was test-fitted/);

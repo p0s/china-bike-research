@@ -12,8 +12,8 @@ export function auditProductReview(product, html, { pageUrl, locale = 'en', noin
   const errors = [];
   const review = product.review;
   const story = html.match(/<section class="model-story"[^>]*>[\s\S]*?<\/section>/)?.[0] ?? '';
-  // Strengths are in the reading section; cautions are listed in the decision panel.
-  const reading = [/<section class="model-reading"[^>]*>[\s\S]*?<\/section>/, /<section class="model-verify"[^>]*>[\s\S]*?<\/section>/]
+  // Strengths and expandable buying checks remain in the rendered review content.
+  const reading = [/<section class="model-reading"[^>]*>[\s\S]*?<\/section>/, /<section class="model-verify"[^>]*>[\s\S]*?<\/section>/, /<details class="detail-panel" id="buying-checks"[^>]*>[\s\S]*?<\/details>/]
     .map((pattern) => html.match(pattern)?.[0] ?? '').join(' ');
   const visible = text(`${story} ${reading}`);
   if (noindex || !/\/models\/[^/]+\/$/.test(pageUrl ?? '') || !story.includes('id="editorial-review"')) errors.push('Product requires an indexable editorial model page');

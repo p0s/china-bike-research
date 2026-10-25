@@ -1065,7 +1065,6 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .catalog-product .product-image { width: 96px; aspect-ratio: 3 / 2; border: 0; border-radius: 8px; background: var(--image-surface); }
 .catalog-product .product-image-link > img { padding: 3px; }
 .product-meta { gap: 6px; margin-bottom: 2px; font-size: .6875rem; letter-spacing: .05em; }
-.catalog-row.is-candidate .product-meta::after { content: attr(data-label); padding: 0 6px; border: 1px dashed var(--line-strong); border-radius: 5px; color: var(--muted); font-size: .625rem; font-weight: 650; letter-spacing: .02em; line-height: 16px; text-transform: none; }
 .product-name { display: block; overflow: hidden; font-size: .9375rem; font-weight: 650; letter-spacing: -.006em; text-overflow: ellipsis; white-space: nowrap; }
 .product-name a { min-height: 0; }
 .search-close-match { color: var(--muted); font-size: .75rem; }
@@ -1248,14 +1247,11 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .price-cell .metric-main { font-size: 1.0625rem; }
   .price-state { -webkit-line-clamp: 1; }
   .china-price-difference, .regional-offer-link, .regional-policy-link { flex: 1 1 100%; margin-top: 0; }
-  .catalog-row > :is(.tire-clearance-cell, .drivetrain-cell, .weight-cell, .frame-cell) { order: 3; display: inline; flex: 0 1 auto; color: var(--ink-soft, var(--ink)); font-size: var(--fs-sm); font-weight: 500; }
-  .catalog-row > :is(.tire-clearance-cell, .drivetrain-cell, .weight-cell, .frame-cell) .metric-main { display: inline; font-weight: 500; }
-  .catalog-row > :is(.tire-clearance-cell, .weight-cell) .metric-sub { display: inline; margin: 0 0 0 4px; font-size: var(--fs-sm); }
-  .catalog-row > .drivetrain-cell .metric-sub, .catalog-row > .frame-cell .tooltip { display: none; }
+  .catalog-row > :is(.tire-clearance-cell, .drivetrain-cell, .weight-cell, .frame-cell) { order: 3; display: flex; flex: 1 1 100%; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; color: var(--ink-soft, var(--ink)); font-size: var(--fs-sm); font-weight: 500; }
+  .catalog-row > :is(.tire-clearance-cell, .drivetrain-cell, .weight-cell, .frame-cell) .metric-main { display: inline-flex; font-weight: 500; }
+  .catalog-row > :is(.tire-clearance-cell, .weight-cell) .metric-sub { display: inline; margin: 0; font-size: var(--fs-sm); }
+  .catalog-row > .drivetrain-cell .metric-sub { display: none; }
   .catalog-row > :is(.is-unknown, .is-muted, .is-clamped, .capability-cell) { display: none; }
-  :not([data-catalog-view="gallery"]) > .catalog-row > .tire-clearance-cell:not(.is-unknown) ~ :is(.drivetrain-cell, .weight-cell, .frame-cell):not(.is-unknown, .is-muted, .is-clamped)::before,
-  :not([data-catalog-view="gallery"]) > .catalog-row > .drivetrain-cell:not(.is-unknown, .is-muted, .is-clamped) ~ :is(.weight-cell, .frame-cell):not(.is-unknown, .is-muted, .is-clamped)::before,
-  :not([data-catalog-view="gallery"]) > .catalog-row > .weight-cell:not(.is-unknown) ~ .frame-cell:not(.is-unknown, .is-clamped)::before { content: '·'; margin: 0 6px; color: var(--muted); }
   .catalog-divider, .empty-state { margin: 0 -16px; padding-inline: 16px; }
   .inline-compare { padding-top: 14px; }
   .compare-grid { --compare-label-width: 80px; min-width: calc(var(--compare-label-width) + var(--compare-count) * max((100vw - 32px - var(--compare-label-width)) / 2, 104px)); }
@@ -1296,7 +1292,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .result-split { display: none; }
   .sort-control { height: 34px; padding-left: 8px; }
   .sort-control select { max-width: 190px; }
-  .catalog-row > .drivetrain-cell { display: inline-block; max-width: 62%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+  .catalog-row > .drivetrain-cell { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .catalog-row > .drivetrain-cell:is(.is-unknown, .is-muted, .is-clamped) { display: none; }
   .selection-bar:not(.is-visible) .selection-actions .text-button { display: none; }
 }
 
@@ -1534,3 +1531,10 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .video-list.video-list-more { align-items: start; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 18px; }
 .video-list-more > .video-entry { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; align-content: start; gap: 10px; margin: 0; padding: 0; border: 0; }
 .video-list-more .video-copy h4 { font-size: .95rem; }
+
+#shared-tooltip a { display: inline-block; margin-top: 6px; color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+.detail-panel:target { scroll-margin-top: 96px; }
+
+.fact-button { appearance: none; min-height: 24px; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: underline dotted; text-underline-offset: .2em; cursor: help; }
+.fact-button:hover, .fact-button[aria-expanded="true"] { color: var(--accent); }
+.fact-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

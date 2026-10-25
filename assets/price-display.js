@@ -28,6 +28,12 @@ export function priceEvidenceLines(item) {
   ].filter(Boolean);
 }
 
+export function pricePopoverLines(item) {
+  const full = priceEvidenceLines(item);
+  const build = String(item.priceDetails || '').match(/Frameset price: .+?\.(?=\s|$)|Estimated complete adds .+?\.(?=\s|$)/g) ?? [];
+  return [...full.filter((line) => /^(?:Historical price|Price) observed|^Official price$/.test(line)), ...build];
+}
+
 /**
  * @param projection result of regionalPrice()
  * @param options.currency display currency

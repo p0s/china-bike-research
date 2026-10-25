@@ -22,7 +22,7 @@ test('gallery is an optional second layout of the same catalog rows, addressable
   assert.match(styles, /\.catalog-table\[data-catalog-view="gallery"\] \{ display: grid;/);
   assert.match(styles, /\[data-catalog-view="gallery"\] > \.catalog-head \{ display: none; \}/);
   // The table's per-row mobile separators never leak into gallery cards.
-  assert.match(styles, /:not\(\[data-catalog-view="gallery"\]\) > \.catalog-row > \.tire-clearance-cell:not\(\.is-unknown\) ~/);
+  assert.doesNotMatch(styles, /content: '·'; margin: 0 6px/);
 });
 
 test('header tools stay inline and fold into one menu only when the measured row is crowded', () => {
