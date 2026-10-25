@@ -69,3 +69,13 @@ test('generated-HTML audit rejects invented ratings, invisible notes, missing di
   assert.ok(errors.some((issue) => issue.includes('linked editorial')));
   assert.ok(auditProductReview(node, html, { ...options, noindex: true }).some((issue) => issue.includes('indexable')));
 });
+
+
+test('review cautions start visible and a closed disclosure cannot support review notes', () => {
+  const product = products.find((item) => item.variant.id === pilot[0]);
+  const html = renderModel(context, product);
+  const node = graph(html).find((item) => item['@type'] === 'Product');
+  assert.match(html, /id="buying-checks" open/);
+  const closed = html.replace('id="buying-checks" open', 'id="buying-checks"');
+  assert.ok(auditProductReview(node, closed, { pageUrl: node.url }).some((issue) => issue.includes('negativeNotes')));
+});

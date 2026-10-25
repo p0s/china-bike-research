@@ -771,6 +771,7 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
+    [/^Show (\d+) more models$/, (_, n) => `再显示 ${n} 款车型`],
     [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translate(value, 'zh-Hans')} — ${translate(label, 'zh-Hans')}`],
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? '前轮' : '后轮'}`],
     [/^unknown (1×|2×)$/, (_, layout) => `${layout} 未知`],
@@ -1408,4 +1409,13 @@ Object.assign(zh, {
   "bare frame": "未涂装车架",
   "painted frame": "涂装车架",
   "Overview": "概览"
+});
+
+Object.assign(zh, {
+  "Handlebar": "车把",
+  "Weight basis": "重量口径",
+  "Tire fit: 1×": "轮胎适配：1×",
+  "Tire fit: 2×": "轮胎适配：2×",
+  "1× unsupported": "不支持 1×",
+  "2× unsupported": "不支持 2×"
 });

@@ -1407,6 +1407,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (!item) return;
       const shown = catalogClearance(item, tireLayout?.value);
       row.dataset.tireClearanceSort = shown.sortValue ? String(shown.sortValue) : '';
+      row.dataset.tireLayoutUnsupported = String(Boolean(shown.unsupported));
       const cell = row.querySelector('.tire-clearance-cell');
       if (!cell) return;
       const tip = cell.querySelector('.tooltip');
@@ -1440,7 +1441,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const frame = normalizeMaterialSearch(frameFilter?.value);
     const categoryLimit = numericValue(categoryMinimum);
     const categoryKind = categoryMinimum?.dataset.kind ?? '';
-    return !regionalHoldBlocks(heldRegional, maxPrice) &&
+    return row.dataset.tireLayoutUnsupported !== 'true' && !regionalHoldBlocks(heldRegional, maxPrice) &&
       (maxPrice === null || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       (!minTire || tireValue >= minTire || (!tireValue && tireUnknown?.checked)) &&
       weightMatches &&
@@ -1659,7 +1660,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}${heldRegional?.destination ? ` · ${translate('not checked', locale)}` : ''}`]);
     else if (heldRegional?.limit) chips.push(['price', `${translate('Price', locale)} ≤ ${formatRequestedBudget(heldRegional.limit.amount, heldRegional.limit.currency, locale)} · ${translate('not checked', locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
-    if (tireLayout?.value) chips.push(['tire-layout', tireLayout.value === 'single' ? '1× drivetrain' : '2× drivetrain']);
+    if (tireLayout?.value) chips.push(['tire-layout', tireLayout.value === 'single' ? 'Tire fit: 1×' : 'Tire fit: 2×']);
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
     if (frameWeight?.value) chips.push(['frame-weight', `Frame ≤ ${frameWeight.value} g`]);
@@ -1817,7 +1818,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (reset) reset.hidden = !hasFilters();
     if (showAllModels instanceof HTMLButtonElement) {
       showAllModels.setAttribute('aria-pressed', String(allModelsVisible));
-      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenLeadCount} more research leads`, locale);
+      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenLeadCount} more models`, locale);
     }
     if (historyMode) updateFilterUrl(historyMode);
     else if (tireUnknownCleared || categoryFilterCleared || sortCorrected) updateFilterUrl('replace');
@@ -2218,7 +2219,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
       title.href = `${target.pathname}${target.search}`;
     }
-    const type = element('span', 'compare-type', [item.type, item.stage === 'candidate' ? translate('Research lead', locale) : ''].filter(Boolean).join(' · '));
+    const type = element('span', 'compare-type', item.type);
     const orderControls = element('div', 'compare-order-controls');
     orderControls.setAttribute('role', 'group');
     orderControls.setAttribute('aria-label', `Reorder ${label}`);
@@ -2363,7 +2364,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       return cell;
     };
     // Complete-bike and frame-only weights never share a row.
-    const weightKindOf = (item) => !item.weight || item.weight === '—' ? '' : / frame$/.test(item.weight) ? 'frame' : 'complete';
+    const weightKindOf = (item) => item.weightKind || (!item.weight || item.weight === '—' ? '' : / (?:frame|Rahmen|车架)$/.test(item.weight) ? 'frame' : 'complete');
     const weightBy = (kind) => (item) => {
       if (weightKindOf(item) !== kind) return valueCell('—');
       const parts = weightParts(item.weight, item.kind, item.weightBasis);

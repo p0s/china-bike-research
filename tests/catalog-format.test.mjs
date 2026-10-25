@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { catalogClearance, clearanceParts, weightParts } from '../assets/catalog-format.js';
+import { catalogClearance, clearanceParts, weightParts, weightBasisLabel, unsupportedTireLayouts } from '../assets/catalog-format.js';
 import { pricePopoverLines } from '../assets/price-display.js';
 import { translate } from '../assets/i18n.js';
 
@@ -40,4 +40,32 @@ test('new fit and evidence controls translate in both supported locales', () => 
       assert.notEqual(translate(text, locale), text, `${locale}: ${text}`);
     }
   }
+});
+
+
+test('weight finish labels ignore separate claims and later observations', () => {
+  assert.equal(weightBasisLabel('Finished size-M frame including hardware and paint; manufacturer tolerance ±50 g. Raw frame claim is 980 g ±50 g excluding hardware and paint.'), 'painted frame');
+  assert.equal(weightBasisLabel('Painted size-M Sahara Nude storefront example. The separate unpainted size-M claim is 750 g.'), 'painted frame');
+  assert.equal(weightBasisLabel('Exact manufacturer frame-only claim; a separate size-56 painted frameset-system value is 1.46 kg.'), '');
+  assert.equal(weightBasisLabel('Finish unspecified. Video field reports: a painted frame was weighed.'), '');
+  assert.equal(weightBasisLabel('Unpainted default. Reviewer weigh-ins (videos): painted hardware included.'), 'bare frame');
+});
+
+test('known unsupported drivetrains cannot inherit a platform maximum', () => {
+  for (const compatibility of ['1x-only', { mechanical: { double: false }, electronic: { single: true, double: false } }]) {
+    const item = { tireClearance: '55/50 mm', tireClearanceMaxMm: 50, tireClearanceByWheel: { front: 55, rear: 50 }, tireLayoutUnsupported: unsupportedTireLayouts(compatibility) };
+    assert.deepEqual(catalogClearance(item, 'double'), { label: '2× unsupported', sortValue: 0, unsupported: true });
+    assert.equal(catalogClearance(item, 'single').sortValue, 50);
+  }
+});
+
+test('numeric drivetrain pairs survive localized legacy label strings', () => {
+  const pair = { tireClearance: '50／45 mm（单盘／双盘）', tireClearanceMaxMm: 50, tireClearanceByDrivetrain: { single: 50, double: 45 } };
+  assert.deepEqual(clearanceParts(catalogClearance(pair).label), { main: '50 mm 1×', sub: '45 mm 2×' });
+  const unknown = { ...pair, tireClearance: '53/unbekannt mm (1×/2×)', tireClearanceByDrivetrain: { single: 53, double: null } };
+  assert.deepEqual(clearanceParts(catalogClearance(unknown).label), { main: '53 mm 1×', sub: 'unknown 2×' });
+});
+
+test('price popovers preserve structured qualifiers even when full prose mentions them', () => {
+  assert.deepEqual(pricePopoverLines({ priceDate: '2026-10-24', chinaPrice: { official: true, conditional: true }, priceDetails: 'Official store promotion; complete conditions in the full record.' }), ['Price observed 2026-10-24.', 'Official price', 'conditional']);
 });

@@ -10,7 +10,7 @@ import { clockLabel, openGraphVideo, renderVideoEntries, timestampUrl } from './
 import { opinionAggregate } from './lib/opinions.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay, pricePopoverLines } from '../assets/price-display.js';
-import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance } from '../assets/catalog-format.js';
+import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsupportedTireLayouts } from '../assets/catalog-format.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis } from './lib/regional-prices.mjs';
 import {
@@ -782,7 +782,7 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
   const price = catalogPriceCell(ctx, summary);
   const tireClearanceData = tireClearance.sortValue ? ` data-tire-clearance-sort="${tireClearance.sortValue}"` : '';
   const drivetrain = variant.kind === 'frameset'
-    ? catalogCell('drivetrain', 'Drivetrain', { main: '—' }, { muted: true })
+    ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: drivetrainLabel(ctx, product), sub: drivetrainSubline(ctx, product) });
   return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
@@ -964,7 +964,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
   const tireClearanceData = tireClearance.sortValue ? ` data-tire-clearance-sort="${tireClearance.sortValue}"` : '';
   const price = catalogPriceCell(ctx, summary);
   const drivetrain = entry.kind === 'frameset'
-    ? catalogCell('drivetrain', 'Drivetrain', { main: '—' }, { muted: true })
+    ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: facts.drivetrain ?? '—' }, { clamp: true });
   return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(entry.id)}" aria-label="Select ${escapeAttr(candidate.name)} for comparison"><span aria-hidden="true"></span></label></div>
@@ -1031,6 +1031,7 @@ function comparisonSummary(ctx, product) {
     tireClearanceMaxMm: tireClearance.sortValue || null,
     ...(product.platform.tire_clearance?.drivetrain_limits_mm ? { tireClearanceByDrivetrain: product.platform.tire_clearance.drivetrain_limits_mm } : {}),
     ...(product.platform.tire_clearance?.published_front_max_mm && product.platform.tire_clearance?.published_rear_max_mm ? { tireClearanceByWheel: { front: product.platform.tire_clearance.published_front_max_mm, rear: product.platform.tire_clearance.published_rear_max_mm } } : {}),
+    tireLayoutUnsupported: unsupportedTireLayouts(product.platform.frame.drivetrain_compatibility),
     weightBasis: weightBasisDescription(product),
     ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightFilter.grams) ? { weightGrams: weightFilter.grams, weightKind: weightFilter.kind } : {}),
@@ -1103,6 +1104,7 @@ function candidateComparisonSummary(ctx, entry) {
     ...(tireClearance.value !== '—' ? { tireClearance: tireClearance.value } : {}),
     tireClearanceMaxMm: tireClearance.sortValue || null,
     ...(facts.tire_clearance_drivetrain_limits_mm ? { tireClearanceByDrivetrain: facts.tire_clearance_drivetrain_limits_mm } : {}),
+    tireLayoutUnsupported: unsupportedTireLayouts(entry.candidate.drivetrain_compatibility),
     weightBasis: facts[entry.kind === 'frameset' ? 'frame_weight_basis' : 'complete_weight_basis'] ?? '',
     ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightGrams) ? { weightGrams, weightKind: entry.kind === 'complete-bike' ? 'complete' : 'frame' } : {}),
@@ -1497,7 +1499,7 @@ export function renderHome(ctx) {
         ${rows.map((row) => row.html).join('')}
         <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
       </div>
-      ${hiddenCandidateCount ? `<p class="catalog-more"><button class="text-button catalog-scope-button" type="button" data-show-all-models aria-pressed="false" aria-controls="catalog-rows">Show ${hiddenCandidateCount} more research leads</button></p>` : ''}
+      ${hiddenCandidateCount ? `<p class="catalog-more"><button class="text-button catalog-scope-button" type="button" data-show-all-models aria-pressed="false" aria-controls="catalog-rows">Show ${hiddenCandidateCount} more models</button></p>` : ''}
       <script type="application/json" id="catalog-data" data-src="${url(ctx.base, `/data/home-catalog-${ctx.locale ?? 'en'}.json`)}?v=${ctx.catalogDataVersions?.[ctx.locale ?? 'en'] ?? 'regional-v1'}">[]</script>
       <script type="application/json" id="regional-price-data" data-src="${url(ctx.base, '/data/regional-prices.json')}?v=${ctx.regionalPriceDataVersion ?? 'regional-v1'}">[]</script>
     </div>
@@ -1577,7 +1579,7 @@ export function renderModel(ctx, product) {
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p>${bestFor ? `<p><strong>${escapeHtml(translate('Best for', ctx.locale))}:</strong> ${escapeHtml(bestFor)}</p>` : ''}</section>
-    ${verifyItems.length ? `<details class="detail-panel" id="buying-checks"><summary>Buying checks (${verifyItems.length})</summary><div class="detail-panel-body"><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></details>` : ''}
+    ${verifyItems.length ? `<details class="detail-panel" id="buying-checks" open><summary>Buying checks (${verifyItems.length})</summary><div class="detail-panel-body"><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></details>` : ''}
 
     <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd${label === 'Purchase route' ? ' id="model-purchase-route"' : ''}>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div>${metric.kind === 'discipline' ? '' : `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div>`}${metric.details.length ? `<div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' '))}</dd></div>` : ''}<div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div></dl></section>
     ${clearanceEvidence(ctx, product)}
@@ -1738,7 +1740,7 @@ export function renderCandidateModel(ctx, entry) {
         ? `${candidatePriceLabel(ctx, entry)} is a dated currency conversion of an official non-mainland price, not a confirmed China checkout price.`
         : `The recorded complete-bike price is ${candidatePriceLabel(ctx, entry)}; its date and basis remain visible below.`;
   const sourceNote = candidate.source_note ? candidatePublicText(candidate.source_note) : '';
-  const type = entry.kind === 'frameset' ? candidateFrameEstimateAllowed(entry) ? 'Frame estimate' : 'Frameset' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike lead';
+  const type = entry.kind === 'frameset' ? candidateFrameEstimateAllowed(entry) ? 'Frame estimate' : 'Frameset' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike';
   const candidateSeoProduct = entry.identifiableModel && !['Identity not confirmed', 'Exact configuration not confirmed'].includes(maturity);
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
   const modelPriceAttributes = candidateFrameEstimateAllowed(entry) && Number.isFinite(frameLow)
