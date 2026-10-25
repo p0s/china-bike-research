@@ -1471,6 +1471,8 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
+    [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Preis erfasst am ${date}.`],
+    [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Historischer Preis erfasst am ${date}.`],
     // Carbon-wheel reference (2026-10-20)
     [/^(\d+) wheelsets · reviewed (.+)$/, (_, n, date) => `${n} Laufradsätze · geprüft ${date}`],
     [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · ${width} mm Innenweite`],
@@ -2086,3 +2088,5 @@ Object.assign(de, {
   "No mainland price visible without JD login; export price excludes shipping and tax": "Kein Festlandpreis ohne JD-Anmeldung sichtbar; der Exportpreis enthält weder Versand noch Steuern",
   "Stiffness and ride evidence comes from the selling retailer, not an independent test": "Belege zu Steifigkeit und Fahrgefühl stammen vom verkaufenden Händler, nicht aus einem unabhängigen Test"
 });
+
+Object.assign(de, { "Frame + build": "Rahmen + Aufbau", "Value assessment": "Preis-Leistungs-Einschätzung" });

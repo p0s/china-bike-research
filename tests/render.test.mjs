@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { priceEvidenceLines } from '../assets/price-display.js';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
 import { loadPosts } from '../src/lib/posts.mjs';
 import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
@@ -194,7 +195,7 @@ test('candidate leads share the catalog without a separate research queue', () =
   assert.match(html, /data-stage="candidate" data-default-visible="true" data-id="candidate-pardus-spark-sport-pes"/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
   assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+src="\/china-bike-research\/assets\/images\/sourced\/retailer\/xds-gt350-primary-image\/[^\"]+"[^>]+alt="XDS GT350 gravel bike shown from the drive side"/);
-  assert.match(html, /<span class="metric-main" data-calculated-price>¥8,597<\/span><span class="metric-sub price-state is-attention">China price · conditional · 2026-08-08<\/span>/);
+  assert.match(html, /<button[^>]*data-calculated-price[^>]*>¥8,597<\/button><span class="metric-sub price-state is-attention">China price · conditional<\/span>/);
   assert.match(html, /data-id="candidate-pardus-spark-sport-pes"[\s\S]*?<span class="product-meta" data-label="Research lead">/);
   assert.match(html, /href="\/china-bike-research\/models\/missing-china-price-winspace-slc3\/" data-model-link/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
@@ -463,25 +464,25 @@ test('superseded published bikes show availability instead of a historical price
 test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {
   // FX references stay visible but never supply a price sort or budget value.
   assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort=""[^>]*data-price-filter=""/);
-  assert.match(html, /Quick Pro ER:ONE[\s\S]*?≈ ¥33,940[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
+  assert.match(html, /Quick Pro ER:ONE[\s\S]*?≈ ¥33,940[\s\S]*?Official FX estimate[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-tire-clearance-sort="50"/);
   assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell">50 mm<\/div>/);
   assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21980"[^>]*data-tire-clearance-sort="55"/);
-  assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?¥21,980[\s\S]*?China price · 2026-08-21[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
+  assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?¥21,980[\s\S]*?China price[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
   assert.match(html, /data-id="candidate-specialized-roubaix-sl8-sport-105"[^>]*data-price-sort=""[^>]*data-tire-clearance-sort="40"/);
-  assert.match(html, /Specialized 2025 Roubaix SL8 Sport Shimano 105[\s\S]*?≈ ¥23,519[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano 105 R7100\/R7120 mechanical 2×12[\s\S]*?9\.1 kg[\s\S]*?FACT 10R carbon/);
+  assert.match(html, /Specialized 2025 Roubaix SL8 Sport Shimano 105[\s\S]*?≈ ¥23,519[\s\S]*?Official FX estimate[\s\S]*?Shimano 105 R7100\/R7120 mechanical 2×12[\s\S]*?9\.1 kg[\s\S]*?FACT 10R carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"[^>]*data-type="frameset"[^>]*data-frame-price-low="9800"[^>]*data-frame-price-high="9800"/);
-  assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Official FX estimate · frame ¥9,800 \+ ¥6,000 plan · 2026-08-17/);
+  assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Official FX estimate/);
   assert.match(html, /data-id="candidate-missing-china-price-giant-defy-advanced"[^>]*data-type="complete-bike"[^>]*data-price-sort="14800"[^>]*data-price-filter="14800"/);
-  assert.match(html, /Giant Defy Advanced 2[\s\S]*?¥14,800[\s\S]*?Official price · 2026-09-24[\s\S]*?38 mm/);
+  assert.match(html, /Giant Defy Advanced 2[\s\S]*?¥14,800[\s\S]*?Official price[\s\S]*?38 mm/);
   assert.match(html, /data-id="candidate-missing-china-price-giant-defy-advanced"[^>]*data-tire-clearance-sort="38"/);
   assert.match(html, /data-id="candidate-missing-china-price-trek-domane"[^>]*data-tire-clearance-sort="38"/);
   assert.match(html, /data-id="candidate-missing-china-price-specialized-roubaix-sl8"[^>]*data-tire-clearance-sort="40"/);
   assert.match(html, /data-id="candidate-missing-china-price-merida-scultura"[^>]*data-type="complete-bike"[^>]*data-price-sort="16800"[^>]*data-price-filter="16800"/);
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
   assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?Exact build price unknown[\s\S]*?Unmatched price retained as reference/);
-  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥13,700[\s\S]*?Official price · conditional · total incomplete · 2026-09-25/);
-  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?frame ¥21,900 \+ ¥6,000 plan · 2026-09-23/);
+  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥13,700[\s\S]*?Official price · conditional · total incomplete/);
+  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame \+ build/);
 });
 
 test('candidate detail preserves official price conflicts and direct source links', () => {
@@ -526,7 +527,7 @@ test('local builds use the live repository for public contribution links', () =>
 });
 
 test('category-specific details stay accessible while price state is visible', () => {
-  assert.match(html, /aria-label="Price details"/);
+  assert.match(html, /data-price-details="2026-08-08" aria-expanded="false"/);
   assert.doesNotMatch(html, /data-capability-kind="tire"/);
   assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"/);
   assert.doesNotMatch(html.match(/<div class="catalog-row[^>]*data-id="twitter-v3-wheeltop-eds"[^>]*>/)[0], /data-tire-clearance-sort=/);
@@ -554,7 +555,7 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /aria-controls="shared-tooltip"/);
   assert.match(html, /role="status" aria-live="polite" id="copy-status"/);
   assert.match(html, /data-result-summary aria-live="polite"/);
-  assert.match(html, /class="metric-sub price-state is-attention">China price · conditional · 2026-08-08<\/span>/);
+  assert.match(html, /class="metric-sub price-state is-attention">China price · conditional<\/span>/);
   assert.match(html, /data-filter-category/);
   assert.match(html, /Category fact/);
   assert.match(html, /role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"/);
@@ -572,8 +573,10 @@ test('category-specific details stay accessible while price state is visible', (
   assert.doesNotMatch(html, /class="metric-sub">Claimed<\/span>/);
   assert.match(html, /data-id="scott-addict-rc-40"[^>]*data-family="road"/);
   assert.doesNotMatch(html, /data-id="scott-addict-rc-40"[^>]*data-tire-clearance-sort=/);
-  assert.match(html, /Why Best value/);
-  assert.match(html, /Wireless electronic hydraulic 2×12, carbon frame\/fork\/cockpit, and T47/);
+  assert.doesNotMatch(html, /Why Best value|class="pick-flag"|class="verify-flag"/);
+  const valueModel = renderModel({ data, products, base: '' }, products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds'));
+  assert.match(valueModel, /Wireless electronic hydraulic 2×12, carbon frame\/fork\/cockpit, and T47/);
+  assert.match(valueModel, /<summary>Value assessment<\/summary>/);
 });
 
 test('model evidence labels claims, source roles, confidence, and inaccessible snapshots', () => {
@@ -827,10 +830,10 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /No attributable mainland China consumer price is recorded/);
   assert.match(html, /cover a 2× hydraulic shift-and-brake kit, not every remaining complete-build part/);
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3987" data-frame-price-high="3987"/);
-  assert.match(html, /<span data-calculated-price>Est\. ¥9,987<\/span>/);
-  assert.match(html, /data-frameset-price-tip=""/);
+  assert.match(html, /<button[^>]*data-calculated-price[^>]*>Est\. ¥9,987<\/button>/);
+  assert.match(html, /data-price-details="\d{4}-\d{2}-\d{2}"/);
   assert.match(html, /data-stage="candidate"[^>]*data-id="candidate-hi-light-g0"[^>]*data-price-sort="[^"]+" data-price-filter="[^"]+" data-frame-price-low="[^"]+" data-frame-price-high="[^"]+"/);
-  assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<span class="metric-main" data-calculated-price>Est\. ¥[\d,]+(?:–[\d,]+)?<\/span><span class="metric-sub price-state">frame ¥[\d,]+ \+ ¥6,000 plan/);
+  assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<button[^>]*data-calculated-price[^>]*>Est\. ¥[\d,]+(?:–[\d,]+)?<\/button><span class="metric-sub price-state">Frame \+ build/);
   assert.doesNotMatch(html, /data-copy-catalog-view|>Copy view</);
 
   const context = {
@@ -1089,4 +1092,15 @@ test('model decision panel links the exact purchase route instead of a broad ava
   assert.match(detail, /Mainland(?: China)? stock and checkout remain unverified/);
   assert.doesNotMatch(panel, /Domestic sales in mainland China/);
   assert.doesNotMatch(detail, /unpublished\. frame;/);
+});
+
+
+test('catalog price dates stay in accessible evidence and not repeated in the visible subline', () => {
+  const sublines = [...html.matchAll(/class="metric-sub price-state[^"]*">([^<]*)</g)];
+  assert.ok(sublines.length > 100);
+  assert.ok(sublines.every(([, text]) => !/\d{4}-\d{2}-\d{2}/.test(text)));
+  assert.match(html, /data-price-details="2026-08-08"/);
+  const priced = catalogSummaries({ data, products }).filter((item) => item.priceDate);
+  assert.ok(priced.length > 20);
+  assert.ok(priced.every((item) => priceEvidenceLines(item).join(' ').includes(item.priceDate)));
 });

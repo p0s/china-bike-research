@@ -26,7 +26,6 @@ import {
   formatCny,
   formatPrice,
   formatRange,
-  freshness,
   joinCatalogCandidates,
   maxClearance,
   wheelsetFreehubLabels,
@@ -383,24 +382,18 @@ function exactPriceLabel(price) {
 
 function priceTooltipLines(ctx, product) {
   const { variant, latestPrice, allInPrice } = product;
-  const fresh = freshness(latestPrice?.observed_at, ctx.now);
-  const threshold = platformIsSuperseded(product) ? null : variant.editorial.price_thresholds_cny?.great_buy_below;
   const lines = [];
   if (platformIsSuperseded(product)) lines.push(`This version is no longer sold new and was superseded by the ${successorLabel(product.platform)}.`);
   if (variant.kind === 'frameset') {
     lines.push(`Frameset price: ${formatPrice(latestPrice)}.`);
     lines.push(`Estimated complete adds ${formatCny(allInPrice.buildAmount)} for the selected ${buildAssumption(ctx).label}.`);
-    if (variant.included?.length) lines.push(`Recorded package includes: ${variant.included.join(', ')}.`);
-    if (threshold) lines.push(`Great-buy reference: below ${formatCny(threshold + allInPrice.buildAmount)} complete (${formatCny(threshold)} frameset).`);
-  } else if (threshold) {
-    lines.push(`Great-buy reference: below ${formatCny(threshold)}.`);
   }
   if (latestPrice?.observed_at) {
     lines.push(latestPrice.status?.startsWith('historical')
       ? `Historical price observed ${latestPrice.observed_at}.`
-      : `Price observed ${latestPrice.observed_at}; ${fresh.label.toLowerCase()} as of this snapshot.`);
+      : `Price observed ${latestPrice.observed_at}.`);
   }
-  if (latestPrice?.status) lines.push(`Record status: ${priceStatusLabel(latestPrice.status)}.`);
+  if (latestPrice?.status && latestPrice.status !== 'available') lines.push(`Record status: ${priceStatusLabel(latestPrice.status)}.`);
   if (latestPrice?.conditions) lines.push(latestPrice.conditions);
   return lines;
 }
@@ -663,13 +656,11 @@ function publishedSpecificationRows(product) {
 function frameTooltipLines(product) {
   const { frame } = product.platform;
   const lines = [
-    `Bottom bracket: ${bottomBracket(product)}.`,
-    `Derailleur hanger: ${frame.derailleur_hanger ?? 'unknown'}.`,
+    frame.derailleur_hanger && frame.derailleur_hanger !== 'UDH' ? `Derailleur hanger: ${frame.derailleur_hanger}.` : '',
     frame.claimed_fiber ? `Carbon claim: ${frame.claimed_fiber}.` : '',
     frame.cable_routing ? `Cable routing: ${frame.cable_routing.replaceAll('-', ' ')}.` : '',
     product.platform.internal_storage ? 'Internal frame storage.' : '',
-    product.platform.mounts?.length ? `Mounts: ${product.platform.mounts.join(', ')}.` : '',
-    `${relationshipLabel(product.brand.manufacturing.relationship)}; ${confidenceLabel(product.brand.manufacturing.confidence).toLowerCase()} evidence confidence.`
+    product.platform.mounts?.length ? `Mounts: ${product.platform.mounts.join(', ')}.` : ''
   ];
   return lines;
 }
@@ -678,36 +669,15 @@ function recommendationFor(ctx, product) {
   return ctx.data.recommendations.find((item) => item.variant_id === product.variant.id) ?? null;
 }
 
-function recommendationLabel(recommendation) {
+function recommendationNotes(recommendation) {
   if (!recommendation) return '';
-  const labels = {
-    'cheapest-traceable-complete': 'Cheapest complete',
-    'best-complete-value': 'Best value',
-    'best-shimano-budget': 'Shimano pick',
-    'best-budget-frame': 'Budget frame pick',
-    'best-premium-package': 'Versatile premium',
-    'best-premium-race-value': 'Race value'
-  };
-  return labels[recommendation.id] ?? recommendation.title;
-}
-
-function recommendationBadge(recommendation) {
-  if (!recommendation) return '';
-  const label = recommendationLabel(recommendation);
-  return `<span class="pick-flag"><span class="pick-pill">${escapeHtml(label)}</span>${infoTip(`Why ${label}`, [recommendation.price_label, recommendation.reason, recommendation.caveat ? `Caveat: ${recommendation.caveat}` : ''])}</span>`;
+  return `<details class="detail-panel"><summary>Value assessment</summary><div class="detail-panel-body">${[recommendation.price_label, recommendation.reason, recommendation.caveat].filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join('')}</div></details>`;
 }
 
 function bestForLabel(product) {
   const values = product.variant.editorial.best_for ?? [];
   if (values.length === 1 && values[0].toLowerCase() === categoryLabel(product.platform.category).toLowerCase()) return '';
   return values.join(' · ');
-}
-
-function statusFlag(product) {
-  if (!product.platform.tire_clearance) return '';
-  const eligibility = product.platform.tire_clearance.eligibility;
-  if (eligibility === 'pass') return '';
-  return `<span class="verify-flag">Verify${infoTip('Why this needs verification', clearanceTooltipLines(product))}</span>`;
 }
 
 function productImage(ctx, product, { hero = false, href = '' } = {}) {
@@ -745,14 +715,14 @@ function catalogPriceProjection(ctx, summary) {
   return { projection, shown, unavailable };
 }
 
-function catalogPriceCell(ctx, summary, tip) {
+function catalogPriceCell(ctx, summary) {
   const { projection, shown } = catalogPriceProjection(ctx, summary);
   const tone = shown.tone ? ` is-${shown.tone}` : '';
   return {
     sort: Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : '',
     filter: Number.isFinite(projection.high) ? projection.high : '',
     // Unknown prices stay a quiet dash, like every other unrecorded cell.
-    html: `<div class="catalog-cell price-cell" role="cell">${tip ? `<span class="metric-main"><span data-calculated-price>${escapeHtml(shown.headline)}</span>${tip}</span>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${shown.tone === 'unknown' && !summary.priceState ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
+    html: `<div class="catalog-cell price-cell" role="cell">${summary.priceDetails || summary.priceDate ? `<button type="button" class="metric-main price-button" data-calculated-price data-price-details="${escapeAttr(summary.priceDate ?? '')}" aria-expanded="false">${escapeHtml(shown.headline)}</button>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${shown.tone === 'unknown' && !summary.priceState ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
   };
 }
 
@@ -780,15 +750,11 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
     tireClearance.value,
     ...(variant.editorial.best_for ?? [])
   ].filter(Boolean).map((value) => String(value).toLowerCase()).filter((value, index, all) => all.indexOf(value) === index).join(' ');
-  const recommendation = recommendationFor(ctx, product);
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
   const framesetData = variant.kind === 'frameset'
     ? ` data-frame-price-low="${allInPrice.frameLow}" data-frame-price-high="${allInPrice.frameHigh}"`
     : '';
-  const priceTipAttributes = variant.kind === 'frameset'
-    ? { 'data-frameset-price-tip': '', 'data-frame-threshold': variant.editorial.price_thresholds_cny?.great_buy_below ?? '' }
-    : {};
-  const price = catalogPriceCell(ctx, summary, infoTip('Price details', priceTooltipLines(ctx, product), priceTipAttributes));
+  const price = catalogPriceCell(ctx, summary);
   const tireClearanceData = tireClearance.sortValue ? ` data-tire-clearance-sort="${tireClearance.sortValue}"` : '';
   const drivetrain = variant.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
@@ -798,14 +764,14 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
     <div class="catalog-product" role="rowheader">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
       <span class="product-copy">
-        <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' ? '<span class="type-pill">Frame build</span>' : ''}${recommendationBadge(recommendation)}${statusFlag(product)}</span>
+        <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' ? '<span class="type-pill">Frame build</span>' : ''}</span>
         <strong class="product-name"><a href="${url(ctx.base, `/models/${variant.id}/`)}" data-model-link>${escapeHtml(variant.name)}</a></strong>
         <span class="product-fit">${escapeHtml(categoryLabel(platform.category))}</span>
       </span>
     </div>
     ${price.html}
     ${catalogCell('capability', metric.label, { main: metric.value }, { extra: metric.details.length ? infoTip(`${metric.label} details`, metric.details) : '' })}
-    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value), { extra: tireClearance.fieldReport ? infoTip('Tire clearance field check', tireClearance.details) : '' })}
+    ${catalogCell('tire-clearance', 'Tire clearance', clearanceParts(tireClearance.value), { extra: tireClearance.fieldReport || platform.tire_clearance?.eligibility !== 'pass' || platform.tire_clearance?.drivetrain_limits_mm ? infoTip('Tire clearance details', tireClearance.details) : '' })}
     ${drivetrain}
     ${catalogCell('weight', 'Weight', weightParts(weightLabel(product), variant.kind))}
     ${catalogCell('frame', 'Frame', { main: frameStandard(product) }, { extra: infoTip('Frame details', frameTooltipLines(product)) })}
@@ -971,7 +937,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
       : '—';
   const frame = facts.frame ?? candidate.manufacturing ?? '—';
   const tireClearanceData = tireClearance.sortValue ? ` data-tire-clearance-sort="${tireClearance.sortValue}"` : '';
-  const price = catalogPriceCell(ctx, summary, '');
+  const price = catalogPriceCell(ctx, summary);
   const drivetrain = entry.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: facts.drivetrain ?? '—' }, { clamp: true });
@@ -1597,7 +1563,7 @@ export function renderModel(ctx, product) {
     : '';
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
-  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([categoryLabel(platform.category), variant.kind === 'frameset' ? 'frame build' : 'complete bike', `${platform.handlebar}-bar`].join(' · '))}</p></header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
+  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}</div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([categoryLabel(platform.category), variant.kind === 'frameset' ? 'frame build' : 'complete bike', `${platform.handlebar}-bar`].join(' · '))}</p></header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#source-records">All price records</a>${goodBuyThreshold ? `<span>${variant.kind === 'frameset' ? 'Frameset' : 'Complete-bike'} good-buy reference: below ${escapeHtml(formatCny(goodBuyThreshold))}</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl>${verifyItems.length ? `<section class="model-verify" aria-labelledby="model-verify-title"><h2 id="model-verify-title">Verify before paying</h2><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : ''}</div>
   </div>
@@ -1607,6 +1573,7 @@ export function renderModel(ctx, product) {
     <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? `${zh ? ' 适合重点考虑的用途：' : german ? ' Besonders geeignet für ' : ' Best suited to '}${escapeHtml(bestFor)}${zh ? '。' : '.'}` : ''}</p><p><strong>${zh ? '关键配置：' : 'Key hardware:'}</strong> ${escapeHtml(keyHardware)}${zh ? '。' : '.'}</p></section>
     <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd${label === 'Purchase route' ? ' id="model-purchase-route"' : ''}>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div>${metric.kind === 'discipline' ? '' : `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div>`}${metric.details.length ? `<div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' '))}</dd></div>` : ''}<div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div></dl></section>
     ${structuredGeometry(platform.frame.geometry, product.sources)}${platform.frame.geometry?.sizes?.length ? `<p class="model-geometry-link"><a href="${url(ctx.base,'/geometry/')}?a=${escapeAttr(platform.id)}">Compare this geometry ↗</a></p>` : ''}<section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p></section>
+    ${recommendationNotes(recommendationFor(ctx, product))}
     ${relatedArticleLinks(ctx, variant.id)}
     ${brandStory(brand)}
     ${opinionSection(ctx, product.opinions)}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { priceDisplay, priceAgeLabel } from '../assets/price-display.js';
+import { priceDisplay, priceAgeLabel, priceEvidenceLines, compactPriceBasis } from '../assets/price-display.js';
 import { regionalPrice, formatMoneyRange } from '../assets/regional-prices.js';
 import { translate } from '../assets/i18n.js';
 
@@ -17,7 +17,8 @@ test('China references remain sortable separately without becoming overseas budg
   assert.equal(result.display.basis, 'china');
   for (const locale of ['en', 'zh-Hans', 'de']) {
     const shown = priceDisplay(result, { currency: 'USD', locale, translate });
-    assert.match(shown.basis, /2026-10-01/);
+    assert.doesNotMatch(shown.basis, /2026-10-01/);
+    assert.equal(shown.date, '2026-10-01');
     assert.equal(shown.tone, 'attention');
     assert.doesNotMatch(shown.headline, /479[.,]89/);
   }
@@ -29,7 +30,9 @@ test('delivered totals lead the shared display and keep their own evidence date'
     state: 'estimated', offer: { date: '2026-10-02' }, china: item.chinaPrice };
   const shown = priceDisplay(result, { currency: 'USD' });
   assert.equal(shown.headline, '≈ $1,700');
-  assert.match(shown.basis, /^Delivered, seller estimate · 2026-10-02 · China price/);
+  assert.match(shown.basis, /^Delivered, seller estimate · China price/);
+  assert.equal(shown.date, '2026-10-02');
+  assert.doesNotMatch(shown.basis, /2026-10-02/);
   assert.equal(shown.tone, 'attention');
 });
 
@@ -46,7 +49,22 @@ test('missing and reference-only prices preserve unknown totals and original dat
   const result = regionalPrice({ ...item, chinaPrice: null }, { country: 'DE', currency: 'EUR' }, payload);
   assert.equal(result.chinaTotal.low, null);
   assert.equal(result.low, null);
-  assert.match(priceDisplay(result, { currency: 'EUR', referenceDate: '2026-09-15', referenceLabel: 'Official FX estimate' }).basis, /Official FX estimate.*2026-09-15/);
+  const shown = priceDisplay(result, { currency: 'EUR', referenceDate: '2026-09-15', referenceLabel: 'Official FX estimate' });
+  assert.match(shown.basis, /Official FX estimate/);
+  assert.doesNotMatch(shown.basis, /2026-09-15/);
+  assert.equal(shown.date, '2026-09-15');
   assert.equal(priceDisplay({ display: { low: null, high: null } }).headline, '—');
   assert.equal(priceAgeLabel('2026-06-01', '2026-10-13'), '4 mo old');
+});
+
+
+test('compact price rows retain dates and conditions in evidence without repetition', () => {
+  const item = { priceDate: '2026-10-24', priceDetails: 'Coupon required; shipping excluded.' };
+  assert.deepEqual(priceEvidenceLines(item), ['Price observed 2026-10-24.', item.priceDetails]);
+  const dated = { ...item, priceDetails: 'Price observed 2026-10-24. Coupon required.' };
+  assert.deepEqual(priceEvidenceLines(dated), ['Price observed 2026-10-24.', 'Coupon required.']);
+  assert.equal(translate(priceEvidenceLines(dated)[0], 'de'), 'Preis erfasst am 2026-10-24.');
+  assert.equal(translate(priceEvidenceLines(dated)[0], 'zh-Hans'), '报价记录于 2026-10-24。');
+  assert.equal(compactPriceBasis('Historical · 2026-10-24 · conditional'), 'Historical · conditional');
+  assert.equal(priceDisplay({ display: {} }, { fallback: { headline: '—', basis: 'Historical · 2026-10-24' } }).basis, 'Historical');
 });
