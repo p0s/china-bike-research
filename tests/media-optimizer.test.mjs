@@ -41,7 +41,7 @@ test('media optimizer selects high quality first and progressively smaller dimen
 
 test('media optimizer uses content-addressed immutable names', () => {
   const digest = 'a'.repeat(64);
-  assert.equal(immutableFileName({ purpose: 'card', width: 480, sha256: digest }), 'aaaaaaaaaaaaaaaa-card-w480.webp');
+  assert.equal(immutableFileName({ purpose: 'card', width: 480, sha256: digest }), 'aaaaaaaaaaaaaaaa-card-w480.avif');
   assert.throws(() => immutableFileName({ purpose: 'full', width: 480, sha256: digest }), /unsupported/);
 });
 

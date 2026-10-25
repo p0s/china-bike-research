@@ -61,7 +61,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header${current === 'catalog' ? ' is-catalog' : ''}">
     <div class="page header-inner">
-      <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/branding/panda-rider-3b-256.webp')}" alt="" width="50" height="50"><span class="brand-wordmark" data-original-language lang="en" translate="no">China <span>Bikes</span></span></a>
+      <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/branding/panda-rider-3b-256-6c271fa41e.avif')}" alt="" width="50" height="50"><span class="brand-wordmark" data-original-language lang="en" translate="no">China <span>Bikes</span></span></a>
       <form class="header-search" role="search" action="${url(base,localePath('/', locale))}#catalog" method="get" data-header-search>
         <label class="sr-only" for="site-search">Search bikes</label>
         <input id="site-search" name="q" type="search" placeholder="Search model, brand, drivetrain or 中文名" autocomplete="off" enterkeyhint="search"${current === 'catalog' ? ' data-filter-search' : ''}>

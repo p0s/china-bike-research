@@ -960,7 +960,7 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   assert.doesNotMatch(privacy, /XHS video links|only after you choose to load/);
 
   const imagePolicy = renderImagePolicy(context);
-  assert.match(imagePolicy, /Displayed product photos are optimized WebP copies served by this site/);
+  assert.match(imagePolicy, /Displayed product photos are optimized copies served by this site/);
   assert.match(imagePolicy, /When a source image is unavailable or its model cannot be verified, we leave the photo out/);
   assert.match(imagePolicy, /Browse image sources and credits/);
 });

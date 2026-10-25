@@ -209,7 +209,8 @@ test('mascot cutouts and illustrated headers have provenance and immutable optim
     assert.match(image.header.alt.en, /red panda/);
     assert.deepEqual(image.header.files.map((file) => file.purpose), ['card', 'hero', 'social']);
     for (const file of [...image.files, ...image.header.files]) {
-      assert.match(file.path, /^\/assets\/blog\/[a-z0-9-]+\.(webp|jpg)$/);
+      assert.match(file.path, /^\/assets\/blog\/[a-z0-9-]+\.(avif|jpg)$/);
+      assert.equal(file.type, file.purpose === 'social' ? 'image/jpeg' : 'image/avif');
       const bytes = fs.readFileSync(new URL('..' + file.path, import.meta.url));
       assert.equal(bytes.length, file.bytes);
       assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), file.sha256);

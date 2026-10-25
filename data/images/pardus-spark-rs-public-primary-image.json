@@ -6,18 +6,51 @@
   "media_type": "community-post-photo",
   "hosting": {
     "mode": "local",
-    "local_path": "/assets/images/sourced/xhs/pardus-spark-rs/a0ed3c4fdd93602c-detail-w920.webp",
+    "local_path": "/assets/images/sourced/xhs/pardus-spark-rs/d71772e9ebab0c45-detail-w920.avif",
     "variants": [
-      { "purpose": "card", "url": "/assets/images/sourced/xhs/pardus-spark-rs/263dd375a2669346-card-w480.webp", "width": 480, "height": 389, "bytes": 38814, "sha256": "263dd375a26693461a5ab924c5f44e032ab4f231e3c269a16dd3f76667a335d1", "format": "image/webp" },
-      { "purpose": "detail", "url": "/assets/images/sourced/xhs/pardus-spark-rs/a0ed3c4fdd93602c-detail-w920.webp", "width": 920, "height": 745, "bytes": 84380, "sha256": "a0ed3c4fdd93602c0b15a0a0f7db6754a06b18229361a3d2e696fdde5de7fc1d", "format": "image/webp" }
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/pardus-spark-rs/df6fa02e9cfdfa71-card-w480.avif",
+        "width": 480,
+        "height": 389,
+        "bytes": 32904,
+        "sha256": "df6fa02e9cfdfa7156c8acb285fab367d5b607986d560d095e6487458112525e",
+        "format": "image/avif"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/pardus-spark-rs/d71772e9ebab0c45-detail-w920.avif",
+        "width": 920,
+        "height": 745,
+        "bytes": 79755,
+        "sha256": "d71772e9ebab0c45433f4eb09bc04f0f05c899033aca4b2342eb2ccdcaf8cefb",
+        "format": "image/avif"
+      }
     ]
   },
   "source_id": "public-pardus-spark-rs-build-2026-08-17",
-  "rights": { "status": "source-attributed-rehost", "copyright_holder": "Original XHS post creator", "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator",
+    "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git."
+  },
   "credit": "Original XHS post creator; see the linked source",
   "alt": "Quoted public-post photo of a white PARDUS Spark RS custom road build",
   "reviewed_at": "2026-08-20",
   "display_note": "Exact Spark RS platform in a custom build; components may differ from a factory trim.",
-  "editorial_quotation": { "purpose": "editorial-identification-and-commentary", "scope": "one-compressed-public-post-photo", "source_link_required": true, "no_license_asserted": true, "removal_route": "https://github.com/p0s/china-bike-research/issues" },
-  "privacy_review": { "reviewed_at": "2026-08-20", "embedded_metadata": "stripped", "faces": "none-visible", "vehicle_registration": "none-visible", "account_identifiers": "none-visible", "location_identifiers": "none-visible" }
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-08-20",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

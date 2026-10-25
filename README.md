@@ -31,3 +31,5 @@ For agent-assisted work, point the LLM at the repository and tell it to read [AG
 - Code and original fallback artwork: [MIT](LICENSE)
 - Original research text and structured data: [CC BY 4.0](LICENSE-DATA)
 - Third-party names, pages, and images remain with their owners; see [THIRD_PARTY.md](THIRD_PARTY.md)
+
+Image imports: follow [AVIF authoring](docs/avif-authoring.md). Browser assets are converted before deployment; `npm run check` enforces the format policy.

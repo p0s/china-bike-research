@@ -6,18 +6,51 @@
   "media_type": "community-post-photo",
   "hosting": {
     "mode": "local",
-    "local_path": "/assets/images/sourced/xhs/pardus-uragano-evo/925778505e419338-detail-w1080.webp",
+    "local_path": "/assets/images/sourced/xhs/pardus-uragano-evo/b9847f78adec39b2-detail-w1080.avif",
     "variants": [
-      { "purpose": "card", "url": "/assets/images/sourced/xhs/pardus-uragano-evo/7d366937bdaecca1-card-w480.webp", "width": 480, "height": 640, "bytes": 25258, "sha256": "7d366937bdaecca1f35ae5a101483856cc0f9093b1c1008fd73292aac2d5aaa1", "format": "image/webp" },
-      { "purpose": "detail", "url": "/assets/images/sourced/xhs/pardus-uragano-evo/925778505e419338-detail-w1080.webp", "width": 1080, "height": 1440, "bytes": 70694, "sha256": "925778505e41933897591f1b7a82895a790b8b8badd05082e6a4840e523e3c88", "format": "image/webp" }
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/pardus-uragano-evo/4fb9c582278bb7eb-card-w480.avif",
+        "width": 480,
+        "height": 640,
+        "bytes": 23198,
+        "sha256": "4fb9c582278bb7eb8929556cb4fc7ed0b2ebf209f3cb6f2a338106a4ee2d570e",
+        "format": "image/avif"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/pardus-uragano-evo/b9847f78adec39b2-detail-w1080.avif",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 59988,
+        "sha256": "b9847f78adec39b2c92c9e30a499d4b963b54caeb9dd18f46aa07d4ad36d712d",
+        "format": "image/avif"
+      }
     ]
   },
   "source_id": "public-pardus-uragano-evo-build-2026-08-17",
-  "rights": { "status": "source-attributed-rehost", "copyright_holder": "Original XHS post creator", "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator",
+    "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git."
+  },
   "credit": "Original XHS post creator; see the linked source",
   "alt": "Quoted public-post close-up of the PARDUS Uragano EVO drivetrain",
   "reviewed_at": "2026-08-20",
   "display_note": "Exact Uragano EVO custom-build drivetrain detail; components may differ from factory trims.",
-  "editorial_quotation": { "purpose": "editorial-identification-and-commentary", "scope": "one-compressed-public-post-photo", "source_link_required": true, "no_license_asserted": true, "removal_route": "https://github.com/p0s/china-bike-research/issues" },
-  "privacy_review": { "reviewed_at": "2026-08-20", "embedded_metadata": "stripped", "faces": "none-visible", "vehicle_registration": "none-visible", "account_identifiers": "none-visible", "location_identifiers": "none-visible" }
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-08-20",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }
