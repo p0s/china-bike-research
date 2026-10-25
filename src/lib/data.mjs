@@ -1,3 +1,4 @@
+import { isAvif } from './image-format.mjs';
 import { isCalendarDate as isDate } from './calendar-date.mjs';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -263,8 +264,12 @@ function derivativeContentMismatch(variant) {
   let stats;
   try { stats = fs.statSync(file); } catch { return false; } // Missing files have their own error.
   const key = `${file}:${stats.size}:${stats.mtimeMs}`;
-  if (!derivativeDigests.has(key)) derivativeDigests.set(key, crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'));
-  const digest = derivativeDigests.get(key);
+  if (!derivativeDigests.has(key)) {
+    const bytes = fs.readFileSync(file);
+    derivativeDigests.set(key, { digest: crypto.createHash('sha256').update(bytes).digest('hex'), avif: isAvif(bytes) });
+  }
+  const { digest, avif } = derivativeDigests.get(key);
+  if (!avif || variant.format !== 'image/avif') return true;
   return digest !== variant.sha256 || stats.size !== variant.bytes || !path.basename(file).startsWith(`${digest.slice(0, 16)}-`);
 }
 /** @param {unknown} value */
@@ -401,7 +406,7 @@ export function validateDataset(data = loadDataset()) {
           if (typeof image[field] !== 'string' || !image[field].trim()) errors.push(`groupset ${groupset.id}: missing image.${field}`);
         }
         if (image.local_path !== undefined) {
-          const pattern = /^\/assets\/images\/sourced\/official\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
+          const pattern = /^\/assets\/images\/sourced\/official\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.avif$/;
           if (!pattern.test(image.local_path) || !fs.existsSync(path.join(root, image.local_path.replace(/^\//, '')))) errors.push(`groupset ${groupset.id}: invalid local image`);
           if (image.remote_url !== undefined) errors.push(`groupset ${groupset.id}: local image must not retain a remote render URL`);
           if (!Array.isArray(image.variants) || image.variants.length !== 2 || image.local_path !== image.variants.find((variant) => variant.purpose === 'detail')?.url) errors.push(`groupset ${groupset.id}: invalid local variants`);
@@ -411,7 +416,7 @@ export function validateDataset(data = loadDataset()) {
             if (!pattern.test(variant.url ?? '') || !fs.existsSync(path.join(root, String(variant.url ?? '').replace(/^\//, '')))
               || !Number.isInteger(variant.bytes) || variant.bytes < 1 || variant.bytes > byteLimit
               || !Number.isInteger(variant.width) || variant.width < 1 || variant.width > widthLimit
-              || !/^[a-f0-9]{64}$/.test(variant.sha256 ?? '') || variant.format !== 'image/webp') errors.push(`groupset ${groupset.id}: invalid local ${variant.purpose ?? 'unknown'} variant`);
+              || !/^[a-f0-9]{64}$/.test(variant.sha256 ?? '') || variant.format !== 'image/avif') errors.push(`groupset ${groupset.id}: invalid local ${variant.purpose ?? 'unknown'} variant`);
             else if (derivativeContentMismatch(variant)) errors.push(`groupset ${groupset.id}: ${variant.purpose} variant bytes do not match its recorded digest`);
           }
           if (image.rights?.status !== 'source-attributed-rehost' || image.privacy_review?.embedded_metadata !== 'stripped') errors.push(`groupset ${groupset.id}: incomplete local image review`);
@@ -943,7 +948,7 @@ export function validateDataset(data = loadDataset()) {
       if (['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation'].includes(image.rights?.status)) errors.push(`image ${image.id}: third-party remote image cannot be stored locally`);
       if (image.rights?.status === 'source-attributed-rehost') {
         const variants = image.hosting?.variants;
-        const localPattern = /^\/assets\/images\/sourced\/(xhs|taobao|xianyu|official|retailer)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
+        const localPattern = /^\/assets\/images\/sourced\/(xhs|taobao|xianyu|official|retailer)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.avif$/;
         if (!Array.isArray(variants) || variants.length !== 2) {
           errors.push(`image ${image.id}: sourced rehost needs card and detail variants`);
         } else {
@@ -959,7 +964,7 @@ export function validateDataset(data = loadDataset()) {
             if (!Number.isInteger(variant?.bytes) || variant.bytes < 1 || variant.bytes > byteLimit) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} sourced variant exceeds its byte budget`);
             if (!Number.isInteger(variant?.width) || variant.width < 1 || variant.width > widthLimit) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} sourced variant has invalid width`);
             if (!Number.isInteger(variant?.height) || variant.height < 1 || variant.height > 2400) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} sourced variant has invalid height`);
-            if (variant?.format !== 'image/webp') errors.push(`image ${image.id}: sourced variants must be WebP`);
+            if (variant?.format !== 'image/avif') errors.push(`image ${image.id}: sourced variants must be AVIF`);
             if (!/^[a-f0-9]{64}$/.test(variant?.sha256 ?? '')) errors.push(`image ${image.id}: sourced variant needs a SHA-256 digest`);
             if (match && !fs.existsSync(path.join(root, variant.url.replace(/^\//, '')))) errors.push(`image ${image.id}: missing sourced variant ${variant.url}`);
             else if (match && /^[a-f0-9]{64}$/.test(variant?.sha256 ?? '') && derivativeContentMismatch(variant)) errors.push(`image ${image.id}: sourced variant ${variant.url} bytes do not match its recorded digest`);

@@ -53,7 +53,7 @@ export function immutableFileName({ purpose, width, sha256 }) {
   if (!['card', 'detail'].includes(purpose)) throw new Error(`unsupported variant purpose: ${purpose}`);
   if (!Number.isInteger(width) || width < 1) throw new Error('variant width must be a positive integer');
   if (!/^[a-f0-9]{64}$/.test(sha256)) throw new Error('variant sha256 must be lowercase hexadecimal');
-  return `${sha256.slice(0, 16)}-${purpose}-w${width}.webp`;
+  return `${sha256.slice(0, 16)}-${purpose}-w${width}.avif`;
 }
 
 export function parseArguments(argv) {
@@ -96,58 +96,29 @@ function requireTool(command, versionArguments) {
   if (result.status !== 0) throw new Error(`${command} is required but unavailable`);
 }
 
-function dimensions(file) {
-  const result = run('ffprobe', [
-    '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'json', file
-  ]);
-  const stream = JSON.parse(result.stdout).streams?.[0];
-  if (!Number.isInteger(stream?.width) || !Number.isInteger(stream?.height)) {
-    throw new Error(`could not read image dimensions: ${file}`);
-  }
-  return { width: stream.width, height: stream.height };
-}
-
 function sha256(file) {
   return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 }
 
-function verifyNoEmbeddedMetadata(file) {
-  const info = run('webpmux', ['-info', file]).stdout;
-  if (/Features present:[\s\S]*(?:EXIF metadata|XMP metadata|ICC profile)/i.test(info)) {
-    throw new Error(`embedded metadata remains in ${path.basename(file)}`);
-  }
-}
-
 function encodeVariant({ input, temporaryDirectory, specification, sourceWidth }) {
+  const python = process.env.MEDIA_PYTHON || 'python3';
+  const encoder = path.join(repositoryRoot, 'scripts/encode-avif.py');
   for (const width of widthSteps(specification.maxWidth, specification.minimumWidth, sourceWidth)) {
-    for (const quality of qualitySteps(specification.qualityStart ?? 72, specification.qualityMinimum ?? 40)) {
-      const temporaryFile = path.join(temporaryDirectory, `.${specification.purpose}-w${width}-q${quality}.webp`);
-      run('cwebp', [
-        '-quiet', '-mt', '-m', '6', '-sharp_yuv', '-metadata', 'none',
-        '-q', String(quality), '-resize', String(width), '0', input, '-o', temporaryFile
-      ]);
-      const bytes = fs.statSync(temporaryFile).size;
-      if (bytes <= specification.maxBytes) {
-        verifyNoEmbeddedMetadata(temporaryFile);
-        const measured = dimensions(temporaryFile);
-        const digest = sha256(temporaryFile);
-        const file = immutableFileName({ purpose: specification.purpose, width: measured.width, sha256: digest });
-        fs.renameSync(temporaryFile, path.join(temporaryDirectory, file));
-        return {
-          purpose: specification.purpose,
-          file,
-          width: measured.width,
-          height: measured.height,
-          bytes,
-          sha256: digest,
-          format: 'image/webp',
-          quality
-        };
-      }
-      fs.unlinkSync(temporaryFile);
+    const temporaryFile = path.join(temporaryDirectory, `.${specification.purpose}-w${width}.avif`);
+    const result = run(python, ['-B', encoder, '--input', input, '--output', temporaryFile,
+      '--width', String(width), '--max-bytes', String(specification.maxBytes),
+      '--quality-start', String(specification.qualityStart ?? 60),
+      '--quality-minimum', String(specification.qualityMinimum ?? 45)], { allowFailure: true });
+    if (result.status !== 0) {
+      if (!result.stderr.includes('cannot meet')) throw new Error(result.stderr.trim());
+      continue;
     }
+    const measured = JSON.parse(result.stdout);
+    const file = immutableFileName({ purpose: specification.purpose, width: measured.width, sha256: measured.sha256 });
+    fs.renameSync(temporaryFile, path.join(temporaryDirectory, file));
+    return { purpose: specification.purpose, file, ...measured };
   }
-  throw new Error(`${specification.purpose} variant could not meet ${specification.maxBytes} bytes without dropping below ${specification.minimumWidth}px or quality 40`);
+  throw new Error(`${specification.purpose} variant cannot meet its byte/width budget at AVIF quality 45 or above`);
 }
 
 export function optimizeImage({ input, output, slug, repositoryLocal = false, variants = DEFAULT_VARIANTS, now = new Date() }) {
@@ -162,9 +133,7 @@ export function optimizeImage({ input, output, slug, repositoryLocal = false, va
   }
   if (!outputIsRepositoryLocal && repositoryLocal) throw new Error('--repository-local requires an approved repository output root');
   if (!fs.statSync(inputPath, { throwIfNoEntry: false })?.isFile()) throw new Error(`input is not a file: ${inputPath}`);
-  requireTool('cwebp', ['-version']);
-  requireTool('ffprobe', ['-version']);
-  requireTool('webpmux', ['-version']);
+  requireTool(process.env.MEDIA_PYTHON || 'python3', ['-c', 'from PIL import features; assert features.check(\"avif\"), \"Install requirements-media.txt\"']);
 
   fs.mkdirSync(outputRoot, { recursive: true });
   const finalDirectory = path.join(outputRoot, slug);
@@ -173,11 +142,10 @@ export function optimizeImage({ input, output, slug, repositoryLocal = false, va
   if (!isWithin(temporaryDirectory, outputRoot)) throw new Error('unsafe optimizer temporary path');
 
   try {
-    const sourceDimensions = dimensions(inputPath);
+    const sourceDimensions = JSON.parse(run(process.env.MEDIA_PYTHON || 'python3', ['-B', path.join(repositoryRoot, 'scripts/encode-avif.py'), '--input', inputPath, '--inspect']).stdout);
     const source = {
+      ...sourceDimensions,
       bytes: fs.statSync(inputPath).size,
-      width: sourceDimensions.width,
-      height: sourceDimensions.height,
       sha256: sha256(inputPath)
     };
     const optimized = variants.map((specification) => encodeVariant({
@@ -210,7 +178,7 @@ function usage() {
 The source must be outside the repository. Repository-local output additionally requires
 --repository-local and must target assets/images/sourced/xhs, assets/images/sourced/taobao,
 assets/images/sourced/xianyu, assets/images/sourced/official, or assets/images/sourced/retailer.
-The command creates immutable, metadata-free WebP card and detail variants plus a manifest.`;
+The command creates immutable, metadata-free AVIF card and detail variants plus a manifest.`;
 }
 
 async function main() {

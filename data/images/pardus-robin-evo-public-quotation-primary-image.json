@@ -6,18 +6,51 @@
   "media_type": "community-post-photo",
   "hosting": {
     "mode": "local",
-    "local_path": "/assets/images/sourced/xhs/pardus-robin-evo/49e14f1b967f0071-detail-w720.webp",
+    "local_path": "/assets/images/sourced/xhs/pardus-robin-evo/5ed8c65cce4fe52c-detail-w720.avif",
     "variants": [
-      { "purpose": "card", "url": "/assets/images/sourced/xhs/pardus-robin-evo/4f91ff6b0c4cc8f2-card-w480.webp", "width": 480, "height": 600, "bytes": 26520, "sha256": "4f91ff6b0c4cc8f2022c2ece72c4b81d71ced12a8bdda2d352aeff7c8f43c4ee", "format": "image/webp" },
-      { "purpose": "detail", "url": "/assets/images/sourced/xhs/pardus-robin-evo/49e14f1b967f0071-detail-w720.webp", "width": 720, "height": 900, "bytes": 49742, "sha256": "49e14f1b967f00717e91dd4803ab483f2081140841af9ba7581ba30065880e7a", "format": "image/webp" }
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/pardus-robin-evo/09d34994ea15f889-card-w480.avif",
+        "width": 480,
+        "height": 600,
+        "bytes": 24543,
+        "sha256": "09d34994ea15f889782c103443b9459585798304861229964653bfa42d9ad8f0",
+        "format": "image/avif"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/pardus-robin-evo/5ed8c65cce4fe52c-detail-w720.avif",
+        "width": 720,
+        "height": 900,
+        "bytes": 46546,
+        "sha256": "5ed8c65cce4fe52c5827590da2258aa337ff9130ede8f3dc47cdde0efb740449",
+        "format": "image/avif"
+      }
     ]
   },
   "source_id": "public-pardus-robin-evo-photo-2026-08-20",
-  "rights": { "status": "source-attributed-rehost", "copyright_holder": "Original XHS post creator", "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator",
+    "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git."
+  },
   "credit": "Original XHS post creator; see the linked source",
   "alt": "Quoted public-post video frame showing a white PARDUS Robin EVO road bike",
   "reviewed_at": "2026-08-20",
   "display_note": "Exact Robin EVO platform in a custom build; components may differ from factory trims.",
-  "editorial_quotation": { "purpose": "editorial-identification-and-commentary", "scope": "one-compressed-public-post-photo", "source_link_required": true, "no_license_asserted": true, "removal_route": "https://github.com/p0s/china-bike-research/issues" },
-  "privacy_review": { "reviewed_at": "2026-08-20", "embedded_metadata": "stripped", "faces": "none-visible", "vehicle_registration": "none-visible", "account_identifiers": "none-visible", "location_identifiers": "none-visible" }
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-08-20",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

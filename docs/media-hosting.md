@@ -1,3 +1,5 @@
+Current browser asset authoring follows [AVIF authoring](avif-authoring.md). The external-media deployment notes below are historical infrastructure context.
+
 # Third-party media hosting
 
 ## Decision
@@ -22,7 +24,7 @@ filed through the public issue tracker without posting personal data.
 | Catalog card | 480 px | 40,000 | Chosen for compact catalog and comparison views |
 | Model detail | 1,200 px | 88,000 | Chosen only when a larger rendered image needs it |
 
-`npm run media:optimize` uses WebP, strips metadata, starts at quality 72, and lowers
+`npm run media:optimize` uses AVIF, strips metadata, starts at quality 60, and lowers
 quality only until the byte target is met. If necessary it reduces dimensions without
 upscaling. Output filenames include a SHA-256 prefix and receive one-year immutable
 caching. A 400 KB original therefore becomes at least 10× smaller in card views; the
@@ -60,7 +62,7 @@ were not committed.
 4. Visually inspect both derivatives and confirm their manifest byte counts, hashes,
    dimensions, and metadata result.
 5. For external hosting, deploy the staging copy and read back HTTPS headers and bytes.
-   For Git hosting, add the generated immutable WebP files to the matching image record;
+   For Git hosting, add the generated immutable AVIF files to the matching image record;
    the privacy and data validators reject unreferenced or out-of-contract binaries.
 
 The optimizer always refuses repository-local sources. Repository-local output requires
@@ -85,7 +87,7 @@ assert ownership or grant a general license to redistribute the source image.
 ## Privacy and serving behavior
 
 - `cwebp -metadata none` removes EXIF, XMP, ICC, and GPS-bearing metadata; the optimizer
-  verifies the WebP container before accepting output.
+  verifies the AVIF container before accepting output.
 - Image review is recorded only after faces, registration, account identifiers, and
   visible location identifiers are absent.
 - Nginx access logging is disabled. The visitor still makes a normal HTTPS request to

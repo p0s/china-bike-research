@@ -229,7 +229,7 @@
           "anyOf": [
             {"type": "string", "format": "uri", "pattern": "^https://"},
             {
-              "pattern": "^/assets/images/sourced/(xhs|taobao|xianyu|official|retailer)/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.webp$"
+              "pattern": "^/assets/images/sourced/(xhs|taobao|xianyu|official|retailer)/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.avif$"
             }
           ]
         },
@@ -237,7 +237,7 @@
         "height": {"type": "integer", "minimum": 1, "maximum": 2400},
         "bytes": {"type": "integer", "minimum": 1, "maximum": 400000},
         "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-        "format": {"const": "image/webp"},
+        "format": {"enum": ["image/webp", "image/avif"]},
         "quality": {"type": "integer", "minimum": 1, "maximum": 100}
       },
       "required": ["purpose", "url", "width", "height", "bytes", "sha256", "format"],
@@ -249,13 +249,13 @@
             "properties": {
               "width": {"type": "integer", "minimum": 1, "maximum": 480},
               "bytes": {"type": "integer", "minimum": 1, "maximum": 100000},
-              "url": {"pattern": "-card-w\\d+\\.webp$"}
+              "url": {"pattern": "-card-w\\d+\\.(webp|avif)$"}
             }
           }
         },
         {
           "if": {"properties": {"purpose": {"const": "detail"}}},
-          "then": {"properties": {"url": {"pattern": "-detail-w\\d+\\.webp$"}}}
+          "then": {"properties": {"url": {"pattern": "-detail-w\\d+\\.(webp|avif)$"}}}
         }
       ]
     },
@@ -378,9 +378,10 @@
           "hosting": {
             "required": ["variants"],
             "properties": {
+              "variants": {"items": {"properties": {"format": {"const": "image/avif"}}}},
               "mode": {"const": "local"},
               "local_path": {
-                "pattern": "^/assets/images/sourced/(xhs|taobao|xianyu|official|retailer)/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.webp$"
+                "pattern": "^/assets/images/sourced/(xhs|taobao|xianyu|official|retailer)/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.avif$"
               }
             }
           },
@@ -457,7 +458,7 @@
                     "items": {
                       "properties": {
                         "url": {
-                          "pattern": "^https://china-bike-media\\.161-97-123-19\\.sslip\\.io/media/xhs/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.webp$"
+                          "pattern": "^https://china-bike-media\\.161-97-123-19\\.sslip\\.io/media/xhs/[a-z0-9][a-z0-9-]*/[a-f0-9]{16}-(card|detail)-w\\d+\\.(webp|avif)$"
                         }
                       }
                     }

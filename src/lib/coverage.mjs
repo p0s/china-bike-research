@@ -140,7 +140,7 @@ function imageProtection(image) {
 // A reviewed source-attributed derivative keeps the same bounded media
 // contract when a previously remote quotation moves into the repository. It
 // is still lower-risk than an arbitrary local fallback: data validation has
-// already checked the immutable WebP variants, source identity, privacy
+// already checked the immutable AVIF variants, source identity, privacy
 // review, and removal route. Keep this equivalence narrow so placeholders or
 // unrelated local images cannot satisfy protected remote-image coverage.
 function hasApprovedLocalSourcedDerivative(image) {

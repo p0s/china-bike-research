@@ -9,8 +9,8 @@
   },
   "scripts": {
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
-    "build": "node scripts/build.mjs",
-    "build:cloudflare": "node scripts/build-cloudflare.mjs && npm run seo:check",
+    "build": "npm run media:check && node scripts/build.mjs",
+    "build:cloudflare": "npm run media:check && node scripts/build-cloudflare.mjs && npm run seo:check",
     "deploy:cloudflare": "npm run check && npx wrangler deploy",
     "dev:cloudflare": "npm run build:cloudflare && npx wrangler dev",
     "validate": "node scripts/validate-data.mjs",
@@ -33,6 +33,7 @@
     "test": "node --test tests/*.test.mjs",
     "check": "npm run privacy && npm run privacy:outgoing && npm run validate && npm run research:check && npm run coverage:check && npm test && npm run build && npm run seo:check",
     "links:check": "node scripts/check-links.mjs",
-    "seo:check": "node scripts/audit-seo.mjs"
+    "seo:check": "node scripts/audit-seo.mjs",
+    "media:check": "node scripts/check-image-formats.mjs"
   }
 }
