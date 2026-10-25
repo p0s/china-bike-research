@@ -9307,6 +9307,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "warranty-evidence-before-service-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda packing a bicycle parts parcel",
+        "zh-Hans": "打包自行车零件的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is packing a small plain cardboard parcel, kneeling beside it and using a tape dispenser to close it. Cheerful competent expression. Unprinted box with no labels or text. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "5e7d345dec565f7168665259bd95e4ad84a2ca8ee5ec736de725dd2dc80ce3b4"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-mascot-480-ab2c6205b2.avif",
+          "width": 480,
+          "height": 320,
+          "type": "image/avif",
+          "bytes": 14181,
+          "sha256": "ab2c6205b28e04038000ed2529477c28c9246064eb88658d783e0705ee09e85b"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda photographs a stationary bike in a workshop, beside a tray of parts and an open blank folder.",
+          "zh-Hans": "戴头盔的小熊猫在工坊里拍摄静止自行车，旁边放着零件托盘和打开的空白文件夹。",
+          "de": "Ein Rotpanda mit Helm fotografiert ein stehendes Fahrrad in der Werkstatt; daneben liegen Teile auf einer Ablage und ein offener, leerer Ordner."
+        },
+        "prompt": "Editorial scene: A helmeted red panda photographs a stationary bike in a workshop, beside a tray of parts and an open blank folder.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "f34f932af4d5f1032ee441d61c25d0810a180048174c69b7edb164bc1214d26d",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/warranty-evidence-before-service-mascot-cover-f34f932af4-640-d5eaf1bd81.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 32189,
+            "sha256": "d5eaf1bd81864182ba2ec546c8cdc2d5b111fe5da2331e95f92d093fd82c5a98"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/warranty-evidence-before-service-mascot-cover-f34f932af4-1600-80fe6ec427.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 120612,
+            "sha256": "80fe6ec42761264625a43dfff65dd2459a2cbfeed1b307c3a53c45cf0cf62fa9"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/warranty-evidence-before-service-mascot-cover-f34f932af4-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 206717,
+            "sha256": "2736105f04afcdabd46483f352795f08b73ae839a47cd1939a85cd17fc2ba9dc"
+          }
+        ]
+      }
     }
   ]
 }
