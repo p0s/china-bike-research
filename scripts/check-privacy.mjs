@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-640-87f9f465ba.avif', '87f9f465bae8174ec3b2e9d85a9b526c096c6e08c4982a5bb816e57cda0e972a'],
+  ['assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-1600-a43ff6d877.avif', 'a43ff6d8770d5258725cbe7a4e1ba76bf70a52a6fe33db801de544a17911b375'],
+  ['assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-1200.jpg', '4d712c7920e741987533dc951cbf5cbeb71d0ea5becb12345adfb61d7ab8907d'],
   ['assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-640-09517dfc1f.avif', '09517dfc1f4a808d88567e84b06983e67f30bbe5cf1abb7ab7173688b660a4df'],
   ['assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-1600-fb31e58618.avif', 'fb31e58618dccb2befec8cfab1155ff5effb8a173e557bca6762e68e6a3e5de8'],
   ['assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-1200.jpg', '241a6e0081a4fd6d9eb176b84a017ea210b98b637d0b413e35e91e5685fa7d95'],

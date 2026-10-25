@@ -9611,6 +9611,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "what-iso-4210-bike-claims-mean-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif",
+          "width": 480,
+          "height": 408,
+          "type": "image/avif",
+          "bytes": 20185,
+          "sha256": "c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda holds a notebook beside a glass enclosure containing an unbranded bicycle frame in a stationary fixture.",
+          "zh-Hans": "戴头盔的小熊猫拿着笔记本，旁边的玻璃围挡内，一副无品牌自行车车架固定在静止的夹具上。",
+          "de": "Ein Rotpanda mit Helm hält ein Notizbuch neben einer Glasabtrennung, hinter der ein unmarkierter Fahrradrahmen in einer stillstehenden Vorrichtung befestigt ist."
+        },
+        "prompt": "Editorial scene: A helmeted red panda holds a notebook beside a glass enclosure containing an unbranded bicycle frame in a stationary fixture.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "d0ed4c8dc85b7490034abd06276b962ecf2d2346a4264fbbe4174c1488dc95ad",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-640-87f9f465ba.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 22831,
+            "sha256": "87f9f465bae8174ec3b2e9d85a9b526c096c6e08c4982a5bb816e57cda0e972a"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-1600-a43ff6d877.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 83673,
+            "sha256": "a43ff6d8770d5258725cbe7a4e1ba76bf70a52a6fe33db801de544a17911b375"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/what-iso-4210-bike-claims-mean-mascot-cover-d0ed4c8dc8-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 148307,
+            "sha256": "4d712c7920e741987533dc951cbf5cbeb71d0ea5becb12345adfb61d7ab8907d"
+          }
+        ]
+      }
     }
   ]
 }
