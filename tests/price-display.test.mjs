@@ -19,7 +19,7 @@ test('China references remain sortable separately without becoming overseas budg
     const shown = priceDisplay(result, { currency: 'USD', locale, translate });
     assert.doesNotMatch(shown.basis, /2026-10-01/);
     assert.equal(shown.date, '2026-10-01');
-    assert.equal(shown.tone, 'attention');
+    assert.equal(shown.tone, '');
     assert.doesNotMatch(shown.headline, /479[.,]89/);
   }
   assert.match(formatMoneyRange(3199.25, 3199.25, 'CNY', 'en', { exact: true }), /3,199.25/);
@@ -65,6 +65,22 @@ test('compact price rows retain dates and conditions in evidence without repetit
   assert.deepEqual(priceEvidenceLines(dated), ['Price observed 2026-10-24.', 'Coupon required.']);
   assert.equal(translate(priceEvidenceLines(dated)[0], 'de'), 'Preis erfasst am 2026-10-24.');
   assert.equal(translate(priceEvidenceLines(dated)[0], 'zh-Hans'), '报价记录于 2026-10-24。');
-  assert.equal(compactPriceBasis('Historical · 2026-10-24 · conditional'), 'Historical · conditional');
+  assert.equal(compactPriceBasis('Historical · 2026-10-24 · conditional · 4 mo old'), 'Historical');
   assert.equal(priceDisplay({ display: {} }, { fallback: { headline: '—', basis: 'Historical · 2026-10-24' } }).basis, 'Historical');
+});
+
+test('secondary price qualifiers stay in details while incomplete totals stay visible', () => {
+  const observed = { ...item, priceDate: '2026-06-01', priceDetails: 'Coupon required; shipping excluded.', chinaPrice: { ...item.chinaPrice, official: true, date: '2026-06-01' } };
+  const result = regionalPrice(observed, { country: 'CN', currency: 'CNY' }, payload);
+  const shown = priceDisplay(result, { today: '2026-10-25' });
+  assert.equal(shown.basis, '');
+  assert.equal(shown.tone, '');
+  assert.equal(shown.stale, true);
+  assert.deepEqual(priceEvidenceLines(observed), ['Price observed 2026-06-01.', 'Official price', 'Coupon required; shipping excluded.']);
+  const converted = priceDisplay(regionalPrice(observed, { country: 'US', currency: 'USD' }, payload), { currency: 'USD', today: '2026-10-25' });
+  assert.match(converted.basis, /^China ¥/);
+  assert.doesNotMatch(converted.basis, /conditional|mo old|Official/);
+  const frame = regionalPrice({ ...observed, estimated: true, frameLow: 3199.25 }, { country: 'CN', currency: 'CNY' }, payload, 6000);
+  assert.match(priceDisplay(frame).headline, /^Est\./);
+  assert.equal(priceDisplay(frame).basis, '');
 });

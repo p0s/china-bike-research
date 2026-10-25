@@ -14,13 +14,18 @@ export function priceAgeLabel(date, today = '') {
 
 // Dates remain in the evidence payload and price popover, not every table row.
 export function compactPriceBasis(basis = '') {
-  return basis.split(' · ').filter((part) => !/^\d{4}-\d{2}-\d{2}$/.test(part)).join(' · ');
+  return basis.split(' · ').filter((part) => !/^(?:\d{4}-\d{2}-\d{2}|conditional|\d+ mo old)$/.test(part)).join(' · ');
 }
 
 export function priceEvidenceLines(item) {
   const details = item.priceDetails || '';
   const dated = details.match(/(?:Historical price|Price) observed \d{4}-\d{2}-\d{2}\./)?.[0];
-  return [dated || (item.priceDate ? `Price observed ${item.priceDate}.` : ''), dated ? details.replace(dated, '').trim() : details].filter(Boolean);
+  return [
+    dated || (item.priceDate ? `Price observed ${item.priceDate}.` : ''),
+    item.chinaPrice?.official && !/official/i.test(details) ? 'Official price' : '',
+    item.chinaPrice?.conditional && !details ? 'conditional' : '',
+    dated ? details.replace(dated, '').trim() : details
+  ].filter(Boolean);
 }
 
 /**
@@ -62,21 +67,19 @@ export function priceDisplay(projection, { currency = 'CNY', allowance = 0, loca
   const native = converted ? formatMoneyRange(display.nativeLow, display.nativeHigh, 'CNY', locale, { approximate: reference || Boolean(china?.approximate) }) : '';
   // The frame/parts split is available in the price popover.
   const parts = [];
-  if (display.basis === 'china') parts.push(converted ? `China ${native}` : china?.official ? 'Official price' : 'China price');
-  else if (display.basis === 'china-build') parts.push(converted ? `China build ${native}` : 'Frame + build');
+  if (display.basis === 'china') parts.push(converted ? `China ${native}` : projection.state === 'china' ? '' : 'China price');
+  else if (display.basis === 'china-build') parts.push(converted ? `China build ${native}` : projection.state === 'china' ? '' : 'China price');
   else parts.push(...[referenceLabel || (display.basis === 'build-reference' ? 'Build reference' : 'Reference estimate'), native].filter(Boolean));
   if (china && ['china', 'china-build'].includes(display.basis)) {
-    if (china.conditional) parts.push('conditional');
     if (china.starting) parts.push('package unknown');
     if (china.partial) parts.push('total incomplete');
   }
   const date = ['china', 'china-build'].includes(display.basis) ? china?.date : referenceDate;
   const age = priceAgeLabel(date, today);
-  if (age) parts.push(age);
-  const attention = Boolean(age || china?.conditional || china?.starting || china?.partial);
+  const attention = Boolean(china?.starting || china?.partial);
   return {
     headline,
-    basis: parts.map((part) => /^\d{4}-\d{2}-\d{2}$/.test(part) ? part : t(part)).join(' · '),
+    basis: parts.filter(Boolean).map(t).join(' · '),
     date: date || '',
     tone: reference ? 'reference' : attention ? 'attention' : '',
     stale: Boolean(age)

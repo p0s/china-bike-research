@@ -1137,7 +1137,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (subline) {
         subline.textContent = shown.basis;
         subline.className = `metric-sub price-state${shown.tone ? ` is-${shown.tone}` : ''}`;
-        subline.hidden = shown.tone === 'unknown' && !original.state;
+        subline.hidden = !shown.basis || (shown.tone === 'unknown' && !original.state);
       }
       const delivered = deliveredLine(projection, { currency, locale, translate });
       const difference = differenceLabel(projection.difference);
