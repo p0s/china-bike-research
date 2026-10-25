@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/bike-sizing-email-template-mascot-cover-c53e87239d-640.webp', '6bda5e6df229fced13b7d4cd7e87cb10c7a03293545ac1fa4d04413784d6f9e6'],
+  ['assets/blog/bike-sizing-email-template-mascot-cover-c53e87239d-1600.webp', 'b8149a07d878e620834c64e715a735be4c6ac7134d09e2ef05b3e0697cc13da9'],
+  ['assets/blog/bike-sizing-email-template-mascot-cover-c53e87239d-1200.jpg', 'fb8e83a5be4e14a2d5c877451ec7dcc07f3f2358cc342492c2acc2451a4d0299'],
   ['assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-640.webp', '73dc10731fa514dadbe2aa0ae4043d473cb13e390c5c8a2cce78076c42c4459c'],
   ['assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-1600.webp', 'c4d7b7964d16ded002f72c445ca7e144578f71f7dedb179a76d22e8ad8314bf3'],
   ['assets/blog/bike-order-component-substitutions-mascot-cover-5afcd5a55a-1200.jpg', 'e14e381da2b6c3138a53d7f17c416570fb55cd9bb699f598f8e8aa9a881f7f87'],
