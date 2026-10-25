@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-640-09517dfc1f.avif', '09517dfc1f4a808d88567e84b06983e67f30bbe5cf1abb7ab7173688b660a4df'],
+  ['assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-1600-fb31e58618.avif', 'fb31e58618dccb2befec8cfab1155ff5effb8a173e557bca6762e68e6a3e5de8'],
+  ['assets/blog/replacement-parts-shipping-cost-mascot-cover-69c74ed133-1200.jpg', '241a6e0081a4fd6d9eb176b84a017ea210b98b637d0b413e35e91e5685fa7d95'],
   ['assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-640-fd115a4cf1.avif', 'fd115a4cf106d5e3d4569b9674d289273f9f19912fe5c6de2c14c0d9cd2ff465'],
   ['assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-1600-90acb01d15.avif', '90acb01d15767e9811c8f94deb9fdc2fff85da8c79b21aaf1c19c17e045ceed2'],
   ['assets/blog/integrated-cockpit-before-you-buy-mascot-cover-c4ee050488-1200.jpg', 'a989423e27424fc126cc94c8d9b4016447ba66a662c30472a59860c12ab2fed7'],
