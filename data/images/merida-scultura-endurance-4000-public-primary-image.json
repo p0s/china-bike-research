@@ -6,17 +6,50 @@
   "media_type": "community-post-photo",
   "hosting": {
     "mode": "local",
-    "local_path": "/assets/images/sourced/xhs/merida-scultura-endurance-4000/e7eb1f97cf4e2097-detail-w1200.webp",
+    "local_path": "/assets/images/sourced/xhs/merida-scultura-endurance-4000/1555613aebbe6f09-detail-w1200.avif",
     "variants": [
-      { "purpose": "card", "url": "/assets/images/sourced/xhs/merida-scultura-endurance-4000/9f27de40fa770110-card-w480.webp", "width": 480, "height": 320, "bytes": 13124, "sha256": "9f27de40fa770110869e975117c988c6a9f24f1ffb02d2c7ba092f78ef2c327d", "format": "image/webp" },
-      { "purpose": "detail", "url": "/assets/images/sourced/xhs/merida-scultura-endurance-4000/e7eb1f97cf4e2097-detail-w1200.webp", "width": 1200, "height": 800, "bytes": 51582, "sha256": "e7eb1f97cf4e209754247206c23ab0f20a047a3336ea5de1d8557117b7aa4b7b", "format": "image/webp" }
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/xhs/merida-scultura-endurance-4000/e1ea2a50447160de-card-w480.avif",
+        "width": 480,
+        "height": 320,
+        "bytes": 12400,
+        "sha256": "e1ea2a50447160dee9bf8804805cbb7ce85b4be08298940f501fa3815542f8c3",
+        "format": "image/avif"
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/xhs/merida-scultura-endurance-4000/1555613aebbe6f09-detail-w1200.avif",
+        "width": 1200,
+        "height": 800,
+        "bytes": 50337,
+        "sha256": "1555613aebbe6f091108cb5a2366a5e166d60423d8dab01a4f8e258689a33ceb",
+        "format": "image/avif"
+      }
     ]
   },
   "source_id": "public-merida-scultura-endurance-4000-2026-08-17",
-  "rights": { "status": "source-attributed-rehost", "copyright_holder": "Original XHS post creator", "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git." },
+  "rights": {
+    "status": "source-attributed-rehost",
+    "copyright_holder": "Original XHS post creator",
+    "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git."
+  },
   "credit": "Original XHS post creator; see the linked source",
   "alt": "Quoted public-post photo of a Merida Scultura Endurance 4000 road bike",
   "reviewed_at": "2026-08-20",
-  "editorial_quotation": { "purpose": "editorial-identification-and-commentary", "scope": "one-compressed-public-post-photo", "source_link_required": true, "no_license_asserted": true, "removal_route": "https://github.com/p0s/china-bike-research/issues" },
-  "privacy_review": { "reviewed_at": "2026-08-20", "embedded_metadata": "stripped", "faces": "none-visible", "vehicle_registration": "none-visible", "account_identifiers": "none-visible", "location_identifiers": "none-visible" }
+  "editorial_quotation": {
+    "purpose": "editorial-identification-and-commentary",
+    "scope": "one-compressed-public-post-photo",
+    "source_link_required": true,
+    "no_license_asserted": true,
+    "removal_route": "https://github.com/p0s/china-bike-research/issues"
+  },
+  "privacy_review": {
+    "reviewed_at": "2026-08-20",
+    "embedded_metadata": "stripped",
+    "faces": "none-visible",
+    "vehicle_registration": "none-visible",
+    "account_identifiers": "none-visible",
+    "location_identifiers": "none-visible"
+  }
 }

@@ -7,7 +7,7 @@ import { escapeHtml, layout, url } from '../src/lib/html.mjs';
 test('the selected rider brand and browser icons use shared base-safe assets in every locale', () => {
   for (const base of ['', '/guide']) for (const locale of ['en', 'zh-Hans', 'de']) {
     const html = layout({ base, locale, repositoryUrl: 'https://github.com/example/guide', body: '' });
-    assert.ok(html.includes(`src="${base}/assets/branding/panda-rider-3b-256.webp"`));
+    assert.ok(html.includes(`src="${base}/assets/branding/panda-rider-3b-256-6c271fa41e.avif"`));
     assert.ok(html.includes(`href="${base}/assets/logo.svg"`));
     assert.ok(html.includes(`href="${base}/assets/branding/favicon-32.png"`));
     assert.ok(html.includes(`href="${base}/assets/branding/apple-touch-icon.png"`));
