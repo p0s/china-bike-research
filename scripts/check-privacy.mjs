@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/damage-in-transit-bike-claim-mascot-cover-389fe5d251-640-633d74c27b.avif', '633d74c27b14b33bb922a5f632479e626284e3cc57051e42fb4a9300bedbf415'],
+  ['assets/blog/damage-in-transit-bike-claim-mascot-cover-389fe5d251-1600-67ced8c73d.avif', '67ced8c73d16e9e4c9a7f195aa03d808d367e174717b41f430654194e3d586d2'],
+  ['assets/blog/damage-in-transit-bike-claim-mascot-cover-389fe5d251-1200.jpg', '71d6ab2037b0a5d3fdae38353f7d8688303f0b02f20e48d17f8c0a5aec12b6cd'],
   ['assets/blog/warranty-evidence-before-service-mascot-cover-f34f932af4-640-d5eaf1bd81.avif', 'd5eaf1bd81864182ba2ec546c8cdc2d5b111fe5da2331e95f92d093fd82c5a98'],
   ['assets/blog/warranty-evidence-before-service-mascot-cover-f34f932af4-1600-80fe6ec427.avif', '80fe6ec42761264625a43dfff65dd2459a2cbfeed1b307c3a53c45cf0cf62fa9'],
   ['assets/blog/warranty-evidence-before-service-mascot-cover-f34f932af4-1200.jpg', '2736105f04afcdabd46483f352795f08b73ae839a47cd1939a85cd17fc2ba9dc'],
