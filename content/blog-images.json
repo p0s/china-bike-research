@@ -9990,6 +9990,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "how-to-read-chinese-bike-owner-reviews-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
+      },
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480-dbff22b04c.avif",
+          "width": 480,
+          "height": 320,
+          "type": "image/avif",
+          "bytes": 11937,
+          "sha256": "dbff22b04ca1c175de8784db262758ccb708c114f77a6ddb389100fbc9a695df"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda studies a tablet beside a notebook in a bicycle workshop.",
+          "zh-Hans": "戴头盔的小熊猫在自行车工作室里查看平板电脑，旁边放着笔记本。",
+          "de": "Ein Rotpanda mit Helm betrachtet ein Tablet neben einem Notizbuch in einer Fahrradwerkstatt."
+        },
+        "prompt": "Editorial scene: A helmeted red panda studies a tablet beside a notebook in a bicycle workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "2db2d0dd7e817c74f1a8e400c72b386dcd5e16c2f468cc662187c8d71d14650e",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-640-50f6b91a5c.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 30240,
+            "sha256": "50f6b91a5c1cb2beee192b016f11791ef0baaaaf8456286c0beb6cd81a40b658"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-1600-cf9dfb1b58.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 111732,
+            "sha256": "cf9dfb1b580417c150d24a35ba1b6e88d284f76d72db64e7a22bcd02c20059f5"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 196342,
+            "sha256": "44c5ac549a50557815e12198d236897c2acfe7c842d5dbcd857367adec49e81b"
+          }
+        ]
+      }
     }
   ]
 }
