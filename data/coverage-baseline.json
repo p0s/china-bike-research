@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1787,
       "images": 892,
-      "videos": 258,
+      "videos": 261,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2985,7 +2985,10 @@
       "bruce-vilas-sunpeed-mars-a-negatives",
       "bxt-store-055-overview",
       "cam-nicholls-falath-evo-inspection",
+      "cam-nicholls-falath-evo-preproduction-sample-withdrawn",
+      "cam-nicholls-falath-evo-production-ride-review",
       "cam-nicholls-seka-exceed-rdc-first-impressions",
+      "cam-nicholls-seka-exceed-rdc-long-term-review",
       "cam-nicholls-seka-exceed-retailer-warning",
       "carlo-villarica-bxt-gravel-135-build",
       "carlo-villarica-hi-light-g7-2-titanium",
@@ -63683,6 +63686,54 @@
         "url",
         "youtube_video_id"
       ],
+      "cam-nicholls-falath-evo-preproduction-sample-withdrawn": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "cam-nicholls-falath-evo-production-ride-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "cam-nicholls-seka-exceed-rdc-first-impressions": [
         "accessed_at",
         "channel_name",
@@ -63700,6 +63751,30 @@
         "target.candidate_id",
         "title",
         "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "cam-nicholls-seka-exceed-rdc-long-term-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
         "transcript.language",
         "transcript.method",
         "transcript.status",
@@ -123773,7 +123848,16 @@
       "cam-nicholls-falath-evo-inspection": [
         "target.candidate_id=missing-china-price-elves-falath-evo"
       ],
+      "cam-nicholls-falath-evo-preproduction-sample-withdrawn": [
+        "target.candidate_id=missing-china-price-elves-falath-evo"
+      ],
+      "cam-nicholls-falath-evo-production-ride-review": [
+        "target.candidate_id=missing-china-price-elves-falath-evo"
+      ],
       "cam-nicholls-seka-exceed-rdc-first-impressions": [
+        "target.candidate_id=seka-exceed-105-di2-dealer-build"
+      ],
+      "cam-nicholls-seka-exceed-rdc-long-term-review": [
         "target.candidate_id=seka-exceed-105-di2-dealer-build"
       ],
       "cam-nicholls-seka-exceed-retailer-warning": [
@@ -126085,6 +126169,8 @@
         "source_ids=elves-falath-evo-taobao-2026-10-24",
         "source_ids=usd-cny-central-parity-2026-07-31",
         "video_ids=cam-nicholls-falath-evo-inspection",
+        "video_ids=cam-nicholls-falath-evo-preproduction-sample-withdrawn",
+        "video_ids=cam-nicholls-falath-evo-production-ride-review",
         "video_ids=gc-performance-falath-evo-ride-review",
         "video_ids=jourdain-coleman-elves-falath-evo-500-miles"
       ],
@@ -126906,6 +126992,7 @@
         "model_id=seka-exceed-105-di2-dealer-build",
         "source_ids=seka-exceed-105-di2-taobao-2026-10-24",
         "video_ids=cam-nicholls-seka-exceed-rdc-first-impressions",
+        "video_ids=cam-nicholls-seka-exceed-rdc-long-term-review",
         "video_ids=cam-nicholls-seka-exceed-retailer-warning"
       ],
       "seka-spear-rdc": [
