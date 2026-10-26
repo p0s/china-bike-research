@@ -34,4 +34,4 @@ These routes are human-only. Unchanged mainland observations keep their original
 
 ## Wide-tire aero
 
-The SEKA Spear RDC stays out of the wide-clearance aero category. Its record gives a 32 mm maximum tire size from the official catalog, which does not exceed the 35 mm this batch required for the wide-clearance aero category. No new evidence contradicted that figure: the SEKA official site failed its TLS handshake from this host, and the official store data publishes no tire limit. No data changed.
+The SEKA Spear stays out of the wide-clearance aero category. SEKA's current pages and catalog give 32 mm for both frames (see `docs/wide-clearance-ledger-2026-10-25.md`), and this batch required more than 35 mm. No bike data changed. That ledger also lists the aero options above 34 mm and their 2× limits.
