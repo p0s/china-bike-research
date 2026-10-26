@@ -1,6 +1,6 @@
 import { defaultGeometryState, geometryKeys, readGeometryState, writeGeometryState, selectedGeometry } from './geometry-core.js';
 import { geometryCopy } from './geometry-copy.js';
-import { comparisonView, nearbyView, provenance, sizeOptions } from './geometry-view.js';
+import { comparisonView, nearbyView, provenance, sizeChips } from './geometry-view.js';
 import { bindHistoryInput, copyText } from './state-utils.js';
 
 const root = document.querySelector('[data-geometry-tool]');
@@ -22,7 +22,7 @@ if (root) {
         select.add(option);
       }
       select.value = state[side];
-      field(`s${side}`).innerHTML = sizeOptions(model, state[`s${side}`]);
+      root.querySelector(`[data-size-chips="${side}"]`).innerHTML = sizeChips(model, side, state[`s${side}`], c);
       root.querySelector(`[data-recorded="${side}"]`).hidden = state[side] === 'manual';
       root.querySelector(`[data-manual="${side}"]`).hidden = state[side] !== 'manual';
     }
@@ -50,6 +50,7 @@ if (root) {
     root.querySelector('[data-geo-results]').innerHTML = nearbyView(data, state, showAll);
     for (const side of ['a', 'b']) root.querySelector(`[data-provenance="${side}"]`).innerHTML = provenance(data, selectedGeometry(data.models, state, side));
     root.querySelector('[data-geo-example]').hidden = geometryKeys.some(k => new URLSearchParams(location.search).has(k));
+    root.querySelectorAll('[data-geo-tolerance]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.geoTolerance === String(state.tolerance).trim())));
     carryShoppingContext();
   }
   function save(mode = 'push') {
@@ -61,7 +62,8 @@ if (root) {
     status.textContent = c.selected;
   }
   root.querySelector('form').addEventListener('submit', event => event.preventDefault());
-  for (const key of geometryKeys) {
+  // Size chips are radio groups handled together below; other fields bind directly.
+  for (const key of geometryKeys.filter(k => !['sa', 'sb'].includes(k))) {
     const el = field(key);
     if (el.tagName === 'INPUT') bindHistoryInput(el, mode => { state[key] = el.value; save(mode); });
     else el.addEventListener('change', () => {
@@ -74,7 +76,27 @@ if (root) {
       save();
     });
   }
+  root.addEventListener('change', event => {
+    const radio = event.target.closest?.('input[type="radio"][name="sa"], input[type="radio"][name="sb"]');
+    if (!radio) return;
+    state[radio.name] = radio.value;
+    save();
+  });
   root.addEventListener('click', async event => {
+    // Plot dots are a pointer shortcut; the size chips remain the keyboard path.
+    const dot = event.target.closest?.('[data-pick-side]');
+    if (dot) {
+      const side = dot.dataset.pickSide;
+      state[`s${side}`] = dot.dataset.pickSize;
+      syncControls(); save();
+      return;
+    }
+    const preset = event.target.closest?.('[data-geo-tolerance]');
+    if (preset) {
+      state.tolerance = preset.dataset.geoTolerance;
+      syncControls(); save();
+      return;
+    }
     if (event.target.closest('[data-geo-show]')) {
       showAll = true;
       render();
@@ -101,5 +123,8 @@ if (root) {
   addEventListener('popstate', () => { state = readGeometryState(data.models, new URLSearchParams(location.search)); showAll = false; syncControls(); render(); });
   syncControls(); render();
   root.querySelectorAll('fieldset, [data-geo-share], [data-geo-reset]').forEach(el => { el.disabled = false; });
-  root.querySelector('[data-geo-enhancement]').textContent = c.ready;
+  // Editing readiness is not a buyer task; keep the notice only for assistive technology.
+  const enhancement = root.querySelector('[data-geo-enhancement]');
+  enhancement.textContent = c.ready;
+  enhancement.classList.add('sr-only');
 }

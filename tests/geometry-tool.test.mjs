@@ -112,3 +112,29 @@ test('user-controlled strings are escaped and unavailable categories do not broa
   const valid = { ...defaultGeometryState(malicious.models) };
   assert.ok(!comparisonView(malicious, valid).includes('<script>'));
 });
+
+test('size chips, close-up ladders and the glossary explain sourced sizes without inventing values', () => {
+  const state = defaultGeometryState(payload.models);
+  const html = renderGeometryTool(ctx);
+  // Every recorded size of the selected model is a labelled radio with its literal stack/reach.
+  const a = payload.models.find(m => m.id === state.a);
+  for (const row of a.sizes) assert.ok(html.includes(`<input type="radio" name="sa" value="${row.size}"`), row.size);
+  assert.match(html, /role="radiogroup" aria-labelledby="geo-size-label-a"/);
+  assert.match(html, /class="geo-size-numbers"[^>]*>\d+(?:\.\d)?\/\d+(?:\.\d)?</);
+  const view = comparisonView(payload, state);
+  // Both models' size runs are drawn; the dots are pointer shortcuts to recorded sizes only.
+  assert.match(view, /class="geo-ladder geo-ladder-a"/);
+  assert.match(view, /class="geo-ladder geo-ladder-b"/);
+  assert.equal((view.match(/data-pick-side="a"/g) ?? []).length, a.sizes.length);
+  assert.match(view, /<details class="geo-glossary">/);
+  for (const locale of ['en', 'zh-Hans', 'de']) {
+    const copy = geometryCopy(locale);
+    for (const key of ['stack', 'reach', 'head_tube_mm', 'head_angle_deg', 'seat_angle_deg', 'top_tube_mm', 'wheelbase_mm', 'chainstay_mm', 'bb_drop_mm', 'standover_mm', 'front_center_mm', 'fork_offset_mm']) {
+      assert.ok(copy[key] && copy.define[key], `${locale} ${key}`);
+    }
+  }
+  // A secondary row appears only when either size records it, and stays a dash otherwise.
+  const manual = comparisonView(payload, { ...state, a: 'manual', stackA: '560', reachA: '380' });
+  assert.doesNotMatch(manual, /class="geo-ladder geo-ladder-a"/);
+  assert.match(html, /data-geo-tolerance="5">±5</);
+});
