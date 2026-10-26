@@ -881,7 +881,8 @@ test('failed PARDUS duplicate images stay out of every buyer-facing surface', ()
   for (const id of ['pardus-spark-sport-pes', 'pardus-spark']) {
     const entry = candidates.find((item) => item.candidate.id === id);
     const detail = renderCandidateModel(context, entry);
-    assert.match(detail, /class="model-grid has-no-image"/);
+    if (id === 'pardus-spark') assert.match(detail, /class="model-grid has-no-image"/);
+    else assert.match(detail, /assets\/images\/sourced\/xhs\/pardus-spark-sport-pes\//);
     assert.doesNotMatch(detail, /c048095/);
   }
   assert.doesNotMatch(html, /c048095/);

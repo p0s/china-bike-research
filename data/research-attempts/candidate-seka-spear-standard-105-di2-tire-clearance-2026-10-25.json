@@ -1,0 +1,70 @@
+{
+  "id": "candidate-seka-spear-standard-105-di2-tire-clearance-2026-10-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seka-spear-standard-105-di2"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-10-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear",
+          "route": "XHS search capture, exact title filter spear",
+          "outcome": "no-result",
+          "result_url": "https://www.xiaohongshu.com/explore/6a9584680000000028007541",
+          "accessed_at": "2026-10-26",
+          "note": "An owner's size-L Standard runs 28 mm GP5000 STR tyres; no post states a maximum or a wider fit."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear Standard frame max tire width",
+          "route": "SEKA global Spear product page specification block (Standard coverage)",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/en/spear-en-2/",
+          "accessed_at": "2026-10-25",
+          "note": "The single Spear specification block lists 32 mm actual maximum tyre width and covers the Standard frame."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA Spear 标准版 胎容量",
+          "route": "SEKA China Spear product page specification block (Standard coverage)",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/spear/",
+          "accessed_at": "2026-10-25",
+          "note": "前后最大胎容量为32C on the Spear page that presents both RDC and 标准版 frames."
+        },
+        {
+          "attempt": 3,
+          "query": "SEKA 2024 catalog Spear Standard max tire",
+          "route": "SEKA 2024–25 catalog PDF, Spear section with Standard finishes",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf",
+          "accessed_at": "2026-10-25",
+          "note": "Support up to 32c in the Spear section listing Standard Achromatic Silver and Twilight Blue frames."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "seka-spear-official-page-2026-10-25",
+    "seka-spear-cn-official-page-2026-10-25",
+    "seka-spear-catalog-recheck-2026-10-25"
+  ],
+  "retry_after": null,
+  "notes": "Official Spear maximum (32 mm actual) applies to the Standard frame; the dealer build's tyre width is not stated. A 2026-10-25 XHS canary stopped before issuing any search (runtime context mismatch); these searches ran on 2026-10-26 after the runner repair."
+}

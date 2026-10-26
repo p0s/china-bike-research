@@ -22,7 +22,8 @@
     "lightcarbon-lcr018-d-gallery-complete-2026-10-03",
     "lightcarbon-catalog-v5-road-recheck-2026-10-11",
     "lightcarbon-lcr018-d-package-review-2026-10-11",
-    "lightcarbon-lcr018-d-official-recheck-2026-10-22"
+    "lightcarbon-lcr018-d-official-recheck-2026-10-22",
+    "lightcarbon-lcr018-d-official-recheck-2026-10-25"
   ],
   "observed_price": {
     "amount_cny": 6450,
@@ -38,10 +39,11 @@
     "frame_construction": "3D latex-mandrel monocoque with full internal routing, optional down-tube storage and replaceable UDH",
     "stiffness_evidence": "LightCarbon publishes qualitative stiffness and load-path claims for its Eagle Eye tube shaping; no independent measured exact-model stiffness result is included",
     "frame_weight_g": 1100,
-    "frame_weight_basis": "Official size-52 frame weight, 1,100 g ±4%; the size range is 1,040–1,190 g, fork 430 g ±4% and seatpost 180 g ±10 g Reviewer weigh-ins (videos): Trace Velo, size 58, 1,236 g frame; Darren French, uncut fork 453 g with through-axle.",
-    "bottom_bracket": "T47×P1, 85.5 mm on the manufacturer page; the Xianyu listing says 86.5 mm, so the 1 mm conflict remains explicit Hambini's inspection video (2026-06-15) states T47 86.5 mm.",
+    "frame_weight_basis": "Official size-52 frame weight, 1,100 g ±4%; the size range is 1,040–1,190 g, fork 430 g ±4% and seatpost 180 g ±10 g. Reviewer weigh-ins (videos): Trace Velo, size 58, 1,236 g frame; Darren French, uncut fork 453 g with through-axle.",
+    "bottom_bracket": "T47×P1, 85.5 mm on the manufacturer page; the Xianyu listing says 86.5 mm, so the 1 mm conflict remains explicit. Hambini's inspection video (2026-06-15) states T47 86.5 mm.",
     "tire_clearance_mm": 38,
-    "tire_clearance_basis": "Manufacturer measured-width 38 mm maximum, also repeated by the exact Xianyu listing; larger owner fits are not treated as a universal limit Video field report (Trace Velo, 2026-05-22): on a size-58 2× build with 26 mm-internal rims, 700×40 Schwalbe G-One tires measuring about 40 mm rubbed the front derailleur with little rear room, while 700×38 tires cleared with modest room.",
+    "tire_clearance_basis": "Manufacturer measured-width 38 mm maximum with no separate 1× or 2× limit (rechecked 2026-10-25), also repeated by the exact Xianyu listing; larger owner fits are not treated as a universal limit. Video field report (Trace Velo, 2026-05-22): on a size-58 2× build with 26 mm-internal rims, 700×40 Schwalbe G-One tires measuring about 40 mm rubbed the front derailleur with little rear room, while 700×38 tires cleared with modest room.",
+    "chainring limits": "Shimano 2× up to 54-40T or 1× up to 46T; SRAM 2× up to 56-43T or 1× up to 54T (manufacturer page, 2026-10-25)",
     "brakes": "Flat-mount disc, compatible with 140 or 160 mm rotors according to the exact Xianyu listing",
     "cockpit": "HBR17 integrated carbon cockpit, approximately 300 g according to the exact Xianyu listing",
     "storage": "Optional integrated down-tube storage",
@@ -109,6 +111,17 @@
         "manufacturer page recheck"
       ],
       "scope": "Live manufacturer-page readback of brake mount, seatpost offset, saddle-rail clamp and two geometry labels only; earlier Xianyu attributions, catalog conflicts, prices and dates retained."
+    },
+    {
+      "reviewed_at": "2026-10-25",
+      "source_ids": [
+        "lightcarbon-lcr018-d-official-recheck-2026-10-25"
+      ],
+      "fields": [
+        "tire_clearance_basis",
+        "chainring limits"
+      ],
+      "scope": "Manufacturer page rechecked for drivetrain-specific tire limits and chainring compatibility; the 38 mm value is unchanged."
     }
   ],
   "prior_specification_observations": [
