@@ -1460,6 +1460,24 @@ Object.assign(de, {
   "Cockpits": "Cockpits"
 });
 
+// Catalog gallery, sorting and comparison wording (2026-10-26).
+Object.assign(de, {
+  "Shifting": "Schaltung",
+  "Electronic shifting": "Elektronische Schaltung",
+  "Mechanical shifting": "Mechanische Schaltung",
+  "electronic, fully wireless": "elektronisch, vollständig kabellos",
+  "Complete profiles first": "Vollständige Profile zuerst",
+  "Complete profiles only": "Nur vollständige Profile",
+  "Hides partial profiles: research leads with missing facts.": "Blendet Teilprofile aus: Recherchehinweise mit fehlenden Angaben.",
+  "Photo size": "Fotogröße",
+  "Smaller photos, more per row": "Kleinere Fotos, mehr pro Reihe",
+  "Larger photos, fewer per row": "Größere Fotos, weniger pro Reihe",
+  "1 per row": "1 pro Reihe",
+  "Sort by the price shown in each row; unknown prices stay last.": "Nach dem in jeder Zeile angezeigten Preis sortieren; unbekannte Preise bleiben am Ende.",
+  "1 identical row hidden": "1 identische Zeile ausgeblendet",
+  "Every compared row differs.": "Alle verglichenen Zeilen unterscheiden sich."
+});
+
 export function translateGerman(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
@@ -1476,7 +1494,9 @@ export function translateGerman(value) {
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? 'vorn' : 'hinten'}`],
     [/^unknown (1×|2×)$/, (_, layout) => `${layout} unbekannt`],
     [/^Buying checks \((\d+)\)$/, (_, n) => `Kaufprüfung (${n})`],
-    [/^(\d+) published profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} veröffentlichte Profile; ${b} Teilprofile. Fehlende Angaben bleiben unbekannt.`],
+    [/^(\d+) (?:published|complete) profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} vollständige Profile; ${b} Teilprofile. Fehlende Angaben bleiben unbekannt.`],
+    [/^(\d+) per row$/, (_, n) => `${n} pro Reihe`],
+    [/^(\d+) identical rows hidden$/, (_, n) => `${n} identische Zeilen ausgeblendet`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Preis erfasst am ${date}.`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Historischer Preis erfasst am ${date}.`],
     // Carbon-wheel reference (2026-10-20)

@@ -212,7 +212,7 @@ test('candidate discovery stays URL-addressable without repeated missing-data wa
   assert.match(script, /setParam\(next, 'scope', allModelsVisible \? 'all' : ''\)/);
   assert.match(script, /showAllModels\?\.addEventListener\('click'/);
   assert.match(script, /const hasValue = \(key\) => items\.some/);
-  assert.match(script, /if \(secondaryFields\.length\)/);
+  assert.match(script, /\['More details', secondaryFields\]/);
   assert.match(script, /remove\.setAttribute\('aria-label', `Remove \$\{label\}`\)/);
   assert.match(script, /\['Tire clearance', clearance, 'tire'\]/);
   assert.match(script, /\['Weight · complete bike', weightBy\('complete'\), 'weight-complete'\]/);

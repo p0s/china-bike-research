@@ -13,6 +13,7 @@ import { priceDisplay, pricePopoverLines } from '../assets/price-display.js';
 import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsupportedTireLayouts } from '../assets/catalog-format.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis } from './lib/regional-prices.mjs';
+import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -490,7 +491,9 @@ function drivetrainSubline(ctx, product) {
   if (!drivetrain) return '';
   // Omit the speed count when the model name already states it.
   const speeds = normalizeSpeeds(drivetrain.speeds);
-  return [normalizeSpeeds(drivetrainLabel(ctx, product)).includes(speeds) ? '' : speeds, drivetrain.shifting.replaceAll('-', ' ')].filter(Boolean).join(' · ');
+  // "Wireless" is reserved for fully wireless systems; wired-derailleur systems read electronic.
+  const shifting = { mechanical: 'mechanical', electronic: 'electronic', 'electronic-wireless': 'electronic, fully wireless' }[drivetrain.shifting] ?? '';
+  return [normalizeSpeeds(drivetrainLabel(ctx, product)).includes(speeds) ? '' : speeds, shifting].filter(Boolean).join(' · ');
 }
 
 function gramRangeLabel(low, high) {
@@ -744,7 +747,8 @@ function catalogPriceCell(ctx, summary) {
   const { projection, shown } = catalogPriceProjection(ctx, summary);
   const tone = shown.tone ? ` is-${shown.tone}` : '';
   return {
-    sort: Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : '',
+    // Price sorting follows the amount the buyer sees, including reference estimates.
+    sort: Number.isFinite(projection.display.low) && !summary.priceUnavailable ? projection.display.low : '',
     filter: Number.isFinite(projection.high) ? projection.high : '',
     // Unknown prices stay a quiet dash, like every other unrecorded cell.
     html: `<div class="catalog-cell price-cell" role="cell">${summary.priceDetails || summary.priceDate ? `<button type="button" class="metric-main price-button" data-calculated-price data-price-details="${escapeAttr(summary.priceDate ?? '')}" data-evidence-href="${escapeAttr(`${summary.url}#source-records`)}" data-evidence-label="Full price record and conditions" aria-expanded="false">${escapeHtml(shown.headline)}</button>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${!shown.basis || (shown.tone === 'unknown' && !summary.priceState) ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
@@ -752,8 +756,8 @@ function catalogPriceCell(ctx, summary) {
 }
 
 function catalogPriceOrder(ctx, summary) {
-  const { projection } = catalogPriceProjection(ctx, summary);
-  return Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : Number.POSITIVE_INFINITY;
+  const { projection, unavailable } = catalogPriceProjection(ctx, summary);
+  return unavailable ? Number.POSITIVE_INFINITY : projection.display.low;
 }
 
 function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
@@ -784,7 +788,7 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
   const drivetrain = variant.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: drivetrainLabel(ctx, product), sub: drivetrainSubline(ctx, product) });
-  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
+  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
     <div class="catalog-product" role="rowheader">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
@@ -966,7 +970,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
   const drivetrain = entry.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: facts.drivetrain ?? '—' }, { clamp: true });
-  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
+  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(entry.id)}" aria-label="Select ${escapeAttr(candidate.name)} for comparison"><span aria-hidden="true"></span></label></div>
     <div class="catalog-product" role="rowheader">
       ${candidateImage(ctx, entry)}
@@ -1036,6 +1040,7 @@ function comparisonSummary(ctx, product) {
     ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightFilter.grams) ? { weightGrams: weightFilter.grams, weightKind: weightFilter.kind } : {}),
     ...(product.variant.kind === 'complete-bike' ? { drivetrain: drivetrainLabel(ctx, product), drivetrainSubline: drivetrainSubline(ctx, product) } : {}),
+    shifting: variantShiftingClass(product.variant),
     weight: weightLabel(product),
     frame: frameStandard(product),
     frameSearch: [product.platform.frame.material, frameMaterialLabel(product), frameStandard(product)].filter(Boolean).join(' '),
@@ -1109,6 +1114,7 @@ function candidateComparisonSummary(ctx, entry) {
     ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightGrams) ? { weightGrams, weightKind: entry.kind === 'complete-bike' ? 'complete' : 'frame' } : {}),
     ...(entry.kind === 'complete-bike' && facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
+    shifting: candidateShiftingClass(entry),
     ...(weight !== '—' ? { weight } : {}),
     ...(frame ? { frame } : {}),
     frameSearch: [facts.frame, facts.frame_material, facts.bottom_bracket].filter(Boolean).join(' '),
@@ -1438,13 +1444,19 @@ function priceSettings(ctx) {
   </div>`;
 }
 
+// Gallery cards reuse the localized column names as fact labels, also without JavaScript.
+function galleryLabelStyle(ctx) {
+  const labels = { tires: 'Tires', drivetrain: 'Drivetrain', weight: 'Weight', frame: 'Frame' };
+  return Object.entries(labels).map(([key, label]) => `--gallery-label-${key}:${JSON.stringify(translate(label, ctx.locale ?? 'en'))}`).join(';');
+}
+
 export function renderHome(ctx) {
   const candidates = ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data);
   const defaultCandidateCount = candidates.filter((entry) => entry.defaultVisible).length;
   const hiddenCandidateCount = candidates.length - defaultCandidateCount;
   const summaries = catalogSummaries(ctx);
   const summaryById = new Map(summaries.map((item) => [item.id, item]));
-  // The static order matches the default "published first, then price" sort.
+  // The static order matches the default sort: complete profiles first, then shown price.
   const rows = [
     ...ctx.products.map((product) => {
       const summary = summaryById.get(product.variant.id);
@@ -1467,7 +1479,7 @@ export function renderHome(ctx) {
         <label class="field"><span>Min tire clearance</span><span class="number-with-unit"><input id="catalog-tire-min" name="min-tire-clearance" type="number" min="0" max="100" step="1" inputmode="decimal" placeholder="Any" data-filter-tire aria-label="Minimum tire clearance"><span>mm</span></span></label>
         <label class="field"><span>Tire fit for</span><select data-filter-tire-layout aria-label="Tire clearance drivetrain"><option value="">Any drivetrain</option><option value="single">1× drivetrain</option><option value="double">2× drivetrain</option></select></label>
         <label class="filter-check"><input type="checkbox" data-filter-tire-unknown disabled><span>Also show unknown clearance</span></label>
-        <div class="field"><span id="drivetrain-quick-label">Drivetrain</span><div class="pills" role="group" aria-labelledby="drivetrain-quick-label"><button type="button" class="pill" data-drivetrain-chip="electronic" aria-pressed="false">Electronic</button><button type="button" class="pill" data-drivetrain-chip="mechanical" aria-pressed="false">Mechanical</button></div></div>
+        <div class="field"><span id="shifting-quick-label">Shifting</span><div class="pills" role="group" aria-labelledby="shifting-quick-label"><button type="button" class="pill" data-shifting-chip="electronic" aria-pressed="false">Electronic</button><button type="button" class="pill" data-shifting-chip="mechanical" aria-pressed="false">Mechanical</button></div><input type="hidden" name="shifting" value="" data-filter-shifting></div>
         <details class="rail-more" id="table-filters" data-filter-panel><summary data-filter-panel-toggle>More filters</summary>
           <div class="filter-panel-grid">
             <label class="field"><span>Max complete-bike weight</span><span class="number-with-unit"><input name="max-complete-weight" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Any" data-filter-complete-weight><span>kg</span></span></label>
@@ -1478,7 +1490,7 @@ export function renderHome(ctx) {
             <p class="field-help">Only rows with recorded values match numeric limits.</p>
           </div>
         </details>
-        <label class="switch"><input type="checkbox" role="switch" data-filter-published><span>Published models only</span></label>
+        <label class="switch"><input type="checkbox" role="switch" data-filter-published aria-describedby="published-filter-help"><span>Complete profiles only</span></label><p class="field-help" id="published-filter-help">Hides partial profiles: research leads with missing facts.</p>
       </section>
       <div class="rail-sheet-foot"><button class="primary-button" type="button" data-filter-sheet-close><span data-sheet-result-count>Show ${resultTotal} results</span></button></div>
     </aside>
@@ -1487,14 +1499,14 @@ export function renderHome(ctx) {
       ${familyChips(ctx, candidates)}
       <div class="result-bar">
         <div class="filter-chips" data-filter-chips role="group" aria-label="Active filters" hidden></div>
-        <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> models<span data-result-context></span>${infoTip('Profile coverage', [`${ctx.products.length} published profiles; ${defaultCandidateCount} partial profiles. Missing facts remain unknown.`], { 'data-result-coverage': '' })}<span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
-        <div class="result-actions"><div class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden><button type="button" data-view-value="table" aria-pressed="true"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button><button type="button" data-view-value="gallery" aria-pressed="false"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button></div><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
+        <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> models<span data-result-context></span>${infoTip('Profile coverage', [`${ctx.products.length} complete profiles; ${defaultCandidateCount} partial profiles. Missing facts remain unknown.`], { 'data-result-coverage': '' })}<span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
+        <div class="result-actions"><div class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden><button type="button" data-view-value="gallery" aria-pressed="true"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button><button type="button" data-view-value="table" aria-pressed="false"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button></div><div class="gallery-size" role="group" aria-label="Photo size" data-gallery-size-control hidden><button type="button" class="gallery-size-step" data-gallery-size-step="-1" aria-label="Smaller photos, more per row"><span aria-hidden="true">−</span></button><input type="range" min="1" max="4" step="1" value="2" data-gallery-size aria-label="Photo size"><button type="button" class="gallery-size-step" data-gallery-size-step="1" aria-label="Larger photos, fewer per row"><span aria-hidden="true">+</span></button></div><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Complete profiles first</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
       </div>
       <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
         <div class="compare-heading"><h2 id="compare-title">Compare</h2><span class="compare-count" data-compare-heading-count></span><label class="switch compare-differences"><input type="checkbox" role="switch" data-compare-differences><span>Differences only</span></label><div class="compare-heading-actions"><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
         <div data-compare-content></div>
       </section>
-      <div class="catalog-table" id="catalog-rows" data-product-list role="table" aria-label="Bike comparison" aria-describedby="compare-hint">
+      <div class="catalog-table" id="catalog-rows" data-product-list data-catalog-view="gallery" role="table" aria-label="Bike comparison" aria-describedby="compare-hint" style="${escapeAttr(galleryLabelStyle(ctx))}">
         <div class="catalog-head" role="row"><span role="columnheader" class="select-head"><span class="sr-only" id="compare-hint">Select two to ten bikes to compare</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button>${catalogFilterShortcut('search', 'bike')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Price</span></button>${catalogFilterShortcut('price', 'full-bike price')}</span></span><span role="columnheader" class="capability-head" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button>${catalogFilterShortcut('category', 'category fact')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tires</span></button>${catalogFilterShortcut('tire', 'tire clearance')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Drivetrain</span>${catalogFilterShortcut('drivetrain', 'drivetrain')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Weight</span>${catalogFilterShortcut('weight', 'weight')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Frame</span>${catalogFilterShortcut('frame', 'frame')}</span></span></div>
         ${rows.map((row) => row.html).join('')}
         <div class="empty-state" data-empty hidden>No bikes match these filters.</div>

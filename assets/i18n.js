@@ -776,7 +776,9 @@ export function translate(value, locale = 'en') {
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? '前轮' : '后轮'}`],
     [/^unknown (1×|2×)$/, (_, layout) => `${layout} 未知`],
     [/^Buying checks \((\d+)\)$/, (_, n) => `购买前核对（${n}）`],
-    [/^(\d+) published profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} 份已发布资料；${b} 份部分资料。缺失信息保留为未知。`],
+    [/^(\d+) (?:published|complete) profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} 份完整资料；${b} 份部分资料。缺失信息保留为未知。`],
+    [/^(\d+) per row$/, (_, n) => `每行 ${n} 个`],
+    [/^(\d+) identical rows hidden$/, (_, n) => `已隐藏 ${n} 行相同内容`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `报价记录于 ${date}。`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `历史报价记录于 ${date}。`],
     // Carbon-wheel reference (2026-10-20)
@@ -1418,4 +1420,24 @@ Object.assign(zh, {
   "Tire fit: 2×": "轮胎适配：2×",
   "1× unsupported": "不支持 1×",
   "2× unsupported": "不支持 2×"
+});
+
+// Catalog gallery, sorting and comparison wording (2026-10-26).
+Object.assign(zh, {
+  "Shifting": "变速",
+  "Electronic shifting": "电子变速",
+  "Mechanical shifting": "机械变速",
+  "mechanical": "机械变速",
+  "electronic": "电子变速",
+  "electronic, fully wireless": "电子变速，全无线",
+  "Complete profiles first": "完整资料优先",
+  "Complete profiles only": "仅显示完整资料",
+  "Hides partial profiles: research leads with missing facts.": "隐藏部分资料：仍缺少信息的研究线索。",
+  "Photo size": "照片大小",
+  "Smaller photos, more per row": "照片更小，每行更多",
+  "Larger photos, fewer per row": "照片更大，每行更少",
+  "1 per row": "每行 1 个",
+  "Sort by the price shown in each row; unknown prices stay last.": "按每行显示的价格排序；未知价格始终排在最后。",
+  "1 identical row hidden": "已隐藏 1 行相同内容",
+  "Every compared row differs.": "所有对比行都不相同。"
 });

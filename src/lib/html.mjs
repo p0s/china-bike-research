@@ -18,6 +18,9 @@ export function layout({base='', repositoryUrl, title='', description, current='
   const languageNames = { en: 'English', 'zh-Hans': '中文', de: 'Deutsch' };
   const languageLabels = { en: 'Read this page in English', 'zh-Hans': '阅读此页面的中文版本', de: 'Diese Seite auf Deutsch lesen' };
   const socialLocales = { en: 'en_US', 'zh-Hans': 'zh_CN', de: 'de_DE' };
+  const languageCodes = { en: 'EN', 'zh-Hans': '中文', de: 'DE' };
+  // The menu's own name stays readable for a visitor who cannot read the current language.
+  const languageMenuLabels = { en: 'Language: English', 'zh-Hans': 'Language · 语言：中文', de: 'Language · Sprache: Deutsch' };
   const languageLinks = noindex ? '' : [...LOCALES, 'x-default'].map((lang) => `<link rel="alternate" hreflang="${lang}" href="${escapeAttr(`${siteUrl}${url(base, localePath(path, lang === 'x-default' ? 'en' : lang))}`)}">`).join('\n  ');
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,localizedPath)}`;
@@ -71,18 +74,25 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <div class="header-actions">
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
-          <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
-          <div class="nav-tools${['geometry','builder','groupsets','wheels'].includes(current) ? ' is-current' : ''}" data-nav-tools>
-            <button class="nav-tools-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-tools-toggle hidden>Tools</button>
-            <div class="nav-tools-menu" id="nav-tools-menu">
-              <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
-              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}><span class="nav-long">Build planner</span><span class="nav-short" aria-hidden="true">Planner</span></a>
+          <div class="nav-group${['groupsets','wheels'].includes(current) ? ' is-current' : ''}" data-nav-group="components">
+            <button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-components-menu" data-nav-group-toggle hidden>Components</button>
+            <div class="nav-group-menu" id="nav-components-menu" role="group" aria-labelledby="nav-components-label">
+              <span class="nav-group-label" id="nav-components-label">Components</span>
               <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
               <a href="${url(base,'/carbon-wheels/')}" data-nav-wheels${current==='wheels'?' aria-current="page"':''}><span class="nav-long">Carbon wheels</span><span class="nav-short" aria-hidden="true">Wheels</span></a>
             </div>
           </div>
+          <div class="nav-group${['geometry','builder'].includes(current) ? ' is-current' : ''}" data-nav-group="tools">
+            <button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-group-toggle hidden>Tools</button>
+            <div class="nav-group-menu" id="nav-tools-menu" role="group" aria-labelledby="nav-tools-label">
+              <span class="nav-group-label" id="nav-tools-label">Tools</span>
+              <a href="${url(base,'/geometry/')}" data-nav-geometry${current==='geometry'?' aria-current="page"':''}>Geometry</a>
+              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}><span class="nav-long">Build planner</span><span class="nav-short" aria-hidden="true">Planner</span></a>
+            </div>
+          </div>
+          <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
         </nav>
-        <nav class="language-nav" aria-label="Language">${LOCALES.filter((lang) => lang !== locale).map((lang) => `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav>
+        <div class="language-menu" data-language-menu><button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-list" aria-label="${escapeAttr(languageMenuLabels[locale] ?? languageMenuLabels.en)}" data-language-toggle hidden><span class="language-current" lang="${locale}">${languageCodes[locale]}</span></button><nav class="language-nav" id="language-list" aria-label="Language">${LOCALES.map((lang) => lang === locale ? `<span class="language-switch is-current" lang="${lang}" aria-current="true">${languageNames[lang]}</span>` : `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav></div>
         <button class="theme-button" type="button" data-theme-control><span aria-hidden="true" data-theme-icon><span class="theme-light">☀</span><span class="theme-dark">☾</span></span><span data-theme-label><span class="theme-light">Light</span><span class="theme-dark">Dark</span></span></button>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       </div>
