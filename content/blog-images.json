@@ -9763,6 +9763,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "bike-weight-claims-real-build-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif",
+          "width": 480,
+          "height": 408,
+          "type": "image/avif",
+          "bytes": 20185,
+          "sha256": "c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda considers a bicycle suspended from a hanging scale with a blank display, with shoes, a bottle and riding equipment on the workbench.",
+          "zh-Hans": "戴头盔的小熊猫看着悬挂在吊秤上的自行车，秤上没有数字，工作台上摆着鞋、水壶和骑行装备。",
+          "de": "Ein Rotpanda mit Helm betrachtet ein Fahrrad an einer Hängewaage mit leerer Anzeige; Schuhe, eine Flasche und Radausrüstung liegen auf der Werkbank."
+        },
+        "prompt": "Editorial scene: A helmeted red panda considers a bicycle suspended from a hanging scale with a blank display, with shoes, a bottle and riding equipment on the workbench.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "0cb63cdc5057a8d285dff32f794d5a7c26ef9fe1026e302188733bb1b0ec5adf",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-640-132f5dbfb4.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 29780,
+            "sha256": "132f5dbfb419bcfd6cc4f612c81add68d6949fdd261a08a3b3b49320e63acab9"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-1600-26016caeb2.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 110228,
+            "sha256": "26016caeb26aaf6d98241f1f3afbfafa45483efd7e65cdf030c51bc43b22b720"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 194414,
+            "sha256": "dcb411d3124e7d26398f84be5735445a283683b5c2ac306a2d21d175debfce22"
+          }
+        ]
+      }
     }
   ]
 }
