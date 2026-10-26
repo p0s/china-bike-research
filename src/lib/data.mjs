@@ -538,6 +538,12 @@ export function validateDataset(data = loadDataset()) {
     if (!Array.isArray(wheelset.caveats) || !wheelset.caveats.length) errors.push(`${label}: caveats must not be empty`);
     for (const sourceId of wheelset.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${label}: missing source ${sourceId}`);
     if (!isDate(wheelset.reviewed_at)) errors.push(`${label}: invalid reviewed_at`);
+    // Independent review notes cite one of the wheelset's listed sources.
+    if (wheelset.independent_evidence !== undefined && (!Array.isArray(wheelset.independent_evidence) || !wheelset.independent_evidence.length)) errors.push(`${label}: independent_evidence must be a non-empty array`);
+    for (const note of Array.isArray(wheelset.independent_evidence) ? wheelset.independent_evidence : []) {
+      if (!sourceIds.has(note?.source_id) || !wheelset.source_ids?.includes(note.source_id)) errors.push(`${label}: independent evidence must cite a listed source`);
+      if (typeof note?.summary !== 'string' || note.summary.trim().length < 20) errors.push(`${label}: independent evidence needs a summary`);
+    }
     // Exact-model photos follow the reviewed local-derivative contract used for groupsets.
     if (wheelset.image !== undefined) {
       const image = wheelset.image;

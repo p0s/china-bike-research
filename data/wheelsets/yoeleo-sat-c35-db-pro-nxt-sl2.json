@@ -1,0 +1,128 @@
+{
+  "id": "yoeleo-sat-c35-db-pro-nxt-sl2",
+  "maker": "YOELEO",
+  "name": "SAT C35 DB PRO NxT SL2",
+  "use": "road",
+  "status": "current",
+  "positioning": "Shallow 35 mm steel-spoke road wheelset with a 23 mm hooked rim and published pressure caps.",
+  "rim": {
+    "depth_mm": {
+      "front": 35,
+      "rear": 35
+    },
+    "internal_width_mm": 23,
+    "external_width_mm": {
+      "front": 32,
+      "rear": 32
+    },
+    "bead": "hooked",
+    "bead_note": "Listed as hooked; the rim bed has no spoke holes, so no rim tape is needed for tubeless.",
+    "tubeless_ready": true,
+    "tire_range": "25c and wider; 28–47c suggested"
+  },
+  "max_pressure": {
+    "psi": 120,
+    "note": "Clincher tires; 90 psi maximum with tubeless tires."
+  },
+  "load_limit": {
+    "kg": 125,
+    "scope": "system",
+    "note": "Listed as a system weight limit."
+  },
+  "weight": {
+    "grams": 1260,
+    "tolerance_pct": 5,
+    "basis": "Pair; valves and front/rear split are not stated.",
+    "claim_type": "official"
+  },
+  "hub": "YOELEO NxT · 36T ratchet",
+  "spokes": {
+    "material": "steel",
+    "summary": "Pillar WING 2.0 aero · 24F/24R"
+  },
+  "compatibility": {
+    "rotor_mount": null,
+    "axles": [
+      "12x100",
+      "12x142"
+    ],
+    "freehubs": [
+      "hg-road",
+      "sram-xdr",
+      "campagnolo-n3w"
+    ]
+  },
+  "warranty": "3-year warranty.",
+  "price_observations": [
+    {
+      "amount": 999,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-26",
+      "conditions": "White or Black finish; taxes included and shipping calculated at checkout.",
+      "source_id": "yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26"
+    }
+  ],
+  "caveats": [
+    "The rotor mount is not stated; the box lists two locking rings.",
+    "Choose the freehub at order; it is not a listed store option.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "independent_evidence": [
+    {
+      "source_id": "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06",
+      "summary": "Cyclists Hub, an affiliate site, named the NxT SL2 range its best-value Chinese road wheels after testing the C60 (4.2/5), not the C35; seating tubeless tires needed a compressor."
+    }
+  ],
+  "source_ids": [
+    "yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26",
+    "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06"
+  ],
+  "reviewed_at": "2026-10-26",
+  "image": {
+    "source_id": "yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26",
+    "subject_accuracy": "exact-model",
+    "width": 1200,
+    "height": 1200,
+    "credit": "YOELEO",
+    "alt": "YOELEO SAT C35 NxT SL2 carbon road wheel with white YOELEO and NxT decals and a gold hub",
+    "rights": {
+      "status": "source-attributed-rehost",
+      "copyright_holder": "YOELEO",
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "reviewed_at": "2026-10-26",
+    "local_path": "/assets/images/sourced/official/wheelset-yoeleo-sat-c35-db-pro-nxt-sl2/c31304c93a2a6295-detail-w1200.avif",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/wheelset-yoeleo-sat-c35-db-pro-nxt-sl2/25c408d58a662684-card-w480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 11497,
+        "sha256": "25c408d58a6626840a412b0c123a771f502fb2519ca763e2d88c79bdc972308d",
+        "format": "image/avif",
+        "quality": 60
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/wheelset-yoeleo-sat-c35-db-pro-nxt-sl2/c31304c93a2a6295-detail-w1200.avif",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 35333,
+        "sha256": "c31304c93a2a6295ee5240f9e01ff74a38816663f24a96943fcad08f4e562d62",
+        "format": "image/avif",
+        "quality": 60
+      }
+    ],
+    "source_media_url": "https://cdn.shopify.com/s/files/1/0952/6666/8819/files/01_ee906427-5920-4c51-a1df-3edbb7c30475.jpg?v=1778150033",
+    "source_media_sha256": "1e08be956dde4b961b409c489143e3e8eb20a1971cace783efa4d29dc8fe8e83",
+    "privacy_review": {
+      "reviewed_at": "2026-10-26",
+      "embedded_metadata": "stripped",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  }
+}

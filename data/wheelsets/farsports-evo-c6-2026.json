@@ -1,0 +1,132 @@
+{
+  "id": "farsports-evo-c6-2026",
+  "maker": "Farsports",
+  "name": "EVO C6 (2026)",
+  "use": "road",
+  "status": "current",
+  "positioning": "58.5 mm steel-spoke aero road wheelset with a 24 mm hooked rim, tested in an independent wind tunnel.",
+  "rim": {
+    "depth_mm": {
+      "front": 58.5,
+      "rear": 58.5
+    },
+    "internal_width_mm": 24,
+    "external_width_mm": {
+      "front": 31.5,
+      "rear": 31.5
+    },
+    "bead": "hooked",
+    "bead_note": "Listed as a tubeless-ready hook rim.",
+    "tubeless_ready": true,
+    "tire_range": "Not published on the product page."
+  },
+  "max_pressure": {
+    "psi": 120,
+    "note": "Brand-wide warranty rule; no tire-size or tubeless caps are published."
+  },
+  "load_limit": {
+    "kg": 120,
+    "scope": "unspecified",
+    "note": "The specification image does not say whether bike weight is included."
+  },
+  "weight": {
+    "grams": 1380,
+    "tolerance_pct": 5,
+    "basis": "Pair; tape and valves are not mentioned.",
+    "claim_type": "official"
+  },
+  "hub": "Farsports CHO1F/CHO1R ratchet · steel or CeramicSpeed bearings",
+  "spokes": {
+    "material": "steel",
+    "summary": "Alpina Ultralite · 21F/24R, 2:1 lacing"
+  },
+  "compatibility": {
+    "rotor_mount": "center-lock",
+    "axles": [
+      "12x100",
+      "12x142"
+    ],
+    "freehubs": [
+      "hg-road",
+      "shimano-microspline",
+      "sram-xdr",
+      "campagnolo-10-12",
+      "campagnolo-n3w"
+    ]
+  },
+  "warranty": "36-month carbon warranty for the original owner; one-time 35% crash-replacement discount.",
+  "price_observations": [
+    {
+      "amount": 1459,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-26",
+      "conditions": "Full EVO6 C set with steel bearings, any freehub; US$1,659 with CeramicSpeed bearings. The page says shipping includes taxes, with free shipping to select countries; returns within 14 days at the buyer's expense.",
+      "source_id": "farsports-evo-c-series-2026-official-2026-10-26"
+    }
+  ],
+  "caveats": [
+    "No tire range is published.",
+    "The 120 kg limit does not say whether bike weight is included.",
+    "Bearings, spokes and skewers are excluded from the warranty as wear parts.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "independent_evidence": [
+    {
+      "source_id": "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30",
+      "summary": "Cyclingnews measured an EVO C6 pair at 1,351 g and 66.89 W at 40 km/h on 28 mm tires; it called the aero result modest for about a quarter of the most expensive set’s price. The model year is not stated."
+    }
+  ],
+  "source_ids": [
+    "farsports-evo-c-series-2026-official-2026-10-26",
+    "farsports-warranty-2026-10-26",
+    "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30"
+  ],
+  "reviewed_at": "2026-10-26",
+  "image": {
+    "source_id": "farsports-evo-c-series-2026-official-2026-10-26",
+    "subject_accuracy": "exact-model",
+    "width": 1200,
+    "height": 1200,
+    "credit": "Farsports",
+    "alt": "Farsports EVO C6 carbon wheelset pair with EVO6 rim decals and an orange hub",
+    "rights": {
+      "status": "source-attributed-rehost",
+      "copyright_holder": "Farsports",
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "reviewed_at": "2026-10-26",
+    "local_path": "/assets/images/sourced/official/wheelset-farsports-evo-c6-2026/f1ee5433c1a1a7eb-detail-w1200.avif",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/wheelset-farsports-evo-c6-2026/e52dc6dfc49e7d33-card-w480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 13041,
+        "sha256": "e52dc6dfc49e7d3380b90eab82feb1aeba718dddc2e5d69e52c41448ed8c7b20",
+        "format": "image/avif",
+        "quality": 60
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/wheelset-farsports-evo-c6-2026/f1ee5433c1a1a7eb-detail-w1200.avif",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 46772,
+        "sha256": "f1ee5433c1a1a7ebdfcbdde482112a3c3af1c95d9c7ba65c85f70604396f102b",
+        "format": "image/avif",
+        "quality": 60
+      }
+    ],
+    "source_media_url": "https://cdn.shopify.com/s/files/1/0602/5537/1439/files/10_6a6386ae-24d9-4a47-bb68-b6ff4dfcdf0f.jpg?v=1773998121",
+    "source_media_sha256": "66455a352d9f19d128208eeb8cc2c697f5b1176b2e122df2c3348a3762f8a1ba",
+    "privacy_review": {
+      "reviewed_at": "2026-10-26",
+      "embedded_metadata": "stripped",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  }
+}

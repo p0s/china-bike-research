@@ -107,4 +107,15 @@ test('the wheel table stays the default while use, sort, gallery and photo size 
   const first = data.wheelsets[0].id;
   assert.ok(withWheelset(first, (wheelset) => { wheelset.image = { source_id: wheelset.source_ids[0], subject_accuracy: 'exact-family', credit: 'Maker', alt: 'A wheelset photo for testing', reviewed_at: '2026-10-26' }; })
     .some((error) => error.includes('must show the exact model')));
+  // Independent review notes render with their source and must cite a listed source.
+  const reviewed = data.wheelsets.find((wheelset) => wheelset.independent_evidence?.length);
+  assert.ok(reviewed, 'at least one wheelset carries an independent review note');
+  const reviewedEntry = html.match(new RegExp(`<tbody class="groupset-entry" id="${reviewed.id}"[\\s\\S]*?</tbody>`))?.[0] ?? '';
+  assert.match(reviewedEntry, /<h3>Independent reviews<\/h3>/);
+  assert.ok(withWheelset(reviewed.id, (wheelset) => { wheelset.independent_evidence = [{ source_id: 'not-a-listed-source', summary: 'A review summary that is long enough.' }]; })
+    .some((error) => error.includes('independent evidence must cite a listed source')));
+  // Every image-bearing wheelset shows a linked local photo with alt text.
+  for (const wheelset of data.wheelsets.filter((item) => item.image)) {
+    assert.match(html, new RegExp(`<img src="/china-bike-research${wheelset.image.local_path}"[^>]*alt="[^"]{10,}"`), wheelset.id);
+  }
 });

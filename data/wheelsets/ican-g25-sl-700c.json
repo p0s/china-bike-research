@@ -1,0 +1,119 @@
+{
+  "id": "ican-g25-sl-700c",
+  "maker": "ICAN",
+  "name": "G25 SL 700C",
+  "use": "gravel",
+  "status": "current",
+  "positioning": "50 mm gravel wheelset with a 25 mm hooked rim, a 45T star-ratchet hub and Sapim CX-Ray spokes.",
+  "rim": {
+    "depth_mm": {
+      "front": 50,
+      "rear": 50
+    },
+    "internal_width_mm": 25,
+    "external_width_mm": {
+      "front": 31.3,
+      "rear": 31.3
+    },
+    "bead": "hooked",
+    "bead_note": "Listed as a hooked-bead design.",
+    "tubeless_ready": true,
+    "tire_range": "700×35–50 mm recommended; 29–60 mm usable"
+  },
+  "max_pressure": {
+    "psi": null,
+    "note": "Not published on the product page."
+  },
+  "load_limit": {
+    "kg": null,
+    "scope": "unspecified",
+    "note": "Not published on the product page."
+  },
+  "weight": {
+    "grams": 1352,
+    "basis": "Pair with D91 hubs (front 636 g, rear 716 g); tape and valves are not mentioned.",
+    "claim_type": "official"
+  },
+  "hub": "ICAN D91 · 45T star ratchet · steel or ceramic bearings",
+  "spokes": {
+    "material": "steel",
+    "summary": "Sapim CX-Ray · 24F/24R, two-cross"
+  },
+  "compatibility": {
+    "rotor_mount": "center-lock",
+    "axles": [
+      "12x100",
+      "12x142"
+    ],
+    "freehubs": [
+      "hg-road",
+      "sram-xdr",
+      "shimano-microspline"
+    ]
+  },
+  "warranty": "2-year guarantee.",
+  "price_observations": [
+    {
+      "amount": 670,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-sale",
+      "observed_at": "2026-10-26",
+      "conditions": "Sale price with D91 hubs and steel bearings; compare-at US$720–740 by freehub. Ceramic bearings US$730; DT Swiss 240 EXP hubs US$1,049 (1,370 g).",
+      "source_id": "ican-g25-sl-700c-official-2026-10-26"
+    }
+  ],
+  "caveats": [
+    "Maximum tire pressure and load limit are not published.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "source_ids": [
+    "ican-g25-sl-700c-official-2026-10-26"
+  ],
+  "reviewed_at": "2026-10-26",
+  "image": {
+    "source_id": "ican-g25-sl-700c-official-2026-10-26",
+    "subject_accuracy": "exact-model",
+    "width": 1200,
+    "height": 1200,
+    "credit": "ICAN Cycling",
+    "alt": "ICAN G25 SL 700C gravel carbon wheelset pair with G25 SL rim decals",
+    "rights": {
+      "status": "source-attributed-rehost",
+      "copyright_holder": "ICAN Cycling",
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "reviewed_at": "2026-10-26",
+    "local_path": "/assets/images/sourced/official/wheelset-ican-g25-sl-700c/9a4597c4e9438eb2-detail-w1200.avif",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/wheelset-ican-g25-sl-700c/56bee1d0863772f5-card-w480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 11514,
+        "sha256": "56bee1d0863772f59c776125feadf7da520afc17074ad4c2c18fc03fb857b7a3",
+        "format": "image/avif",
+        "quality": 60
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/wheelset-ican-g25-sl-700c/9a4597c4e9438eb2-detail-w1200.avif",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 41861,
+        "sha256": "9a4597c4e9438eb26f549358904eea28b0c11809d80fa2bdd688fc9fd42bd5e5",
+        "format": "image/avif",
+        "quality": 60
+      }
+    ],
+    "source_media_url": "https://cdn.shopify.com/s/files/1/0871/7140/files/G25_SL_1.jpg?v=1760692486",
+    "source_media_sha256": "48f87a683db29308c6537c27e9e6762ac272ee57675f6c184542b0a849ddd84d",
+    "privacy_review": {
+      "reviewed_at": "2026-10-26",
+      "embedded_metadata": "stripped",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  }
+}

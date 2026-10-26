@@ -6,26 +6,63 @@
   "status": "current",
   "positioning": "45 mm gravel wheelset with a 27 mm hooked rim for 35–53 mm tires and a 36T ratchet hub.",
   "rim": {
-    "depth_mm": { "front": 45, "rear": 45 },
+    "depth_mm": {
+      "front": 45,
+      "rear": 45
+    },
     "internal_width_mm": 27,
-    "external_width_mm": { "front": 34.3, "rear": 34.3 },
+    "external_width_mm": {
+      "front": 34.3,
+      "rear": 34.3
+    },
     "bead": "hooked",
     "bead_note": "Listed as a hooked rim; tubeless-ready bed without spoke holes.",
     "tubeless_ready": true,
     "tire_range": "35–53 mm suggested; 35 mm and wider"
   },
-  "max_pressure": { "psi": null, "note": "Not published on the product page." },
-  "load_limit": { "kg": 125, "scope": "system", "note": "System weight limit for NxT SL2 wheels." },
-  "weight": { "grams": 1380, "tolerance_pct": 5, "basis": "Pair; inclusion of valves is not stated.", "claim_type": "official" },
+  "max_pressure": {
+    "psi": null,
+    "note": "Not published on the product page."
+  },
+  "load_limit": {
+    "kg": 125,
+    "scope": "system",
+    "note": "System weight limit for NxT SL2 wheels."
+  },
+  "weight": {
+    "grams": 1380,
+    "tolerance_pct": 5,
+    "basis": "Pair; inclusion of valves is not stated.",
+    "claim_type": "official"
+  },
   "hub": "YOELEO NxT · 36T ratchet",
-  "spokes": { "material": "steel", "summary": "Black Aero 2.0 · 24/24" },
+  "spokes": {
+    "material": "steel",
+    "summary": "Black Aero 2.0 · 24/24"
+  },
   "compatibility": {
     "rotor_mount": null,
-    "axles": ["12x100", "12x142"],
-    "freehubs": ["hg-road", "campagnolo-n3w", "sram-xdr"]
+    "axles": [
+      "12x100",
+      "12x142"
+    ],
+    "freehubs": [
+      "hg-road",
+      "campagnolo-n3w",
+      "sram-xdr"
+    ]
   },
   "warranty": "3-year warranty.",
   "price_observations": [
+    {
+      "amount": 999,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-26",
+      "conditions": "White or Black finish; taxes included and shipping calculated at checkout.",
+      "source_id": "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26"
+    },
     {
       "amount": 999,
       "currency": "USD",
@@ -41,6 +78,54 @@
     "No maximum tire pressure is published.",
     "Mainland China price not recorded; confirm it with an authorized seller."
   ],
-  "source_ids": ["yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20"],
-  "reviewed_at": "2026-10-20"
+  "source_ids": [
+    "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20",
+    "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26"
+  ],
+  "reviewed_at": "2026-10-26",
+  "image": {
+    "source_id": "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26",
+    "subject_accuracy": "exact-model",
+    "width": 1200,
+    "height": 1200,
+    "credit": "YOELEO",
+    "alt": "YOELEO SAT C45 DB Pro NxT gravel carbon wheel with white YOELEO and NxT decals",
+    "rights": {
+      "status": "source-attributed-rehost",
+      "copyright_holder": "YOELEO",
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "reviewed_at": "2026-10-26",
+    "local_path": "/assets/images/sourced/official/wheelset-yoeleo-sat-c45-db-pro-nxt-gravel/d6cc5e2c17a8748d-detail-w1200.avif",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/wheelset-yoeleo-sat-c45-db-pro-nxt-gravel/3a6af9d001dfc7eb-card-w480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 11116,
+        "sha256": "3a6af9d001dfc7eb4414d284139817f10a598f2441c42f3dae819d2bd1106006",
+        "format": "image/avif",
+        "quality": 60
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/wheelset-yoeleo-sat-c45-db-pro-nxt-gravel/d6cc5e2c17a8748d-detail-w1200.avif",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 35530,
+        "sha256": "d6cc5e2c17a8748db7d7d265cd2ced117da215cafbf313c98a918f7fced9b766",
+        "format": "image/avif",
+        "quality": 60
+      }
+    ],
+    "source_media_url": "https://cdn.shopify.com/s/files/1/0952/6666/8819/files/01_60638a32-ec66-4d30-af13-f2939d9a833f.jpg?v=1778156802",
+    "source_media_sha256": "c00a2254e35926dda111a3460e4c7c376da9fa6efc4362ac26bd04ee05bd9c56",
+    "privacy_review": {
+      "reviewed_at": "2026-10-26",
+      "embedded_metadata": "stripped",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  }
 }
