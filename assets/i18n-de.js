@@ -1502,6 +1502,24 @@ Object.assign(de, {
   "1 wheelset shown": "1 Laufradsatz angezeigt"
 });
 
+// Groupset price packages (2026-10-26).
+Object.assign(de, {
+  "1× alloy-lever kit": "1×-Kit mit Aluhebeln",
+  "1× carbon-lever kit": "1×-Kit mit Carbonhebeln",
+  "2× alloy-lever kit": "2×-Kit mit Aluhebeln",
+  "2× carbon-lever kit": "2×-Kit mit Carbonhebeln",
+  "1× long-cage kit": "1×-Kit, langer Käfig",
+  "1× medium-cage kit": "1×-Kit, mittlerer Käfig",
+  "1× short-cage kit": "1×-Kit, kurzer Käfig",
+  "2× boxed alloy-lever kit": "2×-Kit im Karton, Aluhebel",
+  "large package (大套)": "großes Paket (大套)",
+  "R8170 large package (大套)": "R8170 großes Paket (大套)",
+  "hydraulic shift-brake groupset": "Schalt- und Hydraulikbremsgruppe",
+  "cable-brake shift groupset": "Schaltgruppe für Seilzugbremsen",
+  "75 mm derailleur, hydraulic brakes, alloy levers": "75-mm-Schaltwerk, Hydraulikbremsen, Aluhebel",
+  "75 or 93 mm derailleur, hydraulic brakes, carbon levers": "75- oder 93-mm-Schaltwerk, Hydraulikbremsen, Carbonhebel"
+});
+
 export function translateGerman(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
@@ -1522,6 +1540,9 @@ export function translateGerman(value) {
     [/^(\d+) per row$/, (_, n) => `${n} pro Reihe`],
     [/^(\d+) identical rows hidden$/, (_, n) => `${n} identische Zeilen ausgeblendet`],
     [/^(\d+) wheelsets shown$/, (_, n) => `${n} Laufradsätze angezeigt`],
+    [/^(\d+) systems · reviewed (\d{4}-\d{2}-\d{2}) · latest price (\d{4}-\d{2}-\d{2})$/, (_, n, reviewed, price) => `${n} Systeme · geprüft ${reviewed} · neuester Preis ${price}`],
+    [/^from (¥|€|US\$|£)([\d,.]+)$/, (_, symbol, amount) => `ab ${symbol}${amount}`],
+    [/^(from )?(€|US\$|£)([\d,.]+) official store · (\d{4}-\d{2}-\d{2})$/, (_, from, symbol, amount, date) => `${from ? 'ab ' : ''}${symbol}${amount} offizieller Shop · ${date}`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Preis erfasst am ${date}.`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Historischer Preis erfasst am ${date}.`],
     // Carbon-wheel reference (2026-10-20)

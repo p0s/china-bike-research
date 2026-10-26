@@ -1034,19 +1034,21 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.equal((reference.match(/data-groupset-entry/g) ?? []).length, 13);
   assert.equal((reference.match(/class="groupset-row-details"/g) ?? []).length, 13);
   assert.equal((reference.match(/class="product-image groupset-image"/g) ?? []).length, 10);
-  assert.match(reference, /<th>System<\/th><th>Use<\/th><th>Gearing<\/th><th>Setup<\/th><th>China price<\/th>/);
+  assert.match(reference, /<th>System<\/th><th>Use<\/th><th>Gearing<\/th><th>Setup<\/th><th>Price<\/th>/);
   assert.match(reference, /L-TWOO · 蓝图/);
   assert.match(reference, /WheelTop · Wheeltop/);
   assert.match(reference, /QED disc-brake core groupset 1,150 g; PES disc-brake core groupset 1,250 g/);
   assert.match(reference, /¥4,150–4,200/);
-  assert.match(reference, /¥2,369–3,219/);
+  // Different seller packages are never spanned as one range; the lowest is named.
+  assert.doesNotMatch(reference, /¥2,369–3,219/);
+  assert.match(reference, /from ¥2,369<\/strong><span>1× alloy-lever kit · Taobao options · 2026-08-24<\/span><span class="groupset-official-price">from €549 official store · 2026-10-26<\/span>/);
   assert.match(reference, /¥3,480/);
   assert.match(reference, /SRAM GX AXS \/ Eagle Transmission/);
   assert.match(reference, /L-TWOO eRX-TT/);
   assert.match(reference, /Package & weight/);
   assert.match(reference, /How package labels and prices are normalized/);
   assert.match(reference, /referrerpolicy="no-referrer" data-product-image/);
-  assert.match(reference, /id="shimano-grx-rx825"[\s\S]*?<td data-label="China price" data-column="price"><\/td>/);
+  assert.match(reference, /id="shimano-grx-rx825"[\s\S]*?<td data-label="Price" data-column="price"><\/td>/);
   assert.doesNotMatch(reference, /No attributable mainland price|No exact mainland package captured|current maximum unresolved/);
   assert.doesNotMatch(reference, /Established benchmarks|Chinese electronic systems|Other disciplines/);
   assert.doesNotMatch(reference, /groupset-details|<article class="groupset-detail"/);

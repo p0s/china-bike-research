@@ -59,7 +59,8 @@
       "package_basis": "shift-brake",
       "checkout_verified": false,
       "headline": true,
-      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24",
+      "package_label": "1× alloy-lever kit"
     },
     {
       "amount": 2624,
@@ -72,7 +73,8 @@
       "package_basis": "shift-brake",
       "checkout_verified": false,
       "headline": true,
-      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24",
+      "package_label": "1× carbon-lever kit"
     },
     {
       "amount": 2879,
@@ -85,7 +87,8 @@
       "package_basis": "shift-brake",
       "checkout_verified": false,
       "headline": true,
-      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24",
+      "package_label": "2× alloy-lever kit"
     },
     {
       "amount": 3219,
@@ -98,7 +101,8 @@
       "package_basis": "shift-brake",
       "checkout_verified": false,
       "headline": true,
-      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24",
+      "package_label": "2× carbon-lever kit"
     },
     {
       "amount": 659,
@@ -109,6 +113,32 @@
       "conditions": "Displayed reference on the official page; variation, destination, tax, shipping and mainland warranty route were not checked.",
       "headline": false,
       "source_id": "wheeltop-eds-tx-official-2026-08-24"
+    },
+    {
+      "amount": 659,
+      "currency": "EUR",
+      "market": "manufacturer-direct global store",
+      "price_type": "official-direct-sale",
+      "observed_at": "2026-10-26",
+      "conditions": "Hydraulic Disc Brake Groupset (UPGRADE) variant; compare-at €879. Destination, VAT, duties, shipping and mainland warranty route were not checked.",
+      "package_label": "hydraulic shift-brake groupset",
+      "package_basis": "shift-brake",
+      "headline": false,
+      "official_store": true,
+      "source_id": "wheeltop-eds-tx-official-store-2026-10-26"
+    },
+    {
+      "amount": 549,
+      "currency": "EUR",
+      "market": "manufacturer-direct global store",
+      "price_type": "official-direct-sale",
+      "observed_at": "2026-10-26",
+      "conditions": "Cable Brake Groupset variant; compare-at €799. Destination, VAT, duties, shipping and mainland warranty route were not checked.",
+      "package_label": "cable-brake shift groupset",
+      "package_basis": "shift-only",
+      "headline": false,
+      "official_store": true,
+      "source_id": "wheeltop-eds-tx-official-store-2026-10-26"
     }
   ],
   "caveats": [
@@ -174,7 +204,8 @@
   },
   "source_ids": [
     "wheeltop-eds-tx-official-2026-08-24",
-    "taobao-wheeltop-eds-tx-options-2026-08-24"
+    "taobao-wheeltop-eds-tx-options-2026-08-24",
+    "wheeltop-eds-tx-official-store-2026-10-26"
   ],
   "reviewed_at": "2026-08-24"
 }

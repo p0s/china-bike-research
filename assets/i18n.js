@@ -780,6 +780,9 @@ export function translate(value, locale = 'en') {
     [/^(\d+) per row$/, (_, n) => `每行 ${n} 个`],
     [/^(\d+) identical rows hidden$/, (_, n) => `已隐藏 ${n} 行相同内容`],
     [/^(\d+) wheelsets shown$/, (_, n) => `显示 ${n} 款轮组`],
+    [/^(\d+) systems · reviewed (\d{4}-\d{2}-\d{2}) · latest price (\d{4}-\d{2}-\d{2})$/, (_, n, reviewed, price) => `${n} 套系统 · 复核于 ${reviewed} · 最新价格 ${price}`],
+    [/^from (¥|€|US\$|£)([\d,.]+)$/, (_, symbol, amount) => `${symbol}${amount} 起`],
+    [/^(from )?(€|US\$|£)([\d,.]+) official store · (\d{4}-\d{2}-\d{2})$/, (_, from, symbol, amount, date) => `官方商店 ${symbol}${amount}${from ? ' 起' : ''} · ${date}`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `报价记录于 ${date}。`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `历史报价记录于 ${date}。`],
     // Carbon-wheel reference (2026-10-20)
@@ -1468,4 +1471,22 @@ Object.assign(zh, {
   "Widest inner rim first": "内宽最宽优先",
   "Wheelset view": "轮组视图",
   "1 wheelset shown": "显示 1 款轮组"
+});
+
+// Groupset price packages (2026-10-26).
+Object.assign(zh, {
+  "1× alloy-lever kit": "单盘铝合金手变套件",
+  "1× carbon-lever kit": "单盘碳纤维手变套件",
+  "2× alloy-lever kit": "双盘铝合金手变套件",
+  "2× carbon-lever kit": "双盘碳纤维手变套件",
+  "1× long-cage kit": "单盘长腿套件",
+  "1× medium-cage kit": "单盘中腿套件",
+  "1× short-cage kit": "单盘短腿套件",
+  "2× boxed alloy-lever kit": "双盘盒装铝合金手变套件",
+  "large package (大套)": "大套",
+  "R8170 large package (大套)": "R8170 大套",
+  "hydraulic shift-brake groupset": "油碟变速刹车套件",
+  "cable-brake shift groupset": "线拉刹车变速套件",
+  "75 mm derailleur, hydraulic brakes, alloy levers": "75 mm 后拨、油碟、铝合金手变",
+  "75 or 93 mm derailleur, hydraulic brakes, carbon levers": "75 或 93 mm 后拨、油碟、碳纤维手变"
 });

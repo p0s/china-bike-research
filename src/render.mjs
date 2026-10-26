@@ -2203,19 +2203,18 @@ function groupsetHeadlinePrices(groupset) {
   return (groupset.price_observations ?? []).filter((observation) => observation.headline !== false);
 }
 
+// Exact package prices: one package keeps its amount; several packages show
+// "from" the lowest with that package named, never a range across packages.
 function groupsetPriceLabel(groupset) {
-  const observations = groupsetHeadlinePrices(groupset);
+  const observations = groupsetHeadlinePrices(groupset).filter((observation) => observation.currency === 'CNY');
   if (!observations.length) return '';
-  const amounts = observations.map((observation) => observation.amount);
-  const currencies = new Set(observations.map((observation) => observation.currency));
   const format = (amount) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amount);
-  if (currencies.size === 1 && currencies.has('CNY')) {
-    const low = Math.min(...amounts);
-    const high = Math.max(...amounts);
-    return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
-  }
-  const observation = observations[0];
-  return `${observation.currency} ${format(observation.amount)}`;
+  const packages = new Set(observations.map((observation) => observation.package_label ?? observation.option_label_zh ?? ''));
+  const amounts = observations.map((observation) => observation.amount);
+  const low = Math.min(...amounts);
+  const high = Math.max(...amounts);
+  if (packages.size > 1) return `from ¥${format(low)}`;
+  return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
 }
 
 function groupsetSetupLabel(groupset) {
@@ -2226,14 +2225,27 @@ function groupsetSetupLabel(groupset) {
 }
 
 function groupsetPriceSummary(groupset) {
-  const observations = groupsetHeadlinePrices(groupset);
+  const observations = groupsetHeadlinePrices(groupset).filter((observation) => observation.currency === 'CNY');
   if (!observations.length) return '';
+  const lowest = [...observations].sort((a, b) => a.amount - b.amount)[0];
   const taobao = observations.every((observation) => /Taobao/i.test(observation.market));
   const label = taobao
     ? `Taobao option${observations.length === 1 ? '' : 's'}`
     : `Dealer observation${observations.length === 1 ? '' : 's'}`;
-  const dates = [...new Set(observations.map((observation) => observation.observed_at))];
-  return `${label} · ${dates.at(-1)}`;
+  const dates = [...new Set(observations.map((observation) => observation.observed_at))].sort();
+  return [lowest.package_label ?? '', label, dates.at(-1)].filter(Boolean).join(' · ');
+}
+
+// The latest official direct-store price, in its own currency, beside the China price.
+function groupsetOfficialPrice(groupset) {
+  const official = (groupset.price_observations ?? []).filter((observation) => observation.official_store && observation.currency !== 'CNY')
+    .sort((a, b) => b.observed_at.localeCompare(a.observed_at) || a.amount - b.amount);
+  if (!official.length) return '';
+  const date = official[0].observed_at;
+  const sameDay = official.filter((observation) => observation.observed_at === date);
+  const low = Math.min(...sameDay.map((observation) => observation.amount));
+  const symbol = { EUR: '€', USD: 'US$', GBP: '£' }[official[0].currency] ?? `${official[0].currency} `;
+  return `${sameDay.length > 1 ? 'from ' : ''}${symbol}${new Intl.NumberFormat('en-US').format(low)} official store · ${date}`;
 }
 
 function observationAmount(observation) {
@@ -2292,7 +2304,7 @@ function groupsetRows(ctx, groupset, sourcesById) {
     <td data-label="Use" data-column="best"><strong>${escapeHtml(groupsetDiscipline(groupset))}</strong><span>${escapeHtml(groupset.positioning)}</span></td>
     <td data-label="Gearing" data-column="gearing"><strong>${escapeHtml(`${groupset.shifting.chainrings} · ${groupset.shifting.cassette_speeds}`)}</strong>${maxRear ? `<span>${escapeHtml(maxRear)}</span>` : ''}</td>
     <td data-label="Setup" data-column="setup"><strong>${escapeHtml(groupsetSetupLabel(groupset))}</strong><span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
-    <td data-label="China price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}</td>
+    <td data-label="Price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}${groupsetOfficialPrice(groupset) ? `<span class="groupset-official-price">${escapeHtml(groupsetOfficialPrice(groupset))}</span>` : ''}</td>
   </tr><tr class="groupset-detail-row"><td colspan="5">${groupsetDetailPanel(groupset, sourcesById)}</td></tr></tbody>`;
 }
 
@@ -2303,6 +2315,8 @@ function adjacentPriceLabel(source) {
   const format = (amount) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amount);
   const low = Math.min(...amounts);
   const high = Math.max(...amounts);
+  // Different seller options are different packages: name the lowest, never span them.
+  if (new Set(observations.map((observation) => observation.option_label_zh)).size > 1) return `from ¥${format(low)}`;
   return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
 }
 
@@ -2318,7 +2332,7 @@ function adjacentRows(source) {
     <td data-label="Use" data-column="best"><strong>${escapeHtml(system.discipline)}</strong><span>${escapeHtml(system.why_separate)}</span></td>
     <td data-label="Gearing" data-column="gearing"></td>
     <td data-label="Setup" data-column="setup"></td>
-    <td data-label="China price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>Taobao options · ${escapeHtml(source.observed_at)}</span>` : ''}</td>
+    <td data-label="Price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>Taobao options · ${escapeHtml(source.observed_at)}</span>` : ''}</td>
   </tr><tr class="groupset-detail-row"><td colspan="5"><details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-lower"><section><h3>Captured packages</h3><div class="price-records">${records}</div></section><section><h3>Package boundary</h3><p>${escapeHtml(system.why_separate)}</p><p>${escapeHtml(source.notes)}</p></section></div><div class="groupset-source-line"><strong>Source</strong><span>${sourceLink}</span></div></div></details></td></tr></tbody>`;
 }
 
@@ -2350,7 +2364,7 @@ export function renderElectronicGroupsets(ctx) {
     ...adjacentSources.map(adjacentRows)
   ].join('');
   const originalNotes = ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Paket-, Preis- und Messnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
-  const html = `${originalNotes}<p class="groupset-table-note"><span>${ordered.length + adjacentSources.length} systems · reviewed 2026-08-25</span> Open a row for fit, batteries, package scope, weight evidence and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison"><caption class="sr-only">Electronic groupsets available in China</caption><thead><tr><th>System</th><th>Use</th><th>Gearing</th><th>Setup</th><th>China price</th></tr></thead>${rows}</table></div>
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${ordered.length + adjacentSources.length} systems · reviewed ${escapeHtml(latestDate([...ordered.map((groupset) => groupset.reviewed_at), ...ordered.map((groupset) => groupset.image?.reviewed_at)], '2026-08-25'))} · latest price ${escapeHtml(latestDate(ordered.flatMap((groupset) => (groupset.price_observations ?? []).map((observation) => observation.observed_at)), '2026-08-24'))}</span> Open a row for fit, batteries, package scope, weight evidence and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison"><caption class="sr-only">Electronic groupsets available in China</caption><thead><tr><th>System</th><th>Use</th><th>Gearing</th><th>Setup</th><th>Price</th></tr></thead>${rows}</table></div>
   <details class="reference-guide"><summary>How package labels and prices are normalized</summary><div><dl class="detail-list package-basis"><div><dt>Shift-only</dt><dd>Levers, derailleurs, battery, wires and charger.</dd></div><div><dt>Shift-brake</dt><dd>Shift-only plus calipers and hoses.</dd></div><div><dt>Partial groupset</dt><dd>Shift-brake plus only some of crank, cassette, chain or rotors.</dd></div><div><dt>Full groupset</dt><dd>An exact, itemized list of every included component.</dd></div><div><dt>OEM take-off</dt><dd>Removed or split from a complete bike; retail packaging and warranty may be absent.</dd></div></dl><p>Seller labels such as 小套, 中套 and 大套 are retained as option text, never treated as standard packages. Taobao observations are option-level screenshots rather than verified checkout totals.</p></div></details>`;
   return prosePage(ctx, {
     title: 'Electronic groupsets in China',
