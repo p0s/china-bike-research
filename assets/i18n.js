@@ -762,8 +762,17 @@ Object.assign(zh, {
   "Cockpits": "把组"
 });
 
+// Interface-only languages register their translators when their module loads,
+// so visitors to other languages never download those dictionaries.
+const registeredTranslators = new Map();
+export function registerTranslator(locale, translator) {
+  registeredTranslators.set(locale, translator);
+}
+
 export function translate(value, locale = 'en') {
   if (locale === 'de') return translateGerman(value);
+  const registered = registeredTranslators.get(locale);
+  if (registered) return registered(value);
   if (locale !== 'zh-Hans' || typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
   const imageText = translateImageText(value, locale);

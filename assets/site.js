@@ -77,7 +77,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     link.addEventListener('click', syncLanguageLink);
   });
   // Static HTML is already localized. This only handles text created by interactions.
-  if (locale === 'zh-Hans' || locale === 'de') {
+  if (locale && locale !== 'en') {
     const translateNode = (node) => {
       if (node.nodeType === Node.TEXT_NODE) {
         if (node.parentElement?.closest('script,style,code,textarea,[data-original-language],[data-localized-caption]')) return;

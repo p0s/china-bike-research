@@ -38,4 +38,71 @@ Object.assign(de, {"sizeHint": "· Stack/Reach mm", "sizeUnavailable": "diese do
 en.diagram = "Stack and reach, close-up on one scale"; en.diagramNote = "Close-up of the head-tube positions on one millimetre scale; the axes do not start at the bottom bracket. Dots are each model’s other recorded sizes; select one to compare it.";
 zh.diagram = "Stack 与 Reach 局部放大（同一比例）"; zh.diagramNote = "头管位置的局部放大图，两轴使用同一毫米比例，坐标不从五通开始。圆点为各车型的其他记录尺码，点选即可对比。";
 de.diagram = "Stack und Reach, Ausschnitt im gleichen Maßstab"; de.diagramNote = "Ausschnitt der Steuerrohrpositionen im gleichen Millimetermaßstab; die Achsen beginnen nicht am Tretlager. Punkte sind die anderen dokumentierten Größen jedes Modells; zum Vergleichen eine auswählen.";
-export const geometryCopy = locale => locale === 'zh-Hans' ? zh : locale === 'de' ? de : en;
+// Spanish and Russian geometry copy (2026-10-26).
+const es = {
+  title: 'Comparación de geometría de bicicletas', description: 'Compara stack y reach de bicicletas y kits de cuadro chinos. Elige tallas exactas, introduce tu propia referencia y encuentra geometrías cercanas con fuentes enlazadas.',
+  eyebrow: 'MEDIR. COMPARAR. EXPLORAR.', intro: 'Empieza con un cuadro que conozcas. Mira cómo se compara otra talla.',
+  libraryLink: 'Ver la biblioteca de tallas con fuentes', share: 'Copiar enlace de la comparación', copied: 'Enlace copiado', copyFailed: 'Copia la dirección de esta página para compartir tu comparación.',
+  a: 'A · Referencia', b: 'B · Comparar', model: 'Modelo', size: 'Talla registrada', manual: 'Introducir stack y reach', manualName: 'Tus medidas', stack: 'Stack', reach: 'Reach', mm: 'mm',
+  source: 'Fuente de la geometría', accessed: 'Consultado', details: 'Modelo, precios y evidencia', build: 'Planificar este montaje', compareCatalog: 'Comparar en el catálogo',
+  example: 'Se muestran tallas de ejemplo. Elige tu talla exacta o introduce una referencia.', loading: 'El ejemplo con fuentes y la biblioteca completa funcionan sin JavaScript. Editar requiere JavaScript.', ready: 'Edición lista. Los cambios se guardan en el enlace de esta página.',
+  invalid: 'Elige un modelo y una talla disponibles, o introduce stack y reach entre 0 y 1.500 mm (sin incluir cero). Los enlaces no disponibles no se sustituyen por otro modelo.',
+  diagram: 'Stack y reach, vista ampliada a una misma escala', diagramNote: 'Vista ampliada de la posición del tubo de dirección a una sola escala en milímetros; los ejes no empiezan en el pedalier. Los puntos son las otras tallas registradas de cada modelo; selecciona una para compararla.', bb: 'Pedalier',
+  differences: 'B comparado con A', metric: 'Medida', difference: 'B − A', head_angle_deg: 'Ángulo de dirección', seat_angle_deg: 'Ángulo del sillín', wheelbase_mm: 'Distancia entre ejes', chainstay_mm: 'Vaina', top_tube_mm: 'Tubo superior', bb_drop_mm: 'Caída del pedalier',
+  deltaNote: 'Positivo = B es mayor. «—» = sin valor registrado. El stack es vertical y el reach horizontal. Ambos describen el cuadro, antes de potencia, espaciadores y manillar.',
+  nearby: 'Encontrar geometrías cercanas', nearbyIntro: 'Tallas cercanas a la referencia A tanto en stack como en reach.', tolerance: 'Tolerancia en cada eje', category: 'Categoría', all: 'Todas las categorías', matches: 'tallas coincidentes', noMatches: 'No hay tallas dentro de esta tolerancia. Amplíala o elige otra categoría.', invalidTolerance: 'Introduce una tolerancia de 0 a 100 mm.',
+  searchNote: 'Ordenado por la distancia en línea recta en stack/reach. Unas dimensiones similares no garantizan el ajuste, el comportamiento, la compatibilidad ni la disponibilidad.', use: 'Comparar como B', show: 'Mostrar todas las tallas coincidentes', library: 'Biblioteca de tallas con fuentes', models: 'modelos', sizes: 'tallas',
+  excluded: 'Fuente pendiente de aclarar', excludedNote: 'Estas tablas originales siguen en sus páginas de modelo. Se excluyen de esta calculadora mientras su evidencia de geometría esté sin resolver.',
+  how: 'Qué te dicen los números', howText: 'El stack y el reach comparan la posición del tubo de dirección respecto al pedalier. Los nombres de talla no están estandarizados entre marcas. Comprueba la generación, la talla, la fuente y el montaje completo del cockpit antes de elegir un cuadro.', privacy: 'Las medidas manuales se quedan en tu navegador y en el enlace compartido. La herramienta no guarda un perfil.', reset: 'Restablecer el ejemplo', selected: 'Comparación actualizada', warning: 'Notas de geometría', sourceClass: 'Tipo de fuente',
+  sizeHint: '· stack/reach mm', sizeUnavailable: 'esta talla registrada no está disponible para el modelo elegido.', head_tube_mm: 'Tubo de dirección', standover_mm: 'Altura de paso', front_center_mm: 'Centro delantero', fork_offset_mm: 'Avance de horquilla',
+  glossary: 'Qué significa cada medida', glossaryFigure: 'Dibujo genérico de un cuadro que muestra dónde se miden stack, reach, distancia entre ejes y vaina', glossaryNote: 'Estos valores describen solo el cuadro. El ajuste también depende de la potencia, los espaciadores, el manillar, la posición del sillín y la longitud de las bielas.', presets: 'Tolerancia rápida',
+  define: {
+    stack: 'Distancia vertical desde el centro del pedalier hasta el centro superior del tubo de dirección. Más stack significa una parte delantera más alta.',
+    reach: 'Distancia horizontal desde el centro del pedalier hasta el centro superior del tubo de dirección. Más reach significa una parte delantera más larga.',
+    head_tube_mm: 'Longitud del tubo de dirección. Junto con el stack, muestra cuánta altura delantera aporta el cuadro.',
+    head_angle_deg: 'Ángulo del eje de dirección respecto a la horizontal. Junto con el avance de la horquilla determina el trail.',
+    seat_angle_deg: 'Ángulo del tubo del sillín respecto a la horizontal. Adelanta o retrasa el sillín respecto al pedalier.',
+    top_tube_mm: 'La longitud del tubo superior según el fabricante, normalmente efectiva (horizontal). Compara valores medidos de la misma forma.',
+    wheelbase_mm: 'Distancia entre los ejes delantero y trasero.',
+    chainstay_mm: 'Distancia desde el centro del pedalier hasta el eje trasero.',
+    bb_drop_mm: 'Cuánto queda el centro del pedalier por debajo de la línea entre los ejes.',
+    standover_mm: 'Altura del tubo superior sobre el suelo en el punto que indica el fabricante.',
+    front_center_mm: 'Distancia desde el centro del pedalier hasta el eje delantero.',
+    fork_offset_mm: 'Avance de la horquilla: cuánto queda el eje delantero por delante del eje de dirección.'
+  },
+  categories: { gravel: 'Gravel', 'road-aero': 'Carretera aero', 'adventure-gravel': 'Gravel de aventura', 'gravel-race': 'Gravel de competición', 'aero-wide-clearance': 'Aero con gran paso de rueda', road: 'Carretera', triathlon: 'Triatlón / contrarreloj' }
+};
+const ru = {
+  title: 'Сравнение геометрии велосипедов', description: 'Сравнивайте Stack и Reach китайских велосипедов и рамсетов. Выбирайте точные размеры, вводите свою эталонную посадку и находите близкие геометрии рам со ссылками на источники.',
+  eyebrow: 'ИЗМЕРЯЙТЕ. СРАВНИВАЙТЕ. ИЗУЧАЙТЕ.', intro: 'Начните с рамы, которую знаете. Посмотрите, чем отличается другой размер.',
+  libraryLink: 'Открыть библиотеку размеров с источниками', share: 'Скопировать ссылку на сравнение', copied: 'Ссылка скопирована', copyFailed: 'Скопируйте адрес этой страницы, чтобы поделиться сравнением.',
+  a: 'A · Эталон', b: 'B · Сравнение', model: 'Модель', size: 'Указанный размер', manual: 'Ввести Stack и Reach', manualName: 'Ваши размеры', stack: 'Stack', reach: 'Reach', mm: 'мм',
+  source: 'Источник геометрии', accessed: 'Проверено', details: 'Модель, цены и данные', build: 'Спланировать сборку', compareCatalog: 'Сравнить в каталоге',
+  example: 'Показаны примерные размеры. Выберите свой точный размер или введите эталон.', loading: 'Пример с источниками и полная библиотека работают без JavaScript. Для редактирования нужен JavaScript.', ready: 'Редактирование доступно. Изменения сохраняются в ссылке на эту страницу.',
+  invalid: 'Выберите доступную модель и размер или введите Stack и Reach от 0 до 1500 мм (без нуля). Недоступные ссылки не заменяются другой моделью.',
+  diagram: 'Stack и Reach крупным планом в едином масштабе', diagramNote: 'Крупный план положения рулевого стакана в едином миллиметровом масштабе; оси не начинаются от каретки. Точки — другие указанные размеры каждой модели; выберите точку, чтобы сравнить.', bb: 'Каретка',
+  differences: 'B по сравнению с A', metric: 'Параметр', difference: 'B − A', head_angle_deg: 'Угол рулевой', seat_angle_deg: 'Угол подседельной трубы', wheelbase_mm: 'Колёсная база', chainstay_mm: 'Длина перьев', top_tube_mm: 'Верхняя труба', bb_drop_mm: 'Занижение каретки',
+  deltaNote: 'Плюс — у B больше. «—» — значение не указано. Stack — по вертикали, Reach — по горизонтали. Оба описывают раму без выноса, проставок и руля.',
+  nearby: 'Найти близкие геометрии', nearbyIntro: 'Размеры, близкие к эталону A и по Stack, и по Reach.', tolerance: 'Допуск по каждой оси', category: 'Категория', all: 'Все категории', matches: 'подходящих размеров', noMatches: 'В этом допуске размеров нет. Увеличьте допуск или выберите другую категорию.', invalidTolerance: 'Введите допуск от 0 до 100 мм.',
+  searchNote: 'Отсортировано по расстоянию по прямой в координатах Stack/Reach. Похожие размеры не означают подходящую посадку, управляемость, совместимость или наличие.', use: 'Сравнить как B', show: 'Показать все подходящие размеры', library: 'Библиотека размеров с источниками', models: 'моделей', sizes: 'размеров',
+  excluded: 'Источник требует уточнения', excludedNote: 'Эти исходные таблицы остаются на страницах моделей. Они исключены из калькулятора, пока данные о геометрии не подтверждены.',
+  how: 'Что означают эти цифры', howText: 'Stack и Reach показывают положение рулевого стакана относительно каретки. Названия размеров у брендов не стандартизированы. Перед выбором рамы проверьте точное поколение, размер, источник и полную сборку кокпита.', privacy: 'Введённые вручную размеры остаются в вашем браузере и в ссылке. Инструмент не сохраняет профиль.', reset: 'Сбросить пример', selected: 'Сравнение обновлено', warning: 'Примечания к геометрии', sourceClass: 'Тип источника',
+  sizeHint: '· Stack/Reach мм', sizeUnavailable: 'этого указанного размера у выбранной модели нет.', head_tube_mm: 'Рулевой стакан', standover_mm: 'Высота над верхней трубой', front_center_mm: 'Передний центр', fork_offset_mm: 'Вынос вилки',
+  glossary: 'Что означает каждый параметр', glossaryFigure: 'Условный рисунок рамы с местами измерения Stack, Reach, колёсной базы и длины перьев', glossaryNote: 'Эти значения описывают только раму. Посадка зависит также от выноса, проставок, руля, положения седла и длины шатунов.', presets: 'Быстрый допуск',
+  define: {
+    stack: 'Расстояние по вертикали от центра каретки до верхнего центра рулевого стакана. Больше Stack — выше передняя часть.',
+    reach: 'Расстояние по горизонтали от центра каретки до верхнего центра рулевого стакана. Больше Reach — длиннее передняя часть.',
+    head_tube_mm: 'Длина рулевого стакана. Вместе со Stack показывает, какую часть высоты передней части даёт рама.',
+    head_angle_deg: 'Угол оси рулевой колонки к горизонтали. Вместе с выносом вилки определяет трейл.',
+    seat_angle_deg: 'Угол подседельной трубы к горизонтали. Смещает седло вперёд или назад относительно каретки.',
+    top_tube_mm: 'Длина верхней трубы по данным производителя, обычно эффективная (горизонтальная). Сравнивайте значения, измеренные одинаково.',
+    wheelbase_mm: 'Расстояние между передней и задней осями.',
+    chainstay_mm: 'Расстояние от центра каретки до задней оси.',
+    bb_drop_mm: 'Насколько центр каретки расположен ниже линии между осями.',
+    standover_mm: 'Высота верхней трубы над землёй в точке, указанной производителем.',
+    front_center_mm: 'Расстояние от центра каретки до передней оси.',
+    fork_offset_mm: 'Вынос вилки: насколько передняя ось смещена вперёд от оси рулевой колонки.'
+  },
+  categories: { gravel: 'Гревел', 'road-aero': 'Аэро-шоссе', 'adventure-gravel': 'Гревел для путешествий', 'gravel-race': 'Гоночный гревел', 'aero-wide-clearance': 'Аэро с широкой покрышкой', road: 'Шоссе', triathlon: 'Триатлон / разделка' }
+};
+export const geometryCopy = locale => ({ 'zh-Hans': zh, de, es, ru })[locale] ?? en;

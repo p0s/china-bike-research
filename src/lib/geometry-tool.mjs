@@ -1,6 +1,6 @@
 import { categoryLabel } from './data.mjs';
 import { layout, escapeHtml as e, safeJson, url } from './html.mjs';
-import { localePath } from './i18n.mjs';
+import { availableLocalePath, localePath } from './i18n.mjs';
 import { translate } from '../../assets/i18n.js';
 import { webApplicationStructuredData } from './seo.mjs';
 import { dimension, defaultGeometryState } from '../../assets/geometry-core.js';
@@ -16,7 +16,7 @@ export function geometryLibrary(ctx) {
     const products = ctx.products.filter(p => p.platform.id === platform.id);
     if (!products.length || !geometry?.sizes?.length) continue;
     const name = `${products[0].brand.name} ${platform.name}`;
-    const modelUrl = url(ctx.base, localePath(`/models/${products[0].variant.id}/`, ctx.locale));
+    const modelUrl = url(ctx.base, availableLocalePath(`/models/${products[0].variant.id}/`, ctx.locale));
     const evidence = [...new Set([geometry.source_id, ...(geometry.source_ids ?? [])].filter(Boolean))].map(id => sources.get(id)).filter(s => s?.url?.startsWith('https://'));
     // Withhold the entire unresolved table, rather than guessing unaffected cells.
     const unresolved = [geometry, geometry.evidence_review, platform.geometry_evidence, platform.frame.geometry_evidence]
@@ -30,7 +30,7 @@ export function geometryLibrary(ctx) {
     models.push({ id: platform.id, name, category: platform.category, categoryLabel: geometryCopy(ctx.locale).categories?.[platform.category] ?? translate(categoryLabel(platform.category), ctx.locale), url: modelUrl, sizes,
       sources: evidence.map(({ title, publisher, url, accessed_at, type }) => ({ title, publisher, url, accessed_at, type })),
       notes: translate(geometry.correction_note ?? '', ctx.locale),
-      variants: products.map(p => ({ id: p.variant.id, name: `${p.brand.name} ${p.variant.name}`, url: url(ctx.base, localePath(`/models/${p.variant.id}/`, ctx.locale)), buildUrl: url(ctx.base, localePath(`/build/?base=${p.variant.id}`, ctx.locale)) })) });
+      variants: products.map(p => ({ id: p.variant.id, name: `${p.brand.name} ${p.variant.name}`, url: url(ctx.base, availableLocalePath(`/models/${p.variant.id}/`, ctx.locale)), buildUrl: url(ctx.base, localePath(`/build/?base=${p.variant.id}`, ctx.locale)) })) });
   }
   return { models: models.sort((a, b) => a.name.localeCompare(b.name)), excluded };
 }
