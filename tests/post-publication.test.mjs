@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadPosts,renderPost,renderBlogIndex,relatedArticleLinks} from '../src/lib/posts.mjs';
-import {loadSchedule,validateSchedule,publishedPosts,nextPublication,preparePublication,oneShotRule,scheduleSeries,nextWakeRule,acceleratePublication} from '../src/lib/post-publication.mjs';
+import {loadSchedule,validateSchedule,publishedPosts,nextPublication,preparePublication,oneShotRule,scheduleSeries,nextWakeRule,acceleratePublication,appendReviewedArticle} from '../src/lib/post-publication.mjs';
 import {loadDataset,joinProducts,joinCatalogCandidates} from '../src/lib/data.mjs';
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..');
@@ -215,4 +215,49 @@ test('the entire accelerated queue delivers once per selected gap and ends only 
  assert.equal(nextPublication(current, receipts).action, 'complete');
  assert.equal(nextWakeRule(nextPublication(current, receipts)), null);
  assert.equal(publishedPosts(f.posts, current, new Date('2030-01-01')).length, 125);
+});
+
+function completedFixture() {
+ const f=acceleratedFixture(120);let current=f.queue;const receipts={...f.receipts};
+ for(const slot of current.delivery.entries){
+  const next=nextPublication(current,receipts,new Date('2030-01-01'));
+  current=preparePublication(current,receipts,slot.slug,new Date(next.due_at));
+  receipts[slot.slug]={published_at:next.due_at,verified_at:new Date(Date.parse(next.due_at)+60000).toISOString()};
+ }
+ const post={...structuredClone(f.posts[0]),slug:'new-buyer-decision',series_id:'buyer-comparisons-2026',publication_status:'draft',editorial_review:{status:'reviewed',reviewed_at:'2026-10-01T00:00:00.000Z',reviewed_languages:['en','zh-Hans','de']}};
+ return {...f,queue:current,receipts,post,now:new Date('2030-01-01')};
+}
+
+test('reviewed private backlog appends one article, preserving old slots and waiting after actual verification',()=>{
+ const f=completedFixture();const before=structuredClone(f.queue);
+ const appended=appendReviewedArticle(f.queue,f.posts,f.receipts,f.post,f.now,()=>75);
+ assert.deepEqual(f.queue,before);
+ assert.deepEqual(appended.queue.delivery.entries.slice(0,-1),before.delivery.entries);
+ assert.deepEqual(appended.queue.entries.slice(0,-1),before.entries);
+ assert.equal(appended.queue.series.at(-1).article_count,1);
+ assert.equal(publishedPosts([...f.posts,appended.post],appended.queue,f.now).some(p=>p.slug===f.post.slug),false);
+ const last=f.receipts[before.delivery.entries.at(-1).slug];
+ const due=new Date(Date.parse(last.verified_at)+75*60000);
+ assert.equal(nextPublication(appended.queue,f.receipts,new Date(+due-1)).action,'wait');
+ assert.equal(nextPublication(appended.queue,f.receipts,due).action,'publish');
+ const prepared=preparePublication(appended.queue,f.receipts,f.post.slug,due);
+ assert.equal(nextPublication(prepared,f.receipts,f.now).action,'verify');
+ const nextPost={...f.post,slug:'another-buyer-decision'};
+ assert.throws(()=>appendReviewedArticle(prepared,[...f.posts,appended.post],f.receipts,nextPost,f.now),/verify/);
+ const receipts={...f.receipts,[f.post.slug]:{published_at:due.toISOString(),verified_at:new Date(+due+60000).toISOString()}};
+ const second=appendReviewedArticle(prepared,[...f.posts,appended.post],receipts,nextPost,f.now,()=>60);
+ assert.equal(second.queue.series.at(-1).article_count,2);
+ validateSchedule(second.queue,[...f.posts,appended.post,second.post]);
+});
+
+test('backlog admission rejects unfinished queues, duplicate posts, incomplete review and invalid cadence',()=>{
+ const f=completedFixture();
+ const incomplete=structuredClone(f.queue);incomplete.entries.find(entry=>entry.slug===incomplete.delivery.entries.at(-1).slug).published_at=null;
+ const receipts=structuredClone(f.receipts);delete receipts[incomplete.delivery.entries.at(-1).slug];
+ assert.throws(()=>appendReviewedArticle(incomplete,f.posts,receipts,f.post,f.now),/verify/);
+ for(const mutate of [p=>{p.slug=f.posts[0].slug;},p=>{p.editorial_review.status='draft';},p=>{p.editorial_review.reviewed_languages=['en'];},p=>{p.editorial_review.reviewed_at='2031-01-01T00:00:00Z';},p=>{delete p.translations.de;}]){
+  const post=structuredClone(f.post);mutate(post);
+  assert.throws(()=>appendReviewedArticle(f.queue,f.posts,f.receipts,post,f.now),/reviewed/);
+ }
+ for(const gap of [59,91,60.5]) assert.throws(()=>appendReviewedArticle(f.queue,f.posts,f.receipts,f.post,f.now,()=>gap),/60 to 90/);
 });

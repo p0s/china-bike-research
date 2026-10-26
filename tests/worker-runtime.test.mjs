@@ -97,6 +97,7 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
       'https://chinesebikes.xyz/site-events/engagement',
       {
         method: 'POST',
+        cf: { country: 'US' },
         headers: {
           origin: 'https://chinesebikes.xyz',
           'content-length': body === undefined ? '0' : String(new TextEncoder().encode(body).byteLength),

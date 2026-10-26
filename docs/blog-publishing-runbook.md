@@ -25,6 +25,10 @@ Validate and deliver the migration through a signed feature PR and required chec
 
 ## Every wake
 
+Additional reviewed buyer guides may remain in an accepted private backlog. After the current queue has a matching live receipt for every entry, `appendReviewedArticle` in `src/lib/post-publication.mjs` admits exactly one complete, reviewed article in English, Simplified Chinese and German. It returns the scheduled article and updated queue for the publisher's next release candidate; it does not write files or publish. Keep all later article files private. Reuse the returned candidate after interruption rather than choosing another gap. Deliver the candidate only when `preparePublication` says it is due.
+
+The additional `buyer-comparisons-2026` series uses one selected 60–90-minute gap after the preceding article's actual live confirmation. Its public `article_count` counts admitted articles, not the private backlog. Existing series calendars, selected delivery slots and receipts remain fixed. An unverified release blocks admission and delivery. A `complete` result is final only when the accepted private backlog is also empty; otherwise admit the next reviewed article through the same publisher and repeat the normal release gates. Review covers and primary sources again at release.
+
 1. Inspect owned Git status and current privacy-safe remote main. Preserve any unfinished candidate. Never use old rewritten ancestry.
 2. Run `node scripts/blog-publication.mjs status`. Follow its `wait`, `publish`, `verify` or `complete` result.
 3. If `wait`, rearm this heartbeat for its returned future one-shot rule. If `complete`, set it PAUSED and report all 120 receipts verified.

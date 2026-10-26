@@ -1440,6 +1440,7 @@ export function freshness(observedAt, now = new Date()) {
 }
 
 const TRANSCRIPT_STATUSES = new Set(['creator-captions', 'auto-captions', 'no-speech', 'unavailable']);
+const TRANSCRIPT_METHODS = new Set(['youtube-transcript-panel', 'youtube-player-captions']);
 const TAKEAWAY_KINDS = new Set(['measured', 'fit', 'build', 'ride', 'quality', 'support', 'price', 'claim']);
 
 // Takeaways are paraphrases checked against a locally reviewed transcript; a
@@ -1450,8 +1451,10 @@ export function validateVideoEvidence(video, isDate) {
   const transcript = video.transcript;
   if (transcript !== undefined) {
     if (video.provider !== 'youtube') errors.push(`${where}: transcript status applies only to YouTube videos`);
-    if (!isObject(transcript) || !TRANSCRIPT_STATUSES.has(transcript.status) || transcript.method !== 'youtube-transcript-panel' || !isDate(transcript.checked_at)) errors.push(`${where}: invalid transcript record`);
+    if (!isObject(transcript) || !TRANSCRIPT_STATUSES.has(transcript.status) || !TRANSCRIPT_METHODS.has(transcript.method) || !isDate(transcript.checked_at)) errors.push(`${where}: invalid transcript record`);
     else if (['creator-captions', 'auto-captions'].includes(transcript.status) && (typeof transcript.language !== 'string' || transcript.language.length < 2)) errors.push(`${where}: transcript needs its caption language`);
+    if (transcript?.evidence_sha256 !== undefined && (typeof transcript.evidence_sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(transcript.evidence_sha256))) errors.push(`${where}: invalid transcript evidence digest`);
+    if (transcript?.method === 'youtube-player-captions' && (!/^[a-f0-9]{64}$/.test(transcript.evidence_sha256 ?? '') || transcript.status === 'unavailable')) errors.push(`${where}: player captions need reviewed evidence and an available track`);
     if (transcript?.note !== undefined && (typeof transcript.note !== 'string' || transcript.note.trim().length < 10)) errors.push(`${where}: transcript note is too short`);
   }
   if (video.takeaways !== undefined) {
