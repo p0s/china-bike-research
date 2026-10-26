@@ -86,9 +86,11 @@ export function restoreBuildState(data, params, stored = {}, { allowStored = tru
     return amount !== '' && PRICE_CURRENCIES.includes(currency) ? { amount, currency } : { amount: '', currency: '' };
   };
   const money = (key, entry) => params.has(key) ? parseMoneyInput(params.get(key)) : savedMoney(entry);
-  // An explicit link shows its own currency or yuan; a private preference only seeds a bare visit.
+  // A link's own currency wins. Otherwise the visitor's saved planner, then catalog, display
+  // currency applies, also to a link without one: only the display follows it, never the plan.
   const currencies = buildCurrencies(data.rates);
-  const currency = [params.get('currency'), own(saved, 'currency'), explicit ? null : preferredCurrency]
+  const savedCurrency = allowStored && own(stored, 'schemaVersion') === 3 ? own(stored, 'currency') : undefined;
+  const currency = [params.get('currency'), savedCurrency, allowStored ? preferredCurrency : null]
     .find((code) => typeof code === 'string' && currencies.includes(code)) ?? 'CNY';
   const requestedBase = params.get('base') ?? params.get('frame') ?? own(saved, 'requestedBaseId') ?? own(saved, 'baseId') ?? own(saved, 'frameId');
   const baseId = bases.has(requestedBase) ? requestedBase : data.bases[0]?.id ?? '';

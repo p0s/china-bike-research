@@ -849,6 +849,7 @@ export const ru = {
   "Base price": "Цена основы",
   "Recorded price": "Записанная цена",
   "ECB reference rate": "Справочный курс ЕЦБ",
+  "New amounts use this currency; entered amounts keep their own.": "Новые суммы вводятся в этой валюте; уже введённые сохраняют свою.",
   "Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.": "Суммы сохраняют валюту, в которой они записаны или введены; ≈ обозначает пересчёт для планирования. Пересчитанные цены в Китае не включают доставку, ввозные пошлины и налоги и не являются ценами с доставкой."
 };
 const t = (value) => translateRussian(value);

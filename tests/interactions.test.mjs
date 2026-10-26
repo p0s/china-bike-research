@@ -278,6 +278,11 @@ test('bike builder persists shareable state and avoids package double counting',
   assert.match(script, /priceCurrencyNode\.textContent = buyerCurrency/);
   // Reading a shared link in another currency does not overwrite the visitor's own draft.
   assert.match(script, /render\(\{ historyMode: 'push', persistState: draftOwned \}\)/);
+  // Editing a quote keeps its currency through a briefly empty field; a field left empty forgets it on blur.
+  assert.match(script, /if \(value !== '' && !entry\.priceCurrency\) entry\.priceCurrency = state\.currency;/);
+  assert.match(script, /customPrice\?\.addEventListener\('blur', \(\) => endMoneyEdit\(state\.custom\[slot\]\)\)/);
+  // Phone rows keep usable part and quote controls beside long evidence notes.
+  assert.match(styles, /\.builder-part-row\.is-included \{ grid-template-columns: minmax\(0, 1fr\); gap: 10px; padding: 16px; \}\s*\/\*[^*]*\*\/\s*\.builder-part-control, \.builder-part-facts \{ grid-column: 1 \/ -1; \}/);
   assert.match(script, /const partWeight = recordedWeight \?\? buyerWeight/);
   assert.match(script, /recordedPrice === null && buyerPrice !== null \? 'Buyer-entered price'/);
   assert.match(script, /customPriceField\.hidden = false/);

@@ -109,7 +109,7 @@ test('the static planner names its yuan default, every supported currency and th
   assert.match(payload.rates.date, /^\d{4}-\d{2}-\d{2}$/);
   assert.equal(payload.rates.perEur.EUR, 1);
   assert.ok(payload.rates.perEur.CNY > 0 && payload.rates.perEur.USD > 0);
-  assert.match(html, /<label class="builder-currency"><span>Currency<\/span><select data-build-currency><option value="EUR">EUR<\/option><option value="USD">USD<\/option><option value="GBP">GBP<\/option><option value="CAD">CAD<\/option><option value="MXN">MXN<\/option><option value="CNY" selected>CNY<\/option><\/select><\/label>/);
+  assert.match(html, /<label class="builder-currency"><span>Currency<\/span><select data-build-currency aria-describedby="builder-currency-help"><option value="EUR">EUR<\/option><option value="USD">USD<\/option><option value="GBP">GBP<\/option><option value="CAD">CAD<\/option><option value="MXN">MXN<\/option><option value="CNY" selected>CNY<\/option><\/select><\/label><small class="builder-currency-help" id="builder-currency-help">New amounts use this currency; entered amounts keep their own\.<\/small>/);
   assert.match(html, /<dt data-build-total-label>(?:Full build price|Purchase \+ upgrades)<\/dt>/);
   assert.ok(html.includes(`<time datetime="${payload.rates.date}">${payload.rates.date}</time>`));
   assert.match(html, /data-build-currency-note hidden>/);

@@ -587,6 +587,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .builder-summary > small { display: block; margin-top: 16px; color: #8f9c94; font-size: .61rem; line-height: 1.42; }
 .builder-currency { display: flex; align-items: center; gap: 8px; margin-top: 12px; color: #bdc9c1; font-size: .66rem; font-weight: 740; letter-spacing: .04em; text-transform: uppercase; }
 .builder-currency select { min-height: 32px; padding: 4px 8px; border: 1px solid rgb(255 255 255 / 25%); border-radius: 8px; background: #f3f6f4; color: #17231d; font: inherit; letter-spacing: 0; }
+.builder-summary > .builder-currency-help { margin-top: 5px; }
 .builder-summary > .builder-currency-note { font-size: .64rem; line-height: 1.45; }
 .builder-summary > .builder-currency-note a { color: inherit; }
 
@@ -1539,7 +1540,7 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .build-hotspot { position: absolute; left: var(--x); top: var(--y); display: grid; place-items: center; width: 34px; height: 34px; margin: -17px 0 0 -17px; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .build-hotspot-mark { display: grid; place-items: center; width: 20px; height: 20px; border: 2px solid var(--accent); border-radius: 50%; background: var(--surface); color: var(--accent); font-size: 11px; font-weight: 800; line-height: 1; box-shadow: 0 0 0 3px var(--surface); transition: transform .12s ease; }
 [data-state="known"] > .build-hotspot-mark { background: var(--accent); color: #fff; }
-[data-state="known"] > .build-hotspot-mark::before { content: '¥'; }
+[data-state="known"] > .build-hotspot-mark::before { content: var(--build-currency-glyph, '¥'); }
 [data-state="included"] > .build-hotspot-mark::before { content: '✓'; }
 [data-state="partial"] > .build-hotspot-mark { border-color: var(--warning); color: var(--warning); }
 [data-state="partial"] > .build-hotspot-mark::before { content: '½'; }
@@ -1666,6 +1667,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .builder-part-row.is-covered .builder-covered-note { margin: 0; align-self: center; }
 @media (max-width: 720px) {
   .builder-part-row, .builder-part-row.is-covered, .builder-part-row.is-included { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 16px; }
+  /* One column: a long evidence note must not open an implicit second column beside the controls. */
+  .builder-part-control, .builder-part-facts { grid-column: 1 / -1; }
   .builder-part-control select { font-size: .86rem; padding-block: 10px; }
   .builder-base-facts > div { grid-template-columns: 1fr; gap: 0; }
 }

@@ -2234,5 +2234,6 @@ Object.assign(de, {
   "Your quote": "Ihr Angebot",
   "Base price": "Basispreis",
   "ECB reference rate": "EZB-Referenzkurs",
+  "New amounts use this currency; entered amounts keep their own.": "Neue Beträge verwenden diese Währung; bereits eingegebene behalten ihre eigene.",
   "Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.": "Beträge behalten die Währung, in der sie erfasst oder eingegeben wurden; ≈ kennzeichnet eine Umrechnung zur Planung. Umgerechnete China-Preise enthalten weder Versand noch Einfuhrzoll und Steuern und sind keine Lieferpreise."
 });

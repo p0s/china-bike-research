@@ -850,6 +850,7 @@ export const es = {
   "Base price": "Precio base",
   "Recorded price": "Precio registrado",
   "ECB reference rate": "Tipo de referencia del BCE",
+  "New amounts use this currency; entered amounts keep their own.": "Los importes nuevos usan esta moneda; los ya introducidos conservan la suya.",
   "Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.": "Los importes conservan la moneda en la que se registraron o introdujeron; ≈ indica una conversión para planificar. Los precios de China convertidos no incluyen envío, aranceles ni impuestos y no son precios con entrega."
 };
 const t = (value) => translateSpanish(value);
@@ -906,7 +907,7 @@ const patterns = [
   [/^(.+) plan · enter allowance$/, (_, plan) => `Plan ${plan} · introduce la asignación`],
   [/^(.+) plan: (¥[\d,]+) total build allowance\. (.+)\.$/, (_, plan, price, basis) => `Plan ${plan}: asignación total de montaje de ${price}. ${t(basis.replace(/\.+$/, ''))}.`],
   [/^(.+) plan: enter the total remaining-build allowance\. (.+)\.$/, (_, plan, basis) => `Plan ${plan}: introduce la asignación total para el resto del montaje. ${t(basis.replace(/\.+$/, ''))}.`],
-  [/^(\d+) unknown$/, (_, count) => `${count} desconocidos`],
+  [/^(\d+) unknown$/, (_, count) => count === '1' ? '1 desconocido' : `${count} desconocidos`],
   [/^(.+): (priced|included|needs one input|needs price and weight)$/, (_, name, state) => `${t(name)}: ${{ priced: 'con precio', included: 'incluido', 'needs one input': 'falta un dato', 'needs price and weight': 'faltan precio y peso' }[state]}`],
   [/^(.+) known \+ (\d+) unknown$/, (_, amount, count) => `${amount} conocido + ${count} desconocidos`],
   [/^(.+) (base \/ known deltas|known) \+ (\d+) unknown$/, (_, amount, basis, count) => `${amount} ${basis === 'known' ? 'conocido' : 'base / diferencias conocidas'} + ${count} desconocidos`],

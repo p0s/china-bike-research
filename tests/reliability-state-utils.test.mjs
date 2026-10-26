@@ -196,10 +196,14 @@ test('planner currencies need a dated rate for the currency and for yuan', () =>
   assert.deepEqual(buildCurrencies({ perEur: { EUR: 1, CNY: 7.5, USD: 0 } }), ['EUR', 'CNY']);
 });
 
-test('planner currency: link first, then a bare visit’s draft or saved preference, else yuan', () => {
-  assert.equal(restoreRated('base=frame-a&currency=EUR').currency, 'EUR');
-  // A shared link without a currency is deterministic legacy yuan, whatever the recipient prefers.
-  assert.equal(restoreRated('base=frame-a', {}, { preferredCurrency: 'USD' }).currency, 'CNY');
+test('planner currency: the link’s own, then the saved planner or catalog currency, else yuan', () => {
+  assert.equal(restoreRated('base=frame-a&currency=EUR', { schemaVersion: 3, currency: 'GBP' }, { preferredCurrency: 'USD' }).currency, 'EUR');
+  // A link without a currency shows the visitor's saved currency; its plan and yuan amounts stay the link's.
+  const shared = restoreRated('base=frame-a&price-wheelset=800', { schemaVersion: 3, baseId: 'frame-a', currency: 'GBP', selections: { drivetrain: 'custom' }, custom: { drivetrain: { price: '9', priceCurrency: 'GBP' } } }, { preferredCurrency: 'USD' });
+  assert.deepEqual([shared.currency, shared.selections.drivetrain, shared.custom.drivetrain.price, shared.custom.wheelset.price, shared.custom.wheelset.priceCurrency], ['GBP', 'group-a', '', '800', 'CNY']);
+  assert.equal(restoreRated('base=frame-a', {}, { preferredCurrency: 'USD' }).currency, 'USD');
+  // History entries carry their currency; restoring one never reads storage.
+  assert.equal(restoreRated('base=frame-a', { schemaVersion: 3, currency: 'GBP' }, { allowStored: false, preferredCurrency: 'USD' }).currency, 'CNY');
   assert.equal(restoreRated('', { schemaVersion: 3, baseId: 'frame-a', currency: 'GBP' }, { preferredCurrency: 'USD' }).currency, 'GBP');
   assert.equal(restoreRated('', { baseId: 'frame-a' }, { preferredCurrency: 'USD' }).currency, 'USD');
   assert.equal(restoreRated('', {}, { preferredCurrency: 'JPY' }).currency, 'CNY');

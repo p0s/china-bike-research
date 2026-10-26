@@ -802,6 +802,7 @@ export function translate(value, locale = 'en') {
     [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} 未说明碟片安装方式；选择碟片前请确认。`],
     [/^Your quote replaces the recorded (.+)$/, (_, price) => `你的报价取代记录的 ${price}`],
     [/^Recorded price (.+)$/, (_, price) => `记录价格 ${price}`],
+    [/^View the official (.+) product page$/, (_, name) => `查看 ${name} 官方产品页面`],
     [/^Entered as (.+)$/, (_, price) => `按 ${price} 输入`],
     [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translate(value, 'zh-Hans')} — ${translate(label, 'zh-Hans')}`],
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? '前轮' : '后轮'}`],
@@ -1542,5 +1543,6 @@ Object.assign(zh, {
   'Your quote': '你的报价',
   'Base price': '基础价格',
   'ECB reference rate': '欧洲央行参考汇率',
+  'New amounts use this currency; entered amounts keep their own.': '新输入的金额使用此币种；已输入的金额保留原币种。',
   'Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.': '金额保留记录或输入时的币种；≈ 表示用于规划的换算。换算后的中国价格不含运费、进口关税和税费，也不是到手价。'
 });

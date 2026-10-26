@@ -2272,8 +2272,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
   function syncBuildLinkCurrency() {
     if (!(openBuildLink instanceof HTMLAnchorElement) || openBuildLink.hidden) return;
     const target = new URL(openBuildLink.href, location.href);
-    if (priceCurrency() === 'CNY') target.searchParams.delete('currency');
-    else target.searchParams.set('currency', priceCurrency());
+    target.searchParams.set('currency', priceCurrency());
     openBuildLink.href = `${target.pathname}${target.search}`;
   }
   ['pointerdown', 'focus', 'click'].forEach((type) => openBuildLink?.addEventListener(type, syncBuildLinkCurrency));
@@ -2743,11 +2742,18 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
   }
   const formatMoney = (low, high = low, approximate = false) => formatMoneyRange(low, high, state.currency, lang, { approximate });
   const nativeMoney = (amount, currency) => formatMoneyRange(amount, amount, currency, lang, { exact: true });
-  // A value typed into an empty field takes the planner currency; editing keeps the value's own currency.
+  // A new amount takes the planner currency. Editing keeps the amount's own currency, even
+  // while the field is briefly empty; a field left empty forgets it when it loses focus.
   function setMoney(entry, value) {
-    entry.priceCurrency = value === '' ? '' : entry.price !== '' && entry.priceCurrency ? entry.priceCurrency : state.currency;
+    if (value !== '' && !entry.priceCurrency) entry.priceCurrency = state.currency;
     entry.price = value;
   }
+  function endMoneyEdit(entry) {
+    if (entry.price !== '' || !entry.priceCurrency) return;
+    entry.priceCurrency = '';
+    render();
+  }
+  const currencyGlyphs = { CNY: '¥', EUR: '€', USD: '$', GBP: '£', CAD: '$', MXN: '$' };
   function savedDisplayCurrency() {
     try { return JSON.parse(localStorage.getItem(deliveryPreferenceStorageKey) ?? '{}')?.currency ?? ''; } catch { return ''; }
   }
@@ -2867,9 +2873,8 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     const defaults = defaultSelections(base);
     if (state.baseId) target.searchParams.set('base', state.requestedBaseId ?? state.baseId);
     target.searchParams.delete('frame');
-    // Yuan stays the link's default currency, so legacy links keep their meaning.
-    if (state.currency !== 'CNY') target.searchParams.set('currency', state.currency);
-    else target.searchParams.delete('currency');
+    // The link names its currency; its unmarked amounts stay yuan, so older links keep their meaning.
+    target.searchParams.set('currency', state.currency);
     for (const [field, value, recorded] of [
       ['basePrice', moneyInputParam(state.baseCustom.price, state.baseCustom.priceCurrency), numberOrNull(base?.priceLow)],
       ['baseWeight', state.baseCustom.weight, numberOrNull(base?.baseWeightG)],
@@ -2940,7 +2945,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
         const unknown = item.querySelector('[data-composition-unknown]');
         if (unknown instanceof HTMLElement) {
           unknown.hidden = segment.unknown === 0;
-          unknown.textContent = `${segment.unknown} ${translate('unknown', lang)}`;
+          unknown.textContent = translate(`${segment.unknown} unknown`, lang);
         }
       });
     }
@@ -3060,6 +3065,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     if (priceLabel) priceLabel.textContent = isComplete ? 'Purchase + upgrades' : 'Full build price';
     if (weightLabel) weightLabel.textContent = isComplete ? 'Projected weight' : 'Known weight';
     if (currencySelect instanceof HTMLSelectElement) currencySelect.value = state.currency;
+    root.style.setProperty('--build-currency-glyph', JSON.stringify(currencyGlyphs[state.currency] ?? '¥'));
 
     const recordedBaseWeight = numberOrNull(base.baseWeightG);
     const buyerBaseWeight = numberOrNull(state.baseCustom.weight);
@@ -3304,6 +3310,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     if (basePrice instanceof HTMLInputElement) setMoney(state.baseCustom, basePrice.value);
     render({ historyMode });
   });
+  basePrice?.addEventListener('blur', () => endMoneyEdit(state.baseCustom));
   bindHistoryInput(baseWeight, (historyMode) => {
     if (baseWeight instanceof HTMLInputElement) state.baseCustom.weight = baseWeight.value;
     render({ historyMode });
@@ -3325,6 +3332,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       if (customPrice instanceof HTMLInputElement) setMoney(state.custom[slot], customPrice.value);
       render({ historyMode });
     });
+    customPrice?.addEventListener('blur', () => endMoneyEdit(state.custom[slot]));
     bindHistoryInput(customWeight, (historyMode) => {
       if (customWeight instanceof HTMLInputElement) state.custom[slot].weight = customWeight.value;
       render({ historyMode });
