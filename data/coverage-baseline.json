@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1787,
       "images": 892,
-      "videos": 261,
+      "videos": 264,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2984,6 +2984,8 @@
       "bkbike-twitter-t10-pro-r7120",
       "bruce-vilas-sunpeed-mars-a-negatives",
       "bxt-store-055-overview",
+      "cam-nicholls-elves-falath-pro-frame-comparison",
+      "cam-nicholls-elves-falath-pro-uci-upgrade-news",
       "cam-nicholls-falath-evo-inspection",
       "cam-nicholls-falath-evo-preproduction-sample-withdrawn",
       "cam-nicholls-falath-evo-production-ride-review",
@@ -3030,6 +3032,7 @@
       "cycling-boon-seka-exaero-road-shop-look",
       "cycling-cameras-coffee-bxt-gravel-135-six-months",
       "cycling-unboxed-canyon-ultimate-cfr-close-up",
+      "cycling-weekly-seka-spear-rdc-custom-build",
       "cyclingnews-colnago-y1rs-review",
       "cyclingnews-incolor-ssr-review",
       "cyclingnews-seka-spear-rdc-review",
@@ -63663,6 +63666,54 @@
         "url",
         "youtube_video_id"
       ],
+      "cam-nicholls-elves-falath-pro-frame-comparison": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "cam-nicholls-elves-falath-pro-uci-upgrade-news": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.platform_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "cam-nicholls-falath-evo-inspection": [
         "accessed_at",
         "channel_name",
@@ -64766,6 +64817,30 @@
         "target.candidate_id",
         "title",
         "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "cycling-weekly-seka-spear-rdc-custom-build": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
         "transcript.language",
         "transcript.method",
         "transcript.status",
@@ -123845,6 +123920,12 @@
       "bxt-store-055-overview": [
         "target.platform_id=bxt-055"
       ],
+      "cam-nicholls-elves-falath-pro-frame-comparison": [
+        "target.platform_id=elves-falath-r7170"
+      ],
+      "cam-nicholls-elves-falath-pro-uci-upgrade-news": [
+        "target.platform_id=elves-falath-r7170"
+      ],
       "cam-nicholls-falath-evo-inspection": [
         "target.candidate_id=missing-china-price-elves-falath-evo"
       ],
@@ -123978,6 +124059,9 @@
       ],
       "cycling-unboxed-canyon-ultimate-cfr-close-up": [
         "target.candidate_id=missing-china-price-canyon-ultimate"
+      ],
+      "cycling-weekly-seka-spear-rdc-custom-build": [
+        "target.candidate_id=seka-spear-rdc-frameset"
       ],
       "cyclingnews-colnago-y1rs-review": [
         "target.candidate_id=colnago-y1rs"
@@ -127029,6 +127113,7 @@
         "source_ids=seka-spear-official-page-2026-10-25",
         "source_ids=seka-spear-rdc-frameset-store-2026-10-25",
         "source_ids=seka-spear-rdc-taobao-dealer-2026-10-24",
+        "video_ids=cycling-weekly-seka-spear-rdc-custom-build",
         "video_ids=klein-concept-seka-spear-rdc-first-impressions"
       ],
       "seka-spear-standard-105-di2": [
