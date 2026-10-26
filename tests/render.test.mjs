@@ -1042,14 +1042,14 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(reference, /¥4,150–4,200/);
   // Different seller packages are never spanned as one range; the lowest is named.
   assert.doesNotMatch(reference, /¥2,369–3,219/);
-  assert.match(reference, /from ¥2,369<\/strong><span>1× alloy-lever kit · Taobao options · 2026-08-24<\/span><span class="groupset-official-price">from €549 official store · 2026-10-26<\/span>/);
+  assert.match(reference, /from ¥2,369<\/strong><span>1× alloy-lever kit · Taobao options · 2026-08-24<\/span><span class="groupset-official-price">from €549 official store · cable-brake shift groupset · 2026-10-26<\/span>/);
   assert.match(reference, /¥3,480/);
   assert.match(reference, /SRAM GX AXS \/ Eagle Transmission/);
   assert.match(reference, /L-TWOO eRX-TT/);
   assert.match(reference, /Package & weight/);
   assert.match(reference, /How package labels and prices are normalized/);
   assert.match(reference, /referrerpolicy="no-referrer" data-product-image/);
-  assert.match(reference, /id="shimano-grx-rx825"[\s\S]*?<td data-label="Price" data-column="price"><\/td>/);
+  assert.match(reference, /id="shimano-grx-rx825"[\s\S]*?<td data-label="Price" data-column="price"><span class="groupset-no-price">No dated price<\/span><\/td>/);
   assert.doesNotMatch(reference, /No attributable mainland price|No exact mainland package captured|current maximum unresolved/);
   assert.doesNotMatch(reference, /Established benchmarks|Chinese electronic systems|Other disciplines/);
   assert.doesNotMatch(reference, /groupset-details|<article class="groupset-detail"/);

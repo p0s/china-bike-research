@@ -2245,9 +2245,10 @@ function groupsetOfficialPrice(groupset) {
   if (!official.length) return '';
   const date = official[0].observed_at;
   const sameDay = official.filter((observation) => observation.observed_at === date);
-  const low = Math.min(...sameDay.map((observation) => observation.amount));
+  const lowest = [...sameDay].sort((x, y) => x.amount - y.amount)[0];
   const symbol = { EUR: '€', USD: 'US$', GBP: '£' }[official[0].currency] ?? `${official[0].currency} `;
-  return `${sameDay.length > 1 ? 'from ' : ''}${symbol}${new Intl.NumberFormat('en-US').format(low)} official store · ${date}`;
+  // A "from" price names the package it belongs to, because the store's kits differ.
+  return [`${sameDay.length > 1 ? 'from ' : ''}${symbol}${new Intl.NumberFormat('en-US').format(lowest.amount)} official store`, sameDay.length > 1 ? lowest.package_label : '', date].filter(Boolean).join(' · ');
 }
 
 function observationAmount(observation) {
@@ -2306,7 +2307,7 @@ function groupsetRows(ctx, groupset, sourcesById) {
     <td data-label="Use" data-column="best"><strong>${escapeHtml(groupsetDiscipline(groupset))}</strong><span>${escapeHtml(groupset.positioning)}</span></td>
     <td data-label="Gearing" data-column="gearing"><strong>${escapeHtml(`${groupset.shifting.chainrings} · ${groupset.shifting.cassette_speeds}`)}</strong>${maxRear ? `<span>${escapeHtml(maxRear)}</span>` : ''}</td>
     <td data-label="Setup" data-column="setup"><strong>${escapeHtml(groupsetSetupLabel(groupset))}</strong><span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
-    <td data-label="Price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}${groupsetOfficialPrice(groupset) ? `<span class="groupset-official-price">${escapeHtml(groupsetOfficialPrice(groupset))}</span>` : ''}</td>
+    <td data-label="Price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}${groupsetOfficialPrice(groupset) ? `<span class="groupset-official-price">${escapeHtml(groupsetOfficialPrice(groupset))}</span>` : ''}${!price && !groupsetOfficialPrice(groupset) ? '<span class="groupset-no-price">No dated price</span>' : ''}</td>
   </tr><tr class="groupset-detail-row"><td colspan="5">${groupsetDetailPanel(groupset, sourcesById)}</td></tr></tbody>`;
 }
 

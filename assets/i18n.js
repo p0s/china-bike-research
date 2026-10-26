@@ -794,7 +794,7 @@ export function translate(value, locale = 'en') {
     [/^(\d+) wheelsets shown$/, (_, n) => `显示 ${n} 款轮组`],
     [/^(\d+) systems · reviewed (\d{4}-\d{2}-\d{2}) · latest price (\d{4}-\d{2}-\d{2})$/, (_, n, reviewed, price) => `${n} 套系统 · 复核于 ${reviewed} · 最新价格 ${price}`],
     [/^from (¥|€|US\$|£)([\d,.]+)$/, (_, symbol, amount) => `${symbol}${amount} 起`],
-    [/^(from )?(€|US\$|£)([\d,.]+) official store · (\d{4}-\d{2}-\d{2})$/, (_, from, symbol, amount, date) => `官方商店 ${symbol}${amount}${from ? ' 起' : ''} · ${date}`],
+    [/^(from )?(€|US\$|£)([\d,.]+) official store$/, (_, from, symbol, amount) => `官方商店 ${symbol}${amount}${from ? ' 起' : ''}`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `报价记录于 ${date}。`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `历史报价记录于 ${date}。`],
     // Carbon-wheel reference (2026-10-20)
@@ -1336,6 +1336,7 @@ Object.assign(zh, {
   "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "对比中国品牌的公路与 Gravel 碟刹轮组：轮圈、重量、限重、兼容性及注明日期的价格。",
   "Open a row for tire limits, pressure, hub, warranty, independent reviews, videos and sources.": "展开各行可查看轮胎范围、胎压、花鼓、保修、独立评测、视频及来源。",
   "Independent reviews": "独立评测",
+  "No dated price": "暂无有日期的价格",
   "Component photos": "组件照片",
   "Exact model shown": "所示为确切型号",
   "Same product family; parts may differ": "同一产品系列；部件可能不同",

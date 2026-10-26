@@ -1545,7 +1545,7 @@ export function translateGerman(value) {
     [/^(\d+) wheelsets shown$/, (_, n) => `${n} Laufradsätze angezeigt`],
     [/^(\d+) systems · reviewed (\d{4}-\d{2}-\d{2}) · latest price (\d{4}-\d{2}-\d{2})$/, (_, n, reviewed, price) => `${n} Systeme · geprüft ${reviewed} · neuester Preis ${price}`],
     [/^from (¥|€|US\$|£)([\d,.]+)$/, (_, symbol, amount) => `ab ${symbol}${amount}`],
-    [/^(from )?(€|US\$|£)([\d,.]+) official store · (\d{4}-\d{2}-\d{2})$/, (_, from, symbol, amount, date) => `${from ? 'ab ' : ''}${symbol}${amount} offizieller Shop · ${date}`],
+    [/^(from )?(€|US\$|£)([\d,.]+) official store$/, (_, from, symbol, amount) => `${from ? 'ab ' : ''}${symbol}${amount} offizieller Shop`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Preis erfasst am ${date}.`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Historischer Preis erfasst am ${date}.`],
     // Carbon-wheel reference (2026-10-20)
@@ -2094,6 +2094,7 @@ Object.assign(de, {
   "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "Straßen- und Gravel-Laufradsätze mit Scheibenbremse von chinesischen Marken, verglichen nach Felge, Gewicht, Grenzwerten, Kompatibilität und datiertem Preis.",
   "Open a row for tire limits, pressure, hub, warranty, independent reviews, videos and sources.": "Zeile öffnen für Reifenbereich, Luftdruck, Nabe, Garantie, unabhängige Tests, Videos und Quellen.",
   "Independent reviews": "Unabhängige Tests",
+  "No dated price": "Kein datierter Preis",
   "Component photos": "Komponentenfotos",
   "Exact model shown": "Genaues Modell abgebildet",
   "Same product family; parts may differ": "Gleiche Produktfamilie; Teile können abweichen",
