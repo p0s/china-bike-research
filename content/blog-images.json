@@ -9839,6 +9839,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "how-to-read-bike-review-videos-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda preparing a ride with a floor pump",
+        "zh-Hans": "用打气筒准备出发的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is preparing for a gravel ride, leaning happily on a compact bicycle floor pump, one paw on the pump handle and one giving a small thumbs-up. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "c3a53156105d1bfcb296a12afe0c7f1a8a87e54ba97d7a7ab7e459c7c8ae66b3"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/gravel-bikes-around-5000-yuan-mascot-480-3427aa665e.avif",
+          "width": 480,
+          "height": 475,
+          "type": "image/avif",
+          "bytes": 20904,
+          "sha256": "3427aa665e5c2817ac54680a9326f0ef24200c3de5ec24ab6d2aa961d73cc700"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda watches a cycling video on a laptop while holding a blank notebook and a pen, with a bicycle behind it.",
+          "zh-Hans": "戴头盔的小熊猫拿着空白笔记本和笔，看着笔记本电脑上的骑行画面，身后放着一辆自行车。",
+          "de": "Ein Rotpanda mit Helm schaut ein Radvideo auf einem Laptop und hält ein leeres Notizbuch und einen Stift; hinter ihm steht ein Fahrrad."
+        },
+        "prompt": "Editorial scene: A helmeted red panda watches a cycling video on a laptop while holding a blank notebook and a pen, with a bicycle behind it.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "d80855f84578b397ca9f63f737c60cc941c4aefaa8184ebb21c785b3664ee577",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-640-bc88d08f58.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 31032,
+            "sha256": "bc88d08f58c06f0fa479deec0945d34453f29c717244092105dea272673f509a"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-1600-9dd1a261dc.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 114872,
+            "sha256": "9dd1a261dcf27e2c1f25dc770d7432e866c8433bf6b6d42bc535c20398d24642"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 208035,
+            "sha256": "14367fea4fac9389bf69142315491d0b80d8c743311b650479c6c79cb9e88884"
+          }
+        ]
+      }
     }
   ]
 }
