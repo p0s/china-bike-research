@@ -8,8 +8,8 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1780,
-      "images": 888,
+      "sources": 1783,
+      "images": 892,
       "videos": 258,
       "opinions": 13,
       "groupsets": 11,
@@ -22,7 +22,7 @@
       "researchAttempts": 1851
     },
     "image_accuracy": {
-      "exact-platform": 595,
+      "exact-platform": 599,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -30,7 +30,7 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 879,
+      "local": 883,
       "remote": 9
     },
     "candidate_prices": {
@@ -1233,10 +1233,13 @@
       "public-xhs-lightcarbon-lcg071s-pro-legacy-2-2026-09-29",
       "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03",
       "public-xhs-pardus-spark-al-image-2026-10-26",
+      "public-xhs-pardus-spark-evo-gen4-image-2026-10-26",
       "public-xhs-pardus-spark-sport-pes-image-2026-10-26",
+      "public-xhs-pardus-super-al-image-2026-10-26",
       "public-xhs-pardus-super-sport-gen2-legacy-13-2026-09-29",
       "public-xhs-pardus-super-sport-gen2-legacy-20-2026-09-29",
       "public-xhs-quick-pro-geometry-collection-2026-08-28",
+      "public-xhs-quick-pro-tr-one-dura-ace-di2-image-2026-10-26",
       "public-xhs-quick-pro-xr-one-launch-display-2026-08-28",
       "public-xhs-quick-pro-xr-one-review-video-2026-08-28",
       "public-xhs-race-gravel-china-roundup-2026-09-28",
@@ -2688,6 +2691,8 @@
       "pardus-robin-evo-public-quotation-primary-image",
       "pardus-robin-sport-pes-primary-image",
       "pardus-spark-al-xhs-primary-2026-10-26",
+      "pardus-spark-evo-gen4-frameset-xhs-primary-2026-10-26",
+      "pardus-spark-evo-gen4-ultegra-di2-xhs-primary-2026-10-26",
       "pardus-spark-family-cn-alt-color-primary-image",
       "pardus-spark-family-cn-color-primary-image",
       "pardus-spark-family-global-primary-image",
@@ -2708,6 +2713,7 @@
       "pardus-ss2-xhs-headset-weight-gallery",
       "pardus-ss2-xhs-seat-wedge-weight-gallery",
       "pardus-ss2-xhs-seatpost-weight-gallery",
+      "pardus-super-al-xhs-primary-2026-10-26",
       "pardus-super-sport-gen2-candidate-primary-image",
       "pardus-super-sport-gen2-legacy-13-gallery",
       "pardus-super-sport-gen2-legacy-20-gallery",
@@ -2736,6 +2742,7 @@
       "quick-pro-er-one-primary-image",
       "quick-pro-er-one-xhs-geometry-gallery",
       "quick-pro-gr-one-grx-di2-primary-image",
+      "quick-pro-tr-one-dura-ace-di2-xhs-primary-2026-10-26",
       "quick-pro-tr-one-primary-image",
       "quick-pro-tr-one-xhs-geometry-gallery",
       "quick-pro-tt-one-primary-image",
@@ -22195,7 +22202,41 @@
         "type",
         "url"
       ],
+      "public-xhs-pardus-spark-evo-gen4-image-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-pardus-spark-sport-pes-image-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-pardus-super-al-image-2026-10-26": [
         "accessed_at",
         "capture.archive_bytes",
         "capture.archive_sha256",
@@ -22245,6 +22286,23 @@
         "url"
       ],
       "public-xhs-quick-pro-geometry-collection-2026-08-28": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-quick-pro-tr-one-dura-ace-di2-image-2026-10-26": [
         "accessed_at",
         "capture.archive_bytes",
         "capture.archive_sha256",
@@ -54873,6 +54931,68 @@
         "source_media_sha256",
         "subject_accuracy"
       ],
+      "pardus-spark-evo-gen4-frameset-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
+      "pardus-spark-evo-gen4-ultegra-di2-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
       "pardus-spark-family-cn-alt-color-primary-image": [
         "alt",
         "buyer_visibility",
@@ -55360,6 +55480,37 @@
         "label",
         "media_type",
         "platform_id",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
+      "pardus-super-al-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
         "privacy_review.account_identifiers",
         "privacy_review.embedded_metadata",
         "privacy_review.faces",
@@ -56238,6 +56389,37 @@
         "source_id",
         "source_media_sha256",
         "source_media_url",
+        "subject_accuracy"
+      ],
+      "quick-pro-tr-one-dura-ace-di2-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "quick-pro-tr-one-primary-image": [
@@ -118374,10 +118556,13 @@
       "public-xhs-lightcarbon-lcg071s-pro-legacy-2-2026-09-29": [],
       "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03": [],
       "public-xhs-pardus-spark-al-image-2026-10-26": [],
+      "public-xhs-pardus-spark-evo-gen4-image-2026-10-26": [],
       "public-xhs-pardus-spark-sport-pes-image-2026-10-26": [],
+      "public-xhs-pardus-super-al-image-2026-10-26": [],
       "public-xhs-pardus-super-sport-gen2-legacy-13-2026-09-29": [],
       "public-xhs-pardus-super-sport-gen2-legacy-20-2026-09-29": [],
       "public-xhs-quick-pro-geometry-collection-2026-08-28": [],
+      "public-xhs-quick-pro-tr-one-dura-ace-di2-image-2026-10-26": [],
       "public-xhs-quick-pro-xr-one-launch-display-2026-08-28": [],
       "public-xhs-quick-pro-xr-one-review-video-2026-08-28": [],
       "public-xhs-race-gravel-china-roundup-2026-09-28": [],
@@ -122294,6 +122479,14 @@
         "candidate_id=pardus-spark-al",
         "source_id=public-xhs-pardus-spark-al-image-2026-10-26"
       ],
+      "pardus-spark-evo-gen4-frameset-xhs-primary-2026-10-26": [
+        "candidate_id=pardus-spark-evo-gen4-frameset",
+        "source_id=public-xhs-pardus-spark-evo-gen4-image-2026-10-26"
+      ],
+      "pardus-spark-evo-gen4-ultegra-di2-xhs-primary-2026-10-26": [
+        "candidate_id=pardus-spark-evo-gen4-ultegra-di2",
+        "source_id=public-xhs-pardus-spark-evo-gen4-image-2026-10-26"
+      ],
       "pardus-spark-family-cn-alt-color-primary-image": [
         "candidate_id=pardus-spark",
         "source_id=pardus-spark-sport-official-cn-2026-08-17"
@@ -122373,6 +122566,10 @@
       "pardus-ss2-xhs-seatpost-weight-gallery": [
         "platform_id=pardus-super-sport-gen2",
         "source_id=public-pardus-super-sport-gen2-owner-weight-2026-08-28"
+      ],
+      "pardus-super-al-xhs-primary-2026-10-26": [
+        "candidate_id=pardus-super-al",
+        "source_id=public-xhs-pardus-super-al-image-2026-10-26"
       ],
       "pardus-super-sport-gen2-candidate-primary-image": [
         "candidate_id=pardus-super-sport-gen2",
@@ -122493,6 +122690,10 @@
       "quick-pro-gr-one-grx-di2-primary-image": [
         "candidate_id=quick-pro-gr-one-grx-di2",
         "source_id=quick-pro-gr-one-grx-di2-official-2026-08-17"
+      ],
+      "quick-pro-tr-one-dura-ace-di2-xhs-primary-2026-10-26": [
+        "candidate_id=quick-pro-tr-one-dura-ace-di2",
+        "source_id=public-xhs-quick-pro-tr-one-dura-ace-di2-image-2026-10-26"
       ],
       "quick-pro-tr-one-primary-image": [
         "candidate_id=quick-pro-tr-one",
@@ -142673,7 +142874,23 @@
         "specification": -1
       }
     },
+    "public-xhs-pardus-spark-evo-gen4-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
     "public-xhs-pardus-spark-sport-pes-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
+    "public-xhs-pardus-super-al-image-2026-10-26": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
         "identity": 3,
@@ -142703,6 +142920,14 @@
         "identity": 1,
         "price": -1,
         "specification": 1
+      }
+    },
+    "public-xhs-quick-pro-tr-one-dura-ace-di2-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
       }
     },
     "public-xhs-quick-pro-xr-one-launch-display-2026-08-28": {
@@ -229253,6 +229478,20 @@
       "remote_required": false,
       "primary_required": true
     },
+    "pardus-spark-evo-gen4-frameset-xhs-primary-2026-10-26": {
+      "target": "candidates:pardus-spark-evo-gen4-frameset",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "pardus-spark-evo-gen4-ultegra-di2-xhs-primary-2026-10-26": {
+      "target": "candidates:pardus-spark-evo-gen4-ultegra-di2",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "pardus-spark-family-cn-alt-color-primary-image": {
       "target": "candidates:pardus-spark",
       "minimum_accuracy_rank": 2,
@@ -229392,6 +229631,13 @@
       "minimum_source_tier": 1,
       "remote_required": false,
       "primary_required": false
+    },
+    "pardus-super-al-xhs-primary-2026-10-26": {
+      "target": "candidates:pardus-super-al",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
     },
     "pardus-super-sport-gen2-candidate-primary-image": {
       "target": "candidates:pardus-super-sport-gen2",
@@ -229587,6 +229833,13 @@
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
+      "primary_required": true
+    },
+    "quick-pro-tr-one-dura-ace-di2-xhs-primary-2026-10-26": {
+      "target": "candidates:quick-pro-tr-one-dura-ace-di2",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
       "primary_required": true
     },
     "quick-pro-tr-one-primary-image": {
@@ -231651,6 +231904,16 @@
       "minimum_source_tier": 1,
       "remote_required": false
     },
+    "candidates:pardus-spark-evo-gen4-frameset": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
+    "candidates:pardus-spark-evo-gen4-ultegra-di2": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:pardus-spark-rs-community-lead": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
@@ -231663,6 +231926,11 @@
     },
     "candidates:pardus-spark-tourist": {
       "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
+    "candidates:pardus-super-al": {
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
       "remote_required": false
     },
@@ -231725,6 +231993,11 @@
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
+    },
+    "candidates:quick-pro-tr-one-dura-ace-di2": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
     },
     "candidates:quick-pro-tt-one": {
       "minimum_accuracy_rank": 4,
