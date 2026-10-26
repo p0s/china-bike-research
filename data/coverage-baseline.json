@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 1787,
       "images": 892,
-      "videos": 264,
+      "videos": 267,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -2984,6 +2984,7 @@
       "bkbike-twitter-t10-pro-r7120",
       "bruce-vilas-sunpeed-mars-a-negatives",
       "bxt-store-055-overview",
+      "cade-media-xlab-ad9-first-look",
       "cam-nicholls-elves-falath-pro-frame-comparison",
       "cam-nicholls-elves-falath-pro-uci-upgrade-news",
       "cam-nicholls-falath-evo-inspection",
@@ -3061,6 +3062,7 @@
       "david-arthur-specialized-roubaix-sl8-first-ride",
       "david-arthur-specialized-s-works-crux-long-term",
       "david-arthur-winspace-slc3-review",
+      "david-arthur-xlab-ad9-review",
       "dicking-about-ican-sn04-six-months",
       "dream-build-quick-pro-gr-one",
       "durianrider-lightcarbon-lcr007-v-unboxing",
@@ -3140,6 +3142,7 @@
       "nero-show-winspace-t1600-review",
       "nero-tavelo-grow-review",
       "nimbus-cycles-carbonda-cfr696-49cm-review",
+      "norcal-cycling-tavelo-arden-price-gap",
       "norcal-cycling-tavelo-arow-race-bike",
       "oompa-loompa-carbonda-cfr696-owner-interview",
       "overbiked-randonneuring-af01-ssl-build",
@@ -63666,6 +63669,30 @@
         "url",
         "youtube_video_id"
       ],
+      "cade-media-xlab-ad9-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "cam-nicholls-elves-falath-pro-frame-comparison": [
         "accessed_at",
         "channel_name",
@@ -65499,6 +65526,30 @@
         "timestamps",
         "title",
         "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "david-arthur-xlab-ad9-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
         "transcript.language",
         "transcript.method",
         "transcript.status",
@@ -67339,6 +67390,30 @@
         "target.platform_id",
         "title",
         "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "norcal-cycling-tavelo-arden-price-gap": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
         "transcript.language",
         "transcript.method",
         "transcript.status",
@@ -123920,6 +123995,9 @@
       "bxt-store-055-overview": [
         "target.platform_id=bxt-055"
       ],
+      "cade-media-xlab-ad9-first-look": [
+        "target.candidate_id=xlab-ad9"
+      ],
       "cam-nicholls-elves-falath-pro-frame-comparison": [
         "target.platform_id=elves-falath-r7170"
       ],
@@ -124144,6 +124222,9 @@
       ],
       "david-arthur-winspace-slc3-review": [
         "target.candidate_id=missing-china-price-winspace-slc3"
+      ],
+      "david-arthur-xlab-ad9-review": [
+        "target.candidate_id=xlab-ad9"
       ],
       "dicking-about-ican-sn04-six-months": [
         "target.candidate_id=icanian-sn04"
@@ -124377,6 +124458,9 @@
       ],
       "nimbus-cycles-carbonda-cfr696-49cm-review": [
         "target.platform_id=carbonda-cfr696"
+      ],
+      "norcal-cycling-tavelo-arden-price-gap": [
+        "target.candidate_id=tavelo-arden"
       ],
       "norcal-cycling-tavelo-arow-race-bike": [
         "target.candidate_id=missing-china-price-tavelo-arow"
@@ -127269,7 +127353,8 @@
         "source_ids=tavelo-warranty-official-2026-08-27",
         "source_ids=tavelo-warranty-official-recheck-2026-09-23",
         "source_ids=usd-cny-central-parity-2026-07-31",
-        "video_ids=italian-cycling-vlog-tavelo-arden-unboxing"
+        "video_ids=italian-cycling-vlog-tavelo-arden-unboxing",
+        "video_ids=norcal-cycling-tavelo-arden-price-gap"
       ],
       "tavelo-arow-disc-frameset": [
         "brand_id=tavelo",
@@ -127697,7 +127782,9 @@
         "source_ids=xlab-ad9-official-global-2026-08-27",
         "source_ids=xlab-ad9-taobao-2026-08-27",
         "source_ids=xlab-ad9-tmall-2026-10-24",
+        "video_ids=cade-media-xlab-ad9-first-look",
         "video_ids=cyclingnews-xlab-ad9-wind-tunnel-review",
+        "video_ids=david-arthur-xlab-ad9-review",
         "video_ids=xhs-xlab-ad9-anniversary-intro",
         "video_ids=xhs-xlab-ad9-club100-build",
         "video_ids=xhs-xlab-ad9-club100-review",
