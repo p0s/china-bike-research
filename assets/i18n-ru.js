@@ -4,6 +4,7 @@ import { isMeasure, localizeMeasures } from './i18n-format.js';
 // display text, never data IDs. Model verdicts, detailed evidence, source titles and
 // seller wording without a reviewed translation stay in their original language.
 export const ru = {
+  "Blog": "Блог",
   " Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.": " Снятые детали весят больше всего велосипеда; проверьте единицы и не учитывайте снятые компоненты дважды.",
   ". Each price keeps its observation date and conditions.": ". У каждой цены сохраняются дата наблюдения и условия.",
   "1 identical row hidden": "Скрыта 1 одинаковая строка",

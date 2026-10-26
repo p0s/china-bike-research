@@ -488,11 +488,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   let imagePreviewTimer = null;
   let lastImagePreviewScroll = -Infinity;
   const imagePreviewLinks = () => document.querySelectorAll('.catalog-row .product-image-link, .curated-group .product-image-link');
-  function imagePreviewDisabled(link) {
-    return Boolean(link.closest?.('[data-catalog-view="gallery"]'));
-  }
   function previewSource(link, image) {
-    const id = link.closest?.('[data-product-row]')?.dataset.id;
+    const id = link.dataset.imagePreviewId || link.closest?.('[data-product-row]')?.dataset.id;
     return (id && imagePreviewSources.get(id)) || image.currentSrc || image.src;
   }
   function closeImagePreview() {
@@ -538,7 +535,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
   function openImagePreview(link) {
     closeImagePreview();
-    if (imagePreviewDisabled(link)) return;
     const image = link.querySelector('img');
     if (!image) return;
     activeImagePreview = link;
@@ -597,7 +593,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (link.matches(':hover') && performance.now() - lastImagePreviewScroll >= 180) openImagePreview(link);
     }, 70);
   }
-  imagePreviewLinks().forEach((link) => {
+  function bindImagePreview(link) {
     link.addEventListener('pointermove', (event) => {
       if (event.pointerType === 'mouse' || event.pointerType === 'pen') requestImagePreview(link);
     });
@@ -623,7 +619,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       });
     });
     link.addEventListener('blur', closeImagePreview);
-  });
+  }
+  imagePreviewLinks().forEach(bindImagePreview);
 
   const copyStatus = document.querySelector('#copy-status');
   const copyFeedbackTimers = new WeakMap();
@@ -2394,6 +2391,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     orderControls.append(moveLeft, moveRight, remove);
     copy.append(title, type, orderControls);
     if (item.image) {
+      const imageLink = element(item.url ? 'a' : 'span', 'compare-image-link');
+      if (item.url) imageLink.href = title.href;
+      else imageLink.tabIndex = 0;
+      imageLink.dataset.imagePreviewId = item.id;
       const image = document.createElement('img');
       image.src = item.image;
       if (item.imageSrcset) image.srcset = item.imageSrcset;
@@ -2405,8 +2406,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       image.decoding = 'async';
       image.dataset.productImage = '';
       if (item.imageRemote) image.referrerPolicy = 'no-referrer';
+      imageLink.append(image);
+      head.append(imageLink);
       enableImageFailureHandling(image);
-      head.append(image);
+      bindImagePreview(imageLink);
     } else {
       head.classList.add('has-no-image');
     }
@@ -2501,6 +2504,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   function renderComparison({ historyMode = 'replace' } = {}) {
     const items = selection.map((id) => byId.get(id)).filter(Boolean);
     if (!compareContent || items.length < 2) return;
+    closeImagePreview();
     const metricKinds = [...new Set(items.map((item) => item.categoryMetricKind))];
     // Discipline and tire metrics repeat the category and clearance rows.
     const metricFields = metricKinds.filter((kind) => !['tire', 'discipline'].includes(kind)).map((kind) => {
@@ -2628,6 +2632,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function closeComparison({ restoreFocus = false } = {}) {
+    closeImagePreview();
     if (comparePanel) comparePanel.hidden = true;
     compareTray?.classList.remove('is-comparing');
     startingPoint = '';

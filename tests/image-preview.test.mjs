@@ -18,16 +18,17 @@ function element() {
   };
 }
 
-function preview({ loaded = true, fine = true, gallery = false, viewport = { width: 1440, height: 900 }, box = { left: 329, top: 438, width: 96, height: 64 } } = {}) {
+function preview({ loaded = true, fine = true, gallery = false, comparison = false, viewport = { width: 1440, height: 900 }, box = { left: 329, top: 438, width: 96, height: 64 } } = {}) {
   const events = new Map(), frames = [], timers = [], linkEvents = new Map(), imageEvents = new Map(), classes = new Set();
   let now = 1000;
   const image = { complete: loaded, naturalWidth: loaded ? 480 : 0, naturalHeight: 320, currentSrc: 'card.webp', src: 'card.webp', addEventListener: (event, fn) => imageEvents.set(event, fn) };
   const row = { dataset: { id: 'bike-a' } };
   const link = {
+    dataset: comparison ? { imagePreviewId: 'bike-a' } : {},
     focused: false, hovered: false,
     classList: { add: name => classes.add(name), remove: name => classes.delete(name) },
     querySelector: () => image,
-    closest: selector => selector === '[data-product-row]' ? row : (gallery && selector.includes('gallery') ? {} : null),
+    closest: selector => selector === '[data-product-row]' ? (comparison ? null : row) : (gallery && selector.includes('gallery') ? {} : null),
     getBoundingClientRect: () => ({ ...box, right: box.left + box.width, bottom: box.top + box.height }),
     scrollIntoView() {},
     matches: selector => selector === ':focus-visible' ? link.focused : link.hovered,
@@ -36,12 +37,13 @@ function preview({ loaded = true, fine = true, gallery = false, viewport = { wid
   const body = element();
   const document = {
     activeElement: null, body,
-    querySelectorAll: () => [link],
+    querySelectorAll: () => comparison ? [] : [link],
     createElement: () => element(),
     addEventListener: (event, fn) => events.set(event, fn)
   };
   class FakeImage { addEventListener(event, fn) { this.onload = fn; } set src(value) { this.value = value; this.onload?.(); } }
-  vm.runInNewContext(previewSource + dismissalSource, {
+  vm.runInNewContext(previewSource + dismissalSource + '\nimagePreviewSources.set("bike-a", "detail.avif"); if (comparison) bindImagePreview(link);', {
+    comparison, link,
     document, innerWidth: viewport.width, innerHeight: viewport.height, Image: FakeImage,
     stickyHeader: { getBoundingClientRect: () => ({ bottom: 60 }) },
     performance: { now: () => now },
@@ -124,7 +126,16 @@ test('touch and coarse pointers keep direct navigation while keyboard focus stil
   ui.blur(); assert.equal(ui.active(), false);
 });
 
-test('gallery view shows large photos already, so it does not open the preview', () => {
-  const ui = preview({ gallery: true }); ui.move(); ui.flush();
-  assert.equal(ui.active(), false);
+for (const surface of ['gallery', 'comparison']) test(`${surface} photos share the large reviewed preview and dismissal behavior`, () => {
+  const options = { [surface]: true };
+  const ui = preview(options); ui.move(); ui.flush();
+  assert.equal(ui.active(), true);
+  assert.equal(ui.layer().firstElementChild.src, 'detail.avif');
+  ui.leave(); assert.equal(ui.active(), false);
+  ui.focus(); ui.flush(); assert.equal(ui.active(), true);
+  ui.escape(); assert.equal(ui.active(), false);
+  ui.focus(); ui.flush(); ui.scroll(); assert.equal(ui.active(), false);
+  ui.touch(); ui.flush(); assert.equal(ui.active(), false);
+  const coarse = preview({ ...options, fine: false });
+  coarse.move(); coarse.flush(); assert.equal(coarse.active(), false);
 });

@@ -4,6 +4,7 @@ import { isMeasure, localizeMeasures } from './i18n-format.js';
 // display text, never data IDs. Model verdicts, detailed evidence, source titles and
 // seller wording without a reviewed translation stay in their original language.
 export const es = {
+  "Blog": "Blog",
   " Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.": " Las piezas retiradas superan el peso de toda la bicicleta; revisa las unidades y evita contar dos veces los componentes retirados.",
   ". Each price keeps its observation date and conditions.": ". Cada precio conserva su fecha de observación y sus condiciones.",
   "1 identical row hidden": "1 fila idéntica oculta",
