@@ -93,7 +93,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
               <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}><span class="nav-long">Build planner</span><span class="nav-short" aria-hidden="true">Planner</span></a>
             </div>
           </div>
-          <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
+          <a href="${url(base,'/blog/')}" data-nav-blog${current==='blog'?' aria-current="page"':''}>Blog</a>
         </nav>
         <div class="language-menu" data-language-menu><button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-list" aria-label="${escapeAttr(languageMenuLabels[locale] ?? languageMenuLabels.en)}" data-language-toggle hidden><span class="language-current" lang="${locale}">${languageCodes[locale]}</span></button><nav class="language-nav" id="language-list" aria-label="Language">${pageLocales.map((lang) => lang === locale ? `<span class="language-switch is-current" lang="${lang}" aria-current="true">${languageNames[lang]}</span>` : `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav></div>
         <button class="theme-button" type="button" data-theme-control><span aria-hidden="true" data-theme-icon><span class="theme-light">☀</span><span class="theme-dark">☾</span></span><span data-theme-label><span class="theme-light">Light</span><span class="theme-dark">Dark</span></span></button>
@@ -111,7 +111,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       </div>
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
-        <a href="${url(base,'/blog/')}">Buying guides</a>
+        <a href="${url(base,'/blog/')}">Blog</a>
         <a href="${url(base,'/brands/')}">Brands</a>
         <a href="${url(base,'/complete-bikes/')}">Complete bikes</a>
         <a href="${url(base,'/framesets/')}">Framesets</a>

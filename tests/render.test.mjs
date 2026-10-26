@@ -53,10 +53,12 @@ test('homepage opens on the catalog without guide teasers or curated card sectio
   assert.equal((html.match(/data-product-row/g) ?? []).length, products.length + candidates.length);
 });
 
-test('guides stay one header link away in every locale and drafts never appear', () => {
-  for (const [locale, prefix, label] of [['en', '', 'Guides'], ['zh-Hans', '/zh', '选购指南'], ['de', '/de', 'Ratgeber']]) {
+test('Blog stays one header and footer link away in every locale and drafts never appear', () => {
+  for (const [locale, prefix, label] of [['en', '', 'Blog'], ['zh-Hans', '/zh', '博客'], ['de', '/de', 'Blog'], ['es', '/es', 'Blog'], ['ru', '/ru', 'Блог']]) {
     const localized = renderHome({ ...homeContext, locale });
-    assert.ok(localized.includes(`href="/china-bike-research${prefix}/blog/" data-nav-guides>${label}</a>`), locale);
+    const blogPrefix = ['es', 'ru'].includes(locale) ? '' : prefix;
+    assert.ok(localized.includes(`href="/china-bike-research${blogPrefix}/blog/" data-nav-blog>${label}</a>`), locale);
+    assert.ok(localized.includes(`href="/china-bike-research${blogPrefix}/blog/">${label}</a>`), locale);
     assert.ok(localized.includes(`action="/china-bike-research${prefix}/#catalog"`), locale);
     for (const draft of allPosts.filter((post) => !posts.some((published) => published.slug === post.slug))) {
       assert.ok(!localized.includes(`/blog/${draft.slug}/`));
@@ -1062,9 +1064,9 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 6);
   assert.match(primaryNav, /href="\/china-bike-research\/geometry\/"/);
-  assert.match(primaryNav, />Guides<\/a>/);
+  assert.match(primaryNav, />Blog<\/a>/);
   // Groupsets and wheels are components, not tools; both groups stay inline until the row is crowded.
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*data-nav-group="components"[\s\S]*data-nav-group-toggle hidden>Components<\/button>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/span>[\s\S]*data-nav-group="tools"[\s\S]*data-nav-group-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/span>[\s\S]*>Guides<\/a>/);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*data-nav-group="components"[\s\S]*data-nav-group-toggle hidden>Components<\/button>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/span>[\s\S]*data-nav-group="tools"[\s\S]*data-nav-group-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/span>[\s\S]*>Blog<\/a>/);
   assert.match(primaryNav, /<span class="nav-short" aria-hidden="true">Planner<\/span>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';

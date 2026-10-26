@@ -398,7 +398,7 @@ export const zh = {
   'Manufacturer aero and stiffness explanations lack an independent published protocol':'厂家的气动与刚性说明缺乏公开的独立测试口径',
   'Independent long-term quality-control and crash-replacement evidence remains limited':'独立的长期品控及撞击损坏换新证据仍有限',
   'Source-based editorial review; no hands-on testing.':'基于所列资料的编辑评述；未进行实车骑行或独立测试。',
-  'Bikes':'整车', 'Framesets':'车架组', 'Frameset':'车架组', 'Build':'装车', 'Groupsets':'变速套件', 'Blog':'购车文章', 'Buying guides':'购车指南',
+  'Bikes':'整车', 'Framesets':'车架组', 'Frameset':'车架组', 'Build':'装车', 'Groupsets':'变速套件', 'Blog':'博客', 'Buying guides':'购车指南',
   'China Bikes home':'China Bikes 首页', 'Primary':'主导航', 'Footer':'页脚', 'Home':'首页', 'Menu':'菜单', 'Skip to content':'跳到主要内容',
   'System':'跟随系统', 'Light':'浅色', 'Dark':'深色', 'Theme: System':'主题：跟随系统', 'Theme: System. Switch to light theme':'主题：跟随系统。切换为浅色',
   'Theme: Light':'主题：浅色', 'Theme: Light. Switch to dark theme':'主题：浅色。切换为深色', 'Theme: Dark':'主题：深色', 'Theme: Dark. Switch to light theme':'主题：深色。切换为浅色', 'Theme: Dark. Switch to system theme':'主题：深色。切换为跟随系统',
