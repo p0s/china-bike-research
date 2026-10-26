@@ -1049,6 +1049,8 @@ export const de = {
   "Tubes / tubeless kit": "Schläuche / Tubeless-Set",
   "Two tubes or valves, sealant and tape for a tubeless setup.": "Zwei Schläuche oder Ventile, Dichtmittel und Band für Tubeless.",
   "Hands-on review": "Praxistest",
+  "Published by bicycle-tool maker Park Tool. The demonstration uses its products and the description links to its tools and repair resources. This is manufacturer education, not an independent tool comparison.": "Veröffentlicht vom Fahrradwerkzeughersteller Park Tool. Die Vorführung nutzt eigene Produkte; die Beschreibung verlinkt Werkzeuge und Reparaturhilfen des Herstellers. Das ist Herstellerinformation, kein unabhängiger Werkzeugvergleich.",
+  "Published by CADE Media. The description lists companies supporting the channel financially or with products, including tyre brands, and includes affiliate and discount links. The exact commercial arrangement for the demonstrated equipment is not established.": "Veröffentlicht von CADE Media. Die Beschreibung nennt Firmen, die den Kanal finanziell oder mit Produkten unterstützen, darunter Reifenmarken, und enthält Affiliate- und Rabattlinks. Die genaue kommerzielle Vereinbarung für die gezeigte Ausrüstung ist nicht belegt.",
   "Workshop guide": "Werkstattanleitung",
   "Topic explainer": "Themenerklärung",
   "Long-term review": "Langzeitbericht",

@@ -699,6 +699,8 @@ Object.assign(zh, {
   "Published by Cyclingnews Tech. The description does not establish whether the test bike was supplied or whether the review was sponsored.": "由 Cyclingnews Tech 发布；简介未说明测试车是否由品牌提供，也未说明评测是否受到赞助。",
   "Exact Spear RDC review presented with riding and wind-tunnel context. The test configuration is separate from this candidate's custom build; no aerodynamic ranking or specification is accepted from the video alone.": "针对 Spear RDC 的评测，涉及骑行和风洞测试。测试配置与此待研究车型的定制装车不同；不单凭视频接受气动排名或规格结论。",
   "Hands-on review": "实车评测",
+  "Published by bicycle-tool maker Park Tool. The demonstration uses its products and the description links to its tools and repair resources. This is manufacturer education, not an independent tool comparison.": "视频由自行车工具制造商Park Tool发布。演示使用其产品，简介链接到自家工具和维修资料。这是厂商教学，不是独立工具对比。",
+  "Published by CADE Media. The description lists companies supporting the channel financially or with products, including tyre brands, and includes affiliate and discount links. The exact commercial arrangement for the demonstrated equipment is not established.": "由CADE Media发布。简介列出为频道提供资金或产品支持的公司，包括轮胎品牌，并包含推广链接与折扣链接。视频所示装备的具体商业安排尚不明确。",
   "Workshop guide": "维修教学",
   "Topic explainer": "专题讲解",
   "Long-term review": "长期使用评测",
