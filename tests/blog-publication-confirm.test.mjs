@@ -7,7 +7,7 @@ function confirmation(mismatch=false, missingIndex=false, exposedDraft=false) {
  const code=[
   "import fs from 'node:fs';import assert from 'node:assert/strict';",
   "const originalRead=fs.readFileSync;const queue=JSON.parse(originalRead('content/post-schedule.json','utf8'));fs.existsSync=file=>!String(file).includes('/dist/');",
-  "const entry=queue.entries.find(entry=>entry.published_at);const slug=entry.slug;let written=false;const requested=[];",
+  "const entry=queue.entries.find(entry=>entry.published_at);const slug=entry.slug;const nextDraftSlugs=[...new Set(queue.entries.map(entry=>entry.series_id))].map(series=>queue.entries.find(entry=>entry.series_id===series&&!entry.published_at)?.slug).filter(Boolean);let written=false;const requested=[];",
   "fs.readFileSync=function(file,...args){if(String(file).endsWith('/.research/blog-publication-state.json'))return JSON.stringify({schema_version:1,receipts:{}});if(String(file).includes('/dist/'))return '<html>exact production article</html>';return originalRead.call(this,file,...args);};",
   "fs.mkdirSync=()=>{};fs.writeFileSync=()=>{written=true;};fs.renameSync=()=>{};",
   "globalThis.fetch=async(url,options)=>{assert.equal(options.headers.dnt,'1');assert.equal(options.headers['sec-gpc'],'1');assert.equal(options.redirect,'error');assert.ok(options.signal instanceof AbortSignal);requested.push(url);",
@@ -20,7 +20,7 @@ function confirmation(mismatch=false, missingIndex=false, exposedDraft=false) {
    ? "await assert.rejects(import('./scripts/blog-publication.mjs'),/Live article does not match/);assert.equal(written,false);assert.equal(requested.length,1);"
    : missingIndex || exposedDraft
     ? "await assert.rejects(import('./scripts/blog-publication.mjs'),/"+(missingIndex?'Live blog index':'Next draft')+"/);assert.equal(written,false);"
-    : "await import('./scripts/blog-publication.mjs');assert.equal(written,true);assert.equal(requested.filter(url=>/\\/blog\\/$/.test(url)).length,3);assert.equal(requested.length,13);"
+    : "await import('./scripts/blog-publication.mjs');assert.equal(written,true);assert.equal(requested.filter(url=>/\\/blog\\/$/.test(url)).length,3);const expectedDrafts=nextDraftSlugs.flatMap(slug=>['','/zh','/de'].map(prefix=>'https://chinesebikes.xyz'+prefix+'/blog/'+slug+'/'));for(const route of expectedDrafts)assert.ok(requested.includes(route),route);assert.equal(requested.length,7+expectedDrafts.length);"
  ].join('\n');
  return spawnSync(process.execPath,['--input-type=module','-e',code],{cwd:path.resolve(import.meta.dirname,'..'),encoding:'utf8'});
 }

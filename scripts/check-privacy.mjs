@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-640-bc88d08f58.avif', 'bc88d08f58c06f0fa479deec0945d34453f29c717244092105dea272673f509a'],
+  ['assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-1600-9dd1a261dc.avif', '9dd1a261dcf27e2c1f25dc770d7432e866c8433bf6b6d42bc535c20398d24642'],
+  ['assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-1200.jpg', '14367fea4fac9389bf69142315491d0b80d8c743311b650479c6c79cb9e88884'],
   ['assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-640-132f5dbfb4.avif', '132f5dbfb419bcfd6cc4f612c81add68d6949fdd261a08a3b3b49320e63acab9'],
   ['assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-1600-26016caeb2.avif', '26016caeb26aaf6d98241f1f3afbfafa45483efd7e65cdf030c51bc43b22b720'],
   ['assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-1200.jpg', 'dcb411d3124e7d26398f84be5735445a283683b5c2ac306a2d21d175debfce22'],
