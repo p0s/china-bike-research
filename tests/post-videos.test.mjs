@@ -74,6 +74,21 @@ test('article-only independent reviews retain the same transcript gate as model 
   assert.throws(() => validatePostVideoReferences(posts, data.videos, registry), /video evidence/);
 });
 
+test('workshop and explainer footage has its own label and does not imply equipment approval', () => {
+  for (const [format, label] of [['workshop-guide', 'Workshop guide'], ['topic-explainer', 'Topic explainer']]) {
+    const registry = structuredClone(postVideos);
+    const item = registry.article_only_videos.find(video => video.takeaways?.length);
+    item.format = format;
+    assert.doesNotThrow(() => validatePostVideoReferences(posts, data.videos, registry));
+    const html = renderVideoEntries([item], { article: true });
+    assert.ok(html.includes(label));
+    assert.ok(html.includes('general guidance, not approval of your exact equipment'));
+    assert.doesNotMatch(html, /points apply to the build shown/);
+    item.format = 'unclassified-guide';
+    assert.throws(() => validatePostVideoReferences(posts, data.videos, registry), /video context/);
+  }
+});
+
 test('invalid video identities, missing context, duplicated placements and XHS embeds fail before publication', () => {
   const mutate = (change) => { const registry = structuredClone(postVideos); change(registry); return registry; };
   const first = (registry) => Object.values(registry.articles)[0];

@@ -43,7 +43,7 @@
       "oneOf": [{"required": ["platform_id"]}, {"required": ["variant_id"]}, {"required": ["candidate_id"]}, {"required": ["wheelset_id"]}]
     },
     "match": {"enum": ["exact-platform", "exact-variant", "exact-model-lead", "exact-wheelset"]},
-    "format": {"enum": ["hands-on-review", "long-term-review", "model-overview", "build-and-ride"]},
+    "format": {"enum": ["hands-on-review", "long-term-review", "model-overview", "build-and-ride", "workshop-guide", "topic-explainer"]},
     "relationship": {
       "enum": [
         "retailer-linked",

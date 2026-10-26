@@ -1056,7 +1056,7 @@ export function validateDataset(data = loadDataset()) {
   const platformVideoCounts = new Map();
   const wheelsetVideoCounts = new Map();
   const wheelsetIds = new Set((data.wheelsets ?? []).map((wheelset) => wheelset.id));
-  const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride']);
+  const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride', 'workshop-guide', 'topic-explainer']);
   const videoRelationships = new Set(['retailer-linked', 'brand-published', 'product-supplied', 'publication-review', 'owner-review', 'community-post', 'unknown']);
   for (const video of data.videos) {
     requireFields('video', video, [
