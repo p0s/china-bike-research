@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-seka-bike-mascot-cover-30cfbed2a7-640-7bd5442b66.avif', '7bd5442b6667f4250df1b242dc65506b50fedddc707d9de7f5b9f4fdbb2bcb1e'],
+  ['assets/blog/buy-seka-bike-mascot-cover-30cfbed2a7-1600-6d50e999c1.avif', '6d50e999c1f90f0931054c0af6617e260c054e16fcc6ef112d4dcc1365bfd683'],
+  ['assets/blog/buy-seka-bike-mascot-cover-30cfbed2a7-1200.jpg', 'c00be7d7cca4bd24d5725cd72aeedeeeaaf2c461d87b465d283f5a73dccdd694'],
   ['assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-640-bc88d08f58.avif', 'bc88d08f58c06f0fa479deec0945d34453f29c717244092105dea272673f509a'],
   ['assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-1600-9dd1a261dc.avif', '9dd1a261dcf27e2c1f25dc770d7432e866c8433bf6b6d42bc535c20398d24642'],
   ['assets/blog/how-to-read-bike-review-videos-mascot-cover-d80855f845-1200.jpg', '14367fea4fac9389bf69142315491d0b80d8c743311b650479c6c79cb9e88884'],
