@@ -81,3 +81,13 @@ test('interface languages localize amounts, units and counts', async () => {
   assert.equal(resolveDestination({ timeZone: 'Asia/Almaty', languages: ['ru-RU'] }).country, 'KZ');
   assert.equal(resolveDestination({ timeZone: 'America/Bogota', languages: ['es'] }).country, 'CO');
 });
+
+test('every indexable interface-language route is accepted for IndexNow submission', async () => {
+  const { validatePublicUrl } = await import('../src/lib/indexnow.mjs');
+  for (const locale of ALL_LOCALES) {
+    for (const route of INTERFACE_ROUTES.filter((item) => item !== '/404.html')) {
+      const pageUrl = `${siteUrl}${localePath(route, locale)}`;
+      assert.doesNotThrow(() => validatePublicUrl(pageUrl), pageUrl);
+    }
+  }
+});
