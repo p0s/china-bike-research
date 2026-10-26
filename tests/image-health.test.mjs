@@ -34,9 +34,11 @@ test('buyer-omitted PARDUS images are not health-check targets', () => {
   assert.equal(ids.some((id) => id.startsWith('pardus-spark-sport-pes-cn-color-primary-image')), false);
 });
 
-test('official groupset images are local and no remote images remain health-check targets', () => {
+test('official groupset images are local; only maker-hosted wheelset photos remain health-check targets', () => {
   const data = loadDataset();
-  assert.equal(imageHealthTargets(data).length, 0);
+  const targets = imageHealthTargets(data);
+  assert.deepEqual(targets.map(({ id }) => id).sort(), data.wheelsets.filter((wheelset) => wheelset.image?.remote_url).map(({ id }) => `wheelset:${id}`).sort());
+  assert.ok(targets.length > 0 && targets.every(({ id }) => id.startsWith('wheelset:')));
   assert.equal(data.groupsets.filter((groupset) => groupset.image?.local_path).length, 10);
   assert.ok(data.groupsets.every((groupset) => !groupset.image?.remote_url));
 });

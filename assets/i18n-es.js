@@ -843,7 +843,15 @@ export const es = {
   "tubeless ready": "lista para tubeless",
   "unknown": "desconocido",
   "weight-focused premium buyer": "comprador premium centrado en el peso",
-  "wheelset": "juego de ruedas"
+  "wheelset": "juego de ruedas",
+  // Build planner currencies (2026-10-26).
+  "Currency": "Moneda",
+  "Your quote": "Tu presupuesto",
+  "Base price": "Precio base",
+  "Recorded price": "Precio registrado",
+  "ECB reference rate": "Tipo de referencia del BCE",
+  "New amounts use this currency; entered amounts keep their own.": "Los importes nuevos usan esta moneda; los ya introducidos conservan la suya.",
+  "Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.": "Los importes conservan la moneda en la que se registraron o introdujeron; ≈ indica una conversión para planificar. Los precios de China convertidos no incluyen envío, aranceles ni impuestos y no son precios con entrega."
 };
 const t = (value) => translateSpanish(value);
 const cap = (value) => value.charAt(0).toUpperCase() + value.slice(1);
@@ -875,7 +883,7 @@ const patterns = [
   [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `Anclaje de disco no indicado · ${axles} mm`],
   [/^Official direct store · (\d{4}-\d{2}-\d{2})$/, (_, date) => `Tienda oficial directa · ${date}`],
   [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `Tienda oficial directa · ${date} · ${kind === 'list' ? 'precio oficial de lista' : 'venta directa oficial'}`],
-  [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `El precio oficial directo de ${amount} (${date}) no es un precio de China continental; introduce un presupuesto de China.${rotor ? ' El anclaje de disco no está indicado; confírmalo antes de elegir discos.' : ''}`],
+  [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter your purchase quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `El precio oficial directo de ${amount} (${date}) no es un precio de China continental; introduce tu presupuesto de compra.${rotor ? ' El anclaje de disco no está indicado; confírmalo antes de elegir discos.' : ''}`],
   [/^Show (\d+) more research leads$/, (_, n) => `Mostrar ${n} pistas de investigación más`],
   [/^Show (\d+) results$/, (_, n) => n === '1' ? 'Mostrar 1 resultado' : `Mostrar ${n} resultados`],
   [/^Only bikes with a seller listing for (.+)$/, (_, country) => `Solo bicicletas con un anuncio de vendedor para ${country}`],
@@ -899,7 +907,7 @@ const patterns = [
   [/^(.+) plan · enter allowance$/, (_, plan) => `Plan ${plan} · introduce la asignación`],
   [/^(.+) plan: (¥[\d,]+) total build allowance\. (.+)\.$/, (_, plan, price, basis) => `Plan ${plan}: asignación total de montaje de ${price}. ${t(basis.replace(/\.+$/, ''))}.`],
   [/^(.+) plan: enter the total remaining-build allowance\. (.+)\.$/, (_, plan, basis) => `Plan ${plan}: introduce la asignación total para el resto del montaje. ${t(basis.replace(/\.+$/, ''))}.`],
-  [/^(\d+) unknown$/, (_, count) => `${count} desconocidos`],
+  [/^(\d+) unknown$/, (_, count) => count === '1' ? '1 desconocido' : `${count} desconocidos`],
   [/^(.+): (priced|included|needs one input|needs price and weight)$/, (_, name, state) => `${t(name)}: ${{ priced: 'con precio', included: 'incluido', 'needs one input': 'falta un dato', 'needs price and weight': 'faltan precio y peso' }[state]}`],
   [/^(.+) known \+ (\d+) unknown$/, (_, amount, count) => `${amount} conocido + ${count} desconocidos`],
   [/^(.+) (base \/ known deltas|known) \+ (\d+) unknown$/, (_, amount, basis, count) => `${amount} ${basis === 'known' ? 'conocido' : 'base / diferencias conocidas'} + ${count} desconocidos`],
@@ -940,6 +948,8 @@ const patterns = [
   [/^(\d[\d.,]* (?:g|kg)) new$/, (_, weight) => `${weight} nuevo`],
   [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} no indica su montaje de disco; confírmalo antes de elegir los discos.`],
   [/^Your quote replaces the recorded (.+)$/, (_, price) => `Tu presupuesto sustituye al importe registrado de ${price}`],
+  [/^Recorded price (.+)$/, (_, price) => `Precio registrado ${price}`],
+  [/^Entered as (.+)$/, (_, price) => `Introducido como ${price}`],
   [/^Remove (.+?) from the comparison$/, (_, name) => `Quitar ${name} de la comparación`]
 ];
 const localize = (text) => localizeMeasures(text, 'es');

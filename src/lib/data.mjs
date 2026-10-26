@@ -545,7 +545,32 @@ export function validateDataset(data = loadDataset()) {
       if (typeof note?.summary !== 'string' || note.summary.trim().length < 20) errors.push(`${label}: independent evidence needs a summary`);
     }
     // Exact-model photos follow the reviewed local-derivative contract used for groupsets.
-    if (wheelset.image !== undefined) {
+    // Without documented reuse rights, the maker's own photo stays on the maker's server.
+    if (wheelset.image?.remote_url !== undefined) {
+      const image = wheelset.image;
+      for (const field of ['source_id', 'subject_accuracy', 'credit', 'alt', 'reviewed_at', 'remote_url', 'source_media_sha256']) {
+        if (typeof image[field] !== 'string' || !image[field].trim()) errors.push(`${label}: missing image.${field}`);
+      }
+      if (image.subject_accuracy !== 'exact-model') errors.push(`${label}: wheelset images must show the exact model`);
+      if (!sourceIds.has(image.source_id) || !wheelset.source_ids.includes(image.source_id)) errors.push(`${label}: image source must be a listed source`);
+      for (const field of ['local_path', 'variants', 'source_media_url']) if (image[field] !== undefined) errors.push(`${label}: a remote image must not also carry ${field}`);
+      let remoteHost = '';
+      try {
+        const remote = new URL(image.remote_url);
+        if (remote.protocol !== 'https:' || remote.search || remote.hash) errors.push(`${label}: image.remote_url must be a plain HTTPS file URL`);
+        remoteHost = remote.hostname;
+      } catch { errors.push(`${label}: invalid image.remote_url`); }
+      let pageHost = '';
+      try { pageHost = new URL(data.sources.find((source) => source.id === image.source_id)?.url ?? '').hostname; } catch { /* reported as a missing source */ }
+      if (!remoteHost || remoteHost !== pageHost) errors.push(`${label}: a remote image must load from its official source page's host`);
+      if (!/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '') || !Number.isInteger(image.source_media_bytes) || image.source_media_bytes < 1) errors.push(`${label}: remote image needs the reviewed file's hash and size`);
+      if (!Number.isInteger(image.width) || image.width <= 0 || !Number.isInteger(image.height) || image.height <= 0) errors.push(`${label}: image needs positive integer dimensions`);
+      if (typeof image.alt !== 'string' || image.alt.trim().length < 10) errors.push(`${label}: image.alt is too short`);
+      if (!isDate(image.reviewed_at)) errors.push(`${label}: invalid image.reviewed_at`);
+      if (image.rights?.status !== 'official-page-embed' || ['copyright_holder', 'usage_note', 'removal_route'].some((field) => typeof image.rights?.[field] !== 'string' || !image.rights[field].trim())) errors.push(`${label}: incomplete image rights record`);
+      if (!sourceIds.has(image.rights?.terms_source_id)) errors.push(`${label}: a remote image needs the reviewed terms source`);
+      if (image.privacy_review?.embedded_metadata !== 'none-found' || image.privacy_review?.visual !== 'no-faces-plates-accounts-locations' || !isDate(image.privacy_review?.reviewed_at)) errors.push(`${label}: incomplete image privacy review`);
+    } else if (wheelset.image !== undefined) {
       const image = wheelset.image;
       const pattern = /^\/assets\/images\/sourced\/(?:official|retailer)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.avif$/;
       if (!isObject(image)) errors.push(`${label}: image must be an object`);

@@ -801,6 +801,9 @@ export function translate(value, locale = 'en') {
     [/^(\d+) models?$/, (_, n) => `${n} 款车型`],
     [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} 未说明碟片安装方式；选择碟片前请确认。`],
     [/^Your quote replaces the recorded (.+)$/, (_, price) => `你的报价取代记录的 ${price}`],
+    [/^Recorded price (.+)$/, (_, price) => `记录价格 ${price}`],
+    [/^View the official (.+) product page$/, (_, name) => `查看 ${name} 官方产品页面`],
+    [/^Entered as (.+)$/, (_, price) => `按 ${price} 输入`],
     [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translate(value, 'zh-Hans')} — ${translate(label, 'zh-Hans')}`],
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? '前轮' : '后轮'}`],
     [/^unknown (1×|2×)$/, (_, layout) => `${layout} 未知`],
@@ -825,7 +828,7 @@ export function translate(value, locale = 'en') {
     [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `未说明碟片安装方式 · ${axles} mm`],
     [/^Official direct store · (\d{4}-\d{2}-\d{2})$/, (_, date) => `官方直营店 · ${date}`],
     [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `官方直营店 · ${date} · ${kind === 'list' ? '官方直营标价' : '官方直营促销价'}`],
-    [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `官方直营价 ${amount}（${date}）不是中国大陆价格；请输入中国报价。${rotor ? zh['Rotor mount is not stated; confirm it before choosing rotors.'] : ''}`],
+    [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter your purchase quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `官方直营价 ${amount}（${date}）不是中国大陆价格；请输入你的购买报价。${rotor ? zh['Rotor mount is not stated; confirm it before choosing rotors.'] : ''}`],
     // Catalog workbench (2026-10)
     [/^· (\d+) published, then (\d+) research leads$/, (_, published, leads) => `· ${published} 个已发布车型，其后 ${leads} 个研究线索`],
     [/^Show (\d+) more research leads$/, (_, n) => `再显示 ${n} 个研究线索`],
@@ -897,7 +900,8 @@ Object.assign(zh, {
   'When enabled, Google Analytics 4 runs only after the consented browser requests its same-origin configuration. The browser tag can then send one page_view through this site\'s first-party gateway. The page request itself does not create a Google identifier or send a site_open event. The configuration request creates a first-party client ID; the tag\'s reported session ID is stored only after its same-origin session handshake. Server comparison and product-link events reach Google only when both stored identifiers exist. If a blocker prevents the tag or handshake, first-party Umami measurement can still work while no server event is sent to Google. Server requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes after a verified tag handshake. We disable advertising signals and personalization. Google controls its own analytics processing and retention.': '启用时，Google Analytics 4 仅在已同意的浏览器请求同源配置后运行。浏览器标签随后可通过本站第一方网关发送一次 page_view。页面请求本身不会创建 Google 标识或发送 site_open。配置请求创建本站第一方客户端标识；只有标签通过同源会话握手报告会话标识后才会保存。服务器比较和产品链接事件只有在两种已保存标识都存在时才会发送给 Google。如果拦截器阻止标签或握手，第一方 Umami 仍可工作，但不会向 Google 发送服务器事件。服务器请求不会向 Google 发送你的 IP、User-Agent、搜索词、网址查询参数或所选车型列表；浏览器标签加载时，Google 可能收到你的网络地址。Google 标签 Cookie 和本站客户端标识 Cookie 最长保留 30 天；经过验证的标签握手后，会话 Cookie 保留 30 分钟。我们关闭广告信号和个性化。Google 自行管理其分析数据的处理与保留。',
   'Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.': '“请勿跟踪”、Global Privacy Control 和下方的退出选项会停止两路分析。退出时会清除本站的 GA 标识 Cookie 和此主机上的 Google 标签 Cookie。',
   'External media': '外部媒体',
-  "Displayed product photos load from this site's Cloudflare-hosted assets. Model pages and the carbon-wheel reference embed a": '展示的产品照片从本站的 Cloudflare 资源加载。含视频的车型页面和碳纤维轮组参考页会嵌入',
+  "Displayed product photos load from this site's Cloudflare-hosted assets, except maker photos that the carbon-wheel reference and image credits show from the maker's website; your browser then contacts that website without sending this page's address. Model pages and the carbon-wheel reference embed a": '展示的产品照片从本站的 Cloudflare 资源加载；碳纤维轮组参考页和图片来源页中的制造商照片除外，这些照片直接从制造商网站加载，此时你的浏览器会联系该网站，但不会发送本页地址。含视频的车型页面和碳纤维轮组参考页会嵌入',
+  'Loaded from the maker’s website': '从制造商网站加载',
   'player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.': '播放器，页面加载或视频进入视野时可能联系 YouTube。文章页面仅在你加载视频或打开观看链接时联系 YouTube。视频不会自动播放。',
   'Contributions': '公开贡献',
   'GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.': 'GitHub 问题和合并请求是公开的。发布图片或链接前请删除个人信息；需要更正或移除内容时可提交问题。'
@@ -1532,4 +1536,13 @@ Object.assign(zh, {
   "cable-brake shift groupset": "线拉刹车变速套件",
   "75 mm derailleur, hydraulic brakes, alloy levers": "75 mm 后拨、油碟、铝合金手变",
   "75 or 93 mm derailleur, hydraulic brakes, carbon levers": "75 或 93 mm 后拨、油碟、碳纤维手变"
+});
+
+// Build planner currencies (2026-10-26).
+Object.assign(zh, {
+  'Your quote': '你的报价',
+  'Base price': '基础价格',
+  'ECB reference rate': '欧洲央行参考汇率',
+  'New amounts use this currency; entered amounts keep their own.': '新输入的金额使用此币种；已输入的金额保留原币种。',
+  'Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.': '金额保留记录或输入时的币种；≈ 表示用于规划的换算。换算后的中国价格不含运费、进口关税和税费，也不是到手价。'
 });

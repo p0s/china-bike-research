@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { numberOrNull, numericInput, normalizeSelection, compareNumbers, restoreBuildState, COMPARISON_SELECTION_LIMIT, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from '../assets/state-utils.js';
+import { numberOrNull, numericInput, normalizeSelection, compareNumbers, restoreBuildState, COMPARISON_SELECTION_LIMIT, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS, buildCurrencies, parseMoneyInput, moneyInputParam } from '../assets/state-utils.js';
 import { formatRequestedBudget } from '../assets/regional-prices.js';
 const data = {
   bases: [{ id: 'frame-a', kind: 'frameset' }, { id: 'bike-b', kind: 'complete-bike' }],
@@ -56,12 +56,12 @@ test('complete-bike defaults remain included, not re-purchased', () => {
 });
 test('buyer zero, package remainder and exact removed weight survive explicit URL', () => {
   const result=restore('base=bike-b&part-wheelset=custom&price-wheelset=0&weight-wheelset=750&removed-wheelset=950&packageWeight=600');
-  assert.deepEqual(result.custom.wheelset,{price:'0',weight:'750',removedWeight:'950'}); assert.equal(result.baseCustom.packageWeight,'600');
+  assert.deepEqual(result.custom.wheelset,{price:'0',priceCurrency:'CNY',weight:'750',removedWeight:'950'}); assert.equal(result.baseCustom.packageWeight,'600');
 });
 test('malformed storage cannot become zero or inject a selection', () => {
   for (const saved of [null,[],false,'text',{schemaVersion:100,baseId:'bike-b'}]) assert.equal(restore('',saved).baseId,'frame-a');
   const result=restore('',{baseId:'frame-a',custom:{wheelset:{price:true,weight:[],removedWeight:{}}}});
-  assert.deepEqual(result.custom.wheelset,{price:'',weight:'',removedWeight:''});
+  assert.deepEqual(result.custom.wheelset,{price:'',priceCurrency:'',weight:'',removedWeight:''});
 });
 test('inherited storage fields are ignored', () => assert.equal(restore('',Object.create({baseId:'bike-b'})).baseId,'frame-a'));
 test('partial URL is explicit even when it only names a part', () => {
@@ -170,4 +170,65 @@ test('a malformed budget currency is held as typed, readable and never broadens 
   assert.equal(links.search, '?ship=DE&currency=EUR');
   budget.limit = null; // the shopper retyped or cleared the budget
   assert.equal(regionalHoldBlocks(budget, 9000), false);
+});
+
+// Build planner currencies (2026-10-26): each amount keeps the currency it was entered in.
+const ratedData = { ...data, rates: { date: '2026-10-01', perEur: { EUR: 1, USD: 1.1298, GBP: 0.85373, CAD: 1.6095, CNY: 7.5748, MXN: 20.5251 } } };
+const restoreRated = (query = '', saved = {}, options) => restoreBuildState(ratedData, new URLSearchParams(query), saved, options);
+
+test('planner money inputs keep their currency; plain numbers stay legacy yuan', () => {
+  assert.deepEqual(parseMoneyInput('1500'), { amount: '1500', currency: 'CNY' });
+  assert.deepEqual(parseMoneyInput('1500USD'), { amount: '1500', currency: 'USD' });
+  assert.deepEqual(parseMoneyInput(' 1499.99 eur '), { amount: '1499.99', currency: 'EUR' });
+  assert.deepEqual(parseMoneyInput('0GBP'), { amount: '0', currency: 'GBP' });
+  for (const value of ['1500JPY', 'USD', '', '-5USD', '1,500USD', '1500USDX', null, true, {}]) assert.deepEqual(parseMoneyInput(value), { amount: '', currency: '' }, String(value));
+  assert.equal(moneyInputParam('1500', 'CNY'), '1500');
+  assert.equal(moneyInputParam('1499.99', 'EUR'), '1499.99EUR');
+  assert.equal(moneyInputParam('', 'USD'), '');
+  // Older planner code reads a marked amount as unknown, never as yuan.
+  assert.equal(numberOrNull('1500USD'), null);
+});
+
+test('planner currencies need a dated rate for the currency and for yuan', () => {
+  assert.deepEqual(buildCurrencies(ratedData.rates), ['EUR', 'USD', 'GBP', 'CAD', 'MXN', 'CNY']);
+  assert.deepEqual(buildCurrencies(null), ['CNY']);
+  assert.deepEqual(buildCurrencies({ perEur: { EUR: 1, USD: 1.1 } }), ['CNY']);
+  assert.deepEqual(buildCurrencies({ perEur: { EUR: 1, CNY: 7.5, USD: 0 } }), ['EUR', 'CNY']);
+});
+
+test('planner currency: the link’s own, then the saved planner or catalog currency, else yuan', () => {
+  assert.equal(restoreRated('base=frame-a&currency=EUR', { schemaVersion: 3, currency: 'GBP' }, { preferredCurrency: 'USD' }).currency, 'EUR');
+  // A link without a currency shows the visitor's saved currency; its plan and yuan amounts stay the link's.
+  const shared = restoreRated('base=frame-a&price-wheelset=800', { schemaVersion: 3, baseId: 'frame-a', currency: 'GBP', selections: { drivetrain: 'custom' }, custom: { drivetrain: { price: '9', priceCurrency: 'GBP' } } }, { preferredCurrency: 'USD' });
+  assert.deepEqual([shared.currency, shared.selections.drivetrain, shared.custom.drivetrain.price, shared.custom.wheelset.price, shared.custom.wheelset.priceCurrency], ['GBP', 'group-a', '', '800', 'CNY']);
+  assert.equal(restoreRated('base=frame-a', {}, { preferredCurrency: 'USD' }).currency, 'USD');
+  // History entries carry their currency; restoring one never reads storage.
+  assert.equal(restoreRated('base=frame-a', { schemaVersion: 3, currency: 'GBP' }, { allowStored: false, preferredCurrency: 'USD' }).currency, 'CNY');
+  assert.equal(restoreRated('', { schemaVersion: 3, baseId: 'frame-a', currency: 'GBP' }, { preferredCurrency: 'USD' }).currency, 'GBP');
+  assert.equal(restoreRated('', { baseId: 'frame-a' }, { preferredCurrency: 'USD' }).currency, 'USD');
+  assert.equal(restoreRated('', {}, { preferredCurrency: 'JPY' }).currency, 'CNY');
+  assert.equal(restoreRated('currency=JPY').currency, 'CNY');
+  assert.equal(restore('currency=EUR').currency, 'CNY', 'without rates only yuan works');
+  // A currency alone is a display choice, not a shared plan: the bare visit still resumes its draft.
+  const resumed = restoreRated('currency=EUR', { schemaVersion: 3, baseId: 'bike-b', currency: 'USD' });
+  assert.equal(resumed.baseId, 'bike-b');
+  assert.equal(resumed.currency, 'EUR');
+});
+
+test('planner amounts keep their entered currency across display changes, links and drafts', () => {
+  const query = 'base=bike-b&part-wheelset=custom&price-wheelset=1500USD&basePrice=9000';
+  for (const currency of ['', 'EUR', 'USD', 'CNY']) {
+    const state = restoreRated(`${query}${currency ? `&currency=${currency}` : ''}`);
+    assert.deepEqual([state.custom.wheelset.price, state.custom.wheelset.priceCurrency], ['1500', 'USD'], currency);
+    assert.deepEqual([state.baseCustom.price, state.baseCustom.priceCurrency], ['9000', 'CNY'], currency);
+  }
+  // Schema 2 drafts stored yuan; schema 3 drafts carry each amount's currency.
+  const legacy = restoreRated('', { schemaVersion: 2, baseId: 'bike-b', custom: { wheelset: { price: '800' } }, baseCustom: { price: '9000' } });
+  assert.deepEqual([legacy.custom.wheelset.price, legacy.custom.wheelset.priceCurrency, legacy.baseCustom.priceCurrency], ['800', 'CNY', 'CNY']);
+  const current = restoreRated('', JSON.parse(JSON.stringify(restoreRated(`${query}&currency=EUR`))));
+  assert.equal(current.schemaVersion, 3);
+  assert.deepEqual([current.currency, current.custom.wheelset.price, current.custom.wheelset.priceCurrency], ['EUR', '1500', 'USD']);
+  // A schema 3 amount without a valid currency is unknown, not yuan.
+  const unmarked = restoreRated('', { schemaVersion: 3, baseId: 'bike-b', custom: { wheelset: { price: '800', priceCurrency: 'XYZ' } } });
+  assert.deepEqual([unmarked.custom.wheelset.price, unmarked.custom.wheelset.priceCurrency], ['', '']);
 });

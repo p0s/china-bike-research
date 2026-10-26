@@ -136,7 +136,8 @@ test('published and research planner bases treat only purchase-eligible latest p
     }
     // Converted official-store reference: amount, original currency and date stay visible; the buyer enters the quote.
     const graro = bases.get('ican-graro-frameset');
-    assert.ok(['¥6,023', 'USD 899', '2026-09-23'].every(part => graro.priceNote.includes(part)), locale);
+    // The original amount keeps its symbol, so interface languages cannot misread its separator.
+    assert.ok(['¥6,023', 'US$899', '2026-09-23'].every(part => graro.priceNote.includes(part)), locale);
     assert.ok(bases.get('twitter-v3-2024-rs-sensah-alloy').priceNote.includes(translate('Historical listing', locale)), locale);
     if (locale !== 'en') assert.ok(!graro.priceNote.startsWith('Reference kept'), locale);
     assert.equal(bases.get('candidate-twitter-cyclone-gen3-7170')?.priceLow ?? null, null);

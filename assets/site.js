@@ -5,11 +5,13 @@ import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
 import { priceDisplay, deliveredLine, pricePopoverLines, compactPriceBasis } from './price-display.js';
 import { clearanceParts, weightParts, catalogClearance } from './catalog-format.js';
-import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, isExplicitBuildUrl, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
+import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, isExplicitBuildUrl, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS, buildCurrencies, moneyInputParam } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
 const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActionDispatcher();
+// Manual shopping choices from the catalog; the Build planner reads only its display currency.
+const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
 
 (async () => {
   const base = document.body.dataset.base ?? '';
@@ -992,7 +994,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const destinationControl = document.querySelector('[data-ship-country]');
   const currencyControl = document.querySelector('[data-display-currency]');
   const areaControl = document.querySelector('[data-delivery-area]');
-  const preferenceStorageKey = 'china-bikes-delivery-preference-v1';
+  const preferenceStorageKey = deliveryPreferenceStorageKey;
   let savedPreference = {};
   try { savedPreference = JSON.parse(localStorage.getItem(preferenceStorageKey) ?? '{}') ?? {}; } catch { /* URL choices remain available */ }
   let timeZone = '';
@@ -2266,6 +2268,15 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     });
   }
 
+  // The planner opens in the catalog's display currency; its yuan records stay yuan.
+  function syncBuildLinkCurrency() {
+    if (!(openBuildLink instanceof HTMLAnchorElement) || openBuildLink.hidden) return;
+    const target = new URL(openBuildLink.href, location.href);
+    target.searchParams.set('currency', priceCurrency());
+    openBuildLink.href = `${target.pathname}${target.search}`;
+  }
+  ['pointerdown', 'focus', 'click'].forEach((type) => openBuildLink?.addEventListener(type, syncBuildLinkCurrency));
+
   function renderTray() {
     writeStoredSelection(selection);
     if (compareCount) compareCount.textContent = String(selection.length);
@@ -2310,6 +2321,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         const target = new URL(`${document.body.dataset.base || ''}/build/`, location.origin);
         target.searchParams.set('base', item.buildBaseId || item.id);
         openBuildLink.href = `${target.pathname}${target.search}`;
+        syncBuildLinkCurrency();
         openBuildLink.textContent = item.buildBaseKind === 'frameset' ? 'Build this frame' : 'Modify this bike';
         openBuildLink.setAttribute('aria-label', `${openBuildLink.textContent}: ${item.name}`);
       }
@@ -2709,9 +2721,42 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   let presentation;
   try { presentation = await import('./builder-presentation.js'); } catch { return; }
-  const { buildBaseFactRows, buildCompatibilityMessages, buildComposition, buildSlotState, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
+  const { buildBaseFactRows, buildCompatibilityMessages, buildComposition, buildSlotState, formatBuildWeight: formatWeight } = presentation;
 
   const storageKey = 'china-bike-builder-v2';
+  const lang = document.documentElement.lang || 'en';
+  // Recorded planner prices are yuan observations. Each buyer-entered amount keeps the
+  // currency it was typed in; other currencies are dated planning conversions, never quotes.
+  const rates = data.rates && typeof data.rates === 'object' ? data.rates : null;
+  const currencies = buildCurrencies(rates);
+  const currencySelect = root.querySelector('[data-build-currency]');
+  const currencyNote = root.querySelector('[data-build-currency-note]');
+  if (currencySelect instanceof HTMLSelectElement) {
+    for (const option of currencySelect.options) option.hidden = option.disabled = !currencies.includes(option.value);
+  }
+  function shownAmount(amount, currency) {
+    if (amount === null || !currency) return null;
+    if (currency === state.currency) return { value: amount, converted: false };
+    const value = convertPrice(amount, currency, state.currency, { per_eur: rates?.perEur });
+    return value === null ? null : { value, converted: true };
+  }
+  const formatMoney = (low, high = low, approximate = false) => formatMoneyRange(low, high, state.currency, lang, { approximate });
+  const nativeMoney = (amount, currency) => formatMoneyRange(amount, amount, currency, lang, { exact: true });
+  // A new amount takes the planner currency. Editing keeps the amount's own currency, even
+  // while the field is briefly empty; a field left empty forgets it when it loses focus.
+  function setMoney(entry, value) {
+    if (value !== '' && !entry.priceCurrency) entry.priceCurrency = state.currency;
+    entry.price = value;
+  }
+  function endMoneyEdit(entry) {
+    if (entry.price !== '' || !entry.priceCurrency) return;
+    entry.priceCurrency = '';
+    render();
+  }
+  const currencyGlyphs = { CNY: '¥', EUR: '€', USD: '$', GBP: '£', CAD: '$', MXN: '$' };
+  function savedDisplayCurrency() {
+    try { return JSON.parse(localStorage.getItem(deliveryPreferenceStorageKey) ?? '{}')?.currency ?? ''; } catch { return ''; }
+  }
   const bases = new Map(data.bases.map((base) => [base.id, base]));
   const parts = new Map(data.parts.map((part) => [part.id, part]));
   const slots = Array.isArray(data.slots) ? data.slots : [];
@@ -2728,6 +2773,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
   const baseCustom = root.querySelector('[data-build-base-custom]');
   const basePrice = root.querySelector('[data-build-base-price]');
+  const basePriceCurrency = root.querySelector('[data-build-base-price-currency]');
   const baseWeight = root.querySelector('[data-build-base-weight]');
   const basePriceField = root.querySelector('[data-build-base-price-field]');
   const baseWeightField = root.querySelector('[data-build-base-weight-field]');
@@ -2741,7 +2787,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const compatibility = root.querySelector('[data-build-compatibility]');
   const buildName = root.querySelector('[data-build-name]');
   const summaryKicker = root.querySelector('[data-build-summary-kicker]');
-  const priceLabel = root.querySelector('[data-build-price-label]');
+  const priceLabel = root.querySelector('[data-build-total-label]');
   const weightLabel = root.querySelector('[data-build-weight-label]');
   const rows = new Map([...root.querySelectorAll('[data-build-slot]')].map((row) => [row.dataset.buildSlot, row]));
   const sourcedDefaults = Object.fromEntries(slots.map((slot) => [
@@ -2776,7 +2822,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   const firstBaseId = data.bases[0]?.id || '';
-  let state = restoreBuildState(data, new URLSearchParams(location.search), readStoredState());
+  let state = restoreBuildState(data, new URLSearchParams(location.search), readStoredState(), { preferredCurrency: savedDisplayCurrency() });
+  // A shared link becomes the visitor's draft only after an edit; reading it in another currency is not an edit.
+  let draftOwned = false;
 
   function selectedPart(slot) {
     const id = state.selections[slot];
@@ -2825,8 +2873,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const defaults = defaultSelections(base);
     if (state.baseId) target.searchParams.set('base', state.requestedBaseId ?? state.baseId);
     target.searchParams.delete('frame');
+    // The link names its currency; its unmarked amounts stay yuan, so older links keep their meaning.
+    target.searchParams.set('currency', state.currency);
     for (const [field, value, recorded] of [
-      ['basePrice', state.baseCustom.price, numberOrNull(base?.priceLow)],
+      ['basePrice', moneyInputParam(state.baseCustom.price, state.baseCustom.priceCurrency), numberOrNull(base?.priceLow)],
       ['baseWeight', state.baseCustom.weight, numberOrNull(base?.baseWeightG)],
       ['packageWeight', state.baseCustom.packageWeight, base?.kind === 'complete-bike' ? 0 : null]
     ]) {
@@ -2839,7 +2889,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       else target.searchParams.delete(`part-${slot}`);
       const part = selectedPart(slot);
       const custom = state.custom[slot];
-      for (const [field, value] of [['price', custom.price], ['weight', custom.weight], ['removed', custom.removedWeight]]) {
+      for (const [field, value] of [['price', moneyInputParam(custom.price, custom.priceCurrency)], ['weight', custom.weight], ['removed', custom.removedWeight]]) {
         const key = `${field}-${slot}`;
         const recordedValue = field === 'price' ? numberOrNull(part?.priceCny) : field === 'weight' ? numberOrNull(part?.weightG) : null;
         const relevant = !['included', 'in-base'].includes(selection) && (field === 'removed' ? base?.kind === 'complete-bike' : field === 'price' || selection === 'custom' || recordedValue === null);
@@ -2880,7 +2930,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const summary = composition[kind];
       figure.hidden = !summary;
       if (!summary) continue;
-      const format = kind === 'price' ? formatYuan : formatWeight;
+      const format = kind === 'price'
+        ? (segment) => formatMoney(segment.value, Math.max(segment.value, segment.high ?? segment.value), segment.approximate)
+        : (segment) => formatWeight(segment.value);
       summary.segments.forEach((segment) => {
         const bar = figure.querySelector(`.composition-segment[data-group="${segment.id}"]`);
         if (bar instanceof HTMLElement) { bar.style.flexGrow = String(segment.value); bar.hidden = !(segment.value > 0); }
@@ -2889,13 +2941,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         const name = item.querySelector('[data-composition-label]');
         if (name && segment.id === 'base') name.textContent = translate(segment.label, lang);
         const value = item.querySelector('[data-composition-value]');
-        if (value) value.textContent = segment.value > 0
-          ? (kind === 'price' && segment.high > segment.value ? formatPriceRange(segment.value, segment.high) : format(segment.value))
-          : '—';
+        if (value) value.textContent = segment.value > 0 ? format(segment) : '—';
         const unknown = item.querySelector('[data-composition-unknown]');
         if (unknown instanceof HTMLElement) {
           unknown.hidden = segment.unknown === 0;
-          unknown.textContent = `${segment.unknown} ${translate('unknown', lang)}`;
+          unknown.textContent = translate(`${segment.unknown} unknown`, lang);
         }
       });
     }
@@ -2984,11 +3034,20 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       baseLink.href = base.url;
       baseLink.hidden = Boolean(state.unavailableStartingPoint);
     }
+    const recordedBasePriceLow = numberOrNull(base.priceLow);
+    const recordedBasePriceHigh = numberOrNull(base.priceHigh ?? base.priceLow);
+    const buyerBasePrice = numberOrNull(state.baseCustom.price);
+    const baseCurrency = recordedBasePriceLow === null ? state.baseCustom.priceCurrency || state.currency : 'CNY';
+    const baseShownLow = shownAmount(recordedBasePriceLow ?? buyerBasePrice, baseCurrency);
+    const baseShownHigh = shownAmount(recordedBasePriceHigh ?? buyerBasePrice, baseCurrency);
+    const basePriceLow = baseShownLow?.value ?? null;
+    const basePriceHigh = baseShownHigh?.value ?? basePriceLow;
+    let converted = Boolean(baseShownLow?.converted);
     if (baseFacts) {
-      const lang = document.documentElement.lang;
       const factRows = state.unavailableStartingPoint
         ? [['Requested starting point', state.requestedBaseId]]
-        : buildBaseFactRows(base);
+        : buildBaseFactRows(base).map(([label, value]) => label === 'Recorded price' && converted && basePriceLow !== null
+          ? [label, `${value} · ${formatMoney(basePriceLow, basePriceHigh, true)}`] : [label, value]);
       baseFacts.replaceChildren(...factRows.map(([label, value]) => {
         const item = document.createElement('div');
         const term = document.createElement('dt');
@@ -3005,16 +3064,14 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (summaryKicker) summaryKicker.textContent = isComplete ? 'Purchase + upgrades' : 'Current build';
     if (priceLabel) priceLabel.textContent = isComplete ? 'Purchase + upgrades' : 'Full build price';
     if (weightLabel) weightLabel.textContent = isComplete ? 'Projected weight' : 'Known weight';
+    if (currencySelect instanceof HTMLSelectElement) currencySelect.value = state.currency;
+    root.style.setProperty('--build-currency-glyph', JSON.stringify(currencyGlyphs[state.currency] ?? '¥'));
 
-    const recordedBasePriceLow = numberOrNull(base.priceLow);
-    const recordedBasePriceHigh = numberOrNull(base.priceHigh ?? base.priceLow);
-    const buyerBasePrice = numberOrNull(state.baseCustom.price);
-    const basePriceLow = recordedBasePriceLow ?? buyerBasePrice;
-    const basePriceHigh = recordedBasePriceHigh ?? buyerBasePrice;
     const recordedBaseWeight = numberOrNull(base.baseWeightG);
     const buyerBaseWeight = numberOrNull(state.baseCustom.weight);
     const baseWeightValue = recordedBaseWeight ?? buyerBaseWeight;
     if (basePrice instanceof HTMLInputElement) basePrice.value = state.baseCustom.price;
+    if (basePriceCurrency) basePriceCurrency.textContent = buyerBasePrice === null ? state.currency : state.baseCustom.priceCurrency;
     if (baseWeight instanceof HTMLInputElement) baseWeight.value = state.baseCustom.weight;
     if (baseWeightField?.firstChild?.nodeType === Node.TEXT_NODE) baseWeightField.firstChild.textContent = isComplete ? 'Base bike weight g' : 'Frame-only weight g';
     if (basePriceField instanceof HTMLElement) basePriceField.hidden = recordedBasePriceLow !== null;
@@ -3101,6 +3158,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const recordedPrice = isCustom ? null : numberOrNull(part.priceCny);
       const recordedWeight = isCustom ? null : numberOrNull(part.weightG);
       const buyerPrice = numberOrNull(state.custom[slot].price);
+      const buyerCurrency = state.custom[slot].priceCurrency || state.currency;
       const buyerWeight = numberOrNull(state.custom[slot].weight);
       const removedPartWeight = numberOrNull(state.custom[slot].removedWeight);
       const needsPriceInput = isCustom || recordedPrice === null;
@@ -3111,10 +3169,15 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       if (customValues instanceof HTMLElement) customValues.hidden = false;
       if (customPriceField instanceof HTMLElement) customPriceField.hidden = false;
       const priceLabelNode = row.querySelector('[data-build-price-label]');
-      if (priceLabelNode) priceLabelNode.textContent = translate(quoteOverride ? 'Your quote ¥' : 'Price ¥', document.documentElement.lang);
+      if (priceLabelNode) priceLabelNode.textContent = translate(quoteOverride ? 'Your quote' : 'Price', lang);
+      const priceCurrencyNode = row.querySelector('[data-build-price-currency]');
+      if (priceCurrencyNode) priceCurrencyNode.textContent = buyerCurrency;
       if (customWeightField instanceof HTMLElement) customWeightField.hidden = !needsWeightInput;
       if (removedWeightField instanceof HTMLElement) removedWeightField.hidden = !needsRemovedWeight;
-      const partPrice = quoteOverride ? buyerPrice ?? recordedPrice : buyerPrice;
+      // A quote that cannot be converted stays unresolved rather than falling back to another amount.
+      const shownPrice = buyerPrice !== null ? shownAmount(buyerPrice, buyerCurrency) : quoteOverride ? shownAmount(recordedPrice, 'CNY') : null;
+      const partPrice = shownPrice?.value ?? null;
+      if (shownPrice?.converted) converted = true;
       const partWeight = recordedWeight ?? buyerWeight;
       if (partPrice === null) missingPrices.push(slot);
       else { priceLow += partPrice; priceHigh += partPrice; }
@@ -3131,10 +3194,14 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         }
       } else if (partWeight === null) missingWeights.push(slot);
       else knownWeight += partWeight;
+      // Native amounts stay visible beside any converted display value.
+      const enteredAs = buyerPrice !== null && buyerCurrency !== state.currency ? `Entered as ${nativeMoney(buyerPrice, buyerCurrency)}` : '';
       const basis = isCustom
-        ? `Buyer-entered value${isComplete ? ' · replacement delta needs removed-part weight' : ''}`
+        ? [`Buyer-entered value${isComplete ? ' · replacement delta needs removed-part weight' : ''}`, enteredAs].filter(Boolean).join(' · ')
         : [
-            quoteOverride && buyerPrice !== null ? `Your quote replaces the recorded ${formatYuan(recordedPrice)}` : part.priceDate,
+            quoteOverride && buyerPrice !== null ? `Your quote replaces the recorded ${nativeMoney(recordedPrice, 'CNY')}` : part.priceDate,
+            enteredAs,
+            quoteOverride && buyerPrice === null && shownPrice?.converted ? `Recorded price ${nativeMoney(recordedPrice, 'CNY')}` : '',
             recordedPrice === null && buyerPrice !== null ? 'Buyer-entered price' : part.priceBasis,
             recordedWeight === null && buyerWeight !== null ? 'Buyer-entered weight' : part.weightBasis,
             isComplete && removedPartWeight === null ? 'Removed-part weight required for final weight' : '',
@@ -3144,9 +3211,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const resolvedWeight = isComplete
         ? (partWeight === null || removedPartWeight === null ? null : partWeight - removedPartWeight)
         : partWeight;
-      visualSlots.push({ slot, state: buildSlotState({ price: partPrice, weight: resolvedWeight }), price: partPrice, weight: isComplete ? null : partWeight });
+      visualSlots.push({ slot, state: buildSlotState({ price: partPrice, weight: resolvedWeight }), price: partPrice, priceConverted: Boolean(shownPrice?.converted), weight: isComplete ? null : partWeight });
       setPartFacts(row, {
-        price: partPrice === null ? '—' : formatYuan(partPrice),
+        price: partPrice === null ? '—' : formatMoney(partPrice, partPrice, Boolean(shownPrice?.converted)),
         weight: weightDisplay,
         basis,
         source: isCustom ? null : part.source,
@@ -3158,6 +3225,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       isComplete,
       basePrice: basePriceLow,
       basePriceHigh,
+      basePriceConverted: Boolean(baseShownLow?.converted),
       baseWeight: baseWeightValue === null ? null : baseWeightValue + (packageRemainder ?? 0),
       baseWeightMissing: !isComplete && packageRemainder === null ? 1 : 0,
       slots: visualSlots
@@ -3165,8 +3233,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const impossibleWeight = isComplete && baseWeightValue !== null && removedWeightTotal > baseWeightValue;
     if (impossibleWeight) missingWeights.push('inconsistent removed-part weights');
     if (totalPrice) totalPrice.textContent = missingPrices.length
-      ? `${formatPriceRange(priceLow, priceHigh)} known + ${missingPrices.length} unknown`
-      : formatPriceRange(priceLow, priceHigh);
+      ? `${formatMoney(priceLow, priceHigh, converted)} known + ${missingPrices.length} unknown`
+      : formatMoney(priceLow, priceHigh, converted);
+    if (currencyNote instanceof HTMLElement) currencyNote.hidden = !converted;
     if (totalWeight) totalWeight.textContent = impossibleWeight ? 'Check removed-part weights' : missingWeights.length
       ? `${formatWeight(knownWeight)} ${isComplete ? 'base / known deltas' : 'known'} + ${missingWeights.length} unknown`
       : formatWeight(knownWeight);
@@ -3204,7 +3273,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         compatibility.append(quiet);
       }
     }
-    if (persistState) persist();
+    if (persistState) {
+      persist();
+      draftOwned = true;
+    }
     updateUrl(historyMode);
     return true;
   }
@@ -3216,22 +3288,29 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     state.baseId = baseSelect.value;
     delete state.unavailableStartingPoint;
     delete state.requestedBaseId;
-    state.baseCustom = { price: '', weight: '', packageWeight: '' };
+    state.baseCustom = { price: '', priceCurrency: '', weight: '', packageWeight: '' };
     for (const custom of Object.values(state.custom)) custom.removedWeight = '';
     if (previous?.kind !== next?.kind) {
       state.selections = defaultSelections(next);
-      state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '', removedWeight: '' }]));
+      state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', priceCurrency: '', weight: '', removedWeight: '' }]));
     }
     render({ historyMode: 'push' });
+  });
+  // Changing the planner currency converts displays only; entered amounts keep their own currency.
+  currencySelect?.addEventListener('change', () => {
+    if (!(currencySelect instanceof HTMLSelectElement) || !currencies.includes(currencySelect.value) || currencySelect.value === state.currency) return;
+    state.currency = currencySelect.value;
+    render({ historyMode: 'push', persistState: draftOwned });
   });
   bindHistoryInput(packageWeight, (historyMode) => {
     state.baseCustom.packageWeight = packageWeight.value;
     render({ historyMode });
   });
   bindHistoryInput(basePrice, (historyMode) => {
-    if (basePrice instanceof HTMLInputElement) state.baseCustom.price = basePrice.value;
+    if (basePrice instanceof HTMLInputElement) setMoney(state.baseCustom, basePrice.value);
     render({ historyMode });
   });
+  basePrice?.addEventListener('blur', () => endMoneyEdit(state.baseCustom));
   bindHistoryInput(baseWeight, (historyMode) => {
     if (baseWeight instanceof HTMLInputElement) state.baseCustom.weight = baseWeight.value;
     render({ historyMode });
@@ -3245,14 +3324,15 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     select?.addEventListener('change', () => {
       if (select instanceof HTMLSelectElement && state.selections[slot] !== select.value) {
         state.selections[slot] = select.value;
-        state.custom[slot] = { price: '', weight: '', removedWeight: '' };
+        state.custom[slot] = { price: '', priceCurrency: '', weight: '', removedWeight: '' };
       }
       render({ historyMode: 'push' });
     });
     bindHistoryInput(customPrice, (historyMode) => {
-      if (customPrice instanceof HTMLInputElement) state.custom[slot].price = customPrice.value;
+      if (customPrice instanceof HTMLInputElement) setMoney(state.custom[slot], customPrice.value);
       render({ historyMode });
     });
+    customPrice?.addEventListener('blur', () => endMoneyEdit(state.custom[slot]));
     bindHistoryInput(customWeight, (historyMode) => {
       if (customWeight instanceof HTMLInputElement) state.custom[slot].weight = customWeight.value;
       render({ historyMode });
@@ -3279,7 +3359,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   // Reset clears part choices and entries but keeps the chosen starting point.
   root.querySelector('[data-build-reset]')?.addEventListener('click', () => {
     state.selections = defaultSelections(bases.get(state.baseId) ?? bases.get(firstBaseId));
-    state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '', removedWeight: '' }]));
+    state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', priceCurrency: '', weight: '', removedWeight: '' }]));
     try { localStorage.removeItem(storageKey); } catch { /* URL still resets */ }
     render({ historyMode: 'push' });
   });

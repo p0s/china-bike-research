@@ -842,7 +842,15 @@ export const ru = {
   "tubeless ready": "под бескамерку",
   "unknown": "неизвестно",
   "weight-focused premium buyer": "премиальный покупатель, для которого важен вес",
-  "wheelset": "колёса"
+  "wheelset": "колёса",
+  // Build planner currencies (2026-10-26).
+  "Currency": "Валюта",
+  "Your quote": "Ваша цена",
+  "Base price": "Цена основы",
+  "Recorded price": "Записанная цена",
+  "ECB reference rate": "Справочный курс ЕЦБ",
+  "New amounts use this currency; entered amounts keep their own.": "Новые суммы вводятся в этой валюте; уже введённые сохраняют свою.",
+  "Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.": "Суммы сохраняют валюту, в которой они записаны или введены; ≈ обозначает пересчёт для планирования. Пересчитанные цены в Китае не включают доставку, ввозные пошлины и налоги и не являются ценами с доставкой."
 };
 const t = (value) => translateRussian(value);
 const cap = (value) => value.charAt(0).toUpperCase() + value.slice(1);
@@ -883,7 +891,7 @@ const patterns = [
   [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `Крепление ротора не указано · ${axles} мм`],
   [/^Official direct store · (\d{4}-\d{2}-\d{2})$/, (_, date) => `Официальный интернет-магазин · ${date}`],
   [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `Официальный интернет-магазин · ${date} · ${kind === 'list' ? 'официальная прайсовая цена' : 'официальная продажа'}`],
-  [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `Официальная цена ${amount} (${date}) — не цена в материковом Китае; введите китайскую цену.${rotor ? ' Крепление ротора не указано; уточните его перед выбором роторов.' : ''}`],
+  [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter your purchase quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `Официальная цена ${amount} (${date}) — не цена в материковом Китае; введите свою цену покупки.${rotor ? ' Крепление ротора не указано; уточните его перед выбором роторов.' : ''}`],
   [/^Show (\d+) more research leads$/, (_, n) => `Показать ещё ${n} ${plural(n, 'модель', 'модели', 'моделей')} на стадии исследования`],
   [/^Show (\d+) results$/, (_, n) => `Показать ${n} ${plural(n, 'результат', 'результата', 'результатов')}`],
   [/^Only bikes with a seller listing for (.+)$/, (_, country) => `Только велосипеды с объявлением продавца для направления: ${country}`],
@@ -949,6 +957,8 @@ const patterns = [
   [/^(\d[\d.,]* (?:g|kg)) new$/, (_, weight) => `${weight} новая`],
   [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name}: тип крепления ротора не указан; уточните его перед выбором роторов.`],
   [/^Your quote replaces the recorded (.+)$/, (_, price) => `Ваша цена заменяет записанную сумму ${price}`],
+  [/^Recorded price (.+)$/, (_, price) => `Записанная цена ${price}`],
+  [/^Entered as (.+)$/, (_, price) => `Введено как ${price}`],
   [/^Remove (.+?) from the comparison$/, (_, name) => `Убрать ${name} из сравнения`]
 ];
 const localize = (text) => localizeMeasures(text, 'ru', { kg: 'кг', g: 'г', mm: 'мм' });

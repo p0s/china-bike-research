@@ -72,7 +72,10 @@ export function imageHealthTargets(data = loadDataset()) {
   const groupsetTargets = data.groupsets
     .filter((groupset) => groupset.image?.remote_url)
     .map((groupset) => ({ id: `groupset:${groupset.id}`, url: groupset.image.remote_url }));
-  return [...catalogTargets, ...groupsetTargets];
+  const wheelsetTargets = (data.wheelsets ?? [])
+    .filter((wheelset) => wheelset.image?.remote_url)
+    .map((wheelset) => ({ id: `wheelset:${wheelset.id}`, url: wheelset.image.remote_url }));
+  return [...catalogTargets, ...groupsetTargets, ...wheelsetTargets];
 }
 
 export function filterImageHealthTargets(targets, imageIds) {
@@ -119,7 +122,7 @@ async function main() {
     console.log(`${result.classification.padEnd(18)} ${result.id} — ${detail}`);
   }
   console.log(`\nChecked ${results.length} remote image resources: ${Object.entries(summary).map(([key, count]) => `${count} ${key}`).join(', ')}.`);
-  console.log('Historical third-party sources are excluded when their image records are hidden; displayed images are served locally.');
+  console.log('Historical third-party sources are excluded when their image records are hidden; other displayed images are served locally. A maker host may refuse this script\'s user agent (host-blocked) while serving browsers normally.');
   if (process.argv.includes('--strict') && results.some(isBlockingImageResult)) process.exitCode = 1;
 }
 

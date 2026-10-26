@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1783,
+      "sources": 1787,
       "images": 892,
       "videos": 258,
       "opinions": 13,
@@ -462,9 +462,13 @@
       "ecb-reference-rates-2026-09-23",
       "ecb-reference-rates-2026-10-01",
       "elitewheels-drive-50d-ii-official-2026-10-20",
+      "elitewheels-drive-50d-ii-official-2026-10-26",
       "elitewheels-drive-g36-official-2026-10-20",
+      "elitewheels-drive-g36-official-2026-10-26",
       "elitewheels-marvel-50d-ii-official-2026-10-20",
+      "elitewheels-marvel-50d-ii-official-2026-10-26",
       "elitewheels-marvel-g35-brochure-2026-08-27",
+      "elitewheels-terms-2026-10-26",
       "elro-f1-photo-source-2026-10-03",
       "elves-falath-evo-frameset-official-2026-08-17",
       "elves-falath-evo-official-2026-08-17",
@@ -12203,6 +12207,17 @@
         "type",
         "url"
       ],
+      "elitewheels-drive-50d-ii-official-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image_rights",
+        "title",
+        "type",
+        "url"
+      ],
       "elitewheels-drive-g36-official-2026-10-20": [
         "accessed_at",
         "language",
@@ -12211,6 +12226,17 @@
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "elitewheels-drive-g36-official-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image_rights",
         "title",
         "type",
         "url"
@@ -12227,6 +12253,17 @@
         "type",
         "url"
       ],
+      "elitewheels-marvel-50d-ii-official-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image_rights",
+        "title",
+        "type",
+        "url"
+      ],
       "elitewheels-marvel-g35-brochure-2026-08-27": [
         "accessed_at",
         "language",
@@ -12235,6 +12272,16 @@
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "elitewheels-terms-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.image_rights",
         "title",
         "type",
         "url"
@@ -69913,6 +69960,24 @@
         "compatibility.freehubs",
         "compatibility.rotor_mount",
         "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.remote_url",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.terms_source_id",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_bytes",
+        "image.source_media_sha256",
+        "image.subject_accuracy",
+        "image.width",
         "load_limit.kg",
         "load_limit.note",
         "load_limit.scope",
@@ -69948,6 +70013,24 @@
         "compatibility.freehubs",
         "compatibility.rotor_mount",
         "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.remote_url",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.terms_source_id",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_bytes",
+        "image.source_media_sha256",
+        "image.subject_accuracy",
+        "image.width",
         "load_limit.kg",
         "load_limit.note",
         "load_limit.scope",
@@ -69983,6 +70066,24 @@
         "compatibility.freehubs",
         "compatibility.rotor_mount",
         "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.remote_url",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.terms_source_id",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_bytes",
+        "image.source_media_sha256",
+        "image.subject_accuracy",
+        "image.width",
         "load_limit.kg",
         "load_limit.note",
         "load_limit.scope",
@@ -117737,9 +117838,13 @@
       "ecb-reference-rates-2026-09-23": [],
       "ecb-reference-rates-2026-10-01": [],
       "elitewheels-drive-50d-ii-official-2026-10-20": [],
+      "elitewheels-drive-50d-ii-official-2026-10-26": [],
       "elitewheels-drive-g36-official-2026-10-20": [],
+      "elitewheels-drive-g36-official-2026-10-26": [],
       "elitewheels-marvel-50d-ii-official-2026-10-20": [],
+      "elitewheels-marvel-50d-ii-official-2026-10-26": [],
       "elitewheels-marvel-g35-brochure-2026-08-27": [],
+      "elitewheels-terms-2026-10-26": [],
       "elro-f1-photo-source-2026-10-03": [],
       "elves-falath-evo-frameset-official-2026-08-17": [],
       "elves-falath-evo-official-2026-08-17": [],
@@ -124522,13 +124627,19 @@
         "source_ids=9velo-cd-wide-series-2025-official-2026-10-26"
       ],
       "elitewheels-drive-50d-ii": [
-        "source_ids=elitewheels-drive-50d-ii-official-2026-10-20"
+        "image.source_id=elitewheels-drive-50d-ii-official-2026-10-26",
+        "source_ids=elitewheels-drive-50d-ii-official-2026-10-20",
+        "source_ids=elitewheels-drive-50d-ii-official-2026-10-26"
       ],
       "elitewheels-drive-g36": [
-        "source_ids=elitewheels-drive-g36-official-2026-10-20"
+        "image.source_id=elitewheels-drive-g36-official-2026-10-26",
+        "source_ids=elitewheels-drive-g36-official-2026-10-20",
+        "source_ids=elitewheels-drive-g36-official-2026-10-26"
       ],
       "elitewheels-marvel-50d-ii": [
-        "source_ids=elitewheels-marvel-50d-ii-official-2026-10-20"
+        "image.source_id=elitewheels-marvel-50d-ii-official-2026-10-26",
+        "source_ids=elitewheels-marvel-50d-ii-official-2026-10-20",
+        "source_ids=elitewheels-marvel-50d-ii-official-2026-10-26"
       ],
       "farsports-evo-c6-2026": [
         "image.source_id=farsports-evo-c-series-2026-official-2026-10-26",
@@ -136602,12 +136713,26 @@
         "specification": 3
       }
     },
+    "elitewheels-drive-50d-ii-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image_rights": 3
+      }
+    },
     "elitewheels-drive-g36-official-2026-10-20": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "elitewheels-drive-g36-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image_rights": 3
       }
     },
     "elitewheels-marvel-50d-ii-official-2026-10-20": {
@@ -136618,12 +136743,25 @@
         "specification": 3
       }
     },
+    "elitewheels-marvel-50d-ii-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image_rights": 3
+      }
+    },
     "elitewheels-marvel-g35-brochure-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "elitewheels-terms-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "image_rights": 3
       }
     },
     "elro-f1-photo-source-2026-10-03": {

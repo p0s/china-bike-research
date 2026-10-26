@@ -87,7 +87,7 @@ test('build planner offers each wheelset with weight and fit but no invented Chi
     assert.equal(part.priceCny, null);
     assert.equal(part.weightG, wheelset.weight.grams);
     assert.deepEqual(part.compatibility.freehubs, wheelset.compatibility.freehubs);
-    assert.match(part.note, /is not a mainland China price; enter a China quote\./);
+    assert.match(part.note, /is not a mainland China price; enter your purchase quote\./);
     assert.equal(part.note.includes('Rotor mount is not stated'), wheelset.compatibility.rotor_mount === null);
   }
 });
@@ -116,8 +116,31 @@ test('the wheel table stays the default while use, sort, gallery and photo size 
   assert.match(reviewedEntry, /<h3>Independent reviews<\/h3>/);
   assert.ok(withWheelset(reviewed.id, (wheelset) => { wheelset.independent_evidence = [{ source_id: 'not-a-listed-source', summary: 'A review summary that is long enough.' }]; })
     .some((error) => error.includes('independent evidence must cite a listed source')));
-  // Every image-bearing wheelset shows a linked local photo with alt text.
+  // Every image-bearing wheelset shows a linked photo with alt text: a local derivative,
+  // or the maker's own file loaded from the maker's site without a referrer.
   for (const wheelset of data.wheelsets.filter((item) => item.image)) {
-    assert.match(html, new RegExp(`<img src="/china-bike-research${wheelset.image.local_path}"[^>]*alt="[^"]{10,}"`), wheelset.id);
+    const src = wheelset.image.local_path ? `/china-bike-research${wheelset.image.local_path}` : wheelset.image.remote_url;
+    const tag = html.match(new RegExp(`<img src="${src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`))?.[0] ?? '';
+    assert.match(tag, /alt="[^"]{10,}"/, wheelset.id);
+    if (!wheelset.image.local_path) assert.match(tag, /referrerpolicy="no-referrer"/, wheelset.id);
   }
+});
+
+test('a maker-hosted wheelset photo stays on the official host with its reviewed terms and file hash', () => {
+  const remote = data.wheelsets.filter((wheelset) => wheelset.image?.remote_url);
+  assert.deepEqual(remote.map((wheelset) => wheelset.id).sort(), ['elitewheels-drive-50d-ii', 'elitewheels-drive-g36', 'elitewheels-marvel-50d-ii']);
+  for (const wheelset of remote) {
+    assert.equal(wheelset.image.rights.status, 'official-page-embed', wheelset.id);
+    assert.equal(wheelset.image.local_path, undefined, wheelset.id);
+    assert.equal(new URL(wheelset.image.remote_url).hostname, 'www.elite-wheels.com', wheelset.id);
+  }
+  const id = remote[0].id;
+  const rejects = (mutate, message) => assert.ok(withWheelset(id, mutate).some((error) => error.includes(message)), message);
+  rejects((wheelset) => { wheelset.image.remote_url = 'https://cdn.example.com/wheel.webp'; }, 'must load from its official source page');
+  rejects((wheelset) => { wheelset.image.remote_url = 'http://www.elite-wheels.com/wp-content/uploads/wheel.webp'; }, 'plain HTTPS file URL');
+  rejects((wheelset) => { delete wheelset.image.rights.terms_source_id; }, 'reviewed terms source');
+  rejects((wheelset) => { wheelset.image.rights.status = 'source-attributed-rehost'; }, 'incomplete image rights record');
+  rejects((wheelset) => { wheelset.image.local_path = '/assets/images/sourced/official/x/0000000000000000-detail-w1200.avif'; }, 'must not also carry local_path');
+  rejects((wheelset) => { delete wheelset.image.source_media_sha256; }, "reviewed file's hash and size");
+  rejects((wheelset) => { wheelset.image.privacy_review.visual = 'unreviewed'; }, 'incomplete image privacy review');
 });
