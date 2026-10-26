@@ -68,6 +68,8 @@ if (root instanceof HTMLElement && toolbar instanceof HTMLElement && table insta
     sizeSteps.forEach((button) => {
       button.disabled = button.dataset.wheelsSizeStep === '1' ? columns <= 1 : columns >= max;
     });
+    // A step that just reached its limit hands keyboard focus to the other step instead of dropping it.
+    if (sizeSteps.some((button) => button.disabled && button === document.activeElement)) sizeSteps.find((button) => !button.disabled)?.focus();
   }
 
   function render() {

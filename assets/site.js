@@ -5,7 +5,7 @@ import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
 import { priceDisplay, deliveredLine, pricePopoverLines, compactPriceBasis } from './price-display.js';
 import { clearanceParts, weightParts, catalogClearance } from './catalog-format.js';
-import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
+import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, isExplicitBuildUrl, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
@@ -845,10 +845,21 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     try {
       const target = new URL(returnPath, location.origin);
       const expectedRoot = `${base}/`;
-      if (target.origin === location.origin && target.pathname === expectedRoot) {
+      // Spanish and Russian cover only the core tools, so their catalog links lead to the English model page.
+      const interfaceNotes = {
+        es: 'Esta ficha solo está disponible en inglés, chino y alemán. El enlace de arriba vuelve a tu catálogo en español.',
+        ru: 'Эта страница доступна только на английском, китайском и немецком. Ссылка выше вернёт вас к каталогу на русском.'
+      };
+      const interfaceLocale = document.body.dataset.locale === 'en'
+        ? Object.keys(interfaceNotes).find((code) => target.pathname === `${base}/${code}/`) : undefined;
+      if (target.origin === location.origin && (target.pathname === expectedRoot || interfaceLocale)) {
         validatedReturnTarget = target;
         catalogBack.href = `${target.pathname}${target.search}${target.hash || '#catalog'}`;
         catalogBack.textContent = '← Back to filtered catalog';
+        if (interfaceLocale) {
+          const note = Object.assign(document.createElement('p'), { className: 'language-scope-note', lang: interfaceLocale, textContent: interfaceNotes[interfaceLocale] });
+          catalogBack.closest('.breadcrumbs')?.after(note);
+        }
       }
     } catch { /* keep the safe all-bikes link */ }
   }
@@ -926,6 +937,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const catalogData = document.querySelector('#catalog-data');
   if (!catalogRoot || !catalogData) return;
   document.body.classList.add('is-catalog-page');
+  // The tray stays fixed on screen; in keyboard order it follows the result controls instead of the footer.
+  const resultBarForTray = catalogRoot.querySelector('.result-bar');
+  const trayForOrder = document.querySelector('[data-compare-tray]');
+  if (resultBarForTray && trayForOrder) resultBarForTray.after(trayForOrder);
 
   const regionalDataElement = document.querySelector('#regional-price-data');
   const regionalDataPromise = (async () => {
@@ -1043,7 +1058,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const settingsPanel = document.querySelector('[data-settings-panel]');
   const reset = catalogRoot.querySelector('[data-reset]');
   const showAllModels = catalogRoot.querySelector('[data-show-all-models]');
-  const hiddenLeadCount = Number(catalogRoot.dataset.hiddenLeads || 0);
   const modelLinks = [...catalogRoot.querySelectorAll('[data-model-link]')];
   const typeButtons = [...catalogRoot.querySelectorAll('[data-type-value]')];
   const brandButtons = [...catalogRoot.querySelectorAll('[data-brand-filter]')];
@@ -1097,6 +1111,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const larger = button.dataset.gallerySizeStep === '1';
       button.disabled = larger ? columns <= 1 : columns >= max;
     });
+    // A step that just reached its limit hands keyboard focus to the slider instead of dropping it.
+    if (gallerySizeSteps.some((button) => button.disabled && button === document.activeElement)) (gallerySize instanceof HTMLInputElement && !gallerySize.disabled ? gallerySize : gallerySizeSteps.find((button) => !button.disabled))?.focus();
     const cardWidth = Math.max(1, Math.ceil((productList.clientWidth - gap * (columns - 1)) / columns));
     rows.forEach((row) => {
       const image = row.querySelector('.product-image-link > img');
@@ -1261,8 +1277,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       cell?.querySelector('[data-china-difference]')?.remove();
       row.dataset.hasListing = 'false';
       if (item.priceUnavailable) {
-        row.dataset.priceSort = '';
-        row.dataset.priceSortHigh = '';
+        // A conditional or reference amount that the row still shows sorts by that amount,
+        // converted only for ordering; it never qualifies for a budget filter.
+        const shownLow = convertPrice(numberOrNull(item.priceLowCny), 'CNY', currency, regionalData.rates);
+        const shownHigh = convertPrice(numberOrNull(item.priceHighCny ?? item.priceLowCny), 'CNY', currency, regionalData.rates);
+        row.dataset.priceSort = Number.isFinite(shownLow) ? String(shownLow) : '';
+        row.dataset.priceSortHigh = Number.isFinite(shownHigh) ? String(shownHigh) : '';
         row.dataset.priceFilter = '';
         return;
       }
@@ -1348,6 +1368,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const details = String(original.details).replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`);
       item.priceDetails = [details, ...lines].filter(Boolean).join(' ');
     });
+    // A strict delivered budget matches nothing where no delivered total is recorded; say so instead of silently emptying the list.
+    const budgetable = domestic || rows.some((row) => row.dataset.priceFilter !== '');
+    if (!budgetable && budgetHelp) budgetHelp.textContent = translate('No delivered totals are recorded for this destination yet, so a budget here matches no bike.', locale);
+    if (price instanceof HTMLInputElement) price.disabled = !budgetable && !price.value;
     catalogRoot.dataset.activeShipCountry = activeCountry || 'unknown';
     catalogRoot.dataset.activePriceCurrency = currency;
     updateSettingsSummary();
@@ -1915,6 +1939,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     leadDivider.hidden = !firstLead;
     if (firstLead) productList?.insertBefore(leadDivider, firstLead);
     if (resultCount) resultCount.textContent = String(visible);
+    // The noun follows the count in every language (Russian has three plural forms).
+    const resultNoun = catalogRoot.querySelector('[data-result-noun]');
+    if (resultNoun) resultNoun.textContent = translate(`${visible} ${visible === 1 ? 'model' : 'models'}`, locale).replace(/^\s*\d+\s*/, '');
     if (sheetResultCount) sheetResultCount.textContent = translate(`Show ${visible} results`, locale);
     if (resultCoverage) {
       const visiblePublished = matching.filter((row) => row.dataset.stage !== 'candidate').length;
@@ -1930,8 +1957,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (visible === 0) renderEmptySuggestions(chips);
     if (reset) reset.hidden = !hasFilters();
     if (showAllModels instanceof HTMLButtonElement) {
+      // Offer only the hidden models that would match the current filters; hide the offer when none would.
+      const hiddenMatching = allModelsVisible ? 0 : rows.filter((row) => !rowInScope(row) && matchesQuery(row) && matchesPrimaryContext(row) && matchesTypedFilters(row)).length;
       showAllModels.setAttribute('aria-pressed', String(allModelsVisible));
-      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenLeadCount} more models`, locale);
+      showAllModels.hidden = !allModelsVisible && hiddenMatching === 0;
+      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenMatching} more ${hiddenMatching === 1 ? 'model' : 'models'}`, locale);
     }
     if (historyMode) updateFilterUrl(historyMode);
     else if (tireUnknownCleared || categoryFilterCleared || sortCorrected) updateFilterUrl('replace');
@@ -2807,7 +2837,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       for (const [field, value] of [['price', custom.price], ['weight', custom.weight], ['removed', custom.removedWeight]]) {
         const key = `${field}-${slot}`;
         const recordedValue = field === 'price' ? numberOrNull(part?.priceCny) : field === 'weight' ? numberOrNull(part?.weightG) : null;
-        const relevant = !['included', 'in-base'].includes(selection) && (field === 'removed' ? base?.kind === 'complete-bike' : selection === 'custom' || recordedValue === null);
+        const relevant = !['included', 'in-base'].includes(selection) && (field === 'removed' ? base?.kind === 'complete-bike' : field === 'price' || selection === 'custom' || recordedValue === null);
         if (relevant && value !== '') target.searchParams.set(key, value);
         else target.searchParams.delete(key);
       }
@@ -2933,7 +2963,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     todo.hidden = !missingPrices.length && !missingWeights.filter((entry) => entry !== 'inconsistent removed-part weights').length;
   }
 
-  function render({ historyMode = 'replace' } = {}) {
+  function render({ historyMode = 'replace', persistState = true } = {}) {
     const base = bases.get(state.baseId) || data.bases[0];
     if (!base) return;
     const isComplete = base.kind === 'complete-bike';
@@ -3069,13 +3099,17 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const buyerWeight = numberOrNull(state.custom[slot].weight);
       const removedPartWeight = numberOrNull(state.custom[slot].removedWeight);
       const needsPriceInput = isCustom || recordedPrice === null;
+      // A recorded package price is a dated observation; the buyer may replace it with an exact quote.
+      const quoteOverride = !needsPriceInput;
       const needsWeightInput = isCustom || recordedWeight === null;
       const needsRemovedWeight = isComplete;
-      if (customValues instanceof HTMLElement) customValues.hidden = !needsPriceInput && !needsWeightInput && !needsRemovedWeight;
-      if (customPriceField instanceof HTMLElement) customPriceField.hidden = !needsPriceInput;
+      if (customValues instanceof HTMLElement) customValues.hidden = false;
+      if (customPriceField instanceof HTMLElement) customPriceField.hidden = false;
+      const priceLabelNode = row.querySelector('[data-build-price-label]');
+      if (priceLabelNode) priceLabelNode.textContent = translate(quoteOverride ? 'Your quote ¥' : 'Price ¥', document.documentElement.lang);
       if (customWeightField instanceof HTMLElement) customWeightField.hidden = !needsWeightInput;
       if (removedWeightField instanceof HTMLElement) removedWeightField.hidden = !needsRemovedWeight;
-      const partPrice = recordedPrice ?? buyerPrice;
+      const partPrice = quoteOverride ? buyerPrice ?? recordedPrice : buyerPrice;
       const partWeight = recordedWeight ?? buyerWeight;
       if (partPrice === null) missingPrices.push(slot);
       else { priceLow += partPrice; priceHigh += partPrice; }
@@ -3095,7 +3129,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const basis = isCustom
         ? `Buyer-entered value${isComplete ? ' · replacement delta needs removed-part weight' : ''}`
         : [
-            part.priceDate,
+            quoteOverride && buyerPrice !== null ? `Your quote replaces the recorded ${formatYuan(recordedPrice)}` : part.priceDate,
             recordedPrice === null && buyerPrice !== null ? 'Buyer-entered price' : part.priceBasis,
             recordedWeight === null && buyerWeight !== null ? 'Buyer-entered weight' : part.weightBasis,
             isComplete && removedPartWeight === null ? 'Removed-part weight required for final weight' : '',
@@ -3165,7 +3199,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         compatibility.append(quiet);
       }
     }
-    persist();
+    if (persistState) persist();
     updateUrl(historyMode);
     return true;
   }
@@ -3250,7 +3284,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     render();
   });
 
-  if (!render()) return;
+  // Opening a shared link shows its state without overwriting the visitor's saved draft until they edit.
+  if (!render({ persistState: !isExplicitBuildUrl(data, new URLSearchParams(location.search)) })) return;
   root.disabled = false;
   const previewStatus = document.querySelector('[data-build-preview-status]');
   previewStatus?.classList.add('is-ready');

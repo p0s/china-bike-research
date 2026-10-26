@@ -271,10 +271,15 @@ test('bike builder persists shareable state and avoids package double counting',
   assert.match(script, /target\.searchParams\.delete\('frame'\)/);
   assert.match(script, /target\.searchParams\.set\(`part-\$\{slot\}`, selection\)/);
   assert.match(script, /localStorage\.setItem\(storageKey, JSON\.stringify\(state\)\)/);
-  assert.match(script, /const partPrice = recordedPrice \?\? buyerPrice/);
+  // A recorded package price stays editable: the buyer's exact quote replaces it.
+  assert.match(script, /const partPrice = quoteOverride \? buyerPrice \?\? recordedPrice : buyerPrice/);
+  assert.match(script, /quoteOverride \? 'Your quote ¥' : 'Price ¥'/);
   assert.match(script, /const partWeight = recordedWeight \?\? buyerWeight/);
   assert.match(script, /recordedPrice === null && buyerPrice !== null \? 'Buyer-entered price'/);
-  assert.match(script, /customPriceField\.hidden = !needsPriceInput/);
+  assert.match(script, /customPriceField\.hidden = false/);
+  // Opening a shared link must not overwrite the saved draft until the visitor edits.
+  assert.match(script, /render\(\{ persistState: !isExplicitBuildUrl\(data, new URLSearchParams\(location\.search\)\) \}\)/);
+  assert.match(script, /if \(persistState\) persist\(\);/);
   assert.match(script, /customWeightField\.hidden = !needsWeightInput/);
   assert.match(script, /removedWeightField\.hidden = !needsRemovedWeight/);
   assert.match(script, /const delta = partWeight - removedPartWeight/);
@@ -284,6 +289,7 @@ test('bike builder persists shareable state and avoids package double counting',
   assert.match(compatibilitySource, /nominal_tire_width_mm/);
   assert.match(compatibilitySource, /tires exceed the frame's published/);
   assert.match(compatibilitySource, /the selected wheelset does not list it/);
+  assert.match(compatibilitySource, /does not state its rotor mount; confirm it before choosing rotors/);
   assert.match(styles, /\.builder-summary \{[\s\S]*?position: sticky;/);
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.builder-summary \{[\s\S]*?position: sticky;/);
 });

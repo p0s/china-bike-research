@@ -62,11 +62,13 @@ test('wheelset videos are exact, capped and embedded only inside their own row d
   for (const wheelset of data.wheelsets) {
     const entry = html.match(new RegExp(`<tbody class="groupset-entry" id="${wheelset.id}"[\\s\\S]*?</tbody>`))[0];
     for (const video of wheelsetVideos) {
-      assert.equal(entry.includes(`youtube-nocookie.com/embed/${video.youtube_video_id}`), video.target.wheelset_id === wheelset.id, `${video.id} in ${wheelset.id}`);
+      assert.equal(entry.includes(`data-article-video="${video.youtube_video_id}"`), video.target.wheelset_id === wheelset.id, `${video.id} in ${wheelset.id}`);
     }
   }
   assert.doesNotMatch(html, /youtube\.com\/embed|autoplay=1/);
-  assert.match(html, /<details class="groupset-row-details">[\s\S]*?<section class="wheelset-videos"><h3>Videos<\/h3>[\s\S]*?loading="lazy"/);
+  // Closed rows must not contact YouTube: players are created only after activation.
+  assert.doesNotMatch(html, /<iframe/);
+  assert.match(html, /<details class="groupset-row-details">[\s\S]*?<section class="wheelset-videos"><h3>Videos<\/h3>[\s\S]*?<button class="video-load-button"/);
 });
 
 test('carbon wheels reference is localized and linked from every page', () => {

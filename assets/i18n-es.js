@@ -1,4 +1,5 @@
 import { registerTranslator } from './i18n.js';
+import { isMeasure, localizeMeasures } from './i18n-format.js';
 // Interface translations for the core interactive routes. Keys are exact English
 // display text, never data IDs. Model verdicts, detailed evidence, source titles and
 // seller wording without a reviewed translation stay in their original language.
@@ -28,6 +29,7 @@ export const es = {
   "A 75 mm 46T unit and 93 mm 52T unit are not interchangeable specifications.": "Una unidad de 75 mm y 46T y otra de 93 mm y 52T no son especificaciones intercambiables.",
   "A concise comparison of bicycles and frame builds available to riders in China.": "Una comparación concisa de bicicletas y montajes sobre cuadro disponibles para ciclistas en China.",
   "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.": "Una observación fechada de la tienda oficial directa en su moneda original. No es un precio de China continental; envío, aranceles e impuestos siguen las condiciones indicadas por la tienda.",
+  "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions. Price sorting converts other currencies to US dollars with the dated ECB rate only to order the rows.": "Una observación fechada de la tienda oficial directa en su moneda original. No es un precio de China continental; envío, aranceles e impuestos siguen las condiciones indicadas por la tienda. Para ordenar por precio, las demás divisas se convierten a dólares estadounidenses con el tipo del BCE fechado, solo para ordenar las filas.",
   "A front and rear pair unless the selected package explicitly includes them.": "Un par delantero y trasero, salvo que el paquete elegido los incluya explícitamente.",
   "A large-set label is not normalized. Dated ¥4,150 and ¥4,200 observations describe a large package without rotors. The retained ¥3,570 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it.": "La etiqueta de «juego grande» no está normalizada. Las observaciones fechadas de ¥4.150 y ¥4.200 describen un paquete grande sin discos. La pista conservada de ¥3.570 por electrónica más pinzas está sin resolver: la página citada no la reproduce.",
   "A pair whose installed width stays within the frame and rim limits.": "Un par cuyo ancho montado quede dentro de los límites del cuadro y la llanta.",
@@ -38,6 +40,7 @@ export const es = {
   "A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.": "Un límite de sistema incluye ciclista, bicicleta y equipaje cuando el fabricante lo indica; si no, el alcance se muestra tal como se publica.",
   "A usable conversion needs the matching right shift/brake lever, left brake lever, RD battery and charger, 10-51T cassette, chain, crank/chainring and hydraulic brakes.": "Una conversión utilizable necesita la maneta derecha de cambio y freno correspondiente, la maneta de freno izquierda, la batería del cambio y el cargador, cassette 10-51T, cadena, bielas o plato y frenos hidráulicos.",
   "AXS app supports setup, personalization, battery state and firmware.": "La app AXS permite configuración, personalización, estado de batería y firmware.",
+  "Active filters": "Filtros activos",
   "Add or correct a bike": "Añadir o corregir una bicicleta",
   "Add to comparison": "Añadir a la comparación",
   "Added to comparison": "Añadida a la comparación",
@@ -45,7 +48,9 @@ export const es = {
   "Aero road": "Carretera aero",
   "Aero road / all-road": "Carretera aero / all-road",
   "Aero road frame · 38 mm documented clearance · dated price": "Cuadro de carretera aero · 38 mm de paso documentado · precio fechado",
+  "Aero road frame · 38 mm documented clearance, 1× on two of three · dated price": "Cuadro de carretera aero · 38 mm de paso documentado, solo 1× en dos de tres · precio fechado",
   "Aero, wide clearance": "Aero con gran paso de rueda",
+  "Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price. Two of the three reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan.": "Cuadros de carretera de forma aerodinámica con 38 mm de paso documentado y un precio fechado de cuadro o de montaje completo. Dos de los tres solo alcanzan 38 mm con transmisión 1× (32–34 mm con 2×); las estimaciones de montaje usan el plan de montaje elegido.",
   "Affordable carbon aero": "Aero de carbono asequible",
   "Alaska / Hawaii / territories": "Alaska / Hawái / territorios",
   "All": "Todo",
@@ -131,6 +136,7 @@ export const es = {
   "Category minimum": "Mínimo de categoría",
   "Chain": "Cadena",
   "Check compatibility": "Comprueba la compatibilidad",
+  "Check fit in the Build planner": "Comprobar compatibilidad en el planificador de montaje",
   "Check removed-part weights": "Revisa los pesos de las piezas retiradas",
   "China": "China",
   "China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.": "China Bikes compara opciones chinas de carretera, gravel y bicicletas de carbono con precios fechados del mercado chino, especificaciones documentadas y estimaciones transparentes de montaje sobre cuadro.",
@@ -432,6 +438,7 @@ export const es = {
   "Listed option": "Opción anunciada",
   "Listing": "Anuncio",
   "Load limit": "Límite de carga",
+  "Load video": "Cargar vídeo",
   "Long-term review": "Prueba a largo plazo",
   "Low": "Baja",
   "Low confidence": "Confianza baja",
@@ -497,6 +504,7 @@ export const es = {
   "No bikes match these filters.": "Ninguna bicicleta coincide con estos filtros.",
   "No comparable price": "Sin precio comparable",
   "No conflict in the recorded checks.": "Sin conflictos en las comprobaciones registradas.",
+  "No delivered totals are recorded for this destination yet, so a budget here matches no bike.": "Aún no hay totales con entrega para este destino, así que un presupuesto aquí no coincide con ninguna bicicleta.",
   "No electronic wire route; verify XDR wheel and DUB/crank compatibility": "Sin paso de cable electrónico; verifica la rueda XDR y la compatibilidad DUB/bielas",
   "No internal battery or electronic wire route; verify front-derailleur mount for 2x": "Sin batería interna ni paso de cable electrónico; verifica el anclaje del desviador delantero en 2x",
   "No internal electronic wire route; verify cage clearance and selected hanger version": "Sin paso interno de cable electrónico; verifica la holgura de la jaula y la versión de patilla elegida",
@@ -621,6 +629,7 @@ export const es = {
   "Road-biased gravel and all-road 2x12 with a chain stabilizer": "Gravel orientado a carretera y all-road 2x12 con estabilizador de cadena",
   "SR+ 2× review: ~32.5 mm measured, little room": "Prueba de SR+ 2×: ~32,5 mm medidos, poca holgura",
   "Saddle": "Sillín",
+  "Sale price": "Precio rebajado",
   "Same price in China": "Mismo precio en China",
   "Search bikes": "Buscar bicicletas",
   "Search model, brand, drivetrain or 中文名": "Busca modelo, marca, transmisión o 中文名",
@@ -753,6 +762,7 @@ export const es = {
   "Video sections": "Secciones del vídeo",
   "Videos": "Vídeos",
   "Warranty": "Garantía",
+  "Watch on YouTube": "Ver en YouTube",
   "Weight": "Peso",
   "Weight and limits": "Peso y límites",
   "Weight basis": "Base del peso",
@@ -771,6 +781,7 @@ export const es = {
   "Wireless Di2 control; Automatic Impact Recovery and SHADOW ES-style protection are part of the current rear-derailleur family.": "Control Di2 inalámbrico; Automatic Impact Recovery y una protección tipo SHADOW ES forman parte de la familia actual de cambios traseros.",
   "XDR for the normal 10T-start road cassettes": "XDR para los cassettes de carretera normales que empiezan en 10T",
   "Yes": "Sí",
+  "Your quote ¥": "Tu presupuesto ¥",
   "aero road": "carretera aero",
   "bare frame": "cuadro sin pintar",
   "base / known deltas": "base / diferencias conocidas",
@@ -779,8 +790,10 @@ export const es = {
   "budget custom builder": "constructor a medida con poco presupuesto",
   "cable-brake shift groupset": "grupo de cambio para frenos de cable",
   "carbon": "carbono",
+  "complete bike package": "bicicleta completa",
   "conditional": "condicionado",
   "delivered": "entregado",
+  "delta unknown": "diferencia desconocida",
   "drop-bar": "manillar de carretera",
   "eRX is the carbon flagship; eR9 is the lower-cost aluminium entry system with separate calipers.": "eRX es el buque insignia de carbono; eR9 es el sistema de entrada de aluminio, más económico, con pinzas aparte.",
   "electronic": "electrónico",
@@ -801,6 +814,7 @@ export const es = {
   "manufacturer-direct global store": "tienda global directa del fabricante",
   "mechanical": "mecánico",
   "mid-price gravel racer": "corredor de gravel de gama media",
+  "model": "modelo",
   "models": "modelos",
   "modern custom builder": "constructor a medida moderno",
   "more in China": "más en China",
@@ -815,6 +829,7 @@ export const es = {
   "risk-tolerant budget builder": "constructor económico que acepta riesgos",
   "road": "carretera",
   "selected": "seleccionadas",
+  "selected · choose one more to compare": "seleccionada · elige otra más para comparar",
   "stock": "de serie",
   "suggested": "sugerido",
   "this bike": "esta bicicleta",
@@ -828,7 +843,7 @@ export const es = {
 const t = (value) => translateSpanish(value);
 const cap = (value) => value.charAt(0).toUpperCase() + value.slice(1);
 const patterns = [
-  [/^Show (\d+) more models$/, (_, n) => `Mostrar ${n} modelos más`],
+  [/^Show (\d+) more models?$/, (_, n) => n === '1' ? 'Mostrar 1 modelo más' : `Mostrar ${n} modelos más`],
   [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${t(value)} — ${t(label)}`],
   [/^(.+) — filter catalog to this brand$/, (_, name) => `${name} — filtrar el catálogo por esta marca`],
   [/^(.+) — remove brand filter$/, (_, name) => `${name} — quitar el filtro de marca`],
@@ -846,10 +861,10 @@ const patterns = [
   [/^(from )?(€|US\$|£)([\d,.]+) official store · (\d{4}-\d{2}-\d{2})$/, (_, from, symbol, amount, date) => `${from ? 'desde ' : ''}${symbol}${amount} tienda oficial · ${date}`],
   [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Precio observado el ${date}.`],
   [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Precio histórico observado el ${date}.`],
-  [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · ${width} mm interior`],
+  [/^(\d+(?:\.\d+)?(?:\/\d+(?:\.\d+)?)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · ${width} mm interior`],
   [/^(\d+) kg system limit$/, (_, kg) => `límite del sistema ${kg} kg`],
   [/^(\d+) kg rider limit$/, (_, kg) => `límite del ciclista ${kg} kg`],
-  [/^(\d+) kg limit, scope not stated$/, (_, kg) => `límite de ${kg} kg, alcance no indicado`],
+  [/^(\d+) kg limit, scope not stated$/, (_, kg) => `límite de ${kg} kg, tipo de límite no indicado`],
   [/^Center Lock · (.+) mm$/, (_, axles) => `Center Lock · ${axles} mm`],
   [/^6-bolt · (.+) mm$/, (_, axles) => `6 tornillos · ${axles} mm`],
   [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `Anclaje de disco no indicado · ${axles} mm`],
@@ -857,7 +872,7 @@ const patterns = [
   [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `Tienda oficial directa · ${date} · ${kind === 'list' ? 'precio oficial de lista' : 'venta directa oficial'}`],
   [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `El precio oficial directo de ${amount} (${date}) no es un precio de China continental; introduce un presupuesto de China.${rotor ? ' El anclaje de disco no está indicado; confírmalo antes de elegir discos.' : ''}`],
   [/^Show (\d+) more research leads$/, (_, n) => `Mostrar ${n} pistas de investigación más`],
-  [/^Show (\d+) results$/, (_, n) => `Mostrar ${n} resultados`],
+  [/^Show (\d+) results$/, (_, n) => n === '1' ? 'Mostrar 1 resultado' : `Mostrar ${n} resultados`],
   [/^Only bikes with a seller listing for (.+)$/, (_, country) => `Solo bicicletas con un anuncio de vendedor para ${country}`],
   [/^frame ([^·+]+) \+ ([^·]+) plan$/, (_, frame, amount) => `cuadro ${frame} + plan ${amount}`],
   [/^frame ([^·+]+) \+ plan$/, (_, frame) => `cuadro ${frame} + plan`],
@@ -909,17 +924,27 @@ const patterns = [
   [/^Theme: (System|Light|Dark)(?:\. Switch to (system|light|dark) theme)?$/, (_, mode, next) => `Tema: ${t(mode)}${next ? `. Cambiar al tema ${t(cap(next)).toLowerCase()}` : ''}`],
   [/^View the official (.+) product page$/, (_, name) => `Ver la página oficial del producto de ${name}`],
   [/^Image: (.+)$/, (_, owner) => `Imagen: ${owner}`],
-  [/^Frame (¥.+)$/, (_, price) => `Cuadro ${price}`],
+  [/^Frame (¥[^·]+)$/, (_, price) => `Cuadro ${price}`],
   [/^Frame package (.+)$/, (_, price) => `Paquete de cuadro ${t(price)}`],
   [/^The groupset alone leaves (.+) of the (.+) allowance for every other missing item\. This is an incomplete cost sketch, not a ready-to-order or compatibility-checked build\.$/, (_, left, total) => `Solo el grupo deja ${left} de la asignación de ${total} para todo lo demás que falta. Es un esbozo de coste incompleto, no un montaje listo para pedir ni con la compatibilidad comprobada.`],
-  [/^(\d+) wheelset shown$/, (_, n) => `${n} juego de ruedas mostrado`]
+  [/^(\d+) wheelset shown$/, (_, n) => `${n} juego de ruedas mostrado`],
+  [/^(\d+) models?$/, (_, n) => n === '1' ? '1 modelo' : `${n} modelos`],
+  [/^Load video: (.+)$/, (_, title) => `Cargar vídeo: ${title}`],
+  [/^(Modify this bike|Build this frame): (.+)$/, (_, action, name) => `${t(action)}: ${name}`],
+  [/^1(x|×) or 2(x|×)(.*)$/, (_, a, b, rest) => `1${a} o 2${b}${rest}`],
+  [/^(\d[\d.,]* (?:g|kg)) new$/, (_, weight) => `${weight} nuevo`],
+  [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} no indica su montaje de disco; confírmalo antes de elegir los discos.`],
+  [/^Your quote replaces the recorded (.+)$/, (_, price) => `Tu presupuesto sustituye al importe registrado de ${price}`],
+  [/^Remove (.+?) from the comparison$/, (_, name) => `Quitar ${name} de la comparación`]
 ];
+const localize = (text) => localizeMeasures(text, 'es');
 export function translateSpanish(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
   const pad = (result) => value.replace(text, result);
-  if (Object.hasOwn(es, text)) return pad(es[text]);
-  for (const [regex, replacement] of patterns) if (regex.test(text)) return pad(text.replace(regex, replacement));
+  if (Object.hasOwn(es, text)) return pad(localize(es[text]));
+  for (const [regex, replacement] of patterns) if (regex.test(text)) return pad(localize(text.replace(regex, replacement)));
+  if (isMeasure(text)) return pad(localize(text));
   // Only delimited UI values are split; sentences and technical IDs stay intact.
   if (text.includes(' · ')) return pad(text.split(' · ').map((part) => translateSpanish(part)).join(' · '));
   return value;

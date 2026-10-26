@@ -60,3 +60,24 @@ test('interface dictionaries translate navigation, controls and dynamic statuses
   assert.match(translate('1 identical row hidden', 'ru'), /строка/);
   assert.match(translate('5 identical rows hidden', 'ru'), /строк$/);
 });
+
+test('interface languages localize amounts, units and counts', async () => {
+  const { localizeMeasures, isMeasure } = await import('../assets/i18n-format.js');
+  const { resolveDestination } = await import('../assets/regional-prices.js');
+  // Intl uses no-break spaces in Russian grouping; compare with plain spaces.
+  const plain = (value) => value.replace(/[\u00a0\u202f]/g, ' ');
+  assert.equal(translate('9.9 kg', 'ru'), '9,9 кг');
+  assert.equal(plain(translate('+¥6,000', 'ru')), '+6 000 ¥');
+  assert.equal(translate('1,459 g', 'es'), '1459 g');
+  assert.equal(translate('58.5 mm · 24 mm inner', 'es'), '58,5 mm · 24 mm interior');
+  // A decimal comma that is already localized is never read as a thousands separator.
+  assert.equal(localizeMeasures('9,5 kg', 'ru', { kg: 'кг' }), '9,5 кг');
+  assert.equal(isMeasure('T700 carbon'), false);
+  assert.equal(translate('1 model', 'ru'), '1 модель');
+  assert.equal(translate('3 models', 'ru'), '3 модели');
+  assert.equal(translate('82 models', 'ru'), '82 модели');
+  assert.equal(translate('1 model', 'es'), '1 modelo');
+  // Spanish and Russian visitors' timezones suggest their own country before the browser language does.
+  assert.equal(resolveDestination({ timeZone: 'Asia/Almaty', languages: ['ru-RU'] }).country, 'KZ');
+  assert.equal(resolveDestination({ timeZone: 'America/Bogota', languages: ['es'] }).country, 'CO');
+});

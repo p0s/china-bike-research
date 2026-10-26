@@ -34,13 +34,18 @@ const own = (value, key) => Object.hasOwn(record(value), key) ? value[key] : und
  * An explicit shared plan is self-contained. A local draft is used only for a
  * bare planner visit, never to fill omitted fields in someone else's URL.
  */
+// A shared planner link carries its own state; it never resumes or replaces the saved draft.
+export function isExplicitBuildUrl(data, params) {
+  const keys = ['base', 'frame', 'basePrice', 'baseWeight', 'packageWeight',
+    ...(data.slots ?? []).flatMap((slot) => [`part-${slot}`, `price-${slot}`, `weight-${slot}`, `removed-${slot}`])];
+  return keys.some((key) => params.has(key));
+}
+
 export function restoreBuildState(data, params, stored = {}, { allowStored = true } = {}) {
   const bases = new Map(data.bases.map((base) => [base.id, base]));
   const parts = new Map(data.parts.map((part) => [part.id, part]));
   const slots = data.slots ?? [];
-  const keys = ['base', 'frame', 'basePrice', 'baseWeight', 'packageWeight',
-    ...slots.flatMap((slot) => [`part-${slot}`, `price-${slot}`, `weight-${slot}`, `removed-${slot}`])];
-  const explicit = keys.some((key) => params.has(key));
+  const explicit = isExplicitBuildUrl(data, params);
   const saved = allowStored && !explicit && (own(stored, 'schemaVersion') === undefined || own(stored, 'schemaVersion') === 2)
     ? record(stored) : {};
   const requestedBase = params.get('base') ?? params.get('frame') ?? own(saved, 'requestedBaseId') ?? own(saved, 'baseId') ?? own(saved, 'frameId');

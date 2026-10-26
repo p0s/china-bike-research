@@ -1,4 +1,5 @@
 import { registerTranslator } from './i18n.js';
+import { isMeasure, localizeMeasures } from './i18n-format.js';
 // Interface translations for the core interactive routes. Keys are exact English
 // display text, never data IDs. Model verdicts, detailed evidence, source titles and
 // seller wording without a reviewed translation stay in their original language.
@@ -28,6 +29,7 @@ export const ru = {
   "A 75 mm 46T unit and 93 mm 52T unit are not interchangeable specifications.": "Блок 75 мм на 46T и блок 93 мм на 52T — не взаимозаменяемые характеристики.",
   "A concise comparison of bicycles and frame builds available to riders in China.": "Краткое сравнение велосипедов и сборок на раме, доступных велосипедистам в Китае.",
   "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.": "Датированное наблюдение в официальном интернет-магазине в исходной валюте. Это не цена в материковом Китае; доставка, пошлины и налоги — по условиям магазина.",
+  "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions. Price sorting converts other currencies to US dollars with the dated ECB rate only to order the rows.": "Датированное наблюдение в официальном интернет-магазине в исходной валюте. Это не цена в материковом Китае; доставка, пошлины и налоги — по условиям магазина. Для сортировки по цене другие валюты пересчитываются в доллары США по датированному курсу ЕЦБ — только чтобы упорядочить строки.",
   "A front and rear pair unless the selected package explicitly includes them.": "Передний и задний, если выбранный комплект явно их не включает.",
   "A large-set label is not normalized. Dated ¥4,150 and ¥4,200 observations describe a large package without rotors. The retained ¥3,570 electronics-plus-calipers lead is unresolved: the cited page does not reproduce it.": "Метка «большой комплект» не стандартизирована. Датированные наблюдения ¥4 150 и ¥4 200 описывают большой комплект без роторов. Сохранённая зацепка ¥3 570 за электронику с калиперами не подтверждена: указанная страница её не воспроизводит.",
   "A pair whose installed width stays within the frame and rim limits.": "Пара, установленная ширина которой не выходит за ограничения рамы и обода.",
@@ -38,6 +40,7 @@ export const ru = {
   "A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.": "Системное ограничение включает велосипедиста, велосипед и багаж, если так указал производитель; иначе охват показан как опубликовано.",
   "A usable conversion needs the matching right shift/brake lever, left brake lever, RD battery and charger, 10-51T cassette, chain, crank/chainring and hydraulic brakes.": "Для рабочей переделки нужны подходящая правая ручка переключения и тормоза, левая тормозная ручка, батарея заднего переключателя и зарядка, кассета 10-51T, цепь, шатуны со звездой и гидравлические тормоза.",
   "AXS app supports setup, personalization, battery state and firmware.": "Приложение AXS поддерживает настройку, персонализацию, заряд батарей и прошивку.",
+  "Active filters": "Активные фильтры",
   "Add or correct a bike": "Добавить или исправить велосипед",
   "Add to comparison": "Добавить в сравнение",
   "Added to comparison": "Добавлено в сравнение",
@@ -45,7 +48,9 @@ export const ru = {
   "Aero road": "Аэро-шоссе",
   "Aero road / all-road": "Аэро-шоссе / олл-роуд",
   "Aero road frame · 38 mm documented clearance · dated price": "Аэро-шоссейная рама · подтверждённые 38 мм · датированная цена",
+  "Aero road frame · 38 mm documented clearance, 1× on two of three · dated price": "Аэро-шоссейная рама · подтверждённые 38 мм, у двух из трёх только с 1× · датированная цена",
   "Aero, wide clearance": "Аэро с широкой покрышкой",
+  "Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price. Two of the three reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan.": "Шоссейные рамы аэродинамической формы с подтверждённым зазором 38 мм и датированной ценой рамы или полной сборки. Две из трёх достигают 38 мм только с трансмиссией 1× (32–34 мм с 2×); оценки сборки на раме используют выбранный план сборки.",
   "Affordable carbon aero": "Доступное карбоновое аэро",
   "Alaska / Hawaii / territories": "Аляска / Гавайи / территории",
   "All": "Все",
@@ -131,6 +136,7 @@ export const ru = {
   "Category minimum": "Минимум для категории",
   "Chain": "Цепь",
   "Check compatibility": "Проверьте совместимость",
+  "Check fit in the Build planner": "Проверить совместимость в планировщике сборки",
   "Check removed-part weights": "Проверьте вес снятых деталей",
   "China": "Китай",
   "China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.": "China Bikes сравнивает китайские шоссейные, гревел- и карбоновые велосипеды по датированным ценам китайского рынка, документированным характеристикам и прозрачным оценкам сборки на раме.",
@@ -431,6 +437,7 @@ export const ru = {
   "Listed option": "Вариант из объявления",
   "Listing": "Объявление",
   "Load limit": "Ограничение нагрузки",
+  "Load video": "Загрузить видео",
   "Long-term review": "Долгосрочный обзор",
   "Low": "Низкая",
   "Low confidence": "Низкая достоверность",
@@ -496,6 +503,7 @@ export const ru = {
   "No bikes match these filters.": "Нет велосипедов, подходящих под эти фильтры.",
   "No comparable price": "Нет сопоставимой цены",
   "No conflict in the recorded checks.": "В учтённых проверках конфликтов нет.",
+  "No delivered totals are recorded for this destination yet, so a budget here matches no bike.": "Для этого направления пока нет итоговых цен с доставкой, поэтому бюджет здесь не подходит ни одному велосипеду.",
   "No electronic wire route; verify XDR wheel and DUB/crank compatibility": "Без каналов для проводов электроники; проверьте колесо XDR и совместимость DUB/шатунов",
   "No internal battery or electronic wire route; verify front-derailleur mount for 2x": "Без внутренней батареи и каналов для проводов; для 2x проверьте крепление переднего переключателя",
   "No internal electronic wire route; verify cage clearance and selected hanger version": "Без внутреннего канала для проводов электроники; проверьте зазор лапки и выбранную версию крепления",
@@ -620,6 +628,7 @@ export const ru = {
   "Road-biased gravel and all-road 2x12 with a chain stabilizer": "Гревел ближе к шоссе и олл-роуд 2x12 со стабилизатором цепи",
   "SR+ 2× review: ~32.5 mm measured, little room": "Тест SR+ 2×: ~32,5 мм по замеру, запаса мало",
   "Saddle": "Седло",
+  "Sale price": "Цена со скидкой",
   "Same price in China": "Та же цена в Китае",
   "Search bikes": "Поиск велосипедов",
   "Search model, brand, drivetrain or 中文名": "Модель, бренд, трансмиссия или 中文名",
@@ -752,6 +761,7 @@ export const ru = {
   "Video sections": "Разделы видео",
   "Videos": "Видео",
   "Warranty": "Гарантия",
+  "Watch on YouTube": "Смотреть на YouTube",
   "Weight": "Вес",
   "Weight and limits": "Вес и ограничения",
   "Weight basis": "Основание веса",
@@ -770,6 +780,7 @@ export const ru = {
   "Wireless Di2 control; Automatic Impact Recovery and SHADOW ES-style protection are part of the current rear-derailleur family.": "Беспроводное управление Di2; Automatic Impact Recovery и защита в стиле SHADOW ES входят в текущее семейство задних переключателей.",
   "XDR for the normal 10T-start road cassettes": "XDR для обычных шоссейных кассет от 10T",
   "Yes": "Да",
+  "Your quote ¥": "Ваша цена ¥",
   "aero road": "аэро-шоссе",
   "bare frame": "неокрашенная рама",
   "base / known deltas": "основа / известные изменения",
@@ -778,8 +789,10 @@ export const ru = {
   "budget custom builder": "бюджетный сборщик на заказ",
   "cable-brake shift groupset": "групсет переключения под тросовые тормоза",
   "carbon": "карбон",
+  "complete bike package": "комплектный велосипед",
   "conditional": "с условиями",
   "delivered": "с доставкой",
+  "delta unknown": "разница неизвестна",
   "drop-bar": "баранок",
   "eRX is the carbon flagship; eR9 is the lower-cost aluminium entry system with separate calipers.": "eRX — карбоновый флагман; eR9 — более доступная алюминиевая начальная система с отдельными калиперами.",
   "electronic": "электронная",
@@ -800,6 +813,7 @@ export const ru = {
   "manufacturer-direct global store": "глобальный магазин производителя",
   "mechanical": "механическая",
   "mid-price gravel racer": "гревел-гонщик среднего бюджета",
+  "model": "модель",
   "models": "моделей",
   "modern custom builder": "современный сборщик на заказ",
   "more in China": "дороже в Китае",
@@ -814,6 +828,7 @@ export const ru = {
   "risk-tolerant budget builder": "сборщик с небольшим бюджетом, готовый к риску",
   "road": "шоссе",
   "selected": "выбрано",
+  "selected · choose one more to compare": "выбрано · выберите ещё один для сравнения",
   "stock": "штатная",
   "suggested": "предложено",
   "this bike": "этот велосипед",
@@ -836,7 +851,7 @@ const plural = (count, one, few, many) => {
   return many;
 };
 const patterns = [
-  [/^Show (\d+) more models$/, (_, n) => `Показать ещё ${n} ${plural(n, 'модель', 'модели', 'моделей')}`],
+  [/^Show (\d+) more models?$/, (_, n) => `Показать ещё ${n} ${plural(n, 'модель', 'модели', 'моделей')}`],
   [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${t(value)} — ${t(label)}`],
   [/^(.+) — filter catalog to this brand$/, (_, name) => `${name} — показать в каталоге только этот бренд`],
   [/^(.+) — remove brand filter$/, (_, name) => `${name} — снять фильтр бренда`],
@@ -854,10 +869,10 @@ const patterns = [
   [/^(from )?(€|US\$|£)([\d,.]+) official store · (\d{4}-\d{2}-\d{2})$/, (_, from, symbol, amount, date) => `${from ? 'от ' : ''}${symbol}${amount} официальный магазин · ${date}`],
   [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Цена зафиксирована ${date}.`],
   [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Историческая цена зафиксирована ${date}.`],
-  [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} мм · внутр. ${width} мм`],
+  [/^(\d+(?:\.\d+)?(?:\/\d+(?:\.\d+)?)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} мм · внутр. ${width} мм`],
   [/^(\d+) kg system limit$/, (_, kg) => `системное ограничение ${kg} кг`],
   [/^(\d+) kg rider limit$/, (_, kg) => `ограничение для велосипедиста ${kg} кг`],
-  [/^(\d+) kg limit, scope not stated$/, (_, kg) => `ограничение ${kg} кг, охват не указан`],
+  [/^(\d+) kg limit, scope not stated$/, (_, kg) => `ограничение ${kg} кг, тип ограничения не указан`],
   [/^Center Lock · (.+) mm$/, (_, axles) => `Center Lock · ${axles} мм`],
   [/^6-bolt · (.+) mm$/, (_, axles) => `6 болтов · ${axles} мм`],
   [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `Крепление ротора не указано · ${axles} мм`],
@@ -918,17 +933,27 @@ const patterns = [
   [/^Theme: (System|Light|Dark)(?:\. Switch to (system|light|dark) theme)?$/, (_, mode, next) => `Тема: ${t(mode)}${next ? `. Переключить на ${({ system: 'системную', light: 'светлую', dark: 'тёмную' })[next]}` : ''}`],
   [/^View the official (.+) product page$/, (_, name) => `Открыть официальную страницу товара ${name}`],
   [/^Image: (.+)$/, (_, owner) => `Изображение: ${owner}`],
-  [/^Frame (¥.+)$/, (_, price) => `Рама ${price}`],
+  [/^Frame (¥[^·]+)$/, (_, price) => `Рама ${price}`],
   [/^Frame package (.+)$/, (_, price) => `Комплект рамы ${t(price)}`],
   [/^The groupset alone leaves (.+) of the (.+) allowance for every other missing item\. This is an incomplete cost sketch, not a ready-to-order or compatibility-checked build\.$/, (_, left, total) => `Только групсет оставляет ${left} из суммы ${total} на всё остальное. Это неполный набросок стоимости, а не готовая к заказу сборка с проверенной совместимостью.`],
-  [/^(\d+) wheelset shown$/, (_, n) => `Показан ${n} комплект колёс`]
+  [/^(\d+) wheelset shown$/, (_, n) => `Показан ${n} комплект колёс`],
+  [/^(\d+) models?$/, (_, n) => `${n} ${plural(n, 'модель', 'модели', 'моделей')}`],
+  [/^Load video: (.+)$/, (_, title) => `Загрузить видео: ${title}`],
+  [/^(Modify this bike|Build this frame): (.+)$/, (_, action, name) => `${t(action)}: ${name}`],
+  [/^1(x|×) or 2(x|×)(.*)$/, (_, a, b, rest) => `1${a} или 2${b}${rest}`],
+  [/^(\d[\d.,]* (?:g|kg)) new$/, (_, weight) => `${weight} новая`],
+  [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name}: тип крепления ротора не указан; уточните его перед выбором роторов.`],
+  [/^Your quote replaces the recorded (.+)$/, (_, price) => `Ваша цена заменяет записанную сумму ${price}`],
+  [/^Remove (.+?) from the comparison$/, (_, name) => `Убрать ${name} из сравнения`]
 ];
+const localize = (text) => localizeMeasures(text, 'ru', { kg: 'кг', g: 'г', mm: 'мм' });
 export function translateRussian(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
   const pad = (result) => value.replace(text, result);
-  if (Object.hasOwn(ru, text)) return pad(ru[text]);
-  for (const [regex, replacement] of patterns) if (regex.test(text)) return pad(text.replace(regex, replacement));
+  if (Object.hasOwn(ru, text)) return pad(localize(ru[text]));
+  for (const [regex, replacement] of patterns) if (regex.test(text)) return pad(localize(text.replace(regex, replacement)));
+  if (isMeasure(text)) return pad(localize(text));
   // Only delimited UI values are split; sentences and technical IDs stay intact.
   if (text.includes(' · ')) return pad(text.split(' · ').map((part) => translateRussian(part)).join(' · '));
   return value;

@@ -117,3 +117,7 @@ fieldset:disabled .geo-size-chip{cursor:default;opacity:.85}
 .geo-use{white-space:nowrap}
 @media(max-width:680px){.geo-search-controls{grid-template-columns:1fr}.geo-presets .geo-preset{flex:1}.geo-results li{grid-template-columns:18px minmax(0,1fr)}.geo-result-deltas{grid-column:2}.geo-use{grid-column:2;grid-row:auto;justify-content:flex-start}.geo-size-chip{min-width:56px}.geo-glossary dl{grid-template-columns:1fr}}
 @media(max-width:680px){.geo-plot .geo-tick{font-size:17px}.geo-plot .geo-axis-label{font-size:18px}.geo-plot .geo-dot text{font-size:16px}.geo-plot .geo-selected text{font-size:15px}}
+
+/* Next steps from a selected model: separate, touch-sized targets. */
+.geo-next-links{display:flex;flex-wrap:wrap;gap:4px 16px;margin:6px 0 8px}.geo-next-links a{display:inline-flex;align-items:center;min-height:32px}
+@media (pointer:coarse){.geo-next-links a{min-height:44px}}

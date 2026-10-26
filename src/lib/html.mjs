@@ -20,7 +20,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   const socialLocales = { en: 'en_US', 'zh-Hans': 'zh_CN', de: 'de_DE', es: 'es_ES', ru: 'ru_RU' };
   const languageCodes = { en: 'EN', 'zh-Hans': '中文', de: 'DE', es: 'ES', ru: 'RU' };
   // The menu's own name stays readable for a visitor who cannot read the current language.
-  const languageMenuLabels = { en: 'Language: English', 'zh-Hans': 'Language · 语言：中文', de: 'Language · Sprache: Deutsch', es: 'Language · Idioma: Español', ru: 'Language · Язык: Русский' };
+  const languageMenuLabels = { en: 'Language: English', 'zh-Hans': 'Language · 语言：中文', de: 'Language · Sprache: Deutsch', es: 'Idioma: español', ru: 'Язык: русский' };
   // Only languages that publish this route are offered or advertised.
   const pageLocales = localesForRoute(path);
   const interfaceOnly = INTERFACE_LOCALES.includes(locale);

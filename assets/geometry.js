@@ -17,7 +17,9 @@ if (root) {
       const select = field(side);
       for (const option of select.querySelectorAll('[data-unavailable]')) option.remove();
       if (!model && state[side] !== 'manual') {
-        const option = new Option(`${state[side] || '—'} (${c.excluded})`, state[side]);
+        // An unresolved library model keeps its name and status; any other ID is simply not in the library.
+        const unresolved = data.excluded?.find((entry) => entry.id === state[side]);
+        const option = new Option(unresolved ? `${unresolved.name} (${c.excluded})` : c.notInLibrary, state[side]);
         option.dataset.unavailable = '';
         select.add(option);
       }

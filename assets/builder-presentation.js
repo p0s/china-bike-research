@@ -55,6 +55,7 @@ export function buildCompatibilityMessages(base, covered, selectedPart, selectio
   if (rotorMount && hubMount && rotorMount !== hubMount) {
     messages.push(`Rotors use ${rotorMount}, but the wheelset lists ${hubMount}; confirm a compatible rotor or explicitly supported adapter.`);
   }
+  if (wheelset && !hubMount) messages.push(`${wheelset.maker} ${wheelset.name} does not state its rotor mount; confirm it before choosing rotors.`);
   const requiredFreehub = drivetrain?.compatibility?.required_freehub;
   const availableFreehubs = wheelset?.compatibility?.freehubs || [];
   if (requiredFreehub && availableFreehubs.length && !availableFreehubs.includes(requiredFreehub)) {
