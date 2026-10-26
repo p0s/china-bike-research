@@ -2,7 +2,8 @@ import { escapeAttr, escapeHtml } from './html.mjs';
 
 const formatLabels = {
   'hands-on-review': 'Hands-on review', 'long-term-review': 'Long-term review',
-  'model-overview': 'Model overview', 'build-and-ride': 'Build and ride'
+  'model-overview': 'Model overview', 'build-and-ride': 'Build and ride',
+  'workshop-guide': 'Workshop guide', 'topic-explainer': 'Topic explainer'
 };
 const relationshipLabels = {
   'retailer-linked': 'Retailer-linked', 'brand-published': 'Brand video',
@@ -45,7 +46,10 @@ export const timestampUrl = (video, seconds) => `${video.url}&t=${Math.max(0, Ma
 export function renderVideoTakeaways(video) {
   if (!video.takeaways?.length) return '';
   const basis = transcriptLabels[video.transcript?.status] ?? '';
-  return `<div class="video-takeaways"><h4>Takeaways</h4><ul>${video.takeaways.map((item) => `<li><span class="video-takeaway-kind">${escapeHtml(label(item.kind, takeawayKindLabels))}</span>${Number.isFinite(item.at_seconds) ? `<a href="${escapeAttr(timestampUrl(video, item.at_seconds))}" rel="noreferrer">${escapeHtml(clockLabel(item.at_seconds))}</a>` : ''}<span data-original-language lang="en">${escapeHtml(item.text)}</span></li>`).join('')}</ul><small>${basis ? `<span>${escapeHtml(basis)}</span> ${escapeHtml(video.transcript.checked_at)}. ` : ''}<span>Paraphrased by China Bikes; points apply to the build shown, not to every size or trim.</span></small></div>`;
+  const scope = ['workshop-guide', 'topic-explainer'].includes(video.format)
+    ? 'Paraphrased by China Bikes; general guidance, not approval of your exact equipment.'
+    : 'Paraphrased by China Bikes; points apply to the build shown, not to every size or trim.';
+  return `<div class="video-takeaways"><h4>Takeaways</h4><ul>${video.takeaways.map((item) => `<li><span class="video-takeaway-kind">${escapeHtml(label(item.kind, takeawayKindLabels))}</span>${Number.isFinite(item.at_seconds) ? `<a href="${escapeAttr(timestampUrl(video, item.at_seconds))}" rel="noreferrer">${escapeHtml(clockLabel(item.at_seconds))}</a>` : ''}<span data-original-language lang="en">${escapeHtml(item.text)}</span></li>`).join('')}</ul><small>${basis ? `<span>${escapeHtml(basis)}</span> ${escapeHtml(video.transcript.checked_at)}. ` : ''}<span>${escapeHtml(scope)}</span></small></div>`;
 }
 
 export function renderVideoEntries(videos, { contexts = new Map(), article = false, playerLabel = 'YouTube video', watchLabel = 'Watch on YouTube', loadLabel = 'Load video', takeaways = true } = {}) {
