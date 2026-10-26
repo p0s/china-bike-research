@@ -538,6 +538,36 @@ export function validateDataset(data = loadDataset()) {
     if (!Array.isArray(wheelset.caveats) || !wheelset.caveats.length) errors.push(`${label}: caveats must not be empty`);
     for (const sourceId of wheelset.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`${label}: missing source ${sourceId}`);
     if (!isDate(wheelset.reviewed_at)) errors.push(`${label}: invalid reviewed_at`);
+    // Exact-model photos follow the reviewed local-derivative contract used for groupsets.
+    if (wheelset.image !== undefined) {
+      const image = wheelset.image;
+      const pattern = /^\/assets\/images\/sourced\/(?:official|retailer)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.avif$/;
+      if (!isObject(image)) errors.push(`${label}: image must be an object`);
+      else {
+        for (const field of ['source_id', 'subject_accuracy', 'credit', 'alt', 'reviewed_at', 'local_path', 'source_media_url', 'source_media_sha256']) {
+          if (typeof image[field] !== 'string' || !image[field].trim()) errors.push(`${label}: missing image.${field}`);
+        }
+        if (image.subject_accuracy !== 'exact-model') errors.push(`${label}: wheelset images must show the exact model`);
+        if (!sourceIds.has(image.source_id) || !wheelset.source_ids.includes(image.source_id)) errors.push(`${label}: image source must be a listed source`);
+        if (!pattern.test(image.local_path ?? '') || !fs.existsSync(path.join(root, String(image.local_path ?? '').replace(/^\//, '')))) errors.push(`${label}: invalid local image`);
+        if (!Array.isArray(image.variants) || image.variants.length !== 2 || image.local_path !== image.variants.find((variant) => variant.purpose === 'detail')?.url) errors.push(`${label}: invalid local variants`);
+        for (const variant of image.variants ?? []) {
+          const byteLimit = variant.purpose === 'card' ? 100_000 : 400_000;
+          const widthLimit = variant.purpose === 'card' ? 480 : 1200;
+          if (!pattern.test(variant.url ?? '') || !fs.existsSync(path.join(root, String(variant.url ?? '').replace(/^\//, '')))
+            || !Number.isInteger(variant.bytes) || variant.bytes < 1 || variant.bytes > byteLimit
+            || !Number.isInteger(variant.width) || variant.width < 1 || variant.width > widthLimit
+            || !/^[a-f0-9]{64}$/.test(variant.sha256 ?? '') || variant.format !== 'image/avif') errors.push(`${label}: invalid local ${variant.purpose ?? 'unknown'} variant`);
+          else if (derivativeContentMismatch(variant)) errors.push(`${label}: ${variant.purpose} variant bytes do not match its recorded digest`);
+        }
+        if (!image.source_media_url?.startsWith('https://') || !/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '')) errors.push(`${label}: missing source media provenance`);
+        if (!Number.isInteger(image.width) || image.width <= 0 || !Number.isInteger(image.height) || image.height <= 0) errors.push(`${label}: image needs positive integer dimensions`);
+        if (typeof image.alt !== 'string' || image.alt.trim().length < 10) errors.push(`${label}: image.alt is too short`);
+        if (!isDate(image.reviewed_at)) errors.push(`${label}: invalid image.reviewed_at`);
+        if (image.rights?.status !== 'source-attributed-rehost' || typeof image.rights?.copyright_holder !== 'string' || typeof image.rights?.usage_note !== 'string' || typeof image.rights?.removal_route !== 'string') errors.push(`${label}: incomplete image rights record`);
+        if (image.privacy_review?.embedded_metadata !== 'stripped' || image.privacy_review?.visual !== 'no-faces-plates-accounts-locations') errors.push(`${label}: incomplete image privacy review`);
+      }
+    }
   }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));

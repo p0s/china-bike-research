@@ -8,7 +8,7 @@ import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
 import { clockLabel, openGraphVideo, renderVideoEntries, timestampUrl } from './lib/videos.mjs';
 import { opinionAggregate } from './lib/opinions.mjs';
-import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
+import { DESTINATION_GROUPS, PRICE_CURRENCIES, convertPrice, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay, pricePopoverLines } from '../assets/price-display.js';
 import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsupportedTireLayouts } from '../assets/catalog-format.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
@@ -50,7 +50,7 @@ import {
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
-export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '' }) {
+export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '', modules = [] }) {
   return layout({
     base: ctx.base,
     locale: ctx.locale ?? 'en',
@@ -74,7 +74,8 @@ export function page(ctx, { title = '', current = '', path = '/', description: d
     datasetUpdated: ctx.siteLastmod ?? ctx.data.meta.snapshot_date,
     catalogReviewed: ctx.data.meta.snapshot_date,
     footerDescription,
-    headerTools
+    headerTools,
+    modules
   });
 }
 
@@ -1807,13 +1808,14 @@ export function renderCandidateModel(ctx, entry) {
   });
 }
 
-function prosePage(ctx, { title, desc, path, html, current = '', className = '', structuredData = [], trail = [] }) {
+function prosePage(ctx, { title, desc, path, html, current = '', className = '', structuredData = [], trail = [], modules = [] }) {
   return page(ctx, {
     title,
     current,
     path,
     description: desc,
     structuredData,
+    modules,
     body: `<section class="simple-page"><article class="page prose${className ? ` ${escapeAttr(className)}` : ''}">${breadcrumbs(ctx, title, trail)}<h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
   });
 }
@@ -2403,14 +2405,29 @@ function wheelsetRotorAxle(compatibility) {
   return `${rotor} · ${compatibility.axles.join(' / ')} mm`;
 }
 
-function wheelsetRows(wheelset, sourcesById, videos = []) {
+// A reviewed exact-model photo; unavailable photos are omitted without a placeholder.
+function wheelsetImageHtml(ctx, wheelset, sourcesById) {
+  const image = wheelset.image;
+  if (!image?.local_path) return '';
+  const source = sourcesById.get(image.source_id);
+  const srcset = image.variants?.length ? ` srcset="${escapeAttr(image.variants.map((variant) => `${url(ctx.base, variant.url)} ${variant.width}w`).join(', '))}" sizes="(max-width: 720px) 120px, 156px"` : '';
+  const visual = `<img src="${escapeAttr(url(ctx.base, image.local_path))}"${srcset} alt="${escapeAttr(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" data-product-image>`;
+  const linked = source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer" aria-label="View the official ${escapeAttr(image.credit)} product page">${visual}</a>` : visual;
+  return `<span class="product-image groupset-image wheelset-image">${linked}</span>`;
+}
+
+function wheelsetRows(ctx, wheelset, sourcesById, videos = [], rates = null) {
   const { rim, compatibility } = wheelset;
   const headline = wheelset.price_observations[0];
   const pressure = Number.isFinite(wheelset.max_pressure.psi) ? `${wheelset.max_pressure.psi} psi maximum. ${wheelset.max_pressure.note}` : wheelset.max_pressure.note;
+  const credit = wheelset.image?.local_path ? `<span class="groupset-image-credit">Image: ${escapeHtml(wheelset.image.credit)}</span>` : '';
   const observations = wheelset.price_observations.map((observation) => `<div><strong>${escapeHtml(wheelsetAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
-  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-grid"><section><h3>Rim and tires</h3><dl><div><dt>Bead</dt><dd>${escapeHtml(rim.bead_note)}</dd></div><div><dt>Outer width</dt><dd>${escapeHtml(rim.external_width_mm.front === rim.external_width_mm.rear ? `${rim.external_width_mm.front} mm` : `${rim.external_width_mm.front} mm front / ${rim.external_width_mm.rear} mm rear`)}</dd></div><div><dt>Tires</dt><dd>${escapeHtml(rim.tire_range)}</dd></div><div><dt>Pressure</dt><dd>${escapeHtml(pressure)}</dd></div></dl></section><section><h3>Weight and limits</h3><dl><div><dt>Weight</dt><dd>${escapeHtml(`${wheelsetGrams(wheelset.weight)}. ${wheelset.weight.basis}`)}</dd></div><div><dt>Load limit</dt><dd>${escapeHtml(`${wheelsetLimit(wheelset.load_limit)}. ${wheelset.load_limit.note}`)}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(wheelset.warranty ?? 'Not stated')}</dd></div></dl></section><section><h3>Hub and spokes</h3><dl><div><dt>Hub</dt><dd>${escapeHtml(wheelset.hub)}</dd></div><div><dt>Spokes</dt><dd>${escapeHtml(`${sentenceLabel(wheelset.spokes.material)} · ${wheelset.spokes.summary}`)}</dd></div><div><dt>Freehubs</dt><dd>${escapeHtml(wheelsetFreehubs(compatibility))}</dd></div></dl></section></div><div class="groupset-detail-lower"><section><h3>Price observations</h3><div class="price-records">${observations}</div></section><section><h3>Confirm before buying</h3><ul>${wheelset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div>${videos.length ? `<section class="wheelset-videos"><h3>Videos</h3><div class="video-list">${renderVideoEntries(videos)}</div></section>` : ''}<div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(wheelset.source_ids, sourcesById)}</span></div></div></details>`;
-  return `<tbody class="groupset-entry" id="${escapeAttr(wheelset.id)}" data-wheelset-entry><tr class="groupset-summary-row">
-    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(wheelset.name)}</strong><span>${escapeHtml(wheelset.maker)}</span></span></div></th>
+  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-grid"><section><h3>Rim and tires</h3><dl><div><dt>Bead</dt><dd>${escapeHtml(rim.bead_note)}</dd></div><div><dt>Outer width</dt><dd>${escapeHtml(rim.external_width_mm.front === rim.external_width_mm.rear ? `${rim.external_width_mm.front} mm` : `${rim.external_width_mm.front} mm front / ${rim.external_width_mm.rear} mm rear`)}</dd></div><div><dt>Tires</dt><dd>${escapeHtml(rim.tire_range)}</dd></div><div><dt>Pressure</dt><dd>${escapeHtml(pressure)}</dd></div></dl></section><section><h3>Weight and limits</h3><dl><div><dt>Weight</dt><dd>${escapeHtml(`${wheelsetGrams(wheelset.weight)}. ${wheelset.weight.basis}`)}</dd></div><div><dt>Load limit</dt><dd>${escapeHtml(`${wheelsetLimit(wheelset.load_limit)}. ${wheelset.load_limit.note}`)}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(wheelset.warranty ?? 'Not stated')}</dd></div></dl></section><section><h3>Hub and spokes</h3><dl><div><dt>Hub</dt><dd>${escapeHtml(wheelset.hub)}</dd></div><div><dt>Spokes</dt><dd>${escapeHtml(`${sentenceLabel(wheelset.spokes.material)} · ${wheelset.spokes.summary}`)}</dd></div><div><dt>Freehubs</dt><dd>${escapeHtml(wheelsetFreehubs(compatibility))}</dd></div></dl></section></div><div class="groupset-detail-lower"><section><h3>Price observations</h3><div class="price-records">${observations}</div></section><section><h3>Confirm before buying</h3><ul>${wheelset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div>${videos.length ? `<section class="wheelset-videos"><h3>Videos</h3><div class="video-list">${renderVideoEntries(videos)}</div></section>` : ''}<div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(wheelset.source_ids, sourcesById)}</span>${credit}</div></div></details>`;
+  // Sort keys: price converted with the dated ECB snapshot only to order rows; cells keep the original currency.
+  const usd = rates ? convertPrice(headline.amount, headline.currency, 'USD', rates) : null;
+  const sortData = ` data-use="${escapeAttr(wheelset.use)}" data-weight="${wheelset.weight.grams}" data-depth="${Math.max(rim.depth_mm.front, rim.depth_mm.rear)}" data-inner="${rim.internal_width_mm}"${Number.isFinite(usd) ? ` data-price-usd="${Math.round(usd)}"` : ''}`;
+  return `<tbody class="groupset-entry" id="${escapeAttr(wheelset.id)}" data-wheelset-entry${sortData}><tr class="groupset-summary-row">
+    <th scope="row"><div class="groupset-identity${wheelset.image?.local_path ? ' has-image' : ''}">${wheelsetImageHtml(ctx, wheelset, sourcesById)}<span class="groupset-name"><strong>${escapeHtml(wheelset.name)}</strong><span>${escapeHtml(wheelset.maker)}</span></span></div></th>
     <td data-label="Use" data-column="best"><strong>${escapeHtml(wheelsetUseLabels[wheelset.use])}</strong><span>${escapeHtml(wheelset.positioning)}</span></td>
     <td data-label="Rim" data-column="rim"><strong>${escapeHtml(`${wheelsetDepth(rim)} · ${rim.internal_width_mm} mm inner`)}</strong><span>${escapeHtml(`${wheelsetBeadLabels[rim.bead]}${rim.tubeless_ready ? ' · tubeless ready' : ''}`)}</span></td>
     <td data-label="Weight" data-column="weight"><strong>${escapeHtml(`${new Intl.NumberFormat('en-US').format(wheelset.weight.grams)} g`)}</strong><span>${escapeHtml(wheelsetLimit(wheelset.load_limit))}</span></td>
@@ -2436,7 +2453,10 @@ export function renderCarbonWheels(ctx) {
   const originalNotes = ctx.locale === 'zh-Hans'
     ? '<p class="locale-evidence-note">本页提供中文导航与规格标签；型号、来源标题及详细的规格、价格和限重备注保留原文。</p>'
     : ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Preis-, Gewichts- und Grenzwertnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
-  const html = `${originalNotes}<p class="groupset-table-note"><span>${wheelsets.length} wheelsets · reviewed ${escapeHtml(reviewed)}</span> Open a row for tire limits, pressure, hub, warranty, videos and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison wheelset-comparison"><caption class="sr-only">Chinese carbon wheelsets compared</caption><thead><tr><th>Wheelset</th><th>Use</th><th>Rim</th><th>Weight</th><th>Fit</th><th>Price</th></tr></thead>${wheelsets.map((wheelset) => wheelsetRows(wheelset, sourcesById, videosFor(wheelset))).join('')}</table></div>
+  const rates = [...(ctx.data.exchangeRates ?? [])].sort((a, b) => b.rate_date.localeCompare(a.rate_date))[0] ?? null;
+  // Filters, sort, view and photo size re-arrange the same rows; the table is the default.
+  const toolbar = `<div class="wheels-toolbar" data-wheels-toolbar hidden><div class="segmented wheels-use" role="group" aria-label="Use"><button type="button" data-wheels-use="" aria-pressed="true">All</button><button type="button" data-wheels-use="road" aria-pressed="false">Road</button><button type="button" data-wheels-use="gravel" aria-pressed="false">Gravel</button></div><label class="sort-control wheels-sort"><span>Sort</span><select data-wheels-sort><option value="">Use, then price</option><option value="price">Price: low to high (US$ equivalent)</option><option value="weight">Lightest first</option><option value="depth">Deepest rim first</option><option value="inner">Widest inner rim first</option></select></label><div class="view-toggle" role="group" aria-label="Wheelset view"><button type="button" data-wheels-view="table" aria-pressed="true"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button><button type="button" data-wheels-view="gallery" aria-pressed="false"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button></div><div class="gallery-size" role="group" aria-label="Photo size" data-wheels-size-control hidden><button type="button" class="gallery-size-step" data-wheels-size-step="-1" aria-label="Smaller photos, more per row"><span aria-hidden="true">−</span></button><button type="button" class="gallery-size-step" data-wheels-size-step="1" aria-label="Larger photos, fewer per row"><span aria-hidden="true">+</span></button></div><p class="wheels-status" data-wheels-status role="status" aria-live="polite"></p></div>`;
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${wheelsets.length} wheelsets · reviewed ${escapeHtml(reviewed)}</span> Open a row for tire limits, pressure, hub, warranty, videos and sources.</p>${toolbar}<div class="reference-table-wrap groupset-table-wrap" data-wheels-view-root data-view="table"><table class="reference-table groupset-comparison wheelset-comparison"><caption class="sr-only">Chinese carbon wheelsets compared</caption><thead><tr><th>Wheelset</th><th>Use</th><th>Rim</th><th>Weight</th><th>Fit</th><th>Price</th></tr></thead>${wheelsets.map((wheelset) => wheelsetRows(ctx, wheelset, sourcesById, videosFor(wheelset), rates)).join('')}</table></div>
   <details class="reference-guide"><summary>How rim, limit and price fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Weight</dt><dd>The maker's pair claim with its stated basis and tolerance.</dd></div><div><dt>Load limit</dt><dd>A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.</dd></div><div><dt>Not stated</dt><dd>The maker's page does not publish the value. It is not a negative finding.</dd></div><div><dt>Price</dt><dd>A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.</dd></div></dl><p>Freehub and rotor fit for these wheelsets is checked in the Build planner. <a href="${url(ctx.base, '/build/')}">Open the Build planner</a></p></div></details>`;
   return prosePage(ctx, {
     title,
@@ -2452,7 +2472,8 @@ export function renderCarbonWheels(ctx) {
       description: desc,
       items: wheelsets.map((wheelset) => ({ name: `${wheelset.maker} ${wheelset.name}` }))
     }),
-    html
+    html,
+    modules: ['/assets/wheels.js']
   });
 }
 

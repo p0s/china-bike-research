@@ -1491,6 +1491,17 @@ Object.assign(de, {
   "Fork and calipers": "Gabel und Bremssättel"
 });
 
+// Carbon wheel toolbar (2026-10-26).
+Object.assign(de, {
+  "Use, then price": "Einsatz, dann Preis",
+  "Price: low to high (US$ equivalent)": "Preis: aufsteigend (US$-Gegenwert)",
+  "Lightest first": "Leichteste zuerst",
+  "Deepest rim first": "Höchste Felge zuerst",
+  "Widest inner rim first": "Breiteste Innenweite zuerst",
+  "Wheelset view": "Laufradansicht",
+  "1 wheelset shown": "1 Laufradsatz angezeigt"
+});
+
 export function translateGerman(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
@@ -1510,6 +1521,7 @@ export function translateGerman(value) {
     [/^(\d+) (?:published|complete) profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} vollständige Profile; ${b} Teilprofile. Fehlende Angaben bleiben unbekannt.`],
     [/^(\d+) per row$/, (_, n) => `${n} pro Reihe`],
     [/^(\d+) identical rows hidden$/, (_, n) => `${n} identische Zeilen ausgeblendet`],
+    [/^(\d+) wheelsets shown$/, (_, n) => `${n} Laufradsätze angezeigt`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Preis erfasst am ${date}.`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Historischer Preis erfasst am ${date}.`],
     // Carbon-wheel reference (2026-10-20)

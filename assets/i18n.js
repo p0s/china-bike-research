@@ -779,6 +779,7 @@ export function translate(value, locale = 'en') {
     [/^(\d+) (?:published|complete) profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} 份完整资料；${b} 份部分资料。缺失信息保留为未知。`],
     [/^(\d+) per row$/, (_, n) => `每行 ${n} 个`],
     [/^(\d+) identical rows hidden$/, (_, n) => `已隐藏 ${n} 行相同内容`],
+    [/^(\d+) wheelsets shown$/, (_, n) => `显示 ${n} 款轮组`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `报价记录于 ${date}。`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `历史报价记录于 ${date}。`],
     // Carbon-wheel reference (2026-10-20)
@@ -1456,4 +1457,15 @@ Object.assign(zh, {
   "package contents incomplete": "套件内容不完整",
   "bottom bracket unknown": "中轴未知",
   "tire clearance unknown": "轮胎空间未知"
+});
+
+// Carbon wheel toolbar (2026-10-26).
+Object.assign(zh, {
+  "Use, then price": "按用途，再按价格",
+  "Price: low to high (US$ equivalent)": "价格：从低到高（折合美元）",
+  "Lightest first": "最轻优先",
+  "Deepest rim first": "框高最高优先",
+  "Widest inner rim first": "内宽最宽优先",
+  "Wheelset view": "轮组视图",
+  "1 wheelset shown": "显示 1 款轮组"
 });

@@ -1652,3 +1652,31 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .builder-part-control select { font-size: .86rem; padding-block: 10px; }
   .builder-base-facts > div { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* Carbon wheels (2026-10-26): toolbar and an optional photo gallery of the same rows. */
+.wheels-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 0 0 12px; }
+.wheels-toolbar[hidden] { display: none; }
+.wheels-toolbar .segmented { display: inline-flex; width: auto; flex: 0 0 auto; margin: 0; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-soft); }
+.wheels-toolbar .segmented button { min-height: 30px; padding: 0 12px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); font-size: var(--fs-sm); font-weight: 680; cursor: pointer; }
+.wheels-toolbar .segmented button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / 10%), 0 0 0 1px var(--line); }
+.wheels-status { margin: 0 0 0 auto; color: var(--muted); font-size: var(--fs-sm); }
+.wheelset-image { width: 92px; }
+[data-wheels-view-root][data-view="gallery"] { overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+[data-view="gallery"] > .wheelset-comparison { display: grid; grid-template-columns: repeat(var(--wheel-columns, 3), minmax(0, 1fr)); gap: 16px; width: 100%; min-width: 0; }
+[data-view="gallery"] > .wheelset-comparison > thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+[data-view="gallery"] .groupset-entry { display: flex; flex-direction: column; overflow: hidden; margin: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow-soft); }
+[data-view="gallery"] .groupset-entry[hidden] { display: none; }
+[data-view="gallery"] .groupset-summary-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); flex: 1; }
+[data-view="gallery"] .groupset-summary-row > th, [data-view="gallery"] .groupset-summary-row > td { position: relative; display: block; width: auto; min-width: 0; padding: 10px 14px; border: 0; background: transparent; }
+[data-view="gallery"] .groupset-summary-row > th { grid-column: 1 / -1; padding-top: 12px; }
+[data-view="gallery"] .groupset-summary-row > td { padding-top: 26px; }
+[data-view="gallery"] .groupset-summary-row > td::before { content: attr(data-label); position: absolute; top: 9px; left: 14px; color: var(--muted); font-size: .57rem; font-weight: 740; letter-spacing: .055em; text-transform: uppercase; }
+[data-view="gallery"] .groupset-summary-row > td[data-column="best"] span { display: none; }
+[data-view="gallery"] .groupset-summary-row > td[data-column="fit"] { grid-column: 1 / -1; }
+[data-view="gallery"] .groupset-summary-row:hover > td { background: transparent; }
+[data-view="gallery"] .groupset-identity, [data-view="gallery"] .groupset-identity.has-image { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-height: 0; }
+[data-view="gallery"] .wheelset-image { width: calc(100% + 28px); margin: -12px -14px 0; aspect-ratio: 3 / 2; border-radius: 0; border-bottom: 1px solid var(--line); }
+[data-view="gallery"] .wheelset-image img { padding: 10px; }
+[data-view="gallery"] .groupset-detail-row { display: block; }
+[data-view="gallery"] .groupset-detail-row > td { display: block; width: auto; padding: 0; border: 0 !important; }
+@media (max-width: 599px) { .wheels-status { width: 100%; margin: 0; } [data-view="gallery"] > .wheelset-comparison { gap: 10px; } }

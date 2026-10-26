@@ -408,6 +408,15 @@ for (const entry of fs.readdirSync(path.join(root, 'data/groupsets'))) {
     }
   }
 }
+for (const entry of fs.readdirSync(path.join(root, 'data/wheelsets'))) {
+  if (!entry.endsWith('.json')) continue;
+  const image = JSON.parse(fs.readFileSync(path.join(root, 'data/wheelsets', entry), 'utf8')).image;
+  if (image?.local_path) {
+    for (const value of [image.local_path, ...(image.variants ?? []).map((variant) => variant.url)]) {
+      if (typeof value === 'string') referencedSourcedMedia.add(value.replace(/^\//, ''));
+    }
+  }
+}
 for (const photo of JSON.parse(fs.readFileSync(path.join(root, 'content/blog-images.json'), 'utf8')).model_photos) {
   const image = photo.external?.image;
   if (image?.hosting?.mode === 'local') {

@@ -89,3 +89,22 @@ test('build planner offers each wheelset with weight and fit but no invented Chi
     assert.equal(part.note.includes('Rotor mount is not stated'), wheelset.compatibility.rotor_mount === null);
   }
 });
+
+test('the wheel table stays the default while use, sort, gallery and photo size re-arrange the same rows', () => {
+  const html = renderCarbonWheels(ctx);
+  assert.match(html, /<div class="wheels-toolbar" data-wheels-toolbar hidden>/);
+  assert.match(html, /data-wheels-view-root data-view="table"/);
+  assert.match(html, /data-wheels-view="table" aria-pressed="true"/);
+  assert.match(html, /<option value="price">Price: low to high \(US\$ equivalent\)<\/option>/);
+  assert.match(html, /<script type="module" src="\/china-bike-research\/assets\/wheels\.js"><\/script>/);
+  // Every row carries its own sort keys; displayed prices keep their original currency.
+  for (const wheelset of data.wheelsets) {
+    const entry = html.match(new RegExp(`<tbody class="groupset-entry" id="${wheelset.id}"[^>]*>`))?.[0] ?? '';
+    assert.match(entry, new RegExp(`data-use="${wheelset.use}" data-weight="${wheelset.weight.grams}"`), wheelset.id);
+    assert.match(entry, /data-price-usd="\d+"/, wheelset.id);
+  }
+  // A wheelset image must be a reviewed exact-model local derivative.
+  const first = data.wheelsets[0].id;
+  assert.ok(withWheelset(first, (wheelset) => { wheelset.image = { source_id: wheelset.source_ids[0], subject_accuracy: 'exact-family', credit: 'Maker', alt: 'A wheelset photo for testing', reviewed_at: '2026-10-26' }; })
+    .some((error) => error.includes('must show the exact model')));
+});
