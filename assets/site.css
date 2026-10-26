@@ -1045,10 +1045,11 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .result-summary { margin: 0; color: var(--muted); font-size: var(--fs-sm); }
 .result-summary strong { color: var(--ink); font-variant-numeric: tabular-nums; }
 .result-split[hidden] { display: none; }
-.result-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
-.sort-control { display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 4px 0 12px; border: 1px solid var(--line-strong); border-radius: 9px; background: var(--surface); }
+/* Longer interface languages wrap the view and sort controls instead of widening the page. */
+.result-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px; min-width: 0; max-width: 100%; margin-left: auto; }
+.sort-control { display: flex; align-items: center; gap: 6px; min-width: 0; max-width: 100%; height: 36px; padding: 0 4px 0 12px; border: 1px solid var(--line-strong); border-radius: 9px; background: var(--surface); }
 .sort-control > span { color: var(--muted); font-size: var(--fs-sm); }
-.sort-control select { max-width: 260px; padding: 6px 4px; border: 0; background: transparent; color: var(--ink); font-size: var(--fs-sm); font-weight: 650; cursor: pointer; }
+.sort-control select { min-width: 0; max-width: 260px; padding: 6px 4px; text-overflow: ellipsis; border: 0; background: transparent; color: var(--ink); font-size: var(--fs-sm); font-weight: 650; cursor: pointer; }
 .sort-control:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent); }
 .sort-control select:focus { outline: 0; }
 .filter-chips button { min-height: 30px; border-color: transparent; background: var(--accent-soft); color: var(--accent); font-size: var(--fs-sm); font-weight: 650; }
