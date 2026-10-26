@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-640-50f6b91a5c.avif', '50f6b91a5c1cb2beee192b016f11791ef0baaaaf8456286c0beb6cd81a40b658'],
+  ['assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-1600-cf9dfb1b58.avif', 'cf9dfb1b580417c150d24a35ba1b6e88d284f76d72db64e7a22bcd02c20059f5'],
+  ['assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-1200.jpg', '44c5ac549a50557815e12198d236897c2acfe7c842d5dbcd857367adec49e81b'],
   ['assets/blog/buy-seka-bike-mascot-cover-30cfbed2a7-640-7bd5442b66.avif', '7bd5442b6667f4250df1b242dc65506b50fedddc707d9de7f5b9f4fdbb2bcb1e'],
   ['assets/blog/buy-seka-bike-mascot-cover-30cfbed2a7-1600-6d50e999c1.avif', '6d50e999c1f90f0931054c0af6617e260c054e16fcc6ef112d4dcc1365bfd683'],
   ['assets/blog/buy-seka-bike-mascot-cover-30cfbed2a7-1200.jpg', 'c00be7d7cca4bd24d5725cd72aeedeeeaaf2c461d87b465d283f5a73dccdd694'],
