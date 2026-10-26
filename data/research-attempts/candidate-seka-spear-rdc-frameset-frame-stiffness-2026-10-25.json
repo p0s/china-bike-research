@@ -1,0 +1,45 @@
+{
+  "id": "candidate-seka-spear-rdc-frameset-frame-stiffness-2026-10-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seka-spear-rdc-frameset"
+  },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-10-25",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear 刚性 刚性重量比 垂直顺应性 109N/mm",
+          "route": "SEKA China Spear product page stiffness section",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/spear/",
+          "accessed_at": "2026-10-25",
+          "note": "Spear RDC versus Exceed RDC: stiffness +5%, stiffness-to-weight +14.5%; vertical compliance 109 N/mm (+23%)."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA Spear stiffness-to-weight Exceed RDC global page",
+          "route": "SEKA global Spear product page performance section",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/en/spear-en-2/",
+          "accessed_at": "2026-10-25",
+          "note": "Same manufacturer comparisons; test conditions referred to the development manual."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "seka-spear-cn-official-page-2026-10-25",
+    "seka-spear-official-page-2026-10-25"
+  ],
+  "retry_after": null,
+  "notes": "Manufacturer comparative stiffness and compliance figures accepted with their own-protocol basis; the Cyclingnews bottom-bracket rig result is retained as video evidence, not a score."
+}

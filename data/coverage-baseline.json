@@ -8,8 +8,8 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1754,
-      "images": 881,
+      "sources": 1765,
+      "images": 888,
       "videos": 258,
       "opinions": 13,
       "groupsets": 11,
@@ -19,10 +19,10 @@
       "candidates": 283,
       "exclusions": 16,
       "research": 1,
-      "researchAttempts": 1846
+      "researchAttempts": 1851
     },
     "image_accuracy": {
-      "exact-platform": 588,
+      "exact-platform": 595,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -30,7 +30,7 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 872,
+      "local": 879,
       "remote": 9
     },
     "candidate_prices": {
@@ -902,6 +902,7 @@
       "lightcarbon-lcr018-d-gallery-complete-2026-10-03",
       "lightcarbon-lcr018-d-official-2026-08-29",
       "lightcarbon-lcr018-d-official-recheck-2026-10-22",
+      "lightcarbon-lcr018-d-official-recheck-2026-10-25",
       "lightcarbon-lcr018-d-package-review-2026-10-11",
       "lightcarbon-lcr018-d-xianyu-2026-08-29",
       "lightcarbon-lcr0x-d-enrichment-2026-10-03",
@@ -1235,6 +1236,10 @@
       "public-xhs-scott-addict-rc-40-2024-reference-2026-10-03",
       "public-xhs-seka-exaero-dealer-alta-build-2026-08-27",
       "public-xhs-seka-exaero-gr-owner-build-2026-10-24",
+      "public-xhs-seka-spear-long-review-2026-10-26",
+      "public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26",
+      "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26",
+      "public-xhs-seka-spear-standard-owner-build-2026-10-26",
       "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26",
       "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26",
       "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26",
@@ -1483,11 +1488,17 @@
       "seka-exaero-road-taobao-2026-10-24",
       "seka-exceed-105-di2-taobao-2026-10-24",
       "seka-official",
+      "seka-rapier-handlebar-store-2026-10-25",
       "seka-spear-catalog-2026-09-01",
+      "seka-spear-catalog-recheck-2026-10-25",
+      "seka-spear-cn-official-page-2026-10-25",
       "seka-spear-development-manual-reopen-2026-09-23",
       "seka-spear-frameset-gulun-taobao-2026-10-24",
+      "seka-spear-frameset-store-2026-10-25",
       "seka-spear-frameset-weier-taobao-2026-10-24",
       "seka-spear-homebike-taobao-2026-10-24",
+      "seka-spear-official-page-2026-10-25",
+      "seka-spear-rdc-frameset-store-2026-10-25",
       "seka-spear-rdc-frameset-store-recheck-2026-09-23",
       "seka-spear-rdc-geometry-official-2026-08-17",
       "seka-spear-rdc-official-2026-08-17",
@@ -2802,7 +2813,14 @@
       "seka-exaero-xhs-launch-weight-gallery",
       "seka-exaero-xhs-launch-windeye-gallery",
       "seka-exaero-xhs-owner-rdc-black-gallery",
+      "seka-spear-rdc-frameset-cockpit-gallery",
+      "seka-spear-rdc-frameset-geometry-gallery",
+      "seka-spear-rdc-frameset-primary-image",
+      "seka-spear-rdc-frameset-wind-eye-gallery",
       "seka-spear-rdc-primary-image",
+      "seka-spear-rdc-xhs-brand-complete-2026-10-26",
+      "seka-spear-standard-105-di2-primary-image",
+      "seka-spear-standard-105-di2-xhs-owner-side-2026-10-26",
       "seraph-tt-x68-new-udh-official-enrichment-2026-10-03",
       "spcycle-g026-primary-image",
       "spcycle-g028-primary-image",
@@ -4677,6 +4695,10 @@
       "candidate-seka-spear-rdc-complete-weight-2026-09-01",
       "candidate-seka-spear-rdc-frame-2026-08-17",
       "candidate-seka-spear-rdc-frame-stiffness-2026-09-01",
+      "candidate-seka-spear-rdc-frameset-frame-material-2026-10-25",
+      "candidate-seka-spear-rdc-frameset-frame-stiffness-2026-10-25",
+      "candidate-seka-spear-rdc-frameset-frame-weight-2026-10-25",
+      "candidate-seka-spear-rdc-frameset-tire-clearance-2026-10-25",
       "candidate-seka-spear-rdc-geometry-2026-08-17",
       "candidate-seka-spear-rdc-identity-2026-08-17",
       "candidate-seka-spear-rdc-image-2026-08-17",
@@ -4685,6 +4707,7 @@
       "candidate-seka-spear-rdc-tire-clearance-2026-08-17",
       "candidate-seka-spear-rdc-tire-clearance-2026-09-01",
       "candidate-seka-spear-rdc-warranty-support-2026-08-17",
+      "candidate-seka-spear-standard-105-di2-tire-clearance-2026-10-25",
       "candidate-seraph-tt-x68-new-udh-bottom-bracket-2026-09-22",
       "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-2026-09-24",
       "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-b147-2026-09-25",
@@ -17739,6 +17762,18 @@
         "type",
         "url"
       ],
+      "lightcarbon-lcr018-d-official-recheck-2026-10-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "lightcarbon-lcr018-d-package-review-2026-10-11": [
         "accessed_at",
         "language",
@@ -22229,6 +22264,74 @@
         "type",
         "url"
       ],
+      "public-xhs-seka-spear-long-review-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-seka-spear-standard-owner-build-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": [
         "accessed_at",
         "capture.archive_bytes",
@@ -25293,7 +25396,43 @@
         "type",
         "url"
       ],
+      "seka-rapier-handlebar-store-2026-10-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "seka-spear-catalog-2026-09-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "seka-spear-catalog-recheck-2026-10-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "seka-spear-cn-official-page-2026-10-25": [
         "accessed_at",
         "language",
         "notes",
@@ -25331,6 +25470,18 @@
         "type",
         "url"
       ],
+      "seka-spear-frameset-store-2026-10-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "seka-spear-frameset-weier-taobao-2026-10-24": [
         "accessed_at",
         "language",
@@ -25355,6 +25506,30 @@
         "reliability.price",
         "reliability.specification",
         "selected_options",
+        "title",
+        "type",
+        "url"
+      ],
+      "seka-spear-official-page-2026-10-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "seka-spear-rdc-frameset-store-2026-10-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
         "title",
         "type",
         "url"
@@ -58750,6 +58925,152 @@
         "source_media_sha256",
         "subject_accuracy"
       ],
+      "seka-spear-rdc-frameset-cockpit-gallery": [
+        "alt",
+        "candidate_id",
+        "content_type",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "seka-spear-rdc-frameset-geometry-gallery": [
+        "alt",
+        "candidate_id",
+        "content_type",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "seka-spear-rdc-frameset-primary-image": [
+        "alt",
+        "candidate_id",
+        "content_type",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "seka-spear-rdc-frameset-wind-eye-gallery": [
+        "alt",
+        "candidate_id",
+        "content_type",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
       "seka-spear-rdc-primary-image": [
         "alt",
         "candidate_id",
@@ -58779,6 +59100,107 @@
         "source_id",
         "source_media_sha256",
         "source_media_url",
+        "subject_accuracy"
+      ],
+      "seka-spear-rdc-xhs-brand-complete-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "content_type",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
+      "seka-spear-standard-105-di2-primary-image": [
+        "alt",
+        "candidate_id",
+        "content_type",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "seka-spear-standard-105-di2-xhs-owner-side-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "content_type",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "seraph-tt-x68-new-udh-official-enrichment-2026-10-03": [
@@ -73124,6 +73546,7 @@
         "enrichment_reviews",
         "facts.bottom_bracket",
         "facts.brakes",
+        "facts.chainring limits",
         "facts.cockpit",
         "facts.current catalog conflict",
         "facts.frame",
@@ -76373,12 +76796,16 @@
       "seka-spear-rdc": [
         "alternative_builds",
         "category",
+        "enrichment_reviews",
         "facts.bottom_bracket",
         "facts.cockpit",
         "facts.complete_weight_basis",
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.geometry complete current manufacturer table",
         "facts.sizes",
         "facts.stiffness_evidence",
         "facts.tire_clearance_basis",
@@ -76405,7 +76832,22 @@
       "seka-spear-rdc-frameset": [
         "brand_id",
         "category",
+        "enrichment_reviews",
+        "facts.axles",
+        "facts.bottom_bracket",
         "facts.cockpit",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry complete current manufacturer table",
+        "facts.manufacturer package",
+        "facts.seatpost",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
@@ -76428,9 +76870,19 @@
         "alternative_builds",
         "brand_id",
         "category",
+        "enrichment_reviews",
+        "facts.bottom_bracket",
         "facts.complete_weight_basis",
         "facts.complete_weight_g",
         "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.geometry complete current manufacturer table",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
         "facts.tires",
         "facts.wheels",
         "last_reviewed",
@@ -100114,6 +100566,62 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-seka-spear-rdc-frameset-frame-material-2026-10-25": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-spear-rdc-frameset-frame-stiffness-2026-10-25": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-spear-rdc-frameset-frame-weight-2026-10-25": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-spear-rdc-frameset-tire-clearance-2026-10-25": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-seka-spear-rdc-geometry-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -100259,6 +100767,21 @@
         "resolution.note",
         "resolution.resolved_at",
         "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-spear-standard-105-di2-tire-clearance-2026-10-25": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -116984,6 +117507,7 @@
       ],
       "lightcarbon-lcr018-d-official-2026-08-29": [],
       "lightcarbon-lcr018-d-official-recheck-2026-10-22": [],
+      "lightcarbon-lcr018-d-official-recheck-2026-10-25": [],
       "lightcarbon-lcr018-d-package-review-2026-10-11": [],
       "lightcarbon-lcr018-d-xianyu-2026-08-29": [],
       "lightcarbon-lcr0x-d-enrichment-2026-10-03": [],
@@ -117333,6 +117857,10 @@
       "public-xhs-scott-addict-rc-40-2024-reference-2026-10-03": [],
       "public-xhs-seka-exaero-dealer-alta-build-2026-08-27": [],
       "public-xhs-seka-exaero-gr-owner-build-2026-10-24": [],
+      "public-xhs-seka-spear-long-review-2026-10-26": [],
+      "public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26": [],
+      "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26": [],
+      "public-xhs-seka-spear-standard-owner-build-2026-10-26": [],
       "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": [],
       "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26": [],
       "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26": [],
@@ -117581,11 +118109,17 @@
       "seka-exaero-road-taobao-2026-10-24": [],
       "seka-exceed-105-di2-taobao-2026-10-24": [],
       "seka-official": [],
+      "seka-rapier-handlebar-store-2026-10-25": [],
       "seka-spear-catalog-2026-09-01": [],
+      "seka-spear-catalog-recheck-2026-10-25": [],
+      "seka-spear-cn-official-page-2026-10-25": [],
       "seka-spear-development-manual-reopen-2026-09-23": [],
       "seka-spear-frameset-gulun-taobao-2026-10-24": [],
+      "seka-spear-frameset-store-2026-10-25": [],
       "seka-spear-frameset-weier-taobao-2026-10-24": [],
       "seka-spear-homebike-taobao-2026-10-24": [],
+      "seka-spear-official-page-2026-10-25": [],
+      "seka-spear-rdc-frameset-store-2026-10-25": [],
       "seka-spear-rdc-frameset-store-recheck-2026-09-23": [],
       "seka-spear-rdc-geometry-official-2026-08-17": [],
       "seka-spear-rdc-official-2026-08-17": [],
@@ -121817,9 +122351,42 @@
         "candidate_id=seka-exaero-road",
         "source_id=public-seka-exaero-rdc-owner-build-2026-08-27"
       ],
+      "seka-spear-rdc-frameset-cockpit-gallery": [
+        "candidate_id=seka-spear-rdc-frameset",
+        "review_evidence.source_ids=seka-rapier-handlebar-store-2026-10-25",
+        "source_id=seka-rapier-handlebar-store-2026-10-25"
+      ],
+      "seka-spear-rdc-frameset-geometry-gallery": [
+        "candidate_id=seka-spear-rdc-frameset",
+        "review_evidence.source_ids=seka-spear-official-page-2026-10-25",
+        "source_id=seka-spear-official-page-2026-10-25"
+      ],
+      "seka-spear-rdc-frameset-primary-image": [
+        "candidate_id=seka-spear-rdc-frameset",
+        "review_evidence.source_ids=seka-spear-rdc-frameset-store-2026-10-25",
+        "source_id=seka-spear-rdc-frameset-store-2026-10-25"
+      ],
+      "seka-spear-rdc-frameset-wind-eye-gallery": [
+        "candidate_id=seka-spear-rdc-frameset",
+        "review_evidence.source_ids=seka-spear-official-page-2026-10-25",
+        "source_id=seka-spear-official-page-2026-10-25"
+      ],
       "seka-spear-rdc-primary-image": [
         "candidate_id=seka-spear-rdc",
         "source_id=seka-spear-rdc-official-2026-08-17"
+      ],
+      "seka-spear-rdc-xhs-brand-complete-2026-10-26": [
+        "candidate_id=seka-spear-rdc",
+        "source_id=public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26"
+      ],
+      "seka-spear-standard-105-di2-primary-image": [
+        "candidate_id=seka-spear-standard-105-di2",
+        "review_evidence.source_ids=seka-spear-frameset-store-2026-10-25",
+        "source_id=seka-spear-frameset-store-2026-10-25"
+      ],
+      "seka-spear-standard-105-di2-xhs-owner-side-2026-10-26": [
+        "candidate_id=seka-spear-standard-105-di2",
+        "source_id=public-xhs-seka-spear-standard-owner-build-2026-10-26"
       ],
       "seraph-tt-x68-new-udh-official-enrichment-2026-10-03": [
         "candidate_id=seraph-tt-x68-new-udh",
@@ -124425,6 +124992,7 @@
         "source_ids=lightcarbon-lcr018-d-gallery-complete-2026-10-03",
         "source_ids=lightcarbon-lcr018-d-official-2026-08-29",
         "source_ids=lightcarbon-lcr018-d-official-recheck-2026-10-22",
+        "source_ids=lightcarbon-lcr018-d-official-recheck-2026-10-25",
         "source_ids=lightcarbon-lcr018-d-package-review-2026-10-11",
         "source_ids=lightcarbon-lcr018-d-xianyu-2026-08-29",
         "source_ids=usd-cny-central-parity-2026-07-31",
@@ -125462,8 +126030,12 @@
       ],
       "seka-spear-rdc": [
         "source_ids=public-seka-spear-rdc-owner-2026-08-17",
+        "source_ids=public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26",
         "source_ids=seka-spear-catalog-2026-09-01",
+        "source_ids=seka-spear-catalog-recheck-2026-10-25",
+        "source_ids=seka-spear-cn-official-page-2026-10-25",
         "source_ids=seka-spear-development-manual-reopen-2026-09-23",
+        "source_ids=seka-spear-official-page-2026-10-25",
         "source_ids=seka-spear-rdc-frameset-store-recheck-2026-09-23",
         "source_ids=seka-spear-rdc-geometry-official-2026-08-17",
         "source_ids=seka-spear-rdc-official-2026-08-17",
@@ -125479,14 +126051,29 @@
       "seka-spear-rdc-frameset": [
         "brand_id=seka",
         "model_id=seka-spear-rdc-frameset",
+        "source_ids=public-xhs-seka-spear-long-review-2026-10-26",
+        "source_ids=public-xhs-seka-spear-rdc-refinished-weight-2026-10-26",
+        "source_ids=seka-rapier-handlebar-store-2026-10-25",
+        "source_ids=seka-spear-catalog-recheck-2026-10-25",
+        "source_ids=seka-spear-cn-official-page-2026-10-25",
+        "source_ids=seka-spear-development-manual-reopen-2026-09-23",
         "source_ids=seka-spear-frameset-gulun-taobao-2026-10-24",
         "source_ids=seka-spear-frameset-weier-taobao-2026-10-24",
+        "source_ids=seka-spear-official-page-2026-10-25",
+        "source_ids=seka-spear-rdc-frameset-store-2026-10-25",
+        "source_ids=seka-spear-rdc-taobao-dealer-2026-10-24",
         "video_ids=klein-concept-seka-spear-rdc-first-impressions"
       ],
       "seka-spear-standard-105-di2": [
         "brand_id=seka",
         "model_id=seka-spear-standard-105-di2",
+        "source_ids=public-xhs-seka-spear-standard-owner-build-2026-10-26",
+        "source_ids=seka-spear-catalog-recheck-2026-10-25",
+        "source_ids=seka-spear-cn-official-page-2026-10-25",
+        "source_ids=seka-spear-development-manual-reopen-2026-09-23",
+        "source_ids=seka-spear-frameset-store-2026-10-25",
         "source_ids=seka-spear-homebike-taobao-2026-10-24",
+        "source_ids=seka-spear-official-page-2026-10-25",
         "source_ids=seka-spear-rdc-taobao-dealer-2026-10-24",
         "video_ids=david-arthur-seka-spear-10000km",
         "video_ids=david-arthur-seka-spear-first-ride"
@@ -130513,6 +131100,18 @@
         "resolution.source_ids=seka-spear-white-paper-2026-09-01",
         "target.record_id=seka-spear-rdc"
       ],
+      "candidate-seka-spear-rdc-frameset-frame-material-2026-10-25": [
+        "target.record_id=seka-spear-rdc-frameset"
+      ],
+      "candidate-seka-spear-rdc-frameset-frame-stiffness-2026-10-25": [
+        "target.record_id=seka-spear-rdc-frameset"
+      ],
+      "candidate-seka-spear-rdc-frameset-frame-weight-2026-10-25": [
+        "target.record_id=seka-spear-rdc-frameset"
+      ],
+      "candidate-seka-spear-rdc-frameset-tire-clearance-2026-10-25": [
+        "target.record_id=seka-spear-rdc-frameset"
+      ],
       "candidate-seka-spear-rdc-geometry-2026-08-17": [
         "resolution.source_ids=seka-spear-development-manual-reopen-2026-09-23",
         "resolution.source_ids=seka-spear-rdc-frameset-store-recheck-2026-09-23",
@@ -130550,6 +131149,9 @@
         "resolution.source_ids=seka-warranty-cn-recheck-2026-09-23",
         "resolution.source_ids=seka-warranty-global-recheck-2026-09-23",
         "target.record_id=seka-spear-rdc"
+      ],
+      "candidate-seka-spear-standard-105-di2-tire-clearance-2026-10-25": [
+        "target.record_id=seka-spear-standard-105-di2"
       ],
       "candidate-seraph-tt-x68-new-udh-bottom-bracket-2026-09-22": [
         "resolution.source_ids=seraph-tt-x68-new-storefront-2026-09-23",
@@ -138827,6 +139429,14 @@
         "specification": 3
       }
     },
+    "lightcarbon-lcr018-d-official-recheck-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "lightcarbon-lcr018-d-package-review-2026-10-11": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -141519,6 +142129,38 @@
         "specification": -1
       }
     },
+    "public-xhs-seka-spear-long-review-2026-10-26": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
+    "public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
+    "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": -1,
+        "specification": 0
+      }
+    },
+    "public-xhs-seka-spear-standard-owner-build-2026-10-26": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
+      }
+    },
     "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -143492,11 +144134,35 @@
         "specification": 2
       }
     },
+    "seka-rapier-handlebar-store-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "seka-spear-catalog-2026-09-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
+        "specification": 3
+      }
+    },
+    "seka-spear-catalog-recheck-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "seka-spear-cn-official-page-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
         "specification": 3
       }
     },
@@ -143516,6 +144182,14 @@
         "specification": 1
       }
     },
+    "seka-spear-frameset-store-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "seka-spear-frameset-weier-taobao-2026-10-24": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -143530,6 +144204,22 @@
         "identity": 3,
         "price": 3,
         "specification": 1
+      }
+    },
+    "seka-spear-official-page-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "seka-spear-rdc-frameset-store-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "seka-spear-rdc-frameset-store-recheck-2026-09-23": {
@@ -195326,6 +196016,69 @@
         "seka-spear-white-paper-2026-09-01"
       ]
     },
+    "candidate-seka-spear-rdc-frameset-frame-material-2026-10-25": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SEKA Spear TeXtreme DIALEAD pitch Pyrofil PMI\",\"SEKA China Spear product page materials section\",\"found\",\"2026-10-25\",\"TeXtreme base layers, DIALEAD pitch-based 65T/80T, Pyrofil 30T/40T (FAW69), PMI foam filling, one-mould True-One-Piece construction.\",\"https://www.sekabikes.com/spear/\"]",
+        "[\"web\",2,\"SEKA catalog Spear RDC 350 pieces TeXtreme\",\"SEKA 2024–25 catalog PDF, RDC lay-up panel\",\"found\",\"2026-10-25\",\"About 350 cut plies after 37 lay-up iterations using TeXtreme and pitch-based ultra-high-modulus fibre for the 685 g RDC frame.\",\"https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-spear-catalog-recheck-2026-10-25",
+        "seka-spear-cn-official-page-2026-10-25"
+      ]
+    },
+    "candidate-seka-spear-rdc-frameset-frame-stiffness-2026-10-25": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SEKA Spear 刚性 刚性重量比 垂直顺应性 109N/mm\",\"SEKA China Spear product page stiffness section\",\"found\",\"2026-10-25\",\"Spear RDC versus Exceed RDC: stiffness +5%, stiffness-to-weight +14.5%; vertical compliance 109 N/mm (+23%).\",\"https://www.sekabikes.com/spear/\"]",
+        "[\"web\",2,\"SEKA Spear stiffness-to-weight Exceed RDC global page\",\"SEKA global Spear product page performance section\",\"found\",\"2026-10-25\",\"Same manufacturer comparisons; test conditions referred to the development manual.\",\"https://www.sekabikes.com/en/spear-en-2/\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-spear-cn-official-page-2026-10-25",
+        "seka-spear-official-page-2026-10-25"
+      ]
+    },
+    "candidate-seka-spear-rdc-frameset-frame-weight-2026-10-25": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA Spear\",\"XHS search capture, exact title filter spear\",\"found\",\"2026-10-26\",\"A reviewer weighed a size-M dark-silver RDC frame at 835 g with paint and metal parts, fork 406 g and Rapier bar 338 g; a paint shop's refinished size-S RDC frame weighed 718 g with a 345 g fork.\",\"https://www.xiaohongshu.com/explore/6a607a17000000000301c489\"]",
+        "[\"web\",1,\"SEKA Spear RDC 车架重量 不含漆面及金属件\",\"SEKA China Spear product page weight notes\",\"found\",\"2026-10-25\",\"RDC 685 g size-M bare frame without paint or metal parts; RDC Shadow Black size M 729 g ±35 g.\",\"https://www.sekabikes.com/spear/\"]",
+        "[\"web\",2,\"SEKA 2024 catalog Spear RDC frame weight\",\"SEKA 2024–25 catalog PDF, Spear weight panel\",\"found\",\"2026-10-25\",\"RDC 685 g size M unpainted frame only; 729 g Shadow Black; paint changes weight by 20–100 g.\",\"https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf\"]",
+        "[\"web\",3,\"Spear RDC Frameset bare frame weight store\",\"SEKA global store Spear RDC Frameset page\",\"found\",\"2026-10-25\",\"Store prints bare frame weight 685 g ±35 g; no fork, bar or seatpost weights.\",\"https://www.shopsekabikes.com/products/spear-spear-frameset\"]"
+      ],
+      "accepted_source_ids": [
+        "public-xhs-seka-spear-long-review-2026-10-26",
+        "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26",
+        "seka-spear-catalog-recheck-2026-10-25",
+        "seka-spear-cn-official-page-2026-10-25",
+        "seka-spear-rdc-frameset-store-2026-10-25"
+      ]
+    },
+    "candidate-seka-spear-rdc-frameset-tire-clearance-2026-10-25": {
+      "channel_attempt_counts": {
+        "public-post": 2,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA Spear\",\"XHS search capture, exact title filter spear\",\"no-result\",\"2026-10-26\",\"Eight exact Spear posts; the owner builds shown run 28 mm tyres and none states a maximum or a wider fit.\",null]",
+        "[\"public-post\",2,\"SEKA SPEAR RDC\",\"XHS search capture, exact title filter rdc\",\"no-result\",\"2026-10-26\",\"Five RDC-titled posts (brand, dealer and owner); the one listed tyre is 28 mm and no clearance claim appears.\",\"https://www.xiaohongshu.com/explore/6a00a728000000000702a026\"]",
+        "[\"web\",1,\"SEKA Spear max tire width actual\",\"SEKA global Spear product page specification block\",\"found\",\"2026-10-25\",\"Max tire width (actual) 32 mm in the one Spear specification block covering RDC and Standard.\",\"https://www.sekabikes.com/en/spear-en-2/\"]",
+        "[\"web\",2,\"SEKA Spear 胎容量 规格数据\",\"SEKA China Spear product page specification block\",\"found\",\"2026-10-25\",\"前后最大胎容量为32C (front and rear maximum 32C).\",\"https://www.sekabikes.com/spear/\"]",
+        "[\"web\",3,\"SEKA 2024 catalog Spear max tire size\",\"SEKA 2024–25 catalog PDF, Spear section\",\"found\",\"2026-10-25\",\"Spear section covering RDC and Standard: Support up to 32c.\",\"https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-spear-catalog-recheck-2026-10-25",
+        "seka-spear-cn-official-page-2026-10-25",
+        "seka-spear-official-page-2026-10-25"
+      ]
+    },
     "candidate-seka-spear-rdc-geometry-2026-08-17": {
       "channel_attempt_counts": {
         "public-post": 3,
@@ -195524,6 +196277,23 @@
         "seka-warranty-cn-recheck-2026-09-23",
         "seka-warranty-global-official-2026-08-17",
         "seka-warranty-global-recheck-2026-09-23"
+      ]
+    },
+    "candidate-seka-spear-standard-105-di2-tire-clearance-2026-10-25": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA Spear\",\"XHS search capture, exact title filter spear\",\"no-result\",\"2026-10-26\",\"An owner's size-L Standard runs 28 mm GP5000 STR tyres; no post states a maximum or a wider fit.\",\"https://www.xiaohongshu.com/explore/6a9584680000000028007541\"]",
+        "[\"web\",1,\"SEKA Spear Standard frame max tire width\",\"SEKA global Spear product page specification block (Standard coverage)\",\"found\",\"2026-10-25\",\"The single Spear specification block lists 32 mm actual maximum tyre width and covers the Standard frame.\",\"https://www.sekabikes.com/en/spear-en-2/\"]",
+        "[\"web\",2,\"SEKA Spear 标准版 胎容量\",\"SEKA China Spear product page specification block (Standard coverage)\",\"found\",\"2026-10-25\",\"前后最大胎容量为32C on the Spear page that presents both RDC and 标准版 frames.\",\"https://www.sekabikes.com/spear/\"]",
+        "[\"web\",3,\"SEKA 2024 catalog Spear Standard max tire\",\"SEKA 2024–25 catalog PDF, Spear section with Standard finishes\",\"found\",\"2026-10-25\",\"Support up to 32c in the Spear section listing Standard Achromatic Silver and Twilight Blue frames.\",\"https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-spear-catalog-recheck-2026-10-25",
+        "seka-spear-cn-official-page-2026-10-25",
+        "seka-spear-official-page-2026-10-25"
       ]
     },
     "candidate-seraph-tt-x68-new-udh-bottom-bracket-2026-09-22": {
@@ -228775,12 +229545,61 @@
       "remote_required": false,
       "primary_required": false
     },
+    "seka-spear-rdc-frameset-cockpit-gallery": {
+      "target": "candidates:seka-spear-rdc-frameset",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "seka-spear-rdc-frameset-geometry-gallery": {
+      "target": "candidates:seka-spear-rdc-frameset",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "seka-spear-rdc-frameset-primary-image": {
+      "target": "candidates:seka-spear-rdc-frameset",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "seka-spear-rdc-frameset-wind-eye-gallery": {
+      "target": "candidates:seka-spear-rdc-frameset",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
+    },
     "seka-spear-rdc-primary-image": {
       "target": "candidates:seka-spear-rdc",
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "seka-spear-rdc-xhs-brand-complete-2026-10-26": {
+      "target": "candidates:seka-spear-rdc",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "seka-spear-standard-105-di2-primary-image": {
+      "target": "candidates:seka-spear-standard-105-di2",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "seka-spear-standard-105-di2-xhs-owner-side-2026-10-26": {
+      "target": "candidates:seka-spear-standard-105-di2",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
     },
     "seraph-tt-x68-new-udh-official-enrichment-2026-10-03": {
       "target": "candidates:seraph-tt-x68-new-udh",
@@ -230323,6 +231142,16 @@
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true
+    },
+    "candidates:seka-spear-rdc-frameset": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
+    },
+    "candidates:seka-spear-standard-105-di2": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
     },
     "candidates:seraph-tt-x68-new-udh": {
       "minimum_accuracy_rank": 3,

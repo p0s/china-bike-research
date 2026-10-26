@@ -25,7 +25,7 @@
     "frame_weight_g": 1000,
     "frame_weight_basis": "V5 manufacturer catalog: size-54 UD-matte frame, ±4%; V1 separately retained 1,100 g at size 54. Neither is a weighed complete frameset.",
     "tire_clearance_mm": 35,
-    "tire_clearance_basis": "Official 700C×35C maximum",
+    "tire_clearance_basis": "Official 700C×35C maximum in the V5 catalog, which calls the frame Super Aero Race. No 1× or 2× qualifier is printed, and front-derailleur clearance at 35 mm is undocumented.",
     "bottom_bracket": "T47×P1.0, 85.5 mm",
     "hanger": "Light UDH",
     "brakes": "V5 catalog flat-mount disc, 140/160 mm; confirm the exact frame/fork and adapter configuration. Prior V1 summary retained separately.",
@@ -65,6 +65,16 @@
         "package confirmation"
       ],
       "scope": "Exact V5 panel pixel review; prior V1 facts and historical collection dates retained. No seller offer or revision equivalence inferred."
+    },
+    {
+      "reviewed_at": "2026-10-25",
+      "source_ids": [
+        "lightcarbon-catalog-v5-road-recheck-2026-10-11"
+      ],
+      "fields": [
+        "tire_clearance_basis"
+      ],
+      "scope": "V5 page 1 re-read for drivetrain-specific tire limits; the 35C value is unchanged and no LightCarbon product page for this model was found."
     }
   ],
   "page_copy": {

@@ -1,0 +1,78 @@
+{
+  "id": "candidate-seka-spear-rdc-frameset-tire-clearance-2026-10-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seka-spear-rdc-frameset"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-10-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear",
+          "route": "XHS search capture, exact title filter spear",
+          "outcome": "no-result",
+          "accessed_at": "2026-10-26",
+          "note": "Eight exact Spear posts; the owner builds shown run 28 mm tyres and none states a maximum or a wider fit."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA SPEAR RDC",
+          "route": "XHS search capture, exact title filter rdc",
+          "outcome": "no-result",
+          "result_url": "https://www.xiaohongshu.com/explore/6a00a728000000000702a026",
+          "accessed_at": "2026-10-26",
+          "note": "Five RDC-titled posts (brand, dealer and owner); the one listed tyre is 28 mm and no clearance claim appears."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear max tire width actual",
+          "route": "SEKA global Spear product page specification block",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/en/spear-en-2/",
+          "accessed_at": "2026-10-25",
+          "note": "Max tire width (actual) 32 mm in the one Spear specification block covering RDC and Standard."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA Spear 胎容量 规格数据",
+          "route": "SEKA China Spear product page specification block",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/spear/",
+          "accessed_at": "2026-10-25",
+          "note": "前后最大胎容量为32C (front and rear maximum 32C)."
+        },
+        {
+          "attempt": 3,
+          "query": "SEKA 2024 catalog Spear max tire size",
+          "route": "SEKA 2024–25 catalog PDF, Spear section",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf",
+          "accessed_at": "2026-10-25",
+          "note": "Spear section covering RDC and Standard: Support up to 32c."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "seka-spear-official-page-2026-10-25",
+    "seka-spear-cn-official-page-2026-10-25",
+    "seka-spear-catalog-recheck-2026-10-25"
+  ],
+  "retry_after": null,
+  "notes": "Official Spear maximum is 32 mm actual tyre width, front and rear, on current global and China pages and in the 2024–25 catalog; no source supports 35 mm. A 2026-10-25 XHS canary stopped before issuing any search (runtime context mismatch); these searches ran on 2026-10-26 after the runner repair."
+}

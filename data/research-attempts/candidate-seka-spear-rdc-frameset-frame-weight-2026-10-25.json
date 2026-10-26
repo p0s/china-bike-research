@@ -1,0 +1,72 @@
+{
+  "id": "candidate-seka-spear-rdc-frameset-frame-weight-2026-10-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seka-spear-rdc-frameset"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-10-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear",
+          "route": "XHS search capture, exact title filter spear",
+          "outcome": "found",
+          "result_url": "https://www.xiaohongshu.com/explore/6a607a17000000000301c489",
+          "accessed_at": "2026-10-26",
+          "note": "A reviewer weighed a size-M dark-silver RDC frame at 835 g with paint and metal parts, fork 406 g and Rapier bar 338 g; a paint shop's refinished size-S RDC frame weighed 718 g with a 345 g fork."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear RDC 车架重量 不含漆面及金属件",
+          "route": "SEKA China Spear product page weight notes",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/spear/",
+          "accessed_at": "2026-10-25",
+          "note": "RDC 685 g size-M bare frame without paint or metal parts; RDC Shadow Black size M 729 g ±35 g."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA 2024 catalog Spear RDC frame weight",
+          "route": "SEKA 2024–25 catalog PDF, Spear weight panel",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf",
+          "accessed_at": "2026-10-25",
+          "note": "RDC 685 g size M unpainted frame only; 729 g Shadow Black; paint changes weight by 20–100 g."
+        },
+        {
+          "attempt": 3,
+          "query": "Spear RDC Frameset bare frame weight store",
+          "route": "SEKA global store Spear RDC Frameset page",
+          "outcome": "found",
+          "result_url": "https://www.shopsekabikes.com/products/spear-spear-frameset",
+          "accessed_at": "2026-10-25",
+          "note": "Store prints bare frame weight 685 g ±35 g; no fork, bar or seatpost weights."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "seka-spear-cn-official-page-2026-10-25",
+    "seka-spear-catalog-recheck-2026-10-25",
+    "seka-spear-rdc-frameset-store-2026-10-25",
+    "public-xhs-seka-spear-long-review-2026-10-26",
+    "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26"
+  ],
+  "retry_after": null,
+  "notes": "Official frame-only weight accepted with its size-M, unpainted, no-metal-parts basis. Measured XHS examples give painted frame, fork and bar weights; the seatpost and a complete frameset package in one size remain unweighed. A 2026-10-25 XHS canary stopped before issuing any search (runtime context mismatch); these searches ran on 2026-10-26 after the runner repair."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "candidate-seka-spear-rdc-frameset-frame-material-2026-10-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seka-spear-rdc-frameset"
+  },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-10-25",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA Spear TeXtreme DIALEAD pitch Pyrofil PMI",
+          "route": "SEKA China Spear product page materials section",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/spear/",
+          "accessed_at": "2026-10-25",
+          "note": "TeXtreme base layers, DIALEAD pitch-based 65T/80T, Pyrofil 30T/40T (FAW69), PMI foam filling, one-mould True-One-Piece construction."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA catalog Spear RDC 350 pieces TeXtreme",
+          "route": "SEKA 2024–25 catalog PDF, RDC lay-up panel",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/wp-content/uploads/2024/06/SEKA%E5%85%A8%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81%E5%BD%95-2024-%EF%BC%88%E8%8B%B1%EF%BC%89.pdf",
+          "accessed_at": "2026-10-25",
+          "note": "About 350 cut plies after 37 lay-up iterations using TeXtreme and pitch-based ultra-high-modulus fibre for the 685 g RDC frame."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "seka-spear-cn-official-page-2026-10-25",
+    "seka-spear-catalog-recheck-2026-10-25"
+  ],
+  "retry_after": null,
+  "notes": "Manufacturer material and construction description accepted for the RDC frame; no independent lay-up inspection."
+}
