@@ -1,0 +1,122 @@
+{
+  "id": "9velo-cd58-wide-2025",
+  "maker": "9Velo",
+  "name": "CD58 Wide (2025)",
+  "use": "road",
+  "status": "current",
+  "positioning": "Carbon-spoke 58 mm road wheelset with a 24 mm hooked rim and a 120 kg system limit.",
+  "rim": {
+    "depth_mm": {
+      "front": 58,
+      "rear": 58
+    },
+    "internal_width_mm": 24,
+    "external_width_mm": {
+      "front": 30,
+      "rear": 30
+    },
+    "bead": "hooked",
+    "bead_note": "Listed as a hooked rim; the rim bed is drilled, so tubeless use needs tape (pre-installed).",
+    "tubeless_ready": true,
+    "tire_range": "700×28–47c"
+  },
+  "max_pressure": {
+    "psi": null,
+    "note": "Not published on the product page."
+  },
+  "load_limit": {
+    "kg": 120,
+    "scope": "system",
+    "note": "Listed as a system weight limit."
+  },
+  "weight": {
+    "grams": 1323,
+    "tolerance_g": 30,
+    "basis": "Pair with the alloy Shimano freehub, without tubeless tape; the titanium freehub adds 18 g.",
+    "claim_type": "official"
+  },
+  "hub": "9Velo T17 straight-pull · 36T ratchet (45T option) · steel bearings",
+  "spokes": {
+    "material": "carbon",
+    "summary": "Bladed carbon · 20F/20R, 1:1 pattern"
+  },
+  "compatibility": {
+    "rotor_mount": "center-lock",
+    "axles": [
+      "12x100",
+      "12x142"
+    ],
+    "freehubs": [
+      "hg-road",
+      "sram-xdr",
+      "campagnolo-10-12",
+      "campagnolo-n3w"
+    ]
+  },
+  "warranty": "Limited 2-year warranty for the original owner; bearings, spokes and nipples are excluded.",
+  "price_observations": [
+    {
+      "amount": 1289,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-26",
+      "conditions": "36T ratchet and alloy freehub; US$1,329 with the 45T ratchet; titanium freehub +US$80. Non-quality returns pay return shipping and import tax.",
+      "source_id": "9velo-cd-wide-series-2025-official-2026-10-26"
+    }
+  ],
+  "caveats": [
+    "No maximum tire pressure is published.",
+    "The store notes 1–3 weeks of order processing before shipping.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "source_ids": [
+    "9velo-cd-wide-series-2025-official-2026-10-26"
+  ],
+  "reviewed_at": "2026-10-26",
+  "image": {
+    "source_id": "9velo-cd-wide-series-2025-official-2026-10-26",
+    "subject_accuracy": "exact-model",
+    "width": 1200,
+    "height": 1200,
+    "credit": "9Velo",
+    "alt": "9Velo CD58 Wide carbon-spoke wheelset pair with 9VELO and CD 58 rim decals",
+    "rights": {
+      "status": "source-attributed-rehost",
+      "copyright_holder": "9Velo",
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "reviewed_at": "2026-10-26",
+    "local_path": "/assets/images/sourced/official/wheelset-9velo-cd58-wide-2025/2a4709ee6364bc03-detail-w1200.avif",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/wheelset-9velo-cd58-wide-2025/a14a8588e935c467-card-w480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 10860,
+        "sha256": "a14a8588e935c467ee8751f97379d1f1dd0c86d2347b3a85904c309d72f69a06",
+        "format": "image/avif",
+        "quality": 60
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/wheelset-9velo-cd58-wide-2025/2a4709ee6364bc03-detail-w1200.avif",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 41909,
+        "sha256": "2a4709ee6364bc0332449de821d3538f227b3dbe6a8a00ea7867a04b237be634",
+        "format": "image/avif",
+        "quality": 60
+      }
+    ],
+    "source_media_url": "https://ueeshop.ly200-cdn.com/u_file/UPAW/UPAW609/2503/21/products/22-565d.jpg",
+    "source_media_sha256": "8dfbbeb253356c38fb8c5b671bad8f57182461d3a0381fb53260748073cde6f8",
+    "privacy_review": {
+      "reviewed_at": "2026-10-26",
+      "embedded_metadata": "stripped",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  }
+}

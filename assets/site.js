@@ -5,7 +5,7 @@ import { moveSelectionId } from './compare-state.js';
 import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
 import { priceDisplay, deliveredLine, pricePopoverLines, compactPriceBasis } from './price-display.js';
 import { clearanceParts, weightParts, catalogClearance } from './catalog-format.js';
-import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
+import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, isExplicitBuildUrl, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
 // Privacy tools may block the optional analytics module. Catalog behavior must
 // still initialize when that happens.
@@ -77,7 +77,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     link.addEventListener('click', syncLanguageLink);
   });
   // Static HTML is already localized. This only handles text created by interactions.
-  if (locale === 'zh-Hans' || locale === 'de') {
+  if (locale && locale !== 'en') {
     const translateNode = (node) => {
       if (node.nodeType === Node.TEXT_NODE) {
         if (node.parentElement?.closest('script,style,code,textarea,[data-original-language],[data-localized-caption]')) return;
@@ -667,16 +667,19 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setMenuOpen(open);
   });
   navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
-  // Tools stay visible in the header. They fold into one Tools menu only when
-  // the measured header row would otherwise overflow or squeeze the search.
-  const toolsMenu = document.querySelector('[data-nav-tools]');
-  const toolsToggle = toolsMenu?.querySelector('[data-nav-tools-toggle]');
+  // Component and tool links stay visible in the header. When the measured row
+  // would overflow or squeeze the search, labels shorten first, then Tools and
+  // finally Components fold into their own small menus. Narrow layouts list
+  // every group in the main menu sheet instead.
+  const navGroups = ['tools', 'components'].map((name) => document.querySelector(`[data-nav-group="${name}"]`)).filter(Boolean);
   const headerRow = document.querySelector('.site-header .header-inner');
-  function setToolsOpen(open, { restoreFocus = false } = {}) {
-    if (!(toolsToggle instanceof HTMLButtonElement)) return;
-    toolsMenu.classList.toggle('is-open', open);
-    toolsToggle.setAttribute('aria-expanded', String(open));
-    if (!open && restoreFocus) toolsToggle.focus({ preventScroll: true });
+  const groupToggle = (group) => group.querySelector('[data-nav-group-toggle]');
+  function setGroupOpen(group, open, { restoreFocus = false } = {}) {
+    const toggle = groupToggle(group);
+    if (!(toggle instanceof HTMLButtonElement)) return;
+    group.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    if (!open && restoreFocus) toggle.focus({ preventScroll: true });
   }
   function headerCrowded() {
     if (!(headerRow instanceof HTMLElement)) return false;
@@ -686,36 +689,79 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const summary = headerRow.querySelector('.settings-summary');
     return summary instanceof HTMLElement && summary.scrollWidth > summary.clientWidth + 1;
   }
-  function fitTools() {
-    if (!(toolsToggle instanceof HTMLButtonElement)) return;
-    // Narrow layouts list every tool inside the main menu sheet instead.
+  function fitNavigation() {
     const menuMode = menuButton instanceof HTMLElement && getComputedStyle(menuButton).display !== 'none';
-    const wasCollapsed = toolsMenu.classList.contains('is-collapsed');
-    toolsMenu.classList.remove('is-collapsed');
-    stickyHeader?.classList.remove('is-compact-nav');
-    // First shorten two tool labels and the theme label, then fold the tools.
-    if (!menuMode && headerCrowded()) stickyHeader?.classList.add('is-compact-nav');
-    const collapse = !menuMode && headerCrowded();
-    if (collapse) stickyHeader?.classList.remove('is-compact-nav');
-    toolsMenu.classList.toggle('is-collapsed', collapse);
-    toolsToggle.hidden = !collapse;
-    if (!collapse && wasCollapsed) setToolsOpen(false);
-  }
-  if (toolsToggle instanceof HTMLButtonElement) {
-    toolsMenu.classList.add('is-enhanced');
-    toolsToggle.addEventListener('click', () => setToolsOpen(toolsToggle.getAttribute('aria-expanded') !== 'true'));
-    document.addEventListener('click', (event) => {
-      if (event.target instanceof Node && !toolsMenu.contains(event.target)) setToolsOpen(false);
+    const wasCollapsed = navGroups.map((group) => group.classList.contains('is-collapsed'));
+    navGroups.forEach((group) => group.classList.remove('is-collapsed'));
+    stickyHeader?.classList.remove('is-compact-nav', 'is-two-row');
+    if (!menuMode) {
+      // Shorten labels, fold Tools, then move search and price settings to a
+      // second row so every link shows again; fold menus there only if needed.
+      const steps = [[false, 0, false], [true, 0, false], [true, 1, false], [false, 0, true], [true, 0, true], [true, 1, true], [true, 2, true]];
+      for (const [compact, folded, twoRow] of steps) {
+        stickyHeader?.classList.toggle('is-compact-nav', compact);
+        stickyHeader?.classList.toggle('is-two-row', twoRow);
+        navGroups.forEach((group, index) => {
+          group.classList.toggle('is-collapsed', index < folded);
+          // Measure with the menu buttons that the folded state will show.
+          const toggle = groupToggle(group);
+          if (toggle instanceof HTMLButtonElement) toggle.hidden = index >= folded;
+        });
+        if (!headerCrowded()) break;
+      }
+    }
+    navGroups.forEach((group, index) => {
+      const collapsed = group.classList.contains('is-collapsed');
+      const toggle = groupToggle(group);
+      if (toggle instanceof HTMLButtonElement) toggle.hidden = !collapsed;
+      if (!collapsed && wasCollapsed[index]) setGroupOpen(group, false);
     });
-    toolsMenu.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && toolsToggle.getAttribute('aria-expanded') === 'true') {
-        setToolsOpen(false, { restoreFocus: true });
+  }
+  navGroups.forEach((group) => {
+    const toggle = groupToggle(group);
+    if (!(toggle instanceof HTMLButtonElement)) return;
+    group.classList.add('is-enhanced');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      navGroups.forEach((other) => { if (other !== group) setGroupOpen(other, false); });
+      setGroupOpen(group, open);
+    });
+    group.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setGroupOpen(group, false, { restoreFocus: true });
         event.preventDefault();
       }
     });
-    let fitFrame = 0;
-    const scheduleFit = () => { cancelAnimationFrame(fitFrame); fitFrame = requestAnimationFrame(fitTools); };
-    fitTools();
+  });
+  document.addEventListener('click', (event) => {
+    navGroups.forEach((group) => { if (event.target instanceof Node && !group.contains(event.target)) setGroupOpen(group, false); });
+  });
+  // Without JavaScript the language links stay inline; with it they fold into one small menu.
+  const languageMenu = document.querySelector('[data-language-menu]');
+  const languageToggle = languageMenu?.querySelector('[data-language-toggle]');
+  function setLanguageOpen(open, { restoreFocus = false } = {}) {
+    if (!(languageToggle instanceof HTMLButtonElement)) return;
+    languageMenu.classList.toggle('is-open', open);
+    languageToggle.setAttribute('aria-expanded', String(open));
+    if (!open && restoreFocus) languageToggle.focus({ preventScroll: true });
+  }
+  if (languageMenu instanceof HTMLElement && languageToggle instanceof HTMLButtonElement) {
+    languageMenu.classList.add('is-enhanced');
+    languageToggle.hidden = false;
+    languageToggle.addEventListener('click', () => setLanguageOpen(languageToggle.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !languageMenu.contains(event.target)) setLanguageOpen(false);
+    });
+    languageMenu.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || languageToggle.getAttribute('aria-expanded') !== 'true') return;
+      setLanguageOpen(false, { restoreFocus: true });
+      event.preventDefault();
+    });
+  }
+  let fitFrame = 0;
+  function scheduleFit() { cancelAnimationFrame(fitFrame); fitFrame = requestAnimationFrame(fitNavigation); }
+  if (navGroups.length) {
+    fitNavigation();
     addEventListener('resize', scheduleFit);
     document.fonts?.ready.then(scheduleFit);
     // Observe the row and the settings text, never the elements this fit resizes.
@@ -799,10 +845,21 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     try {
       const target = new URL(returnPath, location.origin);
       const expectedRoot = `${base}/`;
-      if (target.origin === location.origin && target.pathname === expectedRoot) {
+      // Spanish and Russian cover only the core tools, so their catalog links lead to the English model page.
+      const interfaceNotes = {
+        es: 'Esta ficha solo está disponible en inglés, chino y alemán. El enlace de arriba vuelve a tu catálogo en español.',
+        ru: 'Эта страница доступна только на английском, китайском и немецком. Ссылка выше вернёт вас к каталогу на русском.'
+      };
+      const interfaceLocale = document.body.dataset.locale === 'en'
+        ? Object.keys(interfaceNotes).find((code) => target.pathname === `${base}/${code}/`) : undefined;
+      if (target.origin === location.origin && (target.pathname === expectedRoot || interfaceLocale)) {
         validatedReturnTarget = target;
         catalogBack.href = `${target.pathname}${target.search}${target.hash || '#catalog'}`;
         catalogBack.textContent = '← Back to filtered catalog';
+        if (interfaceLocale) {
+          const note = Object.assign(document.createElement('p'), { className: 'language-scope-note', lang: interfaceLocale, textContent: interfaceNotes[interfaceLocale] });
+          catalogBack.closest('.breadcrumbs')?.after(note);
+        }
       }
     } catch { /* keep the safe all-bikes link */ }
   }
@@ -880,6 +937,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const catalogData = document.querySelector('#catalog-data');
   if (!catalogRoot || !catalogData) return;
   document.body.classList.add('is-catalog-page');
+  // The tray stays fixed on screen; in keyboard order it follows the result controls instead of the footer.
+  const resultBarForTray = catalogRoot.querySelector('.result-bar');
+  const trayForOrder = document.querySelector('[data-compare-tray]');
+  if (resultBarForTray && trayForOrder) resultBarForTray.after(trayForOrder);
 
   const regionalDataElement = document.querySelector('#regional-price-data');
   const regionalDataPromise = (async () => {
@@ -974,7 +1035,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const publishedFilter = catalogRoot.querySelector('[data-filter-published]');
   const listingFilter = document.querySelector('[data-filter-listing]');
   const listingFilterControl = document.querySelector('[data-listing-filter-control]');
-  const drivetrainChips = [...catalogRoot.querySelectorAll('[data-drivetrain-chip]')];
+  const shiftingFilter = catalogRoot.querySelector('[data-filter-shifting]');
+  const shiftingChips = [...catalogRoot.querySelectorAll('[data-shifting-chip]')];
+  const shiftingValues = new Set(shiftingChips.map((chip) => chip.dataset.shiftingChip));
   const sort = catalogRoot.querySelector('[data-sort]');
   const buildPreset = document.querySelector('[data-frameset-build-preset]');
   const buildAllowance = document.querySelector('[data-frameset-build-allowance]');
@@ -995,7 +1058,6 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   const settingsPanel = document.querySelector('[data-settings-panel]');
   const reset = catalogRoot.querySelector('[data-reset]');
   const showAllModels = catalogRoot.querySelector('[data-show-all-models]');
-  const hiddenLeadCount = Number(catalogRoot.dataset.hiddenLeads || 0);
   const modelLinks = [...catalogRoot.querySelectorAll('[data-model-link]')];
   const typeButtons = [...catalogRoot.querySelectorAll('[data-type-value]')];
   const brandButtons = [...catalogRoot.querySelectorAll('[data-brand-filter]')];
@@ -1005,21 +1067,67 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   modelLinks.forEach((link) => { link.dataset.baseHref = link.getAttribute('href') ?? ''; });
   let activeType = '';
   let activeBrand = '';
-  // Gallery is a second layout of the same rows: filters, sort, selection and
+  // Gallery is the default layout of the same rows: filters, sort, selection and
   // comparison keep working because nothing is duplicated or re-rendered.
   const viewControl = catalogRoot.querySelector('[data-view-control]');
   const viewButtons = [...(viewControl?.querySelectorAll('[data-view-value]') ?? [])];
-  let activeView = 'table';
+  const gallerySizeControl = catalogRoot.querySelector('[data-gallery-size-control]');
+  const gallerySize = gallerySizeControl?.querySelector('[data-gallery-size]');
+  const gallerySizeSteps = [...(gallerySizeControl?.querySelectorAll('[data-gallery-size-step]') ?? [])];
+  const galleryColumnsStorageKey = 'china-bikes-gallery-columns-v1';
+  let activeView = 'gallery';
   let galleryPrepared = false;
+  // Photo size works like zooming a photo grid: fewer, larger cards or more,
+  // smaller ones. Bounds follow the available width so every step changes the
+  // grid and cards stay wide enough to identify a bike and read its price.
+  let galleryColumnPreference = {};
+  try { galleryColumnPreference = JSON.parse(localStorage.getItem(galleryColumnsStorageKey) ?? '{}') ?? {}; } catch { /* the default size still works */ }
+  const phoneLayout = matchMedia('(max-width: 599px)');
+  function galleryLayoutKey() { return phoneLayout.matches ? 'narrow' : 'wide'; }
+  function galleryColumnBounds() {
+    const width = productList instanceof HTMLElement ? productList.clientWidth : 0;
+    const narrow = phoneLayout.matches;
+    const gap = narrow ? 10 : 16;
+    const smallest = narrow ? 104 : 150;
+    const max = Math.max(1, Math.min(narrow ? 3 : 7, Math.floor((width + gap) / (smallest + gap))));
+    const preferred = Math.max(1, Math.min(max, narrow ? 2 : Math.floor((width + gap) / (248 + gap)) || 1));
+    return { max, preferred, gap };
+  }
+  function applyGalleryColumns() {
+    if (!(productList instanceof HTMLElement) || activeView !== 'gallery') return;
+    const { max, preferred, gap } = galleryColumnBounds();
+    const saved = Number(galleryColumnPreference[galleryLayoutKey()]);
+    const columns = Number.isInteger(saved) && saved >= 1 ? Math.min(max, saved) : preferred;
+    productList.dataset.galleryColumns = String(columns);
+    productList.style.setProperty('--gallery-columns', String(columns));
+    if (gallerySize instanceof HTMLInputElement) {
+      // Slider position grows with photo size: right is larger, left is smaller.
+      gallerySize.max = String(max);
+      gallerySize.value = String(max + 1 - columns);
+      gallerySize.disabled = max <= 1;
+      gallerySize.setAttribute('aria-valuetext', translate(columns === 1 ? '1 per row' : `${columns} per row`, locale));
+    }
+    gallerySizeSteps.forEach((button) => {
+      const larger = button.dataset.gallerySizeStep === '1';
+      button.disabled = larger ? columns <= 1 : columns >= max;
+    });
+    // A step that just reached its limit hands keyboard focus to the slider instead of dropping it.
+    if (gallerySizeSteps.some((button) => button.disabled && button === document.activeElement)) (gallerySize instanceof HTMLInputElement && !gallerySize.disabled ? gallerySize : gallerySizeSteps.find((button) => !button.disabled))?.focus();
+    const cardWidth = Math.max(1, Math.ceil((productList.clientWidth - gap * (columns - 1)) / columns));
+    rows.forEach((row) => {
+      const image = row.querySelector('.product-image-link > img');
+      if (image instanceof HTMLImageElement && image.srcset) image.sizes = `${cardWidth}px`;
+    });
+  }
+  function setGalleryColumns(columns) {
+    const { max } = galleryColumnBounds();
+    galleryColumnPreference = { ...galleryColumnPreference, [galleryLayoutKey()]: Math.max(1, Math.min(max, columns)) };
+    try { localStorage.setItem(galleryColumnsStorageKey, JSON.stringify(galleryColumnPreference)); } catch { /* size still applies to this page */ }
+    applyGalleryColumns();
+  }
   function prepareGallery() {
     if (galleryPrepared || !(productList instanceof HTMLElement)) return;
     galleryPrepared = true;
-    const headings = [...(productList.querySelector('.catalog-head')?.children ?? [])].map((cell) => (cell.querySelector('.catalog-heading-tools > :first-child') ?? cell).textContent.trim());
-    // Column headings are already localized; gallery cards reuse them as labels.
-    ['price', 'capability', 'tires', 'drivetrain', 'weight', 'frame'].forEach((key, index) => {
-      const text = headings[index + 2] ?? '';
-      if (text) productList.style.setProperty(`--gallery-label-${key}`, JSON.stringify(text));
-    });
     rows.forEach((row) => {
       const image = row.querySelector('.product-image-link > img');
       const item = byId.get(row.dataset.id);
@@ -1029,11 +1137,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     });
   }
   function setView(value, { historyMode = 'push', update = true } = {}) {
-    activeView = value === 'gallery' ? 'gallery' : 'table';
+    activeView = value === 'table' ? 'table' : 'gallery';
     if (activeView === 'gallery') prepareGallery();
     closeImagePreview();
     if (productList instanceof HTMLElement) productList.dataset.catalogView = activeView;
     viewButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.viewValue === activeView)));
+    if (gallerySizeControl instanceof HTMLElement) gallerySizeControl.hidden = activeView !== 'gallery';
+    applyGalleryColumns();
     if (update) updateFilterUrl(historyMode);
   }
   if (viewControl instanceof HTMLElement) {
@@ -1041,6 +1151,22 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     viewButtons.forEach((button) => button.addEventListener('click', () => {
       if (button.dataset.viewValue !== activeView) setView(button.dataset.viewValue);
     }));
+  }
+  if (gallerySize instanceof HTMLInputElement) {
+    gallerySize.addEventListener('input', () => setGalleryColumns(Number(gallerySize.max) + 1 - Number(gallerySize.value)));
+  }
+  gallerySizeSteps.forEach((button) => button.addEventListener('click', () => {
+    const current = Number(productList?.dataset.galleryColumns) || galleryColumnBounds().preferred;
+    setGalleryColumns(current - Number(button.dataset.gallerySizeStep));
+  }));
+  if ('ResizeObserver' in window && productList instanceof HTMLElement) {
+    let galleryWidth = 0;
+    new ResizeObserver(() => {
+      const width = productList.clientWidth;
+      if (width === galleryWidth) return;
+      galleryWidth = width;
+      applyGalleryColumns();
+    }).observe(productList);
   }
   let allModelsVisible = false;
   const defaultBuildAllowance = Number(buildAllowance?.dataset.defaultValue || 0);
@@ -1056,12 +1182,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   leadDivider.firstElementChild.setAttribute('role', 'cell');
 
   const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' };
-  const legacySortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', published: 'published-asc' };
+  // The China-only price sort was retired: Price now sorts the amount each row shows.
+  const legacySortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', published: 'published-asc', 'china-asc': 'price-asc', 'china-desc': 'price-desc' };
   const defaultSort = 'published-asc';
 
   function canonicalSortMode(value) {
     const candidate = legacySortModes[value] ?? value;
-    return ['published-asc', 'china-asc', 'china-desc', 'price-asc', 'price-desc', 'name-asc', 'name-desc', 'capability-asc', 'capability-desc', 'tire-asc', 'tire-desc'].includes(candidate)
+    return ['published-asc', 'price-asc', 'price-desc', 'name-asc', 'name-desc', 'capability-asc', 'capability-desc', 'tire-asc', 'tire-desc'].includes(candidate)
       ? candidate
       : defaultSort;
   }
@@ -1119,18 +1246,12 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const heading = sortHeadingByKey.get('price')?.querySelector('span');
     if (heading) heading.textContent = `${translate('Price', locale)} · ${currency}`;
     const domestic = activeCountry === 'CN';
-    for (const [direction, words] of [['asc', 'low to high'], ['desc', 'high to low']]) {
-      const option = sort?.querySelector(`option[value="price-${direction}"]`);
-      if (option) option.textContent = translate(`${domestic ? 'Price' : 'Delivered price'}: ${words}`, locale);
-    }
     const budgetLabel = catalogRoot.querySelector('[data-price-budget-label]');
     if (budgetLabel) budgetLabel.textContent = translate(domestic ? 'Max full-bike price' : 'Max delivered price', locale);
-    const publishedOption = sort?.querySelector('option[value="published-asc"]');
-    if (publishedOption) publishedOption.textContent = translate(domestic ? 'Published first, then price' : 'Published first, then China price', locale);
     const budgetHelp = catalogRoot.querySelector('[data-price-budget-help]');
     if (budgetHelp) budgetHelp.textContent = translate(domestic ? 'China price. Frame builds include your plan.' : 'Budget filters require complete delivered totals.', locale);
     const sortButton = sortHeadingByKey.get('price');
-    if (sortButton) sortButton.title = translate(domestic ? 'Sort by China totals; reference estimates follow.' : 'Sort by delivered totals; reference estimates follow.', locale);
+    if (sortButton) sortButton.title = translate('Sort by the price shown in each row; unknown prices stay last.', locale);
     catalogRoot.querySelector('[data-price-currency]').textContent = currency;
     const note = document.querySelector('[data-price-region-note]');
     note.hidden = false;
@@ -1156,9 +1277,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       cell?.querySelector('[data-china-difference]')?.remove();
       row.dataset.hasListing = 'false';
       if (item.priceUnavailable) {
-        row.dataset.priceSort = '';
+        // A conditional or reference amount that the row still shows sorts by that amount,
+        // converted only for ordering; it never qualifies for a budget filter.
+        const shownLow = convertPrice(numberOrNull(item.priceLowCny), 'CNY', currency, regionalData.rates);
+        const shownHigh = convertPrice(numberOrNull(item.priceHighCny ?? item.priceLowCny), 'CNY', currency, regionalData.rates);
+        row.dataset.priceSort = Number.isFinite(shownLow) ? String(shownLow) : '';
+        row.dataset.priceSortHigh = Number.isFinite(shownHigh) ? String(shownHigh) : '';
         row.dataset.priceFilter = '';
-        row.dataset.chinaSort = '';
         return;
       }
       const projection = regionalPrice(item, { country: activeCountry, currency, area: activeArea }, regionalData, currentBuildAllowance);
@@ -1169,9 +1294,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         subline.className = 'metric-sub price-state';
         cell.append(subline);
       }
-      row.dataset.priceSort = Number.isFinite(projection.low) ? String((projection.low + projection.high) / 2) : '';
+      // Sorting follows the headline amount the row shows (delivered total, China
+      // price or labelled reference); budgets still require complete delivered totals.
+      row.dataset.priceSort = Number.isFinite(projection.display.low) ? String(projection.display.low) : '';
+      row.dataset.priceSortHigh = Number.isFinite(projection.display.high) ? String(projection.display.high) : '';
       row.dataset.priceFilter = Number.isFinite(projection.high) ? String(projection.high) : '';
-      row.dataset.chinaSort = Number.isFinite(projection.chinaTotal.low) ? String((projection.chinaTotal.low + projection.chinaTotal.high) / 2) : '';
       row.dataset.hasListing = String(Boolean(offer));
       const shown = priceDisplay(projection, {
         currency, allowance: currentBuildAllowance, locale, today, translate,
@@ -1241,6 +1368,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const details = String(original.details).replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`);
       item.priceDetails = [details, ...lines].filter(Boolean).join(' ');
     });
+    // A strict delivered budget matches nothing where no delivered total is recorded; say so instead of silently emptying the list.
+    const budgetable = domestic || rows.some((row) => row.dataset.priceFilter !== '');
+    if (!budgetable && budgetHelp) budgetHelp.textContent = translate('No delivered totals are recorded for this destination yet, so a budget here matches no bike.', locale);
+    if (price instanceof HTMLInputElement) price.disabled = !budgetable && !price.value;
     catalogRoot.dataset.activeShipCountry = activeCountry || 'unknown';
     catalogRoot.dataset.activePriceCurrency = currency;
     updateSettingsSummary();
@@ -1289,7 +1420,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const frameHigh = Number(row.dataset.framePriceHigh || row.dataset.framePriceLow);
       const low = frameLow + currentBuildAllowance;
       const high = frameHigh + currentBuildAllowance;
-      row.dataset.priceSort = String(Math.round((low + high) / 2));
+      row.dataset.priceSort = String(low);
+      row.dataset.priceSortHigh = String(high);
       row.dataset.priceFilter = String(high);
       const priceLabel = row.querySelector('[data-calculated-price]');
       if (priceLabel) priceLabel.textContent = formatEstimatedRange(low, high);
@@ -1345,6 +1477,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setParam(next, 'completeWeight', completeWeight?.value);
     setParam(next, 'frameWeight', frameWeight?.value);
     setParam(next, 'drivetrain', drivetrainFilter?.value.trim());
+    setParam(next, 'shifting', shiftingFilter?.value);
     setParam(next, 'frameFact', frameFilter?.value.trim());
     setParam(next, 'categoryMin', categoryMinimum?.value);
     next.searchParams.delete('capability');
@@ -1352,7 +1485,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     setParam(next, 'published', publishedFilter?.checked ? '1' : '');
     setParam(next, 'listing', listingFilter?.checked ? '1' : '');
     setParam(next, 'sort', sort?.value, defaultSort);
-    setParam(next, 'view', activeView === 'gallery' ? 'gallery' : '');
+    setParam(next, 'view', activeView === 'table' ? 'table' : '');
     setParam(next, 'scope', allModelsVisible ? 'all' : '');
     setParam(next, 'buildPreset', currentBuildPreset, defaultBuildPreset);
     setParam(next, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
@@ -1389,7 +1522,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }
 
   function hasFilters() {
-    return Boolean(heldRegional?.limit || heldRegional?.listing || activeType || activeBrand || allModelsVisible || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tireLayout?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
+    return Boolean(heldRegional?.limit || heldRegional?.listing || activeType || activeBrand || allModelsVisible || shiftingFilter?.value || publishedFilter?.checked || listingFilter?.checked || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tireLayout?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== defaultSort));
   }
 
   function numericValue(input, multiplier = 1) {
@@ -1446,6 +1579,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       (!minTire || tireValue >= minTire || (!tireValue && tireUnknown?.checked)) &&
       weightMatches &&
       (!drivetrain || `${item?.drivetrain ?? ''} ${item?.drivetrainSubline ?? ''}`.toLowerCase().includes(drivetrain)) &&
+      // Shifting uses the recorded class: frame-only and unresolved builds match neither.
+      (!shiftingFilter?.value || item?.shifting === shiftingFilter.value) &&
       (!frame || String(item?.frameSearch ?? item?.frame ?? '').toLowerCase().includes(frame)) &&
       (!categoryLimit || (row.dataset.capabilityKind === categoryKind && Number(row.dataset.capabilitySort || 0) >= categoryLimit)) &&
       (!publishedFilter?.checked || row.dataset.stage !== 'candidate') &&
@@ -1581,7 +1716,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const { key, direction } = sortModeParts();
     sortHeadingButtons.forEach((button) => {
       const heading = button.closest('[role="columnheader"]');
-      const isActive = button.dataset.sortHeading === key && (key !== 'price' || items.some((row) => numberOrNull(row.dataset.priceSort) !== null));
+      const isActive = button.dataset.sortHeading === key;
       heading?.setAttribute('aria-sort', isActive ? (direction === 'desc' ? 'descending' : 'ascending') : 'none');
       if (button instanceof HTMLButtonElement) {
         const defaultDirection = sortModeParts(defaultSortModes[button.dataset.sortHeading]).direction;
@@ -1600,12 +1735,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const stage = (row) => row.dataset.stage === 'candidate' ? 1 : 0;
     return [...items].sort((a, b) => {
       if (key === 'name') return byName(a, b) * (direction === 'desc' ? -1 : 1);
-      if (key === 'published') return searchScore(a) - searchScore(b) || stage(a) - stage(b) || compareNumbers(a.dataset.chinaSort, b.dataset.chinaSort) || byName(a, b);
-      const field = key === 'tire' ? 'tireClearanceSort' : key === 'capability' ? 'capabilitySort' : key === 'china' ? 'chinaSort' : 'priceSort';
-      const value = (row) => ['price', 'china'].includes(key) || Number(row.dataset[field]) > 0 ? row.dataset[field] : null;
+      if (key === 'published') return searchScore(a) - searchScore(b) || stage(a) - stage(b) || compareNumbers(a.dataset.priceSort, b.dataset.priceSort) || compareNumbers(a.dataset.priceSortHigh, b.dataset.priceSortHigh) || byName(a, b) || (a.dataset.id ?? '').localeCompare(b.dataset.id ?? '');
+      const field = key === 'tire' ? 'tireClearanceSort' : key === 'capability' ? 'capabilitySort' : 'priceSort';
+      const value = (row) => key === 'price' || Number(row.dataset[field]) > 0 ? row.dataset[field] : null;
+      // The first visible amount moves monotonically; ranges then order by their upper bound.
       return compareNumbers(value(a), value(b), direction)
-        || (key === 'price' ? 0 : compareNumbers(a.dataset.priceSort, b.dataset.priceSort))
-        || byName(a, b);
+        || (key === 'price' ? compareNumbers(a.dataset.priceSortHigh, b.dataset.priceSortHigh, direction) : compareNumbers(a.dataset.priceSort, b.dataset.priceSort))
+        || byName(a, b) || (a.dataset.id ?? '').localeCompare(b.dataset.id ?? '');
     });
   }
 
@@ -1629,6 +1765,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
           : key === 'complete-weight' ? completeWeight
             : key === 'frame-weight' ? frameWeight
               : key === 'drivetrain' ? drivetrainFilter
+                : key === 'shifting' ? shiftingFilter
                 : key === 'frame' ? frameFilter
                   : key === 'category' ? categoryMinimum
                     : key === 'published' ? publishedFilter
@@ -1664,10 +1801,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (tireUnknown?.checked && tire?.value) chips.push(['tire-unknown', 'Include unknown tire clearance']);
     if (completeWeight?.value) chips.push(['complete-weight', `Complete bike ≤ ${completeWeight.value} kg`]);
     if (frameWeight?.value) chips.push(['frame-weight', `Frame ≤ ${frameWeight.value} g`]);
-    if (drivetrainFilter?.value.trim()) chips.push(['drivetrain', `Drivetrain: ${drivetrainFilter.value.trim()}`]);
+    if (shiftingFilter?.value) chips.push(['shifting', translate(shiftingFilter.value === 'electronic' ? 'Electronic shifting' : 'Mechanical shifting', locale)]);
+    if (drivetrainFilter?.value.trim()) chips.push(['drivetrain', `${translate('Drivetrain', locale)}: ${drivetrainFilter.value.trim()}`]);
     if (frameFilter?.value.trim()) chips.push(['frame', `${translate('Frame', locale)}: ${frameFilter.value.trim()}`]);
     if (categoryMinimum?.value) chips.push(['category', `${categoryMinimumLabel?.textContent || 'Category'} ≥ ${categoryMinimum.value}${categoryMinimumUnit?.textContent ? ` ${categoryMinimumUnit.textContent}` : ''}`]);
-    if (publishedFilter?.checked) chips.push(['published', 'Published only']);
+    if (publishedFilter?.checked) chips.push(['published', translate('Complete profiles only', locale)]);
     if (listingFilter?.checked) chips.push(['listing', `${translate('Listing', locale)}: ${countryName(activeCountry || 'CN', locale)}`]);
     else if (heldRegional?.listing) chips.push(['listing', `${translate('Listing', locale)}: ${heldRegional.country ? countryName(heldRegional.country, locale) : '?'} · ${translate('not checked', locale)}`]);
     return chips;
@@ -1705,13 +1843,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
           : field === 'search' ? activeKeys.has('query') : activeKeys.has(field);
       button.classList.toggle('is-active', active);
     });
-    drivetrainChips.forEach((chip) => chip.setAttribute('aria-pressed', String((drivetrainFilter?.value.trim().toLowerCase() ?? '') === chip.dataset.drivetrainChip)));
+    shiftingChips.forEach((chip) => chip.setAttribute('aria-pressed', String((shiftingFilter?.value ?? '') === chip.dataset.shiftingChip)));
     return chips;
   }
 
   // Zero results offer the changes that restore the most bikes, without side effects.
   function countWithout(key) {
-    const controls = { price, tire, 'tire-layout': tireLayout, 'tire-unknown': tireUnknown, 'complete-weight': completeWeight, 'frame-weight': frameWeight, drivetrain: drivetrainFilter, frame: frameFilter, category: categoryMinimum, published: publishedFilter, listing: listingFilter, query: search, family: category };
+    const controls = { price, tire, 'tire-layout': tireLayout, 'tire-unknown': tireUnknown, 'complete-weight': completeWeight, 'frame-weight': frameWeight, drivetrain: drivetrainFilter, shifting: shiftingFilter, frame: frameFilter, category: categoryMinimum, published: publishedFilter, listing: listingFilter, query: search, family: category };
     const control = controls[key];
     const savedType = activeType;
     const savedBrand = activeBrand;
@@ -1766,12 +1904,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const matching = rows.filter(rowMatches);
     const searching = searchTerms.length > 0;
     const defaultSortOption = sort?.querySelector('option[value="published-asc"]');
-    if (defaultSortOption) defaultSortOption.textContent = translate(searching ? 'Best match'
-      : activeCountry === 'CN' ? 'Published first, then price' : 'Published first, then China price', locale);
+    if (defaultSortOption) defaultSortOption.textContent = translate(searching ? 'Best match' : 'Complete profiles first', locale);
     const sortCorrected = updateSortAvailability(matching);
     updateSortHeadings(matching);
     const sortStatus = catalogRoot.querySelector('[data-sort-status]');
-    if (sortStatus) sortStatus.textContent = sortModeParts().key === 'price' && activeCountry !== 'CN' && !matching.some((row) => numberOrNull(row.dataset.priceSort) !== null) ? translate('No delivered totals in these results. Choose China price to compare references.', locale) : '';
+    if (sortStatus) sortStatus.textContent = '';
     updateCategoryCounts();
     updateCategoryFactColumn(matching);
     const chips = renderFilterChips();
@@ -1802,11 +1939,14 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     leadDivider.hidden = !firstLead;
     if (firstLead) productList?.insertBefore(leadDivider, firstLead);
     if (resultCount) resultCount.textContent = String(visible);
+    // The noun follows the count in every language (Russian has three plural forms).
+    const resultNoun = catalogRoot.querySelector('[data-result-noun]');
+    if (resultNoun) resultNoun.textContent = translate(`${visible} ${visible === 1 ? 'model' : 'models'}`, locale).replace(/^\s*\d+\s*/, '');
     if (sheetResultCount) sheetResultCount.textContent = translate(`Show ${visible} results`, locale);
     if (resultCoverage) {
       const visiblePublished = matching.filter((row) => row.dataset.stage !== 'candidate').length;
       const visibleLeads = visible - visiblePublished;
-      resultCoverage.dataset.tooltipLines = JSON.stringify([translate(`${visiblePublished} published profiles; ${visibleLeads} partial profiles. Missing facts remain unknown.`, locale)]);
+      resultCoverage.dataset.tooltipLines = JSON.stringify([translate(`${visiblePublished} complete profiles; ${visibleLeads} partial profiles. Missing facts remain unknown.`, locale)]);
     }
     if (resultContext) resultContext.textContent = activeBrand ? ` for ${brandLabels.get(activeBrand) ?? activeBrand}` : '';
     if (filterNotice) filterNotice.textContent = (categoryFilterCleared ? ' · incompatible category filter cleared' : '')
@@ -1817,8 +1957,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (visible === 0) renderEmptySuggestions(chips);
     if (reset) reset.hidden = !hasFilters();
     if (showAllModels instanceof HTMLButtonElement) {
+      // Offer only the hidden models that would match the current filters; hide the offer when none would.
+      const hiddenMatching = allModelsVisible ? 0 : rows.filter((row) => !rowInScope(row) && matchesQuery(row) && matchesPrimaryContext(row) && matchesTypedFilters(row)).length;
       showAllModels.setAttribute('aria-pressed', String(allModelsVisible));
-      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenLeadCount} more models`, locale);
+      showAllModels.hidden = !allModelsVisible && hiddenMatching === 0;
+      showAllModels.textContent = translate(allModelsVisible ? 'Show the focused list' : `Show ${hiddenMatching} more ${hiddenMatching === 1 ? 'model' : 'models'}`, locale);
     }
     if (historyMode) updateFilterUrl(historyMode);
     else if (tireUnknownCleared || categoryFilterCleared || sortCorrected) updateFilterUrl('replace');
@@ -1874,7 +2017,11 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (tireUnknown instanceof HTMLInputElement) tireUnknown.checked = requestedTireUnknown;
     if (completeWeight) completeWeight.value = params.get('completeWeight') ?? '';
     if (frameWeight) frameWeight.value = params.get('frameWeight') ?? '';
-    if (drivetrainFilter) drivetrainFilter.value = params.get('drivetrain') ?? '';
+    // Older links used the drivetrain text box for the shifting chips.
+    const legacyShifting = !params.has('shifting') && shiftingValues.has((params.get('drivetrain') ?? '').trim().toLowerCase()) ? (params.get('drivetrain') ?? '').trim().toLowerCase() : '';
+    const requestedShifting = legacyShifting || (shiftingValues.has(params.get('shifting') ?? '') ? params.get('shifting') : '');
+    if (drivetrainFilter) drivetrainFilter.value = legacyShifting ? '' : params.get('drivetrain') ?? '';
+    if (shiftingFilter instanceof HTMLInputElement) shiftingFilter.value = requestedShifting;
     if (frameFilter) frameFilter.value = params.get('frameFact') ?? '';
     if (category) category.value = validCategory(requestedCategory);
     if (publishedFilter instanceof HTMLInputElement) publishedFilter.checked = requestedPublished;
@@ -1901,13 +2048,14 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       requestedBrand !== activeBrand ||
       requestedType !== activeType ||
       requestedListing !== Boolean(listingFilter?.checked) ||
+      Boolean(legacyShifting) || (params.get('shifting') ?? '') !== requestedShifting ||
       requestedBuildAllowance !== String(currentBuildAllowance) ||
       (params.get('buildPreset') ?? defaultBuildPreset) !== currentBuildPreset ||
       (params.get('scope') ?? '') !== (allModelsVisible ? 'all' : '') ||
       Boolean(legacyCapability) ||
       Boolean(legacyMarket) ||
       requestedSort !== (sort?.value ?? defaultSort) ||
-      requestedView !== (activeView === 'gallery' ? 'gallery' : '');
+      requestedView !== (activeView === 'table' ? 'table' : '');
     if (corrected) updateFilterUrl('replace');
   }
 
@@ -1922,9 +2070,9 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (narrowLayout.matches) catalogRoot.querySelector('.result-bar')?.scrollIntoView({ block: 'start' });
   });
   categoryButtons.forEach((button) => button.addEventListener('click', () => setCategory(button.dataset.categoryValue ?? '')));
-  drivetrainChips.forEach((chip) => chip.addEventListener('click', () => {
-    if (!(drivetrainFilter instanceof HTMLInputElement)) return;
-    drivetrainFilter.value = drivetrainFilter.value.trim().toLowerCase() === chip.dataset.drivetrainChip ? '' : chip.dataset.drivetrainChip ?? '';
+  shiftingChips.forEach((chip) => chip.addEventListener('click', () => {
+    if (!(shiftingFilter instanceof HTMLInputElement)) return;
+    shiftingFilter.value = shiftingFilter.value === chip.dataset.shiftingChip ? '' : chip.dataset.shiftingChip ?? '';
     updateCatalog({ historyMode: 'push' });
   }));
   function updatePricePreference(control) {
@@ -1976,7 +2124,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   }));
   function resetCatalog() {
     if (search) search.value = '';
-    ['price', 'tire', 'tire-layout', 'tire-unknown', 'complete-weight', 'frame-weight', 'drivetrain', 'frame', 'category', 'published', 'listing'].forEach(clearTypedFilter);
+    ['price', 'tire', 'tire-layout', 'tire-unknown', 'complete-weight', 'frame-weight', 'drivetrain', 'shifting', 'frame', 'category', 'published', 'listing'].forEach(clearTypedFilter);
     if (category) category.value = '';
     if (sort) sort.value = defaultSort;
     updateFramesetPrices(defaultBuildAllowance, { highlight: true, presetId: defaultBuildPreset });
@@ -2306,7 +2454,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         groupRow.append(groupHeader);
         body.append(groupRow);
       }
-      fields.forEach(([label, render, key = '']) => {
+      let differing = 0;
+      fields.forEach(([label, render, key = '', sameKey = null]) => {
         const row = element('tr');
         const header = element('th', 'compare-label', translate(label, locale));
         header.scope = 'row';
@@ -2315,13 +2464,18 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
           const cell = element('td');
           cell.append(render(item));
           row.append(cell);
-          return cell.textContent.trim();
+          // Formatting, spacing and case never count as a difference.
+          return String(sameKey ? sameKey(item) : cell.textContent).replace(/\s+/g, ' ').trim().toLowerCase();
         });
         // Rows where every bike has the same value can be hidden; nothing is ranked.
+        // A row that is unknown for every bike is also identical.
         if (new Set(values).size === 1) row.classList.add('is-same');
+        else differing += 1;
         if (key) row.dataset.compareField = key;
         body.append(row);
       });
+      // A group heading disappears with its rows in differences-only mode.
+      if (!differing) body.classList.add('is-same');
       table.append(body);
     }
     scroll.append(table);
@@ -2344,7 +2498,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     return cell;
   }
 
-  function renderComparison() {
+  function renderComparison({ historyMode = 'replace' } = {}) {
     const items = selection.map((id) => byId.get(id)).filter(Boolean);
     if (!compareContent || items.length < 2) return;
     const metricKinds = [...new Set(items.map((item) => item.categoryMetricKind))];
@@ -2383,10 +2537,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       cell.append(link);
       return cell;
     };
+    // Research profiles may lack a handlebar note; that alone is not a category difference.
+    const everyHandlebar = items.every((item) => / · [a-z]+-bar$/.test(item.category ?? ''));
+    const categoryKey = (item) => everyHandlebar ? item.category : String(item.category ?? '').replace(/ · [a-z]+-bar$/, '');
     const groups = [
       ['Cost', [['Full-bike price', comparePrice, 'price']]],
       ['Use & fit', [
-        ['Category', (item) => valueCell(item.category), 'category'],
+        ['Category', (item) => valueCell(item.category), 'category', categoryKey],
         ...(hasValue('tireClearance') ? [['Tire clearance', clearance, 'tire']] : []),
         ...metricFields
       ]],
@@ -2398,7 +2555,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       ['Frame & standards', [
         ...(hasValue('frame') ? [['Frame', (item) => valueCell(item.frame), 'frame']] : [])
       ]],
-      ...(geometryItems.length >= 1 ? [['', [['Geometry', geometryLink, 'geometry']]]] : [])
+      // The geometry link is navigation, not a fact, so differences mode keeps it.
+      ...(geometryItems.length >= 1 ? [['', [['Geometry', geometryLink, 'geometry', (item) => item.id]]]] : [])
     ];
     const assessmentFields = [
       ...(hasValue('bestFor') ? [['Best for', (item) => valueCell(item.bestFor)]] : []),
@@ -2424,18 +2582,25 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, notes.join(' '));
     const orderHint = element('p', 'compare-order-hint sr-only', 'Use the arrow controls to reorder columns. The comparison link keeps this order.');
     const grid = comparisonGrid(items, groups, true);
-    grid.classList.toggle('is-differences-only', Boolean(compareDifferences?.checked));
+    const differencesOnly = Boolean(compareDifferences?.checked);
+    compareContent.classList.toggle('is-differences-only', differencesOnly);
     compareContent.replaceChildren(context, orderHint, grid);
-    if (assessmentFields.length) {
-      const assessment = element('details', 'compare-more');
-      assessment.append(element('summary', '', translate('Trade-offs and buying checks', locale)), comparisonGrid(items, [['', assessmentFields]]));
-      compareContent.append(assessment);
+    for (const [label, fields] of [['Trade-offs and buying checks', assessmentFields], ['More details', secondaryFields]]) {
+      if (!fields.length) continue;
+      const section = element('details', 'compare-more');
+      const sectionGrid = comparisonGrid(items, [['', fields]]);
+      section.append(element('summary', '', translate(label, locale)), sectionGrid);
+      // A disclosure whose rows are all identical has nothing to show in this mode.
+      if (!sectionGrid.querySelector('tr:not(.is-same) td')) section.classList.add('is-same');
+      compareContent.append(section);
     }
-    if (secondaryFields.length) {
-      const more = element('details', 'compare-more');
-      more.append(element('summary', '', translate('More details', locale)), comparisonGrid(items, [['', secondaryFields]]));
-      compareContent.append(more);
-    }
+    const hiddenRows = [...compareContent.querySelectorAll('tbody > tr.is-same')].filter((row) => row.querySelector('td')).length;
+    const sameStatus = element('p', 'compare-same-status', !differencesOnly ? ''
+      : hiddenRows ? translate(hiddenRows === 1 ? '1 identical row hidden' : `${hiddenRows} identical rows hidden`, locale)
+        : translate('Every compared row differs.', locale));
+    sameStatus.setAttribute('role', 'status');
+    sameStatus.hidden = !differencesOnly;
+    compareContent.insertBefore(sameStatus, grid);
     if (compareHeadingCount) compareHeadingCount.textContent = `${items.length} / ${comparisonSelectionLimit}`;
 
     const next = new URL(location.href);
@@ -2447,7 +2612,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     if (heldRegional) writeRegionalHold(next, heldRegional);
     setParam(next, 'start', startingPoint);
     setParam(next, 'diff', compareDifferences?.checked ? '1' : '');
-    try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }
+    try { history[historyMode === 'push' ? 'pushState' : 'replaceState'](null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }
     updateModelLinks();
   }
 
@@ -2478,7 +2643,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   document.querySelector('[data-clear-selection]')?.addEventListener('click', () => setSelection([]));
   catalogRoot.querySelector('[data-close-compare]')?.addEventListener('click', () => closeComparison({ restoreFocus: true }));
   tireLayout?.addEventListener('change', () => { updateCatalog({ historyMode: 'push' }); if (comparePanel && !comparePanel.hidden) renderComparison(); });
-  compareDifferences?.addEventListener('change', () => { if (selection.length >= 2) renderComparison(); });
+  // Back and Forward restore the differences mode like any other comparison state.
+  compareDifferences?.addEventListener('change', () => { if (selection.length >= 2) renderComparison({ historyMode: 'push' }); });
   catalogRoot.querySelector('[data-copy-comparison]')?.addEventListener('click', async (event) => {
     if (selection.length >= 2) renderComparison();
     if (event.currentTarget instanceof HTMLButtonElement) {
@@ -2538,7 +2704,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   let presentation;
   try { presentation = await import('./builder-presentation.js'); } catch { return; }
-  const { buildBaseFacts, buildCompatibilityMessages, buildComposition, buildSlotState, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
+  const { buildBaseFactRows, buildCompatibilityMessages, buildComposition, buildSlotState, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
 
   const storageKey = 'china-bike-builder-v2';
   const bases = new Map(data.bases.map((base) => [base.id, base]));
@@ -2671,7 +2837,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       for (const [field, value] of [['price', custom.price], ['weight', custom.weight], ['removed', custom.removedWeight]]) {
         const key = `${field}-${slot}`;
         const recordedValue = field === 'price' ? numberOrNull(part?.priceCny) : field === 'weight' ? numberOrNull(part?.weightG) : null;
-        const relevant = !['included', 'in-base'].includes(selection) && (field === 'removed' ? base?.kind === 'complete-bike' : selection === 'custom' || recordedValue === null);
+        const relevant = !['included', 'in-base'].includes(selection) && (field === 'removed' ? base?.kind === 'complete-bike' : field === 'price' || selection === 'custom' || recordedValue === null);
         if (relevant && value !== '') target.searchParams.set(key, value);
         else target.searchParams.delete(key);
       }
@@ -2749,7 +2915,55 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     row.addEventListener('focusin', on); row.addEventListener('focusout', off);
   });
 
-  function render({ historyMode = 'replace' } = {}) {
+  // Each unresolved input is a button that jumps to the exact field to complete.
+  const todo = root.querySelector('[data-build-todo]');
+  function todoTarget(kind, entry) {
+    if (entry === 'frameset' || entry === 'base bike') return kind === 'price' ? basePrice : baseWeight;
+    if (entry === 'fork / frame package remainder') return packageWeight;
+    const delta = entry.endsWith(' replacement delta');
+    const slot = delta ? entry.slice(0, -' replacement delta'.length) : entry;
+    const row = rows.get(slot);
+    if (!row) return null;
+    // A replacement delta needs the new part's weight first, then the removed part's weight.
+    const newWeightKnown = numberOrNull(selectedPart(slot)?.weightG) !== null || numberOrNull(state.custom[slot]?.weight) !== null;
+    const field = kind === 'price' ? row.querySelector('[data-build-custom-price]')
+      : delta && newWeightKnown ? row.querySelector('[data-build-removed-weight]') : row.querySelector('[data-build-custom-weight]');
+    return field instanceof HTMLElement && !field.closest('[hidden]') ? field : row.querySelector('select') ?? row;
+  }
+  function todoLabel(entry, isComplete) {
+    const lang = document.documentElement.lang;
+    if (entry === 'frameset' || entry === 'base bike') return translate(isComplete ? 'Base bike' : 'Frameset', lang);
+    if (entry === 'fork / frame package remainder') return translate('Fork + frame package', lang);
+    if (entry === 'inconsistent removed-part weights') return null;
+    const slot = entry.endsWith(' replacement delta') ? entry.slice(0, -' replacement delta'.length) : entry;
+    return rows.get(slot)?.querySelector('h2')?.textContent ?? slot;
+  }
+  function renderTodo(missingPrices, missingWeights, isComplete) {
+    if (!(todo instanceof HTMLElement)) return;
+    for (const [kind, list] of [['price', missingPrices], ['weight', missingWeights]]) {
+      const line = todo.querySelector(`[data-build-todo-${kind}]`);
+      if (!(line instanceof HTMLElement)) continue;
+      line.querySelectorAll('button').forEach((button) => button.remove());
+      const items = list.map((entry) => [entry, todoLabel(entry, isComplete)]).filter(([, label]) => label);
+      line.hidden = items.length === 0;
+      for (const [entry, label] of items) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'build-todo-item';
+        button.textContent = label;
+        button.addEventListener('click', () => {
+          const target = todoTarget(kind, entry);
+          if (!(target instanceof HTMLElement)) return;
+          target.scrollIntoView({ block: 'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+          target.focus({ preventScroll: true });
+        });
+        line.append(button);
+      }
+    }
+    todo.hidden = !missingPrices.length && !missingWeights.filter((entry) => entry !== 'inconsistent removed-part weights').length;
+  }
+
+  function render({ historyMode = 'replace', persistState = true } = {}) {
     const base = bases.get(state.baseId) || data.bases[0];
     if (!base) return;
     const isComplete = base.kind === 'complete-bike';
@@ -2765,8 +2979,21 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       baseLink.href = base.url;
       baseLink.hidden = Boolean(state.unavailableStartingPoint);
     }
-    if (baseFacts) baseFacts.textContent = buildBaseFacts(base, document.documentElement.lang);
-    if (state.unavailableStartingPoint && baseFacts) baseFacts.textContent = `${translate('Requested starting point', document.documentElement.lang)}: ${state.requestedBaseId}`;
+    if (baseFacts) {
+      const lang = document.documentElement.lang;
+      const factRows = state.unavailableStartingPoint
+        ? [['Requested starting point', state.requestedBaseId]]
+        : buildBaseFactRows(base);
+      baseFacts.replaceChildren(...factRows.map(([label, value]) => {
+        const item = document.createElement('div');
+        const term = document.createElement('dt');
+        const detail = document.createElement('dd');
+        term.textContent = translate(label, lang);
+        detail.textContent = translate(value, lang);
+        item.append(term, detail);
+        return item;
+      }));
+    }
     if (buildName) buildName.textContent = state.unavailableStartingPoint
       ? translate('Choose an exact starting point', document.documentElement.lang)
       : base.name.replace(/ · research stage$/, '');
@@ -2872,13 +3099,17 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const buyerWeight = numberOrNull(state.custom[slot].weight);
       const removedPartWeight = numberOrNull(state.custom[slot].removedWeight);
       const needsPriceInput = isCustom || recordedPrice === null;
+      // A recorded package price is a dated observation; the buyer may replace it with an exact quote.
+      const quoteOverride = !needsPriceInput;
       const needsWeightInput = isCustom || recordedWeight === null;
       const needsRemovedWeight = isComplete;
-      if (customValues instanceof HTMLElement) customValues.hidden = !needsPriceInput && !needsWeightInput && !needsRemovedWeight;
-      if (customPriceField instanceof HTMLElement) customPriceField.hidden = !needsPriceInput;
+      if (customValues instanceof HTMLElement) customValues.hidden = false;
+      if (customPriceField instanceof HTMLElement) customPriceField.hidden = false;
+      const priceLabelNode = row.querySelector('[data-build-price-label]');
+      if (priceLabelNode) priceLabelNode.textContent = translate(quoteOverride ? 'Your quote ¥' : 'Price ¥', document.documentElement.lang);
       if (customWeightField instanceof HTMLElement) customWeightField.hidden = !needsWeightInput;
       if (removedWeightField instanceof HTMLElement) removedWeightField.hidden = !needsRemovedWeight;
-      const partPrice = recordedPrice ?? buyerPrice;
+      const partPrice = quoteOverride ? buyerPrice ?? recordedPrice : buyerPrice;
       const partWeight = recordedWeight ?? buyerWeight;
       if (partPrice === null) missingPrices.push(slot);
       else { priceLow += partPrice; priceHigh += partPrice; }
@@ -2898,7 +3129,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       const basis = isCustom
         ? `Buyer-entered value${isComplete ? ' · replacement delta needs removed-part weight' : ''}`
         : [
-            part.priceDate,
+            quoteOverride && buyerPrice !== null ? `Your quote replaces the recorded ${formatYuan(recordedPrice)}` : part.priceDate,
             recordedPrice === null && buyerPrice !== null ? 'Buyer-entered price' : part.priceBasis,
             recordedWeight === null && buyerWeight !== null ? 'Buyer-entered weight' : part.weightBasis,
             isComplete && removedPartWeight === null ? 'Removed-part weight required for final weight' : '',
@@ -2942,6 +3173,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       ? [translate('The requested starting point is unavailable. Choose an exact replacement to calculate totals.', document.documentElement.lang)]
       : compatibilityMessages(base, covered);
     if (impossibleWeight && completeness) completeness.textContent += ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
+    renderTodo(state.unavailableStartingPoint ? [] : missingPrices, state.unavailableStartingPoint ? [] : missingWeights, isComplete);
     if (state.unavailableStartingPoint) {
       const pending = translate('Choose an exact starting point', document.documentElement.lang);
       if (totalPrice) totalPrice.textContent = '—';
@@ -2967,7 +3199,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
         compatibility.append(quiet);
       }
     }
-    persist();
+    if (persistState) persist();
     updateUrl(historyMode);
     return true;
   }
@@ -3039,11 +3271,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       button.dataset.copyTimer = String(setTimeout(() => { button.textContent = original; }, 1200));
     }
   });
+  // Reset clears part choices and entries but keeps the chosen starting point.
   root.querySelector('[data-build-reset]')?.addEventListener('click', () => {
-    if (!state.unavailableStartingPoint) state.baseId = firstBaseId;
-    state.selections = defaultSelections(bases.get(firstBaseId));
+    state.selections = defaultSelections(bases.get(state.baseId) ?? bases.get(firstBaseId));
     state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '', removedWeight: '' }]));
-    state.baseCustom = { price: '', weight: '', packageWeight: '' };
     try { localStorage.removeItem(storageKey); } catch { /* URL still resets */ }
     render({ historyMode: 'push' });
   });
@@ -3053,10 +3284,13 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     render();
   });
 
-  if (!render()) return;
+  // Opening a shared link shows its state without overwriting the visitor's saved draft until they edit.
+  if (!render({ persistState: !isExplicitBuildUrl(data, new URLSearchParams(location.search)) })) return;
   root.disabled = false;
   const previewStatus = document.querySelector('[data-build-preview-status]');
   previewStatus?.classList.add('is-ready');
+  // The loading qualification matters only before editing works; keep it for assistive technology.
+  document.querySelector('#builder-preview-note')?.classList.add('sr-only');
   previewStatus?.querySelector('[data-build-static-label]')?.setAttribute('aria-hidden', 'true');
   previewStatus?.querySelector('[data-build-ready-label]')?.removeAttribute('aria-hidden');
 })();

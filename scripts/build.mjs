@@ -1,7 +1,7 @@
 import { renderGeometryTool } from '../src/lib/geometry-tool.mjs';
 import { loadPosts, validatePostReferences, renderBlogIndex, renderPost, postLastmod } from '../src/lib/posts.mjs';
 import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
-import { LOCALES, localePath, localizedCatalogPayload } from '../src/lib/i18n.mjs';
+import { ALL_LOCALES, localePath, localesForRoute, localizedCatalogPayload } from '../src/lib/i18n.mjs';
 import { candidateIndexable } from '../src/lib/indexing.mjs';
 import { publicActionManifest } from '../src/lib/analytics-context.mjs';
 import { regionalPricePayload } from '../src/lib/regional-prices.mjs';
@@ -145,7 +145,8 @@ function add(route, html, includeInSitemap = true, metadata = {}) {
 // English routes stay unchanged. Chinese is rendered at build time, not translated
 // after load; navigation and assets remain valid under a GitHub project base path.
 function addLocalized(route, render, includeInSitemap = true, metadata = {}) {
-  for (const locale of LOCALES) {
+  // Spanish and Russian publish only the interactive core routes.
+  for (const locale of localesForRoute(route)) {
     const localized = { ...ctx, locale };
     let html = render(localized);
     if (route === '/') html = html.replace(/\n[ \t]+(?=<)/g, '\n');
@@ -153,7 +154,7 @@ function addLocalized(route, render, includeInSitemap = true, metadata = {}) {
   }
 }
 const payloadVersion = (payload) => createHash('sha256').update(payload).digest('hex').slice(0, 12);
-const catalogPayloads = Object.fromEntries(LOCALES.map((locale) => [locale,
+const catalogPayloads = Object.fromEntries(ALL_LOCALES.map((locale) => [locale,
   `${JSON.stringify(localizedCatalogPayload(catalogSummaries({ ...ctx, locale }), { base, locale, siteUrl })).replaceAll('<', '\\u003c')}\n`
 ]));
 const regionalData = regionalPricePayload(data);
@@ -275,7 +276,7 @@ write('build-manifest.json', `${JSON.stringify({
     build_parts: data.buildParts.length,
     wheelsets: data.wheelsets.length,
     pages: pages.size,
-    locales: LOCALES.length,
+    locales: ALL_LOCALES.length,
     articles: posts.length,
     indexable_pages: [...pages.values()].filter((page) => page.includeInSitemap).length,
     noindex_pages: [...pages.values()].filter((page) => !page.includeInSitemap).length

@@ -762,8 +762,17 @@ Object.assign(zh, {
   "Cockpits": "把组"
 });
 
+// Interface-only languages register their translators when their module loads,
+// so visitors to other languages never download those dictionaries.
+const registeredTranslators = new Map();
+export function registerTranslator(locale, translator) {
+  registeredTranslators.set(locale, translator);
+}
+
 export function translate(value, locale = 'en') {
   if (locale === 'de') return translateGerman(value);
+  const registered = registeredTranslators.get(locale);
+  if (registered) return registered(value);
   if (locale !== 'zh-Hans' || typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
   const imageText = translateImageText(value, locale);
@@ -771,12 +780,21 @@ export function translate(value, locale = 'en') {
   const pad = (translated) => value.replace(text, translated);
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
-    [/^Show (\d+) more models$/, (_, n) => `再显示 ${n} 款车型`],
+    [/^Show (\d+) more models?$/, (_, n) => `再显示 ${n} 款车型`],
+    [/^(\d+) models?$/, (_, n) => `${n} 款车型`],
+    [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} 未说明碟片安装方式；选择碟片前请确认。`],
+    [/^Your quote replaces the recorded (.+)$/, (_, price) => `你的报价取代记录的 ${price}`],
     [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translate(value, 'zh-Hans')} — ${translate(label, 'zh-Hans')}`],
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? '前轮' : '后轮'}`],
     [/^unknown (1×|2×)$/, (_, layout) => `${layout} 未知`],
     [/^Buying checks \((\d+)\)$/, (_, n) => `购买前核对（${n}）`],
-    [/^(\d+) published profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} 份已发布资料；${b} 份部分资料。缺失信息保留为未知。`],
+    [/^(\d+) (?:published|complete) profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} 份完整资料；${b} 份部分资料。缺失信息保留为未知。`],
+    [/^(\d+) per row$/, (_, n) => `每行 ${n} 个`],
+    [/^(\d+) identical rows hidden$/, (_, n) => `已隐藏 ${n} 行相同内容`],
+    [/^(\d+) wheelsets shown$/, (_, n) => `显示 ${n} 款轮组`],
+    [/^(\d+) systems · reviewed (\d{4}-\d{2}-\d{2}) · latest price (\d{4}-\d{2}-\d{2})$/, (_, n, reviewed, price) => `${n} 套系统 · 复核于 ${reviewed} · 最新价格 ${price}`],
+    [/^from (¥|€|US\$|£)([\d,.]+)$/, (_, symbol, amount) => `${symbol}${amount} 起`],
+    [/^(from )?(€|US\$|£)([\d,.]+) official store$/, (_, from, symbol, amount) => `官方商店 ${symbol}${amount}${from ? ' 起' : ''}`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `报价记录于 ${date}。`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `历史报价记录于 ${date}。`],
     // Carbon-wheel reference (2026-10-20)
@@ -1066,6 +1084,8 @@ Object.assign(zh, {
   "Dated complete price · named build · carbon aero platform": "有日期的整车价格 · 明确配置 · 碳纤维气动平台",
   "Electronic build · dated price · recorded weight · ≥ 40 mm tires": "电子变速配置 · 有日期价格 · 有记录的重量 · ≥ 40 mm 轮胎",
   "Aero road frame · 38 mm documented clearance · dated price": "气动公路车架 · 有记录的 38 mm 轮胎空间 · 有日期价格",
+  "Aero road frame · 38 mm documented clearance, 1× on two of three · dated price": "气动公路车架 · 有记录的 38 mm 轮胎空间（三款中两款仅限 1×） · 有日期价格",
+  "Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price. Two of the three reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan.": "具有气动造型的公路车架，附 38 mm 轮胎空间记录及有日期的车架或装车价格。三款中有两款仅在 1× 传动下达到 38 mm（2× 时为 32–34 mm）；车架装车估价使用所选的装车方案。",
   "Each opens a three-bike comparison with its criteria. Not a ranking.": "每项都会打开附带标准的三车对比，并非排名。",
   "Refine": "细化筛选",
   "Frame build": "车架装车",
@@ -1314,7 +1334,13 @@ Object.assign(zh, {
   "Catalog view": "目录视图",
   "Chinese carbon wheelsets": "中国品牌碳纤维轮组",
   "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "对比中国品牌的公路与 Gravel 碟刹轮组：轮圈、重量、限重、兼容性及注明日期的价格。",
-  "Open a row for tire limits, pressure, hub, warranty, videos and sources.": "展开各行可查看轮胎范围、胎压、花鼓、保修、视频及来源。",
+  "Open a row for tire limits, pressure, hub, warranty, independent reviews, videos and sources.": "展开各行可查看轮胎范围、胎压、花鼓、保修、独立评测、视频及来源。",
+  "Independent reviews": "独立评测",
+  "No dated price": "暂无有日期的价格",
+  "Component photos": "组件照片",
+  "Exact model shown": "所示为确切型号",
+  "Same product family; parts may differ": "同一产品系列；部件可能不同",
+  "Mainland China price not recorded; confirm it with an authorized seller.": "未记录中国大陆价格；请向授权卖家确认。",
   "Chinese carbon wheelsets compared": "中国品牌碳纤维轮组对比",
   "Rim": "轮圈",
   "Hooked": "有钩",
@@ -1341,6 +1367,11 @@ Object.assign(zh, {
   "A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.": "制造商明确说明时，系统限重包括骑手、整车与行李；否则按其公布的范围显示。",
   "The maker's page does not publish the value. It is not a negative finding.": "制造商页面未公布该数值；这并不代表负面结论。",
   "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.": "注明日期的官方直营店价格，保留原币种。它不是中国大陆价格；运费、关税和税费以该店公布的条件为准。",
+  "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions. Price sorting converts other currencies to US dollars with the dated ECB rate only to order the rows.": "注明日期的官方直营店价格，保留原币种。它不是中国大陆价格；运费、关税和税费以该店公布的条件为准。价格排序仅用带日期的欧洲央行汇率把其他货币换算成美元来排列各行。",
+  "Sale price": "促销价",
+  "Check fit in the Build planner": "在装车规划中检查兼容性",
+  "Your quote ¥": "你的报价 ¥",
+  "No delivered totals are recorded for this destination yet, so a budget here matches no bike.": "此目的地尚无含运费总价记录，因此这里的预算不会匹配任何车型。",
   "Freehub and rotor fit for these wheelsets is checked in the Build planner.": "这些轮组的塔基与碟片兼容性可在装车规划中核对。",
   "Open the Build planner": "打开装车规划",
   "Official direct store": "官方直营店",
@@ -1418,4 +1449,69 @@ Object.assign(zh, {
   "Tire fit: 2×": "轮胎适配：2×",
   "1× unsupported": "不支持 1×",
   "2× unsupported": "不支持 2×"
+});
+
+// Catalog gallery, sorting and comparison wording (2026-10-26).
+Object.assign(zh, {
+  "Shifting": "变速",
+  "Electronic shifting": "电子变速",
+  "Mechanical shifting": "机械变速",
+  "mechanical": "机械变速",
+  "electronic": "电子变速",
+  "electronic, fully wireless": "电子变速，全无线",
+  "Complete profiles first": "完整资料优先",
+  "Complete profiles only": "仅显示完整资料",
+  "Hides partial profiles: research leads with missing facts.": "隐藏部分资料：仍缺少信息的研究线索。",
+  "Photo size": "照片大小",
+  "Smaller photos, more per row": "照片更小，每行更多",
+  "Larger photos, fewer per row": "照片更大，每行更少",
+  "1 per row": "每行 1 个",
+  "Sort by the price shown in each row; unknown prices stay last.": "按每行显示的价格排序；未知价格始终排在最后。",
+  "1 identical row hidden": "已隐藏 1 行相同内容",
+  "Every compared row differs.": "所有对比行都不相同。"
+});
+
+// Build planner wording (2026-10-26).
+Object.assign(zh, {
+  "No purchase-ready price is recorded for this exact base. Enter the price you were quoted; the price basis above is for planning only.": "此确切车型没有可直接用于购买的价格记录。请输入您获得的报价；上方的价格依据仅供规划。",
+  "Prices to enter": "待填写价格",
+  "Weights to enter": "待填写重量",
+  "Reset parts": "重置部件",
+  "Fork + frame package": "前叉与车架套件",
+  "Type": "类型",
+  "Clearance note": "轮胎空间说明",
+  "Drivetrain support": "传动支持",
+  "Fork and calipers": "前叉与卡钳",
+  "package contents incomplete": "套件内容不完整",
+  "bottom bracket unknown": "中轴未知",
+  "tire clearance unknown": "轮胎空间未知"
+});
+
+// Carbon wheel toolbar (2026-10-26).
+Object.assign(zh, {
+  "Use, then price": "按用途，再按价格",
+  "Price: low to high (US$ equivalent)": "价格：从低到高（折合美元）",
+  "Lightest first": "最轻优先",
+  "Deepest rim first": "框高最高优先",
+  "Widest inner rim first": "内宽最宽优先",
+  "Wheelset view": "轮组视图",
+  "1 wheelset shown": "显示 1 款轮组"
+});
+
+// Groupset price packages (2026-10-26).
+Object.assign(zh, {
+  "1× alloy-lever kit": "单盘铝合金手变套件",
+  "1× carbon-lever kit": "单盘碳纤维手变套件",
+  "2× alloy-lever kit": "双盘铝合金手变套件",
+  "2× carbon-lever kit": "双盘碳纤维手变套件",
+  "1× long-cage kit": "单盘长腿套件",
+  "1× medium-cage kit": "单盘中腿套件",
+  "1× short-cage kit": "单盘短腿套件",
+  "2× boxed alloy-lever kit": "双盘盒装铝合金手变套件",
+  "large package (大套)": "大套",
+  "R8170 large package (大套)": "R8170 大套",
+  "hydraulic shift-brake groupset": "油碟变速刹车套件",
+  "cable-brake shift groupset": "线拉刹车变速套件",
+  "75 mm derailleur, hydraulic brakes, alloy levers": "75 mm 后拨、油碟、铝合金手变",
+  "75 or 93 mm derailleur, hydraulic brakes, carbon levers": "75 或 93 mm 后拨、油碟、碳纤维手变"
 });

@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { initialBuildPresentation } from '../assets/builder-presentation.js';
 import { restoreBuildState } from '../assets/state-utils.js';
 import { loadDataset, joinProducts } from '../src/lib/data.mjs';
@@ -66,4 +67,18 @@ test('the static builder is a named disabled preview until shared-state initiali
     assert.ok(html.includes(qualification));
     assert.match(html, /data-build-total-price>[^<]+<\/dd>/, 'the labeled default remains readable');
   }
+});
+
+test('planner lists base facts as rows, offers jumps to missing inputs and keeps the base on reset', () => {
+  const catalog = loadDataset();
+  const products = joinProducts(catalog);
+  const html = renderBikeBuilder({ data: catalog, products, base: '', locale: 'en', siteUrl: 'https://example.invalid', repositoryUrl: 'https://github.com/p0s/china-bike-research' });
+  assert.match(html, /<dl class="builder-base-facts" data-build-base-facts><div><dt>Type<\/dt><dd>/);
+  assert.match(html, /<div class="build-todo" data-build-todo hidden><p data-build-todo-price><strong>Prices to enter<\/strong><\/p><p data-build-todo-weight><strong>Weights to enter<\/strong><\/p><\/div>/);
+  assert.match(html, /data-build-reset>Reset parts</);
+  const script = readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
+  const reset = script.slice(script.indexOf("root.querySelector('[data-build-reset]')"), script.indexOf("addEventListener('popstate', () => {\n    state = restoreBuildState"));
+  assert.doesNotMatch(reset, /state\.baseId = firstBaseId/, 'reset must not switch the chosen starting point');
+  assert.doesNotMatch(reset, /state\.baseCustom = /, 'reset keeps the entered base quote and weights');
+  assert.match(script, /function renderTodo\(missingPrices, missingWeights, isComplete\)/);
 });

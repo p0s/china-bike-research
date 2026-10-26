@@ -6,26 +6,63 @@
   "status": "current",
   "positioning": "Mixed-depth 46/54 mm road wheelset with a 21 mm inner width and published pressure caps.",
   "rim": {
-    "depth_mm": { "front": 46, "rear": 54 },
+    "depth_mm": {
+      "front": 46,
+      "rear": 54
+    },
     "internal_width_mm": 21,
-    "external_width_mm": { "front": 27.6, "rear": 27.8 },
-    "bead": "unknown",
-    "bead_note": "Hooked or hookless is not stated; the maker says regular clincher tires with inner tubes are compatible.",
+    "external_width_mm": {
+      "front": 27.6,
+      "rear": 27.8
+    },
+    "bead": "hooked",
+    "bead_note": "The maker says reinforced carbon hooks improve tubeless tire compatibility.",
     "tubeless_ready": true,
     "tire_range": "25–47 mm; optimized for 25–28 mm"
   },
-  "max_pressure": { "psi": 110, "note": "Tubeless riding: 95 psi maximum; 30 mm tires 85 psi, 35 mm 60 psi and 40–45 mm 40 psi maximum." },
-  "load_limit": { "kg": 120, "scope": "system", "note": "Rider, bike and luggage; riders above 90 kg should have the wheels inspected regularly." },
-  "weight": { "grams": 1710, "tolerance_g": 50, "basis": "Pair in black (1,715 g Chameleon); the specification table gives ±25 g per wheel.", "claim_type": "official" },
+  "max_pressure": {
+    "psi": 110,
+    "note": "Tubeless riding: 95 psi maximum; 30 mm tires 85 psi, 35 mm 60 psi and 40–45 mm 40 psi maximum."
+  },
+  "load_limit": {
+    "kg": 120,
+    "scope": "system",
+    "note": "Rider, bike and luggage; riders above 90 kg should have the wheels inspected regularly."
+  },
+  "weight": {
+    "grams": 1710,
+    "tolerance_g": 50,
+    "basis": "Pair in black (1,715 g Chameleon); the specification table gives ±25 g per wheel.",
+    "claim_type": "official"
+  },
   "hub": "Model and engagement not published · steel bearings",
-  "spokes": { "material": "steel", "summary": "Pillar 1423 · 21F/24R" },
+  "spokes": {
+    "material": "steel",
+    "summary": "Pillar 1423 · 21F/24R"
+  },
   "compatibility": {
     "rotor_mount": "center-lock",
-    "axles": ["12x100", "12x142"],
-    "freehubs": ["hg-road", "sram-xdr", "campagnolo-10-12"]
+    "axles": [
+      "12x100",
+      "12x142"
+    ],
+    "freehubs": [
+      "hg-road",
+      "sram-xdr",
+      "campagnolo-10-12"
+    ]
   },
-  "warranty": null,
+  "warranty": "2-year wheelset warranty for the original buyer; wear parts are excluded.",
   "price_observations": [
+    {
+      "amount": 699,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-26",
+      "conditions": "Same price for every finish and freehub; Chameleon with the Shimano freehub was sold out. Each regional warehouse ships only within its region, and the EU warehouse does not ship to the UK.",
+      "source_id": "winspace-lun-routte-se-d45-official-2026-10-26"
+    },
     {
       "amount": 699,
       "currency": "USD",
@@ -37,10 +74,59 @@
     }
   ],
   "caveats": [
-    "Hub model, engagement and bead type are not published.",
+    "Hub model and engagement are not published.",
     "Keep to the size-specific pressure caps for wider tires.",
     "Mainland China price not recorded; confirm it with an authorized seller."
   ],
-  "source_ids": ["winspace-lun-routte-se-d45-official-2026-10-20"],
-  "reviewed_at": "2026-10-20"
+  "source_ids": [
+    "winspace-lun-routte-se-d45-official-2026-10-20",
+    "winspace-lun-routte-se-d45-official-2026-10-26",
+    "winspace-warranty-2026-10-26"
+  ],
+  "reviewed_at": "2026-10-26",
+  "image": {
+    "source_id": "winspace-lun-routte-se-d45-official-2026-10-26",
+    "subject_accuracy": "exact-model",
+    "width": 1000,
+    "height": 1000,
+    "credit": "Winspace",
+    "alt": "Winspace Lún Routte SE D45 carbon wheelset pair in black with Routte script decals",
+    "rights": {
+      "status": "source-attributed-rehost",
+      "copyright_holder": "Winspace",
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "reviewed_at": "2026-10-26",
+    "local_path": "/assets/images/sourced/official/wheelset-winspace-lun-routte-se-d45/b9a60f157bc3ed1d-detail-w1000.avif",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/wheelset-winspace-lun-routte-se-d45/90dfd8ac9588218f-card-w480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 12217,
+        "sha256": "90dfd8ac9588218f140b42251fddec17b77608b4ef06f9207485f9f2710065dd",
+        "format": "image/avif",
+        "quality": 60
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/wheelset-winspace-lun-routte-se-d45/b9a60f157bc3ed1d-detail-w1000.avif",
+        "width": 1000,
+        "height": 1000,
+        "bytes": 33817,
+        "sha256": "b9a60f157bc3ed1dd884feb9cb64b7f25dff5060100df99d872eb15b5cedcba4",
+        "format": "image/avif",
+        "quality": 60
+      }
+    ],
+    "source_media_url": "https://cdn.shopify.com/s/files/1/0912/6101/0215/files/Routte-SE-Black-D45-2.jpg?v=1738463741",
+    "source_media_sha256": "66032aee137eb2802fd2fb2eeff406de15e7ee6a2548664200a1d96881881548",
+    "privacy_review": {
+      "reviewed_at": "2026-10-26",
+      "embedded_metadata": "stripped",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  }
 }

@@ -62,11 +62,13 @@ test('wheelset videos are exact, capped and embedded only inside their own row d
   for (const wheelset of data.wheelsets) {
     const entry = html.match(new RegExp(`<tbody class="groupset-entry" id="${wheelset.id}"[\\s\\S]*?</tbody>`))[0];
     for (const video of wheelsetVideos) {
-      assert.equal(entry.includes(`youtube-nocookie.com/embed/${video.youtube_video_id}`), video.target.wheelset_id === wheelset.id, `${video.id} in ${wheelset.id}`);
+      assert.equal(entry.includes(`data-article-video="${video.youtube_video_id}"`), video.target.wheelset_id === wheelset.id, `${video.id} in ${wheelset.id}`);
     }
   }
   assert.doesNotMatch(html, /youtube\.com\/embed|autoplay=1/);
-  assert.match(html, /<details class="groupset-row-details">[\s\S]*?<section class="wheelset-videos"><h3>Videos<\/h3>[\s\S]*?loading="lazy"/);
+  // Closed rows must not contact YouTube: players are created only after activation.
+  assert.doesNotMatch(html, /<iframe/);
+  assert.match(html, /<details class="groupset-row-details">[\s\S]*?<section class="wheelset-videos"><h3>Videos<\/h3>[\s\S]*?<button class="video-load-button"/);
 });
 
 test('carbon wheels reference is localized and linked from every page', () => {
@@ -87,5 +89,35 @@ test('build planner offers each wheelset with weight and fit but no invented Chi
     assert.deepEqual(part.compatibility.freehubs, wheelset.compatibility.freehubs);
     assert.match(part.note, /is not a mainland China price; enter a China quote\./);
     assert.equal(part.note.includes('Rotor mount is not stated'), wheelset.compatibility.rotor_mount === null);
+  }
+});
+
+test('the wheel table stays the default while use, sort, gallery and photo size re-arrange the same rows', () => {
+  const html = renderCarbonWheels(ctx);
+  assert.match(html, /<div class="wheels-toolbar" data-wheels-toolbar hidden>/);
+  assert.match(html, /data-wheels-view-root data-view="table"/);
+  assert.match(html, /data-wheels-view="table" aria-pressed="true"/);
+  assert.match(html, /<option value="price">Price: low to high \(US\$ equivalent\)<\/option>/);
+  assert.match(html, /<script type="module" src="\/china-bike-research\/assets\/wheels\.js"><\/script>/);
+  // Every row carries its own sort keys; displayed prices keep their original currency.
+  for (const wheelset of data.wheelsets) {
+    const entry = html.match(new RegExp(`<tbody class="groupset-entry" id="${wheelset.id}"[^>]*>`))?.[0] ?? '';
+    assert.match(entry, new RegExp(`data-use="${wheelset.use}" data-weight="${wheelset.weight.grams}"`), wheelset.id);
+    assert.match(entry, /data-price-usd="\d+"/, wheelset.id);
+  }
+  // A wheelset image must be a reviewed exact-model local derivative.
+  const first = data.wheelsets[0].id;
+  assert.ok(withWheelset(first, (wheelset) => { wheelset.image = { source_id: wheelset.source_ids[0], subject_accuracy: 'exact-family', credit: 'Maker', alt: 'A wheelset photo for testing', reviewed_at: '2026-10-26' }; })
+    .some((error) => error.includes('must show the exact model')));
+  // Independent review notes render with their source and must cite a listed source.
+  const reviewed = data.wheelsets.find((wheelset) => wheelset.independent_evidence?.length);
+  assert.ok(reviewed, 'at least one wheelset carries an independent review note');
+  const reviewedEntry = html.match(new RegExp(`<tbody class="groupset-entry" id="${reviewed.id}"[\\s\\S]*?</tbody>`))?.[0] ?? '';
+  assert.match(reviewedEntry, /<h3>Independent reviews<\/h3>/);
+  assert.ok(withWheelset(reviewed.id, (wheelset) => { wheelset.independent_evidence = [{ source_id: 'not-a-listed-source', summary: 'A review summary that is long enough.' }]; })
+    .some((error) => error.includes('independent evidence must cite a listed source')));
+  // Every image-bearing wheelset shows a linked local photo with alt text.
+  for (const wheelset of data.wheelsets.filter((item) => item.image)) {
+    assert.match(html, new RegExp(`<img src="/china-bike-research${wheelset.image.local_path}"[^>]*alt="[^"]{10,}"`), wheelset.id);
   }
 });

@@ -1,0 +1,129 @@
+{
+  "id": "magene-exar-ultra-db508",
+  "maker": "Magene",
+  "name": "EXAR Ultra DB508",
+  "use": "road",
+  "status": "current",
+  "positioning": "Carbon-spoke 50/58 mm road wheelset with a 23 mm inner width and tire-size pressure caps.",
+  "rim": {
+    "depth_mm": {
+      "front": 50,
+      "rear": 58
+    },
+    "internal_width_mm": 23,
+    "external_width_mm": {
+      "front": 30,
+      "rear": 30
+    },
+    "bead": "unknown",
+    "bead_note": "Hooked or hookless is not stated; the maker lists clincher and tubeless tires.",
+    "tubeless_ready": true,
+    "tire_range": "25c and wider; 28–32c suggested"
+  },
+  "max_pressure": {
+    "psi": 120,
+    "note": "Clincher 25c. Lower caps for wider tires: clincher 110/100/90 psi and tubeless 100/90/80 psi at 28/30/32c; tubeless 25c 110 psi."
+  },
+  "load_limit": {
+    "kg": null,
+    "scope": "unspecified",
+    "note": "Not published on the product page."
+  },
+  "weight": {
+    "grams": 1350,
+    "tolerance_pct": 3,
+    "basis": "Pair without skewers and rim tape.",
+    "claim_type": "official"
+  },
+  "hub": "Magene hub · 36T ratchet, DT-compatible and replaceable · ceramic bearings",
+  "spokes": {
+    "material": "carbon",
+    "summary": "VONOA HI-MOD carbon · 21F/21R, 2:1 lacing"
+  },
+  "compatibility": {
+    "rotor_mount": null,
+    "axles": [
+      "12x100",
+      "12x142"
+    ],
+    "freehubs": [
+      "hg-road",
+      "sram-xdr",
+      "campagnolo-n3w"
+    ]
+  },
+  "warranty": null,
+  "price_observations": [
+    {
+      "amount": 1199,
+      "currency": "USD",
+      "market": "Official direct store",
+      "price_type": "official-direct-list",
+      "observed_at": "2026-10-26",
+      "conditions": "Shimano freehub; US$1,239 with SRAM XDR or Campagnolo N3W. Tax included; delivery in 5–10 working days.",
+      "source_id": "magene-exar-ultra-series-2025-official-2026-10-26"
+    }
+  ],
+  "caveats": [
+    "Bead type, rotor mount, load limit and warranty term are not published on the product page.",
+    "Keep to the lower pressure caps for 28–32c tires.",
+    "An independent review flags the radial rear brake-side lacing as a possible spoke-stress point under braking.",
+    "Mainland China price not recorded; confirm it with an authorized seller."
+  ],
+  "independent_evidence": [
+    {
+      "source_id": "the5krunner-magene-exar-db508-ultra-review",
+      "summary": "the5krunner scored the DB508 83% in an unsponsored review: good, well-made wheels; it records no measured weight."
+    }
+  ],
+  "source_ids": [
+    "magene-exar-ultra-series-2025-official-2026-10-26",
+    "the5krunner-magene-exar-db508-ultra-review"
+  ],
+  "reviewed_at": "2026-10-26",
+  "image": {
+    "source_id": "magene-exar-ultra-series-2025-official-2026-10-26",
+    "subject_accuracy": "exact-model",
+    "width": 1200,
+    "height": 1200,
+    "credit": "Magene",
+    "alt": "Magene EXAR Ultra DB508 carbon rims with DB508 Ultra decal and 50 mm and 58 mm depth labels",
+    "rights": {
+      "status": "source-attributed-rehost",
+      "copyright_holder": "Magene",
+      "usage_note": "Optimized source-attributed editorial product image for model identification and comparison; copyright remains with the owner, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "reviewed_at": "2026-10-26",
+    "local_path": "/assets/images/sourced/official/wheelset-magene-exar-ultra-db508/7c15d8671de0406a-detail-w1200.avif",
+    "variants": [
+      {
+        "purpose": "card",
+        "url": "/assets/images/sourced/official/wheelset-magene-exar-ultra-db508/369b753d9e03fe64-card-w480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 11773,
+        "sha256": "369b753d9e03fe647ec29f6dd306d33fb32b4ce5282fa000c2a3ab3c32b145dc",
+        "format": "image/avif",
+        "quality": 60
+      },
+      {
+        "purpose": "detail",
+        "url": "/assets/images/sourced/official/wheelset-magene-exar-ultra-db508/7c15d8671de0406a-detail-w1200.avif",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 37793,
+        "sha256": "7c15d8671de0406a039d5360ec2414df4d7f58d712a66b5ca3f113256981c822",
+        "format": "image/avif",
+        "quality": 60
+      }
+    ],
+    "source_media_url": "https://static.magene.com/img/cms/25-Ultra/selling%20point%202-2.jpg",
+    "source_media_sha256": "9cc01d91c2574b366d007d34933111ed1adf455e46d90b92aadbdfbe86dac189",
+    "privacy_review": {
+      "reviewed_at": "2026-10-26",
+      "embedded_metadata": "stripped",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  }
+}

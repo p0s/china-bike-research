@@ -40,7 +40,12 @@ function timezoneCountry(zone) {
     NL: ['Europe/Amsterdam'], BE: ['Europe/Brussels'], AT: ['Europe/Vienna'], CH: ['Europe/Zurich'],
     PL: ['Europe/Warsaw'], CZ: ['Europe/Prague'], SE: ['Europe/Stockholm'], NO: ['Europe/Oslo'],
     DK: ['Europe/Copenhagen'], FI: ['Europe/Helsinki'], IE: ['Europe/Dublin'], SG: ['Asia/Singapore'],
-    JP: ['Asia/Tokyo'], AU: ['Australia/Sydney', 'Australia/Melbourne', 'Australia/Perth'], NZ: ['Pacific/Auckland']
+    JP: ['Asia/Tokyo'], AU: ['Australia/Sydney', 'Australia/Melbourne', 'Australia/Perth'], NZ: ['Pacific/Auckland'],
+    // Zones for the Spanish and Russian interface audiences, where the browser language often names another country.
+    RU: ['Europe/Moscow', 'Europe/Samara', 'Europe/Volgograd', 'Europe/Kaliningrad', 'Asia/Yekaterinburg', 'Asia/Omsk', 'Asia/Novosibirsk', 'Asia/Krasnoyarsk', 'Asia/Irkutsk', 'Asia/Yakutsk', 'Asia/Vladivostok'],
+    KZ: ['Asia/Almaty', 'Asia/Qostanay', 'Asia/Aqtobe', 'Asia/Aqtau', 'Asia/Atyrau', 'Asia/Oral', 'Asia/Qyzylorda'],
+    BY: ['Europe/Minsk'], UA: ['Europe/Kyiv', 'Europe/Kiev'],
+    AR: ['America/Argentina/Buenos_Aires', 'America/Buenos_Aires'], CL: ['America/Santiago'], CO: ['America/Bogota'], PE: ['America/Lima']
   };
   return Object.entries(groups).find(([, zones]) => zones.includes(zone))?.[0] ?? '';
 }

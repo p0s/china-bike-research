@@ -1460,6 +1460,66 @@ Object.assign(de, {
   "Cockpits": "Cockpits"
 });
 
+// Catalog gallery, sorting and comparison wording (2026-10-26).
+Object.assign(de, {
+  "Shifting": "Schaltung",
+  "Electronic shifting": "Elektronische Schaltung",
+  "Mechanical shifting": "Mechanische Schaltung",
+  "electronic, fully wireless": "elektronisch, vollständig kabellos",
+  "Complete profiles first": "Vollständige Profile zuerst",
+  "Complete profiles only": "Nur vollständige Profile",
+  "Hides partial profiles: research leads with missing facts.": "Blendet Teilprofile aus: Recherchehinweise mit fehlenden Angaben.",
+  "Photo size": "Fotogröße",
+  "Smaller photos, more per row": "Kleinere Fotos, mehr pro Reihe",
+  "Larger photos, fewer per row": "Größere Fotos, weniger pro Reihe",
+  "1 per row": "1 pro Reihe",
+  "Sort by the price shown in each row; unknown prices stay last.": "Nach dem in jeder Zeile angezeigten Preis sortieren; unbekannte Preise bleiben am Ende.",
+  "1 identical row hidden": "1 identische Zeile ausgeblendet",
+  "Every compared row differs.": "Alle verglichenen Zeilen unterscheiden sich."
+});
+
+// Build planner wording (2026-10-26).
+Object.assign(de, {
+  "No purchase-ready price is recorded for this exact base. Enter the price you were quoted; the price basis above is for planning only.": "Für diese genaue Basis ist kein kaufbereiter Preis dokumentiert. Bitte den erhaltenen Angebotspreis eingeben; die Preisgrundlage oben dient nur der Planung.",
+  "Prices to enter": "Fehlende Preise",
+  "Weights to enter": "Fehlende Gewichte",
+  "Reset parts": "Teile zurücksetzen",
+  "Fork + frame package": "Gabel + Rahmenpaket",
+  "Type": "Typ",
+  "Clearance note": "Hinweis zur Reifenfreiheit",
+  "Drivetrain support": "Antriebsfreigabe",
+  "Fork and calipers": "Gabel und Bremssättel"
+});
+
+// Carbon wheel toolbar (2026-10-26).
+Object.assign(de, {
+  "Use, then price": "Einsatz, dann Preis",
+  "Price: low to high (US$ equivalent)": "Preis: aufsteigend (US$-Gegenwert)",
+  "Lightest first": "Leichteste zuerst",
+  "Deepest rim first": "Höchste Felge zuerst",
+  "Widest inner rim first": "Breiteste Innenweite zuerst",
+  "Wheelset view": "Laufradansicht",
+  "1 wheelset shown": "1 Laufradsatz angezeigt"
+});
+
+// Groupset price packages (2026-10-26).
+Object.assign(de, {
+  "1× alloy-lever kit": "1×-Kit mit Aluhebeln",
+  "1× carbon-lever kit": "1×-Kit mit Carbonhebeln",
+  "2× alloy-lever kit": "2×-Kit mit Aluhebeln",
+  "2× carbon-lever kit": "2×-Kit mit Carbonhebeln",
+  "1× long-cage kit": "1×-Kit, langer Käfig",
+  "1× medium-cage kit": "1×-Kit, mittlerer Käfig",
+  "1× short-cage kit": "1×-Kit, kurzer Käfig",
+  "2× boxed alloy-lever kit": "2×-Kit im Karton, Aluhebel",
+  "large package (大套)": "großes Paket (大套)",
+  "R8170 large package (大套)": "R8170 großes Paket (大套)",
+  "hydraulic shift-brake groupset": "Schalt- und Hydraulikbremsgruppe",
+  "cable-brake shift groupset": "Schaltgruppe für Seilzugbremsen",
+  "75 mm derailleur, hydraulic brakes, alloy levers": "75-mm-Schaltwerk, Hydraulikbremsen, Aluhebel",
+  "75 or 93 mm derailleur, hydraulic brakes, carbon levers": "75- oder 93-mm-Schaltwerk, Hydraulikbremsen, Carbonhebel"
+});
+
 export function translateGerman(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
@@ -1471,12 +1531,21 @@ export function translateGerman(value) {
   const weightWarning = ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
-    [/^Show (\d+) more models$/, (_, n) => `${n} weitere Modelle zeigen`],
+    [/^Show (\d+) more models?$/, (_, n) => n === '1' ? '1 weiteres Modell zeigen' : `${n} weitere Modelle zeigen`],
+    [/^(\d+) models?$/, (_, n) => n === '1' ? '1 Modell' : `${n} Modelle`],
+    [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} nennt keine Bremsscheibenaufnahme; vor der Scheibenwahl bestätigen.`],
+    [/^Your quote replaces the recorded (.+)$/, (_, price) => `Ihr Angebot ersetzt den erfassten Preis ${price}`],
     [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translateGerman(value)} — ${translateGerman(label)}`],
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? 'vorn' : 'hinten'}`],
     [/^unknown (1×|2×)$/, (_, layout) => `${layout} unbekannt`],
     [/^Buying checks \((\d+)\)$/, (_, n) => `Kaufprüfung (${n})`],
-    [/^(\d+) published profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} veröffentlichte Profile; ${b} Teilprofile. Fehlende Angaben bleiben unbekannt.`],
+    [/^(\d+) (?:published|complete) profiles; (\d+) partial profiles\. Missing facts remain unknown\.$/, (_, a, b) => `${a} vollständige Profile; ${b} Teilprofile. Fehlende Angaben bleiben unbekannt.`],
+    [/^(\d+) per row$/, (_, n) => `${n} pro Reihe`],
+    [/^(\d+) identical rows hidden$/, (_, n) => `${n} identische Zeilen ausgeblendet`],
+    [/^(\d+) wheelsets shown$/, (_, n) => `${n} Laufradsätze angezeigt`],
+    [/^(\d+) systems · reviewed (\d{4}-\d{2}-\d{2}) · latest price (\d{4}-\d{2}-\d{2})$/, (_, n, reviewed, price) => `${n} Systeme · geprüft ${reviewed} · neuester Preis ${price}`],
+    [/^from (¥|€|US\$|£)([\d,.]+)$/, (_, symbol, amount) => `ab ${symbol}${amount}`],
+    [/^(from )?(€|US\$|£)([\d,.]+) official store$/, (_, from, symbol, amount) => `${from ? 'ab ' : ''}${symbol}${amount} offizieller Shop`],
     [/^Price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Preis erfasst am ${date}.`],
     [/^Historical price observed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `Historischer Preis erfasst am ${date}.`],
     // Carbon-wheel reference (2026-10-20)
@@ -1962,6 +2031,8 @@ Object.assign(de, {
   "Dated complete price · named build · carbon aero platform": "Datierter Komplettpreis · benannte Ausstattung · Carbon-Aero-Plattform",
   "Electronic build · dated price · recorded weight · ≥ 40 mm tires": "Elektronische Ausstattung · datierter Preis · dokumentiertes Gewicht · ≥ 40 mm Reifen",
   "Aero road frame · 38 mm documented clearance · dated price": "Aero-Straßenrahmen · dokumentierte 38 mm Reifenfreiheit · datierter Preis",
+  "Aero road frame · 38 mm documented clearance, 1× on two of three · dated price": "Aero-Straßenrahmen · dokumentierte 38 mm Reifenfreiheit, bei zwei von drei nur 1× · datierter Preis",
+  "Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price. Two of the three reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan.": "Aerodynamisch geformte Straßenrahmen mit belegter 38-mm-Reifenfreiheit und datiertem Rahmen- oder Komplettaufbaupreis. Zwei der drei erreichen 38 mm nur mit 1×-Antrieb (32–34 mm mit 2×); Schätzungen für Rahmenaufbauten nutzen den gewählten Aufbauplan.",
   "Each opens a three-bike comparison with its criteria. Not a ranking.": "Jeder öffnet einen Vergleich von drei Rädern mit seinen Kriterien. Keine Rangliste.",
   "Refine": "Eingrenzen",
   "Frame build": "Rahmenaufbau",
@@ -2021,7 +2092,13 @@ Object.assign(de, {
   "Carbon wheels": "Carbon-Laufräder",
   "Chinese carbon wheelsets": "Chinesische Carbon-Laufradsätze",
   "Road and gravel disc wheelsets from Chinese brands, compared by rim, weight, limits, fit and dated price.": "Straßen- und Gravel-Laufradsätze mit Scheibenbremse von chinesischen Marken, verglichen nach Felge, Gewicht, Grenzwerten, Kompatibilität und datiertem Preis.",
-  "Open a row for tire limits, pressure, hub, warranty, videos and sources.": "Zeile öffnen für Reifenbereich, Luftdruck, Nabe, Garantie, Videos und Quellen.",
+  "Open a row for tire limits, pressure, hub, warranty, independent reviews, videos and sources.": "Zeile öffnen für Reifenbereich, Luftdruck, Nabe, Garantie, unabhängige Tests, Videos und Quellen.",
+  "Independent reviews": "Unabhängige Tests",
+  "No dated price": "Kein datierter Preis",
+  "Component photos": "Komponentenfotos",
+  "Exact model shown": "Genaues Modell abgebildet",
+  "Same product family; parts may differ": "Gleiche Produktfamilie; Teile können abweichen",
+  "Mainland China price not recorded; confirm it with an authorized seller.": "Kein Preis aus Festlandchina erfasst; bei einem autorisierten Händler bestätigen.",
   "Chinese carbon wheelsets compared": "Chinesische Carbon-Laufradsätze im Vergleich",
   "Rim": "Felge",
   "Hooked": "Mit Felgenhaken",
@@ -2048,6 +2125,11 @@ Object.assign(de, {
   "A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.": "Ein Systemgewicht umfasst Fahrer, Rad und Gepäck, wenn der Hersteller das angibt; sonst wird der Umfang wie veröffentlicht gezeigt.",
   "The maker's page does not publish the value. It is not a negative finding.": "Die Herstellerseite veröffentlicht den Wert nicht. Das ist kein negativer Befund.",
   "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.": "Eine datierte Beobachtung im offiziellen Direktshop in Originalwährung. Sie ist kein Preis in Festlandchina; Versand, Zölle und Steuern folgen den Bedingungen des Shops.",
+  "A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions. Price sorting converts other currencies to US dollars with the dated ECB rate only to order the rows.": "Eine datierte Beobachtung im offiziellen Direktshop in Originalwährung. Sie ist kein Preis in Festlandchina; Versand, Zölle und Steuern folgen den Bedingungen des Shops. Für die Preissortierung werden andere Währungen nur zum Ordnen der Zeilen mit dem datierten EZB-Kurs in US-Dollar umgerechnet.",
+  "Sale price": "Aktionspreis",
+  "Check fit in the Build planner": "Passform im Aufbauplaner prüfen",
+  "Your quote ¥": "Ihr Angebot ¥",
+  "No delivered totals are recorded for this destination yet, so a budget here matches no bike.": "Für dieses Ziel sind noch keine Lieferpreise erfasst, daher passt hier kein Budget zu einem Rad.",
   "Freehub and rotor fit for these wheelsets is checked in the Build planner.": "Freilauf- und Bremsscheibenkompatibilität dieser Laufradsätze wird im Aufbauplaner geprüft.",
   "Open the Build planner": "Aufbauplaner öffnen",
   "Official direct store": "Offizieller Direktshop",

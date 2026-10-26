@@ -1,13 +1,30 @@
 import { translate } from '../../assets/i18n.js';
+import '../../assets/i18n-es.js';
+import '../../assets/i18n-ru.js';
 
+// Full-site languages cover every route, including model evidence and guides.
 export const LOCALES = ['en', 'zh-Hans', 'de'];
-export const LOCALE_PREFIXES = { en: '', 'zh-Hans': '/zh', de: '/de' };
-export function routeLocale(route) { return route.startsWith('/de/') ? 'de' : route.startsWith('/zh/') ? 'zh-Hans' : 'en'; }
+// Interface languages cover the interactive core routes; other links stay English.
+export const INTERFACE_LOCALES = ['es', 'ru'];
+export const ALL_LOCALES = [...LOCALES, ...INTERFACE_LOCALES];
+export const INTERFACE_ROUTES = ['/', '/geometry/', '/build/', '/electronic-shifting/', '/carbon-wheels/', '/404.html'];
+export const LOCALE_PREFIXES = { en: '', 'zh-Hans': '/zh', de: '/de', es: '/es', ru: '/ru' };
+const prefixLocales = { '/zh/': 'zh-Hans', '/de/': 'de', '/es/': 'es', '/ru/': 'ru' };
+export function routeLocale(route) { return prefixLocales[route.slice(0, 4)] ?? 'en'; }
 export function localePath(route = '/', locale = 'en') {
   return `${LOCALE_PREFIXES[locale] ?? ''}${route}`;
 }
+// The languages in which one unprefixed route is published.
+export function localesForRoute(route = '/') {
+  const pathname = String(route).split(/[?#]/)[0];
+  return INTERFACE_ROUTES.includes(pathname) ? ALL_LOCALES : LOCALES;
+}
+// A localized link only when that language publishes the route; otherwise English.
+export function availableLocalePath(route = '/', locale = 'en') {
+  return localesForRoute(route).includes(locale) ? localePath(route, locale) : route;
+}
 export function isPagePath(route) {
-  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|carbon-wheels|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
+  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de|es|ru)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|carbon-wheels|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
 }
 function escape(value) { return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'); }
 function decode(value) { return value.replaceAll('&quot;', '"').replaceAll('&#039;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&'); }
@@ -72,8 +89,8 @@ export function localizedHref(value, { base = '', locale = 'en', siteUrl = '' } 
   if (!local.startsWith('/') || local.startsWith('//') || (base && !(local === base || local.startsWith(`${base}/`)))) return value;
   const route = local.slice(base.length) || '/';
   const pathname = route.split(/[?#]/)[0];
-  if (/^\/(?:zh|de)(?:\/|$)/.test(pathname) || !isPagePath(pathname)) return value;
-  return `${prefix}${base}${localePath(route, locale)}`;
+  if (/^\/(?:zh|de|es|ru)(?:\/|$)/.test(pathname) || !isPagePath(pathname)) return value;
+  return `${prefix}${base}${availableLocalePath(route, locale)}`;
 }
 export function localizeJson(value, options = {}, key = '') {
   if (Array.isArray(value)) return value.map((item) => localizeJson(item, options, key));

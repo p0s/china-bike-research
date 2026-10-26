@@ -1,4 +1,4 @@
-import { LOCALES, LOCALE_PREFIXES, clarifyMainlandInDisplayHtml, localePath, localizeHtml } from './i18n.mjs';
+import { INTERFACE_LOCALES, LOCALE_PREFIXES, clarifyMainlandInDisplayHtml, localePath, localesForRoute, localizeHtml } from './i18n.mjs';
 import { translate } from '../../assets/i18n.js';
 export function escapeHtml(value='') {
   return String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
@@ -15,10 +15,16 @@ export function layout({base='', repositoryUrl, title='', description, current='
   title = t(title);
   description = t(description);
   const localizedPath = localePath(path, locale);
-  const languageNames = { en: 'English', 'zh-Hans': '中文', de: 'Deutsch' };
-  const languageLabels = { en: 'Read this page in English', 'zh-Hans': '阅读此页面的中文版本', de: 'Diese Seite auf Deutsch lesen' };
-  const socialLocales = { en: 'en_US', 'zh-Hans': 'zh_CN', de: 'de_DE' };
-  const languageLinks = noindex ? '' : [...LOCALES, 'x-default'].map((lang) => `<link rel="alternate" hreflang="${lang}" href="${escapeAttr(`${siteUrl}${url(base, localePath(path, lang === 'x-default' ? 'en' : lang))}`)}">`).join('\n  ');
+  const languageNames = { en: 'English', 'zh-Hans': '中文', de: 'Deutsch', es: 'Español', ru: 'Русский' };
+  const languageLabels = { en: 'Read this page in English', 'zh-Hans': '阅读此页面的中文版本', de: 'Diese Seite auf Deutsch lesen', es: 'Leer esta página en español', ru: 'Читать эту страницу на русском' };
+  const socialLocales = { en: 'en_US', 'zh-Hans': 'zh_CN', de: 'de_DE', es: 'es_ES', ru: 'ru_RU' };
+  const languageCodes = { en: 'EN', 'zh-Hans': '中文', de: 'DE', es: 'ES', ru: 'RU' };
+  // The menu's own name stays readable for a visitor who cannot read the current language.
+  const languageMenuLabels = { en: 'Language: English', 'zh-Hans': 'Language · 语言：中文', de: 'Language · Sprache: Deutsch', es: 'Idioma: español', ru: 'Язык: русский' };
+  // Only languages that publish this route are offered or advertised.
+  const pageLocales = localesForRoute(path);
+  const interfaceOnly = INTERFACE_LOCALES.includes(locale);
+  const languageLinks = noindex ? '' : [...pageLocales, 'x-default'].map((lang) => `<link rel="alternate" hreflang="${lang}" href="${escapeAttr(`${siteUrl}${url(base, localePath(path, lang === 'x-default' ? 'en' : lang))}`)}">`).join('\n  ');
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,localizedPath)}`;
   const socialImage = image ? (image.startsWith('https://') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`) : '';
@@ -45,7 +51,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   ${languageLinks}
   <meta property="og:site_name" content="${siteName}">
   <meta property="og:locale" content="${socialLocales[locale]}">
-  ${LOCALES.filter((lang) => lang !== locale).map((lang) => `<meta property="og:locale:alternate" content="${socialLocales[lang]}">`).join("\n  ")}
+  ${pageLocales.filter((lang) => lang !== locale).map((lang) => `<meta property="og:locale:alternate" content="${socialLocales[lang]}">`).join("\n  ")}
   <meta property="og:title" content="${escapeAttr(pageTitle)}">
   <meta property="og:description" content="${escapeAttr(description)}">
   <meta property="og:type" content="${escapeAttr(ogType)}">
@@ -71,18 +77,25 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <div class="header-actions">
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
-          <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
-          <div class="nav-tools${['geometry','builder','groupsets','wheels'].includes(current) ? ' is-current' : ''}" data-nav-tools>
-            <button class="nav-tools-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-tools-toggle hidden>Tools</button>
-            <div class="nav-tools-menu" id="nav-tools-menu">
-              <a href="${url(base,'/geometry/')}"${current==='geometry'?' aria-current="page"':''}>Geometry</a>
-              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}><span class="nav-long">Build planner</span><span class="nav-short" aria-hidden="true">Planner</span></a>
+          <div class="nav-group${['groupsets','wheels'].includes(current) ? ' is-current' : ''}" data-nav-group="components">
+            <button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-components-menu" data-nav-group-toggle hidden>Components</button>
+            <div class="nav-group-menu" id="nav-components-menu" role="group" aria-labelledby="nav-components-label">
+              <span class="nav-group-label" id="nav-components-label">Components</span>
               <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
               <a href="${url(base,'/carbon-wheels/')}" data-nav-wheels${current==='wheels'?' aria-current="page"':''}><span class="nav-long">Carbon wheels</span><span class="nav-short" aria-hidden="true">Wheels</span></a>
             </div>
           </div>
+          <div class="nav-group${['geometry','builder'].includes(current) ? ' is-current' : ''}" data-nav-group="tools">
+            <button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-tools-menu" data-nav-group-toggle hidden>Tools</button>
+            <div class="nav-group-menu" id="nav-tools-menu" role="group" aria-labelledby="nav-tools-label">
+              <span class="nav-group-label" id="nav-tools-label">Tools</span>
+              <a href="${url(base,'/geometry/')}" data-nav-geometry${current==='geometry'?' aria-current="page"':''}>Geometry</a>
+              <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}><span class="nav-long">Build planner</span><span class="nav-short" aria-hidden="true">Planner</span></a>
+            </div>
+          </div>
+          <a href="${url(base,'/blog/')}" data-nav-guides${current==='blog'?' aria-current="page"':''}>Guides</a>
         </nav>
-        <nav class="language-nav" aria-label="Language">${LOCALES.filter((lang) => lang !== locale).map((lang) => `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav>
+        <div class="language-menu" data-language-menu><button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-list" aria-label="${escapeAttr(languageMenuLabels[locale] ?? languageMenuLabels.en)}" data-language-toggle hidden><span class="language-current" lang="${locale}">${languageCodes[locale]}</span></button><nav class="language-nav" id="language-list" aria-label="Language">${pageLocales.map((lang) => lang === locale ? `<span class="language-switch is-current" lang="${lang}" aria-current="true">${languageNames[lang]}</span>` : `<a class="language-switch" data-language-switch href="${url(base, localePath(path, lang))}" lang="${lang}" hreflang="${lang}" aria-label="${languageLabels[lang]}">${languageNames[lang]}</a>`).join('')}</nav></div>
         <button class="theme-button" type="button" data-theme-control><span aria-hidden="true" data-theme-icon><span class="theme-light">☀</span><span class="theme-dark">☾</span></span><span data-theme-label><span class="theme-light">Light</span><span class="theme-dark">Dark</span></span></button>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       </div>
@@ -93,6 +106,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
     <div class="page footer-inner">
       <div class="footer-copy">
         ${footerDescription ? `<p>${escapeHtml(footerDescription)}</p>` : '<p>Independent comparison of bicycles available in China.</p>'}
+        ${interfaceOnly ? '<p class="footer-language-note">The interface is translated. Product descriptions and evidence notes stay in English; model pages and buying guides are in English, Chinese and German.</p>' : ''}
         ${datasetUpdated && catalogReviewed ? `<p class="footer-freshness">Dataset updated <time datetime="${escapeAttr(datasetUpdated)}">${escapeHtml(datasetUpdated)}</time>; catalog-wide review <time datetime="${escapeAttr(catalogReviewed)}">${escapeHtml(catalogReviewed)}</time>. Each price keeps its observation date and conditions.</p>` : ''}
       </div>
       <nav aria-label="Footer">
@@ -125,6 +139,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   </aside>
   <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>
   <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
+  ${interfaceOnly ? `<script type="module" src="${url(base,`/assets/i18n-${locale}.js`)}"></script>` : ''}
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
   ${modules.map(path => `<script type="module" src="${url(base,path)}"></script>`).join("\n  ")}
   ${path.endsWith('/404.html') ? '' : `<script type="module" src="${url(base,'/assets/site-interaction.js')}"></script><script type="module" data-ga4-page src="${url(base,'/assets/ga4.js')}"></script>`}

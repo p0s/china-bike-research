@@ -464,14 +464,14 @@ test('superseded published bikes show availability instead of a historical price
 });
 
 test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {
-  // FX references stay visible but never supply a price sort or budget value.
-  assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort=""[^>]*data-price-filter=""/);
+  // FX references sort by the labelled amount buyers see but never supply a budget value.
+  assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort="\d+(?:\.\d+)?"[^>]*data-price-filter=""/);
   assert.match(html, /Quick Pro ER:ONE[\s\S]*?≈ ¥33,940[\s\S]*?Official FX estimate[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-tire-clearance-sort="50"/);
   assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell">50 mm<\/div>/);
   assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21980"[^>]*data-tire-clearance-sort="55"/);
   assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?¥21,980[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
-  assert.match(html, /data-id="candidate-specialized-roubaix-sl8-sport-105"[^>]*data-price-sort=""[^>]*data-tire-clearance-sort="40"/);
+  assert.match(html, /data-id="candidate-specialized-roubaix-sl8-sport-105"[^>]*data-price-sort="\d+(?:\.\d+)?"[^>]*data-price-filter=""[^>]*data-tire-clearance-sort="40"/);
   assert.match(html, /Specialized 2025 Roubaix SL8 Sport Shimano 105[\s\S]*?≈ ¥23,519[\s\S]*?Official FX estimate[\s\S]*?Shimano 105 R7100\/R7120 mechanical 2×12[\s\S]*?9\.1 kg[\s\S]*?FACT 10R carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"[^>]*data-type="frameset"[^>]*data-frame-price-low="9800"[^>]*data-frame-price-high="9800"/);
   assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Official FX estimate/);
@@ -561,9 +561,10 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /data-filter-category/);
   assert.match(html, /Category fact/);
   assert.match(html, /role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"/);
-  // The default "published first, then price" order is not a single-column sort.
+  // The default "complete profiles first" order is not a single-column sort.
   assert.match(html, /role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"/);
-  assert.match(html, /<option value="published-asc">Published first, then price<\/option>/);
+  assert.match(html, /<option value="published-asc">Complete profiles first<\/option><option value="price-asc">Price: low to high<\/option><option value="price-desc">Price: high to low<\/option><option value="name-asc">/);
+  assert.doesNotMatch(html, /china-asc|Published first|data-china-sort/);
   assert.match(html, /data-sort-heading="capability" disabled/);
   assert.match(html, /data-sort-heading="tire"><span>Tires<\/span>/);
   assert.match(html, /data-filter-heading="tire"/);
@@ -1034,19 +1035,21 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.equal((reference.match(/data-groupset-entry/g) ?? []).length, 13);
   assert.equal((reference.match(/class="groupset-row-details"/g) ?? []).length, 13);
   assert.equal((reference.match(/class="product-image groupset-image"/g) ?? []).length, 10);
-  assert.match(reference, /<th>System<\/th><th>Use<\/th><th>Gearing<\/th><th>Setup<\/th><th>China price<\/th>/);
+  assert.match(reference, /<th>System<\/th><th>Use<\/th><th>Gearing<\/th><th>Setup<\/th><th>Price<\/th>/);
   assert.match(reference, /L-TWOO · 蓝图/);
   assert.match(reference, /WheelTop · Wheeltop/);
   assert.match(reference, /QED disc-brake core groupset 1,150 g; PES disc-brake core groupset 1,250 g/);
   assert.match(reference, /¥4,150–4,200/);
-  assert.match(reference, /¥2,369–3,219/);
+  // Different seller packages are never spanned as one range; the lowest is named.
+  assert.doesNotMatch(reference, /¥2,369–3,219/);
+  assert.match(reference, /from ¥2,369<\/strong><span>1× alloy-lever kit · Taobao options · 2026-08-24<\/span><span class="groupset-official-price">from €549 official store · cable-brake shift groupset · 2026-10-26<\/span>/);
   assert.match(reference, /¥3,480/);
   assert.match(reference, /SRAM GX AXS \/ Eagle Transmission/);
   assert.match(reference, /L-TWOO eRX-TT/);
   assert.match(reference, /Package & weight/);
   assert.match(reference, /How package labels and prices are normalized/);
   assert.match(reference, /referrerpolicy="no-referrer" data-product-image/);
-  assert.match(reference, /id="shimano-grx-rx825"[\s\S]*?<td data-label="China price" data-column="price"><\/td>/);
+  assert.match(reference, /id="shimano-grx-rx825"[\s\S]*?<td data-label="Price" data-column="price"><span class="groupset-no-price">No dated price<\/span><\/td>/);
   assert.doesNotMatch(reference, /No attributable mainland price|No exact mainland package captured|current maximum unresolved/);
   assert.doesNotMatch(reference, /Established benchmarks|Chinese electronic systems|Other disciplines/);
   assert.doesNotMatch(reference, /groupset-details|<article class="groupset-detail"/);
@@ -1060,8 +1063,8 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 6);
   assert.match(primaryNav, /href="\/china-bike-research\/geometry\/"/);
   assert.match(primaryNav, />Guides<\/a>/);
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Guides<\/a>[\s\S]*data-nav-tools-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/span>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/span>/);
-  // Tools stay inline; the script folds them into the menu only when the header row is crowded.
+  // Groupsets and wheels are components, not tools; both groups stay inline until the row is crowded.
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*data-nav-group="components"[\s\S]*data-nav-group-toggle hidden>Components<\/button>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/span>[\s\S]*data-nav-group="tools"[\s\S]*data-nav-group-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/span>[\s\S]*>Guides<\/a>/);
   assert.match(primaryNav, /<span class="nav-short" aria-hidden="true">Planner<\/span>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';

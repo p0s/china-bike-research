@@ -1,4 +1,4 @@
-import { LOCALES, localePath, routeLocale } from '../src/lib/i18n.mjs';
+import { localePath, localesForRoute, routeLocale } from '../src/lib/i18n.mjs';
 /** Generated-HTML SEO contract. Uses only Node built-ins; never submits to a search engine. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,8 +39,9 @@ for (const file of files) {
     if (!sitemapSet.has(absolute)) errors.push(`${file}: indexable URL absent from sitemap`);
     if (descriptions.has(description)) errors.push(`${file}: duplicate indexable description with ${descriptions.get(description)}`);
     descriptions.set(description, file);
-    if (alternates.length !== LOCALES.length + 1) errors.push(`${file}: expected all reciprocal language links`);
-    for (const lang of [...LOCALES,'x-default']) {
+    const pageLocales = localesForRoute(untranslated);
+    if (alternates.length !== pageLocales.length + 1) errors.push(`${file}: expected all reciprocal language links`);
+    for (const lang of [...pageLocales,'x-default']) {
       const expected = `${origin}${base}${localePath(untranslated, lang === 'x-default' ? 'en' : lang)}`;
       if (!alternates.some((match) => match[1] === lang && xmlDecode(match[2]) === expected)) errors.push(`${file}: incorrect ${lang} alternate`);
       const target = path.join(dist, localePath(untranslated, lang === 'x-default' ? 'en' : lang).replace(/^\//,''), 'index.html');

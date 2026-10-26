@@ -163,6 +163,11 @@ test('deployment routing sends every locale document through the Worker and keep
     }
   }
   for (const path of ['/zh', '/de', '/geometry']) assert.equal(runsWorkerFirst(path), true, path);
+  // Interface-language and component documents get Worker security headers but never analytics.
+  for (const path of ['/es', '/es/', '/es/geometry/', '/ru', '/ru/', '/ru/carbon-wheels/', '/carbon-wheels/']) {
+    assert.equal(runsWorkerFirst(path), true, `Static document bypasses Worker: ${path}`);
+    if (path.startsWith('/es') || path.startsWith('/ru')) assert.equal(isEligibleDocumentPath(path), false, path);
+  }
   for (const path of ['/assets/site.js', '/data/catalog.json', '/assets/images/example.webp']) {
     assert.equal(runsWorkerFirst(path), false, path);
   }

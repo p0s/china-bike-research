@@ -8,12 +8,14 @@ const script = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'u
 const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
 const renderer = fs.readFileSync(new URL('../src/render.mjs', import.meta.url), 'utf8');
 
-test('gallery is an optional second layout of the same catalog rows, addressable by URL', () => {
+test('gallery is the default layout of the same catalog rows; table stays addressable by URL', () => {
   // The toggle is rendered hidden and revealed only once the catalog script runs.
-  assert.match(renderer, /class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden>[\s\S]*?data-view-value="table" aria-pressed="true"[\s\S]*?data-view-value="gallery" aria-pressed="false"/);
-  // A bare URL stays the table; only an explicit view=gallery parameter changes it.
-  assert.match(script, /activeView = value === 'gallery' \? 'gallery' : 'table';/);
-  assert.match(script, /setParam\(next, 'view', activeView === 'gallery' \? 'gallery' : ''\);/);
+  assert.match(renderer, /class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden>[\s\S]*?data-view-value="gallery" aria-pressed="true"[\s\S]*?data-view-value="table" aria-pressed="false"/);
+  // The static catalog already uses the gallery layout, so the default view does not shift.
+  assert.match(renderer, /data-product-list data-catalog-view="gallery"/);
+  // A bare URL is the gallery; only an explicit view=table parameter changes it.
+  assert.match(script, /activeView = value === 'table' \? 'table' : 'gallery';/);
+  assert.match(script, /setParam\(next, 'view', activeView === 'table' \? 'table' : ''\);/);
   assert.match(script, /const requestedView = params\.get\('view'\) \?\? '';/);
   assert.match(script, /setView\(requestedView, \{ update: false \}\);/);
   // Gallery re-lays out existing rows rather than cloning them.
@@ -25,11 +27,24 @@ test('gallery is an optional second layout of the same catalog rows, addressable
   assert.doesNotMatch(styles, /content: '·'; margin: 0 6px/);
 });
 
-test('header tools stay inline and fold into one menu only when the measured row is crowded', () => {
+test('photo size changes gallery columns within width-based bounds and stays a viewer preference', () => {
+  assert.match(renderer, /data-gallery-size-control hidden>[\s\S]*?data-gallery-size-step="-1" aria-label="Smaller photos, more per row"[\s\S]*?<input type="range" min="1" max="4" step="1" value="2" data-gallery-size aria-label="Photo size">[\s\S]*?data-gallery-size-step="1" aria-label="Larger photos, fewer per row"/);
+  assert.match(script, /function galleryColumnBounds\(\)/);
+  assert.match(script, /const smallest = narrow \? 104 : 150;/);
+  // Size is stored only as a per-device convenience; shared URLs never carry it.
+  assert.match(script, /galleryColumnsStorageKey = 'china-bikes-gallery-columns-v1'/);
+  assert.doesNotMatch(script, /setParam\(next, '(?:size|columns|density)'/);
+  assert.match(script, /image\.sizes = `\$\{cardWidth\}px`/);
+  assert.match(styles, /\.catalog-table\[data-catalog-view="gallery"\]\[data-gallery-columns\] \{ grid-template-columns: repeat\(var\(--gallery-columns\), minmax\(0, 1fr\)\); \}/);
+  assert.match(styles, /@container gallery-card \(max-width: 210px\)/);
+});
+
+test('header groups fold progressively only when the measured row is crowded', () => {
   assert.match(script, /function headerCrowded\(\)/);
-  assert.match(script, /toolsMenu\.classList\.toggle\('is-collapsed', collapse\);/);
-  assert.match(script, /stickyHeader\?\.classList\.add\('is-compact-nav'\)/);
-  assert.match(styles, /\.nav-tools\.is-collapsed \.nav-tools-menu \{ position: absolute;/);
+  assert.match(script, /const navGroups = \['tools', 'components'\]/);
+  assert.match(script, /stickyHeader\?\.classList\.toggle\('is-two-row', twoRow\)/);
+  assert.match(script, /group\.classList\.toggle\('is-collapsed', index < folded\)/);
+  assert.match(styles, /\.nav-group\.is-collapsed \.nav-group-menu \{ position: absolute;/);
   // Observers watch the row and settings text, never the search box the fit resizes.
   assert.match(script, /new ResizeObserver\(scheduleFit\)\.observe\(headerRow\);/);
   assert.doesNotMatch(script, /new ResizeObserver\(scheduleFit\)\.observe\(headerRow\.querySelector\('\.header-search'\)/);

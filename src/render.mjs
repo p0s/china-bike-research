@@ -1,4 +1,4 @@
-import { initialBuildPresentation, buildBaseFacts, formatBuildYuan, formatBuildWeight } from '../assets/builder-presentation.js';
+import { initialBuildPresentation, buildBaseFactRows, formatBuildYuan, formatBuildWeight } from '../assets/builder-presentation.js';
 import { structuredGeometry, candidateGeometry, isGeometryTableFact } from './lib/model-geometry.mjs';
 import { translate } from '../assets/i18n.js';
 import { relatedArticleLinks } from './lib/posts.mjs';
@@ -8,11 +8,12 @@ import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
 import { clockLabel, openGraphVideo, renderVideoEntries, timestampUrl } from './lib/videos.mjs';
 import { opinionAggregate } from './lib/opinions.mjs';
-import { DESTINATION_GROUPS, PRICE_CURRENCIES, countryName, regionalPrice } from '../assets/regional-prices.js';
+import { DESTINATION_GROUPS, PRICE_CURRENCIES, convertPrice, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay, pricePopoverLines } from '../assets/price-display.js';
 import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsupportedTireLayouts } from '../assets/catalog-format.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis } from './lib/regional-prices.mjs';
+import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -49,7 +50,7 @@ import {
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
-export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '' }) {
+export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '', modules = [] }) {
   return layout({
     base: ctx.base,
     locale: ctx.locale ?? 'en',
@@ -73,7 +74,8 @@ export function page(ctx, { title = '', current = '', path = '/', description: d
     datasetUpdated: ctx.siteLastmod ?? ctx.data.meta.snapshot_date,
     catalogReviewed: ctx.data.meta.snapshot_date,
     footerDescription,
-    headerTools
+    headerTools,
+    modules
   });
 }
 
@@ -164,6 +166,8 @@ function accuracyLabel(accuracy) {
     'same-platform': 'Same frame platform; components may differ',
     'same-model-different-color': 'Exact model; color may differ',
     'same-model-different-market-build': 'Same model name; regional build differs',
+    'exact-model': 'Exact model shown',
+    'exact-family': 'Same product family; parts may differ',
     illustrative: 'Illustrative image; not a product photo'
   }[accuracy] ?? 'Image status unclassified';
 }
@@ -490,7 +494,9 @@ function drivetrainSubline(ctx, product) {
   if (!drivetrain) return '';
   // Omit the speed count when the model name already states it.
   const speeds = normalizeSpeeds(drivetrain.speeds);
-  return [normalizeSpeeds(drivetrainLabel(ctx, product)).includes(speeds) ? '' : speeds, drivetrain.shifting.replaceAll('-', ' ')].filter(Boolean).join(' · ');
+  // "Wireless" is reserved for fully wireless systems; wired-derailleur systems read electronic.
+  const shifting = { mechanical: 'mechanical', electronic: 'electronic', 'electronic-wireless': 'electronic, fully wireless' }[drivetrain.shifting] ?? '';
+  return [normalizeSpeeds(drivetrainLabel(ctx, product)).includes(speeds) ? '' : speeds, shifting].filter(Boolean).join(' · ');
 }
 
 function gramRangeLabel(low, high) {
@@ -744,7 +750,8 @@ function catalogPriceCell(ctx, summary) {
   const { projection, shown } = catalogPriceProjection(ctx, summary);
   const tone = shown.tone ? ` is-${shown.tone}` : '';
   return {
-    sort: Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : '',
+    // Price sorting follows the amount the buyer sees, including reference estimates.
+    sort: Number.isFinite(projection.display.low) && !summary.priceUnavailable ? projection.display.low : '',
     filter: Number.isFinite(projection.high) ? projection.high : '',
     // Unknown prices stay a quiet dash, like every other unrecorded cell.
     html: `<div class="catalog-cell price-cell" role="cell">${summary.priceDetails || summary.priceDate ? `<button type="button" class="metric-main price-button" data-calculated-price data-price-details="${escapeAttr(summary.priceDate ?? '')}" data-evidence-href="${escapeAttr(`${summary.url}#source-records`)}" data-evidence-label="Full price record and conditions" aria-expanded="false">${escapeHtml(shown.headline)}</button>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${!shown.basis || (shown.tone === 'unknown' && !summary.priceState) ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
@@ -752,8 +759,8 @@ function catalogPriceCell(ctx, summary) {
 }
 
 function catalogPriceOrder(ctx, summary) {
-  const { projection } = catalogPriceProjection(ctx, summary);
-  return Number.isFinite(projection.low) ? (projection.low + projection.high) / 2 : Number.POSITIVE_INFINITY;
+  const { projection, unavailable } = catalogPriceProjection(ctx, summary);
+  return unavailable ? Number.POSITIVE_INFINITY : projection.display.low;
 }
 
 function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
@@ -784,7 +791,7 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
   const drivetrain = variant.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: drivetrainLabel(ctx, product), sub: drivetrainSubline(ctx, product) });
-  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
+  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
     <div class="catalog-product" role="rowheader">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
@@ -966,7 +973,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
   const drivetrain = entry.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: facts.drivetrain ?? '—' }, { clamp: true });
-  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-china-sort="${price.sort}" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
+  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(entry.id)}" aria-label="Select ${escapeAttr(candidate.name)} for comparison"><span aria-hidden="true"></span></label></div>
     <div class="catalog-product" role="rowheader">
       ${candidateImage(ctx, entry)}
@@ -1036,6 +1043,7 @@ function comparisonSummary(ctx, product) {
     ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightFilter.grams) ? { weightGrams: weightFilter.grams, weightKind: weightFilter.kind } : {}),
     ...(product.variant.kind === 'complete-bike' ? { drivetrain: drivetrainLabel(ctx, product), drivetrainSubline: drivetrainSubline(ctx, product) } : {}),
+    shifting: variantShiftingClass(product.variant),
     weight: weightLabel(product),
     frame: frameStandard(product),
     frameSearch: [product.platform.frame.material, frameMaterialLabel(product), frameStandard(product)].filter(Boolean).join(' '),
@@ -1109,6 +1117,7 @@ function candidateComparisonSummary(ctx, entry) {
     ...(tireClearance.fieldReport ? { tireClearanceFieldReport: tireClearance.fieldReport } : {}),
     ...(Number.isFinite(weightGrams) ? { weightGrams, weightKind: entry.kind === 'complete-bike' ? 'complete' : 'frame' } : {}),
     ...(entry.kind === 'complete-bike' && facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
+    shifting: candidateShiftingClass(entry),
     ...(weight !== '—' ? { weight } : {}),
     ...(frame ? { frame } : {}),
     frameSearch: [facts.frame, facts.frame_material, facts.bottom_bracket].filter(Boolean).join(' '),
@@ -1402,8 +1411,8 @@ const curatedComparisonGroups = [
   {
     id: 'wide-tire-aero',
     title: 'Wide-tire aero',
-    summary: 'Aero road frame · 38 mm documented clearance · dated price',
-    criteria: 'Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price.',
+    summary: 'Aero road frame · 38 mm documented clearance, 1× on two of three · dated price',
+    criteria: 'Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price. Two of the three reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan.',
     ids: ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden']
   }
 ];
@@ -1438,13 +1447,19 @@ function priceSettings(ctx) {
   </div>`;
 }
 
+// Gallery cards reuse the localized column names as fact labels, also without JavaScript.
+function galleryLabelStyle(ctx) {
+  const labels = { tires: 'Tires', drivetrain: 'Drivetrain', weight: 'Weight', frame: 'Frame' };
+  return Object.entries(labels).map(([key, label]) => `--gallery-label-${key}:${JSON.stringify(translate(label, ctx.locale ?? 'en'))}`).join(';');
+}
+
 export function renderHome(ctx) {
   const candidates = ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data);
   const defaultCandidateCount = candidates.filter((entry) => entry.defaultVisible).length;
   const hiddenCandidateCount = candidates.length - defaultCandidateCount;
   const summaries = catalogSummaries(ctx);
   const summaryById = new Map(summaries.map((item) => [item.id, item]));
-  // The static order matches the default "published first, then price" sort.
+  // The static order matches the default sort: complete profiles first, then shown price.
   const rows = [
     ...ctx.products.map((product) => {
       const summary = summaryById.get(product.variant.id);
@@ -1467,7 +1482,7 @@ export function renderHome(ctx) {
         <label class="field"><span>Min tire clearance</span><span class="number-with-unit"><input id="catalog-tire-min" name="min-tire-clearance" type="number" min="0" max="100" step="1" inputmode="decimal" placeholder="Any" data-filter-tire aria-label="Minimum tire clearance"><span>mm</span></span></label>
         <label class="field"><span>Tire fit for</span><select data-filter-tire-layout aria-label="Tire clearance drivetrain"><option value="">Any drivetrain</option><option value="single">1× drivetrain</option><option value="double">2× drivetrain</option></select></label>
         <label class="filter-check"><input type="checkbox" data-filter-tire-unknown disabled><span>Also show unknown clearance</span></label>
-        <div class="field"><span id="drivetrain-quick-label">Drivetrain</span><div class="pills" role="group" aria-labelledby="drivetrain-quick-label"><button type="button" class="pill" data-drivetrain-chip="electronic" aria-pressed="false">Electronic</button><button type="button" class="pill" data-drivetrain-chip="mechanical" aria-pressed="false">Mechanical</button></div></div>
+        <div class="field"><span id="shifting-quick-label">Shifting</span><div class="pills" role="group" aria-labelledby="shifting-quick-label"><button type="button" class="pill" data-shifting-chip="electronic" aria-pressed="false">Electronic</button><button type="button" class="pill" data-shifting-chip="mechanical" aria-pressed="false">Mechanical</button></div><input type="hidden" name="shifting" value="" data-filter-shifting></div>
         <details class="rail-more" id="table-filters" data-filter-panel><summary data-filter-panel-toggle>More filters</summary>
           <div class="filter-panel-grid">
             <label class="field"><span>Max complete-bike weight</span><span class="number-with-unit"><input name="max-complete-weight" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Any" data-filter-complete-weight><span>kg</span></span></label>
@@ -1478,7 +1493,7 @@ export function renderHome(ctx) {
             <p class="field-help">Only rows with recorded values match numeric limits.</p>
           </div>
         </details>
-        <label class="switch"><input type="checkbox" role="switch" data-filter-published><span>Published models only</span></label>
+        <label class="switch"><input type="checkbox" role="switch" data-filter-published aria-describedby="published-filter-help"><span>Complete profiles only</span></label><p class="field-help" id="published-filter-help">Hides partial profiles: research leads with missing facts.</p>
       </section>
       <div class="rail-sheet-foot"><button class="primary-button" type="button" data-filter-sheet-close><span data-sheet-result-count>Show ${resultTotal} results</span></button></div>
     </aside>
@@ -1487,14 +1502,14 @@ export function renderHome(ctx) {
       ${familyChips(ctx, candidates)}
       <div class="result-bar">
         <div class="filter-chips" data-filter-chips role="group" aria-label="Active filters" hidden></div>
-        <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> models<span data-result-context></span>${infoTip('Profile coverage', [`${ctx.products.length} published profiles; ${defaultCandidateCount} partial profiles. Missing facts remain unknown.`], { 'data-result-coverage': '' })}<span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
-        <div class="result-actions"><div class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden><button type="button" data-view-value="table" aria-pressed="true"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button><button type="button" data-view-value="gallery" aria-pressed="false"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button></div><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Published first, then price</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="china-asc">China price: low to high</option><option value="china-desc">China price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
+        <p class="result-summary" data-result-summary aria-live="polite"><strong data-result-count>${resultTotal}</strong> <span data-result-noun>${resultTotal === 1 ? 'model' : 'models'}</span><span data-result-context></span>${infoTip('Profile coverage', [`${ctx.products.length} complete profiles; ${defaultCandidateCount} partial profiles. Missing facts remain unknown.`], { 'data-result-coverage': '' })}<span data-filter-notice></span><span class="sort-status" data-sort-status></span></p>
+        <div class="result-actions"><div class="view-toggle" role="group" aria-label="Catalog view" data-view-control hidden><button type="button" data-view-value="gallery" aria-pressed="true"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button><button type="button" data-view-value="table" aria-pressed="false"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button></div><div class="gallery-size" role="group" aria-label="Photo size" data-gallery-size-control hidden><button type="button" class="gallery-size-step" data-gallery-size-step="-1" aria-label="Smaller photos, more per row"><span aria-hidden="true">−</span></button><input type="range" min="1" max="4" step="1" value="2" data-gallery-size aria-label="Photo size"><button type="button" class="gallery-size-step" data-gallery-size-step="1" aria-label="Larger photos, fewer per row"><span aria-hidden="true">+</span></button></div><label class="sort-control"><span>Sort</span><select name="sort" data-sort><option value="published-asc">Complete profiles first</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="text-button reset-button" type="button" data-reset hidden>Clear all</button></div>
       </div>
       <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
         <div class="compare-heading"><h2 id="compare-title">Compare</h2><span class="compare-count" data-compare-heading-count></span><label class="switch compare-differences"><input type="checkbox" role="switch" data-compare-differences><span>Differences only</span></label><div class="compare-heading-actions"><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
         <div data-compare-content></div>
       </section>
-      <div class="catalog-table" id="catalog-rows" data-product-list role="table" aria-label="Bike comparison" aria-describedby="compare-hint">
+      <div class="catalog-table" id="catalog-rows" data-product-list data-catalog-view="gallery" role="table" aria-label="Bike comparison" aria-describedby="compare-hint" style="${escapeAttr(galleryLabelStyle(ctx))}">
         <div class="catalog-head" role="row"><span role="columnheader" class="select-head"><span class="sr-only" id="compare-hint">Select two to ten bikes to compare</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button>${catalogFilterShortcut('search', 'bike')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Price</span></button>${catalogFilterShortcut('price', 'full-bike price')}</span></span><span role="columnheader" class="capability-head" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button>${catalogFilterShortcut('category', 'category fact')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tires</span></button>${catalogFilterShortcut('tire', 'tire clearance')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Drivetrain</span>${catalogFilterShortcut('drivetrain', 'drivetrain')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Weight</span>${catalogFilterShortcut('weight', 'weight')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Frame</span>${catalogFilterShortcut('frame', 'frame')}</span></span></div>
         ${rows.map((row) => row.html).join('')}
         <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
@@ -1795,13 +1810,14 @@ export function renderCandidateModel(ctx, entry) {
   });
 }
 
-function prosePage(ctx, { title, desc, path, html, current = '', className = '', structuredData = [], trail = [] }) {
+function prosePage(ctx, { title, desc, path, html, current = '', className = '', structuredData = [], trail = [], modules = [] }) {
   return page(ctx, {
     title,
     current,
     path,
     description: desc,
     structuredData,
+    modules,
     body: `<section class="simple-page"><article class="page prose${className ? ` ${escapeAttr(className)}` : ''}">${breadcrumbs(ctx, title, trail)}<h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
   });
 }
@@ -2143,7 +2159,7 @@ function builderSlotRow(ctx, parts, slot, view) {
   const [label, help] = buildSlotCopy[slot];
   return `<section class="builder-part-row${view.covered ? ' is-covered' : view.included ? ' is-included' : ''}" id="build-slot-${escapeAttr(slot)}" tabindex="-1" data-build-slot="${escapeAttr(slot)}">
     <div class="builder-part-label"><h2>${escapeHtml(label)}</h2><p>${escapeHtml(help)}</p></div>
-    <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select${view.covered ? ' disabled' : ''}>${builderPartOptions(parts, slot, view.included)}</select></label><div class="builder-custom-values" data-build-custom-values${view.customHidden ? ' hidden' : ''}><label data-build-custom-price-field${view.priceHidden ? ' hidden' : ''}>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field${view.weightHidden ? ' hidden' : ''}>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
+    <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select${view.covered ? ' disabled' : ''}>${builderPartOptions(parts, slot, view.included)}</select></label><div class="builder-custom-values" data-build-custom-values${view.customHidden ? ' hidden' : ''}><label data-build-custom-price-field${view.priceHidden ? ' hidden' : ''}><span data-build-price-label>Price ¥</span><input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field${view.weightHidden ? ' hidden' : ''}>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
     <div class="builder-part-facts"><strong data-build-part-price>${escapeHtml(view.price)}</strong><span data-build-part-weight>${escapeHtml(view.weight)}</span><small data-build-part-basis>${escapeHtml(view.basis)}</small><a href="${escapeAttr(view.source?.url || url(ctx.base, '/methodology/'))}" data-build-part-source${view.source?.url ? ` title="${escapeAttr(view.source.title || 'Source')}"` : ' hidden'} rel="noreferrer">Source</a></div>
     <p class="builder-covered-note" data-build-covered-note${view.covered ? '' : ' hidden'}>${escapeHtml(view.coveredNote)}</p>
   </section>`;
@@ -2159,14 +2175,14 @@ export function renderBikeBuilder(ctx) {
   const baseOptions = `<option value="" disabled>Choose an exact starting point</option><optgroup label="Published catalog">${publishedBases.map((base) => `<option value="${escapeAttr(base.id)}"${base.id === initialBase?.id ? ' selected' : ''}>${escapeHtml(base.name)}</option>`).join('')}</optgroup>`;
   const payload = { schemaVersion: 2, slots: buildSlotIds, bases, parts };
   const originalNotes = ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Paket-, Preis- und Messnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
-  const body = `<section class="builder-intro"><div class="page">${breadcrumbs(ctx, 'Bike configurator')}<span class="builder-kicker">Component planner</span><h1>Configure a bike</h1><p>Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.</p>${originalNotes}<p class="builder-preview-note" id="builder-preview-note"><span class="builder-preview-status" data-build-preview-status><strong data-build-static-label>Static default preview</strong><strong data-build-ready-label aria-hidden="true">Editing ready</strong></span><span>Editing, shared links and saved drafts require JavaScript to finish loading.</span></p></div></section>
+  const body = `<section class="builder-intro"><div class="page">${breadcrumbs(ctx, 'Build planner')}<h1>Configure a bike</h1><p>Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.</p>${originalNotes}<p class="builder-preview-note" id="builder-preview-note"><span class="builder-preview-status" data-build-preview-status><strong data-build-static-label>Static default preview</strong><strong data-build-ready-label aria-hidden="true">Editing ready</strong></span><span>Editing, shared links and saved drafts require JavaScript to finish loading.</span></p></div></section>
   <fieldset class="builder-page page" data-bike-builder disabled aria-describedby="builder-preview-note"><legend class="sr-only">Bike configurator</legend>
     <div class="builder-workbench">
-      <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><p data-build-base-facts>${initialBase ? escapeHtml(buildBaseFacts(initialBase, ctx.locale)) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom${initial?.isComplete && initialBase?.priceLow != null && initialBase?.baseWeightG != null ? ' hidden' : ''}><label data-build-base-price-field${initialBase?.priceLow != null ? ' hidden' : ''}>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field${initialBase?.baseWeightG != null ? ' hidden' : ''}>${initial?.isComplete ? 'Base bike weight g' : 'Frame-only weight g'}<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label><label class="builder-package-weight" data-build-package-weight-field${initial?.isComplete ? ' hidden' : ''}><span>Fork + remaining frame-package weight (g)</span><input type="number" min="0" step="any" placeholder="Unknown" data-build-package-weight aria-label="Fork and remaining frame-package weight in grams"><small>Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.</small></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
+      <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p class="builder-starting-point-warning" data-build-starting-point-warning role="status" aria-live="polite" hidden></p><dl class="builder-base-facts" data-build-base-facts>${initialBase ? buildBaseFactRows(initialBase).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('') : '<div><dd>No catalog base is currently available.</dd></div>'}</dl><div class="builder-base-custom" data-build-base-custom${initial?.isComplete && initialBase?.priceLow != null && initialBase?.baseWeightG != null ? ' hidden' : ''}><label data-build-base-price-field${initialBase?.priceLow != null ? ' hidden' : ''}>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price aria-describedby="builder-base-price-help"><small id="builder-base-price-help">No purchase-ready price is recorded for this exact base. Enter the price you were quoted; the price basis above is for planning only.</small></label><label data-build-base-weight-field${initialBase?.baseWeightG != null ? ' hidden' : ''}>${initial?.isComplete ? 'Base bike weight g' : 'Frame-only weight g'}<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label><label class="builder-package-weight" data-build-package-weight-field${initial?.isComplete ? ' hidden' : ''}><span>Fork + remaining frame-package weight (g)</span><input type="number" min="0" step="any" placeholder="Unknown" data-build-package-weight aria-label="Fork and remaining frame-package weight in grams"><small>Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.</small></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
       ${buildMap(initial)}
       <div class="builder-parts" role="group" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot, initial?.rows.get(slot) ?? { customHidden: true, priceHidden: true, weightHidden: true, price: '—', weight: '—', basis: '', coveredNote: '' })).join('')}</div>
     </div>
-    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><div class="build-compositions" data-build-compositions>${buildCompositionBlock('price', initial?.composition.price, formatBuildYuan)}${buildCompositionBlock('weight', initial?.composition.weight, formatBuildWeight)}</div><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
+    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>${initial?.isComplete ? 'Purchase + upgrades' : 'Current build'}</span><h2 id="builder-summary-title" data-build-name>${escapeHtml(initialBase?.name.replace(/ · research stage$/, '') ?? 'Build total')}</h2><dl><div><dt data-build-price-label>${initial?.isComplete ? 'Purchase + upgrades' : 'Full build price'}</dt><dd data-build-total-price>${escapeHtml(initial?.price ?? '—')}</dd></div><div><dt data-build-weight-label>${initial?.isComplete ? 'Projected weight' : 'Known weight'}</dt><dd data-build-total-weight>${escapeHtml(initial?.weight ?? '—')}</dd></div></dl><div class="build-compositions" data-build-compositions>${buildCompositionBlock('price', initial?.composition.price, formatBuildYuan)}${buildCompositionBlock('weight', initial?.composition.weight, formatBuildWeight)}</div><p data-build-completeness aria-live="polite">${escapeHtml(initial?.completeness ?? '')}</p><div class="build-todo" data-build-todo hidden><p data-build-todo-price><strong>Prices to enter</strong></p><p data-build-todo-weight><strong>Weights to enter</strong></p></div><div data-build-compatibility aria-live="polite"${initial?.conflicts.length ? ' class="has-conflicts"' : ''}>${initial?.conflicts.length ? `<strong>Check compatibility</strong><ul>${initial.conflicts.map(message => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : '<p>No conflict in the recorded checks.</p>'}</div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset parts</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
     <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
   </fieldset>`;
   return page(ctx, {
@@ -2189,19 +2205,18 @@ function groupsetHeadlinePrices(groupset) {
   return (groupset.price_observations ?? []).filter((observation) => observation.headline !== false);
 }
 
+// Exact package prices: one package keeps its amount; several packages show
+// "from" the lowest with that package named, never a range across packages.
 function groupsetPriceLabel(groupset) {
-  const observations = groupsetHeadlinePrices(groupset);
+  const observations = groupsetHeadlinePrices(groupset).filter((observation) => observation.currency === 'CNY');
   if (!observations.length) return '';
-  const amounts = observations.map((observation) => observation.amount);
-  const currencies = new Set(observations.map((observation) => observation.currency));
   const format = (amount) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amount);
-  if (currencies.size === 1 && currencies.has('CNY')) {
-    const low = Math.min(...amounts);
-    const high = Math.max(...amounts);
-    return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
-  }
-  const observation = observations[0];
-  return `${observation.currency} ${format(observation.amount)}`;
+  const packages = new Set(observations.map((observation) => observation.package_label ?? observation.option_label_zh ?? ''));
+  const amounts = observations.map((observation) => observation.amount);
+  const low = Math.min(...amounts);
+  const high = Math.max(...amounts);
+  if (packages.size > 1) return `from ¥${format(low)}`;
+  return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
 }
 
 function groupsetSetupLabel(groupset) {
@@ -2212,14 +2227,28 @@ function groupsetSetupLabel(groupset) {
 }
 
 function groupsetPriceSummary(groupset) {
-  const observations = groupsetHeadlinePrices(groupset);
+  const observations = groupsetHeadlinePrices(groupset).filter((observation) => observation.currency === 'CNY');
   if (!observations.length) return '';
+  const lowest = [...observations].sort((a, b) => a.amount - b.amount)[0];
   const taobao = observations.every((observation) => /Taobao/i.test(observation.market));
   const label = taobao
     ? `Taobao option${observations.length === 1 ? '' : 's'}`
     : `Dealer observation${observations.length === 1 ? '' : 's'}`;
-  const dates = [...new Set(observations.map((observation) => observation.observed_at))];
-  return `${label} · ${dates.at(-1)}`;
+  const dates = [...new Set(observations.map((observation) => observation.observed_at))].sort();
+  return [lowest.package_label ?? '', label, dates.at(-1)].filter(Boolean).join(' · ');
+}
+
+// The latest official direct-store price, in its own currency, beside the China price.
+function groupsetOfficialPrice(groupset) {
+  const official = (groupset.price_observations ?? []).filter((observation) => observation.official_store && observation.currency !== 'CNY')
+    .sort((a, b) => b.observed_at.localeCompare(a.observed_at) || a.amount - b.amount);
+  if (!official.length) return '';
+  const date = official[0].observed_at;
+  const sameDay = official.filter((observation) => observation.observed_at === date);
+  const lowest = [...sameDay].sort((x, y) => x.amount - y.amount)[0];
+  const symbol = { EUR: '€', USD: 'US$', GBP: '£' }[official[0].currency] ?? `${official[0].currency} `;
+  // A "from" price names the package it belongs to, because the store's kits differ.
+  return [`${sameDay.length > 1 ? 'from ' : ''}${symbol}${new Intl.NumberFormat('en-US').format(lowest.amount)} official store`, sameDay.length > 1 ? lowest.package_label : '', date].filter(Boolean).join(' · ');
 }
 
 function observationAmount(observation) {
@@ -2278,7 +2307,7 @@ function groupsetRows(ctx, groupset, sourcesById) {
     <td data-label="Use" data-column="best"><strong>${escapeHtml(groupsetDiscipline(groupset))}</strong><span>${escapeHtml(groupset.positioning)}</span></td>
     <td data-label="Gearing" data-column="gearing"><strong>${escapeHtml(`${groupset.shifting.chainrings} · ${groupset.shifting.cassette_speeds}`)}</strong>${maxRear ? `<span>${escapeHtml(maxRear)}</span>` : ''}</td>
     <td data-label="Setup" data-column="setup"><strong>${escapeHtml(groupsetSetupLabel(groupset))}</strong><span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
-    <td data-label="China price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}</td>
+    <td data-label="Price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}${groupsetOfficialPrice(groupset) ? `<span class="groupset-official-price">${escapeHtml(groupsetOfficialPrice(groupset))}</span>` : ''}${!price && !groupsetOfficialPrice(groupset) ? '<span class="groupset-no-price">No dated price</span>' : ''}</td>
   </tr><tr class="groupset-detail-row"><td colspan="5">${groupsetDetailPanel(groupset, sourcesById)}</td></tr></tbody>`;
 }
 
@@ -2289,6 +2318,8 @@ function adjacentPriceLabel(source) {
   const format = (amount) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amount);
   const low = Math.min(...amounts);
   const high = Math.max(...amounts);
+  // Different seller options are different packages: name the lowest, never span them.
+  if (new Set(observations.map((observation) => observation.option_label_zh)).size > 1) return `from ¥${format(low)}`;
   return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
 }
 
@@ -2304,7 +2335,7 @@ function adjacentRows(source) {
     <td data-label="Use" data-column="best"><strong>${escapeHtml(system.discipline)}</strong><span>${escapeHtml(system.why_separate)}</span></td>
     <td data-label="Gearing" data-column="gearing"></td>
     <td data-label="Setup" data-column="setup"></td>
-    <td data-label="China price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>Taobao options · ${escapeHtml(source.observed_at)}</span>` : ''}</td>
+    <td data-label="Price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>Taobao options · ${escapeHtml(source.observed_at)}</span>` : ''}</td>
   </tr><tr class="groupset-detail-row"><td colspan="5"><details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-lower"><section><h3>Captured packages</h3><div class="price-records">${records}</div></section><section><h3>Package boundary</h3><p>${escapeHtml(system.why_separate)}</p><p>${escapeHtml(source.notes)}</p></section></div><div class="groupset-source-line"><strong>Source</strong><span>${sourceLink}</span></div></div></details></td></tr></tbody>`;
 }
 
@@ -2336,7 +2367,7 @@ export function renderElectronicGroupsets(ctx) {
     ...adjacentSources.map(adjacentRows)
   ].join('');
   const originalNotes = ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Paket-, Preis- und Messnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
-  const html = `${originalNotes}<p class="groupset-table-note"><span>${ordered.length + adjacentSources.length} systems · reviewed 2026-08-25</span> Open a row for fit, batteries, package scope, weight evidence and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison"><caption class="sr-only">Electronic groupsets available in China</caption><thead><tr><th>System</th><th>Use</th><th>Gearing</th><th>Setup</th><th>China price</th></tr></thead>${rows}</table></div>
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${ordered.length + adjacentSources.length} systems · reviewed ${escapeHtml(latestDate([...ordered.map((groupset) => groupset.reviewed_at), ...ordered.map((groupset) => groupset.image?.reviewed_at)], '2026-08-25'))} · latest price ${escapeHtml(latestDate(ordered.flatMap((groupset) => (groupset.price_observations ?? []).map((observation) => observation.observed_at)), '2026-08-24'))}</span> Open a row for fit, batteries, package scope, weight evidence and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison"><caption class="sr-only">Electronic groupsets available in China</caption><thead><tr><th>System</th><th>Use</th><th>Gearing</th><th>Setup</th><th>Price</th></tr></thead>${rows}</table></div>
   <details class="reference-guide"><summary>How package labels and prices are normalized</summary><div><dl class="detail-list package-basis"><div><dt>Shift-only</dt><dd>Levers, derailleurs, battery, wires and charger.</dd></div><div><dt>Shift-brake</dt><dd>Shift-only plus calipers and hoses.</dd></div><div><dt>Partial groupset</dt><dd>Shift-brake plus only some of crank, cassette, chain or rotors.</dd></div><div><dt>Full groupset</dt><dd>An exact, itemized list of every included component.</dd></div><div><dt>OEM take-off</dt><dd>Removed or split from a complete bike; retail packaging and warranty may be absent.</dd></div></dl><p>Seller labels such as 小套, 中套 and 大套 are retained as option text, never treated as standard packages. Taobao observations are option-level screenshots rather than verified checkout totals.</p></div></details>`;
   return prosePage(ctx, {
     title: 'Electronic groupsets in China',
@@ -2391,14 +2422,43 @@ function wheelsetRotorAxle(compatibility) {
   return `${rotor} · ${compatibility.axles.join(' / ')} mm`;
 }
 
-function wheelsetRows(wheelset, sourcesById, videos = []) {
+// A reviewed exact-model photo; unavailable photos are omitted without a placeholder.
+function wheelsetImageHtml(ctx, wheelset, sourcesById) {
+  const image = wheelset.image;
+  if (!image?.local_path) return '';
+  const source = sourcesById.get(image.source_id);
+  const srcset = image.variants?.length ? ` srcset="${escapeAttr(image.variants.map((variant) => `${url(ctx.base, variant.url)} ${variant.width}w`).join(', '))}" sizes="(max-width: 720px) 120px, 156px"` : '';
+  const visual = `<img src="${escapeAttr(url(ctx.base, image.local_path))}"${srcset} alt="${escapeAttr(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" data-product-image>`;
+  const linked = source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer" aria-label="View the official ${escapeAttr(image.credit)} product page">${visual}</a>` : visual;
+  return `<span class="product-image groupset-image wheelset-image">${linked}</span>`;
+}
+
+function wheelsetRows(ctx, wheelset, sourcesById, videos = [], rates = null) {
   const { rim, compatibility } = wheelset;
   const headline = wheelset.price_observations[0];
   const pressure = Number.isFinite(wheelset.max_pressure.psi) ? `${wheelset.max_pressure.psi} psi maximum. ${wheelset.max_pressure.note}` : wheelset.max_pressure.note;
-  const observations = wheelset.price_observations.map((observation) => `<div><strong>${escapeHtml(wheelsetAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
-  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-grid"><section><h3>Rim and tires</h3><dl><div><dt>Bead</dt><dd>${escapeHtml(rim.bead_note)}</dd></div><div><dt>Outer width</dt><dd>${escapeHtml(rim.external_width_mm.front === rim.external_width_mm.rear ? `${rim.external_width_mm.front} mm` : `${rim.external_width_mm.front} mm front / ${rim.external_width_mm.rear} mm rear`)}</dd></div><div><dt>Tires</dt><dd>${escapeHtml(rim.tire_range)}</dd></div><div><dt>Pressure</dt><dd>${escapeHtml(pressure)}</dd></div></dl></section><section><h3>Weight and limits</h3><dl><div><dt>Weight</dt><dd>${escapeHtml(`${wheelsetGrams(wheelset.weight)}. ${wheelset.weight.basis}`)}</dd></div><div><dt>Load limit</dt><dd>${escapeHtml(`${wheelsetLimit(wheelset.load_limit)}. ${wheelset.load_limit.note}`)}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(wheelset.warranty ?? 'Not stated')}</dd></div></dl></section><section><h3>Hub and spokes</h3><dl><div><dt>Hub</dt><dd>${escapeHtml(wheelset.hub)}</dd></div><div><dt>Spokes</dt><dd>${escapeHtml(`${sentenceLabel(wheelset.spokes.material)} · ${wheelset.spokes.summary}`)}</dd></div><div><dt>Freehubs</dt><dd>${escapeHtml(wheelsetFreehubs(compatibility))}</dd></div></dl></section></div><div class="groupset-detail-lower"><section><h3>Price observations</h3><div class="price-records">${observations}</div></section><section><h3>Confirm before buying</h3><ul>${wheelset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div>${videos.length ? `<section class="wheelset-videos"><h3>Videos</h3><div class="video-list">${renderVideoEntries(videos)}</div></section>` : ''}<div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(wheelset.source_ids, sourcesById)}</span></div></div></details>`;
-  return `<tbody class="groupset-entry" id="${escapeAttr(wheelset.id)}" data-wheelset-entry><tr class="groupset-summary-row">
-    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(wheelset.name)}</strong><span>${escapeHtml(wheelset.maker)}</span></span></div></th>
+  const credit = wheelset.image?.local_path ? `<span class="groupset-image-credit">Image: ${escapeHtml(wheelset.image.credit)}</span>` : '';
+  // A recheck with the same amount, terms and store merges into one entry listing every observation date.
+  const observationGroups = new Map();
+  for (const observation of wheelset.price_observations) {
+    const key = [observation.amount, observation.currency, observation.market, observation.price_type, observation.conditions].join('|');
+    if (!observationGroups.has(key)) observationGroups.set(key, { ...observation, dates: [] });
+    observationGroups.get(key).dates.push(observation.observed_at);
+  }
+  const observations = [...observationGroups.values()].map((observation) => `<div><strong>${escapeHtml(wheelsetAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.dates.join(', ')}${/-sale$/.test(observation.price_type) ? ' · Sale price' : ''}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
+  // Rechecks of one page keep separate dated records but list the page once.
+  const sourceIds = [...new Map(wheelset.source_ids.map((id) => [sourcesById.get(id)?.url ?? id, id])).values()];
+  // Independent review notes summarise third-party tests; each links its listed source.
+  const reviews = wheelset.independent_evidence?.length ? `<section><h3>Independent reviews</h3><ul>${wheelset.independent_evidence.map((note) => {
+    const source = sourcesById.get(note.source_id);
+    return `<li>${escapeHtml(note.summary)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
+  }).join('')}</ul></section>` : '';
+  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-grid"><section><h3>Rim and tires</h3><dl><div><dt>Bead</dt><dd>${escapeHtml(rim.bead_note)}</dd></div><div><dt>Outer width</dt><dd>${escapeHtml(rim.external_width_mm.front === rim.external_width_mm.rear ? `${rim.external_width_mm.front} mm` : `${rim.external_width_mm.front} mm front / ${rim.external_width_mm.rear} mm rear`)}</dd></div><div><dt>Tires</dt><dd>${escapeHtml(rim.tire_range)}</dd></div><div><dt>Pressure</dt><dd>${escapeHtml(pressure)}</dd></div></dl></section><section><h3>Weight and limits</h3><dl><div><dt>Weight</dt><dd>${escapeHtml(`${wheelsetGrams(wheelset.weight)}. ${wheelset.weight.basis}`)}</dd></div><div><dt>Load limit</dt><dd>${escapeHtml(`${wheelsetLimit(wheelset.load_limit)}. ${wheelset.load_limit.note}`)}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(wheelset.warranty ?? 'Not stated')}</dd></div></dl></section><section><h3>Hub and spokes</h3><dl><div><dt>Hub</dt><dd>${escapeHtml(wheelset.hub)}</dd></div><div><dt>Spokes</dt><dd>${escapeHtml(`${sentenceLabel(wheelset.spokes.material)} · ${wheelset.spokes.summary}`)}</dd></div><div><dt>Freehubs</dt><dd>${escapeHtml(wheelsetFreehubs(compatibility))}</dd></div></dl></section></div><div class="groupset-detail-lower"><section><h3>Price observations</h3><div class="price-records">${observations}</div></section><section><h3>Confirm before buying</h3><ul>${wheelset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>${reviews}</div>${videos.length ? `<section class="wheelset-videos"><h3>Videos</h3><div class="video-list">${renderVideoEntries(videos, { article: true })}</div></section>` : ''}<p class="wheelset-planner-link"><a href="${url(ctx.base, `/build/?part-wheelset=${encodeURIComponent(wheelset.id)}`)}">Check fit in the Build planner</a></p><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(sourceIds, sourcesById)}</span>${credit}</div></div></details>`;
+  // Sort keys: price converted with the dated ECB snapshot only to order rows; cells keep the original currency.
+  const usd = rates ? convertPrice(headline.amount, headline.currency, 'USD', rates) : null;
+  const sortData = ` data-use="${escapeAttr(wheelset.use)}" data-weight="${wheelset.weight.grams}" data-depth="${Math.max(rim.depth_mm.front, rim.depth_mm.rear)}" data-inner="${rim.internal_width_mm}"${Number.isFinite(usd) ? ` data-price-usd="${Math.round(usd)}"` : ''}`;
+  return `<tbody class="groupset-entry" id="${escapeAttr(wheelset.id)}" data-wheelset-entry${sortData}><tr class="groupset-summary-row">
+    <th scope="row"><div class="groupset-identity${wheelset.image?.local_path ? ' has-image' : ''}">${wheelsetImageHtml(ctx, wheelset, sourcesById)}<span class="groupset-name"><strong>${escapeHtml(wheelset.name)}</strong><span>${escapeHtml(wheelset.maker)}</span></span></div></th>
     <td data-label="Use" data-column="best"><strong>${escapeHtml(wheelsetUseLabels[wheelset.use])}</strong><span>${escapeHtml(wheelset.positioning)}</span></td>
     <td data-label="Rim" data-column="rim"><strong>${escapeHtml(`${wheelsetDepth(rim)} · ${rim.internal_width_mm} mm inner`)}</strong><span>${escapeHtml(`${wheelsetBeadLabels[rim.bead]}${rim.tubeless_ready ? ' · tubeless ready' : ''}`)}</span></td>
     <td data-label="Weight" data-column="weight"><strong>${escapeHtml(`${new Intl.NumberFormat('en-US').format(wheelset.weight.grams)} g`)}</strong><span>${escapeHtml(wheelsetLimit(wheelset.load_limit))}</span></td>
@@ -2424,8 +2484,11 @@ export function renderCarbonWheels(ctx) {
   const originalNotes = ctx.locale === 'zh-Hans'
     ? '<p class="locale-evidence-note">本页提供中文导航与规格标签；型号、来源标题及详细的规格、价格和限重备注保留原文。</p>'
     : ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Preis-, Gewichts- und Grenzwertnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
-  const html = `${originalNotes}<p class="groupset-table-note"><span>${wheelsets.length} wheelsets · reviewed ${escapeHtml(reviewed)}</span> Open a row for tire limits, pressure, hub, warranty, videos and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison wheelset-comparison"><caption class="sr-only">Chinese carbon wheelsets compared</caption><thead><tr><th>Wheelset</th><th>Use</th><th>Rim</th><th>Weight</th><th>Fit</th><th>Price</th></tr></thead>${wheelsets.map((wheelset) => wheelsetRows(wheelset, sourcesById, videosFor(wheelset))).join('')}</table></div>
-  <details class="reference-guide"><summary>How rim, limit and price fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Weight</dt><dd>The maker's pair claim with its stated basis and tolerance.</dd></div><div><dt>Load limit</dt><dd>A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.</dd></div><div><dt>Not stated</dt><dd>The maker's page does not publish the value. It is not a negative finding.</dd></div><div><dt>Price</dt><dd>A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions.</dd></div></dl><p>Freehub and rotor fit for these wheelsets is checked in the Build planner. <a href="${url(ctx.base, '/build/')}">Open the Build planner</a></p></div></details>`;
+  const rates = [...(ctx.data.exchangeRates ?? [])].sort((a, b) => b.rate_date.localeCompare(a.rate_date))[0] ?? null;
+  // Filters, sort, view and photo size re-arrange the same rows; the table is the default.
+  const toolbar = `<div class="wheels-toolbar" data-wheels-toolbar hidden><div class="segmented wheels-use" role="group" aria-label="Use"><button type="button" data-wheels-use="" aria-pressed="true">All</button><button type="button" data-wheels-use="road" aria-pressed="false">Road</button><button type="button" data-wheels-use="gravel" aria-pressed="false">Gravel</button></div><label class="sort-control wheels-sort"><span>Sort</span><select data-wheels-sort><option value="">Use, then price</option><option value="price">Price: low to high (US$ equivalent)</option><option value="weight">Lightest first</option><option value="depth">Deepest rim first</option><option value="inner">Widest inner rim first</option></select></label><div class="view-toggle" role="group" aria-label="Wheelset view"><button type="button" data-wheels-view="table" aria-pressed="true"><span class="view-icon view-icon-table" aria-hidden="true"></span>Table</button><button type="button" data-wheels-view="gallery" aria-pressed="false"><span class="view-icon view-icon-gallery" aria-hidden="true"></span>Gallery</button></div><div class="gallery-size" role="group" aria-label="Photo size" data-wheels-size-control hidden><button type="button" class="gallery-size-step" data-wheels-size-step="-1" aria-label="Smaller photos, more per row"><span aria-hidden="true">−</span></button><button type="button" class="gallery-size-step" data-wheels-size-step="1" aria-label="Larger photos, fewer per row"><span aria-hidden="true">+</span></button></div><p class="wheels-status" data-wheels-status role="status" aria-live="polite"></p></div>`;
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${wheelsets.length} wheelsets · reviewed ${escapeHtml(reviewed)}</span> Open a row for tire limits, pressure, hub, warranty, independent reviews, videos and sources.</p>${toolbar}<div class="reference-table-wrap groupset-table-wrap" data-wheels-view-root data-view="table"><table class="reference-table groupset-comparison wheelset-comparison"><caption class="sr-only">Chinese carbon wheelsets compared</caption><thead><tr><th>Wheelset</th><th>Use</th><th>Rim</th><th>Weight</th><th>Fit</th><th>Price</th></tr></thead>${wheelsets.map((wheelset) => wheelsetRows(ctx, wheelset, sourcesById, videosFor(wheelset), rates)).join('')}</table></div>
+  <details class="reference-guide"><summary>How rim, limit and price fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Weight</dt><dd>The maker's pair claim with its stated basis and tolerance.</dd></div><div><dt>Load limit</dt><dd>A system limit includes rider, bike and luggage when the maker says so; otherwise the scope is shown as published.</dd></div><div><dt>Not stated</dt><dd>The maker's page does not publish the value. It is not a negative finding.</dd></div><div><dt>Price</dt><dd>A dated official direct-store observation in its original currency. It is not a mainland China price; shipping, duties and tax follow the store's stated conditions. Price sorting converts other currencies to US dollars with the dated ECB rate only to order the rows.</dd></div></dl><p>Freehub and rotor fit for these wheelsets is checked in the Build planner. <a href="${url(ctx.base, '/build/')}">Open the Build planner</a></p></div></details>`;
   return prosePage(ctx, {
     title,
     desc,
@@ -2440,7 +2503,8 @@ export function renderCarbonWheels(ctx) {
       description: desc,
       items: wheelsets.map((wheelset) => ({ name: `${wheelset.maker} ${wheelset.name}` }))
     }),
-    html
+    html,
+    modules: ['/assets/wheels.js']
   });
 }
 
@@ -2496,6 +2560,20 @@ export function renderImagePolicy(ctx) {
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 
+// Groupset and wheelset photos are credited beside the catalog photos and link to their reference rows.
+function componentCredits(ctx, sources) {
+  const entries = [
+    ...(ctx.data.groupsets ?? []).filter((item) => item.image?.local_path).map((item) => ({ item, path: '/electronic-shifting/' })),
+    ...(ctx.data.wheelsets ?? []).filter((item) => item.image?.local_path).map((item) => ({ item, path: '/carbon-wheels/' }))
+  ];
+  if (!entries.length) return '';
+  return `<h2 class="credit-section-title">Component photos</h2><div class="credit-list">${entries.map(({ item, path }) => {
+    const source = sources.get(item.image.source_id);
+    const card = item.image.variants?.find((variant) => variant.purpose === 'card') ?? { url: item.image.local_path, width: item.image.width, height: item.image.height };
+    return `<article><a class="credit-image" href="${url(ctx.base, path)}#${escapeAttr(item.id)}"><img src="${escapeAttr(url(ctx.base, card.url))}" alt="${escapeAttr(item.image.alt)}" width="${card.width}" height="${card.height}" loading="lazy" decoding="async"></a><div><h3>${escapeHtml(`${item.maker} ${item.name}`)}</h3><p>${escapeHtml(item.image.credit)} · ${escapeHtml(accuracyLabel(item.image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`;
+  }).join('')}</div>`;
+}
+
 export function renderImageSources(ctx) {
   const platforms = new Map(ctx.data.platforms.map((item) => [item.id, item]));
   const brands = new Map(ctx.data.brands.map((item) => [item.id, item]));
@@ -2526,7 +2604,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>${componentCredits(ctx, sources)}`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

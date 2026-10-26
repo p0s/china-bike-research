@@ -8,13 +8,13 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1765,
+      "sources": 1780,
       "images": 888,
       "videos": 258,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
-      "wheelsets": 6,
+      "wheelsets": 11,
       "recommendations": 6,
       "candidates": 283,
       "exclusions": 16,
@@ -262,6 +262,7 @@
       "ecb-2026-10-01"
     ],
     "sources": [
+      "9velo-cd-wide-series-2025-official-2026-10-26",
       "af01-manual-2026-08-27",
       "af01-official",
       "af01-official-recheck-2026-09-23",
@@ -423,6 +424,8 @@
       "cycletrack-time-tt-official-2026-08-29",
       "cycletrack-time-tt-owner-2026-08-29",
       "cycletrack-warranty-reference-2026-10-03",
+      "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30",
+      "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06",
       "cyclistshub-lcr018-d-owner-2026-08-29",
       "cyctrac-r18-photo-source-2026-10-03",
       "de-rosa-838-launch-current-2026-09-23",
@@ -523,6 +526,8 @@
       "falco-t912-official-2026-08-29",
       "falco-t912-official-current-2026-09-23",
       "falco-t912-retailer-2026-08-29",
+      "farsports-evo-c-series-2026-official-2026-10-26",
+      "farsports-warranty-2026-10-26",
       "felt-ia-2-expert-current-2026-08-30",
       "felt-ia-2-expert-current-2026-09-23",
       "felt-ia-2-frd-current-2026-08-30",
@@ -658,7 +663,9 @@
       "hongfu-gravel-category-current-recheck-2026-09-25",
       "huanyu-azone-jd-index-2026-09-23",
       "ican-alpha-50-ii-disc-official-2026-10-20",
+      "ican-alpha-50-ii-disc-official-2026-10-26",
       "ican-company-official",
+      "ican-g25-sl-700c-official-2026-10-26",
       "ican-gra04-alibaba-image",
       "ican-gra04-historical-usd-package-discussion-recheck-2026-09-24",
       "ican-gra04-hosted-review-current-2026-09-23",
@@ -948,6 +955,7 @@
       "ltwoo-erx-road-official-2026-08-24",
       "ltwoo-erx-user-manual-2026-08-24",
       "magene-direct-warranty-official-2026-08-24",
+      "magene-exar-ultra-series-2025-official-2026-10-26",
       "magene-qed-official-overview-2026-08-24",
       "magene-qed-pes-catalog-2026-08-24",
       "market-snapshot-2026-08-05",
@@ -1657,6 +1665,7 @@
       "tfsa-jh37-official",
       "tfsa-jh37-taobao-2026-08-27",
       "tfsa-jh37-taobao-recheck-2026-09-23",
+      "the5krunner-magene-exar-db508-ultra-review",
       "titanium-hi-light-g0-official",
       "titanium-hi-light-g7-2-grx-gr1600-official",
       "titanium-hi-light-g7-2-official",
@@ -1882,7 +1891,9 @@
       "west-biking-team-road-jd-current-2026-09-23",
       "wheels-mfg-t47-selection-guide-2026-10-22",
       "wheeltop-eds-gex-official-2026-08-24",
+      "wheeltop-eds-gex-official-store-2026-10-26",
       "wheeltop-eds-tx-official-2026-08-24",
+      "wheeltop-eds-tx-official-store-2026-10-26",
       "winspace-agile-current-recheck-2026-09-23",
       "winspace-agile-cyclistshub-long-term-review-2026-09-01",
       "winspace-agile-cyclistshub-review-recheck-2026-09-23",
@@ -1910,6 +1921,7 @@
       "winspace-g5-regional-offer-2026-10-02",
       "winspace-g5-weight-woods-cycles-2026-08-25",
       "winspace-lun-routte-se-d45-official-2026-10-20",
+      "winspace-lun-routte-se-d45-official-2026-10-26",
       "winspace-m6-105-di2-2026-08-30",
       "winspace-m6-105-di2-current-recheck-2026-09-25",
       "winspace-m6-105-mechanical-2026-08-30",
@@ -1942,6 +1954,7 @@
       "winspace-t1600-tmall-2026-10-24",
       "winspace-t1600-ultegra-di2-2026-08-30",
       "winspace-t1600-ultegra-di2-current-recheck-2026-09-25",
+      "winspace-warranty-2026-10-26",
       "winspace-warranty-official-2026-08-27",
       "winspace-warranty-recheck-2026-10-22",
       "xds-ad350-2026-current-options-2026-08-30",
@@ -2024,7 +2037,9 @@
       "yoeleo-altera-g21-official",
       "yoeleo-altera-g21-official-2026-08-16",
       "yoeleo-altera-g21-official-recheck-2026-09-23",
+      "yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26",
       "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20",
+      "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26",
       "yoeleo-shipping-delivery-2026-10-22",
       "zipp-tire-pressure-inputs-2026-10-22"
     ],
@@ -3234,11 +3249,16 @@
       "shimano-sm-rt70-160-140-rotor-pair"
     ],
     "wheelsets": [
+      "9velo-cd58-wide-2025",
       "elitewheels-drive-50d-ii",
       "elitewheels-drive-g36",
       "elitewheels-marvel-50d-ii",
+      "farsports-evo-c6-2026",
       "ican-alpha-50-ii-disc",
+      "ican-g25-sl-700c",
+      "magene-exar-ultra-db508",
       "winspace-lun-routte-se-d45",
+      "yoeleo-sat-c35-db-pro-nxt-sl2",
       "yoeleo-sat-c45-db-pro-nxt-gravel"
     ],
     "recommendations": [
@@ -9737,6 +9757,18 @@
       ]
     },
     "sources": {
+      "9velo-cd-wide-series-2025-official-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "af01-manual-2026-08-27": [
         "accessed_at",
         "language",
@@ -11706,6 +11738,30 @@
         "type",
         "url"
       ],
+      "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "cyclistshub-lcr018-d-owner-2026-08-29": [
         "accessed_at",
         "language",
@@ -12905,6 +12961,30 @@
         "url"
       ],
       "falco-t912-retailer-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "farsports-evo-c-series-2026-official-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "farsports-warranty-2026-10-26": [
         "accessed_at",
         "language",
         "notes",
@@ -14563,7 +14643,31 @@
         "type",
         "url"
       ],
+      "ican-alpha-50-ii-disc-official-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "ican-company-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ican-g25-sl-700c-official-2026-10-26": [
         "accessed_at",
         "language",
         "notes",
@@ -18371,6 +18475,18 @@
         "url"
       ],
       "magene-direct-warranty-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "magene-exar-ultra-series-2025-official-2026-10-26": [
         "accessed_at",
         "language",
         "notes",
@@ -27534,6 +27650,18 @@
         "type",
         "url"
       ],
+      "the5krunner-magene-exar-db508-ultra-review": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "titanium-hi-light-g0-official": [
         "accessed_at",
         "language",
@@ -30392,7 +30520,31 @@
         "type",
         "url"
       ],
+      "wheeltop-eds-gex-official-store-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "wheeltop-eds-tx-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "wheeltop-eds-tx-official-store-2026-10-26": [
         "accessed_at",
         "language",
         "notes",
@@ -30718,6 +30870,18 @@
         "url"
       ],
       "winspace-lun-routte-se-d45-official-2026-10-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "winspace-lun-routte-se-d45-official-2026-10-26": [
         "accessed_at",
         "language",
         "notes",
@@ -31127,6 +31291,18 @@
         "reliability.identity",
         "reliability.price",
         "reliability.selected_option",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "winspace-warranty-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -32156,7 +32332,31 @@
         "type",
         "url"
       ],
+      "yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26": [
         "accessed_at",
         "language",
         "notes",
@@ -69472,6 +69672,59 @@
       ]
     },
     "wheelsets": {
+      "9velo-cd58-wide-2025": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_g"
+      ],
       "elitewheels-drive-50d-ii": [
         "caveats",
         "compatibility.axles",
@@ -69577,12 +69830,85 @@
         "weight.grams",
         "weight.tolerance_g"
       ],
+      "farsports-evo-c6-2026": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
+        "independent_evidence",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "max_pressure.psi",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_pct"
+      ],
       "ican-alpha-50-ii-disc": [
         "caveats",
         "compatibility.axles",
         "compatibility.freehubs",
         "compatibility.rotor_mount",
         "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
         "load_limit.kg",
         "load_limit.note",
         "load_limit.scope",
@@ -69612,13 +69938,81 @@
         "weight.grams",
         "weight.tolerance_g"
       ],
-      "winspace-lun-routte-se-d45": [
+      "ican-g25-sl-700c": [
         "caveats",
         "compatibility.axles",
         "compatibility.freehubs",
         "compatibility.rotor_mount",
         "hub",
-        "load_limit.kg",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams"
+      ],
+      "magene-exar-ultra-db508": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
+        "independent_evidence",
         "load_limit.note",
         "load_limit.scope",
         "maker",
@@ -69645,13 +70039,139 @@
         "weight.basis",
         "weight.claim_type",
         "weight.grams",
+        "weight.tolerance_pct"
+      ],
+      "winspace-lun-routte-se-d45": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.rotor_mount",
+        "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "max_pressure.psi",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
         "weight.tolerance_g"
+      ],
+      "yoeleo-sat-c35-db-pro-nxt-sl2": [
+        "caveats",
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
+        "independent_evidence",
+        "load_limit.kg",
+        "load_limit.note",
+        "load_limit.scope",
+        "maker",
+        "max_pressure.note",
+        "max_pressure.psi",
+        "name",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "rim.bead",
+        "rim.bead_note",
+        "rim.depth_mm.front",
+        "rim.depth_mm.rear",
+        "rim.external_width_mm.front",
+        "rim.external_width_mm.rear",
+        "rim.internal_width_mm",
+        "rim.tire_range",
+        "rim.tubeless_ready",
+        "source_ids",
+        "spokes.material",
+        "spokes.summary",
+        "status",
+        "use",
+        "warranty",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.tolerance_pct"
       ],
       "yoeleo-sat-c45-db-pro-nxt-gravel": [
         "caveats",
         "compatibility.axles",
         "compatibility.freehubs",
         "hub",
+        "image.alt",
+        "image.credit",
+        "image.height",
+        "image.local_path",
+        "image.privacy_review.embedded_metadata",
+        "image.privacy_review.reviewed_at",
+        "image.privacy_review.visual",
+        "image.reviewed_at",
+        "image.rights.copyright_holder",
+        "image.rights.removal_route",
+        "image.rights.status",
+        "image.rights.usage_note",
+        "image.source_id",
+        "image.source_media_sha256",
+        "image.source_media_url",
+        "image.subject_accuracy",
+        "image.variants",
+        "image.width",
         "load_limit.kg",
         "load_limit.note",
         "load_limit.scope",
@@ -116835,6 +117355,7 @@
       ]
     },
     "sources": {
+      "9velo-cd-wide-series-2025-official-2026-10-26": [],
       "af01-manual-2026-08-27": [],
       "af01-official": [],
       "af01-official-recheck-2026-09-23": [],
@@ -116996,6 +117517,8 @@
       "cycletrack-time-tt-official-2026-08-29": [],
       "cycletrack-time-tt-owner-2026-08-29": [],
       "cycletrack-warranty-reference-2026-10-03": [],
+      "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30": [],
+      "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06": [],
       "cyclistshub-lcr018-d-owner-2026-08-29": [],
       "cyctrac-r18-photo-source-2026-10-03": [],
       "de-rosa-838-launch-current-2026-09-23": [],
@@ -117096,6 +117619,8 @@
       "falco-t912-official-2026-08-29": [],
       "falco-t912-official-current-2026-09-23": [],
       "falco-t912-retailer-2026-08-29": [],
+      "farsports-evo-c-series-2026-official-2026-10-26": [],
+      "farsports-warranty-2026-10-26": [],
       "felt-ia-2-expert-current-2026-08-30": [],
       "felt-ia-2-expert-current-2026-09-23": [],
       "felt-ia-2-frd-current-2026-08-30": [],
@@ -117231,7 +117756,9 @@
       "hongfu-gravel-category-current-recheck-2026-09-25": [],
       "huanyu-azone-jd-index-2026-09-23": [],
       "ican-alpha-50-ii-disc-official-2026-10-20": [],
+      "ican-alpha-50-ii-disc-official-2026-10-26": [],
       "ican-company-official": [],
+      "ican-g25-sl-700c-official-2026-10-26": [],
       "ican-gra04-alibaba-image": [],
       "ican-gra04-historical-usd-package-discussion-recheck-2026-09-24": [],
       "ican-gra04-hosted-review-current-2026-09-23": [],
@@ -117569,6 +118096,7 @@
       "ltwoo-erx-road-official-2026-08-24": [],
       "ltwoo-erx-user-manual-2026-08-24": [],
       "magene-direct-warranty-official-2026-08-24": [],
+      "magene-exar-ultra-series-2025-official-2026-10-26": [],
       "magene-qed-official-overview-2026-08-24": [],
       "magene-qed-pes-catalog-2026-08-24": [],
       "market-snapshot-2026-08-05": [],
@@ -118278,6 +118806,7 @@
       "tfsa-jh37-official": [],
       "tfsa-jh37-taobao-2026-08-27": [],
       "tfsa-jh37-taobao-recheck-2026-09-23": [],
+      "the5krunner-magene-exar-db508-ultra-review": [],
       "titanium-hi-light-g0-official": [],
       "titanium-hi-light-g7-2-grx-gr1600-official": [],
       "titanium-hi-light-g7-2-official": [],
@@ -118503,7 +119032,9 @@
       "west-biking-team-road-jd-current-2026-09-23": [],
       "wheels-mfg-t47-selection-guide-2026-10-22": [],
       "wheeltop-eds-gex-official-2026-08-24": [],
+      "wheeltop-eds-gex-official-store-2026-10-26": [],
       "wheeltop-eds-tx-official-2026-08-24": [],
+      "wheeltop-eds-tx-official-store-2026-10-26": [],
       "winspace-agile-current-recheck-2026-09-23": [],
       "winspace-agile-cyclistshub-long-term-review-2026-09-01": [],
       "winspace-agile-cyclistshub-review-recheck-2026-09-23": [],
@@ -118531,6 +119062,7 @@
       "winspace-g5-regional-offer-2026-10-02": [],
       "winspace-g5-weight-woods-cycles-2026-08-25": [],
       "winspace-lun-routte-se-d45-official-2026-10-20": [],
+      "winspace-lun-routte-se-d45-official-2026-10-26": [],
       "winspace-m6-105-di2-2026-08-30": [],
       "winspace-m6-105-di2-current-recheck-2026-09-25": [],
       "winspace-m6-105-mechanical-2026-08-30": [],
@@ -118563,6 +119095,7 @@
       "winspace-t1600-tmall-2026-10-24": [],
       "winspace-t1600-ultegra-di2-2026-08-30": [],
       "winspace-t1600-ultegra-di2-current-recheck-2026-09-25": [],
+      "winspace-warranty-2026-10-26": [],
       "winspace-warranty-official-2026-08-27": [],
       "winspace-warranty-recheck-2026-10-22": [],
       "xds-ad350-2026-current-options-2026-08-30": [],
@@ -118645,7 +119178,9 @@
       "yoeleo-altera-g21-official": [],
       "yoeleo-altera-g21-official-2026-08-16": [],
       "yoeleo-altera-g21-official-recheck-2026-09-23": [],
+      "yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26": [],
       "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20": [],
+      "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26": [],
       "yoeleo-shipping-delivery-2026-10-22": [],
       "zipp-tire-pressure-inputs-2026-10-22": []
     },
@@ -123725,12 +124260,14 @@
         "image.source_id=wheeltop-eds-gex-official-2026-08-24",
         "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
         "source_ids=taobao-wheeltop-gex-options-2026-08-24",
-        "source_ids=wheeltop-eds-gex-official-2026-08-24"
+        "source_ids=wheeltop-eds-gex-official-2026-08-24",
+        "source_ids=wheeltop-eds-gex-official-store-2026-10-26"
       ],
       "wheeltop-eds-tx": [
         "image.source_id=wheeltop-eds-tx-official-2026-08-24",
         "source_ids=taobao-wheeltop-eds-tx-options-2026-08-24",
-        "source_ids=wheeltop-eds-tx-official-2026-08-24"
+        "source_ids=wheeltop-eds-tx-official-2026-08-24",
+        "source_ids=wheeltop-eds-tx-official-store-2026-10-26"
       ]
     },
     "buildParts": {
@@ -123779,6 +124316,10 @@
       ]
     },
     "wheelsets": {
+      "9velo-cd58-wide-2025": [
+        "image.source_id=9velo-cd-wide-series-2025-official-2026-10-26",
+        "source_ids=9velo-cd-wide-series-2025-official-2026-10-26"
+      ],
       "elitewheels-drive-50d-ii": [
         "source_ids=elitewheels-drive-50d-ii-official-2026-10-20"
       ],
@@ -123788,14 +124329,41 @@
       "elitewheels-marvel-50d-ii": [
         "source_ids=elitewheels-marvel-50d-ii-official-2026-10-20"
       ],
+      "farsports-evo-c6-2026": [
+        "image.source_id=farsports-evo-c-series-2026-official-2026-10-26",
+        "source_ids=cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30",
+        "source_ids=farsports-evo-c-series-2026-official-2026-10-26",
+        "source_ids=farsports-warranty-2026-10-26"
+      ],
       "ican-alpha-50-ii-disc": [
-        "source_ids=ican-alpha-50-ii-disc-official-2026-10-20"
+        "image.source_id=ican-alpha-50-ii-disc-official-2026-10-26",
+        "source_ids=ican-alpha-50-ii-disc-official-2026-10-20",
+        "source_ids=ican-alpha-50-ii-disc-official-2026-10-26"
+      ],
+      "ican-g25-sl-700c": [
+        "image.source_id=ican-g25-sl-700c-official-2026-10-26",
+        "source_ids=ican-g25-sl-700c-official-2026-10-26"
+      ],
+      "magene-exar-ultra-db508": [
+        "image.source_id=magene-exar-ultra-series-2025-official-2026-10-26",
+        "source_ids=magene-exar-ultra-series-2025-official-2026-10-26",
+        "source_ids=the5krunner-magene-exar-db508-ultra-review"
       ],
       "winspace-lun-routte-se-d45": [
-        "source_ids=winspace-lun-routte-se-d45-official-2026-10-20"
+        "image.source_id=winspace-lun-routte-se-d45-official-2026-10-26",
+        "source_ids=winspace-lun-routte-se-d45-official-2026-10-20",
+        "source_ids=winspace-lun-routte-se-d45-official-2026-10-26",
+        "source_ids=winspace-warranty-2026-10-26"
+      ],
+      "yoeleo-sat-c35-db-pro-nxt-sl2": [
+        "image.source_id=yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26",
+        "source_ids=cyclistshub-best-chinese-carbon-road-wheels-2026-07-06",
+        "source_ids=yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26"
       ],
       "yoeleo-sat-c45-db-pro-nxt-gravel": [
-        "source_ids=yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20"
+        "image.source_id=yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26",
+        "source_ids=yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20",
+        "source_ids=yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26"
       ]
     },
     "recommendations": {
@@ -134202,6 +134770,14 @@
     }
   },
   "source_quality": {
+    "9velo-cd-wide-series-2025-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "af01-manual-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -135519,6 +136095,22 @@
         "specification": 3
       }
     },
+    "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "cyclistshub-lcr018-d-owner-2026-08-29": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -136325,6 +136917,22 @@
         "identity": 1,
         "price": 1,
         "specification": 1
+      }
+    },
+    "farsports-evo-c-series-2026-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "farsports-warranty-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "felt-ia-2-expert-current-2026-08-30": {
@@ -137433,12 +138041,28 @@
         "specification": 2
       }
     },
+    "ican-alpha-50-ii-disc-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
     "ican-company-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": -1,
         "specification": 1
+      }
+    },
+    "ican-g25-sl-700c-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
       }
     },
     "ican-gra04-alibaba-image": {
@@ -139798,6 +140422,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
+        "specification": 3
+      }
+    },
+    "magene-exar-ultra-series-2025-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
         "specification": 3
       }
     },
@@ -145503,6 +146135,14 @@
         "specification": 0
       }
     },
+    "the5krunner-magene-exar-db508-ultra-review": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "titanium-hi-light-g0-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -147346,12 +147986,28 @@
         "specification": 3
       }
     },
+    "wheeltop-eds-gex-official-store-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
     "wheeltop-eds-tx-official-2026-08-24": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 1,
         "specification": 3
+      }
+    },
+    "wheeltop-eds-tx-official-store-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
       }
     },
     "winspace-agile-current-recheck-2026-09-23": {
@@ -147567,6 +148223,14 @@
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "winspace-lun-routte-se-d45-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
       }
     },
     "winspace-m6-105-di2-2026-08-30": {
@@ -147837,6 +148501,14 @@
         "identity": 3,
         "price": 0,
         "selected_option": 3,
+        "specification": 3
+      }
+    },
+    "winspace-warranty-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
         "specification": 3
       }
     },
@@ -148517,12 +149189,28 @@
         "specification": 3
       }
     },
+    "yoeleo-sat-c35-db-pro-nxt-sl2-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
       }
     },
     "yoeleo-shipping-delivery-2026-10-22": {
