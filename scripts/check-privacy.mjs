@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-640-132f5dbfb4.avif', '132f5dbfb419bcfd6cc4f612c81add68d6949fdd261a08a3b3b49320e63acab9'],
+  ['assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-1600-26016caeb2.avif', '26016caeb26aaf6d98241f1f3afbfafa45483efd7e65cdf030c51bc43b22b720'],
+  ['assets/blog/bike-weight-claims-real-build-mascot-cover-0cb63cdc50-1200.jpg', 'dcb411d3124e7d26398f84be5735445a283683b5c2ac306a2d21d175debfce22'],
   ['assets/blog/carbon-fiber-t700-t800-claims-mascot-cover-4c9cf0dc30-640-e800668530.avif', 'e80066853067c746fc14aa1816cb6159595d06182014b6d7395ba81c2d0dd6ff'],
   ['assets/blog/carbon-fiber-t700-t800-claims-mascot-cover-4c9cf0dc30-1600-b359f20619.avif', 'b359f20619fd0bf6ad89d50eb84fc4a387a9af17a7abf6bb736903c84a18fd1b'],
   ['assets/blog/carbon-fiber-t700-t800-claims-mascot-cover-4c9cf0dc30-1200.jpg', '65d2aee2921f7970885b0c0b5f45c196cb81a3d1222edbeac10c5f284bd7fe3a'],
