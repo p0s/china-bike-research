@@ -17,7 +17,7 @@ const liveOptions=()=>({headers:{dnt:'1','sec-gpc':'1'},redirect:'error',signal:
 if(command==='status') {
  const next=nextPublication(queue,state.receipts);
  const progress=scheduleSeries(queue).map(series=>({id:series.id,total:series.entries.length,completed:series.entries.filter(entry=>entry.published_at&&state.receipts[entry.slug]?.published_at===entry.published_at).length}));
- console.log(JSON.stringify({...next,total:queue.entries.length,completed:progress.reduce((sum,item)=>sum+item.completed,0),series:progress,cadence:queue.delivery?{min_gap_minutes:120,max_gap_minutes:180,remaining:queue.entries.filter(entry=>!entry.published_at||state.receipts[entry.slug]?.published_at!==entry.published_at).length}:undefined,rrule:nextWakeRule(next)},null,2));
+ console.log(JSON.stringify({...next,total:queue.entries.length,completed:progress.reduce((sum,item)=>sum+item.completed,0),series:progress,cadence:queue.delivery?{min_gap_minutes:next.series_id==='buyer-comparisons-2026'?60:120,max_gap_minutes:next.series_id==='buyer-comparisons-2026'?90:180,remaining:queue.entries.filter(entry=>!entry.published_at||state.receipts[entry.slug]?.published_at!==entry.published_at).length}:undefined,rrule:nextWakeRule(next)},null,2));
 } else if(command==='prepare') {
  if(!slug || deployment) throw new Error('Usage: node scripts/blog-publication.mjs prepare EXACT-SLUG');
  write(scheduleFile,preparePublication(queue,state.receipts,slug));

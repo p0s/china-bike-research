@@ -6,12 +6,13 @@ const iso = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(val
 const legacyStart = '2026-09-25T12:20:00.000Z';
 const authorized = {
   'september-2026': { count: 20, cadence: 'random', min: 2880, max: 7200 },
-  'october-2026': { count: 100, cadence: 'fixed', min: 480, max: 480 }
+  'october-2026': { count: 100, cadence: 'fixed', min: 480, max: 480 },
+  'buyer-comparisons-2026': { min: 60, max: 90 }
 };
 
 export function scheduleSeries(queue) {
   if (queue.schema_version === 1) return [{ id: 'september-2026', entries: queue.entries }];
-  if (![2, 3].includes(queue.schema_version) || !Array.isArray(queue.series) || queue.series.length !== 2 || new Set(queue.series.map(s => s.id)).size !== 2 || queue.series.some(s => !authorized[s.id])) throw new Error('Unknown editorial series.');
+  if (![2, 3].includes(queue.schema_version) || !Array.isArray(queue.series) || queue.series.length < 2 || queue.series.length > (queue.schema_version === 3 ? 3 : 2) || new Set(queue.series.map(s => s.id)).size !== queue.series.length || queue.series.some(s => !authorized[s.id]) || !['september-2026', 'october-2026'].every(id => queue.series.some(s => s.id === id))) throw new Error('Unknown editorial series.');
   return queue.series.map(series => ({ ...series, entries: queue.entries.filter(entry => entry.series_id === series.id) }));
 }
 
@@ -24,18 +25,20 @@ export function validateSchedule(queue, posts) {
   if (drafts.length !== queue.entries.length || new Set(queue.entries.map(e => e.slug)).size !== queue.entries.length) throw new Error('Schedule must cover every scheduled article exactly once.');
   if (series.reduce((count, s) => count + s.entries.length, 0) !== queue.entries.length) throw new Error('Article belongs to an unknown series.');
   for (const post of posts) {
-    if (post.series_id === 'october-2026' && !['draft', 'scheduled'].includes(post.publication_status)) throw new Error('New-series articles require an explicit draft or scheduled state.');
+    if (['october-2026', 'buyer-comparisons-2026'].includes(post.series_id) && !['draft', 'scheduled'].includes(post.publication_status)) throw new Error('New-series articles require an explicit draft or scheduled state.');
     if (post.publication_status && !['draft', 'scheduled'].includes(post.publication_status)) throw new Error('Unknown article publication state.');
   }
   for (const item of series) {
     const rule = authorized[item.id];
-    if (item.entries.length !== rule.count) throw new Error(`Expected ${rule.count} articles in ${item.id}.`);
+    const count = rule.count ?? item.article_count;
+    if (!Number.isInteger(count) || count < 1 || item.entries.length !== count) throw new Error(`Expected ${count} articles in ${item.id}.`);
     if (item.id === 'october-2026' && (item.cadence_minutes !== 480 || !iso(item.ready_at) || Date.parse(item.entries[0].scheduled_at) < Date.parse(item.ready_at) + 480 * 60000)) throw new Error('New series must be ready before its eight-hour schedule starts.');
     let pending = false;
     for (const [index, entry] of item.entries.entries()) {
       const post = drafts.find(p => p.slug === entry.slug);
       if (!post || !iso(entry.scheduled_at)) throw new Error('Unknown draft or invalid schedule date.');
-      if (item.id === 'october-2026' && (post.series_id !== item.id || post.editorial_review?.status !== 'reviewed' || !iso(post.editorial_review.reviewed_at))) throw new Error('Every new article needs its completed editorial review before scheduling.');
+      if (['october-2026', 'buyer-comparisons-2026'].includes(item.id) && (post.series_id !== item.id || post.editorial_review?.status !== 'reviewed' || !iso(post.editorial_review.reviewed_at))) throw new Error('Every new article needs its completed editorial review before scheduling.');
+      if (item.id === 'buyer-comparisons-2026' && (!Array.isArray(post.editorial_review.reviewed_languages) || !['en', 'zh-Hans', 'de'].every(locale => post.editorial_review.reviewed_languages.includes(locale)))) throw new Error('Additional articles require review in every language.');
       if (!Number.isInteger(entry.gap_minutes) || (index === 0 ? entry.gap_minutes !== 0 : entry.gap_minutes < rule.min || entry.gap_minutes > rule.max)) throw new Error(`Invalid interval for ${item.id}.`);
       if (index && Date.parse(entry.scheduled_at) - Date.parse(item.entries[index - 1].scheduled_at) !== entry.gap_minutes * 60000) throw new Error('Schedule dates disagree with fixed intervals.');
       if (entry.published_at !== null) {
@@ -66,7 +69,8 @@ function validateDeliveryPlan(queue, series) {
   let pending = false;
   for (const [index, slot] of plan.entries.entries()) {
     const entry = queue.entries.find(entry => entry.slug === slot.slug);
-    if (!entry || !iso(slot.scheduled_at) || !Number.isInteger(slot.gap_minutes) || (index === 0 ? slot.gap_minutes !== 0 : slot.gap_minutes < 120 || slot.gap_minutes > 180)) throw new Error('Invalid accelerated delivery slot.');
+    const range = entry?.series_id === 'buyer-comparisons-2026' ? authorized[entry.series_id] : { min: 120, max: 180 };
+    if (!entry || !iso(slot.scheduled_at) || !Number.isInteger(slot.gap_minutes) || (index === 0 ? slot.gap_minutes !== 0 : slot.gap_minutes < range.min || slot.gap_minutes > range.max)) throw new Error('Invalid accelerated delivery slot.');
     const expected = index ? Date.parse(plan.entries[index - 1].scheduled_at) + slot.gap_minutes * 60000 : Date.parse(plan.activated_at);
     if (Date.parse(slot.scheduled_at) !== expected) throw new Error('Delivery dates disagree with selected intervals.');
     if (entry.published_at) {
@@ -74,6 +78,31 @@ function validateDeliveryPlan(queue, series) {
       if (index && Date.parse(entry.published_at) - Date.parse(queue.entries.find(entry => entry.slug === plan.entries[index - 1].slug).published_at) < slot.gap_minutes * 60000) throw new Error('Accelerated publication intervals cannot be compressed.');
     } else pending = true;
   }
+}
+
+// Materialize only the next reviewed article after the current queue is verified.
+// Future article files remain in the publisher's private backlog.
+export function appendReviewedArticle(queue, posts, receipts, post, now = new Date(), chooseGap = () => randomInt(60, 91)) {
+  validateSchedule(queue, posts);
+  if (queue.schema_version !== 3 || nextPublication(queue, receipts, now).action !== 'complete') throw new Error('Finish and verify the current queue before appending an article.');
+  if (posts.some(known => known.slug === post.slug) || post.series_id !== 'buyer-comparisons-2026' || post.publication_status !== 'draft' || post.editorial_review?.status !== 'reviewed' || !iso(post.editorial_review.reviewed_at) || Date.parse(post.editorial_review.reviewed_at) > +now || !['en', 'zh-Hans', 'de'].every(locale => post.editorial_review.reviewed_languages?.includes(locale) && post.translations?.[locale]?.sections?.length >= 3)) throw new Error('A distinct reviewed article in every language is required.');
+  const gap = chooseGap();
+  if (!Number.isInteger(gap) || gap < 60 || gap > 90) throw new Error('Additional article gap must be 60 to 90 minutes.');
+  const updated = structuredClone(queue);
+  const previous = updated.delivery.entries.at(-1);
+  const scheduled = new Date(Date.parse(previous.scheduled_at) + gap * 60000).toISOString();
+  let series = updated.series.find(item => item.id === post.series_id);
+  if (!series) {
+    series = { id: post.series_id, article_count: 0 };
+    updated.series.push(series);
+  }
+  const hasPrevious = updated.entries.some(entry => entry.series_id === post.series_id);
+  series.article_count += 1;
+  updated.entries.push({ series_id: post.series_id, slug: post.slug, scheduled_at: scheduled, gap_minutes: hasPrevious ? gap : 0, published_at: null });
+  updated.delivery.entries.push({ slug: post.slug, gap_minutes: gap, scheduled_at: scheduled });
+  const article = { ...structuredClone(post), publication_status: 'scheduled' };
+  validateSchedule(updated, [...posts, article]);
+  return { queue: updated, post: article };
 }
 
 // One migration fixes the random slots. Later wakes never rerandomize them.

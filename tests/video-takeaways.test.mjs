@@ -27,6 +27,18 @@ test('takeaways require a reviewed transcript and a known kind', () => {
   assert.match(validateVideoEvidence(video({ transcript, takeaways: Array(9).fill(takeaway) }), isDate).join(), /one to eight/);
 });
 
+test('normal player-caption review requires its evidence digest and cannot label an unavailable track reviewed', () => {
+  const player = { ...transcript, method: 'youtube-player-captions', evidence_sha256: 'a'.repeat(64) };
+  assert.deepEqual(validateVideoEvidence(video({ transcript: player, takeaways: [takeaway] }), isDate), []);
+  for (const invalid of [
+    { ...player, evidence_sha256: undefined },
+    { ...player, evidence_sha256: 'not-a-digest' },
+    { ...player, evidence_sha256: ['a'.repeat(64)] },
+    { ...player, status: 'unavailable' },
+    { ...player, method: 'video-description' }
+  ]) assert.ok(validateVideoEvidence(video({ transcript: invalid, takeaways: [takeaway] }), isDate).length);
+});
+
 test('takeaways render below the player with kind, timestamp and English-original marker', () => {
   const html = renderVideoEntries([video({ transcript, takeaways: [takeaway] })]);
   assert.match(html, /<div class="video-takeaways"><h4>Takeaways<\/h4>/);

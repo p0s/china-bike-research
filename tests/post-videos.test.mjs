@@ -41,6 +41,7 @@ for (const locale of ['en', 'zh-Hans', 'de']) for (const base of ['', '/china-bi
         assert.ok(html.includes(escapeHtml(video.title)));
         assert.ok(html.includes(escapeHtml(translate(video.disclosure, locale))));
         assert.ok(html.includes(`class="video-fallback" href="${video.url}"`));
+        for (const takeaway of video.takeaways ?? []) assert.ok(html.includes(escapeHtml(takeaway.text)), 'Reviewed highlights stay readable before player activation');
         assert.match(html.slice(embed, html.indexOf('</div>', embed)), /class="video-load-button" type="button" aria-label="[^"]+" hidden/);
         assert.match(html, /data-original-language lang="en"/);
       }
@@ -57,6 +58,20 @@ test('model players retain their existing lazy embed and metadata', () => {
   assert.match(html, /loading="lazy"/);
   assert.doesNotMatch(html, /data-article-video|autoplay/);
   for (const text of [video.title, video.summary, video.disclosure]) assert.ok(html.includes(escapeHtml(text)));
+});
+
+test('article-only independent reviews retain the same transcript gate as model videos', () => {
+  const registry = structuredClone(postVideos);
+  const item = registry.article_only_videos[0];
+  item.format = 'hands-on-review';
+  item.relationship = 'publication-review';
+  item.transcript = { status: 'auto-captions', method: 'youtube-player-captions', language: 'en', checked_at: '2026-10-26', evidence_sha256: 'a'.repeat(64) };
+  item.takeaways = [{ kind: 'build', text: 'The shown custom build uses a separately chosen cockpit.' }];
+  assert.doesNotThrow(() => validatePostVideoReferences(posts, data.videos, registry));
+  delete item.transcript.evidence_sha256;
+  assert.throws(() => validatePostVideoReferences(posts, data.videos, registry), /video evidence/);
+  item.transcript = undefined;
+  assert.throws(() => validatePostVideoReferences(posts, data.videos, registry), /video evidence/);
 });
 
 test('invalid video identities, missing context, duplicated placements and XHS embeds fail before publication', () => {

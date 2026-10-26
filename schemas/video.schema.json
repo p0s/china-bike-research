@@ -77,17 +77,22 @@
       }
     },
     "transcript": {
-      "description": "Local transcript review: the public YouTube transcript panel was read on checked_at; no-speech means the captions hold only music or sound labels. Raw text stays outside Git.",
+      "description": "Local review of the public transcript or the exact video's normal player captions on checked_at. Player-caption review retains an evidence digest; no-speech means only music or sound labels. Raw text stays outside Git.",
       "type": "object",
       "additionalProperties": false,
       "required": ["status", "method", "checked_at"],
       "properties": {
         "status": {"enum": ["creator-captions", "auto-captions", "no-speech", "unavailable"]},
-        "method": {"const": "youtube-transcript-panel"},
+        "method": {"enum": ["youtube-transcript-panel", "youtube-player-captions"]},
+        "evidence_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
         "language": {"type": "string", "minLength": 2},
         "checked_at": {"type": "string", "format": "date"},
         "note": {"type": "string", "minLength": 10}
-      }
+      },
+      "allOf": [{
+        "if": {"properties": {"method": {"const": "youtube-player-captions"}}},
+        "then": {"required": ["evidence_sha256"], "properties": {"status": {"enum": ["creator-captions", "auto-captions", "no-speech"]}}}
+      }]
     },
     "takeaways": {
       "description": "Paraphrased, transcript-checked points for the build shown; never a manufacturer specification by themselves.",

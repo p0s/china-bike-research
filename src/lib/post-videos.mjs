@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import { LOCALES } from './i18n.mjs';
 import { escapeAttr, escapeHtml } from './html.mjs';
 import { renderVideoEntries, validateYouTubeEmbed } from './videos.mjs';
+import { validateVideoEvidence } from './data.mjs';
 
 export const postVideos = JSON.parse(fs.readFileSync(new URL('../../content/blog-videos.json', import.meta.url), 'utf8'));
 
@@ -15,7 +16,8 @@ export function validatePostVideoReferences(posts, catalogVideos, registry = pos
     for (const field of ['published_at', 'accessed_at']) if (!/^\d{4}-\d{2}-\d{2}$/.test(video[field]) || !Number.isFinite(Date.parse(video[field]))) throw new Error(`Invalid article video ${field}: ${video.id}`);
     const channel = new URL(video.channel_url);
     if (channel.protocol !== 'https:' || channel.hostname !== 'www.youtube.com' || !/^\/(?:channel\/UC[A-Za-z0-9_-]+|@[A-Za-z0-9_.-]+)$/.test(channel.pathname) || channel.search || channel.hash || channel.username || channel.password) throw new Error(`Invalid article video channel: ${video.id}`);
-    if (video.disclosure_url !== video.url || video.format !== 'model-overview' || video.relationship !== 'retailer-linked' || video.target || video.match) throw new Error(`Invalid article-only video context: ${video.id}`);
+    if (video.disclosure_url !== video.url || !['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride'].includes(video.format) || !['retailer-linked', 'brand-published', 'product-supplied', 'publication-review', 'owner-review', 'community-post', 'unknown'].includes(video.relationship) || video.target || video.match) throw new Error(`Invalid article-only video context: ${video.id}`);
+    if (validateVideoEvidence(video, value => /^\d{4}-\d{2}-\d{2}$/.test(value ?? '') && Number.isFinite(Date.parse(value))).length) throw new Error(`Invalid article video evidence: ${video.id}`);
     if ([...videos.values()].some((known) => known.youtube_video_id === video.youtube_video_id)) throw new Error(`Duplicate article YouTube video: ${video.id}`);
     videos.set(video.id, video);
   }
@@ -53,5 +55,5 @@ export function renderPostVideos(ctx, post, sectionId) {
   });
   const contexts = new Map(placements.map((placement) => [placement.video_id, placement.context[locale]]));
   const id = `videos-${sectionId}`;
-  return `<aside class="article-videos" aria-labelledby="${escapeAttr(id)}"><h3 id="${escapeAttr(id)}">${escapeHtml(labels[placements.length > 1 ? 1 : 0])}</h3><small class="article-video-language">${escapeHtml(labels[2])}</small><div class="video-list">${renderVideoEntries(videos, { contexts, article: true, playerLabel: labels[3], watchLabel: labels[4], loadLabel: labels[5], takeaways: false })}</div></aside>`;
+  return `<aside class="article-videos" aria-labelledby="${escapeAttr(id)}"><h3 id="${escapeAttr(id)}">${escapeHtml(labels[placements.length > 1 ? 1 : 0])}</h3><small class="article-video-language">${escapeHtml(labels[2])}</small><div class="video-list">${renderVideoEntries(videos, { contexts, article: true, playerLabel: labels[3], watchLabel: labels[4], loadLabel: labels[5] })}</div></aside>`;
 }
