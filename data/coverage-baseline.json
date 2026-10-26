@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-24",
+  "updated_at": "2026-10-26",
   "catalog_metrics": {
     "records": {
       "brands": 43,
@@ -8,8 +8,8 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1748,
-      "images": 875,
+      "sources": 1754,
+      "images": 881,
       "videos": 258,
       "opinions": 13,
       "groupsets": 11,
@@ -22,7 +22,7 @@
       "researchAttempts": 1846
     },
     "image_accuracy": {
-      "exact-platform": 582,
+      "exact-platform": 588,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -30,7 +30,7 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 866,
+      "local": 872,
       "remote": 9
     },
     "candidate_prices": {
@@ -1207,6 +1207,7 @@
       "public-xhs-girder-tsar-105-di2-asking-2025-06-2026-10-24",
       "public-xhs-girder-tsar-105-di2-retail-2023-10-2026-10-24",
       "public-xhs-huanyu-az-one-naming-reference-2026-10-03",
+      "public-xhs-koseea-pioneer-slr-plus-image-2026-10-26",
       "public-xhs-kung-horizon-dealer-2026-10-22",
       "public-xhs-kung-horizon-entry-brand-2026-06-30",
       "public-xhs-kung-horizon-owner-black-2026-09-01",
@@ -1222,6 +1223,8 @@
       "public-xhs-kung-mach-x-ut-brand-2026-07-16",
       "public-xhs-lightcarbon-lcg071s-pro-legacy-2-2026-09-29",
       "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03",
+      "public-xhs-pardus-spark-al-image-2026-10-26",
+      "public-xhs-pardus-spark-sport-pes-image-2026-10-26",
       "public-xhs-pardus-super-sport-gen2-legacy-13-2026-09-29",
       "public-xhs-pardus-super-sport-gen2-legacy-20-2026-09-29",
       "public-xhs-quick-pro-geometry-collection-2026-08-28",
@@ -1232,6 +1235,9 @@
       "public-xhs-scott-addict-rc-40-2024-reference-2026-10-03",
       "public-xhs-seka-exaero-dealer-alta-build-2026-08-27",
       "public-xhs-seka-exaero-gr-owner-build-2026-10-24",
+      "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26",
+      "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26",
+      "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26",
       "public-xhs-trinx-gtr-c6-legacy-64-2026-09-29",
       "public-xhs-trinx-gtr-c6-legacy-71-2026-09-29",
       "public-xhs-trinx-gtr-c6-material-reference-2026-10-03",
@@ -2160,6 +2166,7 @@
       "java-vittoria-7170-official-enrichment-2026-10-03",
       "java-vittoria-er7-2026-official-enrichment-2026-10-03",
       "java-vittoria-er7-2026-official-enrichment-2026-10-03-aluminum-reference",
+      "koseea-pioneer-slr-plus-xhs-primary-2026-10-26",
       "kung-horizon-xhs-brand-entry-price-card-gallery",
       "kung-horizon-xhs-brand-rear-dropout-gallery",
       "kung-horizon-xhs-brand-white-front-gallery",
@@ -2654,6 +2661,7 @@
       "pardus-robin-evo-public-primary-image",
       "pardus-robin-evo-public-quotation-primary-image",
       "pardus-robin-sport-pes-primary-image",
+      "pardus-spark-al-xhs-primary-2026-10-26",
       "pardus-spark-family-cn-alt-color-primary-image",
       "pardus-spark-family-cn-color-primary-image",
       "pardus-spark-family-global-primary-image",
@@ -2662,6 +2670,7 @@
       "pardus-spark-sport-pes-cn-color-primary-image",
       "pardus-spark-sport-pes-global-primary-image",
       "pardus-spark-sport-pes-primary-image",
+      "pardus-spark-sport-pes-xhs-primary-2026-10-26",
       "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29",
       "pardus-spark-tourist-pes-taobao-material-gallery-2026-08-29",
       "pardus-spark-tourist-pes-taobao-primary-2026-08-29",
@@ -2806,9 +2815,12 @@
       "specialized-s-works-crux-frameset-primary-image",
       "specialized-tarmac-sl8-comp-primary-image",
       "spect-mira-official-enrichment-2026-10-03",
+      "sunpeed-galaxy-2026-r7120-xhs-primary-2026-10-26",
+      "sunpeed-mars-a-pro-2026-xhs-primary-2026-10-26",
       "sunpeed-victory-e-2026-photo-2026-10-03",
       "sunpeed-wudi-e-2026-photo-2026-10-03",
       "tavelo-arden-primary-image",
+      "tavelo-arow-disc-frameset-xhs-primary-2026-10-26",
       "tavelo-arow-race-polestar-primary-image",
       "tavelo-arow-sl-primary-image",
       "tavelo-attack-primary-image",
@@ -21743,6 +21755,23 @@
         "type",
         "url"
       ],
+      "public-xhs-koseea-pioneer-slr-plus-image-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-kung-horizon-dealer-2026-10-22": [
         "accessed_at",
         "capture.archive_bytes",
@@ -21998,6 +22027,40 @@
         "type",
         "url"
       ],
+      "public-xhs-pardus-spark-al-image-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-pardus-spark-sport-pes-image-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-pardus-super-sport-gen2-legacy-13-2026-09-29": [
         "accessed_at",
         "capture.archive_bytes",
@@ -22150,6 +22213,57 @@
         "url"
       ],
       "public-xhs-seka-exaero-gr-owner-build-2026-10-24": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26": [
         "accessed_at",
         "capture.archive_bytes",
         "capture.archive_sha256",
@@ -36495,6 +36609,37 @@
         "source_id",
         "source_media_sha256",
         "source_media_url",
+        "subject_accuracy"
+      ],
+      "koseea-pioneer-slr-plus-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "kung-horizon-xhs-brand-entry-price-card-gallery": [
@@ -54322,6 +54467,37 @@
         "source_media_url",
         "subject_accuracy"
       ],
+      "pardus-spark-al-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
       "pardus-spark-family-cn-alt-color-primary-image": [
         "alt",
         "buyer_visibility",
@@ -54463,6 +54639,37 @@
         "rights.usage_note",
         "role",
         "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-spark-sport-pes-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29": [
@@ -58954,6 +59161,68 @@
         "source_media_url",
         "subject_accuracy"
       ],
+      "sunpeed-galaxy-2026-r7120-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
+      "sunpeed-mars-a-pro-2026-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
       "sunpeed-victory-e-2026-photo-2026-10-03": [
         "alt",
         "candidate_id",
@@ -59043,6 +59312,37 @@
         "source_id",
         "source_media_sha256",
         "source_media_url",
+        "subject_accuracy"
+      ],
+      "tavelo-arow-disc-frameset-xhs-primary-2026-10-26": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "tavelo-arow-race-polestar-primary-image": [
@@ -117005,6 +117305,7 @@
       "public-xhs-girder-tsar-105-di2-asking-2025-06-2026-10-24": [],
       "public-xhs-girder-tsar-105-di2-retail-2023-10-2026-10-24": [],
       "public-xhs-huanyu-az-one-naming-reference-2026-10-03": [],
+      "public-xhs-koseea-pioneer-slr-plus-image-2026-10-26": [],
       "public-xhs-kung-horizon-dealer-2026-10-22": [],
       "public-xhs-kung-horizon-entry-brand-2026-06-30": [],
       "public-xhs-kung-horizon-owner-black-2026-09-01": [],
@@ -117020,6 +117321,8 @@
       "public-xhs-kung-mach-x-ut-brand-2026-07-16": [],
       "public-xhs-lightcarbon-lcg071s-pro-legacy-2-2026-09-29": [],
       "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03": [],
+      "public-xhs-pardus-spark-al-image-2026-10-26": [],
+      "public-xhs-pardus-spark-sport-pes-image-2026-10-26": [],
       "public-xhs-pardus-super-sport-gen2-legacy-13-2026-09-29": [],
       "public-xhs-pardus-super-sport-gen2-legacy-20-2026-09-29": [],
       "public-xhs-quick-pro-geometry-collection-2026-08-28": [],
@@ -117030,6 +117333,9 @@
       "public-xhs-scott-addict-rc-40-2024-reference-2026-10-03": [],
       "public-xhs-seka-exaero-dealer-alta-build-2026-08-27": [],
       "public-xhs-seka-exaero-gr-owner-build-2026-10-24": [],
+      "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": [],
+      "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26": [],
+      "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26": [],
       "public-xhs-trinx-gtr-c6-legacy-64-2026-09-29": [],
       "public-xhs-trinx-gtr-c6-legacy-71-2026-09-29": [],
       "public-xhs-trinx-gtr-c6-material-reference-2026-10-03": [],
@@ -118472,6 +118778,10 @@
         "candidate_id=java-vittoria-er7-2026",
         "review_evidence.source_ids=java-vittoria-er7-2026-aluminum-enrichment-2026-10-03",
         "source_id=java-vittoria-er7-2026-aluminum-enrichment-2026-10-03"
+      ],
+      "koseea-pioneer-slr-plus-xhs-primary-2026-10-26": [
+        "candidate_id=koseea-pioneer-slr-plus",
+        "source_id=public-xhs-koseea-pioneer-slr-plus-image-2026-10-26"
       ],
       "kung-horizon-xhs-brand-entry-price-card-gallery": [
         "candidate_id=kung-horizon",
@@ -120911,6 +121221,10 @@
         "candidate_id=pardus-robin-sport-pes",
         "source_id=pardus-robin-sport-official-image-2026-08-17"
       ],
+      "pardus-spark-al-xhs-primary-2026-10-26": [
+        "candidate_id=pardus-spark-al",
+        "source_id=public-xhs-pardus-spark-al-image-2026-10-26"
+      ],
       "pardus-spark-family-cn-alt-color-primary-image": [
         "candidate_id=pardus-spark",
         "source_id=pardus-spark-sport-official-cn-2026-08-17"
@@ -120942,6 +121256,10 @@
       "pardus-spark-sport-pes-primary-image": [
         "candidate_id=pardus-spark-sport-pes",
         "source_id=pardus-spark-sport-official-cn-2026-08-17"
+      ],
+      "pardus-spark-sport-pes-xhs-primary-2026-10-26": [
+        "candidate_id=pardus-spark-sport-pes",
+        "source_id=public-xhs-pardus-spark-sport-pes-image-2026-10-26"
       ],
       "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29": [
         "candidate_id=pardus-spark-tourist",
@@ -121555,6 +121873,14 @@
         "review_evidence.source_ids=spect-mira-enrichment-2026-10-03",
         "source_id=spect-mira-enrichment-2026-10-03"
       ],
+      "sunpeed-galaxy-2026-r7120-xhs-primary-2026-10-26": [
+        "candidate_id=sunpeed-galaxy-2026-r7120",
+        "source_id=public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26"
+      ],
+      "sunpeed-mars-a-pro-2026-xhs-primary-2026-10-26": [
+        "candidate_id=sunpeed-mars-a-pro-2026",
+        "source_id=public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26"
+      ],
       "sunpeed-victory-e-2026-photo-2026-10-03": [
         "candidate_id=sunpeed-victory-e-2026",
         "source_id=sunpeed-victory-e-2026-photo-source-2026-10-03"
@@ -121566,6 +121892,10 @@
       "tavelo-arden-primary-image": [
         "candidate_id=tavelo-arden",
         "source_id=tavelo-arden-official-2026-08-17"
+      ],
+      "tavelo-arow-disc-frameset-xhs-primary-2026-10-26": [
+        "candidate_id=tavelo-arow-disc-frameset",
+        "source_id=public-xhs-tavelo-arow-disc-frameset-image-2026-10-26"
       ],
       "tavelo-arow-race-polestar-primary-image": [
         "candidate_id=missing-china-price-tavelo-arow",
@@ -140965,6 +141295,14 @@
         "specification": 0
       }
     },
+    "public-xhs-koseea-pioneer-slr-plus-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
     "public-xhs-kung-horizon-dealer-2026-10-22": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -141085,6 +141423,22 @@
         "specification": 0
       }
     },
+    "public-xhs-pardus-spark-al-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
+    "public-xhs-pardus-spark-sport-pes-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
     "public-xhs-pardus-super-sport-gen2-legacy-13-2026-09-29": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -141159,6 +141513,30 @@
     },
     "public-xhs-seka-exaero-gr-owner-build-2026-10-24": {
       "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
+    "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
+    "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
+    "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26": {
+      "minimum_type_tier": 0,
       "minimum_reliability": {
         "identity": 3,
         "price": -1,
@@ -223945,6 +224323,13 @@
       "remote_required": false,
       "primary_required": false
     },
+    "koseea-pioneer-slr-plus-xhs-primary-2026-10-26": {
+      "target": "candidates:koseea-pioneer-slr-plus",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "kung-horizon-xhs-brand-entry-price-card-gallery": {
       "target": "candidates:kung-horizon",
       "minimum_accuracy_rank": 4,
@@ -227403,6 +227788,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "pardus-spark-al-xhs-primary-2026-10-26": {
+      "target": "candidates:pardus-spark-al",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "pardus-spark-family-cn-alt-color-primary-image": {
       "target": "candidates:pardus-spark",
       "minimum_accuracy_rank": 2,
@@ -227457,6 +227849,13 @@
       "minimum_accuracy_rank": 2,
       "minimum_source_tier": 2,
       "remote_required": true,
+      "primary_required": true
+    },
+    "pardus-spark-sport-pes-xhs-primary-2026-10-26": {
+      "target": "candidates:pardus-spark-sport-pes",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
       "primary_required": true
     },
     "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29": {
@@ -228467,6 +228866,20 @@
       "remote_required": false,
       "primary_required": true
     },
+    "sunpeed-galaxy-2026-r7120-xhs-primary-2026-10-26": {
+      "target": "candidates:sunpeed-galaxy-2026-r7120",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "sunpeed-mars-a-pro-2026-xhs-primary-2026-10-26": {
+      "target": "candidates:sunpeed-mars-a-pro-2026",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "sunpeed-victory-e-2026-photo-2026-10-03": {
       "target": "candidates:sunpeed-victory-e-2026",
       "minimum_accuracy_rank": 2,
@@ -228486,6 +228899,13 @@
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true,
+      "primary_required": true
+    },
+    "tavelo-arow-disc-frameset-xhs-primary-2026-10-26": {
+      "target": "candidates:tavelo-arow-disc-frameset",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
       "primary_required": true
     },
     "tavelo-arow-race-polestar-primary-image": {
@@ -229359,6 +229779,11 @@
       "minimum_source_tier": 2,
       "remote_required": false
     },
+    "candidates:koseea-pioneer-slr-plus": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:kung-horizon": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 1,
@@ -229714,6 +230139,11 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:pardus-spark-al": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:pardus-spark-rs-community-lead": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
@@ -229929,6 +230359,16 @@
       "minimum_source_tier": 1,
       "remote_required": false
     },
+    "candidates:sunpeed-galaxy-2026-r7120": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
+    "candidates:sunpeed-mars-a-pro-2026": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:sunpeed-victory-e-2026": {
       "minimum_accuracy_rank": 2,
       "minimum_source_tier": 2,
@@ -229943,6 +230383,11 @@
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true
+    },
+    "candidates:tavelo-arow-disc-frameset": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
     },
     "candidates:tavelo-arow-sl-community-lead": {
       "minimum_accuracy_rank": 3,
