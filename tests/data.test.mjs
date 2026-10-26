@@ -2038,7 +2038,7 @@ test('public dataset has the expected coverage', () => {
   assert.ok(data.researchAttempts.length >= 1844, 'retain the existing research ledger while allowing additive evidence');
   assert.equal(new Set(data.researchAttempts.map((attempt) =>
     `${attempt.target.record_type}:${attempt.target.record_id}:${attempt.field}`
-  )).size, 1522);
+  )).size, 1527);
   assert.equal(products.length, data.variants.length);
 });
 

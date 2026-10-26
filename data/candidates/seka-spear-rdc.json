@@ -7,7 +7,7 @@
   "missing": [
     "Proof that the reported price maps to the complete listed build",
     "Current mainland exact-SKU checkout and stock",
-    "Independent frame-weight measurement",
+    "Frame weight in the owner's MR size",
     "Full custom-bike BOM is not established by the official frameset package"
   ],
   "status": "publication-gate-not-met",
@@ -25,21 +25,28 @@
     "seka-spear-development-manual-reopen-2026-09-23",
     "seka-warranty-cn-recheck-2026-09-23",
     "seka-warranty-global-recheck-2026-09-23",
-    "seka-spear-rdc-taobao-dealer-2026-10-24"
+    "seka-spear-rdc-taobao-dealer-2026-10-24",
+    "seka-spear-official-page-2026-10-25",
+    "seka-spear-cn-official-page-2026-10-25",
+    "seka-spear-catalog-recheck-2026-10-25",
+    "public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26"
   ],
   "facts": {
     "drivetrain": "Shimano Ultegra electronic; exact series unconfirmed",
     "complete_weight_g": 7100,
-    "frame": "SEKA SPEAR RDC frame; manufacturer describes TeXtreme/ultra-high-modulus carbon and one-piece molding. The 685 +/- 35 g bare-frame claim is not mapped to MR size; a separate 729 +/- 35 g M Shadow Black figure has a different or unclear basis.",
+    "frame": "Spear RDC frame in the owner's racing MR size. SEKA's weights are for size M: 685 g bare without paint or metal parts, and 729 g ±35 g in Shadow Black; the store prints 685 g ±35 g. MR is unpublished.",
+    "frame_material": "TeXtreme base layers with DIALEAD pitch-based ultra-high-modulus and Pyrofil carbon, plus PMI foam filling",
+    "frame_construction": "One-mould True-One-Piece frame; internal routing through SEKA's Rapier bar system",
     "bottom_bracket": "BSA threaded, 68 mm (frame standard; BB component inclusion in the custom build is not established)",
     "wheels": "Voso Lite50 carbon",
     "cockpit": "375×120 mm integrated handlebar on the custom build; official frameset uses the Rapier integrated bar",
-    "sizes": "XS, S, M, MR, L, LR and XL are listed; numerical geometry for the exact RDC generation remains unconfirmed.",
+    "sizes": "XS, S, M, L and XL, plus racing MR and LR",
     "warranty": "Current China policy: lifetime SEKA frameset, five years for SEKA carbon parts, two years for SEKA spare parts; non-SEKA complete-build parts are not covered by this statement.",
-    "stiffness_evidence": "Manufacturer white paper reports a 14.5% stiffness-to-weight improvement over Exceed RDC for the exact Spear RDC; comparative manufacturer result with limited public protocol detail",
+    "stiffness_evidence": "SEKA reports a 14.5% stiffness-to-weight improvement and 5% more stiffness than Exceed RDC, plus 109 N/mm vertical compliance; manufacturer comparisons with limited public protocol detail",
     "tire_clearance_mm": 32,
-    "tire_clearance_basis": "Official exact-model catalog maximum tire size",
-    "complete_weight_basis": "Exact size-MR custom owner build with Shimano Ultegra electronic shifting and Voso Lite50 wheels: approximately 7.1 kg before pedals, bottle cages and computer mount; not a factory complete-bike SKU"
+    "tire_clearance_basis": "Official maximum actual tyre width, front and rear, on SEKA's current global and China pages; the 2024–25 catalog also lists 32c. A 35 mm tyre exceeds SEKA's stated limit.",
+    "complete_weight_basis": "Exact size-MR custom owner build with Shimano Ultegra electronic shifting and Voso Lite50 wheels: approximately 7.1 kg before pedals, bottle cages and computer mount; not a factory complete-bike SKU",
+    "geometry complete current manufacturer table": "Official Spear chart for both RDC and Standard frames, identical on the current product page and in the 2024–25 catalog; millimetres and degrees. Printed size columns: XS / S / M / MR / L / LR / XL. Stack: 508 / 524 / 543 / 538 / 570 / 560 / 600; Reach: 362 / 370 / 379 / 386 / 389 / 397 / 402; Trail: 68 / 62 / 58 / 58 / 58 / 57 / 55; C1 seat tube: 449 / 463 / 480 / 476 / 508 / 496 / 535; RC chainstay: 410 / 410 / 410 / 410 / 410 / 410 / 410; H bottom-bracket drop: 74 / 74 / 72 / 72 / 72 / 72 / 72; FC front centre: 570 / 574 / 574 / 578 / 591 / 585 / 608; WB wheelbase: 969 / 973 / 973 / 978 / 990 / 995 / 1008; L head tube: 107 / 120 / 136 / 130 / 164 / 153 / 193; N top tube: 498 / 514 / 534 / 540 / 557 / 563 / 585; Q1 head angle: 70.6 / 71.7 / 72.9 / 73 / 73 / 73.1 / 73.5; Q7 seat angle: 75 / 74.8 / 74 / 74 / 73.5 / 73.5 / 73; F fork offset: 48 / 48 / 44 / 44 / 44 / 44 / 44; G fork length: 372 / 372 / 372 / 372 / 372 / 372 / 372; Inseam height: 725 / 738 / 759 / 753 / 786 / 774 / 814; Recommended rider height (cm): 150-163 / 161-173 / 170-180 / 171-186 / 177-187 / 179-194 / 185-198. Dimension names follow the letters on SEKA's drawing; inseam height is measured 50 mm ahead of the bottom bracket with a 680 mm tyre diameter."
   },
   "observed_price": {
     "amount_cny": 16900,
@@ -47,11 +54,31 @@
     "observed_at": "2026-08-17",
     "price_basis": "owner-reported list price"
   },
-  "source_note": "The official SPEAR RDC pages document frame materials, BSA standard, frameset package and a 685 +/- 35 g bare-frame claim; a separate 729 +/- 35 g M Shadow Black figure has an unclear/different basis. These sources do not establish the candidate's full custom-bike BOM, exact RDC geometry or a current mainland complete-bike checkout.",
-  "last_reviewed": "2026-10-24",
+  "source_note": "Frame facts come from SEKA's official pages and catalog; this build's parts, 7.1 kg weight and ¥16,900 figure come from one owner report.",
+  "last_reviewed": "2026-10-25",
   "price_status": "No current manufacturer-published price or checkout for the exact custom complete-bike build. The CNY 16,900 owner-reported list observation from 2026-08-17 remains historical; its mapping to this complete build is unverified.",
   "purchase_route": "SEKA China directs mainland buyers to an authorized dealer, official WeChat or official Taobao. The current global store exposes a frameset route only; an exact custom complete-bike listing, mainland stock and final checkout are unverified.",
   "warranty": "Current China policy: lifetime SEKA frameset warranty, five years for SEKA carbon parts and two years for SEKA spare parts; mainland service route is the seller, official WeChat or official Taobao. This does not establish warranty for non-SEKA parts in the custom build.",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-25",
+      "source_ids": [
+        "seka-spear-official-page-2026-10-25",
+        "seka-spear-cn-official-page-2026-10-25",
+        "seka-spear-catalog-recheck-2026-10-25"
+      ],
+      "fields": [
+        "frame",
+        "frame_material",
+        "frame_construction",
+        "sizes",
+        "stiffness_evidence",
+        "tire_clearance_basis",
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "SEKA's current pages state the weight basis (size M, no paint or metal parts) and publish one geometry chart for RDC and Standard frames, resolving the earlier unclear weight basis and unmapped geometry. The 32 mm limit is unchanged; owner build, prices and dates retained."
+    }
+  ],
   "video_ids": [
     "cyclingnews-seka-spear-rdc-review"
   ],

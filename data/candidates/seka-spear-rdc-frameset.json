@@ -5,18 +5,41 @@
   "brand_id": "seka",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "The RDC Spear frameset is listed by two mainland dealers at the same price; one states bar and seatpost are included.",
+  "why_interesting": "SEKA's lighter Spear: an aero all-round frameset with a threaded BSA shell and a one-piece Rapier bar, listed by two mainland dealers at the same price. Tyres stop at 32 mm.",
   "facts": {
-    "cockpit": "Integrated bar and seatpost selectable per the Nanjing agent listing"
+    "frame": "Spear RDC carbon frame and fork with the Wind Eye seat cluster",
+    "frame_material": "TeXtreme base layers with DIALEAD pitch-based 65T/80T and Pyrofil 30T/40T (FAW69) carbon, plus PMI foam filling",
+    "frame_construction": "One-mould True-One-Piece frame from about 350 cut plies; internal routing through SEKA's Rapier bar system",
+    "frame_weight_g": 685,
+    "frame_weight_basis": "Official size-M bare frame without paint or metal parts; fork, bar and seatpost are not included. SEKA lists 729 g ±35 g for a painted size-M Shadow Black frame and says paint adds 20–100 g. Measured: Cyclingnews, size-L frame 758 g; an XHS reviewer, size-M frame in the dark-silver RDC finish 835 g with paint and metal parts, fork 406 g and Rapier bar 338 g; a paint shop, size-S RDC frame stripped and clear-coated 718 g, fork 345 g.",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Official maximum actual tyre width, front and rear, on SEKA's current global and China pages and in the 2024–25 catalog. A 35 mm tyre exceeds that limit; Klein Concept rode nominal 32 mm GP5000s and no wider fit is documented.",
+    "stiffness_evidence": "SEKA reports a 14.5% stiffness-to-weight improvement and 5% more stiffness than Exceed RDC, plus 109 N/mm vertical compliance, on its own test protocol. Cyclingnews' rig found a size-L bottom bracket less stiff than the tester's steel road bike.",
+    "bottom_bracket": "BSA threaded, 68 mm",
+    "axles": "12 mm thru-axles: front 118.6 mm M12×P1.0, rear 165.2 mm M12×P1.5",
+    "cockpit": "Rapier one-piece bar in 19 sizes (360–415 mm at the hoods, 80–130 mm stem); the Nanjing dealer lets buyers choose bar and seatpost",
+    "seatpost": "Spear aero post with 0 or 15 mm offset; clamp fits 7×7 to 7×11 mm rails",
+    "sizes": "XS, S, M, L and XL, plus racing MR and LR",
+    "manufacturer package": "Official store package: frame, fork, seatpost, Rapier bar, frameset and bar hardware, and aero bottle cages",
+    "geometry complete current manufacturer table": "Official Spear chart for both RDC and Standard frames, identical on the current product page and in the 2024–25 catalog; millimetres and degrees. Printed size columns: XS / S / M / MR / L / LR / XL. Stack: 508 / 524 / 543 / 538 / 570 / 560 / 600; Reach: 362 / 370 / 379 / 386 / 389 / 397 / 402; Trail: 68 / 62 / 58 / 58 / 58 / 57 / 55; C1 seat tube: 449 / 463 / 480 / 476 / 508 / 496 / 535; RC chainstay: 410 / 410 / 410 / 410 / 410 / 410 / 410; H bottom-bracket drop: 74 / 74 / 72 / 72 / 72 / 72 / 72; FC front centre: 570 / 574 / 574 / 578 / 591 / 585 / 608; WB wheelbase: 969 / 973 / 973 / 978 / 990 / 995 / 1008; L head tube: 107 / 120 / 136 / 130 / 164 / 153 / 193; N top tube: 498 / 514 / 534 / 540 / 557 / 563 / 585; Q1 head angle: 70.6 / 71.7 / 72.9 / 73 / 73 / 73.1 / 73.5; Q7 seat angle: 75 / 74.8 / 74 / 74 / 73.5 / 73.5 / 73; F fork offset: 48 / 48 / 44 / 44 / 44 / 44 / 44; G fork length: 372 / 372 / 372 / 372 / 372 / 372 / 372; Inseam height: 725 / 738 / 759 / 753 / 786 / 774 / 814; Recommended rider height (cm): 150-163 / 161-173 / 170-180 / 171-186 / 177-187 / 179-194 / 185-198. Dimension names follow the letters on SEKA's drawing; inseam height is measured 50 mm ahead of the bottom bracket with a 680 mm tyre diameter."
   },
   "missing": [
-    "Frameset weight",
-    "Maximum tire clearance"
+    "Weighed seatpost and a complete frameset package in one size",
+    "Mainland dealer package contents and warranty registration for the listed option"
   ],
   "status": "taobao-listing-observed",
   "source_ids": [
     "seka-spear-frameset-weier-taobao-2026-10-24",
-    "seka-spear-frameset-gulun-taobao-2026-10-24"
+    "seka-spear-frameset-gulun-taobao-2026-10-24",
+    "seka-spear-official-page-2026-10-25",
+    "seka-spear-cn-official-page-2026-10-25",
+    "seka-spear-catalog-recheck-2026-10-25",
+    "seka-spear-rdc-frameset-store-2026-10-25",
+    "seka-rapier-handlebar-store-2026-10-25",
+    "seka-spear-development-manual-reopen-2026-09-23",
+    "public-xhs-seka-spear-long-review-2026-10-26",
+    "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26",
+    "seka-spear-rdc-taobao-dealer-2026-10-24"
   ],
   "observed_at": "2026-10-24",
   "observed_price": {
@@ -29,7 +52,50 @@
     "observation_count": 1
   },
   "source_url": "https://item.taobao.com/item.htm?id=798552335745",
-  "last_reviewed": "2026-10-24",
+  "last_reviewed": "2026-10-25",
+  "enrichment_reviews": [
+    {
+      "reviewed_at": "2026-10-25",
+      "source_ids": [
+        "seka-spear-official-page-2026-10-25",
+        "seka-spear-cn-official-page-2026-10-25",
+        "seka-spear-catalog-recheck-2026-10-25",
+        "seka-spear-rdc-frameset-store-2026-10-25",
+        "seka-rapier-handlebar-store-2026-10-25",
+        "seka-spear-development-manual-reopen-2026-09-23"
+      ],
+      "fields": [
+        "frame",
+        "frame_material",
+        "frame_construction",
+        "frame_weight_g",
+        "frame_weight_basis",
+        "tire_clearance_mm",
+        "tire_clearance_basis",
+        "stiffness_evidence",
+        "bottom_bracket",
+        "axles",
+        "cockpit",
+        "seatpost",
+        "sizes",
+        "manufacturer package",
+        "geometry complete current manufacturer table"
+      ],
+      "scope": "Official platform specification added; dealer prices and dates unchanged."
+    },
+    {
+      "reviewed_at": "2026-10-26",
+      "source_ids": [
+        "public-xhs-seka-spear-long-review-2026-10-26",
+        "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26",
+        "seka-spear-rdc-taobao-dealer-2026-10-24"
+      ],
+      "fields": [
+        "frame_weight_basis"
+      ],
+      "scope": "Measured frame, fork and bar weights from two XHS posts added beside the official claim; the dealer listing prices the dark-silver finish as RDC. The official 685 g value is unchanged."
+    }
+  ],
   "video_ids": [
     "klein-concept-seka-spear-rdc-first-impressions"
   ]
