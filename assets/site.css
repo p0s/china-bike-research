@@ -582,9 +582,13 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .builder-summary [data-build-compatibility].has-conflicts { border-color: #d6a14d; background: rgb(214 161 77 / 10%); color: #f2d7a7; }
 .builder-summary [data-build-compatibility] p { margin: 0; }
 .builder-summary [data-build-compatibility] ul { margin: 7px 0 0; padding-left: 17px; }
-.builder-summary .secondary-button { width: 100%; border-color: rgb(255 255 255 / 25%); background: #f3f6f4; }
+.builder-summary .secondary-button { width: 100%; border-color: rgb(255 255 255 / 25%); background: #f3f6f4; color: #17231d; }
 .builder-summary .text-button { width: 100%; margin-top: 4px; color: #bdc9c1; }
 .builder-summary > small { display: block; margin-top: 16px; color: #8f9c94; font-size: .61rem; line-height: 1.42; }
+.builder-currency { display: flex; align-items: center; gap: 8px; margin-top: 12px; color: #bdc9c1; font-size: .66rem; font-weight: 740; letter-spacing: .04em; text-transform: uppercase; }
+.builder-currency select { min-height: 32px; padding: 4px 8px; border: 1px solid rgb(255 255 255 / 25%); border-radius: 8px; background: #f3f6f4; color: #17231d; font: inherit; letter-spacing: 0; }
+.builder-summary > .builder-currency-note { font-size: .64rem; line-height: 1.45; }
+.builder-summary > .builder-currency-note a { color: inherit; }
 
 /* Simple pages */
 .simple-page { padding: 48px 0 70px; }
@@ -670,7 +674,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .model-figure { max-width: 760px; }
   .builder-page { grid-template-columns: 1fr; }
   .builder-summary { position: sticky; top: 70px; z-index: 20; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px 16px; align-items: center; }
-  .builder-summary > .builder-kicker, .builder-summary > h2 { grid-column: 1; }
+  .builder-summary > .builder-kicker, .builder-summary > h2, .builder-summary > .builder-currency { grid-column: 1; }
   .builder-summary dl { grid-column: 2 / -1; grid-row: 1 / 3; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0; }
   .builder-summary dl > div { padding: 0; border: 0; }
   .builder-summary > p, .builder-summary [data-build-compatibility], .builder-summary > small { grid-column: 1 / -1; }
@@ -739,6 +743,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .builder-summary .build-compositions { display: none; }
   .builder-summary .build-todo { grid-column: 1 / -1; margin: 2px 0 4px; }
   .builder-summary > .builder-kicker, .builder-summary > h2 { display: none; }
+  .builder-summary > .builder-currency { grid-column: 1 / -1; margin: 0; }
   .builder-summary dl { grid-column: 1 / -1; grid-row: auto; gap: 10px; }
   .builder-summary dd { font-size: .95rem; }
   .builder-summary > p { margin: 4px 0; grid-column: 1 / -1; }

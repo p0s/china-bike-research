@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { initialBuildPresentation } from '../assets/builder-presentation.js';
+import { initialBuildPresentation, buildComposition } from '../assets/builder-presentation.js';
 import { restoreBuildState } from '../assets/state-utils.js';
 import { loadDataset, joinProducts } from '../src/lib/data.mjs';
 import { renderBikeBuilder } from '../src/render.mjs';
@@ -81,4 +81,43 @@ test('planner lists base facts as rows, offers jumps to missing inputs and keeps
   assert.doesNotMatch(reset, /state\.baseId = firstBaseId/, 'reset must not switch the chosen starting point');
   assert.doesNotMatch(reset, /state\.baseCustom = /, 'reset keeps the entered base quote and weights');
   assert.match(script, /function renderTodo\(missingPrices, missingWeights, isComplete\)/);
+});
+
+test('composition marks converted price groups as approximate and keeps unknowns out of the sum', () => {
+  const composition = buildComposition({
+    isComplete: false, basePrice: 150, basePriceConverted: true, baseWeight: 1000,
+    slots: [
+      { slot: 'drivetrain', state: 'known', price: 300, priceConverted: false, weight: 2400 },
+      { slot: 'wheelset', state: 'partial', price: 1300, priceConverted: true, weight: null },
+      { slot: 'saddle', state: 'open', price: null, priceConverted: false, weight: null }
+    ]
+  });
+  const segment = (id) => composition.price.segments.find((item) => item.id === id);
+  assert.deepEqual([segment('base').approximate, segment('drivetrain').approximate, segment('wheels').approximate, segment('finishing').approximate], [true, false, true, false]);
+  assert.equal(composition.price.known, 1750);
+  assert.equal(composition.price.unknown, 1);
+  assert.equal(composition.weight.segments.every((item) => !item.approximate), true);
+});
+
+test('the static planner names its yuan default, every supported currency and the dated rate', () => {
+  const catalog = loadDataset();
+  const products = joinProducts(catalog);
+  const ctx = { data: catalog, products, base: '', siteUrl: 'https://example.invalid', repositoryUrl: 'https://github.com/p0s/china-bike-research' };
+  const html = renderBikeBuilder({ ...ctx, locale: 'en' });
+  const payload = JSON.parse(html.match(/id="build-configurator-data">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(payload.schemaVersion, 2);
+  assert.match(payload.rates.date, /^\d{4}-\d{2}-\d{2}$/);
+  assert.equal(payload.rates.perEur.EUR, 1);
+  assert.ok(payload.rates.perEur.CNY > 0 && payload.rates.perEur.USD > 0);
+  assert.match(html, /<label class="builder-currency"><span>Currency<\/span><select data-build-currency><option value="EUR">EUR<\/option><option value="USD">USD<\/option><option value="GBP">GBP<\/option><option value="CAD">CAD<\/option><option value="MXN">MXN<\/option><option value="CNY" selected>CNY<\/option><\/select><\/label>/);
+  assert.match(html, /<dt data-build-total-label>(?:Full build price|Purchase \+ upgrades)<\/dt>/);
+  assert.ok(html.includes(`<time datetime="${payload.rates.date}">${payload.rates.date}</time>`));
+  assert.match(html, /data-build-currency-note hidden>/);
+  assert.match(html, /<span data-build-price-label>Price<\/span> <span class="builder-currency-code" data-build-price-currency>CNY<\/span><\/span><input type="number" min="0" max="200000" step="any" inputmode="decimal" data-build-custom-price>/);
+  assert.match(html, /Base price <span class="builder-currency-code" data-build-base-price-currency>CNY<\/span>/);
+  for (const [locale, label, note] of [['es', 'Moneda', 'Los importes conservan la moneda'], ['ru', 'Валюта', 'Суммы сохраняют валюту'], ['de', 'Währung', 'Beträge behalten die Währung'], ['zh-Hans', '币种', '金额保留记录或输入时的币种']]) {
+    const localized = renderBikeBuilder({ ...ctx, locale });
+    assert.ok(localized.includes(`<label class="builder-currency"><span>${label}</span>`), locale);
+    assert.ok(localized.includes(note), locale);
+  }
 });

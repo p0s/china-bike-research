@@ -272,14 +272,18 @@ test('bike builder persists shareable state and avoids package double counting',
   assert.match(script, /target\.searchParams\.set\(`part-\$\{slot\}`, selection\)/);
   assert.match(script, /localStorage\.setItem\(storageKey, JSON\.stringify\(state\)\)/);
   // A recorded package price stays editable: the buyer's exact quote replaces it.
-  assert.match(script, /const partPrice = quoteOverride \? buyerPrice \?\? recordedPrice : buyerPrice/);
-  assert.match(script, /quoteOverride \? 'Your quote ¥' : 'Price ¥'/);
+  // The quote keeps its entered currency; an unconvertible quote stays unresolved instead of using the record.
+  assert.match(script, /const shownPrice = buyerPrice !== null \? shownAmount\(buyerPrice, buyerCurrency\) : quoteOverride \? shownAmount\(recordedPrice, 'CNY'\) : null/);
+  assert.match(script, /translate\(quoteOverride \? 'Your quote' : 'Price', lang\)/);
+  assert.match(script, /priceCurrencyNode\.textContent = buyerCurrency/);
+  // Reading a shared link in another currency does not overwrite the visitor's own draft.
+  assert.match(script, /render\(\{ historyMode: 'push', persistState: draftOwned \}\)/);
   assert.match(script, /const partWeight = recordedWeight \?\? buyerWeight/);
   assert.match(script, /recordedPrice === null && buyerPrice !== null \? 'Buyer-entered price'/);
   assert.match(script, /customPriceField\.hidden = false/);
   // Opening a shared link must not overwrite the saved draft until the visitor edits.
   assert.match(script, /render\(\{ persistState: !isExplicitBuildUrl\(data, new URLSearchParams\(location\.search\)\) \}\)/);
-  assert.match(script, /if \(persistState\) persist\(\);/);
+  assert.match(script, /if \(persistState\) \{\s*persist\(\);\s*draftOwned = true;/);
   assert.match(script, /customWeightField\.hidden = !needsWeightInput/);
   assert.match(script, /removedWeightField\.hidden = !needsRemovedWeight/);
   assert.match(script, /const delta = partWeight - removedPartWeight/);

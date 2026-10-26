@@ -127,10 +127,13 @@ export function buildBaseFacts(base, locale) {
 }
 
 // The same facts as labelled rows, so package contents and price basis are scannable.
+// The recorded price stays in yuan; a planner in another currency adds its conversion beside it.
 export function buildBaseFactRows(base) {
+  const low = numberOrNull(base.priceLow);
   return [
     ['Type', `${base.kind === 'complete-bike' ? 'Complete bike' : 'Frameset'}${base.stage === 'candidate' ? ' · research stage' : ''}`],
     ['Package', base.included.length ? base.included.join(', ') : 'package contents incomplete'],
+    ['Recorded price', low === null ? '' : formatBuildPriceRange(low, numberOrNull(base.priceHigh) ?? low)],
     ['Bottom bracket', base.bottomBracket || 'bottom bracket unknown'],
     ['Tire clearance', base.tireClearanceLabel || (base.tireClearanceMm ? `${base.tireClearanceMm} mm` : 'tire clearance unknown')],
     ['Price basis', base.priceNote || ''],
@@ -156,21 +159,25 @@ export function buildSlotState({ included = false, price = null, weight = null }
   return known === 2 ? 'known' : known === 1 ? 'partial' : 'open';
 }
 
-// `slots` holds { slot, state, price, weight } where price/weight are numbers or null.
+// `slots` holds { slot, state, price, weight } where price/weight are numbers or null;
+// `priceConverted` marks a price shown in another currency than it was recorded or entered in.
 // Complete bikes report replacement prices only; their weight changes are deltas,
 // so no weight composition is drawn for them.
-export function buildComposition({ isComplete, basePrice = null, basePriceHigh = basePrice, baseWeight = null, baseWeightMissing = 0, slots = [] }) {
+export function buildComposition({ isComplete, basePrice = null, basePriceHigh = basePrice, basePriceConverted = false, baseWeight = null, baseWeightMissing = 0, slots = [] }) {
   const bySlot = new Map(slots.map(entry => [entry.slot, entry]));
   const measure = (key, baseValue, extraUnknown = 0, baseHigh = baseValue) => BUILD_GROUPS.map(group => {
-    if (group.id === 'base') return { id: 'base', label: isComplete ? 'Base bike' : 'Frameset', value: baseValue ?? 0, high: baseHigh ?? baseValue ?? 0, unknown: (baseValue === null ? 1 : 0) + extraUnknown };
-    let value = 0, unknown = 0;
+    if (group.id === 'base') return { id: 'base', label: isComplete ? 'Base bike' : 'Frameset', value: baseValue ?? 0, high: baseHigh ?? baseValue ?? 0, unknown: (baseValue === null ? 1 : 0) + extraUnknown, approximate: key === 'price' && baseValue !== null && basePriceConverted };
+    let value = 0, unknown = 0, approximate = false;
     for (const slot of group.slots) {
       const entry = bySlot.get(slot);
       if (!entry || entry.state === 'included') continue;
       if (entry[key] === null || !Number.isFinite(entry[key])) unknown++;
-      else value += entry[key];
+      else {
+        value += entry[key];
+        approximate ||= key === 'price' && Boolean(entry.priceConverted);
+      }
     }
-    return { id: group.id, label: group.label, value, unknown };
+    return { id: group.id, label: group.label, value, unknown, approximate };
   });
   const summarize = segments => ({
     segments,

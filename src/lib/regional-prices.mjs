@@ -65,9 +65,14 @@ export function validateRegionalPricing(data) {
   return errors;
 }
 
-export function regionalPricePayload(data, asOf = new Date().toISOString().slice(0, 10)) {
-  const rates = [...(data.exchangeRates ?? [])].filter((rate) => rate.rate_date <= asOf)
+// The newest dated ECB snapshot on or before `asOf`, shared by the catalog payload and the Build planner.
+export function latestExchangeRates(data, asOf = new Date().toISOString().slice(0, 10)) {
+  return [...(data.exchangeRates ?? [])].filter((rate) => rate.rate_date <= asOf)
     .sort((a, b) => b.rate_date.localeCompare(a.rate_date))[0] ?? null;
+}
+
+export function regionalPricePayload(data, asOf = new Date().toISOString().slice(0, 10)) {
+  const rates = latestExchangeRates(data, asOf);
   const sources = new Map(data.sources.map((source) => [source.id, source]));
   return {
     asOf,

@@ -694,7 +694,8 @@ export const de = {
   "When enabled, Google Analytics 4 runs only after the consented browser requests its same-origin configuration. The browser tag can then send one page_view through this site's first-party gateway. The page request itself does not create a Google identifier or send a site_open event. The configuration request creates a first-party client ID; the tag's reported session ID is stored only after its same-origin session handshake. Server comparison and product-link events reach Google only when both stored identifiers exist. If a blocker prevents the tag or handshake, first-party Umami measurement can still work while no server event is sent to Google. Server requests do not send Google your IP, User-Agent, search terms, URL query, or selected bike lists; Google can receive your network address when its browser tag loads. Google tag cookies and our client ID cookie can last up to 30 days; a session cookie lasts 30 minutes after a verified tag handshake. We disable advertising signals and personalization. Google controls its own analytics processing and retention.": "Wenn aktiviert, läuft Google Analytics 4 erst, nachdem der eingewilligte Browser die gleichursprüngliche Konfiguration abruft. Das Tag kann danach über das First-Party-Gateway dieser Website ein page_view senden. Die Seitenanfrage selbst erzeugt keine Google-Kennung und sendet kein site_open-Ereignis. Die Konfigurationsanfrage erstellt eine First-Party-Client-ID; die vom Tag gemeldete Sitzungs-ID wird erst nach dem gleichursprünglichen Sitzungsabgleich gespeichert. Serverereignisse zu Vergleichen und Produktlinks erreichen Google nur, wenn beide gespeicherten Kennungen vorliegen. Verhindert ein Blocker das Tag oder den Abgleich, kann die First-Party-Umami-Messung weiterlaufen, während kein Serverereignis an Google gesendet wird. Serveranfragen senden Google weder IP noch User-Agent, Suchtexte, URL-Abfragen oder ausgewählte Fahrradlisten; beim Laden des Browser-Tags kann Google Ihre Netzwerkadresse erhalten. Google-Tag-Cookies und unsere Client-ID-Cookies können bis zu 30 Tage bestehen; ein Sitzungscookie bleibt nach einem verifizierten Tag-Abgleich 30 Minuten bestehen. Werbesignale und Personalisierung sind deaktiviert. Google bestimmt seine eigene Verarbeitung und Aufbewahrung.",
   "Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.": "Do Not Track, Global Privacy Control und die Abwahl unten unterdrücken beide Analyseströme. Die Abwahl löscht unsere GA-ID-Cookies und die auf diesem Host gesetzten Google-Tag-Cookies.",
   "External media": "Externe Medien",
-  "Displayed product photos load from this site's Cloudflare-hosted assets. Model pages and the carbon-wheel reference embed a": "Produktfotos laden aus den Cloudflare-gehosteten Dateien dieser Website. Modellseiten mit Videos und die Carbon-Laufrad-Übersicht betten einen",
+  "Displayed product photos load from this site's Cloudflare-hosted assets, except maker photos that the carbon-wheel reference and image credits show from the maker's website; your browser then contacts that website without sending this page's address. Model pages and the carbon-wheel reference embed a": "Produktfotos laden aus den Cloudflare-gehosteten Dateien dieser Website. Ausgenommen sind Herstellerfotos, die die Carbon-Laufrad-Übersicht und die Bildnachweise direkt von der Website des Herstellers zeigen; dein Browser kontaktiert dann diese Website, ohne die Adresse dieser Seite zu senden. Modellseiten mit Videos und die Carbon-Laufrad-Übersicht betten einen",
+  "Loaded from the maker’s website": "Von der Website des Herstellers geladen",
   "player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.": "Player ein, der YouTube beim Seitenladen oder beim Sichtbarwerden kontaktieren kann. Artikel kontaktieren YouTube erst, wenn du ein Video lädst oder dessen Link zum Ansehen öffnest. Videos starten nicht automatisch.",
   "Contributions": "Beiträge",
   "GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.": "GitHub-Issues und Pull Requests sind öffentlich. Entfernen Sie persönliche Details aus Bildern und Links; beantragen Sie Korrekturen oder Entfernung per Issue.",
@@ -1552,6 +1553,8 @@ export function translateGerman(value) {
     [/^(\d+) models?$/, (_, n) => n === '1' ? '1 Modell' : `${n} Modelle`],
     [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} nennt keine Bremsscheibenaufnahme; vor der Scheibenwahl bestätigen.`],
     [/^Your quote replaces the recorded (.+)$/, (_, price) => `Ihr Angebot ersetzt den erfassten Preis ${price}`],
+    [/^Recorded price (.+)$/, (_, price) => `Dokumentierter Preis ${price}`],
+    [/^Entered as (.+)$/, (_, price) => `Eingegeben als ${price}`],
     [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${translateGerman(value)} — ${translateGerman(label)}`],
     [/^(\d+) mm (front|rear)$/, (_, n, wheel) => `${n} mm ${wheel === 'front' ? 'vorn' : 'hinten'}`],
     [/^unknown (1×|2×)$/, (_, layout) => `${layout} unbekannt`],
@@ -1576,7 +1579,7 @@ export function translateGerman(value) {
     [/^Rotor mount not stated · (.+) mm$/, (_, axles) => `Scheibenaufnahme nicht angegeben · ${axles} mm`],
     [/^Official direct store · (\d{4}-\d{2}-\d{2})$/, (_, date) => `Offizieller Direktshop · ${date}`],
     [/^Official direct store · (\d{4}-\d{2}-\d{2}) · Official direct (list|sale)$/, (_, date, kind) => `Offizieller Direktshop · ${date} · ${kind === 'list' ? 'Offizieller Listenpreis' : 'Offizieller Aktionspreis'}`],
-    [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter a China quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `Offizieller Direktpreis ${amount} am ${date} ist kein Preis in Festlandchina; bitte ein chinesisches Angebot eingeben.${rotor ? ` ${de['Rotor mount is not stated; confirm it before choosing rotors.']}` : ''}`],
+    [/^Official direct price (.+) on (\d{4}-\d{2}-\d{2}) is not a mainland China price; enter your purchase quote\.( Rotor mount is not stated; confirm it before choosing rotors\.)?$/, (_, amount, date, rotor) => `Offizieller Direktpreis ${amount} am ${date} ist kein Preis in Festlandchina; bitte Ihr Kaufangebot eingeben.${rotor ? ` ${de['Rotor mount is not stated; confirm it before choosing rotors.']}` : ''}`],
     // Catalog workbench (2026-10)
     [/^· (\d+) published, then (\d+) research leads$/, (_, published, leads) => `· ${published} veröffentlicht, danach ${leads} Recherchehinweise`],
     [/^Show (\d+) more research leads$/, (_, n) => `${n} weitere Recherchehinweise zeigen`],
@@ -2224,4 +2227,12 @@ Object.assign(de, {
   "Tire fit: 2×": "Reifenfreiheit: 2×",
   "1× unsupported": "1× nicht unterstützt",
   "2× unsupported": "2× nicht unterstützt"
+});
+
+// Build planner currencies (2026-10-26).
+Object.assign(de, {
+  "Your quote": "Ihr Angebot",
+  "Base price": "Basispreis",
+  "ECB reference rate": "EZB-Referenzkurs",
+  "Amounts keep the currency they were recorded or entered in; ≈ marks a planning conversion. Converted China prices exclude shipping, import duty and tax and are not delivered prices.": "Beträge behalten die Währung, in der sie erfasst oder eingegeben wurden; ≈ kennzeichnet eine Umrechnung zur Planung. Umgerechnete China-Preise enthalten weder Versand noch Einfuhrzoll und Steuern und sind keine Lieferpreise."
 });
