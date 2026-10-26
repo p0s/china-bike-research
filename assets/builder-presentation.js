@@ -125,6 +125,21 @@ export function buildBaseFacts(base, locale) {
   ].filter(Boolean).join(' · ');
 }
 
+// The same facts as labelled rows, so package contents and price basis are scannable.
+export function buildBaseFactRows(base) {
+  return [
+    ['Type', `${base.kind === 'complete-bike' ? 'Complete bike' : 'Frameset'}${base.stage === 'candidate' ? ' · research stage' : ''}`],
+    ['Package', base.included.length ? base.included.join(', ') : 'package contents incomplete'],
+    ['Bottom bracket', base.bottomBracket || 'bottom bracket unknown'],
+    ['Tire clearance', base.tireClearanceLabel || (base.tireClearanceMm ? `${base.tireClearanceMm} mm` : 'tire clearance unknown')],
+    ['Price basis', base.priceNote || ''],
+    ['Weight basis', base.weightBasis || ''],
+    ['Clearance note', base.tireClearanceNote || ''],
+    ['Drivetrain support', base.drivetrainCompatibility?.note || ''],
+    ['Fork and calipers', base.forkCaliperNote || '']
+  ].filter(([, value]) => value);
+}
+
 // Visual planner model: slot states and grouped composition of the known totals.
 // Unknown values stay counted as unknown; they never become zero-width "known" parts.
 export const BUILD_GROUPS = Object.freeze([

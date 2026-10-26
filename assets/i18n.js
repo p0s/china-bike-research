@@ -1441,3 +1441,19 @@ Object.assign(zh, {
   "1 identical row hidden": "已隐藏 1 行相同内容",
   "Every compared row differs.": "所有对比行都不相同。"
 });
+
+// Build planner wording (2026-10-26).
+Object.assign(zh, {
+  "No purchase-ready price is recorded for this exact base. Enter the price you were quoted; the price basis above is for planning only.": "此确切车型没有可直接用于购买的价格记录。请输入您获得的报价；上方的价格依据仅供规划。",
+  "Prices to enter": "待填写价格",
+  "Weights to enter": "待填写重量",
+  "Reset parts": "重置部件",
+  "Fork + frame package": "前叉与车架套件",
+  "Type": "类型",
+  "Clearance note": "轮胎空间说明",
+  "Drivetrain support": "传动支持",
+  "Fork and calipers": "前叉与卡钳",
+  "package contents incomplete": "套件内容不完整",
+  "bottom bracket unknown": "中轴未知",
+  "tire clearance unknown": "轮胎空间未知"
+});

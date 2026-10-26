@@ -2674,7 +2674,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
 
   let presentation;
   try { presentation = await import('./builder-presentation.js'); } catch { return; }
-  const { buildBaseFacts, buildCompatibilityMessages, buildComposition, buildSlotState, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
+  const { buildBaseFactRows, buildCompatibilityMessages, buildComposition, buildSlotState, formatBuildYuan: formatYuan, formatBuildPriceRange: formatPriceRange, formatBuildWeight: formatWeight } = presentation;
 
   const storageKey = 'china-bike-builder-v2';
   const bases = new Map(data.bases.map((base) => [base.id, base]));
@@ -2885,6 +2885,54 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
     row.addEventListener('focusin', on); row.addEventListener('focusout', off);
   });
 
+  // Each unresolved input is a button that jumps to the exact field to complete.
+  const todo = root.querySelector('[data-build-todo]');
+  function todoTarget(kind, entry) {
+    if (entry === 'frameset' || entry === 'base bike') return kind === 'price' ? basePrice : baseWeight;
+    if (entry === 'fork / frame package remainder') return packageWeight;
+    const delta = entry.endsWith(' replacement delta');
+    const slot = delta ? entry.slice(0, -' replacement delta'.length) : entry;
+    const row = rows.get(slot);
+    if (!row) return null;
+    // A replacement delta needs the new part's weight first, then the removed part's weight.
+    const newWeightKnown = numberOrNull(selectedPart(slot)?.weightG) !== null || numberOrNull(state.custom[slot]?.weight) !== null;
+    const field = kind === 'price' ? row.querySelector('[data-build-custom-price]')
+      : delta && newWeightKnown ? row.querySelector('[data-build-removed-weight]') : row.querySelector('[data-build-custom-weight]');
+    return field instanceof HTMLElement && !field.closest('[hidden]') ? field : row.querySelector('select') ?? row;
+  }
+  function todoLabel(entry, isComplete) {
+    const lang = document.documentElement.lang;
+    if (entry === 'frameset' || entry === 'base bike') return translate(isComplete ? 'Base bike' : 'Frameset', lang);
+    if (entry === 'fork / frame package remainder') return translate('Fork + frame package', lang);
+    if (entry === 'inconsistent removed-part weights') return null;
+    const slot = entry.endsWith(' replacement delta') ? entry.slice(0, -' replacement delta'.length) : entry;
+    return rows.get(slot)?.querySelector('h2')?.textContent ?? slot;
+  }
+  function renderTodo(missingPrices, missingWeights, isComplete) {
+    if (!(todo instanceof HTMLElement)) return;
+    for (const [kind, list] of [['price', missingPrices], ['weight', missingWeights]]) {
+      const line = todo.querySelector(`[data-build-todo-${kind}]`);
+      if (!(line instanceof HTMLElement)) continue;
+      line.querySelectorAll('button').forEach((button) => button.remove());
+      const items = list.map((entry) => [entry, todoLabel(entry, isComplete)]).filter(([, label]) => label);
+      line.hidden = items.length === 0;
+      for (const [entry, label] of items) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'build-todo-item';
+        button.textContent = label;
+        button.addEventListener('click', () => {
+          const target = todoTarget(kind, entry);
+          if (!(target instanceof HTMLElement)) return;
+          target.scrollIntoView({ block: 'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+          target.focus({ preventScroll: true });
+        });
+        line.append(button);
+      }
+    }
+    todo.hidden = !missingPrices.length && !missingWeights.filter((entry) => entry !== 'inconsistent removed-part weights').length;
+  }
+
   function render({ historyMode = 'replace' } = {}) {
     const base = bases.get(state.baseId) || data.bases[0];
     if (!base) return;
@@ -2901,8 +2949,21 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       baseLink.href = base.url;
       baseLink.hidden = Boolean(state.unavailableStartingPoint);
     }
-    if (baseFacts) baseFacts.textContent = buildBaseFacts(base, document.documentElement.lang);
-    if (state.unavailableStartingPoint && baseFacts) baseFacts.textContent = `${translate('Requested starting point', document.documentElement.lang)}: ${state.requestedBaseId}`;
+    if (baseFacts) {
+      const lang = document.documentElement.lang;
+      const factRows = state.unavailableStartingPoint
+        ? [['Requested starting point', state.requestedBaseId]]
+        : buildBaseFactRows(base);
+      baseFacts.replaceChildren(...factRows.map(([label, value]) => {
+        const item = document.createElement('div');
+        const term = document.createElement('dt');
+        const detail = document.createElement('dd');
+        term.textContent = translate(label, lang);
+        detail.textContent = translate(value, lang);
+        item.append(term, detail);
+        return item;
+      }));
+    }
     if (buildName) buildName.textContent = state.unavailableStartingPoint
       ? translate('Choose an exact starting point', document.documentElement.lang)
       : base.name.replace(/ · research stage$/, '');
@@ -3078,6 +3139,7 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       ? [translate('The requested starting point is unavailable. Choose an exact replacement to calculate totals.', document.documentElement.lang)]
       : compatibilityMessages(base, covered);
     if (impossibleWeight && completeness) completeness.textContent += ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
+    renderTodo(state.unavailableStartingPoint ? [] : missingPrices, state.unavailableStartingPoint ? [] : missingWeights, isComplete);
     if (state.unavailableStartingPoint) {
       const pending = translate('Choose an exact starting point', document.documentElement.lang);
       if (totalPrice) totalPrice.textContent = '—';
@@ -3175,11 +3237,10 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
       button.dataset.copyTimer = String(setTimeout(() => { button.textContent = original; }, 1200));
     }
   });
+  // Reset clears part choices and entries but keeps the chosen starting point.
   root.querySelector('[data-build-reset]')?.addEventListener('click', () => {
-    if (!state.unavailableStartingPoint) state.baseId = firstBaseId;
-    state.selections = defaultSelections(bases.get(firstBaseId));
+    state.selections = defaultSelections(bases.get(state.baseId) ?? bases.get(firstBaseId));
     state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '', removedWeight: '' }]));
-    state.baseCustom = { price: '', weight: '', packageWeight: '' };
     try { localStorage.removeItem(storageKey); } catch { /* URL still resets */ }
     render({ historyMode: 'push' });
   });
@@ -3193,6 +3254,8 @@ const { sendComparisonOpenedEvent, sendProductOutboundClickEvent } = createActio
   root.disabled = false;
   const previewStatus = document.querySelector('[data-build-preview-status]');
   previewStatus?.classList.add('is-ready');
+  // The loading qualification matters only before editing works; keep it for assistive technology.
+  document.querySelector('#builder-preview-note')?.classList.add('sr-only');
   previewStatus?.querySelector('[data-build-static-label]')?.setAttribute('aria-hidden', 'true');
   previewStatus?.querySelector('[data-build-ready-label]')?.removeAttribute('aria-hidden');
 })();

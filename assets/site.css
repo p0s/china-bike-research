@@ -731,7 +731,10 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .builder-intro > .page { margin-inline: auto; }
   .builder-intro h1 { font-size: 2.55rem; }
   .builder-page { gap: 12px; padding-bottom: 38px; }
-  .builder-summary { position: sticky; top: 64px; grid-template-columns: 1fr 1fr; padding: 14px; order: -1; }
+  /* Phones: a non-sticky summary of totals, missing inputs and actions above the plan. */
+  .builder-summary { position: static; grid-template-columns: 1fr 1fr; padding: 14px; order: -1; }
+  .builder-summary .build-compositions { display: none; }
+  .builder-summary .build-todo { grid-column: 1 / -1; margin: 2px 0 4px; }
   .builder-summary > .builder-kicker, .builder-summary > h2 { display: none; }
   .builder-summary dl { grid-column: 1 / -1; grid-row: auto; gap: 10px; }
   .builder-summary dd { font-size: .95rem; }
@@ -1625,3 +1628,27 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .fact-button { appearance: none; min-height: 24px; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: underline dotted; text-underline-offset: .2em; cursor: help; }
 .fact-button:hover, .fact-button[aria-expanded="true"] { color: var(--accent); }
 .fact-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Planner (2026-10-26): scannable base facts, a jump list for missing inputs,
+   compact included rows and a stacked phone layout. */
+.builder-base-facts { display: grid; gap: 6px; margin: 12px 0 14px; font-size: .74rem; line-height: 1.42; }
+.builder-base-facts > div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 10px; }
+.builder-base-facts dt { color: var(--muted); font-weight: 700; }
+.builder-base-facts dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+.builder-base-custom small { display: block; margin-top: 5px; color: var(--muted); font-size: .68rem; font-weight: 400; line-height: 1.4; }
+.build-todo { margin: 0 0 14px; padding: 10px 12px; border: 1px solid rgb(255 255 255 / 16%); border-radius: 8px; }
+.build-todo[hidden], .build-todo p[hidden] { display: none; }
+.build-todo p { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0; }
+.build-todo p + p { margin-top: 8px; }
+.build-todo strong { width: 100%; color: #bdc9c1; font-size: .63rem; letter-spacing: .065em; text-transform: uppercase; }
+.build-todo-item { min-height: 30px; padding: 3px 9px; border: 1px solid rgb(255 255 255 / 28%); border-radius: 999px; background: transparent; color: #f4f7f5; font-size: .72rem; cursor: pointer; }
+.build-todo-item:hover { background: rgb(255 255 255 / 10%); }
+.build-todo-item:focus-visible { outline: 3px solid #d6a14d; outline-offset: 1px; }
+.builder-part-row.is-covered { min-height: 0; padding-block: 12px; }
+.builder-part-row.is-covered .builder-part-label p, .builder-part-row.is-covered .builder-part-facts { display: none; }
+.builder-part-row.is-covered .builder-covered-note { margin: 0; align-self: center; }
+@media (max-width: 720px) {
+  .builder-part-row, .builder-part-row.is-covered, .builder-part-row.is-included { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 16px; }
+  .builder-part-control select { font-size: .86rem; padding-block: 10px; }
+  .builder-base-facts > div { grid-template-columns: 1fr; gap: 0; }
+}

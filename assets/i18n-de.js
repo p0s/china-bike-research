@@ -1478,6 +1478,19 @@ Object.assign(de, {
   "Every compared row differs.": "Alle verglichenen Zeilen unterscheiden sich."
 });
 
+// Build planner wording (2026-10-26).
+Object.assign(de, {
+  "No purchase-ready price is recorded for this exact base. Enter the price you were quoted; the price basis above is for planning only.": "Für diese genaue Basis ist kein kaufbereiter Preis dokumentiert. Bitte den erhaltenen Angebotspreis eingeben; die Preisgrundlage oben dient nur der Planung.",
+  "Prices to enter": "Fehlende Preise",
+  "Weights to enter": "Fehlende Gewichte",
+  "Reset parts": "Teile zurücksetzen",
+  "Fork + frame package": "Gabel + Rahmenpaket",
+  "Type": "Typ",
+  "Clearance note": "Hinweis zur Reifenfreiheit",
+  "Drivetrain support": "Antriebsfreigabe",
+  "Fork and calipers": "Gabel und Bremssättel"
+});
+
 export function translateGerman(value) {
   if (typeof value !== 'string' || !value.trim()) return value;
   const text = value.trim();
