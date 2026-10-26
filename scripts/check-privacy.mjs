@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-tavelo-bike-mascot-cover-18751c5bae-640-a072a3c287.avif', 'a072a3c2871c73f7c23d45640e627a1fe48139075355c8e5ca302bc5ab8a1573'],
+  ['assets/blog/buy-tavelo-bike-mascot-cover-18751c5bae-1600-7970d51495.avif', '7970d51495d76fe8f8cc65c81b14660a663f72c74b810a74670441f929bfd581'],
+  ['assets/blog/buy-tavelo-bike-mascot-cover-18751c5bae-1200.jpg', '65d8c55da6e454a6044fb2be22003e352123073f60dc9881a7789ec7df69e13c'],
   ['assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-640-50f6b91a5c.avif', '50f6b91a5c1cb2beee192b016f11791ef0baaaaf8456286c0beb6cd81a40b658'],
   ['assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-1600-cf9dfb1b58.avif', 'cf9dfb1b580417c150d24a35ba1b6e88d284f76d72db64e7a22bcd02c20059f5'],
   ['assets/blog/how-to-read-chinese-bike-owner-reviews-mascot-cover-2db2d0dd7e-1200.jpg', '44c5ac549a50557815e12198d236897c2acfe7c842d5dbcd857367adec49e81b'],
