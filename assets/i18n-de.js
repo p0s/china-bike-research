@@ -2116,6 +2116,7 @@ Object.assign(de, {
   "Aero-shaped road and all-road frames with documented 38–40 mm maximum tire clearance and a dated frame or complete-build price. Two reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan. Aero shaping is not a measured drag result.": "Aero-geformte Straßen- und All-Road-Rahmen mit belegter maximaler Reifenfreiheit von 38–40 mm und datiertem Rahmen- oder Komplettaufbaupreis. Zwei erreichen 38 mm nur mit 1×-Antrieb (32–34 mm mit 2×); Schätzungen für Rahmenaufbauten nutzen den gewählten Aufbauplan. Aero-Formgebung ist kein gemessenes Luftwiderstandsergebnis.",
   "Each opens a comparison of its listed bikes with its criteria. Not a ranking.": "Jeder öffnet einen Vergleich der aufgeführten Räder mit seinen Kriterien. Keine Rangliste.",
   "Also known as": "Auch bekannt als",
+  "General road": "Allgemeines Rennrad",
   "PARDUS sells this second-generation platform as SUPG2 SPORT in 105, eGR and PES builds. This catalog entry is the eGR build; parts from the official 105 page are not applied to it.": "PARDUS verkauft diese Plattform der zweiten Generation als SUPG2 SPORT mit 105-, eGR- und PES-Ausstattung. Dieser Katalogeintrag ist die eGR-Ausstattung; Teile der offiziellen 105-Seite gelten nicht für ihn.",
   "Refine": "Eingrenzen",
   "Frame build": "Rahmenaufbau",

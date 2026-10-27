@@ -3,6 +3,17 @@
   "name": "XDS 喜德盛 AD350 2026",
   "model_id": "xds-ad350-2026",
   "category": "road",
+  "additional_categories": [
+    {
+      "category": "road-aero",
+      "basis": "The exact 2026 regional specification names an X6 SLR aerodynamic aluminium frame, and launch material an aluminium aero frame.",
+      "source_ids": [
+        "xds-ad350-2026-hk-spec-2026-08-30",
+        "xds-ad350-launch-material-2026-08-30"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "Current exact 2026 evidence resolves the 9.28 kg official-account claim and L-TWOO RX 2x12 hydraulic build while preserving the mainland frame/fork material and maximum tire clearance as unknown. The 2025 1x12 generation is not transferred.",
   "missing": [

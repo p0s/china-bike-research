@@ -71,6 +71,19 @@ export function categoryFamily(category) {
   return category;
 }
 
+// A bike can belong to several categories. The first is its primary category,
+// which keeps category metrics and frame-build rules; filters, counts and labels
+// use every membership, and each family counts the bike once.
+export function categoryMemberships(record) {
+  const primary = String(record?.category ?? '').split('|').map((item) => item.trim()).filter(Boolean);
+  const additional = (record?.additional_categories ?? []).map((item) => item?.category).filter(Boolean);
+  return [...new Set([...primary, ...additional])];
+}
+
+export function categoryFamilies(categories) {
+  return [...new Set(categories.map(categoryFamily))];
+}
+
 export function evidenceLabel(value) {
   const labels = {
     official: 'official source',
@@ -1182,6 +1195,63 @@ export function validateDataset(data = loadDataset()) {
   for (const variant of data.variants) if (!data.prices.some((price) => price.variant_id === variant.id)) errors.push(`variant ${variant.id}: no price record`);
   errors.push(...validateRegionalPricing(data));
   errors.push(...validateNameAliases(data));
+  errors.push(...validateCategoryMemberships(data));
+  return errors;
+}
+
+// Drop-bar road and gravel bikes can share categories; other disciplines stay apart.
+const categoryDisciplines = { road: 'drop-bar', gravel: 'drop-bar' };
+const WIDE_CLEARANCE_MM = 35;
+const wideClearanceCategories = new Set(['aero-wide-clearance', 'all-road']);
+
+function recordedMaximumClearance(type, record) {
+  if (type === 'candidate') {
+    const limits = record.facts?.tire_clearance_drivetrain_limits_mm ?? {};
+    return Math.max(record.facts?.tire_clearance_mm ?? 0, limits.single ?? 0, limits.double ?? 0);
+  }
+  const clearance = record.tire_clearance ?? {};
+  const limits = clearance.drivetrain_limits_mm ?? {};
+  return Math.max(clearance.published_max_mm ?? 0, clearance.published_rear_max_mm ?? 0, limits.single ?? 0, limits.double ?? 0);
+}
+
+// Each extra category is a reviewed, sourced membership; it never replaces the primary category.
+export function validateCategoryMemberships(data) {
+  const errors = [];
+  const sourceIds = new Set(data.sources.map((source) => source.id));
+  const supported = new Set(supportedCategories);
+  const records = [
+    ...data.platforms.map((record) => ({ type: 'platform', record })),
+    ...data.candidates.map((record) => ({ type: 'candidate', record }))
+  ];
+  for (const { type, record } of records) {
+    if (record.additional_categories === undefined) continue;
+    const label = `${type} ${record.id}`;
+    const primary = String(record.category ?? '').split('|').filter(Boolean);
+    if (!Array.isArray(record.additional_categories) || !record.additional_categories.length || !primary.length) {
+      errors.push(`${label}: additional_categories needs a primary category and at least one membership`);
+      continue;
+    }
+    const discipline = (category) => categoryDisciplines[categoryFamily(category)] ?? categoryFamily(category);
+    const seen = new Set(primary);
+    for (const membership of record.additional_categories) {
+      const category = membership?.category;
+      if (!isObject(membership) || !supported.has(category)) {
+        errors.push(`${label}: unsupported additional category ${JSON.stringify(category)}`);
+        continue;
+      }
+      if (seen.has(category)) errors.push(`${label}: additional category ${category} repeats a membership`);
+      seen.add(category);
+      if (discipline(category) !== discipline(primary[0])) errors.push(`${label}: ${category} is a different discipline from ${primary[0]}`);
+      if (typeof membership.basis !== 'string' || !membership.basis.trim() || membership.basis.length > 320) errors.push(`${label}: ${category} needs a concise basis`);
+      if (!isDate(membership.reviewed_at)) errors.push(`${label}: ${category} needs reviewed_at`);
+      if (!Array.isArray(membership.source_ids) || !membership.source_ids.length || membership.source_ids.some((id) => !sourceIds.has(id))) {
+        errors.push(`${label}: ${category} needs existing source_ids`);
+      }
+      if (wideClearanceCategories.has(category) && recordedMaximumClearance(type, record) < WIDE_CLEARANCE_MM) {
+        errors.push(`${label}: ${category} needs a recorded maximum tire clearance of at least ${WIDE_CLEARANCE_MM} mm`);
+      }
+    }
+  }
   return errors;
 }
 
@@ -1340,6 +1410,7 @@ export function joinProducts(data = loadDataset()) {
       variant,
       platform,
       brand,
+      categories: categoryMemberships(platform),
       prices,
       latestPrice,
       allInPrice: allInPriceFor(variant, latestPrice, data),
@@ -1406,7 +1477,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
   return data.candidates
     .filter((candidate) => !candidate.existing_record_id || candidate.catalog_distinct_reason)
     .map((candidate) => {
-      const categories = categoryValues(candidate.category);
+      const categories = categoryMemberships(candidate);
       const observedPrice = candidate.observed_price ?? null;
       const officialPrice = candidate.official_price ?? null;
       const currentObservedPrice = candidate.current_observed_price ?? null;

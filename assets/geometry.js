@@ -31,7 +31,7 @@ if (root) {
     for (const key of geometryKeys.filter(k => !['a', 'b', 'sa', 'sb'].includes(k))) {
       const el = field(key);
       if (key === 'category') for (const option of el.querySelectorAll('[data-unavailable]')) option.remove();
-      if (key === 'category' && state.category && !data.models.some(m => m.category === state.category)) {
+      if (key === 'category' && state.category && !data.models.some(m => (m.categories ?? [m.category]).includes(state.category))) {
         if (!el.querySelector('[data-unavailable]')) { const option = new Option(state.category, state.category); option.dataset.unavailable = ''; el.add(option); }
       }
       el.value = state[key];

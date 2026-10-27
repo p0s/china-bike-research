@@ -1600,7 +1600,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
   function matchesCategory(row, value) {
     if (!value) return true;
     const [kind, choice] = value.split(':');
-    if (kind === 'family') return row.dataset.family === choice;
+    if (kind === 'family') return String(row.dataset.family ?? '').split('|').includes(choice);
     if (kind === 'category') {
       const canonical = (item) => item === 'gravel-adventure' ? 'adventure-gravel' : item;
       return String(row.dataset.category ?? '').split('|').map(canonical).includes(canonical(choice));
@@ -1643,7 +1643,10 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
   function updateCategoryCounts() {
     const eligible = rows.filter((row) => rowInScope(row) && matchesQuery(row) && matchesPrimaryContext(row, '') && matchesTypedFilters(row));
     const active = category?.value ?? '';
-    const family = active.startsWith('family:') ? active.slice(7) : rows.find((row) => matchesCategory(row, active))?.dataset.family ?? '';
+    // A bike may belong to several families, so the open list follows the chosen option.
+    const family = active.startsWith('family:')
+      ? active.slice(7)
+      : categoryButtons.find((button) => button.dataset.categoryValue === active)?.closest('[data-category-sub]')?.dataset.categorySub ?? '';
     categoryButtons.forEach((button) => {
       const value = button.dataset.categoryValue ?? '';
       const total = eligible.filter((row) => matchesCategory(row, value)).length;
@@ -2585,8 +2588,10 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       ...(hasValue('manufacturing') ? [['Manufacturing', (item) => valueCell(item.manufacturing)]] : []),
       ...(hasValue('availability') ? [['Availability', (item) => valueCell(item.availability)]] : [])
     ];
-    const families = new Set(items.map((item) => item.family ?? '').filter(Boolean));
-    const mixedCategories = metricKinds.filter((kind) => !['tire', 'discipline'].includes(kind)).length > 1 || families.size > 1;
+    // Bikes that share any family (for example aero-wide road and all-road) are not a mixed comparison.
+    const itemFamilies = items.map((item) => item.families ?? [item.family ?? '']).map((list) => list.filter(Boolean)).filter((list) => list.length);
+    const sharedFamily = itemFamilies.length ? itemFamilies[0].some((family) => itemFamilies.every((list) => list.includes(family))) : true;
+    const mixedCategories = metricKinds.filter((kind) => !['tire', 'discipline'].includes(kind)).length > 1 || !sharedFamily;
     const start = startingPoint ? document.querySelector(`[data-curated-group="${CSS.escape(startingPoint)}"]`) : null;
     const notes = [
       start?.dataset.criteria ? `${translate('Starting point', locale)}: ${start.querySelector('strong')?.textContent?.trim() ?? ''} · ${translate('Criteria', locale)}: ${translate(start.dataset.criteria, locale)}` : '',

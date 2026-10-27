@@ -4,6 +4,20 @@
   "name": "Super Sport Gen2",
   "name_zh": "Super Sport 二代",
   "aliases": ["SUPG2 SPORT"],
+  "additional_categories": [
+    {
+      "category": "aero-wide-clearance",
+      "basis": "Official SUPG2 SPORT page: endurance styling with aero elements, including an aero down-tube feature, and a 700×40C maximum for frame and fork. Aero shaping is not a measured drag result.",
+      "source_ids": ["pardus-super-sport-gen2-official-naming-recheck-2026-10-27", "pardus-super-sport-gen2-official-2026-08-28"],
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "category": "road-endurance",
+      "basis": "Official SUPER series page lists SUPG2 SPORT as a second-generation long-distance endurance road bike; its product page names comfort endurance geometry.",
+      "source_ids": ["pardus-super-sport-gen2-official-naming-recheck-2026-10-27"],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "alias_note": "PARDUS sells this second-generation platform as SUPG2 SPORT in 105, eGR and PES builds. This catalog entry is the eGR build; parts from the official 105 page are not applied to it.",
   "category": "all-road",
   "handlebar": "drop",

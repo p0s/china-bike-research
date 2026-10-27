@@ -3,6 +3,24 @@
   "name": "LightCarbon LCR018-D",
   "model_id": "lightcarbon-lcr018-d",
   "category": "aero-wide-clearance",
+  "additional_categories": [
+    {
+      "category": "road-endurance",
+      "basis": "The official LightCarbon page names LCR018-D an aero endurance all-road frameset.",
+      "source_ids": [
+        "lightcarbon-lcr018-d-official-2026-08-29"
+      ],
+      "reviewed_at": "2026-10-27"
+    },
+    {
+      "category": "all-road",
+      "basis": "The official page positions LCR018-D as an all-road frameset with a measured-width 38 mm maximum.",
+      "source_ids": [
+        "lightcarbon-lcr018-d-official-2026-08-29"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "frameset",
   "why_interesting": "A light aero-endurance carbon frameset with an official measured-width 38 mm limit and a documented 8.6 kg Shimano 105 owner build.",
   "missing": [

@@ -47,7 +47,7 @@ export function nearbyGeometry(models, reference, { tolerance = '15', category =
   if (!reference || limit === null || limit > 100) return null;
   const matches = [];
   for (const model of models) {
-    if (category && model.category !== category) continue;
+    if (category && !(model.categories ?? [model.category]).includes(category)) continue;
     for (const row of model.sizes) {
       if (reference.model?.id === model.id && reference.size === row.size) continue;
       const stack = geometryDifference(reference, row, 'stack_mm');
