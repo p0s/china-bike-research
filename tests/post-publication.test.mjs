@@ -6,7 +6,7 @@ import {loadDataset,joinProducts,joinCatalogCandidates} from '../src/lib/data.mj
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..');
 const allPosts=loadPosts(root),committedQueue=loadSchedule(root,allPosts);
-const posts=allPosts.filter(post=>post.series_id!=='october-2026');
+const posts=allPosts.filter(post=>!post.series_id||post.series_id==='september-2026');
 const queue={schema_version:1,timezone:'Asia/Singapore',entries:structuredClone(scheduleSeries(committedQueue).find(series=>series.id==='september-2026').entries)};
 for(const entry of queue.entries)entry.published_at=null;
 const start=new Date(queue.entries[0].scheduled_at);

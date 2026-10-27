@@ -14,6 +14,9 @@ function fixture(t, missingReceipt = false) {
   fs.mkdirSync(path.join(dir, 'content/posts'), {recursive: true});
   fs.mkdirSync(path.join(dir, '.research'), {recursive: true});
   const queue = JSON.parse(fs.readFileSync(path.join(root, 'content/post-schedule.json'), 'utf8'));
+  const originalSeries = new Set(['september-2026', 'october-2026']);
+  queue.entries = queue.entries.filter(entry => originalSeries.has(entry.series_id));
+  queue.series = queue.series.filter(series => originalSeries.has(series.id));
   queue.schema_version = 2;delete queue.delivery;
   for (const entry of queue.entries) entry.published_at = null;
   const original = queue.entries.filter(entry => entry.series_id === 'september-2026');
@@ -21,7 +24,7 @@ function fixture(t, missingReceipt = false) {
   const receipts = Object.fromEntries(original.slice(0, missingReceipt ? 1 : 2).map(entry => [entry.slug, {published_at: entry.published_at, verified_at: new Date(Date.parse(entry.published_at) + 60000).toISOString()}]));
   fs.writeFileSync(path.join(dir, 'content/post-schedule.json'), JSON.stringify(queue));
   fs.writeFileSync(path.join(dir, '.research/blog-publication-state.json'), JSON.stringify({schema_version: 1, receipts}));
-  for (const post of loadPosts(root)) fs.writeFileSync(path.join(dir, 'content/posts', post.slug + '.json'), JSON.stringify(post));
+  for (const post of loadPosts(root).filter(post => !post.series_id || originalSeries.has(post.series_id))) fs.writeFileSync(path.join(dir, 'content/posts', post.slug + '.json'), JSON.stringify(post));
   return {dir, file: path.join(dir, 'content/post-schedule.json'), queue};
 }
 

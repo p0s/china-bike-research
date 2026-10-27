@@ -10520,6 +10520,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "chinese-gravel-frames-2026-shortlist-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda preparing a ride with a floor pump",
+        "zh-Hans": "用打气筒准备出发的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is preparing for a gravel ride, leaning happily on a compact bicycle floor pump, one paw on the pump handle and one giving a small thumbs-up. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "c3a53156105d1bfcb296a12afe0c7f1a8a87e54ba97d7a7ab7e459c7c8ae66b3"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/gravel-bikes-around-5000-yuan-mascot-480-3427aa665e.avif",
+          "width": 480,
+          "height": 475,
+          "type": "image/avif",
+          "bytes": 20904,
+          "sha256": "3427aa665e5c2817ac54680a9326f0ef24200c3de5ec24ab6d2aa961d73cc700"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda compares a blank quote card beside three unbranded gravel bicycle frames in a workshop.",
+          "zh-Hans": "戴头盔的小熊猫在工作室里查看空白报价卡，身旁陈列着三副无品牌砾石车架。",
+          "de": "Ein Rotpanda mit Helm betrachtet eine leere Angebotskarte neben drei unmarkierten Gravelrahmen in einer Werkstatt."
+        },
+        "prompt": "Editorial scene: A helmeted red panda compares a blank quote card beside three unbranded gravel bicycle frames in a workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-26",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "54f942bd9f9998b4e22822a88a0ca4977a4d506b31208b5b0de7177d8c906008",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "80ef83a51ed82573c58a62598e51bba584cc8c574184c5bae219a1bfb2745118"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-640-2dd04b542e.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 34215,
+            "sha256": "2dd04b542e4ddcaca25ae198e727b3496ccebf62a5c423f9dd727fa150a02cf2"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-1600-95444b3092.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 127459,
+            "sha256": "95444b3092145fed12d2aed906f3aa4195da4379c2a2989221ada38d31d04d83"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-1200-fe9eb309d2.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 196389,
+            "sha256": "fe9eb309d2d49a777289af5619b8d33d775fc18f2f662d64cb1516c1b4724cd0"
+          }
+        ]
+      }
     }
   ]
 }

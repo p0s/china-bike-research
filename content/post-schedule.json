@@ -9,6 +9,10 @@
       "id": "october-2026",
       "cadence_minutes": 480,
       "ready_at": "2026-10-04T09:18:05.000Z"
+    },
+    {
+      "id": "buyer-comparisons-2026",
+      "article_count": 1
     }
   ],
   "entries": [
@@ -851,6 +855,13 @@
       "scheduled_at": "2026-11-06T17:18:05.000Z",
       "gap_minutes": 480,
       "published_at": "2026-10-26T05:28:36.575Z"
+    },
+    {
+      "series_id": "buyer-comparisons-2026",
+      "slug": "chinese-gravel-frames-2026-shortlist",
+      "scheduled_at": "2026-10-17T15:35:11.000Z",
+      "gap_minutes": 0,
+      "published_at": "2026-10-27T14:08:38.625Z"
     }
   ],
   "delivery": {
@@ -1428,6 +1439,11 @@
         "slug": "buy-dengfu-frame",
         "gap_minutes": 121,
         "scheduled_at": "2026-10-17T14:28:11.000Z"
+      },
+      {
+        "slug": "chinese-gravel-frames-2026-shortlist",
+        "gap_minutes": 67,
+        "scheduled_at": "2026-10-17T15:35:11.000Z"
       }
     ]
   }

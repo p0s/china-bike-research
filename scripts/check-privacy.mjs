@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-640-2dd04b542e.avif', '2dd04b542e4ddcaca25ae198e727b3496ccebf62a5c423f9dd727fa150a02cf2'],
+  ['assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-1600-95444b3092.avif', '95444b3092145fed12d2aed906f3aa4195da4379c2a2989221ada38d31d04d83'],
+  ['assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-1200-fe9eb309d2.jpg', 'fe9eb309d2d49a777289af5619b8d33d775fc18f2f662d64cb1516c1b4724cd0'],
   ['assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-640-e8521cd7cf.avif', 'e8521cd7cf5f894204faafb305275925085ec6a496c04f2f0546611bb49eaf68'],
   ['assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-1600-fc9e1e09eb.avif', 'fc9e1e09ebb67d8a00456321f3b7405c729d79dc71dc14f3ea620c56df997c0c'],
   ['assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-1200.jpg', '8c62abf3a6cd80c8cb252f92569865adaca378d24cfb7c41fbbeefc2014ccd9d'],

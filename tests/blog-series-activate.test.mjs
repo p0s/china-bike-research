@@ -7,7 +7,7 @@ import {activateSeries} from '../scripts/blog-series-activate.mjs';
 import {loadPosts} from '../src/lib/posts.mjs';
 import {loadSchedule,publishedPosts,scheduleSeries} from '../src/lib/post-publication.mjs';
 const root=path.resolve(import.meta.dirname,'..');
-const originals=loadPosts(root).filter(p=>p.series_id!=='october-2026');
+const originals=loadPosts(root).filter(p=>!p.series_id||p.series_id==='september-2026');
 const source=JSON.parse(fs.readFileSync(path.join(root,'content/post-schedule.json'),'utf8'));
 const old={schema_version:1,timezone:'Asia/Singapore',entries:scheduleSeries(source).find(s=>s.id==='september-2026').entries.map(({series_id,...entry})=>entry)};
 // The historical activation fixture stops before accelerated delivery began.
