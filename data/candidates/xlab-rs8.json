@@ -1,0 +1,95 @@
+{
+  "id": "xlab-rs8",
+  "name": "X-LAB RS8",
+  "model_id": "xlab-rs8",
+  "brand_id": "xds",
+  "category": "road",
+  "type": "complete-bike",
+  "why_interesting": "X-LAB's current all-round road bike alongside the RS9: an official 7.4 kg Shimano 105 Di2 build with BRANTA C45 UL carbon wheels, a full mainland specification and geometry, and a CNY 21,980 official price. A CNY 10,980 frameset with an 850 g bare frame is also sold.",
+  "missing": [
+    "Manufacturer maximum tire clearance",
+    "Official mechanical-shifting compatibility (one owner reports no mechanical cable ports)",
+    "Frame lay-up and fork fiber grade beyond the official Toray T800 frame statement",
+    "Final dealer stock, delivery total and mainland warranty issuer"
+  ],
+  "status": "official-mainland-build-documented",
+  "research_priority": "medium",
+  "price_status": "official mainland complete-bike reference",
+  "source_ids": [
+    "xlab-rs8-official-cn-spec-2026-10-27",
+    "xlab-rs8-official-cn-price-2026-10-27",
+    "xlab-rs8-frameset-official-cn-2026-10-27",
+    "xds-official-cn-bicycle-listing-2026-10-27",
+    "xlab-rs8-seller-delivery-xhs-2026-10-27",
+    "xlab-rs8-owner-build-xhs-2026-10-27"
+  ],
+  "official_price": {
+    "amount_cny": 21980,
+    "currency": "CNY",
+    "price_type": "official-list",
+    "observed_at": "2026-10-27",
+    "price_basis": "R7170 Di2 12S / BRANTA C45 UL complete bike",
+    "conditions": "Official retail reference; final price varies by location and delivery method."
+  },
+  "source_url": "https://www.xidesheng.com/goods/1880059951851864065/detail",
+  "source_note": "The catalog row uses the official mainland R7170 Di2 / BRANTA C45 UL complete bike. The frameset, one dealer-delivered build and one owner self-build stay separate below. An owner's report that the frame lacks mechanical-shift cable ports is recorded as unconfirmed; it is not applied as a compatibility rule.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 2×12 (ST-R7170, FD/RD-R7150); 50/34T, 11–34T",
+    "complete_weight_g": 7400,
+    "complete_weight_basis": "Official size-M complete-bike weight without pedals; paint finish may change the result.",
+    "frame": "X-LAB RS8 carbon frame; official description cites Toray T800 carbon",
+    "frame_material": "Toray T800 carbon frame per the official description; lay-up and fork fiber grade are unpublished",
+    "frame_weight_g": 850,
+    "frame_weight_basis": "Official frameset page: unpainted size-M frame without fork and seatpost.",
+    "bottom_bracket": "Shimano SM-BBR60",
+    "wheels": "BRANTA C45 UL carbon; 21 mm inner and 29 mm outer width; Center Lock",
+    "tires": "Maxxis HYPR ZK 700×28C clincher",
+    "cockpit": "X-LAB carbon integrated cockpit; size-specific 380–420 mm width and 80–120 mm stem",
+    "brakes": "Shimano 105 R7170 hydraulic; 160/140 mm rotors",
+    "axles": "12×100 mm front thru-axle; flat-mount brakes",
+    "seatpost": "300 mm carbon seatpost",
+    "max_load": "100 kg maximum load (official)",
+    "sizes": "XS, S, M, L and XL",
+    "geometry": "Official chart, stack/reach mm: XS 508/360, S 525/370, M 544/380, L 564/390, XL 587/400",
+    "mechanical_shifting_report": "One owner reports being advised to use electronic shifting because the frame has no mechanical-shift cable ports; XDS has not confirmed this."
+  },
+  "alternative_builds": [
+    {
+      "id": "official-frameset",
+      "label": "Official RS8 frameset",
+      "price": {
+        "amount_cny": 10980,
+        "currency": "CNY",
+        "price_type": "official-list",
+        "observed_at": "2026-10-27",
+        "price_basis": "Frame, fork, carbon integrated handlebar and carbon seatpost"
+      },
+      "notes": "Frame 850 g for an unpainted size-M frame without fork and seatpost.",
+      "source_ids": [
+        "xlab-rs8-frameset-official-cn-2026-10-27",
+        "xds-official-cn-bicycle-listing-2026-10-27"
+      ]
+    },
+    {
+      "id": "dealer-7170-di2-tukus",
+      "label": "Dealer-delivered build with Shimano 7170 Di2 and TUKUS carbon wheels",
+      "drivetrain": "Shimano 105 Di2 R7170",
+      "wheels": "TUKUS carbon",
+      "notes": "One seller delivery post; no price, weight or full component list.",
+      "source_ids": [
+        "xlab-rs8-seller-delivery-xhs-2026-10-27"
+      ]
+    },
+    {
+      "id": "owner-105-di2-self-build",
+      "label": "Owner self-build on an RS8 frame",
+      "drivetrain": "Shimano 105 Di2",
+      "wheels": "Third-party steel-spoke carbon",
+      "notes": "Owner-assembled example; the owner's payments are not market prices.",
+      "source_ids": [
+        "xlab-rs8-owner-build-xhs-2026-10-27"
+      ]
+    }
+  ],
+  "last_reviewed": "2026-10-27"
+}

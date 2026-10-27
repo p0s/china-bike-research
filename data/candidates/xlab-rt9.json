@@ -1,0 +1,64 @@
+{
+  "id": "xlab-rt9",
+  "name": "X-LAB RT9 frameset",
+  "model_id": "xlab-rt9",
+  "brand_id": "xds",
+  "category": "road-climbing",
+  "type": "frameset",
+  "why_interesting": "X-LAB's climbing-focused RT9: a Toray T1100 + M40X frame with an official 550 g unpainted size-M weight and a 30C maximum tire clearance. The mainland store sells the frameset at CNY 26,800; internationally a 6.20 kg Dura-Ace Di2 complete bike is also listed.",
+  "missing": [
+    "Mainland complete-bike availability",
+    "Fork weight and complete frameset-package weight",
+    "Independent frame weight or stiffness measurement",
+    "Final dealer stock, delivery total and mainland warranty issuer"
+  ],
+  "status": "exact-official-specification-documented",
+  "research_priority": "medium",
+  "price_status": "official mainland frameset reference",
+  "source_ids": [
+    "xlab-rt9-frameset-official-cn-2026-10-27",
+    "xds-official-cn-bicycle-listing-2026-10-27",
+    "xlab-rt9-official-global-2026-10-27"
+  ],
+  "official_price": {
+    "amount_cny": 26800,
+    "currency": "CNY",
+    "price_type": "official-list",
+    "observed_at": "2026-10-27",
+    "price_basis": "Official mainland RT9 frameset: frame, fork, carbon integrated handlebar and carbon seatpost",
+    "conditions": "Official listing price; final price varies by location and delivery method."
+  },
+  "source_url": "https://www.xidesheng.com/goods/1914204937628102658/detail",
+  "source_note": "The catalog row uses the official mainland frameset package. The carbon grade, UDH compatibility, bottom bracket and 30C clearance come from the international RT9 page; the international complete bike stays separate below.",
+  "facts": {
+    "frame": "XDS carbon frame, Toray T-1100 + M40X, UDH compatible (international page)",
+    "frame_material": "Toray T-1100 + M40X carbon frame and Toray T-1100 fork (international page); lay-up unpublished",
+    "frame_weight_g": 550,
+    "frame_weight_basis": "Official mainland page: unpainted size-M frame without fork and seatpost; the international page says about 550 g.",
+    "tire_clearance_mm": 30,
+    "tire_clearance_basis": "Manufacturer maximum tire clearance (international specification).",
+    "bottom_bracket": "BSA 29 mm (international complete-bike specification)",
+    "seatpost": "27.2 mm carbon seatpost (international page); 300 mm carbon seatpost included in the mainland frameset",
+    "cockpit": "Carbon integrated handlebar included; 360×80 to 400×120 mm by size",
+    "axles": "12×100 mm front thru-axle; flat-mount brakes",
+    "included_package": "Frame, fork, carbon integrated handlebar and carbon seatpost (mainland frameset)",
+    "sizes": "XS, S, M and L",
+    "geometry": "Official chart, stack/reach mm: XS 510/362, S 525/372, M 543/384, L 567/396"
+  },
+  "alternative_builds": [
+    {
+      "id": "international-dura-ace-di2",
+      "label": "International RT9 complete bike, Shimano Dura-Ace Di2",
+      "drivetrain": "Shimano Dura-Ace Di2 2×12 (R9250, R9270); 52/36T, 11–34T",
+      "complete_weight_g": 6200,
+      "weight_basis": "Official international size-L complete-bike weight.",
+      "wheels": "Branta C50 ULR carbon-spoke (1,230 g)",
+      "tires": "Michelin Pro 5 700×28C",
+      "notes": "US$9,150 complete or US$3,499 frameset only on the international page on 2026-10-27, with shipping in the contiguous U.S.; not a mainland China price.",
+      "source_ids": [
+        "xlab-rt9-official-global-2026-10-27"
+      ]
+    }
+  ],
+  "last_reviewed": "2026-10-27"
+}

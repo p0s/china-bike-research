@@ -1,0 +1,93 @@
+{
+  "id": "xlab-dawnbreaker",
+  "name": "X-LAB DAWNBREAKER",
+  "model_id": "xlab-dawnbreaker",
+  "brand_id": "xds",
+  "category": "triathlon",
+  "type": "complete-bike",
+  "why_interesting": "XDS's time-trial bike with a Toray T1100×M40X frame and official mainland builds: R7170 Di2 with BRANTA disc wheel at CNY 59,980 (9.08 kg, size S), Dura-Ace Di2 at CNY 108,000 and a CNY 49,980 frameset.",
+  "missing": [
+    "Manufacturer maximum tire clearance",
+    "Storage, hydration or other triathlon-specific integration",
+    "Race-legality statement",
+    "Final dealer stock, delivery total and mainland warranty issuer"
+  ],
+  "status": "official-mainland-build-documented",
+  "research_priority": "medium",
+  "price_status": "official mainland complete-bike reference",
+  "source_ids": [
+    "xlab-dawnbreaker-official-cn-spec-2026-10-27",
+    "xlab-dawnbreaker-official-cn-price-2026-10-27",
+    "xlab-dawnbreaker-dura-ace-official-cn-2026-10-27",
+    "xlab-dawnbreaker-frameset-official-cn-2026-10-27",
+    "xds-official-cn-bicycle-listing-2026-10-27"
+  ],
+  "official_price": {
+    "amount_cny": 59980,
+    "currency": "CNY",
+    "price_type": "official-list",
+    "observed_at": "2026-10-27",
+    "price_basis": "R7170 Di2 12S / BRANTA DAWNBREAKER disc-wheel complete bike",
+    "conditions": "Official retail reference; final price varies by location and delivery method."
+  },
+  "source_url": "https://www.xidesheng.com/goods/1980449024047497217/detail",
+  "source_note": "The catalog row uses the official R7170 Di2 build. The Dura-Ace Di2 build and the frameset stay separate below because their weights, wheels and prices differ.",
+  "facts": {
+    "drivetrain": "Shimano Di2 2×12: Dura-Ace R9160 TT shift buttons and R9180 brake levers with 105 Di2 R7150 derailleurs; 50/34T, 11–34T",
+    "complete_weight_g": 9080,
+    "complete_weight_basis": "Official size-S complete-bike weight without pedals; paint finish may change the result.",
+    "frame": "X-LAB DAWNBREAKER carbon time-trial frame, Toray T1100×M40X",
+    "frame_material": "Toray T1100×M40X carbon frame with X-LAB TT carbon fork; lay-up unpublished",
+    "frame_weight_g": 1245,
+    "frame_weight_basis": "Official frameset page: size-S frame without fork, seatpost and handlebar.",
+    "bottom_bracket": "BBT47 86-24",
+    "wheels": "BRANTA DAWNBREAKER TT 80 mm front, closed disc rear",
+    "tires": "Michelin Pro 5 700×28C",
+    "cockpit": "X-LAB TT carbon base bar with Vision Metron TFE PRO extensions",
+    "brakes": "Shimano Dura-Ace R9270 hydraulic; SM-RT70 rotors",
+    "seatpost": "350 mm X-LAB TT carbon seatpost",
+    "axles": "12×100 mm front thru-axle; flat-mount brakes",
+    "max_load": "100 kg maximum load (official)",
+    "sizes": "S, M, L and XL",
+    "geometry": "Official chart, stack/reach mm: S 490/395, M 493/410, L 512/428, XL 540/448"
+  },
+  "alternative_builds": [
+    {
+      "id": "official-dura-ace-di2",
+      "label": "Official Dura-Ace Di2 build",
+      "drivetrain": "Shimano Dura-Ace Di2 2×12 (R9160, R9180, R9250); 54/40T, 11–34T",
+      "complete_weight_g": 8830,
+      "weight_basis": "Official size-L complete-bike weight without pedals.",
+      "wheels": "Vision Metron 91 front, Metron TTW disc rear",
+      "tires": "Michelin Pro 5 700×28C",
+      "price": {
+        "amount_cny": 108000,
+        "currency": "CNY",
+        "price_type": "official-list",
+        "observed_at": "2026-10-27",
+        "price_basis": "Official mainland listing price"
+      },
+      "source_ids": [
+        "xlab-dawnbreaker-dura-ace-official-cn-2026-10-27",
+        "xds-official-cn-bicycle-listing-2026-10-27"
+      ]
+    },
+    {
+      "id": "official-frameset",
+      "label": "Official DAWNBREAKER frameset",
+      "price": {
+        "amount_cny": 49980,
+        "currency": "CNY",
+        "price_type": "official-list",
+        "observed_at": "2026-10-27",
+        "price_basis": "Frame, TT fork, carbon base bar, Vision Metron TFE PRO extensions and TT carbon seatpost"
+      },
+      "notes": "Frame 1,245 g in size S without fork, seatpost and handlebar.",
+      "source_ids": [
+        "xlab-dawnbreaker-frameset-official-cn-2026-10-27",
+        "xds-official-cn-bicycle-listing-2026-10-27"
+      ]
+    }
+  ],
+  "last_reviewed": "2026-10-27"
+}
