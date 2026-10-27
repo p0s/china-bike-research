@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-640-e8521cd7cf.avif', 'e8521cd7cf5f894204faafb305275925085ec6a496c04f2f0546611bb49eaf68'],
+  ['assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-1600-fc9e1e09eb.avif', 'fc9e1e09ebb67d8a00456321f3b7405c729d79dc71dc14f3ea620c56df997c0c'],
+  ['assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-1200.jpg', '8c62abf3a6cd80c8cb252f92569865adaca378d24cfb7c41fbbeefc2014ccd9d'],
   ['assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-640-3058aa46de.avif', '3058aa46dee73118246d79556277805c99e269b9be734793ee62ed36f3444abf'],
   ['assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-1600-4bc5f37d13.avif', '4bc5f37d13047d5a4e52ebded502d5ac086b5b0edd37b9198ba8c1b162decb6b'],
   ['assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-1200.jpg', 'b90fb6eea5679cc0ba01eec1e0a5d5083a862d04cac08dc7106bf543934a6685'],
