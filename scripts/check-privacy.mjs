@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chinese-bike-warranty-and-spares-mascot-cover-ee7d409a58-640-2ab117b479.avif', '2ab117b479586e2ff98e7c20c5079759e3fc6a98e39cecdebcf1627c9741f2c1'],
+  ['assets/blog/chinese-bike-warranty-and-spares-mascot-cover-ee7d409a58-1600-89f1e7026e.avif', '89f1e7026e649de659de2a5e0e28808b175b0461f563f46eddc9f8d5a542d811'],
+  ['assets/blog/chinese-bike-warranty-and-spares-mascot-cover-ee7d409a58-1200.jpg', 'd2de55387e81a4b50e19eb37872a03110dec05ec27d86dde3db3aeb3cabf9709'],
   ['assets/blog/buy-pardus-bike-mascot-cover-e0ee76851a-640-c8e2eb383a.avif', 'c8e2eb383ac8fa809919f28d6aa0690d06ad9002ce3b6f37b79f72e0153503b7'],
   ['assets/blog/buy-pardus-bike-mascot-cover-e0ee76851a-1600-4ec969f4e3.avif', '4ec969f4e3d9414947e933b62cd6acb8667e25bf64ffce34923d8cbff7a37472'],
   ['assets/blog/buy-pardus-bike-mascot-cover-e0ee76851a-1200.jpg', '36dc25f99a09c8e20a7309cb0df7d6594b264d1ba6855587366c687b3b9be078'],
