@@ -10368,6 +10368,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "buy-velobuild-frame-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif",
+          "width": 480,
+          "height": 408,
+          "type": "image/avif",
+          "bytes": 20185,
+          "sha256": "c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "Helmeted red panda compares paint swatches beside a generic road frameset and neatly arranged components on a workshop bench.",
+          "zh-Hans": "戴头盔的小熊猫在维修台前比较色卡，旁边摆着公路车架和整齐排列的零件。",
+          "de": "Ein Rotpanda mit Helm vergleicht Farbmuster neben einem allgemeinen Rennradrahmenset und geordneten Bauteilen auf einer Werkbank."
+        },
+        "prompt": "Editorial scene: Helmeted red panda compares paint swatches beside a generic road frameset and neatly arranged components on a workshop bench.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "7ee1cd504c4c9d0d3a83e42b04d974c5d9f6a36c6a3c892ada8cc5aa8b7a6185",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-640-3058aa46de.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 26679,
+            "sha256": "3058aa46dee73118246d79556277805c99e269b9be734793ee62ed36f3444abf"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-1600-4bc5f37d13.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 104439,
+            "sha256": "4bc5f37d13047d5a4e52ebded502d5ac086b5b0edd37b9198ba8c1b162decb6b"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 181639,
+            "sha256": "b90fb6eea5679cc0ba01eec1e0a5d5083a862d04cac08dc7106bf543934a6685"
+          }
+        ]
+      }
     }
   ]
 }
