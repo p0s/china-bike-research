@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-26",
+  "updated_at": "2026-10-27",
   "catalog_metrics": {
     "records": {
       "brands": 43,
@@ -8,21 +8,21 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1787,
-      "images": 892,
+      "sources": 1809,
+      "images": 894,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 11,
       "recommendations": 6,
-      "candidates": 283,
+      "candidates": 289,
       "exclusions": 16,
       "research": 1,
-      "researchAttempts": 1851
+      "researchAttempts": 1852
     },
     "image_accuracy": {
-      "exact-platform": 599,
+      "exact-platform": 601,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -30,11 +30,11 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 883,
+      "local": 885,
       "remote": 9
     },
     "candidate_prices": {
-      "official": 80,
+      "official": 86,
       "observed": 189
     }
   },
@@ -1978,6 +1978,7 @@
       "xds-ad500-vietnam-current-2026-08-30",
       "xds-ad500-vietnam-current-recheck-2026-09-25",
       "xds-ad7-105-di2-official-image-2026-08-17",
+      "xds-ad7-2026-dealer-xhs-2026-10-27",
       "xds-ad7-green-demon-hk-2026-08-30",
       "xds-ad7-green-demon-hk-current-recheck-2026-09-25",
       "xds-ad7-green-demon-taiwan-2026-08-30",
@@ -1985,6 +1986,8 @@
       "xds-ad7-green-demon-vbike-2026-08-30",
       "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25",
       "xds-ad7-jd-smzdm-search",
+      "xds-ad7-nz-retailer-2026-10-27",
+      "xds-ad7-tailorx-xhs-2026-10-27",
       "xds-ad7-taobao-2026-10-24",
       "xds-gt350-bikecity-hk-recheck-2026-09-23",
       "xds-gt350-hk-spec-2026-08-09",
@@ -1998,6 +2001,7 @@
       "xds-gt600-official-recheck-2026-09-23",
       "xds-manufacturing-government",
       "xds-manufacturing-profile-recheck-2026-09-30",
+      "xds-official-cn-bicycle-listing-2026-10-27",
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10",
       "xhs-winspace-slc3-200km-2026-08-10",
@@ -2015,18 +2019,36 @@
       "xlab-ad9-official-global-2026-08-27",
       "xlab-ad9-taobao-2026-08-27",
       "xlab-ad9-tmall-2026-10-24",
+      "xlab-dawnbreaker-dura-ace-official-cn-2026-10-27",
+      "xlab-dawnbreaker-frameset-official-cn-2026-10-27",
+      "xlab-dawnbreaker-official-cn-price-2026-10-27",
+      "xlab-dawnbreaker-official-cn-spec-2026-10-27",
       "xlab-dealer-locator-current-2026-09-23",
       "xlab-gt8-official-2026-08-17",
       "xlab-gt8-official-current-2026-09-23",
       "xlab-gt8-smzdm-market-report-2026-08-27",
       "xlab-gt8-velo-review-2026-08-27",
+      "xlab-rs5-official-global-2026-10-27",
+      "xlab-rs7-2024-owner-xhs-2026-10-27",
+      "xlab-rs7-official-au-2026-10-27",
+      "xlab-rs7-official-global-2026-10-27",
+      "xlab-rs8-frameset-official-cn-2026-10-27",
+      "xlab-rs8-official-cn-price-2026-10-27",
+      "xlab-rs8-official-cn-spec-2026-10-27",
+      "xlab-rs8-owner-build-xhs-2026-10-27",
+      "xlab-rs8-seller-delivery-xhs-2026-10-27",
       "xlab-rs9-bikeinsights-2026-08-27",
       "xlab-rs9-bikeinsights-clearance-recheck-2026-09-25",
+      "xlab-rs9-frameset-official-cn-2026-10-27",
       "xlab-rs9-official-clearance-page-recheck-2026-09-25",
       "xlab-rs9-official-cn-price-2026-08-27",
       "xlab-rs9-official-cn-spec-2026-08-27",
+      "xlab-rs9-official-cn-spec-recheck-2026-10-27",
       "xlab-rs9-owner-ride-review-2026-09-01",
       "xlab-rs9-taobao-2026-08-27",
+      "xlab-rt8-frameset-official-cn-2026-10-27",
+      "xlab-rt9-frameset-official-cn-2026-10-27",
+      "xlab-rt9-official-global-2026-10-27",
       "xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01",
       "xmcarbonspeed-cs-gr01-official-2026-09-01",
       "xmcarbonspeed-cs-gr01-store-2026-09-01",
@@ -2935,6 +2957,8 @@
       "xds-ad350-2026-primary-image",
       "xds-ad500-2025-primary-image",
       "xds-ad7-primary-image",
+      "xds-ad7-tailorx-bike-gallery",
+      "xds-ad7-tailorx-spec-gallery",
       "xds-gt350-primary-image",
       "xds-gt600-legacy-134-gallery",
       "xds-gt600-primary-image",
@@ -3575,7 +3599,13 @@
       "xds-gt600",
       "xlab-ad8",
       "xlab-ad9",
-      "xlab-rs9"
+      "xlab-dawnbreaker",
+      "xlab-rs5",
+      "xlab-rs7",
+      "xlab-rs8",
+      "xlab-rs9",
+      "xlab-rt8",
+      "xlab-rt9"
     ],
     "exclusions": [
       "avenger-ambiguous",
@@ -5079,6 +5109,7 @@
       "candidate-xlab-rs9-frame-stiffness-batch-048-2026-09-01",
       "candidate-xlab-rs9-tire-clearance-2026-08-27",
       "candidate-xlab-rs9-tire-clearance-recheck-2026-09-24",
+      "candidate-xlab-rs9-tire-clearance-recheck-2026-10-27",
       "platform-af01-frame-material-2026-08-28",
       "platform-af01-frame-stiffness-2026-08-28",
       "platform-af01-frame-weight-2026-08-27",
@@ -31624,6 +31655,18 @@
         "type",
         "url"
       ],
+      "xds-ad7-2026-dealer-xhs-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xds-ad7-green-demon-hk-2026-08-30": [
         "accessed_at",
         "language",
@@ -31701,6 +31744,30 @@
         "url"
       ],
       "xds-ad7-jd-smzdm-search": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xds-ad7-nz-retailer-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xds-ad7-tailorx-xhs-2026-10-27": [
         "accessed_at",
         "language",
         "notes",
@@ -31860,6 +31927,18 @@
         "url"
       ],
       "xds-manufacturing-profile-recheck-2026-09-30": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xds-official-cn-bicycle-listing-2026-10-27": [
         "accessed_at",
         "language",
         "notes",
@@ -32093,6 +32172,52 @@
         "type",
         "url"
       ],
+      "xlab-dawnbreaker-dura-ace-official-cn-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-dawnbreaker-frameset-official-cn-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-dawnbreaker-official-cn-price-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-dawnbreaker-official-cn-spec-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xlab-dealer-locator-current-2026-09-23": [
         "accessed_at",
         "language",
@@ -32154,6 +32279,111 @@
         "type",
         "url"
       ],
+      "xlab-rs5-official-global-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs7-2024-owner-xhs-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs7-official-au-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs7-official-global-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs8-frameset-official-cn-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs8-official-cn-price-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs8-official-cn-spec-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs8-owner-build-xhs-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs8-seller-delivery-xhs-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xlab-rs9-bikeinsights-2026-08-27": [
         "accessed_at",
         "language",
@@ -32172,6 +32402,18 @@
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs9-frameset-official-cn-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -32212,6 +32454,17 @@
         "type",
         "url"
       ],
+      "xlab-rs9-official-cn-spec-recheck-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xlab-rs9-owner-ride-review-2026-09-01": [
         "accessed_at",
         "language",
@@ -32235,6 +32488,42 @@
         "reliability.specification",
         "selected_options",
         "selected_sku_id",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rt8-frameset-official-cn-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rt9-frameset-official-cn-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rt9-official-global-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
         "title",
         "type",
         "url"
@@ -62388,6 +62677,70 @@
         "source_media_url",
         "subject_accuracy"
       ],
+      "xds-ad7-tailorx-bike-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
+      "xds-ad7-tailorx-spec-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
       "xds-gt350-primary-image": [
         "alt",
         "candidate_id",
@@ -79375,12 +79728,23 @@
         "alternative_builds",
         "brand_id",
         "category",
+        "current_observed_price.amount_cny",
+        "current_observed_price.conditions",
+        "current_observed_price.currency",
+        "current_observed_price.observed_at",
+        "current_observed_price.price_basis",
+        "current_observed_price.price_type",
+        "current_observed_price.purchase_total_complete",
         "facts.complete_weight_references",
+        "facts.custom_order",
         "facts.drivetrain",
         "facts.fitted_tire_references",
         "facts.frame_material",
         "facts.frame_stiffness_status",
         "facts.listing_identity",
+        "facts.sizes",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
@@ -79550,6 +79914,171 @@
         "video_ids",
         "why_interesting"
       ],
+      "xlab-dawnbreaker": [
+        "alternative_builds",
+        "brand_id",
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.max_load",
+        "facts.seatpost",
+        "facts.sizes",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "xlab-rs5": [
+        "brand_id",
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.crankset",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.geometry",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.conversion_rate_cny_per_original_unit",
+        "official_price.conversion_rate_date",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.original_amount",
+        "official_price.original_currency",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "xlab-rs7": [
+        "alternative_builds",
+        "brand_id",
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.crankset",
+        "facts.derailleur_hanger",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.geometry",
+        "facts.max_load",
+        "facts.mounts",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.conversion_rate_cny_per_original_unit",
+        "official_price.conversion_rate_date",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.original_amount",
+        "official_price.original_currency",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "xlab-rs8": [
+        "alternative_builds",
+        "brand_id",
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.max_load",
+        "facts.mechanical_shifting_report",
+        "facts.seatpost",
+        "facts.sizes",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "xlab-rs9": [
         "alternative_builds",
         "category",
@@ -79560,6 +80089,9 @@
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.max_load",
         "facts.sizes",
         "facts.stiffness_evidence",
         "facts.tire_clearance_basis",
@@ -79588,6 +80120,72 @@
         "status",
         "type",
         "video_ids",
+        "why_interesting"
+      ],
+      "xlab-rt8": [
+        "brand_id",
+        "category",
+        "facts.axles",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.included_package",
+        "facts.seatpost",
+        "facts.sizes",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "xlab-rt9": [
+        "alternative_builds",
+        "brand_id",
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.included_package",
+        "facts.seatpost",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
         "why_interesting"
       ]
     },
@@ -108229,6 +108827,26 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-xlab-rs9-tire-clearance-recheck-2026-10-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
+        "retry_of",
+        "retry_reason",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-af01-frame-material-2026-08-28": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -119628,6 +120246,7 @@
       "xds-ad500-vietnam-current-2026-08-30": [],
       "xds-ad500-vietnam-current-recheck-2026-09-25": [],
       "xds-ad7-105-di2-official-image-2026-08-17": [],
+      "xds-ad7-2026-dealer-xhs-2026-10-27": [],
       "xds-ad7-green-demon-hk-2026-08-30": [],
       "xds-ad7-green-demon-hk-current-recheck-2026-09-25": [],
       "xds-ad7-green-demon-taiwan-2026-08-30": [],
@@ -119635,6 +120254,8 @@
       "xds-ad7-green-demon-vbike-2026-08-30": [],
       "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25": [],
       "xds-ad7-jd-smzdm-search": [],
+      "xds-ad7-nz-retailer-2026-10-27": [],
+      "xds-ad7-tailorx-xhs-2026-10-27": [],
       "xds-ad7-taobao-2026-10-24": [],
       "xds-gt350-bikecity-hk-recheck-2026-09-23": [],
       "xds-gt350-hk-spec-2026-08-09": [],
@@ -119648,6 +120269,7 @@
       "xds-gt600-official-recheck-2026-09-23": [],
       "xds-manufacturing-government": [],
       "xds-manufacturing-profile-recheck-2026-09-30": [],
+      "xds-official-cn-bicycle-listing-2026-10-27": [],
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10": [],
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10": [],
       "xhs-winspace-slc3-200km-2026-08-10": [],
@@ -119665,18 +120287,36 @@
       "xlab-ad9-official-global-2026-08-27": [],
       "xlab-ad9-taobao-2026-08-27": [],
       "xlab-ad9-tmall-2026-10-24": [],
+      "xlab-dawnbreaker-dura-ace-official-cn-2026-10-27": [],
+      "xlab-dawnbreaker-frameset-official-cn-2026-10-27": [],
+      "xlab-dawnbreaker-official-cn-price-2026-10-27": [],
+      "xlab-dawnbreaker-official-cn-spec-2026-10-27": [],
       "xlab-dealer-locator-current-2026-09-23": [],
       "xlab-gt8-official-2026-08-17": [],
       "xlab-gt8-official-current-2026-09-23": [],
       "xlab-gt8-smzdm-market-report-2026-08-27": [],
       "xlab-gt8-velo-review-2026-08-27": [],
+      "xlab-rs5-official-global-2026-10-27": [],
+      "xlab-rs7-2024-owner-xhs-2026-10-27": [],
+      "xlab-rs7-official-au-2026-10-27": [],
+      "xlab-rs7-official-global-2026-10-27": [],
+      "xlab-rs8-frameset-official-cn-2026-10-27": [],
+      "xlab-rs8-official-cn-price-2026-10-27": [],
+      "xlab-rs8-official-cn-spec-2026-10-27": [],
+      "xlab-rs8-owner-build-xhs-2026-10-27": [],
+      "xlab-rs8-seller-delivery-xhs-2026-10-27": [],
       "xlab-rs9-bikeinsights-2026-08-27": [],
       "xlab-rs9-bikeinsights-clearance-recheck-2026-09-25": [],
+      "xlab-rs9-frameset-official-cn-2026-10-27": [],
       "xlab-rs9-official-clearance-page-recheck-2026-09-25": [],
       "xlab-rs9-official-cn-price-2026-08-27": [],
       "xlab-rs9-official-cn-spec-2026-08-27": [],
+      "xlab-rs9-official-cn-spec-recheck-2026-10-27": [],
       "xlab-rs9-owner-ride-review-2026-09-01": [],
       "xlab-rs9-taobao-2026-08-27": [],
+      "xlab-rt8-frameset-official-cn-2026-10-27": [],
+      "xlab-rt9-frameset-official-cn-2026-10-27": [],
+      "xlab-rt9-official-global-2026-10-27": [],
       "xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01": [],
       "xmcarbonspeed-cs-gr01-official-2026-09-01": [],
       "xmcarbonspeed-cs-gr01-store-2026-09-01": [],
@@ -123831,6 +124471,14 @@
         "candidate_id=xds-ad7",
         "source_id=xds-ad7-105-di2-official-image-2026-08-17"
       ],
+      "xds-ad7-tailorx-bike-gallery": [
+        "candidate_id=xds-ad7",
+        "source_id=xds-ad7-tailorx-xhs-2026-10-27"
+      ],
+      "xds-ad7-tailorx-spec-gallery": [
+        "candidate_id=xds-ad7",
+        "source_id=xds-ad7-tailorx-xhs-2026-10-27"
+      ],
       "xds-gt350-primary-image": [
         "candidate_id=xds-gt350",
         "source_id=xds-gt350-retailer-2026-08-08"
@@ -127721,6 +128369,7 @@
         "brand_id=xds",
         "model_id=xds-ad7",
         "source_ids=xds-ad7-105-di2-official-image-2026-08-17",
+        "source_ids=xds-ad7-2026-dealer-xhs-2026-10-27",
         "source_ids=xds-ad7-green-demon-hk-2026-08-30",
         "source_ids=xds-ad7-green-demon-hk-current-recheck-2026-09-25",
         "source_ids=xds-ad7-green-demon-taiwan-2026-08-30",
@@ -127728,7 +128377,10 @@
         "source_ids=xds-ad7-green-demon-vbike-2026-08-30",
         "source_ids=xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25",
         "source_ids=xds-ad7-jd-smzdm-search",
+        "source_ids=xds-ad7-nz-retailer-2026-10-27",
+        "source_ids=xds-ad7-tailorx-xhs-2026-10-27",
         "source_ids=xds-ad7-taobao-2026-10-24",
+        "source_ids=xds-official-cn-bicycle-listing-2026-10-27",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "xds-carbon-road-13980": [
@@ -127791,19 +128443,68 @@
         "video_ids=xhs-xlab-ad9-club100-review",
         "video_ids=xhs-xlab-ad9-mechanic-build"
       ],
+      "xlab-dawnbreaker": [
+        "brand_id=xds",
+        "model_id=xlab-dawnbreaker",
+        "source_ids=xds-official-cn-bicycle-listing-2026-10-27",
+        "source_ids=xlab-dawnbreaker-dura-ace-official-cn-2026-10-27",
+        "source_ids=xlab-dawnbreaker-frameset-official-cn-2026-10-27",
+        "source_ids=xlab-dawnbreaker-official-cn-price-2026-10-27",
+        "source_ids=xlab-dawnbreaker-official-cn-spec-2026-10-27"
+      ],
+      "xlab-rs5": [
+        "brand_id=xds",
+        "model_id=xlab-rs5",
+        "source_ids=ecb-reference-rates-2026-10-01",
+        "source_ids=xlab-rs5-official-global-2026-10-27"
+      ],
+      "xlab-rs7": [
+        "brand_id=xds",
+        "model_id=xlab-rs7",
+        "source_ids=ecb-reference-rates-2026-10-01",
+        "source_ids=xlab-rs7-2024-owner-xhs-2026-10-27",
+        "source_ids=xlab-rs7-official-au-2026-10-27",
+        "source_ids=xlab-rs7-official-global-2026-10-27"
+      ],
+      "xlab-rs8": [
+        "brand_id=xds",
+        "model_id=xlab-rs8",
+        "source_ids=xds-official-cn-bicycle-listing-2026-10-27",
+        "source_ids=xlab-rs8-frameset-official-cn-2026-10-27",
+        "source_ids=xlab-rs8-official-cn-price-2026-10-27",
+        "source_ids=xlab-rs8-official-cn-spec-2026-10-27",
+        "source_ids=xlab-rs8-owner-build-xhs-2026-10-27",
+        "source_ids=xlab-rs8-seller-delivery-xhs-2026-10-27"
+      ],
       "xlab-rs9": [
         "model_id=xlab-rs9",
         "source_ids=public-xlab-rs9-build-2026-08-27",
+        "source_ids=xds-official-cn-bicycle-listing-2026-10-27",
         "source_ids=xlab-rs9-bikeinsights-2026-08-27",
         "source_ids=xlab-rs9-bikeinsights-clearance-recheck-2026-09-25",
+        "source_ids=xlab-rs9-frameset-official-cn-2026-10-27",
         "source_ids=xlab-rs9-official-clearance-page-recheck-2026-09-25",
         "source_ids=xlab-rs9-official-cn-price-2026-08-27",
         "source_ids=xlab-rs9-official-cn-spec-2026-08-27",
+        "source_ids=xlab-rs9-official-cn-spec-recheck-2026-10-27",
         "source_ids=xlab-rs9-owner-ride-review-2026-09-01",
         "source_ids=xlab-rs9-taobao-2026-08-27",
         "video_ids=xhs-xlab-rs9-brand",
         "video_ids=xhs-xlab-rs9-owner",
         "video_ids=xhs-xlab-rs9-red-finish"
+      ],
+      "xlab-rt8": [
+        "brand_id=xds",
+        "model_id=xlab-rt8",
+        "source_ids=xds-official-cn-bicycle-listing-2026-10-27",
+        "source_ids=xlab-rt8-frameset-official-cn-2026-10-27"
+      ],
+      "xlab-rt9": [
+        "brand_id=xds",
+        "model_id=xlab-rt9",
+        "source_ids=xds-official-cn-bicycle-listing-2026-10-27",
+        "source_ids=xlab-rt9-frameset-official-cn-2026-10-27",
+        "source_ids=xlab-rt9-official-global-2026-10-27"
       ]
     },
     "exclusions": {
@@ -133600,6 +134301,11 @@
       "candidate-xlab-rs9-tire-clearance-recheck-2026-09-24": [
         "resolution.source_ids=xlab-rs9-bikeinsights-clearance-recheck-2026-09-25",
         "resolution.source_ids=xlab-rs9-official-clearance-page-recheck-2026-09-25",
+        "target.record_id=xlab-rs9"
+      ],
+      "candidate-xlab-rs9-tire-clearance-recheck-2026-10-27": [
+        "resolution.source_ids=xlab-rs9-frameset-official-cn-2026-10-27",
+        "resolution.source_ids=xlab-rs9-official-cn-spec-recheck-2026-10-27",
         "target.record_id=xlab-rs9"
       ],
       "platform-af01-frame-material-2026-08-28": [
@@ -149273,6 +149979,14 @@
         "specification": 1
       }
     },
+    "xds-ad7-2026-dealer-xhs-2026-10-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
+      }
+    },
     "xds-ad7-green-demon-hk-2026-08-30": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -149331,6 +150045,22 @@
         "identity": 1,
         "price": -1,
         "specification": 0
+      }
+    },
+    "xds-ad7-nz-retailer-2026-10-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "xds-ad7-tailorx-xhs-2026-10-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
       }
     },
     "xds-ad7-taobao-2026-10-24": {
@@ -149435,6 +150165,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": -1,
+        "specification": 1
+      }
+    },
+    "xds-official-cn-bicycle-listing-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
         "specification": 1
       }
     },
@@ -149578,6 +150316,36 @@
         "specification": 3
       }
     },
+    "xlab-dawnbreaker-dura-ace-official-cn-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-dawnbreaker-frameset-official-cn-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-dawnbreaker-official-cn-price-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3
+      }
+    },
+    "xlab-dawnbreaker-official-cn-spec-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "specification": 3
+      }
+    },
     "xlab-dealer-locator-current-2026-09-23": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -149619,6 +150387,75 @@
         "specification": 3
       }
     },
+    "xlab-rs5-official-global-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "xlab-rs7-2024-owner-xhs-2026-10-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "specification": 0
+      }
+    },
+    "xlab-rs7-official-au-2026-10-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
+    "xlab-rs7-official-global-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "xlab-rs8-frameset-official-cn-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-rs8-official-cn-price-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3
+      }
+    },
+    "xlab-rs8-official-cn-spec-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "specification": 3
+      }
+    },
+    "xlab-rs8-owner-build-xhs-2026-10-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xlab-rs8-seller-delivery-xhs-2026-10-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
+      }
+    },
     "xlab-rs9-bikeinsights-2026-08-27": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -149632,6 +150469,14 @@
       "minimum_reliability": {
         "identity": 1,
         "specification": 1
+      }
+    },
+    "xlab-rs9-frameset-official-cn-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "xlab-rs9-official-clearance-page-recheck-2026-09-25": {
@@ -149657,6 +150502,13 @@
         "specification": 3
       }
     },
+    "xlab-rs9-official-cn-spec-recheck-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "specification": 3
+      }
+    },
     "xlab-rs9-owner-ride-review-2026-09-01": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -149671,6 +150523,30 @@
         "identity": 3,
         "price": 3,
         "specification": 2
+      }
+    },
+    "xlab-rt8-frameset-official-cn-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "xlab-rt9-frameset-official-cn-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-rt9-official-global-2026-10-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
       }
     },
     "xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01": {
@@ -212019,6 +212895,22 @@
         "xlab-rs9-official-cn-spec-2026-08-27"
       ]
     },
+    "candidate-xlab-rs9-tire-clearance-recheck-2026-10-27": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"X-LAB RS9 official complete-bike specification maximum tire clearance browser render\",\"manufacturer exact mainland complete-bike page rendered in browser\",\"no-result\",\"2026-10-27\",\"The page rendered fully and still states 7 kg in size L, Maxxis HYPR ZK 700×28C tires and a 700C×25/32C inner tube, but no maximum tire clearance.\",\"https://www.xidesheng.com/goods/1891777277617856514/detail\"]",
+        "[\"web\",2,\"X-LAB RS9 frameset official specification tire clearance\",\"manufacturer exact mainland frameset page rendered in browser\",\"no-result\",\"2026-10-27\",\"The frameset page gives a 750 g unpainted size-M frame and package contents but no maximum tire clearance.\",\"https://www.xidesheng.com/goods/1914207042426318849/detail\"]"
+      ],
+      "resolution_entries": [
+        "{\"kind\":\"conflict-reconfirmed\",\"resolved_at\":\"2026-10-27\",\"source_ids\":[\"xlab-rs9-frameset-official-cn-2026-10-27\",\"xlab-rs9-official-cn-spec-recheck-2026-10-27\"],\"note\":\"Readable official complete-bike and frameset pages still publish no maximum tire clearance.\"}"
+      ],
+      "accepted_source_ids": [
+        "xlab-rs9-frameset-official-cn-2026-10-27",
+        "xlab-rs9-official-cn-spec-recheck-2026-10-27"
+      ]
+    },
     "platform-af01-frame-material-2026-08-28": {
       "channel_attempt_counts": {
         "web": 1
@@ -231556,6 +232448,20 @@
       "remote_required": true,
       "primary_required": true
     },
+    "xds-ad7-tailorx-bike-gallery": {
+      "target": "candidates:xds-ad7",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "xds-ad7-tailorx-spec-gallery": {
+      "target": "candidates:xds-ad7",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
+    },
     "xds-gt350-primary-image": {
       "target": "candidates:xds-gt350",
       "minimum_accuracy_rank": 3,
@@ -233735,8 +234641,26 @@
       "xlab-ad9": [
         "official_price"
       ],
+      "xlab-dawnbreaker": [
+        "official_price"
+      ],
+      "xlab-rs5": [
+        "official_price"
+      ],
+      "xlab-rs7": [
+        "official_price"
+      ],
+      "xlab-rs8": [
+        "official_price"
+      ],
       "xlab-rs9": [
         "observed_price",
+        "official_price"
+      ],
+      "xlab-rt8": [
+        "official_price"
+      ],
+      "xlab-rt9": [
         "official_price"
       ]
     }

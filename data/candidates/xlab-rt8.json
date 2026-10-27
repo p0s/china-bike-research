@@ -1,0 +1,45 @@
+{
+  "id": "xlab-rt8",
+  "name": "X-LAB RT8 frameset",
+  "model_id": "xlab-rt8",
+  "brand_id": "xds",
+  "category": "road-climbing",
+  "type": "frameset",
+  "why_interesting": "A current X-LAB climbing frameset of Toray T800 high-modulus carbon with an official 650 g bare size-M frame, sold in the mainland at CNY 9,980 with fork, carbon integrated handlebar and seatpost.",
+  "missing": [
+    "Manufacturer maximum tire clearance",
+    "Bottom-bracket standard and rear-axle specification",
+    "Fork weight and complete frameset-package weight",
+    "Final dealer stock, delivery total and mainland warranty issuer"
+  ],
+  "status": "exact-official-specification-documented",
+  "research_priority": "medium",
+  "price_status": "official mainland frameset reference",
+  "source_ids": [
+    "xlab-rt8-frameset-official-cn-2026-10-27",
+    "xds-official-cn-bicycle-listing-2026-10-27"
+  ],
+  "official_price": {
+    "amount_cny": 9980,
+    "currency": "CNY",
+    "price_type": "official-list",
+    "observed_at": "2026-10-27",
+    "price_basis": "Official mainland RT8 frameset: frame, fork, carbon integrated handlebar and carbon seatpost",
+    "conditions": "Official listing price; final price varies by location and delivery method."
+  },
+  "source_url": "https://www.xidesheng.com/goods/1880062371751362562/detail",
+  "source_note": "Official mainland frameset only. Its published geometry table matches the RT9 table; that does not establish that the frames share a mould, layup or clearance.",
+  "facts": {
+    "frame": "X-LAB RT8 carbon frame, Toray T800 high-modulus carbon (official description)",
+    "frame_material": "Toray T800 high-modulus carbon frame per the official description; fork fiber grade and lay-up are unpublished",
+    "frame_weight_g": 650,
+    "frame_weight_basis": "Official mainland page: bare-carbon, unpainted size-M frame without fork and seatpost.",
+    "seatpost": "300 mm carbon seatpost included",
+    "cockpit": "Carbon integrated handlebar included; 360×80 to 400×120 mm by size",
+    "axles": "12×100 mm front thru-axle; flat-mount brakes",
+    "included_package": "Frame, fork, carbon integrated handlebar and carbon seatpost",
+    "sizes": "XS, S, M and L",
+    "geometry": "Official chart, stack/reach mm: XS 510/362, S 525/372, M 543/384, L 567/396"
+  },
+  "last_reviewed": "2026-10-27"
+}

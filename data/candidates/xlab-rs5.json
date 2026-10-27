@@ -1,0 +1,54 @@
+{
+  "id": "xlab-rs5",
+  "name": "X-LAB RS5",
+  "model_id": "xlab-rs5",
+  "brand_id": "xds",
+  "category": "road-endurance",
+  "type": "complete-bike",
+  "why_interesting": "X-LAB's international aluminium endurance road bike: US$1,399 with Shimano 105 mechanical, a power-meter crankset and a carbon fork, an official 38C maximum tire clearance and 9.54 kg in size L. The official mainland store did not list it on 2026-10-27.",
+  "missing": [
+    "Mainland China availability, price and seller route",
+    "Alloy specification beyond the X6 name",
+    "Independent complete-bike weight and stiffness evidence"
+  ],
+  "status": "official-global-current",
+  "research_priority": "medium",
+  "price_status": "official US list price converted as a CNY reference",
+  "source_ids": [
+    "xlab-rs5-official-global-2026-10-27",
+    "ecb-reference-rates-2026-10-01"
+  ],
+  "official_price": {
+    "amount_cny": 9380,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-10-27",
+    "original_amount": 1399,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.70454948,
+    "conversion_rate_date": "2026-10-01",
+    "price_basis": "Official international RS5 at US$1,399, converted at the ECB reference cross-rate of 1 October 2026.",
+    "conditions": "Foreign reference only; the US offer includes shipping in the contiguous U.S. Mainland availability and price, import duty, tax and the actual transaction rate are unknown."
+  },
+  "source_url": "https://xds.co/en-intl/products/rs5",
+  "source_note": "Single official international build. The alloy frame is UDH compatible and uses endurance geometry; the fork, seatpost and wheels are not interchangeable evidence for the carbon RS7, RS8 or RS9.",
+  "facts": {
+    "drivetrain": "Shimano 105 mechanical 2×12 (RD/FD-R7100, ST-R7120); 52/36T, 11–34T",
+    "complete_weight_g": 9540,
+    "complete_weight_basis": "Official international size-L complete-bike weight.",
+    "frame": "XDS X6 aluminium-alloy frame, UDH compatible; XDS carbon fork",
+    "frame_material": "X6 aluminium-alloy frame and carbon fork; the alloy specification beyond the X6 name is unpublished",
+    "bottom_bracket": "BSA 24 mm",
+    "tire_clearance_mm": 38,
+    "tire_clearance_basis": "Manufacturer maximum tire clearance.",
+    "wheels": "Branta A35 SL alloy rims",
+    "tires": "Branta R332 700×32C",
+    "cockpit": "Branta alloy integrated (semi-integrated) cockpit",
+    "brakes": "Shimano 105 BR-R7170 hydraulic; Branta PN28 160/160 mm rotors",
+    "crankset": "Branta alloy power-meter crankset, 52/36T, 24 mm steel spindle",
+    "axles": "100×12 mm front thru-axle",
+    "sizes": "XS, S, M, L and XL",
+    "geometry": "Official chart, stack/reach mm: XS 530/371, S 553/375, M 575/381, L 599/387, XL 623/394"
+  },
+  "last_reviewed": "2026-10-27"
+}

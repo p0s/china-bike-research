@@ -1,13 +1,14 @@
 {
   "id": "xds-ad7",
-  "name": "XDS 喜德盛 AD7 Green Demon",
+  "name": "XDS 喜德盛 AD7",
   "model_id": "xds-ad7",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Current exact Green Demon regional listings resolve the Shimano 105 Di2 and T700+T800 carbon core while exposing configuration-specific weight and fitted-tire differences. The retained mainland coupon card remains option-sensitive.",
+  "why_interesting": "One entry for the classic and 2026 AD7: a T700+T800 carbon aero road bike documented with Shimano 105 Di2, plus a 105 mechanical option for the classic version. The catalog row uses the current 2026 mainland dealer 105 Di2 option; the 2026 TailorX custom-paint program, the X-LAB-branded export build and earlier regional builds stay listed separately because their wheels, tires, weights and prices differ.",
   "missing": [
-    "Selected exact regional/mainland SKU, complete BOM and corresponding complete-bike weight basis",
+    "Complete-bike weight with size and pedal basis for the 2026 mainland 105 Di2 option",
     "Manufacturer-confirmed maximum tire clearance",
+    "Whether the classic and 2026 frames are identical; the export build lists a UDH-compatible frame and a T47 bottom bracket, which earlier listings do not state",
     "Controlled exact-model frame-stiffness magnitude and reproducible protocol",
     "Current domestic seller, warranty route and final checkout conditions"
   ],
@@ -21,9 +22,22 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
+  "current_observed_price": {
+    "amount_cny": 13980,
+    "currency": "CNY",
+    "observed_at": "2026-10-24",
+    "price_type": "listing-option",
+    "price_basis": "Brand-store dealer listing, 2026 AD7 Shimano 105 Di2 carbon-wheel option, size M",
+    "conditions": "Shown after a ¥3,000 shop reduction from ¥16,980 that the listing said would end on 29 October 2026; same price for the listing's 2026 finish options in size M; shipping included; size M almost sold out; checkout not submitted.",
+    "purchase_total_complete": false
+  },
   "source_refs": "IMG_6865.png#R2",
-  "last_reviewed": "2026-10-24",
+  "last_reviewed": "2026-10-27",
   "source_ids": [
+    "xds-ad7-tailorx-xhs-2026-10-27",
+    "xds-ad7-taobao-2026-10-24",
+    "xds-ad7-nz-retailer-2026-10-27",
+    "xds-ad7-2026-dealer-xhs-2026-10-27",
     "xds-ad7-105-di2-official-image-2026-08-17",
     "xds-ad7-jd-smzdm-search",
     "xds-ad7-green-demon-taiwan-2026-08-30",
@@ -32,35 +46,97 @@
     "xds-ad7-green-demon-hk-current-recheck-2026-09-25",
     "xds-ad7-green-demon-taiwan-current-recheck-2026-09-25",
     "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25",
-    "xds-ad7-taobao-2026-10-24"
+    "xds-official-cn-bicycle-listing-2026-10-27"
   ],
-  "source_note": "Current exact Green Demon listings agree on 105 Di2 and carbon construction but differ at 8.2 versus approximately 8.5 kg and 25C versus 30C fitted tires. Fitted sizes are not promoted to a maximum.",
-  "source_url": "https://24h.pchome.com.tw/prod/DEAOP3-A900HRCVX",
+  "source_note": "One colour-neutral entry covers the classic and 2026 AD7. The catalog row uses the 2026 mainland dealer 105 Di2 option, whose carbon wheels are unnamed and whose weight basis is unpublished. The 2026 TailorX program comes from a brand-named XHS post; the X-LAB-branded export build and earlier Hong Kong and Taiwan listings are separate configurations. Fitted tire widths are not promoted to a maximum, and frame identity across years is not assumed. The official mainland store listed no AD7 on 2026-10-27.",
+  "source_url": "https://www.xiaohongshu.com/explore/6adc5dea0000000033020b57",
   "brand_id": "xds",
   "facts": {
-    "listing_identity": "XDS / 喜德盛 AD7 Green Demon retained CNY 12,980 coupon card",
-    "complete_weight_references": "Historical Taiwan Green Demon listing: 8.2 kg (page rechecked 2026-09-25; readable current product detail omits weight). Current Hong Kong V Bike Green Demon listing: approximately 8.5 kg at 480 mm, sold out. Regional build, wheelset, size and retained mainland card basis are not reconciled.",
-    "drivetrain": "Shimano 105 Di2 electronic hydraulic 2x12 with 11-34T cassette and 50/34T crank",
-    "frame_material": "T700+T800 carbon aero frame with carbon fork; fiber proportions and lay-up are unpublished",
-    "fitted_tire_references": "Current regional Green Demon builds show 25C and 30C fitted tires; neither establishes the frame maximum",
-    "frame_stiffness_status": "No controlled exact-model stiffness magnitude or reproducible protocol found after 50 registered source areas"
+    "listing_identity": "XDS / 喜德盛 AD7, classic and 2026 versions; sold abroad as X-LAB AD7",
+    "drivetrain": "Shimano 105 Di2 electronic 2x12",
+    "frame_material": "T700+T800 carbon aero-tube frame (2026 brand post and the earlier Taiwan listing) with a carbon fork (earlier Taiwan listing and export build); fiber proportions and lay-up are unpublished",
+    "wheels": "Carbon wheels on the 2026 dealer option (model not named); the 2026 TailorX post names BRANTA C45 SL",
+    "tires": "700×28C on the 2026 dealer option",
+    "sizes": "XS–XL (2026 TailorX post)",
+    "complete_weight_references": "2026 mainland dealer option: weight basis unpublished. X-LAB AD7 105 Di2 export build (New Zealand retailer): 8.44 kg in size M. Earlier Taiwan listing: 8.2 kg. Earlier Hong Kong listing: about 8.5 kg at 480 mm. Builds, wheels, sizes and bases differ, so none is assigned to the catalog row.",
+    "fitted_tire_references": "Fitted widths: 28C on the 2026 mainland dealer option, 30C on the export build and the earlier Hong Kong build, 25C on the earlier Taiwan listing; none establishes the frame maximum",
+    "frame_stiffness_status": "No controlled exact-model stiffness magnitude or reproducible protocol found after 50 registered source areas",
+    "custom_order": "2026 TailorX: nine iridescent and eleven two-tone paint choices; about 4–8 weeks after order confirmation, subject to production scheduling; custom orders cannot be returned or exchanged (brand-named XHS post)"
   },
   "alternative_builds": [
     {
-      "id": "taobao-26-105-di2-twilight",
-      "label": "26新款 AD7 105 Di2 (暮光/合金)",
-      "drivetrain": "Shimano 105 Di2 2×12",
-      "wheels": "Carbon (model not named), 700×28C",
-      "price": {
-        "amount_cny": 13980,
-        "currency": "CNY",
-        "price_type": "listing-option",
-        "observed_at": "2026-10-24",
-        "price_basis": "Dealer option after a ¥3,000 shop reduction from ¥16,980"
-      },
-      "notes": "Not the Green Demon colour; M almost sold out; reduction ends 29 October 2026.",
+      "id": "tailorx-2026-custom",
+      "label": "2026 AD7 TailorX custom-paint build",
+      "drivetrain": "Shimano 105 Di2",
+      "wheels": "BRANTA C45 SL",
+      "notes": "Brand-named XHS post: T700+T800 aero-tube frame, sizes XS–XL, nine iridescent and eleven two-tone finishes, about 4–8 weeks after order confirmation, custom orders not returnable. No price or weight is published.",
+      "source_ids": [
+        "xds-ad7-tailorx-xhs-2026-10-27"
+      ]
+    },
+    {
+      "id": "export-x-lab-ad7-105-di2",
+      "label": "X-LAB AD7 105 Di2 export build",
+      "drivetrain": "Shimano 105 Di2 R7150/R7170, 52/36T Branta power-meter crankset, 11–34T",
+      "complete_weight_g": 8440,
+      "weight_basis": "New Zealand retailer specification for size M; measurement method not stated.",
+      "wheels": "Branta C45 SL carbon",
+      "tires": "Branta R630F 700×30C",
+      "notes": "UDH-compatible X-LAB carbon frame, T47 24 mm bottom bracket and 160/140 mm rotors; stack/reach XS 510/368 to XL 580/405 mm. NZD 5,490 including GST on 2026-10-27; not a mainland China price or configuration.",
+      "source_ids": [
+        "xds-ad7-nz-retailer-2026-10-27"
+      ]
+    },
+    {
+      "id": "classic-105-mechanical-option",
+      "label": "Classic AD7 Shimano 105 mechanical option",
+      "drivetrain": "Shimano 105 mechanical",
+      "notes": "The same 2026-10-24 dealer listing also offered the classic (经典款) AD7 with 105 mechanical shifting; its price, wheels and weight were not recorded.",
       "source_ids": [
         "xds-ad7-taobao-2026-10-24"
+      ]
+    },
+    {
+      "id": "classic-retained-mainland-card",
+      "label": "Classic AD7 retained mainland marketplace card",
+      "price": {
+        "amount_cny": 12980,
+        "currency": "CNY",
+        "price_type": "coupon",
+        "observed_at": "2026-08-08",
+        "price_basis": "Coupon price on the retained marketplace card"
+      },
+      "notes": "Original retained card for the classic finish; the selected option's drivetrain, wheels and weight were not resolved. A public price index also showed ¥12,980 for an AD7 105 Di2 listing.",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "xds-ad7-jd-smzdm-search"
+      ]
+    },
+    {
+      "id": "classic-hong-kong-105-di2",
+      "label": "Classic AD7 105 Di2, earlier Hong Kong listings",
+      "drivetrain": "Shimano 105 Di2 R7170/R7150 hydraulic, 50/34T, 11–34T",
+      "wheels": "Branta Base carbon",
+      "tires": "700×30C fitted",
+      "notes": "About 8.5 kg at 480 mm on one retailer page (sold out); another listed HK$16,800 and was sold out. Regional build, not the mainland configuration.",
+      "source_ids": [
+        "xds-ad7-green-demon-vbike-2026-08-30",
+        "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25",
+        "xds-ad7-green-demon-hk-2026-08-30",
+        "xds-ad7-green-demon-hk-current-recheck-2026-09-25"
+      ]
+    },
+    {
+      "id": "classic-taiwan-105-di2",
+      "label": "Classic AD7 105 Di2, earlier Taiwan listing",
+      "drivetrain": "Shimano 105 Di2 hydraulic, 50/34T, 11–34T",
+      "complete_weight_g": 8200,
+      "weight_basis": "Taiwan listing claim from 2026-08-30; size and pedal basis not stated, and the 2026-09-25 recheck no longer showed the weight.",
+      "wheels": "45 mm carbon",
+      "tires": "700×25C fitted",
+      "source_ids": [
+        "xds-ad7-green-demon-taiwan-2026-08-30",
+        "xds-ad7-green-demon-taiwan-current-recheck-2026-09-25"
       ]
     }
   ]

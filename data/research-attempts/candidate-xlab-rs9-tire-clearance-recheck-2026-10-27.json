@@ -1,0 +1,58 @@
+{
+  "id": "candidate-xlab-rs9-tire-clearance-recheck-2026-10-27",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "xlab-rs9"
+  },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-10-27",
+  "status": "conflicted",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "The browser-rendered official complete-bike and frameset pages publish weights, tires and geometry but no maximum tire clearance, so the 30 mm secondary figure and the documented fitted 32C owner build remain unreconciled.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "X-LAB RS9 official complete-bike specification maximum tire clearance browser render",
+          "route": "manufacturer exact mainland complete-bike page rendered in browser",
+          "outcome": "no-result",
+          "accessed_at": "2026-10-27",
+          "result_url": "https://www.xidesheng.com/goods/1891777277617856514/detail",
+          "note": "The page rendered fully and still states 7 kg in size L, Maxxis HYPR ZK 700×28C tires and a 700C×25/32C inner tube, but no maximum tire clearance."
+        },
+        {
+          "attempt": 2,
+          "query": "X-LAB RS9 frameset official specification tire clearance",
+          "route": "manufacturer exact mainland frameset page rendered in browser",
+          "outcome": "no-result",
+          "accessed_at": "2026-10-27",
+          "result_url": "https://www.xidesheng.com/goods/1914207042426318849/detail",
+          "note": "The frameset page gives a 750 g unpainted size-M frame and package contents but no maximum tire clearance."
+        }
+      ]
+    }
+  },
+  "accepted_source_ids": [
+    "xlab-rs9-official-cn-spec-recheck-2026-10-27",
+    "xlab-rs9-frameset-official-cn-2026-10-27"
+  ],
+  "retry_of": "candidate-xlab-rs9-tire-clearance-recheck-2026-09-24",
+  "retry_reason": "The official pages that returned only a generic title on 2026-09-24 rendered fully in a browser on 2026-10-27, and a separate official frameset page was found.",
+  "retry_after": null,
+  "notes": "Both readable official pages omit a maximum tire clearance. Keep 32 mm as a fitted observation, retain the conflicting 30 mm secondary figure, and leave the manufacturer maximum unknown.",
+  "recommended_resolution": null,
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-10-27",
+    "source_ids": [
+      "xlab-rs9-official-cn-spec-recheck-2026-10-27",
+      "xlab-rs9-frameset-official-cn-2026-10-27"
+    ],
+    "note": "Readable official complete-bike and frameset pages still publish no maximum tire clearance."
+  }
+}
