@@ -3,6 +3,16 @@
   "name": "MISSILE 米赛尔 水星6000",
   "model_id": "missile-e6000",
   "category": "road",
+  "additional_categories": [
+    {
+      "category": "road-aero",
+      "basis": "The exact-model JD listing describes the 水星6000 as an aerodynamic carbon complete bike (seller description).",
+      "source_ids": [
+        "missile-mercury-6000-jd-2026-08-30"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "The retained seller card and current exact JD listing identify MISSILE 水星6000, while the exact selected component BOM and seller SKU remain incomplete.",
   "facts": {

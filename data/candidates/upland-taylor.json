@@ -3,6 +3,16 @@
   "name": "UPLAND 阿普兰 Taylor",
   "model_id": "upland-taylor",
   "category": "road",
+  "additional_categories": [
+    {
+      "category": "road-aero",
+      "basis": "The official Upland page specifies a T1100+T800 carbon aero frame and fork.",
+      "source_ids": [
+        "upland-taylor-official-2026-08-30"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "brand_id": "upland",
   "why_interesting": "The current exact manufacturer page matches the retained CNY 10,999 Taylor card and supplies its mechanical-105 build and bare-weight claim.",

@@ -17,6 +17,8 @@ import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs
 import {
   categoryLabel,
   categoryFamily,
+  categoryFamilies as membershipFamilies,
+  categoryMemberships,
   categoryMetric,
   buildSlotIds,
   supportedCategories,
@@ -763,6 +765,11 @@ function catalogPriceOrder(ctx, summary) {
   return unavailable ? Number.POSITIVE_INFINITY : projection.display.low;
 }
 
+// Every category membership of a published product; the first stays its primary category.
+function productCategories(product) {
+  return product.categories ?? categoryMemberships(product.platform);
+}
+
 // Verified alternate names: shown beside the catalog name and searchable, never a new entry.
 function aliasNames(...records) {
   return [...new Set(records.flatMap((record) => record?.aliases ?? []))];
@@ -787,7 +794,7 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
     platform.name,
     platform.name_zh,
     ...aliases,
-    categoryLabel(platform.category),
+    ...productCategories(product).map(categoryLabel),
     platform.handlebar,
     drivetrainLabel(ctx, product),
     bottomBracket(product),
@@ -805,14 +812,14 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
   const drivetrain = variant.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: drivetrainLabel(ctx, product), sub: drivetrainSubline(ctx, product) });
-  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
+  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(membershipFamilies(productCategories(product)).join('|'))}" data-category="${escapeAttr(productCategories(product).join('|'))}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
     <div class="catalog-product" role="rowheader">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
       <span class="product-copy">
         <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' && !/frameset/i.test(variant.name) ? '<span class="type-pill">Frameset</span>' : ''}</span>
         <strong class="product-name"><a href="${url(ctx.base, `/models/${variant.id}/`)}" data-model-link>${escapeHtml(variant.name)}</a></strong>
-        <span class="product-fit">${escapeHtml(categoryLabel(platform.category))}</span>${aliasLine(aliases, 'span', 'product-fit product-aliases')}
+        <span class="product-fit">${escapeHtml(productCategories(product).map(categoryLabel).join(' · '))}</span>${aliasLine(aliases, 'span', 'product-fit product-aliases')}
       </span>
     </div>
     ${price.html}
@@ -990,7 +997,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
   const drivetrain = entry.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: facts.drivetrain ?? '—' }, { clamp: true });
-  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
+  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(membershipFamilies(entry.categories).join('|'))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(entry.id)}" aria-label="Select ${escapeAttr(candidate.name)} for comparison"><span aria-hidden="true"></span></label></div>
     <div class="catalog-product" role="rowheader">
       ${candidateImage(ctx, entry)}
@@ -1028,7 +1035,8 @@ function comparisonSummary(ctx, product) {
     type: product.variant.kind === 'frameset' ? 'Frame build' : 'Complete bike',
     kind: product.variant.kind,
     family: categoryFamily(product.platform.category),
-    subcategory: categoryLabel(product.platform.category),
+    families: membershipFamilies(productCategories(product)),
+    subcategory: productCategories(product).map(categoryLabel).join(' · '),
     ...(product.platform.frame.geometry?.sizes?.length ? { geometryId: product.platform.id } : {}),
     buildBaseKind: product.variant.kind,
     builderEligible: true,
@@ -1064,7 +1072,7 @@ function comparisonSummary(ctx, product) {
     weight: weightLabel(product),
     frame: frameStandard(product),
     frameSearch: [product.platform.frame.material, frameMaterialLabel(product), frameStandard(product)].filter(Boolean).join(' '),
-    category: `${categoryLabel(product.platform.category)} · ${product.platform.handlebar}-bar`,
+    category: `${productCategories(product).map(categoryLabel).join(' · ')} · ${product.platform.handlebar}-bar`,
     internalFrameStorage: product.platform.internal_storage ? 'Yes' : 'No',
     mounts: product.platform.mounts?.join(', ') || 'None recorded',
     manufacturing: `${relationshipLabel(product.brand.manufacturing.relationship)} · ${confidenceLabel(product.brand.manufacturing.confidence)} confidence`,
@@ -1111,6 +1119,7 @@ function candidateComparisonSummary(ctx, entry) {
     type: entry.kind === 'frameset' ? estimated ? 'Frame build' : 'Frameset' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
     kind: entry.kind,
     family: categoryFamily(entry.category),
+    families: membershipFamilies(entry.categories),
     subcategory: entry.categories.map(categoryLabel).join(' · '),
     ...(entry.kind && entry.builderEligible && (entry.kind !== 'frameset' || candidateFrameEstimateAllowed(entry)) ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
@@ -1363,7 +1372,7 @@ const minorCategoryFamilies = new Set(['mtb', 'e-road', 'folding', 'track']);
 
 function liveCategoryFamilies(ctx, candidates) {
   const available = new Set([
-    ...ctx.products.map((product) => product.platform.category),
+    ...ctx.products.flatMap(productCategories),
     ...candidates.flatMap((entry) => entry.categories)
   ].map(canonicalCategory));
   const categoryOrder = supportedCategories.map(canonicalCategory).filter((category, index, all) => all.indexOf(category) === index);
@@ -1384,17 +1393,20 @@ function categoryValues(ctx, candidates) {
 // Category is the primary catalog navigation. Counts describe the focused
 // default view and are updated in the browser for every other filter state.
 function categoryTree(ctx, candidates) {
+  // Each bike counts once per family and once per category it belongs to.
   const entries = [
-    ...ctx.products.map((product) => ({ visible: true, family: categoryFamily(product.platform.category), categories: [product.platform.category] })),
-    ...candidates.map((entry) => ({ visible: entry.defaultVisible, family: categoryFamily(entry.category), categories: entry.categories }))
-  ].filter((entry) => entry.visible);
+    ...ctx.products.map((product) => ({ visible: true, categories: productCategories(product) })),
+    ...candidates.map((entry) => ({ visible: entry.defaultVisible, categories: entry.categories }))
+  ].filter((entry) => entry.visible).map((entry) => ({ ...entry, families: membershipFamilies(entry.categories) }));
   const count = (predicate) => entries.filter(predicate).length;
   const option = (value, label, total, extra = '') => `<button type="button" class="category-option${extra}" data-category-value="${escapeAttr(value)}" aria-pressed="${value === '' ? 'true' : 'false'}"${total ? '' : ' disabled'} data-count="${total}">${escapeHtml(label)}</button>`;
+  // Under the Road parent, the plain road category is labelled so it does not read Road / Road.
+  const subLabel = (category, family) => category === family && category === 'road' ? 'General road' : categoryLabel(category);
   const families = liveCategoryFamilies(ctx, candidates).map(({ family, label, categories, value }) => {
     const subs = categories.length > 1
-      ? `<ul class="category-sub" data-category-sub="${escapeAttr(family)}" hidden>${categories.map((category) => `<li>${option(`category:${category}`, categoryLabel(category), count((entry) => entry.categories.map(canonicalCategory).includes(category)))}</li>`).join('')}</ul>`
+      ? `<ul class="category-sub" data-category-sub="${escapeAttr(family)}" hidden>${categories.map((category) => `<li>${option(`category:${category}`, subLabel(category, family), count((entry) => entry.categories.map(canonicalCategory).includes(category)))}</li>`).join('')}</ul>`
       : '';
-    return { family, html: `<li class="category-family${minorCategoryFamilies.has(family) ? ' is-minor' : ''}" data-category-family="${escapeAttr(family)}">${option(value, label, count((entry) => entry.family === family))}${subs}</li>` };
+    return { family, html: `<li class="category-family${minorCategoryFamilies.has(family) ? ' is-minor' : ''}" data-category-family="${escapeAttr(family)}">${option(value, label, count((entry) => entry.families.includes(family)))}${subs}</li>` };
   });
   const major = families.filter((entry) => !minorCategoryFamilies.has(entry.family)).map((entry) => entry.html).join('');
   const minor = families.filter((entry) => minorCategoryFamilies.has(entry.family)).map((entry) => entry.html).join('');
@@ -1603,7 +1615,7 @@ export function renderModel(ctx, product) {
     : '';
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
-  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a></div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([categoryLabel(platform.category), !/frameset/i.test(variant.name) && variant.kind === 'frameset' ? 'frameset' : ''].filter(Boolean).join(' · '))}</p>${aliasLine(aliasNames(platform, variant), 'p', 'model-subline model-aliases', variant.alias_note ?? platform.alias_note ?? '')}</header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
+  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a></div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([...productCategories(product).map(categoryLabel), !/frameset/i.test(variant.name) && variant.kind === 'frameset' ? 'frameset' : ''].filter(Boolean).join(' · '))}</p>${aliasLine(aliasNames(platform, variant), 'p', 'model-subline model-aliases', variant.alias_note ?? platform.alias_note ?? '')}</header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', pricePopoverLines(summary), { 'data-evidence-href': '#source-records', 'data-evidence-label': 'Full price record and conditions' })}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#source-records">All price records</a>${goodBuyThreshold ? `<span>${variant.kind === 'frameset' ? 'Frameset' : 'Complete-bike'} good-buy reference: below ${escapeHtml(formatCny(goodBuyThreshold))}</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
   </div>
@@ -1843,7 +1855,7 @@ function landingProductCard(ctx, product) {
   const tire = publishedTireClearance(product);
   const weight = weightLabel(product);
   const facts = [
-    categoryLabel(product.platform.category),
+    productCategories(product).map(categoryLabel).join(' · '),
     product.variant.kind === 'complete-bike' ? drivetrainLabel(ctx, product) : 'Frameset',
     tire.value !== '—' ? `${tire.value} tire clearance` : '',
     weight !== '—' ? `${weight} weight` : ''

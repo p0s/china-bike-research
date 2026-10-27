@@ -1,0 +1,4999 @@
+{
+  "campaign": "category-memberships-2026-10-27",
+  "frozen_source": {
+    "commit": "97638c2df06cf902fb3a55ae1f9f803461c0d65c",
+    "published": 42,
+    "candidate_rows": 275,
+    "default_visible": 311,
+    "total": 317
+  },
+  "reconciled_at_commit": null,
+  "criteria": "SPEC.md §1, Category memberships (2026-10-27)",
+  "method": "Every row: record facts and all cited source titles and notes screened for aero, endurance, climbing, all-road, race, adventure and clearance evidence. Every proposed membership reviewed manually in batches of at most 10 models (C01–C06), with targeted primary-source checks on official XDS/X-LAB, PARDUS and SCOTT pages. An independent second-model public-source review is pending and will be reconciled separately.",
+  "counts": {
+    "rows": 317,
+    "published": 42,
+    "candidate_rows": 275,
+    "multi_membership_rows": 21,
+    "decisions": {
+      "supported": 22,
+      "rejected": 31,
+      "unresolved": 80
+    }
+  },
+  "rows": [
+    {
+      "id": "twitter-v3-2024-rs-sensah-alloy",
+      "stage": "published",
+      "record": "platform:twitter-gravel-v3-2024",
+      "name": "Twitter Gravel V3 2024 RS / Sensah 2×12 alloy",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 40 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "twitter-v3-rs-sensah",
+      "stage": "published",
+      "record": "platform:twitter-gravel-v3",
+      "name": "Twitter Gravel V3 RS / Sensah 2×12",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "sava-a7l-r7100",
+      "stage": "published",
+      "record": "platform:sava-a7l-r7100",
+      "name": "SAVA A7L R7100",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 25 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "twitter-v3-wheeltop-eds",
+      "stage": "published",
+      "record": "platform:twitter-gravel-v3",
+      "name": "Twitter Gravel V3 WheelTop EDS 2×12",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "pardus-super-sport-gen2-egr",
+      "stage": "published",
+      "record": "platform:pardus-super-sport-gen2",
+      "name": "PARDUS Super Sport Gen2 eGR",
+      "memberships": [
+        "all-road",
+        "aero-wide-clearance",
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "supported",
+          "basis": "Official SUPG2 SPORT page: endurance styling with aero elements and a 700×40C frame and fork maximum.",
+          "source_ids": [
+            "pardus-super-sport-gen2-official-naming-recheck-2026-10-27",
+            "pardus-super-sport-gen2-official-2026-08-28"
+          ],
+          "batch": "C00"
+        },
+        {
+          "category": "road-endurance",
+          "status": "supported",
+          "basis": "Official SUPER series page: second-generation long-distance endurance road bike with comfort endurance geometry.",
+          "source_ids": [
+            "pardus-super-sport-gen2-official-naming-recheck-2026-10-27"
+          ],
+          "batch": "C00"
+        },
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "Aero elements on an endurance frame are not aero-road positioning.",
+          "source_ids": [
+            "pardus-super-sport-gen2-official-naming-recheck-2026-10-27"
+          ],
+          "batch": "C00"
+        }
+      ],
+      "screen": "Reviewed directly against the official PARDUS SUPER series and SUPG2 SPORT pages.",
+      "second_review": "pending"
+    },
+    {
+      "id": "twitter-cyclone-gen3-et",
+      "stage": "published",
+      "record": "platform:twitter-cyclone-gen3-et",
+      "name": "Twitter Cyclone Gen 3 ET electronic",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "camp-gx600-pes",
+      "stage": "published",
+      "record": "platform:camp-gx600",
+      "name": "CAMP GX600 PES",
+      "memberships": [
+        "all-road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "twitter-cyclone-electronic",
+      "stage": "published",
+      "record": "platform:twitter-cyclone-electronic",
+      "name": "Twitter Cyclone 3rd ET electronic",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "tfsa-jh37-frameset",
+      "stage": "published",
+      "record": "platform:tfsa-jh37",
+      "name": "TFSA JH37 frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 40 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "lightcarbon-lcg071s-pro-frameset",
+      "stage": "published",
+      "record": "platform:lightcarbon-lcg071s-pro",
+      "name": "LightCarbon LCG071S-PRO frameset",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "camp-gx700-grx820",
+      "stage": "published",
+      "record": "platform:camp-gx700",
+      "name": "CAMP GX700 GRX 1×12",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "sava-gelaro-sf6-cues",
+      "stage": "published",
+      "record": "platform:sava-gelaro-sf",
+      "name": "SAVA Gelaro SF6 CUES U6000 1×11",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "rinasclta-gr025-frameset",
+      "stage": "published",
+      "record": "platform:rinasclta-gr025",
+      "name": "Rinasclta GR025 frameset",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "xmcarbonspeed-cs-gr01-frameset",
+      "stage": "published",
+      "record": "platform:xmcarbonspeed-cs-gr01",
+      "name": "Generic CS-GR01 frameset",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "carbonda-cfr696-frameset",
+      "stage": "published",
+      "record": "platform:carbonda-cfr696",
+      "name": "Carbonda CFR696 frameset",
+      "memberships": [
+        "adventure-gravel"
+      ],
+      "decisions": [
+        {
+          "category": "gravel-race",
+          "status": "rejected",
+          "basis": "Only an owner's race-handling remark; the maker's race positioning is not recorded.",
+          "source_ids": [
+            "carbonda-cfr696-owner-forum-2026-08-28"
+          ],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "ican-gra04-frameset",
+      "stage": "published",
+      "record": "platform:ican-gra04",
+      "name": "ICAN GRA04 frameset",
+      "memberships": [
+        "gravel",
+        "gravel-race"
+      ],
+      "decisions": [
+        {
+          "category": "gravel-race",
+          "status": "supported",
+          "basis": "The current ICAN product page titles GRA04 a full-carbon racing gravel frame.",
+          "source_ids": [
+            "ican-gra04-official-current-2026-09-01"
+          ],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "spcycle-g026-frameset",
+      "stage": "published",
+      "record": "platform:spcycle-g026",
+      "name": "SPcycle G026 frameset",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "spcycle-g028-frameset",
+      "stage": "published",
+      "record": "platform:spcycle-g028",
+      "name": "SPcycle G028 frameset",
+      "memberships": [
+        "adventure-gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 57 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "bxt-055-frameset",
+      "stage": "published",
+      "record": "platform:bxt-055",
+      "name": "BXT BXT-055 frameset",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "lightcarbon-speedz-complete",
+      "stage": "published",
+      "record": "platform:lightcarbon-speedz",
+      "name": "LightCarbon SPEEDZ complete",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "lightcarbon-speedz-frameset",
+      "stage": "published",
+      "record": "platform:lightcarbon-speedz",
+      "name": "LightCarbon SPEEDZ frameset",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "ican-graro-frameset",
+      "stage": "published",
+      "record": "platform:ican-graro",
+      "name": "ICAN Graro frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "sava-gelaro-s4-grx400",
+      "stage": "published",
+      "record": "platform:sava-gelaro",
+      "name": "SAVA Gelaro S4 GRX400",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "elves-mori-aerox-frameset",
+      "stage": "published",
+      "record": "platform:elves-mori-aerox",
+      "name": "Elves Mori AeroX frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "af01-frameset",
+      "stage": "published",
+      "record": "platform:af01",
+      "name": "AF Bicycles AF01 frameset",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "elves-falath-r7170",
+      "stage": "published",
+      "record": "platform:elves-falath-r7170",
+      "name": "Elves Falath Pro Disc R7170 build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "sava-gelaro-s8",
+      "stage": "published",
+      "record": "platform:sava-gelaro-s8",
+      "name": "SAVA Gelaro S8 GRX820",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "twitter-t3-tt",
+      "stage": "published",
+      "record": "platform:twitter-t3-tt",
+      "name": "Twitter T3 TT WheelTop TX-TT7110 2×12",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "yoeleo-altera-g21-frameset",
+      "stage": "published",
+      "record": "platform:yoeleo-altera-g21",
+      "name": "Yoeleo Altera G21 frameset package",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [
+        {
+          "category": "adventure-gravel",
+          "status": "rejected",
+          "basis": "The adventure wording is this catalog's geometry assessment; Yoeleo's pages describe a gravel frameset without adventure positioning.",
+          "source_ids": [
+            "yoeleo-altera-g21-cn-2026-08-28"
+          ],
+          "batch": "C01"
+        },
+        {
+          "category": "gravel-race",
+          "status": "unresolved",
+          "basis": "A maker article asks what makes a gravel bike fast, but no explicit race positioning was found.",
+          "source_ids": [
+            "yoeleo-altera-g21-engineering-2026-08-28"
+          ],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "tavelo-grow-frameset",
+      "stage": "published",
+      "record": "platform:tavelo-grow",
+      "name": "Tavelo Grow frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "kung-mach-frameset",
+      "stage": "published",
+      "record": "platform:kung-mach",
+      "name": "KUNG MACH frameset with integrated cockpit",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "winspace-g3-frameset",
+      "stage": "published",
+      "record": "platform:winspace-g3",
+      "name": "Winspace G3 frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "bianchi-oltre-race",
+      "stage": "published",
+      "record": "platform:bianchi-oltre-race",
+      "name": "BIANCHI Oltre Race",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "incolor-speedster-sr-frameset",
+      "stage": "published",
+      "record": "platform:incolor-speedster",
+      "name": "Incolor Speedster SR frameset",
+      "memberships": [
+        "aero-wide-clearance"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "unresolved",
+          "basis": "Cited sources name only the AEROWAV cockpit; aero-road positioning of the SR/SR+ frame is not stated.",
+          "source_ids": [
+            "incolor-services-official-2026-08-29"
+          ],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "evolve-cima-gr-frameset",
+      "stage": "published",
+      "record": "platform:evolve-cima-gr",
+      "name": "Evolve CIMA GR frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "scott-addict-rc-40",
+      "stage": "published",
+      "record": "platform:scott-addict-rc-40",
+      "name": "SCOTT Addict RC 40",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "quick-gr-one-frameset",
+      "stage": "published",
+      "record": "platform:quick-gr-one",
+      "name": "Quick Pro GR:ONE frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "winspace-g5-frameset",
+      "stage": "published",
+      "record": "platform:winspace-g5",
+      "name": "Winspace G5 frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "seka-exaero-gr-frameset",
+      "stage": "published",
+      "record": "platform:seka-exaero-gr",
+      "name": "SEKA ExAero GR frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "incolor-speedster-sr-plus-frameset",
+      "stage": "published",
+      "record": "platform:incolor-speedster",
+      "name": "Incolor Speedster SR+ frameset",
+      "memberships": [
+        "aero-wide-clearance"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 38 mm; cited sources state no further positioning. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "incolor-ssr-frameset",
+      "stage": "published",
+      "record": "platform:incolor-ssr",
+      "name": "Incolor Speedster Radical SSR frameset",
+      "memberships": [
+        "aero-wide-clearance",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "The exact Incolor Taobao listing calls the SPEEDSTER RADICAL SSR an aero road frameset.",
+          "source_ids": [
+            "incolor-ssr-taobao-2026-08-29"
+          ],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "incolor-voyager-frameset",
+      "stage": "published",
+      "record": "platform:incolor-voyager",
+      "name": "Incolor Voyager frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "rejected",
+          "basis": "The all-road wording is this catalog's editorial note; Incolor positions Voyager as race gravel.",
+          "source_ids": [],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr014-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr014-d",
+      "name": "LightCarbon LCR014-D",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-meihanda-phantom-p10",
+      "stage": "candidate",
+      "record": "candidate:meihanda-phantom-p10",
+      "name": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+      "memberships": [
+        "gravel-flatbar"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 40 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sunpeed-space",
+      "stage": "candidate",
+      "record": "candidate:sunpeed-space",
+      "name": "SUNPEED 速比特 Space urban",
+      "memberships": [],
+      "decisions": [
+        {
+          "category": "category",
+          "status": "unresolved",
+          "basis": "No category evidence is recorded for this profile.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No category is recorded; category identity remains unresolved.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-auriga-2027",
+      "stage": "candidate",
+      "record": "candidate:java-auriga-2027",
+      "name": "JAVA 佳沃 御夫座 Auriga 2027 L-TWOO RX",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-gito-carbon-aero-entry",
+      "stage": "candidate",
+      "record": "candidate:gito-carbon-aero-entry",
+      "name": "GITO 捷拓 G325 entry-build lead",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-my-way-custom-carbon-frame",
+      "stage": "candidate-not-default-visible",
+      "record": "candidate:my-way-custom-carbon-frame",
+      "name": "MY WAY Custom carbon disc frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-storm-knight",
+      "stage": "candidate",
+      "record": "candidate:twitter-storm-knight",
+      "name": "TWITTER 骓特 R10 Pro (Shuntai 2×11)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr015s-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr015s-d",
+      "name": "LightCarbon LCR015S-D",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-velobuild-cx-002-2023",
+      "stage": "candidate",
+      "record": "candidate:velobuild-cx-002-2023",
+      "name": "VeloBuild CX-002 (2023 internal routing)",
+      "memberships": [],
+      "decisions": [
+        {
+          "category": "category",
+          "status": "unresolved",
+          "basis": "No category evidence is recorded for this profile.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No category is recorded; category identity remains unresolved.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-cyclone-sport",
+      "stage": "candidate",
+      "record": "candidate:twitter-cyclone-sport",
+      "name": "TWITTER 骓特 Cyclone sport",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sunpeed-charon-2026",
+      "stage": "candidate",
+      "record": "candidate:sunpeed-charon-2026",
+      "name": "SUNPEED 速比特 卡戎 Charon 2026",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sunpeed-mars-a-pro-2026",
+      "stage": "candidate",
+      "record": "candidate:sunpeed-mars-a-pro-2026",
+      "name": "SUNPEED 速比特 火星 Mars-A PRO 2026",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr015-v",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr015-v",
+      "name": "LightCarbon LCR015-V",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-qingsha-carbon-folding",
+      "stage": "candidate",
+      "record": "candidate:qingsha-carbon-folding",
+      "name": "轻鲨 QingSha QS91-20 (carbon wheels)",
+      "memberships": [
+        "folding"
+      ],
+      "decisions": [],
+      "screen": "Folding only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr015-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr015-d",
+      "name": "LightCarbon LCR015-D",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-carbon-road-gravel-unknown",
+      "stage": "candidate",
+      "record": "candidate:twitter-carbon-road-gravel-unknown",
+      "name": "TWITTER 骓特 Gravel V3 RS 24-speed alloy-wheel listing",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr017s-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr017s-d",
+      "name": "LightCarbon LCR017S-D",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-phillips-carbon-road-unknown",
+      "stage": "candidate",
+      "record": "candidate:phillips-carbon-road-unknown",
+      "name": "PHILLIPS 菲利普 SACHEM 24-speed",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "The seller names an aero fork and seatpost, not aero frame shaping.",
+          "source_ids": [],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-cycletrack-phantom-rx24",
+      "stage": "candidate",
+      "record": "candidate:cycletrack-phantom-rx24",
+      "name": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-gelaro-sf",
+      "stage": "candidate",
+      "record": "candidate:sava-gelaro-sf",
+      "name": "SAVA 萨瓦 Gelaro SF / 越界 SF flat-bar",
+      "memberships": [
+        "gravel-flatbar"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-elro-f1",
+      "stage": "candidate",
+      "record": "candidate:elro-f1",
+      "name": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xds-ad350-2026",
+      "stage": "candidate",
+      "record": "candidate:xds-ad350-2026",
+      "name": "XDS 喜德盛 AD350 2026",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "The exact 2026 regional specification names an X6 SLR aerodynamic aluminium frame, and launch material an aluminium aero frame.",
+          "source_ids": [
+            "xds-ad350-2026-hk-spec-2026-08-30",
+            "xds-ad350-launch-material-2026-08-30"
+          ],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-siluro6-top-r7120",
+      "stage": "candidate",
+      "record": "candidate:java-siluro6-top-r7120",
+      "name": "JAVA 佳沃 鱼雷 Siluro6-Top 105 R7120",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-super-al",
+      "stage": "candidate",
+      "record": "candidate:pardus-super-al",
+      "name": "PARDUS 瑞豹 Super AL L-TWOO R9",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-airwolf-yfr068",
+      "stage": "candidate",
+      "record": "candidate:airwolf-yfr068",
+      "name": "Airwolf YFR068 / A5",
+      "memberships": [
+        "all-road"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "40 mm clearance is recorded, but the record states that full-aero status remains unresolved.",
+          "source_ids": [],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr017-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr017-d",
+      "name": "LightCarbon LCR017-D",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-frrx-carbon-road-unknown",
+      "stage": "candidate",
+      "record": "candidate:frrx-carbon-road-unknown",
+      "name": "FRRX 法克斯 carbon road range (exact SKU unresolved)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-icanian-p9",
+      "stage": "candidate",
+      "record": "candidate:icanian-p9",
+      "name": "ICANIAN 冠捷 P9 enduro frameset",
+      "memberships": [
+        "mtb-enduro"
+      ],
+      "decisions": [],
+      "screen": "Enduro MTB only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-seraph-tt-x68-new-udh",
+      "stage": "candidate",
+      "record": "candidate:seraph-tt-x68-new-udh",
+      "name": "Seraph / TanTan TT-X68-new UDH",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcg071-pro",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcg071-pro",
+      "name": "LightCarbon LCG071-PRO",
+      "memberships": [
+        "gravel-adventure"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-flying-pigeon-carbon-road-unknown",
+      "stage": "candidate-not-default-visible",
+      "record": "candidate:flying-pigeon-carbon-road-unknown",
+      "name": "Flying Pigeon 飞鸽 carbon-road listing (model unresolved; X900 unverified)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-rinasclta-q-aero-gr",
+      "stage": "candidate",
+      "record": "candidate:rinasclta-q-aero-gr",
+      "name": "Rinasclta Q-AERO GR",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-generic-custom-carbon-road",
+      "stage": "candidate-not-default-visible",
+      "record": "candidate:generic-custom-carbon-road",
+      "name": "Generic custom seller Custom carbon road frame/bike",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-spark-al",
+      "stage": "candidate",
+      "record": "candidate:pardus-spark-al",
+      "name": "PARDUS 瑞豹 星火 Spark AL",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xds-ad500-2025",
+      "stage": "candidate",
+      "record": "candidate:xds-ad500-2025",
+      "name": "XDS 喜德盛 AD500 2025",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-gravel-v3-105",
+      "stage": "candidate",
+      "record": "candidate:twitter-gravel-v3-105",
+      "name": "TWITTER 骓特 Gravel V3 105 24-speed",
+      "memberships": [
+        "gravel",
+        "gravel-race"
+      ],
+      "decisions": [
+        {
+          "category": "gravel-race",
+          "status": "supported",
+          "basis": "The official Twitter US frameset page titles the Gravel V3 T900 frame for endurance and gravel racing.",
+          "source_ids": [
+            "twitter-gravel-v3-t900-clearance-official-2026-09-25"
+          ],
+          "batch": "C01"
+        },
+        {
+          "category": "road-endurance",
+          "status": "unresolved",
+          "basis": "The official title's endurance wording may describe gravel endurance rather than endurance road geometry.",
+          "source_ids": [
+            "twitter-gravel-v3-t900-clearance-official-2026-09-25"
+          ],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-super-sport",
+      "stage": "candidate",
+      "record": "candidate:pardus-super-sport",
+      "name": "PARDUS 瑞豹 Super Sport (original generation)",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xds-gt350",
+      "stage": "candidate",
+      "record": "candidate:xds-gt350",
+      "name": "XDS 喜德盛 GT350",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missile-e6000",
+      "stage": "candidate",
+      "record": "candidate:missile-e6000",
+      "name": "MISSILE 米赛尔 水星6000",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "The exact-model JD listing describes the 水星6000 as an aerodynamic carbon complete bike (seller description).",
+          "source_ids": [
+            "missile-mercury-6000-jd-2026-08-30"
+          ],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-icanian-sn04",
+      "stage": "candidate",
+      "record": "candidate:icanian-sn04",
+      "name": "ICAN / ICANIAN SN04 full-suspension fat-bike frameset",
+      "memberships": [
+        "mtb-xc",
+        "mtb-trail"
+      ],
+      "decisions": [],
+      "screen": "Cross-country MTB only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-uragano-f",
+      "stage": "candidate",
+      "record": "candidate:pardus-uragano-f",
+      "name": "PARDUS Uragano F",
+      "memberships": [],
+      "decisions": [
+        {
+          "category": "category",
+          "status": "unresolved",
+          "basis": "No category evidence is recorded for this profile.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No category is recorded; category identity remains unresolved.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-a7l-pro-2026",
+      "stage": "candidate",
+      "record": "candidate:sava-a7l-pro-2026",
+      "name": "SAVA 萨瓦 A7L Pro 2026",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 25 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-gito-carbon-road-plus",
+      "stage": "candidate",
+      "record": "candidate:gito-carbon-road-plus",
+      "name": "GITO 捷拓 G320 build (exact trim unresolved)",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "An exact-model retailer page identifies G320 as a carbon aero-road platform.",
+          "source_ids": [
+            "gito-g320-retailer-2026-08-29"
+          ],
+          "batch": "C01"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-spark-tourist",
+      "stage": "candidate",
+      "record": "candidate:pardus-spark-tourist",
+      "name": "PARDUS Spark Tourist PES",
+      "memberships": [
+        "gravel-flatbar"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 51 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-speed7-frameset",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-speed7-frameset",
+      "name": "LightCarbon Speed7 frameset lead",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-t10-pro",
+      "stage": "candidate",
+      "record": "candidate:twitter-t10-pro",
+      "name": "TWITTER 骓特 T10 Pro",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "The official Twitter page describes the T10 Pro's full-carbon aero frame, fork and cockpit as designed for maximum speed.",
+          "source_ids": [
+            "twitter-t10-pro-official-2026-08-17"
+          ],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sunpeed-galaxy-2026-r7120",
+      "stage": "candidate",
+      "record": "candidate:sunpeed-galaxy-2026-r7120",
+      "name": "SUNPEED 速比特 银河 Galaxy 2026 105 R7120",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-longteng-ltk266-d-sl",
+      "stage": "candidate",
+      "record": "candidate:longteng-ltk266-d-sl",
+      "name": "LongTeng LTK266-D--SL",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "rejected",
+          "basis": "The record describes a minimalist non-aero lightweight road frame.",
+          "source_ids": [],
+          "batch": "C02"
+        },
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "The record describes a minimalist non-aero lightweight road frame.",
+          "source_ids": [],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-giant-tcr-advanced",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-giant-tcr-advanced",
+      "name": "Giant TCR Advanced 3-GC",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-elves-mori-community-lead",
+      "stage": "candidate",
+      "record": "candidate:elves-mori-community-lead",
+      "name": "ELVES Mori gravel frameset (subtrim unconfirmed)",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr018-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr018-d",
+      "name": "LightCarbon LCR018-D",
+      "memberships": [
+        "aero-wide-clearance",
+        "road-endurance",
+        "all-road"
+      ],
+      "decisions": [
+        {
+          "category": "road-endurance",
+          "status": "supported",
+          "basis": "The official LightCarbon page names LCR018-D an aero endurance all-road frameset.",
+          "source_ids": [
+            "lightcarbon-lcr018-d-official-2026-08-29"
+          ],
+          "batch": "C02"
+        },
+        {
+          "category": "all-road",
+          "status": "supported",
+          "basis": "The official page positions LCR018-D as an all-road frameset with a measured-width 38 mm maximum.",
+          "source_ids": [
+            "lightcarbon-lcr018-d-official-2026-08-29"
+          ],
+          "batch": "C02"
+        },
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "LightCarbon positions LCR018-D as an aero endurance all-road frame; aero detailing on an endurance frame is not aero-road positioning.",
+          "source_ids": [
+            "lightcarbon-lcr018-d-official-2026-08-29"
+          ],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-meihanda-xtreme-gravel",
+      "stage": "candidate",
+      "record": "candidate:meihanda-xtreme-gravel",
+      "name": "Meihanda 美涵达 / Xtreme carbon gravel bike, exact model unresolved",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-hi-light-g7-2",
+      "stage": "candidate",
+      "record": "candidate:hi-light-g7-2",
+      "name": "Hi-Light 航轮 G7.2",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-viqi-integrated-road-unknown",
+      "stage": "candidate-not-default-visible",
+      "record": "candidate:viqi-integrated-road-unknown",
+      "name": "ViQi 微琦 Integrated carbon road bike, model unclear",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-viqi-r8000",
+      "stage": "candidate",
+      "record": "candidate:viqi-r8000",
+      "name": "ViQi 微琦 R8000 gravel road",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-basso-venta-disc",
+      "stage": "candidate",
+      "record": "candidate:basso-venta-disc",
+      "name": "BASSO Venta Disc",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-little-white-rabbit",
+      "stage": "candidate",
+      "record": "candidate:twitter-little-white-rabbit",
+      "name": "TWITTER 骓特 Little White Rabbit / 小白兔 custom",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-phoenix-700c-carbon-e-road",
+      "stage": "candidate",
+      "record": "candidate:phoenix-700c-carbon-e-road",
+      "name": "Phoenix 凤凰 799 700C carbon electric-assist road bike",
+      "memberships": [
+        "e-road"
+      ],
+      "decisions": [],
+      "screen": "E-road only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-trinx-gtr-c6",
+      "stage": "candidate",
+      "record": "candidate:trinx-gtr-c6",
+      "name": "TRINX 千里达 GTR C6",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-muidler-ashius-s7",
+      "stage": "candidate",
+      "record": "candidate:muidler-ashius-s7",
+      "name": "MUIDLER 媚影 阿修斯 S7",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-fuoco-2025",
+      "stage": "candidate",
+      "record": "candidate:java-fuoco-2025",
+      "name": "JAVA 佳沃 FUOCO 2025",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-kung-horizon",
+      "stage": "candidate",
+      "record": "candidate:kung-horizon",
+      "name": "KUNG 攻 HORIZON 天际 complete bike",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "The aero wording in the JD index refers to the MACH, not HORIZON.",
+          "source_ids": [
+            "kung-jd-flagship-index-2026-10-24"
+          ],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-spect-mira",
+      "stage": "candidate",
+      "record": "candidate:spect-mira",
+      "name": "SPECT 空力公式 Mira frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sunpeed-wudi-e-2026",
+      "stage": "candidate",
+      "record": "candidate:sunpeed-wudi-e-2026",
+      "name": "SUNPEED 速比特 2026 Invincible Sport / 无敌 R7120 alloy-wheel option",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-vook-v8e-pro",
+      "stage": "candidate",
+      "record": "candidate:vook-v8e-pro",
+      "name": "VOOK V8E Pro",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-mondince-fm316",
+      "stage": "candidate",
+      "record": "candidate:mondince-fm316",
+      "name": "Mondince FM316",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-glare-ultegra-r8000-rim",
+      "stage": "candidate",
+      "record": "candidate:girder-glare-ultegra-r8000-rim",
+      "name": "GIRDER 格拉德 Glare rim-brake Ultegra R8000",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xds-gt600",
+      "stage": "candidate",
+      "record": "candidate:xds-gt600",
+      "name": "XDS / X-LAB 喜德盛 GT600",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-irefox-profound-400",
+      "stage": "candidate",
+      "record": "candidate:irefox-profound-400",
+      "name": "IREFOX Profound 400",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "rejected",
+          "basis": "IREFOX lists Profound 400 in its gravel catalog; the all-road wording is this catalog's editorial.",
+          "source_ids": [
+            "irefox-profound-400-official-current-2026-09-23"
+          ],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-elves-falath-evo",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-elves-falath-evo",
+      "name": "ELVES Falath EVO frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-elves-vanyar",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-elves-vanyar",
+      "name": "ELVES Vanyar Pro Disc 2024 frameset",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 30 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-cyclone-r7120",
+      "stage": "candidate",
+      "record": "candidate:twitter-cyclone-r7120",
+      "name": "TWITTER 骓特 Cyclone R7120 aero build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-laget-pioneer",
+      "stage": "candidate",
+      "record": "candidate:laget-pioneer",
+      "name": "LAGET PIONEER",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-r10-pro-gen3",
+      "stage": "candidate",
+      "record": "candidate:twitter-r10-pro-gen3",
+      "name": "TWITTER 骓特 R10 Pro Gen 3 closed-wheel (WheelTop / Shimano 105 options)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-gito-carbon-hydraulic-unknown",
+      "stage": "candidate",
+      "record": "candidate:gito-carbon-hydraulic-unknown",
+      "name": "GITO 捷拓 G525 Shimano 105 hydraulic-disc lead",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "An exact-model retailer index identifies G525 as a carbon aero road bike.",
+          "source_ids": [
+            "gito-g525-retailer-2026-08-29"
+          ],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-vittoria-er7-2026",
+      "stage": "candidate",
+      "record": "candidate:java-vittoria-er7-2026",
+      "name": "JAVA 佳沃 Vittoria ER7 2026",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-corsa-pf-105-alloy",
+      "stage": "candidate",
+      "record": "candidate:girder-corsa-pf-105-alloy",
+      "name": "GIRDER 格拉德 Corsa press-fit T700/T800 105 alloy wheels",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-leinax-leina-road",
+      "stage": "candidate",
+      "record": "candidate:leinax-leina-road",
+      "name": "LEINAK 雷纳克 雷娜 carbon road",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-bigrock-sohtea",
+      "stage": "candidate",
+      "record": "candidate:bigrock-sohtea",
+      "name": "BIGROCK Sohtea",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 30 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-nscr-carbon-gravel-storage",
+      "stage": "candidate-not-default-visible",
+      "record": "candidate:nscr-carbon-gravel-storage",
+      "name": "NSCR Carbon gravel bike with storage",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-hi-light-r6-105-al",
+      "stage": "candidate",
+      "record": "candidate:hi-light-r6-105-al",
+      "name": "Hi-Light 航轮 R6 105 AL",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "35 mm is recorded, but cited sources do not state mixed-surface or all-road positioning.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-leinax-youlong-2",
+      "stage": "candidate",
+      "record": "candidate:leinax-youlong-2",
+      "name": "LEINAK 雷纳克 游龙 2.0",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-spark",
+      "stage": "candidate",
+      "record": "candidate:pardus-spark",
+      "name": "PARDUS 瑞豹 Spark",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-cyctrac-r18",
+      "stage": "candidate",
+      "record": "candidate:cyctrac-r18",
+      "name": "TWITTER 骓特 R18 (Racing ED) / Cyctrac",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-robin-sport-pes",
+      "stage": "candidate",
+      "record": "candidate:pardus-robin-sport-pes",
+      "name": "PARDUS 瑞豹 Robin Sport PES",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "rejected",
+          "basis": "PARDUS's official Robin series page (checked 2026-10-27) describes the Robin Sport as an entry-level carbon disc road bike, with no all-road or mixed-surface wording.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-spark-sport-pes",
+      "stage": "candidate",
+      "record": "candidate:pardus-spark-sport-pes",
+      "name": "PARDUS 瑞豹 Spark Sport PES",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-legit-ac1",
+      "stage": "candidate",
+      "record": "candidate:legit-ac1",
+      "name": "LEGIT 陆极客 AC1",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-climbing",
+          "status": "rejected",
+          "basis": "A hill-climb test website compared vibration absorption; the maker's climbing positioning is not recorded.",
+          "source_ids": [],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-titanium-mtb-2025-xt-1x12",
+      "stage": "candidate",
+      "record": "candidate:girder-titanium-mtb-2025-xt-1x12",
+      "name": "GIRDER 格拉德 Titanium MTB 2025 27.5 XT 1×12",
+      "memberships": [
+        "mtb-xc"
+      ],
+      "decisions": [],
+      "screen": "Cross-country MTB only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-gito-gtv5-plus",
+      "stage": "candidate",
+      "record": "candidate:gito-gtv5-plus",
+      "name": "GITO 捷拓 G530 seller-listed 8.3 kg build",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "An exact-model retailer page identifies GITO 530 as a Toray T800 carbon aero-road platform.",
+          "source_ids": [
+            "gito-g530-retailer-2026-08-29"
+          ],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-hi-light-r9-2025",
+      "stage": "candidate",
+      "record": "candidate:hi-light-r9-2025",
+      "name": "Hi-Light 航轮 R9 (2025)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-camp-ace-qed",
+      "stage": "candidate",
+      "record": "candidate:camp-ace-qed",
+      "name": "CAMP 坎普 ACE QED electronic",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-koseea-pioneer-slr-plus",
+      "stage": "candidate",
+      "record": "candidate:koseea-pioneer-slr-plus",
+      "name": "KOSEEA 科西亚 Pioneer SLR+",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-upland-r80",
+      "stage": "candidate",
+      "record": "candidate:upland-r80",
+      "name": "UPLAND 阿普兰 R80",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-upland-r70",
+      "stage": "candidate",
+      "record": "candidate:upland-r70",
+      "name": "UPLAND 阿普兰 R70",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-rs5",
+      "stage": "candidate",
+      "record": "candidate:xlab-rs5",
+      "name": "X-LAB RS5",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "rejected",
+          "basis": "Only the seatpost is described as aero; the alloy frame is an endurance design.",
+          "source_ids": [
+            "xlab-rs5-official-global-2026-10-27"
+          ],
+          "batch": "C02"
+        },
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "Only the seatpost is described as aero.",
+          "source_ids": [
+            "xlab-rs5-official-global-2026-10-27"
+          ],
+          "batch": "C02"
+        },
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "38 mm is official and the page mentions going wherever the road takes you, but it does not state mixed-surface or all-road positioning.",
+          "source_ids": [
+            "xlab-rs5-official-global-2026-10-27"
+          ],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-a4",
+      "stage": "candidate",
+      "record": "candidate:sava-a4",
+      "name": "SAVA A4",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-airwolf-yf-r003",
+      "stage": "candidate",
+      "record": "candidate:airwolf-yf-r003",
+      "name": "Airwolf YF-R003",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-winspace-slc3",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-winspace-slc3",
+      "name": "Winspace SLC3.0 frameset",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-rt8",
+      "stage": "candidate",
+      "record": "candidate:xlab-rt8",
+      "name": "X-LAB RT8 frameset",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-gito-carbon-road-high-unknown",
+      "stage": "candidate",
+      "record": "candidate:gito-carbon-road-high-unknown",
+      "name": "GITO 捷拓 G530 high-configuration lead",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-camp-gx700",
+      "stage": "candidate",
+      "record": "candidate:camp-gx700",
+      "name": "CAMP 坎普 GX700",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-de-rosa-new-838",
+      "stage": "candidate",
+      "record": "candidate:de-rosa-new-838",
+      "name": "DE ROSA 德罗萨 New 838",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-corsa-2025-105",
+      "stage": "candidate",
+      "record": "candidate:girder-corsa-2025-105",
+      "name": "GIRDER 格拉德 Corsa 2025 105 mechanical",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-tt-frame-hydraulic",
+      "stage": "candidate",
+      "record": "candidate:java-tt-frame-hydraulic",
+      "name": "JAVA 佳沃 Carbon triathlon frameset with hydraulic brakes",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-suprema-7120",
+      "stage": "candidate",
+      "record": "candidate:java-suprema-7120",
+      "name": "JAVA 佳沃 Suprema 7120 / 终结者",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-volata-r7120",
+      "stage": "candidate",
+      "record": "candidate:java-volata-r7120",
+      "name": "JAVA 佳沃 Volata full-carbon 105 R7120",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-paragon-jazz-2026",
+      "stage": "candidate",
+      "record": "candidate:paragon-jazz-2026",
+      "name": "PARAGON 鹏来格 JAZZ 2026",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-t8-closed-wheel",
+      "stage": "candidate",
+      "record": "candidate:twitter-t8-closed-wheel",
+      "name": "TWITTER 骓特 T8 closed-wheel build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-uragano-sport",
+      "stage": "candidate",
+      "record": "candidate:pardus-uragano-sport",
+      "name": "PARDUS 瑞豹 Uragano Sport",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-tavelo-attack",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-tavelo-attack",
+      "name": "Tavelo Attack frameset",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "The aero keyword comes from a tire name in an owner build, not frame shaping.",
+          "source_ids": [],
+          "batch": "C02"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-giant-propel-advanced-3",
+      "stage": "candidate",
+      "record": "candidate:giant-propel-advanced-3",
+      "name": "GIANT 捷安特 Propel Advanced 3",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 30 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-trinx-tornado-900",
+      "stage": "candidate",
+      "record": "candidate:trinx-tornado-900",
+      "name": "TRINX 千里达 Tornado 900 / 龙卷风900",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "unresolved",
+          "basis": "The record calls the frame aero, but no cited source note states aero shaping.",
+          "source_ids": [
+            "trinx-tornado-900-official-2026-08-30"
+          ],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-xr-one-frameset-aelous-gravel",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-xr-one-frameset-aelous-gravel",
+      "name": "Quick Pro XR:ONE frameset with Aelous Gravel cockpit",
+      "memberships": [
+        "gravel-adventure"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-upland-taylor",
+      "stage": "candidate",
+      "record": "candidate:upland-taylor",
+      "name": "UPLAND 阿普兰 Taylor",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "The official Upland page specifies a T1100+T800 carbon aero frame and fork.",
+          "source_ids": [
+            "upland-taylor-official-2026-08-30"
+          ],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-tavelo-arow",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-tavelo-arow",
+      "name": "Tavelo Arow Race Polestar frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-bxt-gravel-complete",
+      "stage": "candidate",
+      "record": "candidate:bxt-gravel-complete",
+      "name": "BXT Gravel complete",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-x7",
+      "stage": "candidate",
+      "record": "candidate:twitter-x7",
+      "name": "TWITTER 骓特 X7 high configuration",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "The official Twitter page presents the X7 as a carbon aero road bike.",
+          "source_ids": [
+            "twitter-x7-official-2026-08-30"
+          ],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-speed7-complete",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-speed7-complete",
+      "name": "LightCarbon Speed7 105 mechanical complete bike",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-alums-da54",
+      "stage": "candidate",
+      "record": "candidate:alums-da54",
+      "name": "ALVAS 爱瓦士 DA54",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-endurance",
+          "status": "unresolved",
+          "basis": "The record describes an aero-shaped endurance frame, but no cited source note states endurance positioning.",
+          "source_ids": [],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-tavelo-arden",
+      "stage": "candidate",
+      "record": "candidate:tavelo-arden",
+      "name": "Tavelo Arden Race Frameset",
+      "memberships": [
+        "aero-wide-clearance"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "rejected",
+          "basis": "Tavelo names it the Arden Race frameset; the all-road wording is this catalog's editorial.",
+          "source_ids": [
+            "tavelo-arden-race-official-2026-08-29"
+          ],
+          "batch": "C03"
+        },
+        {
+          "category": "road-aero",
+          "status": "unresolved",
+          "basis": "Cited Tavelo sources describe the Arden Race frameset without aero wording.",
+          "source_ids": [
+            "tavelo-arden-race-official-2026-08-29"
+          ],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-camp-gx700-travel",
+      "stage": "candidate",
+      "record": "candidate:camp-gx700-travel",
+      "name": "CAMP 坎普 GX700 travel-loaded build",
+      "memberships": [
+        "gravel-touring"
+      ],
+      "decisions": [
+        {
+          "category": "adventure-gravel",
+          "status": "rejected",
+          "basis": "Bikepacking bags in a dated listing photo are not maker positioning; the record stays gravel touring.",
+          "source_ids": [],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-bison-r7020-2023-reference",
+      "stage": "candidate",
+      "record": "candidate:girder-bison-r7020-2023-reference",
+      "name": "GIRDER 格拉德 Bison 105 R7020 — documented 2023 build",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-tavelo-arow-disc-frameset",
+      "stage": "candidate",
+      "record": "candidate:tavelo-arow-disc-frameset",
+      "name": "Tavelo 踏为乐 Arow disc frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-gios-aerolite",
+      "stage": "candidate",
+      "record": "candidate:gios-aerolite",
+      "name": "GIOS AERO LITE (generation and trim unresolved)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-carbon-hydraulic-unknown",
+      "stage": "candidate-not-default-visible",
+      "record": "candidate:java-carbon-hydraulic-unknown",
+      "name": "JAVA 佳沃 Carbon hydraulic road bike, model unclear",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-cinelli-pressure-adr",
+      "stage": "candidate",
+      "record": "candidate:cinelli-pressure-adr",
+      "name": "CINELLI 西耐力 Pressure ADR",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 30 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-irefox-by446",
+      "stage": "candidate",
+      "record": "candidate:irefox-by446",
+      "name": "IREFOX 火之狐 BY446 all-terrain",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-arrow-2025-105-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-arrow-2025-105-di2",
+      "name": "GIRDER 格拉德 Arrow 2025 105 Di2",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-voicevelo-g-major",
+      "stage": "candidate",
+      "record": "candidate:voicevelo-g-major",
+      "name": "Voicevelo G Major",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 47 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-f20-hawkeye",
+      "stage": "candidate",
+      "record": "candidate:sava-f20-hawkeye",
+      "name": "SAVA Hawkeye F20 105 24-speed",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-winspace-t1550",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-winspace-t1550",
+      "name": "Winspace T1550 Gen 2 frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-kontax-power-evo",
+      "stage": "candidate",
+      "record": "candidate:kontax-power-evo",
+      "name": "KONTAX 超探 RS80 POWER EVO",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-camp-ace-gen3-105",
+      "stage": "candidate",
+      "record": "candidate:camp-ace-gen3-105",
+      "name": "CAMP 坎普 ACE Gen 3 105",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-vega-tt-24s",
+      "stage": "candidate",
+      "record": "candidate:java-vega-tt-24s",
+      "name": "JAVA 佳沃 Vega TT 24S",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sunpeed-victory-e-2026",
+      "stage": "candidate",
+      "record": "candidate:sunpeed-victory-e-2026",
+      "name": "SUNPEED 速比特 Victory Expert / 胜利 E 105 Di2 (2026 listing)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "unresolved",
+          "basis": "The record calls the frame aero, but no cited source note states aero shaping.",
+          "source_ids": [],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-winspace-agile",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-winspace-agile",
+      "name": "Winspace Agile frameset",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-winspace-m6",
+      "stage": "candidate",
+      "record": "candidate:winspace-m6",
+      "name": "WINSPACE 银贝斯 M6",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-climbing",
+          "status": "rejected",
+          "basis": "A reviewer commented on out-of-saddle climbing; that is not climbing positioning.",
+          "source_ids": [
+            "winspace-m6-cyclingnews-review-2026-09-22"
+          ],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-canyon-grail",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-canyon-grail",
+      "name": "Canyon Grail CF 7",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 42 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-bison-2025-105",
+      "stage": "candidate",
+      "record": "candidate:girder-bison-2025-105",
+      "name": "GIRDER 格拉德 Bison 2025 105 mechanical",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xds-ad7",
+      "stage": "candidate",
+      "record": "candidate:xds-ad7",
+      "name": "XDS 喜德盛 AD7",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-starship-r13",
+      "stage": "candidate",
+      "record": "candidate:sava-starship-r13",
+      "name": "SAVA 萨瓦 Starship / 星舰 R13 105",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-rs7",
+      "stage": "candidate",
+      "record": "candidate:xlab-rs7",
+      "name": "X-LAB RS7",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "X-LAB's page says the RS7 carbon frame blends aerodynamic shaping with balanced ride geometry.",
+          "source_ids": [
+            "xlab-rs7-official-global-2026-10-27"
+          ],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-tavelo-arow-sl-frameset",
+      "stage": "candidate",
+      "record": "candidate:tavelo-arow-sl-frameset",
+      "name": "Tavelo 踏为乐 Arow SL frameset (amor edition)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-climbing",
+          "status": "unresolved",
+          "basis": "A dealer listing labels the frame ultralight (780 g, size M); no maker climbing positioning was found.",
+          "source_ids": [
+            "tavelo-arow-sl-frameset-taobao-2026-10-24"
+          ],
+          "batch": "C03"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-scott-addict-40",
+      "stage": "candidate",
+      "record": "candidate:scott-addict-40",
+      "name": "SCOTT Addict 40",
+      "memberships": [
+        "aero-wide-clearance"
+      ],
+      "decisions": [
+        {
+          "category": "road-endurance",
+          "status": "unresolved",
+          "basis": "The record calls it an endurance-road chassis, but the cited SCOTT source note does not state endurance positioning; the official page did not render for a text check.",
+          "source_ids": [
+            "scott-addict-40-official-2026-08-29"
+          ],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-evolve-cima-road",
+      "stage": "candidate",
+      "record": "candidate:evolve-cima-road",
+      "name": "Evolve CIMA road",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-giant-defy-advanced",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-giant-defy-advanced",
+      "name": "Giant Defy Advanced 2",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "38 mm is recorded, but cited sources do not state mixed-surface or all-road positioning.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-arrow-pf-105-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-arrow-pf-105-di2",
+      "name": "GIRDER 格拉德 Arrow press-fit T700/T800 105 Di2",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-bison-pf-ultegra-r8020",
+      "stage": "candidate",
+      "record": "candidate:girder-bison-pf-ultegra-r8020",
+      "name": "GIRDER 格拉德 Bison press-fit T700/T800 Ultegra R8020",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "The aero wording is a copied 'AERO TEAM' sentence that the source notes as a conflict, not Bison positioning.",
+          "source_ids": [
+            "girder-bison-pf-ultegra-r8020-official-2026-10-24"
+          ],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-fame-pf-ultegra-r8020",
+      "stage": "candidate",
+      "record": "candidate:girder-fame-pf-ultegra-r8020",
+      "name": "GIRDER 格拉德 Fame press-fit T700/T800 Ultegra R8020",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-t10",
+      "stage": "candidate",
+      "record": "candidate:quick-t10",
+      "name": "QUICK 快客 T10 integrated aero frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-laget-discovery-slr",
+      "stage": "candidate",
+      "record": "candidate:laget-discovery-slr",
+      "name": "LAGET DISCOVERY SLR",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-hi-light-g7-2-grx-gr1600",
+      "stage": "candidate",
+      "record": "candidate:hi-light-g7-2-grx-gr1600",
+      "name": "Hi-Light 航轮 G7.2",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-r8-r8170",
+      "stage": "candidate",
+      "record": "candidate:sava-r8-r8170",
+      "name": "SAVA 萨瓦 R8 R8170",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "The aero names belong to newer, separate SAVA generations (AeroX, Blade R8).",
+          "source_ids": [],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-rolling-stone-comp",
+      "stage": "candidate",
+      "record": "candidate:rolling-stone-comp",
+      "name": "ROLLING STONE 滚石 COMPASS",
+      "memberships": [
+        "road",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "An exact-model Biketo review lists a horizontal aero frame for the COMPASS.",
+          "source_ids": [
+            "rolling-stone-compass-biketo-2026-08-30"
+          ],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-triaero-a9",
+      "stage": "candidate",
+      "record": "candidate:triaero-a9",
+      "name": "TRIAERO 冠捷 A9 Pikachu / 105 Di2 R7170",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-cinelli-pressure",
+      "stage": "candidate",
+      "record": "candidate:cinelli-pressure",
+      "name": "CINELLI 西耐力 Pressure",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-endurance",
+          "status": "rejected",
+          "basis": "False match: 西耐力 is Cinelli's Chinese brand name, not endurance positioning.",
+          "source_ids": [],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-giant-revolt-advanced",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-giant-revolt-advanced",
+      "name": "Giant Revolt Advanced 2",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-hi-light-g0",
+      "stage": "candidate",
+      "record": "candidate:hi-light-g0",
+      "name": "Hi-Light 航轮 G0",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-specialized-roubaix-sl8",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-specialized-roubaix-sl8",
+      "name": "Specialized Roubaix SL8 Tiagra",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "40 mm is recorded, but cited sources do not state mixed-surface or all-road positioning.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-seka-exaero-road",
+      "stage": "candidate",
+      "record": "candidate:seka-exaero-road",
+      "name": "SEKA ExAero / ExAero RDC",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-climbing",
+          "status": "rejected",
+          "basis": "The ultralight wording describes the integrated handlebar in a listing title.",
+          "source_ids": [
+            "seka-exaero-road-taobao-2026-10-24"
+          ],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-cycletrack-time-tt",
+      "stage": "candidate",
+      "record": "candidate:cycletrack-time-tt",
+      "name": "CYCLETRACK 骑迹 TIME 时光 TT / L-TWOO ER9",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-titanium-road-2025-apex-1x12",
+      "stage": "candidate",
+      "record": "candidate:girder-titanium-road-2025-apex-1x12",
+      "name": "GIRDER 格拉德 Titanium road 2025 SRAM Apex 1×12 mechanical",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-merida-scultura",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-merida-scultura",
+      "name": "Merida SCULTURA 6000 25",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "unresolved",
+          "basis": "Merida China says NACA tube shapes balance aerodynamics and stiffness on this lightweight race frame; that is aero detailing, not aero-road positioning.",
+          "source_ids": [
+            "merida-china-scultura-6000-25-official-2026-08-17"
+          ],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-rockbros-pegasus-road",
+      "stage": "candidate",
+      "record": "candidate:rockbros-pegasus-road",
+      "name": "ROCKBROS 洛克兄弟 Pegasus / 飞马 series",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-seka-spear-rdc",
+      "stage": "candidate",
+      "record": "candidate:seka-spear-rdc",
+      "name": "SEKA SPEAR RDC",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-west-biking-sl-one",
+      "stage": "candidate",
+      "record": "candidate:west-biking-sl-one",
+      "name": "WEST BIKING 西骑者 SL-ONE",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-seka-spear-rdc-frameset",
+      "stage": "candidate",
+      "record": "candidate:seka-spear-rdc-frameset",
+      "name": "SEKA Spear RDC frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-kung-mach-x-ultegra-di2",
+      "stage": "candidate",
+      "record": "candidate:kung-mach-x-ultegra-di2",
+      "name": "KUNG 攻 MACH X 马赫X Ultegra Di2 complete bike",
+      "memberships": [
+        "road",
+        "road-climbing"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "The aero wording belongs to the separate MACH; MACH X is the lightweight all-round race bike.",
+          "source_ids": [
+            "kung-jd-flagship-index-2026-10-24"
+          ],
+          "batch": "C04"
+        },
+        {
+          "category": "road-climbing",
+          "status": "supported",
+          "basis": "A KUNG brand post presents MACH X as a lightweight climbing race bike.",
+          "source_ids": [
+            "public-xhs-kung-mach-x-ut-brand-2026-07-16"
+          ],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-dream-maker",
+      "stage": "candidate",
+      "record": "candidate:sava-dream-maker",
+      "name": "SAVA 萨瓦 造梦者 / Dream Maker",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-bison-pro-2025-105-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-bison-pro-2025-105-di2",
+      "name": "GIRDER 格拉德 Bison Pro 2025 105 Di2",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-dash-105-di2-2023-reference",
+      "stage": "candidate",
+      "record": "candidate:girder-dash-105-di2-2023-reference",
+      "name": "GIRDER 格拉德 Dash 105 Di2 — documented 2023 build",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-endurance",
+          "status": "unresolved",
+          "basis": "Girder’s endurance DASH is the older ROAD-section model; whether this 2023 build is that generation is not established.",
+          "source_ids": [],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-fame-105-di2-2023-reference",
+      "stage": "candidate",
+      "record": "candidate:girder-fame-105-di2-2023-reference",
+      "name": "GIRDER 格拉德 Fame 105 Di2 — documented 2023 build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-bianchi-sprint-icr",
+      "stage": "candidate",
+      "record": "candidate:bianchi-sprint-icr",
+      "name": "Bianchi Sprint ICR 105 Di2 (YTBR6)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "Only the fork is described as aero.",
+          "source_ids": [],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-look-765-electronic",
+      "stage": "candidate",
+      "record": "candidate:look-765-electronic",
+      "name": "LOOK 洛克 765 electronic",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 34 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-ur-one-frameset",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-ur-one-frameset",
+      "name": "Quick Pro UR:ONE frameset",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-dash-pf-ultegra-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-dash-pf-ultegra-di2",
+      "name": "GIRDER 格拉德 Dash endurance press-fit T700/T800 Ultegra Di2",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-tsar-105-di2-2023-reference",
+      "stage": "candidate",
+      "record": "candidate:girder-tsar-105-di2-2023-reference",
+      "name": "GIRDER 格拉德 Tsar 105 Di2 — documented 2023 build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-tsar-ultegra-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-tsar-ultegra-di2",
+      "name": "GIRDER 格拉德 Tsar press-fit T700/T800 Ultegra Di2",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-quick-pro-xr-one",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-quick-pro-xr-one",
+      "name": "Quick Pro XR:ONE GRX Di2 1×12",
+      "memberships": [
+        "gravel-adventure"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-sava-r9",
+      "stage": "candidate",
+      "record": "candidate:sava-r9",
+      "name": "SAVA 萨瓦 R9 / 天刺 R9",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-titanium-road-2025-105-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-titanium-road-2025-105-di2",
+      "name": "GIRDER 格拉德 Titanium road 2025 105 Di2",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-vittoria-7170",
+      "stage": "candidate",
+      "record": "candidate:java-vittoria-7170",
+      "name": "JAVA 佳沃 Vittoria 7170 closed-wheel build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-spark-evo-gen4-frameset",
+      "stage": "candidate",
+      "record": "candidate:pardus-spark-evo-gen4-frameset",
+      "name": "PARDUS 瑞豹 Spark EVO Gen 4 frameset",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-van-rysel-rcr",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-van-rysel-rcr",
+      "name": "Van Rysel RCR-F Pro Shimano 105 Di2",
+      "memberships": [
+        "road-race",
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "supported",
+          "basis": "The official Van Rysel RCR-F family page frames the platform around aerodynamics, stability and stiffness.",
+          "source_ids": [
+            "van-rysel-rcr-f-family-official-2026-09-01"
+          ],
+          "batch": "C04"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-tt-one",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-tt-one",
+      "name": "Quick Pro TT ONE",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-merida-silex",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-merida-silex",
+      "name": "Merida SILEX 7000 25",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [
+        {
+          "category": "gravel-race",
+          "status": "rejected",
+          "basis": "The long-term review describes a relaxed, non-race position.",
+          "source_ids": [
+            "merida-silex-7000-radfahren-review-recheck-2026-09-23"
+          ],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-seka-spear-standard-105-di2",
+      "stage": "candidate",
+      "record": "candidate:seka-spear-standard-105-di2",
+      "name": "SEKA Spear (standard frame) 105 Di2 dealer build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-trek-domane",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-trek-domane",
+      "name": "Trek Domane SL 5 Gen 4",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "38 mm is recorded, but cited sources do not state mixed-surface or all-road positioning.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-falco-t91-t912",
+      "stage": "candidate",
+      "record": "candidate:falco-t91-t912",
+      "name": "FALCO 三火 T912 / 寰宇单车 multi-configuration lead",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-specialized-crux-10r-frameset",
+      "stage": "candidate",
+      "record": "candidate:specialized-crux-10r-frameset",
+      "name": "Specialized Crux 10r frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 47 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-meinier-superlight-2",
+      "stage": "candidate",
+      "record": "candidate:meinier-superlight-2",
+      "name": "MEINIER full-carbon road bike, exact model unresolved",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-fame-2025-ultegra-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-fame-2025-ultegra-di2",
+      "name": "GIRDER 格拉德 Fame 2025 Ultegra Di2",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-tr-one",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-tr-one",
+      "name": "Quick Pro TR:ONE",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-trek-madone-gen-8",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-trek-madone-gen-8",
+      "name": "Trek Madone SL 5 Gen 8",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "road-climbing",
+          "status": "rejected",
+          "basis": "A reviewer described responsive climbing; that is not climbing positioning.",
+          "source_ids": [
+            "trek-madone-sl5-gen8-mens-health-review-2026-09-22"
+          ],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-laget-discovery-one-pro",
+      "stage": "candidate",
+      "record": "candidate:laget-discovery-one-pro",
+      "name": "LAGET DISCOVERY ONE PRO",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-laget-pioneer-one",
+      "stage": "candidate",
+      "record": "candidate:laget-pioneer-one",
+      "name": "LAGET PIONEER ONE",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-tsb-titan-super-bond-pioneer-one",
+      "stage": "candidate",
+      "record": "candidate:tsb-titan-super-bond-pioneer-one",
+      "name": "TSB / Titan Super Bond 泰世邦 PIONEER ONE",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-x-lab-xds-gt8",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-x-lab-xds-gt8",
+      "name": "X-LAB GT8 GRX Di2",
+      "memberships": [
+        "gravel",
+        "gravel-race"
+      ],
+      "decisions": [
+        {
+          "category": "gravel-race",
+          "status": "supported",
+          "basis": "XDS's official China store describes the GT8 as X-LAB's first racing gravel road bike (竞速砾石公路车).",
+          "source_ids": [
+            "xds-official-cn-bicycle-listing-2026-10-27"
+          ],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-rs8",
+      "stage": "candidate",
+      "record": "candidate:xlab-rs8",
+      "name": "X-LAB RS8",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-winspace-t1600",
+      "stage": "candidate",
+      "record": "candidate:winspace-t1600",
+      "name": "WINSPACE 银贝斯 T1600",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-dash-2025-ultegra-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-dash-2025-ultegra-di2",
+      "name": "GIRDER 格拉德 Dash 2025 Ultegra Di2",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-endurance",
+          "status": "rejected",
+          "basis": "The official page separates the NEW 2025 DASH from the older T700+T800 endurance DASH.",
+          "source_ids": [
+            "girder-dash-2025-ultegra-di2-official-2026-10-24"
+          ],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-hi-light-r9-force-pr1600",
+      "stage": "candidate",
+      "record": "candidate:hi-light-r9-force-pr1600",
+      "name": "Hi-Light 航轮 R9 FORCE PR1600",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-argon18-krypton-pro",
+      "stage": "candidate",
+      "record": "candidate:argon18-krypton-pro",
+      "name": "Argon 18 Krypton Pro",
+      "memberships": [
+        "aero-wide-clearance",
+        "all-road"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "supported",
+          "basis": "The current Argon 18 page presents the Krypton Pro as part of its all-road family, with up to 43 mm recorded clearance.",
+          "source_ids": [
+            "argon18-krypton-pro-official-2026-08-29"
+          ],
+          "batch": "C05"
+        },
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "Argon 18 presents the Krypton Pro in its all-road family, not as an aero road bike.",
+          "source_ids": [
+            "argon18-krypton-pro-official-2026-08-29"
+          ],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-specialized-roubaix-sl8-sport-105",
+      "stage": "candidate",
+      "record": "candidate:specialized-roubaix-sl8-sport-105",
+      "name": "Specialized 2025 Roubaix SL8 Sport Shimano 105",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "40 mm is recorded, but cited sources do not state mixed-surface or all-road positioning.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-merida-reacto",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-merida-reacto",
+      "name": "Merida REACTO 6000 CN 27",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-west-biking-team-road",
+      "stage": "candidate",
+      "record": "candidate:west-biking-team-road",
+      "name": "WEST BIKING 西骑者 Team edition carbon road",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-uragano-evo",
+      "stage": "candidate",
+      "record": "candidate:pardus-uragano-evo",
+      "name": "PARDUS 瑞豹 Uragano EVO",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-seka-exceed-105-di2-dealer-build",
+      "stage": "candidate",
+      "record": "candidate:seka-exceed-105-di2-dealer-build",
+      "name": "SEKA Exceed 105 Di2 dealer build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-laget-discovery-one-flagship",
+      "stage": "candidate",
+      "record": "candidate:laget-discovery-one-flagship",
+      "name": "LAGET DISCOVERY ONE flagship",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-huanyu-az-one",
+      "stage": "candidate",
+      "record": "candidate:huanyu-az-one",
+      "name": "HUANYU 寰宇单车 AZ ONE / 青龙·赤子",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pinarello-f5",
+      "stage": "candidate",
+      "record": "candidate:pinarello-f5",
+      "name": "PINARELLO F5",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-aero",
+          "status": "unresolved",
+          "basis": "Only a named 'Aero Keel' bottom-bracket feature is recorded, not aero frame positioning.",
+          "source_ids": [
+            "pinarello-f5-my26-current-2026-08-30"
+          ],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-rt9",
+      "stage": "candidate",
+      "record": "candidate:xlab-rt9",
+      "name": "X-LAB RT9 frameset",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 30 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-ad8",
+      "stage": "candidate",
+      "record": "candidate:xlab-ad8",
+      "name": "X-LAB AD8",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-trek-checkpoint",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-trek-checkpoint",
+      "name": "Trek Checkpoint SL 5 AXS Gen 3",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-winspace-g3",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-winspace-g3",
+      "name": "Winspace G3 Pro Di2 complete bike",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [
+        {
+          "category": "adventure-gravel",
+          "status": "rejected",
+          "basis": "'Adventure' is the cockpit's product name, not the bike's positioning.",
+          "source_ids": [],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-specialized-roubaix-sl8-comp-105",
+      "stage": "candidate",
+      "record": "candidate:specialized-roubaix-sl8-comp-105",
+      "name": "Specialized Roubaix SL8 Comp 105",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "40 mm is recorded, but cited sources do not state mixed-surface or all-road positioning.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-aero-team-dura-ace-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-aero-team-dura-ace-di2",
+      "name": "GIRDER 格拉德 Aero Team press-fit T700/T800 Dura-Ace Di2",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-fame-pro-2025-dura-ace-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-fame-pro-2025-dura-ace-di2",
+      "name": "GIRDER 格拉德 Fame Pro 2025 Dura-Ace Di2",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-dash-pro-2025-dura-ace-di2",
+      "stage": "candidate",
+      "record": "candidate:girder-dash-pro-2025-dura-ace-di2",
+      "name": "GIRDER 格拉德 Dash Pro 2025 Dura-Ace Di2",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-specialized-tarmac-sl8",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-specialized-tarmac-sl8",
+      "name": "Specialized Tarmac SL8 Comp 105 Di2",
+      "memberships": [
+        "road-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-gr-one-grx-di2",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-gr-one-grx-di2",
+      "name": "Quick Pro GR:ONE GRX Di2 1×12",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 45 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-er-one",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-er-one",
+      "name": "Quick Pro ER:ONE",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-specialized-s-works-crux-frameset",
+      "stage": "candidate",
+      "record": "candidate:specialized-s-works-crux-frameset",
+      "name": "Specialized S-Works Crux frameset",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 47 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-robin-evo-force-axs",
+      "stage": "candidate",
+      "record": "candidate:pardus-robin-evo-force-axs",
+      "name": "PARDUS 瑞豹 知更鸟 Robin EVO Force AXS (gen 3)",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-cervelo-aspero-5-current",
+      "stage": "candidate",
+      "record": "candidate:cervelo-aspero-5-current",
+      "name": "Cervélo Áspero-5",
+      "memberships": [
+        "aero-wide-clearance"
+      ],
+      "decisions": [
+        {
+          "category": "gravel-race",
+          "status": "unresolved",
+          "basis": "Race-gravel positioning is not stated in the cited source notes.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-spark-evo-gen4-ultegra-di2",
+      "stage": "candidate",
+      "record": "candidate:pardus-spark-evo-gen4-ultegra-di2",
+      "name": "PARDUS 瑞豹 Spark EVO Gen 4 Ultegra Di2 (2026)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-scott-foil-rc-10",
+      "stage": "candidate",
+      "record": "candidate:scott-foil-rc-10",
+      "name": "SCOTT Foil RC 10 (425337)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 30 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-ur-one",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-ur-one",
+      "name": "Quick Pro UR:ONE",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-rs9",
+      "stage": "candidate",
+      "record": "candidate:xlab-rs9",
+      "name": "X-LAB RS9",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-quick-pro-tr-one-dura-ace-di2",
+      "stage": "candidate",
+      "record": "candidate:quick-pro-tr-one-dura-ace-di2",
+      "name": "Quick Pro TR:ONE Dura-Ace Di2 complete",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-ad9",
+      "stage": "candidate",
+      "record": "candidate:xlab-ad9",
+      "name": "X-LAB AD9",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-giant-propel-gen4-community-lead",
+      "stage": "candidate",
+      "record": "candidate:giant-propel-gen4-community-lead",
+      "name": "Giant Propel Advanced SL 1 (Gen 4)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-laget-aero-one",
+      "stage": "candidate",
+      "record": "candidate:laget-aero-one",
+      "name": "LAGET AERO ONE",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 30 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-colnago-y1rs",
+      "stage": "candidate",
+      "record": "candidate:colnago-y1rs",
+      "name": "COLNAGO 梅花 Y1Rs",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-xlab-dawnbreaker",
+      "stage": "candidate",
+      "record": "candidate:xlab-dawnbreaker",
+      "name": "X-LAB DAWNBREAKER",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-gomera-evo-dura-ace-di2",
+      "stage": "candidate",
+      "record": "candidate:pardus-gomera-evo-dura-ace-di2",
+      "name": "PARDUS 瑞豹 戈梅拉 Gomera EVO Dura-Ace Di2",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-canyon-aeroad",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-canyon-aeroad",
+      "name": "Canyon Aeroad CFR Di2",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-canyon-ultimate",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-canyon-ultimate",
+      "name": "Canyon Ultimate CFR AXS",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-climbing",
+          "status": "unresolved",
+          "basis": "The record calls it a climbing/race build, but no cited source note states climbing positioning.",
+          "source_ids": [],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-specialized-s-works-crux-2024-sram-red-xplr",
+      "stage": "candidate",
+      "record": "candidate:specialized-s-works-crux-2024-sram-red-xplr",
+      "name": "Specialized 2024 S-Works Crux SRAM Red XPLR",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 47 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-felt-ia-2",
+      "stage": "candidate",
+      "record": "candidate:felt-ia-2",
+      "name": "FELT IA 2.0",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-carbonda-cfr707",
+      "stage": "candidate",
+      "record": "candidate:carbonda-cfr707",
+      "name": "Carbonda CFR707",
+      "memberships": [
+        "adventure-gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-cosmosworks-carbon-e-road",
+      "stage": "candidate",
+      "record": "candidate:cosmosworks-carbon-e-road",
+      "name": "cosmosworks / 宇宙E-BIKE mixed NOMAD / Oi! lead",
+      "memberships": [
+        "e-road"
+      ],
+      "decisions": [],
+      "screen": "E-road only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-de-rosa-idol",
+      "stage": "candidate",
+      "record": "candidate:de-rosa-idol",
+      "name": "DE ROSA 德罗萨 Idol",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-dengfu-gravel",
+      "stage": "candidate",
+      "record": "candidate:dengfu-gravel",
+      "name": "Dengfu R20 Disc Gravel Bike Frame",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-giant-defy-advanced-sl1-community-lead",
+      "stage": "candidate",
+      "record": "candidate:giant-defy-advanced-sl1-community-lead",
+      "name": "Giant Defy Advanced SL 1",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "rejected",
+          "basis": "'OverDrive Aero' names the steerer, not aero frame shaping.",
+          "source_ids": [
+            "giant-defy-advanced-sl1-uk-official-recheck-2026-09-23"
+          ],
+          "batch": "C05"
+        },
+        {
+          "category": "road-aero",
+          "status": "rejected",
+          "basis": "'OverDrive Aero' names the steerer, not aero frame shaping.",
+          "source_ids": [
+            "giant-defy-advanced-sl1-uk-official-recheck-2026-09-23"
+          ],
+          "batch": "C05"
+        },
+        {
+          "category": "all-road",
+          "status": "unresolved",
+          "basis": "40 mm is recorded, but cited sources do not state mixed-surface or all-road positioning.",
+          "source_ids": [],
+          "batch": "C06"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-dash-frameset-unresolved-generation",
+      "stage": "candidate",
+      "record": "candidate:girder-dash-frameset-unresolved-generation",
+      "name": "GIRDER 格拉德 Dash carbon frameset — generation unresolved",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [
+        {
+          "category": "road-endurance",
+          "status": "unresolved",
+          "basis": "The frameset's generation is unresolved, and only the older press-fit DASH is the endurance model.",
+          "source_ids": [],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-jaunt-apex-axs",
+      "stage": "candidate",
+      "record": "candidate:girder-jaunt-apex-axs",
+      "name": "GIRDER 格拉德 Jaunt carbon gravel SRAM Apex AXS",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-girder-titanium-gravel-2025-apex-axs",
+      "stage": "candidate",
+      "record": "candidate:girder-titanium-gravel-2025-apex-axs",
+      "name": "GIRDER 格拉德 Titanium gravel 2025 SRAM Apex XPLR AXS",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum clearance. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-gito-wave",
+      "stage": "candidate",
+      "record": "candidate:gito-wave",
+      "name": "GITO 捷拓 波浪 carbon-wheel listing (exact frame model unresolved)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-hongfu-gravel",
+      "stage": "candidate",
+      "record": "candidate:hongfu-gravel",
+      "name": "Hongfu current gravel frame",
+      "memberships": [],
+      "decisions": [
+        {
+          "category": "category",
+          "status": "unresolved",
+          "basis": "No category evidence is recorded for this profile.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No category is recorded; category identity remains unresolved.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-java-lampo-carbon-road",
+      "stage": "candidate",
+      "record": "candidate:java-lampo-carbon-road",
+      "name": "JAVA / LAMPO 蓝波 full-carbon road listing (exact model unresolved)",
+      "memberships": [
+        "road"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-kung-mach-complete",
+      "stage": "candidate",
+      "record": "candidate:kung-mach-complete",
+      "name": "KUNG 攻 MACH 马赫 aero complete bike (105 R7120 / 105 Di2 R7170)",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcg074-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcg074-d",
+      "name": "LightCarbon LCG074-D",
+      "memberships": [
+        "gravel-adventure"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcg074s-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcg074s-d",
+      "name": "LightCarbon LCG074S-D",
+      "memberships": [
+        "gravel-adventure"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 50 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcg087-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcg087-d",
+      "name": "LightCarbon LCG087-D",
+      "memberships": [
+        "gravel-adventure"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 47 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcg087s-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcg087s-d",
+      "name": "LightCarbon LCG087S-D",
+      "memberships": [
+        "gravel-adventure"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 47 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr007-v",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr007-v",
+      "name": "LightCarbon LCR007-V",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 25 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr014-v",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr014-v",
+      "name": "LightCarbon LCR014-V",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr015s-v",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr015s-v",
+      "name": "LightCarbon LCR015S-V",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr020-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr020-d",
+      "name": "LightCarbon LCR020-D",
+      "memberships": [
+        "road-aero",
+        "aero-wide-clearance"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "supported",
+          "basis": "LightCarbon's V5 catalog calls LCR020-D a Super Aero Race frame with an official 700C×35C maximum; 2× fit at 35 mm is not documented.",
+          "source_ids": [
+            "lightcarbon-catalog-v5-road-recheck-2026-10-11"
+          ],
+          "batch": "C05"
+        }
+      ],
+      "screen": "Proposed memberships reviewed manually; see decisions.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr0x-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr0x-d",
+      "name": "LightCarbon LCR0X-D",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcr0x-v",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcr0x-v",
+      "name": "LightCarbon LCR0X-V",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcrxs-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcrxs-d",
+      "name": "LightCarbon LCRXS-D",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lcrxs-v",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lcrxs-v",
+      "name": "LightCarbon LCRXS-V",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 28 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lctr003",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lctr003",
+      "name": "LightCarbon LCTR003",
+      "memberships": [
+        "track"
+      ],
+      "decisions": [],
+      "screen": "Track only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lctt001",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lctt001",
+      "name": "LightCarbon LCTT001",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lctt004",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lctt004",
+      "name": "LightCarbon LCTT004",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-lightcarbon-lctt05-d",
+      "stage": "candidate",
+      "record": "candidate:lightcarbon-lctt05-d",
+      "name": "LightCarbon LCTT05-D",
+      "memberships": [
+        "triathlon"
+      ],
+      "decisions": [],
+      "screen": "Triathlon / time trial only; drop-bar road and gravel memberships do not apply across disciplines.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-merida-scultura-endurance-4000-community-lead",
+      "stage": "candidate",
+      "record": "candidate:merida-scultura-endurance-4000-community-lead",
+      "name": "Merida Scultura Endurance 4000",
+      "memberships": [
+        "road-endurance"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 34 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-robin-evo-community-lead",
+      "stage": "candidate",
+      "record": "candidate:pardus-robin-evo-community-lead",
+      "name": "PARDUS Robin EVO competition build",
+      "memberships": [
+        "road-climbing"
+      ],
+      "decisions": [],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-pardus-spark-rs-community-lead",
+      "stage": "candidate",
+      "record": "candidate:pardus-spark-rs-community-lead",
+      "name": "PARDUS Spark RS custom build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-missing-china-price-specialized-crux",
+      "stage": "candidate",
+      "record": "candidate:missing-china-price-specialized-crux",
+      "name": "Specialized Crux Comp GRX",
+      "memberships": [
+        "gravel-race"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 47 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-tavelo-arow-sl-community-lead",
+      "stage": "candidate",
+      "record": "candidate:tavelo-arow-sl-community-lead",
+      "name": "Tavelo Arow SL custom build",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 32 mm is below 35 mm, so Aero, wide clearance and All-road do not apply. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-cyclone-gen3-7170",
+      "stage": "candidate",
+      "record": "candidate:twitter-cyclone-gen3-7170",
+      "name": "TWITTER Cyclone 3rd Shimano 105 R7120",
+      "memberships": [
+        "road-aero"
+      ],
+      "decisions": [
+        {
+          "category": "aero-wide-clearance",
+          "status": "unresolved",
+          "basis": "Aero road frame without a documented maximum clearance.",
+          "source_ids": [],
+          "batch": "stored-evidence screen"
+        }
+      ],
+      "screen": "No documented maximum tire clearance, so Aero, wide clearance and All-road cannot be assessed. Cited sources state no additional aero, endurance, climbing or all-road positioning.",
+      "second_review": "pending"
+    },
+    {
+      "id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave",
+      "stage": "candidate",
+      "record": "candidate:twitter-gravel-v3-2024-rs-carbon-wave",
+      "name": "TWITTER 骓特 Gravel V3 2024 RS 2×12",
+      "memberships": [
+        "gravel"
+      ],
+      "decisions": [],
+      "screen": "Documented clearance 40 mm. Cited sources state no race, adventure, touring or flat-bar subtype beyond the recorded category.",
+      "second_review": "pending"
+    }
+  ]
+}

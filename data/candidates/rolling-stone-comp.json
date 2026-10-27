@@ -3,6 +3,16 @@
   "name": "ROLLING STONE 滚石 COMPASS",
   "model_id": "rolling-stone-comp",
   "category": "road",
+  "additional_categories": [
+    {
+      "category": "road-aero",
+      "basis": "An exact-model Biketo review lists a horizontal aero frame for the COMPASS.",
+      "source_ids": [
+        "rolling-stone-compass-biketo-2026-08-30"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "The retained title and distinctive horizontal aero frame identify the legacy COMPASS. The listing title says road frameset while its photo shows an assembled bike, so the sold package and complete-bike build remain unresolved.",
   "facts": {

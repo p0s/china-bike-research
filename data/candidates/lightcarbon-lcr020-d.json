@@ -3,6 +3,16 @@
   "name": "LightCarbon LCR020-D",
   "model_id": "lightcarbon-lcr020-d",
   "category": "road-aero",
+  "additional_categories": [
+    {
+      "category": "aero-wide-clearance",
+      "basis": "LightCarbon's V5 catalog calls LCR020-D a Super Aero Race frame with an official 700C×35C maximum; 2× fit at 35 mm is not documented.",
+      "source_ids": [
+        "lightcarbon-catalog-v5-road-recheck-2026-10-11"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "frameset",
   "why_interesting": "LightCarbon’s V5 catalog lists an aero road frame with T47, Light UDH, a 1,000 g size-54 frame claim and a nominal 35C tire limit; the exact ordered revision and package remain unconfirmed.",
   "missing": [

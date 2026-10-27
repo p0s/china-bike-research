@@ -1169,6 +1169,8 @@ Object.assign(zh, {
   "Aero-shaped road and all-road frames with documented 38–40 mm maximum tire clearance and a dated frame or complete-build price. Two reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan. Aero shaping is not a measured drag result.": "具有气动造型的公路车与全路况车架，有记录的最大轮胎空间为 38–40 mm，并附有日期的车架或装车价格。其中两款仅在 1× 传动下达到 38 mm（2× 时为 32–34 mm）；车架装车估价使用所选的装车方案。气动造型并非实测风阻结果。",
   "Each opens a comparison of its listed bikes with its criteria. Not a ranking.": "每项都会打开所列车型的对比及其标准，并非排名。",
   "Also known as": "又名",
+  "General road": "通用公路",
+  "Aero, wide clearance": "气动宽胎",
   "PARDUS sells this second-generation platform as SUPG2 SPORT in 105, eGR and PES builds. This catalog entry is the eGR build; parts from the official 105 page are not applied to it.": "PARDUS 以 SUPG2 SPORT 之名销售这一第二代平台，提供 105、eGR 和 PES 配置。本目录条目为 eGR 配置；官方 105 页面所列零件不适用于它。",
   "Refine": "细化筛选",
   "Frame build": "车架装车",

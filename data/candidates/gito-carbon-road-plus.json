@@ -3,6 +3,16 @@
   "name": "GITO 捷拓 G320 build (exact trim unresolved)",
   "model_id": "gito-carbon-road-plus",
   "category": "road",
+  "additional_categories": [
+    {
+      "category": "road-aero",
+      "basis": "An exact-model retailer page identifies G320 as a carbon aero-road platform.",
+      "source_ids": [
+        "gito-g320-retailer-2026-08-29"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "The retained seller image visibly carries a G320 chainstay mark. A current exact-model retailer page verifies the carbon G320 platform but also exposes multiple materially different drivetrains and wheel packages, so the retained CNY 4,999 trim remains unresolved.",
   "facts": {

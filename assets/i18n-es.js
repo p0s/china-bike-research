@@ -291,6 +291,7 @@ export const es = {
   "E-road": "Carretera eléctrica",
   "Each opens a comparison of its listed bikes with its criteria. Not a ranking.": "Cada uno abre una comparación de sus bicicletas con sus criterios. No es una clasificación.",
   "Also known as": "También conocida como",
+  "General road": "Carretera general",
   "Editing ready": "Edición lista",
   "Editing, shared links and saved drafts require JavaScript to finish loading.": "Para editar, compartir enlaces y guardar borradores, JavaScript debe terminar de cargarse.",
   "Electronic": "Electrónico",

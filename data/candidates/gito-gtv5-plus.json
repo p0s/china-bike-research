@@ -3,6 +3,16 @@
   "name": "GITO 捷拓 G530 seller-listed 8.3 kg build",
   "model_id": "gito-gtv5-plus",
   "category": "road",
+  "additional_categories": [
+    {
+      "category": "road-aero",
+      "basis": "An exact-model retailer page identifies GITO 530 as a Toray T800 carbon aero-road platform.",
+      "source_ids": [
+        "gito-g530-retailer-2026-08-29"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "The retained seller image clearly reads G530 rather than the previously unsupported GTV5+ label and states Shimano mechanical 105, a carbon wheelset and an approximate 8.3 kg complete-bike weight.",
   "facts": {
