@@ -10142,6 +10142,81 @@
           }
         ]
       }
+    },
+    {
+      "id": "new-carbon-bike-unboxing-checklist-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
+      },
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480-dbff22b04c.avif",
+          "width": 480,
+          "height": 320,
+          "type": "image/avif",
+          "bytes": 11937,
+          "sha256": "dbff22b04ca1c175de8784db262758ccb708c114f77a6ddb389100fbc9a695df"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "Helmeted red panda lifts protective foam from a generic bicycle frame in an open carton beside a separately packed wheel and parts.",
+          "zh-Hans": "戴头盔的小熊猫从打开的纸箱中掀起示意车架上的保护泡棉，旁边整齐放着单独包装的车轮和部件。",
+          "de": "Ein Rotpanda mit Helm hebt Schutzpolster von einem beispielhaften Fahrradrahmen im offenen Karton;Rad und Teile liegen getrennt verpackt daneben."
+        },
+        "prompt": "Editorial scene: Helmeted red panda lifts protective foam from a generic bicycle frame in an open carton beside a separately packed wheel and parts.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "ac7dac721a710eec2e6305b8fa47660f48b110d3d803a6155f5d4ca38231f82b",
+          "width": 1672,
+          "height": 941
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-640-cb4e0dd02e.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 28933,
+            "sha256": "cb4e0dd02e443c246266f19efcfb96967e5f3c6f9be637c3ed48eadd060cea3b"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-1600-26ad2ad87f.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 121153,
+            "sha256": "26ad2ad87f79a252644852038c14c44f328d6c48f5a8fe8cb4c1e8d6afe9fbfe"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 203355,
+            "sha256": "451c80976b4f49745f97e381d16981125bb468fcf7345b225ea8f33ba57463a1"
+          }
+        ]
+      }
     }
   ]
 }

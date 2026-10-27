@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-640-cb4e0dd02e.avif', 'cb4e0dd02e443c246266f19efcfb96967e5f3c6f9be637c3ed48eadd060cea3b'],
+  ['assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-1600-26ad2ad87f.avif', '26ad2ad87f79a252644852038c14c44f328d6c48f5a8fe8cb4c1e8d6afe9fbfe'],
+  ['assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-1200.jpg', '451c80976b4f49745f97e381d16981125bb468fcf7345b225ea8f33ba57463a1'],
   ['assets/blog/buy-tavelo-bike-mascot-cover-18751c5bae-640-a072a3c287.avif', 'a072a3c2871c73f7c23d45640e627a1fe48139075355c8e5ca302bc5ab8a1573'],
   ['assets/blog/buy-tavelo-bike-mascot-cover-18751c5bae-1600-7970d51495.avif', '7970d51495d76fe8f8cc65c81b14660a663f72c74b810a74670441f929bfd581'],
   ['assets/blog/buy-tavelo-bike-mascot-cover-18751c5bae-1200.jpg', '65d8c55da6e454a6044fb2be22003e352123073f60dc9881a7789ec7df69e13c'],
