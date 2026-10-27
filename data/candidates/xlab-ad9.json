@@ -3,6 +3,16 @@
   "name": "X-LAB AD9",
   "model_id": "xlab-ad9",
   "category": "road-aero",
+  "additional_categories": [
+    {
+      "category": "road-race",
+      "basis": "X-LAB says AD9 is raced by the XDS Astana Team in the UCI WorldTour and is the team's official race machine.",
+      "source_ids": [
+        "xlab-ad9-official-recheck-2026-10-27"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "XDS's current flagship aero race platform, with an official 7.2 kg Dura-Ace Di2 mainland build and a 32 mm manufacturer maximum tire clearance.",
   "missing": [

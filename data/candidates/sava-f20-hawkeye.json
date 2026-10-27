@@ -2,7 +2,17 @@
   "id": "sava-f20-hawkeye",
   "name": "SAVA Hawkeye F20 105 24-speed",
   "model_id": "sava-f20-hawkeye",
-  "category": "road",
+  "category": "road-race",
+  "additional_categories": [
+    {
+      "category": "road-climbing",
+      "basis": "SAVA's product FAQ says the F20's R16 frame is a comprehensive climbing frame.",
+      "source_ids": [
+        "sava-hawkeye-f20-official-recheck-2026-10-27"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "Exact official global complete bike with Shimano 105, hydraulic discs, carbon wheels, weight and geometry evidence.",
   "missing": [

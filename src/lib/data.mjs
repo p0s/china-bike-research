@@ -77,7 +77,17 @@ export function categoryFamily(category) {
 export function categoryMemberships(record) {
   const primary = String(record?.category ?? '').split('|').map((item) => item.trim()).filter(Boolean);
   const additional = (record?.additional_categories ?? []).map((item) => item?.category).filter(Boolean);
-  return [...new Set([...primary, ...additional])];
+  const all = [...new Set([...primary, ...additional])];
+  // A plain road or gravel parent adds nothing beside a specific sub-type of the same family.
+  return all.filter((category) => !(category === 'road' && all.some(isRoadSubtype)) && !(category === 'gravel' && all.some(isGravelSubtype)));
+}
+
+function isRoadSubtype(category) {
+  return category === 'aero-wide-clearance' || category.startsWith('road-');
+}
+
+function isGravelSubtype(category) {
+  return ['gravel-race', 'gravel-flatbar', 'gravel-touring', 'gravel-adventure', 'adventure-gravel'].includes(category);
 }
 
 export function categoryFamilies(categories) {

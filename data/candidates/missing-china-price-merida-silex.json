@@ -2,7 +2,17 @@
   "id": "missing-china-price-merida-silex",
   "name": "Merida SILEX 7000 25",
   "model_id": "merida-silex",
-  "category": "gravel",
+  "category": "adventure-gravel",
+  "additional_categories": [
+    {
+      "category": "gravel-touring",
+      "basis": "Merida China names long-distance bicycle travellers and long trips as uses, with gear mounts on frame and fork and F-MOUNT fender mounts.",
+      "source_ids": [
+        "merida-china-silex-7000-official-recheck-2026-10-27"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "Exact official mainland SILEX 7000 build with full geometry, 45 mm clearance and a CNY 20,800 suggested retail price.",
   "missing": [

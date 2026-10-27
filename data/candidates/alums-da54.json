@@ -3,6 +3,16 @@
   "name": "ALVAS 爱瓦士 DA54",
   "model_id": "alums-da54",
   "category": "road-aero",
+  "additional_categories": [
+    {
+      "category": "road-endurance",
+      "basis": "The ALVAS DA54 page lists Road Endurance Geometry alongside Super Aero Tubes, so the aero primary stays and endurance road is added.",
+      "source_ids": [
+        "alvas-da54-official-recheck-2026-10-27"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "A dated mainland DA54 price lead now has exact manufacturer identity, construction and fit evidence; ALVAS is the correct brand spelling.",
   "facts": {
