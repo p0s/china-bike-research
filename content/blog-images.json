@@ -10444,6 +10444,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "buy-dengfu-frame-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda packing a bicycle parts parcel",
+        "zh-Hans": "打包自行车零件的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is packing a small plain cardboard parcel, kneeling beside it and using a tape dispenser to close it. Cheerful competent expression. Unprinted box with no labels or text. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "5e7d345dec565f7168665259bd95e4ad84a2ca8ee5ec736de725dd2dc80ce3b4"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-mascot-480-ab2c6205b2.avif",
+          "width": 480,
+          "height": 320,
+          "type": "image/avif",
+          "bytes": 14181,
+          "sha256": "ab2c6205b28e04038000ed2529477c28c9246064eb88658d783e0705ee09e85b"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "Helmeted red panda reviews a blank notebook beside a generic carbon frameset and neatly arranged small parts in a workshop.",
+          "zh-Hans": "戴头盔的小熊猫在维修台前查看空白笔记本，旁边是碳纤维车架、前叉和整齐排列的小配件。",
+          "de": "Ein Rotpanda mit Helm prüft ein leeres Notizbuch neben einem allgemeinen Carbonrahmenset und geordneten Kleinteilen in einer Werkstatt."
+        },
+        "prompt": "Editorial scene: Helmeted red panda reviews a blank notebook beside a generic carbon frameset and neatly arranged small parts in a workshop.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-08",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "b1ef3a7f0caeefb98fbc63cbadced18af9f39c805c7912fdbbae53cf5cae8699",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-640-e8521cd7cf.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 25148,
+            "sha256": "e8521cd7cf5f894204faafb305275925085ec6a496c04f2f0546611bb49eaf68"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-1600-fc9e1e09eb.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 97200,
+            "sha256": "fc9e1e09ebb67d8a00456321f3b7405c729d79dc71dc14f3ea620c56df997c0c"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/buy-dengfu-frame-mascot-cover-b1ef3a7f0c-1200.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 163107,
+            "sha256": "8c62abf3a6cd80c8cb252f92569865adaca378d24cfb7c41fbbeefc2014ccd9d"
+          }
+        ]
+      }
     }
   ]
 }

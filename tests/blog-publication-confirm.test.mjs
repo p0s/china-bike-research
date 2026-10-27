@@ -6,9 +6,10 @@ import path from 'node:path';
 function confirmation(mismatch=false, missingIndex=false, exposedDraft=false) {
  const code=[
   "import fs from 'node:fs';import assert from 'node:assert/strict';",
-  "const originalRead=fs.readFileSync;const queue=JSON.parse(originalRead('content/post-schedule.json','utf8'));fs.existsSync=file=>!String(file).includes('/dist/');",
+  "const originalRead=fs.readFileSync;const queue=JSON.parse(originalRead('content/post-schedule.json','utf8'));"+
+   (exposedDraft?"queue.entries.find(entry=>entry.slug===queue.delivery.entries.at(-1).slug).published_at=null;":"")+"fs.existsSync=file=>!String(file).includes('/dist/');",
   "const entry=queue.entries.find(entry=>entry.published_at);const slug=entry.slug;const nextDraftSlugs=[...new Set(queue.entries.map(entry=>entry.series_id))].map(series=>queue.entries.find(entry=>entry.series_id===series&&!entry.published_at)?.slug).filter(Boolean);let written=false;const requested=[];",
-  "fs.readFileSync=function(file,...args){if(String(file).endsWith('/.research/blog-publication-state.json'))return JSON.stringify({schema_version:1,receipts:{}});if(String(file).includes('/dist/'))return '<html>exact production article</html>';return originalRead.call(this,file,...args);};",
+  "fs.readFileSync=function(file,...args){if(String(file).endsWith('/content/post-schedule.json'))return JSON.stringify(queue);if(String(file).endsWith('/.research/blog-publication-state.json'))return JSON.stringify({schema_version:1,receipts:{}});if(String(file).includes('/dist/'))return '<html>exact production article</html>';return originalRead.call(this,file,...args);};",
   "fs.mkdirSync=()=>{};fs.writeFileSync=()=>{written=true;};fs.renameSync=()=>{};",
   "globalThis.fetch=async(url,options)=>{assert.equal(options.headers.dnt,'1');assert.equal(options.headers['sec-gpc'],'1');assert.equal(options.redirect,'error');assert.ok(options.signal instanceof AbortSignal);requested.push(url);",
   "const isIndex=/\\/blog\\/$/.test(url);const prefix=new URL(url).pathname.replace(/\\/blog\\/$/,'');const current=url.endsWith('/blog/'+slug+'/');",
