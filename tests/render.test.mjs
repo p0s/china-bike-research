@@ -132,8 +132,10 @@ test('homepage offers compact criteria-led comparison starting points', () => {
   ]) {
     assert.match(html, new RegExp(`(?:models\\/${id}\\/|compare=[^"#]*${id})`));
   }
-  assert.match(html, /compare=incolor-speedster-sr-frameset%2Ccandidate-lightcarbon-lcr018-d%2Ccandidate-tavelo-arden&amp;start=wide-tire-aero#compare/);
-  assert.match(html, /data-criteria="Aerodynamically shaped road frames with documented 38 mm clearance/);
+  assert.match(html, /compare=incolor-speedster-sr-frameset%2Ccandidate-lightcarbon-lcr018-d%2Ccandidate-tavelo-arden%2Cpardus-super-sport-gen2-egr&amp;start=wide-tire-aero#compare/);
+  assert.match(html, /compare=twitter-v3-wheeltop-eds%2Cpardus-super-sport-gen2-egr%2Cincolor-voyager-frameset&amp;start=electronic-gravel#compare/);
+  assert.match(html, /data-criteria="Aero-shaped road and all-road frames with documented 38–40 mm maximum tire clearance[^"]*Aero shaping is not a measured drag result\."/);
+  assert.doesNotMatch(html, /Compare the three|three-bike comparison/);
 });
 
 test('homepage comparison payload keeps frameset pricing dynamic without serializing inactive fields', () => {

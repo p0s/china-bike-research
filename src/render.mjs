@@ -763,16 +763,30 @@ function catalogPriceOrder(ctx, summary) {
   return unavailable ? Number.POSITIVE_INFINITY : projection.display.low;
 }
 
+// Verified alternate names: shown beside the catalog name and searchable, never a new entry.
+function aliasNames(...records) {
+  return [...new Set(records.flatMap((record) => record?.aliases ?? []))];
+}
+
+function aliasLine(names, tag, className, note = '') {
+  if (!names.length) return '';
+  const line = `<${tag} class="${className}"><span>Also known as</span> ${names.map((name) => `<b>${escapeHtml(name)}</b>`).join(' · ')}</${tag}>`;
+  return note ? `${line}<${tag} class="model-subline alias-note">${escapeHtml(note)}</${tag}>` : line;
+}
+
 function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
   const { variant, platform, brand, allInPrice } = product;
   const metric = categoryMetric(platform);
   const tireClearance = publishedTireClearance(product);
+  const aliases = aliasNames(platform, variant);
   const searchable = [
     brand.name,
     brand.name_zh,
+    ...(brand.aliases ?? []),
     variant.name,
     platform.name,
     platform.name_zh,
+    ...aliases,
     categoryLabel(platform.category),
     platform.handlebar,
     drivetrainLabel(ctx, product),
@@ -798,7 +812,7 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
       <span class="product-copy">
         <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' && !/frameset/i.test(variant.name) ? '<span class="type-pill">Frameset</span>' : ''}</span>
         <strong class="product-name"><a href="${url(ctx.base, `/models/${variant.id}/`)}" data-model-link>${escapeHtml(variant.name)}</a></strong>
-        <span class="product-fit">${escapeHtml(categoryLabel(platform.category))}</span>
+        <span class="product-fit">${escapeHtml(categoryLabel(platform.category))}</span>${aliasLine(aliases, 'span', 'product-fit product-aliases')}
       </span>
     </div>
     ${price.html}
@@ -940,10 +954,13 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
   const metric = candidateMetric(entry);
   const tireClearance = candidateTireClearance(entry);
   const facts = candidate.facts ?? {};
+  const aliases = aliasNames(candidate);
   const searchable = [
     candidate.name,
+    ...aliases,
     brand?.name,
     brand?.name_zh,
+    ...(brand?.aliases ?? []),
     facts.drivetrain,
     facts.frame,
     facts.bottom_bracket,
@@ -980,7 +997,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
       <span class="product-copy">
         <span class="product-meta">${brandButton}${entry.kind === 'frameset' && !/frameset/i.test(candidate.name) ? type : ''}</span>
         <strong class="product-name">${sourceName}</strong>
-        ${entry.category ? `<span class="product-fit">${escapeHtml(entry.categories.map(categoryLabel).join(' · '))}</span>` : ''}
+        ${entry.category ? `<span class="product-fit">${escapeHtml(entry.categories.map(categoryLabel).join(' · '))}</span>` : ''}${aliasLine(aliases, 'span', 'product-fit product-aliases')}
       </span>
     </div>
     ${price.html}
@@ -1411,21 +1428,21 @@ const curatedComparisonGroups = [
   {
     id: 'wide-tire-aero',
     title: 'Wide-tire aero',
-    summary: 'Aero road frame · 38 mm documented clearance, 1× on two of three · dated price',
-    criteria: 'Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price. Two of the three reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan.',
-    ids: ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden']
+    summary: 'Aero-shaped frame · 38–40 mm documented clearance, 1× only on two · dated price',
+    criteria: 'Aero-shaped road and all-road frames with documented 38–40 mm maximum tire clearance and a dated frame or complete-build price. Two reach 38 mm only with a 1× drivetrain (32–34 mm with 2×); frame-build estimates use the selected build plan. Aero shaping is not a measured drag result.',
+    ids: ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden', 'pardus-super-sport-gen2-egr']
   }
 ];
 
-// Criteria-led starting points open their ordered three-bike comparison.
+// Criteria-led starting points open their ordered comparison of the listed bikes.
 function startingPoints(ctx, summaries) {
   const byId = new Map(summaries.map((item) => [item.id, item]));
   const items = curatedComparisonGroups.map((group) => {
     if (!group.ids.every((id) => byId.has(id))) throw new Error(`Curated comparison group ${group.id} has an unresolved catalog id`);
     const params = new URLSearchParams({ compare: group.ids.join(','), start: group.id });
-    return `<li><a class="starting-point" href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" data-curated-group="${escapeAttr(group.id)}" data-criteria="${escapeAttr(group.criteria)}" aria-label="Compare the three ${escapeAttr(group.title.toLowerCase())} choices"><strong>${escapeHtml(group.title)}</strong><small>${escapeHtml(group.summary)}</small></a></li>`;
+    return `<li><a class="starting-point" href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" data-curated-group="${escapeAttr(group.id)}" data-criteria="${escapeAttr(group.criteria)}" aria-label="Compare the ${escapeAttr(group.title.toLowerCase())} choices"><strong>${escapeHtml(group.title)}</strong><small>${escapeHtml(group.summary)}</small></a></li>`;
   }).join('');
-  return `<section class="rail-section rail-starting-points" aria-labelledby="starting-points-title"><h2 class="rail-label" id="starting-points-title">Starting points</h2><ul>${items}</ul><p class="rail-note">Each opens a three-bike comparison with its criteria. Not a ranking.</p></section>`;
+  return `<section class="rail-section rail-starting-points" aria-labelledby="starting-points-title"><h2 class="rail-label" id="starting-points-title">Starting points</h2><ul>${items}</ul><p class="rail-note">Each opens a comparison of its listed bikes with its criteria. Not a ranking.</p></section>`;
 }
 
 function priceSettings(ctx) {
@@ -1586,7 +1603,7 @@ export function renderModel(ctx, product) {
     : '';
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
-  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a></div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([categoryLabel(platform.category), !/frameset/i.test(variant.name) && variant.kind === 'frameset' ? 'frameset' : ''].filter(Boolean).join(' · '))}</p></header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
+  const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a></div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([categoryLabel(platform.category), !/frameset/i.test(variant.name) && variant.kind === 'frameset' ? 'frameset' : ''].filter(Boolean).join(' · '))}</p>${aliasLine(aliasNames(platform, variant), 'p', 'model-subline model-aliases', variant.alias_note ?? platform.alias_note ?? '')}</header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', pricePopoverLines(summary), { 'data-evidence-href': '#source-records', 'data-evidence-label': 'Full price record and conditions' })}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#source-records">All price records</a>${goodBuyThreshold ? `<span>${variant.kind === 'frameset' ? 'Frameset' : 'Complete-bike'} good-buy reference: below ${escapeHtml(formatCny(goodBuyThreshold))}</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
   </div>
@@ -1768,7 +1785,7 @@ export function renderCandidateModel(ctx, entry) {
   const candidateHeroImage = imageUrl(ctx, entry.image);
   const imageFigure = candidateGalleryFigure(ctx, entry);
   const storyTitle = 'Overview';
-  const body = `<section class="model-page candidate-model-page"><div class="page">${breadcrumbs(ctx, pageTitle, [], { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1></header><div class="model-grid${imageFigure ? '' : ' has-no-image'}">
+  const body = `<section class="model-page candidate-model-page"><div class="page">${breadcrumbs(ctx, pageTitle, [], { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1>${aliasLine(aliasNames(candidate), 'p', 'model-subline model-aliases', candidate.alias_note ?? '')}</header><div class="model-grid${imageFigure ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div>${facts.filter(([label]) => ['Frame weight', 'Complete weight', 'Tire clearance', 'Bottom bracket', 'Sizes'].includes(label)).slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}</dl></div>
   </div>

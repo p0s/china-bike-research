@@ -11,13 +11,13 @@ const context = { data, products, catalogCandidates, posts: [], base: '/preview'
 const groups = [
   ['affordable-carbon-aero', ['candidate-cycletrack-phantom-rx24', 'twitter-cyclone-gen3-et', 'candidate-camp-ace-qed']],
   ['electronic-gravel', ['twitter-v3-wheeltop-eds', 'pardus-super-sport-gen2-egr', 'incolor-voyager-frameset']],
-  ['wide-tire-aero', ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden']]
+  ['wide-tire-aero', ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden', 'pardus-super-sport-gen2-egr']]
 ];
 const entries = new Map([...products.map(p => [p.variant.id, p]), ...catalogCandidates.map(e => [e.id, e])]);
 const row = (html, id) => html.match(new RegExp(`<div class="catalog-row[^"]*"[^>]*data-id="${id}"[\\s\\S]*?(?=<div class="catalog-row|<div class="empty-state")`))?.[0];
 
 // Criteria-led starting points open their ordered comparison; they are not a ranking.
-test('starting points open their ordered three-bike comparison with visible criteria in every locale', () => {
+test('starting points open their ordered comparison with visible criteria in every locale', () => {
   for (const [locale, prefix] of [['en', ''], ['zh-Hans', '/zh'], ['de', '/de']]) {
     const html = renderHome({ ...context, locale });
     const rail = html.match(/<section class="rail-section rail-starting-points"[\s\S]*?<\/section>/)[0];
@@ -28,6 +28,7 @@ test('starting points open their ordered three-bike comparison with visible crit
       assert.ok(link[2].length > 40, group);
     }
     assert.doesNotMatch(rail, /<img /);
+    assert.doesNotMatch(rail, /three-bike|Compare the three|two of three|三车|三款|drei Modelle|von drei Rädern|zwei von drei/i, `${locale}: no fixed bike count`);
   }
 });
 
