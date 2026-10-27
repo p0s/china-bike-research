@@ -86,17 +86,24 @@ test('extra memberships need evidence, a matching discipline and documented wide
   assert.match(errors('xlab-ad8', { additional_categories: [membership('mtb-xc')] }), /different discipline/);
 });
 
-test('the category ledger accounts for the frozen catalog and agrees with the data', () => {
+test('the category ledger accounts for every catalog row and agrees with the data', () => {
   const ledger = JSON.parse(fs.readFileSync(new URL('../docs/research-batches/2026-10-27/category-membership-ledger.json', import.meta.url), 'utf8'));
-  assert.equal(ledger.rows.length, ledger.frozen_source.total);
-  assert.equal(new Set(ledger.rows.map((row) => row.id)).size, ledger.rows.length);
   const current = new Map([...products.map((p) => [p.variant.id, p.categories]), ...candidates.map((e) => [e.id, e.categories])]);
+  assert.equal(ledger.rows.length, current.size, 'one ledger row per catalog row');
+  assert.equal(ledger.rows.length, ledger.frozen_source.total + ledger.added_after_freeze.length);
+  assert.equal(new Set(ledger.rows.map((row) => row.id)).size, ledger.rows.length);
+  const sourceIds = new Set(data.sources.map((source) => source.id));
   const supported = new Set();
   for (const row of ledger.rows) {
     assert.ok(current.has(row.id), `${row.id} is still in the catalog`);
+    assert.deepEqual(row.memberships, current.get(row.id), `${row.id} memberships match the data`);
+    assert.ok(['concordant', 'reconciled', 'not-covered'].includes(row.second_review.status), row.id);
+    assert.equal(row.second_review.status === 'not-covered', ledger.added_after_freeze.includes(row.id), row.id);
     for (const decision of row.decisions) {
       assert.ok(['supported', 'rejected', 'unresolved'].includes(decision.status), row.id);
+      assert.ok(decision.outcome === undefined || ['accepted', 'rejected', 'unknown', 'confirmed'].includes(decision.outcome), row.id);
       assert.ok(decision.basis.trim(), `${row.id} ${decision.category} has a rationale`);
+      for (const id of decision.source_ids) assert.ok(sourceIds.has(id), `${row.id} cites existing source ${id}`);
       if (decision.status === 'supported') {
         assert.ok(current.get(row.id).includes(decision.category), `${row.id} carries supported ${decision.category}`);
         supported.add(`${row.record}:${decision.category}`);
@@ -108,4 +115,20 @@ test('the category ledger accounts for the frozen catalog and agrees with the da
       assert.ok(supported.has(`${type}:${record.id}:${category}`), `${type} ${record.id} ${category} is a reviewed ledger decision`);
     }
   }
+});
+
+test('reconciled categories keep one clear label set per real build', () => {
+  const rows = new Map([...products.map((p) => [p.variant.id, p.categories]), ...candidates.map((e) => [e.id, e.categories])]);
+  const roadChild = (category) => category === 'aero-wide-clearance' || category.startsWith('road-');
+  const gravelChild = (category) => ['gravel-race', 'gravel-flatbar', 'gravel-touring', 'gravel-adventure', 'adventure-gravel'].includes(category);
+  for (const [id, categories] of rows) {
+    assert.ok(!(categories.includes('road') && categories.some(roadChild)), `${id} is not also General road`);
+    assert.ok(!(categories.includes('gravel') && categories.some(gravelChild)), `${id} is not also plain Gravel`);
+  }
+  assert.deepEqual(rows.get('candidate-cervelo-aspero-5-current'), ['gravel-race'], 'race gravel, not aero road');
+  assert.deepEqual(rows.get('candidate-xlab-rs7'), ['road-endurance']);
+  assert.ok(!rows.get('candidate-xds-ad7').includes('road-race'), 'export AD7 race claims stay off the grouped 2025/2026 AD7');
+  assert.deepEqual(rows.get('candidate-java-aluminum-24s'), ['road'], 'the aluminum ER7 keeps its own row');
+  assert.deepEqual(rows.get('candidate-velobuild-cx-002-2023'), [], 'cyclocross is not forced into gravel');
+  assert.deepEqual(rows.get('candidate-specialized-roubaix-sl8-sport-105'), ['road-endurance', 'all-road']);
 });

@@ -2354,8 +2354,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 275);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 269);
+  assert.equal(catalogCandidates.length, 276);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 270);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -2406,10 +2406,15 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(generationUnresolvedV3.defaultVisible, true);
   const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');
   assert.equal(genericBuild.defaultVisible, true);
-  assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'java-aluminum-24s'), false);
+  // JAVA sells the aluminum and carbon VITTORIA ER7 as separate products, so each keeps its own row.
+  const aluminumEr7 = catalogCandidates.find((entry) => entry.candidate.id === 'java-aluminum-24s');
+  assert.equal(aluminumEr7.defaultVisible, true);
+  assert.match(aluminumEr7.candidate.catalog_distinct_reason, /separate catalog product/);
+  assert.equal(aluminumEr7.candidate.source_refs, 'IMG_6886.png#R1');
+  assert.deepEqual(aluminumEr7.candidate.video_ids, ['jkt-sepeda-java-vittoria-er7-alloy']);
   const vittoriaEr7 = catalogCandidates.find((entry) => entry.candidate.id === 'java-vittoria-er7-2026');
-  assert.equal(vittoriaEr7.candidate.observed_price.observation_count, 5);
-  assert.match(vittoriaEr7.candidate.source_refs, /IMG_6886\.png#R1/);
+  assert.equal(vittoriaEr7.candidate.observed_price.observation_count, 4);
+  assert.doesNotMatch(vittoriaEr7.candidate.source_refs, /IMG_6886\.png#R1/);
   assert.match(vittoriaEr7.candidate.facts.frame_material, /carbon-frame and aluminum-frame/);
   assert.match(vittoriaEr7.candidate.facts.drivetrain, /2x12 or 1x12/);
   assert.equal(vittoriaEr7.candidate.facts.complete_weight_g, undefined);

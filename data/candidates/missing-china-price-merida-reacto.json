@@ -3,6 +3,16 @@
   "name": "Merida REACTO 6000 CN 27",
   "model_id": "merida-reacto",
   "category": "road-aero",
+  "additional_categories": [
+    {
+      "category": "road-race",
+      "basis": "Merida China says its race-certified road geometry comes from the WorldTour REACTO, which SCULTURA inherits.",
+      "source_ids": [
+        "merida-china-scultura-6000-25-official-recheck-2026-10-27"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "type": "complete-bike",
   "why_interesting": "Official mainland-China aero complete bike with an exact 105 Di2 trim, full geometry and suggested retail price.",
   "missing": [

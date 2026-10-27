@@ -292,6 +292,7 @@ export const ru = {
   "Each opens a comparison of its listed bikes with its criteria. Not a ranking.": "Каждая подборка открывает сравнение её велосипедов с критериями. Это не рейтинг.",
   "Also known as": "Также известен как",
   "General road": "Шоссе общего типа",
+  "Gravel touring": "Туристический гревел",
   "Editing ready": "Редактирование доступно",
   "Editing, shared links and saved drafts require JavaScript to finish loading.": "Для редактирования, ссылок и сохранённых черновиков нужно дождаться загрузки JavaScript.",
   "Electronic": "Электронное",

@@ -3,7 +3,18 @@
   "brand_id": "incolor",
   "name": "Voyager",
   "name_zh": "Voyager",
-  "category": "gravel-race",
+  "category": "gravel",
+  "additional_categories": [
+    {
+      "category": "all-road",
+      "basis": "New maker evidence: INCOLOR says Voyager is built for multi-terrain riding, performs on gravel and paved roads and blends road responsiveness with gravel stability; 1x reaches 45C, 2x is limited to 32C. This reverses the earlier rejection.",
+      "source_ids": [
+        "incolor-voyager-official-recheck-2026-10-27",
+        "incolor-voyager-product-document-2026-08-29"
+      ],
+      "reviewed_at": "2026-10-27"
+    }
+  ],
   "handlebar": "drop",
   "status": "current",
   "summary": "T800 gravel/all-road frame with a manufacturer-reported 190 N/mm bottom-bracket result, 850 g size-54 claim, 45C clearance, UDH, five-size geometry and a current official-store route.",

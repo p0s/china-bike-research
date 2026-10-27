@@ -8,7 +8,7 @@
   "why_interesting": "Exact model visible. | Additional observation. | Likely ER7; card image did not load.",
   "facts": {
     "frame_material": "The current official catalog separates carbon-frame and aluminum-frame VITTORIA ER7 versions; a North American reference build has a carbon frame and fork",
-    "frame_construction": "Current carbon reference build uses aero shaping, fully internal cable routing and an integrated carbon aero handlebar; construction details for the retained aluminum and carbon cards are unresolved",
+    "frame_construction": "Current carbon reference build uses aero shaping, fully internal cable routing and an integrated carbon aero handlebar; construction details for the retained cards are unresolved",
     "drivetrain": "Current carbon/alloy-wheel reference build offers L-TWOO ER7 electronic 2x12 or 1x12 with hydraulic disc brakes; the retained seller cards do not expose the selected option",
     "reference_builds": "Current carbon-frame/alloy-wheel regional build uses 38 mm alloy clinchers and 700x28C fitted tires; official and marketplace sources also expose separate aluminum-frame, carbon-wheel and R7170 configurations",
     "tires": "700x28C fitted on the documented carbon/alloy-wheel reference build; this is not a published maximum",
@@ -29,7 +29,7 @@
     "currency": "CNY",
     "observed_at": "2026-08-08",
     "price_basis": "coupon | listed",
-    "observation_count": 5,
+    "observation_count": 4,
     "conditional": true
   },
   "source_ids": [
@@ -43,9 +43,9 @@
     "java-vittoria-er7-2026-carbon-enrichment-2026-10-03",
     "java-vittoria-er7-2026-aluminum-enrichment-2026-10-03"
   ],
-  "source_refs": "IMG_6859.png#L1, IMG_6886.png#R1, IMG_6889.png#L2, IMG_6893.png#R2, IMG_6898.png#L2",
+  "source_refs": "IMG_6859.png#L1, IMG_6889.png#L2, IMG_6893.png#R2, IMG_6898.png#L2",
   "source_url": "https://www.javabikes.com/Products/5.html",
-  "source_note": "Earlier official catalog evidence dated 2026-08-29 distinguishes carbon-frame and aluminum-frame VITTORIA-ER7 versions. The 2026-09-23 North American page shell says carbon frame plus alloy wheels; its earlier detailed reference listed ER7 electronic 2x12 or 1x12 and fitted 28C tires. Current catalog recheck returned no readable content. Five retained seller observations remain split by exact trim; do not transfer regional configuration or infer weight or maximum clearance.",
+  "source_note": "Earlier official catalog evidence dated 2026-08-29 distinguishes carbon-frame and aluminum-frame VITTORIA-ER7 versions. The 2026-09-23 North American page shell says carbon frame plus alloy wheels; its earlier detailed reference listed ER7 electronic 2x12 or 1x12 and fitted 28C tires. Current catalog recheck returned no readable content. Four retained seller observations remain split by exact trim; the aluminum-frame card is a separate record; do not transfer regional configuration or infer weight or maximum clearance.",
   "last_reviewed": "2026-09-23",
   "enrichment_reviews": [
     {
@@ -66,8 +66,5 @@
       "fields": [],
       "scope": "Exact current source additions; existing observations, conflicts and collection dates retained."
     }
-  ],
-  "video_ids": [
-    "jkt-sepeda-java-vittoria-er7-alloy"
   ]
 }

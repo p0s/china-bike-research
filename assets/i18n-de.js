@@ -2117,6 +2117,7 @@ Object.assign(de, {
   "Each opens a comparison of its listed bikes with its criteria. Not a ranking.": "Jeder öffnet einen Vergleich der aufgeführten Räder mit seinen Kriterien. Keine Rangliste.",
   "Also known as": "Auch bekannt als",
   "General road": "Allgemeines Rennrad",
+  "Gravel touring": "Gravel-Touring",
   "PARDUS sells this second-generation platform as SUPG2 SPORT in 105, eGR and PES builds. This catalog entry is the eGR build; parts from the official 105 page are not applied to it.": "PARDUS verkauft diese Plattform der zweiten Generation als SUPG2 SPORT mit 105-, eGR- und PES-Ausstattung. Dieser Katalogeintrag ist die eGR-Ausstattung; Teile der offiziellen 105-Seite gelten nicht für ihn.",
   "Refine": "Eingrenzen",
   "Frame build": "Rahmenaufbau",
