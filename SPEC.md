@@ -127,6 +127,8 @@ Publish a full product record, model page, or recommendation only when it has:
 
 Use `data/candidates/` when a promising product lacks enough evidence. A candidate may have a sparse table preview under the focused-view rules above without becoming a published product record. Use `data/exclusions/` when a product is obsolete, too ambiguous, outside the useful comparison, or otherwise unsuitable.
 
+Catalog identity (2026-10-27): paint, colour or finish alone never warrants a separate catalog entry, and catalog titles carry no colour or finish names. Material configuration differences, such as drivetrain, wheels, frame material or package, stay distinct as separate entries or documented builds. One entry may group closely similar model years or generations when each build keeps its own dated price, weight and component evidence; frame identity across years is not assumed. Finish and edition labels stay in source evidence and notes, and marketing names that identify an actual model stay in titles.
+
 ## 3. Data model
 
 - `brands/`: manufacturer relationship, support, aliases, and brand-level evidence.

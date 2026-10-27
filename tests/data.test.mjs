@@ -190,6 +190,22 @@ test('batch 024 preserves selected-trim, generation, and tire-maximum boundaries
   assert.match(candidates.get('west-biking-team-road').facts.frame_material, /T800-carbon/);
 });
 
+test('catalog titles leave finish labels to evidence while keeping configuration identity', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const ad7 = candidates.get('xds-ad7');
+  const qingsha = candidates.get('qingsha-carbon-folding');
+  const stormKnight = candidates.get('twitter-storm-knight');
+  assert.equal(ad7.name, 'XDS 喜德盛 AD7');
+  assert.equal(qingsha.name, '轻鲨 QingSha QS91-20 (carbon wheels)');
+  assert.equal(stormKnight.name, 'TWITTER 骓特 R10 Pro (Shuntai 2×11)');
+  for (const candidate of [ad7, qingsha, stormKnight]) {
+    assert.doesNotMatch(candidate.name, /green demon|blue|storm knight|white knight|绿魔|暮光|风暴骑士|白骑士/i);
+  }
+  assert.match(qingsha.facts.listing_option, /QS91-20 blue \/ blue carbon wheel/);
+  assert.match(stormKnight.facts.configuration_identity, /Storm Knight \/ White Knight Shuntai 2×11/);
+  assert.ok(ad7.source_ids.includes('xds-ad7-green-demon-hk-current-recheck-2026-09-25'));
+});
+
 test('batch 025 preserves regional and option conflicts without inventing maxima', () => {
   const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
 
@@ -2358,7 +2374,8 @@ test('candidate catalog keeps the focused view useful without losing discovery',
 
   const stormKnight = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-storm-knight');
   const r10ClosedWheel = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-r10-pro-gen3');
-  assert.match(stormKnight.candidate.name, /R10 Pro Storm Knight \/ White Knight \(Shuntai 2×11\)/);
+  assert.match(stormKnight.candidate.name, /R10 Pro \(Shuntai 2×11\)/);
+  assert.match(stormKnight.candidate.facts.listing_identity, /Storm Knight \/ White Knight/);
   assert.match(r10ClosedWheel.candidate.name, /R10 Pro Gen 3 closed-wheel \(WheelTop \/ Shimano 105 options\)/);
   assert.equal(stormKnight.candidate.facts.platform_family, r10ClosedWheel.candidate.facts.platform_family);
   assert.match(stormKnight.candidate.facts.configuration_relationship, /not the same complete-bike configuration/);
