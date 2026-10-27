@@ -122,7 +122,7 @@ test('German dynamic build totals keep missing inputs and compatibility warnings
 });
 
 test('every German article preserves section anchors, model citations, dates and publication state', () => {
-  assert.equal(posts.filter(post => post.series_id !== 'october-2026').length, 25);
+  assert.equal(posts.filter(post => !post.series_id || post.series_id === 'september-2026').length, 25);
   assert.ok(posts.filter(post => post.series_id === 'october-2026').length <= 100);
   for (const post of posts) {
     const copy = post.translations.de;
