@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-640-3058aa46de.avif', '3058aa46dee73118246d79556277805c99e269b9be734793ee62ed36f3444abf'],
+  ['assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-1600-4bc5f37d13.avif', '4bc5f37d13047d5a4e52ebded502d5ac086b5b0edd37b9198ba8c1b162decb6b'],
+  ['assets/blog/buy-velobuild-frame-mascot-cover-7ee1cd504c-1200.jpg', 'b90fb6eea5679cc0ba01eec1e0a5d5083a862d04cac08dc7106bf543934a6685'],
   ['assets/blog/chinese-bike-warranty-and-spares-mascot-cover-ee7d409a58-640-2ab117b479.avif', '2ab117b479586e2ff98e7c20c5079759e3fc6a98e39cecdebcf1627c9741f2c1'],
   ['assets/blog/chinese-bike-warranty-and-spares-mascot-cover-ee7d409a58-1600-89f1e7026e.avif', '89f1e7026e649de659de2a5e0e28808b175b0461f563f46eddc9f8d5a542d811'],
   ['assets/blog/chinese-bike-warranty-and-spares-mascot-cover-ee7d409a58-1200.jpg', 'd2de55387e81a4b50e19eb37872a03110dec05ec27d86dde3db3aeb3cabf9709'],
