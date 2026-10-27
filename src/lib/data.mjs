@@ -10,6 +10,7 @@ import { priceEvidence } from './price-evidence.mjs';
 import { validateRegionalPricing } from './regional-prices.mjs';
 import { validateMountApproval } from './mount-evidence.mjs';
 import { validateOpinionCollection } from './opinions.mjs';
+import { normalizeCatalogSearch } from '../../assets/catalog-search.js';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -1180,6 +1181,66 @@ export function validateDataset(data = loadDataset()) {
   for (const recommendation of data.recommendations) if (!variantIds.has(recommendation.variant_id)) errors.push(`recommendation ${recommendation.id}: missing variant ${recommendation.variant_id}`);
   for (const variant of data.variants) if (!data.prices.some((price) => price.variant_id === variant.id)) errors.push(`variant ${variant.id}: no price record`);
   errors.push(...validateRegionalPricing(data));
+  errors.push(...validateNameAliases(data));
+  return errors;
+}
+
+// Alternate names must come from the record's own evidence, never from a guess,
+// and must not point at a different catalog identity.
+export function validateNameAliases(data) {
+  const errors = [];
+  const sources = new Map(data.sources.map((source) => [source.id, source]));
+  const opinionTitles = (key, id) => (data.opinions ?? [])
+    .filter((collection) => collection.target?.[key] === id)
+    .flatMap((collection) => (collection.opinions ?? []).map((opinion) => opinion.title));
+  const records = [
+    ...data.brands.map((record) => ({ type: 'brand', record, sourceIds: record.source_ids, extra: [] })),
+    ...data.platforms.map((record) => ({ type: 'platform', record, sourceIds: record.source_ids, extra: opinionTitles('platform_id', record.id) })),
+    ...data.variants.map((record) => ({
+      type: 'variant', record,
+      sourceIds: [...(record.source_ids ?? []), ...(data.platforms.find((platform) => platform.id === record.platform_id)?.source_ids ?? [])],
+      extra: opinionTitles('platform_id', record.platform_id)
+    })),
+    ...data.candidates.map((record) => ({ type: 'candidate', record, sourceIds: record.source_ids, extra: opinionTitles('candidate_id', record.id) }))
+  ];
+  // Names and aliases already claimed by each record, for the cross-record check.
+  const owners = new Map();
+  const claim = (name, owner) => {
+    const key = normalizeCatalogSearch(name);
+    if (key) owners.set(key, [...(owners.get(key) ?? []), owner]);
+  };
+  for (const { type, record } of records) {
+    claim(record.name, `${type}:${record.id}`);
+    for (const alias of Array.isArray(record.aliases) ? record.aliases : []) claim(alias, `${type}:${record.id}`);
+  }
+  for (const { type, record, sourceIds, extra } of records) {
+    const label = `${type} ${record.id}`;
+    if (record.alias_note !== undefined && (typeof record.alias_note !== 'string' || !record.alias_note.trim() || record.alias_note.length > 260 || !record.aliases)) {
+      errors.push(`${label}: alias_note needs aliases and at most 260 characters`);
+    }
+    if (record.aliases === undefined) continue;
+    if (!Array.isArray(record.aliases) || !record.aliases.length || record.aliases.length > 6) {
+      errors.push(`${label}: aliases must be a list of one to six names`);
+      continue;
+    }
+    const evidence = normalizeCatalogSearch([
+      ...(sourceIds ?? []).map((id) => sources.get(id)).filter(Boolean).flatMap((source) => [source.title, source.notes, source.publisher]),
+      ...extra
+    ].join(' '));
+    const seen = new Set();
+    for (const alias of record.aliases) {
+      const key = normalizeCatalogSearch(alias);
+      if (typeof alias !== 'string' || alias !== alias.trim() || alias.length > 60 || !key) {
+        errors.push(`${label}: invalid alias ${JSON.stringify(alias)}`);
+        continue;
+      }
+      if (seen.has(key) || key === normalizeCatalogSearch(record.name)) errors.push(`${label}: alias ${alias} repeats its name or another alias`);
+      seen.add(key);
+      if (!evidence.includes(key)) errors.push(`${label}: alias ${alias} is not attested by its own sources`);
+      const others = (owners.get(key) ?? []).filter((owner) => owner !== `${type}:${record.id}`);
+      if (others.length) errors.push(`${label}: alias ${alias} also names ${others.join(', ')}`);
+    }
+  }
   return errors;
 }
 

@@ -227,6 +227,8 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .product-name a { display: inline-block; min-height: 24px; text-decoration: none; }
 .product-fit { display: -webkit-box; margin-top: 3px; overflow: hidden; color: var(--muted); font-size: .68rem; line-height: 1.35; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .product-fit > span { color: var(--ink); font-weight: 690; }
+.product-aliases > span { color: var(--muted); font-weight: inherit; }
+.product-aliases b, .model-aliases b { color: var(--ink); font-weight: 650; }
 .type-pill, .pick-pill, .verify-flag, .status-pill { display: inline-flex; align-items: center; gap: 4px; width: max-content; padding: 2px 6px; border-radius: 999px; font-size: .6rem; font-weight: 760; letter-spacing: .025em; text-transform: none; }
 .type-pill { background: var(--surface-soft); color: var(--muted); }
 .status-pill { border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
@@ -1361,6 +1363,7 @@ html:has([data-analytics-banner]){overflow-x:clip}
 
 /* Model page decision panel */
 .model-identity .model-subline { margin: 4px 0 0; color: var(--muted); font-size: var(--fs-md); }
+.model-identity .alias-note { max-width: 62ch; font-size: var(--fs-sm); }
 .breadcrumbs [data-catalog-back] { font-weight: 650; }
 .model-summary { align-self: start; padding: 20px 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
 .model-summary .model-price { display: grid; gap: 4px; padding: 0; border: 0; background: none; }

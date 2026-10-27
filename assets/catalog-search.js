@@ -35,7 +35,15 @@ export function createCatalogSearchIndex(value) {
 }
 
 export function compileCatalogQuery(query) {
-  return String(query ?? '').split(/\s+/u).map(normalizeCatalogSearch).filter(Boolean);
+  const terms = String(query ?? '').split(/\s+/u).map(normalizeCatalogSearch).filter(Boolean);
+  // "Gen 2", "RS 9" and "AD 7" name one model code, so a lone digit cannot
+  // match a different generation or model number elsewhere in the row.
+  return terms.reduce((compiled, term) => {
+    const previous = compiled.at(-1);
+    if (/^\d+$/.test(term) && /^[a-z]{1,3}$/.test(previous ?? '')) compiled[compiled.length - 1] = `${previous}${term}`;
+    else compiled.push(term);
+    return compiled;
+  }, []);
 }
 
 // Bounded optimal-string-alignment distance: insertions, deletions,

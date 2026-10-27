@@ -72,6 +72,52 @@ test('search does not stem model suffixes or invent model matches', () => {
   assert.ok(matches('X-LAB RS9', ''));
 });
 
+test('a short word followed by a number searches as one model code', () => {
+  assert.deepEqual(compileCatalogQuery('Super Sport Gen 2'), ['super', 'sport', 'gen2']);
+  assert.deepEqual(compileCatalogQuery('RS 9 x-lab'), ['rs9', 'xlab']);
+  assert.deepEqual(compileCatalogQuery('SUP G2'), ['sup', 'g2']);
+  assert.deepEqual(compileCatalogQuery('105 Di2'), ['105', 'di2']);
+  assert.ok(matches('Super Sport Gen2 eGR 1x12', 'super sport gen 2'));
+  assert.ok(matches('PARDUS 瑞豹 Super Sport Gen 2', 'super sport gen2'));
+  assert.equal(matches('Super Sport Gen2 eGR 1x12', 'super sport gen 1'), false, 'a lone digit cannot match 1x12');
+  assert.equal(matches('X-LAB RS9 700x28C', 'xlab rs 8'), false, 'an adjacent model number cannot match a tire size');
+});
+
+test('verified alternate names find the one existing entry in every language', () => {
+  const data = loadDataset();
+  const products = joinProducts(data);
+  for (const locale of ['en', 'zh-Hans', 'de']) {
+    const html = renderHome({ data, products, locale });
+    const rows = [...html.matchAll(/data-product-row[^>]*data-id="([^"]+)"[^>]*data-search="([^"]*)"/g)]
+      .map(([, id, text]) => ({ id, index: createCatalogSearchIndex(text) }));
+    const find = (query) => rows.filter((row) => matchesCatalogSearch(row.index, query)).map((row) => row.id);
+    for (const query of ['SUPG2', 'supg2 sport', 'SUP G2', 'Super Sport Gen2', 'Super Sport Gen 2', 'pardus supg2', '瑞豹 SUPG2']) {
+      assert.deepEqual(find(query), ['pardus-super-sport-gen2-egr'], `${locale}: ${query}`);
+    }
+    for (const query of ['SUPG1', 'SUPG3', 'SUP G3', 'Super Sport Gen 1', 'Super Sport Gen3']) {
+      assert.equal(find(query).includes('pardus-super-sport-gen2-egr'), false, `${locale}: ${query}`);
+    }
+    for (const [query, id] of [['KUNG MACH AERO', 'kung-mach-frameset'], ['攻队马赫', 'kung-mach-frameset'], ['龙卷风三代', 'twitter-cyclone-electronic'],
+      ['Cyclone 3rd ET', 'twitter-cyclone-electronic'], ['Cyclone 3rd ET', 'twitter-cyclone-gen3-et'], ['X-LAB AD7', 'candidate-xds-ad7'],
+      ['xlab ad 7', 'candidate-xds-ad7'], ['Light Shark QS91', 'candidate-qingsha-carbon-folding']]) {
+      assert.ok(find(query).includes(id), `${locale}: ${query} → ${id}`);
+    }
+    assert.equal(find('xlab ad 8').includes('candidate-xds-ad7'), false, locale);
+    assert.equal(find('xlab ad 7').includes('candidate-xlab-ad8'), false, locale);
+  }
+});
+
+test('brand aliases reach the search key of every row for that brand', () => {
+  const data = loadDataset();
+  const brands = data.brands.map((brand) => brand.id === 'pardus' ? { ...brand, aliases: ['Ruibao Cycle'] } : brand);
+  const aliased = { ...data, brands };
+  const html = renderHome({ data: aliased, products: joinProducts(aliased), locale: 'en' });
+  const ids = [...html.matchAll(/data-product-row[^>]*data-id="([^"]+)"[^>]*data-brand="pardus"[^>]*data-search="([^"]*)"/g)]
+    .filter(([, , text]) => matchesCatalogSearch(createCatalogSearchIndex(text), 'ruibao')).map(([, id]) => id);
+  assert.ok(ids.includes('pardus-super-sport-gen2-egr'));
+  assert.ok(ids.includes('candidate-pardus-spark'));
+});
+
 test('general fuzzy queries and punctuation work on real catalog entries in every language', () => {
   const data = loadDataset();
   const products = joinProducts(data);
