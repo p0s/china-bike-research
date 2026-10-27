@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-pardus-bike-mascot-cover-e0ee76851a-640-c8e2eb383a.avif', 'c8e2eb383ac8fa809919f28d6aa0690d06ad9002ce3b6f37b79f72e0153503b7'],
+  ['assets/blog/buy-pardus-bike-mascot-cover-e0ee76851a-1600-4ec969f4e3.avif', '4ec969f4e3d9414947e933b62cd6acb8667e25bf64ffce34923d8cbff7a37472'],
+  ['assets/blog/buy-pardus-bike-mascot-cover-e0ee76851a-1200.jpg', '36dc25f99a09c8e20a7309cb0df7d6594b264d1ba6855587366c687b3b9be078'],
   ['assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-640-cb4e0dd02e.avif', 'cb4e0dd02e443c246266f19efcfb96967e5f3c6f9be637c3ed48eadd060cea3b'],
   ['assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-1600-26ad2ad87f.avif', '26ad2ad87f79a252644852038c14c44f328d6c48f5a8fe8cb4c1e8d6afe9fbfe'],
   ['assets/blog/new-carbon-bike-unboxing-checklist-mascot-cover-ac7dac721a-1200.jpg', '451c80976b4f49745f97e381d16981125bb468fcf7345b225ea8f33ba57463a1'],
