@@ -1,6 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyticsEngagementPayload, analyticsEventPayload, analyticsPayload, handleRequest, hasOptOutCookie, ingestAction, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
+import { analyticsEventPayload, analyticsPayload, analyticsSignalPayload, handleRequest, hasOptOutCookie, ingestAction, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
+
+// Collector bodies add a fresh random event ID; compare the remaining fields.
+function withoutEventId(body) {
+  assert.match(body.eventId, /^[0-9a-f]{32}$/);
+  const { eventId, ...rest } = body;
+  return rest;
+}
 
 function makeRequest(path, init = {}, cf = { country: 'SG' }) {
   const request = new Request(`https://chinesebikes.xyz${path}`, init);
@@ -188,7 +195,7 @@ test('comparison and engagement QA are boolean only, and engagement shares the s
   const compare = makeRequest('/site-events/action', { method: 'POST', headers: { ...headers, 'x-analytics-path': '/' , 'x-measurement-qa': '1' } });
   assert.equal(analyticsEventPayload(compare, new URL(compare.url)).qa, true);
   const engagement = makeRequest('/site-events/engagement', { method: 'POST', headers: { ...headers, 'x-measurement-qa': '1' } });
-  assert.deepEqual(analyticsEngagementPayload(engagement, new URL(engagement.url)), {
+  assert.deepEqual(analyticsSignalPayload(engagement, new URL(engagement.url)), {
     hostname: 'chinesebikes.xyz', path: '/models/example-bike/', ip: '203.0.113.10',
     userAgent: 'Mozilla/5.0', country: 'SG', eventName: 'page_engaged', qa: true
   });
@@ -197,18 +204,19 @@ test('comparison and engagement QA are boolean only, and engagement shares the s
     { purpose: 'prefetch' }, { 'user-agent': 'ExampleBot/1.0' }
   ]) {
     const request = makeRequest('/site-events/engagement', { method: 'POST', headers: { ...headers, ...blocked } });
-    assert.equal(analyticsEngagementPayload(request, new URL(request.url)), null);
+    assert.equal(analyticsSignalPayload(request, new URL(request.url)), null);
   }
   const verifiedBot = makeRequest('/site-events/engagement', { method: 'POST', headers });
   Object.defineProperty(verifiedBot, 'cf', { value: { country: 'SG', botManagement: { verifiedBot: true } } });
-  assert.equal(analyticsEngagementPayload(verifiedBot, new URL(verifiedBot.url)), null);
+  assert.equal(analyticsSignalPayload(verifiedBot, new URL(verifiedBot.url)), null);
   for (const [path, extra] of [
     ['/site-events/engagement?run=secret', {}], ['/site-events/engagement', { origin: 'https://attacker.example' }],
     ['/site-events/engagement', { 'content-type': 'text/plain' }], ['/site-events/engagement', { 'x-measurement-qa': 'true' }],
-    ['/site-events/engagement', { 'x-analytics-path': '/private/' }]
+    ['/site-events/engagement', { 'x-analytics-path': '/private/' }],
+    ['/site-events/engagement', { 'x-analytics-signal': 'page_visible' }]
   ]) {
     const request = makeRequest(path, { method: 'POST', headers: { ...headers, ...extra } });
-    assert.equal(analyticsEngagementPayload(request, new URL(request.url)), null);
+    assert.equal(analyticsSignalPayload(request, new URL(request.url)), null);
   }
 });
 
@@ -243,7 +251,7 @@ test('same-origin comparison event reaches the gateway without browser-only fiel
     assert.equal(sent[0].url, 'https://stats.p0s.eu/ingest/v1');
     assert.equal(sent[0].init.headers.authorization, 'Bearer test-token');
     assert.equal(Object.hasOwn(sent[0].init.headers, 'origin'), false);
-    assert.deepEqual(JSON.parse(sent[0].init.body), {
+    assert.deepEqual(withoutEventId(JSON.parse(sent[0].init.body)), {
       hostname: 'chinesebikes.xyz',
       path: '/',
       ip: '203.0.113.10',
@@ -257,6 +265,7 @@ test('same-origin comparison event reaches the gateway without browser-only fiel
   }
 });
 
+// A cached module sends no X-Analytics-Signal header; that request stays page_engaged.
 test('engagement endpoint forwards one minimized page_engaged event and honors QA without creating a GA action', async () => {
   const sent = [], waits = [];
   const originalFetch = globalThis.fetch;
@@ -279,7 +288,7 @@ test('engagement endpoint forwards one minimized page_engaged event and honors Q
     await Promise.all(waits);
     assert.equal(sent.length, 1);
     assert.equal(sent[0].url, env.ANALYTICS_INGEST_URL);
-    assert.deepEqual(sent[0].body, { hostname: 'chinesebikes.xyz', path: '/models/example-bike/',
+    assert.deepEqual(withoutEventId(sent[0].body), { hostname: 'chinesebikes.xyz', path: '/models/example-bike/',
       ip: '203.0.113.10', userAgent: 'Mozilla/5.0', country: 'SG', eventName: 'page_engaged', qa: true });
 
     const invalid = await handleRequest(makeRequest('/site-events/engagement', {
@@ -418,7 +427,7 @@ test('comparison events require same-origin bodyless POST and honor analytics ex
 
 test('product outbound action relay forwards only its fixed action ID and honors privacy exclusions', async () => {
   const origin = 'https://chinesebikes.xyz';
-  const env = { ANALYTICS_INGEST_TOKEN: 'test-token' };
+  const env = { ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1', ANALYTICS_INGEST_TOKEN: 'test-token' };
   const outbound = [];
   const waits = [];
   const originalFetch = globalThis.fetch;
@@ -443,7 +452,7 @@ test('product outbound action relay forwards only its fixed action ID and honors
     await Promise.all(waits);
     assert.equal(outbound.length, 1);
     assert.equal(outbound[0].url, 'https://stats.p0s.eu/ingest/action/v1');
-    assert.deepEqual(JSON.parse(outbound[0].init.body), { actionId: 'product_outbound_click' });
+    assert.deepEqual(withoutEventId(JSON.parse(outbound[0].init.body)), { actionId: 'product_outbound_click' });
     assert.deepEqual([...new Headers(outbound[0].init.headers).keys()].sort(), ['authorization', 'content-type']);
     assert.equal(outbound[0].init.headers.authorization, 'Bearer test-token');
     assert.equal(outbound[0].init.redirect, 'manual');
@@ -524,7 +533,7 @@ test('document responses prevent shared caching and schedule bounded ingestion',
     assert.equal(sent.length, 1);
     assert.equal(sent[0].url, 'https://stats.p0s.eu/ingest/v1');
     assert.equal(sent[0].init.headers.authorization, 'Bearer test-token');
-    assert.deepEqual(JSON.parse(sent[0].init.body), {
+    assert.deepEqual(withoutEventId(JSON.parse(sent[0].init.body)), {
       hostname: 'chinesebikes.xyz',
       path: '/models/example-bike/',
       referrer: 'https://example.org',
@@ -567,10 +576,17 @@ test('collector HTTP failures are reported as rejected ingestion', async () => {
     ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
     ANALYTICS_INGEST_TOKEN: 'test-token'
   };
-  const responseFor = (status) => ingestAnalytics(payload, env, async () => new Response(null, { status }));
+  let calls = 0;
+  const responseFor = (status) => ingestAnalytics(payload, env, async () => {
+    calls += 1;
+    return new Response(null, { status });
+  }, { sleep: async () => {} });
   assert.equal(await responseFor(204), true);
   assert.equal(await responseFor(401), false);
+  assert.equal(calls, 2);
+  // A 5xx may not have reached the store: one bounded retry, then give up.
   assert.equal(await responseFor(500), false);
+  assert.equal(calls, 4);
   let redirectCalls = 0;
   assert.equal(await ingestAnalytics(payload, env, async (_url, init) => {
     redirectCalls += 1;

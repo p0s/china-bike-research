@@ -10,6 +10,13 @@ const env = {
   ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1', ANALYTICS_INGEST_TOKEN: 'test-token'
 };
 
+// Collector bodies add a fresh random event ID; compare the remaining fields.
+function withoutEventId(body) {
+  assert.match(body.eventId, /^[0-9a-f]{32}$/);
+  const { eventId, ...rest } = body;
+  return rest;
+}
+
 function gaRequest(url, init) {
   const request = new Request(url, init);
   Object.defineProperty(request, 'cf', { value: { country: 'SG' } });
@@ -57,7 +64,7 @@ test('eligible document schedules one minimized Umami page observation without G
     assert.equal(sent.length, 1);
     assert.equal(sent[0].url, env.ANALYTICS_INGEST_URL);
     const body = JSON.parse(sent[0].init.body);
-    assert.deepEqual(body, {
+    assert.deepEqual(withoutEventId(body), {
       hostname: 'chinesebikes.xyz', path: '/models/example/', referrer: '',
       ip: '203.0.113.10', userAgent: 'Mozilla/5.0', country: 'SG'
     });
@@ -157,6 +164,9 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
     assert.equal(JSON.parse(ga[0].init.body).events[0].name, 'product_outbound_click');
     assert.equal(JSON.parse(ga[0].init.body).client_id, '123.456');
     assert.equal(JSON.parse(ga[0].init.body).events[0].params.session_id, '1780000000');
+    const receipt = sent.filter((item) => item.url === 'https://stats.p0s.eu/ingest/stage/v1');
+    assert.equal(receipt.length, 1);
+    assert.deepEqual(withoutEventId(JSON.parse(receipt[0].init.body)), { stage: 'ga_ok' });
 
     const beforeNoSession = sent.length;
     const withoutSession = await handleRequest(gaRequest('https://chinesebikes.xyz/site-events/action', {
@@ -167,9 +177,10 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
     assert.equal(withoutSession.status, 204);
     await Promise.all(waits.splice(0));
     const noSessionRequests = sent.slice(beforeNoSession);
-    assert.equal(noSessionRequests.length, 1);
-    assert.equal(noSessionRequests[0].url, 'https://stats.p0s.eu/ingest/action/v1');
-    assert.deepEqual(JSON.parse(noSessionRequests[0].init.body), { actionId: 'product_outbound_click' });
+    assert.deepEqual(noSessionRequests.map((item) => item.url),
+      ['https://stats.p0s.eu/ingest/action/v1', 'https://stats.p0s.eu/ingest/stage/v1']);
+    assert.deepEqual(withoutEventId(JSON.parse(noSessionRequests[0].init.body)), { actionId: 'product_outbound_click' });
+    assert.deepEqual(withoutEventId(JSON.parse(noSessionRequests[1].init.body)), { stage: 'ga_skip_no_session' });
 
     const beforeQa = sent.length;
     const qa = await handleRequest(gaRequest('https://chinesebikes.xyz/site-events/action', {
@@ -182,7 +193,8 @@ test('GA action relay uses existing identity only, and opt-out clears identifier
     const qaRequests = sent.slice(beforeQa);
     assert.equal(qaRequests.length, 1);
     assert.equal(qaRequests[0].url, 'https://stats.p0s.eu/ingest/action/v1');
-    assert.deepEqual(JSON.parse(qaRequests[0].init.body), { actionId: 'measurement_qa' });
+    // The collector checks the real action, then stores only measurement_qa.
+    assert.deepEqual(withoutEventId(JSON.parse(qaRequests[0].init.body)), { actionId: 'product_outbound_click', qa: true });
     assert.equal(ga4ActionPayload('product_outbound_click', { clientId: '123.456' }), null);
 
     const optOut = await handleRequest(gaRequest('https://chinesebikes.xyz/analytics/opt-out', {
@@ -217,16 +229,18 @@ test('compare_open joins GA only to a stored tag session while Umami still recei
     }
 
     await compare('p0s_ga_cid=123.456');
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
     assert.equal(sent[0].url, env.ANALYTICS_INGEST_URL);
     assert.equal(sent[0].body.eventName, 'compare_open');
+    assert.deepEqual(withoutEventId(sent[1].body), { stage: 'ga_skip_no_session' });
 
     sent.length = 0;
     await compare('p0s_ga_cid=123.456; p0s_ga_sid=1780000000');
-    assert.equal(sent.length, 2);
+    assert.equal(sent.length, 3);
     const ga = sent.find(item => item.url.startsWith('https://www.google-analytics.com/mp/collect?'));
     assert.equal(ga.body.events[0].name, 'compare_open');
     assert.equal(ga.body.events[0].params.session_id, '1780000000');
+    assert.deepEqual(withoutEventId(sent.find(item => item.url.endsWith('/ingest/stage/v1')).body), { stage: 'ga_ok' });
 
     sent.length = 0;
     await compare('p0s_ga_cid=123.456; p0s_ga_sid=1780000000', true);
@@ -400,9 +414,13 @@ test('browser reuses only its explicit loader and concurrent initialization queu
 
 test('Measurement Protocol failure never throws or reports receipt as processing proof', async () => {
   const payload = ga4ActionPayload('compare_open', { clientId: '123.456', sessionId: '1780000000' });
-  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 })), true);
-  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 500 })), false);
-  assert.equal(await sendGa4(payload, env, async () => { throw new Error('blocked'); }), false);
+  // ga_ok names HTTP receipt only; GA reports remain the processing proof.
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 })), 'ga_ok');
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 400 })), 'ga_fail_definite');
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 500 })), 'ga_fail_uncertain');
+  assert.equal(await sendGa4(payload, env, async () => { throw new Error('blocked'); }), 'ga_fail_uncertain');
+  assert.equal(await sendGa4(null, env, async () => assert.fail('nothing to send')), null);
+  assert.equal(await sendGa4(payload, { ...env, GA4_ENABLED: 'false' }, async () => assert.fail('GA disabled')), null);
 });
 
 test('GA sender uses Workers-compatible manual redirects and rejects a redirect without retrying', async () => {
@@ -412,7 +430,7 @@ test('GA sender uses Workers-compatible manual redirects and rejects a redirect 
     calls += 1;
     assert.equal(init.redirect, 'manual');
     return new Response(null, { status: 302, headers: { location: 'https://elsewhere.example/' } });
-  }, { info() {} }), false);
+  }, { info() {} }), 'ga_fail_definite');
   assert.equal(calls, 1);
 });
 
@@ -420,13 +438,13 @@ test('GA delivery diagnostics expose only bounded outcomes and never visitor dat
   const payload = ga4ActionPayload('product_outbound_click', { clientId: '123.456', sessionId: '1780000000' }, { page_path: '/models/private-model/' });
   const messages = [];
   const logger = { info: (message) => messages.push(JSON.parse(message)) };
-  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), logger), true);
-  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 503 }), logger), false);
-  assert.equal(await sendGa4(payload, env, async () => { throw new Error('test-secret 123.456 private-model'); }, logger), false);
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), logger), 'ga_ok');
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 503 }), logger), 'ga_fail_uncertain');
+  assert.equal(await sendGa4(payload, env, async () => { throw new Error('test-secret 123.456 private-model'); }, logger), 'ga_fail_uncertain');
   assert.deepEqual(messages, [
     { type: 'ga4_delivery', event: 'product_outbound_click', outcome: 'http_received', status: 204 },
     { type: 'ga4_delivery', event: 'product_outbound_click', outcome: 'http_rejected', status: 503 },
     { type: 'ga4_delivery', event: 'product_outbound_click', outcome: 'network_error', status: null }
   ]);
-  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), { info() { throw new Error('logger unavailable'); } }), true);
+  assert.equal(await sendGa4(payload, env, async () => new Response(null, { status: 204 }), { info() { throw new Error('logger unavailable'); } }), 'ga_ok');
 });

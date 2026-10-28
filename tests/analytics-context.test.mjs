@@ -78,12 +78,15 @@ test('both collectors receive the same resolved product context; private or inve
       headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }), env, { waitUntil: p => waits.push(p) });
     assert.equal(response.status, 204);
     await Promise.all(waits);
-    assert.equal(sent.length, 2);
+    assert.equal(sent.length, 3);
     assert.deepEqual(sent.find(x => x.actionId).context, context);
     const ga = sent.find(x => x.events);
     assert.deepEqual(ga.events[0].params, { session_id: '1780000000', ...context,
       page_location: origin + context.page_path });
     assert.deepEqual(ga.consent, { ad_user_data: 'DENIED', ad_personalization: 'DENIED' });
+    // The GA outcome stage carries no action context or visitor data.
+    assert.deepEqual(Object.keys(sent.find(x => x.stage)).sort(), ['eventId', 'stage']);
+    assert.equal(sent.find(x => x.stage).stage, 'ga_ok');
     for (const update of [{ sourceId: 'made-up-source' }, { sourceId: 'constructor' }, { pagePath: '/models/made-up/' },
       { pagePath: context.page_path + '?private=secret' }, { pagePath: context.page_path + '#private' },
       { destination_host: 'private.example' }, { model_id: 'private' }, { sourceId: {} }]) {
@@ -101,7 +104,7 @@ test('both collectors receive the same resolved product context; private or inve
       headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }, 'DE'),
     env, { waitUntil: p => waits.push(p) });
     assert.equal(priorChoice.status, 204);
-    assert.equal(sent.length, 2);
+    assert.equal(sent.length, 3);
   } finally { globalThis.fetch = originalFetch; }
 });
 
@@ -127,10 +130,11 @@ test('catalog offer clicks resolve exact products while preserving the real page
       const expected = { page_path: pagePath, page_type: 'catalog',
         interface_language: pagePath === '/zh/' ? 'zh-Hans' : pagePath === '/de/' ? 'de' : 'en',
         ...manifest.offers['test-offer'] };
-      const latest = sent.slice(-2);
+      const latest = sent.slice(-3);
       assert.deepEqual(latest.find(x => x.actionId).context, expected);
       assert.deepEqual(latest.find(x => x.events).events[0].params,
         { session_id: '1780000000', ...expected, page_location: origin + pagePath });
+      assert.equal(latest.find(x => x.stage).stage, 'ga_ok');
     }
     for (const update of [{ offerId: 'invented' }, { offerId: 'constructor' }, { offerId: {} },
       { pagePath: '/models/test-bike/' }, { pagePath: '/privacy/' }, { pagePath: '/de/?ship=US' },
@@ -138,7 +142,7 @@ test('catalog offer clicks resolve exact products while preserving the real page
       assert.equal((await post({ ...body, ...update })).status, 400);
     }
     assert.equal(manifestReads, 1);
-    assert.equal(sent.length, 6);
+    assert.equal(sent.length, 9);
   } finally { globalThis.fetch = originalFetch; }
 });
 
@@ -176,6 +180,7 @@ test('comparison size and public page context reach both collectors without sele
         headers: { 'x-analytics-path': '/', 'x-comparison-count': count } }), env,
       { waitUntil: p => waits.push(p) })).status, 400);
     }
-    assert.equal(sent.length, 2);
+    assert.equal(sent.length, 3);
+    assert.equal(sent.find(x => x.stage).stage, 'ga_ok');
   } finally { globalThis.fetch = originalFetch; }
 });
