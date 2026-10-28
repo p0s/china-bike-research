@@ -18,10 +18,26 @@ function analyticsAllowed(windowRef, navigatorRef = windowRef?.navigator) {
       windowRef?.doNotTrack].some(doNotTrackEnabled);
 }
 
-function fixedEventHeaders(locationRef) {
+function documentMeasurementQa(locationRef, windowRef) {
+  // Navigation timing keeps the original document URL when the catalog updates
+  // history. Read only its fixed QA flag; never forward its query or fragment.
+  try {
+    const name = windowRef?.performance?.getEntriesByType?.('navigation')?.[0]?.name;
+    if (name) {
+      const initial = new URL(name);
+      return initial.origin === `https://${PRODUCTION_HOSTNAME}`
+        && initial.search === '?measurement_qa=1';
+    }
+  } catch {
+    // An unavailable timing API must not interrupt a useful action.
+  }
+  return locationRef?.search === '?measurement_qa=1';
+}
+
+function fixedEventHeaders(locationRef, windowRef) {
   return {
     'X-Analytics-Path': String(locationRef?.pathname ?? ''),
-    ...(locationRef?.search === '?measurement_qa=1' ? { 'X-Measurement-QA': '1' } : {})
+    ...(documentMeasurementQa(locationRef, windowRef) ? { 'X-Measurement-QA': '1' } : {})
   };
 }
 
@@ -47,7 +63,7 @@ export function sendComparisonOpenedEvent({
       redirect: 'error',
       keepalive: true,
       referrerPolicy: 'no-referrer',
-      headers: { ...fixedEventHeaders(locationRef),
+      headers: { ...fixedEventHeaders(locationRef, windowRef),
         ...(Number.isInteger(comparisonCount) && comparisonCount >= 2 && comparisonCount <= 10
           ? { 'X-Comparison-Count': String(comparisonCount) } : {}) }
     });
@@ -85,7 +101,7 @@ export function sendProductOutboundClickEvent({
       keepalive: true,
       referrerPolicy: 'no-referrer',
       headers: { 'Content-Type': 'application/json',
-        ...(locationRef?.search === '?measurement_qa=1' ? { 'X-Measurement-QA': '1' } : {}) },
+        ...(documentMeasurementQa(locationRef, windowRef) ? { 'X-Measurement-QA': '1' } : {}) },
       body: JSON.stringify({ actionId: 'product_outbound_click',
         ...(sourceId ? { pagePath, sourceId } : {}),
         ...(offerId ? { pagePath, offerId } : {}) })
@@ -119,7 +135,7 @@ export function sendPageSignal(signal, {
       redirect: 'error',
       keepalive: true,
       referrerPolicy: 'no-referrer',
-      headers: { 'X-Analytics-Signal': signal, ...fixedEventHeaders(locationRef) }
+      headers: { 'X-Analytics-Signal': signal, ...fixedEventHeaders(locationRef, windowRef) }
     });
     if (result && typeof result.catch === 'function') result.catch(() => {});
   } catch {

@@ -159,7 +159,9 @@ Set `GA4_MEASUREMENT_ID` to the web stream ID and `GA4_API_SECRET` to a new
 Measurement Protocol API secret in Worker secrets. Set `GA4_ENABLED=true` only
 after those, the gateway, and the privacy checks are verified. Never put the
 API secret in source, build output, or browser responses. Measurement QA uses
-only the exact query `?measurement_qa=1`: GA sends `measurement_qa` instead of
+only the exact initial query `?measurement_qa=1`; browser actions and signals
+retain that label from the original navigation when comparison changes the URL.
+GA sends `measurement_qa` instead of
 `page_view` with fixed `traffic_type: internal` and `debug_mode: true`; Umami
 classifies the fixed QA boolean as `measurement_qa`. No arbitrary query or run
 label is forwarded. QA obeys consent, DNT, GPC, opt-out, bot, and path gates.

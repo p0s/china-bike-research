@@ -8,6 +8,44 @@ import { stopAnalytics } from '../assets/analytics-choice.js';
 
 const origin = 'https://chinesebikes.xyz';
 
+test('QA remains attached to its original document after comparison changes the URL', () => {
+  const requests = [];
+  const common = {
+    locationRef: new URL(origin + '/?measurement_qa=1&compare=fixture#compare'),
+    windowRef: { performance: { getEntriesByType: () => [{ name: origin + '/?measurement_qa=1' }] } },
+    navigatorRef: {}, fetchImpl: (url, init) => requests.push({ url, init })
+  };
+  sendComparisonOpenedEvent({ ...common, comparisonCount: 2 });
+  sendProductOutboundClickEvent({ ...common, offerId: 'test-offer' });
+  sendPageSignal('engaged', common);
+  assert.equal(requests.length, 3);
+  for (const { init } of requests) assert.equal(init.headers['X-Measurement-QA'], '1');
+  assert.equal(JSON.stringify(requests).includes('compare=fixture'), false);
+  assert.equal(JSON.stringify(requests).includes('#compare'), false);
+});
+
+test('changing a normal document URL cannot turn its traffic into QA', () => {
+  const requests = [];
+  sendComparisonOpenedEvent({
+    locationRef: new URL(origin + '/?measurement_qa=1'),
+    windowRef: { performance: { getEntriesByType: () => [{ name: origin + '/' }] } },
+    navigatorRef: {}, fetchImpl: (url, init) => requests.push({ url, init })
+  });
+  assert.equal(requests.length, 1);
+  assert.equal(Object.hasOwn(requests[0].init.headers, 'X-Measurement-QA'), false);
+});
+
+test('the original document still needs the exact QA query', () => {
+  const requests = [];
+  sendPageSignal('visible', {
+    locationRef: new URL(origin + '/?measurement_qa=1'),
+    windowRef: { performance: { getEntriesByType: () => [{ name: origin + '/?measurement_qa=1&other=1' }] } },
+    navigatorRef: {}, fetchImpl: (url, init) => requests.push({ url, init })
+  });
+  assert.equal(requests.length, 1);
+  assert.equal(Object.hasOwn(requests[0].init.headers, 'X-Measurement-QA'), false);
+});
+
 test('rendered pages reference the available first-party interaction module', () => {
   const html = layout({
     repositoryUrl: 'https://github.com/p0s/china-bike-research',
