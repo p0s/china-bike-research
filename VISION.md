@@ -1,6 +1,6 @@
 # Vision
 
-China Bikes should be the fastest trustworthy way to find and compare worthwhile Chinese bicycles and framesets, using research from China and prices relevant to the buyer's region.
+Chinese Bikes should be the fastest trustworthy way to find and compare worthwhile Chinese bicycles and framesets, using research from China and prices relevant to the buyer's region.
 
 ## User
 

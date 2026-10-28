@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "purpose": "Homepage link-preview video (og:video) for apps that play a direct MP4 inline; og:image remains the fallback",
+  "routes": [
+    "/",
+    "/zh/",
+    "/de/",
+    "/es/",
+    "/ru/"
+  ],
+  "scene": {
+    "kind": "Project-made 3D miniature generated entirely in code (procedural three.js geometry and textures, rendered offline)",
+    "depiction": "Generic low-poly mountain switchbacks with small rider groups; no third-party footage, product or exact-model claim",
+    "sha256": "a2579091f2c52f072089c54c17c6f95889ca9795c38f0fdffd00a762cadd20f2",
+    "duration_s": 8,
+    "frame_rate": 30,
+    "dimensions": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "signature": {
+    "mascot": "Site red-panda cyclist from its approved generated source (sha256 14a201c57d9ca2a95416fd12e7beb17ad248ed187d24636a6e8a98d70d23e46d; assets/branding/provenance.json), unaltered",
+    "text": "ChineseBikes.xyz",
+    "typeface": "Apple system font (SF) rasterised into the frames; no font file is distributed",
+    "dim": {
+      "color": "#07110b",
+      "max_opacity": 0.58,
+      "fade_s": [
+        4.45,
+        5.85
+      ]
+    },
+    "mascot_fade_s": [
+      4.8,
+      5.75
+    ],
+    "text_fade_s": [
+      5.15,
+      6.05
+    ],
+    "full_hold_s": [
+      6.05,
+      8.0
+    ]
+  },
+  "output": {
+    "path": "assets/social-video/home-switchback-signature-500a44d912.mp4",
+    "type": "video/mp4",
+    "codec": "H.264 High, yuv420p, BT.709, 30 fps, no audio, fast start",
+    "duration_s": 8.0,
+    "dimensions": {
+      "width": 1280,
+      "height": 720
+    },
+    "bytes": 1866228,
+    "sha256": "500a44d912d3774fc0e7756d5a483a21b7a54e6fe320a5ed10f813673b09dcd0"
+  }
+}

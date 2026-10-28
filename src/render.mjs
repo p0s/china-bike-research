@@ -50,7 +50,9 @@ import {
 } from './lib/seo.mjs';
 
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
-const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
+// Project-made homepage link-preview clip; assets/social-video/home-switchback-signature.provenance.json records it.
+const homeSocialVideo = { path: '/assets/social-video/home-switchback-signature-500a44d912.mp4', type: 'video/mp4', width: 1280, height: 720 };
+const footerDescription = 'Chinese Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
 export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '', modules = [] }) {
   return layout({
@@ -1560,6 +1562,7 @@ export function renderHome(ctx) {
     imageWidth: 1200,
     imageHeight: 630,
     imageType: 'image/png',
+    video: { ...homeSocialVideo, url: url(ctx.base, homeSocialVideo.path) },
     structuredData: websiteStructuredData({
       siteUrl: ctx.siteUrl,
       base: ctx.base,
@@ -1611,7 +1614,7 @@ export function renderModel(ctx, product) {
   const specificationRows = publishedSpecificationRows(product);
   const storyTitle = 'Overview';
   const reviewByline = variant.editorial.review
-    ? `<p class="evidence-context" data-review-basis="source-research"><a href="${url(ctx.base, '/methodology/')}">China Bikes</a><span>${reviewBasisNotice}</span></p>`
+    ? `<p class="evidence-context" data-review-basis="source-research"><a href="${url(ctx.base, '/methodology/')}">Chinese Bikes</a><span>${reviewBasisNotice}</span></p>`
     : '';
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
@@ -2567,7 +2570,7 @@ export function renderMethodology(ctx) {
       siteUrl: ctx.siteUrl,
       base: ctx.base,
       path: '/methodology/',
-      name: 'China Bikes dataset',
+      name: 'Chinese Bikes dataset',
       description: `${ctx.data.meta.scope} ${methodologyDescription}`,
       dateModified: datasetDate,
       license,

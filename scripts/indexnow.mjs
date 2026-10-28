@@ -5,7 +5,7 @@ import { setTimeout as wait } from 'node:timers/promises';
 import { indexNow, indexNowKeyUrl, validateManifest, changedPublicUrls, sitemapPublicUrls, indexNowPayload } from '../src/lib/indexnow.mjs';
 import { readDeliveryState, writeDeliveryState, observeManifest, acknowledgeManifest, startAttempt } from '../src/lib/indexnow-state.mjs';
 
-const readOptions = { redirect: 'error', headers: { DNT: '1', 'Sec-GPC': '1', 'User-Agent': 'ChinaBikes-IndexNow/1.0', 'Cache-Control': 'no-cache' } };
+const readOptions = { redirect: 'error', headers: { DNT: '1', 'Sec-GPC': '1', 'User-Agent': 'ChineseBikes-IndexNow/1.0', 'Cache-Control': 'no-cache' } };
 async function responseText(response, limit = 2_000_000) {
   let result = '';
   const reader = response.body?.getReader();
