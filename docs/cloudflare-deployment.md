@@ -1,6 +1,6 @@
 # Cloudflare Workers deployment
 
-China Bikes builds to `dist/` and deploys as a Cloudflare Worker with Static
+Chinese Bikes builds to `dist/` and deploys as a Cloudflare Worker with Static
 Assets. The checked-in [`wrangler.jsonc`](../wrangler.jsonc) pins the Worker
 name, the production site URL used for canonical tags,
 and the asset-first route split. `assets/*`, generated data, `sitemap.xml`,
@@ -143,7 +143,7 @@ Register event-scoped GA dimensions for `page_type`, `interface_language`,
 `model_id`, `brand_id`, `link_type` and `destination_host`, plus a standard
 numeric custom metric for `comparison_count`. GA page location is the canonical
 public path. Umami receives the same bounded fields as event data after its
-China Bikes validator is deployed. No query, fragment, search text, selected
+Chinese Bikes validator is deployed. No query, fragment, search text, selected
 model list, full outbound URL or arbitrary client property is accepted.
 
 Set `GA4_MEASUREMENT_ID` to the web stream ID and `GA4_API_SECRET` to a new

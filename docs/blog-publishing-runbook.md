@@ -1,4 +1,4 @@
-# Publish the China Bikes editorial series
+# Publish the Chinese Bikes editorial series
 
 ## Authority and scope
 

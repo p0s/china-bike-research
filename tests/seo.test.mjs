@@ -74,7 +74,7 @@ test('dataset schema mirrors visible downloads without commercial claims', () =>
     siteUrl: 'https://china-bikes.example',
     base: '',
     path: '/methodology/',
-    name: 'China Bikes dataset',
+    name: 'Chinese Bikes dataset',
     description: 'Source-linked bike records.',
     dateModified: '2026-08-28',
     license: 'https://creativecommons.org/licenses/by/4.0/',
@@ -87,7 +87,7 @@ test('dataset schema mirrors visible downloads without commercial claims', () =>
   assert.equal(dataset.dateModified, '2026-08-28');
   assert.deepEqual(dataset.creator, {
     '@type': 'Organization',
-    name: 'China Bikes',
+    name: 'Chinese Bikes',
     url: 'https://china-bikes.example/'
   });
   assert.equal(dataset.distribution.length, 2);

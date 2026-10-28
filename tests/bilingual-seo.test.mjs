@@ -119,7 +119,7 @@ for (const locale of ['en', 'zh-Hans']) test(`articles render genuine byline, da
     assert.equal(schema.headline, post.translations[locale].title);
     assert.equal(schema.inLanguage, locale);
     assert.equal(schema.url, `${siteUrl}${localePath(`/blog/${post.slug}/`, locale)}`);
-    assert.equal(schema.author.name, 'China Bikes');
+    assert.equal(schema.author.name, 'Chinese Bikes');
     assert.equal(schema.author['@type'], 'Organization');
     assert.equal(schema.datePublished, post.datePublished);
     assert.ok(!('aggregateRating' in schema)); assert.ok(!('offers' in schema));

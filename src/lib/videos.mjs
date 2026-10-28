@@ -47,8 +47,8 @@ export function renderVideoTakeaways(video) {
   if (!video.takeaways?.length) return '';
   const basis = transcriptLabels[video.transcript?.status] ?? '';
   const scope = ['workshop-guide', 'topic-explainer'].includes(video.format)
-    ? 'Paraphrased by China Bikes; general guidance, not approval of your exact equipment.'
-    : 'Paraphrased by China Bikes; points apply to the build shown, not to every size or trim.';
+    ? 'Paraphrased by Chinese Bikes; general guidance, not approval of your exact equipment.'
+    : 'Paraphrased by Chinese Bikes; points apply to the build shown, not to every size or trim.';
   return `<div class="video-takeaways"><h4>Takeaways</h4><ul>${video.takeaways.map((item) => `<li><span class="video-takeaway-kind">${escapeHtml(label(item.kind, takeawayKindLabels))}</span>${Number.isFinite(item.at_seconds) ? `<a href="${escapeAttr(timestampUrl(video, item.at_seconds))}" rel="noreferrer">${escapeHtml(clockLabel(item.at_seconds))}</a>` : ''}<span data-original-language lang="en">${escapeHtml(item.text)}</span></li>`).join('')}</ul><small>${basis ? `<span>${escapeHtml(basis)}</span> ${escapeHtml(video.transcript.checked_at)}. ` : ''}<span>${escapeHtml(scope)}</span></small></div>`;
 }
 

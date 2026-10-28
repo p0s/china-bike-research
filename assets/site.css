@@ -1361,6 +1361,11 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .selection-bar:not(.is-visible) .selection-actions .text-button { display: none; }
 }
 
+/* The two-line Chinese Bikes wordmark and the longest header actions (Russian) share one row at 320 px. */
+@media (max-width: 359px) {
+  .site-header .header-inner { column-gap: 10px; }
+}
+
 /* Model page decision panel */
 .model-identity .model-subline { margin: 4px 0 0; color: var(--muted); font-size: var(--fs-md); }
 .model-identity .alias-note { max-width: 62ch; font-size: var(--fs-sm); }

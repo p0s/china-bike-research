@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import { escapeHtml } from '../src/lib/html.mjs';
 import { clarifyMainlandInDisplayHtml } from '../src/lib/i18n.mjs';
@@ -82,7 +83,7 @@ test('homepage is the unified bike and frame-build comparison', () => {
 test('homepage exposes crawlable evidence-led discovery without duplicating the catalog', () => {
   assert.match(html, /Dataset updated <time datetime="2026-08-28">2026-08-28<\/time>; catalog-wide review <time datetime="2026-08-08">2026-08-08<\/time>/);
   assert.doesNotMatch(html.match(/<section class="catalog-intro">[\s\S]*?<\/section>/)?.[0] ?? '', /Dataset updated/);
-  assert.match(html, /China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices/);
+  assert.match(html, /Chinese Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices/);
   assert.match(html, /href="\/china-bike-research\/brands\/">Brands<\/a>/);
   assert.match(html, /href="\/china-bike-research\/complete-bikes\/">Complete bikes<\/a>/);
   assert.match(html, /href="\/china-bike-research\/framesets\/">Framesets<\/a>/);
@@ -105,6 +106,29 @@ test('homepage social preview is project-owned, crop-sized, and fully described'
   assert.equal(provenance.composition.bike_count, 7);
   assert.equal(provenance.output.sha256, '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87');
   assert.deepEqual(provenance.output.dimensions, { width: 1200, height: 630 });
+});
+
+test('every homepage locale adds the project-made MP4 link preview and keeps the image fallback', () => {
+  const provenance = JSON.parse(fs.readFileSync(new URL('../assets/social-video/home-switchback-signature.provenance.json', import.meta.url), 'utf8'));
+  const { path: asset, sha256, bytes, dimensions } = provenance.output;
+  const clip = fs.readFileSync(new URL(`../${asset}`, import.meta.url));
+  assert.equal(crypto.createHash('sha256').update(clip).digest('hex'), sha256);
+  assert.ok(asset.endsWith(`-${sha256.slice(0, 10)}.mp4`));
+  assert.equal(clip.byteLength, bytes);
+  assert.ok(clip.byteLength < 2_000_000);
+  const boxes = [];
+  for (let at = 0; at < clip.byteLength; at += clip.readUInt32BE(at)) boxes.push(clip.toString('latin1', at + 4, at + 8));
+  assert.ok(boxes.indexOf('moov') > -1 && boxes.indexOf('moov') < boxes.indexOf('mdat'), 'fast start: moov precedes mdat');
+  assert.deepEqual([...clip.toString('latin1').matchAll(/hdlr[\s\S]{8}(vide|soun)/g)].map((match) => match[1]), ['vide']);
+  assert.deepEqual(dimensions, { width: 1280, height: 720 });
+  const absolute = `https://example.github.io/china-bike-research/${asset}`;
+  for (const locale of ['en', 'zh-Hans', 'de', 'es', 'ru']) {
+    const page = locale === 'en' ? html : renderHome({ ...homeContext, locale });
+    assert.ok(page.includes(`<meta property="og:video" content="${absolute}"><meta property="og:video:secure_url" content="${absolute}"><meta property="og:video:type" content="video/mp4"><meta property="og:video:width" content="1280"><meta property="og:video:height" content="720">`), locale);
+    assert.match(page, /property="og:image" content="https:\/\/example.github.io\/china-bike-research\/assets\/social-preview.png"/);
+    assert.match(page, /name="twitter:card" content="summary_large_image"/);
+  }
+  assert.doesNotMatch(renderMethodology(homeContext), /og:video|social-video/);
 });
 
 test('theme control follows the OS by default and exposes only light and dark choices', () => {
@@ -819,7 +843,7 @@ test('methodology visibly supports its Dataset and DataDownload schema', () => {
   assert.match(methodology, /href="\/china-bike-research\/data\/catalog\.json">Catalog JSON<\/a>/);
   assert.match(methodology, /href="\/china-bike-research\/data\/catalog\.csv">Catalog CSV<\/a>/);
   assert.match(methodology, /"@type":"Dataset"/);
-  assert.match(methodology, /"creator":\{"@type":"Organization","name":"China Bikes"/);
+  assert.match(methodology, /"creator":\{"@type":"Organization","name":"Chinese Bikes"/);
   assert.match(methodology, /"@type":"DataDownload"/);
   assert.doesNotMatch(methodology, /"offers"|"@type":"Product"/);
 });

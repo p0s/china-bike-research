@@ -8,7 +8,7 @@ const noteText = (value) => value.trim().replace(/[.;]+$/, '');
 export function editorialReviewIssues(editorial = {}) {
   if (editorial?.review === undefined) return [];
   const issues = [];
-  if (editorial.review?.author !== 'China Bikes') issues.push('review author must be China Bikes');
+  if (editorial.review?.author !== 'Chinese Bikes') issues.push('review author must be Chinese Bikes');
   if (editorial.review?.basis !== 'source-research') issues.push('review basis must be source-research');
   if (!nonempty(editorial.verdict)) issues.push('review needs a visible editorial verdict');
   for (const field of ['strengths', 'caveats']) {
