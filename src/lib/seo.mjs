@@ -26,7 +26,7 @@ function websiteId(siteUrl, base) {
 function breadcrumb({ siteUrl, base, path, name, trail = [] }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
   const parents = [
-    { name: 'China Bikes', path: '/' },
+    { name: 'Chinese Bikes', path: '/' },
     ...trail
   ];
   return {
@@ -51,7 +51,7 @@ export function websiteStructuredData({ siteUrl, base, description }) {
     '@type': 'WebSite',
     '@id': websiteId(siteUrl, base),
     url: home,
-    name: 'China Bikes',
+    name: 'Chinese Bikes',
     description,
     inLanguage: 'en'
   };
@@ -199,7 +199,7 @@ export function datasetStructuredData({
         license,
         creator: {
           '@type': 'Organization',
-          name: 'China Bikes',
+          name: 'Chinese Bikes',
           url: absoluteUrl(siteUrl, base, '/')
         },
         isAccessibleForFree: true,

@@ -1,4 +1,4 @@
-# China Bikes
+# Chinese Bikes
 
 A minimalist, evidence-backed comparison of bicycles available to riders in mainland China.
 

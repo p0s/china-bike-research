@@ -11,7 +11,7 @@ async function githubJson(route, token, fetcher) {
   const response = await fetcher(`https://api.github.com/repos/${repository}${route}`, {
     redirect: 'error', signal: AbortSignal.timeout(20_000),
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'ChinaBikes-IndexNow-State/1.0' }
+      'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'ChineseBikes-IndexNow-State/1.0' }
   });
   if (response.status !== 200) { await response.body?.cancel(); throw new Error(`IndexNow state lookup failed with GitHub HTTP ${response.status}.`); }
   const reader = response.body.getReader();

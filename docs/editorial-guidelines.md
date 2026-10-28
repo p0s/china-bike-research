@@ -1,4 +1,4 @@
-# China Bikes editorial standard
+# Chinese Bikes editorial standard
 
 Improve useful existing explanations; do not replace them merely to make an article look new.
 

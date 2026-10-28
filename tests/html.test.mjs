@@ -12,7 +12,7 @@ test('the selected rider brand and browser icons use shared base-safe assets in 
     assert.ok(html.includes(`href="${base}/assets/branding/favicon-32.png"`));
     assert.ok(html.includes(`href="${base}/assets/branding/apple-touch-icon.png"`));
     assert.match(html, /alt="" width="50" height="50"/);
-    assert.match(html, /class="brand-wordmark"[^>]*>China <span>Bikes<\/span>/);
+    assert.match(html, /class="brand-wordmark"[^>]*>Chinese <span>Bikes<\/span>/);
     assert.doesNotMatch(html, /(?:src|href)="[^"]*\/(?:zh|de)\/assets\/branding/);
   }
 });
@@ -82,8 +82,8 @@ test('layout emits base-aware social and structured metadata without repository 
   assert.match(html, /property="og:image:height" content="630"/);
   assert.match(html, /property="og:image:type" content="image\/png"/);
   assert.match(html, /property="og:type" content="product"/);
-  assert.match(html, /property="og:site_name" content="China Bikes"/);
-  assert.match(html, /aria-label="China Bikes home"/);
+  assert.match(html, /property="og:site_name" content="Chinese Bikes"/);
+  assert.match(html, /aria-label="Chinese Bikes home"/);
   assert.match(html, /data-theme-control>/);
   assert.match(html, /class="theme-light">Light/);
   assert.match(html, /class="theme-dark">Dark/);

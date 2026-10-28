@@ -14,6 +14,7 @@ const types = {
   '.txt': 'text/plain; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif',
   '.gif': 'image/gif', '.ico': 'image/x-icon', '.woff': 'font/woff', '.woff2': 'font/woff2',
+  '.mp4': 'video/mp4',
 };
 const headers = {
   'cache-control': 'no-cache', 'x-content-type-options': 'nosniff',

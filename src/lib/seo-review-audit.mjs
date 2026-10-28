@@ -23,7 +23,7 @@ export function auditProductReview(product, html, { pageUrl, locale = 'en', noin
   const author = review?.author;
   let authorPath = '';
   try { authorPath = new URL(author?.url).pathname; } catch { /* Report malformed URLs with other attribution errors. */ }
-  if (author?.['@type'] !== 'Organization' || author.name !== 'China Bikes' || !author.url?.endsWith('/methodology/') || !authorPath || !story.includes(`href="${authorPath}"`) || !visible.includes(author?.name ?? '\0')) errors.push('Review needs its visible editorial author and methodology link');
+  if (author?.['@type'] !== 'Organization' || author.name !== 'Chinese Bikes' || !author.url?.endsWith('/methodology/') || !authorPath || !story.includes(`href="${authorPath}"`) || !visible.includes(author?.name ?? '\0')) errors.push('Review needs its visible editorial author and methodology link');
   if (typeof review?.name !== 'string' || !review.name.trim() || !visible.includes(review.name.trim())) errors.push('Review name must match its visible heading');
   if (typeof review?.reviewBody !== 'string' || !review.reviewBody.trim() || !visible.includes(review.reviewBody.trim())) errors.push('Review body must match its visible verdict');
   if (review?.inLanguage !== locale) errors.push('Review language must match the page');

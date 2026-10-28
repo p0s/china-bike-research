@@ -422,7 +422,8 @@ const projectOwnedBinaries = new Map([
   ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-480-a2ea11d518.avif', 'a2ea11d5181e5ce646cc15ea729b39b6b16aa1c6cd09f706e45f865dbcc1edbd'],
   ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif', 'c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162'],
   ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-480-ab2c6205b2.avif', 'ab2c6205b28e04038000ed2529477c28c9246064eb88658d783e0705ee09e85b'],
-  ['assets/social-preview.png', '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87']
+  ['assets/social-preview.png', '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87'],
+  ['assets/social-video/home-switchback-signature-500a44d912.mp4', '500a44d912d3774fc0e7756d5a483a21b7a54e6fe320a5ed10f813673b09dcd0']
 ]);
 const findings = [];
 const referencedSourcedMedia = new Set();

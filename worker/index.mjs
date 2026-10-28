@@ -48,7 +48,7 @@ function responseWithHeaders(response, extra = {}) {
 }
 
 function htmlResponse(body, status = 200, extra = {}, locale = 'en') {
-  return responseWithHeaders(new Response(`<!doctype html><html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>China Bikes</title></head><body>${body}</body></html>`, {
+  return responseWithHeaders(new Response(`<!doctype html><html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chinese Bikes</title></head><body>${body}</body></html>`, {
     status,
     headers: { 'content-type': 'text/html; charset=utf-8' }
   }), {

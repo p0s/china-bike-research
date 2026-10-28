@@ -10,7 +10,7 @@ export function url(base, pathname='/') {
   return `${base}${p}` || '/';
 }
 export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', video=null, ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification='', styles=[], modules=[], headerTools=''}) {
-  const siteName='China Bikes';
+  const siteName='Chinese Bikes';
   const t = (value) => translate(value, locale);
   title = t(title);
   description = t(description);
@@ -27,7 +27,9 @@ export function layout({base='', repositoryUrl, title='', description, current='
   const languageLinks = noindex ? '' : [...pageLocales, 'x-default'].map((lang) => `<link rel="alternate" hreflang="${lang}" href="${escapeAttr(`${siteUrl}${url(base, localePath(path, lang === 'x-default' ? 'en' : lang))}`)}">`).join('\n  ');
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,localizedPath)}`;
-  const socialImage = image ? (image.startsWith('https://') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`) : '';
+  const absolute = (value) => value.startsWith('https://') ? value : `${siteUrl}${value.startsWith('/') ? value : `/${value}`}`;
+  const socialImage = image ? absolute(image) : '';
+  const socialVideo = video && { ...video, url: absolute(video.url) };
   const jsonLd = (Array.isArray(structuredData) ? structuredData : [structuredData])
     .filter(Boolean)
     .map((entry) => `<script type="application/ld+json">${safeJson(entry)}</script>`)
@@ -59,7 +61,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta name="twitter:title" content="${escapeAttr(pageTitle)}">
   <meta name="twitter:description" content="${escapeAttr(description)}">
   ${socialImage ? `<meta property="og:image" content="${escapeAttr(socialImage)}"><meta property="og:image:alt" content="${escapeAttr(imageAlt || description)}">${imageWidth ? `<meta property="og:image:width" content="${escapeAttr(imageWidth)}">` : ''}${imageHeight ? `<meta property="og:image:height" content="${escapeAttr(imageHeight)}">` : ''}${imageType ? `<meta property="og:image:type" content="${escapeAttr(imageType)}">` : ''}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${escapeAttr(socialImage)}"><meta name="twitter:image:alt" content="${escapeAttr(imageAlt || description)}">` : `<meta name="twitter:card" content="summary">`}
-  ${video ? `<meta property="og:video" content="${escapeAttr(video.url)}"><meta property="og:video:secure_url" content="${escapeAttr(video.url)}"><meta property="og:video:type" content="${escapeAttr(video.type)}"><meta property="og:video:width" content="${escapeAttr(video.width)}"><meta property="og:video:height" content="${escapeAttr(video.height)}">` : ''}
+  ${socialVideo ? `<meta property="og:video" content="${escapeAttr(socialVideo.url)}"><meta property="og:video:secure_url" content="${escapeAttr(socialVideo.url)}"><meta property="og:video:type" content="${escapeAttr(socialVideo.type)}"><meta property="og:video:width" content="${escapeAttr(socialVideo.width)}"><meta property="og:video:height" content="${escapeAttr(socialVideo.height)}">` : ''}
   ${jsonLd}
   <title>${escapeHtml(pageTitle)}</title>
 </head>
@@ -67,7 +69,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header${current === 'catalog' ? ' is-catalog' : ''}">
     <div class="page header-inner">
-      <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/branding/panda-rider-3b-256-6c271fa41e.avif')}" alt="" width="50" height="50"><span class="brand-wordmark" data-original-language lang="en" translate="no">China <span>Bikes</span></span></a>
+      <a class="brand" href="${url(base,'/')}" aria-label="Chinese Bikes home"><img src="${url(base,'/assets/branding/panda-rider-3b-256-6c271fa41e.avif')}" alt="" width="50" height="50"><span class="brand-wordmark" data-original-language lang="en" translate="no">Chinese <span>Bikes</span></span></a>
       <form class="header-search" role="search" action="${url(base,localePath('/', locale))}#catalog" method="get" data-header-search>
         <label class="sr-only" for="site-search">Search bikes</label>
         <input id="site-search" name="q" type="search" placeholder="Search model, brand, drivetrain or 中文名" autocomplete="off" enterkeyhint="search"${current === 'catalog' ? ' data-filter-search' : ''}>

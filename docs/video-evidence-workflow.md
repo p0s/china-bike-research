@@ -1,6 +1,6 @@
 # Video evidence workflow
 
-Video research is a bounded discovery lane for China Bikes. It can reveal exact model names, missing catalog records, useful visual context, and claims worth checking. A creator's statement is not an official specification, current price, publication gate, or recommendation by itself.
+Video research is a bounded discovery lane for Chinese Bikes. It can reveal exact model names, missing catalog records, useful visual context, and claims worth checking. A creator's statement is not an official specification, current price, publication gate, or recommendation by itself.
 
 ## Local corpus
 
