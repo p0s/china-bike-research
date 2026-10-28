@@ -20,7 +20,13 @@
     }
   },
   "signature": {
-    "mascot": "Site red-panda cyclist from its approved generated source (sha256 14a201c57d9ca2a95416fd12e7beb17ad248ed187d24636a6e8a98d70d23e46d; assets/branding/provenance.json), unaltered",
+    "mascot": "Site red-panda cyclist from its approved generated source (sha256 14a201c57d9ca2a95416fd12e7beb17ad248ed187d24636a6e8a98d70d23e46d; assets/branding/provenance.json), riding in place: a code rig redraws the legs, cranks, pedals and spokes in the artwork's own colours, restores the frame tubes the legs covered, sways the tail and bobs the body slightly; the head, helmet, face, jersey, arms, hands, handlebar, frame and wheel rings keep the original artwork",
+    "mascot_motion": {
+      "cadence_rpm": 60,
+      "wheel_rev_per_s": 0.75,
+      "body_bob_deg": 1.4,
+      "tail_sway_period_s": 2.0
+    },
     "text": "ChineseBikes.xyz",
     "typeface": "Apple system font (SF) rasterised into the frames; no font file is distributed",
     "dim": {
@@ -45,7 +51,7 @@
     ]
   },
   "output": {
-    "path": "assets/social-video/home-switchback-signature-500a44d912.mp4",
+    "path": "assets/social-video/home-switchback-signature-b06e03542b.mp4",
     "type": "video/mp4",
     "codec": "H.264 High, yuv420p, BT.709, 30 fps, no audio, fast start",
     "duration_s": 8.0,
@@ -53,7 +59,7 @@
       "width": 1280,
       "height": 720
     },
-    "bytes": 1866228,
-    "sha256": "500a44d912d3774fc0e7756d5a483a21b7a54e6fe320a5ed10f813673b09dcd0"
+    "bytes": 1778001,
+    "sha256": "b06e03542bac745abd5f6e85d829933ad17d776bc6a0d82ee01782903162180e"
   }
 }
