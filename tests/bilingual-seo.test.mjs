@@ -256,7 +256,8 @@ for (const base of ['', '/china-bike-research']) for (const locale of ['en', 'zh
     assert.equal(schema.image, expected);
     assert.ok(html.includes(`property="og:image" content="${escapeAttr(expected)}"`));
     assert.ok(html.includes(`name="twitter:image" content="${escapeAttr(expected)}"`));
-    assert.ok(html.includes(`src="${base}${image.files[0].path}"`));
+    assert.equal((html.match(/data-blog-mascot/g) || []).length, postPhotos(post).length);
+    assert.equal(html.includes(`src="${base}${image.files[0].path}"`), postPhotos(post).length > 0);
     assert.ok(html.includes(`src="${base}${hero.path}"`));
     assert.ok(html.includes(`alt="${escapeAttr(image.header.alt[locale])}"`));
     assert.ok(html.includes('fetchpriority="high"'));

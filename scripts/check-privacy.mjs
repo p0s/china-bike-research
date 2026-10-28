@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-640-59f6fe45ec.avif', '59f6fe45ec582e0fd22354b26941b431acb727cb80de72e6997797ffda91ffb5'],
+  ['assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-1600-2bb47996c0.avif', '2bb47996c0c6b6eaefb8ea5d0dadcda913f2da9138cf6f14a5c00a425a7aabd5'],
+  ['assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-1200-73ee02f9ad.jpg', '73ee02f9adc154e8cddeae2dbb233043128fcbcedbd97fa46fec10cd7641d892'],
   ['assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-640-2dd04b542e.avif', '2dd04b542e4ddcaca25ae198e727b3496ccebf62a5c423f9dd727fa150a02cf2'],
   ['assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-1600-95444b3092.avif', '95444b3092145fed12d2aed906f3aa4195da4379c2a2989221ada38d31d04d83'],
   ['assets/blog/chinese-gravel-frames-2026-shortlist-mascot-cover-54f942bd9f-1200-fe9eb309d2.jpg', 'fe9eb309d2d49a777289af5619b8d33d775fc18f2f662d64cb1516c1b4724cd0'],

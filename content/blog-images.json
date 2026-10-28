@@ -10596,6 +10596,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "tpu-latex-butyl-inner-tubes-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif",
+          "width": 480,
+          "height": 408,
+          "type": "image/avif",
+          "bytes": 20185,
+          "sha256": "c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda holds a folded spare tube beside three coiled inner tubes, a pump and a patch kit.",
+          "zh-Hans": "戴头盔的小熊猫拿着折好的备用内胎，工作台上放着三条盘起的内胎、气筒和补胎工具。",
+          "de": "Ein Rotpanda mit Helm hält einen gefalteten Ersatzschlauch neben drei aufgerollten Schläuchen, einer Pumpe und einem Flickset."
+        },
+        "prompt": "Editorial scene: A helmeted red panda holds a folded spare tube beside three coiled inner tubes, a pump and a patch kit.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-26",
+          "credit": "China Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "d9d87b023a886c497a326291b2bb658b55f9d341d6878e4eee4edeed2d698195",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "80ef83a51ed82573c58a62598e51bba584cc8c574184c5bae219a1bfb2745118"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-640-59f6fe45ec.avif",
+            "width": 640,
+            "height": 361,
+            "type": "image/avif",
+            "bytes": 28055,
+            "sha256": "59f6fe45ec582e0fd22354b26941b431acb727cb80de72e6997797ffda91ffb5"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-1600-2bb47996c0.avif",
+            "width": 1600,
+            "height": 901,
+            "type": "image/avif",
+            "bytes": 112060,
+            "sha256": "2bb47996c0c6b6eaefb8ea5d0dadcda913f2da9138cf6f14a5c00a425a7aabd5"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-1200-73ee02f9ad.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 175671,
+            "sha256": "73ee02f9adc154e8cddeae2dbb233043128fcbcedbd97fa46fec10cd7641d892"
+          }
+        ]
+      }
     }
   ]
 }
