@@ -1,3 +1,5 @@
+import { ga4Stage } from './ingest-client.mjs';
+
 export const GA4_CLIENT_COOKIE = 'p0s_ga_cid';
 export const GA4_SESSION_COOKIE = 'p0s_ga_sid';
 
@@ -86,8 +88,10 @@ function reportDelivery(logger, payload, outcome, status = null) {
   try { logger.info(JSON.stringify({ type: 'ga4_delivery', event: eventName, outcome, status })); } catch {}
 }
 
+// Returns the fixed outcome stage (ga_ok is HTTP receipt, not processing
+// proof), or null when nothing was sent. An ambiguous send is never retried.
 export async function sendGa4(payload, env, fetchImpl = globalThis.fetch, logger = console) {
-  if (!payload || !ga4Configured(env)) return false;
+  if (!payload || !ga4Configured(env)) return null;
   const url = new URL('https://www.google-analytics.com/mp/collect');
   url.searchParams.set('measurement_id', env.GA4_MEASUREMENT_ID);
   url.searchParams.set('api_secret', env.GA4_API_SECRET);
@@ -105,10 +109,11 @@ export async function sendGa4(payload, env, fetchImpl = globalThis.fetch, logger
       signal: controller.signal
     });
     reportDelivery(logger, payload, response.ok ? 'http_received' : 'http_rejected', response.status);
-    return response.ok;
+    return ga4Stage({ status: response.status });
   } catch {
-    reportDelivery(logger, payload, controller.signal.aborted ? 'timeout' : 'network_error');
-    return false;
+    const timedOut = controller.signal.aborted;
+    reportDelivery(logger, payload, timedOut ? 'timeout' : 'network_error');
+    return ga4Stage({ timedOut, networkError: !timedOut });
   } finally {
     clearTimeout(timeout);
   }

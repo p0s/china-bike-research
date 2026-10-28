@@ -45,6 +45,7 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
   const config = JSON.parse(await readFile(join(root, 'wrangler.jsonc'), 'utf8'));
   const assetsDirectory = await mkdtemp(join(tmpdir(), 'china-bikes-worker-runtime-'));
   const outbound = [];
+  const collectorStatuses = [];
   let redirectCollector = false;
   let mf;
   try {
@@ -60,7 +61,8 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
         modules: [
           { type: 'ESModule', path: 'worker/index.mjs' },
           { type: 'ESModule', path: 'worker/ga4.mjs' },
-          { type: 'ESModule', path: 'worker/consent.mjs' }
+          { type: 'ESModule', path: 'worker/consent.mjs' },
+          { type: 'ESModule', path: 'worker/ingest-client.mjs' }
         ],
         compatibilityDate: config.compatibility_date,
         compatibilityFlags: config.compatibility_flags ?? [],
@@ -81,7 +83,7 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
         if (redirectCollector) {
           return new Response(null, { status: 302, headers: { location: 'https://redirect.invalid/collect' } });
         }
-        return new Response(null, { status: 204 });
+        return new Response(null, { status: collectorStatuses.shift() ?? 204 });
       }
     };
     mf = new runtime.Miniflare(options);
@@ -115,7 +117,9 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
     assert.equal(qaResponse.status, 204);
     await waitForOutbound(1);
     assert.equal(outbound[0].url, 'https://collector.invalid/ingest/v1');
-    assert.deepEqual(JSON.parse(outbound[0].body), {
+    const { eventId, ...qaBody } = JSON.parse(outbound[0].body);
+    assert.match(eventId, /^[0-9a-f]{32}$/);
+    assert.deepEqual(qaBody, {
       hostname: 'chinesebikes.xyz',
       path: '/',
       ip: '203.0.113.10',
@@ -129,19 +133,31 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
     assert.equal(invalidBody.status, 400);
     assert.equal(outbound.length, 1);
 
+    // The start signal is a stage count without visitor fields; a 503 gets
+    // exactly one retry with the same event ID, and 409 is never resent.
+    collectorStatuses.push(503, 409);
+    assert.equal((await dispatchEngagement({ 'x-analytics-signal': 'bootstrap' })).status, 204);
+    await waitForOutbound(3);
+    const [first, retry] = outbound.slice(1).map(({ url, body }) => ({ url, body: JSON.parse(body) }));
+    assert.equal(first.url, 'https://collector.invalid/ingest/stage/v1');
+    assert.equal(retry.url, first.url);
+    assert.deepEqual(first.body, { stage: 'bootstrap', eventId: first.body.eventId });
+    assert.deepEqual(retry.body, { ...first.body, attempt: 2 });
+    assert.equal((await dispatchEngagement({ 'x-analytics-signal': 'visible' })).status, 204);
+    await waitForOutbound(4);
+    assert.equal(outbound[3].url, 'https://collector.invalid/ingest/v1');
+    assert.equal(JSON.parse(outbound[3].body).eventName, 'page_visible');
+
     redirectCollector = true;
     const redirectResponse = await dispatchEngagement();
     assert.equal(redirectResponse.status, 204);
-    await waitForOutbound(2);
-    assert.deepEqual(outbound.map(({ url }) => url), [
-      'https://collector.invalid/ingest/v1',
-      'https://collector.invalid/ingest/v1'
-    ]);
+    await waitForOutbound(5);
+    assert.equal(outbound[4].url, 'https://collector.invalid/ingest/v1');
 
     const dntResponse = await dispatchEngagement({ dnt: '1' });
     assert.equal(dntResponse.status, 204);
     await new Promise((resolveWait) => setTimeout(resolveWait, 30));
-    assert.equal(outbound.length, 2);
+    assert.equal(outbound.length, 5);
   } finally {
     await mf?.dispose();
     await rm(assetsDirectory, { recursive: true, force: true });

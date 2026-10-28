@@ -1,5 +1,6 @@
 import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SessionCookieHeader, ga4StoredIdentity, sendGa4, validGa4SessionId } from './ga4.mjs';
 import { analyticsBanner, analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COOKIE, CONSENT_MAX_AGE, CONSENT_VERSION, hasAnalyticsConsent, needsAnalyticsConsent } from './consent.mjs';
+import { deliver, stageBody } from './ingest-client.mjs';
 
 const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
 const OPT_OUT_COOKIE = 'p0s_analytics_optout';
@@ -18,9 +19,9 @@ const GA4_SESSION_ROUTE = '/analytics/ga-session';
 const SITE_EVENTS_ACTION_ROUTE = '/site-events/action';
 const SITE_EVENTS_ENGAGEMENT_ROUTE = '/site-events/engagement';
 const CATALOG_DOCUMENT_PATHS = new Set(['/', '/zh/', '/de/']);
-const ANALYTICS_ACTION_INGEST_URL = 'https://stats.p0s.eu/ingest/action/v1';
-const ANALYTICS_ACTION_IDS = new Set(['product_outbound_click', 'measurement_qa']);
 const CUSTOMER_ACTION_IDS = new Set(['product_outbound_click']);
+// Browser module signals. Cached modules send no signal header: page_engaged.
+const PAGE_SIGNALS = { bootstrap: null, visible: 'page_visible', engaged: 'page_engaged' };
 const MAX_ACTION_BODY_BYTES = 512;
 const actionManifestCache = new WeakMap();
 
@@ -212,63 +213,39 @@ export function analyticsPayload(request, url) {
   return payload;
 }
 
-export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch) {
-  const endpoint = String(env?.ANALYTICS_INGEST_URL ?? '').trim();
-  const token = String(env?.ANALYTICS_INGEST_TOKEN ?? '');
-  if (!payload || !endpoint || !token) return false;
-  let parsed;
-  try { parsed = new URL(endpoint); } catch { return false; }
-  if (parsed.protocol !== 'https:') return false;
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 1500);
+// The configured page endpoint's origin also serves the contract v2 action and
+// stage routes. Every event gets a fresh random ID; the vendored client retries
+// once only after a transport failure, timeout or 5xx, and the gateway forwards
+// that retry only when the first attempt provably never reached its store.
+function ingestOrigin(env) {
   try {
-    const response = await fetchImpl(endpoint, {
-      method: 'POST',
-      headers: {
-        authorization: `Bearer ${token}`,
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(payload),
-      // Cloudflare Workers rejects redirect: 'error'; manual keeps analytics
-      // payloads from being forwarded to a redirect target.
-      redirect: 'manual',
-      referrerPolicy: 'no-referrer',
-      signal: controller.signal
-    });
-    return response.ok;
+    const endpoint = new URL(String(env?.ANALYTICS_INGEST_URL ?? '').trim());
+    return endpoint.protocol === 'https:' ? endpoint.origin : null;
   } catch {
-    return false;
-  } finally {
-    clearTimeout(timeout);
+    return null;
   }
 }
 
-export async function ingestAction(actionId, env, fetchImpl = globalThis.fetch, context = null) {
+async function ingest(route, body, env, fetchImpl, options) {
   const token = String(env?.ANALYTICS_INGEST_TOKEN ?? '').trim();
-  if (!ANALYTICS_ACTION_IDS.has(actionId) || !token) return false;
+  const { outcome } = await deliver(ingestOrigin(env), route, token, body, { ...options, fetchImpl });
+  return outcome === 'accepted';
+}
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 1500);
-  try {
-    const response = await fetchImpl(ANALYTICS_ACTION_INGEST_URL, {
-      method: 'POST',
-      headers: {
-        authorization: `Bearer ${token}`,
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({ actionId, ...(context ? { context } : {}) }),
-      // Workers rejects redirect: 'error'; manual preserves the no-forward rule.
-      redirect: 'manual',
-      referrerPolicy: 'no-referrer',
-      signal: controller.signal
-    });
-    return response.ok;
-  } catch {
-    return false;
-  } finally {
-    clearTimeout(timeout);
-  }
+export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch, options = {}) {
+  return payload ? ingest('page', payload, env, fetchImpl, options) : false;
+}
+
+export async function ingestAction(actionId, env, fetchImpl = globalThis.fetch, context = null, { qa = false, ...options } = {}) {
+  if (!CUSTOMER_ACTION_IDS.has(actionId)) return false;
+  // Labelled QA keeps the real action ID and context so the collector checks
+  // them, then stores only its fixed measurement_qa diagnostic.
+  return ingest('action', { actionId, ...(context ? { context } : {}), ...(qa ? { qa: true } : {}) },
+    env, fetchImpl, options);
+}
+
+export async function ingestStage(stage, env, fetchImpl = globalThis.fetch, options = {}) {
+  return ingest('stage', stageBody(stage), env, fetchImpl, options);
 }
 
 function sameOriginPost(request, url) {
@@ -351,22 +328,30 @@ export function analyticsEventPayload(request, url) {
   };
 }
 
-export function analyticsEngagementPayload(request, url) {
+function pageSignal(request) {
+  const signal = request.headers.get('x-analytics-signal') ?? 'engaged';
+  return Object.hasOwn(PAGE_SIGNALS, signal) ? signal : null;
+}
+
+export function analyticsSignalPayload(request, url) {
   if (request.method !== 'POST' || url.hostname !== PRODUCTION_HOSTNAME
     || url.pathname !== SITE_EVENTS_ENGAGEMENT_ROUTE) return null;
   if (url.search || url.hash || request.headers.has('content-type') || !sameOriginPost(request, url)
     || !validMeasurementQaHeader(request)) return null;
 
+  const signal = pageSignal(request);
   const path = request.headers.get('x-analytics-path') ?? '';
-  if (!isEligibleDocumentPath(path) || isExcludedAnalyticsRequest(request)) return null;
+  if (!signal || !isEligibleDocumentPath(path) || isExcludedAnalyticsRequest(request)) return null;
   const identity = analyticsIdentity(request);
   if (!identity) return null;
 
+  // The module start is a stage count, sent without visitor or page fields.
+  if (signal === 'bootstrap') return stageBody('bootstrap', { qa: isMeasurementQa(request) });
   return {
     hostname: PRODUCTION_HOSTNAME,
     path,
     ...identity,
-    eventName: 'page_engaged',
+    eventName: PAGE_SIGNALS[signal],
     ...(isMeasurementQa(request) ? { qa: true } : {})
   };
 }
@@ -458,12 +443,22 @@ async function actionResponse(request, url, env, ctx) {
   if (Object.hasOwn(action, 'pagePath') && !context) return plainResponse('Invalid action request', 400);
   if (typeof ctx.waitUntil === 'function') {
     const measurementQa = isMeasurementQa(request);
-    ctx.waitUntil(ingestAction(measurementQa ? 'measurement_qa' : action.actionId, env, globalThis.fetch,
-      measurementQa ? null : context));
-    const identity = ga4Configured(env) && ga4StoredIdentity(request);
-    if (identity?.sessionId && !measurementQa) ctx.waitUntil(sendGa4(ga4ActionPayload(action.actionId, identity, context ?? {}), env));
+    ctx.waitUntil(ingestAction(action.actionId, env, globalThis.fetch, context, { qa: measurementQa }));
+    if (!measurementQa) forwardGa4Action(action.actionId, request, env, ctx, context ?? {});
   }
   return noContentResponse();
+}
+
+// A permitted, non-QA server action reaches GA only with the stored client ID
+// and verified tag session; no substitute identity is created. The skip or the
+// single send's outcome is reported as one fixed stage. Never retried.
+function forwardGa4Action(name, request, env, ctx, context) {
+  if (!ga4Configured(env)) return;
+  const identity = ga4StoredIdentity(request);
+  const outcome = identity?.sessionId
+    ? sendGa4(ga4ActionPayload(name, identity, context), env)
+    : Promise.resolve('ga_skip_no_session');
+  ctx.waitUntil(outcome.then((stage) => stage ? ingestStage(stage, env) : false));
 }
 
 async function comparisonEventResponse(request, url, env, ctx) {
@@ -477,10 +472,7 @@ async function comparisonEventResponse(request, url, env, ctx) {
   const payload = analyticsEventPayload(request, url);
   if (payload && typeof ctx.waitUntil === 'function') {
     ctx.waitUntil(ingestAnalytics(payload, env));
-    const identity = ga4Configured(env) && ga4StoredIdentity(request);
-    if (identity?.sessionId && !isMeasurementQa(request)) {
-      ctx.waitUntil(sendGa4(ga4ActionPayload(COMPARISON_OPEN_EVENT_NAME, identity, payload.context), env));
-    }
+    if (!isMeasurementQa(request)) forwardGa4Action(COMPARISON_OPEN_EVENT_NAME, request, env, ctx, payload.context);
   }
   return noContentResponse();
 }
@@ -489,13 +481,15 @@ async function engagementResponse(request, url, env, ctx) {
   if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
   if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
   if (url.hostname !== PRODUCTION_HOSTNAME || url.search || url.hash || !validMeasurementQaHeader(request)
-    || request.headers.has('content-type') || await hasEventBodyBytes(request)) {
+    || !pageSignal(request) || request.headers.has('content-type') || await hasEventBodyBytes(request)) {
     return plainResponse('Invalid engagement request', 400);
   }
   const path = request.headers.get('x-analytics-path') ?? '';
   if (!isEligibleDocumentPath(path)) return plainResponse('Invalid engagement request', 400);
-  const payload = analyticsEngagementPayload(request, url);
-  if (payload && typeof ctx.waitUntil === 'function') ctx.waitUntil(ingestAnalytics(payload, env));
+  const payload = analyticsSignalPayload(request, url);
+  if (payload && typeof ctx.waitUntil === 'function') {
+    ctx.waitUntil(ingest(Object.hasOwn(payload, 'stage') ? 'stage' : 'page', payload, env, globalThis.fetch, {}));
+  }
   return noContentResponse();
 }
 

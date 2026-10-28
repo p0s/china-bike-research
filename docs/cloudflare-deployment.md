@@ -69,7 +69,9 @@ properties verified and keep the old host redirect active during the move.
 
 Configure these Worker secrets in Cloudflare after the backend is ready:
 
-- `ANALYTICS_INGEST_URL` — the HTTPS `stats.p0s.eu/ingest/v1` endpoint;
+- `ANALYTICS_INGEST_URL` — the HTTPS `stats.p0s.eu/ingest/v1` endpoint; its
+  origin also serves the contract v2 action (`/ingest/action/v1`) and stage
+  (`/ingest/stage/v1`) routes;
 - `ANALYTICS_INGEST_TOKEN` — the site-scoped bearer token.
 
 The private gateway binds the existing Worker token and website record to
@@ -95,6 +97,13 @@ both stored IDs exist. Without a verified session, a permitted business action
 can still reach Umami while no server action reaches GA. `page_engaged` is a
 first-party Umami event after 10 seconds of visible time and a trusted click,
 keydown, or scroll; it records foreground interaction, not a verified human.
+`page_visible` is the passive first-party event after 10 cumulative visible
+seconds without input. The module's `bootstrap` start and each server action's
+GA outcome (`ga_skip_no_session`, `ga_ok`, `ga_fail_definite`,
+`ga_fail_uncertain`) are stage counts on the collector's stage route; they carry
+no visitor data and never reach Umami or GA. The gateway must report contract
+`p0s-ingest-2-20261028` before this Worker is deployed, or it rejects
+`page_visible` and the stage route.
 
 The GA4 property currently uses 14-month event-level retention, documented
 2026-10-22. Keep advertising signals disabled. Disable Enhanced Measurement
@@ -171,7 +180,10 @@ The Worker emits `ga4_delivery` with a fixed event name, `outcome`, and HTTP
 and `network_error` identify transport failures. Logs deliberately omit the
 secret-bearing collector URL, payload, visitor IDs, paths, and raw errors.
 Do not retry ambiguous deliveries automatically or fabricate engagement
-signals.
+signals. The GA outcome stage records the same send's receipt, refusal or
+uncertainty without its status code. Collector deliveries are different: the
+vendored contract client may retry once with the same event ID, because the
+collector forwards that retry only when the first attempt never reached it.
 
 The configured Cloudflare Workers runtime rejects `fetch` with
 `redirect: 'error'` before sending a request. Every Worker-side analytics
@@ -196,10 +208,13 @@ the baseline.
    JavaScript, network delivery, or processing. Preserve raw counts; a ratio is
    observed browser coverage for that window, not an ad-block rate or a count of
    people. Exclude QA events when the reports expose the fixed QA classification.
-2. Compare `page_engaged` separately from page observations. It records a
-   foreground interaction after 10 visible seconds and a trusted click, keydown,
-   or scroll. It is not proof of a verified human, and its absence does not prove
-   inactivity.
+2. Compare `page_visible` and `page_engaged` separately from page observations
+   and from each other. `page_visible` needs 10 visible seconds without input;
+   `page_engaged` adds a trusted click, keydown, or scroll. Neither is proof of a
+   verified human, and their absence does not prove inactivity. Start their
+   comparison window on the first complete UTC day after this signal
+   deployment, and read `bootstrap` and GA outcome stages as collection steps,
+   not visitors.
 3. Compare `compare_open` and `product_outbound_click` as separate action counts.
    GA receives a server business action only when the stored client and verified
    tag session exist; Umami can still receive the permitted action without that

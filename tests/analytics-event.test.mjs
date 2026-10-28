@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { layout } from '../src/lib/html.mjs';
-import { sendComparisonOpenedEvent, sendPageEngagedEvent, sendProductOutboundClickEvent, startPageEngagement } from '../assets/site-interaction.js';
+import { sendComparisonOpenedEvent, sendPageSignal, sendProductOutboundClickEvent, startPageEngagement } from '../assets/site-interaction.js';
 import { stopAnalytics } from '../assets/analytics-choice.js';
 
 const origin = 'https://chinesebikes.xyz';
@@ -178,26 +178,31 @@ function engagementFixture({ search = '', visible = true, allowed = true, naviga
     setTimer: (fn, delay) => { const id = ++nextTimer; timers.set(id, { fn, at: time + delay }); return id; },
     clearTimer: (id) => timers.delete(id)
   });
-  return { win, doc, listeners, requests, fire, advance, start };
+  const signals = () => requests.map(({ init }) => init.headers['X-Analytics-Signal']);
+  return { win, doc, listeners, requests, signals, fire, advance, start };
 }
 
 test('foreground page engagement requires ten visible seconds and one trusted interaction, then sends once', async () => {
   const f = engagementFixture();
   assert.equal(f.start(), true);
   assert.equal(f.start(), false);
+  assert.deepEqual(f.signals(), ['bootstrap']);
   f.advance(9999);
   f.fire('click', { isTrusted: false });
   f.advance(1);
-  assert.equal(f.requests.length, 0);
+  assert.deepEqual(f.signals(), ['bootstrap', 'visible']);
   f.fire('keydown', { isTrusted: true });
-  assert.equal(f.requests.length, 1);
-  assert.equal(f.requests[0].url, '/site-events/engagement');
-  assert.equal(f.requests[0].init.method, 'POST');
-  assertSameSiteTransport(f.requests[0].init);
-  assert.equal(f.requests[0].init.headers['X-Analytics-Path'], '/models/example-bike/');
-  assert.equal(Object.hasOwn(f.requests[0].init, 'body'), false);
+  assert.deepEqual(f.signals(), ['bootstrap', 'visible', 'engaged']);
+  for (const request of f.requests) {
+    assert.equal(request.url, '/site-events/engagement');
+    assert.equal(request.init.method, 'POST');
+    assertSameSiteTransport(request.init);
+    assert.equal(request.init.headers['X-Analytics-Path'], '/models/example-bike/');
+    assert.equal(Object.hasOwn(request.init, 'body'), false);
+  }
   f.fire('scroll', { isTrusted: true });
-  assert.equal(f.requests.length, 1);
+  f.advance(60_000);
+  assert.equal(f.requests.length, 3);
 });
 
 test('foreground engagement pauses its visible-time clock while the document is hidden', () => {
@@ -207,12 +212,63 @@ test('foreground engagement pauses its visible-time clock while the document is 
   f.advance(6000);
   f.doc.visibilityState = 'hidden'; f.fire('visibilitychange');
   f.advance(60_000);
-  assert.equal(f.requests.length, 0);
+  assert.deepEqual(f.signals(), ['bootstrap']);
   f.doc.visibilityState = 'visible'; f.fire('visibilitychange');
   f.advance(3999);
-  assert.equal(f.requests.length, 0);
+  assert.deepEqual(f.signals(), ['bootstrap']);
   f.advance(1);
-  assert.equal(f.requests.length, 1);
+  assert.deepEqual(f.signals(), ['bootstrap', 'visible', 'engaged']);
+});
+
+test('a passive reader sends page_visible without page_engaged; a short visit sends neither', () => {
+  const passive = engagementFixture();
+  assert.equal(passive.start(), true);
+  passive.advance(10_000);
+  assert.deepEqual(passive.signals(), ['bootstrap', 'visible']);
+  passive.advance(10 * 60_000);
+  assert.deepEqual(passive.signals(), ['bootstrap', 'visible']);
+  // Input after the visible signal still completes engagement exactly once.
+  passive.fire('click', { isTrusted: true });
+  passive.fire('click', { isTrusted: true });
+  assert.deepEqual(passive.signals(), ['bootstrap', 'visible', 'engaged']);
+
+  const short = engagementFixture();
+  assert.equal(short.start(), true);
+  short.fire('scroll', { isTrusted: true });
+  short.advance(9_999);
+  for (const handler of [...(short.listeners.get('window:pagehide') ?? [])]) handler();
+  short.advance(60_000);
+  assert.deepEqual(short.signals(), ['bootstrap']);
+});
+
+test('a background tab bootstraps but counts only time after it becomes visible', () => {
+  const f = engagementFixture({ visible: false });
+  assert.equal(f.start(), true);
+  f.fire('click', { isTrusted: true });
+  f.advance(60_000);
+  assert.deepEqual(f.signals(), ['bootstrap']);
+  f.doc.visibilityState = 'visible'; f.fire('visibilitychange');
+  f.advance(10_000);
+  assert.deepEqual(f.signals(), ['bootstrap', 'visible']);
+});
+
+test('opting out mid-page stops later signals; every new document starts its own lifecycle', () => {
+  const f = engagementFixture();
+  assert.equal(f.start(), true);
+  stopAnalytics(f.win);
+  f.fire('click', { isTrusted: true });
+  f.advance(60_000);
+  assert.deepEqual(f.signals(), ['bootstrap']);
+
+  const first = engagementFixture(), returning = engagementFixture();
+  for (const page of [first, returning]) {
+    assert.equal(page.start(), true);
+    page.fire('keydown', { isTrusted: true });
+    page.advance(10_000);
+    assert.deepEqual(page.signals(), ['bootstrap', 'visible', 'engaged']);
+  }
+  assert.equal(sendPageSignal('page_visible', { locationRef: new URL(origin + '/'), windowRef: {}, navigatorRef: {},
+    fetchImpl: () => assert.fail('unknown signal names are not sent') }), false);
 });
 
 test('foreground engagement honors consent and privacy gates and sends only the exact QA signal', () => {
@@ -223,21 +279,27 @@ test('foreground engagement honors consent and privacy gates and sends only the 
   ]) {
     const f = engagementFixture(options);
     assert.equal(f.start(), false);
+    // A refusal sends nothing, not even the bootstrap stage.
+    f.fire('click', { isTrusted: true }); f.advance(60_000);
+    assert.equal(f.requests.length, 0);
   }
   const optedOut = engagementFixture();
   stopAnalytics(optedOut.win);
   assert.equal(optedOut.start(), false);
+  assert.equal(optedOut.requests.length, 0);
 
   for (const [search, expectedQa] of [['?measurement_qa=1', '1'], ['?measurement_qa=1&run=secret', undefined], ['?run=secret', undefined]]) {
     const f = engagementFixture({ search });
     assert.equal(f.start(), true);
     f.fire('click', { isTrusted: true }); f.advance(10_000);
-    assert.equal(f.requests.length, 1);
-    assert.equal(f.requests[0].init.headers['X-Measurement-QA'], expectedQa);
-    assert.equal(f.requests[0].init.headers['X-Analytics-Path'], '/models/example-bike/');
+    assert.deepEqual(f.signals(), ['bootstrap', 'visible', 'engaged']);
+    for (const request of f.requests) {
+      assert.equal(request.init.headers['X-Measurement-QA'], expectedQa);
+      assert.equal(request.init.headers['X-Analytics-Path'], '/models/example-bike/');
+    }
   }
   const direct = [];
-  assert.equal(sendPageEngagedEvent({ locationRef: new URL('https://chinesebikes.xyz/?measurement_qa=1&label=private'),
+  assert.equal(sendPageSignal('engaged', { locationRef: new URL('https://chinesebikes.xyz/?measurement_qa=1&label=private'),
     windowRef: {}, navigatorRef: {}, fetchImpl: (url, init) => direct.push({ url, init }) }), true);
   assert.equal(direct[0].init.headers['X-Measurement-QA'], undefined);
 });
