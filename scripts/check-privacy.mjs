@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/chain-waxing-vs-drip-lube-cost-mascot-cover-4995fb7653-640-1c985259e3.avif', '1c985259e3a467347e2bdbc674bd4631de5410c68dc8d91c5e82c2c2e8bab9d8'],
+  ['assets/blog/chain-waxing-vs-drip-lube-cost-mascot-cover-4995fb7653-1600-6fb8dd74b5.avif', '6fb8dd74b5706c0da78d1a3cfdd4803105dd930dd0b8c8ba7869cfcac432c300'],
+  ['assets/blog/chain-waxing-vs-drip-lube-cost-mascot-cover-4995fb7653-1200-3c8c05874c.jpg', '3c8c05874ccd16dc34383695ba63804000b3642887d16f399de85d143b8d69c7'],
   ['assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-640-59f6fe45ec.avif', '59f6fe45ec582e0fd22354b26941b431acb727cb80de72e6997797ffda91ffb5'],
   ['assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-1600-2bb47996c0.avif', '2bb47996c0c6b6eaefb8ea5d0dadcda913f2da9138cf6f14a5c00a425a7aabd5'],
   ['assets/blog/tpu-latex-butyl-inner-tubes-mascot-cover-d9d87b023a-1200-73ee02f9ad.jpg', '73ee02f9adc154e8cddeae2dbb233043128fcbcedbd97fa46fec10cd7641d892'],
