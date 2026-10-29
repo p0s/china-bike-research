@@ -128,7 +128,11 @@ test('every homepage locale adds the project-made MP4 link preview and keeps the
     assert.match(page, /property="og:image" content="https:\/\/example.github.io\/china-bike-research\/assets\/social-preview.png"/);
     assert.match(page, /name="twitter:card" content="summary_large_image"/);
   }
-  assert.doesNotMatch(renderMethodology(homeContext), /og:video|social-video/);
+  // Other routes never reuse the homepage clip; a page without a preview still shares the branded fallback.
+  const methodology = renderMethodology(homeContext);
+  const { fallback } = JSON.parse(fs.readFileSync(new URL('../assets/social-video/manifest.json', import.meta.url), 'utf8'));
+  assert.ok(methodology.includes(`<meta property="og:video" content="https://example.github.io/china-bike-research/${fallback.file}">`));
+  assert.doesNotMatch(methodology, /home-switchback-signature/);
 });
 
 test('theme control follows the OS by default and exposes only light and dark choices', () => {
@@ -955,12 +959,13 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   assert.match(detail, /Disclosure basis/);
   assert.match(detail, /href="https:\/\/www\.youtube\.com\/watch\?v=jmdVakRJPQ8" rel="noreferrer"/);
   assert.doesNotMatch(detail, /autoplay=1|data-load-video|Play video/);
-  assert.match(detail, /<meta property="og:video" content="https:\/\/www\.youtube\.com\/embed\/jmdVakRJPQ8"><meta property="og:video:secure_url" content="https:\/\/www\.youtube\.com\/embed\/jmdVakRJPQ8"><meta property="og:video:type" content="text\/html"><meta property="og:video:width" content="1280"><meta property="og:video:height" content="720">/);
+  // The project link-preview clip supersedes YouTube's player metadata; the evidence players above stay.
+  assert.match(detail, /<meta property="og:video" content="https:\/\/example\.github\.io\/china-bike-research\/assets\/social-video\/(?:photo|brand)-[0-9a-f]{16}\.mp4"><meta property="og:video:secure_url" content="[^"]+"><meta property="og:video:type" content="video\/mp4"><meta property="og:video:width" content="960"><meta property="og:video:height" content="540">/);
   assert.equal(detail.match(/property="og:video"/g).length, 1);
   assert.match(detail, /property="og:image" content="https:\/\/example\.github\.io\//);
-  assert.doesNotMatch(detail, /og:video:type" content="video\/|twitter:player/);
+  assert.doesNotMatch(detail, /og:video:type" content="text\/html"|youtube\.com\/embed\/|twitter:player/);
   const withoutVideo = products.find((item) => !item.videos.some((video) => video.provider === 'youtube'));
-  assert.doesNotMatch(renderModel(context, withoutVideo), /og:video/);
+  assert.equal(renderModel(context, withoutVideo).match(/property="og:video" content="[^"]+\.mp4"/g).length, 1);
 
   const privacy = renderPrivacy(context);
   assert.match(privacy, /compare_open when the comparison opens/);
@@ -1018,7 +1023,8 @@ test('candidate videos render as disclosed context with timestamp links', () => 
   assert.match(detail, /watch\?v=rRZ6zr4hfow&amp;t=66/);
   assert.match(detail, /<iframe src="https:\/\/www\.youtube-nocookie\.com\/embed\/rRZ6zr4hfow\?rel=0"/);
   assert.doesNotMatch(detail, /data-load-video|autoplay=1/);
-  assert.match(detail, /<meta property="og:video" content="https:\/\/www\.youtube\.com\/embed\/rRZ6zr4hfow">/);
+  assert.match(detail, /<meta property="og:video" content="[^"]+\/assets\/social-video\/(?:photo|brand)-[0-9a-f]{16}\.mp4">/);
+  assert.doesNotMatch(detail, /youtube\.com\/embed\//);
 });
 
 test('XHS video records do not display as links or an empty video section', () => {
@@ -1033,7 +1039,7 @@ test('XHS video records do not display as links or an empty video section', () =
     now: new Date('2026-09-29T00:00:00Z')
   };
   const detail = renderCandidateModel(context, entry);
-  assert.doesNotMatch(detail, /class="video-context"|class="video-external-list"|og:video/);
+  assert.doesNotMatch(detail, /class="video-context"|class="video-external-list"|og:video:type" content="text\/html"/);
   assert.doesNotMatch(detail, /href="https:\/\/www\.xiaohongshu\.com\/explore\/69e8f860000000001f001363"/);
 
   const youtube = data.videos.find((video) => video.provider === 'youtube');

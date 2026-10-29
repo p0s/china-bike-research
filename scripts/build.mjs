@@ -39,6 +39,7 @@ import {
   render404
 } from '../src/render.mjs';
 import { buildLandingPages } from '../src/lib/landings.mjs';
+import { COVERAGE_PATH, auditSocialVideoPages, loadSocialVideoManifest, validateSocialVideoAssets } from '../src/lib/social-video.mjs';
 import { latestDate, sitemapXml } from '../src/lib/seo.mjs';
 import { indexNow, createIndexNowManifest } from '../src/lib/indexnow.mjs';
 
@@ -285,6 +286,26 @@ write('build-manifest.json', `${JSON.stringify({
   performance_budget: performanceBudget
 }, null, 2)}\n`);
 
+// Link-preview clips: committed files match their manifest, and every page names the clip for its
+// preview still (or the shared fallback) without loading it. The first authoring run starts without one.
+const socialVideos = loadSocialVideoManifest(root);
+let socialVideoSummary = 'no clips authored yet (npm run social-video:author)';
+if (socialVideos.fallback) {
+  const coverage = JSON.parse(fs.readFileSync(path.join(root, COVERAGE_PATH), 'utf8'));
+  const builtPages = function* () {
+    for (const [route, page] of pages) yield { route, canonical: page.translationOf ?? route, html: fs.readFileSync(path.join(dist, page.file), 'utf8') };
+  };
+  const audit = auditSocialVideoPages(builtPages(), { siteUrl, base, root, data: socialVideos, coverage });
+  const socialErrors = [...validateSocialVideoAssets(root, socialVideos), ...audit.errors];
+  if (socialErrors.length) {
+    console.error(`Social-video validation failed with ${socialErrors.length} error(s):`);
+    for (const error of socialErrors.slice(0, 50)) console.error(`- ${error}`);
+    process.exit(1);
+  }
+  const { pages: count, clips, pendingRoutes } = audit.summary;
+  socialVideoSummary = `${count} pages use ${clips} clips${pendingRoutes.length ? `; ${pendingRoutes.length} route(s) share the fallback until \`npm run social-video:author\` (${pendingRoutes.slice(0, 3).join(', ')})` : ''}`;
+}
+
 // Validate the staged output before replacing the last good build.
 const { errors: linkErrors, checked: checkedLinks } = checkLinks(dist);
 if (linkErrors.length) {
@@ -296,5 +317,6 @@ if (linkErrors.length) {
 output.publish();
 console.log(`Built ${pages.size} pages for ${products.length} products.`);
 console.log(`Generated link check passed: ${checkedLinks} local links; no orphaned sitemap pages.`);
+console.log(`Social previews: ${socialVideoSummary}.`);
 console.log(`Base path: ${base || '/'}`);
 console.log(`Output: ${output.destination}`);

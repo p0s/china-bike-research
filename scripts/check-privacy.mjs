@@ -428,6 +428,15 @@ const projectOwnedBinaries = new Map([
   ['assets/social-preview.png', '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87'],
   ['assets/social-video/home-switchback-signature-aded1fdcc8.mp4', 'aded1fdcc8718d94f81e5e50d719758981ceb697119c7750c4879e7064714d88']
 ]);
+// Generated link-preview clips and their sprite sheet are allowed only at the exact hashes their manifests record.
+const socialVideoFiles = [['assets/social-video/manifest.json', (manifest) => [...manifest.clips, manifest.fallback]],
+  ['content/social-video/riding-mascot-kit.json', (kit) => [{ file: `content/social-video/${kit.file}`, sha256: kit.sha256 }]]];
+for (const [manifestPath, entries] of socialVideoFiles) {
+  if (!fs.existsSync(path.join(root, manifestPath))) continue;
+  for (const entry of entries(JSON.parse(fs.readFileSync(path.join(root, manifestPath), 'utf8'))).filter(Boolean)) {
+    projectOwnedBinaries.set(entry.file, entry.sha256);
+  }
+}
 const findings = [];
 const referencedSourcedMedia = new Set();
 

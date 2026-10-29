@@ -1,0 +1,38 @@
+{
+  "file": "riding-mascot-kit-810fc78848.webp",
+  "sha256": "810fc78848caac2c104da70382b3cf68030f0f0f043d7146ae9695cf88ae4f2a",
+  "bytes": 427456,
+  "frames": {
+    "count": 48,
+    "fps": 24,
+    "box": 200,
+    "columns": 8
+  },
+  "text": {
+    "value": "ChineseBikes.xyz",
+    "rect": [
+      0,
+      1200,
+      227,
+      34
+    ]
+  },
+  "provenance": {
+    "mascot": "The site red-panda cyclist from its approved generated source (sha256 14a201c57d9ca2a95416fd12e7beb17ad248ed187d24636a6e8a98d70d23e46d; assets/branding/provenance.json). A code rig redraws the legs, cranks, pedals and spokes in the artwork's own colours, restores the frame tubes the legs covered, sways the tail and bobs the body slightly; the head, helmet, face, jersey, arms, hands, handlebar, frame and wheel rings keep the original artwork. Each pose is drawn at source resolution and Lanczos-downscaled.",
+    "motion": {
+      "cadence_rpm": 60,
+      "wheel_rev_per_s": 0.75,
+      "body_bob_deg": 1.4,
+      "tail_sway_period_s": 2.0,
+      "loop_s": 2.0
+    },
+    "text": {
+      "typeface": "Apple system font (SF), rasterised; no font file is distributed",
+      "px": 28,
+      "weight": 600,
+      "tracking_em": 0.012,
+      "ink": "#171a18"
+    }
+  },
+  "loop_seam_abs_diff_sum": 3253
+}
