@@ -95,3 +95,31 @@ checked in these batches. Each model had two distinct searches.
 - **LightCarbon SPEEDZ and JAVA Siluro6 Top:** the new searches found no post naming them.
 - **JAVA Volata R7120:** the new search returned a 2024 Volata with 105 Di2 R7170; its
   relationship to the mechanical R7120 build is not established.
+
+## Batch 6 — 29 October
+
+Two candidate rows gain their first reviewed photo:
+
+| Model | Image and identity basis |
+| --- | --- |
+| SUNPEED Charon 2026 | Post describes the aluminium Charon with a 1×13 drivetrain and 700×40C tyres, not the separately listed Charon Pro; side view on a stand. |
+| SEKA Exceed 105 Di2 dealer build | A used Exceed with an Ultegra Di2 build and aftermarket wheels; the frame matches, but the components differ from the 105 Di2 dealer build. |
+
+The six batch-1 withheld rows each had one more distinct search; Charon and Exceed are
+above. The others remain without a photo:
+
+- **PARDUS Robin EVO Force AXS:** the search returned a Spark EVO Gen 4 frameset post.
+- **PARDUS Gomera EVO Dura-Ace Di2:** the search returned the same post whose photo shows the rider's face.
+- **JAVA Auriga 2027:** an owner post's only photo shows a roadside, not the bike.
+- **SUNPEED Space:** the search returned a different SUNPEED model.
+
+**KONTAX RS80 POWER EVO:** a build post does not name the POWER EVO, and its photos
+include people.
+
+## Pass summary
+
+Of the 78 catalog rows without a displayable photo at the start, ten gained a
+reviewed photo across the six batches. Forty-one searched rows remain without one
+for the reasons above. Eighteen rows need an exact model or generation before any
+photo can be matched, and nine GIRDER rows already show reviewed gallery photos on
+their model pages. A missing photo is not evidence about the bike.
