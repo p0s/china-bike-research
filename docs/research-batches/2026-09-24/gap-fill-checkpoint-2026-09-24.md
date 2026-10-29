@@ -1,6 +1,6 @@
 # Active gap-fill checkpoint — 2026-09-25
 
-- Goal `01a0c77a-6f24-7990-a826-68f07b479dca` remains active: close actionable catalog gaps and give unresolved gaps dated evidence dispositions.
+- Goal (internal identifier omitted) remains active: close actionable catalog gaps and give unresolved gaps dated evidence dispositions.
 - Owned checkout: worktree `gap-fill-2026-09-22` in china-bike-research; branch `codex/luna-gap-followup-2026-09-22`; HEAD `0532176cd490ee30ad012725517e0f1c8d30b281`.
 - Preserve accumulated dirty state. No staging, commit, push, PR, merge, publishing, production change, or external delivery.
 - Before every batch, run `npm run --silent data:gaps`, freeze no more than 10 exact models / 25 atomic fields, then research one exact model at a time. Reuse the user's single Luna Max evidence agent; root is sole writer.
