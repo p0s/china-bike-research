@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/genuine-branded-parts-before-paying-mascot-cover-125c4c37ea-640-d9b227ead0.avif', 'd9b227ead0f843e6c629c0b8ecfdee5c1794327f48ab5ef8ac7e28b696c83fdf'],
+  ['assets/blog/genuine-branded-parts-before-paying-mascot-cover-125c4c37ea-1600-03f51809d4.avif', '03f51809d436dfa5043f3ab9ef2f77c4e57eb09749d9744a24c011b79ff5facf'],
+  ['assets/blog/genuine-branded-parts-before-paying-mascot-cover-125c4c37ea-1200-725ccb7b1a.jpg', '725ccb7b1ab7f13c7a2ef3eba1025b5d142b137671db95e42ae3619a9cea4b46'],
   ['assets/blog/chain-waxing-vs-drip-lube-cost-mascot-cover-4995fb7653-640-1c985259e3.avif', '1c985259e3a467347e2bdbc674bd4631de5410c68dc8d91c5e82c2c2e8bab9d8'],
   ['assets/blog/chain-waxing-vs-drip-lube-cost-mascot-cover-4995fb7653-1600-6fb8dd74b5.avif', '6fb8dd74b5706c0da78d1a3cfdd4803105dd930dd0b8c8ba7869cfcac432c300'],
   ['assets/blog/chain-waxing-vs-drip-lube-cost-mascot-cover-4995fb7653-1200-3c8c05874c.jpg', '3c8c05874ccd16dc34383695ba63804000b3642887d16f399de85d143b8d69c7'],
