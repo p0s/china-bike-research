@@ -58,3 +58,21 @@ Withheld after two distinct searches each:
 - **LEINAK 雷娜:** the only clear photo of the LEINAK frame carries an unverified "1:1 replica" overlay; the other photos show people, a ride map or app screens.
 - **LEINAK 游龙 2.0:** no post named it; the second search returned the 雷娜.
 - **IREFOX BY446:** the first search ended in a collector parsing error; the second found no match.
+
+## Batch 3 — 29 October
+
+Two candidate rows gain their first reviewed photo:
+
+| Model | Image and identity basis |
+| --- | --- |
+| Giant TCR Advanced 3-GC | Dealer post names the TCR ADV 3-GC with Shimano Tiagra and rim brakes; side view of the complete bike. |
+| TWITTER Little White Rabbit | Product post names the limited-edition 小白兔; close-up of the front end and paint. Drivetrain and wheels are not shown. |
+
+Withheld after two distinct searches each:
+
+- **PARAGON JAZZ 2026:** no post named the JAZZ; the other result was a trade-show post.
+- **ViQi R8000:** no post named it; the other result was a 2024 ViQi folding-bike post.
+- **GITO G320:** the launch photo's frame is marked G325; the second search returned the same post.
+- **GITO G525 and both G530 rows:** launch and assembly posts name G525 and G530 together, and no photo carries a readable model mark; another "G530" result was an unrelated group-ride event.
+- **SCOTT Foil RC 10:** one frame-up build photo shows a shop sign behind the bike; the other result was a used Foil RC 20, a different trim.
+- **Phoenix 799 e-road:** one result was a ¥759 non-electric bike sold by a private seller; the other search found no match.

@@ -20,11 +20,15 @@ test('S-PRO selects its separate-stem manufacturer reference and excludes unprov
 });
 test('SCOTT size chart and different-generation Giant photo remain provenance, never product heroes',()=>{
  for(const id of ['scott-foil-rc-10','missing-china-price-giant-tcr-advanced']){
-  const entry=candidates.find(c=>c.candidate.id===id);assert.equal(entry.image,null);
-  assert.doesNotMatch(renderCandidateModel(ctx,entry),/data-product-image/);
-  const image=data.images.find(i=>i.candidate_id===id);assert.equal(image.buyer_visibility,'omit');assert.ok(image.hosting.variants.length);
+  const entry=candidates.find(c=>c.candidate.id===id);
+  const image=data.images.find(i=>i.candidate_id===id&&i.buyer_visibility==='omit');assert.ok(image.hosting.variants.length);
+  assert.notEqual(entry.image?.id,image.id);
+  const html=renderCandidateModel(ctx,entry);for(const variant of image.hosting.variants) assert.ok(!html.includes(variant.url));
   assert.ok(image.audit_corrections[0].prior_values.subject_accuracy.startsWith('exact-'));
  }
+ // Only a separately reviewed exact-trim photo may become the Giant hero (2026-10-29 XHS batch 3).
+ assert.equal(candidates.find(c=>c.candidate.id==='scott-foil-rc-10').image,null);
+ assert.equal(candidates.find(c=>c.candidate.id==='missing-china-price-giant-tcr-advanced').image.id,'giant-tcr-advanced-3-gc-xhs-primary-2026-10-29');
  assert.match(data.images.find(i=>i.id==='scott-foil-rc-10-primary-image').alt,/chart.*without a bicycle/);
 });
 test('LOOK glass-fibre detail is attributed to the product page while prior PDF wording survives',()=>{
