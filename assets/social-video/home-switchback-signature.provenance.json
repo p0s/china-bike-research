@@ -33,33 +33,34 @@
       "color": "#07110b",
       "max_opacity": 0.58,
       "fade_s": [
-        4.45,
-        5.85
+        1.9,
+        6.1
       ]
     },
     "mascot_fade_s": [
-      4.8,
-      5.75
+      2.2,
+      5.9
     ],
     "text_fade_s": [
-      5.15,
-      6.05
+      2.55,
+      6.25
     ],
     "full_hold_s": [
-      6.05,
+      6.25,
       8.0
     ]
   },
   "output": {
-    "path": "assets/social-video/home-switchback-signature-b06e03542b.mp4",
+    "path": "assets/social-video/home-switchback-signature-aded1fdcc8.mp4",
     "type": "video/mp4",
     "codec": "H.264 High, yuv420p, BT.709, 30 fps, no audio, fast start",
     "duration_s": 8.0,
     "dimensions": {
-      "width": 1280,
-      "height": 720
+      "width": 960,
+      "height": 540
     },
-    "bytes": 1778001,
-    "sha256": "b06e03542bac745abd5f6e85d829933ad17d776bc6a0d82ee01782903162180e"
+    "bytes": 791864,
+    "sha256": "aded1fdcc8718d94f81e5e50d719758981ceb697119c7750c4879e7064714d88",
+    "encoding": "libx264 veryslow, CRF 22, from a visually lossless 1280x720 master, Lanczos-downscaled"
   }
 }

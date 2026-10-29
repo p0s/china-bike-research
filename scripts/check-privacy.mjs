@@ -426,7 +426,7 @@ const projectOwnedBinaries = new Map([
   ['assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif', 'c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162'],
   ['assets/blog/chinese-bike-prices-for-international-buyers-mascot-480-ab2c6205b2.avif', 'ab2c6205b28e04038000ed2529477c28c9246064eb88658d783e0705ee09e85b'],
   ['assets/social-preview.png', '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87'],
-  ['assets/social-video/home-switchback-signature-b06e03542b.mp4', 'b06e03542bac745abd5f6e85d829933ad17d776bc6a0d82ee01782903162180e']
+  ['assets/social-video/home-switchback-signature-aded1fdcc8.mp4', 'aded1fdcc8718d94f81e5e50d719758981ceb697119c7750c4879e7064714d88']
 ]);
 const findings = [];
 const referencedSourcedMedia = new Set();

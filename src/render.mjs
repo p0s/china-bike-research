@@ -51,7 +51,7 @@ import {
 
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 // Project-made homepage link-preview clip; assets/social-video/home-switchback-signature.provenance.json records it.
-const homeSocialVideo = { path: '/assets/social-video/home-switchback-signature-b06e03542b.mp4', type: 'video/mp4', width: 1280, height: 720 };
+const homeSocialVideo = { path: '/assets/social-video/home-switchback-signature-aded1fdcc8.mp4', type: 'video/mp4', width: 960, height: 540 };
 const footerDescription = 'Chinese Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
 export function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', video = null, ogType = 'website', structuredData = [], headerTools = '', modules = [] }) {

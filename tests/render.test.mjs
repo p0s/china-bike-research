@@ -115,16 +115,16 @@ test('every homepage locale adds the project-made MP4 link preview and keeps the
   assert.equal(crypto.createHash('sha256').update(clip).digest('hex'), sha256);
   assert.ok(asset.endsWith(`-${sha256.slice(0, 10)}.mp4`));
   assert.equal(clip.byteLength, bytes);
-  assert.ok(clip.byteLength < 2_000_000);
+  assert.ok(clip.byteLength < 1_000_000);
   const boxes = [];
   for (let at = 0; at < clip.byteLength; at += clip.readUInt32BE(at)) boxes.push(clip.toString('latin1', at + 4, at + 8));
   assert.ok(boxes.indexOf('moov') > -1 && boxes.indexOf('moov') < boxes.indexOf('mdat'), 'fast start: moov precedes mdat');
   assert.deepEqual([...clip.toString('latin1').matchAll(/hdlr[\s\S]{8}(vide|soun)/g)].map((match) => match[1]), ['vide']);
-  assert.deepEqual(dimensions, { width: 1280, height: 720 });
+  assert.deepEqual(dimensions, { width: 960, height: 540 });
   const absolute = `https://example.github.io/china-bike-research/${asset}`;
   for (const locale of ['en', 'zh-Hans', 'de', 'es', 'ru']) {
     const page = locale === 'en' ? html : renderHome({ ...homeContext, locale });
-    assert.ok(page.includes(`<meta property="og:video" content="${absolute}"><meta property="og:video:secure_url" content="${absolute}"><meta property="og:video:type" content="video/mp4"><meta property="og:video:width" content="1280"><meta property="og:video:height" content="720">`), locale);
+    assert.ok(page.includes(`<meta property="og:video" content="${absolute}"><meta property="og:video:secure_url" content="${absolute}"><meta property="og:video:type" content="video/mp4"><meta property="og:video:width" content="960"><meta property="og:video:height" content="540">`), locale);
     assert.match(page, /property="og:image" content="https:\/\/example.github.io\/china-bike-research\/assets\/social-preview.png"/);
     assert.match(page, /name="twitter:card" content="summary_large_image"/);
   }
