@@ -4322,6 +4322,68 @@
           "text": "The wider cassette has bigger jumps between sprockets, which he had not yet noticed; he says he is comfortable pedalling from about 10 to 60 km/h."
         }
       ]
+    },
+    {
+      "id": "gcn-tech-tpu-inner-tube-problems",
+      "provider": "youtube",
+      "youtube_video_id": "xXvL7RC0RMs",
+      "title": "The Problem With TPU Inner Tubes",
+      "channel_name": "GCN Tech",
+      "channel_url": "https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg",
+      "url": "https://www.youtube.com/watch?v=xXvL7RC0RMs",
+      "language": "en",
+      "published_at": "2026-03-07",
+      "accessed_at": "2026-10-26",
+      "format": "topic-explainer",
+      "relationship": "publication-review",
+      "disclosure": "Published by GCN Tech. The presenter names several tube brands from his own use; no supplied-product or sponsor relationship is stated. The description promotes the network's insurance, shop, newsletter and club.",
+      "disclosure_url": "https://www.youtube.com/watch?v=xXvL7RC0RMs",
+      "summary": "A March 2026 GCN Tech explainer on TPU inner tubes: their background, claimed advantages and five practical problems the presenter has met or heard about, from valve joints and pump heat to permanent stretch, hard-to-find leaks, repairs and rim-brake heat. Experience-based, not a lab test or brand comparison.",
+      "transcript": {
+        "status": "auto-captions",
+        "method": "youtube-player-captions",
+        "language": "en",
+        "checked_at": "2026-10-29",
+        "evidence_sha256": "7f0802f21fb8fe5d918d95e87c555566199014ac97cf43da3fb63d24c90e7312",
+        "note": "English automatic captions, reviewed in full (253 segments) on 2026-10-29. The evidence digest binds the identity-checked record observed 2026-10-26."
+      },
+      "takeaways": [
+        {
+          "kind": "claim",
+          "at_seconds": 169,
+          "text": "He lists the claimed advantages, about half the weight of butyl, rolling resistance near latex, better air retention than latex and a small packed size, as the reasons riders switch; these are general claims, not measurements in this video."
+        },
+        {
+          "kind": "quality",
+          "at_seconds": 220,
+          "text": "Most TPU tubes use plastic valve stems; with repeated pump-head use the bonded valve joint can start to leak, a problem he met mainly with very low-cost brands."
+        },
+        {
+          "kind": "build",
+          "at_seconds": 252,
+          "text": "Heat from an electric pump can soften the valve or glue, so he uses the valve extender; CO2 can make the material brittle, so he prefers a normal pump used gently."
+        },
+        {
+          "kind": "build",
+          "at_seconds": 286,
+          "text": "TPU does not shrink back: a tube used in a 32 mm tyre should not be reused in a narrower 28 mm tyre, and inflating one outside the tyre beyond a couple of psi deforms it permanently."
+        },
+        {
+          "kind": "quality",
+          "at_seconds": 328,
+          "text": "He describes 'phantom punctures' that leak only at high pressure, often at the glued overlap where the tube ends join; he has not had one himself and reports others' experience."
+        },
+        {
+          "kind": "support",
+          "at_seconds": 406,
+          "text": "Ordinary vulcanising glue does not work on TPU; specialist glue or self-adhesive patches are needed, and his own repair success rate is about 50/50."
+        },
+        {
+          "kind": "claim",
+          "at_seconds": 463,
+          "text": "Sustained rim braking can heat TPU or its glue; he says most makers recommend their TPU tubes for disc brakes only and advises checking the exact tube maker's guidance."
+        }
+      ]
     }
   ],
   "articles": {
@@ -5395,6 +5457,17 @@
           "en": "GCN Tech’s 2025 conversion of a road bike from 2× to 1× shows the hardware consequences of a ring change: a narrow-wide ring for chain retention, two extra chain links and a B-tension adjustment for the larger cassette, and the loss of a power meter built into the original rings. The presenter chose a bigger ring than before for fast road riding; his 50T and 10–36 combination is not a mixed-surface recommendation.",
           "zh-Hans": "GCN Tech在2025年把一辆公路车从双盘改成单盘，展示了换牙盘带来的硬件影响：需要窄宽齿的单盘牙盘来保持链条，为更大的飞轮加两节链条并调整B螺丝，原牙盘内置的功率计也随之失去。主持人为快速公路骑行选了比原来更大的牙盘；他的50T配10–36组合并不是混合路面的推荐。",
           "de": "Der Umbau eines Rennrads von 2× auf 1× bei GCN Tech (2025) zeigt die Hardware-Folgen eines Kettenblattwechsels: ein Narrow-Wide-Blatt für die Kettenführung, zwei zusätzliche Kettenglieder und eine B-Schrauben-Einstellung für die größere Kassette – und der Verlust eines in die alten Blätter integrierten Powermeters. Der Moderator wählte für schnelle Straßenfahrten ein größeres Blatt als zuvor; seine 50T mit 10–36 sind keine Empfehlung für gemischte Untergründe."
+        }
+      }
+    ],
+    "tpu-latex-butyl-inner-tubes": [
+      {
+        "section_id": "kit",
+        "video_id": "gcn-tech-tpu-inner-tube-problems",
+        "context": {
+          "en": "GCN Tech’s 2026 explainer adds the TPU-specific parts of this plan from the presenter’s own use: treat plastic valve joints gently, use the extender with an electric pump, expect ordinary glue to fail and carry the patches the tube maker specifies, and do not move a stretched tube into a narrower tyre. His repair success rate of about 50/50 is one rider’s experience, not a product test.",
+          "zh-Hans": "GCN Tech在2026年的讲解，根据主持人自己的使用经验补充了TPU内胎特有的准备事项：小心对待塑料气嘴的粘接处，用电动打气筒时要加延长头，普通补胎胶水通常不起作用、应携带内胎厂家指定的补片，已经撑大的内胎不要换到更窄的外胎里。他大约五五开的补胎成功率只是一位骑手的经验，不是产品测试。",
+          "de": "Das Erklärvideo von GCN Tech aus dem Jahr 2026 ergänzt die TPU-spezifischen Punkte dieses Plans aus der eigenen Nutzung des Moderators: Kunststoffventile an der Klebestelle schonen, mit elektrischer Pumpe die Verlängerung nutzen, gewöhnlichen Vulkanisierkleber als ungeeignet ansehen und die vom Schlauchhersteller vorgesehenen Flicken mitnehmen – und einen bereits gedehnten Schlauch nicht in einen schmaleren Reifen umziehen. Seine Flickquote von etwa 50:50 ist die Erfahrung eines Fahrers, kein Produkttest."
         }
       }
     ]
