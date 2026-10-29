@@ -1,4 +1,5 @@
 import { INTERFACE_LOCALES, LOCALE_PREFIXES, clarifyMainlandInDisplayHtml, localePath, localesForRoute, localizeHtml } from './i18n.mjs';
+import { socialVideoFor } from './social-video.mjs';
 import { translate } from '../../assets/i18n.js';
 export function escapeHtml(value='') {
   return String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
@@ -29,7 +30,9 @@ export function layout({base='', repositoryUrl, title='', description, current='
   const canonical = `${siteUrl}${url(base,localizedPath)}`;
   const absolute = (value) => value.startsWith('https://') ? value : `${siteUrl}${value.startsWith('/') ? value : `/${value}`}`;
   const socialImage = image ? absolute(image) : '';
-  const socialVideo = video && { ...video, url: absolute(video.url) };
+  // One MP4 og:video group: the page's explicit clip (homepage), else its preview still's clip or the shared fallback.
+  const chosenVideo = video ?? (path.endsWith('/404.html') ? null : socialVideoFor(base, image));
+  const socialVideo = chosenVideo && { ...chosenVideo, url: absolute(chosenVideo.url) };
   const jsonLd = (Array.isArray(structuredData) ? structuredData : [structuredData])
     .filter(Boolean)
     .map((entry) => `<script type="application/ld+json">${safeJson(entry)}</script>`)

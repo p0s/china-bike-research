@@ -25,6 +25,8 @@
     "research:queue": "node scripts/research-queue.mjs",
     "research:50-audit": "node scripts/research-50-audit.mjs --campaign all-gaps-50-approaches-2026-08-29",
     "media:optimize": "node scripts/optimize-image.mjs",
+    "social-video:author": "npm run build && node scripts/social-video.mjs author",
+    "social-video:check": "node scripts/social-video.mjs check",
     "image:report": "node scripts/image-health-report.mjs",
     "stale:report": "node scripts/stale-report.mjs",
     "video:validate": "node scripts/video-research.mjs validate",

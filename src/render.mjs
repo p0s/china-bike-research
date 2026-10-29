@@ -6,7 +6,7 @@ import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
-import { clockLabel, openGraphVideo, renderVideoEntries, timestampUrl } from './lib/videos.mjs';
+import { clockLabel, renderVideoEntries, timestampUrl } from './lib/videos.mjs';
 import { opinionAggregate } from './lib/opinions.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, convertPrice, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay, pricePopoverLines } from '../assets/price-display.js';
@@ -1646,7 +1646,6 @@ export function renderModel(ctx, product) {
     description: variant.editorial.verdict,
     image: heroImage,
     imageAlt: product.image?.alt ?? `${brand.name} ${variant.name}`,
-    video: openGraphVideo(videos),
     ogType: 'product',
     structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
@@ -1827,7 +1826,6 @@ export function renderCandidateModel(ctx, entry) {
     description: pageCopy?.description ?? reason,
     image: candidateHeroImage,
     imageAlt: entry.image?.alt ?? candidate.name,
-    video: openGraphVideo(entry.videos),
     ogType: candidateSeoProduct ? 'product' : 'website',
     structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
