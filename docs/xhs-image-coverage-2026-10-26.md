@@ -38,3 +38,23 @@ Withheld after review:
 
 The detail image for the TR:ONE is 760 px wide so that its foliage background fits
 the 88 KB budget without dropping below the minimum encoder quality.
+
+## Batch 2 — 29 October
+
+Two candidate rows gain their first reviewed photo:
+
+| Model | Image and identity basis |
+| --- | --- |
+| Tavelo Arow SL frameset | Dealer post names the Arow SL lightweight frameset; its cover shows the frame and fork. Cropped only to remove the dealer's logo. |
+| TWITTER T8 closed-wheel build | Post names the T8 closed-wheel build with Shimano 105 R7120, one of its two listed drivetrains. |
+
+Withheld after two distinct searches each:
+
+- **QUICK T10:** no post named the T10; the second search returned the AR:ONE.
+- **WEST BIKING SL-ONE:** one result showed a different WEST BIKING model; the other search found no match.
+- **WEST BIKING team edition:** one result showed a trade-show stand without the model; the other search found no match.
+- **HUANYU AZ ONE:** one result was a race podium photo without the model; the other search found no match.
+- **MUIDLER 阿修斯 S7:** no post named the S7; the second search returned the 阿瑞斯 R8.
+- **LEINAK 雷娜:** the only clear photo of the LEINAK frame carries an unverified "1:1 replica" overlay; the other photos show people, a ride map or app screens.
+- **LEINAK 游龙 2.0:** no post named it; the second search returned the 雷娜.
+- **IREFOX BY446:** the first search ended in a collector parsing error; the second found no match.

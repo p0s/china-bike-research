@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27",
+  "updated_at": "2026-10-29",
   "catalog_metrics": {
     "records": {
       "brands": 43,
@@ -8,8 +8,8 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1841,
-      "images": 894,
+      "sources": 1843,
+      "images": 896,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
@@ -22,7 +22,7 @@
       "researchAttempts": 1852
     },
     "image_accuracy": {
-      "exact-platform": 601,
+      "exact-platform": 603,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -30,7 +30,7 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 885,
+      "local": 887,
       "remote": 9
     },
     "candidate_prices": {
@@ -1278,10 +1278,12 @@
       "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26",
       "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26",
       "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26",
+      "public-xhs-tavelo-arow-sl-frameset-image-2026-10-29",
       "public-xhs-trinx-gtr-c6-legacy-64-2026-09-29",
       "public-xhs-trinx-gtr-c6-legacy-71-2026-09-29",
       "public-xhs-trinx-gtr-c6-material-reference-2026-10-03",
       "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03",
+      "public-xhs-twitter-t8-closed-wheel-image-2026-10-29",
       "public-xhs-vook-v8e-seller-photos-2026-10-24",
       "public-xhs-winspace-g3-g3-16-2026-09-29",
       "public-xhs-x-lab-xds-gt8-legacy-123-2026-09-29",
@@ -2920,6 +2922,7 @@
       "tavelo-arden-primary-image",
       "tavelo-arow-disc-frameset-xhs-primary-2026-10-26",
       "tavelo-arow-race-polestar-primary-image",
+      "tavelo-arow-sl-frameset-xhs-primary-2026-10-29",
       "tavelo-arow-sl-primary-image",
       "tavelo-attack-primary-image",
       "tavelo-grow-primary-image",
@@ -2955,6 +2958,7 @@
       "twitter-storm-knight-primary-image",
       "twitter-t10-pro-primary-image",
       "twitter-t3-tt-primary-image",
+      "twitter-t8-closed-wheel-xhs-primary-2026-10-29",
       "twitter-x7-official-enrichment-2026-10-03",
       "upland-r70-official-enrichment-2026-10-03",
       "upland-r80-official-enrichment-2026-10-03",
@@ -22926,6 +22930,23 @@
         "type",
         "url"
       ],
+      "public-xhs-tavelo-arow-sl-frameset-image-2026-10-29": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-trinx-gtr-c6-legacy-64-2026-09-29": [
         "accessed_at",
         "capture.archive_bytes",
@@ -22987,6 +23008,23 @@
         "published_date",
         "publisher",
         "reference_claims",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-twitter-t8-closed-wheel-image-2026-10-29": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
@@ -60951,6 +60989,37 @@
         "source_media_url",
         "subject_accuracy"
       ],
+      "tavelo-arow-sl-frameset-xhs-primary-2026-10-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
       "tavelo-arow-sl-primary-image": [
         "alt",
         "candidate_id",
@@ -62045,6 +62114,37 @@
         "source_media_url",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "twitter-t8-closed-wheel-xhs-primary-2026-10-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
       ],
       "twitter-x7-official-enrichment-2026-10-03": [
         "alt",
@@ -120014,10 +120114,12 @@
       "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": [],
       "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26": [],
       "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26": [],
+      "public-xhs-tavelo-arow-sl-frameset-image-2026-10-29": [],
       "public-xhs-trinx-gtr-c6-legacy-64-2026-09-29": [],
       "public-xhs-trinx-gtr-c6-legacy-71-2026-09-29": [],
       "public-xhs-trinx-gtr-c6-material-reference-2026-10-03": [],
       "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03": [],
+      "public-xhs-twitter-t8-closed-wheel-image-2026-10-29": [],
       "public-xhs-vook-v8e-seller-photos-2026-10-24": [],
       "public-xhs-winspace-g3-g3-16-2026-09-29": [],
       "public-xhs-x-lab-xds-gt8-legacy-123-2026-09-29": [],
@@ -124675,6 +124777,10 @@
         "candidate_id=missing-china-price-tavelo-arow",
         "source_id=tavelo-arow-race-polestar-official-2026-08-17"
       ],
+      "tavelo-arow-sl-frameset-xhs-primary-2026-10-29": [
+        "candidate_id=tavelo-arow-sl-frameset",
+        "source_id=public-xhs-tavelo-arow-sl-frameset-image-2026-10-29"
+      ],
       "tavelo-arow-sl-primary-image": [
         "candidate_id=tavelo-arow-sl-community-lead",
         "source_id=tavelo-arow-sl-official-2026-08-17"
@@ -124827,6 +124933,10 @@
         "platform_id=twitter-t3-tt",
         "source_id=twitter-t3-tt-official-2026-08-08",
         "variant_ids=twitter-t3-tt"
+      ],
+      "twitter-t8-closed-wheel-xhs-primary-2026-10-29": [
+        "candidate_id=twitter-t8-closed-wheel",
+        "source_id=public-xhs-twitter-t8-closed-wheel-image-2026-10-29"
       ],
       "twitter-x7-official-enrichment-2026-10-03": [
         "candidate_id=twitter-x7",
@@ -144808,6 +144918,14 @@
         "specification": -1
       }
     },
+    "public-xhs-tavelo-arow-sl-frameset-image-2026-10-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
     "public-xhs-trinx-gtr-c6-legacy-64-2026-09-29": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -144838,6 +144956,14 @@
         "identity": 1,
         "price": -1,
         "specification": 0
+      }
+    },
+    "public-xhs-twitter-t8-closed-wheel-image-2026-10-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
       }
     },
     "public-xhs-vook-v8e-seller-photos-2026-10-24": {
@@ -232723,6 +232849,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "tavelo-arow-sl-frameset-xhs-primary-2026-10-29": {
+      "target": "candidates:tavelo-arow-sl-frameset",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "tavelo-arow-sl-primary-image": {
       "target": "candidates:tavelo-arow-sl-community-lead",
       "minimum_accuracy_rank": 3,
@@ -232966,6 +233099,13 @@
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
+      "primary_required": true
+    },
+    "twitter-t8-closed-wheel-xhs-primary-2026-10-29": {
+      "target": "candidates:twitter-t8-closed-wheel",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
       "primary_required": true
     },
     "twitter-x7-official-enrichment-2026-10-03": {
@@ -234246,6 +234386,11 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:tavelo-arow-sl-frameset": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:triaero-a9": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
@@ -234310,6 +234455,11 @@
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
+    },
+    "candidates:twitter-t8-closed-wheel": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
     },
     "candidates:twitter-x7": {
       "minimum_accuracy_rank": 2,
