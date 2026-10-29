@@ -76,3 +76,22 @@ Withheld after two distinct searches each:
 - **GITO G525 and both G530 rows:** launch and assembly posts name G525 and G530 together, and no photo carries a readable model mark; another "G530" result was an unrelated group-ride event.
 - **SCOTT Foil RC 10:** one frame-up build photo shows a shop sign behind the bike; the other result was a used Foil RC 20, a different trim.
 - **Phoenix 799 e-road:** one result was a ¥759 non-electric bike sold by a private seller; the other search found no match.
+
+## Batches 4 and 5 — 29 October
+
+No photo was accepted for the GIRDER builds or the three earlier withheld rows
+checked in these batches. Each model had two distinct searches.
+
+- **GIRDER 2025 range (BISON, BISON PRO, FAME, FAME PRO, DASH, DASH PRO, titanium
+  road ×2, titanium gravel, titanium MTB):** English-name searches returned unrelated
+  posts (wildlife, a taxi app, other brands' titanium bikes). Searches anchored on the
+  brand name returned a 2023 BISON 105 Di2 post, a 2024 Arrow and a clothing shop
+  that shares the brand name. No post showed a 2025-generation build.
+- **GIRDER press-fit range (GLARE, CORSA 105, BISON Ultegra R8020, DASH Ultegra Di2,
+  TSAR Ultegra Di2, AERO TEAM Dura-Ace Di2) and JAUNT:** results were Arrow posts, used
+  listings of other builds, the clothing shop, or 2023–2024 dealer posts of 105 Di2
+  builds that already illustrate the separate 2023 reference rows. None showed these
+  current builds, and frame identity across years is not assumed.
+- **LightCarbon SPEEDZ and JAVA Siluro6 Top:** the new searches found no post naming them.
+- **JAVA Volata R7120:** the new search returned a 2024 Volata with 105 Di2 R7170; its
+  relationship to the mechanical R7120 build is not established.
