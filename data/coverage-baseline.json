@@ -8,8 +8,8 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1845,
-      "images": 898,
+      "sources": 1847,
+      "images": 900,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
@@ -22,7 +22,7 @@
       "researchAttempts": 1852
     },
     "image_accuracy": {
-      "exact-platform": 605,
+      "exact-platform": 607,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -30,7 +30,7 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 889,
+      "local": 891,
       "remote": 9
     },
     "candidate_prices": {
@@ -1272,10 +1272,12 @@
       "public-xhs-scott-addict-rc-40-2024-reference-2026-10-03",
       "public-xhs-seka-exaero-dealer-alta-build-2026-08-27",
       "public-xhs-seka-exaero-gr-owner-build-2026-10-24",
+      "public-xhs-seka-exceed-105-di2-image-2026-10-29",
       "public-xhs-seka-spear-long-review-2026-10-26",
       "public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26",
       "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26",
       "public-xhs-seka-spear-standard-owner-build-2026-10-26",
+      "public-xhs-sunpeed-charon-2026-image-2026-10-29",
       "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26",
       "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26",
       "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26",
@@ -2898,6 +2900,7 @@
       "seka-exaero-xhs-launch-weight-gallery",
       "seka-exaero-xhs-launch-windeye-gallery",
       "seka-exaero-xhs-owner-rdc-black-gallery",
+      "seka-exceed-105-di2-dealer-build-xhs-primary-2026-10-29",
       "seka-spear-rdc-frameset-cockpit-gallery",
       "seka-spear-rdc-frameset-geometry-gallery",
       "seka-spear-rdc-frameset-primary-image",
@@ -2918,6 +2921,7 @@
       "specialized-s-works-crux-frameset-primary-image",
       "specialized-tarmac-sl8-comp-primary-image",
       "spect-mira-official-enrichment-2026-10-03",
+      "sunpeed-charon-2026-xhs-primary-2026-10-29",
       "sunpeed-galaxy-2026-r7120-xhs-primary-2026-10-26",
       "sunpeed-mars-a-pro-2026-xhs-primary-2026-10-26",
       "sunpeed-victory-e-2026-photo-2026-10-03",
@@ -22832,6 +22836,23 @@
         "type",
         "url"
       ],
+      "public-xhs-seka-exceed-105-di2-image-2026-10-29": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-seka-spear-long-review-2026-10-26": [
         "accessed_at",
         "capture.archive_bytes",
@@ -22884,6 +22905,23 @@
         "url"
       ],
       "public-xhs-seka-spear-standard-owner-build-2026-10-26": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-sunpeed-charon-2026-image-2026-10-29": [
         "accessed_at",
         "capture.archive_bytes",
         "capture.archive_sha256",
@@ -60185,6 +60223,37 @@
         "source_media_sha256",
         "subject_accuracy"
       ],
+      "seka-exceed-105-di2-dealer-build-xhs-primary-2026-10-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
+      ],
       "seka-spear-rdc-frameset-cockpit-gallery": [
         "alt",
         "candidate_id",
@@ -60841,6 +60910,37 @@
         "source_id",
         "source_media_sha256",
         "source_media_url",
+        "subject_accuracy"
+      ],
+      "sunpeed-charon-2026-xhs-primary-2026-10-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "sunpeed-galaxy-2026-r7120-xhs-primary-2026-10-26": [
@@ -120208,10 +120308,12 @@
       "public-xhs-scott-addict-rc-40-2024-reference-2026-10-03": [],
       "public-xhs-seka-exaero-dealer-alta-build-2026-08-27": [],
       "public-xhs-seka-exaero-gr-owner-build-2026-10-24": [],
+      "public-xhs-seka-exceed-105-di2-image-2026-10-29": [],
       "public-xhs-seka-spear-long-review-2026-10-26": [],
       "public-xhs-seka-spear-rdc-opal-white-complete-2026-10-26": [],
       "public-xhs-seka-spear-rdc-refinished-weight-2026-10-26": [],
       "public-xhs-seka-spear-standard-owner-build-2026-10-26": [],
+      "public-xhs-sunpeed-charon-2026-image-2026-10-29": [],
       "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": [],
       "public-xhs-sunpeed-mars-a-pro-2026-image-2026-10-26": [],
       "public-xhs-tavelo-arow-disc-frameset-image-2026-10-26": [],
@@ -124766,6 +124868,10 @@
         "candidate_id=seka-exaero-road",
         "source_id=public-seka-exaero-rdc-owner-build-2026-08-27"
       ],
+      "seka-exceed-105-di2-dealer-build-xhs-primary-2026-10-29": [
+        "candidate_id=seka-exceed-105-di2-dealer-build",
+        "source_id=public-xhs-seka-exceed-105-di2-image-2026-10-29"
+      ],
       "seka-spear-rdc-frameset-cockpit-gallery": [
         "candidate_id=seka-spear-rdc-frameset",
         "review_evidence.source_ids=seka-rapier-handlebar-store-2026-10-25",
@@ -124854,6 +124960,10 @@
         "candidate_id=spect-mira",
         "review_evidence.source_ids=spect-mira-enrichment-2026-10-03",
         "source_id=spect-mira-enrichment-2026-10-03"
+      ],
+      "sunpeed-charon-2026-xhs-primary-2026-10-29": [
+        "candidate_id=sunpeed-charon-2026",
+        "source_id=public-xhs-sunpeed-charon-2026-image-2026-10-29"
       ],
       "sunpeed-galaxy-2026-r7120-xhs-primary-2026-10-26": [
         "candidate_id=sunpeed-galaxy-2026-r7120",
@@ -144980,6 +145090,14 @@
         "specification": -1
       }
     },
+    "public-xhs-seka-exceed-105-di2-image-2026-10-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
     "public-xhs-seka-spear-long-review-2026-10-26": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -145010,6 +145128,14 @@
         "identity": 3,
         "price": -1,
         "specification": 0
+      }
+    },
+    "public-xhs-sunpeed-charon-2026-image-2026-10-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
       }
     },
     "public-xhs-sunpeed-galaxy-2026-r7120-image-2026-10-26": {
@@ -232793,6 +232919,13 @@
       "remote_required": false,
       "primary_required": false
     },
+    "seka-exceed-105-di2-dealer-build-xhs-primary-2026-10-29": {
+      "target": "candidates:seka-exceed-105-di2-dealer-build",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "seka-spear-rdc-frameset-cockpit-gallery": {
       "target": "candidates:seka-spear-rdc-frameset",
       "minimum_accuracy_rank": 3,
@@ -232929,6 +233062,13 @@
     "spect-mira-official-enrichment-2026-10-03": {
       "target": "candidates:spect-mira",
       "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "sunpeed-charon-2026-xhs-primary-2026-10-29": {
+      "target": "candidates:sunpeed-charon-2026",
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
       "remote_required": false,
       "primary_required": true
@@ -234441,6 +234581,11 @@
       "minimum_source_tier": 2,
       "remote_required": false
     },
+    "candidates:seka-exceed-105-di2-dealer-build": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:seka-spear-rdc": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
@@ -234488,6 +234633,11 @@
     },
     "candidates:spect-mira": {
       "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
+    "candidates:sunpeed-charon-2026": {
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
       "remote_required": false
     },

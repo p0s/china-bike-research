@@ -76,3 +76,50 @@ Withheld after two distinct searches each:
 - **GITO G525 and both G530 rows:** launch and assembly posts name G525 and G530 together, and no photo carries a readable model mark; another "G530" result was an unrelated group-ride event.
 - **SCOTT Foil RC 10:** one frame-up build photo shows a shop sign behind the bike; the other result was a used Foil RC 20, a different trim.
 - **Phoenix 799 e-road:** one result was a ¥759 non-electric bike sold by a private seller; the other search found no match.
+
+## Batches 4 and 5 — 29 October
+
+No photo was accepted for the GIRDER builds or the three earlier withheld rows
+checked in these batches. Each model had two distinct searches.
+
+- **GIRDER 2025 range (BISON, BISON PRO, FAME, FAME PRO, DASH, DASH PRO, titanium
+  road ×2, titanium gravel, titanium MTB):** English-name searches returned unrelated
+  posts (wildlife, a taxi app, other brands' titanium bikes). Searches anchored on the
+  brand name returned a 2023 BISON 105 Di2 post, a 2024 Arrow and a clothing shop
+  that shares the brand name. No post showed a 2025-generation build.
+- **GIRDER press-fit range (GLARE, CORSA 105, BISON Ultegra R8020, DASH Ultegra Di2,
+  TSAR Ultegra Di2, AERO TEAM Dura-Ace Di2) and JAUNT:** results were Arrow posts, used
+  listings of other builds, the clothing shop, or 2023–2024 dealer posts of 105 Di2
+  builds that already illustrate the separate 2023 reference rows. None showed these
+  current builds, and frame identity across years is not assumed.
+- **LightCarbon SPEEDZ and JAVA Siluro6 Top:** the new searches found no post naming them.
+- **JAVA Volata R7120:** the new search returned a 2024 Volata with 105 Di2 R7170; its
+  relationship to the mechanical R7120 build is not established.
+
+## Batch 6 — 29 October
+
+Two candidate rows gain their first reviewed photo:
+
+| Model | Image and identity basis |
+| --- | --- |
+| SUNPEED Charon 2026 | Post describes the aluminium Charon with a 1×13 drivetrain and 700×40C tyres, not the separately listed Charon Pro; side view on a stand. |
+| SEKA Exceed 105 Di2 dealer build | A used Exceed with an Ultegra Di2 build and aftermarket wheels; the frame matches, but the components differ from the 105 Di2 dealer build. |
+
+The six batch-1 withheld rows each had one more distinct search; Charon and Exceed are
+above. The others remain without a photo:
+
+- **PARDUS Robin EVO Force AXS:** the search returned a Spark EVO Gen 4 frameset post.
+- **PARDUS Gomera EVO Dura-Ace Di2:** the search returned the same post whose photo shows the rider's face.
+- **JAVA Auriga 2027:** an owner post's only photo shows a roadside, not the bike.
+- **SUNPEED Space:** the search returned a different SUNPEED model.
+
+**KONTAX RS80 POWER EVO:** a build post does not name the POWER EVO, and its photos
+include people.
+
+## Pass summary
+
+Of the 78 catalog rows without a displayable photo at the start, ten gained a
+reviewed photo across the six batches. Forty-one searched rows remain without one
+for the reasons above. Eighteen rows need an exact model or generation before any
+photo can be matched, and nine GIRDER rows already show reviewed gallery photos on
+their model pages. A missing photo is not evidence about the bike.
