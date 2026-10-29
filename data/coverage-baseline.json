@@ -8,8 +8,8 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1843,
-      "images": 896,
+      "sources": 1845,
+      "images": 898,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
@@ -22,7 +22,7 @@
       "researchAttempts": 1852
     },
     "image_accuracy": {
-      "exact-platform": 603,
+      "exact-platform": 605,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -30,7 +30,7 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 887,
+      "local": 889,
       "remote": 9
     },
     "candidate_prices": {
@@ -1218,6 +1218,7 @@
       "public-xhs-camp-gx700-compilation-reference-2026-10-03",
       "public-xhs-camp-gx700-rust-owner-reference-2026-10-03",
       "public-xhs-evolve-cima-gr-dealer-build-2026-09-22",
+      "public-xhs-giant-tcr-advanced-3-gc-image-2026-10-29",
       "public-xhs-girder-arrow-2026-marketing-2026-10-24",
       "public-xhs-girder-arrow-owner-assembly-2026-10-24",
       "public-xhs-girder-arrow-used-r7020-2026-09-2026-10-24",
@@ -1283,6 +1284,7 @@
       "public-xhs-trinx-gtr-c6-legacy-71-2026-09-29",
       "public-xhs-trinx-gtr-c6-material-reference-2026-10-03",
       "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03",
+      "public-xhs-twitter-little-white-rabbit-image-2026-10-29",
       "public-xhs-twitter-t8-closed-wheel-image-2026-10-29",
       "public-xhs-vook-v8e-seller-photos-2026-10-24",
       "public-xhs-winspace-g3-g3-16-2026-09-29",
@@ -2173,6 +2175,7 @@
       "giant-propel-advanced-3-primary-image",
       "giant-propel-gen4-primary-image",
       "giant-revolt-advanced-2-primary-image",
+      "giant-tcr-advanced-3-gc-xhs-primary-2026-10-29",
       "giant-tcr-advanced-primary-image",
       "girder-arrow-xhs-owner-2023-cockpit-gallery",
       "girder-arrow-xhs-owner-2023-drivetrain-gallery",
@@ -2954,6 +2957,7 @@
       "twitter-gravel-v3-primary-image",
       "twitter-gravel-v3-rs-listing-primary-image",
       "twitter-gravel-v3-xhs-r7170-gallery",
+      "twitter-little-white-rabbit-xhs-primary-2026-10-29",
       "twitter-r10-pro-gen3-photo-2026-10-03",
       "twitter-storm-knight-primary-image",
       "twitter-t10-pro-primary-image",
@@ -21891,6 +21895,23 @@
         "type",
         "url"
       ],
+      "public-xhs-giant-tcr-advanced-3-gc-image-2026-10-29": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-girder-arrow-2026-marketing-2026-10-24": [
         "accessed_at",
         "capture.archive_bytes",
@@ -23008,6 +23029,23 @@
         "published_date",
         "publisher",
         "reference_claims",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-twitter-little-white-rabbit-image-2026-10-29": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
@@ -35262,6 +35300,37 @@
         "source_id",
         "source_media_sha256",
         "source_media_url",
+        "subject_accuracy"
+      ],
+      "giant-tcr-advanced-3-gc-xhs-primary-2026-10-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "giant-tcr-advanced-primary-image": [
@@ -61987,6 +62056,37 @@
         "rights.usage_note",
         "role",
         "source_id",
+        "subject_accuracy"
+      ],
+      "twitter-little-white-rabbit-xhs-primary-2026-10-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "twitter-r10-pro-gen3-photo-2026-10-03": [
@@ -120054,6 +120154,7 @@
       "public-xhs-camp-gx700-compilation-reference-2026-10-03": [],
       "public-xhs-camp-gx700-rust-owner-reference-2026-10-03": [],
       "public-xhs-evolve-cima-gr-dealer-build-2026-09-22": [],
+      "public-xhs-giant-tcr-advanced-3-gc-image-2026-10-29": [],
       "public-xhs-girder-arrow-2026-marketing-2026-10-24": [],
       "public-xhs-girder-arrow-owner-assembly-2026-10-24": [],
       "public-xhs-girder-arrow-used-r7020-2026-09-2026-10-24": [],
@@ -120119,6 +120220,7 @@
       "public-xhs-trinx-gtr-c6-legacy-71-2026-09-29": [],
       "public-xhs-trinx-gtr-c6-material-reference-2026-10-03": [],
       "public-xhs-trinx-gtr-c6-weight-reference-2026-10-03": [],
+      "public-xhs-twitter-little-white-rabbit-image-2026-10-29": [],
       "public-xhs-twitter-t8-closed-wheel-image-2026-10-29": [],
       "public-xhs-vook-v8e-seller-photos-2026-10-24": [],
       "public-xhs-winspace-g3-g3-16-2026-09-29": [],
@@ -121237,6 +121339,10 @@
       "giant-revolt-advanced-2-primary-image": [
         "candidate_id=missing-china-price-giant-revolt-advanced",
         "source_id=giant-china-revolt-advanced-2-official-2026-08-17"
+      ],
+      "giant-tcr-advanced-3-gc-xhs-primary-2026-10-29": [
+        "candidate_id=missing-china-price-giant-tcr-advanced",
+        "source_id=public-xhs-giant-tcr-advanced-3-gc-image-2026-10-29"
       ],
       "giant-tcr-advanced-primary-image": [
         "candidate_id=missing-china-price-giant-tcr-advanced",
@@ -124916,6 +125022,10 @@
       "twitter-gravel-v3-xhs-r7170-gallery": [
         "platform_id=twitter-gravel-v3",
         "source_id=public-twitter-gravel-v3-r7170-official-xhs-2026-08-27"
+      ],
+      "twitter-little-white-rabbit-xhs-primary-2026-10-29": [
+        "candidate_id=twitter-little-white-rabbit",
+        "source_id=public-xhs-twitter-little-white-rabbit-image-2026-10-29"
       ],
       "twitter-r10-pro-gen3-photo-2026-10-03": [
         "candidate_id=twitter-r10-pro-gen3",
@@ -144438,6 +144548,14 @@
         "specification": 0
       }
     },
+    "public-xhs-giant-tcr-advanced-3-gc-image-2026-10-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
+      }
+    },
     "public-xhs-girder-arrow-2026-marketing-2026-10-24": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -144956,6 +145074,14 @@
         "identity": 1,
         "price": -1,
         "specification": 0
+      }
+    },
+    "public-xhs-twitter-little-white-rabbit-image-2026-10-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
       }
     },
     "public-xhs-twitter-t8-closed-wheel-image-2026-10-29": {
@@ -227606,6 +227732,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "giant-tcr-advanced-3-gc-xhs-primary-2026-10-29": {
+      "target": "candidates:missing-china-price-giant-tcr-advanced",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "giant-tcr-advanced-primary-image": {
       "target": "candidates:missing-china-price-giant-tcr-advanced",
       "minimum_accuracy_rank": 3,
@@ -233073,6 +233206,13 @@
       "remote_required": false,
       "primary_required": false
     },
+    "twitter-little-white-rabbit-xhs-primary-2026-10-29": {
+      "target": "candidates:twitter-little-white-rabbit",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "twitter-r10-pro-gen3-photo-2026-10-03": {
       "target": "candidates:twitter-r10-pro-gen3",
       "minimum_accuracy_rank": 2,
@@ -234440,6 +234580,11 @@
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
       "remote_required": true
+    },
+    "candidates:twitter-little-white-rabbit": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
     },
     "candidates:twitter-r10-pro-gen3": {
       "minimum_accuracy_rank": 2,
