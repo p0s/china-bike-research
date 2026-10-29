@@ -10824,6 +10824,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "belt-drive-commuter-repair-plan-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif",
+          "width": 480,
+          "height": 408,
+          "type": "image/avif",
+          "bytes": 20185,
+          "sha256": "c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "At the open door of a bike workshop, a helmeted red panda holds a blank card and the handlebar of a green commuter bike with a belt drive, mudguards and a rack.",
+          "zh-Hans": "在敞开的自行车工作室门口，戴头盔的小熊猫一手拿着空白卡片，一手扶着一辆装有皮带传动、挡泥板和货架的绿色通勤车。",
+          "de": "An der offenen Tür einer Fahrradwerkstatt hält ein Rotpanda mit Helm eine leere Karte und den Lenker eines grünen Pendlerrads mit Riemenantrieb, Schutzblechen und Gepäckträger."
+        },
+        "prompt": "Editorial scene: At the open door of a bike workshop, a helmeted red panda holds a blank card and the handlebar of a green commuter bike with a belt drive, mudguards and a rack.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-10-29",
+          "credit": "Chinese Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "156a3ef8213113971752919b53428223d46a0b3c4b38a2ba9415483c970d9e79",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "aae7a7074087cd927bfb101f53de9edab950872b92f12817cc3670a9efc88fe3"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-640-6dbcd9df2e.avif",
+            "width": 640,
+            "height": 360,
+            "type": "image/avif",
+            "bytes": 37540,
+            "sha256": "6dbcd9df2e9c9d0fbf24453a428846f0d2515029c2ab68841c25a46ffab28e87"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-1600-661ede1a48.avif",
+            "width": 1600,
+            "height": 900,
+            "type": "image/avif",
+            "bytes": 116403,
+            "sha256": "661ede1a48b1eb843b711dbe7530b7b821a16408ee772b42b705421f63a2fbf1"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-1200-ed55732080.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 209078,
+            "sha256": "ed55732080fe00496f661a531a06aa04ac00fbc9ea1da620de7cb20ff1b0ec67"
+          }
+        ]
+      }
     }
   ]
 }

@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-640-6dbcd9df2e.avif', '6dbcd9df2e9c9d0fbf24453a428846f0d2515029c2ab68841c25a46ffab28e87'],
+  ['assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-1600-661ede1a48.avif', '661ede1a48b1eb843b711dbe7530b7b821a16408ee772b42b705421f63a2fbf1'],
+  ['assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-1200-ed55732080.jpg', 'ed55732080fe00496f661a531a06aa04ac00fbc9ea1da620de7cb20ff1b0ec67'],
   ['assets/blog/genuine-branded-parts-before-paying-mascot-cover-125c4c37ea-640-d9b227ead0.avif', 'd9b227ead0f843e6c629c0b8ecfdee5c1794327f48ab5ef8ac7e28b696c83fdf'],
   ['assets/blog/genuine-branded-parts-before-paying-mascot-cover-125c4c37ea-1600-03f51809d4.avif', '03f51809d436dfa5043f3ab9ef2f77c4e57eb09749d9744a24c011b79ff5facf'],
   ['assets/blog/genuine-branded-parts-before-paying-mascot-cover-125c4c37ea-1200-725ccb7b1a.jpg', '725ccb7b1ab7f13c7a2ef3eba1025b5d142b137671db95e42ae3619a9cea4b46'],
