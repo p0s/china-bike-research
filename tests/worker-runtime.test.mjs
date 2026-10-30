@@ -62,7 +62,8 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
           { type: 'ESModule', path: 'worker/index.mjs' },
           { type: 'ESModule', path: 'worker/ga4.mjs' },
           { type: 'ESModule', path: 'worker/consent.mjs' },
-          { type: 'ESModule', path: 'worker/ingest-client.mjs' }
+          { type: 'ESModule', path: 'worker/ingest-client.mjs' },
+          { type: 'ESModule', path: 'worker/markdown.mjs' }
         ],
         compatibilityDate: config.compatibility_date,
         compatibilityFlags: config.compatibility_flags ?? [],
