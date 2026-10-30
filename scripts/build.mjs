@@ -42,6 +42,7 @@ import { buildLandingPages } from '../src/lib/landings.mjs';
 import { COVERAGE_PATH, auditSocialVideoPages, loadSocialVideoManifest, validateSocialVideoAssets } from '../src/lib/social-video.mjs';
 import { latestDate, sitemapXml } from '../src/lib/seo.mjs';
 import { indexNow, createIndexNowManifest } from '../src/lib/indexnow.mjs';
+import { HOME_TABLE_LABELS, homeMarkdown, llmsTxt, markdownPath, pageMarkdown, robotsTxt } from '../src/lib/agent-markdown.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const output = createBuildOutput(root);
@@ -239,8 +240,24 @@ const rows = products.map(({ brand, platform, variant, latestPrice, allInPrice, 
 });
 write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) => row.map(csvCell).join(',')).join('\n')}\n`);
 
+// Agent-readable alternates: each public page's Markdown sits beside its HTML as index.md.
+// Generating alternates does not modify HTML; normal build-time data freshness
+// can still change the HTML hashes independently.
+for (const [route, page] of pages) {
+  if (route.endsWith('404.html')) continue;
+  const html = fs.readFileSync(path.join(dist, page.file), 'utf8');
+  const options = { canonical: `${siteUrl}${base}${route}`, lastmod: page.lastmod };
+  if (page.translationOf !== '/') {
+    write(markdownPath(page.file), pageMarkdown(html, options));
+    continue;
+  }
+  const translated = localizedCatalogPayload(HOME_TABLE_LABELS.map((label) => ({ label })), { base, locale: page.locale, siteUrl });
+  const labels = Object.fromEntries(HOME_TABLE_LABELS.map((label, index) => [label, translated[index].label]));
+  write(markdownPath(page.file), homeMarkdown(html, JSON.parse(catalogPayloads[page.locale]), { ...options, labels }));
+}
 write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.meta.snapshot_date }));
-write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
+write('robots.txt', robotsTxt(`${siteUrl}${base}/sitemap.xml`));
+write('llms.txt', llmsTxt({ siteUrl, base, repositoryUrl, has: (target) => pages.has(target) || fs.existsSync(path.join(dist, target)) }));
 const indexNowManifest = createIndexNowManifest({ siteUrl, base, pages, readPage: file => fs.readFileSync(path.join(dist, file)) });
 if (indexNowManifest) {
   write(`${indexNow.key}.txt`, `${indexNow.key}\n`);

@@ -1,6 +1,7 @@
 import { clearGa4CookieHeaders, ga4ActionPayload, ga4Configured, ga4CookieHeaders, ga4Identity, ga4SessionCookieHeader, ga4StoredIdentity, sendGa4, validGa4SessionId } from './ga4.mjs';
 import { analyticsBanner, analyticsConsentAllowed, analyticsScriptPolicy, CONSENT_COOKIE, CONSENT_MAX_AGE, CONSENT_VERSION, hasAnalyticsConsent, needsAnalyticsConsent } from './consent.mjs';
 import { deliver, stageBody } from './ingest-client.mjs';
+import { appendVary, isMarkdownDocumentPath, markdownAlternatePath, markdownResponse, prefersMarkdown } from './markdown.mjs';
 
 const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
 const OPT_OUT_COOKIE = 'p0s_analytics_optout';
@@ -19,6 +20,7 @@ const GA4_SESSION_ROUTE = '/analytics/ga-session';
 const SITE_EVENTS_ACTION_ROUTE = '/site-events/action';
 const SITE_EVENTS_ENGAGEMENT_ROUTE = '/site-events/engagement';
 const CATALOG_DOCUMENT_PATHS = new Set(['/', '/zh/', '/de/']);
+const HOME_DOCUMENT_PATHS = new Set(['/', '/zh/', '/de/', '/es/', '/ru/']);
 const CUSTOMER_ACTION_IDS = new Set(['product_outbound_click']);
 // Browser module signals. Cached modules send no signal header: page_engaged.
 const PAGE_SIGNALS = { bootstrap: null, visible: 'page_visible', engaged: 'page_engaged' };
@@ -588,6 +590,20 @@ export async function handleRequest(request, env = {}, ctx = {}) {
   if (redirect) return redirect;
 
   if (!env.ASSETS?.fetch) return plainResponse('Static assets binding is unavailable', 500);
+  // Markdown is read with GET so HEAD and noindex labelling match the full response.
+  // It is never an analytics page view.
+  const readable = request.method === 'GET' || request.method === 'HEAD';
+  if (readable && isMarkdownDocumentPath(url.pathname)) {
+    const asset = await env.ASSETS.fetch(new Request(url, { method: 'GET', headers: request.headers }));
+    if (asset.status !== 200 && asset.status !== 304) return responseWithHeaders(asset);
+    const canonical = new URL(url.pathname.slice(0, -'index.md'.length), url).href;
+    return responseWithHeaders(await markdownResponse(asset, request, { canonical }));
+  }
+  const markdownPath = markdownAlternatePath(url.pathname);
+  if (readable && markdownPath && prefersMarkdown(request.headers.get('accept'))) {
+    const asset = await env.ASSETS.fetch(new Request(new URL(markdownPath, url), { method: 'GET', headers: request.headers }));
+    if (asset.status === 200 || asset.status === 304) return responseWithHeaders(await markdownResponse(asset, request, { negotiated: true }));
+  }
   let response = responseWithHeaders(await env.ASSETS.fetch(request));
   if ((response.headers.get('content-type') ?? '').toLowerCase().startsWith('text/html')) {
     const eligible = response.status === 200 && request.method === 'GET'
@@ -626,6 +642,11 @@ export async function handleRequest(request, env = {}, ctx = {}) {
       }
       response = new Response(html, response);
     }
+  }
+  if (markdownPath && (response.status === 200 || response.status === 304)) {
+    appendVary(response.headers, 'Accept');
+    response.headers.append('link', `<${markdownPath}>; rel="alternate"; type="text/markdown"`);
+    if (HOME_DOCUMENT_PATHS.has(url.pathname)) response.headers.append('link', '</llms.txt>; rel="describedby"; type="text/plain"');
   }
   if (response.status === 200 && (response.headers.get('content-type') ?? '').toLowerCase().startsWith('text/html')) {
     const payload = analyticsPayload(request, url);
