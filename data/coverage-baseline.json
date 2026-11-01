@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-29",
+  "updated_at": "2026-11-01",
   "catalog_metrics": {
     "records": {
       "brands": 43,
@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1847,
+      "sources": 1849,
       "images": 900,
       "videos": 267,
       "opinions": 13,
@@ -19,7 +19,7 @@
       "candidates": 289,
       "exclusions": 16,
       "research": 1,
-      "researchAttempts": 1852
+      "researchAttempts": 1853
     },
     "image_accuracy": {
       "exact-platform": 607,
@@ -2012,7 +2012,9 @@
       "xds-ad500-vietnam-current-2026-08-30",
       "xds-ad500-vietnam-current-recheck-2026-09-25",
       "xds-ad7-105-di2-official-image-2026-08-17",
+      "xds-ad7-2026-clearance-overview-xhs-2026-11-01",
       "xds-ad7-2026-dealer-xhs-2026-10-27",
+      "xds-ad7-2026-owner-32c-xhs-2026-11-01",
       "xds-ad7-green-demon-hk-2026-08-30",
       "xds-ad7-green-demon-hk-current-recheck-2026-09-25",
       "xds-ad7-green-demon-taiwan-2026-08-30",
@@ -5125,6 +5127,7 @@
       "candidate-xds-ad7-frame-material-2026-08-30",
       "candidate-xds-ad7-frame-stiffness-2026-08-30",
       "candidate-xds-ad7-tire-clearance-2026-08-30",
+      "candidate-xds-ad7-tire-clearance-2026-11-01",
       "candidate-xds-gt350-complete-weight-2026-08-28",
       "candidate-xds-gt350-frame-material-2026-08-28",
       "candidate-xds-gt350-frame-stiffness-2026-08-28",
@@ -32147,7 +32150,31 @@
         "type",
         "url"
       ],
+      "xds-ad7-2026-clearance-overview-xhs-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xds-ad7-2026-dealer-xhs-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xds-ad7-2026-owner-32c-xhs-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -80508,6 +80535,9 @@
         "facts.frame_stiffness_status",
         "facts.listing_identity",
         "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tire_clearance_references",
         "facts.tires",
         "facts.wheels",
         "last_reviewed",
@@ -109099,6 +109129,31 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-xds-ad7-tire-clearance-2026-11-01": [
+        "accepted_source_ids",
+        "campaign_extension.allowed_channels",
+        "campaign_extension.authorized_at",
+        "campaign_extension.extends_attempt_id",
+        "campaign_extension.id",
+        "campaign_extension.max_new_attempts",
+        "campaign_extension.reason",
+        "campaign_extension.scope_file",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.from_attempt_id",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_of",
+        "retry_reason",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-xds-gt350-complete-weight-2026-08-28": [
         "accepted_source_ids",
         "channels.public-post.blocker",
@@ -121048,7 +121103,9 @@
       "xds-ad500-vietnam-current-2026-08-30": [],
       "xds-ad500-vietnam-current-recheck-2026-09-25": [],
       "xds-ad7-105-di2-official-image-2026-08-17": [],
+      "xds-ad7-2026-clearance-overview-xhs-2026-11-01": [],
       "xds-ad7-2026-dealer-xhs-2026-10-27": [],
+      "xds-ad7-2026-owner-32c-xhs-2026-11-01": [],
       "xds-ad7-green-demon-hk-2026-08-30": [],
       "xds-ad7-green-demon-hk-current-recheck-2026-09-25": [],
       "xds-ad7-green-demon-taiwan-2026-08-30": [],
@@ -129202,7 +129259,9 @@
         "brand_id=xds",
         "model_id=xds-ad7",
         "source_ids=xds-ad7-105-di2-official-image-2026-08-17",
+        "source_ids=xds-ad7-2026-clearance-overview-xhs-2026-11-01",
         "source_ids=xds-ad7-2026-dealer-xhs-2026-10-27",
+        "source_ids=xds-ad7-2026-owner-32c-xhs-2026-11-01",
         "source_ids=xds-ad7-green-demon-hk-2026-08-30",
         "source_ids=xds-ad7-green-demon-hk-current-recheck-2026-09-25",
         "source_ids=xds-ad7-green-demon-taiwan-2026-08-30",
@@ -135028,6 +135087,9 @@
         "target.record_id=xds-ad7"
       ],
       "candidate-xds-ad7-tire-clearance-2026-08-30": [
+        "target.record_id=xds-ad7"
+      ],
+      "candidate-xds-ad7-tire-clearance-2026-11-01": [
         "target.record_id=xds-ad7"
       ],
       "candidate-xds-gt350-complete-weight-2026-08-28": [
@@ -151083,12 +151145,28 @@
         "specification": 1
       }
     },
+    "xds-ad7-2026-clearance-overview-xhs-2026-11-01": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
+      }
+    },
     "xds-ad7-2026-dealer-xhs-2026-10-27": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
         "identity": 3,
         "price": -1,
         "specification": 0
+      }
+    },
+    "xds-ad7-2026-owner-32c-xhs-2026-11-01": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "xds-ad7-green-demon-hk-2026-08-30": {
@@ -213298,6 +213376,20 @@
         "[\"web\",9,\"XDS 喜德盛 AD7 Green Demon 绿魔 105 Di2 T700 T800 8.2kg 8.5kg 25C 30C clearance stiffness — Manufacturer newsroom or launch page — field candidate:xds-ad7:tire-clearance\",\"Manufacturer newsroom or launch page — tire-clearance\",\"no-result\",\"2026-08-30\",\"The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for XDS / 喜德盛 AD7 Green Demon retained CNY 12,980 coupon card; it yielded no additional attributable evidence. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.\",null]"
       ],
       "accepted_source_ids": []
+    },
+    "candidate-xds-ad7-tire-clearance-2026-11-01": {
+      "channel_attempt_counts": {
+        "public-post": 2,
+        "web": 0
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"AD7 32c\",\"XHS search, then opened exact 2026 AD7 owner post in Chrome\",\"found\",\"2026-11-01\",\"Accepted only as owner-reported nominal 32C Continental tire installation on a 2026 AD7. No measured width or gap.\",\"https://www.xiaohongshu.com/explore/6ac998910000000014030be1\"]",
+        "[\"public-post\",2,\"AD7 最大胎宽\",\"XHS search, then opened 2026 AD7 overview post in Chrome\",\"rejected\",\"2026-11-01\",\"Retained as a secondary 32C maximum claim, rejected as proof of a manufacturer maximum because no primary document or test is supplied.\",\"https://www.xiaohongshu.com/explore/6a1fe192000000003502d14f\"]"
+      ],
+      "accepted_source_ids": [
+        "xds-ad7-2026-clearance-overview-xhs-2026-11-01",
+        "xds-ad7-2026-owner-32c-xhs-2026-11-01"
+      ]
     },
     "candidate-xds-gt350-complete-weight-2026-08-28": {
       "channel_attempt_counts": {

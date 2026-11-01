@@ -1,0 +1,31 @@
+{
+  "id": "ad7-tire-fit-2026-11-01",
+  "date": "2026-11-01",
+  "selection": {
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "xds-ad7",
+        "field": "tire-clearance",
+        "generation": "2026 only"
+      }
+    ]
+  },
+  "evidence_scope": {
+    "source_ids": [
+      "xds-ad7-2026-owner-32c-xhs-2026-11-01",
+      "xds-ad7-2026-clearance-overview-xhs-2026-11-01"
+    ],
+    "allowed_channels": [
+      "public-post"
+    ],
+    "max_new_attempts": 2
+  },
+  "done_criteria": [
+    "Record the opened exact-generation owner fit and secondary maximum claim with sanitized public URLs.",
+    "Show 32 mm fitted; retain unknown manufacturer maximum and older-generation applicability.",
+    "Validate the bounded update, open a feature pull request, merge after checks and verify live delivery."
+  ]
+}

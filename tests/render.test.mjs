@@ -366,6 +366,16 @@ test('candidate fitted tire observations are labeled and are not sorted as verif
   assert.notEqual(rs9IdOffset, -1);
   const rs9OpeningTag = html.slice(html.lastIndexOf('<div', rs9IdOffset), html.indexOf('>', rs9IdOffset) + 1);
   assert.doesNotMatch(rs9OpeningTag, /data-tire-clearance-sort=/);
+
+  const ad7 = candidates.find((item) => item.candidate.id === 'xds-ad7');
+  const ad7Detail = renderCandidateModel({ data, products, base: '/', repositoryUrl: 'https://github.com/example/china-bike-research', siteUrl: 'https://example.com', now: new Date('2026-11-01T00:00:00Z') }, ad7);
+  assert.match(ad7Detail, /32 mm fitted/);
+  assert.match(ad7Detail, /Documented fitted 32C owner report for a 2026 AD7/);
+  assert.match(ad7Detail, /Manufacturer-confirmed maximum tire clearance/);
+  const ad7IdOffset = html.indexOf('data-id="candidate-xds-ad7"');
+  assert.notEqual(ad7IdOffset, -1);
+  const ad7OpeningTag = html.slice(html.lastIndexOf('<div', ad7IdOffset), html.indexOf('>', ad7IdOffset) + 1);
+  assert.doesNotMatch(ad7OpeningTag, /data-tire-clearance-sort=/);
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
