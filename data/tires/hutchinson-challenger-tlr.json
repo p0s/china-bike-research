@@ -1,0 +1,68 @@
+{
+  "id": "hutchinson-challenger-tlr",
+  "maker": "Hutchinson",
+  "name": "Challenger TLR",
+  "origin": {
+    "group": "international",
+    "country": "France",
+    "basis": "Hutchinson was founded in 1853 in Châlette-sur-Loing, France, and has made bicycle tires since 1890 (company history)."
+  },
+  "manufacturing": {
+    "country": "France",
+    "basis": "Hutchinson's reference table marks the tubeless-ready sizes as Made in France."
+  },
+  "use": "endurance",
+  "positioning": "Hutchinson's protected tubeless-ready training and ultra-endurance tire with Hardshield and an Endurance Bi-Compound.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Hutchinson's hookless page lists Challenger tubeless-ready sizes from 28 mm as compatible with hooked and hookless rims within maximum pressures; the 25 mm size is not included.",
+  "casing": "127 TPI (Airshield)",
+  "compound": "Endurance Bi-Compound",
+  "protection": "Hardshield",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 385,
+      "note": "Not hookless compatible"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 400
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 450
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 495
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Hutchinson reference weights (±7%) for the 127 TPI Hardshield version.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Hutchinson lists dealers rather than an online price; regional retail availability was not checked in this pass."
+  },
+  "price_observations": [],
+  "caveats": [
+    "The reference table also lists a 66 TPI 28 mm tubeless-ready version at 385 g under a duplicate reference number.",
+    "No official price; Hutchinson sells through dealers."
+  ],
+  "source_ids": [
+    "hutchinson-challenger-official-2026-11-01",
+    "hutchinson-history-official-2026-11-01",
+    "hutchinson-hookless-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

@@ -21,12 +21,12 @@
     {
       "name": "Maker catalogs",
       "checked_at": "2026-11-01",
-      "summary": "Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Maxxis (US) and Kenda (US shop) road ranges; further maker catalogs are added with each research batch."
+      "summary": "Road ranges from Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Goodyear (US store), Maxxis (US), Kenda (US shop), Specialized (US store), Panaracer (USA store and global site), IRC (US site), CADEX (US store), Giant (UK and US stores) and Hutchinson (global site). Schwalbe's official pages could not be read."
     },
     {
       "name": "Brand identity checks",
       "checked_at": "2026-11-01",
-      "summary": "Web searches for ZC Rubber/ARISUN, JILUER, Innova and CARNOS."
+      "summary": "Web searches for ZC Rubber/ARISUN, JILUER, Innova and CARNOS; company pages for Panaracer, IRC and Hutchinson."
     }
   ],
   "brands": [
@@ -465,21 +465,56 @@
     },
     {
       "brand_id": "giant",
-      "name": "Gavia Course",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Gavia Course 0 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-course-0-tlr"
     },
     {
       "brand_id": "giant",
-      "name": "Gavia Fondo",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Gavia Course 1 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK and US store specifications and prices.",
+      "record_id": "giant-gavia-course-1-tlr"
     },
     {
       "brand_id": "giant",
-      "name": "Gavia AC",
+      "name": "Gavia Fondo 0 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-fondo-0-tlr"
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Fondo 1 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-fondo-1-tlr"
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia AC 1 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-ac-1-tlr"
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Course (2026)",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "New model in Giant's UK store (£59.99; 28 mm 313 g, 30 mm 354 g; RR-S, Race Shield), but the page does not state tubeless or tube-type construction."
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Fondo AR",
+      "disposition": "excluded",
+      "reason": "All-road tire sold only in 700x40c with raised side knobs (30-50 psi); outside the road comparison."
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia AC 0 Kevlar Tubeless",
+      "disposition": "unresolved",
+      "reason": "Seen in a search result for Giant's Italian site; not listed in the UK store on 2026-11-01 and not read."
     },
     {
       "brand_id": "cadex",
@@ -752,21 +787,21 @@
     },
     {
       "brand_id": "schwalbe",
-      "name": "Pro One TLE",
+      "name": "Pro One Tubeless and Schwalbe One Tubeless",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Schwalbe's official pages returned a 404 or an empty page in the research browser on 2026-11-01, so current sizes and prices could not be confirmed; the 2020 lab tests of the earlier Pro One TLE and One TLE are not applied."
     },
     {
       "brand_id": "schwalbe",
-      "name": "Schwalbe One TLE",
+      "name": "Pro One Aero (front and rear)",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Lab-tested in 2024 as separate front and rear tires; Schwalbe's official pages could not be read on 2026-11-01."
     },
     {
       "brand_id": "schwalbe",
       "name": "Durano Plus",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Schwalbe's official pages could not be read on 2026-11-01; retailer data only."
     },
     {
       "brand_id": "vittoria",
@@ -1136,6 +1171,20 @@
       "name": "Fusion 5 Performance and All Season",
       "disposition": "excluded",
       "reason": "Hutchinson's hookless page lists Fusion 5 among its previous road tires; the 2017 lab tests are not applied."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Challenger TLR",
+      "disposition": "included",
+      "reason": "Official reference table and hookless guidance; no official price.",
+      "record_id": "hutchinson-challenger-tlr"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Challenger (tube type)",
+      "disposition": "included",
+      "reason": "Official reference table; no official price.",
+      "record_id": "hutchinson-challenger"
     },
     {
       "brand_id": "hutchinson",
