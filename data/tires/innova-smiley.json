@@ -1,0 +1,82 @@
+{
+  "id": "innova-smiley",
+  "maker": "Innova",
+  "name": "笑脸 smiley-tread road tire",
+  "aliases": [
+    "笑脸",
+    "伊诺华 笑脸",
+    "零度胎"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Innova Rubber Co., Ltd. was founded in 1995 in Changhua, Taiwan (retailer company profile)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listing does not state the factory."
+  },
+  "use": "training",
+  "positioning": "Low-cost folding road tire with a smiley-face tread and colour edges, sold widely in China.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": null,
+  "compound": null,
+  "protection": "Puncture protection (seller listing)",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 240,
+      "note": "Owner-reported weight"
+    }
+  ],
+  "weight_claim_type": "community report",
+  "weight_basis": "One owner reported 240 g for a 28C.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [
+    {
+      "source_id": "xhs-budget-road-tire-comparison-2025-07-16",
+      "stance": "mixed",
+      "published_at": "2025-07-16",
+      "summary": "Rolled well for the price and fitted by hand, but had the least grip of five budget tires and a thin sidewall."
+    }
+  ],
+  "availability": {
+    "cn": "authorized-retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold in mainland China by a Tmall Maxxis dealer and many Taobao shops; other regions not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 168,
+      "currency": "CNY",
+      "market": "玛吉斯赛力专卖店 (Tmall dealer)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Dealer list price for one pink-edge 28C tire before discounts; coupon price CNY 142.",
+      "source_id": "innova-smiley-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Exact English model name and size-specific specifications were not found.",
+    "Owner grip rating was the lowest in its comparison group."
+  ],
+  "source_ids": [
+    "innova-smiley-tmall-2026-11-01",
+    "99bikes-innova-story-2026-11-01",
+    "xhs-budget-road-tire-comparison-2025-07-16"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

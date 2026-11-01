@@ -1,0 +1,87 @@
+{
+  "id": "jiluer-chaser-pro",
+  "maker": "JILUER",
+  "name": "Chaser Pro",
+  "aliases": [
+    "吉路尔 Chaser Pro"
+  ],
+  "origin": {
+    "group": "mainland-china",
+    "country": "Mainland China",
+    "basis": "Shandong Jiluer Tire Co., Tengzhou, Shandong (brand directory)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listing does not state the factory."
+  },
+  "use": "race",
+  "positioning": "Light folding race clincher from a Shandong tire maker, sold in China as a low-cost alternative to premium race tires.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": null,
+  "compound": null,
+  "protection": "Composite puncture layer (seller listing)",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 216,
+      "note": "Owner-measured weight"
+    }
+  ],
+  "weight_claim_type": "community report",
+  "weight_basis": "One owner weighed a 28C at 216 g.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [
+    {
+      "source_id": "xhs-jiluer-chaser-review-2025-04-14",
+      "stance": "positive",
+      "published_at": "2025-04-14",
+      "summary": "Light at 216 g (28C) for CNY 140; note the reversed rotation arrow."
+    },
+    {
+      "source_id": "xhs-jiluer-chaser-pro-bulges-2026-08-11",
+      "stance": "negative",
+      "published_at": "2026-08-11",
+      "summary": "Bulges and ply separation after about 2,400 km on one tire."
+    }
+  ],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by Taobao shops in mainland China; no official JILUER store was found."
+  },
+  "price_observations": [
+    {
+      "amount": 140,
+      "currency": "CNY",
+      "market": "辣堡运动装备 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Taobao/Tmall shop list price on 2026-11-01; shipping within mainland China. The listing does not say whether an option is one tire or a pair.",
+      "source_id": "jiluer-chaser-taobao-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "One owner report describes bulging and ply separation; inspect the casing regularly.",
+    "No independent lab test found."
+  ],
+  "source_ids": [
+    "jiluer-chaser-taobao-2026-11-01",
+    "maigoo-jiluer-brand-2026-11-01",
+    "xhs-jiluer-chaser-review-2025-04-14",
+    "xhs-jiluer-chaser-pro-bulges-2026-08-11"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "goodyear-eagle-f1-supersport-rs-tlr",
+  "maker": "Goodyear",
+  "name": "Eagle F1 SuperSport RS TLR",
+  "aliases": [
+    "Eagle F1 SuperSport RS"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Goodyear's bicycle-tire line was developed with Rubber Kinetics by a team at Goodyear's Akron, Ohio headquarters (Bicycle Retailer, 2018)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Goodyear does not state where these tires are made."
+  },
+  "use": "race",
+  "positioning": "Goodyear's lightest tubeless-ready race tire in the current Eagle F1 range.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": null,
+  "compound": "UUHP",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 260
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 275
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 300
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Goodyear store weights.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2026,
+      "width_mm": 28,
+      "measured_width_mm": 28,
+      "measured_weight_g": 262,
+      "setup": "tubeless",
+      "rr_w": 8.2,
+      "rr_psi": 72,
+      "wet_grip": 72,
+      "puncture_tread": 32
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Goodyear Bicycle Tires' US-dollar web store; mainland China and European availability not verified for this model."
+  },
+  "price_observations": [
+    {
+      "amount": 99.95,
+      "currency": "USD",
+      "market": "Goodyear Bicycle Tires store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; US shipping and tax at checkout.",
+      "source_id": "goodyear-eagle-f1-supersport-rs-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Very fast in the lab but with a thin 1.4 mm tread and low puncture score: a race-day tire.",
+    "Maximum pressure and hookless compatibility are not stated."
+  ],
+  "source_ids": [
+    "goodyear-eagle-f1-supersport-rs-official-2026-11-01",
+    "bicycle-retailer-goodyear-premium-line-2018",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

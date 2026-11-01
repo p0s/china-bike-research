@@ -1,0 +1,74 @@
+{
+  "id": "cst-crd-06",
+  "maker": "CST",
+  "name": "CRD-06 tubeless",
+  "aliases": [
+    "正新 CRD06"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "CST is the Cheng Shin (正新) brand of Taiwan's Cheng Shin Rubber; China listings give the brand as CST/正新."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listings do not state the factory; Cheng Shin also makes bicycle tires at a mainland plant."
+  },
+  "use": "training",
+  "positioning": "Low-cost 120 TPI tubeless road tire sold in China, often in two-packs.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "120 TPI (seller listing)",
+  "compound": null,
+  "protection": "Puncture protection (seller listing)",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "No weight is given in the listing.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [
+    {
+      "source_id": "xhs-cst-crd06-tubeless-2025-07-19",
+      "stance": "negative",
+      "published_at": "2025-07-19",
+      "summary": "A commenter said the loose bead came off the rim on a descent; the author advised staying under 80 psi on rims up to 22 mm internal."
+    }
+  ],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Widely sold by mainland Taobao and Tmall shops; no official CST store was found, and CST's international site no longer showed model pages on 2026-11-01."
+  },
+  "price_observations": [
+    {
+      "amount": 188.24,
+      "currency": "CNY",
+      "market": "安贵运动户外专营店 (Tmall retailer)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer list price for one 28C tire without box before discounts; coupon price CNY 157.36. A two-tire box is CNY 376.48.",
+      "source_id": "cst-crd-06-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Owner reports of a loose bead: check the fit on your rim and keep pressure moderate.",
+    "No maker maximum pressure, hookless statement or independent test found."
+  ],
+  "source_ids": [
+    "cst-crd-06-tmall-2026-11-01",
+    "tyrepress-cheng-shin-rubber-overview-2007",
+    "xhs-cst-crd06-tubeless-2025-07-19"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

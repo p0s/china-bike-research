@@ -16,12 +16,12 @@
     {
       "name": "Taobao and Tmall",
       "checked_at": "2026-11-01",
-      "summary": "Brand facet for the road-tire query, tubeless listings and official-store listings for Chaoyang, ARISUN and Continental."
+      "summary": "Brand facet for the road-tire query, tubeless listings, official-store listings (Chaoyang, ARISUN, Continental, Michelin, Giant) and dealer or shop listings for CST, Kenda, JILUER, Innova, Maxxis, Pirelli and Vittoria."
     },
     {
       "name": "Maker catalogs",
       "checked_at": "2026-11-01",
-      "summary": "Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance) and Vittoria (international store) road ranges; further maker catalogs are added with each research batch."
+      "summary": "Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Maxxis (US) and Kenda (US shop) road ranges; further maker catalogs are added with each research batch."
     },
     {
       "name": "Brand identity checks",
@@ -218,8 +218,9 @@
     {
       "brand_id": "chaoyang",
       "name": "H-486 Cobra (眼镜蛇)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Shop listing and an owner comment; no specifications or lab test published.",
+      "record_id": "chaoyang-h-486"
     },
     {
       "brand_id": "chaoyang",
@@ -230,8 +231,8 @@
     {
       "brand_id": "chaoyang",
       "name": "H-457 Mini Shark (迷你鲨)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "excluded",
+      "reason": "Entry-level training tire sold mainly in non-folding form for about CNY 60; outside the performance-road comparison."
     },
     {
       "brand_id": "chaoyang",
@@ -274,14 +275,16 @@
     {
       "brand_id": "jiluer",
       "name": "Chaser (60 TPI)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Shop listing and an owner comparison; no lab test found.",
+      "record_id": "jiluer-chaser"
     },
     {
       "brand_id": "jiluer",
       "name": "Chaser Pro",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Shop listing and owner reports; no lab test found.",
+      "record_id": "jiluer-chaser-pro"
     },
     {
       "brand_id": "jiluer",
@@ -340,32 +343,41 @@
     {
       "brand_id": "cst",
       "name": "Energia C3045",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Shop listing and owner reports; no lab test found.",
+      "record_id": "cst-energia-c3045"
     },
     {
       "brand_id": "cst",
       "name": "Cito C1922",
+      "disposition": "included",
+      "reason": "Shop listing and an owner comparison; no lab test found.",
+      "record_id": "cst-cito-c1922"
+    },
+    {
+      "brand_id": "cst",
+      "name": "CRD-06 tubeless",
+      "disposition": "included",
+      "reason": "Tmall listing and an owner report; no lab test found.",
+      "record_id": "cst-crd-06"
+    },
+    {
+      "brand_id": "cst",
+      "name": "C3045N tubeless",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Tubeless version listed by shops; no specification beyond size found."
     },
     {
       "brand_id": "cst",
       "name": "C1808",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Named in an owner comparison (28C, 260 g); no listing with an exact model page found."
     },
     {
       "brand_id": "cst",
-      "name": "CRD06 tubeless",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "cst",
-      "name": "C1406",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "C1406, Sprint, 狂飙 and C1720/C1761/C1777 entry tires",
+      "disposition": "excluded",
+      "reason": "Entry-level training and commuting clinchers sold in many unnamed variants; outside the performance-road comparison."
     },
     {
       "brand_id": "cst",
@@ -381,39 +393,76 @@
     },
     {
       "brand_id": "maxxis",
+      "name": "High Road TR (Gen 2)",
+      "disposition": "included",
+      "reason": "Official US size table.",
+      "record_id": "maxxis-high-road-tr"
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "High Road clincher (Gen 2)",
+      "disposition": "included",
+      "reason": "Official US size table.",
+      "record_id": "maxxis-high-road"
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "Re-Fuse Gen 2",
+      "disposition": "included",
+      "reason": "Official US size table.",
+      "record_id": "maxxis-re-fuse-gen-2"
+    },
+    {
+      "brand_id": "maxxis",
       "name": "High Road SL",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Maxxis' US page labels it Gen 1 with mixed SKUs, while China shops sell a second-generation SL; generations could not be separated."
     },
     {
       "brand_id": "maxxis",
-      "name": "High Road",
+      "name": "High Road third generation (M230)",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Sold by a Maxxis dealer in mainland China (CNY 398 per tire); no official specification found."
     },
     {
       "brand_id": "maxxis",
-      "name": "Re-Fuse",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Pursuer",
+      "disposition": "included",
+      "reason": "Official US size table.",
+      "record_id": "maxxis-pursuer"
     },
     {
       "brand_id": "maxxis",
-      "name": "Padrone",
-      "disposition": "unresolved",
-      "reason": "Older tubeless road tire; current availability not yet checked."
+      "name": "Re-Fuse (Gen 1) and Padrone",
+      "disposition": "excluded",
+      "reason": "Superseded or older road lines."
     },
     {
       "brand_id": "kenda",
       "name": "Valkyrie (女武神)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official US shop specifications and price, China retail listing.",
+      "record_id": "kenda-valkyrie-tlr"
     },
     {
       "brand_id": "kenda",
       "name": "K925 and K1092",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "giant",
+      "name": "White-sidewall road tire (158H2401)",
+      "disposition": "included",
+      "reason": "Official Giant Tmall store listing.",
+      "record_id": "giant-white-sidewall"
+    },
+    {
+      "brand_id": "giant",
+      "name": "Ninja (158H2403)",
+      "disposition": "included",
+      "reason": "Official Giant Tmall store listing.",
+      "record_id": "giant-ninja"
     },
     {
       "brand_id": "giant",
@@ -447,15 +496,16 @@
     },
     {
       "brand_id": "innova",
-      "name": "笑脸 (yellow edge)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "笑脸 smiley-tread road tire",
+      "disposition": "included",
+      "reason": "Tmall dealer listing and an owner comparison.",
+      "record_id": "innova-smiley"
     },
     {
       "brand_id": "innova",
       "name": "3029",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Named in an owner comparison (28C, 220 g); no listing with model details found."
     },
     {
       "brand_id": "continental",
@@ -770,19 +820,40 @@
     },
     {
       "brand_id": "goodyear",
-      "name": "Eagle F1 R",
+      "name": "Eagle F1 RS TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle-f1-rs-tlr"
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 SuperSport RS TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price, lab test.",
+      "record_id": "goodyear-eagle-f1-supersport-rs-tlr"
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Vector 4Seasons TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-vector-4seasons-tlr"
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 RS (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "goodyear",
-      "name": "Eagle F1 SuperSport R",
+      "name": "Vector 4Seasons (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "goodyear",
-      "name": "Vector 4Seasons",
+      "name": "Eagle",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
@@ -793,8 +864,63 @@
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
+      "brand_id": "goodyear",
+      "name": "Vector Sport",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Vector R",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 R and SuperSport R Z29 Aero",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 R and Eagle F1 SuperSport R (2023)",
+      "disposition": "excluded",
+      "reason": "Superseded by the RS generation in the official store."
+    },
+    {
       "brand_id": "specialized",
       "name": "S-Works Turbo TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and price, lab test.",
+      "record_id": "specialized-s-works-turbo-tlr"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Cotton TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Mondo TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "S-Works Turbo T2/T5 (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "All Condition Armadillo",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "RapidAir TLR",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },

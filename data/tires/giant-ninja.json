@@ -1,0 +1,71 @@
+{
+  "id": "giant-ninja",
+  "maker": "Giant",
+  "name": "Ninja (158H2403)",
+  "aliases": [
+    "捷安特 Ninja"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Giant Group was founded in 1972 in Taichung, Taiwan (BikeRadar)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The official store listing does not state the factory."
+  },
+  "use": "training",
+  "positioning": "Giant's China-market folding road tire with aramid puncture protection.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI (store title)",
+  "compound": null,
+  "protection": "Aramid puncture protection (store title)",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "The official listing gives 244 g without stating the size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by Giant's official Tmall store in mainland China; this China-market model was not checked in other regions."
+  },
+  "price_observations": [
+    {
+      "amount": 138,
+      "currency": "CNY",
+      "market": "Giant official Tmall store (捷安特官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 117.",
+      "source_id": "giant-ninja-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "China-market model; global Gavia specifications do not apply.",
+    "No independent lab test or owner report found."
+  ],
+  "source_ids": [
+    "giant-ninja-tmall-2026-11-01",
+    "bikeradar-giant-founder-2026-02-17"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
