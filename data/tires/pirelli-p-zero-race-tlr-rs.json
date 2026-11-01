@@ -91,8 +91,8 @@
   "availability": {
     "cn": "retail",
     "eu": "authorized-retail",
-    "na": "unverified",
-    "note": "Listed in Pirelli's UK catalogue with a dealer finder; sold by retail shops on Tmall and Taobao in mainland China (no official Pirelli store found); North American availability not verified in this pass."
+    "na": "retail",
+    "note": "Listed in Pirelli's UK catalogue with a dealer finder; sold by retail shops on Tmall and Taobao in mainland China (no official Pirelli store found) and stocked by a US retailer on 2026-11-01."
   },
   "price_observations": [
     {
@@ -106,6 +106,18 @@
       "conditions": "Retail shop list price before discounts on 2026-11-01 for the unboxed black 30C option; coupon price CNY 419.8. Not an official Pirelli store; single or pair not stated.",
       "source_id": "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
       "width_mm": 30
+    },
+    {
+      "amount": 117.9,
+      "currency": "USD",
+      "market": "Cahaba Cycles (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer price on 2026-11-01 for the 28 mm black tire with local stock; the page does not state one tire or a pair.",
+      "source_id": "cahaba-pirelli-p-zero-race-tlr-rs-2026-11-01",
+      "width_mm": 28
     }
   ],
   "caveats": [
@@ -117,7 +129,8 @@
     "pirelli-p-zero-race-tlr-rs-official-2026-11-01",
     "pirelli-road-range-gb-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01"
+    "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
+    "cahaba-pirelli-p-zero-race-tlr-rs-2026-11-01"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01"

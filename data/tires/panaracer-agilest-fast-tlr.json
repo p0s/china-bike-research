@@ -63,10 +63,23 @@
   "availability": {
     "cn": "unverified",
     "eu": "unverified",
-    "na": "unverified",
-    "note": "Listed on Panaracer's global site but not in Panaracer USA's road collection on 2026-11-01; regional retail availability not verified."
+    "na": "retail",
+    "note": "Listed on Panaracer's global site; a US retailer takes online orders for the 28 mm (possibly preorder) on 2026-11-01. Not in Panaracer USA's road collection; European and mainland China sellers not verified."
   },
-  "price_observations": [],
+  "price_observations": [
+    {
+      "amount": 119.99,
+      "currency": "USD",
+      "market": "Pro Bike Supply (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer price on 2026-11-01 for the 28 mm; the page does not say one tire or a pair, and the order may be a preorder.",
+      "source_id": "probikesupply-panaracer-agilest-fast-tlr-2026-11-01",
+      "width_mm": 28
+    }
+  ],
   "caveats": [
     "No official price found; Panaracer USA did not list it on 2026-11-01.",
     "Hookless compatibility is not stated."
@@ -74,7 +87,8 @@
   "source_ids": [
     "panaracer-agilest-fast-tlr-official-2026-11-01",
     "panaracer-company-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "probikesupply-panaracer-agilest-fast-tlr-2026-11-01"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01"
