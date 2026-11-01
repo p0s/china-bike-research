@@ -185,20 +185,19 @@
       "name": "Panaracer",
       "name_zh": "松下",
       "origin_group": "international",
-      "origin_basis": "Japanese bicycle-tire maker."
+      "origin_basis": "Panaracer Corporation, Tamba City, Hyogo, Japan (company page)."
     },
     {
       "id": "irc",
       "name": "IRC",
       "origin_group": "international",
-      "origin_basis": "Japanese tire maker."
+      "origin_basis": "Inoue Rubber Co., Ltd., founded in 1926 in Japan, head office in Nagoya (IRC about page)."
     },
     {
       "id": "hutchinson",
       "name": "Hutchinson",
-      "name_zh": "黑鸟 (Blackbird)",
       "origin_group": "international",
-      "origin_basis": "French tire maker."
+      "origin_basis": "Founded in 1853 in Châlette-sur-Loing, France; bicycle tires since 1890 (company history)."
     },
     {
       "id": "specialists",
@@ -484,15 +483,23 @@
     },
     {
       "brand_id": "cadex",
-      "name": "Aero Tire",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Race Tubeless (25 mm)",
+      "disposition": "included",
+      "reason": "Official US store specifications and sale price, 2022 lab test.",
+      "record_id": "cadex-race-tubeless"
     },
     {
       "brand_id": "cadex",
-      "name": "Race Tubeless",
+      "name": "Race GC",
+      "disposition": "included",
+      "reason": "Official US store specification for 28 mm and price.",
+      "record_id": "cadex-race-gc"
+    },
+    {
+      "brand_id": "cadex",
+      "name": "Aero Tire",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Lab-tested in 2026 (28 mm nominal, 26 mm measured), but no official CADEX product page was found on 2026-11-01."
     },
     {
       "brand_id": "innova",
@@ -1072,27 +1079,69 @@
     },
     {
       "brand_id": "irc",
-      "name": "Formula Pro TLR",
+      "name": "Formula Pro TLR S-Light (Gen 6)",
+      "disposition": "included",
+      "reason": "Official US specifications with hookless pressure ranges; no official price.",
+      "record_id": "irc-formula-pro-tlr-s-light"
+    },
+    {
+      "brand_id": "irc",
+      "name": "Gen 6 Formula Pro Tubeless RBCC and X-Guard",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Listed in IRC's US road collection on 2026-11-01; product pages not read in this pass."
+    },
+    {
+      "brand_id": "irc",
+      "name": "Formula Pro HL TLR S-Light, TLR S-Light Hooked and Tubeless RBCC (without the Gen 6 label)",
+      "disposition": "unresolved",
+      "reason": "Shown beside the Gen 6 models in IRC's US road collection; generation and current status not established. The 2021 lab test of the Formula Pro RBCC is not applied."
     },
     {
       "brand_id": "hutchinson",
       "name": "Blackbird Race TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official reference table, hookless guidance and lab test; no official price.",
+      "record_id": "hutchinson-blackbird-race-tlr"
     },
     {
       "brand_id": "hutchinson",
       "name": "Blackbird TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official reference table, hookless guidance and lab test; no official price.",
+      "record_id": "hutchinson-blackbird-tlr"
     },
     {
       "brand_id": "hutchinson",
-      "name": "Fusion 5 All Season",
+      "name": "Blackbird (tube type)",
+      "disposition": "included",
+      "reason": "Official reference table; no official price.",
+      "record_id": "hutchinson-blackbird"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Blackbird Allseason TLR",
+      "disposition": "included",
+      "reason": "Official reference table and hookless guidance; no official price.",
+      "record_id": "hutchinson-blackbird-allseason-tlr"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Blackbird Allseason (tube type)",
+      "disposition": "included",
+      "reason": "Official reference table; no official price.",
+      "record_id": "hutchinson-blackbird-allseason"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Fusion 5 Performance and All Season",
+      "disposition": "excluded",
+      "reason": "Hutchinson's hookless page lists Fusion 5 among its previous road tires; the 2017 lab tests are not applied."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "GP Explorer",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Listed as a leisure tire in Hutchinson's road range on 2026-11-01; reference table not read."
     },
     {
       "brand_id": "specialists",

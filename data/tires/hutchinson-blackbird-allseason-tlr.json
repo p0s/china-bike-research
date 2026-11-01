@@ -1,0 +1,76 @@
+{
+  "maker": "Hutchinson",
+  "origin": {
+    "group": "international",
+    "country": "France",
+    "basis": "Hutchinson was founded in 1853 in Châlette-sur-Loing, France, and has made bicycle tires since 1890 (company history)."
+  },
+  "manufacturing": {
+    "country": "France",
+    "basis": "Hutchinson's reference table marks every listed size as Made in France."
+  },
+  "weight_claim_type": "official",
+  "weight_basis": "Hutchinson reference weights (±7%).",
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Hutchinson lists dealers rather than an online price; regional retail availability was not checked in this pass."
+  },
+  "price_observations": [],
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Hutchinson claims exceptional wet-weather grip from the Safetread shoulder compound; no independent wet test found.",
+      "source_id": "hutchinson-blackbird-allseason-official-2026-11-01"
+    }
+  ],
+  "id": "hutchinson-blackbird-allseason-tlr",
+  "name": "Blackbird Allseason TLR",
+  "aliases": [
+    "Blackbird All Season TLR"
+  ],
+  "use": "all-season",
+  "positioning": "Hutchinson's all-weather training tire with a Safetread shoulder compound and Gridskin sidewalls, tubeless-ready.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Hutchinson lists the tubeless-ready sizes from 28 mm as compatible with hooked and hookless rims within its maximum pressures.",
+  "casing": "127 TPI SwiftEasy",
+  "compound": "Mach Tread 3.0 centre, Safetread shoulders",
+  "protection": "Gridskin sidewalls and polyamide reinforcement",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 340
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 360
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 380
+    },
+    {
+      "width_mm": 34,
+      "etrto": "34-622",
+      "weight_g": 405
+    }
+  ],
+  "caveats": [
+    "No official price; Hutchinson sells through dealers.",
+    "Wet grip is a maker claim; no independent wet test found."
+  ],
+  "source_ids": [
+    "hutchinson-blackbird-allseason-official-2026-11-01",
+    "hutchinson-history-official-2026-11-01",
+    "hutchinson-hookless-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
