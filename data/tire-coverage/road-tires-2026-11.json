@@ -227,19 +227,19 @@
       "id": "silca",
       "name": "SILCA",
       "origin_group": "international",
-      "origin_basis": "US accessory and tire brand with its own web store."
+      "origin_basis": "Founded in 1917 in Milan; headquartered in Indianapolis since 2013-2014 (SILCA about page)."
     },
     {
       "id": "veloflex",
       "name": "Veloflex",
       "origin_group": "international",
-      "origin_basis": "Italian tire brand."
+      "origin_basis": "Founded in 1981 in Italy; tires handmade in its laboratory in Presezzo, Italy (about page)."
     },
     {
       "id": "challenge",
       "name": "Challenge",
       "origin_group": "international",
-      "origin_basis": "Handmade tire brand with Italian roots."
+      "origin_basis": "Roots in Italy, the United States and Thailand; handmade tires made in its family factory in Thailand (company page)."
     },
     {
       "id": "tufo",
@@ -1677,19 +1677,94 @@
       "record_id": "bontrager-aw1-hard-case-lite"
     },
     {
-      "brand_id": "silca",
-      "name": "Road range",
-      "disposition": "unresolved",
-      "reason": "Queued for the specialist-brand batches of this follow-up."
+      "brand_id": "enve",
+      "name": "HEX Gravel and HEX Carapace Gravel",
+      "disposition": "excluded",
+      "reason": "Gravel tires in ENVE's tire collection."
     },
     {
-      "brand_id": "veloflex",
-      "name": "Road range",
-      "disposition": "unresolved",
-      "reason": "Queued for the specialist-brand batches of this follow-up."
+      "brand_id": "silca",
+      "name": "Protocol RCR",
+      "disposition": "included",
+      "reason": "Official store specifications and price, 2026 lab test.",
+      "record_id": "silca-protocol-rcr"
+    },
+    {
+      "brand_id": "silca",
+      "name": "Protocol RCG-3, RCG-3 32-inch and RCG-4",
+      "disposition": "excluded",
+      "reason": "Gravel tires in SILCA's Protocol line."
     },
     {
       "brand_id": "challenge",
+      "name": "Criterium RS TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications, hookless statement and price; 2025 lab test.",
+      "record_id": "challenge-criterium-rs-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Pro TLR (2026)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; 2026 lab test.",
+      "record_id": "challenge-strada-pro-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Pro (tube type, 2026)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "challenge-strada-pro"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Elite Pro TLR (2026)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "challenge-elite-pro-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "4 Stagioni XP TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications, wet-weather claim and price.",
+      "record_id": "challenge-4-stagioni-xp-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Bianca Pro TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; all-road tire assessed as overlapping road use.",
+      "record_id": "challenge-strada-bianca-pro-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Vulcanized (tube type)",
+      "disposition": "included",
+      "reason": "Official international storefront listing; no weights or currency-stated price.",
+      "record_id": "challenge-strada-vulcanized"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Vulcanized TLR",
+      "disposition": "included",
+      "reason": "Official international storefront listing; no weights or currency-stated price.",
+      "record_id": "challenge-strada-vulcanized-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Criterium RS, Elite Pro and Strada Pro tubulars",
+      "disposition": "excluded",
+      "reason": "Tubular tires; tubulars are outside this comparison."
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Paris-Roubaix",
+      "disposition": "excluded",
+      "reason": "Not in Challenge's current US road collection on 2026-11-01."
+    },
+    {
+      "brand_id": "veloflex",
       "name": "Road range",
       "disposition": "unresolved",
       "reason": "Queued for the specialist-brand batches of this follow-up."

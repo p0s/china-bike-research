@@ -1,0 +1,103 @@
+{
+  "maker": "Challenge",
+  "origin": {
+    "group": "international",
+    "country": "Italy, United States and Thailand",
+    "basis": "Challenge says it has roots in Italy, the United States and Thailand (company page)."
+  },
+  "manufacturing": {
+    "country": "Thailand",
+    "basis": "Challenge says all its handmade tires are made in its family-owned factory in Thailand."
+  },
+  "hookless": "approved",
+  "weight_claim_type": "official",
+  "weight_basis": "Challenge product-page weights (±10%).",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2026,
+      "width_mm": 28,
+      "measured_width_mm": 29,
+      "measured_weight_g": 304,
+      "setup": "tubeless",
+      "rr_w": 13.2,
+      "rr_psi": 72,
+      "wet_grip": 60,
+      "puncture_tread": 56
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Challenge's US web store; its European storefront was not read for this tire."
+  },
+  "id": "challenge-strada-pro-tlr",
+  "name": "Strada Pro TLR (2026)",
+  "use": "all-round",
+  "positioning": "Challenge's handmade all-conditions road tire, tubeless-ready, with PPS Ganzo protection.",
+  "construction": "tubeless-ready",
+  "hookless_note": "Challenge's FAQ lists all handmade TLR tires from 33 to 45C and all Criterium RS TLR sizes as compatible with ISO/ETRTO-compliant hookless rims. Only the 35 mm size of this tire falls in that range.",
+  "casing": "300 TPI Super Polyester",
+  "compound": "SMARTprime",
+  "protection": "PPS Ganzo",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 280,
+      "note": "Not in the hookless list"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 295,
+      "note": "Not in the hookless list"
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 310,
+      "note": "Not in the hookless list"
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 330,
+      "note": "Not in the hookless list"
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 385
+    }
+  ],
+  "caveats": [
+    "Hookless use applies only to 35 mm.",
+    "Lab wet grip is low (60)."
+  ],
+  "price_observations": [
+    {
+      "amount": 89.99,
+      "currency": "USD",
+      "market": "Challenge store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "challenge-strada-pro-handmade-tlr-2026-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "challenge-strada-pro-handmade-tlr-2026-official-2026-11-01",
+    "challenge-about-official-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
