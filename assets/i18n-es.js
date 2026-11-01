@@ -1020,6 +1020,7 @@ Object.assign(es, {
   "Wet evidence": "Con pruebas en mojado",
   "Seller claim": "Declaración del vendedor",
   "Community report": "Opinión de propietario",
+  "Sizes": "Medidas",
   "Width": "Anchura",
   "Max pressure": "Presión máxima",
   "Note": "Nota",

@@ -1029,6 +1029,7 @@ Object.assign(ru, {
   "Wet evidence": "Есть данные о мокром",
   "Seller claim": "Заявление продавца",
   "Community report": "Отзыв владельца",
+  "Sizes": "Размеры",
   "Width": "Ширина",
   "Max pressure": "Макс. давление",
   "Note": "Примечание",
