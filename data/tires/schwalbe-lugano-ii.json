@@ -1,0 +1,101 @@
+{
+  "id": "schwalbe-lugano-ii",
+  "maker": "Schwalbe",
+  "name": "Lugano II",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Schwalbe is the brand of Ralf Bohle GmbH, Reichshof, Germany (legal notice)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Schwalbe product pages do not state where the tire is made."
+  },
+  "use": "training",
+  "positioning": "Schwalbe's entry-level road clincher with K-Guard protection, sold in wired and folding versions.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "50 EPI",
+  "compound": "Silica",
+  "protection": "K-Guard",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 330,
+      "max_psi": 115,
+      "max_bar": 8.0,
+      "note": "Folding 330 g; wired 365 g (Classic-Skin) or 405 g (black)."
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 470,
+      "max_psi": 95,
+      "max_bar": 6.5,
+      "note": "Wired only."
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Schwalbe product-page weight per size and bead.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Schwalbe's European and North American sites give recommended retail prices and send buyers to retailers; mainland China availability not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 21.9,
+      "currency": "EUR",
+      "market": "Schwalbe recommended retail price (Europe)",
+      "region": "eu",
+      "price_type": "official-rrp",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "RRP for one 25 mm wired tire on 2026-11-01; retailer prices vary.",
+      "source_id": "schwalbe-lugano-ii-25-wired-2026-11-01",
+      "width_mm": 25
+    },
+    {
+      "amount": 29.9,
+      "currency": "EUR",
+      "market": "Schwalbe recommended retail price (Europe)",
+      "region": "eu",
+      "price_type": "official-rrp",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "RRP for one 25 mm folding tire on 2026-11-01.",
+      "source_id": "schwalbe-lugano-ii-25-folding-2026-11-01",
+      "width_mm": 25
+    },
+    {
+      "amount": 26.0,
+      "currency": "USD",
+      "market": "Schwalbe North America recommended retail price",
+      "region": "na",
+      "price_type": "official-rrp",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "RRP for one 25 mm wired tire on 2026-11-01.",
+      "source_id": "schwalbe-na-lugano-ii-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "Entry-level casing (50 EPI) with K-Guard protection; the wired version is about 35-75 g heavier than the folding one.",
+    "Schwalbe gives a 115 psi limit for the 25 mm and 95 psi for the 32 mm; no hookless statement.",
+    "The Lugano II Endurance is a separate tire that Schwalbe North America calls a sportive city tire."
+  ],
+  "source_ids": [
+    "schwalbe-lugano-ii-25-wired-2026-11-01",
+    "schwalbe-lugano-ii-25-folding-2026-11-01",
+    "schwalbe-lugano-ii-32-2026-11-01",
+    "schwalbe-na-lugano-ii-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
