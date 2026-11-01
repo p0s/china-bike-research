@@ -13,6 +13,12 @@ export const TIRE_PRICE_REGIONS = [...TIRE_REGIONS, 'global'];
 export const TIRE_PACKAGES = ['single', 'pair', 'unstated'];
 export const TIRE_DISPOSITIONS = ['included', 'excluded', 'unresolved'];
 export const TIRE_STANCES = ['positive', 'mixed', 'negative'];
+// Problems an owner report describes: casing failure (bulging, ply separation or a split
+// along the casing cords), rubber cracking, early wear-through, repeated punctures, and a
+// bead that comes off or will not seat on the rim.
+export const TIRE_ISSUES = ['casing', 'cracking', 'wear', 'punctures', 'fit'];
+// Budget all-season starting point (2026-11-01): a dated one-tire price before shipping.
+export const BUDGET_CNY_PER_TIRE = 250;
 
 // The two requested width groups. Road: 25–35 mm. Wet weather: 20–40 mm with recorded
 // wet-traction evidence. Rim-brake or pad braking is never part of tire evidence.
@@ -112,6 +118,51 @@ export function tireShortlists(tires) {
   return { fastest, balanced, protective, chinese, wetGrip, allSeason };
 }
 
+// The lowest dated CNY price within the budget for one package basis. Only a one-tire
+// ('single') price qualifies; a price whose one-tire or pair basis is unstated is shown apart.
+export function budgetPrice(tire, basis = 'single') {
+  const prices = (tire.price_observations ?? []).filter((price) => price.currency === 'CNY' && price.package === basis && price.amount <= BUDGET_CNY_PER_TIRE);
+  return prices.sort((a, b) => a.amount - b.amount || b.observed_at.localeCompare(a.observed_at))[0] ?? null;
+}
+
+// Wet-road evidence for a tire without a lab test comes from first-hand owner reports.
+// Tread pattern, "four-season" copy and seller claims never count.
+export function wetEvidenceStatus(tire) {
+  if (measuredWetGrip(tire) !== null) return 'measured';
+  const stances = (tire.wet_notes ?? []).filter((note) => note.kind === 'community report').map((note) => note.stance);
+  if (!stances.length) return 'none';
+  const positive = stances.filter((stance) => stance === 'positive').length;
+  if (positive === stances.length) return positive >= 2 ? 'consistent' : 'single';
+  return positive || stances.includes('mixed') ? 'conflicting' : 'unfavourable';
+}
+
+// Distinct sources whose owner reports describe the issue.
+export function issueSources(tire, issue) {
+  return new Set((tire.community ?? []).filter((report) => (report.issues ?? []).includes(issue)).map((report) => report.source_id)).size;
+}
+
+// Budget all-season starting point. A supported all-season choice needs measured wet grip of
+// at least 80 or two favourable owner wet reports with none against, and fewer than two
+// casing-failure sources. Tires listed within the budget whose price basis is unstated are
+// returned separately and never count as budget choices.
+const BUDGET_WET_ORDER = ['measured', 'consistent', 'single', 'conflicting', 'none', 'unfavourable'];
+export function budgetShortlist(tires) {
+  const evidence = (tire, price) => {
+    const wet = wetEvidenceStatus(tire);
+    const grip = measuredWetGrip(tire);
+    const issues = Object.fromEntries(TIRE_ISSUES.map((issue) => [issue, issueSources(tire, issue)]));
+    const allSeason = ((wet === 'measured' && grip >= 80) || wet === 'consistent') && issues.casing < 2;
+    return { tire, price, wet, grip, issues, allSeason };
+  };
+  const order = (a, b) => Number(b.allSeason) - Number(a.allSeason) || BUDGET_WET_ORDER.indexOf(a.wet) - BUDGET_WET_ORDER.indexOf(b.wet)
+    || a.issues.casing - b.issues.casing || a.price.amount - b.price.amount || a.tire.id.localeCompare(b.tire.id);
+  const chinese = tires.filter((tire) => tire.origin.group !== 'international' && tireGroups(tire).road);
+  const qualifying = chinese.filter((tire) => budgetPrice(tire)).map((tire) => evidence(tire, budgetPrice(tire))).sort(order);
+  const unverified = chinese.filter((tire) => !budgetPrice(tire) && budgetPrice(tire, 'unstated'))
+    .map((tire) => ({ ...evidence(tire, budgetPrice(tire, 'unstated')), allSeason: false })).sort(order);
+  return { qualifying, unverified };
+}
+
 const sizeKey = (size) => `${sizeLabel(size)}|${size.bead ?? ''}`;
 
 export function validateTires(data, sourceIds) {
@@ -175,9 +226,12 @@ export function validateTires(data, sourceIds) {
     }
     for (const note of tire.wet_notes ?? []) {
       if (!TIRE_EVIDENCE_KINDS.includes(note.kind) || !nonEmpty(note.summary) || !listed(tire, note.source_id)) errors.push(`${label}: wet notes need a kind, summary and listed source`);
+      // An owner wet report states whether it favours the tire; other kinds carry no stance.
+      if (note.kind === 'community report' ? !TIRE_STANCES.includes(note.stance) : note.stance !== undefined) errors.push(`${label}: only owner wet reports carry a stance, and they need one`);
     }
     for (const report of tire.community ?? []) {
       if (!listed(tire, report.source_id) || !nonEmpty(report.summary) || !TIRE_STANCES.includes(report.stance) || !isDate(report.published_at)) errors.push(`${label}: owner reports need a listed source, summary, stance and date`);
+      if (report.issues !== undefined && (!Array.isArray(report.issues) || !report.issues.length || report.issues.some((issue) => !TIRE_ISSUES.includes(issue)) || new Set(report.issues).size !== report.issues.length)) errors.push(`${label}: owner report issues must be distinct known issues`);
     }
     const availability = tire.availability ?? {};
     for (const region of TIRE_REGIONS) if (!TIRE_AVAILABILITY.includes(availability[region])) errors.push(`${label}: invalid availability.${region}`);

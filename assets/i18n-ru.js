@@ -1086,7 +1086,21 @@ Object.assign(ru, {
   "Negative": "Отрицательный",
   "Maker claim": "Заявление производителя",
   "Lab measured": "Измерено в лаборатории",
-  "Owner-measured": "Измерено владельцем"
+  "Owner-measured": "Измерено владельцем",
+  "Budget all-season: up to CNY 250 per tire": "Недорогие всесезонные: до 250 CNY за шину",
+  "Tires marked as a supported all-season choice meet both evidence thresholds. Others may still be good; the evidence found is thinner or conflicting.": "Шины с отметкой «Подтверждённый всесезонный выбор» проходят оба порога доказательств. Остальные тоже могут быть хорошими, но данных меньше или они противоречивы.",
+  "None of these tires has enough wet-road evidence to be called a proven all-season choice yet. The lists show what owners report, so you can weigh price against the known risks.": "Ни у одной из этих шин пока нет достаточных данных о поведении на мокрой дороге, чтобы назвать её проверенным всесезонным выбором. Списки показывают отзывы владельцев, чтобы вы могли сопоставить цену и известные риски.",
+  "Mainland China and Taiwan brands in 25–35 mm with a dated price of CNY 250 or less for one tire, before shipping. A supported all-season choice needs measured wet grip of at least 80, or at least two favourable first-hand wet reports with none against, and fewer than two reports of bulging or casing failure. Tread pattern, four-season marketing and seller copy are not wet evidence. Confidence: a lab test is strongest, agreeing owner reports are moderate, and one report or conflicting reports are weak. Ordered by wet evidence, then fewer casing reports, then price.": "Бренды материкового Китая и Тайваня шириной 25–35 мм с датированной ценой не выше 250 CNY за одну шину без доставки. Для подтверждённого всесезонного выбора нужно измеренное сцепление на мокром не ниже 80 или хотя бы два положительных отзыва владельцев о мокрой дороге без противоположных, а также меньше двух сообщений о вздутиях или повреждении каркаса. Рисунок протектора, реклама «всесезонности» и тексты продавцов не считаются данными о мокрой дороге. Надёжность: лабораторный тест — самая высокая, несколько согласных отзывов — средняя, один или противоречивые отзывы — низкая. Порядок: по данным о мокрой дороге, затем по меньшему числу сообщений о каркасе, затем по цене.",
+  "No verified one-tire price within the budget yet.": "Подтверждённой цены за одну шину в пределах бюджета пока нет.",
+  "Listed at CNY 250 or less, but one tire or pair is not stated": "Цена не выше 250 CNY, но не указано, за одну шину или за пару",
+  "These listings do not establish a one-tire price, so they are not budget choices until a listing states one tire.": "Эти объявления не подтверждают цену за одну шину, поэтому они не входят в бюджетный выбор, пока в объявлении не будет указана одна шина.",
+  "Supported all-season choice": "Подтверждённый всесезонный выбор",
+  "Favourable owner wet reports agree": "Положительные отзывы о мокрой дороге согласуются",
+  "One favourable owner wet report": "Один положительный отзыв о мокрой дороге",
+  "Owner wet reports conflict": "Отзывы о мокрой дороге противоречат друг другу",
+  "Owner wet reports are unfavourable": "Отзывы о мокрой дороге отрицательные",
+  "No owner wet report found": "Отзывы о мокрой дороге не найдены",
+  "No durability or fit problem report found": "Сообщений о проблемах с долговечностью или посадкой не найдено"
 });
 
 // Road tire reference (2026-11-01)
@@ -1100,6 +1114,9 @@ patterns.push(
   [/^wet (\d+)$/, (_, n) => `мокро ${n}`],
   [/^also (.+)$/, (_, list) => `также ${list}`],
   [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${plural(n, 'отзыв', 'отзыва', 'отзывов')} владельцев, лабораторный тест не найден`],
+  [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} за шину`],
+  [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} в объявлении, не указано, за одну шину или за пару`],
+  [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${plural(n, 'сообщение', 'сообщения', 'сообщений')} о ${{ 'bulging or casing failure': 'вздутиях или повреждении каркаса', cracking: 'трещинах', 'fast wear': 'быстром износе', 'frequent punctures': 'частых проколах', 'bead or rim-fit problems': 'проблемах с бортом или посадкой на обод' }[issue]}`],
   [/^Sizes: (.+)$/, (_, name) => `Размеры: ${name}`],
   [/^Coverage: (\d+) candidates from (\d+) brands, as of (\d{4}-\d{2}-\d{2})$/, (_, n, brands, date) => `Охват: ${n} ${plural(n, 'кандидат', 'кандидата', 'кандидатов')} от ${brands} ${plural(brands, 'бренда', 'брендов', 'брендов')} на ${date}`],
   [/^(\d+) included$/, (_, n) => `${n} в сравнении`],

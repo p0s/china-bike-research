@@ -44,8 +44,38 @@
   "weight_claim_type": "seller claim",
   "weight_basis": "The shop listing gives no weights.",
   "tests": [],
-  "wet_notes": [],
-  "community": [],
+  "wet_notes": [
+    {
+      "kind": "community report",
+      "summary": "A K925 25C owner lists being rather slippery on wet roads as one of its known weaknesses.",
+      "source_id": "xhs-kenda-k925-question-2026-05-11",
+      "stance": "negative"
+    }
+  ],
+  "community": [
+    {
+      "source_id": "xhs-kenda-k925-vs-gsr-2026-05-14",
+      "stance": "positive",
+      "published_at": "2026-05-14",
+      "summary": "Owner: about 255 g at 28C and 29.4 mm wide on a 23 mm rim, light, fast-feeling and easy to fit; a dry paved-road training tire."
+    },
+    {
+      "source_id": "xhs-kenda-k925-question-2026-05-11",
+      "stance": "mixed",
+      "published_at": "2026-05-11",
+      "summary": "Owner: low rolling resistance and good feel, but slippery in the wet and only modest puncture resistance; commenters report about 5,000 km of wear and beads that crack easily.",
+      "issues": [
+        "wear",
+        "cracking"
+      ]
+    },
+    {
+      "source_id": "xhs-kenda-k925-20c-2025-12-29",
+      "stance": "negative",
+      "published_at": "2025-12-29",
+      "summary": "A commenter blames poor shoulder grip for their only crash; conditions not stated."
+    }
+  ],
   "availability": {
     "cn": "retail",
     "eu": "unverified",
@@ -67,11 +97,16 @@
     }
   ],
   "caveats": [
+    "An owner reports it is rather slippery on wet roads, and another blames its shoulder grip for a crash; no lab test found.",
+    "The listing does not say whether a price is for one tire or a pair.",
     "TPI and pressure come from shop option labels; weights are not published.",
     "A non-folding 700x25 version is also sold."
   ],
   "source_ids": [
-    "kenda-k925-k1092-taobao-2026-11-01"
+    "kenda-k925-k1092-taobao-2026-11-01",
+    "xhs-kenda-k925-question-2026-05-11",
+    "xhs-kenda-k925-vs-gsr-2026-05-14",
+    "xhs-kenda-k925-20c-2025-12-29"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01"

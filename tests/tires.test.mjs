@@ -4,7 +4,7 @@ import { loadDataset, joinProducts, validateDataset } from '../src/lib/data.mjs'
 import { renderHome, renderTires } from '../src/render.mjs';
 import { INTERFACE_ROUTES } from '../src/lib/i18n.mjs';
 import { translate } from '../assets/i18n.js';
-import { comparableRollingTest, measuredWetGrip, referenceSize, sizeWidths, tireGroups, tireShortlists } from '../src/lib/tires.mjs';
+import { BUDGET_CNY_PER_TIRE, budgetPrice, budgetShortlist, comparableRollingTest, issueSources, measuredWetGrip, referenceSize, sizeWidths, tireGroups, tireShortlists, wetEvidenceStatus } from '../src/lib/tires.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -98,6 +98,57 @@ test('starting points are criteria-led lists, not a universal ranking', () => {
   assert.match(html, /It is not a braking-distance or cornering certification, and rim-brake pads, rims and rotors are separate\./);
   assert.match(html, /missing evidence is not a negative result\. No list promises that a tire fits your frame or rim\./);
   assert.doesNotMatch(html, /score out of|overall score|best tire overall/i);
+});
+
+test('the budget all-season starting point counts only verified one-tire prices and states its verdict', () => {
+  const { qualifying, unverified } = budgetShortlist(data.tires);
+  assert.ok(qualifying.length + unverified.length > 0);
+  for (const item of [...qualifying, ...unverified]) {
+    assert.notEqual(item.tire.origin.group, 'international', item.tire.id);
+    assert.ok(tireGroups(item.tire).road, item.tire.id);
+    assert.equal(item.price.currency, 'CNY', item.tire.id);
+    assert.ok(item.price.amount <= BUDGET_CNY_PER_TIRE, item.tire.id);
+  }
+  assert.ok(qualifying.every((item) => item.price.package === 'single'));
+  // A listing that does not say one tire or a pair is shown apart and never qualifies.
+  assert.ok(unverified.every((item) => item.price.package === 'unstated' && !item.allSeason && !budgetPrice(item.tire)));
+  for (const item of qualifying.filter((entry) => entry.allSeason)) {
+    assert.ok((item.wet === 'measured' && item.grip >= 80) || item.wet === 'consistent', item.tire.id);
+    assert.ok(item.issues.casing < 2, item.tire.id);
+  }
+  const html = renderTires(ctx);
+  assert.match(html, /<div class="tire-budget" id="budget"><h3>Budget all-season: up to CNY 250 per tire<\/h3>/);
+  assert.match(html, qualifying.some((item) => item.allSeason) ? /meet both evidence thresholds/ : /None of these tires has enough wet-road evidence to be called a proven all-season choice yet\./);
+  assert.match(html, /Tread pattern, four-season marketing and seller copy are not wet evidence\./);
+  for (const item of qualifying) assert.match(html, new RegExp(`<li><a href="#${item.tire.id}">[^<]+</a> (?:<strong>Supported all-season choice</strong> )?<span>¥[\\d,.]+ per tire</span>`), item.tire.id);
+  for (const item of unverified) assert.match(html, new RegExp(`<li><a href="#${item.tire.id}">[^<]+</a> <span>¥[\\d,.]+ listing, one tire or pair not stated</span>`), item.tire.id);
+  for (const locale of ['zh-Hans', 'de', 'es', 'ru']) {
+    for (const text of ['Budget all-season: up to CNY 250 per tire', 'Owner wet reports conflict', 'No owner wet report found', '¥165 per tire', '¥198 listing, one tire or pair not stated', '2 reports of bulging or casing failure', '1 report of bead or rim-fit problems', 'No durability or fit problem report found']) {
+      assert.notEqual(translate(text, locale), text, `${locale}: ${text}`);
+    }
+  }
+});
+
+test('owner wet reports are classified by stance, never by tread or marketing', () => {
+  const tire = (wetNotes, tests = []) => ({ wet_notes: wetNotes, tests });
+  const owner = (stance) => ({ kind: 'community report', stance, summary: 'x', source_id: 's' });
+  assert.equal(wetEvidenceStatus(tire([])), 'none');
+  assert.equal(wetEvidenceStatus(tire([{ kind: 'seller claim', summary: 'drains water', source_id: 's' }])), 'none');
+  assert.equal(wetEvidenceStatus(tire([owner('positive')])), 'single');
+  assert.equal(wetEvidenceStatus(tire([owner('positive'), owner('positive')])), 'consistent');
+  assert.equal(wetEvidenceStatus(tire([owner('positive'), owner('negative')])), 'conflicting');
+  assert.equal(wetEvidenceStatus(tire([owner('mixed')])), 'conflicting');
+  assert.equal(wetEvidenceStatus(tire([owner('negative')])), 'unfavourable');
+  assert.equal(wetEvidenceStatus(tire([owner('negative')], [{ wet_grip: 77 }])), 'measured');
+  // Durability issues count distinct sources, not repeated reports from one post.
+  const reports = { community: [{ source_id: 'a', issues: ['casing'] }, { source_id: 'a', issues: ['casing'] }, { source_id: 'b', issues: ['casing', 'wear'] }] };
+  assert.equal(issueSources(reports, 'casing'), 2);
+  assert.equal(issueSources(reports, 'punctures'), 0);
+  const ownerWet = firstId((item) => item.wet_notes.some((note) => note.kind === 'community report'));
+  rejects(ownerWet, (item) => { delete item.wet_notes.find((note) => note.kind === 'community report').stance; }, 'only owner wet reports carry a stance, and they need one');
+  rejects(tubeless, (item) => { item.wet_notes = [{ kind: 'official', summary: 'x', source_id: item.source_ids[0], stance: 'positive' }]; }, 'only owner wet reports carry a stance, and they need one');
+  const withIssues = firstId((item) => item.community.some((report) => report.issues));
+  rejects(withIssues, (item) => { item.community.find((report) => report.issues).issues = ['bulges']; }, 'owner report issues must be distinct known issues');
 });
 
 test('the tire table renders one row per record with origin, evidence and price basis', () => {
