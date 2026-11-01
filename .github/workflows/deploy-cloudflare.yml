@@ -40,7 +40,7 @@ jobs:
         id: indexnow-restore
         if: steps.indexnow-state.outcome == 'success' && steps.indexnow-state.outputs.run-id != ''
         continue-on-error: true
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: indexnow-delivery-state-v1
           path: ${{ runner.temp }}/indexnow-state
