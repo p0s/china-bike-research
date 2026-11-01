@@ -65,7 +65,7 @@ jobs:
         run: node scripts/indexnow.mjs notify --before "$RUNNER_TEMP/indexnow-before.json" --expected dist/indexnow-manifest.json --state "$RUNNER_TEMP/indexnow-state/state.json"
       - name: Save IndexNow delivery state
         if: always() && steps.indexnow-snapshot.outcome == 'success'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: indexnow-delivery-state-v1
           path: ${{ runner.temp }}/indexnow-state/state.json
