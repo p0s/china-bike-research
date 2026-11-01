@@ -88,6 +88,7 @@ test('the tire table renders one row per record with origin, evidence and price 
     assert.match(entry, new RegExp(`data-origin="${tire.origin.group}" data-construction="${tire.construction}"`), tire.id);
     // A tire without a lab test shows the quiet unknown dash, never an invented figure.
     if (!tire.tests.length) assert.match(entry, /<td data-label="Lab test" data-column="tests"><strong>—<\/strong>/, tire.id);
+    if (!tire.price_observations.length) assert.match(entry, /<td data-label="Price" data-column="price"><strong>—<\/strong>/, tire.id);
     for (const observation of tire.price_observations) assert.ok(entry.includes(observation.conditions.replaceAll("'", '&#039;')), `${tire.id} keeps price conditions`);
   }
   assert.match(html, /<details class="reference-guide tire-coverage" id="coverage"><summary>Coverage: \d+ candidates from \d+ brands, as of \d{4}-\d{2}-\d{2}<\/summary>/);

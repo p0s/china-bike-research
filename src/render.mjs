@@ -2628,7 +2628,7 @@ function tireRows(ctx, tire, sourcesById, rates) {
     <td data-label="Widths" data-column="widths"><strong>${escapeHtml(scoped.length ? `${scoped.join(' · ')} mm` : '—')}</strong><span>${escapeHtml([groupHint, others.length ? `also ${others.join(', ')} mm` : ''].filter(Boolean).join(' · '))}</span></td>
     <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.width_mm} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
     <td data-label="Lab test" data-column="tests"><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
-    <td data-label="Price" data-column="price"><strong>${escapeHtml(headline ? tireAmount(headline) : '')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
+    <td data-label="Price" data-column="price"><strong>${escapeHtml(headline ? tireAmount(headline) : '—')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
   </tr><tr class="groupset-detail-row"><td colspan="6">${details}</td></tr></tbody>`;
 }
 
