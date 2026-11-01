@@ -200,10 +200,64 @@
       "origin_basis": "Founded in 1853 in Châlette-sur-Loing, France; bicycle tires since 1890 (company history)."
     },
     {
-      "id": "specialists",
-      "name": "Specialist brands in lab-test lists",
+      "id": "vredestein",
+      "name": "Vredestein",
       "origin_group": "international",
-      "origin_basis": "Brands found in the Bicycle Rolling Resistance road list."
+      "origin_basis": "Founded in 1908 in the Netherlands; owned by Apollo Tyres since 2009 (heritage page)."
+    },
+    {
+      "id": "enve",
+      "name": "ENVE",
+      "origin_group": "international",
+      "origin_basis": "ENVE Composites USA (official store footer)."
+    },
+    {
+      "id": "zipp",
+      "name": "Zipp",
+      "origin_group": "international",
+      "origin_basis": "SRAM's wheel and component brand; tires are published on sram.com."
+    },
+    {
+      "id": "bontrager",
+      "name": "Bontrager (Trek)",
+      "origin_group": "international",
+      "origin_basis": "Trek Bicycle Corporation's component brand (Trek US store footer)."
+    },
+    {
+      "id": "silca",
+      "name": "SILCA",
+      "origin_group": "international",
+      "origin_basis": "Founded in 1917 in Milan; headquartered in Indianapolis since 2013-2014 (SILCA about page)."
+    },
+    {
+      "id": "veloflex",
+      "name": "Veloflex",
+      "origin_group": "international",
+      "origin_basis": "Founded in 1981 in Italy; tires handmade in its laboratory in Presezzo, Italy (about page)."
+    },
+    {
+      "id": "challenge",
+      "name": "Challenge",
+      "origin_group": "international",
+      "origin_basis": "Roots in Italy, the United States and Thailand; handmade tires made in its family factory in Thailand (company page)."
+    },
+    {
+      "id": "tufo",
+      "name": "Tufo",
+      "origin_group": "international",
+      "origin_basis": "TUFO, s.r.o., Otrokovice, Czech Republic (contact page); founded in 1991."
+    },
+    {
+      "id": "wolfpack",
+      "name": "Wolfpack",
+      "origin_group": "international",
+      "origin_basis": "Wolfpack - Tires GmbH, Medebach, Germany (legal notice)."
+    },
+    {
+      "id": "renehersecycles",
+      "name": "Rene Herse",
+      "origin_group": "international",
+      "origin_basis": "US web store in US dollars; tires made in Japan (product pages)."
     }
   ],
   "candidates": [
@@ -484,8 +538,9 @@
     {
       "brand_id": "kenda",
       "name": "K1092",
-      "disposition": "excluded",
-      "reason": "Entry-level 60 TPI folding training tire (Taobao: 700x25/28, 125 psi label, CNY 97-108); entry-level tires are outside this comparison, like the Chaoyang H-479 Viper. US retailers list a 120 TPI Kountach version."
+      "disposition": "included",
+      "reason": "Taobao listing gives folding 60 TPI training-tire options, pressure label and prices; US retailers list a 120 TPI Kountach version.",
+      "record_id": "kenda-k1092"
     },
     {
       "brand_id": "kenda",
@@ -1192,9 +1247,24 @@
     },
     {
       "brand_id": "specialized",
-      "name": "Cotton TLR, Cotton Folding and RapidAir TLR",
-      "disposition": "excluded",
-      "reason": "Specialized groups them as 'Racing Only' tires; race-day specialist tires are left out, like the time-trial tires above."
+      "name": "RapidAir TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and sale price; Specialized labels it 'Racing Only'.",
+      "record_id": "specialized-rapidair-tlr"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Cotton TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; Specialized labels it 'Racing Only'.",
+      "record_id": "specialized-cotton-tlr"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Cotton (tube type)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; Specialized labels it 'Racing Only'.",
+      "record_id": "specialized-cotton-folding"
     },
     {
       "brand_id": "specialized",
@@ -1230,9 +1300,23 @@
     },
     {
       "brand_id": "specialized",
-      "name": "RoadSport family",
+      "name": "RoadSport Elite",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-roadsport-elite"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "RoadSport Wirebead",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-roadsport-wirebead"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "RoadSport Wirebead Reflect and older RoadSport listing",
       "disposition": "excluded",
-      "reason": "Entry-level 60 TPI road tires (RoadSport Elite 280 g at 26 mm and 325 g at 28 mm), including wire-bead versions."
+      "reason": "Duplicates of the RoadSport Wirebead: a reflective-sidewall version (32 and 35 mm) and an older clearance listing with the same weights."
     },
     {
       "brand_id": "specialized",
@@ -1383,10 +1467,507 @@
       "reason": "Hutchinson labels it a Leisure tire for new riders: tube type, mono-compound, 65-66 TPI folding at 350 g (25 and 28 mm) or a 33 TPI wire version."
     },
     {
-      "brand_id": "specialists",
-      "name": "Veloflex, Challenge, Tufo, Zipp, Bontrager, Enve, Silca, Wolfpack, Cadex-tested specialists, Vredestein and Rene Herse",
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro TLR",
+      "disposition": "included",
+      "reason": "Official size table (28, 30, 32 mm).",
+      "record_id": "vredestein-superpasso-pro-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro (tube type)",
+      "disposition": "included",
+      "reason": "Official size table (25, 28, 30 mm).",
+      "record_id": "vredestein-superpasso-pro"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso 2 TLR",
+      "disposition": "included",
+      "reason": "Official size table (28, 32 mm).",
+      "record_id": "vredestein-superpasso-2-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso 2 (tube type)",
+      "disposition": "included",
+      "reason": "Official size table (28 mm).",
+      "record_id": "vredestein-superpasso-2"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro 4S TLR",
+      "disposition": "included",
+      "reason": "Official size table (28-35 mm).",
+      "record_id": "vredestein-superpasso-pro-4s-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro Cotton TLR",
+      "disposition": "included",
+      "reason": "Official size table (28 mm).",
+      "record_id": "vredestein-superpasso-pro-cotton-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro Cotton (tube type)",
+      "disposition": "included",
+      "reason": "Official size table (28 mm).",
+      "record_id": "vredestein-superpasso-pro-cotton"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fortezza Senso Xtreme Weather",
+      "disposition": "included",
+      "reason": "Official size table and wet-weather positioning.",
+      "record_id": "vredestein-fortezza-senso-xtreme-weather"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Freccia",
+      "disposition": "included",
+      "reason": "Official size table; folding training and touring tire.",
+      "record_id": "vredestein-freccia"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fiammante (folding and rigid)",
       "disposition": "excluded",
-      "reason": "Scope boundary: specialist and wheel-brand lines seen in the lab-test list are outside this roster, which covers major tire makers with national distribution in Asia, Europe and North America plus mainland-China and Taiwan brands. They were not researched model by model."
+      "reason": "Vredestein calls it an extremely durable tire for recreational use (26 TPI)."
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fortezza Senso T All Weather",
+      "disposition": "excluded",
+      "reason": "Handmade tubular ('tube'); tubular tires are outside this comparison."
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fortezza Senso Superiore, Senso All Weather clincher and Fortezza Tubeless Ready",
+      "disposition": "excluded",
+      "reason": "Not in Vredestein's current road range on 2026-11-01; the Senso Superiore product page returns 404. The 2015 lab test of the Senso All Weather is not applied."
+    },
+    {
+      "brand_id": "enve",
+      "name": "SES Road Tire",
+      "disposition": "included",
+      "reason": "Official store specifications, hookless statement and price.",
+      "record_id": "enve-ses-road-tire"
+    },
+    {
+      "brand_id": "enve",
+      "name": "SES Raceday",
+      "disposition": "included",
+      "reason": "Official store specifications and price, 2024 lab test.",
+      "record_id": "enve-ses-raceday"
+    },
+    {
+      "brand_id": "zipp",
+      "name": "Tangente Speed (tubeless and clincher) and Tangente Course (clincher)",
+      "disposition": "excluded",
+      "reason": "Not current: Zipp's tire page on sram.com lists only gravel tires on 2026-11-01; the Tangente road tires remain only as SRAM service model pages. The 2021 lab test of the Tangente Speed is not applied."
+    },
+    {
+      "brand_id": "zipp",
+      "name": "G40 XPLR and Goodyear XPLR Slick and Intermediate (designed for Zipp)",
+      "disposition": "excluded",
+      "reason": "Gravel tires in 40-45 mm listed under Zipp's gravel products."
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Aeolus RSL TLR",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aeolus-rsl-tlr"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Aeolus Pro TLR",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aeolus-pro-tlr"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Kwaremont RSL TLR",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-kwaremont-rsl-tlr"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Kwaremont Pro TLR",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-kwaremont-pro-tlr"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Hard-Case Max Pro TLR",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-hard-case-max-pro-tlr"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "R4 320 Handmade Clincher",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-r4-320"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "R3 Hard-Case Lite",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-r3-hard-case-lite"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "AW3 Hard-Case Lite",
+      "disposition": "included",
+      "reason": "Trek US store specification table; no price shown.",
+      "record_id": "bontrager-aw3-hard-case-lite"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "AW3 Hard-Case",
+      "disposition": "included",
+      "reason": "Trek US store specification table; no price shown.",
+      "record_id": "bontrager-aw3-hard-case"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Aeolus Elite",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aeolus-elite"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "T1",
+      "disposition": "excluded",
+      "reason": "Sold only in 26 x 1-3/8 and 27-inch sizes (590 and 630 ETRTO), not 700C."
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "E6 Hard-Case Lite and Dialed Kids road tires",
+      "disposition": "excluded",
+      "reason": "E-bike and kids-bike tires listed among Trek road tires."
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Aeolus Comp",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aeolus-comp"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Kwaremont Comp",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-kwaremont-comp"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "AW1 Hard-Case",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aw1-hard-case"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "AW1 Hard-Case Lite",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aw1-hard-case-lite"
+    },
+    {
+      "brand_id": "enve",
+      "name": "HEX Gravel and HEX Carapace Gravel",
+      "disposition": "excluded",
+      "reason": "Gravel tires in ENVE's tire collection."
+    },
+    {
+      "brand_id": "silca",
+      "name": "Protocol RCR",
+      "disposition": "included",
+      "reason": "Official store specifications and price, 2026 lab test.",
+      "record_id": "silca-protocol-rcr"
+    },
+    {
+      "brand_id": "silca",
+      "name": "Protocol RCG-3, RCG-3 32-inch and RCG-4",
+      "disposition": "excluded",
+      "reason": "Gravel tires in SILCA's Protocol line."
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Criterium RS TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications, hookless statement and price; 2025 lab test.",
+      "record_id": "challenge-criterium-rs-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Pro TLR (2026)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; 2026 lab test.",
+      "record_id": "challenge-strada-pro-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Pro (tube type, 2026)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "challenge-strada-pro"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Elite Pro TLR (2026)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "challenge-elite-pro-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "4 Stagioni XP TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications, wet-weather claim and price.",
+      "record_id": "challenge-4-stagioni-xp-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Bianca Pro TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; all-road tire assessed as overlapping road use.",
+      "record_id": "challenge-strada-bianca-pro-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Vulcanized (tube type)",
+      "disposition": "included",
+      "reason": "Official international storefront listing; no weights or currency-stated price.",
+      "record_id": "challenge-strada-vulcanized"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Strada Vulcanized TLR",
+      "disposition": "included",
+      "reason": "Official international storefront listing; no weights or currency-stated price.",
+      "record_id": "challenge-strada-vulcanized-tlr"
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Criterium RS, Elite Pro and Strada Pro tubulars",
+      "disposition": "excluded",
+      "reason": "Tubular tires; tubulars are outside this comparison."
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Paris-Roubaix",
+      "disposition": "excluded",
+      "reason": "Not in Challenge's current US road collection on 2026-11-01."
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Corsa EVO TLR",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-evo-tlr"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Corsa RACE TLR",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-race-tlr"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Corsa EVO (open tubular)",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-evo"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Corsa RACE (open tubular)",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-race"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Record TLR and Record open tubular",
+      "disposition": "excluded",
+      "reason": "Veloflex designs them for time trial and track racing."
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Tubulars (Corsa, Record and others)",
+      "disposition": "excluded",
+      "reason": "Tubular tires; tubulars are outside this comparison."
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura Prima TR",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price; 2023 and 2026 lab tests.",
+      "record_id": "tufo-comtura-prima-tr"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura Prima TT",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-prima-tt"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura 4 TR",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-4-tr"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura 5 TR",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-5-tr"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Calibra Plus",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-calibra-plus"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura Duo",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-duo"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura Aero",
+      "disposition": "unresolved",
+      "reason": "Named in Tufo's product list, but no product page with specifications was found on 2026-11-01."
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Gravel Thundero and Thundero HD",
+      "disposition": "excluded",
+      "reason": "Gravel tires (36-48 mm)."
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Tubulars",
+      "disposition": "excluded",
+      "reason": "Tubular tires; tubulars are outside this comparison."
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road Race II TLR",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-road-race-ii-tlr"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road Race II (hookless ready, tube type)",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-road-race-ii"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road Race",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-road-race"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Cotton",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-cotton"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road Race RS TLR",
+      "disposition": "unresolved",
+      "reason": "A separate shop page lists a 28-622 RS TLR as out of stock; it is not in the road category on 2026-11-01, so its relation to the Road Race II TLR is unclear."
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Tire and TPU-tube bundles",
+      "disposition": "excluded",
+      "reason": "Duplicates of the Race, Race II and Cotton tires bundled with an inner tube."
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Gravel Speed and Gravel Superspeed TLR",
+      "disposition": "excluded",
+      "reason": "Gravel tires (40-622)."
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Cayuse Pass",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-cayuse-pass"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Chinook Pass",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-chinook-pass"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Stampede Pass",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-stampede-pass"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Orondo Grade TC",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-orondo-grade-tc"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Bon Jon Pass TC",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-bon-jon-pass-tc"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Barlow Pass TC and Steilacoom TC (38 mm)",
+      "disposition": "excluded",
+      "reason": "Sold only in 38 mm, outside the 25-35 mm road group, with no wet-traction evidence for the wet group."
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Orondo Grade + TPU tube set",
+      "disposition": "excluded",
+      "reason": "Duplicate of the Orondo Grade bundled with a tube."
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Wider all-road and gravel tires (42-55 mm)",
+      "disposition": "excluded",
+      "reason": "Outside both width groups."
     }
   ]
 }

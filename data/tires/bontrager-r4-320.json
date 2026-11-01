@@ -1,0 +1,63 @@
+{
+  "maker": "Bontrager",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Bontrager is Trek Bicycle Corporation's component brand (Trek US store footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Trek product page does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Trek specification table per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Trek's US web store; Trek stores and dealers in other regions were not checked for this tire."
+  },
+  "id": "bontrager-r4-320",
+  "name": "R4 320 Handmade Clincher",
+  "use": "race",
+  "positioning": "Bontrager's handmade 320 TPI race clincher with Hard-Case Lite protection.",
+  "construction": "tube-type",
+  "casing": "320 TPI",
+  "compound": null,
+  "protection": "Hard-Case Lite",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 230,
+      "max_psi": 110
+    }
+  ],
+  "caveats": [
+    "Only 25 mm is listed; needs an inner tube.",
+    "No independent lab test of the current version recorded."
+  ],
+  "price_observations": [
+    {
+      "amount": 84.99,
+      "currency": "USD",
+      "market": "Trek store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "trek-bontrager-r4-320-handmade-clincher-official-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "source_ids": [
+    "trek-bontrager-r4-320-handmade-clincher-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

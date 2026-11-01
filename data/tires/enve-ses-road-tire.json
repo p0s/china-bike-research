@@ -1,0 +1,110 @@
+{
+  "id": "enve-ses-road-tire",
+  "maker": "ENVE",
+  "name": "SES Road Tire",
+  "aliases": [
+    "ENVE SES"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "ENVE Composites USA publishes the official store (site footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "ENVE does not state where the tire is made."
+  },
+  "use": "all-round",
+  "positioning": "ENVE's aero-shaped tubeless-ready road tire with an all-weather silica compound and Vectran barrier, from road racing to all-road widths.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "ENVE lists it as compatible with hookless and hooked-bead rims; its tables show the 25c only on 19-21 mm internal rims.",
+  "casing": null,
+  "compound": "Natural and synthetic rubber with activated silica",
+  "protection": "Vectran protection barrier",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 240,
+      "max_psi": 90,
+      "max_bar": 6.25
+    },
+    {
+      "width_mm": 27,
+      "etrto": "27-622",
+      "weight_g": 245,
+      "max_psi": 85,
+      "max_bar": 5.9
+    },
+    {
+      "width_mm": 29,
+      "etrto": "29-622",
+      "weight_g": 270,
+      "max_psi": 80,
+      "max_bar": 5.5
+    },
+    {
+      "width_mm": 31,
+      "etrto": "31-622",
+      "weight_g": 285,
+      "max_psi": 75,
+      "max_bar": 5.2
+    },
+    {
+      "width_mm": 33,
+      "etrto": "33-622",
+      "weight_g": 290,
+      "max_psi": 70,
+      "max_bar": 4.8
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 290,
+      "max_psi": 65,
+      "max_bar": 4.5
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "ENVE tech-spec table; the page's product-details list gives 255-285 g for 25-31c.",
+  "tests": [],
+  "community": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "ENVE labels the compound for all-weather performance and claims a confident ride regardless of the weather; no independent wet test recorded.",
+      "source_id": "enve-ses-road-tire-official-2026-11-01"
+    }
+  ],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by ENVE's US store; ENVE also runs a European storefront that was not read for this tire."
+  },
+  "price_observations": [
+    {
+      "amount": 75,
+      "currency": "USD",
+      "market": "ENVE store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "enve-ses-road-tire-official-2026-11-01",
+      "width_mm": 29
+    }
+  ],
+  "caveats": [
+    "The page lists two weight sets for 25-29c; the tech-spec figures are shown.",
+    "Wet performance is a maker claim."
+  ],
+  "source_ids": [
+    "enve-ses-road-tire-official-2026-11-01",
+    "enve-about-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

@@ -1,0 +1,68 @@
+{
+  "maker": "Wolfpack",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Wolfpack - Tires GmbH is based in Medebach, Germany (legal notice)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Wolfpack does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Wolfpack shop weights (the shop notes weights can deviate about 9%).",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Sold by Wolfpack's own web shop in euros; other regions not verified."
+  },
+  "id": "wolfpack-road-race",
+  "name": "Road Race",
+  "use": "race",
+  "positioning": "Wolfpack's original Road Race clincher in 24 and 26 mm.",
+  "construction": "tube-type",
+  "casing": null,
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 24,
+      "etrto": "24-622",
+      "weight_g": 218
+    },
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 223
+    }
+  ],
+  "caveats": [
+    "The shop shows a EUR 20 headline price and special prices of EUR 29.99 (24 mm) and 24.99 (26 mm).",
+    "Needs an inner tube."
+  ],
+  "price_observations": [
+    {
+      "amount": 24.99,
+      "currency": "EUR",
+      "market": "Wolfpack web shop",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official shop price on 2026-11-01 (incl. VAT); one tire; shipping extra.",
+      "source_id": "wolfpack-road-category-2026-11-01",
+      "width_mm": 26
+    }
+  ],
+  "source_ids": [
+    "wolfpack-road-category-2026-11-01",
+    "wolfpack-impressum-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

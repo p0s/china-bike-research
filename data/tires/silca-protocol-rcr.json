@@ -1,0 +1,88 @@
+{
+  "id": "silca-protocol-rcr",
+  "maker": "SILCA",
+  "name": "Protocol RCR",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "SILCA was founded in 1917 in Milan and has been headquartered in Indianapolis since its 2013-2014 move (SILCA about page)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "SILCA does not state where the tire is made."
+  },
+  "use": "race",
+  "positioning": "SILCA's wide tubeless-ready race tire designed around 25 mm internal rims, with a carbon-fiber bead.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "120 TPI race casing",
+  "compound": "Pulsar",
+  "protection": "SealSkin tread protection",
+  "sizes": [
+    {
+      "width_mm": 29,
+      "etrto": "29-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 34,
+      "etrto": "34-622",
+      "weight_g": 320
+    },
+    {
+      "width_mm": 38,
+      "etrto": "38-622",
+      "weight_g": 350
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "SILCA product-page weights.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2026,
+      "width_mm": 29,
+      "measured_width_mm": 28,
+      "measured_weight_g": 290,
+      "setup": "tubeless",
+      "rr_w": 11.5,
+      "rr_psi": 72,
+      "wet_grip": 83,
+      "puncture_tread": 44
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by SILCA's US web store (limited preorders on 2026-11-01); other regions not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 99,
+      "currency": "USD",
+      "market": "SILCA store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; preorder fulfillment 1-2 weeks.",
+      "source_id": "silca-protocol-rcr-official-2026-11-01",
+      "width_mm": 29
+    }
+  ],
+  "caveats": [
+    "SILCA says to fit it without tire levers.",
+    "No explicit hookless approval or maximum pressure is stated."
+  ],
+  "source_ids": [
+    "silca-protocol-rcr-official-2026-11-01",
+    "silca-about-official-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

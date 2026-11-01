@@ -1,0 +1,81 @@
+{
+  "maker": "Bontrager",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Bontrager is Trek Bicycle Corporation's component brand (Trek US store footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Trek product page does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Trek specification table per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Trek's US web store; Trek stores and dealers in other regions were not checked for this tire."
+  },
+  "id": "bontrager-hard-case-max-pro-tlr",
+  "name": "Hard-Case Max Pro TLR",
+  "use": "training",
+  "positioning": "Puncture-resistant tubeless-ready Bontrager training tire for high mileage, with Hard-Case construction.",
+  "construction": "tubeless-ready",
+  "casing": "60 TPI",
+  "compound": "Race Dual-Compound (65a)",
+  "protection": "Hard-Case",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 370,
+      "max_psi": 100
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 405,
+      "max_psi": 100
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 500,
+      "max_psi": 75
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 515,
+      "max_psi": 70
+    }
+  ],
+  "caveats": [
+    "Heavy protection-first tire (405 g at 28 mm).",
+    "Hookless compatibility is not stated."
+  ],
+  "price_observations": [
+    {
+      "amount": 64.99,
+      "currency": "USD",
+      "market": "Trek store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "trek-bontrager-hard-case-max-pro-tlr-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "trek-bontrager-hard-case-max-pro-tlr-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

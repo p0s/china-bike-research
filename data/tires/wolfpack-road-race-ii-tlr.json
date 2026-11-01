@@ -1,0 +1,73 @@
+{
+  "maker": "Wolfpack",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Wolfpack - Tires GmbH is based in Medebach, Germany (legal notice)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Wolfpack does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "The shop shows no size weights for the TLR version.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Sold by Wolfpack's own web shop in euros; other regions not verified."
+  },
+  "id": "wolfpack-road-race-ii-tlr",
+  "name": "Road Race II TLR",
+  "use": "all-round",
+  "positioning": "Wolfpack's tubeless-ready Road Race II all-rounder.",
+  "construction": "tubeless-ready",
+  "casing": null,
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": null
+    }
+  ],
+  "caveats": [
+    "No size weights are shown.",
+    "Hookless compatibility is not stated for the TLR version."
+  ],
+  "price_observations": [
+    {
+      "amount": 59.99,
+      "currency": "EUR",
+      "market": "Wolfpack web shop",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official shop price on 2026-11-01 (incl. VAT); one tire; shipping extra.",
+      "source_id": "wolfpack-road-category-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "wolfpack-road-category-2026-11-01",
+    "wolfpack-impressum-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

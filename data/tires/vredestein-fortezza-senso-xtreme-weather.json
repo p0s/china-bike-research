@@ -1,0 +1,69 @@
+{
+  "maker": "Vredestein",
+  "origin": {
+    "group": "international",
+    "country": "Netherlands",
+    "basis": "Vredestein was founded in 1908 in the Netherlands and has been owned by Apollo Tyres Ltd since 2009 (heritage page)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The product page does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Vredestein size-table weights (black sidewall unless noted).",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Vredestein claims superior grip in wet and cold conditions from its extreme-weather compound; no independent wet test of the current version found.",
+      "source_id": "vredestein-fortezza-senso-xtreme-weather-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Vredestein's Dutch site lists the tire with a dealer finder and no price; other regions not verified."
+  },
+  "price_observations": [],
+  "id": "vredestein-fortezza-senso-xtreme-weather",
+  "name": "Fortezza Senso Xtreme Weather",
+  "use": "all-season",
+  "positioning": "Vredestein's tube-type road tire for wet and cold weather, with the TriComp XWS silica compound and bead-to-bead protection.",
+  "construction": "tube-type",
+  "casing": "120 TPI",
+  "compound": "TriComp silica (XWS)",
+  "protection": "Sportex and bead-to-bead protection layer",
+  "sizes": [
+    {
+      "width_mm": 23,
+      "etrto": "23-622",
+      "weight_g": 245,
+      "note": "6-10 bar"
+    },
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 260,
+      "note": "6-9 bar"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 280,
+      "note": "6-8 bar"
+    }
+  ],
+  "caveats": [
+    "Wet grip is a maker claim; the 2015 lab test of the older Senso All Weather is not applied.",
+    "Needs an inner tube."
+  ],
+  "source_ids": [
+    "vredestein-fortezza-senso-xtreme-weather-official-2026-11-01",
+    "vredestein-heritage-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

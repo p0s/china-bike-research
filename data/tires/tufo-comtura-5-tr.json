@@ -1,0 +1,72 @@
+{
+  "maker": "Tufo",
+  "origin": {
+    "group": "international",
+    "country": "Czech Republic",
+    "basis": "TUFO, s.r.o. is based in Otrokovice, the Czech Republic (contact page)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Tufo does not state where the tire is made."
+  },
+  "hookless": "approved",
+  "weight_claim_type": "official",
+  "weight_basis": "Tufo product-page weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Priced in euros on Tufo's own site; other regions not verified."
+  },
+  "id": "tufo-comtura-5-tr",
+  "name": "Comtura 5 TR",
+  "use": "training",
+  "positioning": "Tufo's training-focused entry tubeless-ready road tire with a reinforced layer.",
+  "construction": "tubeless-ready",
+  "hookless_note": "Tufo lists it as hookless compatible and links a rim-compatibility chart.",
+  "casing": "TPI 210/375",
+  "compound": null,
+  "protection": "Reinforced protective layer",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 260,
+      "max_psi": 100,
+      "max_bar": 7.0
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 300,
+      "max_psi": 90,
+      "max_bar": 6.0
+    }
+  ],
+  "caveats": [
+    "No independent lab test found."
+  ],
+  "price_observations": [
+    {
+      "amount": 52.49,
+      "currency": "EUR",
+      "market": "TUFO web shop",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official price per tire on 2026-11-01 (incl. VAT); shipping extra.",
+      "source_id": "tufo-comtura-5-tr-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "tufo-comtura-5-tr-official-2026-11-01",
+    "tufo-contact-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
