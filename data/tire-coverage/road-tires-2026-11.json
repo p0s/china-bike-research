@@ -290,7 +290,7 @@
       "brand_id": "jiluer",
       "name": "Chaser T2",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "One owner post (28C measured 30.3 mm on a 23 mm inner rim; punctured on the first ride); no shop listing with specifications found."
     },
     {
       "brand_id": "jiluer",
@@ -446,9 +446,9 @@
     },
     {
       "brand_id": "kenda",
-      "name": "K925 and K1092",
+      "name": "K925 Kaliente and K1092 Kountach",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Named in owner posts (K925 described as easy to fit); retailers list the Kountach at 120 TPI, but no official Kenda page was found and the Kenda US shop search returned no Kountach listing on 2026-11-01."
     },
     {
       "brand_id": "giant",
@@ -961,51 +961,114 @@
     },
     {
       "brand_id": "specialized",
-      "name": "Cotton TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Mondo TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-mondo-tlr"
     },
     {
       "brand_id": "specialized",
-      "name": "Mondo TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Mondo (tube type)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-mondo"
     },
     {
       "brand_id": "specialized",
       "name": "S-Works Turbo T2/T5 (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-s-works-turbo"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Cotton TLR, Cotton Folding and RapidAir TLR",
+      "disposition": "excluded",
+      "reason": "Specialized groups them as 'Racing Only' tires; race-day specialist tires are left out, like the time-trial tires above."
     },
     {
       "brand_id": "specialized",
       "name": "All Condition Armadillo",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "excluded",
+      "reason": "Specialized positions it for touring, commuting and rough roads; wire bead, 60 TPI, 395 g at 25 mm and 510 g at 32 mm."
     },
     {
       "brand_id": "specialized",
-      "name": "RapidAir TLR",
+      "name": "All Condition Armadillo Elite, Flat Proof and Reflect versions",
+      "disposition": "excluded",
+      "reason": "Variants of the All Condition Armadillo commuting and touring family."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Turbo Cotton and S-Works Turbo 2Bliss Ready T2/T5",
+      "disposition": "excluded",
+      "reason": "Older models at clearance prices in the US store on 2026-11-01 (US$49.99 and US$39.99, each down from US$79.99)."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Roubaix Pro and Roubaix Pro 2Bliss Ready",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Endurance tires listed with dual-width labels (23/25, 25/28 and 30/32 mm), so one nominal width cannot be recorded; no lab test of the current versions found."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "RoadSport family",
+      "disposition": "excluded",
+      "reason": "Entry-level 60 TPI road tires (RoadSport Elite 280 g at 26 mm and 325 g at 28 mm), including wire-bead versions."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Sawtooth and Rhombus Pro",
+      "disposition": "excluded",
+      "reason": "Listed in the road collection but sold in all-road and gravel widths (Sawtooth 2Bliss Ready 38 and 42 mm; Rhombus Pro 42 and 47 mm)."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Trigger Sport",
+      "disposition": "unresolved",
+      "reason": "Listed in the US road-tire collection on 2026-11-01; product page not read."
     },
     {
       "brand_id": "panaracer",
       "name": "Agilest TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price, lab test.",
+      "record_id": "panaracer-agilest-tlr"
     },
     {
       "brand_id": "panaracer",
       "name": "Agilest Fast TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official global specifications and lab test; no official price found.",
+      "record_id": "panaracer-agilest-fast-tlr"
     },
     {
       "brand_id": "panaracer",
-      "name": "Agilest Duro",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Agilest Duro TLR",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price.",
+      "record_id": "panaracer-agilest-duro-tlr"
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest (tube type)",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price.",
+      "record_id": "panaracer-agilest"
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest Duro (tube type)",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price; out of stock on 2026-11-01.",
+      "record_id": "panaracer-agilest-duro"
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest Light",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price; out of stock on 2026-11-01.",
+      "record_id": "panaracer-agilest-light"
     },
     {
       "brand_id": "irc",
