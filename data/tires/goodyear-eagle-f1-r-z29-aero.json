@@ -1,0 +1,63 @@
+{
+  "id": "goodyear-eagle-f1-r-z29-aero",
+  "maker": "Goodyear",
+  "name": "Eagle F1 R Z29 Aero (tube type)",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Goodyear's bicycle-tire line was developed with Rubber Kinetics by a team at Goodyear's Akron, Ohio headquarters (Bicycle Retailer, 2018)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Goodyear does not state where these tires are made."
+  },
+  "use": "race",
+  "positioning": "29 mm aero race clincher from the Eagle F1 R family.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "1 ply",
+  "compound": "Dynamic:UHP",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 29,
+      "etrto": "29-622",
+      "weight_g": 210
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Goodyear store weights for the tube-type SKUs.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Goodyear Bicycle Tires' US-dollar web store and by Tmall shops in mainland China; European availability not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 99.95,
+      "currency": "USD",
+      "market": "Goodyear Bicycle Tires store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; US shipping and tax at checkout.",
+      "source_id": "goodyear-eagle-f1r-z29-aero-official-2026-11-01",
+      "width_mm": 29
+    }
+  ],
+  "caveats": [
+    "The single store option does not state which construction it ships in.",
+    "Maximum pressure is not stated."
+  ],
+  "source_ids": [
+    "goodyear-eagle-f1r-z29-aero-official-2026-11-01",
+    "bicycle-retailer-goodyear-premium-line-2018"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

@@ -8,14 +8,14 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1943,
+      "sources": 1953,
       "images": 900,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 11,
-      "tires": 58,
+      "tires": 67,
       "tireCoverage": 1,
       "recommendations": 6,
       "candidates": 289,
@@ -1068,10 +1068,16 @@
       "merida-silex-7000-radfahren-review-recheck-2026-09-23",
       "merida-silex-first-ride-review-recheck-2026-09-23",
       "merida-warranty-official-2026-08-17",
+      "michelin-lithion-4-performance-line-official-2026-11-01",
+      "michelin-lithion-4-performance-line-tmall-2026-11-01",
+      "michelin-power-cup-competition-line-official-2026-11-01",
+      "michelin-power-cup-competition-line-tmall-2026-11-01",
       "michelin-power-cup-tlr-competition-line-official-2026-11-01",
       "michelin-power-cup-tlr-tmall-2026-11-01",
       "michelin-power-protection-tlr-competition-line-official-2026-11-01",
       "michelin-power-protection-tlr-tmall-2026-11-01",
+      "michelin-pro5-competition-line-official-2026-11-01",
+      "michelin-pro5-competition-line-tmall-2026-11-01",
       "michelin-pro5-tlr-competition-line-official-2026-11-01",
       "michelin-pro5-tlr-tmall-2026-11-01",
       "michelin-road-range-gb-2026-11-01",
@@ -1206,9 +1212,12 @@
       "pinarello-f5-my26-reference-weight-2026-08-30",
       "pinarello-f5-official-2026-08-08",
       "pinarello-uk-store-locator-authority-recheck-2026-09-24",
+      "pirelli-cinturato-road-official-2026-11-01",
       "pirelli-cinturato-road-tlr-official-2026-11-01",
       "pirelli-cinturato-velo-35-retailer-2026-08-27",
+      "pirelli-p-zero-race-4s-official-2026-11-01",
       "pirelli-p-zero-race-official-2026-11-01",
+      "pirelli-p-zero-race-rs-official-2026-11-01",
       "pirelli-p-zero-race-tlr-4s-official-2026-11-01",
       "pirelli-p-zero-race-tlr-official-2026-11-01",
       "pirelli-p-zero-race-tlr-rs-official-2026-11-01",
@@ -1994,6 +2003,7 @@
       "vittoria-corsa-pro-tube-type-official-2026-11-01",
       "vittoria-corsa-pro-tubeless-ready-official-2026-11-01",
       "vittoria-ridearmor-tubeless-ready-official-2026-11-01",
+      "vittoria-rubino-tube-type-official-2026-11-01",
       "vittoria-rubino-tubeless-ready-official-2026-11-01",
       "vittoria-zaffiro-evo-official-2026-11-01",
       "voicevelo-g-major-biketo-launch-2023-11-13",
@@ -3467,6 +3477,7 @@
       "giant-ninja",
       "giant-white-sidewall",
       "goodyear-eagle",
+      "goodyear-eagle-f1-r-z29-aero",
       "goodyear-eagle-f1-r-z29-aero-tlr",
       "goodyear-eagle-f1-rs",
       "goodyear-eagle-f1-rs-tlr",
@@ -3477,6 +3488,7 @@
       "goodyear-vector-4seasons",
       "goodyear-vector-4seasons-tlr",
       "goodyear-vector-r-tlr",
+      "goodyear-vector-sport",
       "goodyear-vector-sport-tlr",
       "innova-smiley",
       "jiluer-chaser",
@@ -3486,11 +3498,17 @@
       "maxxis-high-road-tr",
       "maxxis-pursuer",
       "maxxis-re-fuse-gen-2",
+      "michelin-lithion-4",
+      "michelin-power-cup",
       "michelin-power-cup-tlr",
       "michelin-power-protection-tlr",
+      "michelin-pro5",
       "michelin-pro5-tlr",
+      "pirelli-cinturato-road",
       "pirelli-cinturato-road-tlr",
       "pirelli-p-zero-race",
+      "pirelli-p-zero-race-4s",
+      "pirelli-p-zero-race-rs",
       "pirelli-p-zero-race-tlr",
       "pirelli-p-zero-race-tlr-4s",
       "pirelli-p-zero-race-tlr-rs",
@@ -3505,6 +3523,7 @@
       "vittoria-corsa-pro-tube-type",
       "vittoria-ridearmor-tlr",
       "vittoria-rubino-tlr",
+      "vittoria-rubino-tube-type",
       "vittoria-zaffiro-evo"
     ],
     "tireCoverage": [
@@ -20090,6 +20109,54 @@
         "type",
         "url"
       ],
+      "michelin-lithion-4-performance-line-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "michelin-lithion-4-performance-line-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "michelin-power-cup-competition-line-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "michelin-power-cup-competition-line-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "michelin-power-cup-tlr-competition-line-official-2026-11-01": [
         "accessed_at",
         "language",
@@ -20127,6 +20194,30 @@
         "url"
       ],
       "michelin-power-protection-tlr-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "michelin-pro5-competition-line-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "michelin-pro5-competition-line-tmall-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -21807,6 +21898,18 @@
         "type",
         "url"
       ],
+      "pirelli-cinturato-road-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pirelli-cinturato-road-tlr-official-2026-11-01": [
         "accessed_at",
         "language",
@@ -21831,7 +21934,31 @@
         "type",
         "url"
       ],
+      "pirelli-p-zero-race-4s-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pirelli-p-zero-race-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pirelli-p-zero-race-rs-official-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -32016,6 +32143,18 @@
         "url"
       ],
       "vittoria-ridearmor-tubeless-ready-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "vittoria-rubino-tube-type-official-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -73645,6 +73784,32 @@
         "weight_basis",
         "weight_claim_type"
       ],
+      "goodyear-eagle-f1-r-z29-aero": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "goodyear-eagle-f1-r-z29-aero-tlr": [
         "availability.cn",
         "availability.eu",
@@ -73886,6 +74051,33 @@
         "wet_notes"
       ],
       "goodyear-vector-r-tlr": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "goodyear-vector-sport": [
         "availability.cn",
         "availability.eu",
         "availability.na",
@@ -74155,6 +74347,60 @@
         "weight_claim_type",
         "wet_notes"
       ],
+      "michelin-lithion-4": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "construction",
+        "hookless",
+        "hookless_note",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "michelin-power-cup": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "hookless_note",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "michelin-power-cup-tlr": [
         "aliases",
         "availability.cn",
@@ -74215,6 +74461,33 @@
         "weight_claim_type",
         "wet_notes"
       ],
+      "michelin-pro5": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "hookless_note",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "michelin-pro5-tlr": [
         "aliases",
         "availability.cn",
@@ -74243,6 +74516,34 @@
         "use",
         "weight_basis",
         "weight_claim_type"
+      ],
+      "pirelli-cinturato-road": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
       ],
       "pirelli-cinturato-road-tlr": [
         "availability.cn",
@@ -74297,6 +74598,65 @@
         "source_ids",
         "status",
         "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "pirelli-p-zero-race-4s": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "pirelli-p-zero-race-rs": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "manufacturing.country",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
         "use",
         "weight_basis",
         "weight_claim_type",
@@ -74673,6 +75033,32 @@
         "wet_notes"
       ],
       "vittoria-rubino-tlr": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "vittoria-rubino-tube-type": [
         "aliases",
         "availability.cn",
         "availability.eu",
@@ -123073,10 +123459,16 @@
       "merida-silex-7000-radfahren-review-recheck-2026-09-23": [],
       "merida-silex-first-ride-review-recheck-2026-09-23": [],
       "merida-warranty-official-2026-08-17": [],
+      "michelin-lithion-4-performance-line-official-2026-11-01": [],
+      "michelin-lithion-4-performance-line-tmall-2026-11-01": [],
+      "michelin-power-cup-competition-line-official-2026-11-01": [],
+      "michelin-power-cup-competition-line-tmall-2026-11-01": [],
       "michelin-power-cup-tlr-competition-line-official-2026-11-01": [],
       "michelin-power-cup-tlr-tmall-2026-11-01": [],
       "michelin-power-protection-tlr-competition-line-official-2026-11-01": [],
       "michelin-power-protection-tlr-tmall-2026-11-01": [],
+      "michelin-pro5-competition-line-official-2026-11-01": [],
+      "michelin-pro5-competition-line-tmall-2026-11-01": [],
       "michelin-pro5-tlr-competition-line-official-2026-11-01": [],
       "michelin-pro5-tlr-tmall-2026-11-01": [],
       "michelin-road-range-gb-2026-11-01": [],
@@ -123211,9 +123603,12 @@
       "pinarello-f5-my26-reference-weight-2026-08-30": [],
       "pinarello-f5-official-2026-08-08": [],
       "pinarello-uk-store-locator-authority-recheck-2026-09-24": [],
+      "pirelli-cinturato-road-official-2026-11-01": [],
       "pirelli-cinturato-road-tlr-official-2026-11-01": [],
       "pirelli-cinturato-velo-35-retailer-2026-08-27": [],
+      "pirelli-p-zero-race-4s-official-2026-11-01": [],
       "pirelli-p-zero-race-official-2026-11-01": [],
+      "pirelli-p-zero-race-rs-official-2026-11-01": [],
       "pirelli-p-zero-race-tlr-4s-official-2026-11-01": [],
       "pirelli-p-zero-race-tlr-official-2026-11-01": [],
       "pirelli-p-zero-race-tlr-rs-official-2026-11-01": [],
@@ -123999,6 +124394,7 @@
       "vittoria-corsa-pro-tube-type-official-2026-11-01": [],
       "vittoria-corsa-pro-tubeless-ready-official-2026-11-01": [],
       "vittoria-ridearmor-tubeless-ready-official-2026-11-01": [],
+      "vittoria-rubino-tube-type-official-2026-11-01": [],
       "vittoria-rubino-tubeless-ready-official-2026-11-01": [],
       "vittoria-zaffiro-evo-official-2026-11-01": [],
       "voicevelo-g-major-biketo-launch-2023-11-13": [],
@@ -129586,6 +129982,10 @@
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
         "source_ids=goodyear-eagle-official-2026-11-01"
       ],
+      "goodyear-eagle-f1-r-z29-aero": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-eagle-f1r-z29-aero-official-2026-11-01"
+      ],
       "goodyear-eagle-f1-r-z29-aero-tlr": [
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
         "source_ids=goodyear-eagle-f1r-z29-aero-official-2026-11-01"
@@ -129626,6 +130026,10 @@
       "goodyear-vector-r-tlr": [
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
         "source_ids=goodyear-vector-r-official-2026-11-01"
+      ],
+      "goodyear-vector-sport": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-vector-sport-official-2026-11-01"
       ],
       "goodyear-vector-sport-tlr": [
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
@@ -129672,6 +130076,16 @@
         "source_ids=maxxis-re-fuse-gen-2-official-2026-11-01",
         "source_ids=maxxis-road-range-us-2026-11-01"
       ],
+      "michelin-lithion-4": [
+        "source_ids=michelin-lithion-4-performance-line-official-2026-11-01",
+        "source_ids=michelin-lithion-4-performance-line-tmall-2026-11-01",
+        "source_ids=michelin-road-range-gb-2026-11-01"
+      ],
+      "michelin-power-cup": [
+        "source_ids=michelin-power-cup-competition-line-official-2026-11-01",
+        "source_ids=michelin-power-cup-competition-line-tmall-2026-11-01",
+        "source_ids=michelin-road-range-gb-2026-11-01"
+      ],
       "michelin-power-cup-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=michelin-power-cup-tlr-competition-line-official-2026-11-01",
@@ -129683,11 +130097,20 @@
         "source_ids=michelin-power-protection-tlr-tmall-2026-11-01",
         "source_ids=michelin-road-range-gb-2026-11-01"
       ],
+      "michelin-pro5": [
+        "source_ids=michelin-pro5-competition-line-official-2026-11-01",
+        "source_ids=michelin-pro5-competition-line-tmall-2026-11-01",
+        "source_ids=michelin-road-range-gb-2026-11-01"
+      ],
       "michelin-pro5-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=michelin-pro5-tlr-competition-line-official-2026-11-01",
         "source_ids=michelin-pro5-tlr-tmall-2026-11-01",
         "source_ids=michelin-road-range-gb-2026-11-01"
+      ],
+      "pirelli-cinturato-road": [
+        "source_ids=pirelli-cinturato-road-official-2026-11-01",
+        "source_ids=pirelli-road-range-gb-2026-11-01"
       ],
       "pirelli-cinturato-road-tlr": [
         "source_ids=pirelli-cinturato-road-tlr-official-2026-11-01",
@@ -129696,6 +130119,15 @@
       "pirelli-p-zero-race": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=pirelli-p-zero-race-official-2026-11-01",
+        "source_ids=pirelli-road-range-gb-2026-11-01"
+      ],
+      "pirelli-p-zero-race-4s": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=pirelli-p-zero-race-4s-official-2026-11-01",
+        "source_ids=pirelli-road-range-gb-2026-11-01"
+      ],
+      "pirelli-p-zero-race-rs": [
+        "source_ids=pirelli-p-zero-race-rs-official-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
       ],
       "pirelli-p-zero-race-tlr": [
@@ -129762,6 +130194,9 @@
       ],
       "vittoria-rubino-tlr": [
         "source_ids=vittoria-rubino-tubeless-ready-official-2026-11-01"
+      ],
+      "vittoria-rubino-tube-type": [
+        "source_ids=vittoria-rubino-tube-type-official-2026-11-01"
       ],
       "vittoria-zaffiro-evo": [
         "source_ids=vittoria-zaffiro-evo-official-2026-11-01"
@@ -146794,6 +147229,38 @@
         "support": 3
       }
     },
+    "michelin-lithion-4-performance-line-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "michelin-lithion-4-performance-line-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "michelin-power-cup-competition-line-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "michelin-power-cup-competition-line-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "michelin-power-cup-tlr-competition-line-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -146819,6 +147286,22 @@
       }
     },
     "michelin-power-protection-tlr-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "michelin-pro5-competition-line-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "michelin-pro5-competition-line-tmall-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -147909,6 +148392,14 @@
         "route": 0
       }
     },
+    "pirelli-cinturato-road-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "pirelli-cinturato-road-tlr-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -147925,7 +148416,23 @@
         "specification": 1
       }
     },
+    "pirelli-p-zero-race-4s-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "pirelli-p-zero-race-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "pirelli-p-zero-race-rs-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -154246,6 +154753,14 @@
       }
     },
     "vittoria-ridearmor-tubeless-ready-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "vittoria-rubino-tube-type-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,

@@ -1,0 +1,71 @@
+{
+  "id": "pirelli-cinturato-road",
+  "maker": "Pirelli",
+  "name": "Cinturato Road (tube type)",
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian tire maker; Pirelli says the P ZERO Race range is made at its plant in Italy near its Milan headquarters."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Pirelli says it was designed in its Bollate factory in Italy; the production location is not stated."
+  },
+  "use": "endurance",
+  "positioning": "Protection-first tube-type tire for daily riding, with a 60 TPI TechWALL+ casing.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI TechWALL+",
+  "compound": "SmartNET Silica",
+  "protection": "TechWALL+ casing",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 314
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 333
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 375
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 420
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Pirelli claims per size.",
+  "pressure_note": "The product page gives no maximum pressure; use the figure printed on the tire.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Pirelli claims the SmartNET Silica compound gives superior grip in all kinds of weather.",
+      "source_id": "pirelli-cinturato-road-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Listed in Pirelli's UK catalogue with a dealer finder; mainland China and North American availability not verified for this line."
+  },
+  "price_observations": [],
+  "caveats": [
+    "Bicycle Rolling Resistance's results for the earlier Cinturato Velo are not applied."
+  ],
+  "source_ids": [
+    "pirelli-cinturato-road-official-2026-11-01",
+    "pirelli-road-range-gb-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
