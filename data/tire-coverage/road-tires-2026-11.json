@@ -484,9 +484,8 @@
     {
       "brand_id": "kenda",
       "name": "K1092",
-      "disposition": "included",
-      "reason": "Taobao listing gives folding 60 TPI training-tire options, pressure label and prices; US retailers list a 120 TPI Kountach version.",
-      "record_id": "kenda-k1092"
+      "disposition": "excluded",
+      "reason": "Entry-level 60 TPI folding training tire (Taobao: 700x25/28, 125 psi label, CNY 97-108); entry-level tires are outside this comparison, like the Chaoyang H-479 Viper. US retailers list a 120 TPI Kountach version."
     },
     {
       "brand_id": "kenda",
@@ -795,9 +794,28 @@
     },
     {
       "brand_id": "pirelli",
-      "name": "Cinturato Evo, Cinturato Sport and P4 Sport",
+      "name": "Cinturato EVO TLR",
+      "disposition": "included",
+      "reason": "Official page with size table and all-weather endurance positioning.",
+      "record_id": "pirelli-cinturato-evo-tlr"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Cinturato Sport",
       "disposition": "excluded",
-      "reason": "Entry or commuting road lines; outside the performance-road comparison in this pass."
+      "reason": "Pirelli positions it for leisure weekend rides and urban commuting (60 TPI casing)."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P4 Sport",
+      "disposition": "excluded",
+      "reason": "Durability-focused 26 TPI clincher; entry-level tires are outside this comparison."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Angel",
+      "disposition": "excluded",
+      "reason": "Pirelli's urban line for everyday city riding."
     },
     {
       "brand_id": "michelin",
@@ -1368,7 +1386,7 @@
       "brand_id": "specialists",
       "name": "Veloflex, Challenge, Tufo, Zipp, Bontrager, Enve, Silca, Wolfpack, Cadex-tested specialists, Vredestein and Rene Herse",
       "disposition": "excluded",
-      "reason": "Reviewed in the lab-test list; not added in this pass, which prioritizes major makers with national distribution in Asia, Europe and North America."
+      "reason": "Scope boundary: specialist and wheel-brand lines seen in the lab-test list are outside this roster, which covers major tire makers with national distribution in Asia, Europe and North America plus mainland-China and Taiwan brands. They were not researched model by model."
     }
   ]
 }
