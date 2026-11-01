@@ -21,7 +21,7 @@
     {
       "name": "Maker catalogs",
       "checked_at": "2026-11-01",
-      "summary": "Continental's global, US and German road ranges; further maker catalogs are added with each research batch."
+      "summary": "Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance) and Vittoria (international store) road ranges; further maker catalogs are added with each research batch."
     },
     {
       "name": "Brand identity checks",
@@ -550,37 +550,53 @@
     },
     {
       "brand_id": "pirelli",
-      "name": "P Zero Race TLR",
+      "name": "P ZERO Race TLR",
+      "disposition": "included",
+      "reason": "Official specifications and lab tests.",
+      "record_id": "pirelli-p-zero-race-tlr"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TLR RS",
+      "disposition": "included",
+      "reason": "Official specifications, lab tests and a mainland retail listing.",
+      "record_id": "pirelli-p-zero-race-tlr-rs"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TLR 4S",
+      "disposition": "included",
+      "reason": "Official specifications and lab test.",
+      "record_id": "pirelli-p-zero-race-tlr-4s"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Cinturato Road TLR",
+      "disposition": "included",
+      "reason": "Official specifications; the older Cinturato Velo lab results are not applied.",
+      "record_id": "pirelli-cinturato-road-tlr"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TLR SL-R",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "pirelli",
-      "name": "P Zero Race TLR RS",
+      "name": "P ZERO Road TLR",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "pirelli",
-      "name": "P Zero Race TLR 4S",
+      "name": "P ZERO Race (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "pirelli",
-      "name": "Cinturato Velo TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "pirelli",
-      "name": "P Zero Race (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "pirelli",
-      "name": "P Zero Race 4S (tube type)",
+      "name": "P ZERO Race 4S (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
@@ -591,16 +607,49 @@
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
-      "brand_id": "michelin",
-      "name": "Power Cup TLR",
+      "brand_id": "pirelli",
+      "name": "Cinturato Road (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
-      "brand_id": "michelin",
-      "name": "Pro5 TLR",
+      "brand_id": "pirelli",
+      "name": "P ZERO Race RS (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TT",
+      "disposition": "excluded",
+      "reason": "Time-trial specialist tire."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Cinturato Evo, Cinturato Sport and P4 Sport",
+      "disposition": "excluded",
+      "reason": "Entry or commuting road lines; outside the performance-road comparison in this pass."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Cup TLR",
+      "disposition": "included",
+      "reason": "Official size list with per-size hookless approval, lab tests and official China store.",
+      "record_id": "michelin-power-cup-tlr"
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Pro5 TLR",
+      "disposition": "included",
+      "reason": "Official size list with hookless approval, lab tests and official China store.",
+      "record_id": "michelin-pro5-tlr"
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Protection TLR",
+      "disposition": "included",
+      "reason": "Official size list with hookless approval and official China store.",
+      "record_id": "michelin-power-protection-tlr"
     },
     {
       "brand_id": "michelin",
@@ -610,15 +659,27 @@
     },
     {
       "brand_id": "michelin",
-      "name": "Power Road TLR",
+      "name": "Pro5 (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "michelin",
-      "name": "Dynamic Sport",
+      "name": "Lithion 4",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Time Trial",
+      "disposition": "excluded",
+      "reason": "Time-trial specialist tire."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Cup Tubular",
+      "disposition": "excluded",
+      "reason": "Tubular tire."
     },
     {
       "brand_id": "schwalbe",
@@ -640,43 +701,52 @@
     },
     {
       "brand_id": "vittoria",
-      "name": "Corsa Pro TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Corsa PRO TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and prices, lab test and Tmall store.",
+      "record_id": "vittoria-corsa-pro-tlr"
     },
     {
       "brand_id": "vittoria",
-      "name": "Corsa Pro Speed TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "vittoria",
-      "name": "Corsa Pro Control TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "vittoria",
-      "name": "Corsa Pro (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Corsa PRO Control TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and prices, lab test and Tmall store.",
+      "record_id": "vittoria-corsa-pro-control-tlr"
     },
     {
       "brand_id": "vittoria",
       "name": "Corsa N.EXT TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and prices, lab test and Tmall store.",
+      "record_id": "vittoria-corsa-n-ext-tlr"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO Speed TLR",
+      "disposition": "excluded",
+      "reason": "Vittoria says it is designed specifically for time trial and triathlon."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "vittoria",
-      "name": "Rubino Pro",
+      "name": "Corsa N.EXT (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "vittoria",
-      "name": "Zaffiro Pro",
+      "name": "Rubino (TLR and tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Zaffiro and Zaffiro Evo",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
@@ -685,6 +755,18 @@
       "name": "RideArmor TLR",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO tubular and other tubulars",
+      "disposition": "excluded",
+      "reason": "Tubular tires."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO Gold and colour editions",
+      "disposition": "excluded",
+      "reason": "Limited or colour editions of the Corsa PRO."
     },
     {
       "brand_id": "goodyear",
