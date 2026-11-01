@@ -13,6 +13,8 @@ export const COVERAGE_COLLECTIONS = [
   'groupsets',
   'buildParts',
   'wheelsets',
+  'tires',
+  'tireCoverage',
   'recommendations',
   'candidates',
   'exclusions',

@@ -8,13 +8,15 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1849,
+      "sources": 1873,
       "images": 900,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 11,
+      "tires": 10,
+      "tireCoverage": 1,
       "recommendations": 6,
       "candidates": 289,
       "exclusions": 16,
@@ -294,6 +296,7 @@
       "argon18-krypton-pro-current-global-price-recheck-2026-09-24",
       "argon18-krypton-pro-official-2026-08-29",
       "argon18-krypton-pro-official-recheck-2026-10-27",
+      "arisun-storm-r1-tmall-2026-11-01",
       "basso-venta-disc-owner-clearance-conflict-2026-09-22",
       "basso-venta-disc-photo-source-2026-10-03",
       "basso-venta-disc-retailer-2026-08-29",
@@ -319,6 +322,7 @@
       "bianchi-sprint-icr-probike-current-weight-recheck-2026-09-25",
       "bianchi-sprint-icr-probike-weight-2026-09-01",
       "bianchi-sprint-icr-uk-clearance-2026-09-01",
+      "bicycle-rolling-resistance-road-table-2026-11-01",
       "bigrock-japan-products-recheck-2026-09-23",
       "bigrock-sohtea-panda-podium-2026-08-17",
       "bigrock-sohtea-panda-podium-recheck-2026-09-23",
@@ -399,6 +403,7 @@
       "cervelo-aspero5-official-recheck-2026-10-27",
       "cervelo-aspero5-omara-image-2026-08-29",
       "cervelo-china-brand-name-2026-08-29",
+      "chaoyang-h-496-tmall-2026-11-01",
       "china-cycling-bigrock-sohtea-long-term",
       "chinesecarbon-top-discovery-2026-09-05",
       "cinelli-pressure-adr-bikeradar-2026-08-29",
@@ -414,7 +419,22 @@
       "colnago-y1rs-layup-faq-2026-08-30",
       "colnago-y1rs-official-2026-08-08",
       "compiled-research-2026-08-06",
+      "continental-aero-111-official-2026-11-01",
       "continental-gp5000-str-35-official-2026-08-27",
+      "continental-grand-prix-5000-allseason-tr-official-2026-11-01",
+      "continental-grand-prix-5000-as-tr-tmall-2026-11-01",
+      "continental-grand-prix-5000-official-2026-11-01",
+      "continental-grand-prix-5000-s-tr-official-2026-11-01",
+      "continental-grand-prix-5000-s-tr-tmall-2026-11-01",
+      "continental-grand-prix-5000-tmall-2026-11-01",
+      "continental-grand-prix-tr-official-2026-11-01",
+      "continental-grand-prix-tr-tmall-2026-11-01",
+      "continental-grand-sport-official-2026-11-01",
+      "continental-grand-sport-race-tmall-2026-11-01",
+      "continental-road-range-de-2026-11-01",
+      "continental-road-range-us-2026-11-01",
+      "continental-ultra-sport-iii-tmall-2026-11-01",
+      "continental-ultra-sport-official-2026-11-01",
       "cosmosworks-nomad-current-2026-09-23",
       "cosmosworks-nomad-launch-price-2026-08-29",
       "cosmosworks-nomad-official-2026-08-29",
@@ -2038,6 +2058,12 @@
       "xds-manufacturing-government",
       "xds-manufacturing-profile-recheck-2026-09-30",
       "xds-official-cn-bicycle-listing-2026-10-27",
+      "xhs-arisun-storm-r1-3000-km-2025-06-12",
+      "xhs-arisun-storm-r1-test-2025-01-25",
+      "xhs-arisun-storm-r1-tlr-test-2025-05-19",
+      "xhs-arisun-storm-r1-weights-2025-04-26",
+      "xhs-budget-road-tire-comparison-2025-07-16",
+      "xhs-chaoyang-falcon-sidewall-2025-09-26",
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10",
       "xhs-winspace-slc3-200km-2026-08-10",
@@ -3350,6 +3376,21 @@
       "winspace-lun-routte-se-d45",
       "yoeleo-sat-c35-db-pro-nxt-sl2",
       "yoeleo-sat-c45-db-pro-nxt-gravel"
+    ],
+    "tires": [
+      "arisun-storm-r1",
+      "arisun-storm-r1-tlr",
+      "chaoyang-h-496",
+      "continental-aero-111",
+      "continental-grand-prix-5000",
+      "continental-grand-prix-5000-all-season-tr",
+      "continental-grand-prix-5000-s-tr",
+      "continental-grand-prix-tr",
+      "continental-grand-sport-race",
+      "continental-ultra-sport-iii"
+    ],
+    "tireCoverage": [
+      "road-tires-2026-11"
     ],
     "recommendations": [
       "best-budget-frame",
@@ -10256,6 +10297,18 @@
         "type",
         "url"
       ],
+      "arisun-storm-r1-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "basso-venta-disc-owner-clearance-conflict-2026-09-22": [
         "accessed_at",
         "language",
@@ -10559,6 +10612,18 @@
         "reliability.identity",
         "reliability.price",
         "reliability.selected_option",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bicycle-rolling-resistance-road-table-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -11546,6 +11611,18 @@
         "type",
         "url"
       ],
+      "chaoyang-h-496-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "china-cycling-bigrock-sohtea-long-term": [
         "accessed_at",
         "language",
@@ -11727,7 +11804,187 @@
         "title",
         "type"
       ],
+      "continental-aero-111-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "continental-gp5000-str-35-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-5000-allseason-tr-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-5000-as-tr-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-5000-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-5000-s-tr-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-5000-s-tr-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-5000-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-tr-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-tr-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-sport-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-sport-race-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-road-range-de-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-road-range-us-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-ultra-sport-iii-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-ultra-sport-official-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -32458,6 +32715,78 @@
         "url"
       ],
       "xds-official-cn-bicycle-listing-2026-10-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-arisun-storm-r1-3000-km-2025-06-12": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-arisun-storm-r1-test-2025-01-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-arisun-storm-r1-tlr-test-2025-05-19": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-arisun-storm-r1-weights-2025-04-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-budget-road-tire-comparison-2025-07-16": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-chaoyang-falcon-sidewall-2025-09-26": [
         "accessed_at",
         "language",
         "notes",
@@ -71815,6 +72144,312 @@
         "weight.claim_type",
         "weight.grams",
         "weight.tolerance_pct"
+      ]
+    },
+    "tires": {
+      "arisun-storm-r1": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "community",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "arisun-storm-r1-tlr": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "community",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "chaoyang-h-496": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "community",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "continental-aero-111": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "hookless_note",
+        "maker",
+        "manufacturing.basis",
+        "manufacturing.country",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "continental-grand-prix-5000": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "manufacturing.country",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "continental-grand-prix-5000-all-season-tr": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "hookless_note",
+        "maker",
+        "manufacturing.basis",
+        "manufacturing.country",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "continental-grand-prix-5000-s-tr": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "hookless_note",
+        "maker",
+        "manufacturing.basis",
+        "manufacturing.country",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "continental-grand-prix-tr": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "hookless_note",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "continental-grand-sport-race": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "continental-ultra-sport-iii": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ]
+    },
+    "tireCoverage": {
+      "road-tires-2026-11": [
+        "as_of",
+        "brands",
+        "candidates",
+        "routes",
+        "scope_note"
       ]
     },
     "recommendations": {
@@ -119337,6 +119972,7 @@
       "argon18-krypton-pro-current-global-price-recheck-2026-09-24": [],
       "argon18-krypton-pro-official-2026-08-29": [],
       "argon18-krypton-pro-official-recheck-2026-10-27": [],
+      "arisun-storm-r1-tmall-2026-11-01": [],
       "basso-venta-disc-owner-clearance-conflict-2026-09-22": [],
       "basso-venta-disc-photo-source-2026-10-03": [],
       "basso-venta-disc-retailer-2026-08-29": [],
@@ -119362,6 +119998,7 @@
       "bianchi-sprint-icr-probike-current-weight-recheck-2026-09-25": [],
       "bianchi-sprint-icr-probike-weight-2026-09-01": [],
       "bianchi-sprint-icr-uk-clearance-2026-09-01": [],
+      "bicycle-rolling-resistance-road-table-2026-11-01": [],
       "bigrock-japan-products-recheck-2026-09-23": [],
       "bigrock-sohtea-panda-podium-2026-08-17": [],
       "bigrock-sohtea-panda-podium-recheck-2026-09-23": [],
@@ -119442,6 +120079,7 @@
       "cervelo-aspero5-official-recheck-2026-10-27": [],
       "cervelo-aspero5-omara-image-2026-08-29": [],
       "cervelo-china-brand-name-2026-08-29": [],
+      "chaoyang-h-496-tmall-2026-11-01": [],
       "china-cycling-bigrock-sohtea-long-term": [],
       "chinesecarbon-top-discovery-2026-09-05": [],
       "cinelli-pressure-adr-bikeradar-2026-08-29": [],
@@ -119457,7 +120095,22 @@
       "colnago-y1rs-layup-faq-2026-08-30": [],
       "colnago-y1rs-official-2026-08-08": [],
       "compiled-research-2026-08-06": [],
+      "continental-aero-111-official-2026-11-01": [],
       "continental-gp5000-str-35-official-2026-08-27": [],
+      "continental-grand-prix-5000-allseason-tr-official-2026-11-01": [],
+      "continental-grand-prix-5000-as-tr-tmall-2026-11-01": [],
+      "continental-grand-prix-5000-official-2026-11-01": [],
+      "continental-grand-prix-5000-s-tr-official-2026-11-01": [],
+      "continental-grand-prix-5000-s-tr-tmall-2026-11-01": [],
+      "continental-grand-prix-5000-tmall-2026-11-01": [],
+      "continental-grand-prix-tr-official-2026-11-01": [],
+      "continental-grand-prix-tr-tmall-2026-11-01": [],
+      "continental-grand-sport-official-2026-11-01": [],
+      "continental-grand-sport-race-tmall-2026-11-01": [],
+      "continental-road-range-de-2026-11-01": [],
+      "continental-road-range-us-2026-11-01": [],
+      "continental-ultra-sport-iii-tmall-2026-11-01": [],
+      "continental-ultra-sport-official-2026-11-01": [],
       "cosmosworks-nomad-current-2026-09-23": [],
       "cosmosworks-nomad-launch-price-2026-08-29": [],
       "cosmosworks-nomad-official-2026-08-29": [],
@@ -121129,6 +121782,12 @@
       "xds-manufacturing-government": [],
       "xds-manufacturing-profile-recheck-2026-09-30": [],
       "xds-official-cn-bicycle-listing-2026-10-27": [],
+      "xhs-arisun-storm-r1-3000-km-2025-06-12": [],
+      "xhs-arisun-storm-r1-test-2025-01-25": [],
+      "xhs-arisun-storm-r1-tlr-test-2025-05-19": [],
+      "xhs-arisun-storm-r1-weights-2025-04-26": [],
+      "xhs-budget-road-tire-comparison-2025-07-16": [],
+      "xhs-chaoyang-falcon-sidewall-2025-09-26": [],
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10": [],
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10": [],
       "xhs-winspace-slc3-200km-2026-08-10": [],
@@ -126466,6 +127125,75 @@
         "source_ids=yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-20",
         "source_ids=yoeleo-sat-c45-db-pro-nxt-gravel-official-2026-10-26"
       ]
+    },
+    "tires": {
+      "arisun-storm-r1": [
+        "source_ids=arisun-storm-r1-tmall-2026-11-01",
+        "source_ids=xhs-arisun-storm-r1-3000-km-2025-06-12",
+        "source_ids=xhs-arisun-storm-r1-test-2025-01-25",
+        "source_ids=xhs-arisun-storm-r1-weights-2025-04-26",
+        "source_ids=xhs-budget-road-tire-comparison-2025-07-16"
+      ],
+      "arisun-storm-r1-tlr": [
+        "source_ids=arisun-storm-r1-tmall-2026-11-01",
+        "source_ids=xhs-arisun-storm-r1-tlr-test-2025-05-19",
+        "source_ids=xhs-arisun-storm-r1-weights-2025-04-26"
+      ],
+      "chaoyang-h-496": [
+        "source_ids=chaoyang-h-496-tmall-2026-11-01",
+        "source_ids=xhs-budget-road-tire-comparison-2025-07-16",
+        "source_ids=xhs-chaoyang-falcon-sidewall-2025-09-26"
+      ],
+      "continental-aero-111": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=continental-aero-111-official-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
+      "continental-grand-prix-5000": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=continental-grand-prix-5000-official-2026-11-01",
+        "source_ids=continental-grand-prix-5000-tmall-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
+      "continental-grand-prix-5000-all-season-tr": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=continental-grand-prix-5000-allseason-tr-official-2026-11-01",
+        "source_ids=continental-grand-prix-5000-as-tr-tmall-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
+      "continental-grand-prix-5000-s-tr": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=continental-grand-prix-5000-s-tr-official-2026-11-01",
+        "source_ids=continental-grand-prix-5000-s-tr-tmall-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
+      "continental-grand-prix-tr": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=continental-grand-prix-tr-official-2026-11-01",
+        "source_ids=continental-grand-prix-tr-tmall-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
+      "continental-grand-sport-race": [
+        "source_ids=continental-grand-sport-official-2026-11-01",
+        "source_ids=continental-grand-sport-race-tmall-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
+      "continental-ultra-sport-iii": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01",
+        "source_ids=continental-ultra-sport-iii-tmall-2026-11-01",
+        "source_ids=continental-ultra-sport-official-2026-11-01"
+      ]
+    },
+    "tireCoverage": {
+      "road-tires-2026-11": []
     },
     "recommendations": {
       "best-budget-frame": [
@@ -137201,6 +137929,14 @@
         "specification": 3
       }
     },
+    "arisun-storm-r1-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "basso-venta-disc-owner-clearance-conflict-2026-09-22": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -137406,6 +138142,14 @@
         "identity": 3,
         "price": 1,
         "selected_option": 1,
+        "specification": 3
+      }
+    },
+    "bicycle-rolling-resistance-road-table-2026-11-01": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
         "specification": 3
       }
     },
@@ -138066,6 +138810,14 @@
         "specification": 1
       }
     },
+    "chaoyang-h-496-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "china-cycling-bigrock-sohtea-long-term": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -138188,11 +138940,131 @@
         "specification": 1
       }
     },
+    "continental-aero-111-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "continental-gp5000-str-35-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
+        "specification": 3
+      }
+    },
+    "continental-grand-prix-5000-allseason-tr-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-grand-prix-5000-as-tr-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "continental-grand-prix-5000-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-grand-prix-5000-s-tr-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-grand-prix-5000-s-tr-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "continental-grand-prix-5000-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "continental-grand-prix-tr-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-grand-prix-tr-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "continental-grand-sport-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-grand-sport-race-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "continental-road-range-de-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-road-range-us-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-ultra-sport-iii-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "continental-ultra-sport-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
         "specification": 3
       }
     },
@@ -151356,6 +152228,54 @@
         "identity": 3,
         "price": 3,
         "specification": 1
+      }
+    },
+    "xhs-arisun-storm-r1-3000-km-2025-06-12": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-arisun-storm-r1-test-2025-01-25": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-arisun-storm-r1-tlr-test-2025-05-19": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-arisun-storm-r1-weights-2025-04-26": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-budget-road-tire-comparison-2025-07-16": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-chaoyang-falcon-sidewall-2025-09-26": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
       }
     },
     "xhs-pardus-spark-sport-pes-1200km-2026-08-10": {

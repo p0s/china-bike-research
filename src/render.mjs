@@ -14,6 +14,7 @@ import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsuppo
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis, latestExchangeRates } from './lib/regional-prices.mjs';
 import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs';
+import { WET_WIDTHS, comparableRollingTest, headlineTest, measuredWetGrip, referenceSize, tireGroups, tireShortlists } from './lib/tires.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -2545,6 +2546,168 @@ export function renderCarbonWheels(ctx) {
     }),
     html,
     modules: ['/assets/wheels.js']
+  });
+}
+
+// Road tire reference (2026-11-01): one table of exact outer-tire lines with criteria-led
+// starting points, row details and a dated coverage ledger. Tires never enter the bike catalog.
+const tireUseLabels = { race: 'Race', 'all-round': 'All-round', endurance: 'Endurance', 'all-season': 'All-season', training: 'Training' };
+const tireOriginLabels = { 'mainland-china': 'Mainland China', taiwan: 'Taiwan', international: 'International' };
+const tireConstructionLabels = { 'tubeless-ready': 'Tubeless-ready', 'tube-type': 'Tube-type clincher', tubular: 'Tubular' };
+const tireHooklessLabels = { approved: 'Hookless approved', 'not-approved': 'Not for hookless rims', 'not-stated': 'Hookless not stated' };
+const tireAvailabilityLabels = { 'official-store': 'Official store', 'authorized-retail': 'Authorized retail', retail: 'Retail listings', 'not-found': 'Not found', unverified: 'Not verified' };
+const tireRegionLabels = { cn: 'Mainland China', eu: 'Europe', na: 'North America', global: 'Global' };
+const tirePackageLabels = { single: 'Per tire', pair: 'Per pair', unstated: 'Single or pair not stated' };
+const tireDispositionLabels = { included: 'In comparison', excluded: 'Excluded', unresolved: 'Unresolved' };
+const tireWeightBasisLabels = { official: 'Maker claim', 'seller claim': 'Seller claim', measured: 'Lab measured', 'community report': 'Owner-measured' };
+const tireStanceLabels = { positive: 'Positive', mixed: 'Mixed', negative: 'Negative' };
+const tireWetKindLabels = { measured: 'Measured', official: 'Maker claim', 'seller claim': 'Seller claim', 'community report': 'Owner report' };
+
+function tireAmount(observation, { exact = false } = {}) {
+  const symbol = { USD: 'US$', CNY: '¥', EUR: '€', GBP: '£', CAD: 'CA$', JPY: 'JP¥' }[observation.currency] ?? `${observation.currency} `;
+  return `${symbol}${new Intl.NumberFormat('en-US', { minimumFractionDigits: exact && !Number.isInteger(observation.amount) ? 2 : 0, maximumFractionDigits: exact ? 2 : 0 }).format(observation.amount)}`;
+}
+
+function tireTestLine(test) {
+  const parts = [];
+  if (Number.isFinite(test.rr_w)) parts.push(`${test.rr_w} W at ${test.rr_psi} psi`);
+  if (Number.isFinite(test.wet_grip)) parts.push(`wet grip ${test.wet_grip}`);
+  if (Number.isFinite(test.puncture_tread)) parts.push(`tread puncture ${test.puncture_tread}`);
+  return parts.join('; ');
+}
+
+function tirePressure(size) {
+  if (!Number.isFinite(size.max_psi)) return 'Not stated';
+  return `${size.max_psi} psi${Number.isFinite(size.max_bar) ? ` / ${size.max_bar} bar` : ''}`;
+}
+
+function tireRows(ctx, tire, sourcesById, rates) {
+  const groups = tireGroups(tire);
+  const reference = referenceSize(tire);
+  const test = headlineTest(tire);
+  const comparable = comparableRollingTest(tire);
+  const wetGrip = measuredWetGrip(tire);
+  const scoped = (tire.sizes ?? []).filter((size) => size.width_mm >= WET_WIDTHS.min && size.width_mm <= WET_WIDTHS.max).map((size) => size.width_mm);
+  const others = (tire.sizes ?? []).filter((size) => !scoped.includes(size.width_mm)).map((size) => size.width_mm);
+  const headline = tire.price_observations?.[0] ?? null;
+  const groupHint = [groups.road ? 'Road 25–35 mm' : '', groups.wet ? 'Wet evidence' : ''].filter(Boolean).join(' · ');
+  const sizeRows = (tire.sizes ?? []).map((size) => `<tr><th scope="row">${escapeHtml(`${size.width_mm} mm`)}</th><td>${escapeHtml(size.etrto ?? '—')}</td><td>${escapeHtml(Number.isFinite(size.weight_g) ? `${size.weight_g} g` : '—')}</td><td>${escapeHtml(tirePressure(size))}</td><td>${escapeHtml(size.note ?? '')}</td></tr>`).join('');
+  const sizes = `<section class="tire-sizes"><h3>Sizes</h3><div class="tire-size-table" role="region" aria-label="${escapeAttr(`Sizes: ${tire.maker} ${tire.name}`)}" tabindex="0"><table><thead><tr><th scope="col">Width</th><th scope="col">ETRTO</th><th scope="col">Weight</th><th scope="col">Max pressure</th><th scope="col">Note</th></tr></thead><tbody>${sizeRows}</tbody></table></div><p>${escapeHtml(`${tireWeightBasisLabels[tire.weight_claim_type]}. ${tire.weight_basis}`)}${tire.pressure_note ? ` ${escapeHtml(tire.pressure_note)}` : ''}</p></section>`;
+  const construction = `<section><h3>Construction</h3><dl>${[
+    ['Type', tireConstructionLabels[tire.construction]],
+    ['Hookless rims', tire.hookless_note ? `${tireHooklessLabels[tire.hookless]}. ${tire.hookless_note}` : tireHooklessLabels[tire.hookless]],
+    ['Casing', tire.casing],
+    ['Compound', tire.compound],
+    ['Protection', tire.protection],
+    ['Brand origin', `${tire.origin.country}. ${tire.origin.basis}`],
+    ['Made in', tire.manufacturing.country ? `${tire.manufacturing.country}. ${tire.manufacturing.basis}` : tire.manufacturing.basis]
+  ].filter(([, value]) => value).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></section>`;
+  const tests = (tire.tests ?? []).length ? `<section><h3>Independent lab tests</h3><ul>${tire.tests.map((item) => {
+    const source = sourcesById.get(item.source_id);
+    return `<li>${escapeHtml(`Bicycle Rolling Resistance, ${item.tested_year}: ${item.width_mm} mm (${item.measured_width_mm} mm measured), ${item.setup === 'tubeless' ? 'tubeless with sealant' : 'with a butyl tube'}, ${item.measured_weight_g} g measured. ${tireTestLine(item)}.`)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
+  }).join('')}</ul></section>` : '';
+  const wetNotes = (tire.wet_notes ?? []).map((note) => {
+    const source = sourcesById.get(note.source_id);
+    return `<li><strong>${escapeHtml(tireWetKindLabels[note.kind])}:</strong> ${escapeHtml(note.summary)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
+  });
+  const wet = wetNotes.length || wetGrip !== null ? `<section><h3>Wet-weather evidence</h3><ul>${wetGrip !== null ? `<li><strong>${escapeHtml(tireWetKindLabels.measured)}:</strong> ${escapeHtml(`static wet grip ${wetGrip} (friction coefficient × 100) on Bicycle Rolling Resistance's wet drum. It is not a braking-distance or cornering result.`)}</li>` : ''}${wetNotes.join('')}</ul></section>` : '';
+  const owners = (tire.community ?? []).length ? `<section><h3>Owner reports</h3><ul>${tire.community.map((report) => {
+    const source = sourcesById.get(report.source_id);
+    return `<li><strong>${escapeHtml(tireStanceLabels[report.stance])}</strong> · ${escapeHtml(report.published_at)}: ${escapeHtml(report.summary)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
+  }).join('')}</ul></section>` : '';
+  const routes = `<dl>${['cn', 'eu', 'na'].map((region) => `<div><dt>${escapeHtml(tireRegionLabels[region])}</dt><dd>${escapeHtml(tireAvailabilityLabels[tire.availability[region]])}</dd></div>`).join('')}</dl>${tire.availability.note ? `<p>${escapeHtml(tire.availability.note)}</p>` : ''}`;
+  const prices = (tire.price_observations ?? []).map((observation) => `<div><strong>${escapeHtml(tireAmount(observation, { exact: true }))}</strong><span>${escapeHtml([observation.market, observation.width_mm ? `${observation.width_mm} mm` : '', tirePackageLabels[observation.package], observation.observed_at].filter(Boolean).join(' · '))}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
+  const sourceIds = [...new Map((tire.source_ids ?? []).map((id) => [sourcesById.get(id)?.url ?? id, id])).values()];
+  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body">${sizes}<div class="groupset-detail-grid">${construction}${tests}${wet}</div><div class="groupset-detail-lower">${owners}<section><h3>Where to buy</h3>${routes}${prices ? `<div class="price-records">${prices}</div>` : ''}</section><section><h3>Confirm before buying</h3><ul>${tire.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(sourceIds, sourcesById)}</span></div></div></details>`;
+  const usd = headline && rates ? convertPrice(headline.amount, headline.currency, 'USD', rates) : null;
+  const sortData = ` data-groups="${escapeAttr(Object.entries(groups).filter(([, value]) => value).map(([key]) => key).join(' '))}" data-origin="${escapeAttr(tire.origin.group)}" data-construction="${escapeAttr(tire.construction)}"${Number.isFinite(reference?.weight_g) ? ` data-weight="${reference.weight_g}"` : ''}${comparable ? ` data-rr="${comparable.rr_w}"` : ''}${wetGrip !== null ? ` data-wet="${wetGrip}"` : ''}${Number.isFinite(usd) ? ` data-price-usd="${Math.round(usd)}"` : ''}`;
+  const aliases = tire.aliases?.length ? `<span class="tire-aliases"><span>Also known as</span> ${escapeHtml(tire.aliases.join(', '))}</span>` : '';
+  return `<tbody class="groupset-entry tire-entry" id="${escapeAttr(tire.id)}" data-tire-entry${sortData}><tr class="groupset-summary-row">
+    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(tire.name)}</strong><span>${escapeHtml(`${tire.maker} · ${tireOriginLabels[tire.origin.group] === 'International' ? tire.origin.country : tireOriginLabels[tire.origin.group]}`)}</span>${aliases}</span></div></th>
+    <td data-label="Use" data-column="best"><strong>${escapeHtml(tireUseLabels[tire.use])}</strong><span>${escapeHtml(`${tireConstructionLabels[tire.construction]} · ${tireHooklessLabels[tire.hookless]}`)}</span></td>
+    <td data-label="Widths" data-column="widths"><strong>${escapeHtml(scoped.length ? `${scoped.join(' · ')} mm` : '—')}</strong><span>${escapeHtml([groupHint, others.length ? `also ${others.join(', ')} mm` : ''].filter(Boolean).join(' · '))}</span></td>
+    <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.width_mm} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
+    <td data-label="Lab test" data-column="tests"><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
+    <td data-label="Price" data-column="price"><strong>${escapeHtml(headline ? tireAmount(headline) : '')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
+  </tr><tr class="groupset-detail-row"><td colspan="6">${details}</td></tr></tbody>`;
+}
+
+function tireShortlistItems(items, line) {
+  return `<ol>${items.map((item) => `<li><a href="#${escapeAttr(item.tire.id)}">${escapeHtml(`${item.tire.maker} ${item.tire.name}`)}</a> <span>${escapeHtml(line(item))}</span></li>`).join('')}</ol>`;
+}
+
+function tireShortlistBlock(title, criteria, items, line) {
+  if (!items.length) return '';
+  return `<div class="tire-shortlist"><h4>${escapeHtml(title)}</h4><p class="tire-criteria">${escapeHtml(criteria)}</p>${tireShortlistItems(items, line)}</div>`;
+}
+
+function tireCoverageHtml(ledger, tiresById) {
+  if (!ledger) return '';
+  const candidates = ledger.candidates ?? [];
+  const count = (disposition) => candidates.filter((candidate) => candidate.disposition === disposition).length;
+  const brands = ledger.brands ?? [];
+  const byGroup = ['mainland-china', 'taiwan', 'international'].map((group) => {
+    const groupBrands = brands.filter((brand) => brand.origin_group === group);
+    if (!groupBrands.length) return '';
+    return `<h4>${escapeHtml(tireOriginLabels[group])}</h4><div class="tire-coverage-brands">${groupBrands.map((brand) => {
+      const rows = candidates.filter((candidate) => candidate.brand_id === brand.id);
+      return `<section><h5>${escapeHtml(brand.name)}${brand.name_zh ? ` <span lang="zh-Hans">${escapeHtml(brand.name_zh)}</span>` : ''}</h5><p>${escapeHtml(brand.origin_basis)}</p>${rows.length ? `<ul>${rows.map((candidate) => {
+        const record = candidate.record_id ? tiresById.get(candidate.record_id) : null;
+        const name = record ? `<a href="#${escapeAttr(record.id)}">${escapeHtml(candidate.name)}</a>` : escapeHtml(candidate.name);
+        return `<li><strong>${name}</strong> <span class="tire-disposition tire-disposition-${escapeAttr(candidate.disposition)}">${escapeHtml(tireDispositionLabels[candidate.disposition])}</span> ${escapeHtml(candidate.reason)}</li>`;
+      }).join('')}</ul>` : ''}</section>`;
+    }).join('')}</div>`;
+  }).join('');
+  const routes = (ledger.routes ?? []).map((route) => `<li><strong>${escapeHtml(route.name)}</strong> · ${escapeHtml(route.checked_at)}: ${escapeHtml(route.summary)}</li>`).join('');
+  return `<details class="reference-guide tire-coverage" id="coverage"><summary>${escapeHtml(`Coverage: ${candidates.length} candidates from ${brands.length} brands, as of ${ledger.as_of}`)}</summary><div><p><strong>${escapeHtml(`${count('included')} included · ${count('excluded')} excluded · ${count('unresolved')} unresolved`)}</strong></p><p>${escapeHtml(ledger.scope_note)}</p><h3>Discovery routes</h3><ul>${routes}</ul><h3>Candidates by brand origin</h3>${byGroup}</div></details>`;
+}
+
+export function renderTires(ctx) {
+  const title = 'Road tires';
+  const desc = 'Chinese and leading international road tires compared by width, weight, lab tests, wet-weather evidence and dated price.';
+  const tires = [...(ctx.data.tires ?? [])];
+  const originOrder = { 'mainland-china': 0, taiwan: 1, international: 2 };
+  tires.sort((a, b) => originOrder[a.origin.group] - originOrder[b.origin.group] || a.maker.localeCompare(b.maker) || a.name.localeCompare(b.name));
+  const tiresById = new Map(tires.map((tire) => [tire.id, tire]));
+  const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
+  const ledger = [...(ctx.data.tireCoverage ?? [])].sort((a, b) => b.as_of.localeCompare(a.as_of))[0] ?? null;
+  const rates = [...(ctx.data.exchangeRates ?? [])].sort((a, b) => b.rate_date.localeCompare(a.rate_date))[0] ?? null;
+  const reviewed = latestDate(tires.map((tire) => tire.reviewed_at), ledger?.as_of ?? '');
+  const brandCount = new Set(tires.map((tire) => tire.maker)).size;
+  const lists = tireShortlists(tires);
+  const testLine = ({ test }) => `${test.rr_w} W · tread ${test.puncture_tread}${Number.isFinite(test.wet_grip) ? ` · wet ${test.wet_grip}` : ''}`;
+  const shortlists = `<section class="tire-shortlists" aria-labelledby="tire-starting-points"><h2 id="tire-starting-points">Starting points</h2><div class="tire-shortlist-grid"><div><h3>Road 25–35 mm</h3>${[
+    tireShortlistBlock('Lowest measured rolling resistance', 'Bicycle Rolling Resistance drum tests at 28–30 mm measured width, 72 psi, 29 km/h and 42.5 kg. Fast race tires usually trade away puncture protection.', lists.fastest, testLine),
+    tireShortlistBlock('Fast with more protection', 'Same tests: at most 12 W and at least 45 tread puncture points.', lists.balanced, testLine),
+    tireShortlistBlock('Most measured tread protection', 'Same tests, highest tread puncture score first. Slower casings and thicker treads are normal here.', lists.protective, testLine),
+    tireShortlistBlock('Chinese and Taiwanese options with the most evidence', 'Mainland China or Taiwan brands in 25–35 mm with a lab test or at least two owner reports. Owner reports are not lab tests.', lists.chinese, ({ tested, reports }) => tested ? 'lab-tested' : `${reports} owner reports, no lab test found`)
+  ].join('')}</div><div><h3>Wet weather 20–40 mm</h3>${[
+    tireShortlistBlock('Highest measured wet grip', 'Static wet grip of at least 80 on Bicycle Rolling Resistance\'s wet drum, tested width shown in the row.', lists.wetGrip, ({ grip }) => `wet grip ${grip}`),
+    tireShortlistBlock('All-season constructions with a wet-grip test', 'Maker all-season or four-season lines with a measured wet-grip score, highest first.', lists.allSeason, ({ grip }) => `wet grip ${grip}`)
+  ].join('')}<p class="tire-wet-note">Wet grip here is tire traction on a wet test drum. It is not a braking-distance or cornering certification, and rim-brake pads, rims and rotors are separate. Lower pressure, clean rims and earlier braking matter as much as the tire.</p></div></div><p class="tire-shortlist-note">Each list follows only its stated criteria. A tire missing from a list may simply lack a lab test; missing evidence is not a negative result. No list promises that a tire fits your frame or rim.</p></section>`;
+  const toolbar = `<div class="wheels-toolbar tires-toolbar" data-tires-toolbar hidden><div class="segmented" role="group" aria-label="Width group"><button type="button" data-tires-group="" aria-pressed="true">All</button><button type="button" data-tires-group="road" aria-pressed="false">Road 25–35 mm</button><button type="button" data-tires-group="wet" aria-pressed="false">Wet 20–40 mm</button></div><label class="sort-control"><span>Origin</span><select data-tires-origin><option value="">All origins</option><option value="mainland-china">Mainland China</option><option value="taiwan">Taiwan</option><option value="international">International</option></select></label><label class="sort-control"><span>Type</span><select data-tires-construction><option value="">All types</option><option value="tubeless-ready">Tubeless-ready</option><option value="tube-type">Tube-type clincher</option></select></label><label class="sort-control"><span>Sort</span><select data-tires-sort><option value="">Origin, then maker</option><option value="rr">Lowest rolling resistance (BRR 28–30 mm)</option><option value="wet">Highest wet grip (BRR)</option><option value="weight">Lightest at the reference size</option><option value="price">Price: low to high (US$ equivalent)</option></select></label><p class="wheels-status" data-tires-status role="status" aria-live="polite"></p></div>`;
+  const originalNotes = ctx.locale === 'zh-Hans'
+    ? '<p class="locale-evidence-note">本页提供中文导航与规格标签；型号、来源标题以及详细的测试、车主反馈和价格备注保留原文。</p>'
+    : ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Test-, Besitzer- und Preisnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${tires.length} tires · ${brandCount} brands · reviewed ${escapeHtml(reviewed)}</span> Widths are in millimetres (25C = 25 mm). Open a row for sizes, pressure limits, lab tests, owner reports, prices and sources.</p>${shortlists}${toolbar}<div class="reference-table-wrap groupset-table-wrap tire-table-wrap" data-tires-root><table class="reference-table groupset-comparison tire-comparison"><caption class="sr-only">Road tires compared</caption><thead><tr><th>Tire</th><th>Use</th><th>Widths</th><th>Weight</th><th>Lab test</th><th>Price</th></tr></thead>${tires.map((tire) => tireRows(ctx, tire, sourcesById, rates)).join('')}</table></div>
+  <details class="reference-guide"><summary>How tire fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Widths and groups</dt><dd>Nominal 700C widths in millimetres. Road lists tires sold in at least one 25–35 mm width; Wet lists tires with a 20–40 mm width and recorded wet-traction evidence.</dd></div><div><dt>Weight</dt><dd>The maker's or seller's claim at 28 mm, or the nearest recorded width. Lab-measured weights stay in the test notes.</dd></div><div><dt>Lab test</dt><dd>Bicycle Rolling Resistance's public figures: rolling resistance for one tire at 29 km/h and 42.5 kg (80 psi for 25–27 mm, 72 psi for 28–30 mm measured width), static wet grip and tread puncture points. Only tests in the same width band are comparable; tubeless tests use sealant and tube-type tests a butyl tube.</dd></div><div><dt>Wet weather</dt><dd>Measured wet grip, maker claims and owner reports are kept apart. Puncture protection is not evidence of wet grip, and tire grip does not describe rim, pad or rotor braking.</dd></div><div><dt>Hookless</dt><dd>Approved only when the maker says so; otherwise the status is shown as published. Check the rim maker's tire list and pressure limit as well.</dd></div><div><dt>Origin</dt><dd>Brand origin is where the brand is based. Made in is shown only when a source states it.</dd></div><div><dt>Price</dt><dd>A dated observation in its original currency with its store and package basis. It is not a delivered price; price sorting converts to US dollars with the dated ECB rate only to order rows.</dd></div><div><dt>Owner reports</dt><dd>Short paraphrases of public first-hand posts. They describe one rider's tire and are not tests.</dd></div><div><dt>Not stated</dt><dd>The source does not publish the value. It is not a negative finding.</dd></div></dl><p>No tire on this page is approved for a particular frame or rim. Check your frame's tire clearance on its model page and your rim's tire and pressure limits before buying.</p></div></details>
+  ${tireCoverageHtml(ledger, tiresById)}`;
+  return prosePage(ctx, {
+    title,
+    desc,
+    path: '/tires/',
+    current: 'tires',
+    className: 'groupsets-prose tires-prose',
+    structuredData: collectionStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: '/tires/',
+      name: title,
+      description: desc,
+      items: tires.map((tire) => ({ name: `${tire.maker} ${tire.name}` }))
+    }),
+    html,
+    modules: ['/assets/tires.js']
   });
 }
 

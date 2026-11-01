@@ -1718,3 +1718,45 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .wheels-toolbar select { min-height: 44px; }
   .groupset-row-details > summary { min-height: 44px; padding-block: 12px; }
 }
+
+/* Road tires (2026-11-01): starting points, size tables and the coverage ledger. */
+.tire-comparison { min-width: 1040px; }
+.tire-comparison th:nth-child(2) { width: 19%; }
+.tire-comparison th:nth-child(3) { width: 15%; }
+.tire-comparison th:nth-child(4) { width: 11%; }
+.tire-comparison th:nth-child(5) { width: 16%; }
+.tire-comparison th:nth-child(6) { width: 14%; }
+.tire-aliases { display: block; margin-top: 3px; color: var(--muted); font-size: .7rem; font-weight: 500; }
+.groupset-name .tire-aliases > span { display: inline; margin: 0; }
+.tire-shortlists { margin: 0 0 22px; }
+.tire-shortlists > h2 { margin: 0 0 10px; font-size: 1.05rem; }
+.tire-shortlist-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.tire-shortlist-grid > div { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-soft); }
+.tire-shortlist-grid h3 { margin: 0 0 6px; color: var(--accent); font-size: .7rem; letter-spacing: .055em; text-transform: uppercase; }
+.tire-shortlist { padding: 10px 0; border-top: 1px solid var(--line); }
+.tire-shortlist:first-of-type { border-top: 0; }
+.tire-shortlist h4 { margin: 0; font-size: .86rem; }
+.tire-criteria { margin: 3px 0 6px !important; color: var(--muted) !important; font-size: .72rem; line-height: 1.45; }
+.tire-shortlist ol { margin: 0; padding-left: 20px; font-size: .8rem; line-height: 1.55; }
+.tire-shortlist li span { color: var(--muted); font-size: .74rem; }
+.tire-wet-note, .tire-shortlist-note { margin: 10px 0 0 !important; color: var(--muted) !important; font-size: .74rem; line-height: 1.5; }
+.tire-shortlist-note { max-width: 760px; }
+.tire-size-table { overflow-x: auto; }
+.tire-size-table table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: .76rem; }
+.tire-size-table th, .tire-size-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.tire-size-table thead th { color: var(--muted); font-size: .64rem; letter-spacing: .05em; text-transform: uppercase; }
+.tire-sizes > p { margin: 6px 0 12px; color: var(--muted); font-size: .74rem; }
+.tire-coverage h4 { margin: 14px 0 6px; color: var(--accent); font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; }
+.tire-coverage-brands { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px 18px; }
+.tire-coverage-brands section h5 { margin: 6px 0 2px; font-size: .84rem; }
+.tire-coverage-brands section > p { margin: 0 0 4px; color: var(--muted); font-size: .72rem; }
+.tire-coverage-brands ul { margin: 0; padding-left: 18px; font-size: .76rem; line-height: 1.5; }
+.tire-disposition { display: inline-block; margin: 0 4px 0 2px; padding: 0 6px; border-radius: 999px; background: var(--surface-soft); color: var(--muted); font-size: .66rem; font-weight: 700; }
+.tire-disposition-included { color: var(--accent); }
+.tire-disposition-unresolved { background: var(--warning-soft); color: var(--warning); }
+@media (max-width: 720px) {
+  .tire-comparison { min-width: 0; }
+  .tire-shortlist-grid { grid-template-columns: minmax(0, 1fr); }
+  .tire-comparison .groupset-summary-row > td[data-column="widths"] { border-right: 1px solid var(--line); }
+  .tire-comparison .groupset-summary-row > td[data-column="tests"] { grid-column: 1 / -1; }
+}

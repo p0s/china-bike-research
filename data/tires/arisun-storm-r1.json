@@ -1,0 +1,114 @@
+{
+  "id": "arisun-storm-r1",
+  "maker": "ARISUN",
+  "name": "STORM R1 clincher",
+  "aliases": [
+    "风R1",
+    "艾瑞森 风R1",
+    "H-908"
+  ],
+  "origin": {
+    "group": "mainland-china",
+    "country": "Mainland China",
+    "basis": "ARISUN is a ZC Rubber (Zhongce, maker of Chaoyang) bicycle-tire brand; the official listing gives the brand as 朝阳 and the item code 艾瑞森H-908."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listing does not state the factory location."
+  },
+  "use": "race",
+  "positioning": "ZC Rubber's lightweight 330 TPI folding race clincher, sold in China as a lower-priced alternative to premium race tires.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "330 TPI",
+  "compound": null,
+  "protection": "Kevlar puncture layer (seller description)",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 221,
+      "note": "Owner-measured weight"
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "community report",
+  "weight_basis": "One owner weighed a 28C clincher at 221 g; the official listing gives 215 g without a size.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "community report",
+      "summary": "Owner comments are split: one found it better than a GP5000 in the wet, others found it very slippery on wet roads.",
+      "source_id": "xhs-arisun-storm-r1-weights-2025-04-26"
+    }
+  ],
+  "community": [
+    {
+      "source_id": "xhs-budget-road-tire-comparison-2025-07-16",
+      "stance": "mixed",
+      "published_at": "2025-07-16",
+      "summary": "Ranked fastest-feeling of five budget tires but last for puncture resistance and mid-pack for grip."
+    },
+    {
+      "source_id": "xhs-arisun-storm-r1-3000-km-2025-06-12",
+      "stance": "mixed",
+      "published_at": "2025-06-12",
+      "summary": "Light and lively for 3,000 km; a bulge formed at a puncture site, and commenters reported sidewall cord cracks at 100-1,000 km."
+    },
+    {
+      "source_id": "xhs-arisun-storm-r1-test-2025-01-25",
+      "stance": "mixed",
+      "published_at": "2025-01-25",
+      "summary": "A creator test presents it as a GP5000 alternative; commenters reported early cracks and bulges, some replaced under warranty."
+    },
+    {
+      "source_id": "xhs-arisun-storm-r1-weights-2025-04-26",
+      "stance": "mixed",
+      "published_at": "2025-04-26",
+      "summary": "Owner-measured 221 g at 28C; commenters praise speed and feel but report fast wear."
+    }
+  ],
+  "availability": {
+    "cn": "official-store",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold in mainland China through an official Tmall store; no European or North American seller was verified."
+  },
+  "price_observations": [
+    {
+      "amount": 268,
+      "currency": "CNY",
+      "market": "九骑官方旗舰店 (Tmall)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing does not say whether the option is one tire or a pair.",
+      "source_id": "arisun-storm-r1-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Several owners report sidewall cracks or bulges within the first 1,000 km; inspect the sidewall regularly.",
+    "No independent lab test found; speed claims come from owners and the seller.",
+    "Mount in the direction of the rotation arrow, which some owners say is opposite to Continental tires."
+  ],
+  "source_ids": [
+    "arisun-storm-r1-tmall-2026-11-01",
+    "xhs-arisun-storm-r1-weights-2025-04-26",
+    "xhs-budget-road-tire-comparison-2025-07-16",
+    "xhs-arisun-storm-r1-3000-km-2025-06-12",
+    "xhs-arisun-storm-r1-test-2025-01-25"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

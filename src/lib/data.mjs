@@ -11,6 +11,7 @@ import { validateRegionalPricing } from './regional-prices.mjs';
 import { validateMountApproval } from './mount-evidence.mjs';
 import { validateOpinionCollection } from './opinions.mjs';
 import { normalizeCatalogSearch } from '../../assets/catalog-search.js';
+import { validateTires } from './tires.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -264,6 +265,8 @@ export function loadDataset() {
     groupsets: loadDirectory('groupsets'),
     buildParts: loadDirectory('build-parts'),
     wheelsets: loadDirectory('wheelsets'),
+    tires: loadDirectory('tires'),
+    tireCoverage: loadDirectory('tire-coverage'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -343,6 +346,8 @@ export function validateDataset(data = loadDataset()) {
     groupset: data.groupsets,
     buildPart: data.buildParts,
     wheelset: data.wheelsets ?? [],
+    tire: data.tires ?? [],
+    tireCoverage: data.tireCoverage ?? [],
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
@@ -632,6 +637,7 @@ export function validateDataset(data = loadDataset()) {
     || /\b(?:unknown|varies|variable|unspecified|not recorded)\b/i.test(value);
 
   errors.push(...validateResearchAttempts(data.researchAttempts, data));
+  errors.push(...validateTires(data, sourceIds));
 
   for (const brand of data.brands) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);

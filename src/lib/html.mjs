@@ -82,12 +82,13 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <div class="header-actions">
         <nav id="main-nav" class="main-nav" aria-label="Primary">
           <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
-          <div class="nav-group${['groupsets','wheels'].includes(current) ? ' is-current' : ''}" data-nav-group="components">
+          <div class="nav-group${['groupsets','wheels','tires'].includes(current) ? ' is-current' : ''}" data-nav-group="components">
             <button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-components-menu" data-nav-group-toggle hidden>Components</button>
             <div class="nav-group-menu" id="nav-components-menu" role="group" aria-labelledby="nav-components-label">
               <span class="nav-group-label" id="nav-components-label">Components</span>
               <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
               <a href="${url(base,'/carbon-wheels/')}" data-nav-wheels${current==='wheels'?' aria-current="page"':''}><span class="nav-long">Carbon wheels</span><span class="nav-short" aria-hidden="true">Wheels</span></a>
+              <a href="${url(base,'/tires/')}" data-nav-tires${current==='tires'?' aria-current="page"':''}>Tires</a>
             </div>
           </div>
           <div class="nav-group${['geometry','builder'].includes(current) ? ' is-current' : ''}" data-nav-group="tools">
@@ -123,6 +124,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <a href="${url(base,'/prices/')}">Price ranges</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
         <a href="${url(base,'/carbon-wheels/')}">Carbon wheels</a>
+        <a href="${url(base,'/tires/')}">Road tires</a>
         <a href="${url(base,'/build/')}">Build a bike</a>
         <a href="${url(base,'/geometry/')}">Geometry comparison</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>

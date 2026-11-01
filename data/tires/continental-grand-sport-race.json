@@ -1,0 +1,84 @@
+{
+  "id": "continental-grand-sport-race",
+  "maker": "Continental",
+  "name": "Grand Sport Race",
+  "aliases": [
+    "GSR"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Continental's bicycle tires are marketed from its German site; Germany-made lines are marked 'Handmade in Germany'."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Continental's size table gives no made-in statement for this line."
+  },
+  "use": "training",
+  "positioning": "Budget all-rounder with a racing contour for tours and training.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "3-ply, 180 TPI",
+  "compound": null,
+  "protection": "NyTech breaker",
+  "sizes": [
+    {
+      "width_mm": 23,
+      "etrto": "23-622",
+      "weight_g": 245
+    },
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 275
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 335
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 400
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Continental claims; a 345 g 25 mm version is also listed.",
+  "pressure_note": "The product table does not list maximum pressures; use the figure printed on the tire.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Continental's official Tmall store sells it in mainland China; Continental's German and US catalogs list it for retailers."
+  },
+  "price_observations": [
+    {
+      "amount": 236,
+      "currency": "CNY",
+      "market": "Continental official Tmall store (德国马牌轮胎官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 197.64.",
+      "source_id": "continental-grand-sport-race-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "No independent lab test found.",
+    "Heavy for its width; owners on XHS describe it as an entry training tire that measures wide."
+  ],
+  "source_ids": [
+    "continental-grand-sport-official-2026-11-01",
+    "continental-road-range-us-2026-11-01",
+    "continental-road-range-de-2026-11-01",
+    "continental-grand-sport-race-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

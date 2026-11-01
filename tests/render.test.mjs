@@ -1107,11 +1107,11 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 6);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 7);
   assert.match(primaryNav, /href="\/china-bike-research\/geometry\/"/);
   assert.match(primaryNav, />Blog<\/a>/);
-  // Groupsets and wheels are components, not tools; both groups stay inline until the row is crowded.
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*data-nav-group="components"[\s\S]*data-nav-group-toggle hidden>Components<\/button>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/span>[\s\S]*data-nav-group="tools"[\s\S]*data-nav-group-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/span>[\s\S]*>Blog<\/a>/);
+  // Groupsets, wheels and tires are components, not tools; both groups stay inline until the row is crowded.
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*data-nav-group="components"[\s\S]*data-nav-group-toggle hidden>Components<\/button>[\s\S]*>Groupsets<\/a>[\s\S]*>Carbon wheels<\/span>[\s\S]*>Tires<\/a>[\s\S]*data-nav-group="tools"[\s\S]*data-nav-group-toggle hidden>Tools<\/button>[\s\S]*>Geometry<\/a>[\s\S]*>Build planner<\/span>[\s\S]*>Blog<\/a>/);
   assert.match(primaryNav, /<span class="nav-short" aria-hidden="true">Planner<\/span>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';

@@ -1,0 +1,92 @@
+{
+  "id": "continental-aero-111",
+  "maker": "Continental",
+  "name": "Aero 111",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Continental's bicycle tires are marketed from its German site; Germany-made lines are marked 'Handmade in Germany'."
+  },
+  "manufacturing": {
+    "country": "Germany",
+    "basis": "Continental's size table: 'Handmade in Germany'."
+  },
+  "use": "race",
+  "positioning": "Aerodynamic race tire with vortex-generating tread cavities, developed with DT Swiss and Swiss Side.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Continental lists hookless maximum pressures: 73 psi for 26 and 29 mm, 65 psi for 32 mm.",
+  "casing": "2-ply, 220 TPI",
+  "compound": "BlackChili",
+  "protection": "Vectran breaker",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 245,
+      "max_psi": 102,
+      "max_bar": 7.0,
+      "note": "Hookless 73 psi; rim 13-22 mm"
+    },
+    {
+      "width_mm": 29,
+      "etrto": "29-622",
+      "weight_g": 275,
+      "max_psi": 102,
+      "max_bar": 7.0,
+      "note": "Hookless 73 psi; rim 16-25 mm"
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 310,
+      "max_psi": 95,
+      "max_bar": 6.5,
+      "note": "Hookless 65 psi; rim 16-25 mm"
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Continental claims per size.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2024,
+      "width_mm": 29,
+      "measured_width_mm": 28,
+      "measured_weight_g": 272,
+      "setup": "tubeless",
+      "rr_w": 10.5,
+      "rr_psi": 72,
+      "wet_grip": 84,
+      "puncture_tread": 40
+    }
+  ],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Continental claims exceptional grip in both wet and dry conditions.",
+      "source_id": "continental-aero-111-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Listed in Continental's German and US catalogs; not found in Continental's official Tmall store on 2026-11-01."
+  },
+  "price_observations": [],
+  "caveats": [
+    "Sizes are 26, 29 and 32 mm; measured width depends on the rim.",
+    "Not found in the official mainland China store; confirm a genuine source before buying there."
+  ],
+  "source_ids": [
+    "continental-aero-111-official-2026-11-01",
+    "continental-road-range-us-2026-11-01",
+    "continental-road-range-de-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
