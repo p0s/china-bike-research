@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { loadDataset, joinProducts, validateDataset } from '../src/lib/data.mjs';
 import { renderHome, renderTires } from '../src/render.mjs';
 import { INTERFACE_ROUTES } from '../src/lib/i18n.mjs';
+import { translate } from '../assets/i18n.js';
 import { comparableRollingTest, measuredWetGrip, referenceSize, sizeWidths, tireGroups, tireShortlists } from '../src/lib/tires.mjs';
 
 const data = loadDataset();
@@ -75,6 +76,12 @@ test('dual-width labels stay literal and count toward a group only when both num
   const entry = html.match(new RegExp(`<tbody class="groupset-entry tire-entry" id="${dual}"[\\s\\S]*?</details></td></tr></tbody>`))?.[0] ?? '';
   const label = labelled(data.tires.find((tire) => tire.id === dual)).width_label_mm.join('/');
   assert.ok(entry.includes(`<th scope="row">${label} mm</th><td>—</td>`), 'the size table shows the literal label without an ETRTO');
+});
+
+test('tire detail headings are translated in every interface language', () => {
+  for (const [locale, heading] of [['zh-Hans', '尺码'], ['de', 'Größen'], ['es', 'Medidas'], ['ru', 'Размеры']]) {
+    assert.equal(translate('Sizes', locale), heading, locale);
+  }
 });
 
 test('starting points are criteria-led lists, not a universal ranking', () => {
