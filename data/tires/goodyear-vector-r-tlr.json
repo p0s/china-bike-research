@@ -1,0 +1,75 @@
+{
+  "id": "goodyear-vector-r-tlr",
+  "maker": "Goodyear",
+  "name": "Vector R",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Goodyear's bicycle-tire line was developed with Rubber Kinetics by a team at Goodyear's Akron, Ohio headquarters (Bicycle Retailer, 2018)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Goodyear does not state where these tires are made."
+  },
+  "use": "endurance",
+  "positioning": "Wider tubeless-ready road and all-road tire in 30, 35 and 40 mm.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "Half-ply, 120-150 TPI",
+  "compound": "Dynamic:UHP",
+  "protection": "Sidewall protection on SW versions",
+  "sizes": [
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 280,
+      "note": "Z30 NSW, 150 TPI; a sidewall-protected Z30 SW is 325 g"
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 365
+    },
+    {
+      "width_mm": 40,
+      "etrto": "40-622",
+      "weight_g": 440,
+      "note": "XPLR version"
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Goodyear store weights for this construction.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Goodyear Bicycle Tires' US-dollar web store; mainland China and European availability not verified for this model."
+  },
+  "price_observations": [
+    {
+      "amount": 99.95,
+      "currency": "USD",
+      "market": "Goodyear Bicycle Tires store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; US shipping and tax at checkout.",
+      "source_id": "goodyear-vector-r-official-2026-11-01",
+      "width_mm": 30
+    }
+  ],
+  "caveats": [
+    "Two 30 mm versions are listed (with or without sidewall protection); the store variant does not say which ships.",
+    "Maximum pressure is not stated."
+  ],
+  "source_ids": [
+    "goodyear-vector-r-official-2026-11-01",
+    "bicycle-retailer-goodyear-premium-line-2018"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

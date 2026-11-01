@@ -1,0 +1,63 @@
+{
+  "id": "goodyear-eagle-f1-supersport-r-z29-aero",
+  "maker": "Goodyear",
+  "name": "Eagle F1 SuperSport R Z29 Aero",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Goodyear's bicycle-tire line was developed with Rubber Kinetics by a team at Goodyear's Akron, Ohio headquarters (Bicycle Retailer, 2018)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Goodyear does not state where these tires are made."
+  },
+  "use": "race",
+  "positioning": "Lightweight 29 mm aero race tire, tubeless-ready.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "Half-ply, 120 TPI",
+  "compound": "Dynamic:UHP",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 29,
+      "etrto": "29-622",
+      "weight_g": 250
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Goodyear store weights for this construction.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Goodyear Bicycle Tires' US-dollar web store; mainland China and European availability not verified for this model."
+  },
+  "price_observations": [
+    {
+      "amount": 99.95,
+      "currency": "USD",
+      "market": "Goodyear Bicycle Tires store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; US shipping and tax at checkout.",
+      "source_id": "goodyear-eagle-f1-supersport-r-z29-aero-official-2026-11-01",
+      "width_mm": 29
+    }
+  ],
+  "caveats": [
+    "Aero-specific size; check frame and rim fit.",
+    "Maximum pressure is not stated."
+  ],
+  "source_ids": [
+    "goodyear-eagle-f1-supersport-r-z29-aero-official-2026-11-01",
+    "bicycle-retailer-goodyear-premium-line-2018"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "goodyear-eagle-sport",
+  "maker": "Goodyear",
+  "name": "Eagle Sport",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Goodyear's bicycle-tire line was developed with Rubber Kinetics by a team at Goodyear's Akron, Ohio headquarters (Bicycle Retailer, 2018)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Goodyear does not state where these tires are made."
+  },
+  "use": "training",
+  "positioning": "Goodyear's budget tube-type road tire.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI",
+  "compound": "Performance",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 240
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 270
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 300
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 310
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Goodyear store weights for this construction.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Goodyear Bicycle Tires' US-dollar web store and by Tmall shops in mainland China; European availability not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 34.95,
+      "currency": "USD",
+      "market": "Goodyear Bicycle Tires store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; US shipping and tax at checkout.",
+      "source_id": "goodyear-eagle-sport-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Budget training tire.",
+    "Maximum pressure is not stated."
+  ],
+  "source_ids": [
+    "goodyear-eagle-sport-official-2026-11-01",
+    "bicycle-retailer-goodyear-premium-line-2018"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

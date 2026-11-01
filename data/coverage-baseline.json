@@ -8,14 +8,14 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1936,
+      "sources": 1943,
       "images": 900,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 11,
-      "tires": 48,
+      "tires": 58,
       "tireCoverage": 1,
       "recommendations": 6,
       "candidates": 289,
@@ -672,8 +672,14 @@
       "gito-g530-retailer-2026-08-29",
       "gito-g530-taobao-index-2026-08-29",
       "goodyear-eagle-f1-rs-official-2026-11-01",
+      "goodyear-eagle-f1-supersport-r-z29-aero-official-2026-11-01",
       "goodyear-eagle-f1-supersport-rs-official-2026-11-01",
+      "goodyear-eagle-f1r-z29-aero-official-2026-11-01",
+      "goodyear-eagle-official-2026-11-01",
+      "goodyear-eagle-sport-official-2026-11-01",
       "goodyear-vector-4seasons-official-2026-11-01",
+      "goodyear-vector-r-official-2026-11-01",
+      "goodyear-vector-sport-official-2026-11-01",
       "gpt-pro-electronic-groupsets-input-2026-08-24",
       "hi-light-g0-171works-current-2026-09-23",
       "hi-light-g0-171works-stiffness-2026-09-01",
@@ -1980,6 +1986,7 @@
       "viqi-r8000-current-jd-2026-08-30",
       "viqi-r8000-current-jd-recheck-2026-09-24",
       "vittoria-corsa-n-ext-tmall-2026-11-01",
+      "vittoria-corsa-n-ext-tube-type-official-2026-11-01",
       "vittoria-corsa-n-ext-tubeless-ready-official-2026-11-01",
       "vittoria-corsa-pro-control-tmall-2026-11-01",
       "vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01",
@@ -3459,9 +3466,18 @@
       "cst-energia-c3045",
       "giant-ninja",
       "giant-white-sidewall",
+      "goodyear-eagle",
+      "goodyear-eagle-f1-r-z29-aero-tlr",
+      "goodyear-eagle-f1-rs",
       "goodyear-eagle-f1-rs-tlr",
+      "goodyear-eagle-f1-supersport-r-z29-aero",
       "goodyear-eagle-f1-supersport-rs-tlr",
+      "goodyear-eagle-sport",
+      "goodyear-eagle-tlr",
+      "goodyear-vector-4seasons",
       "goodyear-vector-4seasons-tlr",
+      "goodyear-vector-r-tlr",
+      "goodyear-vector-sport-tlr",
       "innova-smiley",
       "jiluer-chaser",
       "jiluer-chaser-pro",
@@ -3483,6 +3499,7 @@
       "pirelli-p7-sport",
       "specialized-s-works-turbo-tlr",
       "vittoria-corsa-n-ext-tlr",
+      "vittoria-corsa-n-ext-tube-type",
       "vittoria-corsa-pro-control-tlr",
       "vittoria-corsa-pro-tlr",
       "vittoria-corsa-pro-tube-type",
@@ -14969,6 +14986,18 @@
         "type",
         "url"
       ],
+      "goodyear-eagle-f1-supersport-r-z29-aero-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "goodyear-eagle-f1-supersport-rs-official-2026-11-01": [
         "accessed_at",
         "language",
@@ -14981,7 +15010,67 @@
         "type",
         "url"
       ],
+      "goodyear-eagle-f1r-z29-aero-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "goodyear-eagle-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "goodyear-eagle-sport-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "goodyear-vector-4seasons-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "goodyear-vector-r-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "goodyear-vector-sport-official-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -31831,6 +31920,18 @@
         "url"
       ],
       "vittoria-corsa-n-ext-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "vittoria-corsa-n-ext-tube-type-official-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -73518,12 +73619,116 @@
         "weight_basis",
         "weight_claim_type"
       ],
+      "goodyear-eagle": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "goodyear-eagle-f1-r-z29-aero-tlr": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "goodyear-eagle-f1-rs": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "goodyear-eagle-f1-rs-tlr": [
         "aliases",
         "availability.cn",
         "availability.eu",
         "availability.na",
         "availability.note",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "goodyear-eagle-f1-supersport-r-z29-aero": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
         "caveats",
         "compound",
         "construction",
@@ -73571,6 +73776,86 @@
         "weight_basis",
         "weight_claim_type"
       ],
+      "goodyear-eagle-sport": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "goodyear-eagle-tlr": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "goodyear-vector-4seasons": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
       "goodyear-vector-4seasons-tlr": [
         "aliases",
         "availability.cn",
@@ -73599,6 +73884,60 @@
         "weight_basis",
         "weight_claim_type",
         "wet_notes"
+      ],
+      "goodyear-vector-r-tlr": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "goodyear-vector-sport-tlr": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
       ],
       "innova-smiley": [
         "aliases",
@@ -74192,6 +74531,31 @@
         "source_ids",
         "status",
         "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "vittoria-corsa-n-ext-tube-type": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
         "use",
         "weight_basis",
         "weight_claim_type"
@@ -122265,8 +122629,14 @@
       "gito-g530-retailer-2026-08-29": [],
       "gito-g530-taobao-index-2026-08-29": [],
       "goodyear-eagle-f1-rs-official-2026-11-01": [],
+      "goodyear-eagle-f1-supersport-r-z29-aero-official-2026-11-01": [],
       "goodyear-eagle-f1-supersport-rs-official-2026-11-01": [],
+      "goodyear-eagle-f1r-z29-aero-official-2026-11-01": [],
+      "goodyear-eagle-official-2026-11-01": [],
+      "goodyear-eagle-sport-official-2026-11-01": [],
       "goodyear-vector-4seasons-official-2026-11-01": [],
+      "goodyear-vector-r-official-2026-11-01": [],
+      "goodyear-vector-sport-official-2026-11-01": [],
       "gpt-pro-electronic-groupsets-input-2026-08-24": [],
       "hi-light-g0-171works-current-2026-09-23": [],
       "hi-light-g0-171works-stiffness-2026-09-01": [],
@@ -123621,6 +123991,7 @@
       "viqi-r8000-current-jd-2026-08-30": [],
       "viqi-r8000-current-jd-recheck-2026-09-24": [],
       "vittoria-corsa-n-ext-tmall-2026-11-01": [],
+      "vittoria-corsa-n-ext-tube-type-official-2026-11-01": [],
       "vittoria-corsa-n-ext-tubeless-ready-official-2026-11-01": [],
       "vittoria-corsa-pro-control-tmall-2026-11-01": [],
       "vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01": [],
@@ -129211,18 +129582,54 @@
         "source_ids=bikeradar-giant-founder-2026-02-17",
         "source_ids=giant-white-tire-tmall-2026-11-01"
       ],
+      "goodyear-eagle": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-eagle-official-2026-11-01"
+      ],
+      "goodyear-eagle-f1-r-z29-aero-tlr": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-eagle-f1r-z29-aero-official-2026-11-01"
+      ],
+      "goodyear-eagle-f1-rs": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-eagle-f1-rs-official-2026-11-01"
+      ],
       "goodyear-eagle-f1-rs-tlr": [
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
         "source_ids=goodyear-eagle-f1-rs-official-2026-11-01"
+      ],
+      "goodyear-eagle-f1-supersport-r-z29-aero": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-eagle-f1-supersport-r-z29-aero-official-2026-11-01"
       ],
       "goodyear-eagle-f1-supersport-rs-tlr": [
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=goodyear-eagle-f1-supersport-rs-official-2026-11-01"
       ],
+      "goodyear-eagle-sport": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-eagle-sport-official-2026-11-01"
+      ],
+      "goodyear-eagle-tlr": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-eagle-official-2026-11-01"
+      ],
+      "goodyear-vector-4seasons": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-vector-4seasons-official-2026-11-01"
+      ],
       "goodyear-vector-4seasons-tlr": [
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
         "source_ids=goodyear-vector-4seasons-official-2026-11-01"
+      ],
+      "goodyear-vector-r-tlr": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-vector-r-official-2026-11-01"
+      ],
+      "goodyear-vector-sport-tlr": [
+        "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=goodyear-vector-sport-official-2026-11-01"
       ],
       "innova-smiley": [
         "source_ids=99bikes-innova-story-2026-11-01",
@@ -129329,6 +129736,10 @@
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=vittoria-corsa-n-ext-tmall-2026-11-01",
         "source_ids=vittoria-corsa-n-ext-tubeless-ready-official-2026-11-01"
+      ],
+      "vittoria-corsa-n-ext-tube-type": [
+        "source_ids=vittoria-corsa-n-ext-tmall-2026-11-01",
+        "source_ids=vittoria-corsa-n-ext-tube-type-official-2026-11-01"
       ],
       "vittoria-corsa-pro-control-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
@@ -143154,6 +143565,14 @@
         "specification": 2
       }
     },
+    "goodyear-eagle-f1-supersport-r-z29-aero-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
     "goodyear-eagle-f1-supersport-rs-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -143162,7 +143581,47 @@
         "specification": 2
       }
     },
+    "goodyear-eagle-f1r-z29-aero-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "goodyear-eagle-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "goodyear-eagle-sport-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
     "goodyear-vector-4seasons-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "goodyear-vector-r-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "goodyear-vector-sport-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -153728,6 +154187,14 @@
         "identity": 3,
         "price": 1,
         "specification": 1
+      }
+    },
+    "vittoria-corsa-n-ext-tube-type-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
       }
     },
     "vittoria-corsa-n-ext-tubeless-ready-official-2026-11-01": {
