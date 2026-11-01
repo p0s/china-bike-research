@@ -1,0 +1,93 @@
+{
+  "id": "cst-energia-c3045",
+  "maker": "CST",
+  "name": "Energia C3045",
+  "aliases": [
+    "正新 C3045",
+    "Energia"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "CST is the Cheng Shin (正新) brand of Taiwan's Cheng Shin Rubber; China listings give the brand as CST/正新."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listings do not state the factory; Cheng Shin also makes bicycle tires at a mainland plant."
+  },
+  "use": "training",
+  "positioning": "Budget 120 TPI folding road tire with a dual-compound tread and puncture layer, popular in China as a training tire.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "120 TPI, 3-ply nylon (seller listing)",
+  "compound": null,
+  "protection": "Kevlar puncture layer (seller listing)",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "No weight is given in the listing.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "community report",
+      "summary": "One owner felt its water-channel tread cleared wet roads faster than a Continental GSR.",
+      "source_id": "xhs-cst-c3045-high-road-gsr-2025-08-10"
+    }
+  ],
+  "community": [
+    {
+      "source_id": "xhs-cst-c3045-high-road-gsr-2025-08-10",
+      "stance": "positive",
+      "published_at": "2025-08-10",
+      "summary": "Recommended over the Continental GSR: similar grip, lighter and closer to nominal width."
+    },
+    {
+      "source_id": "xhs-domestic-25c-training-tire-2025-04-10",
+      "stance": "negative",
+      "published_at": "2025-04-10",
+      "summary": "Commenters found it very hard to mount and reported longitudinal slipping."
+    }
+  ],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Widely sold by mainland Taobao and Tmall shops; no official CST store was found, and CST's international site no longer showed model pages on 2026-11-01."
+  },
+  "price_observations": [
+    {
+      "amount": 72,
+      "currency": "CNY",
+      "market": "云天 优质正品 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Taobao/Tmall shop list price on 2026-11-01; shipping within mainland China. The listing does not say whether an option is one tire or a pair.",
+      "source_id": "cst-energia-c3045-taobao-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "A separate C3045N tubeless version is sold (CNY 108 at the same shop).",
+    "No independent lab test found; specifications come from seller listings."
+  ],
+  "source_ids": [
+    "cst-energia-c3045-taobao-2026-11-01",
+    "tyrepress-cheng-shin-rubber-overview-2007",
+    "xhs-cst-c3045-high-road-gsr-2025-08-10",
+    "xhs-domestic-25c-training-tire-2025-04-10"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

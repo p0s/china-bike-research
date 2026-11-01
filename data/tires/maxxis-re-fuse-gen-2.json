@@ -1,0 +1,70 @@
+{
+  "id": "maxxis-re-fuse-gen-2",
+  "maker": "Maxxis",
+  "name": "Re-Fuse Gen 2",
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Maxxis says it began in 1967 as a bicycle-tire maker in Taiwan."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Maxxis' size table does not state where the tire is made."
+  },
+  "use": "all-season",
+  "positioning": "Durable training and commuting road tire with a full-silica all-season compound and MaxxShield protection.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI",
+  "compound": "Full-silica single compound",
+  "protection": "MaxxShield",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 281,
+      "max_psi": 120
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 301,
+      "max_psi": 115
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 355,
+      "max_psi": 110
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Maxxis claims per size.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Maxxis describes a full-silica, all-season compound with micro knobs for cornering control.",
+      "source_id": "maxxis-re-fuse-gen-2-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "authorized-retail",
+    "note": "Listed on Maxxis' US site with a dealer locator; mainland China and European availability not verified for this generation."
+  },
+  "price_observations": [],
+  "caveats": [
+    "A 40 mm tubeless-ready Re-Fuse uses a different construction and is not part of this record.",
+    "Bicycle Rolling Resistance's 2019 Re-Fuse test predates Gen 2 and is not applied."
+  ],
+  "source_ids": [
+    "maxxis-re-fuse-gen-2-official-2026-11-01",
+    "maxxis-road-range-us-2026-11-01",
+    "maxxis-how-we-began-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

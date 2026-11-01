@@ -1,0 +1,80 @@
+{
+  "id": "jiluer-chaser",
+  "maker": "JILUER",
+  "name": "Chaser",
+  "aliases": [
+    "吉路尔 Chaser"
+  ],
+  "origin": {
+    "group": "mainland-china",
+    "country": "Mainland China",
+    "basis": "Shandong Jiluer Tire Co., Tengzhou, Shandong (brand directory)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listing does not state the factory."
+  },
+  "use": "training",
+  "positioning": "Budget 60 TPI folding road clincher.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI (owner report)",
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 250,
+      "note": "Owner-reported weight"
+    }
+  ],
+  "weight_claim_type": "community report",
+  "weight_basis": "One owner reported 250 g for a 28C.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [
+    {
+      "source_id": "xhs-budget-clincher-comparison-2025-05-30",
+      "stance": "mixed",
+      "published_at": "2025-05-30",
+      "summary": "Felt fastest and most comfortable of four budget tires but gripped least; easy to fit by hand."
+    }
+  ],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by Taobao shops in mainland China; no official JILUER store was found."
+  },
+  "price_observations": [
+    {
+      "amount": 85,
+      "currency": "CNY",
+      "market": "辣堡运动装备 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Taobao/Tmall shop list price on 2026-11-01; shipping within mainland China. The listing does not say whether an option is one tire or a pair.",
+      "source_id": "jiluer-chaser-taobao-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Grip was rated lowest in the one owner comparison found.",
+    "No independent lab test found."
+  ],
+  "source_ids": [
+    "jiluer-chaser-taobao-2026-11-01",
+    "maigoo-jiluer-brand-2026-11-01",
+    "xhs-budget-clincher-comparison-2025-05-30"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
