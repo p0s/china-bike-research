@@ -1,0 +1,75 @@
+{
+  "maker": "Bontrager",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Bontrager is Trek Bicycle Corporation's component brand (Trek US store footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Trek product page does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Trek specification table per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Trek's US web store; Trek stores and dealers in other regions were not checked for this tire."
+  },
+  "id": "bontrager-aeolus-pro-tlr",
+  "name": "Aeolus Pro TLR",
+  "use": "all-round",
+  "positioning": "Tubeless-ready Bontrager road tire balancing fast rolling with everyday durability, with bead-to-bead protection.",
+  "construction": "tubeless-ready",
+  "casing": "120 TPI",
+  "compound": "Road Dual-Compound (65a/57a)",
+  "protection": "Bead-to-bead puncture protection",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 335,
+      "max_psi": 90
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 353,
+      "max_psi": 80
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 385,
+      "max_psi": 75
+    }
+  ],
+  "caveats": [
+    "No independent lab test of this model found.",
+    "Hookless compatibility is not stated."
+  ],
+  "price_observations": [
+    {
+      "amount": 64.99,
+      "currency": "USD",
+      "market": "Trek store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "trek-bontrager-aeolus-pro-tlr-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "trek-bontrager-aeolus-pro-tlr-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

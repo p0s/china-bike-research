@@ -1,0 +1,76 @@
+{
+  "maker": "Bontrager",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Bontrager is Trek Bicycle Corporation's component brand (Trek US store footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Trek product page does not state where the tire is made."
+  },
+  "hookless": "approved",
+  "weight_claim_type": "official",
+  "weight_basis": "Trek specification table per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Trek's US web store; Trek stores and dealers in other regions were not checked for this tire."
+  },
+  "id": "bontrager-kwaremont-rsl-tlr",
+  "name": "Kwaremont RSL TLR",
+  "use": "endurance",
+  "positioning": "High-volume 320 TPI cotton road tire combining race speed with comfort on rough roads.",
+  "construction": "tubeless-ready",
+  "hookless_note": "Trek says it is compatible with hooked and hookless rims and that maximum pressures vary by size and rim type.",
+  "casing": "320 TPI cotton",
+  "compound": "Road Dual-Compound",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 345,
+      "max_psi": 75
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 380,
+      "max_psi": 70
+    },
+    {
+      "width_mm": 38,
+      "etrto": "38-622",
+      "weight_g": 400,
+      "max_psi": 65
+    }
+  ],
+  "caveats": [
+    "No independent lab test found.",
+    "Check the rim maker for hookless pressure limits."
+  ],
+  "price_observations": [
+    {
+      "amount": 99.99,
+      "currency": "USD",
+      "market": "Trek store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "trek-bontrager-kwaremont-rsl-tlr-official-2026-11-01",
+      "width_mm": 32
+    }
+  ],
+  "source_ids": [
+    "trek-bontrager-kwaremont-rsl-tlr-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

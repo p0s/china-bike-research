@@ -1,0 +1,75 @@
+{
+  "maker": "Bontrager",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Bontrager is Trek Bicycle Corporation's component brand (Trek US store footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Trek product page does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Trek specification table per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Trek's US web store; Trek stores and dealers in other regions were not checked for this tire."
+  },
+  "id": "bontrager-kwaremont-pro-tlr",
+  "name": "Kwaremont Pro TLR",
+  "use": "endurance",
+  "positioning": "High-volume 120 TPI tubeless-ready road tire with a dual-compound tread and added puncture protection.",
+  "construction": "tubeless-ready",
+  "casing": "120 TPI",
+  "compound": "Road Dual-Compound",
+  "protection": "Added puncture protection",
+  "sizes": [
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 345,
+      "max_psi": 75
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 390,
+      "max_psi": 70
+    },
+    {
+      "width_mm": 38,
+      "etrto": "38-622",
+      "weight_g": 410,
+      "max_psi": 65
+    }
+  ],
+  "caveats": [
+    "No independent lab test found.",
+    "Hookless compatibility is not stated."
+  ],
+  "price_observations": [
+    {
+      "amount": 64.99,
+      "currency": "USD",
+      "market": "Trek store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "trek-bontrager-kwaremont-pro-tlr-official-2026-11-01",
+      "width_mm": 32
+    }
+  ],
+  "source_ids": [
+    "trek-bontrager-kwaremont-pro-tlr-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
