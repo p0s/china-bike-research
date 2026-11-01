@@ -1,0 +1,71 @@
+{
+  "id": "giant-white-sidewall",
+  "maker": "Giant",
+  "name": "White-sidewall road tire (158H2401)",
+  "aliases": [
+    "GIANT WHITE TIRE"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Giant Group was founded in 1972 in Taichung, Taiwan (BikeRadar)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The official store listing does not state the factory."
+  },
+  "use": "training",
+  "positioning": "Giant's China-market 120 TPI folding road tire with white sidewalls.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "120 TPI (store title)",
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "No weight is given in the listing.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by Giant's official Tmall store in mainland China; this China-market model was not checked in other regions."
+  },
+  "price_observations": [
+    {
+      "amount": 268,
+      "currency": "CNY",
+      "market": "Giant official Tmall store (捷安特官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 98.",
+      "source_id": "giant-white-tire-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Specifications beyond TPI are not published in the listing.",
+    "No independent lab test or owner report found."
+  ],
+  "source_ids": [
+    "giant-white-tire-tmall-2026-11-01",
+    "bikeradar-giant-founder-2026-02-17"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
