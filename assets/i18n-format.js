@@ -5,7 +5,8 @@ const currencies = { 'US$': 'USD', '€': 'EUR', '£': 'GBP', '¥': 'CNY' };
 const amount = String.raw`\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?`;
 const moneyPattern = new RegExp(String.raw`(US\$|€|£|¥)(${amount})(?:–(${amount}))?`, 'g');
 const measurePattern = new RegExp(String.raw`(${amount})\s?(kg|mm|g|кг|мм|г)(?![A-Za-zА-Яа-яЁё])`, 'g');
-const measureOnly = new RegExp(String.raw`^[≈~+−\-\s]*(?:(?:US\$|€|£|¥)(?:${amount})(?:–(?:${amount}))?|(?:${amount})\s?(?:kg|mm|g))$`);
+// A literal dual-width label such as "25/28 mm" is a measure too.
+const measureOnly = new RegExp(String.raw`^[≈~+−\-\s]*(?:(?:US\$|€|£|¥)(?:${amount})(?:–(?:${amount}))?|(?:${amount})(?:\/(?:${amount}))?\s?(?:kg|mm|g))$`);
 const formatters = new Map();
 
 function formatter(locale, currency = '') {
