@@ -54,9 +54,9 @@
   "community": [],
   "availability": {
     "cn": "unverified",
-    "eu": "unverified",
+    "eu": "authorized-retail",
     "na": "official-store",
-    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+    "note": "Sold by Specialized's US store; Specialized's UK site lists a GBP price and a store finder. Mainland China sellers were not checked."
   },
   "price_observations": [
     {
@@ -70,6 +70,18 @@
       "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
       "source_id": "specialized-s-works-turbo-tlr-official-2026-11-01",
       "width_mm": 28
+    },
+    {
+      "amount": 60.0,
+      "currency": "GBP",
+      "market": "Specialized (UK)",
+      "region": "eu",
+      "price_type": "official-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "UK list price on 2026-11-01; the page offers a store finder.",
+      "source_id": "specialized-gb-s-works-turbo-tlr-2026-11-01",
+      "width_mm": 28
     }
   ],
   "caveats": [
@@ -78,7 +90,8 @@
   ],
   "source_ids": [
     "specialized-s-works-turbo-tlr-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "specialized-gb-s-works-turbo-tlr-2026-11-01"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01"

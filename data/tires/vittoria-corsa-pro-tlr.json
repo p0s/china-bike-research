@@ -84,8 +84,8 @@
   "availability": {
     "cn": "official-store",
     "eu": "official-store",
-    "na": "unverified",
-    "note": "Sold by Vittoria's international web store in euros and by a Vittoria Tmall store in mainland China; the US store did not load on 2026-11-01."
+    "na": "official-store",
+    "note": "Sold by Vittoria's international web store in euros, its US store in dollars and a Vittoria Tmall store in mainland China."
   },
   "price_observations": [
     {
@@ -111,6 +111,17 @@
       "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 470.",
       "source_id": "vittoria-corsa-pro-tmall-2026-11-01",
       "width_mm": 28
+    },
+    {
+      "amount": 111.99,
+      "currency": "USD",
+      "market": "Vittoria store (US)",
+      "region": "na",
+      "price_type": "official-store-sale",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official US store sale price on 2026-11-01 for one tire; free shipping within the contiguous US.",
+      "source_id": "vittoria-us-corsa-pro-tlr-2026-11-01"
     }
   ],
   "caveats": [
@@ -120,7 +131,8 @@
   "source_ids": [
     "vittoria-corsa-pro-tubeless-ready-official-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "vittoria-corsa-pro-tmall-2026-11-01"
+    "vittoria-corsa-pro-tmall-2026-11-01",
+    "vittoria-us-corsa-pro-tlr-2026-11-01"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01"

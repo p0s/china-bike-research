@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2102,
+      "sources": 2107,
       "images": 900,
       "videos": 267,
       "opinions": 13,
@@ -353,6 +353,8 @@
       "bxt-gravel-complete-photo-source-2026-10-03",
       "cadex-race-25-tubeless-official-2026-11-01",
       "cadex-race-gc-official-2026-11-01",
+      "cahaba-pirelli-p-zero-race-tlr-2026-11-01",
+      "cahaba-pirelli-p-zero-race-tlr-rs-2026-11-01",
       "cahaba-pirelli-p4-sport-2026-11-01",
       "camp-ace-gen3-105-official-2026-08-29",
       "camp-ace-gen3-105-photo-source-2026-10-03",
@@ -1283,6 +1285,7 @@
       "pirelli-p7-sport-official-2026-11-01",
       "pirelli-road-range-gb-2026-11-01",
       "pro-stealth-sport-official-2026-08-27",
+      "probikesupply-panaracer-agilest-fast-tlr-2026-11-01",
       "project-image-placeholders",
       "public-camp-gx600-custom-flatbar-xhs-2026-08-25",
       "public-camp-gx700-spec-post-2026-08-28",
@@ -1760,6 +1763,7 @@
       "specialized-crux-comp-grx-official-2026-08-17",
       "specialized-crux-comp-grx-official-recheck-2026-09-23",
       "specialized-crux-comp-grx-sw-recheck-2026-09-23",
+      "specialized-gb-s-works-turbo-tlr-2026-11-01",
       "specialized-mondo-folding-endurance-tire-official-2026-11-01",
       "specialized-mondo-tlr-endurance-tire-official-2026-11-01",
       "specialized-rapidair-tlr-racing-only-tire-official-2026-11-01",
@@ -2122,6 +2126,7 @@
       "vittoria-ridearmor-tubeless-ready-official-2026-11-01",
       "vittoria-rubino-tube-type-official-2026-11-01",
       "vittoria-rubino-tubeless-ready-official-2026-11-01",
+      "vittoria-us-corsa-pro-tlr-2026-11-01",
       "vittoria-zaffiro-evo-official-2026-11-01",
       "voicevelo-g-major-biketo-launch-2023-11-13",
       "voicevelo-g-major-biketo-review-2024-01-17",
@@ -11392,6 +11397,30 @@
         "url"
       ],
       "cadex-race-gc-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "cahaba-pirelli-p-zero-race-tlr-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "cahaba-pirelli-p-zero-race-tlr-rs-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -23016,6 +23045,18 @@
         "type",
         "url"
       ],
+      "probikesupply-panaracer-agilest-fast-tlr-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "project-image-placeholders": [
         "accessed_at",
         "language",
@@ -29257,6 +29298,18 @@
         "type",
         "url"
       ],
+      "specialized-gb-s-works-turbo-tlr-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "specialized-mondo-folding-endurance-tire-official-2026-11-01": [
         "accessed_at",
         "language",
@@ -33837,6 +33890,18 @@
         "url"
       ],
       "vittoria-rubino-tubeless-ready-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "vittoria-us-corsa-pro-tlr-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -78279,6 +78344,7 @@
         "origin.country",
         "origin.group",
         "positioning",
+        "price_observations",
         "reviewed_at",
         "sizes",
         "source_ids",
@@ -78536,6 +78602,7 @@
         "origin.group",
         "positioning",
         "pressure_note",
+        "price_observations",
         "reviewed_at",
         "sizes",
         "source_ids",
@@ -127893,6 +127960,8 @@
       "bxt-gravel-complete-photo-source-2026-10-03": [],
       "cadex-race-25-tubeless-official-2026-11-01": [],
       "cadex-race-gc-official-2026-11-01": [],
+      "cahaba-pirelli-p-zero-race-tlr-2026-11-01": [],
+      "cahaba-pirelli-p-zero-race-tlr-rs-2026-11-01": [],
       "cahaba-pirelli-p4-sport-2026-11-01": [],
       "camp-ace-gen3-105-official-2026-08-29": [],
       "camp-ace-gen3-105-photo-source-2026-10-03": [],
@@ -128871,6 +128940,7 @@
       "pirelli-p7-sport-official-2026-11-01": [],
       "pirelli-road-range-gb-2026-11-01": [],
       "pro-stealth-sport-official-2026-08-27": [],
+      "probikesupply-panaracer-agilest-fast-tlr-2026-11-01": [],
       "project-image-placeholders": [],
       "public-camp-gx600-custom-flatbar-xhs-2026-08-25": [],
       "public-camp-gx700-spec-post-2026-08-28": [],
@@ -129348,6 +129418,7 @@
       "specialized-crux-comp-grx-official-2026-08-17": [],
       "specialized-crux-comp-grx-official-recheck-2026-09-23": [],
       "specialized-crux-comp-grx-sw-recheck-2026-09-23": [],
+      "specialized-gb-s-works-turbo-tlr-2026-11-01": [],
       "specialized-mondo-folding-endurance-tire-official-2026-11-01": [],
       "specialized-mondo-tlr-endurance-tire-official-2026-11-01": [],
       "specialized-rapidair-tlr-racing-only-tire-official-2026-11-01": [],
@@ -129710,6 +129781,7 @@
       "vittoria-ridearmor-tubeless-ready-official-2026-11-01": [],
       "vittoria-rubino-tube-type-official-2026-11-01": [],
       "vittoria-rubino-tubeless-ready-official-2026-11-01": [],
+      "vittoria-us-corsa-pro-tlr-2026-11-01": [],
       "vittoria-zaffiro-evo-official-2026-11-01": [],
       "voicevelo-g-major-biketo-launch-2023-11-13": [],
       "voicevelo-g-major-biketo-review-2024-01-17": [],
@@ -135723,7 +135795,8 @@
       "panaracer-agilest-fast-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=panaracer-agilest-fast-tlr-official-2026-11-01",
-        "source_ids=panaracer-company-official-2026-11-01"
+        "source_ids=panaracer-company-official-2026-11-01",
+        "source_ids=probikesupply-panaracer-agilest-fast-tlr-2026-11-01"
       ],
       "panaracer-agilest-light": [
         "source_ids=panaracer-company-official-2026-11-01",
@@ -135761,6 +135834,7 @@
       ],
       "pirelli-p-zero-race-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=cahaba-pirelli-p-zero-race-tlr-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-official-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
       ],
@@ -135771,6 +135845,7 @@
       ],
       "pirelli-p-zero-race-tlr-rs": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=cahaba-pirelli-p-zero-race-tlr-rs-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-rs-official-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
@@ -135902,6 +135977,7 @@
       ],
       "specialized-s-works-turbo-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=specialized-gb-s-works-turbo-tlr-2026-11-01",
         "source_ids=specialized-s-works-turbo-tlr-official-2026-11-01"
       ],
       "tufo-calibra-plus": [
@@ -135962,7 +136038,8 @@
       "vittoria-corsa-pro-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=vittoria-corsa-pro-tmall-2026-11-01",
-        "source_ids=vittoria-corsa-pro-tubeless-ready-official-2026-11-01"
+        "source_ids=vittoria-corsa-pro-tubeless-ready-official-2026-11-01",
+        "source_ids=vittoria-us-corsa-pro-tlr-2026-11-01"
       ],
       "vittoria-corsa-pro-tube-type": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
@@ -147246,6 +147323,22 @@
         "specification": 2
       }
     },
+    "cahaba-pirelli-p-zero-race-tlr-2026-11-01": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 0
+      }
+    },
+    "cahaba-pirelli-p-zero-race-tlr-rs-2026-11-01": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 0
+      }
+    },
     "cahaba-pirelli-p4-sport-2026-11-01": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -154795,6 +154888,14 @@
         "specification": 3
       }
     },
+    "probikesupply-panaracer-agilest-fast-tlr-2026-11-01": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 0
+      }
+    },
     "project-image-placeholders": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -158602,6 +158703,14 @@
         "specification": 3
       }
     },
+    "specialized-gb-s-works-turbo-tlr-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "specialized-mondo-folding-endurance-tire-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -161545,6 +161654,14 @@
         "identity": 3,
         "price": 3,
         "specification": 2
+      }
+    },
+    "vittoria-us-corsa-pro-tlr-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
       }
     },
     "vittoria-zaffiro-evo-official-2026-11-01": {

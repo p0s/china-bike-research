@@ -96,10 +96,23 @@
   "availability": {
     "cn": "unverified",
     "eu": "authorized-retail",
-    "na": "unverified",
-    "note": "Listed in Pirelli's UK catalogue with a dealer finder; no mainland China listing was checked for this line; North American availability not verified in this pass."
+    "na": "retail",
+    "note": "Listed in Pirelli's UK catalogue with a dealer finder and stocked by a US retailer on 2026-11-01; no mainland China listing was checked for this line."
   },
-  "price_observations": [],
+  "price_observations": [
+    {
+      "amount": 109.9,
+      "currency": "USD",
+      "market": "Cahaba Cycles (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer price on 2026-11-01 for the 28 mm black tire with local stock; the page does not state one tire or a pair.",
+      "source_id": "cahaba-pirelli-p-zero-race-tlr-2026-11-01",
+      "width_mm": 28
+    }
+  ],
   "caveats": [
     "Hookless compatibility and maximum pressure are not stated on the product page; follow the rim maker.",
     "About 35 g heavier than the 5000 S TR at 28 mm, with more measured tread protection."
@@ -107,7 +120,8 @@
   "source_ids": [
     "pirelli-p-zero-race-tlr-official-2026-11-01",
     "pirelli-road-range-gb-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "cahaba-pirelli-p-zero-race-tlr-2026-11-01"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01"
