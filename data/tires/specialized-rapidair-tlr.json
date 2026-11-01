@@ -1,0 +1,67 @@
+{
+  "id": "specialized-rapidair-tlr",
+  "name": "RapidAir TLR",
+  "use": "race",
+  "positioning": "Specialized's lightest tubeless-ready race tire, sold as a race-day tire.",
+  "construction": "tubeless-ready",
+  "casing": "120 TPI RapidAir",
+  "compound": "GRIPTON T2/T5",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 220
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 230
+    }
+  ],
+  "caveats": [
+    "Specialized labels it 'Racing Only': a race-day tire with less protection than its training tires.",
+    "Hookless compatibility and maximum pressure are not stated."
+  ],
+  "maker": "Specialized",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Specialized Bicycle Components, Inc. publishes the US store, with California consumer disclosures in the page footer."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Specialized does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Specialized approximate weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+  },
+  "source_ids": [
+    "specialized-rapidair-tlr-racing-only-tire-official-2026-11-01"
+  ],
+  "price_observations": [
+    {
+      "amount": 76.99,
+      "currency": "USD",
+      "market": "Specialized store (US)",
+      "region": "na",
+      "price_type": "official-store-sale",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store sale price on 2026-11-01 (was US$109.99); one tire; shipping and tax at checkout.",
+      "source_id": "specialized-rapidair-tlr-racing-only-tire-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

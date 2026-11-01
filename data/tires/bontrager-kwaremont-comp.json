@@ -1,0 +1,63 @@
+{
+  "id": "bontrager-kwaremont-comp",
+  "maker": "Bontrager",
+  "name": "Kwaremont Comp",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Bontrager is Trek Bicycle Corporation's component brand (Trek US store footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Trek product page does not state where the tire is made."
+  },
+  "use": "training",
+  "positioning": "Budget wire-bead 60 TPI Bontrager road clincher (Comp HCL).",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI",
+  "compound": null,
+  "protection": "Comp HCL",
+  "sizes": [
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 398,
+      "max_psi": 75
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Trek specification table per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Trek's US web store; Trek stores and dealers in other regions were not checked for this tire."
+  },
+  "price_observations": [
+    {
+      "amount": 29.99,
+      "currency": "USD",
+      "market": "Trek store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "trek-bontrager-kwaremont-comp-official-2026-11-01",
+      "width_mm": 32
+    }
+  ],
+  "caveats": [
+    "Wire bead; needs an inner tube.",
+    "Budget training tire; no independent lab test found."
+  ],
+  "source_ids": [
+    "trek-bontrager-kwaremont-comp-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

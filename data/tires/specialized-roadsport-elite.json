@@ -1,0 +1,69 @@
+{
+  "id": "specialized-roadsport-elite",
+  "name": "RoadSport Elite",
+  "use": "training",
+  "positioning": "Specialized's folding 60 TPI training tire with BlackBelt protection for high-mileage rides.",
+  "construction": "tube-type",
+  "casing": "60 TPI",
+  "compound": "60a",
+  "protection": "BlackBelt",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 280,
+      "max_psi": 125
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 325,
+      "max_psi": 95
+    }
+  ],
+  "caveats": [
+    "Budget training tire; needs an inner tube.",
+    "Specialized gives a pressure range per size; the upper value is shown."
+  ],
+  "maker": "Specialized",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Specialized Bicycle Components, Inc. publishes the US store, with California consumer disclosures in the page footer."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Specialized does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Specialized approximate weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+  },
+  "source_ids": [
+    "specialized-roadsport-elite-official-2026-11-01"
+  ],
+  "price_observations": [
+    {
+      "amount": 39.99,
+      "currency": "USD",
+      "market": "Specialized store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "specialized-roadsport-elite-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

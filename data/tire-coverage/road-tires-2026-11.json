@@ -538,8 +538,9 @@
     {
       "brand_id": "kenda",
       "name": "K1092",
-      "disposition": "excluded",
-      "reason": "Entry-level 60 TPI folding training tire (Taobao: 700x25/28, 125 psi label, CNY 97-108); entry-level tires are outside this comparison, like the Chaoyang H-479 Viper. US retailers list a 120 TPI Kountach version."
+      "disposition": "included",
+      "reason": "Taobao listing gives folding 60 TPI training-tire options, pressure label and prices; US retailers list a 120 TPI Kountach version.",
+      "record_id": "kenda-k1092"
     },
     {
       "brand_id": "kenda",
@@ -1246,9 +1247,24 @@
     },
     {
       "brand_id": "specialized",
-      "name": "Cotton TLR, Cotton Folding and RapidAir TLR",
-      "disposition": "excluded",
-      "reason": "Specialized groups them as 'Racing Only' tires; race-day specialist tires are left out, like the time-trial tires above."
+      "name": "RapidAir TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and sale price; Specialized labels it 'Racing Only'.",
+      "record_id": "specialized-rapidair-tlr"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Cotton TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; Specialized labels it 'Racing Only'.",
+      "record_id": "specialized-cotton-tlr"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Cotton (tube type)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price; Specialized labels it 'Racing Only'.",
+      "record_id": "specialized-cotton-folding"
     },
     {
       "brand_id": "specialized",
@@ -1284,9 +1300,16 @@
     },
     {
       "brand_id": "specialized",
-      "name": "RoadSport family",
-      "disposition": "excluded",
-      "reason": "Entry-level 60 TPI road tires (RoadSport Elite 280 g at 26 mm and 325 g at 28 mm), including wire-bead versions."
+      "name": "RoadSport Elite",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-roadsport-elite"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "RoadSport wire-bead versions (RoadSport, Wirebead and Wirebead Reflect)",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
     },
     {
       "brand_id": "specialized",
@@ -1495,8 +1518,9 @@
     {
       "brand_id": "vredestein",
       "name": "Freccia",
-      "disposition": "excluded",
-      "reason": "Vredestein positions it as a folding tire for training and touring with a 50 TPI casing; entry-level tires are outside this comparison."
+      "disposition": "included",
+      "reason": "Official size table; folding training and touring tire.",
+      "record_id": "vredestein-freccia"
     },
     {
       "brand_id": "vredestein",
@@ -1626,9 +1650,31 @@
     },
     {
       "brand_id": "bontrager",
-      "name": "Aeolus Comp, Kwaremont Comp, AW1 Hard-Case and AW1 Hard-Case Lite",
-      "disposition": "unresolved",
-      "reason": "Queued for the specialist-brand batches of this follow-up."
+      "name": "Aeolus Comp",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aeolus-comp"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Kwaremont Comp",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-kwaremont-comp"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "AW1 Hard-Case",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aw1-hard-case"
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "AW1 Hard-Case Lite",
+      "disposition": "included",
+      "reason": "Trek US store specification table and price.",
+      "record_id": "bontrager-aw1-hard-case-lite"
     },
     {
       "brand_id": "silca",

@@ -1,0 +1,72 @@
+{
+  "id": "specialized-cotton-tlr",
+  "name": "Cotton TLR",
+  "use": "race",
+  "positioning": "Specialized's 320 TPI cotton-casing tubeless-ready race tire.",
+  "construction": "tubeless-ready",
+  "casing": "320 TPI cotton",
+  "compound": "GRIPTON T2/T5",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 280
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 320
+    }
+  ],
+  "caveats": [
+    "Specialized labels it 'Racing Only': a race-day tire with less protection than its training tires.",
+    "The lab rating Specialized cites is not recorded here because the test itself was not read."
+  ],
+  "maker": "Specialized",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Specialized Bicycle Components, Inc. publishes the US store, with California consumer disclosures in the page footer."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Specialized does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Specialized approximate weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+  },
+  "source_ids": [
+    "specialized-cotton-tlr-official-2026-11-01"
+  ],
+  "price_observations": [
+    {
+      "amount": 109.99,
+      "currency": "USD",
+      "market": "Specialized store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "specialized-cotton-tlr-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
