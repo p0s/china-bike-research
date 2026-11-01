@@ -1,0 +1,132 @@
+{
+  "id": "continental-grand-prix-5000-all-season-tr",
+  "maker": "Continental",
+  "name": "Grand Prix 5000 AS TR",
+  "aliases": [
+    "GP5000 AS TR",
+    "GP5000 All Season TR"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Continental's bicycle tires are marketed from its German site; Germany-made lines are marked 'Handmade in Germany'."
+  },
+  "manufacturing": {
+    "country": "Germany",
+    "basis": "Continental's size table: 'Handmade in Germany'."
+  },
+  "use": "all-season",
+  "positioning": "All-season version of the 5000 S TR with more puncture protection, a thicker tread and a reinforced sidewall for year-round riding.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Continental lists hookless maximum pressures (73 psi up to 28 mm, 65 psi at 32 mm, 58 psi at 35 mm).",
+  "casing": "2-ply, 220 TPI",
+  "compound": "BlackChili (Grand Prix 5000 TR technology list)",
+  "protection": "Vectran breaker and reinforced sidewall",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 285,
+      "max_psi": 109,
+      "max_bar": 7.5,
+      "note": "Hookless 73 psi"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 320,
+      "max_psi": 95,
+      "max_bar": 6.5,
+      "note": "Hookless 73 psi"
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 370,
+      "max_psi": 73,
+      "max_bar": 5.0,
+      "note": "Hookless 65 psi"
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 415,
+      "max_psi": 66,
+      "max_bar": 4.5,
+      "note": "Hookless 58 psi"
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Continental black-sidewall claims per size; cream sidewalls add 10 g.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2023,
+      "width_mm": 28,
+      "measured_width_mm": 29,
+      "measured_weight_g": 345,
+      "setup": "tubeless",
+      "rr_w": 12.2,
+      "rr_psi": 72,
+      "wet_grip": 82,
+      "puncture_tread": 46
+    },
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2023,
+      "width_mm": 25,
+      "measured_width_mm": 26,
+      "measured_weight_g": 282,
+      "setup": "tubeless",
+      "rr_w": 12.6,
+      "rr_psi": 80,
+      "wet_grip": 77,
+      "puncture_tread": 43
+    }
+  ],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Continental claims superior grip in all-weather conditions for this all-season version.",
+      "source_id": "continental-grand-prix-5000-allseason-tr-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Continental's official Tmall store sells it in mainland China; Continental's German and US catalogs list it for retailers."
+  },
+  "price_observations": [
+    {
+      "amount": 811,
+      "currency": "CNY",
+      "market": "Continental official Tmall store (德国马牌轮胎官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 683.08.",
+      "source_id": "continental-grand-prix-5000-as-tr-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Heavier and slower-rolling than the 5000 S TR in the same lab test; chosen for wet grip and protection.",
+    "No 30 mm size; 32 and 35 mm need a frame with that clearance.",
+    "Use the hookless pressure limit on hookless rims."
+  ],
+  "source_ids": [
+    "continental-grand-prix-5000-allseason-tr-official-2026-11-01",
+    "continental-road-range-us-2026-11-01",
+    "continental-road-range-de-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "continental-grand-prix-5000-as-tr-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

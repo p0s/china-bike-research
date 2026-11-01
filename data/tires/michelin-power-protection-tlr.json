@@ -1,0 +1,90 @@
+{
+  "id": "michelin-power-protection-tlr",
+  "maker": "Michelin",
+  "name": "Power Protection TLR",
+  "aliases": [
+    "Power Protection TLR Competition Line"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "France",
+    "basis": "French tire maker; Michelin's UK site lists its bicycle range and dealers."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Michelin's size list does not state where these tires are made."
+  },
+  "use": "all-season",
+  "positioning": "Year-round tubeless road tire with bead-to-bead puncture and pinch protection.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Michelin lists every size (28-35 mm) for hooked and hookless rims.",
+  "casing": null,
+  "compound": "Magi-X",
+  "protection": "Bead to Bead reinforcement",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Michelin's size list shows no weights; no maker weight was found.",
+  "pressure_note": "Michelin's size list gives no maximum pressure; use the figure printed on the tire.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Michelin positions it for tough road conditions all year round, listing grip among its key benefits.",
+      "source_id": "michelin-power-protection-tlr-competition-line-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Sold by Michelin's official Tmall store in mainland China; listed on Michelin's UK site with a dealer locator; North American availability not verified in this pass."
+  },
+  "price_observations": [
+    {
+      "amount": 646,
+      "currency": "CNY",
+      "market": "Michelin official Tmall store (米其林官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 543.08.",
+      "source_id": "michelin-power-protection-tlr-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "No independent lab test or maker weight found.",
+    "Protection-focused: expect more weight and rolling resistance than the Power Cup TLR."
+  ],
+  "source_ids": [
+    "michelin-power-protection-tlr-competition-line-official-2026-11-01",
+    "michelin-road-range-gb-2026-11-01",
+    "michelin-power-protection-tlr-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

@@ -412,6 +412,7 @@ const LLMS_SECTIONS = [
     ['Price ranges', '/prices/'],
     ['Groupsets', '/electronic-shifting/', 'electronic groupset reference'],
     ['Carbon wheels', '/carbon-wheels/', 'carbon wheelset reference'],
+    ['Road tires', '/tires/', 'road outer-tire reference with lab tests, wet-weather evidence and a coverage ledger'],
     ['Geometry comparison', '/geometry/', 'interactive in HTML'],
     ['Build planner', '/build/', 'interactive in HTML'],
     ['Buying guides', '/blog/'],
@@ -421,6 +422,7 @@ const LLMS_SECTIONS = [
     ['Catalog JSON', '/data/catalog.json'],
     ['Catalog CSV', '/data/catalog.csv'],
     ['Source records JSON', '/data/sources.json'],
+    ['Road tires JSON', '/data/tires.json'],
     ['Sitemap', '/sitemap.xml']
   ]],
   ['Languages', [

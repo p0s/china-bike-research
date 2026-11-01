@@ -1,0 +1,101 @@
+{
+  "id": "continental-ultra-sport-iii",
+  "maker": "Continental",
+  "name": "Ultra Sport III",
+  "aliases": [
+    "Ultra Sport 3",
+    "US3"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Continental's bicycle tires are marketed from its German site; Germany-made lines are marked 'Handmade in Germany'."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Continental's size table gives no made-in statement for this line."
+  },
+  "use": "training",
+  "positioning": "Entry road tire for performance road bikes and drop-bar city bikes.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "3-ply, 180 TPI",
+  "compound": "Performance compound",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 23,
+      "etrto": "23-622",
+      "weight_g": 235
+    },
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 260
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 410,
+      "note": "Heaviest listed version; folding and wire beads differ by up to 75 g"
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Continental folding-bead claims; wire-bead versions weigh 70-75 g more.",
+  "pressure_note": "The product table does not list maximum pressures; use the figure printed on the tire.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2020,
+      "width_mm": 25,
+      "measured_width_mm": 26,
+      "measured_weight_g": 267,
+      "setup": "butyl-tube",
+      "rr_w": 16.6,
+      "rr_psi": 80,
+      "wet_grip": 71,
+      "puncture_tread": 53
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Continental's official Tmall store sells it in mainland China; Continental's German and US catalogs list it for retailers."
+  },
+  "price_observations": [
+    {
+      "amount": 186,
+      "currency": "CNY",
+      "market": "Continental official Tmall store (德国马牌轮胎官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China.",
+      "source_id": "continental-ultra-sport-iii-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Budget training tire: about 7 W slower than the 5000 S TR in comparable lab tests.",
+    "Folding and wire-bead versions share the name; check the bead and weight on the listing."
+  ],
+  "source_ids": [
+    "continental-ultra-sport-official-2026-11-01",
+    "continental-road-range-us-2026-11-01",
+    "continental-road-range-de-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "continental-ultra-sport-iii-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

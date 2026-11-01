@@ -1,0 +1,85 @@
+{
+  "id": "pirelli-p-zero-race-tlr-4s",
+  "maker": "Pirelli",
+  "name": "P ZERO Race TLR 4S",
+  "aliases": [
+    "P0 4S TLR"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian tire maker; Pirelli says the P ZERO Race range is made at its plant in Italy near its Milan headquarters."
+  },
+  "manufacturing": {
+    "country": "Italy",
+    "basis": "Pirelli: the P ZERO Race range is made in Italy (Bollate factory)."
+  },
+  "use": "all-season",
+  "positioning": "Year-round tubeless racing tire with the SmartNET Silica compound for wet grip and mileage.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "120 TPI SpeedCORE",
+  "compound": "SmartNET Silica",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 320
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 365
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 410
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Pirelli claims per size.",
+  "pressure_note": "The product page gives no maximum pressure; use the figure printed on the tire.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2023,
+      "width_mm": 28,
+      "measured_width_mm": 28,
+      "measured_weight_g": 330,
+      "setup": "tubeless",
+      "rr_w": 15.4,
+      "rr_psi": 72,
+      "wet_grip": 76,
+      "puncture_tread": 64
+    }
+  ],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Pirelli describes SmartNET Silica as its best formulation for wet grip, for year-round racing.",
+      "source_id": "pirelli-p-zero-race-tlr-4s-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Listed in Pirelli's UK catalogue with a dealer finder; no mainland China listing was checked for this line; North American availability not verified in this pass."
+  },
+  "price_observations": [],
+  "caveats": [
+    "Heavier and slower-rolling than the standard P ZERO Race TLR in the same lab; measured wet grip was similar (76 versus 75 at 28 mm).",
+    "Hookless compatibility and maximum pressure are not stated on the product page."
+  ],
+  "source_ids": [
+    "pirelli-p-zero-race-tlr-4s-official-2026-11-01",
+    "pirelli-road-range-gb-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

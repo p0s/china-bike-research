@@ -1,0 +1,160 @@
+{
+  "id": "continental-grand-prix-5000-s-tr",
+  "maker": "Continental",
+  "name": "Grand Prix 5000 S TR",
+  "aliases": [
+    "GP5000 S TR",
+    "GP5000 STR"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Continental's bicycle tires are marketed from its German site; Germany-made lines are marked 'Handmade in Germany'."
+  },
+  "manufacturing": {
+    "country": "Germany",
+    "basis": "Continental's size table: 'Handmade in Germany'."
+  },
+  "use": "all-round",
+  "positioning": "Continental's tubeless race and all-round road tire, positioned as a balance of speed, grip and puncture protection.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Continental lists separate hookless maximum pressures (73 psi up to 28 mm, 65 psi at 30-32 mm, 58 psi at 35 mm) and permitted rim ranges per size.",
+  "casing": "2-ply, 220 TPI",
+  "compound": "BlackChili",
+  "protection": "Vectran breaker",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 250,
+      "max_psi": 109,
+      "max_bar": 7.5,
+      "note": "Hookless 73 psi; rim 13-21 mm"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 280,
+      "max_psi": 95,
+      "max_bar": 6.5,
+      "note": "Hookless 73 psi; rim 15-23 mm"
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 300,
+      "max_psi": 73,
+      "max_bar": 5.0,
+      "note": "Hookless 65 psi; rim 16-25 mm"
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 330,
+      "max_psi": 73,
+      "max_bar": 5.0,
+      "note": "Hookless 65 psi; rim 16-25 mm"
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 365,
+      "max_psi": 66,
+      "max_bar": 4.5,
+      "note": "Hookless 58 psi; rim 17-27 mm"
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Continental black-sidewall claims per size; transparent sidewalls add up to 5 g.",
+  "pressure_note": "Maximum pressures are for hooked rims; hookless limits are lower.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2023,
+      "width_mm": 28,
+      "measured_width_mm": 29,
+      "measured_weight_g": 265,
+      "setup": "tubeless",
+      "rr_w": 9.7,
+      "rr_psi": 72,
+      "wet_grip": 70,
+      "puncture_tread": 34
+    },
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2024,
+      "width_mm": 30,
+      "measured_width_mm": 30,
+      "measured_weight_g": 308,
+      "setup": "tubeless",
+      "rr_w": 10.0,
+      "rr_psi": 72,
+      "wet_grip": 67,
+      "puncture_tread": 40
+    },
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2021,
+      "width_mm": 25,
+      "measured_width_mm": 26,
+      "measured_weight_g": 255,
+      "setup": "tubeless",
+      "rr_w": 10.1,
+      "rr_psi": 80,
+      "wet_grip": 66,
+      "puncture_tread": 36
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Continental's official Tmall store sells it in mainland China; Continental's German and US catalogs list it for retailers."
+  },
+  "price_observations": [
+    {
+      "amount": 729,
+      "currency": "CNY",
+      "market": "Continental official Tmall store (德国马牌轮胎官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China.",
+      "source_id": "continental-grand-prix-5000-s-tr-tmall-2026-11-01",
+      "width_mm": 28
+    },
+    {
+      "amount": 658,
+      "currency": "CNY",
+      "market": "Continental official Tmall store (德国马牌轮胎官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China.",
+      "source_id": "continental-grand-prix-5000-s-tr-tmall-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "Use the lower hookless pressure on hookless rims and stay inside the permitted rim range for the size.",
+    "Fast, light race casing: tread puncture protection measured lower than all-season and training tires.",
+    "Check frame and rim clearance for the measured width; tires usually measure wider on wide rims."
+  ],
+  "source_ids": [
+    "continental-grand-prix-5000-s-tr-official-2026-11-01",
+    "continental-road-range-us-2026-11-01",
+    "continental-road-range-de-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "continental-grand-prix-5000-s-tr-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

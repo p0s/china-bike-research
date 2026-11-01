@@ -1,0 +1,850 @@
+{
+  "id": "road-tires-2026-11",
+  "as_of": "2026-11-01",
+  "scope_note": "Road outer tires with a current 700C width of 25-35 mm, or 20-40 mm with wet-traction evidence: mainland-China and Taiwan brands found in Chinese marketplaces and XHS, plus leading international lines sold in Asia, Europe and North America. Inner tubes and gravel, MTB and city tires are outside the comparison. This is the discovered roster, not every tire made.",
+  "routes": [
+    {
+      "name": "Bicycle Rolling Resistance road list",
+      "checked_at": "2026-11-01",
+      "summary": "183 road tires with public lab figures; no mainland-Chinese brand is listed."
+    },
+    {
+      "name": "Xiaohongshu search",
+      "checked_at": "2026-11-01",
+      "summary": "Ten searches (domestic road tires, top domestic tires, Chaoyang/ARISUN, domestic tubeless, JILUER, wet grip, Innova, CST, Kenda, new 2026 tires) and 25 opened posts in one sequential browser session; repeated results showed saturation for domestic brands."
+    },
+    {
+      "name": "Taobao and Tmall",
+      "checked_at": "2026-11-01",
+      "summary": "Brand facet for the road-tire query, tubeless listings and official-store listings for Chaoyang, ARISUN and Continental."
+    },
+    {
+      "name": "Maker catalogs",
+      "checked_at": "2026-11-01",
+      "summary": "Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance) and Vittoria (international store) road ranges; further maker catalogs are added with each research batch."
+    },
+    {
+      "name": "Brand identity checks",
+      "checked_at": "2026-11-01",
+      "summary": "Web searches for ZC Rubber/ARISUN, JILUER, Innova and CARNOS."
+    }
+  ],
+  "brands": [
+    {
+      "id": "chaoyang",
+      "name": "Chaoyang",
+      "name_zh": "朝阳",
+      "origin_group": "mainland-china",
+      "origin_basis": "ZC Rubber (Zhongce) bicycle-tire brand with an official Tmall store."
+    },
+    {
+      "id": "arisun",
+      "name": "ARISUN",
+      "name_zh": "艾瑞森",
+      "origin_group": "mainland-china",
+      "origin_basis": "ZC Rubber performance bicycle-tire brand; official listing gives the brand as 朝阳."
+    },
+    {
+      "id": "jiluer",
+      "name": "JILUER",
+      "name_zh": "吉路尔",
+      "origin_group": "mainland-china",
+      "origin_basis": "Shandong Jiluer Tire Co., Tengzhou (third-party brand directory)."
+    },
+    {
+      "id": "hebo",
+      "name": "Hebo",
+      "name_zh": "和博",
+      "origin_group": "mainland-china",
+      "origin_basis": "Named in one XHS owner comment as a domestic tire brand; not verified."
+    },
+    {
+      "id": "carnos",
+      "name": "CARNOS",
+      "origin_group": "mainland-china",
+      "origin_basis": "Tmall store label (CARNOS旗舰店) selling co-branded tires."
+    },
+    {
+      "id": "xds",
+      "name": "XDS",
+      "name_zh": "喜德盛",
+      "origin_group": "mainland-china",
+      "origin_basis": "Shenzhen bicycle maker; listings sell original-equipment spare tires."
+    },
+    {
+      "id": "ridenow",
+      "name": "RideNow",
+      "name_zh": "莱德诺",
+      "origin_group": "mainland-china",
+      "origin_basis": "Domestic TPU tube and accessory brand found in the Taobao brand facet."
+    },
+    {
+      "id": "boostor",
+      "name": "Boostor",
+      "origin_group": "mainland-china",
+      "origin_basis": "Domestic wheel and TPU tube brand seen in XHS posts."
+    },
+    {
+      "id": "facet-minor",
+      "name": "BHE and 速斗鹰",
+      "origin_group": "mainland-china",
+      "origin_basis": "Taobao brand-facet entries for the road-tire query; identity not verified."
+    },
+    {
+      "id": "cst",
+      "name": "CST",
+      "name_zh": "正新",
+      "origin_group": "taiwan",
+      "origin_basis": "Cheng Shin Rubber, Taiwan; widely sold in mainland China."
+    },
+    {
+      "id": "maxxis",
+      "name": "Maxxis",
+      "name_zh": "玛吉斯",
+      "origin_group": "taiwan",
+      "origin_basis": "Cheng Shin Rubber brand, Taiwan."
+    },
+    {
+      "id": "kenda",
+      "name": "Kenda",
+      "name_zh": "建大",
+      "origin_group": "taiwan",
+      "origin_basis": "Kenda Rubber, Taiwan; China listings describe the Valkyrie as imported from Taiwan."
+    },
+    {
+      "id": "giant",
+      "name": "Giant",
+      "name_zh": "捷安特",
+      "origin_group": "taiwan",
+      "origin_basis": "Giant, Taiwan; Gavia road tires sold in mainland China."
+    },
+    {
+      "id": "cadex",
+      "name": "CADEX",
+      "origin_group": "taiwan",
+      "origin_basis": "Giant group's premium component brand."
+    },
+    {
+      "id": "innova",
+      "name": "Innova",
+      "name_zh": "伊诺华",
+      "origin_group": "taiwan",
+      "origin_basis": "Innova Rubber, Changhua, Taiwan (retailer company profiles)."
+    },
+    {
+      "id": "continental",
+      "name": "Continental",
+      "name_zh": "马牌",
+      "origin_group": "international",
+      "origin_basis": "German tire maker; official Tmall store in mainland China."
+    },
+    {
+      "id": "pirelli",
+      "name": "Pirelli",
+      "name_zh": "倍耐力",
+      "origin_group": "international",
+      "origin_basis": "Italian tire maker."
+    },
+    {
+      "id": "michelin",
+      "name": "Michelin",
+      "name_zh": "米其林",
+      "origin_group": "international",
+      "origin_basis": "French tire maker."
+    },
+    {
+      "id": "schwalbe",
+      "name": "Schwalbe",
+      "name_zh": "世文",
+      "origin_group": "international",
+      "origin_basis": "German bicycle-tire maker (Ralf Bohle)."
+    },
+    {
+      "id": "vittoria",
+      "name": "Vittoria",
+      "name_zh": "维多利亚",
+      "origin_group": "international",
+      "origin_basis": "Italian bicycle-tire maker."
+    },
+    {
+      "id": "goodyear",
+      "name": "Goodyear",
+      "name_zh": "固特异",
+      "origin_group": "international",
+      "origin_basis": "US brand; bicycle tires under licence."
+    },
+    {
+      "id": "specialized",
+      "name": "Specialized",
+      "name_zh": "闪电",
+      "origin_group": "international",
+      "origin_basis": "US bicycle brand."
+    },
+    {
+      "id": "panaracer",
+      "name": "Panaracer",
+      "name_zh": "松下",
+      "origin_group": "international",
+      "origin_basis": "Japanese bicycle-tire maker."
+    },
+    {
+      "id": "irc",
+      "name": "IRC",
+      "origin_group": "international",
+      "origin_basis": "Japanese tire maker."
+    },
+    {
+      "id": "hutchinson",
+      "name": "Hutchinson",
+      "name_zh": "黑鸟 (Blackbird)",
+      "origin_group": "international",
+      "origin_basis": "French tire maker."
+    },
+    {
+      "id": "specialists",
+      "name": "Specialist brands in lab-test lists",
+      "origin_group": "international",
+      "origin_basis": "Brands found in the Bicycle Rolling Resistance road list."
+    }
+  ],
+  "candidates": [
+    {
+      "brand_id": "chaoyang",
+      "name": "H-496 Falcon (隼)",
+      "disposition": "included",
+      "reason": "Official store listing and owner reports; no lab test found.",
+      "record_id": "chaoyang-h-496"
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "H-486 Cobra (眼镜蛇)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "H-498 \"Chinese knot\" edition",
+      "disposition": "unresolved",
+      "reason": "Official store sells it separately; sellers write \"H496/498\", but the relationship to H-496 is not documented."
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "H-457 Mini Shark (迷你鲨)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "H-479 Viper",
+      "disposition": "excluded",
+      "reason": "Entry-level 60 TPI folding tire about 335 g at 28 mm in a retailer listing; outside the performance-road comparison."
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "Speed Shark, Fly Fish and H-419 wire tires",
+      "disposition": "excluded",
+      "reason": "City and fitness wire-bead tires."
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "Tubeless road/gravel \"恐龙皮\" 700x28-40C (EV store)",
+      "disposition": "unresolved",
+      "reason": "Listing in a Chaoyang e-bike store without an identifiable model name."
+    },
+    {
+      "brand_id": "arisun",
+      "name": "STORM R1 clincher (风R1)",
+      "disposition": "included",
+      "reason": "Official store listing and several owner reports; no lab test found.",
+      "record_id": "arisun-storm-r1"
+    },
+    {
+      "brand_id": "arisun",
+      "name": "STORM R1 TLR (风R1 真空)",
+      "disposition": "included",
+      "reason": "Official store listing and owner tests; no lab test found.",
+      "record_id": "arisun-storm-r1-tlr"
+    },
+    {
+      "brand_id": "arisun",
+      "name": "Rapide",
+      "disposition": "excluded",
+      "reason": "Entry-level 30/60 TPI export tire; not found in China-market road discussions."
+    },
+    {
+      "brand_id": "jiluer",
+      "name": "Chaser (60 TPI)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "jiluer",
+      "name": "Chaser Pro",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "jiluer",
+      "name": "Chaser T2",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "jiluer",
+      "name": "Tubeless road tire",
+      "disposition": "unresolved",
+      "reason": "Model name not identified; owner reports of bulging in a 2025 batch."
+    },
+    {
+      "brand_id": "jiluer",
+      "name": "狼图 (Wolf pattern)",
+      "disposition": "unresolved",
+      "reason": "Listing name only; no specification found."
+    },
+    {
+      "brand_id": "hebo",
+      "name": "Road tires",
+      "disposition": "unresolved",
+      "reason": "Brand named once in an owner comment; no road-tire listing identified."
+    },
+    {
+      "brand_id": "carnos",
+      "name": "Co-branded road tires",
+      "disposition": "excluded",
+      "reason": "Store label selling co-branded CST, Chaoyang, Kenda, Maxxis, IRC and Schwalbe tires; no own tire line."
+    },
+    {
+      "brand_id": "xds",
+      "name": "Original-equipment road tires",
+      "disposition": "excluded",
+      "reason": "Spare original-equipment tires for XDS bikes, listed with CST tires; no distinct model."
+    },
+    {
+      "brand_id": "ridenow",
+      "name": "Road products",
+      "disposition": "excluded",
+      "reason": "TPU tubes and tubeless inserts; no outer road tire found."
+    },
+    {
+      "brand_id": "boostor",
+      "name": "Road products",
+      "disposition": "excluded",
+      "reason": "Wheels and TPU inner tubes only; inner tubes are outside this comparison."
+    },
+    {
+      "brand_id": "facet-minor",
+      "name": "Road tires",
+      "disposition": "unresolved",
+      "reason": "Brand-facet entries only; no identifiable road-tire model found."
+    },
+    {
+      "brand_id": "cst",
+      "name": "Energia C3045",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "cst",
+      "name": "Cito C1922",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "cst",
+      "name": "C1808",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "cst",
+      "name": "CRD06 tubeless",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "cst",
+      "name": "C1406",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "cst",
+      "name": "CFT1",
+      "disposition": "unresolved",
+      "reason": "Named in owner posts; official identity not found."
+    },
+    {
+      "brand_id": "cst",
+      "name": "Recourse, Conquistare and Correre",
+      "disposition": "unresolved",
+      "reason": "International names on CST's road page; mapping to China model codes not established."
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "High Road SL",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "High Road",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "Re-Fuse",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "Padrone",
+      "disposition": "unresolved",
+      "reason": "Older tubeless road tire; current availability not yet checked."
+    },
+    {
+      "brand_id": "kenda",
+      "name": "Valkyrie (女武神)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K925 and K1092",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Course",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Fondo",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia AC",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "cadex",
+      "name": "Aero Tire",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "cadex",
+      "name": "Race Tubeless",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "innova",
+      "name": "笑脸 (yellow edge)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "innova",
+      "name": "3029",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Prix 5000 S TR",
+      "disposition": "included",
+      "reason": "Official specifications, lab test and official China store.",
+      "record_id": "continental-grand-prix-5000-s-tr"
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Prix 5000 AS TR",
+      "disposition": "included",
+      "reason": "Official specifications, lab test and official China store.",
+      "record_id": "continental-grand-prix-5000-all-season-tr"
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Prix TR",
+      "disposition": "included",
+      "reason": "Official specifications, lab test and official China store.",
+      "record_id": "continental-grand-prix-tr"
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Prix 5000 (tube type)",
+      "disposition": "included",
+      "reason": "Official specifications, lab tests and official China store.",
+      "record_id": "continental-grand-prix-5000"
+    },
+    {
+      "brand_id": "continental",
+      "name": "Aero 111",
+      "disposition": "included",
+      "reason": "Official specifications and lab test.",
+      "record_id": "continental-aero-111"
+    },
+    {
+      "brand_id": "continental",
+      "name": "Ultra Sport III",
+      "disposition": "included",
+      "reason": "Official specifications, lab test and official China store.",
+      "record_id": "continental-ultra-sport-iii"
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Sport Race",
+      "disposition": "included",
+      "reason": "Official specifications and official China store.",
+      "record_id": "continental-grand-sport-race"
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Prix (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "continental",
+      "name": "Gatorskin",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Prix 4-Season",
+      "disposition": "unresolved",
+      "reason": "Listed in the road range, but the official page showed no size table on 2026-11-01."
+    },
+    {
+      "brand_id": "continental",
+      "name": "Grand Prix 5000 TT TR",
+      "disposition": "excluded",
+      "reason": "Time-trial specialist tire; the 5000 S TR covers road use."
+    },
+    {
+      "brand_id": "continental",
+      "name": "Pogačar and TdF limited editions",
+      "disposition": "excluded",
+      "reason": "Limited editions of the 5000 S TR."
+    },
+    {
+      "brand_id": "continental",
+      "name": "Gatorskin Black Edition",
+      "disposition": "excluded",
+      "reason": "Variant of the Gatorskin line."
+    },
+    {
+      "brand_id": "continental",
+      "name": "Competition and Sprinter Gatorskin",
+      "disposition": "excluded",
+      "reason": "Tubular tires."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TLR",
+      "disposition": "included",
+      "reason": "Official specifications and lab tests.",
+      "record_id": "pirelli-p-zero-race-tlr"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TLR RS",
+      "disposition": "included",
+      "reason": "Official specifications, lab tests and a mainland retail listing.",
+      "record_id": "pirelli-p-zero-race-tlr-rs"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TLR 4S",
+      "disposition": "included",
+      "reason": "Official specifications and lab test.",
+      "record_id": "pirelli-p-zero-race-tlr-4s"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Cinturato Road TLR",
+      "disposition": "included",
+      "reason": "Official specifications; the older Cinturato Velo lab results are not applied.",
+      "record_id": "pirelli-cinturato-road-tlr"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TLR SL-R",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Road TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race 4S (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P7 Sport",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Cinturato Road (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race RS (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race TT",
+      "disposition": "excluded",
+      "reason": "Time-trial specialist tire."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Cinturato Evo, Cinturato Sport and P4 Sport",
+      "disposition": "excluded",
+      "reason": "Entry or commuting road lines; outside the performance-road comparison in this pass."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Cup TLR",
+      "disposition": "included",
+      "reason": "Official size list with per-size hookless approval, lab tests and official China store.",
+      "record_id": "michelin-power-cup-tlr"
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Pro5 TLR",
+      "disposition": "included",
+      "reason": "Official size list with hookless approval, lab tests and official China store.",
+      "record_id": "michelin-pro5-tlr"
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Protection TLR",
+      "disposition": "included",
+      "reason": "Official size list with hookless approval and official China store.",
+      "record_id": "michelin-power-protection-tlr"
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Cup (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Pro5 (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Lithion 4",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Time Trial",
+      "disposition": "excluded",
+      "reason": "Time-trial specialist tire."
+    },
+    {
+      "brand_id": "michelin",
+      "name": "Power Cup Tubular",
+      "disposition": "excluded",
+      "reason": "Tubular tire."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Pro One TLE",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Schwalbe One TLE",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Durano Plus",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and prices, lab test and Tmall store.",
+      "record_id": "vittoria-corsa-pro-tlr"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO Control TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and prices, lab test and Tmall store.",
+      "record_id": "vittoria-corsa-pro-control-tlr"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa N.EXT TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and prices, lab test and Tmall store.",
+      "record_id": "vittoria-corsa-n-ext-tlr"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO Speed TLR",
+      "disposition": "excluded",
+      "reason": "Vittoria says it is designed specifically for time trial and triathlon."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa N.EXT (tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Rubino (TLR and tube type)",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Zaffiro and Zaffiro Evo",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "RideArmor TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO tubular and other tubulars",
+      "disposition": "excluded",
+      "reason": "Tubular tires."
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa PRO Gold and colour editions",
+      "disposition": "excluded",
+      "reason": "Limited or colour editions of the Corsa PRO."
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 R",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 SuperSport R",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Vector 4Seasons",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle Sport",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "S-Works Turbo TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest Fast TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest Duro",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "irc",
+      "name": "Formula Pro TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Blackbird Race TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Blackbird TLR",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Fusion 5 All Season",
+      "disposition": "unresolved",
+      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+    },
+    {
+      "brand_id": "specialists",
+      "name": "Veloflex, Challenge, Tufo, Zipp, Bontrager, Enve, Silca, Wolfpack, Cadex-tested specialists, Vredestein and Rene Herse",
+      "disposition": "excluded",
+      "reason": "Reviewed in the lab-test list; not added in this pass, which prioritizes major makers with national distribution in Asia, Europe and North America."
+    }
+  ]
+}

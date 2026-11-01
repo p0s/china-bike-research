@@ -1,0 +1,124 @@
+{
+  "id": "pirelli-p-zero-race-tlr-rs",
+  "maker": "Pirelli",
+  "name": "P ZERO Race TLR RS",
+  "aliases": [
+    "P0 RS",
+    "PZero Race RS TLR"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian tire maker; Pirelli says the P ZERO Race range is made at its plant in Italy near its Milan headquarters."
+  },
+  "manufacturing": {
+    "country": "Italy",
+    "basis": "Pirelli: the P ZERO Race range is made in Italy (Bollate factory)."
+  },
+  "use": "race",
+  "positioning": "Pirelli's top SpeedCORE race tire developed with World Tour teams, with the SmartEVO2 compound.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "120 TPI SpeedCORE (lighter version)",
+  "compound": "SmartEVO2",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 270
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 310
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 340
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 370
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Pirelli claims per size.",
+  "pressure_note": "The product page gives no maximum pressure; use the figure printed on the tire.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2024,
+      "width_mm": 28,
+      "measured_width_mm": 28,
+      "measured_weight_g": 294,
+      "setup": "tubeless",
+      "rr_w": 10.5,
+      "rr_psi": 72,
+      "wet_grip": 80,
+      "puncture_tread": 43
+    },
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2026,
+      "width_mm": 30,
+      "measured_width_mm": 30,
+      "measured_weight_g": 313,
+      "setup": "tubeless",
+      "rr_w": 9.7,
+      "rr_psi": 72,
+      "wet_grip": 80,
+      "puncture_tread": 43
+    }
+  ],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Pirelli claims SmartEVO2 improves grip and handling on dry and especially wet surfaces.",
+      "source_id": "pirelli-p-zero-race-tlr-rs-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Listed in Pirelli's UK catalogue with a dealer finder; sold by retail shops on Tmall and Taobao in mainland China (no official Pirelli store found); North American availability not verified in this pass."
+  },
+  "price_observations": [
+    {
+      "amount": 670,
+      "currency": "CNY",
+      "market": "宝祥丰运动户外专营店 (Tmall retailer)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retail shop list price before discounts on 2026-11-01 for the unboxed black 30C option; coupon price CNY 419.8. Not an official Pirelli store; single or pair not stated.",
+      "source_id": "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
+      "width_mm": 30
+    }
+  ],
+  "caveats": [
+    "Race casing: lower tread puncture score than the standard P ZERO Race TLR in the same lab.",
+    "Hookless compatibility and maximum pressure are not stated on the product page.",
+    "Mainland China price is from a retail shop, not an official Pirelli store."
+  ],
+  "source_ids": [
+    "pirelli-p-zero-race-tlr-rs-official-2026-11-01",
+    "pirelli-road-range-gb-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

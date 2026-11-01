@@ -31,6 +31,7 @@ import {
   renderBikeBuilder,
   renderElectronicGroupsets,
   renderCarbonWheels,
+  renderTires,
   renderLandingPage,
   renderMethodology,
   renderPrivacy,
@@ -177,7 +178,7 @@ for (const landing of landings.pages) {
 for (const product of products) addLocalized(`/models/${product.variant.id}/`, (localized) => renderModel(localized, product), true, { lastmod: productLastmod(product) });
 for (const candidate of candidates) addLocalized(`/models/${candidate.candidate.id}/`, (localized) => renderCandidateModel(localized, candidate), candidateIndexable(candidate), { lastmod: candidateLastmod(candidate) });
 for (const [route, render] of [
-  ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets], ['/carbon-wheels/', renderCarbonWheels],
+  ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets], ['/carbon-wheels/', renderCarbonWheels], ['/tires/', renderTires],
   ['/privacy/', renderPrivacy], ['/image-policy/', renderImagePolicy], ['/image-sources/', renderImageSources]
 ]) addLocalized(route, render, true, { lastmod: siteLastmod });
 addLocalized('/blog/', (localized) => renderBlogIndex(localized, posts), true, { lastmod: latestDate(posts.map((post) => postLastmod(ctx, post)), siteLastmod) });
@@ -213,6 +214,7 @@ write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at
 write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
 write('data/groupsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, groupsets: data.groupsets }, null, 2)}\n`);
 write('data/wheelsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, wheelsets: data.wheelsets }, null, 2)}\n`);
+write('data/tires.json', `${JSON.stringify({ generated_at: catalog.generated_at, tires: data.tires ?? [], coverage: data.tireCoverage ?? [] }, null, 2)}\n`);
 write('data/build-parts.json', `${JSON.stringify({ generated_at: catalog.generated_at, build_parts: data.buildParts }, null, 2)}\n`);
 
 const headers = [
