@@ -1,0 +1,64 @@
+{
+  "maker": "Vredestein",
+  "origin": {
+    "group": "international",
+    "country": "Netherlands",
+    "basis": "Vredestein was founded in 1908 in the Netherlands and has been owned by Apollo Tyres Ltd since 2009 (heritage page)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The product page does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Vredestein size-table weights (black sidewall unless noted).",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Vredestein's Dutch site lists the tire with a dealer finder and no price; other regions not verified."
+  },
+  "price_observations": [],
+  "id": "vredestein-superpasso-pro",
+  "name": "Superpasso Pro (tube type)",
+  "use": "race",
+  "positioning": "Tube-type version of the 120 TPI Superpasso Pro race tire.",
+  "construction": "tube-type",
+  "casing": "120 TPI",
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 205,
+      "note": "6-9 bar"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 230,
+      "note": "5-7 bar"
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 235,
+      "note": "Transparent sidewall 225 g"
+    }
+  ],
+  "caveats": [
+    "Needs an inner tube; the Superpasso Pro TLR is listed separately.",
+    "No independent lab test of this model found."
+  ],
+  "source_ids": [
+    "vredestein-superpasso-pro-official-2026-11-01",
+    "vredestein-superpasso-pro-30-official-2026-11-01",
+    "vredestein-heritage-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

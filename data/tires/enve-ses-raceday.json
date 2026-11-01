@@ -1,0 +1,90 @@
+{
+  "id": "enve-ses-raceday",
+  "maker": "ENVE",
+  "name": "SES Raceday",
+  "aliases": [
+    "SES Race Day"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "ENVE Composites USA publishes the official store (site footer)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "ENVE does not state where the tire is made."
+  },
+  "use": "race",
+  "positioning": "ENVE's lightest tubeless-ready race-day tire for road racing, criteriums and time trials.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": null,
+  "compound": "Nanotech-enhanced compound",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 27,
+      "etrto": "27-622",
+      "weight_g": 195,
+      "max_psi": 85,
+      "max_bar": 5.9
+    },
+    {
+      "width_mm": 29,
+      "etrto": "29-622",
+      "weight_g": 210,
+      "max_psi": 80,
+      "max_bar": 5.5
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "ENVE tech-spec table.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2024,
+      "width_mm": 29,
+      "measured_width_mm": 30,
+      "measured_weight_g": 214,
+      "setup": "tubeless",
+      "rr_w": 9.3,
+      "rr_psi": 72,
+      "wet_grip": 80,
+      "puncture_tread": 37
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by ENVE's US store; the European storefront was not read for this tire."
+  },
+  "price_observations": [
+    {
+      "amount": 100,
+      "currency": "USD",
+      "market": "ENVE store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "enve-ses-raceday-tire-official-2026-11-01",
+      "width_mm": 29
+    }
+  ],
+  "caveats": [
+    "ENVE says it prioritizes speed over puncture resistance and longevity; the lab tread-puncture score is low (37).",
+    "Hookless use is not stated on the product page."
+  ],
+  "source_ids": [
+    "enve-ses-raceday-tire-official-2026-11-01",
+    "enve-about-official-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

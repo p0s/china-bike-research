@@ -200,10 +200,64 @@
       "origin_basis": "Founded in 1853 in Châlette-sur-Loing, France; bicycle tires since 1890 (company history)."
     },
     {
-      "id": "specialists",
-      "name": "Specialist brands in lab-test lists",
+      "id": "vredestein",
+      "name": "Vredestein",
       "origin_group": "international",
-      "origin_basis": "Brands found in the Bicycle Rolling Resistance road list."
+      "origin_basis": "Founded in 1908 in the Netherlands; owned by Apollo Tyres since 2009 (heritage page)."
+    },
+    {
+      "id": "enve",
+      "name": "ENVE",
+      "origin_group": "international",
+      "origin_basis": "ENVE Composites USA (official store footer)."
+    },
+    {
+      "id": "zipp",
+      "name": "Zipp",
+      "origin_group": "international",
+      "origin_basis": "SRAM's wheel and component brand; tires are published on sram.com."
+    },
+    {
+      "id": "bontrager",
+      "name": "Bontrager (Trek)",
+      "origin_group": "international",
+      "origin_basis": "Trek Bicycle's component brand, sold through Trek."
+    },
+    {
+      "id": "silca",
+      "name": "SILCA",
+      "origin_group": "international",
+      "origin_basis": "US accessory and tire brand with its own web store."
+    },
+    {
+      "id": "veloflex",
+      "name": "Veloflex",
+      "origin_group": "international",
+      "origin_basis": "Italian tire brand."
+    },
+    {
+      "id": "challenge",
+      "name": "Challenge",
+      "origin_group": "international",
+      "origin_basis": "Handmade tire brand with Italian roots."
+    },
+    {
+      "id": "tufo",
+      "name": "Tufo",
+      "origin_group": "international",
+      "origin_basis": "Czech tire maker."
+    },
+    {
+      "id": "wolfpack",
+      "name": "Wolfpack",
+      "origin_group": "international",
+      "origin_basis": "Wolfpack - Tires GmbH, Medebach, Germany (retailer manufacturer details)."
+    },
+    {
+      "id": "renehersecycles",
+      "name": "Rene Herse",
+      "origin_group": "international",
+      "origin_basis": "US cycling-component maker selling its own tires."
     }
   ],
   "candidates": [
@@ -1383,10 +1437,152 @@
       "reason": "Hutchinson labels it a Leisure tire for new riders: tube type, mono-compound, 65-66 TPI folding at 350 g (25 and 28 mm) or a 33 TPI wire version."
     },
     {
-      "brand_id": "specialists",
-      "name": "Veloflex, Challenge, Tufo, Zipp, Bontrager, Enve, Silca, Wolfpack, Cadex-tested specialists, Vredestein and Rene Herse",
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro TLR",
+      "disposition": "included",
+      "reason": "Official size table (28, 30, 32 mm).",
+      "record_id": "vredestein-superpasso-pro-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro (tube type)",
+      "disposition": "included",
+      "reason": "Official size table (25, 28, 30 mm).",
+      "record_id": "vredestein-superpasso-pro"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso 2 TLR",
+      "disposition": "included",
+      "reason": "Official size table (28, 32 mm).",
+      "record_id": "vredestein-superpasso-2-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso 2 (tube type)",
+      "disposition": "included",
+      "reason": "Official size table (28 mm).",
+      "record_id": "vredestein-superpasso-2"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro 4S TLR",
+      "disposition": "included",
+      "reason": "Official size table (28-35 mm).",
+      "record_id": "vredestein-superpasso-pro-4s-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro Cotton TLR",
+      "disposition": "included",
+      "reason": "Official size table (28 mm).",
+      "record_id": "vredestein-superpasso-pro-cotton-tlr"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Superpasso Pro Cotton (tube type)",
+      "disposition": "included",
+      "reason": "Official size table (28 mm).",
+      "record_id": "vredestein-superpasso-pro-cotton"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fortezza Senso Xtreme Weather",
+      "disposition": "included",
+      "reason": "Official size table and wet-weather positioning.",
+      "record_id": "vredestein-fortezza-senso-xtreme-weather"
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Freccia",
       "disposition": "excluded",
-      "reason": "Scope boundary: specialist and wheel-brand lines seen in the lab-test list are outside this roster, which covers major tire makers with national distribution in Asia, Europe and North America plus mainland-China and Taiwan brands. They were not researched model by model."
+      "reason": "Vredestein positions it as a folding tire for training and touring with a 50 TPI casing; entry-level tires are outside this comparison."
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fiammante (folding and rigid)",
+      "disposition": "excluded",
+      "reason": "Vredestein calls it an extremely durable tire for recreational use (26 TPI)."
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fortezza Senso T All Weather",
+      "disposition": "excluded",
+      "reason": "Handmade tubular ('tube'); tubular tires are outside this comparison."
+    },
+    {
+      "brand_id": "vredestein",
+      "name": "Fortezza Senso Superiore, Senso All Weather clincher and Fortezza Tubeless Ready",
+      "disposition": "excluded",
+      "reason": "Not in Vredestein's current road range on 2026-11-01; the Senso Superiore product page returns 404. The 2015 lab test of the Senso All Weather is not applied."
+    },
+    {
+      "brand_id": "enve",
+      "name": "SES Road Tire",
+      "disposition": "included",
+      "reason": "Official store specifications, hookless statement and price.",
+      "record_id": "enve-ses-road-tire"
+    },
+    {
+      "brand_id": "enve",
+      "name": "SES Raceday",
+      "disposition": "included",
+      "reason": "Official store specifications and price, 2024 lab test.",
+      "record_id": "enve-ses-raceday"
+    },
+    {
+      "brand_id": "zipp",
+      "name": "Tangente Speed (tubeless and clincher) and Tangente Course (clincher)",
+      "disposition": "excluded",
+      "reason": "Not current: Zipp's tire page on sram.com lists only gravel tires on 2026-11-01; the Tangente road tires remain only as SRAM service model pages. The 2021 lab test of the Tangente Speed is not applied."
+    },
+    {
+      "brand_id": "zipp",
+      "name": "G40 XPLR and Goodyear XPLR Slick and Intermediate (designed for Zipp)",
+      "disposition": "excluded",
+      "reason": "Gravel tires in 40-45 mm listed under Zipp's gravel products."
+    },
+    {
+      "brand_id": "bontrager",
+      "name": "Road range",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
+    },
+    {
+      "brand_id": "silca",
+      "name": "Road range",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Road range",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
+    },
+    {
+      "brand_id": "challenge",
+      "name": "Road range",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Road range",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road range",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Road range",
+      "disposition": "unresolved",
+      "reason": "Queued for the specialist-brand batches of this follow-up."
     }
   ]
 }
