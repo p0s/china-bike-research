@@ -16,12 +16,12 @@
     {
       "name": "Taobao and Tmall",
       "checked_at": "2026-11-01",
-      "summary": "Brand facet for the road-tire query, tubeless listings, official-store listings (Chaoyang, ARISUN, Continental, Michelin, Giant) and dealer or shop listings for CST, Kenda, JILUER, Innova, Maxxis, Pirelli and Vittoria."
+      "summary": "Brand facet for the road-tire query, tubeless listings, official-store listings (Chaoyang, ARISUN, Continental, Michelin, Giant) and dealer or shop listings for CST, Kenda, JILUER, Innova, Maxxis, Pirelli and Vittoria. Follow-up the same day: 14 exact-model searches for the unresolved Chinese and Taiwanese rows, 12 listings opened, six maker-catalog searches (Chaoyang, ARISUN, Kenda, CST, Innova, JILUER) and three broad domestic queries; no further mainland brand with its own road tire was found, and unnamed generic listings were not added."
     },
     {
       "name": "Maker catalogs",
       "checked_at": "2026-11-01",
-      "summary": "Road ranges from Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Goodyear (US store), Maxxis (US), Kenda (US shop), Specialized (US store), Panaracer (USA store and global site), IRC (US site), CADEX (US store), Giant (UK and US stores) and Hutchinson (global site). Schwalbe's official pages could not be read."
+      "summary": "Road ranges from Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Goodyear (US store), Maxxis (US), Kenda (US shop), Specialized (US store), Panaracer (USA store and global site), IRC (US site), CADEX (US store), Giant (UK, US and Australian stores), Hutchinson (global site) and Schwalbe (North American road category and schwalbe.com variant pages, read as server pages because the browser rendered them blank). Continental's Grand Prix 4-Season page has no size table, so a US retailer listing is recorded as seller claims; the CADEX Aero tires have no CADEX product page, so independent lab pages record them."
     },
     {
       "name": "Brand identity checks",
@@ -157,7 +157,7 @@
       "name": "Schwalbe",
       "name_zh": "世文",
       "origin_group": "international",
-      "origin_basis": "German bicycle-tire maker (Ralf Bohle)."
+      "origin_basis": "Ralf Bohle GmbH, Reichshof, Germany (legal notice)."
     },
     {
       "id": "vittoria",
@@ -224,8 +224,16 @@
     {
       "brand_id": "chaoyang",
       "name": "H-498 \"Chinese knot\" edition",
-      "disposition": "unresolved",
-      "reason": "Official store sells it separately; sellers write \"H496/498\", but the relationship to H-496 is not documented."
+      "disposition": "included",
+      "reason": "Official Chaoyang Tmall store lists it under its own item code H-498 with folding and 60 TPI wire options and prices; its relationship to the H-496 is not documented.",
+      "record_id": "chaoyang-h-498"
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "H-496 Falcon TLR",
+      "disposition": "included",
+      "reason": "Separate tubeless option in the official store (30 mm) and a Tmall retailer (28 and 30 mm).",
+      "record_id": "chaoyang-h-496-tlr"
     },
     {
       "brand_id": "chaoyang",
@@ -249,7 +257,7 @@
       "brand_id": "chaoyang",
       "name": "Tubeless road/gravel \"恐龙皮\" 700x28-40C (EV store)",
       "disposition": "unresolved",
-      "reason": "Listing in a Chaoyang e-bike store without an identifiable model name."
+      "reason": "Listing in a Chaoyang e-bike store without an identifiable model name; a 2026-11-01 Taobao search for named Chaoyang tubeless road tires found only the H-496 TLR and ARISUN STORM R1 TLR, so the listing could not be matched."
     },
     {
       "brand_id": "arisun",
@@ -289,25 +297,26 @@
       "brand_id": "jiluer",
       "name": "Chaser T2",
       "disposition": "unresolved",
-      "reason": "One owner post (28C measured 30.3 mm on a 23 mm inner rim; punctured on the first ride); no shop listing with specifications found."
+      "reason": "One owner post (28C measured 30.3 mm on a 23 mm inner rim; punctured on the first ride); a 2026-11-01 Taobao search for 吉路尔 T2 returned only Chaser and Chaser Pro listings."
     },
     {
       "brand_id": "jiluer",
-      "name": "Tubeless road tire",
-      "disposition": "unresolved",
-      "reason": "Model name not identified; owner reports of bulging in a 2025 batch."
+      "name": "Chaser Pro tubeless (真空)",
+      "disposition": "included",
+      "reason": "Shop listing sells the Chaser Pro in a 28C tubeless version; earlier unnamed owner reports of a 2025 tubeless batch are not attributed to it.",
+      "record_id": "jiluer-chaser-pro-tubeless"
     },
     {
       "brand_id": "jiluer",
       "name": "狼图 (Wolf pattern)",
-      "disposition": "unresolved",
-      "reason": "Listing name only; no specification found."
+      "disposition": "excluded",
+      "reason": "Taobao listings show 狼图 as a JILUER e-bike, tricycle and motorcycle tire pattern (for example 14x2.5 and 3.00-10), not a road-bike tire."
     },
     {
       "brand_id": "hebo",
       "name": "Road tires",
-      "disposition": "unresolved",
-      "reason": "Brand named once in an owner comment; no road-tire listing identified."
+      "disposition": "excluded",
+      "reason": "和博 is the Taobao shop HuB和博骑行; its road-tire listing names the generic brand 'roauick' with unnamed training and racing options (one 299 g weight)."
     },
     {
       "brand_id": "carnos",
@@ -335,9 +344,15 @@
     },
     {
       "brand_id": "facet-minor",
-      "name": "Road tires",
+      "name": "速斗鹰",
+      "disposition": "excluded",
+      "reason": "速斗鹰旗舰店 is a Tmall store selling Goodyear tires; no own tire line."
+    },
+    {
+      "brand_id": "facet-minor",
+      "name": "BHE road tires",
       "disposition": "unresolved",
-      "reason": "Brand-facet entries only; no identifiable road-tire model found."
+      "reason": "Brand-facet entry only; a 2026-11-01 Taobao search for BHE road tires returned no BHE-branded listing."
     },
     {
       "brand_id": "cst",
@@ -363,14 +378,16 @@
     {
       "brand_id": "cst",
       "name": "C3045N tubeless",
-      "disposition": "unresolved",
-      "reason": "Tubeless version listed by shops; no specification beyond size found."
+      "disposition": "included",
+      "reason": "Tmall shop listing gives the 28C tubeless option, about 328 g, and price.",
+      "record_id": "cst-energia-c3045n"
     },
     {
       "brand_id": "cst",
       "name": "C1808",
-      "disposition": "unresolved",
-      "reason": "Named in an owner comparison (28C, 260 g); no listing with an exact model page found."
+      "disposition": "included",
+      "reason": "Tmall shop listing gives 25C and 28C folding 120 TPI options and price; one owner comparison.",
+      "record_id": "cst-c1808"
     },
     {
       "brand_id": "cst",
@@ -381,14 +398,20 @@
     {
       "brand_id": "cst",
       "name": "CFT1",
-      "disposition": "unresolved",
-      "reason": "Named in owner posts; official identity not found."
+      "disposition": "excluded",
+      "reason": "Tmall and Taobao listings show C-FT1 as a CST mountain-bike tire (26, 27.5 and 29 x 1.95)."
     },
     {
       "brand_id": "cst",
       "name": "Recourse, Conquistare and Correre",
       "disposition": "unresolved",
-      "reason": "International names on CST's road page; mapping to China model codes not established."
+      "reason": "International names on CST's road page; CST's US site gave no product text and a 2026-11-01 web search found no mapping to China model codes."
+    },
+    {
+      "brand_id": "cst",
+      "name": "Merida original-equipment road tires (CST-made)",
+      "disposition": "excluded",
+      "reason": "Original-equipment spares for Merida bikes sold by shops; not a distinct retail tire line."
     },
     {
       "brand_id": "maxxis",
@@ -415,13 +438,21 @@
       "brand_id": "maxxis",
       "name": "High Road SL",
       "disposition": "unresolved",
-      "reason": "Maxxis' US page labels it Gen 1 with mixed SKUs, while China shops sell a second-generation SL; generations could not be separated."
+      "reason": "Maxxis' US page labels it Gen 1 with mixed SKUs; a Tmall store sells a 'third-generation' SL (25/28 mm; clincher CNY 299, tubeless CNY 349) and Maxxis' International Gen 3 page mentions an SL only on its packaging, with no SL specifications. Generations could not be separated from official data."
     },
     {
       "brand_id": "maxxis",
-      "name": "High Road third generation (M230)",
-      "disposition": "unresolved",
-      "reason": "Sold by a Maxxis dealer in mainland China (CNY 398 per tire); no official specification found."
+      "name": "High Road Gen 3 (tube type)",
+      "disposition": "included",
+      "reason": "Official International page (construction, compound, wet claim) with sizes and price from a Tmall listing.",
+      "record_id": "maxxis-high-road-gen-3"
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "High Road Gen 3 TLR",
+      "disposition": "included",
+      "reason": "Official International page (construction, compound, wet claim) with sizes and price from a Tmall listing.",
+      "record_id": "maxxis-high-road-gen-3-tlr"
     },
     {
       "brand_id": "maxxis",
@@ -445,9 +476,34 @@
     },
     {
       "brand_id": "kenda",
-      "name": "K925 Kaliente and K1092 Kountach",
+      "name": "K925",
+      "disposition": "included",
+      "reason": "Taobao listing gives folding 120 TPI race-tire options, pressure label and prices.",
+      "record_id": "kenda-k925"
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K1092",
+      "disposition": "excluded",
+      "reason": "Entry-level 60 TPI folding training tire (Taobao: 700x25/28, 125 psi label, CNY 97-108); entry-level tires are outside this comparison, like the Chaoyang H-479 Viper. US retailers list a 120 TPI Kountach version."
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K1225 (四季 all-season)",
       "disposition": "unresolved",
-      "reason": "Named in owner posts (K925 described as easy to fit); retailers list the Kountach at 120 TPI, but no official Kenda page was found and the Kenda US shop search returned no Kountach listing on 2026-11-01."
+      "reason": "Seen only in mixed Kenda listings as an all-season 60 TPI folding tire in 28 and 32 mm (CNY 75-79); construction and weight per model are not stated."
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K1018",
+      "disposition": "excluded",
+      "reason": "Listed for fixed-gear and small-wheel bikes in 700x23/25 and 650x23 at 60 TPI."
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K177, K1029, K1286 and K1226",
+      "disposition": "excluded",
+      "reason": "Folding-bike, fixed-gear, flat-bar commuter or wide listings (K177 14-16 inch and 700x23, K1029 20 inch, K1286 flat-bar 28-35 mm, K1226 only beside a 700x40C option); not road-bike tires."
     },
     {
       "brand_id": "giant",
@@ -501,8 +557,9 @@
     {
       "brand_id": "giant",
       "name": "Gavia Course (2026)",
-      "disposition": "unresolved",
-      "reason": "New model in Giant's UK store (£59.99; 28 mm 313 g, 30 mm 354 g; RR-S, Race Shield), but the page does not state tubeless or tube-type construction."
+      "disposition": "included",
+      "reason": "Official UK store specifications and price; Giant Australia confirms the tubeless construction.",
+      "record_id": "giant-gavia-course-2026"
     },
     {
       "brand_id": "giant",
@@ -513,8 +570,8 @@
     {
       "brand_id": "giant",
       "name": "Gavia AC 0 Kevlar Tubeless",
-      "disposition": "unresolved",
-      "reason": "Seen in a search result for Giant's Italian site; not listed in the UK store on 2026-11-01 and not read."
+      "disposition": "excluded",
+      "reason": "Not current: Giant's Italian product page has been removed and the UK store does not list it (2026-11-01)."
     },
     {
       "brand_id": "cadex",
@@ -533,8 +590,16 @@
     {
       "brand_id": "cadex",
       "name": "Aero Tire",
-      "disposition": "unresolved",
-      "reason": "Lab-tested in 2026 (28 mm nominal, 26 mm measured), but no official CADEX product page was found on 2026-11-01."
+      "disposition": "included",
+      "reason": "Independent lab page (2026) gives identity, sizes and test results with a safety warning; no CADEX product page or readable retailer listing found.",
+      "record_id": "cadex-aero-tire"
+    },
+    {
+      "brand_id": "cadex",
+      "name": "Aero Cotton",
+      "disposition": "included",
+      "reason": "Independent lab page (2026) gives identity, sizes and test results; no CADEX product page or readable retailer listing found.",
+      "record_id": "cadex-aero-cotton"
     },
     {
       "brand_id": "innova",
@@ -546,8 +611,9 @@
     {
       "brand_id": "innova",
       "name": "3029",
-      "disposition": "unresolved",
-      "reason": "Named in an owner comparison (28C, 220 g); no listing with model details found."
+      "disposition": "included",
+      "reason": "Taobao listing gives folding 120 TPI options in 25-30 mm and prices; one owner comparison.",
+      "record_id": "innova-3029"
     },
     {
       "brand_id": "continental",
@@ -615,8 +681,9 @@
     {
       "brand_id": "continental",
       "name": "Grand Prix 4-Season",
-      "disposition": "unresolved",
-      "reason": "Listed in the road range, but the official page showed no size table on 2026-11-01."
+      "disposition": "included",
+      "reason": "Official page gives positioning but no size table; sizes, weights and price recorded from a US retailer listing as seller claims.",
+      "record_id": "continental-grand-prix-4-season"
     },
     {
       "brand_id": "continental",
@@ -727,9 +794,28 @@
     },
     {
       "brand_id": "pirelli",
-      "name": "Cinturato Evo, Cinturato Sport and P4 Sport",
+      "name": "Cinturato EVO TLR",
+      "disposition": "included",
+      "reason": "Official page with size table and all-weather endurance positioning.",
+      "record_id": "pirelli-cinturato-evo-tlr"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Cinturato Sport",
       "disposition": "excluded",
-      "reason": "Entry or commuting road lines; outside the performance-road comparison in this pass."
+      "reason": "Pirelli positions it for leisure weekend rides and urban commuting (60 TPI casing)."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P4 Sport",
+      "disposition": "excluded",
+      "reason": "Durability-focused 26 TPI clincher; entry-level tires are outside this comparison."
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "Angel",
+      "disposition": "excluded",
+      "reason": "Pirelli's urban line for everyday city riding."
     },
     {
       "brand_id": "michelin",
@@ -787,21 +873,103 @@
     },
     {
       "brand_id": "schwalbe",
-      "name": "Pro One Tubeless and Schwalbe One Tubeless",
-      "disposition": "unresolved",
-      "reason": "Schwalbe's official pages returned a 404 or an empty page in the research browser on 2026-11-01, so current sizes and prices could not be confirmed; the 2020 lab tests of the earlier Pro One TLE and One TLE are not applied."
+      "name": "Pro One Tubeless",
+      "disposition": "included",
+      "reason": "Official variant pages for six sizes and European RRP.",
+      "record_id": "schwalbe-pro-one-tubeless"
     },
     {
       "brand_id": "schwalbe",
-      "name": "Pro One Aero (front and rear)",
-      "disposition": "unresolved",
-      "reason": "Lab-tested in 2024 as separate front and rear tires; Schwalbe's official pages could not be read on 2026-11-01."
+      "name": "Pro One (tube type)",
+      "disposition": "included",
+      "reason": "Official variant pages for four sizes and European RRP.",
+      "record_id": "schwalbe-pro-one"
     },
     {
       "brand_id": "schwalbe",
-      "name": "Durano Plus",
-      "disposition": "unresolved",
-      "reason": "Schwalbe's official pages could not be read on 2026-11-01; retailer data only."
+      "name": "Pro One Aero Front",
+      "disposition": "included",
+      "reason": "Official North American page and 2024 lab test.",
+      "record_id": "schwalbe-pro-one-aero-front"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Pro One Aero Rear",
+      "disposition": "included",
+      "reason": "Official variant page and European RRP.",
+      "record_id": "schwalbe-pro-one-aero-rear"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One (tube type)",
+      "disposition": "included",
+      "reason": "Official variant pages for four sizes and European RRP.",
+      "record_id": "schwalbe-one"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One Tubeless",
+      "disposition": "included",
+      "reason": "Official variant pages for four sizes and European RRP.",
+      "record_id": "schwalbe-one-tubeless"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One 365 (tube type)",
+      "disposition": "included",
+      "reason": "Official variant pages for three sizes and European RRP.",
+      "record_id": "schwalbe-one-365"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One 365 Tubeless",
+      "disposition": "included",
+      "reason": "Official variant pages for two sizes and European RRP.",
+      "record_id": "schwalbe-one-365-tubeless"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One Plus",
+      "disposition": "included",
+      "reason": "Official variant pages for three folding sizes and European RRP.",
+      "record_id": "schwalbe-one-plus"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Pro One Allroad",
+      "disposition": "included",
+      "reason": "Official variant pages for three sizes and European RRP.",
+      "record_id": "schwalbe-pro-one-allroad"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Pro One TT",
+      "disposition": "excluded",
+      "reason": "Time-trial and triathlon specialist tire."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Durano Plus and Durano DD",
+      "disposition": "excluded",
+      "reason": "Superseded: Schwalbe says the One Plus succeeds the Durano Plus and the One 365 replaces the Durano DD."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Lugano II and Lugano II Endurance",
+      "disposition": "excluded",
+      "reason": "Schwalbe North America calls them an entry-level racing tire and a sportive city tire."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "E-One",
+      "disposition": "excluded",
+      "reason": "E-bike racing tire approved under ECE-R75; outside the road-bike comparison."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Insider and 16-inch One Evo",
+      "disposition": "excluded",
+      "reason": "A turbo-trainer-only tire and a 16-inch (349) folding-bike size."
     },
     {
       "brand_id": "vittoria",
@@ -1048,9 +1216,17 @@
     },
     {
       "brand_id": "specialized",
-      "name": "Roubaix Pro and Roubaix Pro 2Bliss Ready",
-      "disposition": "unresolved",
-      "reason": "Endurance tires listed with dual-width labels (23/25, 25/28 and 30/32 mm), so one nominal width cannot be recorded; no lab test of the current versions found."
+      "name": "Roubaix Pro (tube type)",
+      "disposition": "included",
+      "reason": "Official US store specifications with literal dual-width labels, and sale price.",
+      "record_id": "specialized-roubaix-pro"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Roubaix Pro 2Bliss Ready",
+      "disposition": "included",
+      "reason": "Official US store specification with a literal dual-width label, and price.",
+      "record_id": "specialized-roubaix-pro-2bliss-ready"
     },
     {
       "brand_id": "specialized",
@@ -1067,8 +1243,8 @@
     {
       "brand_id": "specialized",
       "name": "Trigger Sport",
-      "disposition": "unresolved",
-      "reason": "Listed in the US road-tire collection on 2026-11-01; product page not read."
+      "disposition": "excluded",
+      "reason": "Specialized files it under gravel bike tires for cyclocross and gravel paths; wire bead, 60 TPI, 33-47 mm (US$19.95)."
     },
     {
       "brand_id": "panaracer",
@@ -1121,15 +1297,23 @@
     },
     {
       "brand_id": "irc",
-      "name": "Gen 6 Formula Pro Tubeless RBCC and X-Guard",
-      "disposition": "unresolved",
-      "reason": "Listed in IRC's US road collection on 2026-11-01; product pages not read in this pass."
+      "name": "Formula Pro Tubeless RBCC (Gen 6)",
+      "disposition": "included",
+      "reason": "Official US specifications with hookless pressure ranges; no official price.",
+      "record_id": "irc-formula-pro-tubeless-rbcc"
+    },
+    {
+      "brand_id": "irc",
+      "name": "Formula Pro Tubeless X-Guard (Gen 6)",
+      "disposition": "included",
+      "reason": "Official US specifications with hookless pressure ranges; no official price.",
+      "record_id": "irc-formula-pro-tubeless-x-guard"
     },
     {
       "brand_id": "irc",
       "name": "Formula Pro HL TLR S-Light, TLR S-Light Hooked and Tubeless RBCC (without the Gen 6 label)",
-      "disposition": "unresolved",
-      "reason": "Shown beside the Gen 6 models in IRC's US road collection; generation and current status not established. The 2021 lab test of the Formula Pro RBCC is not applied."
+      "disposition": "excluded",
+      "reason": "Earlier-generation listings: IRC files them under All Tires rather than its 2025 Road range, without the Gen 6 label (180 TPI; 700x25-30), and its Gen 6 RBCC page compares the new tire with 'the previous model'. The 2021 lab test of the Formula Pro RBCC predates Gen 6 and is not applied."
     },
     {
       "brand_id": "hutchinson",
@@ -1189,14 +1373,20 @@
     {
       "brand_id": "hutchinson",
       "name": "GP Explorer",
-      "disposition": "unresolved",
-      "reason": "Listed as a leisure tire in Hutchinson's road range on 2026-11-01; reference table not read."
+      "disposition": "excluded",
+      "reason": "Hutchinson labels it a Leisure tire: tube type, 66 TPI folding at 230-310 g (26-32 mm) or a 33 TPI wire version."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Nitro 2",
+      "disposition": "excluded",
+      "reason": "Hutchinson labels it a Leisure tire for new riders: tube type, mono-compound, 65-66 TPI folding at 350 g (25 and 28 mm) or a 33 TPI wire version."
     },
     {
       "brand_id": "specialists",
       "name": "Veloflex, Challenge, Tufo, Zipp, Bontrager, Enve, Silca, Wolfpack, Cadex-tested specialists, Vredestein and Rene Herse",
       "disposition": "excluded",
-      "reason": "Reviewed in the lab-test list; not added in this pass, which prioritizes major makers with national distribution in Asia, Europe and North America."
+      "reason": "Scope boundary: specialist and wheel-brand lines seen in the lab-test list are outside this roster, which covers major tire makers with national distribution in Asia, Europe and North America plus mainland-China and Taiwan brands. They were not researched model by model."
     }
   ]
 }

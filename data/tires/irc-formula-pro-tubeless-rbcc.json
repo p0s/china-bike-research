@@ -1,0 +1,77 @@
+{
+  "id": "irc-formula-pro-tubeless-rbcc",
+  "maker": "IRC",
+  "name": "Formula Pro Tubeless RBCC (Gen 6)",
+  "aliases": [
+    "Formula Pro RBCC Gen 6"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Japan",
+    "basis": "Inoue Rubber Co., Ltd. (IRC Tire) was founded in 1926 in Japan and has its head office in Nagoya (IRC about page)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "IRC does not state where this tire is made."
+  },
+  "use": "all-round",
+  "positioning": "IRC's sixth-generation pure-tubeless Formula Pro with a dual compound and RBCC2 tread, sold for speed and wear life.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "IRC lists a hookless pressure range for every size, capped at 73 psi.",
+  "casing": null,
+  "compound": "Dual compound with RBCC2",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 270,
+      "max_psi": 110,
+      "note": "Hookless up to 73 psi"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 310,
+      "max_psi": 94,
+      "note": "Hookless up to 73 psi"
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 335,
+      "max_psi": 80,
+      "note": "Hookless up to 73 psi"
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 360,
+      "max_psi": 73
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "IRC table weights per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "authorized-retail",
+    "note": "IRC's US site sends buyers to local bike shops or the Pure Gravel web store; no price recorded. Mainland China and European availability not verified."
+  },
+  "price_observations": [],
+  "caveats": [
+    "IRC sells it as pure tubeless: it holds air without sealant, which the site records under tubeless-ready.",
+    "No independent lab test of Gen 6 found; the 2021 test of the Formula Pro RBCC predates it.",
+    "No official price recorded."
+  ],
+  "source_ids": [
+    "irc-formula-pro-tubeless-rbcc-gen-6-official-2026-11-01",
+    "irc-about-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

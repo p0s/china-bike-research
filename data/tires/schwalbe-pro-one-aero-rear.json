@@ -1,0 +1,67 @@
+{
+  "maker": "Schwalbe",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Schwalbe is the brand of Ralf Bohle GmbH, Reichshof, Germany (legal notice)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Schwalbe product pages do not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Schwalbe product-page weight per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Schwalbe's European and North American sites give recommended retail prices and send buyers to retailers; mainland China availability not verified."
+  },
+  "id": "schwalbe-pro-one-aero-rear",
+  "name": "Pro One Aero Rear",
+  "use": "race",
+  "positioning": "Rear-wheel tire of the Pro One Aero pair, aimed at low rolling resistance and puncture protection.",
+  "construction": "tubeless-ready",
+  "casing": "127 EPI Super Race",
+  "compound": "ADDIX Race",
+  "protection": "RaceGuard",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 270,
+      "max_psi": 95,
+      "max_bar": 6.5
+    }
+  ],
+  "caveats": [
+    "Rear-wheel tire designed to pair with the Pro One Aero Front.",
+    "No lab result for the rear tire is recorded here.",
+    "Schwalbe states no hookless approval on these product pages."
+  ],
+  "price_observations": [
+    {
+      "amount": 84.9,
+      "currency": "EUR",
+      "market": "Schwalbe recommended retail price (Europe)",
+      "region": "eu",
+      "price_type": "manufacturer-rrp",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Recommended retail price on the official product page on 2026-11-01; one tire; retailer prices vary.",
+      "source_id": "schwalbe-pro-one-aero-rear-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "schwalbe-pro-one-aero-rear-official-2026-11-01",
+    "schwalbe-north-america-road-tires-2026-11-01",
+    "schwalbe-legal-notice-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

@@ -70,6 +70,7 @@ test('interface languages localize amounts, units and counts', async () => {
   assert.equal(plain(translate('+¥6,000', 'ru')), '+6 000 ¥');
   assert.equal(translate('1,459 g', 'es'), '1459 g');
   assert.equal(translate('58.5 mm · 24 mm inner', 'es'), '58,5 mm · 24 mm interior');
+  assert.equal(translate('25/28 mm', 'ru'), '25/28 мм');
   // A decimal comma that is already localized is never read as a thousands separator.
   assert.equal(localizeMeasures('9,5 kg', 'ru', { kg: 'кг' }), '9,5 кг');
   assert.equal(isMeasure('T700 carbon'), false);
