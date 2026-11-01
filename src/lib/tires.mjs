@@ -182,7 +182,9 @@ export const TIRE_MEDIA_HOSTS = {
   'www.enve.com': ['enve.com'],
   'www.michelin.co.uk': ['dxm.contentcenter.michelin.com'],
   'www.pirelli.com': ['tyre24.pirelli.com'],
-  'www.specialized.com': ['resources.specialized.com']
+  'www.specialized.com': ['resources.specialized.com'],
+  // Unsigned XHS CDN form of a post's own image (the signed feed URLs expire).
+  'www.xiaohongshu.com': ['sns-img-qc.xhscdn.com']
 };
 // Only resizing parameters may follow an image file URL; tracking or session parameters never do.
 const RESIZE_PARAMS = new Set(['width', 'height', 'w', 'h', 'q', 'fm', 'fit', 'crop']);
@@ -215,9 +217,10 @@ export function validateTireImage(tire, sources, label) {
   try { pageHost = new URL(source?.url ?? '').hostname; } catch { /* reported above */ }
   if (remote && remote.hostname !== pageHost && !(TIRE_MEDIA_HOSTS[pageHost] ?? []).includes(remote.hostname)) errors.push(`${label}: image must load from its source page's host or reviewed media host`);
   if (image.thumb_url !== undefined) {
-    // A resized copy keeps the file name, or adds a WordPress size suffix to the same original.
+    // A resized copy keeps the file name, or changes only a WordPress size suffix or an XHS
+    // style suffix (for example !nc_n_webp_prv_1) on the same original.
     const thumb = plainImageUrl(image.thumb_url);
-    const original = (url) => url.pathname.split('/').pop().replace(/-\d+x\d+(?=\.[a-z0-9]+$)/i, '');
+    const original = (url) => url.pathname.split('/').pop().replace(/![a-z0-9_]+$/i, '').replace(/-\d+x\d+(?=\.[a-z0-9]+$)/i, '');
     if (!thumb || !remote || thumb.hostname !== remote.hostname || original(thumb) !== original(remote)) errors.push(`${label}: image.thumb_url must be a resized copy of the same file on the same host`);
   }
   if (!/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '') || !Number.isInteger(image.source_media_bytes) || image.source_media_bytes < 1) errors.push(`${label}: image needs the reviewed file's hash and size`);
