@@ -1,0 +1,71 @@
+{
+  "id": "michelin-pro5",
+  "maker": "Michelin",
+  "name": "Pro5 (tube type)",
+  "origin": {
+    "group": "international",
+    "country": "France",
+    "basis": "French tire maker; Michelin's UK site lists its bicycle range and dealers."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Michelin's size list does not state where these tires are made."
+  },
+  "use": "all-round",
+  "positioning": "Slick tube-type Pro5 for fast everyday and training rides, with the Magi-X compound.",
+  "construction": "tube-type",
+  "hookless": "not-approved",
+  "hookless_note": "Michelin lists every size of this tube-type tire for hooked rims only.",
+  "casing": null,
+  "compound": "Magi-X",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Michelin's size list shows no weights; no maker weight was found.",
+  "pressure_note": "Michelin's size list gives no maximum pressure; use the figure printed on the tire.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Sold by Michelin's official Tmall store in mainland China; listed on Michelin's UK site with a dealer locator; North American availability not verified in this pass."
+  },
+  "price_observations": [
+    {
+      "amount": 359,
+      "currency": "CNY",
+      "market": "Michelin official Tmall store (米其林官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 299.08.",
+      "source_id": "michelin-pro5-competition-line-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Listed for hooked rims only.",
+    "No independent lab test found."
+  ],
+  "source_ids": [
+    "michelin-pro5-competition-line-official-2026-11-01",
+    "michelin-road-range-gb-2026-11-01",
+    "michelin-pro5-competition-line-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

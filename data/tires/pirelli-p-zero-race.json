@@ -1,0 +1,85 @@
+{
+  "id": "pirelli-p-zero-race",
+  "maker": "Pirelli",
+  "name": "P ZERO Race (tube type)",
+  "aliases": [
+    "P0 Race"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian tire maker; Pirelli says the P ZERO Race range is made at its plant in Italy near its Milan headquarters."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The tube-type P ZERO Race page does not state where it is made."
+  },
+  "use": "all-round",
+  "positioning": "Tube-type P ZERO Race for high-intensity training and racing, with TechBELT Road protection.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "120 TPI TechBELT Road",
+  "compound": "SmartEVO",
+  "protection": "TechBELT Road",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 215
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 235
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 260
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Pirelli claims per size.",
+  "pressure_note": "The product page gives no maximum pressure; use the figure printed on the tire.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2021,
+      "width_mm": 26,
+      "measured_width_mm": 26,
+      "measured_weight_g": 204,
+      "setup": "butyl-tube",
+      "rr_w": 15.0,
+      "rr_psi": 80,
+      "wet_grip": 60,
+      "puncture_tread": 55
+    }
+  ],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Pirelli claims SmartEVO improves grip on wet and dry asphalt over its previous compounds.",
+      "source_id": "pirelli-p-zero-race-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "unverified",
+    "note": "Listed in Pirelli's UK catalogue with a dealer finder; mainland China and North American availability not verified for this line."
+  },
+  "price_observations": [],
+  "caveats": [
+    "The 2021 lab sample was tested with a butyl tube; a latex or TPU tube changes rolling resistance.",
+    "Measured wet grip (60) was low for a race tire in that test."
+  ],
+  "source_ids": [
+    "pirelli-p-zero-race-official-2026-11-01",
+    "pirelli-road-range-gb-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

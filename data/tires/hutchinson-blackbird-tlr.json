@@ -1,0 +1,87 @@
+{
+  "maker": "Hutchinson",
+  "origin": {
+    "group": "international",
+    "country": "France",
+    "basis": "Hutchinson was founded in 1853 in Châlette-sur-Loing, France, and has made bicycle tires since 1890 (company history)."
+  },
+  "manufacturing": {
+    "country": "France",
+    "basis": "Hutchinson's reference table marks every listed size as Made in France."
+  },
+  "weight_claim_type": "official",
+  "weight_basis": "Hutchinson reference weights (±7%).",
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Hutchinson lists dealers rather than an online price; regional retail availability was not checked in this pass."
+  },
+  "price_observations": [],
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2024,
+      "width_mm": 28,
+      "measured_width_mm": 28,
+      "measured_weight_g": 291,
+      "setup": "tubeless",
+      "rr_w": 13.3,
+      "rr_psi": 72,
+      "wet_grip": 76,
+      "puncture_tread": 55
+    }
+  ],
+  "wet_notes": [],
+  "id": "hutchinson-blackbird-tlr",
+  "name": "Blackbird TLR",
+  "use": "race",
+  "positioning": "Hutchinson's Blackbird (Racing Lab) in its tubeless-ready construction, with the Mach Tread 3.0 compound and SwiftEasy casing.",
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Hutchinson lists the tubeless-ready sizes from 28 mm as compatible with hooked and hookless rims within its maximum pressures. The 26 mm size is not marked hookless.",
+  "casing": "127 TPI SwiftEasy",
+  "compound": "Mach Tread 3.0",
+  "protection": "Polyamide reinforcement",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 275,
+      "note": "Not marked hookless"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 310
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 350
+    },
+    {
+      "width_mm": 34,
+      "etrto": "34-622",
+      "weight_g": 380
+    }
+  ],
+  "caveats": [
+    "No official price; Hutchinson sells through dealers."
+  ],
+  "source_ids": [
+    "hutchinson-blackbird-official-2026-11-01",
+    "hutchinson-history-official-2026-11-01",
+    "hutchinson-hookless-official-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

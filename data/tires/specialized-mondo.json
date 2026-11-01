@@ -1,0 +1,75 @@
+{
+  "id": "specialized-mondo",
+  "maker": "Specialized",
+  "name": "Mondo (tube type)",
+  "aliases": [
+    "Mondo Folding"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Specialized Bicycle Components, Inc. publishes the US store, with California consumer disclosures in the page footer."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Specialized does not state where the tire is made."
+  },
+  "use": "endurance",
+  "positioning": "Tube-type version of the Mondo all-road endurance tire.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "120 TPI, 3-ply",
+  "compound": "GRIPTON T5",
+  "protection": "Puncture-resistant strips",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 260
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 340
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Specialized approximate weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+  },
+  "price_observations": [
+    {
+      "amount": 64.99,
+      "currency": "USD",
+      "market": "Specialized store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "specialized-mondo-folding-endurance-tire-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Needs an inner tube; the Mondo TLR is listed separately.",
+    "Maximum pressure is not stated on the product page."
+  ],
+  "source_ids": [
+    "specialized-mondo-folding-endurance-tire-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

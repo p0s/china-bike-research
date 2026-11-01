@@ -1,0 +1,79 @@
+{
+  "id": "continental-grand-prix",
+  "maker": "Continental",
+  "name": "Grand Prix (tube type)",
+  "aliases": [
+    "GP"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Continental's bicycle tires are marketed from its German site; Germany-made lines are marked 'Handmade in Germany'."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Continental's size table gives no made-in statement for this line."
+  },
+  "use": "training",
+  "positioning": "Tube-type counterpart of the Grand Prix TR for training and long rides.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "3-ply, 180 TPI",
+  "compound": "BlackChili (32 mm rows)",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 315
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 340
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Continental black-sidewall claims.",
+  "pressure_note": "The product table does not list maximum pressures; use the figure printed on the tire.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Continental's official Tmall store sells it in mainland China; Continental's German and US catalogs list it for retailers."
+  },
+  "price_observations": [
+    {
+      "amount": 329,
+      "currency": "CNY",
+      "market": "Continental official Tmall store (德国马牌轮胎官方旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China.",
+      "source_id": "continental-grand-prix-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Bicycle Rolling Resistance's older 'Grand Prix' test is not applied to this line.",
+    "Needs an inner tube."
+  ],
+  "source_ids": [
+    "continental-grand-prix-official-2026-11-01",
+    "continental-road-range-us-2026-11-01",
+    "continental-road-range-de-2026-11-01",
+    "continental-grand-prix-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

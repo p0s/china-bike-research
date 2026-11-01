@@ -1,0 +1,75 @@
+{
+  "id": "specialized-mondo-tlr",
+  "maker": "Specialized",
+  "name": "Mondo TLR",
+  "aliases": [
+    "闪电 Mondo TLR"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Specialized Bicycle Components, Inc. publishes the US store, with California consumer disclosures in the page footer."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Specialized does not state where the tire is made."
+  },
+  "use": "endurance",
+  "positioning": "Specialized's tubeless-ready all-road endurance tire with puncture-resistant strips and reinforced sidewalls.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "120 TPI, 3-ply",
+  "compound": "GRIPTON T2/T5",
+  "protection": "Puncture-resistant centre strip and reinforced sidewalls",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 310
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 330
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 360
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Specialized approximate weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+  },
+  "price_observations": [
+    {
+      "amount": 89.99,
+      "currency": "USD",
+      "market": "Specialized store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "specialized-mondo-tlr-endurance-tire-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "No independent lab test of this model found.",
+    "Hookless compatibility and maximum pressure are not stated on the product page."
+  ],
+  "source_ids": [
+    "specialized-mondo-tlr-endurance-tire-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

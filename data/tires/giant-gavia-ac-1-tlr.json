@@ -1,0 +1,75 @@
+{
+  "maker": "Giant",
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Giant Group was founded in 1972 in Taichung, Taiwan (BikeRadar)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Giant does not state where this tire is made."
+  },
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Giant's UK product page labels it 'Hookless compatible'; check the wheel maker's tire list and pressure limit.",
+  "weight_claim_type": "official",
+  "weight_basis": "Giant approximate weights.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Giant claims its all-condition tread gives traction in a wide range of conditions and grip all year round; no independent wet test found.",
+      "source_id": "giant-gavia-ac-1-tubeless-tyre-gb-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Sold by Giant's UK web store; mainland China and North American availability not verified for this model."
+  },
+  "id": "giant-gavia-ac-1-tlr",
+  "name": "Gavia AC 1 Tubeless",
+  "use": "all-season",
+  "positioning": "Giant's all-condition tubeless road tire with a 60 TPI casing and Deflect 2 Lite protection.",
+  "casing": "60 TPI",
+  "compound": "Silica based",
+  "protection": "Deflect 2 Lite",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 330
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 373
+    }
+  ],
+  "caveats": [
+    "Only 700x25c was offered in the UK store on 2026-11-01.",
+    "Maximum pressure is not stated."
+  ],
+  "price_observations": [
+    {
+      "amount": 39.99,
+      "currency": "GBP",
+      "market": "Giant UK store",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price incl. UK VAT on 2026-11-01; one tire; delivery terms at checkout.",
+      "source_id": "giant-gavia-ac-1-tubeless-tyre-gb-official-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "source_ids": [
+    "giant-gavia-ac-1-tubeless-tyre-gb-official-2026-11-01",
+    "bikeradar-giant-founder-2026-02-17"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

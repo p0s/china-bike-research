@@ -1,0 +1,94 @@
+{
+  "maker": "Giant",
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Giant Group was founded in 1972 in Taichung, Taiwan (BikeRadar)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Giant does not state where this tire is made."
+  },
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Giant's UK product page labels it 'Hookless compatible'; check the wheel maker's tire list and pressure limit.",
+  "weight_claim_type": "official",
+  "weight_basis": "Giant approximate weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "official-store",
+    "na": "official-store",
+    "note": "Sold by Giant's UK and US web stores; mainland China availability not verified."
+  },
+  "id": "giant-gavia-course-1-tlr",
+  "name": "Gavia Course 1 Tubeless",
+  "aliases": [
+    "捷安特 Gavia Course 1"
+  ],
+  "use": "race",
+  "positioning": "Lower-cost tubeless Gavia Course with a 60 TPI casing and R-Shield protection.",
+  "casing": "60 TPI",
+  "compound": "RR-S",
+  "protection": "R-Shield",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 375,
+      "max_psi": 125,
+      "max_bar": 8.6
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 395,
+      "max_psi": 105,
+      "max_bar": 7.2
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": null
+    }
+  ],
+  "caveats": [
+    "The stores offer 28 and 30 mm, but the specification lists 25 and 28 mm.",
+    "Heavy for a race tire (about 395 g at 28 mm); no independent lab test found."
+  ],
+  "price_observations": [
+    {
+      "amount": 44.99,
+      "currency": "GBP",
+      "market": "Giant UK store",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price incl. UK VAT on 2026-11-01; one tire; delivery terms at checkout.",
+      "source_id": "giant-gavia-course-1-tubeless-tyre-2020-gb-official-2026-11-01",
+      "width_mm": 28
+    },
+    {
+      "amount": 65,
+      "currency": "USD",
+      "market": "Giant US store",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
+      "source_id": "giant-gavia-course-1-bicycle-tire-2020-us-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "giant-gavia-course-1-tubeless-tyre-2020-gb-official-2026-11-01",
+    "giant-gavia-course-1-bicycle-tire-2020-us-official-2026-11-01",
+    "bikeradar-giant-founder-2026-02-17"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

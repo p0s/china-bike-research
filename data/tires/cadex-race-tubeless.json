@@ -1,0 +1,84 @@
+{
+  "id": "cadex-race-tubeless",
+  "maker": "CADEX",
+  "name": "Race Tubeless (25 mm)",
+  "aliases": [
+    "CADEX Race 25"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "CADEX is the Giant Group's component brand (its site footer links to Giant Group); Giant Group was founded in Taichung, Taiwan (BikeRadar)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "CADEX does not state where the tire is made."
+  },
+  "use": "race",
+  "positioning": "CADEX's tubeless race tire with the silica RR-S compound, a 170 TPI single-layer casing and Race Shield protection.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "170 TPI Supple Race Casing (single layer)",
+  "compound": "RR-S",
+  "protection": "Race Shield (Kevlar)",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 270,
+      "max_psi": 125,
+      "max_bar": 8.6
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "CADEX store specification.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2022,
+      "width_mm": 25,
+      "measured_width_mm": 26,
+      "measured_weight_g": 276,
+      "setup": "tubeless",
+      "rr_w": 15.3,
+      "rr_psi": 80,
+      "wet_grip": 71,
+      "puncture_tread": 48
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by CADEX's US web store; Giant and CADEX stores in other regions were not checked for this model."
+  },
+  "price_observations": [
+    {
+      "amount": 78,
+      "currency": "USD",
+      "market": "CADEX store (US)",
+      "region": "na",
+      "price_type": "official-store-sale",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store sale price on 2026-11-01 (original price US$105); one tire; shipping and tax at checkout.",
+      "source_id": "cadex-race-25-tubeless-official-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "Only the 25 mm size was offered in the US store on 2026-11-01.",
+    "The lab test dates from 2022.",
+    "CADEX says its tires work with Giant wheelsystems; no general hookless approval or hookless pressure limit is stated."
+  ],
+  "source_ids": [
+    "cadex-race-25-tubeless-official-2026-11-01",
+    "bikeradar-giant-founder-2026-02-17",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

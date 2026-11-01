@@ -21,12 +21,12 @@
     {
       "name": "Maker catalogs",
       "checked_at": "2026-11-01",
-      "summary": "Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Maxxis (US) and Kenda (US shop) road ranges; further maker catalogs are added with each research batch."
+      "summary": "Road ranges from Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Goodyear (US store), Maxxis (US), Kenda (US shop), Specialized (US store), Panaracer (USA store and global site), IRC (US site), CADEX (US store), Giant (UK and US stores) and Hutchinson (global site). Schwalbe's official pages could not be read."
     },
     {
       "name": "Brand identity checks",
       "checked_at": "2026-11-01",
-      "summary": "Web searches for ZC Rubber/ARISUN, JILUER, Innova and CARNOS."
+      "summary": "Web searches for ZC Rubber/ARISUN, JILUER, Innova and CARNOS; company pages for Panaracer, IRC and Hutchinson."
     }
   ],
   "brands": [
@@ -185,20 +185,19 @@
       "name": "Panaracer",
       "name_zh": "松下",
       "origin_group": "international",
-      "origin_basis": "Japanese bicycle-tire maker."
+      "origin_basis": "Panaracer Corporation, Tamba City, Hyogo, Japan (company page)."
     },
     {
       "id": "irc",
       "name": "IRC",
       "origin_group": "international",
-      "origin_basis": "Japanese tire maker."
+      "origin_basis": "Inoue Rubber Co., Ltd., founded in 1926 in Japan, head office in Nagoya (IRC about page)."
     },
     {
       "id": "hutchinson",
       "name": "Hutchinson",
-      "name_zh": "黑鸟 (Blackbird)",
       "origin_group": "international",
-      "origin_basis": "French tire maker."
+      "origin_basis": "Founded in 1853 in Châlette-sur-Loing, France; bicycle tires since 1890 (company history)."
     },
     {
       "id": "specialists",
@@ -290,7 +289,7 @@
       "brand_id": "jiluer",
       "name": "Chaser T2",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "One owner post (28C measured 30.3 mm on a 23 mm inner rim; punctured on the first ride); no shop listing with specifications found."
     },
     {
       "brand_id": "jiluer",
@@ -446,9 +445,9 @@
     },
     {
       "brand_id": "kenda",
-      "name": "K925 and K1092",
+      "name": "K925 Kaliente and K1092 Kountach",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Named in owner posts (K925 described as easy to fit); retailers list the Kountach at 120 TPI, but no official Kenda page was found and the Kenda US shop search returned no Kountach listing on 2026-11-01."
     },
     {
       "brand_id": "giant",
@@ -466,33 +465,76 @@
     },
     {
       "brand_id": "giant",
-      "name": "Gavia Course",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Gavia Course 0 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-course-0-tlr"
     },
     {
       "brand_id": "giant",
-      "name": "Gavia Fondo",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Gavia Course 1 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK and US store specifications and prices.",
+      "record_id": "giant-gavia-course-1-tlr"
     },
     {
       "brand_id": "giant",
-      "name": "Gavia AC",
+      "name": "Gavia Fondo 0 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-fondo-0-tlr"
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Fondo 1 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-fondo-1-tlr"
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia AC 1 Tubeless",
+      "disposition": "included",
+      "reason": "Official UK store specifications and price.",
+      "record_id": "giant-gavia-ac-1-tlr"
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Course (2026)",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "New model in Giant's UK store (£59.99; 28 mm 313 g, 30 mm 354 g; RR-S, Race Shield), but the page does not state tubeless or tube-type construction."
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia Fondo AR",
+      "disposition": "excluded",
+      "reason": "All-road tire sold only in 700x40c with raised side knobs (30-50 psi); outside the road comparison."
+    },
+    {
+      "brand_id": "giant",
+      "name": "Gavia AC 0 Kevlar Tubeless",
+      "disposition": "unresolved",
+      "reason": "Seen in a search result for Giant's Italian site; not listed in the UK store on 2026-11-01 and not read."
+    },
+    {
+      "brand_id": "cadex",
+      "name": "Race Tubeless (25 mm)",
+      "disposition": "included",
+      "reason": "Official US store specifications and sale price, 2022 lab test.",
+      "record_id": "cadex-race-tubeless"
+    },
+    {
+      "brand_id": "cadex",
+      "name": "Race GC",
+      "disposition": "included",
+      "reason": "Official US store specification for 28 mm and price.",
+      "record_id": "cadex-race-gc"
     },
     {
       "brand_id": "cadex",
       "name": "Aero Tire",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "cadex",
-      "name": "Race Tubeless",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Lab-tested in 2026 (28 mm nominal, 26 mm measured), but no official CADEX product page was found on 2026-11-01."
     },
     {
       "brand_id": "innova",
@@ -559,14 +601,16 @@
     {
       "brand_id": "continental",
       "name": "Grand Prix (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications and official China store.",
+      "record_id": "continental-grand-prix"
     },
     {
       "brand_id": "continental",
       "name": "Gatorskin",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "continental-gatorskin"
     },
     {
       "brand_id": "continental",
@@ -629,44 +673,51 @@
     {
       "brand_id": "pirelli",
       "name": "P ZERO Race TLR SL-R",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications, lab test and a mainland retail listing.",
+      "record_id": "pirelli-p-zero-race-tlr-sl-r"
     },
     {
       "brand_id": "pirelli",
       "name": "P ZERO Road TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "pirelli-p-zero-road-tlr"
     },
     {
       "brand_id": "pirelli",
       "name": "P ZERO Race (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "pirelli",
-      "name": "P ZERO Race 4S (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications and lab test.",
+      "record_id": "pirelli-p-zero-race"
     },
     {
       "brand_id": "pirelli",
       "name": "P7 Sport",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "pirelli-p7-sport"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race 4S (tube type)",
+      "disposition": "included",
+      "reason": "Official specifications and lab test.",
+      "record_id": "pirelli-p-zero-race-4s"
     },
     {
       "brand_id": "pirelli",
       "name": "Cinturato Road (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "pirelli-cinturato-road"
     },
     {
       "brand_id": "pirelli",
       "name": "P ZERO Race RS (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "pirelli-p-zero-race-rs"
     },
     {
       "brand_id": "pirelli",
@@ -704,20 +755,23 @@
     {
       "brand_id": "michelin",
       "name": "Power Cup (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official size list and official China store.",
+      "record_id": "michelin-power-cup"
     },
     {
       "brand_id": "michelin",
       "name": "Pro5 (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official size list and official China store.",
+      "record_id": "michelin-pro5"
     },
     {
       "brand_id": "michelin",
       "name": "Lithion 4",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official size list and official China store.",
+      "record_id": "michelin-lithion-4"
     },
     {
       "brand_id": "michelin",
@@ -733,21 +787,21 @@
     },
     {
       "brand_id": "schwalbe",
-      "name": "Pro One TLE",
+      "name": "Pro One Tubeless and Schwalbe One Tubeless",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Schwalbe's official pages returned a 404 or an empty page in the research browser on 2026-11-01, so current sizes and prices could not be confirmed; the 2020 lab tests of the earlier Pro One TLE and One TLE are not applied."
     },
     {
       "brand_id": "schwalbe",
-      "name": "Schwalbe One TLE",
+      "name": "Pro One Aero (front and rear)",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Lab-tested in 2024 as separate front and rear tires; Schwalbe's official pages could not be read on 2026-11-01."
     },
     {
       "brand_id": "schwalbe",
       "name": "Durano Plus",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Schwalbe's official pages could not be read on 2026-11-01; retailer data only."
     },
     {
       "brand_id": "vittoria",
@@ -779,32 +833,50 @@
     {
       "brand_id": "vittoria",
       "name": "Corsa PRO (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official store specifications and price, lab test.",
+      "record_id": "vittoria-corsa-pro-tube-type"
     },
     {
       "brand_id": "vittoria",
-      "name": "Corsa N.EXT (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "vittoria",
-      "name": "Rubino (TLR and tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "vittoria",
-      "name": "Zaffiro and Zaffiro Evo",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Rubino TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "vittoria-rubino-tlr"
     },
     {
       "brand_id": "vittoria",
       "name": "RideArmor TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official store specifications and price, lab test.",
+      "record_id": "vittoria-ridearmor-tlr"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Zaffiro EVO",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "vittoria-zaffiro-evo"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Corsa N.EXT (tube type)",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "vittoria-corsa-n-ext-tube-type"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Rubino (tube type)",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "vittoria-rubino-tube-type"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Zaffiro (older non-EVO listing)",
+      "disposition": "excluded",
+      "reason": "Older entry clincher listed beside the Zaffiro EVO."
     },
     {
       "brand_id": "vittoria",
@@ -842,44 +914,79 @@
     {
       "brand_id": "goodyear",
       "name": "Eagle F1 RS (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle-f1-rs"
     },
     {
       "brand_id": "goodyear",
       "name": "Vector 4Seasons (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-vector-4seasons"
     },
     {
       "brand_id": "goodyear",
-      "name": "Eagle",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Eagle TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle-tlr"
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle (tube type)",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle"
     },
     {
       "brand_id": "goodyear",
       "name": "Eagle Sport",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle-sport"
     },
     {
       "brand_id": "goodyear",
-      "name": "Vector Sport",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Vector Sport TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-vector-sport-tlr"
     },
     {
       "brand_id": "goodyear",
       "name": "Vector R",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-vector-r-tlr"
     },
     {
       "brand_id": "goodyear",
-      "name": "Eagle F1 R and SuperSport R Z29 Aero",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Eagle F1 R Z29 Aero TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle-f1-r-z29-aero-tlr"
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 SuperSport R Z29 Aero",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle-f1-supersport-r-z29-aero"
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Vector Sport (tube type)",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-vector-sport"
+    },
+    {
+      "brand_id": "goodyear",
+      "name": "Eagle F1 R Z29 Aero (tube type)",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "goodyear-eagle-f1-r-z29-aero"
     },
     {
       "brand_id": "goodyear",
@@ -896,75 +1003,194 @@
     },
     {
       "brand_id": "specialized",
-      "name": "Cotton TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Mondo TLR",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-mondo-tlr"
     },
     {
       "brand_id": "specialized",
-      "name": "Mondo TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Mondo (tube type)",
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-mondo"
     },
     {
       "brand_id": "specialized",
       "name": "S-Works Turbo T2/T5 (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official US store specifications and price.",
+      "record_id": "specialized-s-works-turbo"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Cotton TLR, Cotton Folding and RapidAir TLR",
+      "disposition": "excluded",
+      "reason": "Specialized groups them as 'Racing Only' tires; race-day specialist tires are left out, like the time-trial tires above."
     },
     {
       "brand_id": "specialized",
       "name": "All Condition Armadillo",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "excluded",
+      "reason": "Specialized positions it for touring, commuting and rough roads; wire bead, 60 TPI, 395 g at 25 mm and 510 g at 32 mm."
     },
     {
       "brand_id": "specialized",
-      "name": "RapidAir TLR",
+      "name": "All Condition Armadillo Elite, Flat Proof and Reflect versions",
+      "disposition": "excluded",
+      "reason": "Variants of the All Condition Armadillo commuting and touring family."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Turbo Cotton and S-Works Turbo 2Bliss Ready T2/T5",
+      "disposition": "excluded",
+      "reason": "Older models at clearance prices in the US store on 2026-11-01 (US$49.99 and US$39.99, each down from US$79.99)."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Roubaix Pro and Roubaix Pro 2Bliss Ready",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Endurance tires listed with dual-width labels (23/25, 25/28 and 30/32 mm), so one nominal width cannot be recorded; no lab test of the current versions found."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "RoadSport family",
+      "disposition": "excluded",
+      "reason": "Entry-level 60 TPI road tires (RoadSport Elite 280 g at 26 mm and 325 g at 28 mm), including wire-bead versions."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Sawtooth and Rhombus Pro",
+      "disposition": "excluded",
+      "reason": "Listed in the road collection but sold in all-road and gravel widths (Sawtooth 2Bliss Ready 38 and 42 mm; Rhombus Pro 42 and 47 mm)."
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Trigger Sport",
+      "disposition": "unresolved",
+      "reason": "Listed in the US road-tire collection on 2026-11-01; product page not read."
     },
     {
       "brand_id": "panaracer",
       "name": "Agilest TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price, lab test.",
+      "record_id": "panaracer-agilest-tlr"
     },
     {
       "brand_id": "panaracer",
       "name": "Agilest Fast TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official global specifications and lab test; no official price found.",
+      "record_id": "panaracer-agilest-fast-tlr"
     },
     {
       "brand_id": "panaracer",
-      "name": "Agilest Duro",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Agilest Duro TLR",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price.",
+      "record_id": "panaracer-agilest-duro-tlr"
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest (tube type)",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price.",
+      "record_id": "panaracer-agilest"
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest Duro (tube type)",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price; out of stock on 2026-11-01.",
+      "record_id": "panaracer-agilest-duro"
+    },
+    {
+      "brand_id": "panaracer",
+      "name": "Agilest Light",
+      "disposition": "included",
+      "reason": "Panaracer USA store specifications and price; out of stock on 2026-11-01.",
+      "record_id": "panaracer-agilest-light"
     },
     {
       "brand_id": "irc",
-      "name": "Formula Pro TLR",
+      "name": "Formula Pro TLR S-Light (Gen 6)",
+      "disposition": "included",
+      "reason": "Official US specifications with hookless pressure ranges; no official price.",
+      "record_id": "irc-formula-pro-tlr-s-light"
+    },
+    {
+      "brand_id": "irc",
+      "name": "Gen 6 Formula Pro Tubeless RBCC and X-Guard",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Listed in IRC's US road collection on 2026-11-01; product pages not read in this pass."
+    },
+    {
+      "brand_id": "irc",
+      "name": "Formula Pro HL TLR S-Light, TLR S-Light Hooked and Tubeless RBCC (without the Gen 6 label)",
+      "disposition": "unresolved",
+      "reason": "Shown beside the Gen 6 models in IRC's US road collection; generation and current status not established. The 2021 lab test of the Formula Pro RBCC is not applied."
     },
     {
       "brand_id": "hutchinson",
       "name": "Blackbird Race TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official reference table, hookless guidance and lab test; no official price.",
+      "record_id": "hutchinson-blackbird-race-tlr"
     },
     {
       "brand_id": "hutchinson",
       "name": "Blackbird TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official reference table, hookless guidance and lab test; no official price.",
+      "record_id": "hutchinson-blackbird-tlr"
     },
     {
       "brand_id": "hutchinson",
-      "name": "Fusion 5 All Season",
+      "name": "Blackbird (tube type)",
+      "disposition": "included",
+      "reason": "Official reference table; no official price.",
+      "record_id": "hutchinson-blackbird"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Blackbird Allseason TLR",
+      "disposition": "included",
+      "reason": "Official reference table and hookless guidance; no official price.",
+      "record_id": "hutchinson-blackbird-allseason-tlr"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Blackbird Allseason (tube type)",
+      "disposition": "included",
+      "reason": "Official reference table; no official price.",
+      "record_id": "hutchinson-blackbird-allseason"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Fusion 5 Performance and All Season",
+      "disposition": "excluded",
+      "reason": "Hutchinson's hookless page lists Fusion 5 among its previous road tires; the 2017 lab tests are not applied."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Challenger TLR",
+      "disposition": "included",
+      "reason": "Official reference table and hookless guidance; no official price.",
+      "record_id": "hutchinson-challenger-tlr"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Challenger (tube type)",
+      "disposition": "included",
+      "reason": "Official reference table; no official price.",
+      "record_id": "hutchinson-challenger"
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "GP Explorer",
       "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "reason": "Listed as a leisure tire in Hutchinson's road range on 2026-11-01; reference table not read."
     },
     {
       "brand_id": "specialists",

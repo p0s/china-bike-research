@@ -1,0 +1,102 @@
+{
+  "id": "vittoria-corsa-n-ext-tube-type",
+  "maker": "Vittoria",
+  "name": "Corsa N.EXT (tube type)",
+  "aliases": [
+    "Corsa NEXT TT"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian bicycle-tire brand; Vittoria's international store is set to Italy (EUR)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The store page does not state where the tire is made."
+  },
+  "use": "all-round",
+  "positioning": "Tube-type Corsa N.EXT for racing, training and long rides.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": null,
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 24,
+      "etrto": "24-622",
+      "weight_g": 200
+    },
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 205
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 220
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 225
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 245
+    },
+    {
+      "width_mm": 34,
+      "etrto": "34-622",
+      "weight_g": 250
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Vittoria store weights per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Sold by Vittoria's international web store and as a tube-type option in a Vittoria Tmall store (CNY 338 for 28C before discounts); North American availability not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 65.95,
+      "currency": "EUR",
+      "market": "Vittoria international store (Italy)",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price incl. Italian VAT on 2026-11-01; shipping calculated at checkout. One tire.",
+      "source_id": "vittoria-corsa-n-ext-tube-type-official-2026-11-01",
+      "width_mm": 28
+    },
+    {
+      "amount": 338,
+      "currency": "CNY",
+      "market": "Vittoria Tmall store (vittoria运动户外旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01 for the 28C tube-type option; coupon price CNY 270. Single or pair not stated.",
+      "source_id": "vittoria-corsa-n-ext-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "No independent lab test of this construction found."
+  ],
+  "source_ids": [
+    "vittoria-corsa-n-ext-tube-type-official-2026-11-01",
+    "vittoria-corsa-n-ext-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

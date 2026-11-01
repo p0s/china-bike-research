@@ -1,0 +1,64 @@
+{
+  "maker": "Hutchinson",
+  "origin": {
+    "group": "international",
+    "country": "France",
+    "basis": "Hutchinson was founded in 1853 in Châlette-sur-Loing, France, and has made bicycle tires since 1890 (company history)."
+  },
+  "manufacturing": {
+    "country": "France",
+    "basis": "Hutchinson's reference table marks every listed size as Made in France."
+  },
+  "weight_claim_type": "official",
+  "weight_basis": "Hutchinson reference weights (±7%).",
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Hutchinson lists dealers rather than an online price; regional retail availability was not checked in this pass."
+  },
+  "price_observations": [],
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Hutchinson claims exceptional wet-weather grip from the Safetread shoulder compound; no independent wet test found.",
+      "source_id": "hutchinson-blackbird-allseason-official-2026-11-01"
+    }
+  ],
+  "id": "hutchinson-blackbird-allseason",
+  "name": "Blackbird Allseason (tube type)",
+  "aliases": [
+    "Blackbird All Season"
+  ],
+  "use": "all-season",
+  "positioning": "Tube-type version of the Blackbird Allseason training tire.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "127 TPI",
+  "compound": "Mach Tread 3.0 centre, Safetread shoulders",
+  "protection": "Aramid Pro Tech",
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 240
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 258
+    }
+  ],
+  "caveats": [
+    "No official price; Hutchinson sells through dealers.",
+    "Wet grip is a maker claim; no independent wet test found."
+  ],
+  "source_ids": [
+    "hutchinson-blackbird-allseason-official-2026-11-01",
+    "hutchinson-history-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

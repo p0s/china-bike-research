@@ -1,0 +1,78 @@
+{
+  "maker": "Giant",
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Giant Group was founded in 1972 in Taichung, Taiwan (BikeRadar)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Giant does not state where this tire is made."
+  },
+  "construction": "tubeless-ready",
+  "hookless": "approved",
+  "hookless_note": "Giant's UK product page labels it 'Hookless compatible'; check the wheel maker's tire list and pressure limit.",
+  "weight_claim_type": "official",
+  "weight_basis": "Giant approximate weights.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Giant names winter training and wet rides and claims an endurance tread pattern for better wet and mixed-terrain grip; no independent wet test found.",
+      "source_id": "giant-gavia-fondo-1-tubeless-tyre-2020-gb-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Sold by Giant's UK web store; mainland China and North American availability not verified for this model."
+  },
+  "id": "giant-gavia-fondo-1-tlr",
+  "name": "Gavia Fondo 1 Tubeless",
+  "use": "all-season",
+  "positioning": "Lower-cost 60 TPI version of the Gavia Fondo winter and wet-weather endurance tire.",
+  "casing": "60 TPI",
+  "compound": "RR-E (durable centre, tackier shoulder)",
+  "protection": "R-Shield",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 395,
+      "max_psi": 105,
+      "max_bar": 7.2
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 445,
+      "max_psi": 75,
+      "max_bar": 5.1
+    }
+  ],
+  "caveats": [
+    "Wet grip is a maker claim; no independent wet test found."
+  ],
+  "price_observations": [
+    {
+      "amount": 44.99,
+      "currency": "GBP",
+      "market": "Giant UK store",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price incl. UK VAT on 2026-11-01; one tire; delivery terms at checkout.",
+      "source_id": "giant-gavia-fondo-1-tubeless-tyre-2020-gb-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "giant-gavia-fondo-1-tubeless-tyre-2020-gb-official-2026-11-01",
+    "bikeradar-giant-founder-2026-02-17"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
