@@ -245,19 +245,19 @@
       "id": "tufo",
       "name": "Tufo",
       "origin_group": "international",
-      "origin_basis": "Czech tire maker."
+      "origin_basis": "TUFO, s.r.o., Otrokovice, Czech Republic (contact page); founded in 1991."
     },
     {
       "id": "wolfpack",
       "name": "Wolfpack",
       "origin_group": "international",
-      "origin_basis": "Wolfpack - Tires GmbH, Medebach, Germany (retailer manufacturer details)."
+      "origin_basis": "Wolfpack - Tires GmbH, Medebach, Germany (legal notice)."
     },
     {
       "id": "renehersecycles",
       "name": "Rene Herse",
       "origin_group": "international",
-      "origin_basis": "US cycling-component maker selling its own tires."
+      "origin_basis": "US web store in US dollars; tires made in Japan (product pages)."
     }
   ],
   "candidates": [
@@ -1765,27 +1765,202 @@
     },
     {
       "brand_id": "veloflex",
-      "name": "Road range",
-      "disposition": "unresolved",
-      "reason": "Queued for the specialist-brand batches of this follow-up."
+      "name": "Corsa EVO TLR",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-evo-tlr"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Corsa RACE TLR",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-race-tlr"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Corsa EVO (open tubular)",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-evo"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Corsa RACE (open tubular)",
+      "disposition": "included",
+      "reason": "Official catalog specifications; no readable price.",
+      "record_id": "veloflex-corsa-race"
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Record TLR and Record open tubular",
+      "disposition": "excluded",
+      "reason": "Veloflex designs them for time trial and track racing."
+    },
+    {
+      "brand_id": "veloflex",
+      "name": "Tubulars (Corsa, Record and others)",
+      "disposition": "excluded",
+      "reason": "Tubular tires; tubulars are outside this comparison."
     },
     {
       "brand_id": "tufo",
-      "name": "Road range",
+      "name": "Comtura Prima TR",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price; 2023 and 2026 lab tests.",
+      "record_id": "tufo-comtura-prima-tr"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura Prima TT",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-prima-tt"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura 4 TR",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-4-tr"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura 5 TR",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-5-tr"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Calibra Plus",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-calibra-plus"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura Duo",
+      "disposition": "included",
+      "reason": "Official product page specifications and euro price.",
+      "record_id": "tufo-comtura-duo"
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Comtura Aero",
       "disposition": "unresolved",
-      "reason": "Queued for the specialist-brand batches of this follow-up."
+      "reason": "Named in Tufo's product list, but no product page with specifications was found on 2026-11-01."
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Gravel Thundero and Thundero HD",
+      "disposition": "excluded",
+      "reason": "Gravel tires (36-48 mm)."
+    },
+    {
+      "brand_id": "tufo",
+      "name": "Tubulars",
+      "disposition": "excluded",
+      "reason": "Tubular tires; tubulars are outside this comparison."
     },
     {
       "brand_id": "wolfpack",
-      "name": "Road range",
+      "name": "Road Race II TLR",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-road-race-ii-tlr"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road Race II (hookless ready, tube type)",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-road-race-ii"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road Race",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-road-race"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Cotton",
+      "disposition": "included",
+      "reason": "Official shop listing with sizes and euro price.",
+      "record_id": "wolfpack-cotton"
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Road Race RS TLR",
       "disposition": "unresolved",
-      "reason": "Queued for the specialist-brand batches of this follow-up."
+      "reason": "A separate shop page lists a 28-622 RS TLR as out of stock; it is not in the road category on 2026-11-01, so its relation to the Road Race II TLR is unclear."
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Tire and TPU-tube bundles",
+      "disposition": "excluded",
+      "reason": "Duplicates of the Race, Race II and Cotton tires bundled with an inner tube."
+    },
+    {
+      "brand_id": "wolfpack",
+      "name": "Gravel Speed and Gravel Superspeed TLR",
+      "disposition": "excluded",
+      "reason": "Gravel tires (40-622)."
     },
     {
       "brand_id": "renehersecycles",
-      "name": "Road range",
-      "disposition": "unresolved",
-      "reason": "Queued for the specialist-brand batches of this follow-up."
+      "name": "Cayuse Pass",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-cayuse-pass"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Chinook Pass",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-chinook-pass"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Stampede Pass",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-stampede-pass"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Orondo Grade TC",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-orondo-grade-tc"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Bon Jon Pass TC",
+      "disposition": "included",
+      "reason": "Official store specifications by casing and price range.",
+      "record_id": "rene-herse-bon-jon-pass-tc"
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Barlow Pass TC and Steilacoom TC (38 mm)",
+      "disposition": "excluded",
+      "reason": "Sold only in 38 mm, outside the 25-35 mm road group, with no wet-traction evidence for the wet group."
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Orondo Grade + TPU tube set",
+      "disposition": "excluded",
+      "reason": "Duplicate of the Orondo Grade bundled with a tube."
+    },
+    {
+      "brand_id": "renehersecycles",
+      "name": "Wider all-road and gravel tires (42-55 mm)",
+      "disposition": "excluded",
+      "reason": "Outside both width groups."
     }
   ]
 }

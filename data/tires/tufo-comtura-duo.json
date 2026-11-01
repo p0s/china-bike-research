@@ -1,0 +1,72 @@
+{
+  "maker": "Tufo",
+  "origin": {
+    "group": "international",
+    "country": "Czech Republic",
+    "basis": "TUFO, s.r.o. is based in Otrokovice, the Czech Republic (contact page)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Tufo does not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Tufo product-page weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Priced in euros on Tufo's own site; other regions not verified."
+  },
+  "id": "tufo-comtura-duo",
+  "name": "Comtura Duo",
+  "use": "all-round",
+  "positioning": "Versatile Tufo road clincher with a Vectran puncture barrier.",
+  "construction": "tube-type",
+  "casing": "TPI 120/240",
+  "compound": null,
+  "protection": "Vectran",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 225,
+      "max_psi": 130,
+      "max_bar": 9.0
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 250,
+      "max_psi": 115,
+      "max_bar": 8.0
+    }
+  ],
+  "caveats": [
+    "Tufo lists it as a tyre rather than a tubeless TR model; recorded as tube type.",
+    "No independent lab test found."
+  ],
+  "price_observations": [
+    {
+      "amount": 46.9,
+      "currency": "EUR",
+      "market": "TUFO web shop",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official price per tire on 2026-11-01 (incl. VAT); shipping extra.",
+      "source_id": "tufo-comtura-duo-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "tufo-comtura-duo-official-2026-11-01",
+    "tufo-contact-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

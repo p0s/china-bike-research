@@ -1,0 +1,65 @@
+{
+  "id": "rene-herse-chinook-pass",
+  "maker": "Rene Herse",
+  "name": "Chinook Pass",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Rene Herse Cycles sells its tires from its own US web store in US dollars."
+  },
+  "manufacturing": {
+    "country": "Japan",
+    "basis": "Rene Herse product pages state the tires are made in Japan."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Rene Herse weight for the Standard casing; other casings in the size note.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Rene Herse's US web store; other regions not verified."
+  },
+  "use": "all-round",
+  "positioning": "Supple 28 mm all-road tire for road bikes, sold in Standard and Extralight casings.",
+  "construction": "tube-type",
+  "casing": "Standard or Extralight",
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 255,
+      "max_psi": 105,
+      "max_bar": 7.4,
+      "note": "Extralight 230 g"
+    }
+  ],
+  "caveats": [
+    "Needs an inner tube.",
+    "No independent lab test of the current casing recorded."
+  ],
+  "price_observations": [
+    {
+      "amount": 79,
+      "currency": "USD",
+      "market": "Rene Herse store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store range US$79-92 by casing on 2026-11-01; the lowest price is shown; one tire.",
+      "source_id": "rene-herse-chinook-pass-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "rene-herse-chinook-pass-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

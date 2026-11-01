@@ -1,0 +1,66 @@
+{
+  "id": "rene-herse-orondo-grade-tc",
+  "maker": "Rene Herse",
+  "name": "Orondo Grade TC",
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Rene Herse Cycles sells its tires from its own US web store in US dollars."
+  },
+  "manufacturing": {
+    "country": "Japan",
+    "basis": "Rene Herse product pages state the tires are made in Japan."
+  },
+  "hookless": "approved",
+  "weight_claim_type": "official",
+  "weight_basis": "Rene Herse weight for the Standard casing; other casings in the size note.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Rene Herse's US web store; other regions not verified."
+  },
+  "use": "endurance",
+  "positioning": "Rene Herse's tubeless 31 mm road tire in Standard, Extralight and Endurance casings.",
+  "construction": "tubeless-ready",
+  "hookless_note": "Rene Herse says it suits hookless or hooked rims with 15-25 mm inner width, up to 90 psi.",
+  "casing": "Standard, Extralight or Endurance",
+  "compound": null,
+  "protection": "Endurance casing option",
+  "sizes": [
+    {
+      "width_mm": 31,
+      "etrto": "31-622",
+      "weight_g": 350,
+      "max_psi": 90,
+      "max_bar": 6.2,
+      "note": "Extralight 325 g; Endurance 330 g"
+    }
+  ],
+  "caveats": [
+    "Older narrow non-tubeless rims can make mounting very difficult.",
+    "No independent lab test recorded."
+  ],
+  "price_observations": [
+    {
+      "amount": 89,
+      "currency": "USD",
+      "market": "Rene Herse store (US)",
+      "region": "na",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store range US$89-99 by casing on 2026-11-01; the lowest price is shown; one tire.",
+      "source_id": "rene-herse-orondo-grade-tc-official-2026-11-01",
+      "width_mm": 31
+    }
+  ],
+  "source_ids": [
+    "rene-herse-orondo-grade-tc-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
