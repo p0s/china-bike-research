@@ -1640,6 +1640,7 @@ export function translateGerman(value) {
     [/^wet (\d+)$/, (_, n) => `nass ${n}`],
     [/^also (.+)$/, (_, list) => `auch ${list}`],
     [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${n === '1' ? 'Besitzerbericht' : 'Besitzerberichte'}, kein Labortest gefunden`],
+    [/^(\d+) maker · (\d+) retailer · (\d+) XHS post · (\d+) without a photo$/, (_, a, b, c, d) => `${a} Hersteller · ${b} Händler · ${c} XHS-Beitrag · ${d} ohne Foto`],
     [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} pro Reifen`],
     [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} laut Angebot, Einzelreifen oder Paar nicht angegeben`],
     [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${n === '1' ? 'Bericht' : 'Berichte'} über ${{ 'bulging or casing failure': 'Beulen oder Karkassenschäden', cracking: 'Risse', 'fast wear': 'schnellen Verschleiß', 'frequent punctures': 'häufige Pannen', 'bead or rim-fit problems': 'Wulst- oder Felgensitzprobleme' }[issue]}`],
@@ -2435,5 +2436,13 @@ Object.assign(de, {
   "Owner wet reports conflict": "Besitzerberichte bei Nässe widersprechen sich",
   "Owner wet reports are unfavourable": "Besitzerberichte bei Nässe sind negativ",
   "No owner wet report found": "Kein Besitzerbericht bei Nässe gefunden",
-  "No durability or fit problem report found": "Kein Bericht über Haltbarkeits- oder Sitzprobleme gefunden"
+  "No durability or fit problem report found": "Kein Bericht über Haltbarkeits- oder Sitzprobleme gefunden",
+  "Maker photo": "Herstellerfoto",
+  "Retailer photo": "Händlerfoto",
+  "Photo from an XHS post": "Foto aus einem XHS-Beitrag",
+  "Loaded from the retailer’s website": "Von der Website des Händlers geladen",
+  "Loaded from the original XHS post": "Aus dem ursprünglichen XHS-Beitrag geladen",
+  "Photo": "Foto",
+  "Photos": "Fotos",
+  "Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.": "Fotos werden von der eigenen Produktseite des Herstellers oder Händlers oder aus dem ursprünglichen öffentlichen Beitrag geladen; diese Website speichert keine Kopie."
 });

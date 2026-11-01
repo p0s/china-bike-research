@@ -165,11 +165,78 @@ export function budgetShortlist(tires) {
 
 const sizeKey = (size) => `${sizeLabel(size)}|${size.bead ?? ''}`;
 
+// Tire photos (2026-11-02). A third-party photo stays on its owner's server: the maker's or
+// retailer's own product page, or the original public post. No copy enters Git.
+export const TIRE_IMAGE_KINDS = { official: 'official-page-embed', retailer: 'retailer-page-embed', 'public-post': 'public-post-embed' };
+export const TIRE_IMAGE_STATUSES = [...Object.keys(TIRE_IMAGE_KINDS), 'missing'];
+const TIRE_IMAGE_SOURCE_TYPES = {
+  official: /^(manufacturer-[a-z-]+|official-marketplace-listing)$/,
+  retailer: /^(retailer-product-page|marketplace-product-page)$/,
+  'public-post': /^public-community-post$/
+};
+// A photo loads from its source page's own host or that site's reviewed media host.
+export const TIRE_MEDIA_HOSTS = {
+  'www.trekbikes.com': ['media.trekbikes.com'],
+  'www.giant-bicycles.com': ['images2.giant-bicycles.com'],
+  'www.cadex-cycling.com': ['images2.giant-bicycles.com'],
+  'www.enve.com': ['enve.com'],
+  'www.michelin.co.uk': ['dxm.contentcenter.michelin.com'],
+  'www.pirelli.com': ['tyre24.pirelli.com']
+};
+// Only resizing parameters may follow an image file URL; tracking or session parameters never do.
+const RESIZE_PARAMS = new Set(['width', 'height', 'w', 'h', 'q', 'fm', 'fit', 'crop']);
+
+function plainImageUrl(value) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:' || url.hash || url.username || url.password) return null;
+    if ([...url.searchParams.keys()].some((key) => !RESIZE_PARAMS.has(key))) return null;
+    return url;
+  } catch { return null; }
+}
+
+export function validateTireImage(tire, sources, label) {
+  const errors = [];
+  const image = tire.image;
+  if (!image || typeof image !== 'object' || Array.isArray(image)) return [`${label}: image must be an object`];
+  for (const field of ['source_id', 'subject_accuracy', 'shown', 'credit', 'alt', 'remote_url', 'reviewed_at', 'source_media_sha256']) {
+    if (!nonEmpty(image[field])) errors.push(`${label}: missing image.${field}`);
+  }
+  if (!Object.hasOwn(TIRE_IMAGE_KINDS, image.kind)) errors.push(`${label}: invalid image.kind`);
+  if (image.subject_accuracy !== 'exact-model') errors.push(`${label}: tire photos must show the exact model`);
+  const source = sources.get(image.source_id);
+  if (!source || !(tire.source_ids ?? []).includes(image.source_id)) errors.push(`${label}: image source must be a listed source`);
+  else if (!TIRE_IMAGE_SOURCE_TYPES[image.kind]?.test(source.type)) errors.push(`${label}: image source type does not match its kind`);
+  if (image.kind === 'public-post' && !/^https:\/\/www\.xiaohongshu\.com\/explore\/[0-9a-f]{24}$/.test(source?.url ?? '')) errors.push(`${label}: a public-post photo needs a canonical XHS post link`);
+  const remote = plainImageUrl(image.remote_url);
+  if (!remote) errors.push(`${label}: image.remote_url must be an HTTPS file URL with resizing parameters only`);
+  let pageHost = '';
+  try { pageHost = new URL(source?.url ?? '').hostname; } catch { /* reported above */ }
+  if (remote && remote.hostname !== pageHost && !(TIRE_MEDIA_HOSTS[pageHost] ?? []).includes(remote.hostname)) errors.push(`${label}: image must load from its source page's host or reviewed media host`);
+  if (image.thumb_url !== undefined) {
+    // A resized copy keeps the file name, or adds a WordPress size suffix to the same original.
+    const thumb = plainImageUrl(image.thumb_url);
+    const original = (url) => url.pathname.split('/').pop().replace(/-\d+x\d+(?=\.[a-z0-9]+$)/i, '');
+    if (!thumb || !remote || thumb.hostname !== remote.hostname || original(thumb) !== original(remote)) errors.push(`${label}: image.thumb_url must be a resized copy of the same file on the same host`);
+  }
+  if (!/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '') || !Number.isInteger(image.source_media_bytes) || image.source_media_bytes < 1) errors.push(`${label}: image needs the reviewed file's hash and size`);
+  if (!Number.isInteger(image.width) || image.width < 120 || !Number.isInteger(image.height) || image.height < 120) errors.push(`${label}: image needs reviewed dimensions of at least 120 px`);
+  if (nonEmpty(image.alt) && image.alt.trim().length < 15) errors.push(`${label}: image.alt is too short`);
+  if (!isDate(image.reviewed_at)) errors.push(`${label}: invalid image.reviewed_at`);
+  const rights = image.rights ?? {};
+  if (rights.status !== TIRE_IMAGE_KINDS[image.kind] || ['copyright_holder', 'usage_note', 'removal_route'].some((field) => !nonEmpty(rights[field]))) errors.push(`${label}: incomplete image rights record`);
+  if (rights.terms_source_id !== undefined && !sources.has(rights.terms_source_id)) errors.push(`${label}: unknown image terms source`);
+  const privacy = image.privacy_review ?? {};
+  if (!['none-found', 'technical-only'].includes(privacy.embedded_metadata) || privacy.visual !== 'no-faces-plates-accounts-locations' || !isDate(privacy.reviewed_at)) errors.push(`${label}: incomplete image privacy review`);
+  return errors;
+}
+
 export function validateTires(data, sourceIds) {
   const errors = [];
   const tires = data.tires ?? [];
   const ids = new Set(tires.map((tire) => tire.id));
   const otherIds = new Set([...(data.buildParts ?? []), ...(data.wheelsets ?? [])].map((record) => record.id));
+  const sources = new Map((data.sources ?? []).map((source) => [source.id, source]));
   const listed = (tire, id) => sourceIds.has(id) && (tire.source_ids ?? []).includes(id);
   for (const tire of tires) {
     const label = `tire ${tire.id}`;
@@ -247,6 +314,24 @@ export function validateTires(data, sourceIds) {
     for (const id of tire.source_ids ?? []) if (!sourceIds.has(id)) errors.push(`${label}: missing source ${id}`);
     if (!Array.isArray(tire.source_ids) || !tire.source_ids.length) errors.push(`${label}: source_ids must not be empty`);
     if (!isDate(tire.reviewed_at)) errors.push(`${label}: invalid reviewed_at`);
+    if (tire.image !== undefined) errors.push(...validateTireImage(tire, sources, label));
+  }
+  // The image ledger lists every published tire once with its photo status or the reason it has none.
+  for (const ledger of data.tireImages ?? []) {
+    const label = `tire image ledger ${ledger.id}`;
+    if (!isDate(ledger.as_of)) errors.push(`${label}: invalid as_of`);
+    const entries = new Map();
+    for (const entry of ledger.entries ?? []) {
+      if (entries.has(entry.tire_id)) errors.push(`${label}: duplicate entry ${entry.tire_id}`);
+      entries.set(entry.tire_id, entry);
+      if (!ids.has(entry.tire_id)) errors.push(`${label}: unknown tire ${entry.tire_id}`);
+      if (!TIRE_IMAGE_STATUSES.includes(entry.status) || !nonEmpty(entry.reason)) errors.push(`${label}: ${entry.tire_id} needs a status and reason`);
+    }
+    for (const tire of tires) {
+      const entry = entries.get(tire.id);
+      if (!entry) errors.push(`${label}: tire ${tire.id} is missing`);
+      else if (entry.status !== (tire.image?.kind ?? 'missing')) errors.push(`${label}: ${tire.id} status does not match its record`);
+    }
   }
   // The coverage ledger records every discovered candidate's disposition and reason.
   for (const ledger of data.tireCoverage ?? []) {

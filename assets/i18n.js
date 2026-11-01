@@ -888,6 +888,7 @@ export function translate(value, locale = 'en') {
     [/^wet (\d+)$/, (_, n) => `湿地 ${n}`],
     [/^also (.+)$/, (_, list) => `另有 ${list}`],
     [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} 条车主反馈，未找到实验室测试`],
+    [/^(\d+) maker · (\d+) retailer · (\d+) XHS post · (\d+) without a photo$/, (_, a, b, c, d) => `厂商 ${a} · 零售商 ${b} · 小红书帖子 ${c} · 无图片 ${d}`],
     [/^(¥[\d,.]+) per tire$/, (_, price) => `单条 ${price}`],
     [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `标价 ${price}，未说明单条还是一对`],
     [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} 条${{ 'bulging or casing failure': '鼓包或胎体损坏', cracking: '开裂', 'fast wear': '磨损快', 'frequent punctures': '频繁扎胎', 'bead or rim-fit problems': '胎唇或装圈问题' }[issue]}报告`],
@@ -1752,5 +1753,13 @@ Object.assign(zh, {
   "Owner wet reports conflict": "车主湿地反馈相互矛盾",
   "Owner wet reports are unfavourable": "车主湿地反馈为负面",
   "No owner wet report found": "未找到车主湿地反馈",
-  "No durability or fit problem report found": "未找到耐用性或装胎问题报告"
+  "No durability or fit problem report found": "未找到耐用性或装胎问题报告",
+  "Maker photo": "厂商图片",
+  "Retailer photo": "零售商图片",
+  "Photo from an XHS post": "小红书帖子图片",
+  "Loaded from the retailer’s website": "从零售商网站加载",
+  "Loaded from the original XHS post": "从小红书原帖加载",
+  "Photo": "图片",
+  "Photos": "图片",
+  "Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.": "图片从厂商或零售商自己的产品页面或原始公开帖子加载；本站不保存副本。"
 });

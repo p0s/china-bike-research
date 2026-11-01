@@ -75,7 +75,14 @@ export function imageHealthTargets(data = loadDataset()) {
   const wheelsetTargets = (data.wheelsets ?? [])
     .filter((wheelset) => wheelset.image?.remote_url)
     .map((wheelset) => ({ id: `wheelset:${wheelset.id}`, url: wheelset.image.remote_url }));
-  return [...catalogTargets, ...groupsetTargets, ...wheelsetTargets];
+  // Tire photos load from their owners' servers: the detail file and any resized thumbnail.
+  const tireTargets = (data.tires ?? [])
+    .filter((tire) => tire.image?.remote_url)
+    .flatMap((tire) => [
+      { id: `tire:${tire.id}`, url: tire.image.remote_url },
+      ...(tire.image.thumb_url ? [{ id: `tire:${tire.id}:thumb`, url: tire.image.thumb_url }] : [])
+    ]);
+  return [...catalogTargets, ...groupsetTargets, ...wheelsetTargets, ...tireTargets];
 }
 
 export function filterImageHealthTargets(targets, imageIds) {

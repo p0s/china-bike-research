@@ -214,7 +214,7 @@ write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at
 write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
 write('data/groupsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, groupsets: data.groupsets }, null, 2)}\n`);
 write('data/wheelsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, wheelsets: data.wheelsets }, null, 2)}\n`);
-write('data/tires.json', `${JSON.stringify({ generated_at: catalog.generated_at, tires: data.tires ?? [], coverage: data.tireCoverage ?? [] }, null, 2)}\n`);
+write('data/tires.json', `${JSON.stringify({ generated_at: catalog.generated_at, tires: data.tires ?? [], coverage: data.tireCoverage ?? [], images: data.tireImages ?? [] }, null, 2)}\n`);
 write('data/build-parts.json', `${JSON.stringify({ generated_at: catalog.generated_at, build_parts: data.buildParts }, null, 2)}\n`);
 
 const headers = [

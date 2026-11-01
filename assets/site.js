@@ -214,8 +214,11 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       const container = image.closest('.product-image');
       if (container instanceof HTMLElement) {
         container.closest('.catalog-product')?.classList.add('has-no-image');
+        container.closest('.groupset-identity')?.classList.remove('has-image');
         container.remove();
       }
+      // A reference-row detail photo leaves no empty caption behind.
+      image.closest('.tire-photo')?.remove();
       const comparison = image.closest('.compare-product-head');
       if (comparison instanceof HTMLElement) comparison.classList.add('has-no-image');
       image.remove();

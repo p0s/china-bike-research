@@ -1748,6 +1748,12 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .tire-budget li { margin-bottom: 6px; }
 .tire-budget li strong { color: var(--accent); font-size: .74rem; }
 .tire-budget li span + span::before { content: '· '; }
+.tire-photo { display: flex; align-items: flex-start; gap: 14px; margin: 4px 0 16px; }
+.tire-photo img { flex: 0 0 auto; width: 220px; max-width: 42%; height: auto; aspect-ratio: auto; padding: 6px; border-radius: 10px; background: var(--image-surface); object-fit: contain; }
+.tire-photo figcaption { display: flex; flex-direction: column; gap: 3px; min-width: 0; color: var(--muted); font-size: .72rem; line-height: 1.45; }
+.tire-photo figcaption strong { color: var(--ink); font-size: .76rem; }
+.tire-photo-shown { color: var(--ink); }
+.tire-photo figcaption a { color: var(--ink); }
 .tire-size-table { overflow-x: auto; }
 .tire-size-table table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: .76rem; }
 .tire-size-table th, .tire-size-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -1765,6 +1771,8 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .tire-comparison { min-width: 0; }
   .tire-shortlist-grid, .tire-budget-grid { grid-template-columns: minmax(0, 1fr); }
   .tire-budget-grid .tire-shortlist + .tire-shortlist { border-top: 1px solid var(--line); }
+  .tire-photo { flex-direction: column; }
+  .tire-photo img { width: 100%; max-width: 280px; }
   .tire-comparison .groupset-summary-row > td[data-column="widths"] { border-right: 1px solid var(--line); }
   .tire-comparison .groupset-summary-row > td[data-column="tests"] { grid-column: 1 / -1; }
 }

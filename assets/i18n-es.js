@@ -1091,7 +1091,17 @@ Object.assign(es, {
   "Owner wet reports conflict": "Las opiniones en mojado se contradicen",
   "Owner wet reports are unfavourable": "Las opiniones en mojado son desfavorables",
   "No owner wet report found": "No se encontraron opiniones en mojado",
-  "No durability or fit problem report found": "No se encontraron informes de problemas de durabilidad o de ajuste"
+  "No durability or fit problem report found": "No se encontraron informes de problemas de durabilidad o de ajuste",
+  "Maker photo": "Foto del fabricante",
+  "Retailer photo": "Foto del minorista",
+  "Photo from an XHS post": "Foto de una publicación de XHS",
+  "Loaded from the maker’s website": "Cargada desde el sitio del fabricante",
+  "Loaded from the retailer’s website": "Cargada desde el sitio del minorista",
+  "Loaded from the original XHS post": "Cargada desde la publicación original de XHS",
+  "Original source": "Fuente original",
+  "Photo": "Foto",
+  "Photos": "Fotos",
+  "Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.": "Las fotos se cargan desde la página de producto del propio fabricante o minorista, o desde la publicación pública original; este sitio no guarda copias."
 });
 
 // Road tire reference (2026-11-01)
@@ -1105,6 +1115,7 @@ patterns.push(
   [/^wet (\d+)$/, (_, n) => `mojado ${n}`],
   [/^also (.+)$/, (_, list) => `también ${list}`],
   [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${n === '1' ? 'opinión de propietario' : 'opiniones de propietarios'}, sin prueba de laboratorio`],
+  [/^(\d+) maker · (\d+) retailer · (\d+) XHS post · (\d+) without a photo$/, (_, a, b, c, d) => `${a} del fabricante · ${b} de minorista · ${c} de publicaciones de XHS · ${d} sin foto`],
   [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} por neumático`],
   [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} en el anuncio, sin indicar si es uno o un par`],
   [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${n === '1' ? 'informe' : 'informes'} de ${{ 'bulging or casing failure': 'abultamientos o fallos de carcasa', cracking: 'grietas', 'fast wear': 'desgaste rápido', 'frequent punctures': 'pinchazos frecuentes', 'bead or rim-fit problems': 'problemas de talón o de ajuste en la llanta' }[issue]}`],
