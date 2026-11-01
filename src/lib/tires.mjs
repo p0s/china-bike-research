@@ -181,7 +181,8 @@ export const TIRE_MEDIA_HOSTS = {
   'www.cadex-cycling.com': ['images2.giant-bicycles.com'],
   'www.enve.com': ['enve.com'],
   'www.michelin.co.uk': ['dxm.contentcenter.michelin.com'],
-  'www.pirelli.com': ['tyre24.pirelli.com']
+  'www.pirelli.com': ['tyre24.pirelli.com'],
+  'www.specialized.com': ['resources.specialized.com']
 };
 // Only resizing parameters may follow an image file URL; tracking or session parameters never do.
 const RESIZE_PARAMS = new Set(['width', 'height', 'w', 'h', 'q', 'fm', 'fit', 'crop']);
