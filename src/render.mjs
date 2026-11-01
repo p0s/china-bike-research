@@ -14,7 +14,7 @@ import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsuppo
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis, latestExchangeRates } from './lib/regional-prices.mjs';
 import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs';
-import { WET_WIDTHS, comparableRollingTest, headlineTest, measuredWetGrip, referenceSize, sizeInRange, sizeLabel, tireGroups, tireShortlists } from './lib/tires.mjs';
+import { WET_WIDTHS, budgetShortlist, comparableRollingTest, headlineTest, measuredWetGrip, referenceSize, sizeInRange, sizeLabel, tireGroups, tireShortlists } from './lib/tires.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -2608,7 +2608,7 @@ function tireRows(ctx, tire, sourcesById, rates) {
   }).join('')}</ul></section>` : '';
   const wetNotes = (tire.wet_notes ?? []).map((note) => {
     const source = sourcesById.get(note.source_id);
-    return `<li><strong>${escapeHtml(tireWetKindLabels[note.kind])}:</strong> ${escapeHtml(note.summary)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
+    return `<li><strong>${escapeHtml(tireWetKindLabels[note.kind])}:</strong> ${note.stance ? `<em>${escapeHtml(tireStanceLabels[note.stance])}</em> · ` : ''}${escapeHtml(note.summary)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
   });
   const wet = wetNotes.length || wetGrip !== null ? `<section><h3>Wet-weather evidence</h3><ul>${wetGrip !== null ? `<li><strong>${escapeHtml(tireWetKindLabels.measured)}:</strong> ${escapeHtml(`static wet grip ${wetGrip} (friction coefficient × 100) on Bicycle Rolling Resistance's wet drum. It is not a braking-distance or cornering result.`)}</li>` : ''}${wetNotes.join('')}</ul></section>` : '';
   const owners = (tire.community ?? []).length ? `<section><h3>Owner reports</h3><ul>${tire.community.map((report) => {
@@ -2639,6 +2639,44 @@ function tireShortlistItems(items, line) {
 function tireShortlistBlock(title, criteria, items, line) {
   if (!items.length) return '';
   return `<div class="tire-shortlist"><h4>${escapeHtml(title)}</h4><p class="tire-criteria">${escapeHtml(criteria)}</p>${tireShortlistItems(items, line)}</div>`;
+}
+
+const tireBudgetWetLabels = {
+  consistent: 'Favourable owner wet reports agree',
+  single: 'One favourable owner wet report',
+  conflicting: 'Owner wet reports conflict',
+  unfavourable: 'Owner wet reports are unfavourable',
+  none: 'No owner wet report found'
+};
+const tireIssueLabels = { casing: 'bulging or casing failure', cracking: 'cracking', wear: 'fast wear', punctures: 'frequent punctures', fit: 'bead or rim-fit problems' };
+
+// Budget all-season starting point: every qualifying tire with its per-tire price, wet-road
+// evidence and durability reports, an explicit verdict when none meets the bar, and the
+// tires listed within the budget whose one-tire or pair basis is unstated, kept apart.
+function tireBudgetHtml({ qualifying, unverified }) {
+  if (!qualifying.length && !unverified.length) return '';
+  const entry = (item, { verified }) => {
+    const issues = Object.entries(item.issues).filter(([, count]) => count > 0)
+      .map(([issue, count]) => `<span>${escapeHtml(`${count} ${count === 1 ? 'report' : 'reports'} of ${tireIssueLabels[issue]}`)}</span>`);
+    const facts = [
+      item.allSeason ? '<strong>Supported all-season choice</strong>' : '',
+      `<span>${escapeHtml(verified ? `${tireAmount(item.price, { exact: true })} per tire` : `${tireAmount(item.price, { exact: true })} listing, one tire or pair not stated`)}</span>`,
+      `<span>${escapeHtml(`${item.price.market} · ${item.price.observed_at}`)}</span>`,
+      verified ? '' : `<span>${escapeHtml(tireOriginLabels[item.tire.origin.group])}</span>`,
+      `<span>${escapeHtml(item.wet === 'measured' ? `wet grip ${item.grip}` : tireBudgetWetLabels[item.wet])}</span>`,
+      ...(issues.length ? issues : [`<span>${escapeHtml('No durability or fit problem report found')}</span>`])
+    ].filter(Boolean).join(' ');
+    return `<li><a href="#${escapeAttr(item.tire.id)}">${escapeHtml(`${item.tire.maker} ${item.tire.name}`)}</a> ${facts}</li>`;
+  };
+  const groups = ['mainland-china', 'taiwan'].map((group) => {
+    const rows = qualifying.filter((item) => item.tire.origin.group === group);
+    return `<div class="tire-shortlist"><h4>${escapeHtml(tireOriginLabels[group])}</h4>${rows.length ? `<ol>${rows.map((item) => entry(item, { verified: true })).join('')}</ol>` : `<p class="tire-criteria">${escapeHtml('No verified one-tire price within the budget yet.')}</p>`}</div>`;
+  }).join('');
+  const verdict = qualifying.some((item) => item.allSeason)
+    ? 'Tires marked as a supported all-season choice meet both evidence thresholds. Others may still be good; the evidence found is thinner or conflicting.'
+    : 'None of these tires has enough wet-road evidence to be called a proven all-season choice yet. The lists show what owners report, so you can weigh price against the known risks.';
+  const pending = unverified.length ? `<div class="tire-shortlist tire-budget-unverified"><h4>${escapeHtml('Listed at CNY 250 or less, but one tire or pair is not stated')}</h4><p class="tire-criteria">${escapeHtml('These listings do not establish a one-tire price, so they are not budget choices until a listing states one tire.')}</p><ol>${unverified.map((item) => entry(item, { verified: false })).join('')}</ol></div>` : '';
+  return `<div class="tire-budget" id="budget"><h3>Budget all-season: up to CNY 250 per tire</h3><p class="tire-budget-verdict"><strong>${escapeHtml(verdict)}</strong></p><p class="tire-criteria">${escapeHtml('Mainland China and Taiwan brands in 25–35 mm with a dated price of CNY 250 or less for one tire, before shipping. A supported all-season choice needs measured wet grip of at least 80, or at least two favourable first-hand wet reports with none against, and fewer than two reports of bulging or casing failure. Tread pattern, four-season marketing and seller copy are not wet evidence. Confidence: a lab test is strongest, agreeing owner reports are moderate, and one report or conflicting reports are weak. Ordered by wet evidence, then fewer casing reports, then price.')}</p><div class="tire-budget-grid">${groups}</div>${pending}</div>`;
 }
 
 function tireCoverageHtml(ledger, tiresById) {
@@ -2684,7 +2722,7 @@ export function renderTires(ctx) {
   ].join('')}</div><div><h3>Wet weather 20–40 mm</h3>${[
     tireShortlistBlock('Highest measured wet grip', 'Static wet grip of at least 80 on Bicycle Rolling Resistance\'s wet drum, tested width shown in the row.', lists.wetGrip, ({ grip }) => `wet grip ${grip}`),
     tireShortlistBlock('All-season constructions with a wet-grip test', 'Maker all-season or four-season lines with a measured wet-grip score, highest first.', lists.allSeason, ({ grip }) => `wet grip ${grip}`)
-  ].join('')}<p class="tire-wet-note">Wet grip here is tire traction on a wet test drum. It is not a braking-distance or cornering certification, and rim-brake pads, rims and rotors are separate. Lower pressure, clean rims and earlier braking matter as much as the tire.</p></div></div><p class="tire-shortlist-note">Each list follows only its stated criteria. A tire missing from a list may simply lack a lab test; missing evidence is not a negative result. No list promises that a tire fits your frame or rim.</p></section>`;
+  ].join('')}<p class="tire-wet-note">Wet grip here is tire traction on a wet test drum. It is not a braking-distance or cornering certification, and rim-brake pads, rims and rotors are separate. Lower pressure, clean rims and earlier braking matter as much as the tire.</p></div></div>${tireBudgetHtml(budgetShortlist(tires))}<p class="tire-shortlist-note">Each list follows only its stated criteria. A tire missing from a list may simply lack a lab test; missing evidence is not a negative result. No list promises that a tire fits your frame or rim.</p></section>`;
   const toolbar = `<div class="wheels-toolbar tires-toolbar" data-tires-toolbar hidden><div class="segmented" role="group" aria-label="Width group"><button type="button" data-tires-group="" aria-pressed="true">All</button><button type="button" data-tires-group="road" aria-pressed="false">Road 25–35 mm</button><button type="button" data-tires-group="wet" aria-pressed="false">Wet 20–40 mm</button></div><label class="sort-control"><span>Origin</span><select data-tires-origin><option value="">All origins</option><option value="mainland-china">Mainland China</option><option value="taiwan">Taiwan</option><option value="international">International</option></select></label><label class="sort-control"><span>Type</span><select data-tires-construction><option value="">All types</option><option value="tubeless-ready">Tubeless-ready</option><option value="tube-type">Tube-type clincher</option></select></label><label class="sort-control"><span>Sort</span><select data-tires-sort><option value="">Origin, then maker</option><option value="rr">Lowest rolling resistance (BRR 28–30 mm)</option><option value="wet">Highest wet grip (BRR)</option><option value="weight">Lightest at the reference size</option><option value="price">Price: low to high (US$ equivalent)</option></select></label><p class="wheels-status" data-tires-status role="status" aria-live="polite"></p></div>`;
   const originalNotes = ctx.locale === 'zh-Hans'
     ? '<p class="locale-evidence-note">本页提供中文导航与规格标签；型号、来源标题以及详细的测试、车主反馈和价格备注保留原文。</p>'

@@ -1077,7 +1077,21 @@ Object.assign(es, {
   "Negative": "Negativa",
   "Maker claim": "Declaración del fabricante",
   "Lab measured": "Medido en laboratorio",
-  "Owner-measured": "Medido por el propietario"
+  "Owner-measured": "Medido por el propietario",
+  "Budget all-season: up to CNY 250 per tire": "Todo el año económico: hasta 250 CNY por neumático",
+  "Tires marked as a supported all-season choice meet both evidence thresholds. Others may still be good; the evidence found is thinner or conflicting.": "Los neumáticos marcados como opción para todo el año respaldada cumplen ambos umbrales de evidencia. Otros pueden ser buenos; la evidencia encontrada es más escasa o contradictoria.",
+  "None of these tires has enough wet-road evidence to be called a proven all-season choice yet. The lists show what owners report, so you can weigh price against the known risks.": "Ninguno de estos neumáticos tiene todavía evidencia suficiente en mojado para considerarlo una opción probada para todo el año. Las listas muestran lo que cuentan los propietarios para que compares el precio con los riesgos conocidos.",
+  "Mainland China and Taiwan brands in 25–35 mm with a dated price of CNY 250 or less for one tire, before shipping. A supported all-season choice needs measured wet grip of at least 80, or at least two favourable first-hand wet reports with none against, and fewer than two reports of bulging or casing failure. Tread pattern, four-season marketing and seller copy are not wet evidence. Confidence: a lab test is strongest, agreeing owner reports are moderate, and one report or conflicting reports are weak. Ordered by wet evidence, then fewer casing reports, then price.": "Marcas de China continental y Taiwán en 25–35 mm con un precio fechado de 250 CNY o menos por un neumático, sin envío. Una opción para todo el año respaldada necesita un agarre en mojado medido de al menos 80, o al menos dos opiniones de primera mano favorables en mojado y ninguna en contra, y menos de dos informes de abultamientos o fallos de carcasa. El dibujo de la banda, la publicidad de cuatro estaciones y los textos del vendedor no son evidencia en mojado. Confianza: una prueba de laboratorio es la más sólida, varias opiniones coincidentes son moderadas, y una sola opinión o opiniones contradictorias son débiles. Ordenado por evidencia en mojado, después por menos informes de carcasa y después por precio.",
+  "No verified one-tire price within the budget yet.": "Aún no hay un precio por neumático verificado dentro del presupuesto.",
+  "Listed at CNY 250 or less, but one tire or pair is not stated": "Anunciados por 250 CNY o menos, sin indicar si es uno o un par",
+  "These listings do not establish a one-tire price, so they are not budget choices until a listing states one tire.": "Estos anuncios no establecen un precio por neumático, así que no son opciones del presupuesto hasta que un anuncio indique un neumático.",
+  "Supported all-season choice": "Opción para todo el año respaldada",
+  "Favourable owner wet reports agree": "Las opiniones favorables en mojado coinciden",
+  "One favourable owner wet report": "Una opinión favorable en mojado",
+  "Owner wet reports conflict": "Las opiniones en mojado se contradicen",
+  "Owner wet reports are unfavourable": "Las opiniones en mojado son desfavorables",
+  "No owner wet report found": "No se encontraron opiniones en mojado",
+  "No durability or fit problem report found": "No se encontraron informes de problemas de durabilidad o de ajuste"
 });
 
 // Road tire reference (2026-11-01)
@@ -1091,6 +1105,9 @@ patterns.push(
   [/^wet (\d+)$/, (_, n) => `mojado ${n}`],
   [/^also (.+)$/, (_, list) => `también ${list}`],
   [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${n === '1' ? 'opinión de propietario' : 'opiniones de propietarios'}, sin prueba de laboratorio`],
+  [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} por neumático`],
+  [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} en el anuncio, sin indicar si es uno o un par`],
+  [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${n === '1' ? 'informe' : 'informes'} de ${{ 'bulging or casing failure': 'abultamientos o fallos de carcasa', cracking: 'grietas', 'fast wear': 'desgaste rápido', 'frequent punctures': 'pinchazos frecuentes', 'bead or rim-fit problems': 'problemas de talón o de ajuste en la llanta' }[issue]}`],
   [/^Sizes: (.+)$/, (_, name) => `Medidas: ${name}`],
   [/^Coverage: (\d+) candidates from (\d+) brands, as of (\d{4}-\d{2}-\d{2})$/, (_, n, brands, date) => `Cobertura: ${n} candidatos de ${brands} marcas, a ${date}`],
   [/^(\d+) included$/, (_, n) => `${n} en la comparación`],

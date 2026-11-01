@@ -47,8 +47,9 @@
   "wet_notes": [
     {
       "kind": "community report",
-      "summary": "Owner comments are split: one found it better than a GP5000 in the wet, others found it very slippery on wet roads.",
-      "source_id": "xhs-arisun-storm-r1-weights-2025-04-26"
+      "summary": "One commenter found it better than a GP5000 in the wet after two months; two others said it turns very slippery once wet. The post covers both the clincher and the tubeless version.",
+      "source_id": "xhs-arisun-storm-r1-weights-2025-04-26",
+      "stance": "mixed"
     }
   ],
   "community": [
@@ -62,19 +63,60 @@
       "source_id": "xhs-arisun-storm-r1-3000-km-2025-06-12",
       "stance": "mixed",
       "published_at": "2025-06-12",
-      "summary": "Light and lively for 3,000 km; a bulge formed at a puncture site, and commenters reported sidewall cord cracks at 100-1,000 km."
+      "summary": "Light and lively for 3,000 km; a bulge formed at a puncture site, and commenters reported sidewall cord cracks at 100-1,000 km.",
+      "issues": [
+        "casing",
+        "cracking"
+      ]
     },
     {
       "source_id": "xhs-arisun-storm-r1-test-2025-01-25",
       "stance": "mixed",
       "published_at": "2025-01-25",
-      "summary": "A creator test presents it as a GP5000 alternative; commenters reported early cracks and bulges, some replaced under warranty."
+      "summary": "A creator test presents it as a GP5000 alternative; commenters reported early cracks and bulges, some replaced under warranty.",
+      "issues": [
+        "casing",
+        "cracking"
+      ]
     },
     {
       "source_id": "xhs-arisun-storm-r1-weights-2025-04-26",
       "stance": "mixed",
       "published_at": "2025-04-26",
-      "summary": "Owner-measured 221 g at 28C; commenters praise speed and feel but report fast wear."
+      "summary": "Owner-measured 221 g at 28C; commenters praise speed and feel but report fast wear.",
+      "issues": [
+        "wear"
+      ]
+    },
+    {
+      "source_id": "xhs-arisun-storm-r1-dry-review-2025-06-26",
+      "stance": "positive",
+      "published_at": "2025-06-26",
+      "summary": "Owner: more dry grip and high-speed stability than a Michelin Power Cup, comfortable, close to 28 mm on a 19 mm rim; not yet ridden in the wet."
+    },
+    {
+      "source_id": "xhs-arisun-storm-r1-1800-km-2026-06-26",
+      "stance": "negative",
+      "published_at": "2026-06-26",
+      "summary": "A 28C rear wore through to the casing after about 1,800 km; other owners report 7,000-10,000 km.",
+      "issues": [
+        "wear"
+      ]
+    },
+    {
+      "source_id": "xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
+      "stance": "mixed",
+      "published_at": "2026-09-09",
+      "summary": "Commenters on a tubeless-bulge post: one clincher sidewall cracked through at about 1,000 km; another lasted 7,000 km with several punctures; others had no problem at 1,000-2,000 km.",
+      "issues": [
+        "cracking"
+      ]
+    },
+    {
+      "source_id": "xhs-arisun-storm-r1-10000-km-2026-10-02",
+      "stance": "positive",
+      "published_at": "2026-10-02",
+      "summary": "About 10,000 km to the casing for a light rider with about five punctures; the post does not say clincher or tubeless."
     }
   ],
   "availability": {
@@ -98,16 +140,21 @@
     }
   ],
   "caveats": [
-    "Several owners report sidewall cracks or bulges within the first 1,000 km; inspect the sidewall regularly.",
-    "No independent lab test found; speed claims come from owners and the seller.",
-    "Mount in the direction of the rotation arrow, which some owners say is opposite to Continental tires."
+    "Several owners report bulges, sidewall cracks or wear-through within 1,000-2,000 km, while others report 7,000-10,000 km; inspect the casing regularly.",
+    "Owner wet reports conflict: one found it better than a GP5000 in the wet, others found it very slippery once wet. No independent lab test found.",
+    "Mount in the direction of the rotation arrow, which some owners say is opposite to Continental's.",
+    "The official store price is CNY 268 per listing option; whether an option is one tire or a pair is not stated."
   ],
   "source_ids": [
     "arisun-storm-r1-tmall-2026-11-01",
     "xhs-arisun-storm-r1-weights-2025-04-26",
     "xhs-budget-road-tire-comparison-2025-07-16",
     "xhs-arisun-storm-r1-3000-km-2025-06-12",
-    "xhs-arisun-storm-r1-test-2025-01-25"
+    "xhs-arisun-storm-r1-test-2025-01-25",
+    "xhs-arisun-storm-r1-dry-review-2025-06-26",
+    "xhs-arisun-storm-r1-1800-km-2026-06-26",
+    "xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
+    "xhs-arisun-storm-r1-10000-km-2026-10-02"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01"
