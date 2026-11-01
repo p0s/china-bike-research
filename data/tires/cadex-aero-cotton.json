@@ -1,0 +1,70 @@
+{
+  "id": "cadex-aero-cotton",
+  "maker": "CADEX",
+  "name": "Aero Cotton",
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "CADEX is the Giant Group's component brand (its site footer links to Giant Group); Giant Group was founded in Taichung, Taiwan (BikeRadar)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "No source states where the tire is made."
+  },
+  "use": "race",
+  "positioning": "CADEX tubeless-ready race tire with a cotton casing.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "Cotton",
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 278
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Specified weight as quoted by Bicycle Rolling Resistance; no CADEX product page was found.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-cadex-aero-cotton-2026-11-01",
+      "tested_year": 2026,
+      "width_mm": 28,
+      "measured_width_mm": 27,
+      "measured_weight_g": 292,
+      "setup": "tubeless",
+      "rr_w": 10.6,
+      "rr_psi": 80,
+      "wet_grip": 75,
+      "puncture_tread": 46
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "No CADEX product page was found on 2026-11-01; retailer listings appeared in search results but could not be read (403, 404 or timeouts)."
+  },
+  "price_observations": [],
+  "caveats": [
+    "Identity and sizes come from the independent lab page; no CADEX product page or readable retailer listing was found.",
+    "Measured 27 mm wide, so its rolling-resistance result sits in the 80 psi band and is not compared with 28-30 mm tires.",
+    "Hookless compatibility and maximum pressure are not stated."
+  ],
+  "source_ids": [
+    "bicycle-rolling-resistance-cadex-aero-cotton-2026-11-01",
+    "bikeradar-giant-founder-2026-02-17"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

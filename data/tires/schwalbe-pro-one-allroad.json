@@ -1,0 +1,80 @@
+{
+  "maker": "Schwalbe",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Schwalbe is the brand of Ralf Bohle GmbH, Reichshof, Germany (legal notice)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Schwalbe product pages do not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Schwalbe product-page weight per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Schwalbe's European and North American sites give recommended retail prices and send buyers to retailers; mainland China availability not verified."
+  },
+  "id": "schwalbe-pro-one-allroad",
+  "name": "Pro One Allroad",
+  "use": "endurance",
+  "positioning": "Allroad Pro One with a V-Guard belt for mixed road and gravel riding.",
+  "construction": "tubeless-ready",
+  "casing": null,
+  "compound": "ADDIX Race",
+  "protection": "V-Guard",
+  "sizes": [
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 340,
+      "max_psi": 65,
+      "max_bar": 4.5
+    },
+    {
+      "width_mm": 35,
+      "etrto": "35-622",
+      "weight_g": 425,
+      "max_psi": 65,
+      "max_bar": 4.5
+    },
+    {
+      "width_mm": 40,
+      "etrto": "40-622",
+      "weight_g": 465,
+      "max_psi": 65,
+      "max_bar": 4.5
+    }
+  ],
+  "caveats": [
+    "Maximum pressure is 4.5 bar (65 psi) in every size.",
+    "Schwalbe states no hookless approval on these product pages."
+  ],
+  "price_observations": [
+    {
+      "amount": 78.9,
+      "currency": "EUR",
+      "market": "Schwalbe recommended retail price (Europe)",
+      "region": "eu",
+      "price_type": "manufacturer-rrp",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Recommended retail price on the official product page on 2026-11-01; one tire; retailer prices vary.",
+      "source_id": "schwalbe-pro-one-allroad-official-2026-11-01",
+      "width_mm": 30
+    }
+  ],
+  "source_ids": [
+    "schwalbe-pro-one-allroad-official-2026-11-01",
+    "schwalbe-north-america-road-tires-2026-11-01",
+    "schwalbe-legal-notice-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

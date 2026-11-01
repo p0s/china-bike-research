@@ -1,0 +1,81 @@
+{
+  "maker": "Schwalbe",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Schwalbe is the brand of Ralf Bohle GmbH, Reichshof, Germany (legal notice)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Schwalbe product pages do not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Schwalbe product-page weight per size.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2024,
+      "width_mm": 28,
+      "measured_width_mm": 28,
+      "measured_weight_g": 243,
+      "setup": "tubeless",
+      "rr_w": 12.9,
+      "rr_psi": 72,
+      "wet_grip": 71,
+      "puncture_tread": 40
+    }
+  ],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "authorized-retail",
+    "note": "Listed by Schwalbe North America with a US recommended retail price; the European product page returned 404 on 2026-11-01; mainland China not verified."
+  },
+  "id": "schwalbe-pro-one-aero-front",
+  "name": "Pro One Aero Front",
+  "use": "race",
+  "positioning": "Front-wheel aero race tire from the Pro One range, built separately from the rear version.",
+  "construction": "tubeless-ready",
+  "casing": "127 EPI Super Race",
+  "compound": "ADDIX Race",
+  "protection": "RaceGuard",
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 235,
+      "max_psi": 95,
+      "max_bar": 6.5
+    }
+  ],
+  "caveats": [
+    "Front-wheel tire: Schwalbe uses a different construction for the rear (Pro One Aero Rear).",
+    "Schwalbe states no hookless approval on these product pages."
+  ],
+  "price_observations": [
+    {
+      "amount": 91.0,
+      "currency": "USD",
+      "market": "Schwalbe North America recommended retail price",
+      "region": "na",
+      "price_type": "manufacturer-rrp",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Recommended retail price on the official product page on 2026-11-01; one tire; retailer prices vary.",
+      "source_id": "schwalbe-pro-one-aero-front-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "schwalbe-pro-one-aero-front-official-2026-11-01",
+    "schwalbe-north-america-road-tires-2026-11-01",
+    "schwalbe-legal-notice-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

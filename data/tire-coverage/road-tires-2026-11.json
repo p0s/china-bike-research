@@ -21,7 +21,7 @@
     {
       "name": "Maker catalogs",
       "checked_at": "2026-11-01",
-      "summary": "Road ranges from Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Goodyear (US store), Maxxis (US), Kenda (US shop), Specialized (US store), Panaracer (USA store and global site), IRC (US site), CADEX (US store), Giant (UK and US stores) and Hutchinson (global site). Schwalbe's official pages could not be read."
+      "summary": "Road ranges from Continental (global, US, German), Pirelli (global and UK), Michelin (UK racing and endurance), Vittoria (international store), Goodyear (US store), Maxxis (US), Kenda (US shop), Specialized (US store), Panaracer (USA store and global site), IRC (US site), CADEX (US store), Giant (UK, US and Australian stores), Hutchinson (global site) and Schwalbe (North American road category and schwalbe.com variant pages, read as server pages because the browser rendered them blank). Continental's Grand Prix 4-Season page has no size table, so a US retailer listing is recorded as seller claims; the CADEX Aero tires have no CADEX product page, so independent lab pages record them."
     },
     {
       "name": "Brand identity checks",
@@ -157,7 +157,7 @@
       "name": "Schwalbe",
       "name_zh": "世文",
       "origin_group": "international",
-      "origin_basis": "German bicycle-tire maker (Ralf Bohle)."
+      "origin_basis": "Ralf Bohle GmbH, Reichshof, Germany (legal notice)."
     },
     {
       "id": "vittoria",
@@ -501,8 +501,9 @@
     {
       "brand_id": "giant",
       "name": "Gavia Course (2026)",
-      "disposition": "unresolved",
-      "reason": "New model in Giant's UK store (£59.99; 28 mm 313 g, 30 mm 354 g; RR-S, Race Shield), but the page does not state tubeless or tube-type construction."
+      "disposition": "included",
+      "reason": "Official UK store specifications and price; Giant Australia confirms the tubeless construction.",
+      "record_id": "giant-gavia-course-2026"
     },
     {
       "brand_id": "giant",
@@ -513,8 +514,8 @@
     {
       "brand_id": "giant",
       "name": "Gavia AC 0 Kevlar Tubeless",
-      "disposition": "unresolved",
-      "reason": "Seen in a search result for Giant's Italian site; not listed in the UK store on 2026-11-01 and not read."
+      "disposition": "excluded",
+      "reason": "Not current: Giant's Italian product page has been removed and the UK store does not list it (2026-11-01)."
     },
     {
       "brand_id": "cadex",
@@ -533,8 +534,16 @@
     {
       "brand_id": "cadex",
       "name": "Aero Tire",
-      "disposition": "unresolved",
-      "reason": "Lab-tested in 2026 (28 mm nominal, 26 mm measured), but no official CADEX product page was found on 2026-11-01."
+      "disposition": "included",
+      "reason": "Independent lab page (2026) gives identity, sizes and test results with a safety warning; no CADEX product page or readable retailer listing found.",
+      "record_id": "cadex-aero-tire"
+    },
+    {
+      "brand_id": "cadex",
+      "name": "Aero Cotton",
+      "disposition": "included",
+      "reason": "Independent lab page (2026) gives identity, sizes and test results; no CADEX product page or readable retailer listing found.",
+      "record_id": "cadex-aero-cotton"
     },
     {
       "brand_id": "innova",
@@ -615,8 +624,9 @@
     {
       "brand_id": "continental",
       "name": "Grand Prix 4-Season",
-      "disposition": "unresolved",
-      "reason": "Listed in the road range, but the official page showed no size table on 2026-11-01."
+      "disposition": "included",
+      "reason": "Official page gives positioning but no size table; sizes, weights and price recorded from a US retailer listing as seller claims.",
+      "record_id": "continental-grand-prix-4-season"
     },
     {
       "brand_id": "continental",
@@ -787,21 +797,103 @@
     },
     {
       "brand_id": "schwalbe",
-      "name": "Pro One Tubeless and Schwalbe One Tubeless",
-      "disposition": "unresolved",
-      "reason": "Schwalbe's official pages returned a 404 or an empty page in the research browser on 2026-11-01, so current sizes and prices could not be confirmed; the 2020 lab tests of the earlier Pro One TLE and One TLE are not applied."
+      "name": "Pro One Tubeless",
+      "disposition": "included",
+      "reason": "Official variant pages for six sizes and European RRP.",
+      "record_id": "schwalbe-pro-one-tubeless"
     },
     {
       "brand_id": "schwalbe",
-      "name": "Pro One Aero (front and rear)",
-      "disposition": "unresolved",
-      "reason": "Lab-tested in 2024 as separate front and rear tires; Schwalbe's official pages could not be read on 2026-11-01."
+      "name": "Pro One (tube type)",
+      "disposition": "included",
+      "reason": "Official variant pages for four sizes and European RRP.",
+      "record_id": "schwalbe-pro-one"
     },
     {
       "brand_id": "schwalbe",
-      "name": "Durano Plus",
-      "disposition": "unresolved",
-      "reason": "Schwalbe's official pages could not be read on 2026-11-01; retailer data only."
+      "name": "Pro One Aero Front",
+      "disposition": "included",
+      "reason": "Official North American page and 2024 lab test.",
+      "record_id": "schwalbe-pro-one-aero-front"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Pro One Aero Rear",
+      "disposition": "included",
+      "reason": "Official variant page and European RRP.",
+      "record_id": "schwalbe-pro-one-aero-rear"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One (tube type)",
+      "disposition": "included",
+      "reason": "Official variant pages for four sizes and European RRP.",
+      "record_id": "schwalbe-one"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One Tubeless",
+      "disposition": "included",
+      "reason": "Official variant pages for four sizes and European RRP.",
+      "record_id": "schwalbe-one-tubeless"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One 365 (tube type)",
+      "disposition": "included",
+      "reason": "Official variant pages for three sizes and European RRP.",
+      "record_id": "schwalbe-one-365"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One 365 Tubeless",
+      "disposition": "included",
+      "reason": "Official variant pages for two sizes and European RRP.",
+      "record_id": "schwalbe-one-365-tubeless"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "One Plus",
+      "disposition": "included",
+      "reason": "Official variant pages for three folding sizes and European RRP.",
+      "record_id": "schwalbe-one-plus"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Pro One Allroad",
+      "disposition": "included",
+      "reason": "Official variant pages for three sizes and European RRP.",
+      "record_id": "schwalbe-pro-one-allroad"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Pro One TT",
+      "disposition": "excluded",
+      "reason": "Time-trial and triathlon specialist tire."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Durano Plus and Durano DD",
+      "disposition": "excluded",
+      "reason": "Superseded: Schwalbe says the One Plus succeeds the Durano Plus and the One 365 replaces the Durano DD."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Lugano II and Lugano II Endurance",
+      "disposition": "excluded",
+      "reason": "Schwalbe North America calls them an entry-level racing tire and a sportive city tire."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "E-One",
+      "disposition": "excluded",
+      "reason": "E-bike racing tire approved under ECE-R75; outside the road-bike comparison."
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Insider and 16-inch One Evo",
+      "disposition": "excluded",
+      "reason": "A turbo-trainer-only tire and a 16-inch (349) folding-bike size."
     },
     {
       "brand_id": "vittoria",
@@ -1205,8 +1297,14 @@
     {
       "brand_id": "hutchinson",
       "name": "GP Explorer",
-      "disposition": "unresolved",
-      "reason": "Listed as a leisure tire in Hutchinson's road range on 2026-11-01; reference table not read."
+      "disposition": "excluded",
+      "reason": "Hutchinson labels it a Leisure tire: tube type, 66 TPI folding at 230-310 g (26-32 mm) or a 33 TPI wire version."
+    },
+    {
+      "brand_id": "hutchinson",
+      "name": "Nitro 2",
+      "disposition": "excluded",
+      "reason": "Hutchinson labels it a Leisure tire for new riders: tube type, mono-compound, 65-66 TPI folding at 350 g (25 and 28 mm) or a 33 TPI wire version."
     },
     {
       "brand_id": "specialists",

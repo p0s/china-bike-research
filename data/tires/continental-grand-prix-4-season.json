@@ -1,0 +1,93 @@
+{
+  "id": "continental-grand-prix-4-season",
+  "maker": "Continental",
+  "name": "Grand Prix 4-Season",
+  "aliases": [
+    "马牌 GP 4 Season"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "German tire maker; Continental lists the tire on its global bicycle site."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Continental says the tire is handmade but the pages read do not state the factory country."
+  },
+  "use": "all-season",
+  "positioning": "Continental's handmade all-season training and racing clincher with a double Vectran breaker and DuraSkin sidewalls.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "3/330 TPI",
+  "compound": "MaxGrip Silica",
+  "protection": "Double Vectran breaker and DuraSkin sidewalls",
+  "sizes": [
+    {
+      "width_mm": 23,
+      "etrto": "23-622",
+      "weight_g": 235,
+      "note": "Retailer inflation figure 120 psi"
+    },
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 230,
+      "note": "Retailer inflation figure 120 psi"
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 295,
+      "note": "Retailer inflation figure 115 psi"
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 340,
+      "note": "Retailer inflation figure 102 psi"
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "Performance Bicycle listing weights; Continental's current page gives no size table.",
+  "tests": [],
+  "community": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Continental positions it for training and racing 'come rain or shine'; no independent wet test recorded.",
+      "source_id": "continental-grand-prix-4-season-global-2026-11-01"
+    }
+  ],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "retail",
+    "note": "Back-ordered at a US retailer on 2026-11-01; Continental's current page lists the tire without sizes; other regions not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 91.95,
+      "currency": "USD",
+      "market": "Performance Bicycle (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Retail listing price for the 25 mm option on 2026-11-01; back order; one tire.",
+      "source_id": "performance-bicycle-grand-prix-4-season-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "Sizes and weights come from a retailer listing catalogued since 2018, not from Continental's current page; the listing shows the 25 mm lighter than the 23 mm.",
+    "The retailer gives inflation figures without calling them maximum pressures.",
+    "Neither page calls it tubeless-ready, and Continental names its tubeless-ready versions 'TR'; it is recorded as a tube-type clincher.",
+    "Wet performance is a maker claim; no independent wet test recorded."
+  ],
+  "source_ids": [
+    "continental-grand-prix-4-season-global-2026-11-01",
+    "performance-bicycle-grand-prix-4-season-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

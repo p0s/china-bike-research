@@ -1,0 +1,73 @@
+{
+  "maker": "Schwalbe",
+  "origin": {
+    "group": "international",
+    "country": "Germany",
+    "basis": "Schwalbe is the brand of Ralf Bohle GmbH, Reichshof, Germany (legal notice)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The Schwalbe product pages do not state where the tire is made."
+  },
+  "hookless": "not-stated",
+  "weight_claim_type": "official",
+  "weight_basis": "Schwalbe product-page weight per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "authorized-retail",
+    "na": "authorized-retail",
+    "note": "Schwalbe's European and North American sites give recommended retail prices and send buyers to retailers; mainland China availability not verified."
+  },
+  "id": "schwalbe-one-365-tubeless",
+  "name": "One 365 Tubeless",
+  "use": "all-season",
+  "positioning": "Tubeless version of the One 365 all-season road tire with a reinforced casing.",
+  "construction": "tubeless-ready",
+  "casing": "Reinforced",
+  "compound": "ADDIX 4-Season",
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 360,
+      "max_psi": 95,
+      "max_bar": 6.5
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 420,
+      "max_psi": 70,
+      "max_bar": 5.0
+    }
+  ],
+  "caveats": [
+    "Schwalbe states no hookless approval on these product pages.",
+    "No specific wet-grip claim or wet test recorded."
+  ],
+  "price_observations": [
+    {
+      "amount": 68.9,
+      "currency": "EUR",
+      "market": "Schwalbe recommended retail price (Europe)",
+      "region": "eu",
+      "price_type": "manufacturer-rrp",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Recommended retail price on the official product page on 2026-11-01; one tire; retailer prices vary.",
+      "source_id": "schwalbe-one-365-tubeless-official-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "source_ids": [
+    "schwalbe-one-365-tubeless-official-2026-11-01",
+    "schwalbe-north-america-road-tires-2026-11-01",
+    "schwalbe-legal-notice-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
