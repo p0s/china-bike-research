@@ -1,0 +1,108 @@
+{
+  "id": "vittoria-corsa-pro-tube-type",
+  "maker": "Vittoria",
+  "name": "Corsa PRO (tube type)",
+  "aliases": [
+    "Corsa Pro TT"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian bicycle-tire brand; Vittoria's international store is set to Italy (EUR)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The store pages do not state where the tire is made."
+  },
+  "use": "race",
+  "positioning": "Tube-type Corsa PRO race clincher for riders who keep inner tubes.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": null,
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 245
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 255
+    },
+    {
+      "width_mm": 30,
+      "etrto": "30-622",
+      "weight_g": 270
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Vittoria store weights per size.",
+  "tests": [
+    {
+      "protocol": "brr-road",
+      "source_id": "bicycle-rolling-resistance-road-table-2026-11-01",
+      "tested_year": 2025,
+      "width_mm": 28,
+      "measured_width_mm": 28,
+      "measured_weight_g": 262,
+      "setup": "butyl-tube",
+      "rr_w": 15.3,
+      "rr_psi": 72,
+      "wet_grip": 76,
+      "puncture_tread": 47
+    }
+  ],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Vittoria claims 'ultimate cornering grip in wet or dry conditions'.",
+      "source_id": "vittoria-corsa-pro-tube-type-official-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "official-store",
+    "eu": "official-store",
+    "na": "unverified",
+    "note": "Sold by Vittoria's international web store in euros and as a tube-type option in a Vittoria Tmall store; North American availability not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 87.95,
+      "currency": "EUR",
+      "market": "Vittoria international store (Italy)",
+      "region": "eu",
+      "price_type": "official-store-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store price incl. Italian VAT on 2026-11-01; shipping calculated at checkout. One tire.",
+      "source_id": "vittoria-corsa-pro-tube-type-official-2026-11-01",
+      "width_mm": 28
+    },
+    {
+      "amount": 463,
+      "currency": "CNY",
+      "market": "Vittoria Tmall store (vittoria运动户外旗舰店)",
+      "region": "cn",
+      "price_type": "official-store-list",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts ('优惠前') on 2026-11-01; the listing text does not say whether the option is one tire or a pair. Shipping within mainland China. A store coupon showed CNY 370.",
+      "source_id": "vittoria-corsa-pro-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Lab rolling resistance is with a butyl tube; a latex or TPU tube changes it."
+  ],
+  "source_ids": [
+    "vittoria-corsa-pro-tube-type-official-2026-11-01",
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "vittoria-corsa-pro-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

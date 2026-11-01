@@ -559,14 +559,16 @@
     {
       "brand_id": "continental",
       "name": "Grand Prix (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications and official China store.",
+      "record_id": "continental-grand-prix"
     },
     {
       "brand_id": "continental",
       "name": "Gatorskin",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "continental-gatorskin"
     },
     {
       "brand_id": "continental",
@@ -629,30 +631,34 @@
     {
       "brand_id": "pirelli",
       "name": "P ZERO Race TLR SL-R",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications, lab test and a mainland retail listing.",
+      "record_id": "pirelli-p-zero-race-tlr-sl-r"
     },
     {
       "brand_id": "pirelli",
       "name": "P ZERO Road TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "pirelli-p-zero-road-tlr"
     },
     {
       "brand_id": "pirelli",
       "name": "P ZERO Race (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "pirelli",
-      "name": "P ZERO Race 4S (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official specifications and lab test.",
+      "record_id": "pirelli-p-zero-race"
     },
     {
       "brand_id": "pirelli",
       "name": "P7 Sport",
+      "disposition": "included",
+      "reason": "Official specifications.",
+      "record_id": "pirelli-p7-sport"
+    },
+    {
+      "brand_id": "pirelli",
+      "name": "P ZERO Race 4S (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
@@ -779,8 +785,30 @@
     {
       "brand_id": "vittoria",
       "name": "Corsa PRO (tube type)",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "disposition": "included",
+      "reason": "Official store specifications and price, lab test.",
+      "record_id": "vittoria-corsa-pro-tube-type"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Rubino TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "vittoria-rubino-tlr"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "RideArmor TLR",
+      "disposition": "included",
+      "reason": "Official store specifications and price, lab test.",
+      "record_id": "vittoria-ridearmor-tlr"
+    },
+    {
+      "brand_id": "vittoria",
+      "name": "Zaffiro EVO",
+      "disposition": "included",
+      "reason": "Official store specifications and price.",
+      "record_id": "vittoria-zaffiro-evo"
     },
     {
       "brand_id": "vittoria",
@@ -790,21 +818,15 @@
     },
     {
       "brand_id": "vittoria",
-      "name": "Rubino (TLR and tube type)",
+      "name": "Rubino (tube type)",
       "disposition": "unresolved",
       "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
     },
     {
       "brand_id": "vittoria",
-      "name": "Zaffiro and Zaffiro Evo",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
-    },
-    {
-      "brand_id": "vittoria",
-      "name": "RideArmor TLR",
-      "disposition": "unresolved",
-      "reason": "Queued for exact research: sizes, claims and prices not yet recorded."
+      "name": "Zaffiro (older non-EVO listing)",
+      "disposition": "excluded",
+      "reason": "Older entry clincher listed beside the Zaffiro EVO."
     },
     {
       "brand_id": "vittoria",

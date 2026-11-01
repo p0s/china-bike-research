@@ -8,14 +8,14 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 1925,
+      "sources": 1936,
       "images": 900,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 11,
-      "tires": 38,
+      "tires": 48,
       "tireCoverage": 1,
       "recommendations": 6,
       "candidates": 289,
@@ -424,6 +424,7 @@
       "colnago-y1rs-official-2026-08-08",
       "compiled-research-2026-08-06",
       "continental-aero-111-official-2026-11-01",
+      "continental-gatorskin-official-2026-11-01",
       "continental-gp5000-str-35-official-2026-08-27",
       "continental-grand-prix-5000-allseason-tr-official-2026-11-01",
       "continental-grand-prix-5000-as-tr-tmall-2026-11-01",
@@ -431,6 +432,8 @@
       "continental-grand-prix-5000-s-tr-official-2026-11-01",
       "continental-grand-prix-5000-s-tr-tmall-2026-11-01",
       "continental-grand-prix-5000-tmall-2026-11-01",
+      "continental-grand-prix-official-2026-11-01",
+      "continental-grand-prix-tmall-2026-11-01",
       "continental-grand-prix-tr-official-2026-11-01",
       "continental-grand-prix-tr-tmall-2026-11-01",
       "continental-grand-sport-official-2026-11-01",
@@ -1199,10 +1202,14 @@
       "pinarello-uk-store-locator-authority-recheck-2026-09-24",
       "pirelli-cinturato-road-tlr-official-2026-11-01",
       "pirelli-cinturato-velo-35-retailer-2026-08-27",
+      "pirelli-p-zero-race-official-2026-11-01",
       "pirelli-p-zero-race-tlr-4s-official-2026-11-01",
       "pirelli-p-zero-race-tlr-official-2026-11-01",
       "pirelli-p-zero-race-tlr-rs-official-2026-11-01",
       "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
+      "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01",
+      "pirelli-p-zero-road-tlr-official-2026-11-01",
+      "pirelli-p7-sport-official-2026-11-01",
       "pirelli-road-range-gb-2026-11-01",
       "pro-stealth-sport-official-2026-08-27",
       "project-image-placeholders",
@@ -1977,7 +1984,11 @@
       "vittoria-corsa-pro-control-tmall-2026-11-01",
       "vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01",
       "vittoria-corsa-pro-tmall-2026-11-01",
+      "vittoria-corsa-pro-tube-type-official-2026-11-01",
       "vittoria-corsa-pro-tubeless-ready-official-2026-11-01",
+      "vittoria-ridearmor-tubeless-ready-official-2026-11-01",
+      "vittoria-rubino-tubeless-ready-official-2026-11-01",
+      "vittoria-zaffiro-evo-official-2026-11-01",
       "voicevelo-g-major-biketo-launch-2023-11-13",
       "voicevelo-g-major-biketo-review-2024-01-17",
       "voicevelo-g-major-biketo-review-recheck-2026-09-23",
@@ -3435,6 +3446,8 @@
       "chaoyang-h-486",
       "chaoyang-h-496",
       "continental-aero-111",
+      "continental-gatorskin",
+      "continental-grand-prix",
       "continental-grand-prix-5000",
       "continental-grand-prix-5000-all-season-tr",
       "continental-grand-prix-5000-s-tr",
@@ -3461,13 +3474,21 @@
       "michelin-power-protection-tlr",
       "michelin-pro5-tlr",
       "pirelli-cinturato-road-tlr",
+      "pirelli-p-zero-race",
       "pirelli-p-zero-race-tlr",
       "pirelli-p-zero-race-tlr-4s",
       "pirelli-p-zero-race-tlr-rs",
+      "pirelli-p-zero-race-tlr-sl-r",
+      "pirelli-p-zero-road-tlr",
+      "pirelli-p7-sport",
       "specialized-s-works-turbo-tlr",
       "vittoria-corsa-n-ext-tlr",
       "vittoria-corsa-pro-control-tlr",
-      "vittoria-corsa-pro-tlr"
+      "vittoria-corsa-pro-tlr",
+      "vittoria-corsa-pro-tube-type",
+      "vittoria-ridearmor-tlr",
+      "vittoria-rubino-tlr",
+      "vittoria-zaffiro-evo"
     ],
     "tireCoverage": [
       "road-tires-2026-11"
@@ -11944,6 +11965,18 @@
         "type",
         "url"
       ],
+      "continental-gatorskin-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "continental-gp5000-str-35-official-2026-08-27": [
         "accessed_at",
         "language",
@@ -12017,6 +12050,30 @@
         "url"
       ],
       "continental-grand-prix-5000-tmall-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "continental-grand-prix-tmall-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -21685,6 +21742,18 @@
         "type",
         "url"
       ],
+      "pirelli-p-zero-race-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pirelli-p-zero-race-tlr-4s-official-2026-11-01": [
         "accessed_at",
         "language",
@@ -21722,6 +21791,42 @@
         "url"
       ],
       "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pirelli-p-zero-road-tlr-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pirelli-p7-sport-official-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -31785,7 +31890,55 @@
         "type",
         "url"
       ],
+      "vittoria-corsa-pro-tube-type-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "vittoria-corsa-pro-tubeless-ready-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "vittoria-ridearmor-tubeless-ready-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "vittoria-rubino-tubeless-ready-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "vittoria-zaffiro-evo-official-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -72990,6 +73143,61 @@
         "weight_claim_type",
         "wet_notes"
       ],
+      "continental-gatorskin": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "manufacturing.country",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "continental-grand-prix": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "continental-grand-prix-5000": [
         "aliases",
         "availability.cn",
@@ -73725,6 +73933,36 @@
         "weight_claim_type",
         "wet_notes"
       ],
+      "pirelli-p-zero-race": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
       "pirelli-p-zero-race-tlr": [
         "aliases",
         "availability.cn",
@@ -73815,6 +74053,90 @@
         "weight_basis",
         "weight_claim_type",
         "wet_notes"
+      ],
+      "pirelli-p-zero-race-tlr-sl-r": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "manufacturing.country",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "pirelli-p-zero-road-tlr": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "pirelli-p7-sport": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
       ],
       "specialized-s-works-turbo-tlr": [
         "aliases",
@@ -73931,6 +74253,111 @@
         "weight_basis",
         "weight_claim_type",
         "wet_notes"
+      ],
+      "vittoria-corsa-pro-tube-type": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "vittoria-ridearmor-tlr": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type",
+        "wet_notes"
+      ],
+      "vittoria-rubino-tlr": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "vittoria-zaffiro-evo": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
       ]
     },
     "tireCoverage": {
@@ -121590,6 +122017,7 @@
       "colnago-y1rs-official-2026-08-08": [],
       "compiled-research-2026-08-06": [],
       "continental-aero-111-official-2026-11-01": [],
+      "continental-gatorskin-official-2026-11-01": [],
       "continental-gp5000-str-35-official-2026-08-27": [],
       "continental-grand-prix-5000-allseason-tr-official-2026-11-01": [],
       "continental-grand-prix-5000-as-tr-tmall-2026-11-01": [],
@@ -121597,6 +122025,8 @@
       "continental-grand-prix-5000-s-tr-official-2026-11-01": [],
       "continental-grand-prix-5000-s-tr-tmall-2026-11-01": [],
       "continental-grand-prix-5000-tmall-2026-11-01": [],
+      "continental-grand-prix-official-2026-11-01": [],
+      "continental-grand-prix-tmall-2026-11-01": [],
       "continental-grand-prix-tr-official-2026-11-01": [],
       "continental-grand-prix-tr-tmall-2026-11-01": [],
       "continental-grand-sport-official-2026-11-01": [],
@@ -122413,10 +122843,14 @@
       "pinarello-uk-store-locator-authority-recheck-2026-09-24": [],
       "pirelli-cinturato-road-tlr-official-2026-11-01": [],
       "pirelli-cinturato-velo-35-retailer-2026-08-27": [],
+      "pirelli-p-zero-race-official-2026-11-01": [],
       "pirelli-p-zero-race-tlr-4s-official-2026-11-01": [],
       "pirelli-p-zero-race-tlr-official-2026-11-01": [],
       "pirelli-p-zero-race-tlr-rs-official-2026-11-01": [],
       "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01": [],
+      "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01": [],
+      "pirelli-p-zero-road-tlr-official-2026-11-01": [],
+      "pirelli-p7-sport-official-2026-11-01": [],
       "pirelli-road-range-gb-2026-11-01": [],
       "pro-stealth-sport-official-2026-08-27": [],
       "project-image-placeholders": [],
@@ -123191,7 +123625,11 @@
       "vittoria-corsa-pro-control-tmall-2026-11-01": [],
       "vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01": [],
       "vittoria-corsa-pro-tmall-2026-11-01": [],
+      "vittoria-corsa-pro-tube-type-official-2026-11-01": [],
       "vittoria-corsa-pro-tubeless-ready-official-2026-11-01": [],
+      "vittoria-ridearmor-tubeless-ready-official-2026-11-01": [],
+      "vittoria-rubino-tubeless-ready-official-2026-11-01": [],
+      "vittoria-zaffiro-evo-official-2026-11-01": [],
       "voicevelo-g-major-biketo-launch-2023-11-13": [],
       "voicevelo-g-major-biketo-review-2024-01-17": [],
       "voicevelo-g-major-biketo-review-recheck-2026-09-23": [],
@@ -128697,6 +129135,17 @@
         "source_ids=continental-road-range-de-2026-11-01",
         "source_ids=continental-road-range-us-2026-11-01"
       ],
+      "continental-gatorskin": [
+        "source_ids=continental-gatorskin-official-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
+      "continental-grand-prix": [
+        "source_ids=continental-grand-prix-official-2026-11-01",
+        "source_ids=continental-grand-prix-tmall-2026-11-01",
+        "source_ids=continental-road-range-de-2026-11-01",
+        "source_ids=continental-road-range-us-2026-11-01"
+      ],
       "continental-grand-prix-5000": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=continental-grand-prix-5000-official-2026-11-01",
@@ -128837,6 +129286,11 @@
         "source_ids=pirelli-cinturato-road-tlr-official-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
       ],
+      "pirelli-p-zero-race": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=pirelli-p-zero-race-official-2026-11-01",
+        "source_ids=pirelli-road-range-gb-2026-11-01"
+      ],
       "pirelli-p-zero-race-tlr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-official-2026-11-01",
@@ -128851,6 +129305,20 @@
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-rs-official-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
+        "source_ids=pirelli-road-range-gb-2026-11-01"
+      ],
+      "pirelli-p-zero-race-tlr-sl-r": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
+        "source_ids=pirelli-p-zero-race-tlr-sl-r-official-2026-11-01",
+        "source_ids=pirelli-road-range-gb-2026-11-01"
+      ],
+      "pirelli-p-zero-road-tlr": [
+        "source_ids=pirelli-p-zero-road-tlr-official-2026-11-01",
+        "source_ids=pirelli-road-range-gb-2026-11-01"
+      ],
+      "pirelli-p7-sport": [
+        "source_ids=pirelli-p7-sport-official-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
       ],
       "specialized-s-works-turbo-tlr": [
@@ -128871,6 +129339,21 @@
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=vittoria-corsa-pro-tmall-2026-11-01",
         "source_ids=vittoria-corsa-pro-tubeless-ready-official-2026-11-01"
+      ],
+      "vittoria-corsa-pro-tube-type": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=vittoria-corsa-pro-tmall-2026-11-01",
+        "source_ids=vittoria-corsa-pro-tube-type-official-2026-11-01"
+      ],
+      "vittoria-ridearmor-tlr": [
+        "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=vittoria-ridearmor-tubeless-ready-official-2026-11-01"
+      ],
+      "vittoria-rubino-tlr": [
+        "source_ids=vittoria-rubino-tubeless-ready-official-2026-11-01"
+      ],
+      "vittoria-zaffiro-evo": [
+        "source_ids=vittoria-zaffiro-evo-official-2026-11-01"
       ]
     },
     "tireCoverage": {
@@ -140661,6 +141144,14 @@
         "specification": 3
       }
     },
+    "continental-gatorskin-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "continental-gp5000-str-35-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -140710,6 +141201,22 @@
       }
     },
     "continental-grand-prix-5000-tmall-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "continental-grand-prix-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "continental-grand-prix-tmall-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -146959,6 +147466,14 @@
         "specification": 1
       }
     },
+    "pirelli-p-zero-race-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "pirelli-p-zero-race-tlr-4s-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -146989,6 +147504,30 @@
         "identity": 3,
         "price": 1,
         "specification": 0
+      }
+    },
+    "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "pirelli-p-zero-road-tlr-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "pirelli-p7-sport-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
       }
     },
     "pirelli-road-range-gb-2026-11-01": {
@@ -153223,7 +153762,39 @@
         "specification": 1
       }
     },
+    "vittoria-corsa-pro-tube-type-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
     "vittoria-corsa-pro-tubeless-ready-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "vittoria-ridearmor-tubeless-ready-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "vittoria-rubino-tubeless-ready-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "vittoria-zaffiro-evo-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
