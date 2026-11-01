@@ -1048,9 +1048,17 @@
     },
     {
       "brand_id": "specialized",
-      "name": "Roubaix Pro and Roubaix Pro 2Bliss Ready",
-      "disposition": "unresolved",
-      "reason": "Endurance tires listed with dual-width labels (23/25, 25/28 and 30/32 mm), so one nominal width cannot be recorded; no lab test of the current versions found."
+      "name": "Roubaix Pro (tube type)",
+      "disposition": "included",
+      "reason": "Official US store specifications with literal dual-width labels, and sale price.",
+      "record_id": "specialized-roubaix-pro"
+    },
+    {
+      "brand_id": "specialized",
+      "name": "Roubaix Pro 2Bliss Ready",
+      "disposition": "included",
+      "reason": "Official US store specification with a literal dual-width label, and price.",
+      "record_id": "specialized-roubaix-pro-2bliss-ready"
     },
     {
       "brand_id": "specialized",
@@ -1067,8 +1075,8 @@
     {
       "brand_id": "specialized",
       "name": "Trigger Sport",
-      "disposition": "unresolved",
-      "reason": "Listed in the US road-tire collection on 2026-11-01; product page not read."
+      "disposition": "excluded",
+      "reason": "Specialized files it under gravel bike tires for cyclocross and gravel paths; wire bead, 60 TPI, 33-47 mm (US$19.95)."
     },
     {
       "brand_id": "panaracer",
@@ -1121,15 +1129,23 @@
     },
     {
       "brand_id": "irc",
-      "name": "Gen 6 Formula Pro Tubeless RBCC and X-Guard",
-      "disposition": "unresolved",
-      "reason": "Listed in IRC's US road collection on 2026-11-01; product pages not read in this pass."
+      "name": "Formula Pro Tubeless RBCC (Gen 6)",
+      "disposition": "included",
+      "reason": "Official US specifications with hookless pressure ranges; no official price.",
+      "record_id": "irc-formula-pro-tubeless-rbcc"
+    },
+    {
+      "brand_id": "irc",
+      "name": "Formula Pro Tubeless X-Guard (Gen 6)",
+      "disposition": "included",
+      "reason": "Official US specifications with hookless pressure ranges; no official price.",
+      "record_id": "irc-formula-pro-tubeless-x-guard"
     },
     {
       "brand_id": "irc",
       "name": "Formula Pro HL TLR S-Light, TLR S-Light Hooked and Tubeless RBCC (without the Gen 6 label)",
-      "disposition": "unresolved",
-      "reason": "Shown beside the Gen 6 models in IRC's US road collection; generation and current status not established. The 2021 lab test of the Formula Pro RBCC is not applied."
+      "disposition": "excluded",
+      "reason": "Earlier-generation listings: IRC files them under All Tires rather than its 2025 Road range, without the Gen 6 label (180 TPI; 700x25-30), and its Gen 6 RBCC page compares the new tire with 'the previous model'. The 2021 lab test of the Formula Pro RBCC predates Gen 6 and is not applied."
     },
     {
       "brand_id": "hutchinson",

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { loadDataset, joinProducts, validateDataset } from '../src/lib/data.mjs';
 import { renderHome, renderTires } from '../src/render.mjs';
 import { INTERFACE_ROUTES } from '../src/lib/i18n.mjs';
-import { comparableRollingTest, measuredWetGrip, referenceSize, tireGroups, tireShortlists } from '../src/lib/tires.mjs';
+import { comparableRollingTest, measuredWetGrip, referenceSize, sizeWidths, tireGroups, tireShortlists } from '../src/lib/tires.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -42,13 +42,13 @@ test('tire records validate safety, evidence and ledger rules', () => {
 });
 
 test('width groups, reference sizes and comparable tests follow their stated rules', () => {
+  const fits = (tire, low, high) => tire.sizes.some((size) => sizeWidths(size).every((width) => width >= low && width <= high));
   for (const tire of data.tires) {
-    const widths = tire.sizes.map((size) => size.width_mm);
-    assert.equal(tireGroups(tire).road, widths.some((width) => width >= 25 && width <= 35), tire.id);
-    if (tireGroups(tire).wet) assert.ok(widths.some((width) => width >= 20 && width <= 40) && (measuredWetGrip(tire) !== null || tire.wet_notes.length), tire.id);
+    assert.equal(tireGroups(tire).road, fits(tire, 25, 35), tire.id);
+    if (tireGroups(tire).wet) assert.ok(fits(tire, 20, 40) && (measuredWetGrip(tire) !== null || tire.wet_notes.length), tire.id);
     const reference = referenceSize(tire);
-    assert.ok(widths.includes(reference.width_mm), tire.id);
-    if (widths.includes(28)) assert.equal(reference.width_mm, 28, tire.id);
+    assert.ok(tire.sizes.includes(reference), tire.id);
+    if (tire.sizes.some((size) => size.width_mm === 28)) assert.equal(reference.width_mm, 28, tire.id);
     const comparable = comparableRollingTest(tire);
     if (comparable) assert.ok(comparable.measured_width_mm >= 28 && comparable.measured_width_mm <= 30 && comparable.rr_psi === 72, tire.id);
   }
@@ -57,6 +57,24 @@ test('width groups, reference sizes and comparable tests follow their stated rul
   sample.tests = sample.tests.map((item) => ({ ...item, wet_grip: null }));
   sample.wet_notes = [];
   assert.equal(tireGroups(sample).wet, false);
+});
+
+test('dual-width labels stay literal and count toward a group only when both numbers fit', () => {
+  const sample = structuredClone(data.tires[0]);
+  sample.sizes = [{ width_mm: null, width_label_mm: [23, 25], weight_g: 260 }];
+  assert.equal(tireGroups(sample).road, false);
+  sample.sizes.push({ width_mm: null, width_label_mm: [25, 28], weight_g: 300 });
+  assert.equal(tireGroups(sample).road, true);
+  assert.deepEqual(referenceSize(sample).width_label_mm, [25, 28]);
+  const dual = firstId((tire) => tire.sizes.some((size) => size.width_label_mm));
+  const labelled = (tire) => tire.sizes.find((size) => size.width_label_mm);
+  rejects(dual, (tire) => { labelled(tire).width_label_mm = [28, 25]; }, 'a dual-width label needs two ascending widths');
+  rejects(dual, (tire) => { labelled(tire).width_mm = 28; }, 'a dual-width label must not claim one width or ETRTO');
+  rejects(dual, (tire) => { labelled(tire).etrto = '28-622'; }, 'a dual-width label must not claim one width or ETRTO');
+  const html = renderTires(ctx);
+  const entry = html.match(new RegExp(`<tbody class="groupset-entry tire-entry" id="${dual}"[\\s\\S]*?</details></td></tr></tbody>`))?.[0] ?? '';
+  const label = labelled(data.tires.find((tire) => tire.id === dual)).width_label_mm.join('/');
+  assert.ok(entry.includes(`<th scope="row">${label} mm</th><td>—</td>`), 'the size table shows the literal label without an ETRTO');
 });
 
 test('starting points are criteria-led lists, not a universal ranking', () => {

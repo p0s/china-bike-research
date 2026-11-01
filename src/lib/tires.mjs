@@ -27,8 +27,24 @@ export const BRR_BANDS = [
 const inRange = (value, low, high) => Number.isFinite(value) && value >= low && value <= high;
 const nonEmpty = (value) => typeof value === 'string' && value.trim().length > 0;
 
-export function widthsIn(tire, { min, max }) {
-  return (tire.sizes ?? []).map((size) => size.width_mm).filter((width) => width >= min && width <= max);
+// A size is one nominal width (width_mm) or a maker's literal dual-width label
+// (width_label_mm, for example [25, 28] for "25/28 mm"). The label is kept as written;
+// the site never guesses which labelled number is the mounted width.
+export function sizeWidths(size) {
+  return Array.isArray(size.width_label_mm) ? size.width_label_mm : [size.width_mm];
+}
+
+export function sizeLabel(size) {
+  return sizeWidths(size).join('/');
+}
+
+// A size counts toward a width group only when every labelled number falls inside it.
+export function sizeInRange(size, { min, max }) {
+  return sizeWidths(size).every((width) => inRange(width, min, max));
+}
+
+export function widthsIn(tire, range) {
+  return (tire.sizes ?? []).filter((size) => sizeInRange(size, range)).map(sizeLabel);
 }
 
 // Independent wet-traction evidence: a measured lab score or a recorded measured note.
@@ -51,11 +67,14 @@ export function tireGroups(tire) {
 }
 
 // The size used for one-number comparisons: 28 mm, else the nearest recorded width
-// (ties prefer the wider size, which is the common modern road choice).
+// (ties prefer the wider size, which is the common modern road choice). A dual-width
+// label is placed by its nearest labelled number.
 export function referenceSize(tire) {
-  const sizes = [...(tire.sizes ?? [])].filter((size) => Number.isFinite(size.width_mm));
+  const sizes = (tire.sizes ?? []).filter((size) => sizeWidths(size).every(Number.isFinite));
   if (!sizes.length) return null;
-  return sizes.sort((a, b) => Math.abs(a.width_mm - 28) - Math.abs(b.width_mm - 28) || b.width_mm - a.width_mm)[0];
+  const distance = (size) => Math.min(...sizeWidths(size).map((width) => Math.abs(width - 28)));
+  const widest = (size) => Math.max(...sizeWidths(size));
+  return [...sizes].sort((a, b) => distance(a) - distance(b) || widest(b) - widest(a))[0];
 }
 
 // Comparable rolling resistance: Bicycle Rolling Resistance tests in the 28–30 mm band.
@@ -93,7 +112,7 @@ export function tireShortlists(tires) {
   return { fastest, balanced, protective, chinese, wetGrip, allSeason };
 }
 
-const sizeKey = (size) => `${size.width_mm}|${size.bead ?? ''}`;
+const sizeKey = (size) => `${sizeLabel(size)}|${size.bead ?? ''}`;
 
 export function validateTires(data, sourceIds) {
   const errors = [];
@@ -126,12 +145,17 @@ export function validateTires(data, sourceIds) {
     if (!Array.isArray(tire.sizes) || !tire.sizes.length) errors.push(`${label}: sizes must not be empty`);
     const seen = new Set();
     for (const size of tire.sizes ?? []) {
-      if (!inRange(size.width_mm, 18, 50)) errors.push(`${label}: invalid size width_mm`);
-      if (seen.has(sizeKey(size))) errors.push(`${label}: duplicate size ${size.width_mm} mm`);
+      if (size.width_label_mm !== undefined) {
+        // A literal dual-width label keeps both numbers and claims no single width or ETRTO.
+        const [narrow, wide] = Array.isArray(size.width_label_mm) ? size.width_label_mm : [];
+        if (!Array.isArray(size.width_label_mm) || size.width_label_mm.length !== 2 || !inRange(narrow, 18, 50) || !inRange(wide, 18, 50) || narrow >= wide) errors.push(`${label}: a dual-width label needs two ascending widths`);
+        if (size.width_mm !== null || size.etrto !== undefined) errors.push(`${label}: a dual-width label must not claim one width or ETRTO`);
+      } else if (!inRange(size.width_mm, 18, 50)) errors.push(`${label}: invalid size width_mm`);
+      if (seen.has(sizeKey(size))) errors.push(`${label}: duplicate size ${sizeLabel(size)} mm`);
       seen.add(sizeKey(size));
       if (size.etrto !== undefined && !/^\d{2}-622$/.test(size.etrto ?? '')) errors.push(`${label}: invalid etrto ${size.etrto}`);
-      if (size.weight_g !== null && !inRange(size.weight_g, 120, 700)) errors.push(`${label}: invalid weight for ${size.width_mm} mm`);
-      if (size.max_psi !== null && size.max_psi !== undefined && !inRange(size.max_psi, 30, 200)) errors.push(`${label}: invalid max_psi for ${size.width_mm} mm`);
+      if (size.weight_g !== null && !inRange(size.weight_g, 120, 700)) errors.push(`${label}: invalid weight for ${sizeLabel(size)} mm`);
+      if (size.max_psi !== null && size.max_psi !== undefined && !inRange(size.max_psi, 30, 200)) errors.push(`${label}: invalid max_psi for ${sizeLabel(size)} mm`);
     }
     if (!TIRE_EVIDENCE_KINDS.includes(tire.weight_claim_type)) errors.push(`${label}: invalid weight_claim_type`);
     if (!nonEmpty(tire.weight_basis)) errors.push(`${label}: missing weight_basis`);

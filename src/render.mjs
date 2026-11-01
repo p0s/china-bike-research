@@ -14,7 +14,7 @@ import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsuppo
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis, latestExchangeRates } from './lib/regional-prices.mjs';
 import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs';
-import { WET_WIDTHS, comparableRollingTest, headlineTest, measuredWetGrip, referenceSize, tireGroups, tireShortlists } from './lib/tires.mjs';
+import { WET_WIDTHS, comparableRollingTest, headlineTest, measuredWetGrip, referenceSize, sizeInRange, sizeLabel, tireGroups, tireShortlists } from './lib/tires.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -2587,11 +2587,11 @@ function tireRows(ctx, tire, sourcesById, rates) {
   const test = headlineTest(tire);
   const comparable = comparableRollingTest(tire);
   const wetGrip = measuredWetGrip(tire);
-  const scoped = (tire.sizes ?? []).filter((size) => size.width_mm >= WET_WIDTHS.min && size.width_mm <= WET_WIDTHS.max).map((size) => size.width_mm);
-  const others = (tire.sizes ?? []).filter((size) => !scoped.includes(size.width_mm)).map((size) => size.width_mm);
+  const scoped = (tire.sizes ?? []).filter((size) => sizeInRange(size, WET_WIDTHS)).map(sizeLabel);
+  const others = (tire.sizes ?? []).filter((size) => !sizeInRange(size, WET_WIDTHS)).map(sizeLabel);
   const headline = tire.price_observations?.[0] ?? null;
   const groupHint = [groups.road ? 'Road 25–35 mm' : '', groups.wet ? 'Wet evidence' : ''].filter(Boolean).join(' · ');
-  const sizeRows = (tire.sizes ?? []).map((size) => `<tr><th scope="row">${escapeHtml(`${size.width_mm} mm`)}</th><td>${escapeHtml(size.etrto ?? '—')}</td><td>${escapeHtml(Number.isFinite(size.weight_g) ? `${size.weight_g} g` : '—')}</td><td>${escapeHtml(tirePressure(size))}</td><td>${escapeHtml(size.note ?? '')}</td></tr>`).join('');
+  const sizeRows = (tire.sizes ?? []).map((size) => `<tr><th scope="row">${escapeHtml(`${sizeLabel(size)} mm`)}</th><td>${escapeHtml(size.etrto ?? '—')}</td><td>${escapeHtml(Number.isFinite(size.weight_g) ? `${size.weight_g} g` : '—')}</td><td>${escapeHtml(tirePressure(size))}</td><td>${escapeHtml(size.note ?? '')}</td></tr>`).join('');
   const sizes = `<section class="tire-sizes"><h3>Sizes</h3><div class="tire-size-table" role="region" aria-label="${escapeAttr(`Sizes: ${tire.maker} ${tire.name}`)}" tabindex="0"><table><thead><tr><th scope="col">Width</th><th scope="col">ETRTO</th><th scope="col">Weight</th><th scope="col">Max pressure</th><th scope="col">Note</th></tr></thead><tbody>${sizeRows}</tbody></table></div><p>${escapeHtml(`${tireWeightBasisLabels[tire.weight_claim_type]}. ${tire.weight_basis}`)}${tire.pressure_note ? ` ${escapeHtml(tire.pressure_note)}` : ''}</p></section>`;
   const construction = `<section><h3>Construction</h3><dl>${[
     ['Type', tireConstructionLabels[tire.construction]],
@@ -2626,7 +2626,7 @@ function tireRows(ctx, tire, sourcesById, rates) {
     <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(tire.name)}</strong><span>${escapeHtml(`${tire.maker} · ${tireOriginLabels[tire.origin.group] === 'International' ? tire.origin.country : tireOriginLabels[tire.origin.group]}`)}</span>${aliases}</span></div></th>
     <td data-label="Use" data-column="best"><strong>${escapeHtml(tireUseLabels[tire.use])}</strong><span>${escapeHtml(`${tireConstructionLabels[tire.construction]} · ${tireHooklessLabels[tire.hookless]}`)}</span></td>
     <td data-label="Widths" data-column="widths"><strong>${escapeHtml(scoped.length ? `${scoped.join(' · ')} mm` : '—')}</strong><span>${escapeHtml([groupHint, others.length ? `also ${others.join(', ')} mm` : ''].filter(Boolean).join(' · '))}</span></td>
-    <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.width_mm} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
+    <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${sizeLabel(reference)} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
     <td data-label="Lab test" data-column="tests"><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
     <td data-label="Price" data-column="price"><strong>${escapeHtml(headline ? tireAmount(headline) : '—')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
   </tr><tr class="groupset-detail-row"><td colspan="6">${details}</td></tr></tbody>`;

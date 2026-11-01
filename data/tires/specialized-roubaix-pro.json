@@ -1,0 +1,80 @@
+{
+  "id": "specialized-roubaix-pro",
+  "maker": "Specialized",
+  "name": "Roubaix Pro (tube type)",
+  "aliases": [
+    "闪电 Roubaix Pro"
+  ],
+  "origin": {
+    "group": "international",
+    "country": "United States",
+    "basis": "Specialized Bicycle Components, Inc. publishes the US store, with California consumer disclosures in the page footer."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Specialized does not state where the tire is made."
+  },
+  "use": "endurance",
+  "positioning": "Specialized's endurance road clincher for smooth and rough roads, with a bead-to-bead Endurant casing and BlackBelt.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "120 TPI Endurant",
+  "compound": "GRIPTON",
+  "protection": "Endurant casing and BlackBelt",
+  "sizes": [
+    {
+      "width_mm": null,
+      "width_label_mm": [
+        23,
+        25
+      ],
+      "weight_g": 260,
+      "max_psi": 125,
+      "note": "Labelled 700 x 23mm/25mm; 115-125 psi"
+    },
+    {
+      "width_mm": null,
+      "width_label_mm": [
+        25,
+        28
+      ],
+      "weight_g": 300,
+      "max_psi": 95,
+      "note": "Labelled 700 x 25mm/28mm; 85-95 psi"
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Specialized approximate weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "official-store",
+    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+  },
+  "price_observations": [
+    {
+      "amount": 29.99,
+      "currency": "USD",
+      "market": "Specialized store (US)",
+      "region": "na",
+      "price_type": "official-store-sale",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "Official store sale price on 2026-11-01 (was US$49.99); one tire; shipping and tax at checkout.",
+      "source_id": "specialized-roubaix-pro-official-2026-11-01"
+    }
+  ],
+  "caveats": [
+    "Specialized labels each size with two widths and does not say which number is the mounted width.",
+    "The page names no tubeless feature; Specialized sells a separate 2Bliss Ready version for tubeless use.",
+    "No independent lab test of the current version found."
+  ],
+  "source_ids": [
+    "specialized-roubaix-pro-official-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}
