@@ -1,0 +1,78 @@
+{
+  "id": "maxxis-high-road-gen-3-tlr",
+  "maker": "Maxxis",
+  "name": "High Road Gen 3 TLR",
+  "aliases": [
+    "玛吉斯 HIGH ROAD 第三代"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Maxxis says it began in 1967 as a bicycle-tire maker in Taiwan."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The pages read do not state where the tire is made."
+  },
+  "use": "race",
+  "positioning": "Third-generation High Road all-purpose road race tire (tubeless-ready) with Turn-Up construction, a 150 TPI casing, HYPR compound and K2 protection.",
+  "construction": "tubeless-ready",
+  "hookless": "not-stated",
+  "casing": "150 TPI, Turn-Up construction",
+  "compound": "HYPR",
+  "protection": "K2",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "No size-specific weights were readable; Maxxis' page shows no size table.",
+  "tests": [],
+  "wet_notes": [
+    {
+      "kind": "official",
+      "summary": "Maxxis claims its HYPR compound has 23% better wet grip than its previous road racing compound; no independent wet test of this generation found.",
+      "source_id": "maxxis-high-road-gen3-international-2026-11-01"
+    }
+  ],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by a Tmall shop in mainland China; Maxxis' US site still lists the earlier generations; European retailers were seen in search results but not read."
+  },
+  "price_observations": [
+    {
+      "amount": 329,
+      "currency": "CNY",
+      "market": "SYB运动旗舰店 (Tmall)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts on 2026-11-01 for the 700X28C tubeless option; coupon price CNY 279. Single or pair not stated.",
+      "source_id": "maxxis-high-road-gen3-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Sizes come from the Tmall listing; Maxxis publishes no size table on the page read.",
+    "Weights and pressure limits are not recorded.",
+    "Wet grip is a maker claim relative to its own previous compound."
+  ],
+  "source_ids": [
+    "maxxis-high-road-gen3-international-2026-11-01",
+    "maxxis-high-road-gen3-tmall-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

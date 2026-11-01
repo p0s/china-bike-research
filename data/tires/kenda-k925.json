@@ -1,0 +1,78 @@
+{
+  "id": "kenda-k925",
+  "maker": "Kenda",
+  "name": "K925",
+  "aliases": [
+    "建大 K925"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "Kenda Rubber Industrial Co. won a 2017 Taiwan Excellence award for the Valkyrie (K1160X)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listings do not state the factory."
+  },
+  "use": "race",
+  "positioning": "Kenda's 120 TPI folding road race clincher sold in mainland China under the K925 code.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "120 TPI",
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 23,
+      "etrto": "23-622",
+      "weight_g": null,
+      "max_psi": 110
+    },
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null,
+      "max_psi": 110
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null,
+      "max_psi": 110
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "The shop listing gives no weights.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by Taobao shops in mainland China; other regions not verified."
+  },
+  "price_observations": [
+    {
+      "amount": 136.32,
+      "currency": "CNY",
+      "market": "教授单车 (Taobao)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Shop list price before discounts on 2026-11-01 for the folding 700x25 option; coupon price CNY 111.24. Single or pair not stated.",
+      "source_id": "kenda-k925-k1092-taobao-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "TPI and pressure come from shop option labels; weights are not published.",
+    "A non-folding 700x25 version is also sold."
+  ],
+  "source_ids": [
+    "kenda-k925-k1092-taobao-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

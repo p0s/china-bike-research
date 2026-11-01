@@ -1,0 +1,78 @@
+{
+  "id": "cst-c1808",
+  "maker": "CST",
+  "name": "C1808",
+  "aliases": [
+    "正新 C1808"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "CST is the Cheng Shin (正新) brand of Taiwan's Cheng Shin Rubber; China listings give the brand as CST/正新."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listing does not state the factory; Cheng Shin also makes bicycle tires at a mainland plant."
+  },
+  "use": "training",
+  "positioning": "CST folding 120 TPI training clincher with a dual compound and puncture layer.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "120 TPI",
+  "compound": "Dual compound",
+  "protection": "Composite puncture layer",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "The listing gives one 225 g weight without a size, so no size weight is recorded.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [
+    {
+      "source_id": "xhs-budget-clincher-comparison-2025-05-30",
+      "stance": "positive",
+      "published_at": "2025-05-30",
+      "summary": "Owner weighed a 28C at 260 g and rated it the most puncture- and wear-resistant of four budget clinchers."
+    }
+  ],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by Tmall and Taobao shops; no official CST store listing was read for this model."
+  },
+  "price_observations": [
+    {
+      "amount": 125,
+      "currency": "CNY",
+      "market": "东之耀运动户外专营店 (Tmall)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Tmall list price before discounts on 2026-11-01 for the 28C folding option; coupon price CNY 92.25. Single or pair not stated.",
+      "source_id": "cst-c1808-tmall-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "Pressure limits are not published.",
+    "One owner comparison only; no lab test found."
+  ],
+  "source_ids": [
+    "cst-c1808-tmall-2026-11-01",
+    "xhs-budget-clincher-comparison-2025-05-30"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

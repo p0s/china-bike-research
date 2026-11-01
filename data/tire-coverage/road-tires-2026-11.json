@@ -16,7 +16,7 @@
     {
       "name": "Taobao and Tmall",
       "checked_at": "2026-11-01",
-      "summary": "Brand facet for the road-tire query, tubeless listings, official-store listings (Chaoyang, ARISUN, Continental, Michelin, Giant) and dealer or shop listings for CST, Kenda, JILUER, Innova, Maxxis, Pirelli and Vittoria."
+      "summary": "Brand facet for the road-tire query, tubeless listings, official-store listings (Chaoyang, ARISUN, Continental, Michelin, Giant) and dealer or shop listings for CST, Kenda, JILUER, Innova, Maxxis, Pirelli and Vittoria. Follow-up the same day: 14 exact-model searches for the unresolved Chinese and Taiwanese rows, 12 listings opened, six maker-catalog searches (Chaoyang, ARISUN, Kenda, CST, Innova, JILUER) and three broad domestic queries; no further mainland brand with its own road tire was found, and unnamed generic listings were not added."
     },
     {
       "name": "Maker catalogs",
@@ -224,8 +224,16 @@
     {
       "brand_id": "chaoyang",
       "name": "H-498 \"Chinese knot\" edition",
-      "disposition": "unresolved",
-      "reason": "Official store sells it separately; sellers write \"H496/498\", but the relationship to H-496 is not documented."
+      "disposition": "included",
+      "reason": "Official Chaoyang Tmall store lists it under its own item code H-498 with folding and 60 TPI wire options and prices; its relationship to the H-496 is not documented.",
+      "record_id": "chaoyang-h-498"
+    },
+    {
+      "brand_id": "chaoyang",
+      "name": "H-496 Falcon TLR",
+      "disposition": "included",
+      "reason": "Separate tubeless option in the official store (30 mm) and a Tmall retailer (28 and 30 mm).",
+      "record_id": "chaoyang-h-496-tlr"
     },
     {
       "brand_id": "chaoyang",
@@ -249,7 +257,7 @@
       "brand_id": "chaoyang",
       "name": "Tubeless road/gravel \"恐龙皮\" 700x28-40C (EV store)",
       "disposition": "unresolved",
-      "reason": "Listing in a Chaoyang e-bike store without an identifiable model name."
+      "reason": "Listing in a Chaoyang e-bike store without an identifiable model name; a 2026-11-01 Taobao search for named Chaoyang tubeless road tires found only the H-496 TLR and ARISUN STORM R1 TLR, so the listing could not be matched."
     },
     {
       "brand_id": "arisun",
@@ -289,25 +297,26 @@
       "brand_id": "jiluer",
       "name": "Chaser T2",
       "disposition": "unresolved",
-      "reason": "One owner post (28C measured 30.3 mm on a 23 mm inner rim; punctured on the first ride); no shop listing with specifications found."
+      "reason": "One owner post (28C measured 30.3 mm on a 23 mm inner rim; punctured on the first ride); a 2026-11-01 Taobao search for 吉路尔 T2 returned only Chaser and Chaser Pro listings."
     },
     {
       "brand_id": "jiluer",
-      "name": "Tubeless road tire",
-      "disposition": "unresolved",
-      "reason": "Model name not identified; owner reports of bulging in a 2025 batch."
+      "name": "Chaser Pro tubeless (真空)",
+      "disposition": "included",
+      "reason": "Shop listing sells the Chaser Pro in a 28C tubeless version; earlier unnamed owner reports of a 2025 tubeless batch are not attributed to it.",
+      "record_id": "jiluer-chaser-pro-tubeless"
     },
     {
       "brand_id": "jiluer",
       "name": "狼图 (Wolf pattern)",
-      "disposition": "unresolved",
-      "reason": "Listing name only; no specification found."
+      "disposition": "excluded",
+      "reason": "Taobao listings show 狼图 as a JILUER e-bike, tricycle and motorcycle tire pattern (for example 14x2.5 and 3.00-10), not a road-bike tire."
     },
     {
       "brand_id": "hebo",
       "name": "Road tires",
-      "disposition": "unresolved",
-      "reason": "Brand named once in an owner comment; no road-tire listing identified."
+      "disposition": "excluded",
+      "reason": "和博 is the Taobao shop HuB和博骑行; its road-tire listing names the generic brand 'roauick' with unnamed training and racing options (one 299 g weight)."
     },
     {
       "brand_id": "carnos",
@@ -335,9 +344,15 @@
     },
     {
       "brand_id": "facet-minor",
-      "name": "Road tires",
+      "name": "速斗鹰",
+      "disposition": "excluded",
+      "reason": "速斗鹰旗舰店 is a Tmall store selling Goodyear tires; no own tire line."
+    },
+    {
+      "brand_id": "facet-minor",
+      "name": "BHE road tires",
       "disposition": "unresolved",
-      "reason": "Brand-facet entries only; no identifiable road-tire model found."
+      "reason": "Brand-facet entry only; a 2026-11-01 Taobao search for BHE road tires returned no BHE-branded listing."
     },
     {
       "brand_id": "cst",
@@ -363,14 +378,16 @@
     {
       "brand_id": "cst",
       "name": "C3045N tubeless",
-      "disposition": "unresolved",
-      "reason": "Tubeless version listed by shops; no specification beyond size found."
+      "disposition": "included",
+      "reason": "Tmall shop listing gives the 28C tubeless option, about 328 g, and price.",
+      "record_id": "cst-energia-c3045n"
     },
     {
       "brand_id": "cst",
       "name": "C1808",
-      "disposition": "unresolved",
-      "reason": "Named in an owner comparison (28C, 260 g); no listing with an exact model page found."
+      "disposition": "included",
+      "reason": "Tmall shop listing gives 25C and 28C folding 120 TPI options and price; one owner comparison.",
+      "record_id": "cst-c1808"
     },
     {
       "brand_id": "cst",
@@ -381,14 +398,20 @@
     {
       "brand_id": "cst",
       "name": "CFT1",
-      "disposition": "unresolved",
-      "reason": "Named in owner posts; official identity not found."
+      "disposition": "excluded",
+      "reason": "Tmall and Taobao listings show C-FT1 as a CST mountain-bike tire (26, 27.5 and 29 x 1.95)."
     },
     {
       "brand_id": "cst",
       "name": "Recourse, Conquistare and Correre",
       "disposition": "unresolved",
-      "reason": "International names on CST's road page; mapping to China model codes not established."
+      "reason": "International names on CST's road page; CST's US site gave no product text and a 2026-11-01 web search found no mapping to China model codes."
+    },
+    {
+      "brand_id": "cst",
+      "name": "Merida original-equipment road tires (CST-made)",
+      "disposition": "excluded",
+      "reason": "Original-equipment spares for Merida bikes sold by shops; not a distinct retail tire line."
     },
     {
       "brand_id": "maxxis",
@@ -415,13 +438,21 @@
       "brand_id": "maxxis",
       "name": "High Road SL",
       "disposition": "unresolved",
-      "reason": "Maxxis' US page labels it Gen 1 with mixed SKUs, while China shops sell a second-generation SL; generations could not be separated."
+      "reason": "Maxxis' US page labels it Gen 1 with mixed SKUs; a Tmall store sells a 'third-generation' SL (25/28 mm; clincher CNY 299, tubeless CNY 349) and Maxxis' International Gen 3 page mentions an SL only on its packaging, with no SL specifications. Generations could not be separated from official data."
     },
     {
       "brand_id": "maxxis",
-      "name": "High Road third generation (M230)",
-      "disposition": "unresolved",
-      "reason": "Sold by a Maxxis dealer in mainland China (CNY 398 per tire); no official specification found."
+      "name": "High Road Gen 3 (tube type)",
+      "disposition": "included",
+      "reason": "Official International page (construction, compound, wet claim) with sizes and price from a Tmall listing.",
+      "record_id": "maxxis-high-road-gen-3"
+    },
+    {
+      "brand_id": "maxxis",
+      "name": "High Road Gen 3 TLR",
+      "disposition": "included",
+      "reason": "Official International page (construction, compound, wet claim) with sizes and price from a Tmall listing.",
+      "record_id": "maxxis-high-road-gen-3-tlr"
     },
     {
       "brand_id": "maxxis",
@@ -445,9 +476,35 @@
     },
     {
       "brand_id": "kenda",
-      "name": "K925 Kaliente and K1092 Kountach",
+      "name": "K925",
+      "disposition": "included",
+      "reason": "Taobao listing gives folding 120 TPI race-tire options, pressure label and prices.",
+      "record_id": "kenda-k925"
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K1092",
+      "disposition": "included",
+      "reason": "Taobao listing gives folding 60 TPI training-tire options, pressure label and prices; US retailers list a 120 TPI Kountach version.",
+      "record_id": "kenda-k1092"
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K1225 (四季 all-season)",
       "disposition": "unresolved",
-      "reason": "Named in owner posts (K925 described as easy to fit); retailers list the Kountach at 120 TPI, but no official Kenda page was found and the Kenda US shop search returned no Kountach listing on 2026-11-01."
+      "reason": "Seen only in mixed Kenda listings as an all-season 60 TPI folding tire in 28 and 32 mm (CNY 75-79); construction and weight per model are not stated."
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K1018",
+      "disposition": "excluded",
+      "reason": "Listed for fixed-gear and small-wheel bikes in 700x23/25 and 650x23 at 60 TPI."
+    },
+    {
+      "brand_id": "kenda",
+      "name": "K177, K1029, K1286 and K1226",
+      "disposition": "excluded",
+      "reason": "Folding-bike, fixed-gear, flat-bar commuter or wide listings (K177 14-16 inch and 700x23, K1029 20 inch, K1286 flat-bar 28-35 mm, K1226 only beside a 700x40C option); not road-bike tires."
     },
     {
       "brand_id": "giant",
@@ -555,8 +612,9 @@
     {
       "brand_id": "innova",
       "name": "3029",
-      "disposition": "unresolved",
-      "reason": "Named in an owner comparison (28C, 220 g); no listing with model details found."
+      "disposition": "included",
+      "reason": "Taobao listing gives folding 120 TPI options in 25-30 mm and prices; one owner comparison.",
+      "record_id": "innova-3029"
     },
     {
       "brand_id": "continental",
