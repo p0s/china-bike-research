@@ -1,0 +1,87 @@
+{
+  "id": "chaoyang-h-457",
+  "maker": "Chaoyang",
+  "name": "H-457 Mini Shark",
+  "aliases": [
+    "迷你鲨",
+    "朝阳迷你鲨"
+  ],
+  "origin": {
+    "group": "mainland-china",
+    "country": "Mainland China",
+    "basis": "Chaoyang is the bicycle-tire brand of ZC Rubber (Zhongce)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Neither the listing nor the official post states the factory."
+  },
+  "use": "training",
+  "positioning": "Chaoyang's entry road tire with a shark-skin puncture layer, an upgrade of the original-equipment tires on domestic road bikes.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI (official post)",
+  "compound": null,
+  "protection": "Shark-skin puncture layer",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null,
+      "note": "Skin-wall and black non-folding versions."
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null,
+      "note": "Black non-folding version."
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "No weight is given in the listing or the official post.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by mainland Taobao shops; no official-store listing was read for this model."
+  },
+  "price_observations": [
+    {
+      "amount": 60,
+      "currency": "CNY",
+      "market": "骑点单车 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Shop price on 2026-11-01 for the black non-folding 700x25C and 700x28C options; the listing does not say one tire or a pair.",
+      "source_id": "chaoyang-h-486-taobao-2026-11-01",
+      "width_mm": 28
+    },
+    {
+      "amount": 71,
+      "currency": "CNY",
+      "market": "骑点单车 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Shop price on 2026-11-01 for the 700x25C skin-wall option; one tire or a pair not stated.",
+      "source_id": "chaoyang-h-486-taobao-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "Weights, pressure limits and the casing of each version are not published in the listing.",
+    "No owner report or wet-road evidence was found; the official post is a maker claim.",
+    "Chaoyang places it for daily training and leisure, below the H-496 Falcon."
+  ],
+  "source_ids": [
+    "chaoyang-h-486-taobao-2026-11-01",
+    "xhs-chaoyang-mini-shark-launch-2024-04-11"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

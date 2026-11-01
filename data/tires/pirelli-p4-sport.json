@@ -1,0 +1,79 @@
+{
+  "id": "pirelli-p4-sport",
+  "maker": "Pirelli",
+  "name": "P4 Sport",
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian tire maker; Pirelli says the P ZERO Race range is made at its plant in Italy near its Milan headquarters."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The P4 Sport page does not state where it is made."
+  },
+  "use": "endurance",
+  "positioning": "Pirelli's durability-first 26 TPI road clincher for long distances.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "26 TPI",
+  "compound": "PRO Compound",
+  "protection": "TechBELT Road nylon layer",
+  "sizes": [
+    {
+      "width_mm": 24,
+      "etrto": "24-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 320
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 330
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 350
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Pirelli claims per size.",
+  "pressure_note": "Pirelli gives no pressure on the product page; a US retailer lists 87-125 psi for the 28 mm.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "retail",
+    "note": "Found at a US retailer (in-store pickup only on 2026-11-01); European and mainland China sellers were not verified for this line."
+  },
+  "price_observations": [
+    {
+      "amount": 46.9,
+      "currency": "USD",
+      "market": "Cahaba Cycles (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer list price on 2026-11-01 for the 28 mm folding tire; in-store pickup only, and the page does not say one tire or a pair.",
+      "source_id": "cahaba-pirelli-p4-sport-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "A heavy, low-TPI casing chosen for durability rather than speed; no lab test found.",
+    "Pirelli does not state tubeless compatibility or a pressure limit; treat it as a tube-type clincher and follow the sidewall."
+  ],
+  "source_ids": [
+    "pirelli-p4-sport-official-2026-11-01",
+    "cahaba-pirelli-p4-sport-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

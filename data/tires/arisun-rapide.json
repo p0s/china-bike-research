@@ -1,0 +1,82 @@
+{
+  "id": "arisun-rapide",
+  "maker": "ARISUN",
+  "name": "Rapide",
+  "origin": {
+    "group": "mainland-china",
+    "country": "Mainland China",
+    "basis": "ARISUN is a ZC Rubber (Zhongce, maker of Chaoyang) bicycle-tire brand; the official listing gives the brand as 朝阳 and the item code 艾瑞森H-908."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The retailer pages do not state the factory location."
+  },
+  "use": "training",
+  "positioning": "ARISUN's 60 TPI folding road clincher sold through US and European retailers rather than mainland marketplaces.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI",
+  "compound": null,
+  "protection": "Nylon Defense breaker belt (retailer description)",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": 290,
+      "max_psi": 110
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 335,
+      "max_psi": 90
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "US retailer weights per size.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "not-found",
+    "eu": "unverified",
+    "na": "retail",
+    "note": "Listed by a US retailer (sold out on 2026-11-01); not found in mainland China marketplaces or XHS. A UK retailer listing could not be read."
+  },
+  "price_observations": [
+    {
+      "amount": 39.08,
+      "currency": "USD",
+      "market": "Velo Mine (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer price on 2026-11-01 for the 25 mm folding tire; sold out, shipping at checkout.",
+      "source_id": "velomine-arisun-rapide-25-2026-11-01",
+      "width_mm": 25
+    },
+    {
+      "amount": 39.93,
+      "currency": "USD",
+      "market": "Velo Mine (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer price on 2026-11-01 for the 32 mm folding tire; sold out, shipping at checkout.",
+      "source_id": "velomine-arisun-rapide-32-2026-11-01",
+      "width_mm": 32
+    }
+  ],
+  "caveats": [
+    "Retailer copy claims wet-weather grip from its tread design; no owner report or lab test supports it.",
+    "Not sold in the mainland China routes checked; the US listings were sold out on 2026-11-01."
+  ],
+  "source_ids": [
+    "velomine-arisun-rapide-25-2026-11-01",
+    "velomine-arisun-rapide-32-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01"
+}

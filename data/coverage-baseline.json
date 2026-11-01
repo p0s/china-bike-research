@@ -8,14 +8,14 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2091,
+      "sources": 2102,
       "images": 900,
       "videos": 267,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
       "wheelsets": 11,
-      "tires": 178,
+      "tires": 184,
       "tireCoverage": 1,
       "recommendations": 6,
       "candidates": 289,
@@ -353,6 +353,7 @@
       "bxt-gravel-complete-photo-source-2026-10-03",
       "cadex-race-25-tubeless-official-2026-11-01",
       "cadex-race-gc-official-2026-11-01",
+      "cahaba-pirelli-p4-sport-2026-11-01",
       "camp-ace-gen3-105-official-2026-08-29",
       "camp-ace-gen3-105-photo-source-2026-10-03",
       "camp-ace-gen3-105-taobao-2026-10-24",
@@ -603,6 +604,7 @@
       "felt-ia-2-race-current-2026-08-30",
       "felt-ia-2-race-current-2026-09-23",
       "felt-ia-2-regional-clearance-2026-08-30",
+      "fiperformance-cst-c1406-2026-11-01",
       "frrx-jd-range-2026-08-29",
       "frrx-jd-range-current-2026-09-23",
       "frrx-smzdm-brand-2026-08-29",
@@ -1277,6 +1279,7 @@
       "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
       "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01",
       "pirelli-p-zero-road-tlr-official-2026-11-01",
+      "pirelli-p4-sport-official-2026-11-01",
       "pirelli-p7-sport-official-2026-11-01",
       "pirelli-road-range-gb-2026-11-01",
       "pro-stealth-sport-official-2026-08-27",
@@ -1629,7 +1632,11 @@
       "sava-starship-105-official-2026-08-17",
       "sava-starship-r13-current-build-2026-09-22",
       "schwalbe-legal-notice-2026-11-01",
+      "schwalbe-lugano-ii-25-folding-2026-11-01",
+      "schwalbe-lugano-ii-25-wired-2026-11-01",
+      "schwalbe-lugano-ii-32-2026-11-01",
       "schwalbe-motion-spike-2026-10-22",
+      "schwalbe-na-lugano-ii-2026-11-01",
       "schwalbe-north-america-road-tires-2026-11-01",
       "schwalbe-one-365-official-2026-11-01",
       "schwalbe-one-365-tubeless-official-2026-11-01",
@@ -2099,6 +2106,8 @@
       "veloflex-clincher-tire-corsa-race-black-sidewall-official-2026-11-01",
       "veloflex-tubeless-ready-corsa-evo-tlr-black-sidewall-official-2026-11-01",
       "veloflex-tubeless-ready-corsa-race-tlr-black-sidewall-official-2026-11-01",
+      "velomine-arisun-rapide-25-2026-11-01",
+      "velomine-arisun-rapide-32-2026-11-01",
       "viqi-current-jd-options-2026-08-30",
       "viqi-r8000-current-jd-2026-08-30",
       "viqi-r8000-current-jd-recheck-2026-09-24",
@@ -2265,6 +2274,8 @@
       "xhs-chaoyang-falcon-sidewall-2025-09-26",
       "xhs-chaoyang-falcon-vs-us3-2026-02-23",
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29",
+      "xhs-chaoyang-mini-shark-launch-2024-04-11",
+      "xhs-cst-c1406-cheap-slick-2025-11-26",
       "xhs-cst-c1808-owners-2025-03-23",
       "xhs-cst-c1922-89-yuan-2024-08-02",
       "xhs-cst-c1922-vs-gsr-2025-11-30",
@@ -3596,6 +3607,7 @@
       "yoeleo-sat-c45-db-pro-nxt-gravel"
     ],
     "tires": [
+      "arisun-rapide",
       "arisun-storm-r1",
       "arisun-storm-r1-tlr",
       "bontrager-aeolus-comp",
@@ -3624,6 +3636,8 @@
       "challenge-strada-pro-tlr",
       "challenge-strada-vulcanized",
       "challenge-strada-vulcanized-tlr",
+      "chaoyang-h-457",
+      "chaoyang-h-479",
       "chaoyang-h-486",
       "chaoyang-h-496",
       "chaoyang-h-496-tlr",
@@ -3638,6 +3652,7 @@
       "continental-grand-prix-tr",
       "continental-grand-sport-race",
       "continental-ultra-sport-iii",
+      "cst-c1406",
       "cst-c1808",
       "cst-cito-c1922",
       "cst-crd-06",
@@ -3714,12 +3729,14 @@
       "pirelli-p-zero-race-tlr-rs",
       "pirelli-p-zero-race-tlr-sl-r",
       "pirelli-p-zero-road-tlr",
+      "pirelli-p4-sport",
       "pirelli-p7-sport",
       "rene-herse-bon-jon-pass-tc",
       "rene-herse-cayuse-pass",
       "rene-herse-chinook-pass",
       "rene-herse-orondo-grade-tc",
       "rene-herse-stampede-pass",
+      "schwalbe-lugano-ii",
       "schwalbe-one",
       "schwalbe-one-365",
       "schwalbe-one-365-tubeless",
@@ -11386,6 +11403,18 @@
         "type",
         "url"
       ],
+      "cahaba-pirelli-p4-sport-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "camp-ace-gen3-105-official-2026-08-29": [
         "accessed_at",
         "language",
@@ -14400,6 +14429,18 @@
         "url"
       ],
       "felt-ia-2-regional-clearance-2026-08-30": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "fiperformance-cst-c1406-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -22927,6 +22968,18 @@
         "type",
         "url"
       ],
+      "pirelli-p4-sport-official-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pirelli-p7-sport-official-2026-11-01": [
         "accessed_at",
         "language",
@@ -27645,7 +27698,55 @@
         "type",
         "url"
       ],
+      "schwalbe-lugano-ii-25-folding-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "schwalbe-lugano-ii-25-wired-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "schwalbe-lugano-ii-32-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "schwalbe-motion-spike-2026-10-22": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "schwalbe-na-lugano-ii-2026-11-01": [
         "accessed_at",
         "language",
         "notes",
@@ -33554,6 +33655,30 @@
         "type",
         "url"
       ],
+      "velomine-arisun-rapide-25-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "velomine-arisun-rapide-32-2026-11-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "viqi-current-jd-options-2026-08-30": [
         "accessed_at",
         "language",
@@ -35585,6 +35710,30 @@
         "url"
       ],
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-chaoyang-mini-shark-launch-2024-04-11": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-cst-c1406-cheap-slick-2025-11-26": [
         "accessed_at",
         "language",
         "notes",
@@ -75149,6 +75298,32 @@
       ]
     },
     "tires": {
+      "arisun-rapide": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "arisun-storm-r1": [
         "aliases",
         "availability.cn",
@@ -75907,6 +76082,58 @@
         "weight_basis",
         "weight_claim_type"
       ],
+      "chaoyang-h-457": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "chaoyang-h-479": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "caveats",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "chaoyang-h-486": [
         "aliases",
         "availability.cn",
@@ -76301,6 +76528,35 @@
         "source_ids",
         "status",
         "tests",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "cst-c1406": [
+        "aliases",
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "community",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
         "use",
         "weight_basis",
         "weight_claim_type"
@@ -78409,6 +78665,34 @@
         "weight_claim_type",
         "wet_notes"
       ],
+      "pirelli-p4-sport": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "pressure_note",
+        "price_observations",
+        "protection",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
       "pirelli-p7-sport": [
         "availability.cn",
         "availability.eu",
@@ -78561,6 +78845,33 @@
         "origin.group",
         "positioning",
         "price_observations",
+        "reviewed_at",
+        "sizes",
+        "source_ids",
+        "status",
+        "use",
+        "weight_basis",
+        "weight_claim_type"
+      ],
+      "schwalbe-lugano-ii": [
+        "availability.cn",
+        "availability.eu",
+        "availability.na",
+        "availability.note",
+        "casing",
+        "caveats",
+        "compound",
+        "construction",
+        "hookless",
+        "maker",
+        "manufacturing.basis",
+        "name",
+        "origin.basis",
+        "origin.country",
+        "origin.group",
+        "positioning",
+        "price_observations",
+        "protection",
         "reviewed_at",
         "sizes",
         "source_ids",
@@ -127582,6 +127893,7 @@
       "bxt-gravel-complete-photo-source-2026-10-03": [],
       "cadex-race-25-tubeless-official-2026-11-01": [],
       "cadex-race-gc-official-2026-11-01": [],
+      "cahaba-pirelli-p4-sport-2026-11-01": [],
       "camp-ace-gen3-105-official-2026-08-29": [],
       "camp-ace-gen3-105-photo-source-2026-10-03": [],
       "camp-ace-gen3-105-taobao-2026-10-24": [],
@@ -127832,6 +128144,7 @@
       "felt-ia-2-race-current-2026-08-30": [],
       "felt-ia-2-race-current-2026-09-23": [],
       "felt-ia-2-regional-clearance-2026-08-30": [],
+      "fiperformance-cst-c1406-2026-11-01": [],
       "frrx-jd-range-2026-08-29": [],
       "frrx-jd-range-current-2026-09-23": [],
       "frrx-smzdm-brand-2026-08-29": [],
@@ -128554,6 +128867,7 @@
       "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01": [],
       "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01": [],
       "pirelli-p-zero-road-tlr-official-2026-11-01": [],
+      "pirelli-p4-sport-official-2026-11-01": [],
       "pirelli-p7-sport-official-2026-11-01": [],
       "pirelli-road-range-gb-2026-11-01": [],
       "pro-stealth-sport-official-2026-08-27": [],
@@ -128906,7 +129220,11 @@
       "sava-starship-105-official-2026-08-17": [],
       "sava-starship-r13-current-build-2026-09-22": [],
       "schwalbe-legal-notice-2026-11-01": [],
+      "schwalbe-lugano-ii-25-folding-2026-11-01": [],
+      "schwalbe-lugano-ii-25-wired-2026-11-01": [],
+      "schwalbe-lugano-ii-32-2026-11-01": [],
       "schwalbe-motion-spike-2026-10-22": [],
+      "schwalbe-na-lugano-ii-2026-11-01": [],
       "schwalbe-north-america-road-tires-2026-11-01": [],
       "schwalbe-one-365-official-2026-11-01": [],
       "schwalbe-one-365-tubeless-official-2026-11-01": [],
@@ -129376,6 +129694,8 @@
       "veloflex-clincher-tire-corsa-race-black-sidewall-official-2026-11-01": [],
       "veloflex-tubeless-ready-corsa-evo-tlr-black-sidewall-official-2026-11-01": [],
       "veloflex-tubeless-ready-corsa-race-tlr-black-sidewall-official-2026-11-01": [],
+      "velomine-arisun-rapide-25-2026-11-01": [],
+      "velomine-arisun-rapide-32-2026-11-01": [],
       "viqi-current-jd-options-2026-08-30": [],
       "viqi-r8000-current-jd-2026-08-30": [],
       "viqi-r8000-current-jd-recheck-2026-09-24": [],
@@ -129542,6 +129862,8 @@
       "xhs-chaoyang-falcon-sidewall-2025-09-26": [],
       "xhs-chaoyang-falcon-vs-us3-2026-02-23": [],
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29": [],
+      "xhs-chaoyang-mini-shark-launch-2024-04-11": [],
+      "xhs-cst-c1406-cheap-slick-2025-11-26": [],
       "xhs-cst-c1808-owners-2025-03-23": [],
       "xhs-cst-c1922-89-yuan-2024-08-02": [],
       "xhs-cst-c1922-vs-gsr-2025-11-30": [],
@@ -134898,6 +135220,10 @@
       ]
     },
     "tires": {
+      "arisun-rapide": [
+        "source_ids=velomine-arisun-rapide-25-2026-11-01",
+        "source_ids=velomine-arisun-rapide-32-2026-11-01"
+      ],
       "arisun-storm-r1": [
         "source_ids=arisun-storm-r1-tmall-2026-11-01",
         "source_ids=xhs-arisun-storm-r1-10000-km-2026-10-02",
@@ -135010,6 +135336,13 @@
         "source_ids=challenge-about-official-2026-11-01",
         "source_ids=challenge-strada-tlr-official-2026-11-01"
       ],
+      "chaoyang-h-457": [
+        "source_ids=chaoyang-h-486-taobao-2026-11-01",
+        "source_ids=xhs-chaoyang-mini-shark-launch-2024-04-11"
+      ],
+      "chaoyang-h-479": [
+        "source_ids=chaoyang-h-486-taobao-2026-11-01"
+      ],
       "chaoyang-h-486": [
         "source_ids=chaoyang-h-486-taobao-2026-11-01",
         "source_ids=xhs-budget-road-tire-comparison-2025-07-16"
@@ -135092,6 +135425,11 @@
         "source_ids=continental-road-range-us-2026-11-01",
         "source_ids=continental-ultra-sport-iii-tmall-2026-11-01",
         "source_ids=continental-ultra-sport-official-2026-11-01"
+      ],
+      "cst-c1406": [
+        "source_ids=fiperformance-cst-c1406-2026-11-01",
+        "source_ids=xhs-cst-c1406-cheap-slick-2025-11-26",
+        "source_ids=xhs-cst-c3045-high-road-gsr-2025-08-10"
       ],
       "cst-c1808": [
         "source_ids=cst-c1808-tmall-2026-11-01",
@@ -135447,6 +135785,10 @@
         "source_ids=pirelli-p-zero-road-tlr-official-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
       ],
+      "pirelli-p4-sport": [
+        "source_ids=cahaba-pirelli-p4-sport-2026-11-01",
+        "source_ids=pirelli-p4-sport-official-2026-11-01"
+      ],
       "pirelli-p7-sport": [
         "source_ids=pirelli-p7-sport-official-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
@@ -135465,6 +135807,12 @@
       ],
       "rene-herse-stampede-pass": [
         "source_ids=rene-herse-stampede-pass-official-2026-11-01"
+      ],
+      "schwalbe-lugano-ii": [
+        "source_ids=schwalbe-lugano-ii-25-folding-2026-11-01",
+        "source_ids=schwalbe-lugano-ii-25-wired-2026-11-01",
+        "source_ids=schwalbe-lugano-ii-32-2026-11-01",
+        "source_ids=schwalbe-na-lugano-ii-2026-11-01"
       ],
       "schwalbe-one": [
         "source_ids=schwalbe-legal-notice-2026-11-01",
@@ -146898,6 +147246,14 @@
         "specification": 2
       }
     },
+    "cahaba-pirelli-p4-sport-2026-11-01": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "camp-ace-gen3-105-official-2026-08-29": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -148918,6 +149274,14 @@
         "identity": 3,
         "price": 0,
         "specification": 2
+      }
+    },
+    "fiperformance-cst-c1406-2026-11-01": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
       }
     },
     "frrx-jd-range-2026-08-29": {
@@ -154399,6 +154763,14 @@
         "specification": 3
       }
     },
+    "pirelli-p4-sport-official-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "pirelli-p7-sport-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -157207,11 +157579,43 @@
         "specification": 3
       }
     },
+    "schwalbe-lugano-ii-25-folding-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "schwalbe-lugano-ii-25-wired-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "schwalbe-lugano-ii-32-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "schwalbe-motion-spike-2026-10-22": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": -1,
+        "specification": 3
+      }
+    },
+    "schwalbe-na-lugano-ii-2026-11-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
         "specification": 3
       }
     },
@@ -161014,6 +161418,22 @@
         "specification": 3
       }
     },
+    "velomine-arisun-rapide-25-2026-11-01": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "velomine-arisun-rapide-32-2026-11-01": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "viqi-current-jd-options-2026-08-30": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -162376,6 +162796,22 @@
       }
     },
     "xhs-chaoyang-h496-vs-gp5000-2024-12-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-chaoyang-mini-shark-launch-2024-04-11": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-cst-c1406-cheap-slick-2025-11-26": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
