@@ -219,7 +219,10 @@ test('batch 025 preserves regional and option conflicts without inventing maxima
   assert.match(ad7.facts.complete_weight_references, /8\.2 kg.*8\.5 kg/);
   assert.match(ad7.facts.drivetrain, /Shimano 105 Di2.*2x12/);
   assert.match(ad7.facts.frame_material, /T700\+T800 carbon/);
-  assert.equal(ad7.facts.tire_clearance_mm, undefined);
+  assert.equal(ad7.facts.tire_clearance_mm, 32);
+  assert.match(ad7.facts.tire_clearance_basis, /^Documented fitted.*2026 AD7/);
+  assert.match(ad7.facts.tire_clearance_basis, /not measured width or a manufacturer maximum/);
+  assert.ok(ad7.missing.includes('Manufacturer-confirmed maximum tire clearance'));
 
   const hongfu = candidates.get('hongfu-gravel');
   assert.match(hongfu.facts.current_model_options, /FM188.*FM279/);

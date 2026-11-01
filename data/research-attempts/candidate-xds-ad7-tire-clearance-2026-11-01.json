@@ -1,0 +1,65 @@
+{
+  "id": "candidate-xds-ad7-tire-clearance-2026-11-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "xds-ad7"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-11-01",
+  "retry_of": "candidate-xds-ad7-tire-clearance-2026-08-30",
+  "retry_reason": "New exact-2026 owner tire-fit and model-overview leads were opened in the available signed-in Chrome session.",
+  "campaign_extension": {
+    "id": "ad7-tire-fit-2026-11-01",
+    "extends_attempt_id": "candidate-xds-ad7-tire-clearance-2026-08-30",
+    "authorized_at": "2026-11-01",
+    "scope_file": "docs/research-batches/2026-11-01/ad7-tire-fit-scope.json",
+    "reason": "Bounded exact-generation follow-up for two newly readable public XHS posts; preserve the prior broad campaign.",
+    "allowed_channels": [
+      "public-post"
+    ],
+    "max_new_attempts": 2
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "A reported 32C fit and secondary maximum claim do not establish a manufacturer-approved maximum or measured gaps.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "AD7 32c",
+          "route": "XHS search, then opened exact 2026 AD7 owner post in Chrome",
+          "outcome": "found",
+          "accessed_at": "2026-11-01",
+          "result_url": "https://www.xiaohongshu.com/explore/6ac998910000000014030be1",
+          "note": "Accepted only as owner-reported nominal 32C Continental tire installation on a 2026 AD7. No measured width or gap."
+        },
+        {
+          "attempt": 2,
+          "query": "AD7 最大胎宽",
+          "route": "XHS search, then opened 2026 AD7 overview post in Chrome",
+          "outcome": "rejected",
+          "accessed_at": "2026-11-01",
+          "result_url": "https://www.xiaohongshu.com/explore/6a1fe192000000003502d14f",
+          "note": "Retained as a secondary 32C maximum claim, rejected as proof of a manufacturer maximum because no primary document or test is supplied."
+        }
+      ]
+    },
+    "web": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-xds-ad7-tire-clearance-2026-08-30",
+      "attempts": []
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "xds-ad7-2026-owner-32c-xhs-2026-11-01",
+    "xds-ad7-2026-clearance-overview-xhs-2026-11-01"
+  ],
+  "retry_after": null,
+  "notes": "32 mm fitted is now supported for a reported 2026 owner build. Keep manufacturer-confirmed maximum in missing; preserve classic/export configuration boundaries. No complete-bike weight, price, drivetrain or stiffness value is adopted from these posts."
+}
