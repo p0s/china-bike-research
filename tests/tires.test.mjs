@@ -176,6 +176,59 @@ test('the tire table renders one row per record with origin, evidence and price 
   for (const tire of data.tires) assert.doesNotMatch(home, new RegExp(`data-id="${tire.id}"`));
 });
 
+test('tire photos are exact remote embeds with a listed source, rights and privacy review', () => {
+  const official = firstId((tire) => tire.image?.kind === 'official' && tire.image.thumb_url);
+  const post = firstId((tire) => tire.image?.kind === 'public-post');
+  rejects(official, (tire) => { tire.image.subject_accuracy = 'same-family'; }, 'tire photos must show the exact model');
+  rejects(official, (tire) => { tire.image.source_id = 'not-a-listed-source'; }, 'image source must be a listed source');
+  rejects(official, (tire) => { tire.image.remote_url = 'https://images.example.com/tire.jpg'; }, "image must load from its source page's host or reviewed media host");
+  rejects(official, (tire) => { tire.image.remote_url = `${tire.image.remote_url.split('?')[0]}?utm_source=x`; }, 'image.remote_url must be an HTTPS file URL with resizing parameters only');
+  rejects(official, (tire) => { tire.image.thumb_url = tire.image.remote_url.split('?')[0].replace(/[^/]+$/, 'another-tire.jpg'); }, 'image.thumb_url must be a resized copy of the same file on the same host');
+  rejects(official, (tire) => { tire.image.width = 80; }, 'image needs reviewed dimensions of at least 120 px');
+  rejects(official, (tire) => { delete tire.image.source_media_sha256; }, "image needs the reviewed file's hash and size");
+  // A remote embed never claims a local-reuse licence, and every photo names a removal route.
+  rejects(official, (tire) => { tire.image.rights.status = 'local-reuse'; }, 'incomplete image rights record');
+  rejects(official, (tire) => { delete tire.image.rights.removal_route; }, 'incomplete image rights record');
+  rejects(official, (tire) => { tire.image.privacy_review.visual = 'not-checked'; }, 'incomplete image privacy review');
+  rejects(post, (tire) => { tire.image.kind = 'official'; tire.image.rights.status = 'official-page-embed'; }, 'image source type does not match its kind');
+  rejects(post, (tire, copy) => { copy.sources.find((source) => source.id === tire.image.source_id).url += '?xsec_token=x'; }, 'a public-post photo needs a canonical XHS post link');
+  // The photo ledger lists every tire once, and its status follows the tire record.
+  const [ledger] = data.tireImages;
+  rejects(official, (tire, copy) => { copy.tireImages[0].entries = copy.tireImages[0].entries.filter((entry) => entry.tire_id !== tire.id); }, `tire image ledger ${ledger.id}: tire ${official} is missing`);
+  rejects(official, (tire) => { delete tire.image; }, `tire image ledger ${ledger.id}: ${official} status does not match its record`);
+  rejects(official, (tire, copy) => { copy.tireImages[0].entries.find((entry) => entry.tire_id === tire.id).reason = ''; }, `tire image ledger ${ledger.id}: ${official} needs a status and reason`);
+});
+
+test('tire rows show a lazy exact photo with credit and source, and coverage lists every missing photo', () => {
+  const html = renderTires(ctx);
+  const sourcesById = new Map(data.sources.map((source) => [source.id, source]));
+  for (const tire of data.tires) {
+    const entry = html.match(new RegExp(`<tbody class="groupset-entry tire-entry" id="${tire.id}"[\\s\\S]*?</details></td></tr></tbody>`))?.[0] ?? '';
+    if (!tire.image) {
+      assert.doesNotMatch(entry, /has-image|tire-photo|data-product-image/, tire.id);
+      continue;
+    }
+    const { image } = tire;
+    const src = (image.thumb_url ?? image.remote_url).replaceAll('&', '&amp;');
+    // The thumbnail sits in the row identity, loads lazily and sends no referrer; it is not a link.
+    assert.ok(entry.includes(`<div class="groupset-identity has-image"><span class="product-image groupset-image tire-image"><img src="${src}"`), tire.id);
+    assert.match(entry, /loading="lazy" decoding="async" referrerpolicy="no-referrer" data-product-image>/, tire.id);
+    const figure = entry.match(/<figure class="tire-photo">[\s\S]*?<\/figure>/)?.[0] ?? '';
+    assert.ok(figure.includes({ official: 'Maker photo', retailer: 'Retailer photo', 'public-post': 'Photo from an XHS post' }[image.kind]), tire.id);
+    assert.ok(figure.includes(`href="${sourcesById.get(image.source_id).url.replaceAll('&', '&amp;')}" rel="noreferrer">Original source</a>`), tire.id);
+    assert.match(entry, /<span class="groupset-image-credit"><span>Photo<\/span> /, tire.id);
+  }
+  const ledger = [...data.tireImages].sort((a, b) => b.as_of.localeCompare(a.as_of))[0];
+  const count = (status) => ledger.entries.filter((entry) => entry.status === status).length;
+  assert.equal(count('official') + count('retailer') + count('public-post') + count('missing'), data.tires.length);
+  assert.ok(html.includes(`<h3>Photos</h3><p><strong>${count('official')} maker · ${count('retailer')} retailer · ${count('public-post')} XHS post · ${count('missing')} without a photo</strong>`));
+  for (const entry of ledger.entries.filter((item) => item.status === 'missing')) assert.ok(html.includes(`<a href="#${entry.tire_id}">`), entry.tire_id);
+  for (const [locale, label] of [['zh-Hans', '小红书帖子图片'], ['de', 'Foto aus einem XHS-Beitrag'], ['es', 'Foto de una publicación de XHS'], ['ru', 'Фото из публикации XHS']]) {
+    assert.equal(translate('Photo from an XHS post', locale), label, locale);
+    assert.notEqual(translate('1 maker · 2 retailer · 3 XHS post · 4 without a photo', locale), '1 maker · 2 retailer · 3 XHS post · 4 without a photo', locale);
+  }
+});
+
 test('the tire reference is an interface route in every language', () => {
   assert.ok(INTERFACE_ROUTES.includes('/tires/'));
   assert.match(renderTires({ ...ctx, locale: 'zh-Hans' }), /<h1>公路车外胎<\/h1>[\s\S]*对比起点/);

@@ -2562,6 +2562,29 @@ const tireDispositionLabels = { included: 'In comparison', excluded: 'Excluded',
 const tireWeightBasisLabels = { official: 'Maker claim', 'seller claim': 'Seller claim', measured: 'Lab measured', 'community report': 'Owner-measured' };
 const tireStanceLabels = { positive: 'Positive', mixed: 'Mixed', negative: 'Negative' };
 const tireWetKindLabels = { measured: 'Measured', official: 'Maker claim', 'seller claim': 'Seller claim', 'community report': 'Owner report' };
+const tireImageKindLabels = { official: 'Maker photo', retailer: 'Retailer photo', 'public-post': 'Photo from an XHS post' };
+const tireImageHostLabels = { official: 'Loaded from the maker’s website', retailer: 'Loaded from the retailer’s website', 'public-post': 'Loaded from the original XHS post' };
+
+// An exact-model photo stays on its owner's server and loads lazily without sending this
+// page's address; a failed load hides it (site.js), and a missing photo has no placeholder.
+function tireImageTag(image, src, extra = '') {
+  return `<img src="${escapeAttr(src)}" alt="${escapeAttr(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-product-image${extra}>`;
+}
+
+// The row thumbnail is not a link, so a long table adds no extra tab stops; the detail
+// photo carries the source link and credit.
+function tireThumbHtml(tire) {
+  const image = tire.image;
+  if (!image) return '';
+  return `<span class="product-image groupset-image tire-image">${tireImageTag(image, image.thumb_url ?? image.remote_url)}</span>`;
+}
+
+function tirePhotoHtml(tire, sourcesById) {
+  const image = tire.image;
+  if (!image) return '';
+  const source = sourcesById.get(image.source_id);
+  return `<figure class="tire-photo">${tireImageTag(image, image.remote_url)}<figcaption><strong>${escapeHtml(tireImageKindLabels[image.kind])}</strong> <span>${escapeHtml(image.credit)}</span> <span>${escapeHtml(tireImageHostLabels[image.kind])}</span><span class="tire-photo-shown">${escapeHtml(image.shown)}</span>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml('Original source')}</a>` : ''}</figcaption></figure>`;
+}
 
 function tireAmount(observation, { exact = false } = {}) {
   const symbol = { USD: 'US$', CNY: '¥', EUR: '€', GBP: '£', CAD: 'CA$', JPY: 'JP¥' }[observation.currency] ?? `${observation.currency} `;
@@ -2618,12 +2641,12 @@ function tireRows(ctx, tire, sourcesById, rates) {
   const routes = `<dl>${['cn', 'eu', 'na'].map((region) => `<div><dt>${escapeHtml(tireRegionLabels[region])}</dt><dd>${escapeHtml(tireAvailabilityLabels[tire.availability[region]])}</dd></div>`).join('')}</dl>${tire.availability.note ? `<p>${escapeHtml(tire.availability.note)}</p>` : ''}`;
   const prices = (tire.price_observations ?? []).map((observation) => `<div><strong>${escapeHtml(tireAmount(observation, { exact: true }))}</strong><span>${escapeHtml([observation.market, observation.width_mm ? `${observation.width_mm} mm` : '', tirePackageLabels[observation.package], observation.observed_at].filter(Boolean).join(' · '))}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
   const sourceIds = [...new Map((tire.source_ids ?? []).map((id) => [sourcesById.get(id)?.url ?? id, id])).values()];
-  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body">${sizes}<div class="groupset-detail-grid">${construction}${tests}${wet}</div><div class="groupset-detail-lower">${owners}<section><h3>Where to buy</h3>${routes}${prices ? `<div class="price-records">${prices}</div>` : ''}</section><section><h3>Confirm before buying</h3><ul>${tire.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(sourceIds, sourcesById)}</span></div></div></details>`;
+  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body">${tirePhotoHtml(tire, sourcesById)}${sizes}<div class="groupset-detail-grid">${construction}${tests}${wet}</div><div class="groupset-detail-lower">${owners}<section><h3>Where to buy</h3>${routes}${prices ? `<div class="price-records">${prices}</div>` : ''}</section><section><h3>Confirm before buying</h3><ul>${tire.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(sourceIds, sourcesById)}</span>${tire.image ? `<span class="groupset-image-credit"><span>Photo</span> ${escapeHtml(tire.image.credit)}</span>` : ''}</div></div></details>`;
   const usd = headline && rates ? convertPrice(headline.amount, headline.currency, 'USD', rates) : null;
   const sortData = ` data-groups="${escapeAttr(Object.entries(groups).filter(([, value]) => value).map(([key]) => key).join(' '))}" data-origin="${escapeAttr(tire.origin.group)}" data-construction="${escapeAttr(tire.construction)}"${Number.isFinite(reference?.weight_g) ? ` data-weight="${reference.weight_g}"` : ''}${comparable ? ` data-rr="${comparable.rr_w}"` : ''}${wetGrip !== null ? ` data-wet="${wetGrip}"` : ''}${Number.isFinite(usd) ? ` data-price-usd="${Math.round(usd)}"` : ''}`;
   const aliases = tire.aliases?.length ? `<span class="tire-aliases"><span>Also known as</span> ${escapeHtml(tire.aliases.join(', '))}</span>` : '';
   return `<tbody class="groupset-entry tire-entry" id="${escapeAttr(tire.id)}" data-tire-entry${sortData}><tr class="groupset-summary-row">
-    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(tire.name)}</strong><span>${escapeHtml(`${tire.maker} · ${tireOriginLabels[tire.origin.group] === 'International' ? tire.origin.country : tireOriginLabels[tire.origin.group]}`)}</span>${aliases}</span></div></th>
+    <th scope="row"><div class="groupset-identity${tire.image ? ' has-image' : ''}">${tireThumbHtml(tire)}<span class="groupset-name"><strong>${escapeHtml(tire.name)}</strong><span>${escapeHtml(`${tire.maker} · ${tireOriginLabels[tire.origin.group] === 'International' ? tire.origin.country : tireOriginLabels[tire.origin.group]}`)}</span>${aliases}</span></div></th>
     <td data-label="Use" data-column="best"><strong>${escapeHtml(tireUseLabels[tire.use])}</strong><span>${escapeHtml(`${tireConstructionLabels[tire.construction]} · ${tireHooklessLabels[tire.hookless]}`)}</span></td>
     <td data-label="Widths" data-column="widths"><strong>${escapeHtml(scoped.length ? `${scoped.join(' · ')} mm` : '—')}</strong><span>${escapeHtml([groupHint, others.length ? `also ${others.join(', ')} mm` : ''].filter(Boolean).join(' · '))}</span></td>
     <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${sizeLabel(reference)} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
@@ -2679,7 +2702,20 @@ function tireBudgetHtml({ qualifying, unverified }) {
   return `<div class="tire-budget" id="budget"><h3>Budget all-season: up to CNY 250 per tire</h3><p class="tire-budget-verdict"><strong>${escapeHtml(verdict)}</strong></p><p class="tire-criteria">${escapeHtml('Mainland China and Taiwan brands in 25–35 mm with a dated price of CNY 250 or less for one tire, before shipping. A supported all-season choice needs measured wet grip of at least 80, or at least two favourable first-hand wet reports with none against, and fewer than two reports of bulging or casing failure. Tread pattern, four-season marketing and seller copy are not wet evidence. Confidence: a lab test is strongest, agreeing owner reports are moderate, and one report or conflicting reports are weak. Ordered by wet evidence, then fewer casing reports, then price.')}</p><div class="tire-budget-grid">${groups}</div>${pending}</div>`;
 }
 
-function tireCoverageHtml(ledger, tiresById) {
+// Photo coverage: counts by photo kind and every tire without one, with the reason.
+function tireImageCoverageHtml(imageLedger, tiresById) {
+  if (!imageLedger) return '';
+  const entries = imageLedger.entries ?? [];
+  const count = (status) => entries.filter((entry) => entry.status === status).length;
+  const missing = entries.filter((entry) => entry.status === 'missing' && tiresById.has(entry.tire_id));
+  const list = missing.length ? `<ul>${missing.map((entry) => {
+    const tire = tiresById.get(entry.tire_id);
+    return `<li><a href="#${escapeAttr(tire.id)}">${escapeHtml(`${tire.maker} ${tire.name}`)}</a> ${escapeHtml(entry.reason)}</li>`;
+  }).join('')}</ul>` : '';
+  return `<h3>Photos</h3><p><strong>${escapeHtml(`${count('official')} maker · ${count('retailer')} retailer · ${count('public-post')} XHS post · ${count('missing')} without a photo`)}</strong></p><p>${escapeHtml("Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.")} <span>${escapeHtml(`reviewed ${imageLedger.as_of}`)}</span></p>${list}`;
+}
+
+function tireCoverageHtml(ledger, tiresById, imageLedger = null) {
   if (!ledger) return '';
   const candidates = ledger.candidates ?? [];
   const count = (disposition) => candidates.filter((candidate) => candidate.disposition === disposition).length;
@@ -2697,7 +2733,7 @@ function tireCoverageHtml(ledger, tiresById) {
     }).join('')}</div>`;
   }).join('');
   const routes = (ledger.routes ?? []).map((route) => `<li><strong>${escapeHtml(route.name)}</strong> · ${escapeHtml(route.checked_at)}: ${escapeHtml(route.summary)}</li>`).join('');
-  return `<details class="reference-guide tire-coverage" id="coverage"><summary>${escapeHtml(`Coverage: ${candidates.length} candidates from ${brands.length} brands, as of ${ledger.as_of}`)}</summary><div><p><strong>${escapeHtml(`${count('included')} included · ${count('excluded')} excluded · ${count('unresolved')} unresolved`)}</strong></p><p>${escapeHtml(ledger.scope_note)}</p><h3>Discovery routes</h3><ul>${routes}</ul><h3>Candidates by brand origin</h3>${byGroup}</div></details>`;
+  return `<details class="reference-guide tire-coverage" id="coverage"><summary>${escapeHtml(`Coverage: ${candidates.length} candidates from ${brands.length} brands, as of ${ledger.as_of}`)}</summary><div><p><strong>${escapeHtml(`${count('included')} included · ${count('excluded')} excluded · ${count('unresolved')} unresolved`)}</strong></p><p>${escapeHtml(ledger.scope_note)}</p><h3>Discovery routes</h3><ul>${routes}</ul><h3>Candidates by brand origin</h3>${byGroup}${tireImageCoverageHtml(imageLedger, tiresById)}</div></details>`;
 }
 
 export function renderTires(ctx) {
@@ -2709,6 +2745,7 @@ export function renderTires(ctx) {
   const tiresById = new Map(tires.map((tire) => [tire.id, tire]));
   const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
   const ledger = [...(ctx.data.tireCoverage ?? [])].sort((a, b) => b.as_of.localeCompare(a.as_of))[0] ?? null;
+  const imageLedger = [...(ctx.data.tireImages ?? [])].sort((a, b) => b.as_of.localeCompare(a.as_of))[0] ?? null;
   const rates = [...(ctx.data.exchangeRates ?? [])].sort((a, b) => b.rate_date.localeCompare(a.rate_date))[0] ?? null;
   const reviewed = latestDate(tires.map((tire) => tire.reviewed_at), ledger?.as_of ?? '');
   const brandCount = new Set(tires.map((tire) => tire.maker)).size;
@@ -2729,7 +2766,7 @@ export function renderTires(ctx) {
     : ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Test-, Besitzer- und Preisnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
   const html = `${originalNotes}<p class="groupset-table-note"><span>${tires.length} tires · ${brandCount} brands · reviewed ${escapeHtml(reviewed)}</span> Widths are in millimetres (25C = 25 mm). Open a row for sizes, pressure limits, lab tests, owner reports, prices and sources.</p>${shortlists}${toolbar}<div class="reference-table-wrap groupset-table-wrap tire-table-wrap" data-tires-root><table class="reference-table groupset-comparison tire-comparison"><caption class="sr-only">Road tires compared</caption><thead><tr><th>Tire</th><th>Use</th><th>Widths</th><th>Weight</th><th>Lab test</th><th>Price</th></tr></thead>${tires.map((tire) => tireRows(ctx, tire, sourcesById, rates)).join('')}</table></div>
   <details class="reference-guide"><summary>How tire fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Widths and groups</dt><dd>Nominal 700C widths in millimetres. Road lists tires sold in at least one 25–35 mm width; Wet lists tires with a 20–40 mm width and recorded wet-traction evidence.</dd></div><div><dt>Weight</dt><dd>The maker's or seller's claim at 28 mm, or the nearest recorded width. Lab-measured weights stay in the test notes.</dd></div><div><dt>Lab test</dt><dd>Bicycle Rolling Resistance's public figures: rolling resistance for one tire at 29 km/h and 42.5 kg (80 psi for 25–27 mm, 72 psi for 28–30 mm measured width), static wet grip and tread puncture points. Only tests in the same width band are comparable; tubeless tests use sealant and tube-type tests a butyl tube.</dd></div><div><dt>Wet weather</dt><dd>Measured wet grip, maker claims and owner reports are kept apart. Puncture protection is not evidence of wet grip, and tire grip does not describe rim, pad or rotor braking.</dd></div><div><dt>Hookless</dt><dd>Approved only when the maker says so; otherwise the status is shown as published. Check the rim maker's tire list and pressure limit as well.</dd></div><div><dt>Origin</dt><dd>Brand origin is where the brand is based. Made in is shown only when a source states it.</dd></div><div><dt>Price</dt><dd>A dated observation in its original currency with its store and package basis. It is not a delivered price; price sorting converts to US dollars with the dated ECB rate only to order rows.</dd></div><div><dt>Owner reports</dt><dd>Short paraphrases of public first-hand posts. They describe one rider's tire and are not tests.</dd></div><div><dt>Not stated</dt><dd>The source does not publish the value. It is not a negative finding.</dd></div></dl><p>No tire on this page is approved for a particular frame or rim. Check your frame's tire clearance on its model page and your rim's tire and pressure limits before buying.</p></div></details>
-  ${tireCoverageHtml(ledger, tiresById)}`;
+  ${tireCoverageHtml(ledger, tiresById, imageLedger)}`;
   return prosePage(ctx, {
     title,
     desc,
@@ -2792,13 +2829,13 @@ export function renderPrivacy(ctx) {
     <p>To check delivery, the analytics script reports once per page that it started, and our server counts whether each server event for Google was skipped because no session was stored, received, refused, or left uncertain. These technical counts carry no visitor or page details. Each delivery to our collector has a random one-time event ID, held briefly in memory, so a retry is not counted twice.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <p>Google processes analytics data outside your region. Its recipient and privacy information, contact options, and rights tools are described in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Allowing optional analytics includes this transfer. Advertising consent remains denied.</p>
-    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets, except maker photos that the carbon-wheel reference and image credits show from the maker's website; your browser then contacts that website without sending this page's address. Model pages and the carbon-wheel reference embed a <code>youtube-nocookie.com</code> player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.</p>
+    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets, except maker photos that the carbon-wheel reference and image credits show from the maker's website, and road-tire photos, which load from the maker's or retailer's website or from Xiaohongshu; your browser then contacts that website without sending this page's address. Model pages and the carbon-wheel reference embed a <code>youtube-nocookie.com</code> player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
 }
 
 export function renderImagePolicy(ctx) {
-  const html = `<h2>Product images</h2><p>Displayed product photos are optimized copies served by this site. Where a maker's terms do not permit a copy, a component reference shows the maker's own photo from the maker's website instead, and no copy is stored here. When a source image is unavailable or its model cannot be verified, we leave the photo out. Original sources and owners stay credited.</p><h2>Accuracy and privacy</h2><p>A photo may show a different color, region, or component build; the catalog labels material differences. Hosted copies have embedded metadata removed and are checked for visible personal identifiers.</p><h2>Corrections</h2><p>Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> for a broken image, credit correction, removal request, or better exact-model photo. Please keep private contact details out of public issues.</p><p><a href="${url(ctx.base, '/image-sources/')}">Browse image sources and credits.</a></p>`;
+  const html = `<h2>Product images</h2><p>Displayed product photos are optimized copies served by this site. Where a maker's terms do not permit a copy, a component reference shows the maker's own photo from the maker's website instead, and no copy is stored here. Road-tire photos load from the maker's or retailer's own product page or, when neither shows the exact tire, from the original public post on Xiaohongshu, always linked to that page. When a source image is unavailable or its model cannot be verified, we leave the photo out. Original sources and owners stay credited.</p><h2>Accuracy and privacy</h2><p>A photo may show a different color, region, or component build; the catalog labels material differences. Hosted copies have embedded metadata removed and are checked for visible personal identifiers.</p><h2>Corrections</h2><p>Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> for a broken image, credit correction, removal request, or better exact-model photo. Please keep private contact details out of public issues.</p><p><a href="${url(ctx.base, '/image-sources/')}">Browse image sources and credits.</a></p>`;
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 
