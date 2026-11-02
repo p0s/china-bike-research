@@ -217,8 +217,12 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
         container.closest('.groupset-identity')?.classList.remove('has-image');
         container.remove();
       }
-      // A reference-row detail photo leaves no empty caption behind.
-      image.closest('.tire-photo')?.remove();
+      // A reference-row detail photo leaves no empty caption or photo credit behind.
+      const tirePhoto = image.closest('.tire-photo');
+      if (tirePhoto instanceof HTMLElement) {
+        tirePhoto.closest('.tire-entry')?.querySelector('.groupset-image-credit')?.remove();
+        tirePhoto.remove();
+      }
       const comparison = image.closest('.compare-product-head');
       if (comparison instanceof HTMLElement) comparison.classList.add('has-no-image');
       image.remove();
