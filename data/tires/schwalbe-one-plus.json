@@ -35,21 +35,21 @@
       "etrto": "25-622",
       "weight_g": 415,
       "max_psi": 130,
-      "max_bar": 9.0
+      "max_bar": 9
     },
     {
       "width_mm": 28,
       "etrto": "28-622",
       "weight_g": 480,
       "max_psi": 115,
-      "max_bar": 8.0
+      "max_bar": 8
     },
     {
       "width_mm": 30,
       "etrto": "30-622",
       "weight_g": 585,
       "max_psi": 100,
-      "max_bar": 7.0
+      "max_bar": 7
     }
   ],
   "caveats": [
@@ -73,8 +73,62 @@
   "source_ids": [
     "schwalbe-one-plus-official-2026-11-01",
     "schwalbe-north-america-road-tires-2026-11-01",
-    "schwalbe-legal-notice-2026-11-01"
+    "schwalbe-legal-notice-2026-11-01",
+    "bike-components-schwalbe-one-plus-wired-reviews",
+    "bike-components-schwalbe-one-plus-reviews"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. The wired and folding versions count as the same tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-schwalbe-one-plus-wired-reviews"
+        ],
+        "published_at": "2026-05-12",
+        "width_mm": 32,
+        "setup": null,
+        "exposure": "3,000 km",
+        "codes": {
+          "overall": "mixed",
+          "grip": "favourable",
+          "speed": "favourable",
+          "wear": "unfavourable"
+        },
+        "summary": "Good grip and rolls without noticeable drag at a fair price, but after 3,000 km on asphalt and concrete the tread was covered in holes."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-one-plus-reviews"
+        ],
+        "published_at": "2026-10-06",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Much heavier than the standard One, but the owner finds it almost completely puncture-proof."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "none",
+        "note": "The one written review describes only fitting"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "Wired and folding listings; one review gives no riding detail"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "Only the earlier Durano Plus was tested"
+      }
+    ]
+  }
 }
