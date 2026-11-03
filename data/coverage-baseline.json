@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2172,
+      "sources": 2179,
       "images": 900,
       "videos": 272,
       "opinions": 13,
@@ -355,16 +355,23 @@
       "brr-comments-continental-aero-111",
       "brr-comments-continental-gatorskin-2015",
       "brr-comments-continental-grand-prix-4-season",
+      "brr-comments-continental-grand-prix-4-season-2015",
       "brr-comments-continental-grand-prix-5000-2018",
       "brr-comments-continental-grand-prix-5000-as-tr-28",
       "brr-comments-continental-grand-prix-5000-s-tr",
+      "brr-comments-continental-grand-prix-5000-s-tr-32",
+      "brr-comments-continental-grand-prix-5000-s-tr-35",
       "brr-comments-michelin-pro-5-28",
       "brr-comments-michelin-pro-5-32",
       "brr-comments-michelin-pro-5-35",
       "brr-comments-michelin-pro-5-40",
+      "brr-comments-pirelli-cinturato-evo-40",
       "brr-comments-pirelli-p-zero-race-tlr-28",
       "brr-comments-schwalbe-pro-one-tle-2020",
+      "brr-comments-schwalbe-pro-one-tle-34",
+      "brr-comments-schwalbe-pro-one-tle-38",
       "brr-comments-silca-protocol-rcr-38",
+      "brr-comments-vittoria-corsa-pro-control-34",
       "brr-comments-vittoria-corsa-pro-control-tlr",
       "bxt-055-bikeinsights-geometry-2026-09-01",
       "bxt-055-official",
@@ -11493,6 +11500,18 @@
         "type",
         "url"
       ],
+      "brr-comments-continental-grand-prix-4-season-2015": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-continental-grand-prix-5000-2018": [
         "accessed_at",
         "language",
@@ -11518,6 +11537,30 @@
         "url"
       ],
       "brr-comments-continental-grand-prix-5000-s-tr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-continental-grand-prix-5000-s-tr-32": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-continental-grand-prix-5000-s-tr-35": [
         "accessed_at",
         "language",
         "notes",
@@ -11577,6 +11620,18 @@
         "type",
         "url"
       ],
+      "brr-comments-pirelli-cinturato-evo-40": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-pirelli-p-zero-race-tlr-28": [
         "accessed_at",
         "language",
@@ -11601,7 +11656,43 @@
         "type",
         "url"
       ],
+      "brr-comments-schwalbe-pro-one-tle-34": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-schwalbe-pro-one-tle-38": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-silca-protocol-rcr-38": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-vittoria-corsa-pro-control-34": [
         "accessed_at",
         "language",
         "notes",
@@ -132239,16 +132330,23 @@
       "brr-comments-continental-aero-111": [],
       "brr-comments-continental-gatorskin-2015": [],
       "brr-comments-continental-grand-prix-4-season": [],
+      "brr-comments-continental-grand-prix-4-season-2015": [],
       "brr-comments-continental-grand-prix-5000-2018": [],
       "brr-comments-continental-grand-prix-5000-as-tr-28": [],
       "brr-comments-continental-grand-prix-5000-s-tr": [],
+      "brr-comments-continental-grand-prix-5000-s-tr-32": [],
+      "brr-comments-continental-grand-prix-5000-s-tr-35": [],
       "brr-comments-michelin-pro-5-28": [],
       "brr-comments-michelin-pro-5-32": [],
       "brr-comments-michelin-pro-5-35": [],
       "brr-comments-michelin-pro-5-40": [],
+      "brr-comments-pirelli-cinturato-evo-40": [],
       "brr-comments-pirelli-p-zero-race-tlr-28": [],
       "brr-comments-schwalbe-pro-one-tle-2020": [],
+      "brr-comments-schwalbe-pro-one-tle-34": [],
+      "brr-comments-schwalbe-pro-one-tle-38": [],
       "brr-comments-silca-protocol-rcr-38": [],
+      "brr-comments-vittoria-corsa-pro-control-34": [],
       "brr-comments-vittoria-corsa-pro-control-tlr": [],
       "bxt-055-bikeinsights-geometry-2026-09-01": [],
       "bxt-055-official": [],
@@ -139872,6 +139970,7 @@
         "source_ids=bike-components-gp-4-season-reviews",
         "source_ids=bike-components-gp-4-season-set-reviews",
         "source_ids=brr-comments-continental-grand-prix-4-season",
+        "source_ids=brr-comments-continental-grand-prix-4-season-2015",
         "source_ids=continental-grand-prix-4-season-global-2026-11-01",
         "source_ids=performance-bicycle-grand-prix-4-season-2026-11-01",
         "source_ids=sigma-sports-gp-4-season-reviews"
@@ -139893,6 +139992,8 @@
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=bike-components-gp5000-as-tr-reviews",
         "source_ids=brr-comments-continental-grand-prix-5000-as-tr-28",
+        "source_ids=brr-comments-continental-grand-prix-5000-s-tr-35",
+        "source_ids=brr-comments-pirelli-cinturato-evo-40",
         "source_ids=brr-comments-pirelli-p-zero-race-tlr-28",
         "source_ids=continental-grand-prix-5000-allseason-tr-official-2026-11-01",
         "source_ids=continental-grand-prix-5000-as-tr-tmall-2026-11-01",
@@ -139907,6 +140008,9 @@
         "source_ids=bike-components-gp5000-s-tr-set-reviews",
         "source_ids=brr-comments-continental-aero-111",
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr",
+        "source_ids=brr-comments-continental-grand-prix-5000-s-tr-32",
+        "source_ids=brr-comments-continental-grand-prix-5000-s-tr-35",
+        "source_ids=brr-comments-schwalbe-pro-one-tle-34",
         "source_ids=continental-grand-prix-5000-s-tr-official-2026-11-01",
         "source_ids=continental-grand-prix-5000-s-tr-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
@@ -140479,7 +140583,10 @@
       "schwalbe-pro-one-tubeless": [
         "image.source_id=cahaba-schwalbe-pro-one-tlr-2026-11-02",
         "source_ids=bike-components-pro-one-tle-reviews",
+        "source_ids=brr-comments-continental-grand-prix-5000-s-tr-32",
         "source_ids=brr-comments-schwalbe-pro-one-tle-2020",
+        "source_ids=brr-comments-schwalbe-pro-one-tle-34",
+        "source_ids=brr-comments-schwalbe-pro-one-tle-38",
         "source_ids=cahaba-schwalbe-pro-one-tlr-2026-11-02",
         "source_ids=schwalbe-legal-notice-2026-11-01",
         "source_ids=schwalbe-north-america-road-tires-2026-11-01",
@@ -140599,6 +140706,7 @@
         "image.source_id=vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=bike-components-corsa-pro-control-tlr-reviews",
+        "source_ids=brr-comments-vittoria-corsa-pro-control-34",
         "source_ids=brr-comments-vittoria-corsa-pro-control-tlr",
         "source_ids=sigma-sports-corsa-pro-control-tlr-reviews",
         "source_ids=vittoria-corsa-pro-control-tmall-2026-11-01",
@@ -151930,6 +152038,14 @@
         "specification": 0
       }
     },
+    "brr-comments-continental-grand-prix-4-season-2015": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-continental-grand-prix-5000-2018": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -151947,6 +152063,22 @@
       }
     },
     "brr-comments-continental-grand-prix-5000-s-tr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-continental-grand-prix-5000-s-tr-32": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-continental-grand-prix-5000-s-tr-35": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
@@ -151986,6 +152118,14 @@
         "specification": 0
       }
     },
+    "brr-comments-pirelli-cinturato-evo-40": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-pirelli-p-zero-race-tlr-28": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -152002,7 +152142,31 @@
         "specification": 0
       }
     },
+    "brr-comments-schwalbe-pro-one-tle-34": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-schwalbe-pro-one-tle-38": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-silca-protocol-rcr-38": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-vittoria-corsa-pro-control-34": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,

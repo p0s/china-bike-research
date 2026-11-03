@@ -160,7 +160,10 @@
     "brr-comments-continental-grand-prix-5000-s-tr",
     "xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
     "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20",
-    "brr-comments-continental-aero-111"
+    "brr-comments-continental-aero-111",
+    "brr-comments-continental-grand-prix-5000-s-tr-32",
+    "brr-comments-schwalbe-pro-one-tle-34",
+    "brr-comments-continental-grand-prix-5000-s-tr-35"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -192,7 +195,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
     "reports": [
       {
         "source_ids": [
@@ -703,6 +706,47 @@
           "grip": "mixed"
         },
         "summary": "Felt slightly vague in fast corners compared with the ARISUN tubeless tire that replaced it."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-5000-s-tr-32"
+        ],
+        "published_at": "2025-08-29",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Very noticeably fast-rolling, but it punctured often from harmless-looking debris and now leaks to about half pressure mid-ride; the owner is replacing it with a more puncture-resistant tire."
+      },
+      {
+        "source_ids": [
+          "brr-comments-schwalbe-pro-one-tle-34",
+          "brr-comments-continental-grand-prix-5000-s-tr-32"
+        ],
+        "published_at": "2022-08-05",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "Consistently up to about 1 km/h faster on the flats than the Pro One TLE the owner also commutes on, though it rides less comfortably."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-5000-s-tr-35"
+        ],
+        "published_at": "2026-04-25",
+        "width_mm": 35,
+        "setup": "tubeless",
+        "exposure": "Almost four weeks",
+        "codes": {
+          "overall": "mixed",
+          "punctures": "unfavourable"
+        },
+        "summary": "Rides very well but is too fragile, as the owner generally finds this tire: the rear needed five plugs in under four weeks."
       }
     ],
     "checks": [
@@ -721,8 +765,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 3,
-        "note": "Test pages for 25, 28 and 30 mm plus GP5000 S TR owners commenting on the Aero 111 test"
+        "owners": 6,
+        "note": "Test pages for 25, 28, 30, 32 and 35 mm and the tanwall option, plus owners commenting on other tires' tests"
       },
       {
         "route": "xiaohongshu",

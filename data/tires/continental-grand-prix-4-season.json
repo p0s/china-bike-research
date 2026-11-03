@@ -90,7 +90,8 @@
     "sigma-sports-gp-4-season-reviews",
     "bike-components-gp-4-season-reviews",
     "bike-components-gp-4-season-set-reviews",
-    "brr-comments-continental-grand-prix-4-season"
+    "brr-comments-continental-grand-prix-4-season",
+    "brr-comments-continental-grand-prix-4-season-2015"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -122,7 +123,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the 2015 test page on Bicycle Rolling Resistance is now read as well. Continental has not announced a new generation, though the site measured differences between its 2015 and 2022 samples.",
     "reports": [
       {
         "source_ids": [
@@ -648,7 +649,8 @@
       },
       {
         "source_ids": [
-          "brr-comments-continental-grand-prix-4-season"
+          "brr-comments-continental-grand-prix-4-season",
+          "brr-comments-continental-grand-prix-4-season-2015"
         ],
         "published_at": "2022-04-11",
         "width_mm": 32,
@@ -656,9 +658,10 @@
         "codes": {
           "overall": "unfavourable",
           "speed": "unfavourable",
-          "punctures": "unfavourable"
+          "punctures": "unfavourable",
+          "wet": "mixed"
         },
-        "summary": "A 32 mm set bought in 2018 rode harshly, felt draggy and often punctured from small glass."
+        "summary": "A 32 mm set bought in 2018 rode harshly, felt draggy, was not much grippier in the wet than the owner's summer tires and often punctured from small glass."
       },
       {
         "source_ids": [
@@ -675,6 +678,153 @@
           "wet": "favourable"
         },
         "summary": "About 1,200 winter miles with only a handful of punctures in harsh conditions, plenty of tread left and no wet-grip problem at moderate speed."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2016-01-01",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 8,000 km",
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "punctures": "favourable",
+          "speed": "unfavourable"
+        },
+        "summary": "Great winter tires for any weather, including rain and snow, with no puncture in about 8,000 km, but about 10 W slower than the GP4000 in the owner's own comparison."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2015-10-07",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Up to 10,000 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "About half as many flats as the GP4000S it replaced and amazing durability: two tires reached 10,000 miles and another 8,500."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2016-01-29",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "About 2,800 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Three years and 2,800 miles with one pinch flat and at least 60% of the tread left; glass made small nicks but never got through."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2017-04-27",
+        "width_mm": 25,
+        "setup": null,
+        "exposure": "Just under 3,000 miles",
+        "codes": {
+          "overall": "favourable",
+          "wear": "unfavourable"
+        },
+        "summary": "Loved on a loaded commuter, but the rear was almost worn through after just under 3,000 miles in about a year."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2015-06-15",
+        "width_mm": 23,
+        "setup": null,
+        "exposure": "Several winters",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "The owner's winter tire for several years: one puncture in thousands of miles and good durability, over 1,500 miles on the last set despite wheelspin in cinders and snow."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2016-08-29",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "One winter",
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "punctures": "favourable",
+          "speed": "unfavourable"
+        },
+        "summary": "A first winter of cold rain and rough chip roads with no puncture and excellent grip on wet, fast descents, though it feels more sluggish than a summer tire."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2015-06-11",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Several years",
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "punctures": "mixed"
+        },
+        "summary": "The owner's go-to winter and rain tire for several years: never skidded in very sloppy conditions; puncture resistance is acceptable, but the ride is stiff."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2021-05-06",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "wet": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Very good grip in the wet and cold on a commuter, but constant punctures on a glass-strewn route; cut open, the tire showed only a narrow puncture belt under the tread centre."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2019-04-14",
+        "width_mm": 32,
+        "setup": null,
+        "exposure": "Two sets",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "On a second pair for frequent riding on choppy, debris-strewn roads and some gravel: one puncture, from a screw; the first set lasted a little over 4,000 km."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-4-season-2015"
+        ],
+        "published_at": "2018-06-29",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "First rides",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Feels excellent on the front, though it measures about 30 mm."
       }
     ],
     "checks": [
@@ -693,7 +843,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 3
+        "owners": 13,
+        "note": "2015 and 2022 test pages"
       }
     ]
   }

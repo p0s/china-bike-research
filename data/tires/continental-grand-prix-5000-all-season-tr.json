@@ -129,7 +129,9 @@
     "bike-components-gp5000-as-tr-reviews",
     "sigma-sports-gp5000-as-tr-reviews",
     "brr-comments-continental-grand-prix-5000-as-tr-28",
-    "brr-comments-pirelli-p-zero-race-tlr-28"
+    "brr-comments-pirelli-p-zero-race-tlr-28",
+    "brr-comments-continental-grand-prix-5000-s-tr-35",
+    "brr-comments-pirelli-cinturato-evo-40"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -161,7 +163,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
     "reports": [
       {
         "source_ids": [
@@ -498,6 +500,34 @@
           "overall": "favourable"
         },
         "summary": "Good quality and runs true after a few kilometres; measures 29.6 mm on a 21 mm rim."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-5000-s-tr-35"
+        ],
+        "published_at": "2026-04-25",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Found it too fragile and was glad to replace it."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-cinturato-evo-40"
+        ],
+        "published_at": "2026-02-02",
+        "width_mm": 35,
+        "setup": "tubeless",
+        "exposure": "About 13,000 km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Two winters of light touring on mostly paved roads with gravel, broken pavement and cobbles: about 13,000 km with no flat, puncture or pressure loss."
       }
     ],
     "checks": [
@@ -516,7 +546,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 2
+        "owners": 4,
+        "note": "Test pages for 25, 28, 32 and 35 mm (black and cream), plus owners commenting on other tires' tests"
       }
     ]
   }

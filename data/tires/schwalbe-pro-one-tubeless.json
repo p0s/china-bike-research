@@ -103,7 +103,10 @@
     "cahaba-schwalbe-pro-one-tlr-2026-11-02",
     "sigma-sports-pro-one-tle-reviews",
     "bike-components-pro-one-tle-reviews",
-    "brr-comments-schwalbe-pro-one-tle-2020"
+    "brr-comments-schwalbe-pro-one-tle-2020",
+    "brr-comments-schwalbe-pro-one-tle-34",
+    "brr-comments-continental-grand-prix-5000-s-tr-32",
+    "brr-comments-schwalbe-pro-one-tle-38"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -135,7 +138,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
     "reports": [
       {
         "source_ids": [
@@ -531,6 +534,72 @@
           "punctures": "favourable"
         },
         "summary": "Supple and sure-footed; the rear reached its wear indicator at about 2,500 miles and every puncture sealed."
+      },
+      {
+        "source_ids": [
+          "brr-comments-schwalbe-pro-one-tle-34"
+        ],
+        "published_at": "2022-05-29",
+        "width_mm": 34,
+        "setup": "tubeless",
+        "exposure": "About 100 miles",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Very impressed after about 100 miles: a noticeably smoother ride than the GP5000 TL on the owner's other wheels, and much easier to mount."
+      },
+      {
+        "source_ids": [
+          "brr-comments-schwalbe-pro-one-tle-34",
+          "brr-comments-continental-grand-prix-5000-s-tr-32"
+        ],
+        "published_at": "2022-08-05",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "speed": "mixed",
+          "punctures": "favourable"
+        },
+        "summary": "Rides noticeably more comfortably than the GP5000 S TR on the owner's commute but is consistently up to about 1 km/h slower on the flats; one tack puncture sealed very quickly."
+      },
+      {
+        "source_ids": [
+          "brr-comments-schwalbe-pro-one-tle-38"
+        ],
+        "published_at": "2025-08-23",
+        "width_mm": 38,
+        "setup": "tubeless",
+        "codes": {
+          "punctures": "unfavourable"
+        },
+        "summary": "Used in an ultra-distance event: below-average puncture protection; the sealant has always sealed, but pressure loss is sometimes noticeable."
+      },
+      {
+        "source_ids": [
+          "brr-comments-schwalbe-pro-one-tle-38"
+        ],
+        "published_at": "2024-08-05",
+        "width_mm": 38,
+        "setup": null,
+        "exposure": "Over 1,000 miles",
+        "codes": {
+          "overall": "unfavourable",
+          "grip": "mixed"
+        },
+        "summary": "Very grippy on the road but with very little traction on hardpacked dirt, and it measured narrower than labelled; the owner replaced it after over 1,000 miles."
+      },
+      {
+        "source_ids": [
+          "brr-comments-schwalbe-pro-one-tle-38"
+        ],
+        "published_at": "2024-08-07",
+        "width_mm": 38,
+        "setup": null,
+        "exposure": "Five months",
+        "codes": {
+          "grip": "favourable"
+        },
+        "summary": "Excellent road grip and a very supple ride over five months, though it picked up many small cuts off road."
       }
     ],
     "checks": [
@@ -549,8 +618,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 5,
-        "note": "2020 TLE test page; earlier Pro One versions not counted"
+        "owners": 10,
+        "note": "2020 TLE test page and the 32, 34 and 38 mm gravel pages; earlier Pro One versions not counted"
       }
     ]
   }
