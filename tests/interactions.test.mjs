@@ -142,7 +142,8 @@ test('catalog and shortlist previews share uncropped paint while preserving link
   assert.match(script, /\.catalog-row \.product-image-link, \.curated-group \.product-image-link/);
   assert.match(styles, /\.product-image:has\(\.product-image-link\.is-previewing\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
   assert.match(styles, /\.model-figure\.is-unavailable,[\s\S]*?\.gallery-thumb\[hidden\] \{ display: none; \}/);
-  assert.match(styles, /\.model-grid\.has-no-image \{[^}]*grid-template-columns: minmax\(0, 760px\);[^}]*justify-content: center;/);
+  // A photo-less decision panel aligns with the content column below it.
+  assert.match(styles, /\.model-grid\.has-no-image \{[^}]*grid-template-columns: minmax\(0, 760px\);[^}]*justify-content: start;/);
   assert.match(styles, /\.catalog-product\.has-no-image, \.catalog-product:not\(:has\(\.product-image\)\) \{ grid-template-columns: minmax\(0, 1fr\); \}/);
   assert.doesNotMatch(styles, /^\s*\.selection-actions \.text-button \{ display: none; \}/m);
 });
