@@ -25,7 +25,7 @@
       "etrto": "26-622",
       "weight_g": 245,
       "max_psi": 102,
-      "max_bar": 7.0,
+      "max_bar": 7,
       "note": "Hookless 73 psi; rim 13-22 mm"
     },
     {
@@ -33,7 +33,7 @@
       "etrto": "29-622",
       "weight_g": 275,
       "max_psi": 102,
-      "max_bar": 7.0,
+      "max_bar": 7,
       "note": "Hookless 73 psi; rim 16-25 mm"
     },
     {
@@ -85,7 +85,9 @@
     "continental-aero-111-official-2026-11-01",
     "continental-road-range-us-2026-11-01",
     "continental-road-range-de-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-aero-111-reviews",
+    "brr-comments-continental-aero-111"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -114,5 +116,68 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-aero-111-reviews"
+        ],
+        "published_at": "2026-05-26",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A quality tire that rides well; a bit tight to fit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-aero-111-reviews"
+        ],
+        "published_at": "2025-08-23",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About a month",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Easy to fit and seems fast after a month."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-aero-111"
+        ],
+        "published_at": "2024-08-12",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Awesome performance, but less puncture resistant than the GP5000 All Season, with more punctures in the wet."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "26 and 29 mm test pages, 40 comments"
+      }
+    ]
   }
 }

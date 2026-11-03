@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2150,
+      "sources": 2162,
       "images": 900,
       "videos": 272,
       "opinions": 13,
@@ -331,14 +331,20 @@
       "bigrock-sohtea-panda-podium-2026-08-17",
       "bigrock-sohtea-panda-podium-recheck-2026-09-23",
       "bike-components-corsa-pro-control-tlr-reviews",
+      "bike-components-gatorskin-reviews",
       "bike-components-gp-4-season-reviews",
       "bike-components-gp-4-season-set-reviews",
       "bike-components-gp5000-as-tr-reviews",
+      "bike-components-gp5000-clincher-reviews",
+      "bike-components-gp5000-clincher-set-reviews",
       "bike-components-gp5000-s-tr-reviews",
       "bike-components-gp5000-s-tr-set-reviews",
+      "bike-components-grand-prix-tr-reviews",
       "bike-components-michelin-pro5-tlr-reviews",
+      "bike-components-power-protection-tlr-reviews",
       "bike-components-pro-one-tle-reviews",
       "bike-components-strada-bianca-pro-tlr-reviews",
+      "bike-components-ultra-sport-iii-reviews",
       "bikeradar-cervelo-aspero5-2026-08-29",
       "bikeradar-giant-founder-2026-02-17",
       "biketo-girder-vagrant-2016-2026-10-23",
@@ -346,7 +352,10 @@
       "biketo-quick-gr-one-launch-2025",
       "brr-comments-challenge-strada-bianca-pro-htlr",
       "brr-comments-challenge-strada-bianca-pro-htlr-40",
+      "brr-comments-continental-aero-111",
+      "brr-comments-continental-gatorskin-2015",
       "brr-comments-continental-grand-prix-4-season",
+      "brr-comments-continental-grand-prix-5000-2018",
       "brr-comments-continental-grand-prix-5000-as-tr-28",
       "brr-comments-continental-grand-prix-5000-s-tr",
       "brr-comments-pirelli-p-zero-race-tlr-28",
@@ -1753,11 +1762,14 @@
       "shimano-sm-bb72-41b-official-2026-08-27",
       "shimano-sm-rt70-official-2026-08-27",
       "shimano-ultegra-r8150-official-2026-08-24",
+      "sigma-sports-aero-111-reviews",
       "sigma-sports-bontrager-aw3-hard-case-reviews",
       "sigma-sports-cinturato-evo-tlr-reviews",
       "sigma-sports-corsa-pro-control-tlr-reviews",
+      "sigma-sports-gatorskin-reviews",
       "sigma-sports-gp-4-season-reviews",
       "sigma-sports-gp5000-as-tr-reviews",
+      "sigma-sports-gp5000-clincher-reviews",
       "sigma-sports-gp5000-s-tr-reviews",
       "sigma-sports-pro-one-tle-reviews",
       "silca-about-official-2026-11-01",
@@ -11183,6 +11195,18 @@
         "type",
         "url"
       ],
+      "bike-components-gatorskin-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bike-components-gp-4-season-reviews": [
         "accessed_at",
         "language",
@@ -11219,6 +11243,30 @@
         "type",
         "url"
       ],
+      "bike-components-gp5000-clincher-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-gp5000-clincher-set-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bike-components-gp5000-s-tr-reviews": [
         "accessed_at",
         "language",
@@ -11243,7 +11291,31 @@
         "type",
         "url"
       ],
+      "bike-components-grand-prix-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bike-components-michelin-pro5-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-power-protection-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -11268,6 +11340,18 @@
         "url"
       ],
       "bike-components-strada-bianca-pro-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-ultra-sport-iii-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -11363,7 +11447,43 @@
         "type",
         "url"
       ],
+      "brr-comments-continental-aero-111": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-continental-gatorskin-2015": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-continental-grand-prix-4-season": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-continental-grand-prix-5000-2018": [
         "accessed_at",
         "language",
         "notes",
@@ -29226,6 +29346,18 @@
         "type",
         "url"
       ],
+      "sigma-sports-aero-111-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sigma-sports-bontrager-aw3-hard-case-reviews": [
         "accessed_at",
         "language",
@@ -29262,6 +29394,18 @@
         "type",
         "url"
       ],
+      "sigma-sports-gatorskin-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sigma-sports-gp-4-season-reviews": [
         "accessed_at",
         "language",
@@ -29275,6 +29419,18 @@
         "url"
       ],
       "sigma-sports-gp5000-as-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-gp5000-clincher-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -77705,6 +77861,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -77753,6 +77913,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "protection",
@@ -77801,6 +77965,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -77903,6 +78070,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -78011,6 +78182,7 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
         "owner_evidence.coded_at",
         "owner_evidence.reports",
         "owner_evidence.screening_note",
@@ -78065,6 +78237,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78113,6 +78289,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -78162,6 +78341,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -80748,6 +80931,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -81467,6 +81654,7 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
         "owner_evidence.coded_at",
         "owner_evidence.reports",
         "owner_evidence.screening_note",
@@ -131862,14 +132050,20 @@
       "bigrock-sohtea-panda-podium-2026-08-17": [],
       "bigrock-sohtea-panda-podium-recheck-2026-09-23": [],
       "bike-components-corsa-pro-control-tlr-reviews": [],
+      "bike-components-gatorskin-reviews": [],
       "bike-components-gp-4-season-reviews": [],
       "bike-components-gp-4-season-set-reviews": [],
       "bike-components-gp5000-as-tr-reviews": [],
+      "bike-components-gp5000-clincher-reviews": [],
+      "bike-components-gp5000-clincher-set-reviews": [],
       "bike-components-gp5000-s-tr-reviews": [],
       "bike-components-gp5000-s-tr-set-reviews": [],
+      "bike-components-grand-prix-tr-reviews": [],
       "bike-components-michelin-pro5-tlr-reviews": [],
+      "bike-components-power-protection-tlr-reviews": [],
       "bike-components-pro-one-tle-reviews": [],
       "bike-components-strada-bianca-pro-tlr-reviews": [],
+      "bike-components-ultra-sport-iii-reviews": [],
       "bikeradar-cervelo-aspero5-2026-08-29": [],
       "bikeradar-giant-founder-2026-02-17": [],
       "biketo-girder-vagrant-2016-2026-10-23": [],
@@ -131877,7 +132071,10 @@
       "biketo-quick-gr-one-launch-2025": [],
       "brr-comments-challenge-strada-bianca-pro-htlr": [],
       "brr-comments-challenge-strada-bianca-pro-htlr-40": [],
+      "brr-comments-continental-aero-111": [],
+      "brr-comments-continental-gatorskin-2015": [],
       "brr-comments-continental-grand-prix-4-season": [],
+      "brr-comments-continental-grand-prix-5000-2018": [],
       "brr-comments-continental-grand-prix-5000-as-tr-28": [],
       "brr-comments-continental-grand-prix-5000-s-tr": [],
       "brr-comments-pirelli-p-zero-race-tlr-28": [],
@@ -133332,11 +133529,14 @@
       "shimano-sm-bb72-41b-official-2026-08-27": [],
       "shimano-sm-rt70-official-2026-08-27": [],
       "shimano-ultegra-r8150-official-2026-08-24": [],
+      "sigma-sports-aero-111-reviews": [],
       "sigma-sports-bontrager-aw3-hard-case-reviews": [],
       "sigma-sports-cinturato-evo-tlr-reviews": [],
       "sigma-sports-corsa-pro-control-tlr-reviews": [],
+      "sigma-sports-gatorskin-reviews": [],
       "sigma-sports-gp-4-season-reviews": [],
       "sigma-sports-gp5000-as-tr-reviews": [],
+      "sigma-sports-gp5000-clincher-reviews": [],
       "sigma-sports-gp5000-s-tr-reviews": [],
       "sigma-sports-pro-one-tle-reviews": [],
       "silca-about-official-2026-11-01": [],
@@ -139467,15 +139667,20 @@
       "continental-aero-111": [
         "image.source_id=continental-aero-111-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-continental-aero-111",
         "source_ids=continental-aero-111-official-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
-        "source_ids=continental-road-range-us-2026-11-01"
+        "source_ids=continental-road-range-us-2026-11-01",
+        "source_ids=sigma-sports-aero-111-reviews"
       ],
       "continental-gatorskin": [
         "image.source_id=continental-road-range-us-2026-11-01",
+        "source_ids=bike-components-gatorskin-reviews",
+        "source_ids=brr-comments-continental-gatorskin-2015",
         "source_ids=continental-gatorskin-official-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
-        "source_ids=continental-road-range-us-2026-11-01"
+        "source_ids=continental-road-range-us-2026-11-01",
+        "source_ids=sigma-sports-gatorskin-reviews"
       ],
       "continental-grand-prix": [
         "image.source_id=continental-grand-prix-official-2026-11-01",
@@ -139496,10 +139701,14 @@
       "continental-grand-prix-5000": [
         "image.source_id=continental-grand-prix-5000-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-gp5000-clincher-reviews",
+        "source_ids=bike-components-gp5000-clincher-set-reviews",
+        "source_ids=brr-comments-continental-grand-prix-5000-2018",
         "source_ids=continental-grand-prix-5000-official-2026-11-01",
         "source_ids=continental-grand-prix-5000-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
-        "source_ids=continental-road-range-us-2026-11-01"
+        "source_ids=continental-road-range-us-2026-11-01",
+        "source_ids=sigma-sports-gp5000-clincher-reviews"
       ],
       "continental-grand-prix-5000-all-season-tr": [
         "image.source_id=continental-grand-prix-5000-allseason-tr-official-2026-11-01",
@@ -139518,6 +139727,7 @@
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=bike-components-gp5000-s-tr-reviews",
         "source_ids=bike-components-gp5000-s-tr-set-reviews",
+        "source_ids=brr-comments-continental-aero-111",
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr",
         "source_ids=continental-grand-prix-5000-s-tr-official-2026-11-01",
         "source_ids=continental-grand-prix-5000-s-tr-tmall-2026-11-01",
@@ -139530,6 +139740,7 @@
       "continental-grand-prix-tr": [
         "image.source_id=continental-grand-prix-tr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-grand-prix-tr-reviews",
         "source_ids=continental-grand-prix-tr-official-2026-11-01",
         "source_ids=continental-grand-prix-tr-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
@@ -139545,6 +139756,7 @@
       "continental-ultra-sport-iii": [
         "image.source_id=continental-ultra-sport-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-ultra-sport-iii-reviews",
         "source_ids=continental-road-range-de-2026-11-01",
         "source_ids=continental-road-range-us-2026-11-01",
         "source_ids=continental-ultra-sport-iii-tmall-2026-11-01",
@@ -139871,6 +140083,7 @@
       ],
       "michelin-power-protection-tlr": [
         "image.source_id=michelin-power-protection-tlr-competition-line-official-2026-11-01",
+        "source_ids=bike-components-power-protection-tlr-reviews",
         "source_ids=michelin-power-protection-tlr-competition-line-official-2026-11-01",
         "source_ids=michelin-power-protection-tlr-tmall-2026-11-01",
         "source_ids=michelin-road-range-gb-2026-11-01"
@@ -139957,6 +140170,7 @@
       "pirelli-p-zero-race-tlr": [
         "image.source_id=pirelli-p-zero-race-tlr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-continental-aero-111",
         "source_ids=brr-comments-pirelli-p-zero-race-tlr-28",
         "source_ids=cahaba-pirelli-p-zero-race-tlr-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-official-2026-11-01",
@@ -151337,6 +151551,14 @@
         "specification": 0
       }
     },
+    "bike-components-gatorskin-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bike-components-gp-4-season-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -151361,6 +151583,22 @@
         "specification": 0
       }
     },
+    "bike-components-gp5000-clincher-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-gp5000-clincher-set-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bike-components-gp5000-s-tr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -151377,7 +151615,23 @@
         "specification": 0
       }
     },
+    "bike-components-grand-prix-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bike-components-michelin-pro5-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-power-protection-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
@@ -151394,6 +151648,14 @@
       }
     },
     "bike-components-strada-bianca-pro-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-ultra-sport-iii-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
@@ -151457,7 +151719,31 @@
         "specification": 0
       }
     },
+    "brr-comments-continental-aero-111": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-continental-gatorskin-2015": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-continental-grand-prix-4-season": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-continental-grand-prix-5000-2018": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
@@ -162820,6 +163106,14 @@
         "specification": 3
       }
     },
+    "sigma-sports-aero-111-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "sigma-sports-bontrager-aw3-hard-case-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -162844,6 +163138,14 @@
         "specification": 0
       }
     },
+    "sigma-sports-gatorskin-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "sigma-sports-gp-4-season-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -162853,6 +163155,14 @@
       }
     },
     "sigma-sports-gp5000-as-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-gp5000-clincher-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
