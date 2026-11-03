@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 2189,
       "images": 911,
-      "videos": 272,
+      "videos": 276,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -3401,6 +3401,7 @@
       "bikelabhq-sava-a7l-pro-review",
       "bikelabhq-trek-domane-sl5-gen4-six-months",
       "bikeradar-giant-propel-2026-first-look",
+      "bikeradar-roubaix-sl8-expert-vs-defy-advanced-sl",
       "bikeradar-winspace-m6-review",
       "bikeroom-de-rosa-new-838-cristiano-de-rosa",
       "bikesales-ican-sn04-review",
@@ -3478,6 +3479,7 @@
       "daryl-pace-carbonda-cfr707-build",
       "daryl-pace-carbonda-cfr707-frameset-build",
       "david-arthur-canyon-aeroad-cfr-first-ride",
+      "david-arthur-canyon-aeroad-cfr-vs-cf-slx",
       "david-arthur-canyon-grail-tire-clearance",
       "david-arthur-colnago-y1rs-first-ride",
       "david-arthur-elves-vanyar-pro-disc-first-look",
@@ -3488,6 +3490,8 @@
       "david-arthur-seka-spear-first-ride",
       "david-arthur-specialized-roubaix-sl8-first-ride",
       "david-arthur-specialized-s-works-crux-long-term",
+      "david-arthur-tarmac-sl8-pro-six-month-review",
+      "david-arthur-trek-domane-sl6-review",
       "david-arthur-winspace-slc3-review",
       "david-arthur-xlab-ad9-review",
       "david-arthur-xlab-rs7-first-look",
@@ -69628,6 +69632,30 @@
         "url",
         "youtube_video_id"
       ],
+      "bikeradar-roubaix-sl8-expert-vs-defy-advanced-sl": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "bikeradar-winspace-m6-review": [
         "accessed_at",
         "channel_name",
@@ -71470,6 +71498,30 @@
         "url",
         "youtube_video_id"
       ],
+      "david-arthur-canyon-aeroad-cfr-vs-cf-slx": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "david-arthur-canyon-grail-tire-clearance": [
         "accessed_at",
         "channel_name",
@@ -71695,6 +71747,54 @@
         "target.candidate_id",
         "title",
         "transcript.checked_at",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "david-arthur-tarmac-sl8-pro-six-month-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "david-arthur-trek-domane-sl6-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
         "transcript.language",
         "transcript.method",
         "transcript.status",
@@ -92686,6 +92786,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "specialized-s-works-crux-2024-sram-red-xplr": [
@@ -139383,6 +139484,9 @@
       "bikeradar-giant-propel-2026-first-look": [
         "target.candidate_id=giant-propel-gen4-community-lead"
       ],
+      "bikeradar-roubaix-sl8-expert-vs-defy-advanced-sl": [
+        "target.candidate_id=specialized-roubaix-sl8-sport-105"
+      ],
       "bikeradar-winspace-m6-review": [
         "target.candidate_id=winspace-m6"
       ],
@@ -139608,6 +139712,9 @@
       "david-arthur-canyon-aeroad-cfr-first-ride": [
         "target.candidate_id=missing-china-price-canyon-aeroad"
       ],
+      "david-arthur-canyon-aeroad-cfr-vs-cf-slx": [
+        "target.candidate_id=missing-china-price-canyon-aeroad"
+      ],
       "david-arthur-canyon-grail-tire-clearance": [
         "target.candidate_id=missing-china-price-canyon-grail"
       ],
@@ -139637,6 +139744,12 @@
       ],
       "david-arthur-specialized-s-works-crux-long-term": [
         "target.candidate_id=specialized-s-works-crux-2024-sram-red-xplr"
+      ],
+      "david-arthur-tarmac-sl8-pro-six-month-review": [
+        "target.candidate_id=missing-china-price-specialized-tarmac-sl8"
+      ],
+      "david-arthur-trek-domane-sl6-review": [
+        "target.candidate_id=missing-china-price-trek-domane"
       ],
       "david-arthur-winspace-slc3-review": [
         "target.candidate_id=missing-china-price-winspace-slc3"
@@ -142814,7 +142927,8 @@
         "source_ids=canyon-aeroad-cfr-di2-official-2026-08-17",
         "source_ids=canyon-aeroad-cfr-di2-official-recheck-2026-09-23",
         "source_ids=usd-cny-central-parity-2026-07-31",
-        "video_ids=david-arthur-canyon-aeroad-cfr-first-ride"
+        "video_ids=david-arthur-canyon-aeroad-cfr-first-ride",
+        "video_ids=david-arthur-canyon-aeroad-cfr-vs-cf-slx"
       ],
       "missing-china-price-canyon-grail": [
         "model_id=canyon-grail",
@@ -143005,6 +143119,7 @@
         "source_ids=specialized-tarmac-sl8-comp-105di2-china-current-price-recheck-2026-09-24",
         "source_ids=specialized-tarmac-sl8-comp-105di2-us-recheck-2026-09-23",
         "source_ids=specialized-tarmac-sl8-comp-spec-2026-08-17",
+        "video_ids=david-arthur-tarmac-sl8-pro-six-month-review",
         "video_ids=gc-performance-specialized-tarmac-sl8-comp-2026",
         "video_ids=road-cc-cheapest-specialized-tarmac-sl8"
       ],
@@ -143062,7 +143177,8 @@
         "source_ids=trek-domane-sl5-gen4-official-2026-08-17",
         "source_ids=trek-domane-sl5-gen4-sefiles-2026-08-17",
         "source_ids=trek-domane-sl5-gen4-us-page-recheck-2026-09-23",
-        "video_ids=bikelabhq-trek-domane-sl5-gen4-six-months"
+        "video_ids=bikelabhq-trek-domane-sl5-gen4-six-months",
+        "video_ids=david-arthur-trek-domane-sl6-review"
       ],
       "missing-china-price-trek-madone-gen-8": [
         "model_id=trek-madone-sl-5-gen-8-57653",
@@ -143769,7 +143885,8 @@
         "source_ids=specialized-roubaix-sl8-sport-105-official-recheck-2026-09-24",
         "source_ids=specialized-roubaix-sl8-sport-105-price-recheck-2026-09-24",
         "source_ids=specialized-roubaix-sl8-sport-105-taiwan-2026-08-28",
-        "source_ids=usd-cny-central-parity-2026-07-31"
+        "source_ids=usd-cny-central-parity-2026-07-31",
+        "video_ids=bikeradar-roubaix-sl8-expert-vs-defy-advanced-sl"
       ],
       "specialized-s-works-crux-2024-sram-red-xplr": [
         "model_id=specialized-s-works-crux-2024",
