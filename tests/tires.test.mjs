@@ -46,7 +46,8 @@ test('width groups, reference sizes and comparable tests follow their stated rul
   const fits = (tire, low, high) => tire.sizes.some((size) => sizeWidths(size).every((width) => width >= low && width <= high));
   for (const tire of data.tires) {
     assert.equal(tireGroups(tire).road, fits(tire, 25, 35), tire.id);
-    if (tireGroups(tire).wet) assert.ok(fits(tire, 20, 40) && (measuredWetGrip(tire) !== null || tire.wet_notes.length), tire.id);
+    // Wet evidence: a lab score, a wet note, or a coded owner row that describes wet riding.
+    if (tireGroups(tire).wet) assert.ok(fits(tire, 20, 40) && (measuredWetGrip(tire) !== null || tire.wet_notes.length || (tire.owner_evidence?.reports ?? []).some((report) => report.codes.wet)), tire.id);
     const reference = referenceSize(tire);
     assert.ok(tire.sizes.includes(reference), tire.id);
     if (tire.sizes.some((size) => size.width_mm === 28)) assert.equal(reference.width_mm, 28, tire.id);
