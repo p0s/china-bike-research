@@ -36,12 +36,6 @@
   "wet_notes": [],
   "community": [
     {
-      "source_id": "xhs-cst-c3045-high-road-gsr-2025-08-10",
-      "stance": "mixed",
-      "published_at": "2025-08-10",
-      "summary": "An owner fitted one as a rear after a puncture and rode about 10 km of commuting: it felt more sluggish than a Continental Grand Sport Race; the packaging calls it a wear-focused tire, and the owner saw it for CNY 49 per tire on Taobao."
-    },
-    {
       "source_id": "xhs-cst-c1406-cheap-slick-2025-11-26",
       "stance": "mixed",
       "published_at": "2025-11-26",
@@ -104,5 +98,45 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model; questions, seller and maker replies, unmounted impressions and reports about other models were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-cst-c3045-high-road-gsr-2025-08-10"
+        ],
+        "published_at": "2025-08-10",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 10 km",
+        "codes": {
+          "speed": "unfavourable"
+        },
+        "summary": "After about 10 km of commuting it felt more sluggish than a Continental GSR."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "Two posts; a video post has no written report"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
   }
 }
