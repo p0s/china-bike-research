@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2179,
+      "sources": 2189,
       "images": 911,
       "videos": 272,
       "opinions": 13,
@@ -2333,6 +2333,12 @@
       "xhs-budget-clincher-comparison-2025-05-30",
       "xhs-budget-clincher-test-irc-k925-2025-05-16",
       "xhs-budget-road-tire-comparison-2025-07-16",
+      "xhs-cadex-aero-cotton-2025-06-18",
+      "xhs-cadex-aero-cotton-review-2025-05-31",
+      "xhs-cadex-aero-tubeless-shop-unboxing",
+      "xhs-cadex-race-gc-2024-06-23",
+      "xhs-cadex-race-gc-sidewall-2025-04-06",
+      "xhs-cadex-race-gc-wear-2025-07-13",
       "xhs-chaoyang-chinese-knot-30c-2025-03-10",
       "xhs-chaoyang-falcon-cracks-2026-04-16",
       "xhs-chaoyang-falcon-long-term-2025-09-11",
@@ -2370,6 +2376,10 @@
       "xhs-kenda-k925-20c-2025-12-29",
       "xhs-kenda-k925-question-2026-05-11",
       "xhs-kenda-k925-vs-gsr-2026-05-14",
+      "xhs-maxxis-high-road-28c-retired-2025-06-11",
+      "xhs-maxxis-high-road-gen2-front-sl-rear",
+      "xhs-maxxis-high-road-gen3-30c-comparison",
+      "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30",
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10",
       "xhs-winspace-slc3-200km-2026-08-10",
@@ -36522,6 +36532,78 @@
         "type",
         "url"
       ],
+      "xhs-cadex-aero-cotton-2025-06-18": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-cadex-aero-cotton-review-2025-05-31": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-cadex-aero-tubeless-shop-unboxing": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-cadex-race-gc-2024-06-23": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-cadex-race-gc-sidewall-2025-04-06": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-cadex-race-gc-wear-2025-07-13": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xhs-chaoyang-chinese-knot-30c-2025-03-10": [
         "accessed_at",
         "language",
@@ -36955,6 +37037,54 @@
         "url"
       ],
       "xhs-kenda-k925-vs-gsr-2026-05-14": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-maxxis-high-road-28c-retired-2025-06-11": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-maxxis-high-road-gen2-front-sl-rear": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-maxxis-high-road-gen3-30c-comparison": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30": [
         "accessed_at",
         "language",
         "notes",
@@ -77655,6 +77785,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -77680,6 +77814,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -77726,6 +77864,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -77774,6 +77916,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -81142,6 +81287,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -81188,6 +81337,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -81236,6 +81389,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -81284,6 +81440,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -81329,6 +81488,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -134734,6 +134897,12 @@
       "xhs-budget-clincher-comparison-2025-05-30": [],
       "xhs-budget-clincher-test-irc-k925-2025-05-16": [],
       "xhs-budget-road-tire-comparison-2025-07-16": [],
+      "xhs-cadex-aero-cotton-2025-06-18": [],
+      "xhs-cadex-aero-cotton-review-2025-05-31": [],
+      "xhs-cadex-aero-tubeless-shop-unboxing": [],
+      "xhs-cadex-race-gc-2024-06-23": [],
+      "xhs-cadex-race-gc-sidewall-2025-04-06": [],
+      "xhs-cadex-race-gc-wear-2025-07-13": [],
       "xhs-chaoyang-chinese-knot-30c-2025-03-10": [],
       "xhs-chaoyang-falcon-cracks-2026-04-16": [],
       "xhs-chaoyang-falcon-long-term-2025-09-11": [],
@@ -134771,6 +134940,10 @@
       "xhs-kenda-k925-20c-2025-12-29": [],
       "xhs-kenda-k925-question-2026-05-11": [],
       "xhs-kenda-k925-vs-gsr-2026-05-14": [],
+      "xhs-maxxis-high-road-28c-retired-2025-06-11": [],
+      "xhs-maxxis-high-road-gen2-front-sl-rear": [],
+      "xhs-maxxis-high-road-gen3-30c-comparison": [],
+      "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30": [],
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10": [],
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10": [],
       "xhs-winspace-slc3-200km-2026-08-10": [],
@@ -140273,16 +140446,22 @@
         "image.source_id=tayjunction-cadex-aero-cotton-2026-11-02",
         "source_ids=bicycle-rolling-resistance-cadex-aero-cotton-2026-11-01",
         "source_ids=bikeradar-giant-founder-2026-02-17",
-        "source_ids=tayjunction-cadex-aero-cotton-2026-11-02"
+        "source_ids=tayjunction-cadex-aero-cotton-2026-11-02",
+        "source_ids=xhs-cadex-aero-cotton-2025-06-18",
+        "source_ids=xhs-cadex-aero-cotton-review-2025-05-31"
       ],
       "cadex-aero-tire": [
         "source_ids=bicycle-rolling-resistance-cadex-aero-tire-2026-11-01",
-        "source_ids=bikeradar-giant-founder-2026-02-17"
+        "source_ids=bikeradar-giant-founder-2026-02-17",
+        "source_ids=xhs-cadex-aero-tubeless-shop-unboxing"
       ],
       "cadex-race-gc": [
         "image.source_id=cadex-race-gc-official-2026-11-01",
         "source_ids=bikeradar-giant-founder-2026-02-17",
-        "source_ids=cadex-race-gc-official-2026-11-01"
+        "source_ids=cadex-race-gc-official-2026-11-01",
+        "source_ids=xhs-cadex-race-gc-2024-06-23",
+        "source_ids=xhs-cadex-race-gc-sidewall-2025-04-06",
+        "source_ids=xhs-cadex-race-gc-wear-2025-07-13"
       ],
       "cadex-race-tubeless": [
         "image.source_id=cadex-race-25-tubeless-official-2026-11-01",
@@ -140750,12 +140929,15 @@
         "source_ids=maxxis-high-road-gen-2-official-2026-11-01",
         "source_ids=maxxis-high-road-gen3-international-2026-11-01",
         "source_ids=maxxis-how-we-began-2026-11-01",
-        "source_ids=maxxis-road-range-us-2026-11-01"
+        "source_ids=maxxis-road-range-us-2026-11-01",
+        "source_ids=xhs-maxxis-high-road-28c-retired-2025-06-11",
+        "source_ids=xhs-maxxis-high-road-gen2-front-sl-rear"
       ],
       "maxxis-high-road-gen-3": [
         "image.source_id=maxxis-high-road-gen3-international-2026-11-01",
         "source_ids=maxxis-high-road-gen3-international-2026-11-01",
-        "source_ids=maxxis-high-road-gen3-tmall-2026-11-01"
+        "source_ids=maxxis-high-road-gen3-tmall-2026-11-01",
+        "source_ids=xhs-maxxis-high-road-gen3-30c-comparison"
       ],
       "maxxis-high-road-gen-3-tlr": [
         "image.source_id=maxxis-high-road-gen3-international-2026-11-01",
@@ -140773,7 +140955,8 @@
         "image.source_id=maxxis-pursuer-official-2026-11-01",
         "source_ids=maxxis-how-we-began-2026-11-01",
         "source_ids=maxxis-pursuer-official-2026-11-01",
-        "source_ids=maxxis-road-range-us-2026-11-01"
+        "source_ids=maxxis-road-range-us-2026-11-01",
+        "source_ids=xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
       ],
       "maxxis-re-fuse-gen-2": [
         "image.source_id=maxxis-re-fuse-gen-2-official-2026-11-01",
@@ -168490,6 +168673,54 @@
         "specification": 0
       }
     },
+    "xhs-cadex-aero-cotton-2025-06-18": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-cadex-aero-cotton-review-2025-05-31": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-cadex-aero-tubeless-shop-unboxing": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-cadex-race-gc-2024-06-23": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-cadex-race-gc-sidewall-2025-04-06": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-cadex-race-gc-wear-2025-07-13": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "xhs-chaoyang-chinese-knot-30c-2025-03-10": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -168779,6 +169010,38 @@
       }
     },
     "xhs-kenda-k925-vs-gsr-2026-05-14": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-maxxis-high-road-28c-retired-2025-06-11": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-maxxis-high-road-gen2-front-sl-rear": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-maxxis-high-road-gen3-30c-comparison": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,

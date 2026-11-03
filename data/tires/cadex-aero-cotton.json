@@ -64,7 +64,9 @@
   "source_ids": [
     "bicycle-rolling-resistance-cadex-aero-cotton-2026-11-01",
     "bikeradar-giant-founder-2026-02-17",
-    "tayjunction-cadex-aero-cotton-2026-11-02"
+    "tayjunction-cadex-aero-cotton-2026-11-02",
+    "xhs-cadex-aero-cotton-2025-06-18",
+    "xhs-cadex-aero-cotton-review-2025-05-31"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -93,5 +95,83 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and every Bicycle Rolling Resistance reader comment on this tire's test pages. Counted only owners who describe their own riding of this exact model and, where it is sold in more than one construction or generation, say which; seller and shop posts, questions, unmounted impressions and reports about other models were left out. Reports of bulges or leaks that do not name this tire are not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-cadex-aero-cotton-2025-06-18"
+        ],
+        "published_at": "2025-06-18",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "The 320 TPI cotton casing with a tubeless setup rides with unbeatable comfort."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-aero-cotton-review-2025-05-31"
+        ],
+        "published_at": "2025-05-31",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Among the first owners: an extremely supple, planted ride at low tubeless pressure, though air retention is poor and it measures narrow; wet grip not yet tried."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-aero-cotton-review-2025-05-31"
+        ],
+        "published_at": "2025-06-24",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Rides the 30 mm and finds it superb."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-aero-cotton-review-2025-05-31",
+          "xhs-cadex-aero-cotton-2025-06-18"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 2,000 km",
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "Short life: after about half a year and 2,000 km the sidewall began to leak slightly."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 4,
+        "note": "Four posts; a shop advert and a weight-only post are not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "Two comments, neither first-hand"
+      }
+    ]
   }
 }
