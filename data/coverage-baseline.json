@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2189,
+      "sources": 2194,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -340,6 +340,7 @@
       "bike-components-gp5000-s-tr-reviews",
       "bike-components-gp5000-s-tr-set-reviews",
       "bike-components-grand-prix-tr-reviews",
+      "bike-components-kenda-valkyrie-pro-tlr-reviews",
       "bike-components-michelin-pro5-tlr-reviews",
       "bike-components-power-protection-tlr-reviews",
       "bike-components-pro-one-tle-reviews",
@@ -2359,6 +2360,10 @@
       "xhs-cst-c3045-high-road-gsr-2025-08-10",
       "xhs-cst-crd06-tubeless-2025-07-19",
       "xhs-domestic-25c-training-tire-2025-04-10",
+      "xhs-giant-gavia-course-0-cracked",
+      "xhs-giant-gavia-course-1-visible-line",
+      "xhs-giant-gavia-fondo-0-recommendation",
+      "xhs-giant-gavia-fondo-1-15000-km-2025-12-05",
       "xhs-giant-ninja-dealer-2025-02-10",
       "xhs-giant-white-tire-boxes-2024-09-20",
       "xhs-innova-3029-30c-weights",
@@ -11334,6 +11339,18 @@
         "url"
       ],
       "bike-components-grand-prix-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-kenda-valkyrie-pro-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -36837,6 +36854,54 @@
         "url"
       ],
       "xhs-domestic-25c-training-tire-2025-04-10": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-giant-gavia-course-0-cracked": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-giant-gavia-course-1-visible-line": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-giant-gavia-fondo-0-recommendation": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-giant-gavia-fondo-1-15000-km-2025-12-05": [
         "accessed_at",
         "language",
         "notes",
@@ -79575,6 +79640,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79625,6 +79693,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79674,6 +79746,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79722,6 +79798,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79771,6 +79850,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79820,6 +79903,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79868,6 +79955,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79915,6 +80005,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -81339,6 +81432,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -132957,6 +133054,7 @@
       "bike-components-gp5000-s-tr-reviews": [],
       "bike-components-gp5000-s-tr-set-reviews": [],
       "bike-components-grand-prix-tr-reviews": [],
+      "bike-components-kenda-valkyrie-pro-tlr-reviews": [],
       "bike-components-michelin-pro5-tlr-reviews": [],
       "bike-components-power-protection-tlr-reviews": [],
       "bike-components-pro-one-tle-reviews": [],
@@ -135024,6 +135122,10 @@
       "xhs-cst-c3045-high-road-gsr-2025-08-10": [],
       "xhs-cst-crd06-tubeless-2025-07-19": [],
       "xhs-domestic-25c-training-tire-2025-04-10": [],
+      "xhs-giant-gavia-course-0-cracked": [],
+      "xhs-giant-gavia-course-1-visible-line": [],
+      "xhs-giant-gavia-fondo-0-recommendation": [],
+      "xhs-giant-gavia-fondo-1-15000-km-2025-12-05": [],
       "xhs-giant-ninja-dealer-2025-02-10": [],
       "xhs-giant-white-tire-boxes-2024-09-20": [],
       "xhs-innova-3029-30c-weights": [],
@@ -140823,13 +140925,18 @@
       "giant-gavia-course-0-tlr": [
         "image.source_id=giant-gavia-course-0-tubeless-tyre-2020-gb-official-2026-11-01",
         "source_ids=bikeradar-giant-founder-2026-02-17",
-        "source_ids=giant-gavia-course-0-tubeless-tyre-2020-gb-official-2026-11-01"
+        "source_ids=giant-gavia-course-0-tubeless-tyre-2020-gb-official-2026-11-01",
+        "source_ids=xhs-cadex-race-gc-wear-2025-07-13",
+        "source_ids=xhs-giant-gavia-course-0-cracked"
       ],
       "giant-gavia-course-1-tlr": [
         "image.source_id=giant-gavia-course-1-tubeless-tyre-2020-gb-official-2026-11-01",
         "source_ids=bikeradar-giant-founder-2026-02-17",
         "source_ids=giant-gavia-course-1-bicycle-tire-2020-us-official-2026-11-01",
-        "source_ids=giant-gavia-course-1-tubeless-tyre-2020-gb-official-2026-11-01"
+        "source_ids=giant-gavia-course-1-tubeless-tyre-2020-gb-official-2026-11-01",
+        "source_ids=xhs-cadex-race-gc-sidewall-2025-04-06",
+        "source_ids=xhs-cadex-race-gc-wear-2025-07-13",
+        "source_ids=xhs-giant-gavia-course-1-visible-line"
       ],
       "giant-gavia-course-2026": [
         "image.source_id=giant-gavia-course-2026-gb-official-2026-11-01",
@@ -140840,12 +140947,14 @@
       "giant-gavia-fondo-0-tlr": [
         "image.source_id=giant-gavia-fondo-0-tubeless-tyre-2020-gb-official-2026-11-01",
         "source_ids=bikeradar-giant-founder-2026-02-17",
-        "source_ids=giant-gavia-fondo-0-tubeless-tyre-2020-gb-official-2026-11-01"
+        "source_ids=giant-gavia-fondo-0-tubeless-tyre-2020-gb-official-2026-11-01",
+        "source_ids=xhs-giant-gavia-fondo-0-recommendation"
       ],
       "giant-gavia-fondo-1-tlr": [
         "image.source_id=giant-gavia-fondo-1-tubeless-tyre-2020-gb-official-2026-11-01",
         "source_ids=bikeradar-giant-founder-2026-02-17",
-        "source_ids=giant-gavia-fondo-1-tubeless-tyre-2020-gb-official-2026-11-01"
+        "source_ids=giant-gavia-fondo-1-tubeless-tyre-2020-gb-official-2026-11-01",
+        "source_ids=xhs-giant-gavia-fondo-1-15000-km-2025-12-05"
       ],
       "giant-ninja": [
         "image.source_id=xhs-giant-ninja-dealer-2025-02-10",
@@ -141033,6 +141142,7 @@
       ],
       "kenda-valkyrie-tlr": [
         "image.source_id=kenda-valkyrie-official-shop-2026-11-01",
+        "source_ids=bike-components-kenda-valkyrie-pro-tlr-reviews",
         "source_ids=kenda-valkyrie-official-shop-2026-11-01",
         "source_ids=kenda-valkyrie-tmall-retail-2026-11-01",
         "source_ids=taiwan-excellence-kenda-valkyrie-2017"
@@ -152644,6 +152754,14 @@
       }
     },
     "bike-components-grand-prix-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-kenda-valkyrie-pro-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
@@ -168991,6 +169109,38 @@
       }
     },
     "xhs-domestic-25c-training-tire-2025-04-10": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-giant-gavia-course-0-cracked": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-giant-gavia-course-1-visible-line": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-giant-gavia-fondo-0-recommendation": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-giant-gavia-fondo-1-15000-km-2025-12-05": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
