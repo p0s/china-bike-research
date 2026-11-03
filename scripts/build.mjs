@@ -44,6 +44,7 @@ import { COVERAGE_PATH, auditSocialVideoPages, loadSocialVideoManifest, validate
 import { latestDate, sitemapXml } from '../src/lib/seo.mjs';
 import { indexNow, createIndexNowManifest } from '../src/lib/indexnow.mjs';
 import { HOME_TABLE_LABELS, homeMarkdown, llmsTxt, markdownPath, pageMarkdown, robotsTxt } from '../src/lib/agent-markdown.mjs';
+import { CATALOG_ROUTES, SKILLS_ROUTE, agentCatalog, agentDiscoveryHeaders, loadAgentSkills, skillLinkErrors, skillsIndex } from '../src/lib/agent-skills.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const output = createBuildOutput(root);
@@ -257,6 +258,21 @@ for (const [route, page] of pages) {
   const labels = Object.fromEntries(HOME_TABLE_LABELS.map((label, index) => [label, translated[index].label]));
   write(markdownPath(page.file), homeMarkdown(html, JSON.parse(catalogPayloads[page.locale]), { ...options, labels }));
 }
+// Agent Skills: the reviewed SKILL.md bytes, their discovery index and one AI Catalog / ARD
+// manifest, all static. Pages stay byte-identical.
+const { skills: agentSkills, errors: skillErrors } = loadAgentSkills(root);
+if (skillErrors.length) {
+  console.error(`Agent skill validation failed with ${skillErrors.length} error(s):`);
+  for (const error of skillErrors) console.error(`- ${error}`);
+  process.exit(1);
+}
+if (agentSkills.length) {
+  for (const skill of agentSkills) write(`${SKILLS_ROUTE.slice(1)}${skill.name}/SKILL.md`, skill.bytes);
+  write(`${SKILLS_ROUTE.slice(1)}index.json`, `${JSON.stringify(skillsIndex(agentSkills, { base }), null, 2)}\n`);
+  const agentCatalogJson = `${JSON.stringify(agentCatalog(agentSkills, { siteUrl, base }), null, 2)}\n`;
+  for (const route of CATALOG_ROUTES) write(route.slice(1), agentCatalogJson);
+  write('_headers', agentDiscoveryHeaders(agentSkills, { base }));
+}
 write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.meta.snapshot_date }));
 write('robots.txt', robotsTxt(`${siteUrl}${base}/sitemap.xml`));
 write('llms.txt', llmsTxt({ siteUrl, base, repositoryUrl, has: (target) => pages.has(target) || fs.existsSync(path.join(dist, target)) }));
@@ -326,6 +342,12 @@ if (socialVideos.fallback) {
 }
 
 // Validate the staged output before replacing the last good build.
+const skillLinks = skillLinkErrors(agentSkills, (pathname) => fs.existsSync(path.join(dist, pathname.endsWith('/') ? `${pathname}index.html` : pathname)));
+if (skillLinks.length) {
+  console.error(`Agent skill link validation failed with ${skillLinks.length} error(s):`);
+  for (const error of skillLinks) console.error(`- ${error}`);
+  process.exit(1);
+}
 const { errors: linkErrors, checked: checkedLinks } = checkLinks(dist);
 if (linkErrors.length) {
   console.error(`Internal link validation failed with ${linkErrors.length} error(s):`);

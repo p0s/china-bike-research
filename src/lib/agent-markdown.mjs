@@ -425,6 +425,11 @@ const LLMS_SECTIONS = [
     ['Road tires JSON', '/data/tires.json'],
     ['Sitemap', '/sitemap.xml']
   ]],
+  ['Agent skills', [
+    ['Agent Skills index', '/.well-known/agent-skills/index.json', 'skills with SHA-256 digests (Agent Skills Discovery RFC v0.2.0)'],
+    ['Compare Chinese bikes', '/.well-known/agent-skills/compare-chinese-bikes/SKILL.md', 'shortlist and compare models with prices, dates, unknowns and sources intact'],
+    ['Agentic resource catalog', '/.well-known/ard.json', 'AI Catalog and ARD manifest of the skills']
+  ]],
   ['Languages', [
     ['English', '/'],
     ['Simplified Chinese', '/zh/', 'catalog, model pages and guides'],

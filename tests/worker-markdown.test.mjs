@@ -103,7 +103,7 @@ test('HTML documents advertise their Markdown alternate and fall back when none 
   assert.equal(home.response.status, 200);
   assert.match(home.response.headers.get('content-type'), /^text\/html/);
   assert.equal(home.response.headers.get('vary'), 'Accept');
-  assert.equal(home.response.headers.get('link'), '</index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain"');
+  assert.equal(home.response.headers.get('link'), '</index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain", </.well-known/ard.json>; rel="ard", </.well-known/ai-catalog.json>; rel="ai-catalog"');
   assert.equal(home.waits.length, 1, 'the HTML control request is an eligible page view');
 
   const model = await fetchPath('/models/lead/', { accept: 'text/html,application/xhtml+xml,*/*;q=0.8' });
