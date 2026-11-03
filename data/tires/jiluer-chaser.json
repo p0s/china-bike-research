@@ -38,24 +38,7 @@
   "weight_basis": "One owner reported 250 g for a 28C.",
   "tests": [],
   "wet_notes": [],
-  "community": [
-    {
-      "source_id": "xhs-budget-clincher-comparison-2025-05-30",
-      "stance": "mixed",
-      "published_at": "2025-05-30",
-      "summary": "Felt fastest and most comfortable of four budget tires but gripped least; easy to fit by hand."
-    },
-    {
-      "source_id": "xhs-jiluer-chaser-separation-2026-06-24",
-      "stance": "negative",
-      "published_at": "2026-06-24",
-      "summary": "Rubber separated from the casing, with deep wear holes, after under 3,000 km; the post names the Chaser, not the Chaser Pro.",
-      "issues": [
-        "casing",
-        "wear"
-      ]
-    }
-  ],
+  "community": [],
   "availability": {
     "cn": "retail",
     "eu": "unverified",
@@ -86,8 +69,77 @@
     "jiluer-chaser-taobao-2026-11-01",
     "maigoo-jiluer-brand-2026-11-01",
     "xhs-budget-clincher-comparison-2025-05-30",
-    "xhs-jiluer-chaser-separation-2026-06-24"
+    "xhs-jiluer-chaser-separation-2026-06-24",
+    "xhs-jiluer-chaser-85-yuan"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model and, where the model is sold in more than one construction, say which; seller replies, questions, unmounted impressions and reports about other models were left out. Reports that do not say Chaser, Chaser Pro or which construction are not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-jiluer-chaser-separation-2026-06-24"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Under 3,000 km",
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable",
+          "wear": "unfavourable"
+        },
+        "summary": "The rubber separated from the casing and the tread wore deep holes in under 3,000 km."
+      },
+      {
+        "source_ids": [
+          "xhs-jiluer-chaser-separation-2026-06-24"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "500 km",
+        "codes": {
+          "overall": "unfavourable"
+        },
+        "summary": "Discarded after 500 km: very light, but very thin."
+      },
+      {
+        "source_ids": [
+          "xhs-budget-clincher-comparison-2025-05-30",
+          "xhs-jiluer-chaser-85-yuan"
+        ],
+        "published_at": "2025-05-30",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "unfavourable"
+        },
+        "summary": "The 60 TPI clincher had the lowest rolling resistance but the least grip in an uncontrolled four-tire comparison; the owner calls it very good to use."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "Three posts; seller posts and replies are not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

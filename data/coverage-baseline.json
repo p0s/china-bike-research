@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2162,
+      "sources": 2167,
       "images": 900,
       "videos": 272,
       "opinions": 13,
@@ -2329,6 +2329,8 @@
       "xhs-chaoyang-falcon-vs-us3-2026-02-23",
       "xhs-chaoyang-h486-boxes-2023-12-01",
       "xhs-chaoyang-h486-cracks-2025-02-23",
+      "xhs-chaoyang-h496-7000-km-2025-08-31",
+      "xhs-chaoyang-h496-rain-review-2025-12-25",
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29",
       "xhs-chaoyang-mini-shark-launch-2024-04-11",
       "xhs-cst-c1406-cheap-slick-2025-11-26",
@@ -2341,7 +2343,10 @@
       "xhs-domestic-25c-training-tire-2025-04-10",
       "xhs-giant-ninja-dealer-2025-02-10",
       "xhs-giant-white-tire-boxes-2024-09-20",
+      "xhs-innova-3029-30c-weights",
+      "xhs-innova-smiley-punctures-cracks",
       "xhs-innova-smiley-six-years-2025-08-12",
+      "xhs-jiluer-chaser-85-yuan",
       "xhs-jiluer-chaser-pro-1300-km-2026-02-09",
       "xhs-jiluer-chaser-pro-bulges-2026-08-11",
       "xhs-jiluer-chaser-pro-first-look-2025-04-30",
@@ -36446,6 +36451,30 @@
         "type",
         "url"
       ],
+      "xhs-chaoyang-h496-7000-km-2025-08-31": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-chaoyang-h496-rain-review-2025-12-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29": [
         "accessed_at",
         "language",
@@ -36590,7 +36619,43 @@
         "type",
         "url"
       ],
+      "xhs-innova-3029-30c-weights": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-innova-smiley-punctures-cracks": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xhs-innova-smiley-six-years-2025-08-12": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-jiluer-chaser-85-yuan": [
         "accessed_at",
         "language",
         "notes",
@@ -76238,6 +76303,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -77748,7 +77816,8 @@
         "status",
         "use",
         "weight_basis",
-        "weight_claim_type"
+        "weight_claim_type",
+        "wet_notes"
       ],
       "chaoyang-h-496-tlr": [
         "aliases",
@@ -77765,6 +77834,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80039,6 +80111,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80065,6 +80141,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -80228,6 +80308,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80274,6 +80358,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -80320,6 +80407,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80366,6 +80456,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80413,6 +80506,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -134096,6 +134193,8 @@
       "xhs-chaoyang-falcon-vs-us3-2026-02-23": [],
       "xhs-chaoyang-h486-boxes-2023-12-01": [],
       "xhs-chaoyang-h486-cracks-2025-02-23": [],
+      "xhs-chaoyang-h496-7000-km-2025-08-31": [],
+      "xhs-chaoyang-h496-rain-review-2025-12-25": [],
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29": [],
       "xhs-chaoyang-mini-shark-launch-2024-04-11": [],
       "xhs-cst-c1406-cheap-slick-2025-11-26": [],
@@ -134108,7 +134207,10 @@
       "xhs-domestic-25c-training-tire-2025-04-10": [],
       "xhs-giant-ninja-dealer-2025-02-10": [],
       "xhs-giant-white-tire-boxes-2024-09-20": [],
+      "xhs-innova-3029-30c-weights": [],
+      "xhs-innova-smiley-punctures-cracks": [],
       "xhs-innova-smiley-six-years-2025-08-12": [],
+      "xhs-jiluer-chaser-85-yuan": [],
       "xhs-jiluer-chaser-pro-1300-km-2026-02-09": [],
       "xhs-jiluer-chaser-pro-bulges-2026-08-11": [],
       "xhs-jiluer-chaser-pro-first-look-2025-04-30": [],
@@ -139652,6 +139754,8 @@
         "source_ids=xhs-chaoyang-falcon-one-year-2026-04-13",
         "source_ids=xhs-chaoyang-falcon-sidewall-2025-09-26",
         "source_ids=xhs-chaoyang-falcon-vs-us3-2026-02-23",
+        "source_ids=xhs-chaoyang-h496-7000-km-2025-08-31",
+        "source_ids=xhs-chaoyang-h496-rain-review-2025-12-25",
         "source_ids=xhs-chaoyang-h496-vs-gp5000-2024-12-29",
         "source_ids=xhs-domestic-25c-training-tire-2025-04-10"
       ],
@@ -139964,12 +140068,14 @@
       ],
       "innova-3029": [
         "source_ids=innova-3029-taobao-2026-11-01",
-        "source_ids=xhs-budget-road-tire-comparison-2025-07-16"
+        "source_ids=xhs-budget-road-tire-comparison-2025-07-16",
+        "source_ids=xhs-innova-3029-30c-weights"
       ],
       "innova-smiley": [
         "source_ids=99bikes-innova-story-2026-11-01",
         "source_ids=innova-smiley-tmall-2026-11-01",
         "source_ids=xhs-budget-road-tire-comparison-2025-07-16",
+        "source_ids=xhs-innova-smiley-punctures-cracks",
         "source_ids=xhs-innova-smiley-six-years-2025-08-12"
       ],
       "irc-formula-pro-tlr-s-light": [
@@ -139991,6 +140097,7 @@
         "source_ids=jiluer-chaser-taobao-2026-11-01",
         "source_ids=maigoo-jiluer-brand-2026-11-01",
         "source_ids=xhs-budget-clincher-comparison-2025-05-30",
+        "source_ids=xhs-jiluer-chaser-85-yuan",
         "source_ids=xhs-jiluer-chaser-separation-2026-06-24"
       ],
       "jiluer-chaser-pro": [
@@ -140016,6 +140123,7 @@
       "kenda-k925": [
         "image.source_id=xhs-kenda-k925-vs-gsr-2026-05-14",
         "source_ids=kenda-k925-k1092-taobao-2026-11-01",
+        "source_ids=xhs-budget-clincher-test-irc-k925-2025-05-16",
         "source_ids=xhs-kenda-k925-20c-2025-12-29",
         "source_ids=xhs-kenda-k925-question-2026-05-11",
         "source_ids=xhs-kenda-k925-vs-gsr-2026-05-14"
@@ -167730,6 +167838,22 @@
         "specification": 0
       }
     },
+    "xhs-chaoyang-h496-7000-km-2025-08-31": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-chaoyang-h496-rain-review-2025-12-25": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "xhs-chaoyang-h496-vs-gp5000-2024-12-29": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -167826,7 +167950,31 @@
         "specification": 0
       }
     },
+    "xhs-innova-3029-30c-weights": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-innova-smiley-punctures-cracks": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "xhs-innova-smiley-six-years-2025-08-12": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-jiluer-chaser-85-yuan": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
