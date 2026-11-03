@@ -127,7 +127,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: the first check of Bicycle Rolling Resistance's index missed this tire's test pages; their reader comments are now read.",
     "reports": [
       {
         "source_ids": [
@@ -313,8 +313,8 @@
       },
       {
         "route": "brr-comments",
-        "outcome": "not-listed",
-        "note": "Only the earlier Ultra Sport II was tested"
+        "outcome": "none",
+        "note": "Four comments, none a first-hand riding report"
       }
     ]
   }
