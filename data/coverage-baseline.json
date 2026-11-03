@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2135,
+      "sources": 2137,
       "images": 900,
       "videos": 272,
       "opinions": 13,
@@ -334,6 +334,7 @@
       "bike-components-gp5000-as-tr-reviews",
       "bike-components-gp5000-s-tr-reviews",
       "bike-components-gp5000-s-tr-set-reviews",
+      "bike-components-michelin-pro5-tlr-reviews",
       "bikeradar-cervelo-aspero5-2026-08-29",
       "bikeradar-giant-founder-2026-02-17",
       "biketo-girder-vagrant-2016-2026-10-23",
@@ -1744,6 +1745,7 @@
       "shimano-sm-bb72-41b-official-2026-08-27",
       "shimano-sm-rt70-official-2026-08-27",
       "shimano-ultegra-r8150-official-2026-08-24",
+      "sigma-sports-cinturato-evo-tlr-reviews",
       "sigma-sports-corsa-pro-control-tlr-reviews",
       "sigma-sports-gp5000-as-tr-reviews",
       "sigma-sports-gp5000-s-tr-reviews",
@@ -11193,6 +11195,18 @@
         "url"
       ],
       "bike-components-gp5000-s-tr-set-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-michelin-pro5-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -29092,6 +29106,18 @@
         "url"
       ],
       "shimano-ultegra-r8150-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-cinturato-evo-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -76857,6 +76883,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -77356,6 +77385,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -77720,6 +77752,7 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
         "owner_evidence.coded_at",
         "owner_evidence.reports",
         "owner_evidence.screening_note",
@@ -79158,6 +79191,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -80292,6 +80328,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -80575,6 +80614,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -80903,6 +80946,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -82040,6 +82087,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -83141,6 +83191,7 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
         "owner_evidence.coded_at",
         "owner_evidence.reports",
         "owner_evidence.screening_note",
@@ -83288,6 +83339,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -131575,6 +131629,7 @@
       "bike-components-gp5000-as-tr-reviews": [],
       "bike-components-gp5000-s-tr-reviews": [],
       "bike-components-gp5000-s-tr-set-reviews": [],
+      "bike-components-michelin-pro5-tlr-reviews": [],
       "bikeradar-cervelo-aspero5-2026-08-29": [],
       "bikeradar-giant-founder-2026-02-17": [],
       "biketo-girder-vagrant-2016-2026-10-23": [],
@@ -133033,6 +133088,7 @@
       "shimano-sm-bb72-41b-official-2026-08-27": [],
       "shimano-sm-rt70-official-2026-08-27": [],
       "shimano-ultegra-r8150-official-2026-08-24": [],
+      "sigma-sports-cinturato-evo-tlr-reviews": [],
       "sigma-sports-corsa-pro-control-tlr-reviews": [],
       "sigma-sports-gp5000-as-tr-reviews": [],
       "sigma-sports-gp5000-s-tr-reviews": [],
@@ -139569,6 +139625,7 @@
       "michelin-pro5-tlr": [
         "image.source_id=michelin-pro5-tlr-competition-line-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-michelin-pro5-tlr-reviews",
         "source_ids=michelin-pro5-tlr-competition-line-official-2026-11-01",
         "source_ids=michelin-pro5-tlr-tmall-2026-11-01",
         "source_ids=michelin-road-range-gb-2026-11-01"
@@ -139608,7 +139665,8 @@
       ],
       "pirelli-cinturato-evo-tlr": [
         "image.source_id=pirelli-cinturato-evo-official-2026-11-01",
-        "source_ids=pirelli-cinturato-evo-official-2026-11-01"
+        "source_ids=pirelli-cinturato-evo-official-2026-11-01",
+        "source_ids=sigma-sports-cinturato-evo-tlr-reviews"
       ],
       "pirelli-cinturato-road": [
         "image.source_id=pirelli-cinturato-road-official-2026-11-01",
@@ -151041,6 +151099,14 @@
         "specification": 0
       }
     },
+    "bike-components-michelin-pro5-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bikeradar-cervelo-aspero5-2026-08-29": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -162426,6 +162492,14 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "sigma-sports-cinturato-evo-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
       }
     },
     "sigma-sports-corsa-pro-control-tlr-reviews": {

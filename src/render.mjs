@@ -14,7 +14,7 @@ import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsuppo
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis, latestExchangeRates } from './lib/regional-prices.mjs';
 import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs';
-import { OWNER_ASPECTS, OWNER_CODES, OWNER_RATING_MIN, WET_WIDTHS, budgetShortlist, comparableRollingTest, headlineTest, measuredWetGrip, ownerRatings, referenceSize, sizeInRange, sizeLabel, tireGroups, tireShortlists } from './lib/tires.mjs';
+import { OWNER_ASPECTS, OWNER_CODES, OWNER_RATING_MIN, WET_WIDTHS, budgetShortlist, comparableRollingTest, headlineTest, measuredWetGrip, ownerCheckStatus, ownerRatings, referenceSize, sizeInRange, sizeLabel, tireGroups, tireShortlists } from './lib/tires.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -2566,6 +2566,9 @@ const tireOwnerBandLabels = { favourable: 'Favourable', 'mostly-favourable': 'Mo
 const tireOwnerDepthLabels = { limited: 'limited evidence', moderate: 'moderate evidence', larger: 'larger sample' };
 const tireOwnerSetupLabels = { tubeless: 'tubeless', 'inner-tube': 'inner tube' };
 const tireOwnersLabel = (n) => `${n} ${n === 1 ? 'owner' : 'owners'}`;
+const tireOwnerRouteLabels = { xiaohongshu: 'Xiaohongshu posts', 'sigma-sports': 'Sigma Sports reviews', 'bike-components': 'bike-components reviews', 'brr-comments': 'BRR reader comments' };
+const tireOwnerOutcomeLabels = { none: 'no eligible review', 'not-listed': 'not listed', blocked: 'access blocked', pending: 'pending' };
+const tireOwnerStatusLines = { none: 'No eligible owner report found', blocked: 'Review sources blocked', pending: 'Xiaohongshu research pending' };
 const tireWetKindLabels = { measured: 'Measured', official: 'Maker claim', 'seller claim': 'Seller claim', 'community report': 'Owner report' };
 const tireImageKindLabels = { official: 'Maker photo', retailer: 'Retailer photo', 'public-post': 'Photo from an XHS post' };
 const tireImageHostLabels = { official: 'Loaded from the maker’s website', retailer: 'Loaded from the retailer’s website', 'public-post': 'Loaded from the original XHS post' };
@@ -2611,10 +2614,10 @@ function tirePressure(size) {
 
 // Owner ratings (2026-11-03). The cell leads with the first rated aspect (overall verdict
 // first) and its owner count; a tire that was never coded shows the quiet unknown dash.
-function tireOwnerCell(summary) {
+function tireOwnerCell(summary, status) {
   if (!summary.coded) return '<td data-label="Owners" data-column="owners"><strong>—</strong></td>';
   const lead = summary.rated[0];
-  if (!lead) return `<td data-label="Owners" data-column="owners"><strong>${escapeHtml('Not rated yet')}</strong><span>${escapeHtml(summary.owners ? `${tireOwnersLabel(summary.owners)} · fewer than ${OWNER_RATING_MIN} per aspect` : 'No eligible owner report found')}</span></td>`;
+  if (!lead) return `<td data-label="Owners" data-column="owners"><strong>${escapeHtml('Not rated yet')}</strong><span>${escapeHtml(summary.owners ? `${tireOwnersLabel(summary.owners)} · fewer than ${OWNER_RATING_MIN} per aspect` : tireOwnerStatusLines[status])}</span></td>`;
   const more = summary.rated.length - 1;
   return `<td data-label="Owners" data-column="owners"><strong>${escapeHtml(tireOwnerBandLabels[summary.aspects[lead].rating.band])}</strong><span>${escapeHtml([tireOwnerAspectLabels[lead], tireOwnersLabel(summary.aspects[lead].n), more ? `${more} more rated` : ''].filter(Boolean).join(' · '))}</span></td>`;
 }
@@ -2635,7 +2638,9 @@ function tireOwnerSection(tire, summary, sourcesById) {
     const basis = [Number.isFinite(report.width_mm) ? `${report.width_mm} mm` : '', report.setup ? tireOwnerSetupLabels[report.setup] : '', report.published_at ?? '', report.exposure ?? ''].filter(Boolean).join(' · ');
     return `<li><p class="tire-owner-codes">${codes}${basis ? ` <span class="tire-owner-basis">${escapeHtml(basis)}</span>` : ''}</p><p>${escapeHtml(report.summary)} ${links}</p></li>`;
   }).join('');
-  return `<section class="tire-owner-ratings"><h3>Owner ratings</h3><div class="tire-size-table tire-owner-table" role="region" aria-label="${escapeAttr(`Owner ratings: ${tire.maker} ${tire.name}`)}" tabindex="0"><table><thead><tr><th scope="col">Aspect</th><th scope="col">Rating</th><th scope="col">Owners</th></tr></thead><tbody>${rows}</tbody></table></div><dl class="tire-owner-coverage"><div><dt>Coded</dt><dd>${escapeHtml(`${tire.owner_evidence.coded_at} · ${tireOwnersLabel(summary.owners)}`)}</dd></div>${summary.owners ? `<div><dt>Widths</dt><dd>${escapeHtml(tally(summary.widths, (width) => `${width} mm`))}</dd></div><div><dt>Tube or tubeless</dt><dd>${escapeHtml(tally(summary.setups, (setup) => tireOwnerSetupLabels[setup]))}</dd></div>` : ''}</dl><p>${escapeHtml(tire.owner_evidence.screening_note)}</p><p class="tire-owner-method">${escapeHtml(`Editorial coding of first-hand public reports, not star ratings given by owners. An aspect is rated only when at least ${OWNER_RATING_MIN} owners describe it; ${OWNER_RATING_MIN} is an entry threshold, not proof. Public reports are self-selected, sources differ between tires, and width, pressure, setup and roads vary between owners.`)}</p>${reports ? `<details class="tire-owner-list"><summary>${escapeHtml(`Coded owner reports (${summary.owners})`)}</summary><ul>${reports}</ul></details>` : ''}</section>`;
+  const checks = (tire.owner_evidence.checks ?? []).map((check) => `<span class="tire-owner-code"><span>${escapeHtml(tireOwnerRouteLabels[check.route])}</span> <em>${escapeHtml(check.outcome === 'counted' ? `${check.owners} counted` : tireOwnerOutcomeLabels[check.outcome])}</em>${check.note ? ` <span class="tire-owner-basis">${escapeHtml(check.note)}</span>` : ''}</span>`).join(' ');
+  const table = summary.owners ? `<div class="tire-size-table tire-owner-table" role="region" aria-label="${escapeAttr(`Owner ratings: ${tire.maker} ${tire.name}`)}" tabindex="0"><table><thead><tr><th scope="col">Aspect</th><th scope="col">Rating</th><th scope="col">Owners</th></tr></thead><tbody>${rows}</tbody></table></div>` : '';
+  return `<section class="tire-owner-ratings"><h3>Owner ratings</h3>${table}<dl class="tire-owner-coverage"><div><dt>Checked</dt><dd class="tire-owner-codes"><span>${escapeHtml(tire.owner_evidence.coded_at)}</span>${checks ? ` ${checks}` : ''}</dd></div>${summary.owners ? `<div><dt>Widths</dt><dd>${escapeHtml(tally(summary.widths, (width) => `${width} mm`))}</dd></div><div><dt>Tube or tubeless</dt><dd>${escapeHtml(tally(summary.setups, (setup) => tireOwnerSetupLabels[setup]))}</dd></div>` : ''}</dl><p>${escapeHtml(tire.owner_evidence.screening_note)}</p><p class="tire-owner-method">${escapeHtml(`Editorial coding of first-hand public reports, not star ratings given by owners. An aspect is rated only when at least ${OWNER_RATING_MIN} owners describe it; ${OWNER_RATING_MIN} is an entry threshold, not proof. Public reports are self-selected, sources differ between tires, and width, pressure, setup and roads vary between owners.`)}</p>${reports ? `<details class="tire-owner-list"><summary>${escapeHtml(`Coded owner reports (${summary.owners})`)}</summary><ul>${reports}</ul></details>` : ''}</section>`;
 }
 
 function tireRows(ctx, tire, sourcesById, rates) {
@@ -2688,7 +2693,7 @@ function tireRows(ctx, tire, sourcesById, rates) {
     <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${sizeLabel(reference)} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
     <td data-label="Lab test" data-column="tests"><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
     <td data-label="Price" data-column="price"><strong>${escapeHtml(headline ? tireAmount(headline) : '—')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
-    ${tireOwnerCell(ownerSummary)}
+    ${tireOwnerCell(ownerSummary, ownerCheckStatus(tire))}
   </tr><tr class="groupset-detail-row"><td colspan="7">${details}</td></tr></tbody>`;
 }
 
@@ -2755,11 +2760,11 @@ function tireImageCoverageHtml(imageLedger, tiresById) {
 // Owner-rating coverage: how many tires were coded owner by owner and how many reached a
 // rating. Uncoded tires are research still to do, not tires without owners.
 function tireOwnerCoverageHtml(tires) {
-  const summaries = tires.map((tire) => ({ tire, summary: ownerRatings(tire) }));
-  const coded = summaries.filter((item) => item.summary.coded);
-  const rated = coded.filter((item) => item.summary.rated.length);
-  const list = coded.length ? `<ul>${coded.map(({ tire, summary }) => `<li><a href="#${escapeAttr(tire.id)}">${escapeHtml(`${tire.maker} ${tire.name}`)}</a> ${escapeHtml([tireOwnersLabel(summary.owners), ...(summary.rated.length ? summary.rated.map((aspect) => tireOwnerAspectLabels[aspect]) : ['no aspect rated yet'])].join(' · '))}</li>`).join('')}</ul>` : '';
-  return `<h3>Owner ratings</h3><p><strong>${escapeHtml(`${rated.length} with a rated aspect · ${coded.length - rated.length} coded below the threshold · ${tires.length - coded.length} not yet coded`)}</strong></p><p>${escapeHtml('A tire that has not been coded may still have many owners; its reports have not been checked owner by owner yet.')}</p>${list}`;
+  const summaries = tires.map((tire) => ({ tire, summary: ownerRatings(tire), status: ownerCheckStatus(tire) }));
+  const count = (status) => summaries.filter((item) => item.status === status).length;
+  const withOwners = summaries.filter((item) => item.summary.owners);
+  const list = withOwners.length ? `<ul>${withOwners.map(({ tire, summary }) => `<li><a href="#${escapeAttr(tire.id)}">${escapeHtml(`${tire.maker} ${tire.name}`)}</a> ${escapeHtml([tireOwnersLabel(summary.owners), ...(summary.rated.length ? summary.rated.map((aspect) => tireOwnerAspectLabels[aspect]) : ['no aspect rated yet'])].join(' · '))}</li>`).join('')}</ul>` : '';
+  return `<h3>Owner ratings</h3><p><strong>${escapeHtml(`${count('rated')} with a rated aspect · ${count('below')} below the threshold · ${count('none')} with no eligible owner found · ${count('blocked')} access blocked · ${count('pending')} awaiting Xiaohongshu research · ${count('unchecked')} not yet checked`)}</strong></p><p>${escapeHtml('A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.')}</p>${list}`;
 }
 
 function tireCoverageHtml(ledger, tiresById, imageLedger = null) {

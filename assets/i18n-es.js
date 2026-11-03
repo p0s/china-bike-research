@@ -1166,7 +1166,6 @@ Object.assign(es, {
   "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "Breves paráfrasis de publicaciones públicas completas registradas antes de la codificación propietario por propietario. Describen el neumático de un ciclista, no son pruebas y no cuentan en las valoraciones de propietarios.",
   "Most owners coded": "Más propietarios codificados",
   "no aspect rated yet": "aún ningún aspecto valorado",
-  "A tire that has not been coded may still have many owners; its reports have not been checked owner by owner yet.": "Un neumático sin codificar puede tener muchos propietarios; sus opiniones aún no se han revisado propietario por propietario."
 });
 patterns.push(
   [/^(\d+) owners?$/, (_, n) => n === '1' ? '1 propietario' : `${n} propietarios`],
@@ -1178,4 +1177,28 @@ patterns.push(
   [/^(\d+) with a rated aspect$/, (_, n) => `${n} con un aspecto valorado`],
   [/^(\d+) coded below the threshold$/, (_, n) => `${n} codificados por debajo del umbral`],
   [/^(\d+) not yet coded$/, (_, n) => `${n} aún sin codificar`]
+);
+
+// Tire owner checked-source ledger (2026-11-03).
+Object.assign(es, {
+  "Xiaohongshu posts": "Publicaciones de Xiaohongshu",
+  "Sigma Sports reviews": "Opiniones de Sigma Sports",
+  "bike-components reviews": "Opiniones de bike-components",
+  "BRR reader comments": "Comentarios de lectores de BRR",
+  "no eligible review": "ninguna opinión válida",
+  "not listed": "no está a la venta",
+  "access blocked": "acceso bloqueado",
+  "pending": "pendiente",
+  "Review sources blocked": "Fuentes de opiniones bloqueadas",
+  "Xiaohongshu research pending": "Investigación en Xiaohongshu pendiente",
+  "Checked": "Revisado",
+  "A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.": "Un neumático sin revisar puede tener muchos propietarios; sus opiniones aún no se han revisado propietario por propietario. Cada neumático revisado indica en sus detalles las fuentes revisadas."
+});
+patterns.push(
+  [/^(\d+) counted$/, (_, n) => n === '1' ? '1 contado' : `${n} contados`],
+  [/^(\d+) below the threshold$/, (_, n) => `${n} por debajo del umbral`],
+  [/^(\d+) with no eligible owner found$/, (_, n) => `${n} sin propietarios válidos`],
+  [/^(\d+) access blocked$/, (_, n) => `${n} con acceso bloqueado`],
+  [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} a la espera de investigación en Xiaohongshu`],
+  [/^(\d+) not yet checked$/, (_, n) => `${n} aún sin revisar`]
 );

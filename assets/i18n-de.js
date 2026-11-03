@@ -1659,6 +1659,12 @@ export function translateGerman(value) {
     [/^(\d+) with a rated aspect$/, (_, n) => `${n} mit bewertetem Aspekt`],
     [/^(\d+) coded below the threshold$/, (_, n) => `${n} codiert, unter der Schwelle`],
     [/^(\d+) not yet coded$/, (_, n) => `${n} noch nicht codiert`],
+    [/^(\d+) counted$/, (_, n) => `${n} gezählt`],
+    [/^(\d+) below the threshold$/, (_, n) => `${n} unter der Schwelle`],
+    [/^(\d+) with no eligible owner found$/, (_, n) => `${n} ohne verwertbaren Besitzer`],
+    [/^(\d+) access blocked$/, (_, n) => `${n} mit gesperrtem Zugriff`],
+    [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} warten auf Xiaohongshu-Recherche`],
+    [/^(\d+) not yet checked$/, (_, n) => `${n} noch nicht geprüft`],
     [/^(\d+) wheelsets · reviewed (.+)$/, (_, n, date) => `${n} Laufradsätze · geprüft ${date}`],
     [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · ${width} mm Innenweite`],
     [/^(\d+) kg system limit$/, (_, kg) => `${kg} kg Systemgewicht`],
@@ -2497,5 +2503,20 @@ Object.assign(de, {
   "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "Kurze Zusammenfassungen ganzer öffentlicher Beiträge, erfasst vor der Codierung Besitzer für Besitzer. Sie beschreiben den Reifen eines Fahrers, sind keine Tests und zählen nicht zu den Besitzerbewertungen.",
   "Most owners coded": "Meiste codierte Besitzer",
   "no aspect rated yet": "noch kein Aspekt bewertet",
-  "A tire that has not been coded may still have many owners; its reports have not been checked owner by owner yet.": "Ein noch nicht codierter Reifen kann viele Besitzer haben; seine Berichte wurden nur noch nicht Besitzer für Besitzer geprüft."
+});
+
+// Tire owner checked-source ledger (2026-11-03).
+Object.assign(de, {
+  "Xiaohongshu posts": "Xiaohongshu-Beiträge",
+  "Sigma Sports reviews": "Sigma-Sports-Bewertungen",
+  "bike-components reviews": "bike-components-Bewertungen",
+  "BRR reader comments": "BRR-Leserkommentare",
+  "no eligible review": "keine verwertbare Bewertung",
+  "not listed": "nicht gelistet",
+  "access blocked": "Zugriff gesperrt",
+  "pending": "ausstehend",
+  "Review sources blocked": "Bewertungsquellen gesperrt",
+  "Xiaohongshu research pending": "Xiaohongshu-Recherche ausstehend",
+  "Checked": "Geprüft",
+  "A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.": "Ein noch nicht geprüfter Reifen kann viele Besitzer haben; seine Berichte wurden nur noch nicht Besitzer für Besitzer geprüft. Jeder geprüfte Reifen nennt in seinen Details die geprüften Quellen."
 });

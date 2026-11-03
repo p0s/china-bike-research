@@ -51,7 +51,7 @@
       "source_id": "xhs-chaoyang-h496-vs-gp5000-2024-12-29",
       "stance": "mixed",
       "published_at": "2024-12-29",
-      "summary": "A creator's two-week power-meter comparison found it a slower substitute for the GP5000, not an equal; uncontrolled road test."
+      "summary": "A creator's two-week power-meter comparison of a Chaoyang tire the post calls the Cobra (眼镜蛇); owners also use that name for this tire, so the exact model is unresolved. Uncontrolled road test: a slower substitute for the GP5000."
     },
     {
       "source_id": "xhs-chaoyang-falcon-sidewall-2025-09-26",
@@ -166,5 +166,25 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: four Xiaohongshu posts about the H-496 reviewed owner by owner, plus the Sigma Sports and bike-components catalogues. No owner said whether the tire was the clincher or the tubeless version, and one post may describe the Chaoyang Cobra, so no owner is counted. The earlier post notes remain unverified.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "Four posts; none states clincher or tubeless"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      }
+    ]
   }
 }

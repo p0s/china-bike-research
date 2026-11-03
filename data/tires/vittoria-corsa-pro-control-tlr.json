@@ -158,8 +158,35 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: every reader comment on Bicycle Rolling Resistance's test pages for this tire, the written customer reviews that bike-components and Sigma Sports serve on their product pages (reviews loaded by third-party widgets were not read) and owner comments in the coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. No owner comment was found in the coded Xiaohongshu threads.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
     "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2026-07-19",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Excellent grip, very smooth and surprisingly fast."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2026-05-19",
+        "width_mm": 42,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "High comfort on poor roads without giving up speed; about as fast as a 40 mm Schwalbe G-One RS Pro and slightly more supple."
+      },
       {
         "source_ids": [
           "sigma-sports-corsa-pro-control-tlr-reviews"
@@ -177,14 +204,28 @@
         "source_ids": [
           "sigma-sports-corsa-pro-control-tlr-reviews"
         ],
-        "published_at": "2026-05-19",
-        "width_mm": 42,
+        "published_at": "2023-07-09",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Rolls smoothly and fast at 80 psi and feels very sure in corners."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2023-06-25",
+        "width_mm": null,
         "setup": null,
         "codes": {
           "overall": "favourable",
-          "speed": "favourable"
+          "speed": "mixed"
         },
-        "summary": "High comfort on poor roads without giving up speed; about as fast as a 40 mm Schwalbe G-One RS Pro and slightly more supple."
+        "summary": "Does a splendid job on rough UK roads; not slow, but slower than a GP5000 S TR or the regular Corsa Pro."
       },
       {
         "source_ids": [
@@ -211,6 +252,25 @@
           "speed": "favourable"
         },
         "summary": "Feels faster than its lab result and has a great road feel, but the owner regrets not choosing the regular Corsa Pro after its puncture-test result."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 5,
+        "note": "One of 6 written reviews only repeats other reviews"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "Two of 3 written reviews describe only mounting or a first impression"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1
       }
     ]
   }
