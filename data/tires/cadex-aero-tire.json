@@ -66,8 +66,48 @@
   ],
   "source_ids": [
     "bicycle-rolling-resistance-cadex-aero-tire-2026-11-01",
-    "bikeradar-giant-founder-2026-02-17"
+    "bikeradar-giant-founder-2026-02-17",
+    "xhs-cadex-aero-tubeless-shop-unboxing"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and every Bicycle Rolling Resistance reader comment on this tire's test pages. Counted only owners who describe their own riding of this exact model and, where it is sold in more than one construction or generation, say which; seller and shop posts, questions, unmounted impressions and reports about other models were left out. The shop's own unboxing post is not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-cadex-aero-tubeless-shop-unboxing"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Several months",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Used for several months and finds it really good."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One commenter on a shop post"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "One comment, not first-hand"
+      }
+    ]
+  }
 }

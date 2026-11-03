@@ -94,9 +94,14 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Xiaohongshu checked on 2026-11-03: the only detailed owner report describes a tubeless 32 mm Re-Fuse, which conflicts with this tube-type record, so it is not counted here.",
     "reports": [],
     "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "A tubeless 32 mm Re-Fuse touring report is not this tube-type record; a puncture report did not state the generation"
+      },
       {
         "route": "sigma-sports",
         "outcome": "not-listed",
