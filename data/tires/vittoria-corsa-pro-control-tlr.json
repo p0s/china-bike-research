@@ -126,7 +126,8 @@
     "vittoria-corsa-pro-control-tmall-2026-11-01",
     "sigma-sports-corsa-pro-control-tlr-reviews",
     "bike-components-corsa-pro-control-tlr-reviews",
-    "brr-comments-vittoria-corsa-pro-control-tlr"
+    "brr-comments-vittoria-corsa-pro-control-tlr",
+    "brr-comments-vittoria-corsa-pro-control-34"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -158,7 +159,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
     "reports": [
       {
         "source_ids": [
@@ -252,6 +253,31 @@
           "speed": "favourable"
         },
         "summary": "Feels faster than its lab result and has a great road feel, but the owner regrets not choosing the regular Corsa Pro after its puncture-test result."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-control-34"
+        ],
+        "published_at": "2024-08-31",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "Having ridden the 32 mm and a knobby mountain-bike tire, the owner finds this tire far faster in practice than the test suggests."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-control-34"
+        ],
+        "published_at": "2024-08-31",
+        "width_mm": 34,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable"
+        },
+        "summary": "Ridden back to back with a 28 mm GP5000, the 34 mm felt no slower, but it measures barely 31 mm, so the owner plans to replace it."
       }
     ],
     "checks": [
@@ -270,7 +296,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 1
+        "owners": 3,
+        "note": "28 mm road and 34, 38 and 42 mm gravel test pages"
       }
     ]
   }
