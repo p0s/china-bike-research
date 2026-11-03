@@ -78,7 +78,9 @@
     "Bicycle Rolling Resistance's 2016 Rubino Pro Speed test is not applied."
   ],
   "source_ids": [
-    "vittoria-rubino-tubeless-ready-official-2026-11-01"
+    "vittoria-rubino-tubeless-ready-official-2026-11-01",
+    "sigma-sports-vittoria-rubino-v-tlr-reviews",
+    "bike-components-vittoria-rubino-v-tlr-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -107,5 +109,55 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. Reviews of the earlier Rubino Pro IV are not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-rubino-v-tlr-reviews"
+        ],
+        "published_at": "2026-10-30",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "A few weeks",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Aired up without sealant and has been faultless on a bumpy commute for a few weeks."
+      },
+      {
+        "source_ids": [
+          "bike-components-vittoria-rubino-v-tlr-reviews"
+        ],
+        "published_at": "2026-10-07",
+        "width_mm": 34,
+        "setup": null,
+        "exposure": "300 km",
+        "codes": {
+          "speed": "mixed"
+        },
+        "summary": "Rolls satisfactorily, though very hard to fit and narrower than labelled."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 1
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One of 2 written reviews is a return without riding"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "Only the earlier Rubino Pro was tested"
+      }
+    ]
   }
 }

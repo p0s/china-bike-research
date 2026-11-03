@@ -69,7 +69,10 @@
   "source_ids": [
     "michelin-power-cup-competition-line-official-2026-11-01",
     "michelin-road-range-gb-2026-11-01",
-    "michelin-power-cup-competition-line-tmall-2026-11-01"
+    "michelin-power-cup-competition-line-tmall-2026-11-01",
+    "bike-components-michelin-power-cup-reviews",
+    "brr-comments-michelin-power-cup",
+    "brr-comments-michelin-power-cup-tlr"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -97,5 +100,137 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-michelin-power-cup-reviews"
+        ],
+        "published_at": "2023-09-25",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "One of the owner's favourite road tires: super grip and rolls very well."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup"
+        ],
+        "published_at": "2023-02-20",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "wet": "unfavourable"
+        },
+        "summary": "Oily residue from new made the tires erratic on wet roads until scrubbed."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup"
+        ],
+        "published_at": "2022-09-23",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "grip": "unfavourable"
+        },
+        "summary": "Really great tires, but grip gave way in hard technical cornering on 23/25 mm sizes on wide rims."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup"
+        ],
+        "published_at": "2022-09-28",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "grip": "favourable"
+        },
+        "summary": "No grip issues on 21 mm rims after Specialized Turbo Cottons."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup"
+        ],
+        "published_at": "2022-09-29",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "grip": "favourable",
+          "speed": "mixed"
+        },
+        "summary": "Unbeatable cornering grip, just slightly slower than the GP5000, especially at lower pressures."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup-tlr"
+        ],
+        "published_at": "2022-06-08",
+        "width_mm": 25,
+        "setup": "inner-tube",
+        "exposure": "150 km",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Excellent cornering and no cuts after 150 hard kilometres; full trust."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup-tlr"
+        ],
+        "published_at": "2022-06-13",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Superior ride quality, more cornering confidence than the GP5000 and equally fast with latex tubes."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup-tlr"
+        ],
+        "published_at": "2022-07-11",
+        "width_mm": 25,
+        "setup": "inner-tube",
+        "exposure": "About 700 miles",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Bags of grip, better handling than the GP5000 and new personal records, but a stone cut a sidewall beyond repair after about 700 miles."
+      }
+    ],
+    "checks": [
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed",
+        "note": "Only the earlier Pro4 is listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 7,
+        "note": "Clincher test page plus clincher owners on the TLR page"
+      }
+    ]
   }
 }
