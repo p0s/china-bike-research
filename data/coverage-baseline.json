@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02",
+  "updated_at": "2026-11-03",
   "catalog_metrics": {
     "records": {
       "brands": 43,
@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2122,
+      "sources": 2135,
       "images": 900,
       "videos": 267,
       "opinions": 13,
@@ -330,11 +330,19 @@
       "bigrock-japan-products-recheck-2026-09-23",
       "bigrock-sohtea-panda-podium-2026-08-17",
       "bigrock-sohtea-panda-podium-recheck-2026-09-23",
+      "bike-components-corsa-pro-control-tlr-reviews",
+      "bike-components-gp5000-as-tr-reviews",
+      "bike-components-gp5000-s-tr-reviews",
+      "bike-components-gp5000-s-tr-set-reviews",
       "bikeradar-cervelo-aspero5-2026-08-29",
       "bikeradar-giant-founder-2026-02-17",
       "biketo-girder-vagrant-2016-2026-10-23",
       "biketo-pardus-uragano-evo-review-2023",
       "biketo-quick-gr-one-launch-2025",
+      "brr-comments-continental-grand-prix-5000-as-tr-28",
+      "brr-comments-continental-grand-prix-5000-s-tr",
+      "brr-comments-pirelli-p-zero-race-tlr-28",
+      "brr-comments-vittoria-corsa-pro-control-tlr",
       "bxt-055-bikeinsights-geometry-2026-09-01",
       "bxt-055-official",
       "bxt-055-official-recheck-2026-09-23",
@@ -1736,6 +1744,9 @@
       "shimano-sm-bb72-41b-official-2026-08-27",
       "shimano-sm-rt70-official-2026-08-27",
       "shimano-ultegra-r8150-official-2026-08-24",
+      "sigma-sports-corsa-pro-control-tlr-reviews",
+      "sigma-sports-gp5000-as-tr-reviews",
+      "sigma-sports-gp5000-s-tr-reviews",
       "silca-about-official-2026-11-01",
       "silca-protocol-rcr-official-2026-11-01",
       "smzdm-shimano-di2-market-observations-2026-08-24",
@@ -2274,9 +2285,11 @@
       "xhs-arisun-storm-r1-10000-km-2026-10-02",
       "xhs-arisun-storm-r1-1800-km-2026-06-26",
       "xhs-arisun-storm-r1-3000-km-2025-06-12",
+      "xhs-arisun-storm-r1-70-km-log",
       "xhs-arisun-storm-r1-dry-review-2025-06-26",
       "xhs-arisun-storm-r1-test-2025-01-25",
       "xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
+      "xhs-arisun-storm-r1-tlr-sealant-leak",
       "xhs-arisun-storm-r1-tlr-test-2025-05-19",
       "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20",
       "xhs-arisun-storm-r1-weights-2025-04-26",
@@ -11138,6 +11151,54 @@
         "type",
         "url"
       ],
+      "bike-components-corsa-pro-control-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-gp5000-as-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-gp5000-s-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-gp5000-s-tr-set-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bikeradar-cervelo-aspero5-2026-08-29": [
         "accessed_at",
         "language",
@@ -11187,6 +11248,54 @@
         "url"
       ],
       "biketo-quick-gr-one-launch-2025": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-continental-grand-prix-5000-as-tr-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-continental-grand-prix-5000-s-tr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-pirelli-p-zero-race-tlr-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-vittoria-corsa-pro-control-tlr": [
         "accessed_at",
         "language",
         "notes",
@@ -28989,6 +29098,42 @@
         "type",
         "url"
       ],
+      "sigma-sports-corsa-pro-control-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-gp5000-as-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-gp5000-s-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "silca-about-official-2026-11-01": [
         "accessed_at",
         "language",
@@ -35741,6 +35886,18 @@
         "type",
         "url"
       ],
+      "xhs-arisun-storm-r1-70-km-log": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xhs-arisun-storm-r1-dry-review-2025-06-26": [
         "accessed_at",
         "language",
@@ -35766,6 +35923,18 @@
         "url"
       ],
       "xhs-arisun-storm-r1-tlr-bulges-2026-09-09": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-arisun-storm-r1-tlr-sealant-leak": [
         "accessed_at",
         "language",
         "notes",
@@ -75641,6 +75810,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -75690,6 +75862,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -77420,6 +77595,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -77472,6 +77650,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -80885,6 +81066,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -82832,6 +83016,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -131256,11 +131443,19 @@
       "bigrock-japan-products-recheck-2026-09-23": [],
       "bigrock-sohtea-panda-podium-2026-08-17": [],
       "bigrock-sohtea-panda-podium-recheck-2026-09-23": [],
+      "bike-components-corsa-pro-control-tlr-reviews": [],
+      "bike-components-gp5000-as-tr-reviews": [],
+      "bike-components-gp5000-s-tr-reviews": [],
+      "bike-components-gp5000-s-tr-set-reviews": [],
       "bikeradar-cervelo-aspero5-2026-08-29": [],
       "bikeradar-giant-founder-2026-02-17": [],
       "biketo-girder-vagrant-2016-2026-10-23": [],
       "biketo-pardus-uragano-evo-review-2023": [],
       "biketo-quick-gr-one-launch-2025": [],
+      "brr-comments-continental-grand-prix-5000-as-tr-28": [],
+      "brr-comments-continental-grand-prix-5000-s-tr": [],
+      "brr-comments-pirelli-p-zero-race-tlr-28": [],
+      "brr-comments-vittoria-corsa-pro-control-tlr": [],
       "bxt-055-bikeinsights-geometry-2026-09-01": [],
       "bxt-055-official": [],
       "bxt-055-official-recheck-2026-09-23": [],
@@ -132710,6 +132905,9 @@
       "shimano-sm-bb72-41b-official-2026-08-27": [],
       "shimano-sm-rt70-official-2026-08-27": [],
       "shimano-ultegra-r8150-official-2026-08-24": [],
+      "sigma-sports-corsa-pro-control-tlr-reviews": [],
+      "sigma-sports-gp5000-as-tr-reviews": [],
+      "sigma-sports-gp5000-s-tr-reviews": [],
       "silca-about-official-2026-11-01": [],
       "silca-protocol-rcr-official-2026-11-01": [],
       "smzdm-shimano-di2-market-observations-2026-08-24": [],
@@ -133248,9 +133446,11 @@
       "xhs-arisun-storm-r1-10000-km-2026-10-02": [],
       "xhs-arisun-storm-r1-1800-km-2026-06-26": [],
       "xhs-arisun-storm-r1-3000-km-2025-06-12": [],
+      "xhs-arisun-storm-r1-70-km-log": [],
       "xhs-arisun-storm-r1-dry-review-2025-06-26": [],
       "xhs-arisun-storm-r1-test-2025-01-25": [],
       "xhs-arisun-storm-r1-tlr-bulges-2026-09-09": [],
+      "xhs-arisun-storm-r1-tlr-sealant-leak": [],
       "xhs-arisun-storm-r1-tlr-test-2025-05-19": [],
       "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20": [],
       "xhs-arisun-storm-r1-weights-2025-04-26": [],
@@ -138637,16 +138837,21 @@
         "source_ids=xhs-arisun-storm-r1-10000-km-2026-10-02",
         "source_ids=xhs-arisun-storm-r1-1800-km-2026-06-26",
         "source_ids=xhs-arisun-storm-r1-3000-km-2025-06-12",
+        "source_ids=xhs-arisun-storm-r1-70-km-log",
         "source_ids=xhs-arisun-storm-r1-dry-review-2025-06-26",
         "source_ids=xhs-arisun-storm-r1-test-2025-01-25",
         "source_ids=xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
+        "source_ids=xhs-arisun-storm-r1-tlr-sealant-leak",
+        "source_ids=xhs-arisun-storm-r1-tlr-vs-str-2026-10-20",
         "source_ids=xhs-arisun-storm-r1-weights-2025-04-26",
         "source_ids=xhs-budget-road-tire-comparison-2025-07-16"
       ],
       "arisun-storm-r1-tlr": [
         "image.source_id=xhs-arisun-storm-r1-weights-2025-04-26",
         "source_ids=arisun-storm-r1-tmall-2026-11-01",
+        "source_ids=xhs-arisun-storm-r1-dry-review-2025-06-26",
         "source_ids=xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
+        "source_ids=xhs-arisun-storm-r1-tlr-sealant-leak",
         "source_ids=xhs-arisun-storm-r1-tlr-test-2025-05-19",
         "source_ids=xhs-arisun-storm-r1-tlr-vs-str-2026-10-20",
         "source_ids=xhs-arisun-storm-r1-weights-2025-04-26"
@@ -138842,18 +139047,28 @@
       "continental-grand-prix-5000-all-season-tr": [
         "image.source_id=continental-grand-prix-5000-allseason-tr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-gp5000-as-tr-reviews",
+        "source_ids=brr-comments-continental-grand-prix-5000-as-tr-28",
+        "source_ids=brr-comments-pirelli-p-zero-race-tlr-28",
         "source_ids=continental-grand-prix-5000-allseason-tr-official-2026-11-01",
         "source_ids=continental-grand-prix-5000-as-tr-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
-        "source_ids=continental-road-range-us-2026-11-01"
+        "source_ids=continental-road-range-us-2026-11-01",
+        "source_ids=sigma-sports-gp5000-as-tr-reviews"
       ],
       "continental-grand-prix-5000-s-tr": [
         "image.source_id=continental-grand-prix-5000-s-tr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-gp5000-s-tr-reviews",
+        "source_ids=bike-components-gp5000-s-tr-set-reviews",
+        "source_ids=brr-comments-continental-grand-prix-5000-s-tr",
         "source_ids=continental-grand-prix-5000-s-tr-official-2026-11-01",
         "source_ids=continental-grand-prix-5000-s-tr-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
-        "source_ids=continental-road-range-us-2026-11-01"
+        "source_ids=continental-road-range-us-2026-11-01",
+        "source_ids=sigma-sports-gp5000-s-tr-reviews",
+        "source_ids=xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
+        "source_ids=xhs-arisun-storm-r1-tlr-vs-str-2026-10-20"
       ],
       "continental-grand-prix-tr": [
         "image.source_id=continental-grand-prix-tr-official-2026-11-01",
@@ -139282,6 +139497,7 @@
       "pirelli-p-zero-race-tlr": [
         "image.source_id=pirelli-p-zero-race-tlr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-pirelli-p-zero-race-tlr-28",
         "source_ids=cahaba-pirelli-p-zero-race-tlr-2026-11-01",
         "source_ids=pirelli-p-zero-race-tlr-official-2026-11-01",
         "source_ids=pirelli-road-range-gb-2026-11-01"
@@ -139518,6 +139734,9 @@
       "vittoria-corsa-pro-control-tlr": [
         "image.source_id=vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-corsa-pro-control-tlr-reviews",
+        "source_ids=brr-comments-vittoria-corsa-pro-control-tlr",
+        "source_ids=sigma-sports-corsa-pro-control-tlr-reviews",
         "source_ids=vittoria-corsa-pro-control-tmall-2026-11-01",
         "source_ids=vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01"
       ],
@@ -150642,6 +150861,38 @@
         "specification": 1
       }
     },
+    "bike-components-corsa-pro-control-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-gp5000-as-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-gp5000-s-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-gp5000-s-tr-set-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bikeradar-cervelo-aspero5-2026-08-29": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -150680,6 +150931,38 @@
         "identity": 3,
         "price": 3,
         "specification": 2
+      }
+    },
+    "brr-comments-continental-grand-prix-5000-as-tr-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-continental-grand-prix-5000-s-tr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-pirelli-p-zero-race-tlr-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-vittoria-corsa-pro-control-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
       }
     },
     "bxt-055-bikeinsights-geometry-2026-09-01": {
@@ -161997,6 +162280,30 @@
         "specification": 3
       }
     },
+    "sigma-sports-corsa-pro-control-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-gp5000-as-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-gp5000-s-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "silca-about-official-2026-11-01": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -166389,6 +166696,14 @@
         "specification": 0
       }
     },
+    "xhs-arisun-storm-r1-70-km-log": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "xhs-arisun-storm-r1-dry-review-2025-06-26": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -166406,6 +166721,14 @@
       }
     },
     "xhs-arisun-storm-r1-tlr-bulges-2026-09-09": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-arisun-storm-r1-tlr-sealant-leak": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
