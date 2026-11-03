@@ -45,7 +45,20 @@
   "weight_claim_type": "seller claim",
   "weight_basis": "The official listing gives 248 g without stating the size.",
   "tests": [],
-  "wet_notes": [],
+  "wet_notes": [
+    {
+      "kind": "community report",
+      "summary": "An owner who did not say clincher or tubeless found it stable in the rain.",
+      "source_id": "xhs-chaoyang-h496-rain-review-2025-12-25",
+      "stance": "positive"
+    },
+    {
+      "kind": "community report",
+      "summary": "A commenter who did not say clincher or tubeless found it too slippery for braking in the wet.",
+      "source_id": "xhs-chaoyang-h496-7000-km-2025-08-31",
+      "stance": "negative"
+    }
+  ],
   "community": [
     {
       "source_id": "xhs-chaoyang-h496-vs-gp5000-2024-12-29",
@@ -137,7 +150,9 @@
     "xhs-chaoyang-falcon-long-term-2025-09-11",
     "xhs-chaoyang-falcon-one-year-2026-04-13",
     "xhs-chaoyang-falcon-cracks-2026-04-16",
-    "xhs-domestic-25c-training-tire-2025-04-10"
+    "xhs-domestic-25c-training-tire-2025-04-10",
+    "xhs-chaoyang-h496-rain-review-2025-12-25",
+    "xhs-chaoyang-h496-7000-km-2025-08-31"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -169,13 +184,13 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Checked on 2026-11-03: four Xiaohongshu posts about the H-496 reviewed owner by owner, plus the Sigma Sports and bike-components catalogues. No owner said whether the tire was the clincher or the tubeless version, and one post may describe the Chaoyang Cobra, so no owner is counted. The earlier post notes remain unverified.",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model and, where the model is sold in more than one construction, say which; seller replies, questions, unmounted impressions and reports about other models were left out. Owners who did not say clincher or tubeless are kept as family-level wet notes; an inner tube that burst during fitting is not a tire report.",
     "reports": [],
     "checks": [
       {
         "route": "xiaohongshu",
         "outcome": "none",
-        "note": "Four posts; none states clincher or tubeless"
+        "note": "Seven posts; no owner says clincher or tubeless"
       },
       {
         "route": "sigma-sports",

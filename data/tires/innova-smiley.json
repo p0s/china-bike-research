@@ -41,20 +41,7 @@
   "weight_basis": "One owner reported 240 g for a 28C.",
   "tests": [],
   "wet_notes": [],
-  "community": [
-    {
-      "source_id": "xhs-budget-road-tire-comparison-2025-07-16",
-      "stance": "mixed",
-      "published_at": "2025-07-16",
-      "summary": "Rolled well for the price and fitted by hand, but had the least grip of five budget tires and a thin sidewall."
-    },
-    {
-      "source_id": "xhs-innova-smiley-six-years-2025-08-12",
-      "stance": "positive",
-      "published_at": "2025-08-12",
-      "summary": "Used on and off for six years before the sidewall came apart."
-    }
-  ],
+  "community": [],
   "availability": {
     "cn": "authorized-retail",
     "eu": "unverified",
@@ -83,8 +70,77 @@
     "innova-smiley-tmall-2026-11-01",
     "99bikes-innova-story-2026-11-01",
     "xhs-budget-road-tire-comparison-2025-07-16",
-    "xhs-innova-smiley-six-years-2025-08-12"
+    "xhs-innova-smiley-six-years-2025-08-12",
+    "xhs-innova-smiley-punctures-cracks"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model and, where the model is sold in more than one construction, say which; seller replies, questions, unmounted impressions and reports about other models were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-budget-road-tire-comparison-2025-07-16"
+        ],
+        "published_at": "2025-07-16",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "speed": "favourable",
+          "grip": "unfavourable"
+        },
+        "summary": "In an uncontrolled five-tire comparison it tied for second in rolling but came last for grip."
+      },
+      {
+        "source_ids": [
+          "xhs-innova-smiley-punctures-cracks"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Under 1,000 km",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "Punctured twice in one day by small stones and showed many cracks after under 1,000 km in less than a year."
+      },
+      {
+        "source_ids": [
+          "xhs-innova-smiley-six-years-2025-08-12"
+        ],
+        "published_at": "2025-08-12",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About six years",
+        "codes": {
+          "overall": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "A rear fitted in 2019 lasted about six years of on-off use before its sidewall came apart, still riding 30 km home; the owner then ordered the 3029."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "Four posts; an unexplained insult is not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }
