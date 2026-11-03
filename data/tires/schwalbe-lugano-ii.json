@@ -24,7 +24,7 @@
       "etrto": "25-622",
       "weight_g": 330,
       "max_psi": 115,
-      "max_bar": 8.0,
+      "max_bar": 8,
       "note": "Folding 330 g; wired 365 g (Classic-Skin) or 405 g (black)."
     },
     {
@@ -73,7 +73,7 @@
       "width_mm": 25
     },
     {
-      "amount": 26.0,
+      "amount": 26,
       "currency": "USD",
       "market": "Schwalbe North America recommended retail price",
       "region": "na",
@@ -95,7 +95,9 @@
     "schwalbe-lugano-ii-25-folding-2026-11-01",
     "schwalbe-lugano-ii-32-2026-11-01",
     "schwalbe-na-lugano-ii-2026-11-01",
-    "probikesupply-schwalbe-lugano-ii-2026-11-02"
+    "probikesupply-schwalbe-lugano-ii-2026-11-02",
+    "bike-components-schwalbe-lugano-ii-k-guard-reviews",
+    "bike-components-schwalbe-lugano-ii-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -124,5 +126,135 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. The wired, folding and coloured versions count as the same tire; the Lugano II Endurance is a separate tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-k-guard-reviews"
+        ],
+        "published_at": "2025-08-31",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Good grip and comfort for the price; a little demanding to mount."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-k-guard-reviews"
+        ],
+        "published_at": "2023-10-12",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "grip": "unfavourable"
+        },
+        "summary": "Good for the price, but the rubber becomes too hard to use in cold, dry weather."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-k-guard-reviews"
+        ],
+        "published_at": "2023-02-15",
+        "width_mm": 23,
+        "setup": null,
+        "exposure": "1.5 years",
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "After 1.5 years of daily use, cracks along the tread grooves reached the casing, so the tire had to be replaced."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-k-guard-reviews"
+        ],
+        "published_at": "2022-10-27",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "A year of daily use",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "A year of low-mileage daily use: rolling resistance barely above top tires and no complaints about punctures."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-k-guard-reviews"
+        ],
+        "published_at": "2022-05-21",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "Both tires had a bulge from new that made riding uncomfortable."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-reviews"
+        ],
+        "published_at": "2026-09-03",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Surprisingly good to ride and roll."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-reviews"
+        ],
+        "published_at": "2023-01-08",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "wear": "unfavourable"
+        },
+        "summary": "A very comfortable budget tire, but not hard-wearing."
+      },
+      {
+        "source_ids": [
+          "bike-components-schwalbe-lugano-ii-reviews"
+        ],
+        "published_at": "2020-06-23",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Rolls very well and looks great."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 8,
+        "note": "Wired, K-Guard wired and folding listings; one review relies on lab tests rather than riding"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "The 2020 test sample carries this tire's article number; 3 comments, none first-hand"
+      }
+    ]
   }
 }

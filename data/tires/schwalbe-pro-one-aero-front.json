@@ -58,7 +58,7 @@
   ],
   "price_observations": [
     {
-      "amount": 91.0,
+      "amount": 91,
       "currency": "USD",
       "market": "Schwalbe North America recommended retail price",
       "region": "na",
@@ -77,5 +77,27 @@
     "bicycle-rolling-resistance-road-table-2026-11-01"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "none",
+        "note": "Two listings; the one written review describes only setup"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "6 comments, none first-hand"
+      }
+    ]
+  }
 }
