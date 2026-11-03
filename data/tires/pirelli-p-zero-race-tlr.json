@@ -123,7 +123,10 @@
     "bicycle-rolling-resistance-road-table-2026-11-01",
     "cahaba-pirelli-p-zero-race-tlr-2026-11-01",
     "brr-comments-pirelli-p-zero-race-tlr-28",
-    "brr-comments-continental-aero-111"
+    "brr-comments-continental-aero-111",
+    "brr-comments-pirelli-p-zero-race-tlr-32",
+    "brr-comments-pirelli-p-zero-race-tlr-35",
+    "brr-comments-pirelli-p-zero-race-tlr-4s-32"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -154,7 +157,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-04: the 32, 35 and 40 mm test pages' reader comments are now read as well.",
     "reports": [
       {
         "source_ids": [
@@ -213,6 +216,61 @@
           "wear": "favourable"
         },
         "summary": "The owner's regular tire, with the best balance of durability, puncture resistance and speed; holds pressure well tubeless."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-32"
+        ],
+        "published_at": "2024-05-28",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Ridden in 28 mm for a while: the best race tire for real-world use the owner has tried."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-35"
+        ],
+        "published_at": "2025-04-02",
+        "width_mm": 35,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Perfect on a fastpacking trip: comfortable, grippy and quick enough to keep up with the owner's usual groups."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-35"
+        ],
+        "published_at": "2025-04-15",
+        "width_mm": 35,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "unfavourable"
+        },
+        "summary": "Heavy and stodgy as a commuter tire, with a noticeable speed and comfort penalty in 35 mm; the owner calls it a failed experiment."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-4s-32",
+          "brr-comments-pirelli-p-zero-race-tlr-35"
+        ],
+        "published_at": "2024-10-22",
+        "width_mm": 30,
+        "setup": "tubeless",
+        "exposure": "About 3,000 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Noticeably faster than the 4S, far more comfortable than the Corsa Pro in 30 mm, holds air and no puncture in about 3,000 km."
       }
     ],
     "checks": [
@@ -229,8 +287,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 4,
-        "note": "28 and 30 mm test pages plus an owner commenting on the Aero 111 test"
+        "owners": 8,
+        "note": "28, 30, 32, 35 and 40 mm test pages plus owners on the Aero 111 and TLR 4S tests"
       }
     ]
   }

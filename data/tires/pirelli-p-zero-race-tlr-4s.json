@@ -78,7 +78,11 @@
   "source_ids": [
     "pirelli-p-zero-race-tlr-4s-official-2026-11-01",
     "pirelli-road-range-gb-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-pirelli-p-zero-race-tlr-4s-reviews",
+    "brr-comments-pirelli-p-zero-race-tlr-4s",
+    "brr-comments-pirelli-p-zero-race-tlr-28",
+    "brr-comments-pirelli-p-zero-race-tlr-4s-32"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -106,5 +110,102 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-tlr-4s-reviews"
+        ],
+        "published_at": "2025-02-21",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A great tire once fitted that holds air extremely well, though very tight to mount."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-tlr-4s-reviews"
+        ],
+        "published_at": "2024-06-23",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "More confidence on the road after replacing the bike's original tires."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-tlr-4s-reviews"
+        ],
+        "published_at": "2024-05-08",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A few months",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "No issues over a few months; grips well and feels fast."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-4s"
+        ],
+        "published_at": "2023-09-16",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "4,600 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Does not feel slow and feels strong; on the rear the wear indicator is barely visible at 4,600 km, far longer than a Corsa N.EXT TLR lasted."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-28",
+          "brr-comments-pirelli-p-zero-race-tlr-4s",
+          "brr-comments-pirelli-p-zero-race-tlr-4s-32"
+        ],
+        "published_at": "2023-07-09",
+        "width_mm": 30,
+        "setup": "tubeless",
+        "exposure": "About 4,000 km",
+        "codes": {
+          "overall": "mixed",
+          "wet": "favourable",
+          "speed": "unfavourable",
+          "punctures": "favourable"
+        },
+        "summary": "Truly amazing grip in pouring rain, but noticeably slower than the GP5000 S TR and the standard P ZERO Race TLR; one plugged puncture in about 4,000 km."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "One of 4 written reviews describes only fitting and width"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "28 and 32 mm test pages plus an owner on the P ZERO Race TLR test"
+      }
+    ]
   }
 }

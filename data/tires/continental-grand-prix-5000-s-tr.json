@@ -164,7 +164,9 @@
     "brr-comments-continental-grand-prix-5000-s-tr-32",
     "brr-comments-schwalbe-pro-one-tle-34",
     "brr-comments-continental-grand-prix-5000-s-tr-35",
-    "brr-comments-michelin-power-cup-tlr-28"
+    "brr-comments-michelin-power-cup-tlr-28",
+    "brr-comments-pirelli-p-zero-race-tlr-sl-r",
+    "brr-comments-pirelli-p-zero-race-tlr-sl-r-30"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -761,6 +763,31 @@
           "punctures": "unfavourable"
         },
         "summary": "On glass-strewn city roads the 32 mm was full of cuts sealant could not close after 3,000-4,000 km, and a 28 mm punctured after 100 km."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-05-11",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "15,000 km",
+        "codes": {
+          "punctures": "favourable"
+        },
+        "summary": "15,000 km without a single puncture before trying the SL-R."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r-30"
+        ],
+        "published_at": "2026-08-23",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Went back to it from the SL-R: an overall better tire that has never left the owner stranded, with sealant and plugs that work."
       }
     ],
     "checks": [
@@ -779,7 +806,7 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 7,
+        "owners": 9,
         "note": "Test pages for 25, 28, 30, 32 and 35 mm and the tanwall option, plus owners commenting on other tires' tests"
       },
       {
