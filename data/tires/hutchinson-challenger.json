@@ -52,7 +52,9 @@
   ],
   "source_ids": [
     "hutchinson-challenger-official-2026-11-01",
-    "hutchinson-history-official-2026-11-01"
+    "hutchinson-history-official-2026-11-01",
+    "sigma-sports-hutchinson-challenger-reviews",
+    "brr-comments-hutchinson-blackbird-race-tlr"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -80,5 +82,72 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-challenger-reviews"
+        ],
+        "published_at": "2025-01-05",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Rolls well on a winter bike and has been good in all conditions over the holidays."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-challenger-reviews"
+        ],
+        "published_at": "2024-07-12",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A few weeks",
+        "codes": {
+          "overall": "favourable",
+          "speed": "unfavourable"
+        },
+        "summary": "An ideal winter tire with no punctures in a few weeks, though it rolls slowly."
+      },
+      {
+        "source_ids": [
+          "brr-comments-hutchinson-blackbird-race-tlr"
+        ],
+        "published_at": "2026-02-05",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A couple of years",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Very durable over a couple of years, with clearly better rolling and grip than the Gatorskins used before."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "Two of 4 written reviews describe only fitting or quote test figures"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "No test page; one owner on the Blackbird Race TLR test"
+      }
+    ]
   }
 }

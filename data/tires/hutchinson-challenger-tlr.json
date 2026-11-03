@@ -61,7 +61,8 @@
   "source_ids": [
     "hutchinson-challenger-official-2026-11-01",
     "hutchinson-history-official-2026-11-01",
-    "hutchinson-hookless-official-2026-11-01"
+    "hutchinson-hookless-official-2026-11-01",
+    "sigma-sports-hutchinson-challenger-tlr-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -89,5 +90,71 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-challenger-tlr-reviews"
+        ],
+        "published_at": "2026-03-04",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Over 8,000 km",
+        "codes": {
+          "overall": "favourable",
+          "wear": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Over 8,000 km on one tire with only a couple of flats that sealant fixed, and still some life left; rides nicely."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-challenger-tlr-reviews"
+        ],
+        "published_at": "2024-12-18",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "5,000 miles",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable",
+          "wet": "mixed"
+        },
+        "summary": "A fast commuter and audax tire: 5,000 miles on the front without a puncture, though grip in cold, wet weather is not the best."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-challenger-tlr-reviews"
+        ],
+        "published_at": "2024-10-28",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "wet": "favourable"
+        },
+        "summary": "Rolls smoothly and grips well in the wet, with no punctures so far."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 3
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
   }
 }

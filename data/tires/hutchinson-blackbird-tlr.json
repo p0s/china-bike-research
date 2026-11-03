@@ -80,7 +80,9 @@
     "hutchinson-blackbird-official-2026-11-01",
     "hutchinson-history-official-2026-11-01",
     "hutchinson-hookless-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-hutchinson-blackbird-tlr-reviews",
+    "brr-comments-hutchinson-blackbird-tlr"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -108,5 +110,136 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-tlr-reviews"
+        ],
+        "published_at": "2025-12-18",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 500 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Super supple, with good puncture resistance in about 500 km, and much better than the Pro One the owner had before."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-tlr-reviews"
+        ],
+        "published_at": "2025-05-15",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Under 200 km",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "An unrepairable sidewall puncture on an ordinary city street within 200 km."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-tlr-reviews"
+        ],
+        "published_at": "2025-01-19",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Great ride feel, easy to fit and excellent puncture protection."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-tlr-reviews"
+        ],
+        "published_at": "2024-11-22",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "A really supple ride that feels fast."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-tlr-reviews"
+        ],
+        "published_at": "2024-10-16",
+        "width_mm": 30,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Great grip and comfort, especially in 30 mm."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-tlr-reviews"
+        ],
+        "published_at": "2024-10-06",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable"
+        },
+        "summary": "Rolls well, but hard to seal even with double the sealant and loses air faster than other tubeless tires."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-tlr-reviews"
+        ],
+        "published_at": "2024-06-01",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Light, supple and fast, with a more compliant ride than the GP5000 TR."
+      },
+      {
+        "source_ids": [
+          "brr-comments-hutchinson-blackbird-tlr"
+        ],
+        "published_at": "2024-06-23",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Just under 280 miles",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Liked about as much as the P ZERO Race SpeedCORE after just under 280 miles: fast, light and lively at speed."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 7,
+        "note": "Two of 9 written reviews describe only mounting or value"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "28 mm test page"
+      }
+    ]
   }
 }
