@@ -60,12 +60,6 @@
   ],
   "community": [
     {
-      "source_id": "xhs-budget-road-tire-comparison-2025-07-16",
-      "stance": "mixed",
-      "published_at": "2025-07-16",
-      "summary": "Ranked fastest-feeling of five budget tires but last for puncture resistance and mid-pack for grip."
-    },
-    {
       "source_id": "xhs-arisun-storm-r1-3000-km-2025-06-12",
       "stance": "mixed",
       "published_at": "2025-06-12",
@@ -139,7 +133,8 @@
     "xhs-arisun-storm-r1-10000-km-2026-10-02",
     "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20",
     "xhs-arisun-storm-r1-70-km-log",
-    "xhs-arisun-storm-r1-tlr-sealant-leak"
+    "xhs-arisun-storm-r1-tlr-sealant-leak",
+    "xhs-chaoyang-h496-rain-review-2025-12-25"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -171,7 +166,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded from seven Xiaohongshu posts and their visible comments, reviewed on 2026-11-03 (not exhaustive). Counted only owners who said they ride the clincher; replies that did not say clincher or tubeless, seller replies, questions, hearsay, prices and repeated comments by one owner were left out. Five posts remain as post notes: four older posts whose commenters have not been checked owner by owner, and a 10,000 km report that does not say clincher or tubeless.",
+    "screening_note": "Coded from seven Xiaohongshu posts and their visible comments, reviewed on 2026-11-03 (not exhaustive). Counted only owners who said they ride the clincher or whose stated 28 mm weight is the clincher's; replies that did not say clincher or tubeless, seller replies, questions, hearsay, prices and repeated comments by one owner were left out. Two later comparison threads were added on 2026-11-03. Four posts remain as post notes: three older posts whose commenters have not been checked owner by owner, and a 10,000 km report that does not say clincher or tubeless.",
     "reports": [
       {
         "source_ids": [
@@ -311,6 +306,54 @@
           "overall": "favourable"
         },
         "summary": "Finds the clincher fine in use; the same owner gave up on the tubeless version early."
+      },
+      {
+        "source_ids": [
+          "xhs-budget-road-tire-comparison-2025-07-16"
+        ],
+        "published_at": "2025-07-16",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "speed": "favourable",
+          "grip": "mixed"
+        },
+        "summary": "In an uncontrolled five-tire comparison the 230 g 28 mm tire, the clincher's weight, rolled best and came third of five for grip."
+      },
+      {
+        "source_ids": [
+          "xhs-chaoyang-h496-rain-review-2025-12-25"
+        ],
+        "published_at": "2025-12-26",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Chose the clincher rather than tubeless for a new wheelset: quick to accelerate, rolls freely and holds well in sharp corners, though it is harsher over bumps at the owner's high pressure."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 13,
+        "note": "Nine posts; three older posts are not yet re-checked owner by owner"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
       }
     ]
   }

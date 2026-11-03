@@ -43,14 +43,7 @@
   "weight_basis": "No weight is given in the listing.",
   "tests": [],
   "wet_notes": [],
-  "community": [
-    {
-      "source_id": "xhs-budget-road-tire-comparison-2025-07-16",
-      "stance": "mixed",
-      "published_at": "2025-07-16",
-      "summary": "A commenter found it puncture-resistant but slow-rolling."
-    }
-  ],
+  "community": [],
   "availability": {
     "cn": "retail",
     "eu": "unverified",
@@ -164,14 +157,27 @@
           "casing": "unfavourable"
         },
         "summary": "A tire bought in March 2024 had cracked by September and was scrapped."
+      },
+      {
+        "source_ids": [
+          "xhs-budget-road-tire-comparison-2025-07-16"
+        ],
+        "published_at": "2025-07-17",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "punctures": "favourable",
+          "speed": "unfavourable"
+        },
+        "summary": "Finds its puncture protection good but its rolling resistance far too high."
       }
     ],
     "checks": [
       {
         "route": "xiaohongshu",
         "outcome": "counted",
-        "owners": 4,
-        "note": "Three posts; a claimed maker reply is not counted"
+        "owners": 5,
+        "note": "Four posts; a claimed maker reply is not counted"
       },
       {
         "route": "sigma-sports",
@@ -180,6 +186,11 @@
       {
         "route": "bike-components",
         "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
       }
     ]
   }
