@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2247,
+      "sources": 2250,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -332,6 +332,7 @@
       "bigrock-sohtea-panda-podium-recheck-2026-09-23",
       "bike-components-corsa-pro-control-tlr-reviews",
       "bike-components-gatorskin-reviews",
+      "bike-components-goodyear-vector-4season-tlr-reviews",
       "bike-components-gp-4-season-reviews",
       "bike-components-gp-4-season-set-reviews",
       "bike-components-gp5000-as-tr-reviews",
@@ -380,6 +381,8 @@
       "brr-comments-continental-grand-prix-5000-s-tr",
       "brr-comments-continental-grand-prix-5000-s-tr-32",
       "brr-comments-continental-grand-prix-5000-s-tr-35",
+      "brr-comments-goodyear-eagle-f1-r",
+      "brr-comments-goodyear-eagle-f1-supersport-r",
       "brr-comments-michelin-power-cup",
       "brr-comments-michelin-power-cup-tlr",
       "brr-comments-michelin-power-cup-tlr-28",
@@ -11307,6 +11310,18 @@
         "type",
         "url"
       ],
+      "bike-components-goodyear-vector-4season-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bike-components-gp-4-season-reviews": [
         "accessed_at",
         "language",
@@ -11872,6 +11887,30 @@
         "url"
       ],
       "brr-comments-continental-grand-prix-5000-s-tr-35": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-goodyear-eagle-f1-r": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-goodyear-eagle-f1-supersport-r": [
         "accessed_at",
         "language",
         "notes",
@@ -80743,6 +80782,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80789,6 +80831,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80835,6 +80880,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80861,6 +80909,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80907,6 +80958,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80953,6 +81007,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -80999,6 +81056,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -81046,6 +81106,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -81092,6 +81155,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -81187,6 +81253,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -133846,6 +133916,7 @@
       "bigrock-sohtea-panda-podium-recheck-2026-09-23": [],
       "bike-components-corsa-pro-control-tlr-reviews": [],
       "bike-components-gatorskin-reviews": [],
+      "bike-components-goodyear-vector-4season-tlr-reviews": [],
       "bike-components-gp-4-season-reviews": [],
       "bike-components-gp-4-season-set-reviews": [],
       "bike-components-gp5000-as-tr-reviews": [],
@@ -133894,6 +133965,8 @@
       "brr-comments-continental-grand-prix-5000-s-tr": [],
       "brr-comments-continental-grand-prix-5000-s-tr-32": [],
       "brr-comments-continental-grand-prix-5000-s-tr-35": [],
+      "brr-comments-goodyear-eagle-f1-r": [],
+      "brr-comments-goodyear-eagle-f1-supersport-r": [],
       "brr-comments-michelin-power-cup": [],
       "brr-comments-michelin-power-cup-tlr": [],
       "brr-comments-michelin-power-cup-tlr-28": [],
@@ -141879,6 +141952,7 @@
       "goodyear-vector-4seasons-tlr": [
         "image.source_id=goodyear-vector-4seasons-official-2026-11-01",
         "source_ids=bicycle-retailer-goodyear-premium-line-2018",
+        "source_ids=bike-components-goodyear-vector-4season-tlr-reviews",
         "source_ids=goodyear-vector-4seasons-official-2026-11-01"
       ],
       "goodyear-vector-r-tlr": [
@@ -142054,6 +142128,7 @@
       "michelin-power-cup": [
         "image.source_id=michelin-power-cup-competition-line-official-2026-11-01",
         "source_ids=bike-components-michelin-power-cup-reviews",
+        "source_ids=brr-comments-goodyear-eagle-f1-supersport-r",
         "source_ids=brr-comments-michelin-power-cup",
         "source_ids=brr-comments-michelin-power-cup-tlr",
         "source_ids=michelin-power-cup-competition-line-official-2026-11-01",
@@ -142175,6 +142250,7 @@
         "image.source_id=pirelli-p-zero-race-tlr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
         "source_ids=brr-comments-continental-aero-111",
+        "source_ids=brr-comments-goodyear-eagle-f1-r",
         "source_ids=brr-comments-pirelli-p-zero-race-tlr-28",
         "source_ids=brr-comments-pirelli-p-zero-race-tlr-32",
         "source_ids=brr-comments-pirelli-p-zero-race-tlr-35",
@@ -153617,6 +153693,14 @@
         "specification": 0
       }
     },
+    "bike-components-goodyear-vector-4season-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bike-components-gp-4-season-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -153994,6 +154078,22 @@
       }
     },
     "brr-comments-continental-grand-prix-5000-s-tr-35": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-goodyear-eagle-f1-r": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-goodyear-eagle-f1-supersport-r": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,

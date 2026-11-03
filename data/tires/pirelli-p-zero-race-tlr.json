@@ -126,7 +126,8 @@
     "brr-comments-continental-aero-111",
     "brr-comments-pirelli-p-zero-race-tlr-32",
     "brr-comments-pirelli-p-zero-race-tlr-35",
-    "brr-comments-pirelli-p-zero-race-tlr-4s-32"
+    "brr-comments-pirelli-p-zero-race-tlr-4s-32",
+    "brr-comments-goodyear-eagle-f1-r"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -271,6 +272,18 @@
           "punctures": "favourable"
         },
         "summary": "Noticeably faster than the 4S, far more comfortable than the Corsa Pro in 30 mm, holds air and no puncture in about 3,000 km."
+      },
+      {
+        "source_ids": [
+          "brr-comments-goodyear-eagle-f1-r"
+        ],
+        "published_at": "2023-11-06",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Preferred to the Eagle F1 SuperSport R after riding both, and holds air as well or better."
       }
     ],
     "checks": [
@@ -287,8 +300,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 8,
-        "note": "28, 30, 32, 35 and 40 mm test pages plus owners on the Aero 111 and TLR 4S tests"
+        "owners": 9,
+        "note": "28, 30, 32, 35 and 40 mm test pages plus owners on the Aero 111, TLR 4S and Eagle F1 R tests"
       }
     ]
   }
