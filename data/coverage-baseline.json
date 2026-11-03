@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2148,
+      "sources": 2150,
       "images": 900,
       "videos": 272,
       "opinions": 13,
@@ -2307,6 +2307,7 @@
       "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20",
       "xhs-arisun-storm-r1-weights-2025-04-26",
       "xhs-budget-clincher-comparison-2025-05-30",
+      "xhs-budget-clincher-test-irc-k925-2025-05-16",
       "xhs-budget-road-tire-comparison-2025-07-16",
       "xhs-chaoyang-chinese-knot-30c-2025-03-10",
       "xhs-chaoyang-falcon-cracks-2026-04-16",
@@ -2315,6 +2316,7 @@
       "xhs-chaoyang-falcon-sidewall-2025-09-26",
       "xhs-chaoyang-falcon-vs-us3-2026-02-23",
       "xhs-chaoyang-h486-boxes-2023-12-01",
+      "xhs-chaoyang-h486-cracks-2025-02-23",
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29",
       "xhs-chaoyang-mini-shark-launch-2024-04-11",
       "xhs-cst-c1406-cheap-slick-2025-11-26",
@@ -36168,6 +36170,18 @@
         "type",
         "url"
       ],
+      "xhs-budget-clincher-test-irc-k925-2025-05-16": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xhs-budget-road-tire-comparison-2025-07-16": [
         "accessed_at",
         "language",
@@ -36253,6 +36267,18 @@
         "url"
       ],
       "xhs-chaoyang-h486-boxes-2023-12-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-chaoyang-h486-cracks-2025-02-23": [
         "accessed_at",
         "language",
         "notes",
@@ -77427,6 +77453,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -77453,6 +77482,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -77499,6 +77531,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -77618,6 +77654,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -78173,6 +78212,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78202,6 +78245,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78250,6 +78297,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78278,6 +78329,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78326,6 +78381,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78353,6 +78412,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -133824,6 +133886,7 @@
       "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20": [],
       "xhs-arisun-storm-r1-weights-2025-04-26": [],
       "xhs-budget-clincher-comparison-2025-05-30": [],
+      "xhs-budget-clincher-test-irc-k925-2025-05-16": [],
       "xhs-budget-road-tire-comparison-2025-07-16": [],
       "xhs-chaoyang-chinese-knot-30c-2025-03-10": [],
       "xhs-chaoyang-falcon-cracks-2026-04-16": [],
@@ -133832,6 +133895,7 @@
       "xhs-chaoyang-falcon-sidewall-2025-09-26": [],
       "xhs-chaoyang-falcon-vs-us3-2026-02-23": [],
       "xhs-chaoyang-h486-boxes-2023-12-01": [],
+      "xhs-chaoyang-h486-cracks-2025-02-23": [],
       "xhs-chaoyang-h496-vs-gp5000-2024-12-29": [],
       "xhs-chaoyang-mini-shark-launch-2024-04-11": [],
       "xhs-cst-c1406-cheap-slick-2025-11-26": [],
@@ -139376,7 +139440,8 @@
         "image.source_id=xhs-chaoyang-h486-boxes-2023-12-01",
         "source_ids=chaoyang-h-486-taobao-2026-11-01",
         "source_ids=xhs-budget-road-tire-comparison-2025-07-16",
-        "source_ids=xhs-chaoyang-h486-boxes-2023-12-01"
+        "source_ids=xhs-chaoyang-h486-boxes-2023-12-01",
+        "source_ids=xhs-chaoyang-h486-cracks-2025-02-23"
       ],
       "chaoyang-h-496": [
         "image.source_id=xhs-domestic-25c-training-tire-2025-04-10",
@@ -139513,6 +139578,7 @@
         "image.source_id=xhs-cst-c3045-5000-km-2025-09-13",
         "source_ids=cst-energia-c3045-taobao-2026-11-01",
         "source_ids=tyrepress-cheng-shin-rubber-overview-2007",
+        "source_ids=xhs-budget-clincher-test-irc-k925-2025-05-16",
         "source_ids=xhs-cst-c3045-5000-km-2025-09-13",
         "source_ids=xhs-cst-c3045-high-road-gsr-2025-08-10",
         "source_ids=xhs-domestic-25c-training-tire-2025-04-10"
@@ -167274,6 +167340,14 @@
         "specification": 0
       }
     },
+    "xhs-budget-clincher-test-irc-k925-2025-05-16": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "xhs-budget-road-tire-comparison-2025-07-16": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -167331,6 +167405,14 @@
       }
     },
     "xhs-chaoyang-h486-boxes-2023-12-01": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-chaoyang-h486-cracks-2025-02-23": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
