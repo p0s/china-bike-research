@@ -154,18 +154,23 @@ test('failed product photos are hidden without substituting a placeholder', () =
   assert.doesNotMatch(script, /showing project placeholder|dataset\.completeBikeFallback|dataset\.framesetFallback/);
 });
 
-test('product galleries are explicit, keyboard-operable, and motion-safe', () => {
+test('product galleries are one swipeable, keyboard-operable and motion-safe slideshow', () => {
   assert.match(script, /document\.querySelectorAll\('\[data-image-gallery\]'\)/);
-  assert.match(script, /const caption = gallery\.querySelector\('\[data-image-caption-status\]\[data-gallery-caption\]'\)/);
-  assert.match(script, /const selectImage = \(button\) =>/);
-  assert.match(script, /button\.addEventListener\('click', \(\) => selectImage\(button\)\)/);
+  // Thumbnails are fragment links; with JavaScript they select the slide in place.
+  assert.match(script, /thumb\.addEventListener\('click', \(event\) => \{[\s\S]*?event\.preventDefault\(\);\s*show\(thumb\);/);
+  assert.match(script, /track\.scrollTo\(\{ left: slide\.offsetLeft, behavior: reduceMotion\.matches \? 'instant' : 'smooth' \}\)/);
+  // Swiping or scrolling the photos updates the selected thumbnail.
+  assert.match(script, /track\.addEventListener\('scroll', syncFromScroll, \{ passive: true \}\)/);
   assert.match(script, /ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1/);
   assert.match(script, /event\.key === 'Home'/);
   assert.match(script, /event\.key === 'End'/);
-  assert.doesNotMatch(script, /fallbackApplied|dataset\.fallback/);
+  // A failed view hides only its own slide and thumbnail.
+  assert.match(script, /if \(slide instanceof HTMLElement\) slide\.hidden = true;/);
+  assert.doesNotMatch(script, /fallbackApplied|dataset\.fallback|data-gallery-all/);
+  assert.match(styles, /\.gallery-track \{[^}]*scroll-snap-type: x mandatory/);
+  assert.match(styles, /\.gallery-slide \{[^}]*scroll-snap-align: start/);
   assert.match(styles, /\.model-gallery-strip \{[^}]*grid-auto-flow: column;[^}]*overflow-x: auto/);
-  assert.match(styles, /\.gallery-hero-image\.is-switching \{[^}]*opacity: \.18/);
-  assert.match(styles, /\.gallery-thumb\[aria-pressed="true"\]/);
+  assert.match(styles, /\.gallery-thumb\[aria-current="true"\]/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
 });
 

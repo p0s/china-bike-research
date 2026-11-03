@@ -432,7 +432,7 @@ export const zh = {
   'Flat-bar gravel':'平把 Gravel', 'Flat-bar bikes':'平把自行车', 'MTB':'山地', 'Hardtail MTB':'硬尾山地', 'Full-suspension MTB':'全避震山地', 'E-road':'电助力公路', 'Folding':'折叠', 'Triathlon':'铁三', 'Cockpit':'把组',
   'Complete bike':'整车', 'Frame estimate':'车架装车估算', 'Bike lead':'车型线索', 'Frame standard':'车架接口', 'Availability':'供应情况', 'Add to comparison':'加入对比', 'Added to comparison':'已加入对比',
   'Build this frame':'用此车架装车', 'Modify this bike':'修改此车配置', 'Choose another bike':'选择另一辆车', 'Price details':'价格详情', 'Specifications and evidence':'规格与证据',
-  'Price record and sources':'价格记录与来源', 'View sources':'查看来源', 'Methodology and dataset':'方法与数据集', 'Evidence reviewed through':'证据复核截至',
+  'Price record and sources':'价格记录与来源', 'Price history':'价格记录', 'Conditions':'条件', 'Specifications':'规格', 'Prices':'价格', 'Fit & frame evidence':'适配与车架证据', 'Fit and frame evidence':'适配与车架证据', 'Purchase route':'购买渠道', 'Show full note':'显示完整备注', 'Show less':'收起', 'Swipe or scroll the photos, or use the arrow keys, Home and End on the thumbnails.':'可滑动或滚动浏览照片，也可在缩略图上使用方向键、Home 和 End 键。', 'slideshow':'幻灯片', 'Date not recorded':'日期未记录', 'View sources':'查看来源', 'Methodology and dataset':'方法与数据集', 'Evidence reviewed through':'证据复核截至',
   '. Price records retain their own observation dates and conditions.':'。价格记录保留各自的观察日期和条件。', 'Ride and buying context':'骑行与购买参考', 'Buying context':'购买参考', 'What to verify':'购前需确认',
   'Key hardware:':'关键配置：', 'Frame material':'车架材料', 'Frame construction':'车架成型工艺', 'Stiffness evidence':'刚性证据', 'Cable routing':'走线方式', 'Category evidence':'类别证据',
   'Internal frame storage':'车架内储物', 'Mounts':'安装孔位', 'China purchase':'国内购买', 'Not recorded':'暂无记录', 'Not confirmed':'尚未确认', 'Unknown':'未知', 'unknown':'未知', 'None recorded':'暂无记录', 'Yes':'有', 'No':'无',
@@ -946,6 +946,7 @@ export function translate(value, locale = 'en') {
     // Build planner statuses: numbers, names and unknown counts pass through unchanged.
     [/^Brief paraphrases of substantive exact-model opinions on ride, fit, build, weight, compatibility and support\. Open each source for the full context\. Reviewed (\d{4}-\d{2}-\d{2})\.$/, (_, date) => `针对确切车型的骑行、合身、装车、重量、兼容性和售后支持等实质意见简述。完整内容请打开各条来源。复核于 ${date}。`],
     [/^Show (\d+) more opinions?$/, (_, n) => `再显示 ${n} 条意见`],
+    [/^Image (\d+) of (\d+)$/, (_, index, count) => `第 ${index} 张，共 ${count} 张`],
     [/^from (\d+) independent owners and reviewers$/, (_, n) => `来自 ${n} 位独立车主和评测者`],
     [/^(Positive|Mixed|Negative) (\d+)$/, (_, stance, n) => `${{ Positive: '正面', Mixed: '褒贬参半', Negative: '负面' }[stance]} ${n}`],
     [/^95% interval (\d+)–(\d+)\. Share of positive opinions, with mixed counted as half\. It summarizes sentiment for this exact model only; it is not a quality rating or comparable across models\.$/, (_, low, high) => `95% 区间 ${low}–${high}。正面意见所占比例，褒贬参半计为一半。它只汇总对该确切车型的意见倾向，不是质量评分，也不可跨车型比较。`],

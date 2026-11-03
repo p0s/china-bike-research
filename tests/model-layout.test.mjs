@@ -15,7 +15,10 @@ test('every model keeps its identity before images and its full evidence records
     const html = entry.variant ? renderModel(ctx, entry) : renderCandidateModel(ctx, entry);
     const identity = html.indexOf('class="model-identity"'), gallery = html.indexOf('class="model-gallery"');
     assert.ok(identity >= 0 && (gallery < 0 || identity < gallery));
-    assert.match(html, /id="source-records" open/);
+    // Price history and the source list are visible sections, not collapsed panels.
+    assert.match(html, /<section class="model-prices" id="price-records"/);
+    assert.match(html, /<section class="model-sources" id="source-records"/);
+    assert.doesNotMatch(html, /<details class="detail-panel" id="source-records"/);
     if (gallery < 0) continue;
     const images = [entry.image, ...(entry.galleryImages ?? [])].filter(Boolean);
     for (const image of images) {
@@ -28,11 +31,14 @@ test('every model keeps its identity before images and its full evidence records
       if (image.display_note) assert.ok(html.includes(clarifyMainlandInDisplayHtml(escapeHtml(image.display_note))), image.id);
       if (image.source_media_page_url) assert.ok(html.includes(escapeHtml(image.source_media_page_url)), image.id);
     }
-    assert.match(html, /data-gallery-all/);
+    // One slideshow holds every view once, each with its own caption; no second image list.
+    assert.doesNotMatch(html, /data-gallery-all|gallery-all-images/);
+    assert.equal((html.match(/data-gallery-slide/g) ?? []).length, images.length);
     if (images.length > 1) {
-      assert.equal((html.match(/data-gallery-thumb\s/g) ?? []).length, images.length);
-      assert.match(html, /data-gallery-all/);
-      assert.ok(html.indexOf('data-gallery-caption') < html.indexOf('class="model-gallery-strip"'));
+      const thumbs = [...html.matchAll(/<a class="gallery-thumb" href="#(gallery-view-\d+)"/g)].map((match) => match[1]);
+      assert.equal(thumbs.length, images.length);
+      for (const id of thumbs) assert.ok(html.includes(`id="${id}" data-gallery-slide`), id);
+      assert.ok(html.indexOf('data-image-caption-status') < html.indexOf('class="model-gallery-strip"'));
     }
   }
 });
