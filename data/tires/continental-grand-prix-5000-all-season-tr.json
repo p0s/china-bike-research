@@ -161,49 +161,8 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: every reader comment on Bicycle Rolling Resistance's test pages for this tire, the written customer reviews that bike-components and Sigma Sports serve on their product pages (reviews loaded by third-party widgets were not read) and owner comments in the coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
     "reports": [
-      {
-        "source_ids": [
-          "bike-components-gp5000-as-tr-reviews"
-        ],
-        "published_at": "2024-12-07",
-        "width_mm": 28,
-        "setup": null,
-        "codes": {
-          "overall": "favourable",
-          "punctures": "favourable"
-        },
-        "summary": "Compliant for a wider tire and holds up well to road debris."
-      },
-      {
-        "source_ids": [
-          "sigma-sports-gp5000-as-tr-reviews"
-        ],
-        "published_at": "2024-10-29",
-        "width_mm": null,
-        "setup": "tubeless",
-        "codes": {
-          "overall": "favourable",
-          "wet": "favourable",
-          "grip": "favourable",
-          "speed": "favourable"
-        },
-        "summary": "Excellent grip in wet or dry conditions, no noticeable speed loss against the regular GP5000 and easy to seat tubeless."
-      },
-      {
-        "source_ids": [
-          "sigma-sports-gp5000-as-tr-reviews"
-        ],
-        "published_at": "2026-09-01",
-        "width_mm": null,
-        "setup": null,
-        "codes": {
-          "overall": "favourable",
-          "speed": "favourable"
-        },
-        "summary": "Rolls very well once fitted, but was very difficult to mount on the owner's rims."
-      },
       {
         "source_ids": [
           "brr-comments-continental-grand-prix-5000-as-tr-28"
@@ -230,6 +189,334 @@
           "punctures": "favourable"
         },
         "summary": "A little better puncture protection than the standard GP5000."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2026-10-01",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Early days",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Early days, but performing well and notably easy to seat tubeless."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2026-09-01",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Rolls very well once fitted, but was very difficult to mount on the owner's rims."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2026-05-19",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "The tan-wall version: hard-wearing yet fast, and suits both summer and winter riding."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2026-02-05",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Never had a problem; easy to fit and fast rolling."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2025-09-09",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Spring to autumn",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Fitted with soapy water and a booster pump; ridden spring to autumn without mishap."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2025-09-01",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Fast, stable and responsive on dry roads; not yet ridden in the wet."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2025-08-30",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "First wet ride",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "wet": "unfavourable"
+        },
+        "summary": "Rolls nicely, but felt slippery on the owner's first and only wet ride, which an older GP4000 never did."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2025-05-13",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "A winter season and a tour",
+        "codes": {
+          "overall": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Survived a tough Yorkshire winter, a Mallorca tour and gravelly lanes and is still going strong."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2025-02-25",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable"
+        },
+        "summary": "Bought because the previous tires were too slippery on wet tarmac and cobbles; found these very safe and grippy."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-10-29",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Excellent grip in wet or dry conditions, no noticeable speed loss against the regular GP5000 and easy to seat tubeless."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-09-13",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Rolls better than the owner's Schwalbe Marathons and is very comfortable in 32 mm; expensive."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-09-12",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Feels very much like the standard tubeless GP5000; durability not yet known."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-07-01",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Rolls really well and still grippy; expensive."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-06-23",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Good grip on Pyrenean descents and comfortable; no puncture so far and not yet ridden in the wet."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-06-14",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Easy to fit and seal tubeless without levers, and very puncture resistant so far."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2025-06-01",
+        "width_mm": 32,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Easy to mount and nearly airtight before sealant; rides very well in 32 mm, durability not yet known."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2025-05-14",
+        "width_mm": 32,
+        "setup": null,
+        "exposure": "Two winters",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Two winters on gritted roads without a flat or other problem; not the lightest and needs good tire levers."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-12-07",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Compliant for a wider tire and holds up well to road debris."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-04-23",
+        "width_mm": 35,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "punctures": "favourable",
+          "speed": "mixed"
+        },
+        "summary": "Robust and grippy with no marks after some gravel use; rolling resistance feels only acceptable, and it was very tight to mount with a latex tube."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2023-10-24",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "1,800 km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "No problem or flat after 1,800 km."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2023-10-09",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "exposure": "First 75 km",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Very stable in corners with no sliding on a first 75 km ride."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2023-09-24",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A harmonious, comfortable ride on 25 mm rims."
+      },
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2023-08-13",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Good quality and runs true after a few kilometres; measures 29.6 mm on a 21 mm rim."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 15,
+        "note": "Newest 15 of 17 written reviews"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 8,
+        "note": "One of 9 written reviews gives no riding detail"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2
       }
     ]
   }

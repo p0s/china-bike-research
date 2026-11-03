@@ -907,6 +907,12 @@ export function translate(value, locale = 'en') {
     [/^(\d+) with a rated aspect$/, (_, n) => `${n} 款有已评级方面`],
     [/^(\d+) coded below the threshold$/, (_, n) => `${n} 款已编码但未达门槛`],
     [/^(\d+) not yet coded$/, (_, n) => `${n} 款尚未编码`],
+    [/^(\d+) counted$/, (_, n) => `计入 ${n} 位`],
+    [/^(\d+) below the threshold$/, (_, n) => `${n} 款未达门槛`],
+    [/^(\d+) with no eligible owner found$/, (_, n) => `${n} 款未找到合格车主`],
+    [/^(\d+) access blocked$/, (_, n) => `${n} 款无法访问`],
+    [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} 款待小红书调研`],
+    [/^(\d+) not yet checked$/, (_, n) => `${n} 款尚未核查`],
     [/^(\d+) wheelsets · reviewed (.+)$/, (_, n, date) => `${n} 款轮组 · 复核于 ${date}`],
     [/^(\d+(?:\/\d+)?) mm · (\d+(?:\.\d+)?) mm inner$/, (_, depth, width) => `${depth} mm · 内宽 ${width} mm`],
     [/^(\d+) kg system limit$/, (_, kg) => `系统限重 ${kg} kg`],
@@ -1814,5 +1820,20 @@ Object.assign(zh, {
   "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "在逐一核对车主之前记录的整帖简要转述。它们描述的是某位骑手的轮胎，不是测试，也不计入车主评价。",
   "Most owners coded": "编码车主最多",
   "no aspect rated yet": "暂无已评级方面",
-  "A tire that has not been coded may still have many owners; its reports have not been checked owner by owner yet.": "尚未编码的轮胎也可能有很多车主，只是其反馈还没有逐一核对。"
+});
+
+// Tire owner checked-source ledger (2026-11-03).
+Object.assign(zh, {
+  "Xiaohongshu posts": "小红书帖子",
+  "Sigma Sports reviews": "Sigma Sports 评价",
+  "bike-components reviews": "bike-components 评价",
+  "BRR reader comments": "BRR 读者评论",
+  "no eligible review": "无合格评价",
+  "not listed": "未上架",
+  "access blocked": "无法访问",
+  "pending": "待查",
+  "Review sources blocked": "评价来源无法访问",
+  "Xiaohongshu research pending": "小红书调研待完成",
+  "Checked": "已核查",
+  "A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.": "尚未核查的轮胎也可能有很多车主，只是其反馈还没有逐一核对。每款已核查的轮胎都在详情中列出核查过的来源。"
 });

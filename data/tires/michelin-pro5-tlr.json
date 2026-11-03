@@ -110,7 +110,8 @@
     "michelin-pro5-tlr-competition-line-official-2026-11-01",
     "michelin-road-range-gb-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "michelin-pro5-tlr-tmall-2026-11-01"
+    "michelin-pro5-tlr-tmall-2026-11-01",
+    "bike-components-michelin-pro5-tlr-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -138,5 +139,40 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-michelin-pro5-tlr-reviews"
+        ],
+        "published_at": "2026-08-30",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Easy to mount, pleasant and fun to ride (transparent-sidewall colour option)."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed",
+        "note": "Only the earlier Pro4 is listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
   }
 }

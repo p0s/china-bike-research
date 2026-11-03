@@ -4,7 +4,7 @@ import { loadDataset, joinProducts, validateDataset } from '../src/lib/data.mjs'
 import { renderHome, renderTires } from '../src/render.mjs';
 import { INTERFACE_ROUTES } from '../src/lib/i18n.mjs';
 import { translate } from '../assets/i18n.js';
-import { BUDGET_CNY_PER_TIRE, OWNER_ASPECTS, OWNER_RATING_MIN, budgetPrice, budgetShortlist, comparableRollingTest, issueSources, measuredWetGrip, ownerRating, ownerRatings, referenceSize, sizeWidths, tireGroups, tireShortlists, wetEvidenceStatus } from '../src/lib/tires.mjs';
+import { BUDGET_CNY_PER_TIRE, OWNER_ASPECTS, OWNER_RATING_MIN, OWNER_STATUSES, budgetPrice, budgetShortlist, comparableRollingTest, issueSources, measuredWetGrip, ownerCheckStatus, ownerRating, ownerRatings, referenceSize, sizeWidths, tireGroups, tireShortlists, wetEvidenceStatus } from '../src/lib/tires.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -273,6 +273,21 @@ test('owner rows are construction-specific, sourced and free of links or handles
   rejects(tubeType, (tire) => { tire.owner_evidence.reports[0].setup = 'tubeless'; }, 'a tube-type tire cannot have a tubeless owner row');
   rejects(coded, (tire) => { tire.community = [{ source_id: tire.owner_evidence.reports[0].source_ids[0], stance: 'mixed', published_at: '2026-01-01', summary: 'x' }]; }, 'a post is either coded owner by owner or kept as a post note');
   rejects(coded, (tire) => { delete tire.owner_evidence.screening_note; }, 'owner evidence needs a coding date, screening note and reports');
+  // The checked-source ledger: known routes once each, counted routes carry a bounded owner count.
+  const owners = (count) => [...Array(count)].map(() => ({ source_ids: ['s'], width_mm: null, setup: null, codes: { overall: 'favourable' }, summary: 'x' }));
+  rejects(coded, (tire) => { tire.owner_evidence.checks = [{ route: 'reddit', outcome: 'none' }]; }, 'owner checks need distinct known routes');
+  rejects(coded, (tire) => { tire.owner_evidence.checks = [{ route: 'sigma-sports', outcome: 'counted', owners: 1 }, { route: 'sigma-sports', outcome: 'none' }]; }, 'owner checks need distinct known routes');
+  rejects(coded, (tire) => { tire.owner_evidence.checks = [{ route: 'sigma-sports', outcome: 'counted' }]; }, 'only a counted route carries an owner count within the coded rows');
+  rejects(coded, (tire) => { tire.owner_evidence.checks = [{ route: 'sigma-sports', outcome: 'counted', owners: 99 }]; }, 'only a counted route carries an owner count within the coded rows');
+  rejects(coded, (tire) => { tire.owner_evidence.checks = [{ route: 'bike-components', outcome: 'blocked', note: 'see https://example.com' }]; }, 'owner check notes must be plain text');
+  rejects(coded, (tire) => { tire.owner_evidence.checks = [{ route: 'bike-components', outcome: 'not-listed' }]; }, 'coded rows need a counted route');
+  const evidence = (reports, checks) => ({ owner_evidence: { coded_at: '2026-11-03', screening_note: 'x', reports, checks } });
+  assert.equal(ownerCheckStatus({}), 'unchecked');
+  assert.equal(ownerCheckStatus(evidence(owners(5), [{ route: 'sigma-sports', outcome: 'counted', owners: 5 }])), 'rated');
+  assert.equal(ownerCheckStatus(evidence(owners(2), [{ route: 'sigma-sports', outcome: 'counted', owners: 2 }])), 'below');
+  assert.equal(ownerCheckStatus(evidence([], [{ route: 'sigma-sports', outcome: 'not-listed' }, { route: 'xiaohongshu', outcome: 'pending' }])), 'pending');
+  assert.equal(ownerCheckStatus(evidence([], [{ route: 'bike-components', outcome: 'blocked', note: 'HTTP 403' }])), 'blocked');
+  assert.equal(ownerCheckStatus(evidence([], [{ route: 'bike-components', outcome: 'blocked' }, { route: 'sigma-sports', outcome: 'none' }])), 'none');
 });
 
 test('the Owners column and row details show ratings, counts and unknowns honestly', () => {
@@ -287,10 +302,14 @@ test('the Owners column and row details show ratings, counts and unknowns honest
       assert.doesNotMatch(entry, /tire-owner-ratings|data-owners=/, tire.id);
       continue;
     }
-    assert.match(entry, new RegExp(`data-owners="${summary.owners}"`), tire.id);
+    // Only tires with counted owners carry an owner count for sorting; others sort last.
+    if (summary.owners) assert.match(entry, new RegExp(`data-owners="${summary.owners}"`), tire.id);
+    else assert.doesNotMatch(entry, /data-owners=/, tire.id);
     assert.match(entry, /<section class="tire-owner-ratings"><h3>Owner ratings<\/h3>/, tire.id);
     assert.match(entry, /not star ratings given by owners\. An aspect is rated only when at least 5 owners describe it; 5 is an entry threshold, not proof\./, tire.id);
-    for (const aspect of OWNER_ASPECTS) {
+    // A checked tire without a counted owner shows its ledger, not an empty aspect table.
+    if (!summary.owners) assert.doesNotMatch(entry, /tire-owner-table/, tire.id);
+    for (const aspect of summary.owners ? OWNER_ASPECTS : []) {
       const { n, rating } = summary.aspects[aspect];
       // Too few owners show a count without a rating; no report stays unknown, never zero.
       if (!rating) assert.match(entry, n ? /<span>Not rated<\/span><\/td><td>\d+ owners? <span>/ : /<span>No owner report<\/span><\/td><td>—<\/td>/, `${tire.id} ${aspect}`);
@@ -298,7 +317,9 @@ test('the Owners column and row details show ratings, counts and unknowns honest
     if (summary.rated.length) assert.match(cell, /<strong>(Favourable|Mostly favourable|Mixed|Mostly unfavourable|Unfavourable)<\/strong><span>[^<]+ · \d+ owners/, tire.id);
     else assert.match(cell, /<strong>Not rated yet<\/strong>/, tire.id);
   }
-  assert.match(html, /<h3>Owner ratings<\/h3><p><strong>\d+ with a rated aspect · \d+ coded below the threshold · \d+ not yet coded<\/strong><\/p>/);
+  const statuses = Object.fromEntries(OWNER_STATUSES.map((status) => [status, data.tires.filter((tire) => ownerCheckStatus(tire) === status).length]));
+  assert.ok(html.includes(`<h3>Owner ratings</h3><p><strong>${statuses.rated} with a rated aspect · ${statuses.below} below the threshold · ${statuses.none} with no eligible owner found · ${statuses.blocked} access blocked · ${statuses.pending} awaiting Xiaohongshu research · ${statuses.unchecked} not yet checked</strong></p>`));
+  assert.equal(Object.values(statuses).reduce((sum, n) => sum + n, 0), data.tires.length);
   // Owner ratings never become structured-data ratings.
   assert.doesNotMatch(html, /aggregateRating|ratingValue/);
   for (const locale of ['zh-Hans', 'de', 'es', 'ru']) {

@@ -1175,7 +1175,6 @@ Object.assign(ru, {
   "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "Краткие пересказы целых публичных постов, записанные до кодирования по отдельным владельцам. Они описывают шину одного райдера, не являются тестами и не учитываются в оценках владельцев.",
   "Most owners coded": "Больше всего закодированных владельцев",
   "no aspect rated yet": "пока ни один аспект не оценён",
-  "A tire that has not been coded may still have many owners; its reports have not been checked owner by owner yet.": "У незакодированной шины может быть много владельцев; просто их отзывы ещё не проверены по отдельности."
 });
 patterns.push(
   [/^(\d+) owners?$/, (_, n) => `${n} ${plural(n, 'владелец', 'владельца', 'владельцев')}`],
@@ -1188,4 +1187,28 @@ patterns.push(
   [/^(\d+) with a rated aspect$/, (_, n) => `${n} с оценённым аспектом`],
   [/^(\d+) coded below the threshold$/, (_, n) => `${n} закодировано ниже порога`],
   [/^(\d+) not yet coded$/, (_, n) => `${n} ещё не закодировано`]
+);
+
+// Tire owner checked-source ledger (2026-11-03).
+Object.assign(ru, {
+  "Xiaohongshu posts": "Посты Xiaohongshu",
+  "Sigma Sports reviews": "Отзывы Sigma Sports",
+  "bike-components reviews": "Отзывы bike-components",
+  "BRR reader comments": "Комментарии читателей BRR",
+  "no eligible review": "нет подходящих отзывов",
+  "not listed": "нет в продаже",
+  "access blocked": "доступ заблокирован",
+  "pending": "ожидается",
+  "Review sources blocked": "Источники отзывов недоступны",
+  "Xiaohongshu research pending": "Ожидается исследование Xiaohongshu",
+  "Checked": "Проверено",
+  "A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.": "У непроверенной шины может быть много владельцев; просто их отзывы ещё не проверены по отдельности. Для каждой проверенной шины в деталях указаны проверенные источники."
+});
+patterns.push(
+  [/^(\d+) counted$/, (_, n) => `учтено: ${n}`],
+  [/^(\d+) below the threshold$/, (_, n) => `${n} ниже порога`],
+  [/^(\d+) with no eligible owner found$/, (_, n) => `${n} без подходящих владельцев`],
+  [/^(\d+) access blocked$/, (_, n) => `${n} с заблокированным доступом`],
+  [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} ожидают исследования Xiaohongshu`],
+  [/^(\d+) not yet checked$/, (_, n) => `${n} ещё не проверено`]
 );

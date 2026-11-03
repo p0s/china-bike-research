@@ -27,6 +27,11 @@ export const OWNER_ASPECTS = ['overall', 'wet', 'grip', 'speed', 'punctures', 'w
 export const OWNER_CODES = ['favourable', 'mixed', 'unfavourable'];
 export const OWNER_SETUPS = ['tubeless', 'inner-tube'];
 export const OWNER_RATING_MIN = 5;
+// Per-tire checked-source ledger (2026-11-03): each route a tire was checked on and its
+// outcome. Pending marks a route still waiting for research, such as the Xiaohongshu lane.
+export const OWNER_ROUTES = ['xiaohongshu', 'sigma-sports', 'bike-components', 'brr-comments'];
+export const OWNER_CHECK_OUTCOMES = ['counted', 'none', 'not-listed', 'blocked', 'pending'];
+export const OWNER_STATUSES = ['rated', 'below', 'none', 'blocked', 'pending', 'unchecked'];
 // Share = (favourable + mixed / 2) / owners, mapped to five symmetric word bands.
 const OWNER_BANDS = [
   [(share) => share >= 0.85, 'favourable'],
@@ -206,6 +211,19 @@ export function ownerRatings(tire) {
   };
 }
 
+// Research status: rated, owners below the threshold, checked with no eligible owner, every
+// checked route blocked, waiting for a pending route, or not yet checked at all.
+export function ownerCheckStatus(tire) {
+  if (!tire.owner_evidence) return 'unchecked';
+  const summary = ownerRatings(tire);
+  if (summary.rated.length) return 'rated';
+  if (summary.owners) return 'below';
+  const checks = tire.owner_evidence.checks ?? [];
+  if (checks.some((check) => check.outcome === 'pending')) return 'pending';
+  if (checks.length && checks.every((check) => check.outcome === 'blocked')) return 'blocked';
+  return 'none';
+}
+
 const sizeKey = (size) => `${sizeLabel(size)}|${size.bead ?? ''}`;
 
 // Tire photos (2026-11-02). A third-party photo stays on its owner's server: the maker's or
@@ -363,6 +381,21 @@ export function validateTires(data, sourceIds) {
         if (report.setup === 'tubeless' && tire.construction === 'tube-type') errors.push(`${label}: a tube-type tire cannot have a tubeless owner row`);
         if (report.published_at !== undefined && !isDate(report.published_at)) errors.push(`${label}: owner row date must be a full date`);
         if ((report.source_ids ?? []).some((id) => posts.has(id))) errors.push(`${label}: a post is either coded owner by owner or kept as a post note`);
+      }
+      // The checked-source ledger names each route once with its outcome; only a counted
+      // route carries an owner count, and it cannot exceed the coded rows.
+      if (evidence.checks !== undefined) {
+        if (!Array.isArray(evidence.checks)) errors.push(`${label}: owner checks must be an array`);
+        const routes = new Set();
+        for (const check of Array.isArray(evidence.checks) ? evidence.checks : []) {
+          if (!OWNER_ROUTES.includes(check.route) || routes.has(check.route)) errors.push(`${label}: owner checks need distinct known routes`);
+          routes.add(check.route);
+          if (!OWNER_CHECK_OUTCOMES.includes(check.outcome)) errors.push(`${label}: invalid owner check outcome`);
+          const counted = check.outcome === 'counted';
+          if (counted !== (check.owners !== undefined) || (counted && (!Number.isInteger(check.owners) || check.owners < 1 || check.owners > (evidence.reports ?? []).length))) errors.push(`${label}: only a counted route carries an owner count within the coded rows`);
+          if (check.note !== undefined && (!nonEmpty(check.note) || /https?:|www\.|@/i.test(check.note))) errors.push(`${label}: owner check notes must be plain text`);
+        }
+        if ((evidence.reports ?? []).length && !(evidence.checks ?? []).some((check) => check.outcome === 'counted')) errors.push(`${label}: coded rows need a counted route`);
       }
     }
     const availability = tire.availability ?? {};
