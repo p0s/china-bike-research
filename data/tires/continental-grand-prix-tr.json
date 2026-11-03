@@ -44,7 +44,7 @@
       "etrto": "30-622",
       "weight_g": 370,
       "max_psi": 73,
-      "max_bar": 5.0,
+      "max_bar": 5,
       "note": "Hookless 65 psi"
     },
     {
@@ -52,7 +52,7 @@
       "etrto": "32-622",
       "weight_g": 385,
       "max_psi": 73,
-      "max_bar": 5.0,
+      "max_bar": 5,
       "note": "Hookless 65 psi"
     }
   ],
@@ -104,7 +104,8 @@
     "continental-road-range-us-2026-11-01",
     "continental-road-range-de-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "continental-grand-prix-tr-tmall-2026-11-01"
+    "continental-grand-prix-tr-tmall-2026-11-01",
+    "bike-components-grand-prix-tr-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -133,5 +134,52 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-grand-prix-tr-reviews"
+        ],
+        "published_at": "2026-10-09",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Handles hardly differently from the GP5000 for less money."
+      },
+      {
+        "source_ids": [
+          "bike-components-grand-prix-tr-reviews"
+        ],
+        "published_at": "2025-11-19",
+        "width_mm": 25,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Easy to mount and seal tubeless with a floor pump, runs true, and the owner would buy it again."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 2
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "Three comments, none first-hand"
+      }
+    ]
   }
 }

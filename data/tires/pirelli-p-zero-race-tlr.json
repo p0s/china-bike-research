@@ -122,7 +122,8 @@
     "pirelli-road-range-gb-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
     "cahaba-pirelli-p-zero-race-tlr-2026-11-01",
-    "brr-comments-pirelli-p-zero-race-tlr-28"
+    "brr-comments-pirelli-p-zero-race-tlr-28",
+    "brr-comments-continental-aero-111"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -153,7 +154,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: every reader comment on Bicycle Rolling Resistance's test pages for this tire, the written customer reviews that bike-components and Sigma Sports serve on their product pages (reviews loaded by third-party widgets were not read) and owner comments in the coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Reviews dated before the SpeedCORE generation (2021 on Sigma Sports) were not counted, and bike-components showed no written review.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
     "reports": [
       {
         "source_ids": [
@@ -197,6 +198,39 @@
           "wear": "mixed"
         },
         "summary": "The front shows wear and the rear is squaring off; harder and less comfortable than a GP5000 and not as fast, but the owner switched for fewer punctures."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-aero-111"
+        ],
+        "published_at": "2024-08-21",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "The owner's regular tire, with the best balance of durability, puncture resistance and speed; holds pressure well tubeless."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed",
+        "note": "Its listings' reviews predate the SpeedCORE generation or cover the Classic edition"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 4,
+        "note": "28 and 30 mm test pages plus an owner commenting on the Aero 111 test"
       }
     ]
   }
