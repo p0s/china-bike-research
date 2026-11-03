@@ -10900,6 +10900,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "buy-x-lab-bike-unique-mascot-cover",
+      "alt": {
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
+      },
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
+      "source": {
+        "kind": "project-generated",
+        "tool": "OpenAI built-in image generation",
+        "created_at": "2026-09-22",
+        "credit": "China Bikes",
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
+      },
+      "files": [
+        {
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480-c9699ca11c.avif",
+          "width": 480,
+          "height": 408,
+          "type": "image/avif",
+          "bytes": 20185,
+          "sha256": "c9699ca11cdf86342eb1f005b4dd4414a0c015fed9233fbc8a4c0a41781ab162"
+        }
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda measures the top tube of the smallest of three road bikes in a bright shop, glancing toward a world map with pins and strings, beside a counter with a parcel and a folder.",
+          "zh-Hans": "戴头盔的小熊猫在明亮的车店里，用卷尺量三辆公路车中最小那辆的上管，望向插着图钉、连着细线的世界地图；柜台上放着包裹和文件夹。",
+          "de": "Ein Rotpanda mit Helm misst in einem hellen Laden das Oberrohr des kleinsten von drei Rennrädern und blickt zu einer Weltkarte mit Nadeln und Fäden; auf der Theke liegen ein Paket und eine Mappe."
+        },
+        "prompt": "Editorial scene: A helmeted red panda measures the top tube of the smallest of three road bikes in a bright shop, glancing toward a world map with pins and strings, beside a counter with a parcel and a folder.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-11-03",
+          "credit": "Chinese Bikes",
+          "subject": "Conceptual mascot illustration; no exact-model identity or specification claim",
+          "sha256": "ee68647ce873970aa323e070de5534b669dbb847d227420ddaecaa54fb7b805d",
+          "width": 1672,
+          "height": 941,
+          "mascot_reference_sha256": "aae7a7074087cd927bfb101f53de9edab950872b92f12817cc3670a9efc88fe3"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/buy-x-lab-bike-mascot-cover-ee68647ce8-640-a08f112d28.avif",
+            "width": 640,
+            "height": 360,
+            "type": "image/avif",
+            "bytes": 39417,
+            "sha256": "a08f112d28bd19c2d446af91f16d624095fcbb030c8818dc6ac0f8f5db0fb1ec"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/buy-x-lab-bike-mascot-cover-ee68647ce8-1600-9afaf03106.avif",
+            "width": 1600,
+            "height": 900,
+            "type": "image/avif",
+            "bytes": 129470,
+            "sha256": "9afaf03106f7f0eebcfc3edef0d02c7125a305bfaad3fb1d0e632539bd66fd34"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/buy-x-lab-bike-mascot-cover-ee68647ce8-1200-154d06bcf4.jpg",
+            "width": 1200,
+            "height": 675,
+            "type": "image/jpeg",
+            "bytes": 225782,
+            "sha256": "154d06bcf4380120e485d1ba0186a3472a886cfe2260faa1969525ec0216351a"
+          }
+        ]
+      }
     }
   ]
 }
