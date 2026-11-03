@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { CATALOG_ROUTES, SKILLS_ROUTE, agentCatalog, agentDiscoveryHeaders, loadAgentSkills, skillsIndex } from '../src/lib/agent-skills.mjs';
 import { existsSync, readFileSync, realpathSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { delimiter, dirname, join, resolve } from 'node:path';
@@ -159,6 +161,83 @@ test('workerd accepts empty event POSTs and does not follow collector redirects'
     assert.equal(dntResponse.status, 204);
     await new Promise((resolveWait) => setTimeout(resolveWait, 30));
     assert.equal(outbound.length, 5);
+  } finally {
+    await mf?.dispose();
+    await rm(assetsDirectory, { recursive: true, force: true });
+  }
+});
+
+test('static assets serve the agent discovery files with their types, open CORS and 404s', {
+  skip: runtime ? false : 'Wrangler with its bundled Miniflare runtime is unavailable',
+  timeout: 20_000
+}, async () => {
+  const config = JSON.parse(await readFile(join(root, 'wrangler.jsonc'), 'utf8'));
+  const assetsDirectory = await mkdtemp(join(tmpdir(), 'china-bikes-agent-skills-'));
+  const { skills } = loadAgentSkills(root);
+  const put = async (file, body) => {
+    await mkdir(dirname(join(assetsDirectory, file)), { recursive: true });
+    await writeFile(join(assetsDirectory, file), body);
+  };
+  let mf;
+  try {
+    await put('404.html', '<!doctype html><title>Not found</title>');
+    await put('index.html', '<!doctype html><title>Catalog</title>');
+    for (const skill of skills) await put(`${SKILLS_ROUTE.slice(1)}${skill.name}/SKILL.md`, skill.bytes);
+    await put(`${SKILLS_ROUTE.slice(1)}index.json`, JSON.stringify(skillsIndex(skills)));
+    for (const route of CATALOG_ROUTES) await put(route.slice(1), JSON.stringify(agentCatalog(skills, { siteUrl: 'https://chinesebikes.xyz' })));
+    await put('_headers', agentDiscoveryHeaders(skills));
+    mf = new runtime.Miniflare(runtime.convertV4MiniflareOptions({
+      workers: [{
+        name: config.name,
+        modulesRoot: root,
+        modules: ['index', 'ga4', 'consent', 'ingest-client', 'markdown'].map((name) => ({ type: 'ESModule', path: `worker/${name}.mjs` })),
+        compatibilityDate: config.compatibility_date,
+        compatibilityFlags: config.compatibility_flags ?? [],
+        routes: [`${config.routes[0].pattern}/*`],
+        // Per-worker assets run the same router and asset worker as production, including `_headers`.
+        assets: {
+          directory: assetsDirectory,
+          binding: config.assets.binding,
+          run_worker_first: config.assets.run_worker_first,
+          assetConfig: { not_found_handling: config.assets.not_found_handling }
+        }
+      }]
+    }));
+    const get = (path, method = 'GET') => mf.dispatchFetch(`https://chinesebikes.xyz${path}`, { method });
+
+    const index = await get(`${SKILLS_ROUTE}index.json`);
+    assert.equal(index.status, 200);
+    assert.match(index.headers.get('content-type'), /^application\/json/);
+    assert.equal(index.headers.get('access-control-allow-origin'), '*');
+    const { skills: listed } = await index.json();
+    const head = await get(`${SKILLS_ROUTE}index.json`, 'HEAD');
+    assert.equal(head.status, 200);
+    assert.equal(await head.text(), '');
+    for (const entry of listed) {
+      const response = await get(entry.url);
+      assert.equal(response.status, 200, entry.url);
+      assert.equal(response.headers.get('content-type'), 'text/markdown; charset=utf-8');
+      assert.equal(response.headers.get('access-control-allow-origin'), '*');
+      const bytes = Buffer.from(await response.arrayBuffer());
+      assert.equal(`sha256:${createHash('sha256').update(bytes).digest('hex')}`, entry.digest, entry.url);
+    }
+    for (const route of CATALOG_ROUTES) {
+      const response = await get(route);
+      assert.equal(response.status, 200, route);
+      assert.match(response.headers.get('content-type'), /^application\/json/);
+      assert.equal(response.headers.get('access-control-allow-origin'), '*');
+      assert.equal((await response.json()).entries.length, listed.length);
+    }
+    const missing = await get(`${SKILLS_ROUTE}missing/SKILL.md`);
+    assert.equal(missing.status, 404);
+    assert.match(missing.headers.get('content-type'), /^text\/html/);
+    await missing.arrayBuffer();
+    const headersFile = await get('/_headers');
+    assert.equal(headersFile.status, 404, 'the header rules are configuration, not a public file');
+    await headersFile.arrayBuffer();
+    const home = await get('/');
+    assert.match(home.headers.get('link'), /<\/\.well-known\/ard\.json>; rel="ard", <\/\.well-known\/ai-catalog\.json>; rel="ai-catalog"/);
+    await home.arrayBuffer();
   } finally {
     await mf?.dispose();
     await rm(assetsDirectory, { recursive: true, force: true });

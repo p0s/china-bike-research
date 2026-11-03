@@ -6,13 +6,17 @@ import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 const project=fileURLToPath(new URL('../',import.meta.url));
 function fixture(t,mode='',base='',siteUrl='https://example.invalid') {
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'bike-build-driver-'));
  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  for(const dir of ['scripts','src/lib','assets','dist'])fs.mkdirSync(path.join(root,dir),{recursive:true});
- for(const f of ['scripts/build.mjs','scripts/check-links.mjs','src/lib/indexnow.mjs','src/lib/csv.mjs','src/lib/build-output.mjs','src/lib/regional-prices.mjs','src/lib/price-evidence.mjs','src/lib/analytics-context.mjs','src/lib/social-video.mjs','src/lib/agent-markdown.mjs','assets/regional-prices.js'])fs.copyFileSync(path.join(project,f),path.join(root,f));
+ for(const f of ['scripts/build.mjs','scripts/check-links.mjs','src/lib/indexnow.mjs','src/lib/csv.mjs','src/lib/build-output.mjs','src/lib/regional-prices.mjs','src/lib/price-evidence.mjs','src/lib/analytics-context.mjs','src/lib/social-video.mjs','src/lib/agent-markdown.mjs','src/lib/agent-skills.mjs','assets/regional-prices.js'])fs.copyFileSync(path.join(project,f),path.join(root,f));
  fs.writeFileSync(path.join(root,'dist','previous.html'),'PREVIOUS GOOD BUILD');
+ fs.mkdirSync(path.join(root,'content/agent-skills/fixture-skill'),{recursive:true});
+ fs.writeFileSync(path.join(root,'content/agent-skills/fixture-skill/SKILL.md'),`---\nname: "fixture-skill"\ndescription: "Compare the fixture bike."\n---\n\nRead https://chinesebikes.xyz/geometry/ and https://chinesebikes.xyz/llms.txt.${mode==='skill-link'?' Then https://chinesebikes.xyz/missing/.':''}\n`);
+ fs.writeFileSync(path.join(root,'content/agent-skills/discovery.json'),JSON.stringify({schema_version:1,skills:{'fixture-skill':{display_name:'Fixture skill',tags:['fixture'],representative_queries:['compare the fixture bike','check the fixture bike']}}}));
  fs.writeFileSync(path.join(root,'src/lib/data.mjs'),`
  const platform={id:'p',category:'road',last_reviewed:'2026-09-01',frame:{},tire_clearance:{}};
  const brand={id:'brand',name:'=unsafe-text',manufacturing:{},last_reviewed:'2026-09-01'};
@@ -50,8 +54,9 @@ function fixture(t,mode='',base='',siteUrl='https://example.invalid') {
  const result=spawnSync(process.execPath,[path.join(root,'scripts/build.mjs')],{encoding:'utf8',env:{...process.env,FAIL_BUILD:mode,GITHUB_ACTIONS:'false',GITHUB_REPOSITORY:'',PUBLIC_BASE_PATH:base,PUBLIC_SITE_URL:siteUrl}});
  return{root,result};
 }
-for(const mode of ['validation','render','budget','links','escape','fragments','responsive','absolute','orphan'])test(`build driver preserves previous output after ${mode} failure`,t=>{
+for(const mode of ['validation','render','budget','links','escape','fragments','responsive','absolute','orphan','skill-link'])test(`build driver preserves previous output after ${mode} failure`,t=>{
  const {root,result}=fixture(t,mode);assert.notEqual(result.status,0);assert.equal(fs.readFileSync(path.join(root,'dist','previous.html'),'utf8'),'PREVIOUS GOOD BUILD');assert.equal(fs.readdirSync(root).some(x=>x.startsWith('.dist-stage-')),false);
+ if(mode==='skill-link')assert.match(result.stderr,/fixture-skill: https:\/\/chinesebikes\.xyz\/missing\/ is not a published page or file/);
 });
 for(const base of ['','/china-bike-research'])test(`build driver success at base ${base||'/'}`,t=>{
  const {root,result}=fixture(t,'',base);assert.equal(result.status,0,result.stderr);assert.equal(fs.existsSync(path.join(root,'dist','previous.html')),false);
@@ -65,6 +70,13 @@ for(const base of ['','/china-bike-research'])test(`build driver success at base
  assert.match(fs.readFileSync(path.join(root,'dist','llms.txt'),'utf8'),new RegExp(`\\(https://example\\.invalid${base}/data/catalog\\.json\\)`));
  for(const file of ['index.md','zh/index.md','geometry/index.md','models/bike/index.md'])assert.match(fs.readFileSync(path.join(root,'dist',file),'utf8'),/^---\ntitle: |^---\ncanonical: /,file);
  assert.equal(fs.readdirSync(path.join(root,'dist')).some(file=>file.startsWith('404')&&file.endsWith('.md')),false);
+ const skill=fs.readFileSync(path.join(root,'dist','.well-known/agent-skills/fixture-skill/SKILL.md'));assert.deepEqual(skill,fs.readFileSync(path.join(root,'content/agent-skills/fixture-skill/SKILL.md')));
+ const index=JSON.parse(fs.readFileSync(path.join(root,'dist','.well-known/agent-skills/index.json')));
+ assert.deepEqual(index.skills.map(({url,digest})=>[url,digest]),[[`${base}/.well-known/agent-skills/fixture-skill/SKILL.md`,`sha256:${createHash('sha256').update(skill).digest('hex')}`]]);
+ const catalog=fs.readFileSync(path.join(root,'dist','.well-known/ard.json'),'utf8');assert.equal(fs.readFileSync(path.join(root,'dist','.well-known/ai-catalog.json'),'utf8'),catalog);
+ assert.equal(JSON.parse(catalog).entries[0].url,`https://example.invalid${base}/.well-known/agent-skills/fixture-skill/SKILL.md`);
+ assert.match(fs.readFileSync(path.join(root,'dist','_headers'),'utf8'),new RegExp(`^${base}/\\.well-known/agent-skills/\\*\\n  Access-Control-Allow-Origin: \\*$`,'m'));
+ assert.match(fs.readFileSync(path.join(root,'dist','llms.txt'),'utf8'),new RegExp(`\\(https://example\\.invalid${base}/\\.well-known/agent-skills/index\\.json\\)`));
 });
 test('production build publishes a key and only indexable public page hashes',t=>{
  const {root,result}=fixture(t,'','','https://chinesebikes.xyz');assert.equal(result.status,0,result.stderr);
