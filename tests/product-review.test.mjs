@@ -71,11 +71,12 @@ test('generated-HTML audit rejects invented ratings, invisible notes, missing di
 });
 
 
-test('review cautions start visible and a closed disclosure cannot support review notes', () => {
+test('review cautions are a visible section and hidden cautions cannot support review notes', () => {
   const product = products.find((item) => item.variant.id === pilot[0]);
   const html = renderModel(context, product);
   const node = graph(html).find((item) => item['@type'] === 'Product');
-  assert.match(html, /id="buying-checks" open/);
-  const closed = html.replace('id="buying-checks" open', 'id="buying-checks"');
-  assert.ok(auditProductReview(node, closed, { pageUrl: node.url }).some((issue) => issue.includes('negativeNotes')));
+  assert.match(html, /<section class="buying-checks" id="buying-checks" aria-labelledby="buying-checks-title"><h2 id="buying-checks-title">Buying checks<\/h2><ul>/);
+  assert.doesNotMatch(html, /<details[^>]*id="buying-checks"/);
+  const hidden = html.replace(/<section class="buying-checks"[\s\S]*?<\/section>/, (block) => block.replace('<section class="buying-checks"', '<details class="buying-checks"').replace(/<\/section>$/, '</details>'));
+  assert.ok(auditProductReview(node, hidden, { pageUrl: node.url }).some((issue) => issue.includes('negativeNotes')));
 });
