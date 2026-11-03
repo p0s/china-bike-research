@@ -87,7 +87,8 @@
     "continental-road-range-de-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
     "sigma-sports-aero-111-reviews",
-    "brr-comments-continental-aero-111"
+    "brr-comments-continental-aero-111",
+    "brr-comments-pirelli-p-zero-race-tlr-sl-r"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -159,6 +160,18 @@
           "punctures": "unfavourable"
         },
         "summary": "Awesome performance, but less puncture resistant than the GP5000 All Season, with more punctures in the wet."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-05-13",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Made a deep front wheel easy to handle even in strong crosswinds, so the owner is reluctant to switch."
       }
     ],
     "checks": [
@@ -175,8 +188,8 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 1,
-        "note": "26 and 29 mm test pages, 40 comments"
+        "owners": 2,
+        "note": "26 and 29 mm test pages (40 comments), plus an owner on the P ZERO Race TLR SL-R test"
       }
     ]
   }

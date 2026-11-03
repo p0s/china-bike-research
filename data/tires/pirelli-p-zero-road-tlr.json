@@ -70,7 +70,8 @@
   ],
   "source_ids": [
     "pirelli-p-zero-road-tlr-official-2026-11-01",
-    "pirelli-road-range-gb-2026-11-01"
+    "pirelli-road-range-gb-2026-11-01",
+    "sigma-sports-pirelli-p-zero-road-tlr-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -98,5 +99,43 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-road-tlr-reviews"
+        ],
+        "published_at": "2025-08-01",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Light and fast without giving up grip."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "Three of 4 written reviews describe only fitting or a purchase; a separate tube-type P ZERO clincher listing is not counted"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "Only the tube-type P ZERO Road was tested"
+      }
+    ]
   }
 }

@@ -63,7 +63,10 @@
   ],
   "source_ids": [
     "pirelli-p-zero-race-rs-official-2026-11-01",
-    "pirelli-road-range-gb-2026-11-01"
+    "pirelli-road-range-gb-2026-11-01",
+    "sigma-sports-pirelli-p-zero-race-rs-reviews",
+    "sigma-sports-pirelli-p-zero-race-rs-retro-reviews",
+    "brr-comments-pirelli-p-zero-race-rs"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -91,5 +94,135 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. The Classic and Retro editions sold on their own pages count as the same tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-rs-reviews"
+        ],
+        "published_at": "2026-08-24",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 1,000 miles",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "At least as fast as the GP5000 in real riding, smoother and more confidence-inspiring in corners; no punctures in about 1,000 dry miles."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-rs-reviews"
+        ],
+        "published_at": "2025-10-21",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Grips, rolls and rides well, best with a quality TPU tube."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-rs-reviews"
+        ],
+        "published_at": "2025-06-02",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Clearly more supple and comfortable than the owner's previous P ZERO tires, especially with TPU tubes."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-rs-retro-reviews"
+        ],
+        "published_at": "2026-09-30",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "An instant difference in speed and smoothness."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-rs-retro-reviews"
+        ],
+        "published_at": "2026-03-04",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Great grip and feels fast."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-rs-retro-reviews"
+        ],
+        "published_at": "2026-02-18",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Light with superb grip."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-rs"
+        ],
+        "published_at": "2025-06-30",
+        "width_mm": 30,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "The 30 mm with TPU tubes rides very smoothly and feels fast."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-rs"
+        ],
+        "published_at": "2025-06-30",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Fitted to climbing wheels in 30 mm; feels good with nothing to complain about."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 6,
+        "note": "Black and Retro edition pages; the Classic edition page has a star rating only"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "28 and 30 mm test pages"
+      }
+    ]
   }
 }

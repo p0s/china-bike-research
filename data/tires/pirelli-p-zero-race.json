@@ -50,7 +50,7 @@
       "measured_width_mm": 26,
       "measured_weight_g": 204,
       "setup": "butyl-tube",
-      "rr_w": 15.0,
+      "rr_w": 15,
       "rr_psi": 80,
       "wet_grip": 60,
       "puncture_tread": 55
@@ -78,7 +78,12 @@
   "source_ids": [
     "pirelli-p-zero-race-official-2026-11-01",
     "pirelli-road-range-gb-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-pirelli-p-zero-race-reviews",
+    "sigma-sports-pirelli-p-zero-race-classic-reviews",
+    "sigma-sports-pirelli-p-zero-race-retro-reviews",
+    "bike-components-pirelli-p-zero-race-reviews",
+    "bike-components-pirelli-p-zero-race-2022-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -106,5 +111,420 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. The Classic, Retro and coloured-label editions sold on their own pages count as the same tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2026-05-25",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Gives confidence on the road and was easy to fit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2025-12-11",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Two rides",
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "A sidewall split on the second ride."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2025-09-14",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Great in all conditions on a long one-day challenge ride."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2024-04-01",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 500 miles",
+        "codes": {
+          "overall": "mixed",
+          "casing": "unfavourable"
+        },
+        "summary": "Fitted to a new bike: comfortable enough, but one sidewall split and the other looked close to splitting after about 500 miles."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2023-09-29",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Replaced much-liked P ZERO Velos; the 30 mm measures just over 28 mm on 19 mm rims and is worth the extra over the P ZERO Road."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2023-05-02",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A few rides",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "After a few rides it feels better in corners than the owner's usual Continentals and lets them carry more speed."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2023-04-20",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "favourable",
+          "casing": "unfavourable"
+        },
+        "summary": "Rolls really well, but the front sidewall split while virtually new."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2022-01-19",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Three rides",
+        "codes": {
+          "overall": "unfavourable",
+          "wet": "unfavourable"
+        },
+        "summary": "Very comfortable at first, but the front slid out in corners on cold, damp roads on two of three rides."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2021-07-08",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Easier to fit than the tubeless tires it replaced and seems really rapid."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2021-06-23",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Three rides",
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "The rear sidewall split 87 km into the third ride on ordinary tarmac."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2021-06-18",
+        "width_mm": 26,
+        "setup": null,
+        "exposure": "About a month",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "A month in: awesome grip and rolling with confident cornering; the owner prefers the compound to the GP5000."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2021-06-14",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "grip": "unfavourable",
+          "speed": "mixed",
+          "punctures": "unfavourable"
+        },
+        "summary": "Less grip under braking and in corners than the P ZERO Velo, no faster, and two punctures from debris."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2026-06-05",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "The 30 mm is super comfortable yet fast and gives lots of confidence in corners."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2026-05-18",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Over 500 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Very good puncture protection with no cuts after over 500 miles."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-10-20",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Great grip and fast; rated as highly as the owner's previous Vittorias."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-10-03",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Smooth, fast, comfortable and grippy."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-08-22",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A comfortable ride and a flexible bead that is easy to fit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-08-12",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Lots of grip and no punctures; an improvement on the bike's original tires."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-08-01",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "The best tires the owner has had: definitely faster with good grip, though not ridden in the wet."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-07-02",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Made such a difference that the bike feels new."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-02-10",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Very fast, light and very grippy."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2025-01-10",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "So far fast and smooth with no punctures."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2024-08-31",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "wear": "mixed"
+        },
+        "summary": "The owner's go-to tire for years: fast rolling and comfortable in 30 mm on rough roads, though a rear lasts only about 2,000-3,000 miles."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-classic-reviews"
+        ],
+        "published_at": "2024-07-21",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About a month",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "A noticeable improvement in rolling, especially on climbs, after a month."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-retro-reviews"
+        ],
+        "published_at": "2026-10-29",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Brilliant in almost all conditions."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-retro-reviews"
+        ],
+        "published_at": "2025-07-24",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Made a real difference for the owner."
+      },
+      {
+        "source_ids": [
+          "bike-components-pirelli-p-zero-race-reviews"
+        ],
+        "published_at": "2026-03-19",
+        "width_mm": 26,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Pleasantly narrow for a 26 mm and rolls nicely; no flat so far."
+      },
+      {
+        "source_ids": [
+          "bike-components-pirelli-p-zero-race-2022-reviews"
+        ],
+        "published_at": "2025-03-28",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Over 6,000 km",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "After years on Continental and Vittoria tires, the owner's best road tire: top grip, rolling close to the GP5000 S, much easier mounting and no flat in over 6,000 km."
+      },
+      {
+        "source_ids": [
+          "bike-components-pirelli-p-zero-race-2022-reviews"
+        ],
+        "published_at": "2024-04-07",
+        "width_mm": 26,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "The best tire the owner has ridden in 15 years."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 26,
+        "note": "Black, Classic and Retro edition pages; seven reviews give no riding detail, describe another bike or product, or were not ridden"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "Current and 2022 listings"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "17 comments, none first-hand"
+      }
+    ]
   }
 }
