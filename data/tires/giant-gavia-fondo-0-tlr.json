@@ -71,7 +71,8 @@
   ],
   "source_ids": [
     "giant-gavia-fondo-0-tubeless-tyre-2020-gb-official-2026-11-01",
-    "bikeradar-giant-founder-2026-02-17"
+    "bikeradar-giant-founder-2026-02-17",
+    "xhs-giant-gavia-fondo-0-recommendation"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -100,5 +101,43 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this exact model; shop and promotional posts, questions, mounting-only impressions, generic praise and reports about other models were left out. Review verdicts quoted in the post are not owner reports.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-giant-gavia-fondo-0-recommendation"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "grip": "unfavourable"
+        },
+        "summary": "Heavy, and stops in a longer distance than the Course 0."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One reply; the post itself is a mounting report"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
   }
 }

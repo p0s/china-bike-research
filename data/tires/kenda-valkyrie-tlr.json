@@ -90,7 +90,8 @@
   "source_ids": [
     "kenda-valkyrie-official-shop-2026-11-01",
     "taiwan-excellence-kenda-valkyrie-2017",
-    "kenda-valkyrie-tmall-retail-2026-11-01"
+    "kenda-valkyrie-tmall-retail-2026-11-01",
+    "bike-components-kenda-valkyrie-pro-tlr-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -119,5 +120,47 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this exact model; shop and promotional posts, questions, mounting-only impressions, generic praise and reports about other models were left out. Seller claims of no complaints, pressure and hookless use are not owner evidence.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-kenda-valkyrie-pro-tlr-reviews"
+        ],
+        "published_at": "2022-02-27",
+        "width_mm": 25,
+        "setup": "tubeless",
+        "exposure": "A few months",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "A puncture after 30 km and about three more over the following months would not seal with sealant, and air seeped through the sidewalls."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "Two promotional posts and questions only"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "Listed as Valkyrie Pro TLR; one written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
   }
 }
