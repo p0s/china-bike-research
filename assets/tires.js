@@ -41,12 +41,15 @@ if (root instanceof HTMLElement && toolbar instanceof HTMLElement && table insta
     try { history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', next); } catch { /* same-origin navigation required */ }
   }
 
-  // Lowest first (wet grip highest first); rows without the value keep their order at the end.
+  // Lowest first (wet grip and coded owners highest first); rows without the value keep their
+  // order at the end. Owner counts order evidence, not quality.
+  const sortKeys = { rr: 'rr', wet: 'wet', weight: 'weight', price: 'priceUsd', owners: 'owners' };
   function sortValue(entry) {
     if (!state.sort) return null;
-    const value = Number(entry.dataset[{ rr: 'rr', wet: 'wet', weight: 'weight', price: 'priceUsd' }[state.sort]]);
-    if (!entry.dataset[{ rr: 'rr', wet: 'wet', weight: 'weight', price: 'priceUsd' }[state.sort]] || !Number.isFinite(value)) return null;
-    return state.sort === 'wet' ? -value : value;
+    const raw = entry.dataset[sortKeys[state.sort]];
+    const value = Number(raw);
+    if (!raw || !Number.isFinite(value)) return null;
+    return state.sort === 'wet' || state.sort === 'owners' ? -value : value;
   }
 
   function matches(entry) {

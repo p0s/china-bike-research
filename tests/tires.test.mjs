@@ -4,7 +4,7 @@ import { loadDataset, joinProducts, validateDataset } from '../src/lib/data.mjs'
 import { renderHome, renderTires } from '../src/render.mjs';
 import { INTERFACE_ROUTES } from '../src/lib/i18n.mjs';
 import { translate } from '../assets/i18n.js';
-import { BUDGET_CNY_PER_TIRE, budgetPrice, budgetShortlist, comparableRollingTest, issueSources, measuredWetGrip, referenceSize, sizeWidths, tireGroups, tireShortlists, wetEvidenceStatus } from '../src/lib/tires.mjs';
+import { BUDGET_CNY_PER_TIRE, OWNER_ASPECTS, OWNER_RATING_MIN, budgetPrice, budgetShortlist, comparableRollingTest, issueSources, measuredWetGrip, ownerRating, ownerRatings, referenceSize, sizeWidths, tireGroups, tireShortlists, wetEvidenceStatus } from '../src/lib/tires.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -154,7 +154,7 @@ test('owner wet reports are classified by stance, never by tread or marketing', 
 test('the tire table renders one row per record with origin, evidence and price basis', () => {
   const html = renderTires(ctx);
   assert.equal((html.match(/data-tire-entry/g) ?? []).length, data.tires.length);
-  assert.match(html, /<thead><tr><th>Tire<\/th><th>Use<\/th><th>Widths<\/th><th>Weight<\/th><th>Lab test<\/th><th>Price<\/th><\/tr><\/thead>/);
+  assert.match(html, /<thead><tr><th>Tire<\/th><th>Use<\/th><th>Widths<\/th><th>Weight<\/th><th>Lab test<\/th><th>Price<\/th><th>Owners<\/th><\/tr><\/thead>/);
   assert.match(html, /<div class="wheels-toolbar tires-toolbar" data-tires-toolbar hidden>/);
   assert.match(html, /<script type="module" src="\/china-bike-research\/assets\/tires\.js"><\/script>/);
   for (const tire of data.tires) {
@@ -235,4 +235,75 @@ test('the tire reference is an interface route in every language', () => {
   assert.match(renderTires({ ...ctx, locale: 'de' }), /<h1>Rennradreifen<\/h1>[\s\S]*Niedrigster gemessener Rollwiderstand/);
   assert.match(renderTires({ ...ctx, locale: 'es' }), /<h1>Neumáticos de carretera<\/h1>/);
   assert.match(renderTires({ ...ctx, locale: 'ru' }), /<h1>Шоссейные шины<\/h1>/);
+});
+
+test('owner ratings need five owners per aspect and map shares to coarse word bands', () => {
+  const counts = (favourable, mixed, unfavourable) => ({ favourable, mixed, unfavourable });
+  assert.equal(OWNER_RATING_MIN, 5);
+  assert.equal(ownerRating(counts(4, 0, 0)), null);
+  assert.deepEqual(ownerRating(counts(5, 0, 0)), { band: 'favourable', depth: 'limited' });
+  assert.equal(ownerRating(counts(4, 1, 0)).band, 'favourable');
+  assert.equal(ownerRating(counts(4, 0, 1)).band, 'mostly-favourable');
+  assert.equal(ownerRating(counts(3, 0, 2)).band, 'mixed');
+  assert.equal(ownerRating(counts(2, 0, 3)).band, 'mixed');
+  assert.equal(ownerRating(counts(1, 0, 4)).band, 'mostly-unfavourable');
+  assert.equal(ownerRating(counts(0, 1, 4)).band, 'unfavourable');
+  assert.equal(ownerRating(counts(6, 2, 2)).depth, 'moderate');
+  assert.equal(ownerRating(counts(15, 3, 2)).depth, 'larger');
+  // Five generic ownership reports cannot rate wet grip: each aspect needs its own sample.
+  const row = (codes) => ({ source_ids: ['s'], width_mm: 28, setup: null, codes, summary: 'x' });
+  const tire = { owner_evidence: { coded_at: '2026-11-03', screening_note: 'x', reports: [...Array(5)].map(() => row({ overall: 'favourable' })).concat(row({ wet: 'unfavourable' })) } };
+  const summary = ownerRatings(tire);
+  assert.equal(summary.owners, 6);
+  assert.deepEqual(summary.rated, ['overall']);
+  assert.equal(summary.aspects.wet.n, 1);
+  assert.equal(summary.aspects.wet.rating, null);
+  assert.equal(ownerRatings({}).coded, false);
+});
+
+test('owner rows are construction-specific, sourced and free of links or handles', () => {
+  const coded = firstId((tire) => tire.owner_evidence?.reports.length);
+  const tubeType = firstId((tire) => tire.construction === 'tube-type' && tire.owner_evidence?.reports.length);
+  rejects(coded, (tire) => { tire.owner_evidence.reports[0].codes = { braking: 'favourable' }; }, 'owner rows need known aspect codes');
+  rejects(coded, (tire) => { tire.owner_evidence.reports[0].codes = { overall: 'great' }; }, 'owner rows need known aspect codes');
+  rejects(coded, (tire) => { tire.owner_evidence.reports[0].source_ids = ['not-a-listed-source']; }, 'owner rows need listed sources');
+  rejects(coded, (tire) => { tire.owner_evidence.reports[0].summary = 'See https://example.com for details'; }, 'owner rows need a summary without links or handles');
+  rejects(coded, (tire) => { tire.owner_evidence.reports[0].summary = 'Reported by @rider'; }, 'owner rows need a summary without links or handles');
+  rejects(coded, (tire) => { tire.owner_evidence.reports[0].published_at = '06-26'; }, 'owner row date must be a full date');
+  rejects(tubeType, (tire) => { tire.owner_evidence.reports[0].setup = 'tubeless'; }, 'a tube-type tire cannot have a tubeless owner row');
+  rejects(coded, (tire) => { tire.community = [{ source_id: tire.owner_evidence.reports[0].source_ids[0], stance: 'mixed', published_at: '2026-01-01', summary: 'x' }]; }, 'a post is either coded owner by owner or kept as a post note');
+  rejects(coded, (tire) => { delete tire.owner_evidence.screening_note; }, 'owner evidence needs a coding date, screening note and reports');
+});
+
+test('the Owners column and row details show ratings, counts and unknowns honestly', () => {
+  const html = renderTires(ctx);
+  assert.match(html, /<option value="owners">Most owners coded<\/option>/);
+  for (const tire of data.tires) {
+    const entry = html.match(new RegExp(`<tbody class="groupset-entry tire-entry" id="${tire.id}"[\\s\\S]*?</details></td></tr></tbody>`))?.[0] ?? '';
+    const cell = entry.match(/<td data-label="Owners" data-column="owners">[\s\S]*?<\/td>/)?.[0] ?? '';
+    const summary = ownerRatings(tire);
+    if (!summary.coded) {
+      assert.equal(cell, '<td data-label="Owners" data-column="owners"><strong>—</strong></td>', tire.id);
+      assert.doesNotMatch(entry, /tire-owner-ratings|data-owners=/, tire.id);
+      continue;
+    }
+    assert.match(entry, new RegExp(`data-owners="${summary.owners}"`), tire.id);
+    assert.match(entry, /<section class="tire-owner-ratings"><h3>Owner ratings<\/h3>/, tire.id);
+    assert.match(entry, /not star ratings given by owners\. An aspect is rated only when at least 5 owners describe it; 5 is an entry threshold, not proof\./, tire.id);
+    for (const aspect of OWNER_ASPECTS) {
+      const { n, rating } = summary.aspects[aspect];
+      // Too few owners show a count without a rating; no report stays unknown, never zero.
+      if (!rating) assert.match(entry, n ? /<span>Not rated<\/span><\/td><td>\d+ owners? <span>/ : /<span>No owner report<\/span><\/td><td>—<\/td>/, `${tire.id} ${aspect}`);
+    }
+    if (summary.rated.length) assert.match(cell, /<strong>(Favourable|Mostly favourable|Mixed|Mostly unfavourable|Unfavourable)<\/strong><span>[^<]+ · \d+ owners/, tire.id);
+    else assert.match(cell, /<strong>Not rated yet<\/strong>/, tire.id);
+  }
+  assert.match(html, /<h3>Owner ratings<\/h3><p><strong>\d+ with a rated aspect · \d+ coded below the threshold · \d+ not yet coded<\/strong><\/p>/);
+  // Owner ratings never become structured-data ratings.
+  assert.doesNotMatch(html, /aggregateRating|ratingValue/);
+  for (const locale of ['zh-Hans', 'de', 'es', 'ru']) {
+    for (const text of ['Owners', 'Owner ratings', 'Overall verdict', 'Wet grip', 'Mostly favourable', 'Not rated yet', 'Post notes', '7 owners', '5 favourable', 'Most owners coded', 'limited evidence']) {
+      assert.notEqual(translate(text, locale), text, `${locale}: ${text}`);
+    }
+  }
 });

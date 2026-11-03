@@ -20,6 +20,22 @@ export const TIRE_ISSUES = ['casing', 'cracking', 'wear', 'punctures', 'fit'];
 // Budget all-season starting point (2026-11-01): a dated one-tire price before shipping.
 export const BUDGET_CNY_PER_TIRE = 250;
 
+// Owner ratings (2026-11-03): editorial coding of first-hand public reports, one row per
+// distinct owner of the exact tire record. Each aspect is rated only from its own sample of
+// at least OWNER_RATING_MIN owners; five is an entry threshold, not proof.
+export const OWNER_ASPECTS = ['overall', 'wet', 'grip', 'speed', 'punctures', 'wear', 'casing'];
+export const OWNER_CODES = ['favourable', 'mixed', 'unfavourable'];
+export const OWNER_SETUPS = ['tubeless', 'inner-tube'];
+export const OWNER_RATING_MIN = 5;
+// Share = (favourable + mixed / 2) / owners, mapped to five symmetric word bands.
+const OWNER_BANDS = [
+  [(share) => share >= 0.85, 'favourable'],
+  [(share) => share >= 0.65, 'mostly-favourable'],
+  [(share) => share > 0.35, 'mixed'],
+  [(share) => share > 0.15, 'mostly-unfavourable'],
+  [() => true, 'unfavourable']
+];
+
 // The two requested width groups. Road: 25–35 mm. Wet weather: 20–40 mm with recorded
 // wet-traction evidence. Rim-brake or pad braking is never part of tire evidence.
 export const ROAD_WIDTHS = { min: 25, max: 35 };
@@ -62,6 +78,7 @@ export function measuredWetGrip(tire) {
 export function wetEvidenceKinds(tire) {
   const kinds = new Set((tire.wet_notes ?? []).map((note) => note.kind));
   if (measuredWetGrip(tire) !== null) kinds.add('measured');
+  if ((tire.owner_evidence?.reports ?? []).some((report) => report.codes?.wet)) kinds.add('community report');
   return TIRE_EVIDENCE_KINDS.filter((kind) => kinds.has(kind));
 }
 
@@ -107,7 +124,7 @@ export function tireShortlists(tires) {
   const protective = rolling.filter((item) => Number.isFinite(item.test.puncture_tread))
     .sort((a, b) => b.test.puncture_tread - a.test.puncture_tread || a.test.rr_w - b.test.rr_w).slice(0, 5);
   const chinese = road.filter((tire) => tire.origin.group !== 'international')
-    .map((tire) => ({ tire, reports: (tire.community ?? []).length, tested: (tire.tests ?? []).length }))
+    .map((tire) => ({ tire, reports: (tire.owner_evidence?.reports ?? []).length + (tire.community ?? []).length, tested: (tire.tests ?? []).length }))
     .filter((item) => item.tested || item.reports >= 2)
     .sort((a, b) => b.tested - a.tested || b.reports - a.reports || a.tire.id.localeCompare(b.tire.id));
   const gripScored = wet.map((tire) => ({ tire, grip: measuredWetGrip(tire) })).filter((item) => item.grip !== null);
@@ -161,6 +178,32 @@ export function budgetShortlist(tires) {
   const unverified = chinese.filter((tire) => !budgetPrice(tire) && budgetPrice(tire, 'unstated'))
     .map((tire) => ({ ...evidence(tire, budgetPrice(tire, 'unstated')), allSeason: false })).sort(order);
   return { qualifying, unverified };
+}
+
+// Owner-rating counts and bands. Evidence depth describes how much was found, not statistical
+// confidence: public reports are self-selected, and width, pressure, setup and roads vary.
+export function ownerRating(counts) {
+  const n = counts.favourable + counts.mixed + counts.unfavourable;
+  if (n < OWNER_RATING_MIN) return null;
+  const share = (counts.favourable + counts.mixed / 2) / n;
+  return { band: OWNER_BANDS.find(([test]) => test(share))[1], depth: n >= 20 ? 'larger' : n >= 10 ? 'moderate' : 'limited' };
+}
+
+export function ownerRatings(tire) {
+  const reports = tire.owner_evidence?.reports ?? [];
+  const aspects = Object.fromEntries(OWNER_ASPECTS.map((aspect) => {
+    const counts = Object.fromEntries(OWNER_CODES.map((code) => [code, reports.filter((report) => report.codes?.[aspect] === code).length]));
+    return [aspect, { counts, n: counts.favourable + counts.mixed + counts.unfavourable, rating: ownerRating(counts) }];
+  }));
+  const tally = (values) => [...values.reduce((map, value) => map.set(value, (map.get(value) ?? 0) + 1), new Map())];
+  return {
+    coded: Boolean(tire.owner_evidence),
+    owners: reports.length,
+    aspects,
+    rated: OWNER_ASPECTS.filter((aspect) => aspects[aspect].rating),
+    widths: tally(reports.map((report) => report.width_mm ?? null)).sort((a, b) => (a[0] ?? 999) - (b[0] ?? 999)),
+    setups: tally(reports.map((report) => report.setup ?? null)).sort((a, b) => (a[0] === null) - (b[0] === null) || String(a[0]).localeCompare(String(b[0])))
+  };
 }
 
 const sizeKey = (size) => `${sizeLabel(size)}|${size.bead ?? ''}`;
@@ -303,6 +346,24 @@ export function validateTires(data, sourceIds) {
     for (const report of tire.community ?? []) {
       if (!listed(tire, report.source_id) || !nonEmpty(report.summary) || !TIRE_STANCES.includes(report.stance) || !isDate(report.published_at)) errors.push(`${label}: owner reports need a listed source, summary, stance and date`);
       if (report.issues !== undefined && (!Array.isArray(report.issues) || !report.issues.length || report.issues.some((issue) => !TIRE_ISSUES.includes(issue)) || new Set(report.issues).size !== report.issues.length)) errors.push(`${label}: owner report issues must be distinct known issues`);
+    }
+    // Owner ratings: one row per distinct owner, coded per aspect. A post is either coded owner
+    // by owner or kept as a whole-post note, never both. Rows carry no names or account data.
+    if (tire.owner_evidence !== undefined) {
+      const evidence = tire.owner_evidence ?? {};
+      if (!isDate(evidence.coded_at) || !nonEmpty(evidence.screening_note) || !Array.isArray(evidence.reports)) errors.push(`${label}: owner evidence needs a coding date, screening note and reports`);
+      const posts = new Set((tire.community ?? []).map((report) => report.source_id));
+      for (const report of evidence.reports ?? []) {
+        const codes = Object.entries(report.codes ?? {});
+        if (!Array.isArray(report.source_ids) || !report.source_ids.length || report.source_ids.some((id) => !listed(tire, id))) errors.push(`${label}: owner rows need listed sources`);
+        if (!codes.length || codes.some(([aspect, code]) => !OWNER_ASPECTS.includes(aspect) || !OWNER_CODES.includes(code))) errors.push(`${label}: owner rows need known aspect codes`);
+        if (!nonEmpty(report.summary) || /https?:|www\.|@/i.test(`${report.summary} ${report.exposure ?? ''}`)) errors.push(`${label}: owner rows need a summary without links or handles`);
+        if (report.width_mm !== null && !inRange(report.width_mm, 18, 50)) errors.push(`${label}: owner row width must be a width or null`);
+        if (report.setup !== null && !OWNER_SETUPS.includes(report.setup)) errors.push(`${label}: owner row setup must be tubeless, inner-tube or null`);
+        if (report.setup === 'tubeless' && tire.construction === 'tube-type') errors.push(`${label}: a tube-type tire cannot have a tubeless owner row`);
+        if (report.published_at !== undefined && !isDate(report.published_at)) errors.push(`${label}: owner row date must be a full date`);
+        if ((report.source_ids ?? []).some((id) => posts.has(id))) errors.push(`${label}: a post is either coded owner by owner or kept as a post note`);
+      }
     }
     const availability = tire.availability ?? {};
     for (const region of TIRE_REGIONS) if (!TIRE_AVAILABILITY.includes(availability[region])) errors.push(`${label}: invalid availability.${region}`);

@@ -1134,3 +1134,58 @@ patterns.push(
   [/^(\d+) excluded$/, (_, n) => `${n} ${plural(n, 'исключена', 'исключены', 'исключено')}`],
   [/^(\d+) unresolved$/, (_, n) => `${n} не решено`]
 );
+
+// Tire owner ratings (2026-11-03).
+Object.assign(ru, {
+  "Owners": "Владельцы",
+  "Owner ratings": "Оценки владельцев",
+  "Not rated yet": "Пока без оценки",
+  "No eligible owner report found": "Подходящих отзывов владельцев не найдено",
+  "fewer than 5 per aspect": "меньше 5 по каждому аспекту",
+  "Overall verdict": "Общая оценка",
+  "Wet grip": "Сцепление на мокром",
+  "Grip, dry or not stated": "Сцепление: сухо или не указано",
+  "Speed feel": "Ощущение скорости",
+  "Puncture resistance": "Защита от проколов",
+  "Tread life": "Ресурс протектора",
+  "Casing durability": "Прочность каркаса",
+  "Favourable": "Положительная",
+  "Mostly favourable": "Скорее положительная",
+  "Mostly unfavourable": "Скорее отрицательная",
+  "Unfavourable": "Отрицательная",
+  "limited evidence": "ограниченные данные",
+  "moderate evidence": "умеренный объём данных",
+  "larger sample": "более крупная выборка",
+  "Not rated": "Без оценки",
+  "No owner report": "Нет отзывов владельцев",
+  "Aspect": "Аспект",
+  "Rating": "Оценка",
+  "Coded": "Закодировано",
+  "Tube or tubeless": "С камерой или бескамерно",
+  "not stated": "не указано",
+  "tubeless": "бескамерно",
+  "inner tube": "с камерой",
+  "favourable": "положительно",
+  "mixed": "смешанно",
+  "unfavourable": "отрицательно",
+  "Post notes": "Заметки по публикациям",
+  "Whole-post summaries, not checked owner by owner and not counted in owner ratings.": "Сводки целых публикаций, не проверенные по отдельным владельцам и не учитываемые в оценках владельцев.",
+  "Editorial coding of first-hand public reports, not star ratings given by owners. An aspect is rated only when at least 5 owners describe it; 5 is an entry threshold, not proof. Public reports are self-selected, and width, pressure, setup and roads vary between owners.": "Редакционная кодировка публичных отзывов из первых рук, а не звёздные оценки владельцев. Аспект оценивается, только если его описывают не менее 5 владельцев; 5 — это порог включения, а не доказательство. Публичные отзывы самоотобраны, а ширина, давление, способ установки и дороги у владельцев различаются.",
+  "Each coded row is one owner of the exact tire and construction who describes their own riding. Seller and brand copy, questions, hearsay, repeats and reports that do not name the construction are left out, and an owner counts once however often they post. Each aspect is coded favourable, mixed or unfavourable; wet grip needs wet riding, and grip covers dry or unstated conditions. An aspect is rated only with at least 5 owners: the share favourable, with mixed counted as half, reads as Favourable from 85%, Mostly favourable from 65%, Mixed above 35%, Mostly unfavourable above 15%, otherwise Unfavourable. Evidence depth is limited for 5–9 owners, moderate for 10–19 and a larger sample from 20; it describes how much was found, not statistical confidence. Ratings describe the widths owners reported and never another width.": "Каждая закодированная строка — один владелец именно этой шины и конструкции, описывающий собственные поездки. Тексты продавцов и брендов, вопросы, слухи, повторы и отзывы без указания конструкции не учитываются, а владелец считается один раз, сколько бы он ни писал. Каждый аспект кодируется как положительный, смешанный или отрицательный; для сцепления на мокром нужны поездки по мокрой дороге, а сцепление охватывает сухие или неуказанные условия. Аспект оценивается только при наличии не менее 5 владельцев: доля положительных, где смешанные считаются за половину, читается как «Положительная» от 85 %, «Скорее положительная» от 65 %, «Смешанный» выше 35 %, «Скорее отрицательная» выше 15 %, иначе «Отрицательная». Объём данных ограничен при 5–9 владельцах, умеренный при 10–19, а от 20 это более крупная выборка; это показывает, сколько найдено, а не статистическую достоверность. Оценки относятся к ширинам, которые указали владельцы, и никогда — к другой ширине.",
+  "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "Краткие пересказы целых публичных постов, записанные до кодирования по отдельным владельцам. Они описывают шину одного райдера, не являются тестами и не учитываются в оценках владельцев.",
+  "Most owners coded": "Больше всего закодированных владельцев",
+  "no aspect rated yet": "пока ни один аспект не оценён",
+  "A tire that has not been coded may still have many owners; its reports have not been checked owner by owner yet.": "У незакодированной шины может быть много владельцев; просто их отзывы ещё не проверены по отдельности."
+});
+patterns.push(
+  [/^(\d+) owners?$/, (_, n) => `${n} ${plural(n, 'владелец', 'владельца', 'владельцев')}`],
+  [/^(\d+) more rated$/, (_, n) => `ещё ${n} с оценкой`],
+  [/^(\d+) (favourable|mixed|unfavourable)$/, (_, n, code) => `${n} ${{ favourable: 'положительно', mixed: 'смешанно', unfavourable: 'отрицательно' }[code]}`],
+  [/^(not stated|inner tube|tubeless) ×(\d+)$/, (_, label, n) => `${t(label)} ×${n}`],
+  [/^(\d+) mm ×(\d+)$/, (_, width, n) => `${width} мм ×${n}`],
+  [/^Owner ratings: (.+)$/, (_, name) => `Оценки владельцев: ${name}`],
+  [/^Coded owner reports \((\d+)\)$/, (_, n) => `Закодированные отзывы владельцев (${n})`],
+  [/^(\d+) with a rated aspect$/, (_, n) => `${n} с оценённым аспектом`],
+  [/^(\d+) coded below the threshold$/, (_, n) => `${n} закодировано ниже порога`],
+  [/^(\d+) not yet coded$/, (_, n) => `${n} ещё не закодировано`]
+);

@@ -1720,12 +1720,29 @@ html:has([data-analytics-banner]){overflow-x:clip}
 }
 
 /* Road tires (2026-11-01): starting points, size tables and the coverage ledger. */
-.tire-comparison { min-width: 1040px; }
-.tire-comparison th:nth-child(2) { width: 19%; }
-.tire-comparison th:nth-child(3) { width: 15%; }
-.tire-comparison th:nth-child(4) { width: 11%; }
-.tire-comparison th:nth-child(5) { width: 16%; }
-.tire-comparison th:nth-child(6) { width: 14%; }
+.tire-comparison { min-width: 1140px; }
+.tire-comparison th:nth-child(2) { width: 17%; }
+.tire-comparison th:nth-child(3) { width: 13%; }
+.tire-comparison th:nth-child(4) { width: 10%; }
+.tire-comparison th:nth-child(5) { width: 14%; }
+.tire-comparison th:nth-child(6) { width: 13%; }
+.tire-comparison th:nth-child(7) { width: 13%; }
+.tire-owner-ratings { grid-column: 1 / -1; }
+.tire-owner-table table { min-width: 360px; }
+.tire-owner-table td strong { display: inline; }
+.tire-owner-table td span { color: var(--muted); }
+.tire-owner-coverage { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 8px 0; font-size: .74rem; }
+.tire-owner-coverage dt { display: inline; color: var(--muted); }
+.tire-owner-coverage dt::after { content: ' '; }
+.tire-owner-coverage dd { display: inline; margin: 0; }
+.tire-owner-method { color: var(--muted) !important; font-size: .72rem !important; line-height: 1.45; }
+.tire-owner-list > summary { cursor: pointer; font-size: .76rem; font-weight: 650; }
+.tire-owner-list ul { margin-top: 6px; }
+.tire-owner-list li p { margin: 0 0 2px; }
+.tire-owner-codes { display: flex; flex-wrap: wrap; gap: 4px; }
+.tire-owner-code { padding: 0 6px; border-radius: 999px; background: var(--surface-soft); color: var(--muted); font-size: .66rem; }
+.tire-owner-code em { color: var(--ink); font-style: normal; font-weight: 700; }
+.tire-owner-basis { color: var(--muted); }
 .tire-aliases { display: block; margin-top: 3px; color: var(--muted); font-size: .7rem; font-weight: 500; }
 .groupset-name .tire-aliases > span { display: inline; margin: 0; }
 .tire-shortlists { margin: 0 0 22px; }
@@ -1775,4 +1792,5 @@ html:has([data-analytics-banner]){overflow-x:clip}
   .tire-photo img { width: 100%; max-width: 280px; }
   .tire-comparison .groupset-summary-row > td[data-column="widths"] { border-right: 1px solid var(--line); }
   .tire-comparison .groupset-summary-row > td[data-column="tests"] { grid-column: 1 / -1; }
+  .tire-comparison .groupset-summary-row > td[data-column="price"] { grid-column: auto; border-right: 1px solid var(--line); }
 }

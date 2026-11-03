@@ -47,9 +47,15 @@
   "wet_notes": [
     {
       "kind": "community report",
-      "summary": "One commenter found it better than a GP5000 in the wet after two months; two others said it turns very slippery once wet. The post covers both the clincher and the tubeless version.",
+      "summary": "In a tire seller's post, one commenter found it grippier than a GP5000 in the rain after two months; the seller's own wet warning is not an owner test.",
       "source_id": "xhs-arisun-storm-r1-weights-2025-04-26",
-      "stance": "mixed"
+      "stance": "positive"
+    },
+    {
+      "kind": "community report",
+      "summary": "An owner who did not say clincher or tubeless reported slips on puddles and road paint and replaced the tires.",
+      "source_id": "xhs-arisun-storm-r1-dry-review-2025-06-26",
+      "stance": "negative"
     }
   ],
   "community": [
@@ -89,30 +95,6 @@
       ]
     },
     {
-      "source_id": "xhs-arisun-storm-r1-dry-review-2025-06-26",
-      "stance": "positive",
-      "published_at": "2025-06-26",
-      "summary": "Owner: more dry grip and high-speed stability than a Michelin Power Cup, comfortable, close to 28 mm on a 19 mm rim; not yet ridden in the wet."
-    },
-    {
-      "source_id": "xhs-arisun-storm-r1-1800-km-2026-06-26",
-      "stance": "negative",
-      "published_at": "2026-06-26",
-      "summary": "A 28C rear wore through to the casing after about 1,800 km; other owners report 7,000-10,000 km.",
-      "issues": [
-        "wear"
-      ]
-    },
-    {
-      "source_id": "xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
-      "stance": "mixed",
-      "published_at": "2026-09-09",
-      "summary": "Commenters on a tubeless-bulge post: one clincher sidewall cracked through at about 1,000 km; another lasted 7,000 km with several punctures; others had no problem at 1,000-2,000 km.",
-      "issues": [
-        "cracking"
-      ]
-    },
-    {
       "source_id": "xhs-arisun-storm-r1-10000-km-2026-10-02",
       "stance": "positive",
       "published_at": "2026-10-02",
@@ -140,8 +122,8 @@
     }
   ],
   "caveats": [
-    "Several owners report bulges, sidewall cracks or wear-through within 1,000-2,000 km, while others report 7,000-10,000 km; inspect the casing regularly.",
-    "Owner wet reports conflict: one found it better than a GP5000 in the wet, others found it very slippery once wet. No independent lab test found.",
+    "Clincher owners report anything from a sidewall crack after about 1,000 km and a rear worn through at 1,800 km to 8,000 km of use; inspect the casing regularly.",
+    "Wet grip is unresolved: the few owner wet reports conflict, the slip report does not say clincher or tubeless, and no lab or controlled wet-braking test was found.",
     "Mount in the direction of the rotation arrow, which some owners say is opposite to Continental's.",
     "The official store price is CNY 268 per listing option; whether an option is one tire or a pair is not stated."
   ],
@@ -154,7 +136,10 @@
     "xhs-arisun-storm-r1-dry-review-2025-06-26",
     "xhs-arisun-storm-r1-1800-km-2026-06-26",
     "xhs-arisun-storm-r1-tlr-bulges-2026-09-09",
-    "xhs-arisun-storm-r1-10000-km-2026-10-02"
+    "xhs-arisun-storm-r1-10000-km-2026-10-02",
+    "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20",
+    "xhs-arisun-storm-r1-70-km-log",
+    "xhs-arisun-storm-r1-tlr-sealant-leak"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -183,5 +168,150 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded from seven Xiaohongshu posts and their visible comments, reviewed on 2026-11-03 (not exhaustive). Counted only owners who said they ride the clincher; replies that did not say clincher or tubeless, seller replies, questions, hearsay, prices and repeated comments by one owner were left out. Five posts remain as post notes: four older posts whose commenters have not been checked owner by owner, and a 10,000 km report that does not say clincher or tubeless.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-1800-km-2026-06-26",
+          "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20"
+        ],
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Rear about 1,800 km in two months; front about 6,000 km in five months",
+        "codes": {
+          "overall": "unfavourable",
+          "wear": "mixed"
+        },
+        "summary": "The rear wore through to the casing after about 1,800 km while the front was still fine at about 6,000 km; the owner summed it up as getting what you pay for."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "grip": "unfavourable"
+        },
+        "summary": "Found it too hard: the rear stepped out when cornering on descents, so the owner switched to Michelin tires. Road conditions not stated."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Over 3,000 km in about a year",
+        "codes": {
+          "overall": "favourable",
+          "wear": "favourable",
+          "casing": "mixed"
+        },
+        "summary": "Hard-wearing: the front still showed its centre line after more than 3,000 km. Fine surface cracks appeared after a year, but the owner expects another year of use."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-vs-str-2026-10-20"
+        ],
+        "width_mm": null,
+        "setup": "inner-tube",
+        "exposure": "3,000 km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Ridden with a TPU tube: very good value and no flat in 3,000 km."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-70-km-log"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "70 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "After a first 70 km it felt lighter to accelerate and about 1 km/h faster at the same effort than the stock tires; not a controlled test."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-dry-review-2025-06-26"
+        ],
+        "width_mm": 28,
+        "setup": "inner-tube",
+        "exposure": "First rides",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "mixed"
+        },
+        "summary": "More dry-road grip and high-speed stability than a Michelin Power Cup and comfortable, but slower to spin up; called it good value. Not yet ridden in the wet."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-bulges-2026-09-09"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 2,000 km",
+        "codes": {
+          "casing": "favourable"
+        },
+        "summary": "No problem so far after about 2,000 km."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-bulges-2026-09-09"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Just over 1,000 km",
+        "codes": {
+          "casing": "unfavourable"
+        },
+        "summary": "The rear sidewall cracked and the tire was scrapped after just over 1,000 km."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-bulges-2026-09-09"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "7,000 km",
+        "codes": {
+          "punctures": "unfavourable"
+        },
+        "summary": "Punctured several times and was replaced after 7,000 km."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-sealant-leak"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "8,000 km",
+        "codes": {
+          "wear": "favourable"
+        },
+        "summary": "Has ridden 8,000 km on the clincher."
+      },
+      {
+        "source_ids": [
+          "xhs-arisun-storm-r1-tlr-bulges-2026-09-09"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Finds the clincher fine in use; the same owner gave up on the tubeless version early."
+      }
+    ]
   }
 }
