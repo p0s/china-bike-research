@@ -45,7 +45,7 @@
       "etrto": "32-622",
       "weight_g": 370,
       "max_psi": 73,
-      "max_bar": 5.0,
+      "max_bar": 5,
       "note": "Hookless 65 psi"
     },
     {
@@ -125,7 +125,11 @@
     "continental-road-range-us-2026-11-01",
     "continental-road-range-de-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "continental-grand-prix-5000-as-tr-tmall-2026-11-01"
+    "continental-grand-prix-5000-as-tr-tmall-2026-11-01",
+    "bike-components-gp5000-as-tr-reviews",
+    "sigma-sports-gp5000-as-tr-reviews",
+    "brr-comments-continental-grand-prix-5000-as-tr-28",
+    "brr-comments-pirelli-p-zero-race-tlr-28"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -154,5 +158,79 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: every reader comment on Bicycle Rolling Resistance's test pages for this tire, the written customer reviews that bike-components and Sigma Sports serve on their product pages (reviews loaded by third-party widgets were not read) and owner comments in the coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-12-07",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Compliant for a wider tire and holds up well to road debris."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2024-10-29",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Excellent grip in wet or dry conditions, no noticeable speed loss against the regular GP5000 and easy to seat tubeless."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gp5000-as-tr-reviews"
+        ],
+        "published_at": "2026-09-01",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Rolls very well once fitted, but was very difficult to mount on the owner's rims."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-grand-prix-5000-as-tr-28"
+        ],
+        "published_at": "2024-12-28",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A few rides",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Feels very fast and comfortable, more a race and training tire than an all-season one; durability not yet known."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-28"
+        ],
+        "published_at": "2023-11-04",
+        "width_mm": 32,
+        "setup": null,
+        "exposure": "Recent months",
+        "codes": {
+          "punctures": "favourable"
+        },
+        "summary": "A little better puncture protection than the standard GP5000."
+      }
+    ]
   }
 }

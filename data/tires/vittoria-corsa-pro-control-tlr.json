@@ -123,7 +123,10 @@
   "source_ids": [
     "vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "vittoria-corsa-pro-control-tmall-2026-11-01"
+    "vittoria-corsa-pro-control-tmall-2026-11-01",
+    "sigma-sports-corsa-pro-control-tlr-reviews",
+    "bike-components-corsa-pro-control-tlr-reviews",
+    "brr-comments-vittoria-corsa-pro-control-tlr"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -152,5 +155,63 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: every reader comment on Bicycle Rolling Resistance's test pages for this tire, the written customer reviews that bike-components and Sigma Sports serve on their product pages (reviews loaded by third-party widgets were not read) and owner comments in the coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. No owner comment was found in the coded Xiaohongshu threads.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2023-09-13",
+        "width_mm": 28,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Comfortable at lower pressure with supple sidewalls and no puncture so far; hard to fit on the owner's rims."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2026-05-19",
+        "width_mm": 42,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "High comfort on poor roads without giving up speed; about as fast as a 40 mm Schwalbe G-One RS Pro and slightly more supple."
+      },
+      {
+        "source_ids": [
+          "bike-components-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2025-09-29",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "punctures": "favourable"
+        },
+        "summary": "Supple sidewalls with a thick tread; no flat so far."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-control-tlr"
+        ],
+        "published_at": "2023-07-11",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 40 miles, then a few more rides",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable"
+        },
+        "summary": "Feels faster than its lab result and has a great road feel, but the owner regrets not choosing the regular Corsa Pro after its puncture-test result."
+      }
+    ]
   }
 }

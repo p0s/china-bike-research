@@ -1125,3 +1125,57 @@ patterns.push(
   [/^(\d+) excluded$/, (_, n) => n === '1' ? '1 excluido' : `${n} excluidos`],
   [/^(\d+) unresolved$/, (_, n) => `${n} sin resolver`]
 );
+
+// Tire owner ratings (2026-11-03).
+Object.assign(es, {
+  "Owners": "Propietarios",
+  "Owner ratings": "Valoraciones de propietarios",
+  "Not rated yet": "Aún sin valoración",
+  "No eligible owner report found": "No se encontró ninguna opinión de propietario válida",
+  "fewer than 5 per aspect": "menos de 5 por aspecto",
+  "Overall verdict": "Valoración general",
+  "Wet grip": "Agarre en mojado",
+  "Grip, dry or not stated": "Agarre, en seco o sin indicar",
+  "Speed feel": "Sensación de velocidad",
+  "Puncture resistance": "Resistencia a pinchazos",
+  "Tread life": "Duración de la banda",
+  "Casing durability": "Durabilidad de la carcasa",
+  "Favourable": "Favorable",
+  "Mostly favourable": "Mayormente favorable",
+  "Mostly unfavourable": "Mayormente desfavorable",
+  "Unfavourable": "Desfavorable",
+  "limited evidence": "evidencia limitada",
+  "moderate evidence": "evidencia moderada",
+  "larger sample": "muestra más amplia",
+  "Not rated": "Sin valoración",
+  "No owner report": "Sin opiniones de propietarios",
+  "Aspect": "Aspecto",
+  "Rating": "Valoración",
+  "Coded": "Codificado",
+  "Tube or tubeless": "Cámara o tubeless",
+  "not stated": "sin indicar",
+  "tubeless": "tubeless",
+  "inner tube": "cámara",
+  "favourable": "favorable",
+  "mixed": "mixta",
+  "unfavourable": "desfavorable",
+  "Post notes": "Notas de publicaciones",
+  "Whole-post summaries, not checked owner by owner and not counted in owner ratings.": "Resúmenes de publicaciones completas, no revisados propietario por propietario y no incluidos en las valoraciones de propietarios.",
+  "Editorial coding of first-hand public reports, not star ratings given by owners. An aspect is rated only when at least 5 owners describe it; 5 is an entry threshold, not proof. Public reports are self-selected, sources differ between tires, and width, pressure, setup and roads vary between owners.": "Codificación editorial de opiniones públicas de primera mano, no valoraciones con estrellas de los propietarios. Un aspecto solo se valora cuando al menos 5 propietarios lo describen; 5 es un umbral de entrada, no una prueba. Las opiniones públicas son autoseleccionadas, las fuentes varían de un neumático a otro, y la anchura, la presión, el montaje y las carreteras varían entre propietarios.",
+  "Each coded row is one owner of the exact tire and construction who describes their own riding. Seller and brand copy, questions, hearsay, repeats and reports that do not name the construction are left out, and an owner counts once however often they post. Each aspect is coded favourable, mixed or unfavourable; wet grip needs wet riding, and grip covers dry or unstated conditions. An aspect is rated only with at least 5 owners: the share favourable, with mixed counted as half, reads as Favourable from 85%, Mostly favourable from 65%, Mixed above 35%, Mostly unfavourable above 15%, otherwise Unfavourable. Evidence depth is limited for 5–9 owners, moderate for 10–19 and a larger sample from 20; it describes how much was found, not statistical confidence. Ratings describe the widths owners reported and never another width.": "Cada fila codificada corresponde a un propietario del neumático y la construcción exactos que describe su propio uso. Se excluyen los textos de vendedores y marcas, las preguntas, los rumores, las repeticiones y las opiniones que no indican la construcción, y cada propietario cuenta una vez aunque publique varias veces. Cada aspecto se codifica como favorable, mixto o desfavorable; el agarre en mojado exige haber rodado en mojado, y el agarre cubre condiciones secas o sin indicar. Un aspecto solo se valora con al menos 5 propietarios: la proporción favorable, contando las mixtas como media, se lee como Favorable desde el 85 %, Mayormente favorable desde el 65 %, Mixta por encima del 35 %, Mayormente desfavorable por encima del 15 % y, si no, Desfavorable. La profundidad de la evidencia es limitada con 5–9 propietarios, moderada con 10–19 y una muestra más amplia desde 20; describe cuánto se encontró, no una confianza estadística. Las valoraciones describen las anchuras que indicaron los propietarios y nunca otra anchura.",
+  "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "Breves paráfrasis de publicaciones públicas completas registradas antes de la codificación propietario por propietario. Describen el neumático de un ciclista, no son pruebas y no cuentan en las valoraciones de propietarios.",
+  "Most owners coded": "Más propietarios codificados",
+  "no aspect rated yet": "aún ningún aspecto valorado",
+  "A tire that has not been coded may still have many owners; its reports have not been checked owner by owner yet.": "Un neumático sin codificar puede tener muchos propietarios; sus opiniones aún no se han revisado propietario por propietario."
+});
+patterns.push(
+  [/^(\d+) owners?$/, (_, n) => n === '1' ? '1 propietario' : `${n} propietarios`],
+  [/^(\d+) more rated$/, (_, n) => n === '1' ? '1 más valorado' : `${n} más valorados`],
+  [/^(\d+) (favourable|mixed|unfavourable)$/, (_, n, code) => `${n} ${{ favourable: n === '1' ? 'favorable' : 'favorables', mixed: n === '1' ? 'mixta' : 'mixtas', unfavourable: n === '1' ? 'desfavorable' : 'desfavorables' }[code]}`],
+  [/^(not stated|inner tube|tubeless) ×(\d+)$/, (_, label, n) => `${t(label)} ×${n}`],
+  [/^Owner ratings: (.+)$/, (_, name) => `Valoraciones de propietarios: ${name}`],
+  [/^Coded owner reports \((\d+)\)$/, (_, n) => `Opiniones de propietarios codificadas (${n})`],
+  [/^(\d+) with a rated aspect$/, (_, n) => `${n} con un aspecto valorado`],
+  [/^(\d+) coded below the threshold$/, (_, n) => `${n} codificados por debajo del umbral`],
+  [/^(\d+) not yet coded$/, (_, n) => `${n} aún sin codificar`]
+);
