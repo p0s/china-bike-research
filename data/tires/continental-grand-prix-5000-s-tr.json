@@ -163,7 +163,8 @@
     "brr-comments-continental-aero-111",
     "brr-comments-continental-grand-prix-5000-s-tr-32",
     "brr-comments-schwalbe-pro-one-tle-34",
-    "brr-comments-continental-grand-prix-5000-s-tr-35"
+    "brr-comments-continental-grand-prix-5000-s-tr-35",
+    "brr-comments-michelin-power-cup-tlr-28"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -747,6 +748,19 @@
           "punctures": "unfavourable"
         },
         "summary": "Rides very well but is too fragile, as the owner generally finds this tire: the rear needed five plugs in under four weeks."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup-tlr-28"
+        ],
+        "published_at": "2025-04-18",
+        "width_mm": 32,
+        "setup": "tubeless",
+        "exposure": "3,000-4,000 km",
+        "codes": {
+          "punctures": "unfavourable"
+        },
+        "summary": "On glass-strewn city roads the 32 mm was full of cuts sealant could not close after 3,000-4,000 km, and a 28 mm punctured after 100 km."
       }
     ],
     "checks": [
@@ -765,7 +779,7 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 6,
+        "owners": 7,
         "note": "Test pages for 25, 28, 30, 32 and 35 mm and the tanwall option, plus owners commenting on other tires' tests"
       },
       {

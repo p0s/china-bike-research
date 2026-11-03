@@ -127,7 +127,8 @@
     "sigma-sports-corsa-pro-control-tlr-reviews",
     "bike-components-corsa-pro-control-tlr-reviews",
     "brr-comments-vittoria-corsa-pro-control-tlr",
-    "brr-comments-vittoria-corsa-pro-control-34"
+    "brr-comments-vittoria-corsa-pro-control-34",
+    "brr-comments-vittoria-corsa-pro-tlr"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -278,6 +279,19 @@
           "speed": "favourable"
         },
         "summary": "Ridden back to back with a 28 mm GP5000, the 34 mm felt no slower, but it measures barely 31 mm, so the owner plans to replace it."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-tlr"
+        ],
+        "published_at": "2023-07-03",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "grip": "favourable"
+        },
+        "summary": "Owns both versions in 28 mm: the Pro Control is middling but grips very well, so it stays on climbing wheels."
       }
     ],
     "checks": [
@@ -296,7 +310,7 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 3,
+        "owners": 4,
         "note": "28 mm road and 34, 38 and 42 mm gravel test pages"
       }
     ]

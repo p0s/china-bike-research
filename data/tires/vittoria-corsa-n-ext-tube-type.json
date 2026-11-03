@@ -95,7 +95,8 @@
   ],
   "source_ids": [
     "vittoria-corsa-n-ext-tube-type-official-2026-11-01",
-    "vittoria-corsa-n-ext-tmall-2026-11-01"
+    "vittoria-corsa-n-ext-tmall-2026-11-01",
+    "sigma-sports-vittoria-corsa-next-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -124,5 +125,133 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2026-07-21",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A big gain in comfort on poor roads over the owner's previous 28 mm tires without a noticeable weight penalty; early days for durability."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2024-12-17",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Over 1,000 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "mixed"
+        },
+        "summary": "One early sidewall rip caused a blowout; the replacement has done over 1,000 km of winter roads without incident and rolls nicely."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2024-10-22",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "speed": "mixed"
+        },
+        "summary": "Robust and great for winter riding with excellent wet grip, though slightly slower than the Schwalbe Ones it replaced."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2024-05-04",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "500 km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "500 km on wet, gritty roads with no problems."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2023-07-18",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed"
+        },
+        "summary": "A nice tire, but the front loses air from 80 psi to flat within a couple of days, so the owner doubts its quality."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2023-03-27",
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "A winter tire that has spared the owner from punctures; very happy with the 30 mm at 85 psi."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2023-03-26",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "Rolls nicely and feels very light."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-vittoria-corsa-next-reviews"
+        ],
+        "published_at": "2023-03-21",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Great through the winter; the owner will now use it all year."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 8,
+        "note": "One of 9 written reviews gives no riding detail"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "The one written review gives only a measured width"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "Test page without reader comments"
+      }
+    ]
   }
 }

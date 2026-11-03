@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2194,
+      "sources": 2209,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -341,11 +341,17 @@
       "bike-components-gp5000-s-tr-set-reviews",
       "bike-components-grand-prix-tr-reviews",
       "bike-components-kenda-valkyrie-pro-tlr-reviews",
+      "bike-components-michelin-power-cup-reviews",
+      "bike-components-michelin-power-cup-tlr-reviews",
       "bike-components-michelin-pro5-tlr-reviews",
       "bike-components-power-protection-tlr-reviews",
       "bike-components-pro-one-tle-reviews",
       "bike-components-strada-bianca-pro-tlr-reviews",
       "bike-components-ultra-sport-iii-reviews",
+      "bike-components-vittoria-corsa-next-tlr-reviews",
+      "bike-components-vittoria-corsa-pro-tlr-reviews",
+      "bike-components-vittoria-rubino-v-reviews",
+      "bike-components-vittoria-rubino-v-tlr-reviews",
       "bikeradar-cervelo-aspero5-2026-08-29",
       "bikeradar-giant-founder-2026-02-17",
       "biketo-girder-vagrant-2016-2026-10-23",
@@ -362,6 +368,9 @@
       "brr-comments-continental-grand-prix-5000-s-tr",
       "brr-comments-continental-grand-prix-5000-s-tr-32",
       "brr-comments-continental-grand-prix-5000-s-tr-35",
+      "brr-comments-michelin-power-cup",
+      "brr-comments-michelin-power-cup-tlr",
+      "brr-comments-michelin-power-cup-tlr-28",
       "brr-comments-michelin-pro-5-28",
       "brr-comments-michelin-pro-5-32",
       "brr-comments-michelin-pro-5-35",
@@ -372,8 +381,10 @@
       "brr-comments-schwalbe-pro-one-tle-34",
       "brr-comments-schwalbe-pro-one-tle-38",
       "brr-comments-silca-protocol-rcr-38",
+      "brr-comments-vittoria-corsa-next-tlr",
       "brr-comments-vittoria-corsa-pro-control-34",
       "brr-comments-vittoria-corsa-pro-control-tlr",
+      "brr-comments-vittoria-corsa-pro-tlr",
       "bxt-055-bikeinsights-geometry-2026-09-01",
       "bxt-055-official",
       "bxt-055-official-recheck-2026-09-23",
@@ -1785,6 +1796,10 @@
       "sigma-sports-gp5000-clincher-reviews",
       "sigma-sports-gp5000-s-tr-reviews",
       "sigma-sports-pro-one-tle-reviews",
+      "sigma-sports-vittoria-corsa-next-reviews",
+      "sigma-sports-vittoria-corsa-next-tlr-reviews",
+      "sigma-sports-vittoria-corsa-pro-tlr-reviews",
+      "sigma-sports-vittoria-rubino-v-tlr-reviews",
       "silca-about-official-2026-11-01",
       "silca-protocol-rcr-official-2026-11-01",
       "smzdm-shimano-di2-market-observations-2026-08-24",
@@ -11362,6 +11377,30 @@
         "type",
         "url"
       ],
+      "bike-components-michelin-power-cup-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-michelin-power-cup-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bike-components-michelin-pro5-tlr-reviews": [
         "accessed_at",
         "language",
@@ -11411,6 +11450,54 @@
         "url"
       ],
       "bike-components-ultra-sport-iii-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-vittoria-corsa-next-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-vittoria-corsa-pro-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-vittoria-rubino-v-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-vittoria-rubino-v-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -11614,6 +11701,42 @@
         "type",
         "url"
       ],
+      "brr-comments-michelin-power-cup": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-michelin-power-cup-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-michelin-power-cup-tlr-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-michelin-pro-5-28": [
         "accessed_at",
         "language",
@@ -11734,6 +11857,18 @@
         "type",
         "url"
       ],
+      "brr-comments-vittoria-corsa-next-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-vittoria-corsa-pro-control-34": [
         "accessed_at",
         "language",
@@ -11747,6 +11882,18 @@
         "url"
       ],
       "brr-comments-vittoria-corsa-pro-control-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-vittoria-corsa-pro-tlr": [
         "accessed_at",
         "language",
         "notes",
@@ -29658,6 +29805,54 @@
         "url"
       ],
       "sigma-sports-pro-one-tle-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-vittoria-corsa-next-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-vittoria-corsa-next-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-vittoria-corsa-pro-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-vittoria-rubino-v-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -81827,6 +82022,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -81875,6 +82074,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -81976,6 +82179,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -84516,6 +84722,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -84564,6 +84774,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84662,6 +84876,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -84711,6 +84929,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84809,6 +85030,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84855,6 +85080,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84899,6 +85128,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -133055,11 +133287,17 @@
       "bike-components-gp5000-s-tr-set-reviews": [],
       "bike-components-grand-prix-tr-reviews": [],
       "bike-components-kenda-valkyrie-pro-tlr-reviews": [],
+      "bike-components-michelin-power-cup-reviews": [],
+      "bike-components-michelin-power-cup-tlr-reviews": [],
       "bike-components-michelin-pro5-tlr-reviews": [],
       "bike-components-power-protection-tlr-reviews": [],
       "bike-components-pro-one-tle-reviews": [],
       "bike-components-strada-bianca-pro-tlr-reviews": [],
       "bike-components-ultra-sport-iii-reviews": [],
+      "bike-components-vittoria-corsa-next-tlr-reviews": [],
+      "bike-components-vittoria-corsa-pro-tlr-reviews": [],
+      "bike-components-vittoria-rubino-v-reviews": [],
+      "bike-components-vittoria-rubino-v-tlr-reviews": [],
       "bikeradar-cervelo-aspero5-2026-08-29": [],
       "bikeradar-giant-founder-2026-02-17": [],
       "biketo-girder-vagrant-2016-2026-10-23": [],
@@ -133076,6 +133314,9 @@
       "brr-comments-continental-grand-prix-5000-s-tr": [],
       "brr-comments-continental-grand-prix-5000-s-tr-32": [],
       "brr-comments-continental-grand-prix-5000-s-tr-35": [],
+      "brr-comments-michelin-power-cup": [],
+      "brr-comments-michelin-power-cup-tlr": [],
+      "brr-comments-michelin-power-cup-tlr-28": [],
       "brr-comments-michelin-pro-5-28": [],
       "brr-comments-michelin-pro-5-32": [],
       "brr-comments-michelin-pro-5-35": [],
@@ -133086,8 +133327,10 @@
       "brr-comments-schwalbe-pro-one-tle-34": [],
       "brr-comments-schwalbe-pro-one-tle-38": [],
       "brr-comments-silca-protocol-rcr-38": [],
+      "brr-comments-vittoria-corsa-next-tlr": [],
       "brr-comments-vittoria-corsa-pro-control-34": [],
       "brr-comments-vittoria-corsa-pro-control-tlr": [],
+      "brr-comments-vittoria-corsa-pro-tlr": [],
       "bxt-055-bikeinsights-geometry-2026-09-01": [],
       "bxt-055-official": [],
       "bxt-055-official-recheck-2026-09-23": [],
@@ -134547,6 +134790,10 @@
       "sigma-sports-gp5000-clincher-reviews": [],
       "sigma-sports-gp5000-s-tr-reviews": [],
       "sigma-sports-pro-one-tle-reviews": [],
+      "sigma-sports-vittoria-corsa-next-reviews": [],
+      "sigma-sports-vittoria-corsa-next-tlr-reviews": [],
+      "sigma-sports-vittoria-corsa-pro-tlr-reviews": [],
+      "sigma-sports-vittoria-rubino-v-tlr-reviews": [],
       "silca-about-official-2026-11-01": [],
       "silca-protocol-rcr-official-2026-11-01": [],
       "smzdm-shimano-di2-market-observations-2026-08-24": [],
@@ -140837,6 +141084,7 @@
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr",
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr-32",
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr-35",
+        "source_ids=brr-comments-michelin-power-cup-tlr-28",
         "source_ids=brr-comments-schwalbe-pro-one-tle-34",
         "source_ids=continental-grand-prix-5000-s-tr-official-2026-11-01",
         "source_ids=continental-grand-prix-5000-s-tr-tmall-2026-11-01",
@@ -141195,6 +141443,9 @@
       ],
       "michelin-power-cup": [
         "image.source_id=michelin-power-cup-competition-line-official-2026-11-01",
+        "source_ids=bike-components-michelin-power-cup-reviews",
+        "source_ids=brr-comments-michelin-power-cup",
+        "source_ids=brr-comments-michelin-power-cup-tlr",
         "source_ids=michelin-power-cup-competition-line-official-2026-11-01",
         "source_ids=michelin-power-cup-competition-line-tmall-2026-11-01",
         "source_ids=michelin-road-range-gb-2026-11-01"
@@ -141202,9 +141453,13 @@
       "michelin-power-cup-tlr": [
         "image.source_id=michelin-power-cup-tlr-competition-line-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-michelin-power-cup-tlr-reviews",
+        "source_ids=brr-comments-michelin-power-cup-tlr-28",
+        "source_ids=brr-comments-vittoria-corsa-next-tlr",
         "source_ids=michelin-power-cup-tlr-competition-line-official-2026-11-01",
         "source_ids=michelin-power-cup-tlr-tmall-2026-11-01",
-        "source_ids=michelin-road-range-gb-2026-11-01"
+        "source_ids=michelin-road-range-gb-2026-11-01",
+        "source_ids=xhs-cadex-race-gc-wear-2025-07-13"
       ],
       "michelin-power-protection-tlr": [
         "image.source_id=michelin-power-protection-tlr-competition-line-official-2026-11-01",
@@ -141533,11 +141788,15 @@
       "vittoria-corsa-n-ext-tlr": [
         "image.source_id=vittoria-corsa-n-ext-tubeless-ready-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-vittoria-corsa-next-tlr-reviews",
+        "source_ids=brr-comments-vittoria-corsa-next-tlr",
+        "source_ids=sigma-sports-vittoria-corsa-next-tlr-reviews",
         "source_ids=vittoria-corsa-n-ext-tmall-2026-11-01",
         "source_ids=vittoria-corsa-n-ext-tubeless-ready-official-2026-11-01"
       ],
       "vittoria-corsa-n-ext-tube-type": [
         "image.source_id=vittoria-corsa-n-ext-tube-type-official-2026-11-01",
+        "source_ids=sigma-sports-vittoria-corsa-next-reviews",
         "source_ids=vittoria-corsa-n-ext-tmall-2026-11-01",
         "source_ids=vittoria-corsa-n-ext-tube-type-official-2026-11-01"
       ],
@@ -141547,6 +141806,7 @@
         "source_ids=bike-components-corsa-pro-control-tlr-reviews",
         "source_ids=brr-comments-vittoria-corsa-pro-control-34",
         "source_ids=brr-comments-vittoria-corsa-pro-control-tlr",
+        "source_ids=brr-comments-vittoria-corsa-pro-tlr",
         "source_ids=sigma-sports-corsa-pro-control-tlr-reviews",
         "source_ids=vittoria-corsa-pro-control-tmall-2026-11-01",
         "source_ids=vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01"
@@ -141554,9 +141814,13 @@
       "vittoria-corsa-pro-tlr": [
         "image.source_id=vittoria-corsa-pro-tubeless-ready-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=bike-components-vittoria-corsa-pro-tlr-reviews",
+        "source_ids=brr-comments-vittoria-corsa-pro-tlr",
+        "source_ids=sigma-sports-vittoria-corsa-pro-tlr-reviews",
         "source_ids=vittoria-corsa-pro-tmall-2026-11-01",
         "source_ids=vittoria-corsa-pro-tubeless-ready-official-2026-11-01",
-        "source_ids=vittoria-us-corsa-pro-tlr-2026-11-01"
+        "source_ids=vittoria-us-corsa-pro-tlr-2026-11-01",
+        "source_ids=xhs-cadex-aero-cotton-review-2025-05-31"
       ],
       "vittoria-corsa-pro-tube-type": [
         "image.source_id=vittoria-corsa-pro-tube-type-official-2026-11-01",
@@ -141571,10 +141835,13 @@
       ],
       "vittoria-rubino-tlr": [
         "image.source_id=vittoria-rubino-tubeless-ready-official-2026-11-01",
+        "source_ids=bike-components-vittoria-rubino-v-tlr-reviews",
+        "source_ids=sigma-sports-vittoria-rubino-v-tlr-reviews",
         "source_ids=vittoria-rubino-tubeless-ready-official-2026-11-01"
       ],
       "vittoria-rubino-tube-type": [
         "image.source_id=vittoria-rubino-tube-type-official-2026-11-01",
+        "source_ids=bike-components-vittoria-rubino-v-reviews",
         "source_ids=vittoria-rubino-tube-type-official-2026-11-01"
       ],
       "vittoria-zaffiro-evo": [
@@ -152769,6 +153036,22 @@
         "specification": 0
       }
     },
+    "bike-components-michelin-power-cup-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-michelin-power-cup-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bike-components-michelin-pro5-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -152802,6 +153085,38 @@
       }
     },
     "bike-components-ultra-sport-iii-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-vittoria-corsa-next-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-vittoria-corsa-pro-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-vittoria-rubino-v-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-vittoria-rubino-v-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
@@ -152937,6 +153252,30 @@
         "specification": 0
       }
     },
+    "brr-comments-michelin-power-cup": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-michelin-power-cup-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-michelin-power-cup-tlr-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-michelin-pro-5-28": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -153017,6 +153356,14 @@
         "specification": 0
       }
     },
+    "brr-comments-vittoria-corsa-next-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-vittoria-corsa-pro-control-34": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -153026,6 +153373,14 @@
       }
     },
     "brr-comments-vittoria-corsa-pro-control-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-vittoria-corsa-pro-tlr": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
@@ -164421,6 +164776,38 @@
       }
     },
     "sigma-sports-pro-one-tle-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-vittoria-corsa-next-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-vittoria-corsa-next-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-vittoria-corsa-pro-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-vittoria-rubino-v-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
