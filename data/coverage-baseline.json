@@ -9,7 +9,7 @@
       "prices": 84,
       "exchangeRates": 1,
       "sources": 2179,
-      "images": 900,
+      "images": 911,
       "videos": 272,
       "opinions": 13,
       "groupsets": 11,
@@ -24,7 +24,7 @@
       "researchAttempts": 1853
     },
     "image_accuracy": {
-      "exact-platform": 607,
+      "exact-platform": 618,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
@@ -32,7 +32,7 @@
       "same-platform": 69
     },
     "image_hosting": {
-      "local": 891,
+      "local": 902,
       "remote": 9
     },
     "candidate_prices": {
@@ -2484,6 +2484,7 @@
       "cycletrack-phantom-rx24-primary-image",
       "cycletrack-time-tt-official-enrichment-2026-10-03",
       "cyctrac-r18-photo-2026-10-03",
+      "de-rosa-idol-official-2-2026-11-03",
       "de-rosa-new-838-primary-image",
       "dengfu-gravel-official-enrichment-2026-10-03",
       "elro-f1-photo-2026-10-03",
@@ -3350,12 +3351,22 @@
       "xlab-ad9-anniversary-rear-gallery",
       "xlab-ad9-primary-image",
       "xlab-ad9-xhs-anniversary-cockpit-gallery",
+      "xlab-dawnbreaker-official-1-2026-11-03",
+      "xlab-dawnbreaker-official-2-2026-11-03",
       "xlab-gt8-primary-image",
       "xlab-gt8-xhs-muddy-build-gallery",
+      "xlab-rs5-official-1-2026-11-03",
+      "xlab-rs5-official-2-2026-11-03",
+      "xlab-rs7-official-1-2026-11-03",
+      "xlab-rs7-official-2-2026-11-03",
+      "xlab-rs8-official-1-2026-11-03",
       "xlab-rs9-owner-front-gallery",
       "xlab-rs9-owner-full-gallery",
       "xlab-rs9-owner-rear-gallery",
       "xlab-rs9-primary-image",
+      "xlab-rt8-official-1-2026-11-03",
+      "xlab-rt9-official-1-2026-11-03",
+      "xlab-rt9-official-2-2026-11-03",
       "xmcarbonspeed-cs-gr01-primary-image",
       "yoeleo-altera-g21-legacy-136-gallery",
       "yoeleo-altera-g21-primary-image"
@@ -39018,6 +39029,39 @@
         "source_media_url",
         "subject_accuracy"
       ],
+      "de-rosa-idol-official-2-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
       "de-rosa-new-838-primary-image": [
         "alt",
         "candidate_id",
@@ -68389,6 +68433,73 @@
         "source_media_sha256",
         "subject_accuracy"
       ],
+      "xlab-dawnbreaker-official-1-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-dawnbreaker-official-2-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
       "xlab-gt8-primary-image": [
         "alt",
         "candidate_id",
@@ -68447,6 +68558,173 @@
         "rights.usage_note",
         "role",
         "source_id",
+        "subject_accuracy"
+      ],
+      "xlab-rs5-official-1-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-rs5-official-2-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-rs7-official-1-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-rs7-official-2-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-rs8-official-1-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
         "subject_accuracy"
       ],
       "xlab-rs9-owner-front-gallery": [
@@ -68571,6 +68849,106 @@
         "rights.status",
         "rights.usage_note",
         "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-rt8-official-1-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-rt9-official-1-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "xlab-rt9-official-2-2026-11-03": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
         "source_id",
         "source_media_sha256",
         "source_media_url",
@@ -134645,6 +135023,11 @@
         "candidate_id=cyctrac-r18",
         "source_id=cyctrac-r18-photo-source-2026-10-03"
       ],
+      "de-rosa-idol-official-2-2026-11-03": [
+        "candidate_id=de-rosa-idol",
+        "review_evidence.source_ids=derosa-idol-official-2026-08-29",
+        "source_id=derosa-idol-official-2026-08-29"
+      ],
       "de-rosa-new-838-primary-image": [
         "candidate_id=de-rosa-new-838",
         "source_id=de-rosa-838-official-2026-08-17"
@@ -138682,6 +139065,16 @@
         "candidate_id=xlab-ad9",
         "source_id=public-xlab-ad9-anniversary-xhs-2026-08-27"
       ],
+      "xlab-dawnbreaker-official-1-2026-11-03": [
+        "candidate_id=xlab-dawnbreaker",
+        "review_evidence.source_ids=xlab-dawnbreaker-official-cn-spec-2026-10-27",
+        "source_id=xlab-dawnbreaker-official-cn-spec-2026-10-27"
+      ],
+      "xlab-dawnbreaker-official-2-2026-11-03": [
+        "candidate_id=xlab-dawnbreaker",
+        "review_evidence.source_ids=xlab-dawnbreaker-official-cn-spec-2026-10-27",
+        "source_id=xlab-dawnbreaker-official-cn-spec-2026-10-27"
+      ],
       "xlab-gt8-primary-image": [
         "candidate_id=missing-china-price-x-lab-xds-gt8",
         "source_id=xlab-gt8-official-2026-08-17"
@@ -138689,6 +139082,31 @@
       "xlab-gt8-xhs-muddy-build-gallery": [
         "candidate_id=missing-china-price-x-lab-xds-gt8",
         "source_id=public-xlab-gt8-muddy-build-2026-08-28"
+      ],
+      "xlab-rs5-official-1-2026-11-03": [
+        "candidate_id=xlab-rs5",
+        "review_evidence.source_ids=xlab-rs5-official-global-2026-10-27",
+        "source_id=xlab-rs5-official-global-2026-10-27"
+      ],
+      "xlab-rs5-official-2-2026-11-03": [
+        "candidate_id=xlab-rs5",
+        "review_evidence.source_ids=xlab-rs5-official-global-2026-10-27",
+        "source_id=xlab-rs5-official-global-2026-10-27"
+      ],
+      "xlab-rs7-official-1-2026-11-03": [
+        "candidate_id=xlab-rs7",
+        "review_evidence.source_ids=xlab-rs7-official-global-2026-10-27",
+        "source_id=xlab-rs7-official-global-2026-10-27"
+      ],
+      "xlab-rs7-official-2-2026-11-03": [
+        "candidate_id=xlab-rs7",
+        "review_evidence.source_ids=xlab-rs7-official-global-2026-10-27",
+        "source_id=xlab-rs7-official-global-2026-10-27"
+      ],
+      "xlab-rs8-official-1-2026-11-03": [
+        "candidate_id=xlab-rs8",
+        "review_evidence.source_ids=xlab-rs8-official-cn-spec-2026-10-27",
+        "source_id=xlab-rs8-official-cn-spec-2026-10-27"
       ],
       "xlab-rs9-owner-front-gallery": [
         "candidate_id=xlab-rs9",
@@ -138705,6 +139123,21 @@
       "xlab-rs9-primary-image": [
         "candidate_id=xlab-rs9",
         "source_id=xlab-rs9-official-cn-spec-2026-08-27"
+      ],
+      "xlab-rt8-official-1-2026-11-03": [
+        "candidate_id=xlab-rt8",
+        "review_evidence.source_ids=xlab-rt8-frameset-official-cn-2026-10-27",
+        "source_id=xlab-rt8-frameset-official-cn-2026-10-27"
+      ],
+      "xlab-rt9-official-1-2026-11-03": [
+        "candidate_id=xlab-rt9",
+        "review_evidence.source_ids=xlab-rt9-official-global-2026-10-27",
+        "source_id=xlab-rt9-official-global-2026-10-27"
+      ],
+      "xlab-rt9-official-2-2026-11-03": [
+        "candidate_id=xlab-rt9",
+        "review_evidence.source_ids=xlab-rt9-official-global-2026-10-27",
+        "source_id=xlab-rt9-official-global-2026-10-27"
       ],
       "xmcarbonspeed-cs-gr01-primary-image": [
         "platform_id=xmcarbonspeed-cs-gr01",
@@ -244756,6 +245189,13 @@
       "remote_required": false,
       "primary_required": true
     },
+    "de-rosa-idol-official-2-2026-11-03": {
+      "target": "candidates:de-rosa-idol",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
     "de-rosa-new-838-primary-image": {
       "target": "candidates:de-rosa-new-838",
       "minimum_accuracy_rank": 4,
@@ -250818,6 +251258,20 @@
       "remote_required": false,
       "primary_required": false
     },
+    "xlab-dawnbreaker-official-1-2026-11-03": {
+      "target": "candidates:xlab-dawnbreaker",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "xlab-dawnbreaker-official-2-2026-11-03": {
+      "target": "candidates:xlab-dawnbreaker",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
+    },
     "xlab-gt8-primary-image": {
       "target": "candidates:missing-china-price-x-lab-xds-gt8",
       "minimum_accuracy_rank": 4,
@@ -250831,6 +251285,41 @@
       "minimum_source_tier": 1,
       "remote_required": false,
       "primary_required": false
+    },
+    "xlab-rs5-official-1-2026-11-03": {
+      "target": "candidates:xlab-rs5",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "xlab-rs5-official-2-2026-11-03": {
+      "target": "candidates:xlab-rs5",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "xlab-rs7-official-1-2026-11-03": {
+      "target": "candidates:xlab-rs7",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "xlab-rs7-official-2-2026-11-03": {
+      "target": "candidates:xlab-rs7",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "xlab-rs8-official-1-2026-11-03": {
+      "target": "candidates:xlab-rs8",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
     },
     "xlab-rs9-owner-front-gallery": {
       "target": "candidates:xlab-rs9",
@@ -250859,6 +251348,27 @@
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "xlab-rt8-official-1-2026-11-03": {
+      "target": "candidates:xlab-rt8",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "xlab-rt9-official-1-2026-11-03": {
+      "target": "candidates:xlab-rt9",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "xlab-rt9-official-2-2026-11-03": {
+      "target": "candidates:xlab-rt9",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false,
+      "primary_required": false
     },
     "xmcarbonspeed-cs-gr01-primary-image": {
       "target": "platforms:xmcarbonspeed-cs-gr01",
@@ -250980,6 +251490,11 @@
     },
     "candidates:cyctrac-r18": {
       "minimum_accuracy_rank": 2,
+      "minimum_source_tier": 2,
+      "remote_required": false
+    },
+    "candidates:de-rosa-idol": {
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": false
     },
@@ -251923,10 +252438,40 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:xlab-dawnbreaker": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
+    },
+    "candidates:xlab-rs5": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
+    },
+    "candidates:xlab-rs7": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
+    },
+    "candidates:xlab-rs8": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
+    },
     "candidates:xlab-rs9": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
+    },
+    "candidates:xlab-rt8": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
+    },
+    "candidates:xlab-rt9": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": false
     },
     "platforms:af01": {
       "minimum_accuracy_rank": 4,
