@@ -10,7 +10,7 @@
       "exchangeRates": 1,
       "sources": 2135,
       "images": 900,
-      "videos": 267,
+      "videos": 272,
       "opinions": 13,
       "groupsets": 11,
       "buildParts": 10,
@@ -3343,6 +3343,9 @@
       "bruce-vilas-sunpeed-mars-a-negatives",
       "bxt-store-055-overview",
       "cade-media-xlab-ad9-first-look",
+      "cade-media-xlab-gt8-first-look",
+      "cade-media-xlab-rs5-first-look",
+      "cade-media-xlab-rt9-first-look",
       "cam-nicholls-elves-falath-pro-frame-comparison",
       "cam-nicholls-elves-falath-pro-uci-upgrade-news",
       "cam-nicholls-falath-evo-inspection",
@@ -3411,6 +3414,7 @@
       "daryl-pace-carbonda-cfr707-frameset-build",
       "david-arthur-canyon-aeroad-cfr-first-ride",
       "david-arthur-canyon-grail-tire-clearance",
+      "david-arthur-colnago-y1rs-first-ride",
       "david-arthur-elves-vanyar-pro-disc-first-look",
       "david-arthur-giant-defy-advanced-1-review",
       "david-arthur-giant-propel-advanced-2023-review",
@@ -3421,6 +3425,7 @@
       "david-arthur-specialized-s-works-crux-long-term",
       "david-arthur-winspace-slc3-review",
       "david-arthur-xlab-ad9-review",
+      "david-arthur-xlab-rs7-first-look",
       "dicking-about-ican-sn04-six-months",
       "dream-build-quick-pro-gr-one",
       "durianrider-lightcarbon-lcr007-v-unboxing",
@@ -68708,6 +68713,78 @@
         "url",
         "youtube_video_id"
       ],
+      "cade-media-xlab-gt8-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "cade-media-xlab-rs5-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "cade-media-xlab-rt9-first-look": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "cam-nicholls-elves-falath-pro-frame-comparison": [
         "accessed_at",
         "channel_name",
@@ -70336,6 +70413,30 @@
         "url",
         "youtube_video_id"
       ],
+      "david-arthur-colnago-y1rs-first-ride": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
       "david-arthur-elves-vanyar-pro-disc-first-look": [
         "accessed_at",
         "channel_name",
@@ -70549,6 +70650,30 @@
         "youtube_video_id"
       ],
       "david-arthur-xlab-ad9-review": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "takeaways",
+        "target.candidate_id",
+        "title",
+        "transcript.checked_at",
+        "transcript.evidence_sha256",
+        "transcript.language",
+        "transcript.method",
+        "transcript.status",
+        "url",
+        "youtube_video_id"
+      ],
+      "david-arthur-xlab-rs7-first-look": [
         "accessed_at",
         "channel_name",
         "channel_url",
@@ -92860,6 +92985,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "xlab-rs7": [
@@ -92906,6 +93032,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ],
       "xlab-rs8": [
@@ -93055,6 +93182,7 @@
         "source_url",
         "status",
         "type",
+        "video_ids",
         "why_interesting"
       ]
     },
@@ -137892,6 +138020,15 @@
       "cade-media-xlab-ad9-first-look": [
         "target.candidate_id=xlab-ad9"
       ],
+      "cade-media-xlab-gt8-first-look": [
+        "target.candidate_id=missing-china-price-x-lab-xds-gt8"
+      ],
+      "cade-media-xlab-rs5-first-look": [
+        "target.candidate_id=xlab-rs5"
+      ],
+      "cade-media-xlab-rt9-first-look": [
+        "target.candidate_id=xlab-rt9"
+      ],
       "cam-nicholls-elves-falath-pro-frame-comparison": [
         "target.platform_id=elves-falath-r7170"
       ],
@@ -138090,6 +138227,9 @@
       "david-arthur-canyon-grail-tire-clearance": [
         "target.candidate_id=missing-china-price-canyon-grail"
       ],
+      "david-arthur-colnago-y1rs-first-ride": [
+        "target.candidate_id=colnago-y1rs"
+      ],
       "david-arthur-elves-vanyar-pro-disc-first-look": [
         "target.candidate_id=missing-china-price-elves-vanyar"
       ],
@@ -138119,6 +138259,9 @@
       ],
       "david-arthur-xlab-ad9-review": [
         "target.candidate_id=xlab-ad9"
+      ],
+      "david-arthur-xlab-rs7-first-look": [
+        "target.candidate_id=xlab-rs7"
       ],
       "dicking-about-ican-sn04-six-months": [
         "target.candidate_id=icanian-sn04"
@@ -140041,7 +140184,8 @@
         "source_ids=colnago-y1rs-official-2026-08-08",
         "source_ids=taobao-snapshot-2026-08-08",
         "source_snapshot_id=taobao-snapshot-2026-08-08",
-        "video_ids=cyclingnews-colnago-y1rs-review"
+        "video_ids=cyclingnews-colnago-y1rs-review",
+        "video_ids=david-arthur-colnago-y1rs-first-ride"
       ],
       "cosmosworks-carbon-e-road": [
         "model_id=cosmosworks-carbon-e-road",
@@ -141575,6 +141719,7 @@
         "source_ids=xlab-gt8-official-current-2026-09-23",
         "source_ids=xlab-gt8-smzdm-market-report-2026-08-27",
         "source_ids=xlab-gt8-velo-review-2026-08-27",
+        "video_ids=cade-media-xlab-gt8-first-look",
         "video_ids=velovelovelo-x-lab-gt8-review"
       ],
       "missing-china-price-yoeleo-altera-g21": [
@@ -142726,7 +142871,8 @@
         "brand_id=xds",
         "model_id=xlab-rs5",
         "source_ids=ecb-reference-rates-2026-10-01",
-        "source_ids=xlab-rs5-official-global-2026-10-27"
+        "source_ids=xlab-rs5-official-global-2026-10-27",
+        "video_ids=cade-media-xlab-rs5-first-look"
       ],
       "xlab-rs7": [
         "brand_id=xds",
@@ -142734,7 +142880,8 @@
         "source_ids=ecb-reference-rates-2026-10-01",
         "source_ids=xlab-rs7-2024-owner-xhs-2026-10-27",
         "source_ids=xlab-rs7-official-au-2026-10-27",
-        "source_ids=xlab-rs7-official-global-2026-10-27"
+        "source_ids=xlab-rs7-official-global-2026-10-27",
+        "video_ids=david-arthur-xlab-rs7-first-look"
       ],
       "xlab-rs8": [
         "brand_id=xds",
@@ -142774,7 +142921,8 @@
         "model_id=xlab-rt9",
         "source_ids=xds-official-cn-bicycle-listing-2026-10-27",
         "source_ids=xlab-rt9-frameset-official-cn-2026-10-27",
-        "source_ids=xlab-rt9-official-global-2026-10-27"
+        "source_ids=xlab-rt9-official-global-2026-10-27",
+        "video_ids=cade-media-xlab-rt9-first-look"
       ]
     },
     "exclusions": {
