@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03",
+  "updated_at": "2026-11-04",
   "catalog_metrics": {
     "records": {
       "brands": 43,
@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2256,
+      "sources": 2257,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -381,6 +381,7 @@
       "brr-comments-continental-grand-prix-5000-s-tr",
       "brr-comments-continental-grand-prix-5000-s-tr-32",
       "brr-comments-continental-grand-prix-5000-s-tr-35",
+      "brr-comments-continental-ultra-sport-iii-2020",
       "brr-comments-goodyear-eagle-f1-r",
       "brr-comments-goodyear-eagle-f1-supersport-r",
       "brr-comments-hutchinson-blackbird-race-tlr",
@@ -11893,6 +11894,18 @@
         "url"
       ],
       "brr-comments-continental-grand-prix-5000-s-tr-35": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-continental-ultra-sport-iii-2020": [
         "accessed_at",
         "language",
         "notes",
@@ -80015,6 +80028,7 @@
         "origin.group",
         "owner_evidence.checks",
         "owner_evidence.coded_at",
+        "owner_evidence.reports",
         "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
@@ -134077,6 +134091,7 @@
       "brr-comments-continental-grand-prix-5000-s-tr": [],
       "brr-comments-continental-grand-prix-5000-s-tr-32": [],
       "brr-comments-continental-grand-prix-5000-s-tr-35": [],
+      "brr-comments-continental-ultra-sport-iii-2020": [],
       "brr-comments-goodyear-eagle-f1-r": [],
       "brr-comments-goodyear-eagle-f1-supersport-r": [],
       "brr-comments-hutchinson-blackbird-race-tlr": [],
@@ -141883,6 +141898,7 @@
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr",
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr-32",
         "source_ids=brr-comments-continental-grand-prix-5000-s-tr-35",
+        "source_ids=brr-comments-michelin-power-cup",
         "source_ids=brr-comments-michelin-power-cup-tlr-28",
         "source_ids=brr-comments-pirelli-p-zero-race-tlr-sl-r",
         "source_ids=brr-comments-pirelli-p-zero-race-tlr-sl-r-30",
@@ -141906,6 +141922,7 @@
       ],
       "continental-grand-sport-race": [
         "image.source_id=continental-grand-sport-official-2026-11-01",
+        "source_ids=brr-comments-continental-ultra-sport-iii-2020",
         "source_ids=continental-grand-sport-official-2026-11-01",
         "source_ids=continental-grand-sport-race-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
@@ -154205,6 +154222,14 @@
       }
     },
     "brr-comments-continental-grand-prix-5000-s-tr-35": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-continental-ultra-sport-iii-2020": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
