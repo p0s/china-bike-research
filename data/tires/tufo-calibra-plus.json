@@ -35,21 +35,21 @@
       "etrto": "23-622",
       "weight_g": 180,
       "max_psi": 145,
-      "max_bar": 10.0
+      "max_bar": 10
     },
     {
       "width_mm": 25,
       "etrto": "25-622",
       "weight_g": 210,
       "max_psi": 130,
-      "max_bar": 9.0
+      "max_bar": 9
     },
     {
       "width_mm": 28,
       "etrto": "28-622",
       "weight_g": 235,
       "max_psi": 115,
-      "max_bar": 8.0
+      "max_bar": 8
     }
   ],
   "caveats": [
@@ -101,5 +101,24 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
   }
 }
