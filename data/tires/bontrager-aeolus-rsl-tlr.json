@@ -90,7 +90,9 @@
   ],
   "source_ids": [
     "trek-bontrager-aeolus-rsl-tlr-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-bontrager-aeolus-rsl-tlr-reviews",
+    "brr-comments-bontrager-aeolus-rsl-tlr"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -119,5 +121,98 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-bontrager-aeolus-rsl-tlr-reviews"
+        ],
+        "published_at": "2026-03-31",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Rolls really smoothly and seems quicker than a Continental, but a flint fragment cut the casing; the owner will return to Continental after another puncture."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-bontrager-aeolus-rsl-tlr-reviews"
+        ],
+        "published_at": "2025-07-11",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "The 32 mm feels very smooth and lively just under 60 psi; liked enough on a hire bike to buy."
+      },
+      {
+        "source_ids": [
+          "brr-comments-bontrager-aeolus-rsl-tlr"
+        ],
+        "published_at": "2025-05-11",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "A few rides",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Very happy after a few rides: close to the P ZERO Race SpeedCORE in ride quality, comfortable and fast."
+      },
+      {
+        "source_ids": [
+          "brr-comments-bontrager-aeolus-rsl-tlr"
+        ],
+        "published_at": "2026-08-02",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 1,600-1,700 miles",
+        "codes": {
+          "overall": "mixed",
+          "casing": "unfavourable"
+        },
+        "summary": "Liked for five months, until the rear tread delaminated down to the casing in two places at about 1,600-1,700 miles."
+      },
+      {
+        "source_ids": [
+          "brr-comments-bontrager-aeolus-rsl-tlr"
+        ],
+        "published_at": "2025-10-31",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "About 100 miles",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "No issues in about 100 miles, with rolling that reminds the owner of the GP5000 S TR but without losing pressure."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed",
+        "note": "Bontrager tires are not sold there"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "28 mm test page"
+      }
+    ]
   }
 }
