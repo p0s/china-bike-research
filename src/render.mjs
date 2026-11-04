@@ -2638,7 +2638,7 @@ function tirePressure(size) {
 // Owner ratings (2026-11-03). The cell leads with the first rated aspect (overall verdict
 // first) and its owner count; a tire that was never coded shows the quiet unknown dash.
 function tireOwnerCell(summary, status) {
-  if (!summary.coded) return '<td data-label="Owners" data-column="owners"><strong>—</strong></td>';
+  if (!summary.coded) return '<td data-label="Owners" data-column="owners" data-unknown><strong>—</strong></td>';
   const lead = summary.rated[0];
   if (!lead) return `<td data-label="Owners" data-column="owners"><strong>${escapeHtml('Not rated yet')}</strong><span>${escapeHtml(summary.owners ? `${tireOwnersLabel(summary.owners)} · fewer than ${OWNER_RATING_MIN} per aspect` : tireOwnerStatusLines[status])}</span></td>`;
   const more = summary.rated.length - 1;
@@ -2713,15 +2713,21 @@ function tireRows(ctx, tire, sourcesById, rates) {
     <th scope="row"><div class="groupset-identity${tire.image ? ' has-image' : ''}">${tireThumbHtml(tire)}<span class="groupset-name"><strong>${escapeHtml(tire.name)}</strong><span>${escapeHtml(`${tire.maker} · ${tireOriginLabels[tire.origin.group] === 'International' ? tire.origin.country : tireOriginLabels[tire.origin.group]}`)}</span>${aliases}</span></div></th>
     <td data-label="Use" data-column="best"><strong>${escapeHtml(tireUseLabels[tire.use])}</strong><span>${escapeHtml(`${tireConstructionLabels[tire.construction]} · ${tireHooklessLabels[tire.hookless]}`)}</span></td>
     <td data-label="Widths" data-column="widths"><strong>${escapeHtml(scoped.length ? `${scoped.join(' · ')} mm` : '—')}</strong><span>${escapeHtml([groupHint, others.length ? `also ${others.join(', ')} mm` : ''].filter(Boolean).join(' · '))}</span></td>
-    <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${sizeLabel(reference)} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
-    <td data-label="Lab test" data-column="tests"><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
-    <td data-label="Price" data-column="price"><strong>${escapeHtml(headline ? tireAmount(headline) : '—')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
+    <td data-label="Weight" data-column="weight"${Number.isFinite(reference?.weight_g) ? '' : ' data-unknown'}><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${sizeLabel(reference)} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
+    <td data-label="Lab test" data-column="tests"${test ? '' : ' data-unknown'}><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
+    <td data-label="Price" data-column="price"${headline ? '' : ' data-unknown'}><strong>${escapeHtml(headline ? tireAmount(headline) : '—')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
     ${tireOwnerCell(ownerSummary, ownerCheckStatus(tire))}
   </tr><tr class="groupset-detail-row"><td colspan="7">${details}</td></tr></tbody>`;
 }
 
+// Long starting-point lists show five entries; the rest open in place and work without JavaScript.
+function tireCollapsedList(entries, visible = 5) {
+  if (entries.length <= visible + 1) return `<ol>${entries.join('')}</ol>`;
+  return `<ol>${entries.slice(0, visible).join('')}</ol><details class="tire-shortlist-more"><summary><span class="when-closed">${escapeHtml(`Show ${entries.length - visible} more tires`)}</span><span class="when-open">${escapeHtml('Show fewer')}</span></summary><ol start="${visible + 1}">${entries.slice(visible).join('')}</ol></details>`;
+}
+
 function tireShortlistItems(items, line) {
-  return `<ol>${items.map((item) => `<li><a href="#${escapeAttr(item.tire.id)}">${escapeHtml(`${item.tire.maker} ${item.tire.name}`)}</a> <span>${escapeHtml(line(item))}</span></li>`).join('')}</ol>`;
+  return tireCollapsedList(items.map((item) => `<li><a href="#${escapeAttr(item.tire.id)}">${escapeHtml(`${item.tire.maker} ${item.tire.name}`)}</a> <span>${escapeHtml(line(item))}</span></li>`));
 }
 
 function tireShortlistBlock(title, criteria, items, line) {
@@ -2758,12 +2764,12 @@ function tireBudgetHtml({ qualifying, unverified }) {
   };
   const groups = ['mainland-china', 'taiwan'].map((group) => {
     const rows = qualifying.filter((item) => item.tire.origin.group === group);
-    return `<div class="tire-shortlist"><h4>${escapeHtml(tireOriginLabels[group])}</h4>${rows.length ? `<ol>${rows.map((item) => entry(item, { verified: true })).join('')}</ol>` : `<p class="tire-criteria">${escapeHtml('No verified one-tire price within the budget yet.')}</p>`}</div>`;
+    return `<div class="tire-shortlist"><h4>${escapeHtml(tireOriginLabels[group])}</h4>${rows.length ? tireCollapsedList(rows.map((item) => entry(item, { verified: true }))) : `<p class="tire-criteria">${escapeHtml('No verified one-tire price within the budget yet.')}</p>`}</div>`;
   }).join('');
   const verdict = qualifying.some((item) => item.allSeason)
     ? 'Tires marked as a supported all-season choice meet both evidence thresholds. Others may still be good; the evidence found is thinner or conflicting.'
     : 'None of these tires has enough wet-road evidence to be called a proven all-season choice yet. The lists show what owners report, so you can weigh price against the known risks.';
-  const pending = unverified.length ? `<div class="tire-shortlist tire-budget-unverified"><h4>${escapeHtml('Listed at CNY 250 or less, but one tire or pair is not stated')}</h4><p class="tire-criteria">${escapeHtml('These listings do not establish a one-tire price, so they are not budget choices until a listing states one tire.')}</p><ol>${unverified.map((item) => entry(item, { verified: false })).join('')}</ol></div>` : '';
+  const pending = unverified.length ? `<div class="tire-shortlist tire-budget-unverified"><h4>${escapeHtml('Listed at CNY 250 or less, but one tire or pair is not stated')}</h4><p class="tire-criteria">${escapeHtml('These listings do not establish a one-tire price, so they are not budget choices until a listing states one tire.')}</p>${tireCollapsedList(unverified.map((item) => entry(item, { verified: false })))}</div>` : '';
   return `<div class="tire-budget" id="budget"><h3>Budget all-season: up to CNY 250 per tire</h3><p class="tire-budget-verdict"><strong>${escapeHtml(verdict)}</strong></p><p class="tire-criteria">${escapeHtml('Mainland China and Taiwan brands in 25–35 mm with a dated price of CNY 250 or less for one tire, before shipping. A supported all-season choice needs measured wet grip of at least 80, or at least two favourable first-hand wet reports with none against, and fewer than two reports of bulging or casing failure. Tread pattern, four-season marketing and seller copy are not wet evidence. Confidence: a lab test is strongest, agreeing owner reports are moderate, and one report or conflicting reports are weak. Ordered by wet evidence, then fewer casing reports, then price.')}</p><div class="tire-budget-grid">${groups}</div>${pending}</div>`;
 }
 

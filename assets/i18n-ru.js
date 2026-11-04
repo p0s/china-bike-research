@@ -668,6 +668,7 @@ export const ru = {
   "Shipping destination": "Страна доставки",
   "Shop staff compare the Elite Drive G36 with Zipp 303 XPLR, Hunt 40 Limitless and Secret Wheels gravel wheelsets. It is comparative opinion, not a laboratory test.": "Сотрудники магазина сравнивают Elite Drive G36 с гревел-колёсами Zipp 303 XPLR, Hunt 40 Limitless и Secret Wheels. Это сравнительное мнение, а не лабораторный тест.",
   "Show the focused list": "Показать основной список",
+  "Show fewer": "Свернуть",
   "Size 54, unpainted, excluding paint and metal hardware": "Размер 54, без покраски, без краски и металлического крепежа",
   "Skip to content": "Перейти к содержимому",
   "Slick-tire limits; 1× small-knob limit: 36C.": "Ограничения для слик-покрышек; для 1× с мелким протектором — 36C.",
@@ -868,6 +869,7 @@ const plural = (count, one, few, many) => {
 };
 const patterns = [
   [/^Show (\d+) more models?$/, (_, n) => `Показать ещё ${n} ${plural(n, 'модель', 'модели', 'моделей')}`],
+  [/^Show (\d+) more tires$/, (_, n) => `Показать ещё ${n} ${plural(n, 'шину', 'шины', 'шин')}`],
   [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${t(value)} — ${t(label)}`],
   [/^(.+) — filter catalog to this brand$/, (_, name) => `${name} — показать в каталоге только этот бренд`],
   [/^(.+) — remove brand filter$/, (_, name) => `${name} — снять фильтр бренда`],

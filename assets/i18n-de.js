@@ -649,6 +649,7 @@ export const de = {
   "Complete-bike price": "Komplettradpreis",
   "Clear selection": "Auswahl leeren",
   "Show fewer models": "Weniger Modelle zeigen",
+  "Show fewer": "Weniger zeigen",
   "Comparison": "Vergleich",
   "Best for": "Geeignet für",
   "No independent exact-model stiffness measurement recorded": "Keine unabhängige Steifigkeitsmessung dieses Modells dokumentiert",
@@ -1621,6 +1622,7 @@ export function translateGerman(value) {
   if (text.endsWith(weightWarning)) return pad(`${t(text.slice(0, -weightWarning.length))} ${t(weightWarning.trim())}`);
   const patterns = [
     [/^Show (\d+) more models?$/, (_, n) => n === '1' ? '1 weiteres Modell zeigen' : `${n} weitere Modelle zeigen`],
+    [/^Show (\d+) more tires$/, (_, n) => `${n} weitere Reifen zeigen`],
     [/^(\d+) models?$/, (_, n) => n === '1' ? '1 Modell' : `${n} Modelle`],
     [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} nennt keine Bremsscheibenaufnahme; vor der Scheibenwahl bestätigen.`],
     [/^Your quote replaces the recorded (.+)$/, (_, price) => `Ihr Angebot ersetzt den erfassten Preis ${price}`],
