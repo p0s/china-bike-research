@@ -2927,13 +2927,30 @@ function componentCredits(ctx, sources) {
     ...(ctx.data.wheelsets ?? []).filter((item) => wheelsetImageSrc(ctx, item.image)).map((item) => ({ item, path: '/carbon-wheels/' }))
   ];
   if (!entries.length) return '';
-  return `<h2 class="credit-section-title">Component photos</h2><div class="credit-list">${entries.map(({ item, path }) => {
-    const source = sources.get(item.image.source_id);
+  return `<h2 class="credit-section-title">Component photos</h2>${creditList(entries.map(({ item, path }) => {
     const remote = !item.image.local_path;
     const card = item.image.variants?.find((variant) => variant.purpose === 'card') ?? { url: item.image.local_path, width: item.image.width, height: item.image.height };
-    const visual = `<img src="${escapeAttr(remote ? item.image.remote_url : url(ctx.base, card.url))}" alt="${escapeAttr(item.image.alt)}" width="${card.width}" height="${card.height}" loading="lazy" decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}>`;
-    return `<article><a class="credit-image" href="${url(ctx.base, path)}#${escapeAttr(item.id)}">${visual}</a><div><h3>${escapeHtml(`${item.maker} ${item.name}`)}</h3><p>${escapeHtml(item.image.credit)} · ${escapeHtml(accuracyLabel(item.image.subject_accuracy))}${remote ? ` · ${escapeHtml('Loaded from the maker’s website')}` : ''}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`;
-  }).join('')}</div>`;
+    return {
+      label: `${item.maker} ${item.name}`,
+      href: `${url(ctx.base, path)}#${item.id}`,
+      line: [item.image.credit, accuracyLabel(item.image.subject_accuracy), ...(remote ? ['Loaded from the maker’s website'] : [])],
+      sourceUrl: sources.get(item.image.source_id)?.url ?? '',
+      visual: `<img src="${escapeAttr(remote ? item.image.remote_url : url(ctx.base, card.url))}" alt="${escapeAttr(item.image.alt)}" width="${card.width}" height="${card.height}" loading="lazy" decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}>`
+    };
+  }))}`;
+}
+
+// One entry per model: photos that share a credit, exactness label and original source form one line under their thumbnails.
+function creditList(entries) {
+  const models = new Map();
+  for (const entry of entries) {
+    if (!models.has(entry.href)) models.set(entry.href, { label: entry.label, href: entry.href, groups: new Map() });
+    const groups = models.get(entry.href).groups;
+    const key = [...entry.line, entry.sourceUrl].join('\n');
+    if (!groups.has(key)) groups.set(key, { line: entry.line, sourceUrl: entry.sourceUrl, visuals: [] });
+    groups.get(key).visuals.push(entry.visual);
+  }
+  return `<div class="credit-list">${[...models.values()].map(({ label, href, groups }) => `<article><h3><a href="${escapeAttr(href)}">${escapeHtml(label)}</a></h3><ul>${[...groups.values()].map(({ line, sourceUrl, visuals }) => `<li><div class="credit-thumbs">${visuals.join('')}</div><p>${escapeHtml([...line, ...(visuals.length > 1 ? [`${visuals.length} photos`] : [])].join(' · '))}${sourceUrl ? ` · <a href="${escapeAttr(sourceUrl)}" rel="noreferrer">Original source</a>` : ''}</p></li>`).join('')}</ul></article>`).join('')}</div>`;
 }
 
 export function renderImageSources(ctx) {
@@ -2943,16 +2960,17 @@ export function renderImageSources(ctx) {
   const firstProductByPlatform = new Map();
   for (const product of ctx.products) if (!firstProductByPlatform.has(product.platform.id)) firstProductByPlatform.set(product.platform.id, product);
   const candidatesById = new Map(joinCatalogCandidates(ctx.data).map((entry) => [entry.candidate.id, entry]));
-  const entries = ctx.data.images.filter((image) => image.buyer_visibility !== 'omit' && imageUrl(ctx, image)).map((image) => {
+  // Photos of profiles merged into another record are not shown anywhere, so they get no credit entry.
+  const entries = ctx.data.images.filter((image) => image.buyer_visibility !== 'omit' && imageUrl(ctx, image) && (!image.candidate_id || candidatesById.has(image.candidate_id))).map((image) => {
     const source = sources.get(image.source_id);
     if (image.candidate_id) {
       const candidate = candidatesById.get(image.candidate_id);
       return {
         image,
         source,
-        label: candidate?.candidate.name ?? image.candidate_id,
-        href: candidate ? url(ctx.base, `/models/${candidate.candidate.id}/`) : `${url(ctx.base, '/')}?scope=all&q=${encodeURIComponent(image.candidate_id)}#catalog`,
-        visual: candidate ? candidateImageElement(ctx, { ...candidate, image }) : ''
+        label: candidate.candidate.name,
+        href: url(ctx.base, `/models/${candidate.candidate.id}/`),
+        visual: candidateImageElement(ctx, { ...candidate, image })
       };
     }
     const platform = platforms.get(image.platform_id);
@@ -2966,7 +2984,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>${componentCredits(ctx, sources)}`;
+  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<h2 class="credit-section-title">Product photos</h2>${creditList(entries.map(({ image, source, label, href, visual }) => ({ label, href, line: [image.credit, accuracyLabel(image.subject_accuracy)], sourceUrl: image.source_media_page_url ?? source?.url ?? '', visual })))}${componentCredits(ctx, sources)}`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

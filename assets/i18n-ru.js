@@ -1110,6 +1110,8 @@ Object.assign(ru, {
   "Loaded from the retailer’s website": "Загружено с сайта продавца",
   "Loaded from the original XHS post": "Загружено из исходной публикации XHS",
   "Original source": "Исходный источник",
+  "Product photos": "Фото продуктов",
+  "Component photos": "Фото компонентов",
   "Photo": "Фото",
   "Photos": "Фото",
   "Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.": "Фото загружаются со страницы товара самого производителя или продавца либо из исходной публичной публикации; этот сайт не хранит копий."
@@ -1127,6 +1129,7 @@ patterns.push(
   [/^also (.+)$/, (_, list) => `также ${list}`],
   [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${plural(n, 'отзыв', 'отзыва', 'отзывов')} владельцев, лабораторный тест не найден`],
   [/^(\d+) maker · (\d+) retailer · (\d+) XHS post · (\d+) without a photo$/, (_, a, b, c, d) => `производитель: ${a} · продавец: ${b} · публикации XHS: ${c} · без фото: ${d}`],
+  [/^(\d+) photos$/, (_, n) => `${n} фото`],
   [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} за шину`],
   [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} в объявлении, не указано, за одну шину или за пару`],
   [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${plural(n, 'сообщение', 'сообщения', 'сообщений')} о ${{ 'bulging or casing failure': 'вздутиях или повреждении каркаса', cracking: 'трещинах', 'fast wear': 'быстром износе', 'frequent punctures': 'частых проколах', 'bead or rim-fit problems': 'проблемах с бортом или посадкой на обод' }[issue]}`],
