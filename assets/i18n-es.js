@@ -669,6 +669,7 @@ export const es = {
   "Shipping destination": "Destino del envío",
   "Shop staff compare the Elite Drive G36 with Zipp 303 XPLR, Hunt 40 Limitless and Secret Wheels gravel wheelsets. It is comparative opinion, not a laboratory test.": "El personal de una tienda compara las Elite Drive G36 con las ruedas gravel Zipp 303 XPLR, Hunt 40 Limitless y Secret Wheels. Es una opinión comparativa, no una prueba de laboratorio.",
   "Show the focused list": "Mostrar la lista principal",
+  "Show fewer": "Mostrar menos",
   "Size 54, unpainted, excluding paint and metal hardware": "Talla 54, sin pintar, sin pintura ni tornillería metálica",
   "Skip to content": "Saltar al contenido",
   "Slick-tire limits; 1× small-knob limit: 36C.": "Límites para neumáticos lisos; límite para taco pequeño en 1×: 36C.",
@@ -860,6 +861,7 @@ const t = (value) => translateSpanish(value);
 const cap = (value) => value.charAt(0).toUpperCase() + value.slice(1);
 const patterns = [
   [/^Show (\d+) more models?$/, (_, n) => n === '1' ? 'Mostrar 1 modelo más' : `Mostrar ${n} modelos más`],
+  [/^Show (\d+) more tires$/, (_, n) => `Mostrar ${n} neumáticos más`],
   [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${t(value)} — ${t(label)}`],
   [/^(.+) — filter catalog to this brand$/, (_, name) => `${name} — filtrar el catálogo por esta marca`],
   [/^(.+) — remove brand filter$/, (_, name) => `${name} — quitar el filtro de marca`],

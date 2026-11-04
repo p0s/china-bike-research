@@ -164,8 +164,8 @@ test('the tire table renders one row per record with origin, evidence and price 
     assert.ok(entry, tire.id);
     assert.match(entry, new RegExp(`data-origin="${tire.origin.group}" data-construction="${tire.construction}"`), tire.id);
     // A tire without a lab test shows the quiet unknown dash, never an invented figure.
-    if (!tire.tests.length) assert.match(entry, /<td data-label="Lab test" data-column="tests"><strong>—<\/strong>/, tire.id);
-    if (!tire.price_observations.length) assert.match(entry, /<td data-label="Price" data-column="price"><strong>—<\/strong>/, tire.id);
+    if (!tire.tests.length) assert.match(entry, /<td data-label="Lab test" data-column="tests" data-unknown><strong>—<\/strong>/, tire.id);
+    if (!tire.price_observations.length) assert.match(entry, /<td data-label="Price" data-column="price" data-unknown><strong>—<\/strong>/, tire.id);
     for (const observation of tire.price_observations) assert.ok(entry.includes(observation.conditions.replaceAll("'", '&#039;')), `${tire.id} keeps price conditions`);
   }
   assert.match(html, /<details class="reference-guide tire-coverage" id="coverage"><summary>Coverage: \d+ candidates from \d+ brands, as of \d{4}-\d{2}-\d{2}<\/summary>/);
@@ -296,10 +296,10 @@ test('the Owners column and row details show ratings, counts and unknowns honest
   assert.match(html, /<option value="owners">Most owners coded<\/option>/);
   for (const tire of data.tires) {
     const entry = html.match(new RegExp(`<tbody class="groupset-entry tire-entry" id="${tire.id}"[\\s\\S]*?</details></td></tr></tbody>`))?.[0] ?? '';
-    const cell = entry.match(/<td data-label="Owners" data-column="owners">[\s\S]*?<\/td>/)?.[0] ?? '';
+    const cell = entry.match(/<td data-label="Owners" data-column="owners"[^>]*>[\s\S]*?<\/td>/)?.[0] ?? '';
     const summary = ownerRatings(tire);
     if (!summary.coded) {
-      assert.equal(cell, '<td data-label="Owners" data-column="owners"><strong>—</strong></td>', tire.id);
+      assert.equal(cell, '<td data-label="Owners" data-column="owners" data-unknown><strong>—</strong></td>', tire.id);
       assert.doesNotMatch(entry, /tire-owner-ratings|data-owners=/, tire.id);
       continue;
     }

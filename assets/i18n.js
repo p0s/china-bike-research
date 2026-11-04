@@ -625,6 +625,7 @@ Object.assign(zh, {
   "Complete-bike price": "整车价格",
   "Clear selection": "清除所选",
   "Show fewer models": "显示主要车型",
+  "Show fewer": "收起",
   "Comparison": "对比",
   "Best for": "适合用途",
   "No independent exact-model stiffness measurement recorded": "未记录该具体型号的独立刚性测量。",
@@ -858,6 +859,7 @@ export function translate(value, locale = 'en') {
   if (Object.hasOwn(zh, text)) return pad(zh[text]);
   const patterns = [
     [/^Show (\d+) more models?$/, (_, n) => `再显示 ${n} 款车型`],
+    [/^Show (\d+) more tires$/, (_, n) => `再显示 ${n} 款轮胎`],
     [/^(\d+) models?$/, (_, n) => `${n} 款车型`],
     [/^(.+) does not state its rotor mount; confirm it before choosing rotors\.$/, (_, name) => `${name} 未说明碟片安装方式；选择碟片前请确认。`],
     [/^Your quote replaces the recorded (.+)$/, (_, price) => `你的报价取代记录的 ${price}`],
