@@ -118,7 +118,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-04: long reader comments are now read in full, not cut at 700 characters.",
     "reports": [
       {
         "source_ids": [
@@ -308,9 +308,10 @@
         "codes": {
           "overall": "favourable",
           "wet": "favourable",
-          "grip": "mixed"
+          "grip": "mixed",
+          "punctures": "mixed"
         },
-        "summary": "A little less grip under hard braking, but no wet-grip problem on concrete and asphalt at moderate speed."
+        "summary": "Ten months without wet-grip trouble on concrete and asphalt at moderate speed and a little less grip under hard braking; glass worked through the tread and punctured the tubes first fitted, but holes self-seal now it runs tubeless."
       },
       {
         "source_ids": [
@@ -320,9 +321,14 @@
         "width_mm": 40,
         "setup": "tubeless",
         "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "wet": "favourable",
+          "wear": "favourable",
           "punctures": "mixed"
         },
-        "summary": "Slow to seal at first; two punctures later sealed, with no other problem over rough pavement and glass."
+        "summary": "Grips well on rough and patchily wet pavement and showed little wear after a summer; later, on mixed terrain, two punctures took a while but sealed.",
+        "exposure": "A summer, then mixed terrain"
       },
       {
         "source_ids": [
@@ -336,6 +342,20 @@
           "grip": "unfavourable"
         },
         "summary": "Exceptionally supple, but the lack of grip is real."
+      },
+      {
+        "source_ids": [
+          "brr-comments-challenge-strada-bianca-pro-htlr-40"
+        ],
+        "published_at": "2023-08-14",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A season on the front",
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "mixed"
+        },
+        "summary": "A season on the front did not feel faster than the tire it was compared with and the rubber felt plasticky; the rear would not fit, and the owner advises against buying."
       }
     ],
     "checks": [
@@ -352,7 +372,7 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 13,
+        "owners": 14,
         "note": "36 and 40 mm gravel test pages, 39 comments"
       }
     ]

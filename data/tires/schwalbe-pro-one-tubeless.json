@@ -138,7 +138,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well. Corrected on 2026-11-04: long reader comments are now read in full, not cut at 700 characters.",
     "reports": [
       {
         "source_ids": [
@@ -471,13 +471,14 @@
           "brr-comments-schwalbe-pro-one-tle-2020"
         ],
         "published_at": "2020-11-06",
-        "width_mm": null,
+        "width_mm": 28,
         "setup": "tubeless",
         "codes": {
           "overall": "favourable",
           "punctures": "mixed"
         },
-        "summary": "A summer on two bikes with only one puncture, from broken glass that sliced the tread; extraordinary comfort."
+        "summary": "Extraordinary comfort over 3,500-4,000 miles in 28 mm; the one puncture came from broken glass that sliced the rear tread.",
+        "exposure": "3,500-4,000 miles"
       },
       {
         "source_ids": [

@@ -166,7 +166,8 @@
     "brr-comments-continental-grand-prix-5000-s-tr-35",
     "brr-comments-michelin-power-cup-tlr-28",
     "brr-comments-pirelli-p-zero-race-tlr-sl-r",
-    "brr-comments-pirelli-p-zero-race-tlr-sl-r-30"
+    "brr-comments-pirelli-p-zero-race-tlr-sl-r-30",
+    "brr-comments-michelin-power-cup"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -198,7 +199,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well. Corrected on 2026-11-04: long reader comments are now read in full, not cut at 700 characters.",
     "reports": [
       {
         "source_ids": [
@@ -788,6 +789,18 @@
           "overall": "favourable"
         },
         "summary": "Went back to it from the SL-R: an overall better tire that has never left the owner stranded, with sealant and plugs that work."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-power-cup"
+        ],
+        "published_at": "2022-09-23",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "Switched to the 25 mm from the Power Cup: not as plush and smooth, but clearly very fast."
       }
     ],
     "checks": [
@@ -806,7 +819,7 @@
       {
         "route": "brr-comments",
         "outcome": "counted",
-        "owners": 9,
+        "owners": 10,
         "note": "Test pages for 25, 28, 30, 32 and 35 mm and the tanwall option, plus owners commenting on other tires' tests"
       },
       {
