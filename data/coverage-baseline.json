@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2269,
+      "sources": 2272,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -345,6 +345,7 @@
       "bike-components-michelin-power-cup-reviews",
       "bike-components-michelin-power-cup-tlr-reviews",
       "bike-components-michelin-pro5-tlr-reviews",
+      "bike-components-panaracer-agilest-reviews",
       "bike-components-pirelli-p-zero-race-2022-reviews",
       "bike-components-pirelli-p-zero-race-reviews",
       "bike-components-pirelli-p-zero-race-tlr-rs-reviews",
@@ -396,6 +397,8 @@
       "brr-comments-michelin-pro-5-32",
       "brr-comments-michelin-pro-5-35",
       "brr-comments-michelin-pro-5-40",
+      "brr-comments-panaracer-agilest-fast-tlr",
+      "brr-comments-panaracer-agilest-tlr",
       "brr-comments-pirelli-cinturato-evo-40",
       "brr-comments-pirelli-p-zero-race-4s",
       "brr-comments-pirelli-p-zero-race-rs",
@@ -11485,6 +11488,18 @@
         "type",
         "url"
       ],
+      "bike-components-panaracer-agilest-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bike-components-pirelli-p-zero-race-2022-reviews": [
         "accessed_at",
         "language",
@@ -12086,6 +12101,30 @@
         "url"
       ],
       "brr-comments-michelin-pro-5-40": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-panaracer-agilest-fast-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-panaracer-agilest-tlr": [
         "accessed_at",
         "language",
         "notes",
@@ -82135,6 +82174,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -82180,6 +82222,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -82224,6 +82269,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -83158,6 +83206,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -83205,6 +83257,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -83252,6 +83307,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -83296,6 +83354,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -83343,6 +83404,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -83391,6 +83455,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -85152,6 +85220,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -134278,6 +134349,7 @@
       "bike-components-michelin-power-cup-reviews": [],
       "bike-components-michelin-power-cup-tlr-reviews": [],
       "bike-components-michelin-pro5-tlr-reviews": [],
+      "bike-components-panaracer-agilest-reviews": [],
       "bike-components-pirelli-p-zero-race-2022-reviews": [],
       "bike-components-pirelli-p-zero-race-reviews": [],
       "bike-components-pirelli-p-zero-race-tlr-rs-reviews": [],
@@ -134329,6 +134401,8 @@
       "brr-comments-michelin-pro-5-32": [],
       "brr-comments-michelin-pro-5-35": [],
       "brr-comments-michelin-pro-5-40": [],
+      "brr-comments-panaracer-agilest-fast-tlr": [],
+      "brr-comments-panaracer-agilest-tlr": [],
       "brr-comments-pirelli-cinturato-evo-40": [],
       "brr-comments-pirelli-p-zero-race-4s": [],
       "brr-comments-pirelli-p-zero-race-rs": [],
@@ -142554,6 +142628,8 @@
       ],
       "panaracer-agilest": [
         "image.source_id=panaracer-usa-agilest-folding-road-tire-2026-11-01",
+        "source_ids=bike-components-panaracer-agilest-reviews",
+        "source_ids=brr-comments-panaracer-agilest-fast-tlr",
         "source_ids=panaracer-company-official-2026-11-01",
         "source_ids=panaracer-usa-agilest-folding-road-tire-2026-11-01"
       ],
@@ -142582,6 +142658,7 @@
       "panaracer-agilest-tlr": [
         "image.source_id=panaracer-usa-agilest-tlr-folding-road-tire-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-panaracer-agilest-tlr",
         "source_ids=panaracer-company-official-2026-11-01",
         "source_ids=panaracer-usa-agilest-tlr-folding-road-tire-2026-11-01"
       ],
@@ -154188,6 +154265,14 @@
         "specification": 0
       }
     },
+    "bike-components-panaracer-agilest-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bike-components-pirelli-p-zero-race-2022-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -154589,6 +154674,22 @@
       }
     },
     "brr-comments-michelin-pro-5-40": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-panaracer-agilest-fast-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-panaracer-agilest-tlr": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,

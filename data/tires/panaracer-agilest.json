@@ -71,7 +71,9 @@
   ],
   "source_ids": [
     "panaracer-usa-agilest-folding-road-tire-2026-11-01",
-    "panaracer-company-official-2026-11-01"
+    "panaracer-company-official-2026-11-01",
+    "bike-components-panaracer-agilest-reviews",
+    "brr-comments-panaracer-agilest-fast-tlr"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -100,5 +102,109 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-panaracer-agilest-reviews"
+        ],
+        "published_at": "2025-03-19",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "A very nice-running, light tire."
+      },
+      {
+        "source_ids": [
+          "bike-components-panaracer-agilest-reviews"
+        ],
+        "published_at": "2024-09-04",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Rides and rolls very well, and is very light."
+      },
+      {
+        "source_ids": [
+          "bike-components-panaracer-agilest-reviews"
+        ],
+        "published_at": "2024-08-01",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "A good road tire with lots of grip and control and no flats so far, on a par with the Schwalbe One range."
+      },
+      {
+        "source_ids": [
+          "bike-components-panaracer-agilest-reviews"
+        ],
+        "published_at": "2023-09-23",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "mixed"
+        },
+        "summary": "Very soft compound and little puncture protection, but fine for a summer lightweight build."
+      },
+      {
+        "source_ids": [
+          "bike-components-panaracer-agilest-reviews"
+        ],
+        "published_at": "2023-08-17",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Two rides",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "On the second ride the rear took three deep tread cuts, one causing a flat, and a stone worked through to the front casing."
+      },
+      {
+        "source_ids": [
+          "brr-comments-panaracer-agilest-fast-tlr"
+        ],
+        "published_at": "2026-10-08",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "exposure": "500 miles",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable",
+          "punctures": "mixed"
+        },
+        "summary": "Loves the 25/28 mm pair on TPU tubes: very light, rolling and gripping well, with one rear puncture in 500 miles."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 5
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "No test page; one owner on the Agilest Fast TLR test"
+      }
+    ]
   }
 }
