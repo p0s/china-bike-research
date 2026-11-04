@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2284,
+      "sources": 2285,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -1840,6 +1840,7 @@
       "sigma-sports-challenge-criterium-rs-tlr-reviews",
       "sigma-sports-cinturato-evo-tlr-reviews",
       "sigma-sports-corsa-pro-control-tlr-reviews",
+      "sigma-sports-enve-ses-raceday-reviews",
       "sigma-sports-enve-ses-road-tire-reviews",
       "sigma-sports-gatorskin-reviews",
       "sigma-sports-gp-4-season-reviews",
@@ -30408,6 +30409,18 @@
         "url"
       ],
       "sigma-sports-corsa-pro-control-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-enve-ses-raceday-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -80784,6 +80797,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84358,6 +84375,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -84404,6 +84424,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84449,6 +84472,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84495,6 +84521,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -84541,6 +84570,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -136145,6 +136177,7 @@
       "sigma-sports-challenge-criterium-rs-tlr-reviews": [],
       "sigma-sports-cinturato-evo-tlr-reviews": [],
       "sigma-sports-corsa-pro-control-tlr-reviews": [],
+      "sigma-sports-enve-ses-raceday-reviews": [],
       "sigma-sports-enve-ses-road-tire-reviews": [],
       "sigma-sports-gatorskin-reviews": [],
       "sigma-sports-gp-4-season-reviews": [],
@@ -142554,8 +142587,11 @@
       "enve-ses-raceday": [
         "image.source_id=enve-ses-raceday-tire-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-enve-raceday",
+        "source_ids=brr-comments-tufo-comtura-prima-tt",
         "source_ids=enve-about-official-2026-11-01",
-        "source_ids=enve-ses-raceday-tire-official-2026-11-01"
+        "source_ids=enve-ses-raceday-tire-official-2026-11-01",
+        "source_ids=sigma-sports-enve-ses-raceday-reviews"
       ],
       "enve-ses-road-tire": [
         "image.source_id=enve-ses-road-tire-official-2026-11-01",
@@ -166603,6 +166639,14 @@
       }
     },
     "sigma-sports-corsa-pro-control-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-enve-ses-raceday-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
