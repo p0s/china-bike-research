@@ -214,6 +214,23 @@ test('products without verified photos omit the image region and social placehol
   assert.doesNotMatch(renderImageSources(context), /project-placeholder|Project-owned product image placeholders|assets\/images\/placeholders/);
 });
 
+test('image credits list each model once and keep every photo with its credit and source', () => {
+  const credits = renderImageSources(homeContext);
+  const products = credits.slice(credits.indexOf('<h2 class="credit-section-title">Product photos</h2>'), credits.indexOf('<h2 class="credit-section-title">Component photos</h2>'));
+  const headings = [...products.matchAll(/<article><h3><a href="([^"]+)">/g)].map((match) => match[1]);
+  const catalogIds = new Set(candidates.map((entry) => entry.candidate.id));
+  const shown = data.images.filter((image) => image.media_type !== 'project-placeholder' && image.buyer_visibility !== 'omit' && (!image.candidate_id || catalogIds.has(image.candidate_id)));
+
+  assert.doesNotMatch(products, /\?scope=all/);
+  assert.equal(new Set(headings).size, headings.length);
+  assert.equal((products.match(/<img /g) ?? []).length, shown.length);
+  assert.ok(headings.length < shown.length);
+  for (const group of products.match(/<li><div class="credit-thumbs">[\s\S]*?<\/li>/g)) {
+    const photos = (group.match(/<img /g) ?? []).length;
+    assert.match(group, photos > 1 ? new RegExp(` · ${photos} photos`) : /<p>(?![^<]* photos)/);
+  }
+});
+
 test('homepage omits developer-facing dashboards and legacy sections', () => {
   assert.doesNotMatch(html, /decision-ready configurations/i);
   assert.doesNotMatch(html, /Current quick picks/i);

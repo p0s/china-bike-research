@@ -628,14 +628,15 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .prose h2 { margin: 34px 0 10px; font-size: 1.35rem; }
 .prose p, .prose li { color: color-mix(in srgb, var(--ink) 78%, var(--muted)); }
 .prose p { margin: 0 0 13px; }
-.credit-list { display: grid; gap: 10px; margin-top: 28px; }
-.credit-list article { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: center; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
-.credit-image { display: grid; place-items: center; width: 150px; aspect-ratio: 3 / 2; padding: 5px; border-radius: 7px; background: var(--image-surface); }
-.credit-image img { width: 100%; height: 100%; object-fit: contain; }
-.credit-list :is(h2, h3) { margin: 0; font-size: 1rem; }
+.credit-list { display: grid; gap: 10px; margin-top: 14px; }
+.credit-list article { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.credit-list h3 { margin: 0; font-size: 1rem; }
+.credit-list ul { display: grid; gap: 12px; margin: 8px 0 0; padding: 0; list-style: none; }
+.credit-list li { margin: 0; }
+.credit-thumbs { display: flex; flex-wrap: wrap; gap: 6px; }
+.credit-thumbs img { width: 80px; height: auto; aspect-ratio: 3 / 2; padding: 3px; border-radius: 6px; object-fit: contain; background: var(--image-surface); }
 .credit-section-title { margin: 40px 0 0; font-size: 1.15rem; }
-.credit-list p { margin: 4px 0; font-size: .77rem; }
-.credit-list a { font-size: .75rem; }
+.credit-list p { margin: 6px 0 0; font-size: .77rem; }
 .dataset-downloads { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 14px; padding: 0; list-style: none; }
 .dataset-downloads a { display: inline-flex; padding: 6px 9px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--accent); font-size: .76rem; font-weight: 680; text-decoration: none; }
 
@@ -840,8 +841,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .groupset-detail-grid,
   .groupset-detail-lower { grid-template-columns: 1fr; gap: 18px; }
   .groupset-image-credit { width: 100%; margin-left: 0; }
-  .credit-list article { grid-template-columns: 105px minmax(0, 1fr); }
-  .credit-image { width: 105px; }
+  .credit-thumbs img { width: 72px; }
   .footer-inner { grid-template-columns: 1fr; gap: 20px; }
   .footer-inner nav { justify-content: flex-start; }
 }

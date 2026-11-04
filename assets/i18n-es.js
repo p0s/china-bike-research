@@ -1101,6 +1101,8 @@ Object.assign(es, {
   "Loaded from the retailer’s website": "Cargada desde el sitio del minorista",
   "Loaded from the original XHS post": "Cargada desde la publicación original de XHS",
   "Original source": "Fuente original",
+  "Product photos": "Fotos de productos",
+  "Component photos": "Fotos de componentes",
   "Photo": "Foto",
   "Photos": "Fotos",
   "Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.": "Las fotos se cargan desde la página de producto del propio fabricante o minorista, o desde la publicación pública original; este sitio no guarda copias."
@@ -1118,6 +1120,7 @@ patterns.push(
   [/^also (.+)$/, (_, list) => `también ${list}`],
   [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${n === '1' ? 'opinión de propietario' : 'opiniones de propietarios'}, sin prueba de laboratorio`],
   [/^(\d+) maker · (\d+) retailer · (\d+) XHS post · (\d+) without a photo$/, (_, a, b, c, d) => `${a} del fabricante · ${b} de minorista · ${c} de publicaciones de XHS · ${d} sin foto`],
+  [/^(\d+) photos$/, (_, n) => `${n} fotos`],
   [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} por neumático`],
   [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} en el anuncio, sin indicar si es uno o un par`],
   [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${n === '1' ? 'informe' : 'informes'} de ${{ 'bulging or casing failure': 'abultamientos o fallos de carcasa', cracking: 'grietas', 'fast wear': 'desgaste rápido', 'frequent punctures': 'pinchazos frecuentes', 'bead or rim-fit problems': 'problemas de talón o de ajuste en la llanta' }[issue]}`],

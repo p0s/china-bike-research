@@ -236,7 +236,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     image.addEventListener('error', hideUnavailable);
     if (image.complete && image.currentSrc && image.naturalWidth === 0) hideUnavailable();
   }
-  document.querySelectorAll('[data-product-image], .product-image img, .gallery-thumb img, .credit-image img').forEach(enableImageFailureHandling);
+  document.querySelectorAll('[data-product-image], .product-image img, .gallery-thumb img, .credit-thumbs img').forEach(enableImageFailureHandling);
 
   document.querySelectorAll('[data-blog-header-image], [data-blog-bike-image], [data-blog-mascot]').forEach((image) => {
     const hideUnavailable = () => {
