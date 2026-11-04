@@ -51,6 +51,24 @@ Checked, not filled:
 | Phoenix 799 700C e-road | The retailer page's main photo shows rim brakes while its text lists disc brakes, so no photo can be tied to this build. |
 | cosmosworks e-road lead | The official site separates the NOMAD and the Oi!, and no source joins this lead's facts into one model. |
 
+## Third batch (2026-11-04)
+
+Filled: 2 entries, 2 photos. Both come from public Xiaohongshu posts opened on 2026-11-04. Each photo links its post and credits the post's creator. After this batch, 55 entries show no verified photo: 53 research profiles and the two LightCarbon SpeedZ records.
+
+| Model | Photo | Exactness |
+|---|---|---|
+| ELVES Mori gravel frameset (subtrim unconfirmed) | A shop-built Mori from a July 2025 post, drive side, with MORI AEROX on the chainstay | Same frame platform; the lead's own Mori subtrim is still unconfirmed |
+| PARDUS Robin EVO Force AXS | An owner's Robin EVO, rear three-quarter view | Same frame platform; the bike has SRAM RED AXS and Zipp 454 wheels, not the Force AXS and Zipp 303 S build |
+
+Small crops at the image edges removed only private material: payment QR codes, part of a person, a shop sign and a faint stamp from the Mori photo, and the photographer's signature from the PARDUS photo. No part of either bike was cropped.
+
+Checked, not filled:
+
+| Entries | Reason |
+|---|---|
+| Other photos in the same two posts | The Mori post's top view adds no new fact, and a QR-code poster in its rear view could not be cropped without cutting the bike. The PARDUS post's other images are an article cover with a large title and a WeChat account line, and two text screenshots with small detail photos. |
+| HUANYU AZ ONE (青龙·赤子) | The recorded post and one other post, found with three searches (`HUANYU AZ ONE 寰宇`, `寰宇 AZ-ONE` and `寰宇单车 赤子`), contain only videos. Their frames show an assembly close-up or the presenter's face, so neither can be a catalog photo. |
+
 ## Queued for the next bounded batches
 
-Huanyu AZ ONE and ELVES Mori have only Xiaohongshu sources; they wait for the Xiaohongshu photo lane. JAVA, PARDUS, Leinax, West Biking, VIQI, Muidler and Paragon entries have only JD, Taobao or Tmall sources; that lane is paused after a CAPTCHA, with no bypass. GIRDER waits for an HTTPS source.
+HUANYU AZ ONE needs an exact, privacy-safe photo; the posts found so far hold only videos. JAVA, PARDUS Gomera EVO, Leinax, West Biking, VIQI, Muidler and Paragon entries have only JD, Taobao or Tmall sources; that lane is paused after a CAPTCHA, with no bypass. GIRDER waits for an HTTPS source.

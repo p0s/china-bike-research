@@ -8,8 +8,8 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2286,
-      "images": 914,
+      "sources": 2288,
+      "images": 916,
       "videos": 276,
       "opinions": 13,
       "groupsets": 11,
@@ -29,10 +29,10 @@
       "illustrative": 47,
       "same-model-different-color": 18,
       "same-model-different-market-build": 54,
-      "same-platform": 70
+      "same-platform": 72
     },
     "image_hosting": {
-      "local": 905,
+      "local": 907,
       "remote": 9
     },
     "candidate_prices": {
@@ -1454,6 +1454,7 @@
       "public-xhs-camp-gx600-pes-used-reference-2026-10-03",
       "public-xhs-camp-gx700-compilation-reference-2026-10-03",
       "public-xhs-camp-gx700-rust-owner-reference-2026-10-03",
+      "public-xhs-elves-mori-shop-build-photo-2026-11-04",
       "public-xhs-evolve-cima-gr-dealer-build-2026-09-22",
       "public-xhs-giant-tcr-advanced-3-gc-image-2026-10-29",
       "public-xhs-girder-arrow-2026-marketing-2026-10-24",
@@ -1494,6 +1495,7 @@
       "public-xhs-kung-mach-x-ut-brand-2026-07-16",
       "public-xhs-lightcarbon-lcg071s-pro-legacy-2-2026-09-29",
       "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03",
+      "public-xhs-pardus-robin-evo-owner-review-2026-11-04",
       "public-xhs-pardus-spark-al-image-2026-10-26",
       "public-xhs-pardus-spark-evo-gen4-image-2026-10-26",
       "public-xhs-pardus-spark-sport-pes-image-2026-10-26",
@@ -2599,6 +2601,7 @@
       "elves-falath-r7170-official-enrichment-2026-10-03",
       "elves-falath-r7170-primary-image",
       "elves-mori-aerox-primary-image",
+      "elves-mori-community-lead-xhs-1-2026-11-04",
       "elves-vanyar-pro-disc-primary-image",
       "evolve-cima-gr-primary-image",
       "evolve-cima-gr-xhs-cockpit-rear-gallery",
@@ -3197,6 +3200,7 @@
       "merida-silex-7000-25-primary-image",
       "missile-e6000-photo-2026-10-03",
       "mondince-fm316-official-enrichment-2026-10-03",
+      "pardus-robin-evo-force-axs-xhs-1-2026-11-04",
       "pardus-robin-evo-public-primary-image",
       "pardus-robin-evo-public-quotation-primary-image",
       "pardus-robin-sport-pes-primary-image",
@@ -25356,6 +25360,19 @@
         "type",
         "url"
       ],
+      "public-xhs-elves-mori-shop-build-photo-2026-11-04": [
+        "accessed_at",
+        "language",
+        "notes",
+        "published_date",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xhs-evolve-cima-gr-dealer-build-2026-09-22": [
         "accessed_at",
         "capture.archive_bytes",
@@ -26050,6 +26067,18 @@
         "published_date",
         "publisher",
         "reference_claims",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xhs-pardus-robin-evo-owner-review-2026-11-04": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
@@ -40671,6 +40700,40 @@
         "source_media_url",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "elves-mori-community-lead-xhs-1-2026-11-04": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
+        "subject_accuracy"
       ],
       "elves-vanyar-pro-disc-primary-image": [
         "alt",
@@ -61795,6 +61858,40 @@
         "source_id",
         "source_media_sha256",
         "source_media_url",
+        "subject_accuracy"
+      ],
+      "pardus-robin-evo-force-axs-xhs-1-2026-11-04": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_page_url",
+        "source_media_sha256",
         "subject_accuracy"
       ],
       "pardus-robin-evo-public-primary-image": [
@@ -135910,6 +136007,7 @@
       "public-xhs-camp-gx600-pes-used-reference-2026-10-03": [],
       "public-xhs-camp-gx700-compilation-reference-2026-10-03": [],
       "public-xhs-camp-gx700-rust-owner-reference-2026-10-03": [],
+      "public-xhs-elves-mori-shop-build-photo-2026-11-04": [],
       "public-xhs-evolve-cima-gr-dealer-build-2026-09-22": [],
       "public-xhs-giant-tcr-advanced-3-gc-image-2026-10-29": [],
       "public-xhs-girder-arrow-2026-marketing-2026-10-24": [],
@@ -135950,6 +136048,7 @@
       "public-xhs-kung-mach-x-ut-brand-2026-07-16": [],
       "public-xhs-lightcarbon-lcg071s-pro-legacy-2-2026-09-29": [],
       "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03": [],
+      "public-xhs-pardus-robin-evo-owner-review-2026-11-04": [],
       "public-xhs-pardus-spark-al-image-2026-10-26": [],
       "public-xhs-pardus-spark-evo-gen4-image-2026-10-26": [],
       "public-xhs-pardus-spark-sport-pes-image-2026-10-26": [],
@@ -137224,6 +137323,11 @@
         "platform_id=elves-mori-aerox",
         "source_id=elves-mori-aerox-official-2026-08-17",
         "variant_ids=elves-mori-aerox-frameset"
+      ],
+      "elves-mori-community-lead-xhs-1-2026-11-04": [
+        "candidate_id=elves-mori-community-lead",
+        "review_evidence.source_ids=public-xhs-elves-mori-shop-build-photo-2026-11-04",
+        "source_id=public-xhs-elves-mori-shop-build-photo-2026-11-04"
       ],
       "elves-vanyar-pro-disc-primary-image": [
         "candidate_id=missing-china-price-elves-vanyar",
@@ -140124,6 +140228,11 @@
         "candidate_id=mondince-fm316",
         "review_evidence.source_ids=mondince-fm316-enrichment-2026-10-03",
         "source_id=mondince-fm316-enrichment-2026-10-03"
+      ],
+      "pardus-robin-evo-force-axs-xhs-1-2026-11-04": [
+        "candidate_id=pardus-robin-evo-force-axs",
+        "review_evidence.source_ids=public-xhs-pardus-robin-evo-owner-review-2026-11-04",
+        "source_id=public-xhs-pardus-robin-evo-owner-review-2026-11-04"
       ],
       "pardus-robin-evo-public-primary-image": [
         "candidate_id=pardus-robin-evo-community-lead",
@@ -163707,6 +163816,14 @@
         "specification": 0
       }
     },
+    "public-xhs-elves-mori-shop-build-photo-2026-11-04": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "public-xhs-evolve-cima-gr-dealer-build-2026-09-22": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -164021,6 +164138,14 @@
     },
     "public-xhs-lightcarbon-speed7-custom-build-reference-2026-10-03": {
       "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": -1,
+        "specification": 0
+      }
+    },
+    "public-xhs-pardus-robin-evo-owner-review-2026-11-04": {
+      "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
         "price": -1,
@@ -248428,6 +248553,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "elves-mori-community-lead-xhs-1-2026-11-04": {
+      "target": "candidates:elves-mori-community-lead",
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "elves-vanyar-pro-disc-primary-image": {
       "target": "candidates:missing-china-price-elves-vanyar",
       "minimum_accuracy_rank": 4,
@@ -252614,6 +252746,13 @@
       "remote_required": false,
       "primary_required": true
     },
+    "pardus-robin-evo-force-axs-xhs-1-2026-11-04": {
+      "target": "candidates:pardus-robin-evo-force-axs",
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "pardus-robin-evo-public-primary-image": {
       "target": "candidates:pardus-robin-evo-community-lead",
       "minimum_accuracy_rank": 3,
@@ -254717,6 +254856,11 @@
       "minimum_source_tier": 1,
       "remote_required": false
     },
+    "candidates:elves-mori-community-lead": {
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:evolve-cima-road": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
@@ -255191,6 +255335,11 @@
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
       "remote_required": true
+    },
+    "candidates:pardus-robin-evo-force-axs": {
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false
     },
     "candidates:pardus-robin-sport-pes": {
       "minimum_accuracy_rank": 3,
