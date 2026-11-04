@@ -43,7 +43,9 @@
   ],
   "source_ids": [
     "veloflex-tubeless-ready-corsa-race-tlr-black-sidewall-official-2026-11-01",
-    "veloflex-about-official-2026-11-01"
+    "veloflex-about-official-2026-11-01",
+    "brr-comments-veloflex-corsa-race-tlr",
+    "brr-comments-veloflex-corsa-race"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -71,5 +73,56 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "brr-comments-veloflex-corsa-race-tlr"
+        ],
+        "published_at": "2021-06-07",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A few hundred km",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "After a few hundred kilometres it rides like a Vittoria Corsa with latex tubes and corners superbly."
+      },
+      {
+        "source_ids": [
+          "brr-comments-veloflex-corsa-race-tlr",
+          "brr-comments-veloflex-corsa-race"
+        ],
+        "published_at": "2021-07-06",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Very supple, light, comfortable, grippy and fast, rated above the GP5000, Corsa and Pro One for ride quality; easy to mount."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "25 mm test page plus the clincher test page"
+      }
+    ]
   }
 }
