@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2257,
+      "sources": 2267,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -359,6 +359,8 @@
       "bike-components-schwalbe-one-reviews",
       "bike-components-schwalbe-one-tle-reviews",
       "bike-components-schwalbe-pro-one-reviews",
+      "bike-components-specialized-mondo-tlr-reviews",
+      "bike-components-specialized-s-works-turbo-t2-t5-reviews",
       "bike-components-strada-bianca-pro-tlr-reviews",
       "bike-components-ultra-sport-iii-reviews",
       "bike-components-vittoria-corsa-next-tlr-reviews",
@@ -410,6 +412,9 @@
       "brr-comments-schwalbe-pro-one-tle-34",
       "brr-comments-schwalbe-pro-one-tle-38",
       "brr-comments-silca-protocol-rcr-38",
+      "brr-comments-specialized-cotton-tlr",
+      "brr-comments-specialized-turbo-t2-t5",
+      "brr-comments-specialized-turbo-tlr",
       "brr-comments-vittoria-corsa-next-tlr",
       "brr-comments-vittoria-corsa-pro-control-34",
       "brr-comments-vittoria-corsa-pro-control-tlr",
@@ -1844,6 +1849,11 @@
       "sigma-sports-schwalbe-one-reviews",
       "sigma-sports-schwalbe-one-tle-reviews",
       "sigma-sports-schwalbe-pro-one-reviews",
+      "sigma-sports-specialized-cotton-tlr-reviews",
+      "sigma-sports-specialized-mondo-reviews",
+      "sigma-sports-specialized-mondo-tlr-reviews",
+      "sigma-sports-specialized-roadsport-reviews",
+      "sigma-sports-specialized-s-works-turbo-tlr-reviews",
       "sigma-sports-vittoria-corsa-next-reviews",
       "sigma-sports-vittoria-corsa-next-tlr-reviews",
       "sigma-sports-vittoria-corsa-pro-tlr-reviews",
@@ -11641,6 +11651,30 @@
         "type",
         "url"
       ],
+      "bike-components-specialized-mondo-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bike-components-specialized-s-works-turbo-t2-t5-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bike-components-strada-bianca-pro-tlr-reviews": [
         "accessed_at",
         "language",
@@ -12242,6 +12276,42 @@
         "url"
       ],
       "brr-comments-silca-protocol-rcr-38": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-specialized-cotton-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-specialized-turbo-t2-t5": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-specialized-turbo-tlr": [
         "accessed_at",
         "language",
         "notes",
@@ -30429,6 +30499,66 @@
         "url"
       ],
       "sigma-sports-schwalbe-pro-one-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-specialized-cotton-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-specialized-mondo-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-specialized-mondo-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-specialized-roadsport-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-specialized-s-works-turbo-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -84602,6 +84732,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84648,6 +84781,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84695,6 +84832,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -84723,6 +84864,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -84770,6 +84915,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -84796,6 +84944,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -84841,6 +84992,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -84889,6 +85044,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -84965,6 +85123,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -85013,6 +85175,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -134069,6 +134235,8 @@
       "bike-components-schwalbe-one-reviews": [],
       "bike-components-schwalbe-one-tle-reviews": [],
       "bike-components-schwalbe-pro-one-reviews": [],
+      "bike-components-specialized-mondo-tlr-reviews": [],
+      "bike-components-specialized-s-works-turbo-t2-t5-reviews": [],
       "bike-components-strada-bianca-pro-tlr-reviews": [],
       "bike-components-ultra-sport-iii-reviews": [],
       "bike-components-vittoria-corsa-next-tlr-reviews": [],
@@ -134120,6 +134288,9 @@
       "brr-comments-schwalbe-pro-one-tle-34": [],
       "brr-comments-schwalbe-pro-one-tle-38": [],
       "brr-comments-silca-protocol-rcr-38": [],
+      "brr-comments-specialized-cotton-tlr": [],
+      "brr-comments-specialized-turbo-t2-t5": [],
+      "brr-comments-specialized-turbo-tlr": [],
       "brr-comments-vittoria-corsa-next-tlr": [],
       "brr-comments-vittoria-corsa-pro-control-34": [],
       "brr-comments-vittoria-corsa-pro-control-tlr": [],
@@ -135602,6 +135773,11 @@
       "sigma-sports-schwalbe-one-reviews": [],
       "sigma-sports-schwalbe-one-tle-reviews": [],
       "sigma-sports-schwalbe-pro-one-reviews": [],
+      "sigma-sports-specialized-cotton-tlr-reviews": [],
+      "sigma-sports-specialized-mondo-reviews": [],
+      "sigma-sports-specialized-mondo-tlr-reviews": [],
+      "sigma-sports-specialized-roadsport-reviews": [],
+      "sigma-sports-specialized-s-works-turbo-tlr-reviews": [],
       "sigma-sports-vittoria-corsa-next-reviews": [],
       "sigma-sports-vittoria-corsa-next-tlr-reviews": [],
       "sigma-sports-vittoria-corsa-pro-tlr-reviews": [],
@@ -142572,13 +142748,18 @@
       ],
       "specialized-cotton-tlr": [
         "image.source_id=specialized-cotton-tlr-official-2026-11-01",
+        "source_ids=brr-comments-specialized-cotton-tlr",
+        "source_ids=sigma-sports-specialized-cotton-tlr-reviews",
         "source_ids=specialized-cotton-tlr-official-2026-11-01"
       ],
       "specialized-mondo": [
         "image.source_id=specialized-mondo-folding-endurance-tire-official-2026-11-01",
+        "source_ids=sigma-sports-specialized-mondo-reviews",
         "source_ids=specialized-mondo-folding-endurance-tire-official-2026-11-01"
       ],
       "specialized-mondo-tlr": [
+        "source_ids=bike-components-specialized-mondo-tlr-reviews",
+        "source_ids=sigma-sports-specialized-mondo-tlr-reviews",
         "source_ids=specialized-mondo-tlr-endurance-tire-official-2026-11-01"
       ],
       "specialized-rapidair-tlr": [
@@ -142590,6 +142771,7 @@
       ],
       "specialized-roadsport-wirebead": [
         "image.source_id=specialized-roadsport-wirebead-road-tire-official-2026-11-01",
+        "source_ids=sigma-sports-specialized-roadsport-reviews",
         "source_ids=specialized-roadsport-wirebead-road-tire-official-2026-11-01"
       ],
       "specialized-roubaix-pro": [
@@ -142601,11 +142783,15 @@
         "source_ids=specialized-roubaix-pro-2bliss-ready-official-2026-11-01"
       ],
       "specialized-s-works-turbo": [
+        "source_ids=bike-components-specialized-s-works-turbo-t2-t5-reviews",
+        "source_ids=brr-comments-specialized-turbo-t2-t5",
         "source_ids=specialized-s-works-turbo-t2t5-official-2026-11-01"
       ],
       "specialized-s-works-turbo-tlr": [
         "image.source_id=specialized-s-works-turbo-tlr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-specialized-turbo-tlr",
+        "source_ids=sigma-sports-specialized-s-works-turbo-tlr-reviews",
         "source_ids=specialized-gb-s-works-turbo-tlr-2026-11-01",
         "source_ids=specialized-s-works-turbo-tlr-official-2026-11-01"
       ],
@@ -154053,6 +154239,22 @@
         "specification": 0
       }
     },
+    "bike-components-specialized-mondo-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "bike-components-specialized-s-works-turbo-t2-t5-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "bike-components-strada-bianca-pro-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -154454,6 +154656,30 @@
       }
     },
     "brr-comments-silca-protocol-rcr-38": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-specialized-cotton-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-specialized-turbo-t2-t5": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-specialized-turbo-tlr": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
@@ -166033,6 +166259,46 @@
       }
     },
     "sigma-sports-schwalbe-pro-one-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-specialized-cotton-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-specialized-mondo-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-specialized-mondo-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-specialized-roadsport-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-specialized-s-works-turbo-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
