@@ -86,7 +86,8 @@
     "Specialized gives a pressure range per size; the upper value is shown."
   ],
   "source_ids": [
-    "specialized-roadsport-wirebead-road-tire-official-2026-11-01"
+    "specialized-roadsport-wirebead-road-tire-official-2026-11-01",
+    "sigma-sports-specialized-roadsport-reviews"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -115,5 +116,70 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-specialized-roadsport-reviews"
+        ],
+        "published_at": "2024-12-26",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About a month",
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "unfavourable",
+          "grip": "mixed",
+          "casing": "unfavourable"
+        },
+        "summary": "Feels very slow and heavy, with less grip than a GP5000 or P ZERO, and one tire was twisted and bulged slightly."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-specialized-roadsport-reviews"
+        ],
+        "published_at": "2021-07-21",
+        "width_mm": 35,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "So far so good in 35 mm."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-specialized-roadsport-reviews"
+        ],
+        "published_at": "2021-05-07",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Better than expected for the price in 32 mm: comfortable, grips well in corners and plenty fast."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "One of 4 written reviews gives no riding detail; reviewers bought 32 and 35 mm, sizes only the wire-bead version is made in"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Two listings with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
   }
 }
