@@ -82,7 +82,9 @@
   "source_ids": [
     "challenge-criterium-rs-handmade-tlr-official-2026-11-01",
     "challenge-about-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-challenge-criterium-rs-tlr-reviews",
+    "brr-comments-challenge-criterium-rs"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -111,5 +113,68 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-challenge-criterium-rs-tlr-reviews"
+        ],
+        "published_at": "2025-04-30",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Beautifully made and super grippy, but a battle to fit."
+      },
+      {
+        "source_ids": [
+          "brr-comments-challenge-criterium-rs"
+        ],
+        "published_at": "2024-03-13",
+        "width_mm": 27,
+        "setup": null,
+        "exposure": "Almost a year",
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable"
+        },
+        "summary": "Almost a year in 27 mm without a single problem on wet tarmac, including rainy, sketchy descents."
+      },
+      {
+        "source_ids": [
+          "brr-comments-challenge-criterium-rs"
+        ],
+        "published_at": "2023-06-03",
+        "width_mm": 27,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "An absolutely superb tire in the dry in 27 mm."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 1
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "25 and 30 mm test pages"
+      }
+    ]
   }
 }
