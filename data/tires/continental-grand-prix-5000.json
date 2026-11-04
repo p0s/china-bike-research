@@ -147,7 +147,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: the 32 mm test page on Bicycle Rolling Resistance is now read as well.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: the 32 mm test page on Bicycle Rolling Resistance is now read as well. Corrected on 2026-11-04: long reader comments are now read in full, not cut at 700 characters.",
     "reports": [
       {
         "source_ids": [
@@ -536,8 +536,7 @@
         "width_mm": null,
         "setup": null,
         "codes": {
-          "overall": "favourable",
-          "punctures": "favourable"
+          "overall": "favourable"
         },
         "summary": "Loves them, with no punctures yet."
       },

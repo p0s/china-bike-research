@@ -168,7 +168,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-04",
-    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. The Classic, Retro and team colour editions count as the same tire.",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. The Classic, Retro and team colour editions count as the same tire. Corrected on 2026-11-04: long reader comments are now read in full, not cut at 700 characters.",
     "reports": [
       {
         "source_ids": [
@@ -344,12 +344,13 @@
           "brr-comments-pirelli-p-zero-race-tlr-rs"
         ],
         "published_at": "2025-05-28",
-        "width_mm": null,
+        "width_mm": 30,
         "setup": "tubeless",
         "codes": {
+          "overall": "favourable",
           "punctures": "unfavourable"
         },
-        "summary": "A puncture that sealant would not close; the first plug broke and the owner rode home at low pressure."
+        "summary": "Probably the best-feeling tire the owner has used, in 30 mm, but a puncture on a short gravel section would not seal and the first plug broke."
       },
       {
         "source_ids": [
