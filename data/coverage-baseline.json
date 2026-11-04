@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2280,
+      "sources": 2284,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -389,6 +389,7 @@
       "brr-comments-continental-ultra-sport-iii-2020",
       "brr-comments-enve-raceday",
       "brr-comments-enve-ses-road-tire",
+      "brr-comments-enve-ses-road-tire-35",
       "brr-comments-goodyear-eagle-f1-r",
       "brr-comments-goodyear-eagle-f1-supersport-r",
       "brr-comments-hutchinson-blackbird-race-tlr",
@@ -422,6 +423,9 @@
       "brr-comments-specialized-cotton-tlr",
       "brr-comments-specialized-turbo-t2-t5",
       "brr-comments-specialized-turbo-tlr",
+      "brr-comments-tufo-comtura-prima-tr",
+      "brr-comments-tufo-comtura-prima-tr-32",
+      "brr-comments-tufo-comtura-prima-tt",
       "brr-comments-veloflex-corsa-evo-tlr",
       "brr-comments-veloflex-corsa-race",
       "brr-comments-veloflex-corsa-race-tlr",
@@ -12024,6 +12028,18 @@
         "type",
         "url"
       ],
+      "brr-comments-enve-ses-road-tire-35": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-goodyear-eagle-f1-r": [
         "accessed_at",
         "language",
@@ -12409,6 +12425,42 @@
         "url"
       ],
       "brr-comments-specialized-turbo-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-tufo-comtura-prima-tr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-tufo-comtura-prima-tr-32": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-tufo-comtura-prima-tt": [
         "accessed_at",
         "language",
         "notes",
@@ -85481,6 +85533,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -85527,6 +85582,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -85574,6 +85632,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -85620,6 +85681,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -85647,6 +85711,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -85675,6 +85743,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -86795,6 +86867,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -86839,6 +86914,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -86882,6 +86960,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -86925,6 +87006,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "reviewed_at",
@@ -134562,6 +134646,7 @@
       "brr-comments-continental-ultra-sport-iii-2020": [],
       "brr-comments-enve-raceday": [],
       "brr-comments-enve-ses-road-tire": [],
+      "brr-comments-enve-ses-road-tire-35": [],
       "brr-comments-goodyear-eagle-f1-r": [],
       "brr-comments-goodyear-eagle-f1-supersport-r": [],
       "brr-comments-hutchinson-blackbird-race-tlr": [],
@@ -134595,6 +134680,9 @@
       "brr-comments-specialized-cotton-tlr": [],
       "brr-comments-specialized-turbo-t2-t5": [],
       "brr-comments-specialized-turbo-tlr": [],
+      "brr-comments-tufo-comtura-prima-tr": [],
+      "brr-comments-tufo-comtura-prima-tr-32": [],
+      "brr-comments-tufo-comtura-prima-tt": [],
       "brr-comments-veloflex-corsa-evo-tlr": [],
       "brr-comments-veloflex-corsa-race": [],
       "brr-comments-veloflex-corsa-race-tlr": [],
@@ -143137,10 +143225,14 @@
       ],
       "tufo-comtura-prima-tr": [
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-enve-ses-road-tire-35",
+        "source_ids=brr-comments-tufo-comtura-prima-tr",
+        "source_ids=brr-comments-tufo-comtura-prima-tr-32",
         "source_ids=tufo-comtura-prima-official-2026-11-01",
         "source_ids=tufo-contact-official-2026-11-01"
       ],
       "tufo-comtura-prima-tt": [
+        "source_ids=brr-comments-tufo-comtura-prima-tt",
         "source_ids=tufo-comtura-prima-tt-official-2026-11-01",
         "source_ids=tufo-contact-official-2026-11-01"
       ],
@@ -154803,6 +154895,14 @@
         "specification": 0
       }
     },
+    "brr-comments-enve-ses-road-tire-35": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-goodyear-eagle-f1-r": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -155060,6 +155160,30 @@
       }
     },
     "brr-comments-specialized-turbo-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-tufo-comtura-prima-tr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-tufo-comtura-prima-tr-32": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-tufo-comtura-prima-tt": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
