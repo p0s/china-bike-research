@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2267,
+      "sources": 2269,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -372,6 +372,7 @@
       "biketo-girder-vagrant-2016-2026-10-23",
       "biketo-pardus-uragano-evo-review-2023",
       "biketo-quick-gr-one-launch-2025",
+      "brr-comments-bontrager-aeolus-rsl-tlr",
       "brr-comments-challenge-strada-bianca-pro-htlr",
       "brr-comments-challenge-strada-bianca-pro-htlr-40",
       "brr-comments-continental-aero-111",
@@ -1821,6 +1822,7 @@
       "shimano-sm-rt70-official-2026-08-27",
       "shimano-ultegra-r8150-official-2026-08-24",
       "sigma-sports-aero-111-reviews",
+      "sigma-sports-bontrager-aeolus-rsl-tlr-reviews",
       "sigma-sports-bontrager-aw3-hard-case-reviews",
       "sigma-sports-cinturato-evo-tlr-reviews",
       "sigma-sports-corsa-pro-control-tlr-reviews",
@@ -11796,6 +11798,18 @@
         "url"
       ],
       "biketo-quick-gr-one-launch-2025": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-bontrager-aeolus-rsl-tlr": [
         "accessed_at",
         "language",
         "notes",
@@ -30163,6 +30177,18 @@
         "url"
       ],
       "sigma-sports-aero-111-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-bontrager-aeolus-rsl-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -78235,6 +78261,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78282,6 +78311,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78329,6 +78361,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78377,6 +78412,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78424,6 +78463,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78470,6 +78512,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78614,6 +78659,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78660,6 +78708,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78807,6 +78858,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -78853,6 +78907,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -134248,6 +134305,7 @@
       "biketo-girder-vagrant-2016-2026-10-23": [],
       "biketo-pardus-uragano-evo-review-2023": [],
       "biketo-quick-gr-one-launch-2025": [],
+      "brr-comments-bontrager-aeolus-rsl-tlr": [],
       "brr-comments-challenge-strada-bianca-pro-htlr": [],
       "brr-comments-challenge-strada-bianca-pro-htlr-40": [],
       "brr-comments-continental-aero-111": [],
@@ -135745,6 +135803,7 @@
       "shimano-sm-rt70-official-2026-08-27": [],
       "shimano-ultegra-r8150-official-2026-08-24": [],
       "sigma-sports-aero-111-reviews": [],
+      "sigma-sports-bontrager-aeolus-rsl-tlr-reviews": [],
       "sigma-sports-bontrager-aw3-hard-case-reviews": [],
       "sigma-sports-cinturato-evo-tlr-reviews": [],
       "sigma-sports-corsa-pro-control-tlr-reviews": [],
@@ -141849,6 +141908,8 @@
       "bontrager-aeolus-rsl-tlr": [
         "image.source_id=trek-bontrager-aeolus-rsl-tlr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-bontrager-aeolus-rsl-tlr",
+        "source_ids=sigma-sports-bontrager-aeolus-rsl-tlr-reviews",
         "source_ids=trek-bontrager-aeolus-rsl-tlr-official-2026-11-01"
       ],
       "bontrager-aw1-hard-case": [
@@ -154343,6 +154404,14 @@
         "specification": 2
       }
     },
+    "brr-comments-bontrager-aeolus-rsl-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-challenge-strada-bianca-pro-htlr": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -166035,6 +166104,14 @@
       }
     },
     "sigma-sports-aero-111-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-bontrager-aeolus-rsl-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
