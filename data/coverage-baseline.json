@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2272,
+      "sources": 2275,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -386,6 +386,8 @@
       "brr-comments-continental-grand-prix-5000-s-tr-32",
       "brr-comments-continental-grand-prix-5000-s-tr-35",
       "brr-comments-continental-ultra-sport-iii-2020",
+      "brr-comments-enve-raceday",
+      "brr-comments-enve-ses-road-tire",
       "brr-comments-goodyear-eagle-f1-r",
       "brr-comments-goodyear-eagle-f1-supersport-r",
       "brr-comments-hutchinson-blackbird-race-tlr",
@@ -1829,6 +1831,7 @@
       "sigma-sports-bontrager-aw3-hard-case-reviews",
       "sigma-sports-cinturato-evo-tlr-reviews",
       "sigma-sports-corsa-pro-control-tlr-reviews",
+      "sigma-sports-enve-ses-road-tire-reviews",
       "sigma-sports-gatorskin-reviews",
       "sigma-sports-gp-4-season-reviews",
       "sigma-sports-gp5000-as-tr-reviews",
@@ -11969,6 +11972,30 @@
         "url"
       ],
       "brr-comments-continental-ultra-sport-iii-2020": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-enve-raceday": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-enve-ses-road-tire": [
         "accessed_at",
         "language",
         "notes",
@@ -30264,6 +30291,18 @@
         "url"
       ],
       "sigma-sports-corsa-pro-control-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-enve-ses-road-tire-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -80657,6 +80696,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -86235,6 +86278,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -86280,6 +86326,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -86323,6 +86372,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -86366,6 +86418,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -86409,6 +86464,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -86452,6 +86510,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -86495,6 +86556,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -86538,6 +86602,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -86581,6 +86648,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -134390,6 +134460,8 @@
       "brr-comments-continental-grand-prix-5000-s-tr-32": [],
       "brr-comments-continental-grand-prix-5000-s-tr-35": [],
       "brr-comments-continental-ultra-sport-iii-2020": [],
+      "brr-comments-enve-raceday": [],
+      "brr-comments-enve-ses-road-tire": [],
       "brr-comments-goodyear-eagle-f1-r": [],
       "brr-comments-goodyear-eagle-f1-supersport-r": [],
       "brr-comments-hutchinson-blackbird-race-tlr": [],
@@ -135881,6 +135953,7 @@
       "sigma-sports-bontrager-aw3-hard-case-reviews": [],
       "sigma-sports-cinturato-evo-tlr-reviews": [],
       "sigma-sports-corsa-pro-control-tlr-reviews": [],
+      "sigma-sports-enve-ses-road-tire-reviews": [],
       "sigma-sports-gatorskin-reviews": [],
       "sigma-sports-gp-4-season-reviews": [],
       "sigma-sports-gp5000-as-tr-reviews": [],
@@ -142292,8 +142365,11 @@
       ],
       "enve-ses-road-tire": [
         "image.source_id=enve-ses-road-tire-official-2026-11-01",
+        "source_ids=brr-comments-enve-raceday",
+        "source_ids=brr-comments-enve-ses-road-tire",
         "source_ids=enve-about-official-2026-11-01",
-        "source_ids=enve-ses-road-tire-official-2026-11-01"
+        "source_ids=enve-ses-road-tire-official-2026-11-01",
+        "source_ids=sigma-sports-enve-ses-road-tire-reviews"
       ],
       "giant-gavia-ac-1-tlr": [
         "source_ids=bikeradar-giant-founder-2026-02-17",
@@ -154593,6 +154669,22 @@
         "specification": 0
       }
     },
+    "brr-comments-enve-raceday": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-enve-ses-road-tire": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-goodyear-eagle-f1-r": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -166237,6 +166329,14 @@
       }
     },
     "sigma-sports-corsa-pro-control-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-enve-ses-road-tire-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
