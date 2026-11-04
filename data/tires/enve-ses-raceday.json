@@ -83,7 +83,10 @@
   "source_ids": [
     "enve-ses-raceday-tire-official-2026-11-01",
     "enve-about-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-enve-ses-raceday-reviews",
+    "brr-comments-enve-raceday",
+    "brr-comments-tufo-comtura-prima-tt"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -112,5 +115,95 @@
       "embedded_metadata": "technical-only",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-raceday-reviews"
+        ],
+        "published_at": "2025-09-07",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Light and very lively on the front wheel; recommended for racing."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-raceday-reviews"
+        ],
+        "published_at": "2025-07-04",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "A super-fast tire with surprisingly good puncture protection."
+      },
+      {
+        "source_ids": [
+          "brr-comments-enve-raceday"
+        ],
+        "published_at": "2025-06-29",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "About 1,600 km",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "wet": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Very fast through a 1,000 km ultra race on rough and smooth roads, with great wet grip, but after two sealed punctures and 600 km more a pothole tore the sidewall beyond plugging."
+      },
+      {
+        "source_ids": [
+          "brr-comments-tufo-comtura-prima-tt"
+        ],
+        "published_at": "2026-01-22",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "punctures": "unfavourable"
+        },
+        "summary": "Loved the feel, but it was very, very puncture-prone."
+      },
+      {
+        "source_ids": [
+          "brr-comments-tufo-comtura-prima-tt"
+        ],
+        "published_at": "2026-01-23",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable"
+        },
+        "summary": "Incredibly fast with a nice feel, but simply too fragile."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "29 mm test page plus two owners on the Tufo Comtura Prima TT test"
+      }
+    ]
   }
 }
