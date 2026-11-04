@@ -3,7 +3,7 @@
 Improve useful existing explanations; do not replace them merely to make an article look new.
 
 - Answer the reader's question in the opening, then explain the decision and its trade-offs.
-- Add original value through exact-model comparisons, worked budgets and practical checks.
+- Add original value through exact-model comparisons, catalog-derived tables, worked budgets and calculations. A check earns space only when it says what to look for and what each answer means.
 - Use a table only when its columns serve that article's question. Derive prices, dates and primary comparison values from the catalog.
 - Keep a price's observation date, source basis and conditions. An editorial edit is not a price refresh.
 - Put real model photos beside the discussion they support. Keep source credits and pictured-build differences visible.
@@ -16,6 +16,28 @@ Improve useful existing explanations; do not replace them merely to make an arti
 - Edit English, Simplified Chinese and German for natural reading while preserving equivalent facts and section anchors. Translate the thought, including the joke; avoid English sentence patterns in the other editions.
 - Preserve stable URLs, canonical/hreflang links, accurate article metadata and a genuine byline. Use specific titles and descriptions without keyword repetition or ranking promises.
 
+## The reader-value test (4 November 2026)
+
+A November 2026 review of all published guides found too much diligence presented as content: checklists that any competent buyer already knows, answers withheld out of caution, catalog models used as link decoration and the same caveats repeated across short articles. These rules apply to new articles and to every edit of an existing one.
+
+**Publish only a real gain.** Before drafting, write the reader's question and what they will know or be able to do afterwards that they could not work out in a minute. "Check the size before buying" is not a gain; "in one review this brand's smallest road frame was too big for two riders just under average women's height, and its free cockpit swap applies to two models only" is. If the gain is a set of reminders, there is no article: improve an existing one instead.
+
+**Every section changes a decision.** Usually that takes a specific: a sourced number, range or limit; an exact-model comparison from the catalog; the exact wording of a maker's or seller's term; a worked calculation with real inputs; a documented failure case or labelled owner evidence; or a decision rule with a threshold. A clear explanation of a mechanism, trade-off or failure that changes what the reader does counts as well, numbers or not. A paragraph of reminders does not. Use the specifics the decision needs; never add a number, model or link to satisfy this rule, and keep material safety limits even when they are short. Counts of numbers or instructions are review diagnostics, not targets.
+
+**Leave out obvious diligence.** Do not give a heading, title or paragraph to buying the right size, using an authorized seller, reading the warranty, getting promises in writing, keeping the invoice, photographing the box or following the manufacturer's instructions. Mention such a step in one clause only where the article supplies the non-obvious part, and link the [ordering checklist](/blog/chinese-frameset-order-checklist/) for the general routine.
+
+**Give the best available answer, then its limit once.** When a maker, standard or official page publishes the value the reader needs, report it with its source and date. "Use a calculator" or "follow the manufacturer" is acceptable only next to what the calculator or manufacturer actually says. State a boundary once, where it changes what the reader does. Remove ritual disclaimers such as "this is not a recommendation" or "a photograph cannot establish"; general method caveats belong on the methodology page. Name a specific unknown instead of hedging everything.
+
+**Use the catalog as evidence.** Mention a catalog model only with the fact that answers the article's question, such as its clearance with mudguards, its stack in the size discussed or its dated price. Prefer a comparison of real records to an invented example; label any hypothetical case and use it only when no real record fits.
+
+**Brand guides are brand intelligence.** A brand guide must give what a buyer would otherwise spend hours assembling: the current range and what separates the models, with dated catalog prices; decisive specifications such as tyre clearance, weight with its basis, frame material and cockpit; exact warranty, crash and return terms; real purchase routes and delivered-cost evidence by region; and labelled reviewer or owner evidence about strengths and problems. Say which rider each model suits and which it does not, from that evidence. General ordering steps stay in the shared checklist.
+
+**Titles promise the answer.** A title states the decision or the finding, not a chore. Avoid "check X before Y" formulas. The description summarizes the answer.
+
+**One decision, one page.** Before writing, find pages on the same decision. Extend, merge or cross-link instead of adding a thinner sibling. Merging published URLs needs a reviewable redirect proposal; until then, trim the duplicated passages and link the stronger page.
+
+**Media are evidence.** Use a photo or video only where it shows the exact thing discussed, and say in the caption what it shows and how it differs from the discussed build. Each new third-party photo needs its own use basis: documented reusable rights for a local copy, or a remote official-page embed under the media contract in `SPEC.md`. Otherwise omit it.
+
 ## A reason to read each article
 
 Before drafting, write down one reader question, the decision the article helps make, its original contribution and its boundary with existing articles. Choose a title after considering several clear alternatives. Do not invent keyword volumes. A topic earns a separate article through a different decision or practical tool, not a different brand name.
@@ -26,9 +48,9 @@ Use precise nouns, active verbs and varied sentence lengths. A light joke should
 
 Show the reasoning behind advice. Separate manufacturer limits, dated listings, owner anecdotes and our own calculations. Label illustrative budgets and scenarios. Keep uncertain details local to the claim. Safety and compatibility advice must point to the exact manufacturer's instructions; a general article is not an installation manual.
 
-## Two separate reviews
+## Three separate reviews
 
-First read each edition as a reader: does the opening earn attention, does the argument move, do examples earn their space, and is the next step useful? Then check clarity, voice, consequence, evidence, specificity and tone. Remove sentences that add no information or pleasure. Compare neighboring articles for repeated ideas and phrases.
+First read each edition as a reader: does the opening earn attention, does the argument move, do examples earn their space, and is the next step useful? Then apply the reader-value test: say what each section lets the reader decide or do, delete sentences a competent buyer would assume, and compare neighboring articles for repeated ideas and phrases. Leave a strong section alone rather than rewriting it for novelty. Then check clarity, voice, consequence, evidence, specificity and tone. Remove sentences that add no information or pleasure.
 
 Only then check search presentation: the title and description accurately promise the page's answer; headings describe its real sections; links help the reader continue; relevant photos have accurate captions; structured data, dates, canonical and language alternatives match the published page. SEO cannot compensate for a weak article, and no ranking result is promised.
 
