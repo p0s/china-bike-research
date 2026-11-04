@@ -131,7 +131,8 @@
     "brr-comments-continental-grand-prix-5000-as-tr-28",
     "brr-comments-pirelli-p-zero-race-tlr-28",
     "brr-comments-continental-grand-prix-5000-s-tr-35",
-    "brr-comments-pirelli-cinturato-evo-40"
+    "brr-comments-pirelli-cinturato-evo-40",
+    "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -163,7 +164,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well. Xiaohongshu owners were added on 2026-11-04 from threads coded for other tires.",
     "reports": [
       {
         "source_ids": [
@@ -528,6 +529,32 @@
           "wear": "favourable"
         },
         "summary": "Two winters of light touring on mostly paved roads with gravel, broken pavement and cobbles: about 13,000 km with no flat, puncture or pressure loss."
+      },
+      {
+        "source_ids": [
+          "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
+        ],
+        "published_at": "2025-05-30",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "First rides",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Newly fitted tubeless by a shop: at low pressure the road feel beats the clinchers the owner used before."
+      },
+      {
+        "source_ids": [
+          "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
+        ],
+        "published_at": "2025-05-30",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "5,000 km",
+        "codes": {
+          "wear": "favourable"
+        },
+        "summary": "5,000 km on 28 mm tires, and the front still shows its moulding lines."
       }
     ],
     "checks": [
@@ -548,6 +575,12 @@
         "outcome": "counted",
         "owners": 4,
         "note": "Test pages for 25, 28, 32 and 35 mm (black and cream), plus owners commenting on other tires' tests"
+      },
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "The author and a commenter in a coded Maxxis thread"
       }
     ]
   }

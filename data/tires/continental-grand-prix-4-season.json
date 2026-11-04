@@ -91,7 +91,8 @@
     "bike-components-gp-4-season-reviews",
     "bike-components-gp-4-season-set-reviews",
     "brr-comments-continental-grand-prix-4-season",
-    "brr-comments-continental-grand-prix-4-season-2015"
+    "brr-comments-continental-grand-prix-4-season-2015",
+    "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -123,7 +124,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the 2015 test page on Bicycle Rolling Resistance is now read as well. Continental has not announced a new generation, though the site measured differences between its 2015 and 2022 samples.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the 2015 test page on Bicycle Rolling Resistance is now read as well. Continental has not announced a new generation, though the site measured differences between its 2015 and 2022 samples. Xiaohongshu owners were added on 2026-11-04 from threads coded for other tires.",
     "reports": [
       {
         "source_ids": [
@@ -825,6 +826,21 @@
           "overall": "favourable"
         },
         "summary": "Feels excellent on the front, though it measures about 30 mm."
+      },
+      {
+        "source_ids": [
+          "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
+        ],
+        "published_at": "2025-05-30",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "exposure": "Almost 3,000 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "After the stock tires it rode faster and felt easier; almost 3,000 km without a flat before the owner replaced it as a precaution."
       }
     ],
     "checks": [
@@ -845,6 +861,12 @@
         "outcome": "counted",
         "owners": 13,
         "note": "2015 and 2022 test pages"
+      },
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One owner in a coded Maxxis thread"
       }
     ]
   }

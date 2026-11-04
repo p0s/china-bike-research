@@ -110,7 +110,8 @@
   ],
   "source_ids": [
     "vittoria-ridearmor-tubeless-ready-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "xhs-tubeless-touring-tire-list-2025-09-13"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -142,8 +143,23 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the first check of Bicycle Rolling Resistance's index missed this tire's test pages; their reader comments are now read.",
-    "reports": [],
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the first check of Bicycle Rolling Resistance's index missed this tire's test pages; their reader comments are now read. Xiaohongshu owners were added on 2026-11-04 from threads coded for other tires.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-tubeless-touring-tire-list-2025-09-13"
+        ],
+        "published_at": "2025-09-13",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Long-distance touring",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Over 400 g and not worth the weight for this owner: on long tours the rear tire flatted three times, possibly because it was worn, though sidewall protection was fair."
+      }
+    ],
     "checks": [
       {
         "route": "sigma-sports",
@@ -159,6 +175,12 @@
         "route": "brr-comments",
         "outcome": "none",
         "note": "One comment, not first-hand"
+      },
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One owner in a coded Maxxis thread"
       }
     ]
   }

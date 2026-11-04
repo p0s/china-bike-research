@@ -115,7 +115,8 @@
     "bike-components-gp5000-clincher-reviews",
     "bike-components-gp5000-clincher-set-reviews",
     "brr-comments-continental-grand-prix-5000-2018",
-    "brr-comments-pirelli-p-zero-race-rs"
+    "brr-comments-pirelli-p-zero-race-rs",
+    "xhs-cadex-race-gc-wear-2025-07-13"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -147,7 +148,7 @@
   },
   "owner_evidence": {
     "coded_at": "2026-11-03",
-    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: the 32 mm test page on Bicycle Rolling Resistance is now read as well. Corrected on 2026-11-04: long reader comments are now read in full, not cut at 700 characters.",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-03: the 32 mm test page on Bicycle Rolling Resistance is now read as well. Corrected on 2026-11-04: long reader comments are now read in full, not cut at 700 characters. Xiaohongshu owners were added on 2026-11-04 from threads coded for other tires.",
     "reports": [
       {
         "source_ids": [
@@ -593,6 +594,19 @@
           "overall": "unfavourable"
         },
         "summary": "Disliked the feel of the 30 mm and found cracking in several places at modest mileage."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-wear-2025-07-13"
+        ],
+        "published_at": "2025-07-14",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "exposure": "About 10,000 km",
+        "codes": {
+          "wear": "favourable"
+        },
+        "summary": "The owner gets about 10,000 km from a GP5000 clincher and treats its surface cracks as normal."
       }
     ],
     "checks": [
@@ -613,6 +627,12 @@
         "outcome": "counted",
         "owners": 8,
         "note": "2018 test page (51 comments) and 32 mm page (8 comments, none first-hand), plus an owner on the P ZERO Race RS test"
+      },
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One owner in a coded CADEX thread"
       }
     ]
   }

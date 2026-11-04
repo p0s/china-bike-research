@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2285,
+      "sources": 2286,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -2478,6 +2478,7 @@
       "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30",
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10",
+      "xhs-tubeless-touring-tire-list-2025-09-13",
       "xhs-winspace-slc3-200km-2026-08-10",
       "xhs-winspace-slc3-review-lead-2026-08-10",
       "xlab-ad8-bicycling-review-2026-09-01",
@@ -38370,6 +38371,18 @@
         "publisher",
         "reliability.identity",
         "reliability.ownership_context",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xhs-tubeless-touring-tire-list-2025-09-13": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -86284,6 +86297,7 @@
         "origin.group",
         "owner_evidence.checks",
         "owner_evidence.coded_at",
+        "owner_evidence.reports",
         "owner_evidence.screening_note",
         "positioning",
         "price_observations",
@@ -136815,6 +136829,7 @@
       "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30": [],
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10": [],
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10": [],
+      "xhs-tubeless-touring-tire-list-2025-09-13": [],
       "xhs-winspace-slc3-200km-2026-08-10": [],
       "xhs-winspace-slc3-review-lead-2026-08-10": [],
       "xlab-ad8-bicycling-review-2026-09-01": [],
@@ -142471,7 +142486,8 @@
         "source_ids=brr-comments-continental-grand-prix-4-season-2015",
         "source_ids=continental-grand-prix-4-season-global-2026-11-01",
         "source_ids=performance-bicycle-grand-prix-4-season-2026-11-01",
-        "source_ids=sigma-sports-gp-4-season-reviews"
+        "source_ids=sigma-sports-gp-4-season-reviews",
+        "source_ids=xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
       ],
       "continental-grand-prix-5000": [
         "image.source_id=continental-grand-prix-5000-official-2026-11-01",
@@ -142484,7 +142500,8 @@
         "source_ids=continental-grand-prix-5000-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
         "source_ids=continental-road-range-us-2026-11-01",
-        "source_ids=sigma-sports-gp5000-clincher-reviews"
+        "source_ids=sigma-sports-gp5000-clincher-reviews",
+        "source_ids=xhs-cadex-race-gc-wear-2025-07-13"
       ],
       "continental-grand-prix-5000-all-season-tr": [
         "image.source_id=continental-grand-prix-5000-allseason-tr-official-2026-11-01",
@@ -142498,7 +142515,8 @@
         "source_ids=continental-grand-prix-5000-as-tr-tmall-2026-11-01",
         "source_ids=continental-road-range-de-2026-11-01",
         "source_ids=continental-road-range-us-2026-11-01",
-        "source_ids=sigma-sports-gp5000-as-tr-reviews"
+        "source_ids=sigma-sports-gp5000-as-tr-reviews",
+        "source_ids=xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
       ],
       "continental-grand-prix-5000-s-tr": [
         "image.source_id=continental-grand-prix-5000-s-tr-official-2026-11-01",
@@ -143342,7 +143360,8 @@
       "vittoria-ridearmor-tlr": [
         "image.source_id=vittoria-ridearmor-tubeless-ready-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
-        "source_ids=vittoria-ridearmor-tubeless-ready-official-2026-11-01"
+        "source_ids=vittoria-ridearmor-tubeless-ready-official-2026-11-01",
+        "source_ids=xhs-tubeless-touring-tire-list-2025-09-13"
       ],
       "vittoria-rubino-tlr": [
         "image.source_id=vittoria-rubino-tubeless-ready-official-2026-11-01",
@@ -171836,6 +171855,14 @@
       "minimum_reliability": {
         "identity": 1,
         "ownership_context": 0,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xhs-tubeless-touring-tire-list-2025-09-13": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
         "price": 0,
         "specification": 0
       }
