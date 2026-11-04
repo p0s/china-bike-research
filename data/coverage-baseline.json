@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2250,
+      "sources": 2256,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -383,6 +383,8 @@
       "brr-comments-continental-grand-prix-5000-s-tr-35",
       "brr-comments-goodyear-eagle-f1-r",
       "brr-comments-goodyear-eagle-f1-supersport-r",
+      "brr-comments-hutchinson-blackbird-race-tlr",
+      "brr-comments-hutchinson-blackbird-tlr",
       "brr-comments-michelin-power-cup",
       "brr-comments-michelin-power-cup-tlr",
       "brr-comments-michelin-power-cup-tlr-28",
@@ -1821,6 +1823,10 @@
       "sigma-sports-gp5000-as-tr-reviews",
       "sigma-sports-gp5000-clincher-reviews",
       "sigma-sports-gp5000-s-tr-reviews",
+      "sigma-sports-hutchinson-blackbird-reviews",
+      "sigma-sports-hutchinson-blackbird-tlr-reviews",
+      "sigma-sports-hutchinson-challenger-reviews",
+      "sigma-sports-hutchinson-challenger-tlr-reviews",
       "sigma-sports-pirelli-p-zero-race-4s-reviews",
       "sigma-sports-pirelli-p-zero-race-classic-reviews",
       "sigma-sports-pirelli-p-zero-race-retro-reviews",
@@ -11911,6 +11917,30 @@
         "url"
       ],
       "brr-comments-goodyear-eagle-f1-supersport-r": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-hutchinson-blackbird-race-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-hutchinson-blackbird-tlr": [
         "accessed_at",
         "language",
         "notes",
@@ -30146,6 +30176,54 @@
         "url"
       ],
       "sigma-sports-gp5000-s-tr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-hutchinson-blackbird-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-hutchinson-blackbird-tlr-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-hutchinson-challenger-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-hutchinson-challenger-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -81204,6 +81282,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -81335,6 +81416,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -81382,6 +81466,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -81429,6 +81516,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -81476,6 +81567,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -81576,6 +81670,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -81624,6 +81721,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -81670,6 +81771,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -81717,6 +81822,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -82540,6 +82649,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "pressure_note",
         "price_observations",
@@ -133967,6 +134079,8 @@
       "brr-comments-continental-grand-prix-5000-s-tr-35": [],
       "brr-comments-goodyear-eagle-f1-r": [],
       "brr-comments-goodyear-eagle-f1-supersport-r": [],
+      "brr-comments-hutchinson-blackbird-race-tlr": [],
+      "brr-comments-hutchinson-blackbird-tlr": [],
       "brr-comments-michelin-power-cup": [],
       "brr-comments-michelin-power-cup-tlr": [],
       "brr-comments-michelin-power-cup-tlr-28": [],
@@ -135453,6 +135567,10 @@
       "sigma-sports-gp5000-as-tr-reviews": [],
       "sigma-sports-gp5000-clincher-reviews": [],
       "sigma-sports-gp5000-s-tr-reviews": [],
+      "sigma-sports-hutchinson-blackbird-reviews": [],
+      "sigma-sports-hutchinson-blackbird-tlr-reviews": [],
+      "sigma-sports-hutchinson-challenger-reviews": [],
+      "sigma-sports-hutchinson-challenger-tlr-reviews": [],
       "sigma-sports-pirelli-p-zero-race-4s-reviews": [],
       "sigma-sports-pirelli-p-zero-race-classic-reviews": [],
       "sigma-sports-pirelli-p-zero-race-retro-reviews": [],
@@ -141971,8 +142089,12 @@
       ],
       "hutchinson-blackbird": [
         "image.source_id=hutchinson-blackbird-official-2026-11-01",
+        "source_ids=brr-comments-hutchinson-blackbird-race-tlr",
+        "source_ids=brr-comments-hutchinson-blackbird-tlr",
+        "source_ids=brr-comments-michelin-pro-5-35",
         "source_ids=hutchinson-blackbird-official-2026-11-01",
-        "source_ids=hutchinson-history-official-2026-11-01"
+        "source_ids=hutchinson-history-official-2026-11-01",
+        "source_ids=sigma-sports-hutchinson-blackbird-reviews"
       ],
       "hutchinson-blackbird-allseason": [
         "image.source_id=hutchinson-blackbird-allseason-official-2026-11-01",
@@ -141995,20 +142117,25 @@
       "hutchinson-blackbird-tlr": [
         "image.source_id=hutchinson-blackbird-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-hutchinson-blackbird-tlr",
         "source_ids=hutchinson-blackbird-official-2026-11-01",
         "source_ids=hutchinson-history-official-2026-11-01",
-        "source_ids=hutchinson-hookless-official-2026-11-01"
+        "source_ids=hutchinson-hookless-official-2026-11-01",
+        "source_ids=sigma-sports-hutchinson-blackbird-tlr-reviews"
       ],
       "hutchinson-challenger": [
         "image.source_id=hutchinson-challenger-official-2026-11-01",
+        "source_ids=brr-comments-hutchinson-blackbird-race-tlr",
         "source_ids=hutchinson-challenger-official-2026-11-01",
-        "source_ids=hutchinson-history-official-2026-11-01"
+        "source_ids=hutchinson-history-official-2026-11-01",
+        "source_ids=sigma-sports-hutchinson-challenger-reviews"
       ],
       "hutchinson-challenger-tlr": [
         "image.source_id=hutchinson-challenger-official-2026-11-01",
         "source_ids=hutchinson-challenger-official-2026-11-01",
         "source_ids=hutchinson-history-official-2026-11-01",
-        "source_ids=hutchinson-hookless-official-2026-11-01"
+        "source_ids=hutchinson-hookless-official-2026-11-01",
+        "source_ids=sigma-sports-hutchinson-challenger-tlr-reviews"
       ],
       "innova-3029": [
         "source_ids=innova-3029-taobao-2026-11-01",
@@ -154101,6 +154228,22 @@
         "specification": 0
       }
     },
+    "brr-comments-hutchinson-blackbird-race-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-hutchinson-blackbird-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-michelin-power-cup": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -165705,6 +165848,38 @@
       }
     },
     "sigma-sports-gp5000-s-tr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-hutchinson-blackbird-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-hutchinson-blackbird-tlr-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-hutchinson-challenger-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-hutchinson-challenger-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,

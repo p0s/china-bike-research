@@ -53,7 +53,11 @@
   ],
   "source_ids": [
     "hutchinson-blackbird-official-2026-11-01",
-    "hutchinson-history-official-2026-11-01"
+    "hutchinson-history-official-2026-11-01",
+    "sigma-sports-hutchinson-blackbird-reviews",
+    "brr-comments-hutchinson-blackbird-tlr",
+    "brr-comments-hutchinson-blackbird-race-tlr",
+    "brr-comments-michelin-pro-5-35"
   ],
   "status": "current",
   "reviewed_at": "2026-11-01",
@@ -81,5 +85,75 @@
       "embedded_metadata": "none-found",
       "visual": "no-faces-plates-accounts-locations"
     }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-reviews"
+        ],
+        "published_at": "2025-08-14",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Performs well in the dry; not yet ridden in the wet."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-hutchinson-blackbird-reviews"
+        ],
+        "published_at": "2024-06-01",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "exposure": "About a month",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable",
+          "wet": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "The owner's best tires after a month with tubes: very fast rolling, cornering grip even in the wet, comfortable, and no flat on a long sportive."
+      },
+      {
+        "source_ids": [
+          "brr-comments-hutchinson-blackbird-tlr",
+          "brr-comments-hutchinson-blackbird-race-tlr",
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-03-05",
+        "width_mm": 30,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "unfavourable",
+          "wet": "unfavourable",
+          "grip": "mixed"
+        },
+        "summary": "A heavy rider's 30 mm tube type: draggy and sluggish, not brilliant on the edge and very squirmy in the damp; worse than the Fusion 5 it is compared with."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "Two of 4 written reviews give no riding detail"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "No test page of this version; one owner on the Blackbird TLR, Blackbird Race TLR and Pro 5 tests"
+      }
+    ]
   }
 }
