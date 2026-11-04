@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2275,
+      "sources": 2280,
       "images": 911,
       "videos": 276,
       "opinions": 13,
@@ -374,6 +374,7 @@
       "biketo-pardus-uragano-evo-review-2023",
       "biketo-quick-gr-one-launch-2025",
       "brr-comments-bontrager-aeolus-rsl-tlr",
+      "brr-comments-challenge-criterium-rs",
       "brr-comments-challenge-strada-bianca-pro-htlr",
       "brr-comments-challenge-strada-bianca-pro-htlr-40",
       "brr-comments-continental-aero-111",
@@ -421,6 +422,9 @@
       "brr-comments-specialized-cotton-tlr",
       "brr-comments-specialized-turbo-t2-t5",
       "brr-comments-specialized-turbo-tlr",
+      "brr-comments-veloflex-corsa-evo-tlr",
+      "brr-comments-veloflex-corsa-race",
+      "brr-comments-veloflex-corsa-race-tlr",
       "brr-comments-vittoria-corsa-next-tlr",
       "brr-comments-vittoria-corsa-pro-control-34",
       "brr-comments-vittoria-corsa-pro-control-tlr",
@@ -1829,6 +1833,7 @@
       "sigma-sports-aero-111-reviews",
       "sigma-sports-bontrager-aeolus-rsl-tlr-reviews",
       "sigma-sports-bontrager-aw3-hard-case-reviews",
+      "sigma-sports-challenge-criterium-rs-tlr-reviews",
       "sigma-sports-cinturato-evo-tlr-reviews",
       "sigma-sports-corsa-pro-control-tlr-reviews",
       "sigma-sports-enve-ses-road-tire-reviews",
@@ -11839,6 +11844,18 @@
         "type",
         "url"
       ],
+      "brr-comments-challenge-criterium-rs": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "brr-comments-challenge-strada-bianca-pro-htlr": [
         "accessed_at",
         "language",
@@ -12392,6 +12409,42 @@
         "url"
       ],
       "brr-comments-specialized-turbo-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-veloflex-corsa-evo-tlr": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-veloflex-corsa-race": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "brr-comments-veloflex-corsa-race-tlr": [
         "accessed_at",
         "language",
         "notes",
@@ -30267,6 +30320,18 @@
         "url"
       ],
       "sigma-sports-bontrager-aw3-hard-case-reviews": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sigma-sports-challenge-criterium-rs-tlr-reviews": [
         "accessed_at",
         "language",
         "notes",
@@ -79272,6 +79337,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79321,6 +79390,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79422,6 +79494,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79471,6 +79546,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "price_observations",
         "protection",
@@ -79518,6 +79596,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -79562,6 +79643,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "reviewed_at",
         "sizes",
@@ -85638,6 +85722,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -85684,6 +85772,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -85731,6 +85823,9 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -85777,6 +85872,10 @@
         "origin.basis",
         "origin.country",
         "origin.group",
+        "owner_evidence.checks",
+        "owner_evidence.coded_at",
+        "owner_evidence.reports",
+        "owner_evidence.screening_note",
         "positioning",
         "protection",
         "reviewed_at",
@@ -134448,6 +134547,7 @@
       "biketo-pardus-uragano-evo-review-2023": [],
       "biketo-quick-gr-one-launch-2025": [],
       "brr-comments-bontrager-aeolus-rsl-tlr": [],
+      "brr-comments-challenge-criterium-rs": [],
       "brr-comments-challenge-strada-bianca-pro-htlr": [],
       "brr-comments-challenge-strada-bianca-pro-htlr-40": [],
       "brr-comments-continental-aero-111": [],
@@ -134495,6 +134595,9 @@
       "brr-comments-specialized-cotton-tlr": [],
       "brr-comments-specialized-turbo-t2-t5": [],
       "brr-comments-specialized-turbo-tlr": [],
+      "brr-comments-veloflex-corsa-evo-tlr": [],
+      "brr-comments-veloflex-corsa-race": [],
+      "brr-comments-veloflex-corsa-race-tlr": [],
       "brr-comments-vittoria-corsa-next-tlr": [],
       "brr-comments-vittoria-corsa-pro-control-34": [],
       "brr-comments-vittoria-corsa-pro-control-tlr": [],
@@ -135951,6 +136054,7 @@
       "sigma-sports-aero-111-reviews": [],
       "sigma-sports-bontrager-aeolus-rsl-tlr-reviews": [],
       "sigma-sports-bontrager-aw3-hard-case-reviews": [],
+      "sigma-sports-challenge-criterium-rs-tlr-reviews": [],
       "sigma-sports-cinturato-evo-tlr-reviews": [],
       "sigma-sports-corsa-pro-control-tlr-reviews": [],
       "sigma-sports-enve-ses-road-tire-reviews": [],
@@ -142135,8 +142239,10 @@
       "challenge-criterium-rs-tlr": [
         "image.source_id=challenge-criterium-rs-handmade-tlr-official-2026-11-01",
         "source_ids=bicycle-rolling-resistance-road-table-2026-11-01",
+        "source_ids=brr-comments-challenge-criterium-rs",
         "source_ids=challenge-about-official-2026-11-01",
-        "source_ids=challenge-criterium-rs-handmade-tlr-official-2026-11-01"
+        "source_ids=challenge-criterium-rs-handmade-tlr-official-2026-11-01",
+        "source_ids=sigma-sports-challenge-criterium-rs-tlr-reviews"
       ],
       "challenge-elite-pro-tlr": [
         "image.source_id=challenge-elite-pro-handmade-tlr-2026-official-2026-11-01",
@@ -143040,11 +143146,13 @@
       ],
       "veloflex-corsa-evo": [
         "image.source_id=veloflex-clincher-tire-corsa-evo-black-sidewall-official-2026-11-01",
+        "source_ids=brr-comments-veloflex-corsa-evo-tlr",
         "source_ids=veloflex-about-official-2026-11-01",
         "source_ids=veloflex-clincher-tire-corsa-evo-black-sidewall-official-2026-11-01"
       ],
       "veloflex-corsa-evo-tlr": [
         "image.source_id=veloflex-tubeless-ready-corsa-evo-tlr-black-sidewall-official-2026-11-01",
+        "source_ids=brr-comments-veloflex-corsa-race-tlr",
         "source_ids=veloflex-about-official-2026-11-01",
         "source_ids=veloflex-tubeless-ready-corsa-evo-tlr-black-sidewall-official-2026-11-01"
       ],
@@ -143055,6 +143163,8 @@
       ],
       "veloflex-corsa-race-tlr": [
         "image.source_id=veloflex-tubeless-ready-corsa-race-tlr-black-sidewall-official-2026-11-01",
+        "source_ids=brr-comments-veloflex-corsa-race",
+        "source_ids=brr-comments-veloflex-corsa-race-tlr",
         "source_ids=veloflex-about-official-2026-11-01",
         "source_ids=veloflex-tubeless-ready-corsa-race-tlr-black-sidewall-official-2026-11-01"
       ],
@@ -154573,6 +154683,14 @@
         "specification": 0
       }
     },
+    "brr-comments-challenge-criterium-rs": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "brr-comments-challenge-strada-bianca-pro-htlr": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -154942,6 +155060,30 @@
       }
     },
     "brr-comments-specialized-turbo-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-veloflex-corsa-evo-tlr": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-veloflex-corsa-race": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "brr-comments-veloflex-corsa-race-tlr": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
@@ -166313,6 +166455,14 @@
       }
     },
     "sigma-sports-bontrager-aw3-hard-case-reviews": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "sigma-sports-challenge-criterium-rs-tlr-reviews": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 1,
