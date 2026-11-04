@@ -9,7 +9,7 @@
       "prices": 84,
       "exchangeRates": 1,
       "sources": 2286,
-      "images": 911,
+      "images": 914,
       "videos": 276,
       "opinions": 13,
       "groupsets": 11,
@@ -24,15 +24,15 @@
       "researchAttempts": 1853
     },
     "image_accuracy": {
-      "exact-platform": 618,
+      "exact-platform": 620,
       "exact-variant": 105,
       "illustrative": 47,
       "same-model-different-color": 18,
       "same-model-different-market-build": 54,
-      "same-platform": 69
+      "same-platform": 70
     },
     "image_hosting": {
-      "local": 902,
+      "local": 905,
       "remote": 9
     },
     "candidate_prices": {
@@ -2653,7 +2653,10 @@
       "girder-tsar-2023-xhs-dealer-side-gallery",
       "girder-tsar-xhs-used-blue-side-gallery",
       "girder-tsar-xhs-used-white-side-gallery",
+      "gito-carbon-road-high-unknown-retailer-1-2026-11-04",
+      "gito-carbon-road-plus-retailer-1-2026-11-04",
       "gito-g325-primary-image",
+      "gito-gtv5-plus-retailer-1-2026-11-04",
       "hi-light-g0-official-enrichment-2026-10-03",
       "hi-light-g7-2-frameset-enrichment-2026-10-03",
       "hi-light-g7-2-official-primary-image",
@@ -42348,6 +42351,74 @@
         "source_media_sha256",
         "subject_accuracy"
       ],
+      "gito-carbon-road-high-unknown-retailer-1-2026-11-04": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "gito-carbon-road-plus-retailer-1-2026-11-04": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
       "gito-g325-primary-image": [
         "alt",
         "candidate_id",
@@ -42369,6 +42440,40 @@
         "privacy_review.location_identifiers",
         "privacy_review.reviewed_at",
         "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "source_media_sha256",
+        "source_media_url",
+        "subject_accuracy"
+      ],
+      "gito-gtv5-plus-retailer-1-2026-11-04": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "review_evidence.conclusion",
+        "review_evidence.reviewed_at",
+        "review_evidence.source_ids",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -137339,9 +137444,24 @@
         "candidate_id=girder-tsar-105-di2-2023-reference",
         "source_id=public-xhs-girder-tsar-105-di2-asking-2025-06-2026-10-24"
       ],
+      "gito-carbon-road-high-unknown-retailer-1-2026-11-04": [
+        "candidate_id=gito-carbon-road-high-unknown",
+        "review_evidence.source_ids=gito-g530-retailer-2026-08-29",
+        "source_id=gito-g530-retailer-2026-08-29"
+      ],
+      "gito-carbon-road-plus-retailer-1-2026-11-04": [
+        "candidate_id=gito-carbon-road-plus",
+        "review_evidence.source_ids=gito-g320-888bike-current-2026-09-23",
+        "source_id=gito-g320-888bike-current-2026-09-23"
+      ],
       "gito-g325-primary-image": [
         "candidate_id=gito-carbon-aero-entry",
         "source_id=gito-g325-retailer-2026-08-29"
+      ],
+      "gito-gtv5-plus-retailer-1-2026-11-04": [
+        "candidate_id=gito-gtv5-plus",
+        "review_evidence.source_ids=gito-g530-retailer-2026-08-29",
+        "source_id=gito-g530-retailer-2026-08-29"
       ],
       "hi-light-g0-official-enrichment-2026-10-03": [
         "candidate_id=hi-light-g0",
@@ -248686,11 +248806,32 @@
       "remote_required": false,
       "primary_required": false
     },
+    "gito-carbon-road-high-unknown-retailer-1-2026-11-04": {
+      "target": "candidates:gito-carbon-road-high-unknown",
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "gito-carbon-road-plus-retailer-1-2026-11-04": {
+      "target": "candidates:gito-carbon-road-plus",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
     "gito-g325-primary-image": {
       "target": "candidates:gito-carbon-aero-entry",
       "minimum_accuracy_rank": 2,
       "minimum_source_tier": 1,
       "remote_required": true,
+      "primary_required": true
+    },
+    "gito-gtv5-plus-retailer-1-2026-11-04": {
+      "target": "candidates:gito-gtv5-plus",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
       "primary_required": true
     },
     "hi-light-g0-official-enrichment-2026-10-03": {
@@ -254610,6 +254751,21 @@
       "minimum_accuracy_rank": 2,
       "minimum_source_tier": 1,
       "remote_required": true
+    },
+    "candidates:gito-carbon-road-high-unknown": {
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
+    "candidates:gito-carbon-road-plus": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
+    "candidates:gito-gtv5-plus": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false
     },
     "candidates:hi-light-g0": {
       "minimum_accuracy_rank": 3,
