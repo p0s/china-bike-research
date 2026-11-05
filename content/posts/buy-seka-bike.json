@@ -2,7 +2,7 @@
   "slug": "buy-seka-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-10-26",
+  "dateModified": "2026-11-05",
   "researched_at": "2026-09-22",
   "image_id": "buy-seka-bike-unique-mascot-cover",
   "model_ids": [
@@ -11,7 +11,7 @@
   "source_ids": [],
   "photo_sections": [
     {
-      "section_id": "dealer",
+      "section_id": "range",
       "ids": [
         "seka-spear-rdc"
       ]
@@ -19,139 +19,106 @@
   ],
   "translations": {
     "en": {
-      "title": "Buying a SEKA bike: start with the dealer, then match the exact frame",
-      "description": "Where to buy a SEKA bike: compare the official dealer and store routes, exact Spear version, stock state, cockpit and support.",
-      "intro": "SEKA has an official dealer directory and an online-store link. Start there, then get a quote for the exact frame, cockpit and services you need. An old Exceed owner thread cannot tell you whether today’s dealer has your Spear size or the parts to build it.",
+      "title": "Which SEKA frame? Spear RDC, ExAero and ExAero GR by weight, tire room and price",
+      "description": "SEKA's Spear, ExAero and ExAero GR framesets compared by claimed and measured weight, tire room, bottom bracket and dated mainland China prices, plus its overseas dealers and what old reseller stories can and cannot tell you.",
+      "intro": "SEKA's road frames, the Spear and the ExAero, both take 32 mm tires and a threaded BSA 68 bottom bracket. The light Spear RDC weighs 685 g bare in size M by SEKA's figure and was listed at ¥16,990 as a frameset by two mainland dealers on 24 October 2026. For gravel, the ExAero GR takes 56 mm tires at the front and 52 mm at the rear and cost ¥14,990 with its handlebar and seatpost on SEKA's official store. Outside China, SEKA's dealer directory names shops in Europe and North America.",
       "sections": [
         {
-          "id": "dealer",
-          "heading": "Use the current directory as your starting point",
+          "id": "range",
+          "heading": "Three frames, with SEKA's and measured weights",
           "paragraphs": [
-            "Open SEKA’s [global dealer directory](https://www.sekabikes.com/en/seka-global-dealer/); its navigation also links to an official online store. The directory names shops in Europe and North America. Ask a relevant dealer for the exact Spear RDC or other version, size, finish and cockpit, then compare a matched online offer if available in your country.",
-            "A dealer quote can include fitting, assembly and claim handling. Get those services itemized beside the frame and components. The [Spear RDC pictured here](/models/seka-spear-rdc/) must not inherit the weight, cockpit or warranty outcome of an older Exceed or a non-RDC Spear."
+            "SEKA's frame weights are bare, without paint or metal parts. Prices are mainland China listings on 24 October 2026 and exclude export shipping and import charges:"
+          ],
+          "bullets": [
+            "[Spear RDC](/models/seka-spear-rdc-frameset/): light aero road. 685 g bare in size M; SEKA lists 729 g ± 35 g for a painted size-M frame in Shadow Black and says paint adds 20–100 g. Cyclingnews weighed a size-L frame at 758 g, and a Xiaohongshu reviewer a painted size-M frame with its metal parts at 835 g. 32 mm tires, BSA 68. Frameset ¥16,990 from two dealers.",
+            "[Spear](/models/seka-spear-standard-105-di2/) with the standard frame: 780 g bare in size M. A dealer's custom Shimano 105 Di2 build was ¥20,800 and about 7.0 kg, size not stated.",
+            "[ExAero and ExAero RDC](/models/seka-exaero-road/): aero road with UDH and SEKA's claimed T1100/M46J carbon. 935 g and 820 g bare in size 54 (± 35 g); 32 mm, BSA 68. A Nanjing agent's frameset options ran from ¥11,990 for the standard frame to ¥20,290 for a limited RDC finish.",
+            "[ExAero GR](/models/seka-exaero-gr-frameset/): gravel race. 56 mm front and 52 mm rear; 980 g ± 35 g unpainted in size 54; T47 68 mm. ¥14,990 on SEKA's official store with handlebar and seatpost, paid as a ¥3,000 deposit and a ¥11,990 balance on a 15-day pre-order.",
+            "The older [Exceed](/models/seka-exceed-105-di2-dealer-build/) still appears as a dealer's finished 105 Di2 build at ¥25,600, 7.6 kg in size S by the dealer's figure."
+          ]
+        },
+        {
+          "id": "dealer",
+          "heading": "Outside China, start with the dealer directory",
+          "paragraphs": [
+            "SEKA's [global dealer directory](https://www.sekabikes.com/en/seka-global-dealer/) names shops in Europe and North America, and its site links an official online store. A dealer quote can include fitting, assembly and claim handling; compare it with an import quote for the same frame, size and cockpit, adding the charges in the [Europe](/blog/buy-chinese-bikes-europe/) or [US and Canada](/blog/buy-chinese-bikes-us-canada/) guide."
           ]
         },
         {
           "id": "history",
           "heading": "Old reseller stories need their original context",
           "paragraphs": [
-            "A [December 2022 Exceed buyer](https://chinertown.com/index.php?topic=3643.15) described a roughly six-and-a-half-month wait through a particular reseller. A [February 2024 US non-RDC owner](https://chinertown.com/index.php?topic=4757.0) described a good warranty experience. Different models, years and sellers make these useful questions about fulfillment and service, not a score for every SEKA bike.",
-            "Ask the current seller what is physically in its shop, what is allocated at a distributor and what still needs production. That answer will matter more to your delivery date than either historical post."
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "Ask what the dealer actually holds",
-          "paragraphs": [
-            "Ask the dealer to select one of these stock states and attach a dispatch estimate to it. Get the same answer for cockpit availability. “Can order” and “ready for the workshop” are different promises.",
-            "For example, suppose a dealer replies “frame in stock” but must order your requested cockpit from the factory. That confirms neither a complete package ready for assembly nor a dispatch date for it. Ask for separate frame and cockpit stock states, then a date when both can reach the workshop. Use the [production-to-delivery checklist](/blog/bike-preorders-and-production-windows/) to keep that date separate from arrival at your door. This is a hypothetical reply, not a report of SEKA stock."
-          ],
-          "bullets": [
-            "At this shop now: identify the exact frame version, size and included cockpit.",
-            "Allocated to this dealer: ask for the expected arrival date and whether it is reserved for you.",
-            "Factory order: ask when production starts, when dispatch is estimated and what changes to the order are still possible.",
-            "Any route: require your approval for changes to the frame revision, bar width, stem length or seatpost."
-          ]
-        },
-        {
-          "id": "support",
-          "heading": "Make support a concrete part of the offer",
-          "paragraphs": [
-            "Get the current warranty terms from the actual seller. Record claim contact, proof required, return destination and whether labor and transport are included. A nearby dealer helps most when its responsibilities are explicit.",
-            "Ask how to order a hanger, headset pieces and proprietary cockpit hardware after the sale. If a spare is inexpensive and difficult to source locally, ask the assembler whether buying one with the frame is sensible.",
-            "Choose the route that gives you an identifiable frame, a credible delivery plan and a named support path at a total you accept. A beautiful frame deserves a buying process with fewer mysteries than its forum history."
+            "A [December 2022 Exceed buyer](https://chinertown.com/index.php?topic=3643.15) described a roughly six-and-a-half-month wait through a particular reseller. A [February 2024 US non-RDC owner](https://chinertown.com/index.php?topic=4757.0) described a good warranty experience. Different models, years and sellers make these useful questions about fulfillment and service, not a score for every SEKA bike."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "SEKA 购车指南：先找经销商，再对齐具体车架",
-      "description": "SEKA 如何购买：比较官方经销商与商城、准确 Spear 版本、库存状态、把组和售后。",
-      "intro": "SEKA 官网有经销商名单和商城入口。先从这些渠道取得符合你需求的具体车架、把组及服务报价。旧 Exceed 车主帖不能告诉你，今天的经销商有没有所需尺码的 Spear，或是否凑齐了装车零件。",
+      "title": "SEKA 车架怎么选：Spear RDC、ExAero 和 ExAero GR 的重量、胎宽和价格",
+      "description": "对比 SEKA Spear、ExAero 和 ExAero GR 车架组的官方与实测重量、胎宽、中轴和带日期的国内售价，并说明海外经销商，以及旧的经销商故事能说明什么、不能说明什么。",
+      "intro": "SEKA 的公路车架 Spear 和 ExAero 都可装 32 毫米轮胎，都用 BSA 68 螺纹中轴。轻量的 Spear RDC 按 SEKA 的数据 M 码裸架 685 克，2026 年 10 月 24 日两家国内经销商的车架组标价 16,990 元。砾石车 ExAero GR 前轮可装 56 毫米、后轮 52 毫米，SEKA 官方店含车把和座管售价 14,990 元。在中国以外，SEKA 的经销商目录列出了欧洲和北美的店铺。",
       "sections": [
         {
-          "id": "dealer",
-          "heading": "先用当前经销商目录",
+          "id": "range",
+          "heading": "三款车架，附官方与实测重量",
           "paragraphs": [
-            "打开 SEKA [全球经销商目录](https://www.sekabikes.com/en/seka-global-dealer/)；同一导航也有官方商城入口。名单列有欧洲和北美店铺。向所在地区经销商询问具体 Spear RDC 或其他版本、尺码、颜色和把组；若当地可从商城购买，再拿一致配置比较。",
-            "经销商报价可能包含骑姿设定、装配与索赔协助，应与车架和部件价格分开列出。图中的 [Spear RDC](/zh/models/seka-spear-rdc/) 不能套用老 Exceed 或非 RDC Spear 的重量、把组或保修结果。"
+            "SEKA 给出的车架重量是不含涂装和金属件的裸架重量。价格为 2026 年 10 月 24 日的国内挂牌价，不含出口运费和进口税费："
+          ],
+          "bullets": [
+            "[Spear RDC](/models/seka-spear-rdc-frameset/)：轻量气动公路。M 码裸架 685 克；SEKA 列出影黑涂装 M 码车架 729 克 ± 35 克，并称涂装增加 20–100 克。Cyclingnews 称得 L 码车架 758 克，一位小红书博主称得带金属件的已喷漆 M 码车架 835 克。最大胎宽 32 毫米，BSA 68。两家经销商车架组标价 16,990 元。",
+            "标准版车架的 [Spear](/models/seka-spear-standard-105-di2/)：M 码裸架 780 克。一家经销商的 Shimano 105 Di2 定制整车 20,800 元，约 7.0 公斤，未注明尺码。",
+            "[ExAero 和 ExAero RDC](/models/seka-exaero-road/)：气动公路，UDH 挂耳，SEKA 称用 T1100/M46J 碳纤维。54 码裸架分别 935 克和 820 克（± 35 克）；32 毫米，BSA 68。南京一家代理的车架组选项从标准版 11,990 元到 RDC 限定配色 20,290 元。",
+            "[ExAero GR](/models/seka-exaero-gr-frameset/)：竞赛砾石。前 56 毫米、后 52 毫米；54 码未喷漆车架 980 克 ± 35 克；T47 68 毫米。SEKA 官方店含车把和座管 14,990 元，分为 3,000 元订金和 11,990 元尾款，预售 15 天。",
+            "较早的 [Exceed](/models/seka-exceed-105-di2-dealer-build/) 仍以经销商 105 Di2 成车出现，售价 25,600 元，经销商称 S 码 7.6 公斤。"
+          ]
+        },
+        {
+          "id": "dealer",
+          "heading": "在中国以外，先查经销商目录",
+          "paragraphs": [
+            "SEKA 的[全球经销商目录](https://www.sekabikes.com/en/seka-global-dealer/)列出了欧洲和北美的店铺，官网还链接了官方网店。经销商的报价可以包含调校、组装和售后索赔；请用同一车架、尺码和车把的进口报价来比较，需要另加的费用见[欧洲](/blog/buy-chinese-bikes-europe/)或[美国与加拿大](/blog/buy-chinese-bikes-us-canada/)购车指南。"
           ]
         },
         {
           "id": "history",
           "heading": "旧卖家故事要放回当时的背景",
           "paragraphs": [
-            "[2022 年 12 月一位 Exceed 买家](https://chinertown.com/index.php?topic=3643.15)描述通过某转售商等待约六个半月。[2024 年 2 月一位美国非 RDC 车主](https://chinertown.com/index.php?topic=4757.0)则报告积极的保修经历。型号、年份、卖家都不同，这两帖适合提醒人询交付与售后，却不能给所有 SEKA 车打分。",
-            "直接问当前卖家：哪辆车在店里，哪辆已由代理分配，哪辆仍等生产？这比历史帖子更能影响你的交期。"
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "问清经销商手上有什么",
-          "paragraphs": [
-            "请经销商从下面几种库存状态中选一项，并把预计发货日与状态对应；把组库存也同样询问。“可以订”与“能送去装车”是两种承诺。",
-            "举个假设例子：经销商回复“车架有现货”，但你要的把组还得向厂家订购。这既不能证明整套配件已可装车，也不能确定整套的发货日。应分别问车架和把组的库存状态，再确认两者何时都能送到装车工作室。用[生产到交付清单](/zh/blog/bike-preorders-and-production-windows/)区分这个日期与送达你家的日期。这是假设回复，不是 SEKA 实际库存报告。"
-          ],
-          "bullets": [
-            "现货在店：写明准确车架版本、尺码和内含把组。",
-            "已分配给经销商：问预计到店日，以及是否为你预留。",
-            "厂家订单：问生产何时开始、预计何时发出、订单还能改到什么时候。",
-            "任何渠道：车架版本、把宽、把立长度和座管变化都须先征得同意。"
-          ]
-        },
-        {
-          "id": "support",
-          "heading": "让售后成为明确报价的一部分",
-          "paragraphs": [
-            "向实际卖家取得当前保修条款，记录联系人、举证材料、退货地，以及是否含工时和运输。附近经销商的优势，在责任明确时最有价值。",
-            "问日后如何购买尾钩、碗组零件和专用把组硬件。某备用件若便宜却当地难找，可让装配者判断是否适合随车架一起买。",
-            "选择能明确车型、合理交期和售后路径，且总额可接受的渠道。漂亮车架值得拥有一套比论坛历史更清楚的购买流程。"
+            "[2022 年 12 月一位 Exceed 买家](https://chinertown.com/index.php?topic=3643.15)描述通过某转售商等待约六个半月。[2024 年 2 月一位美国非 RDC 车主](https://chinertown.com/index.php?topic=4757.0)则报告积极的保修经历。型号、年份、卖家都不同，这两帖适合提醒人询交付与售后，却不能给所有 SEKA 车打分。"
           ]
         }
       ]
     },
     "de": {
-      "title": "SEKA kaufen: Zuerst den Händler, dann den genauen Rahmen wählen",
-      "description": "SEKA-Kaufwege vergleichen: offizieller Händler oder Shop, genaue Spear-Version, Bestand, Cockpit und Service.",
-      "intro": "SEKA hat ein offizielles Händlerverzeichnis und einen Shoplink. Lassen Sie sich darüber den genauen Rahmen, das Cockpit und die benötigten Leistungen anbieten. Ein alter Exceed-Besitzerthread belegt weder den heutigen Bestand Ihrer Spear-Größe noch ein vollständiges Teilepaket für den Aufbau.",
+      "title": "Welcher SEKA-Rahmen? Spear RDC, ExAero und ExAero GR nach Gewicht, Reifenfreiheit und Preis",
+      "description": "SEKAs Rahmensets Spear, ExAero und ExAero GR nach angegebenem und gemessenem Gewicht, Reifenfreiheit, Tretlager und datierten Preisen aus Festlandchina verglichen, dazu die Händler außerhalb Chinas und was alte Händlergeschichten aussagen und was nicht.",
+      "intro": "SEKAs Rennradrahmen Spear und ExAero nehmen beide 32-mm-Reifen und ein BSA-68-Gewindetretlager auf. Der leichte Spear RDC wiegt laut SEKA nackt 685 g in Größe M und wurde am 24. Oktober 2026 von zwei Händlern in Festlandchina als Rahmenset für 16.990 Yuan angeboten. Fürs Gelände nimmt der ExAero GR vorne 56 mm und hinten 52 mm auf und kostete im offiziellen SEKA-Shop mit Lenker und Sattelstütze 14.990 Yuan. Außerhalb Chinas nennt SEKAs Händlerverzeichnis Läden in Europa und Nordamerika.",
       "sections": [
         {
-          "id": "dealer",
-          "heading": "Mit dem aktuellen Verzeichnis beginnen",
+          "id": "range",
+          "heading": "Drei Rahmen, mit Herstellerangaben und gewogenen Werten",
           "paragraphs": [
-            "Öffnen Sie SEKAs [globales Händlerverzeichnis](https://www.sekabikes.com/en/seka-global-dealer/), dessen Navigation auch den offiziellen Shop verlinkt. Es nennt Geschäfte in Europa und Nordamerika. Fragen Sie nach der genauen Version, etwa Spear RDC, sowie Größe, Lackierung und Cockpit und vergleichen Sie ein passendes Onlineangebot für Ihr Land.",
-            "Ein Händlerangebot kann die Einstellung der Sitzposition, Montage und Reklamationsabwicklung enthalten. Lassen Sie diese Leistungen neben Rahmen und Teilen einzeln aufführen. Für das [hier gezeigte Spear RDC](/de/models/seka-spear-rdc/) gelten nicht automatisch das Gewicht, das Cockpit oder die Garantieerfahrung eines älteren Exceed oder eines Spear ohne RDC."
+            "SEKAs Rahmengewichte gelten nackt, ohne Lack und Metallteile. Die Preise sind Angebote in Festlandchina vom 24. Oktober 2026, ohne Exportversand und Einfuhrabgaben:"
+          ],
+          "bullets": [
+            "[Spear RDC](/models/seka-spear-rdc-frameset/): leichter Aero-Rennrahmen. 685 g nackt in Größe M; SEKA nennt 729 g ± 35 g für einen lackierten Rahmen in Größe M in Shadow Black und 20 bis 100 g für den Lack. Cyclingnews wog einen Rahmen in Größe L mit 758 g, ein Xiaohongshu-Tester einen lackierten Rahmen in Größe M samt Metallteilen mit 835 g. 32-mm-Reifen, BSA 68. Rahmenset 16.990 Yuan bei zwei Händlern.",
+            "[Spear](/models/seka-spear-standard-105-di2/) mit Standardrahmen: 780 g nackt in Größe M. Ein Händleraufbau mit Shimano 105 Di2 kostete 20.800 Yuan und wog rund 7,0 kg, ohne Größenangabe.",
+            "[ExAero und ExAero RDC](/models/seka-exaero-road/): Aero-Rennrad mit UDH und laut SEKA T1100/M46J-Carbon. 935 g und 820 g nackt in Größe 54 (± 35 g); 32 mm, BSA 68. Die Rahmenset-Optionen eines Agenten in Nanjing reichten von 11.990 Yuan für den Standardrahmen bis 20.290 Yuan für ein limitiertes RDC-Finish.",
+            "[ExAero GR](/models/seka-exaero-gr-frameset/): Race-Gravel. 56 mm vorne und 52 mm hinten; 980 g ± 35 g unlackiert in Größe 54; T47 mit 68 mm. 14.990 Yuan im offiziellen SEKA-Shop mit Lenker und Sattelstütze, gezahlt als 3.000 Yuan Anzahlung und 11.990 Yuan Restbetrag bei 15 Tagen Vorbestellung.",
+            "Der ältere [Exceed](/models/seka-exceed-105-di2-dealer-build/) erscheint noch als fertiger 105-Di2-Händleraufbau für 25.600 Yuan, laut Händler 7,6 kg in Größe S."
+          ]
+        },
+        {
+          "id": "dealer",
+          "heading": "Außerhalb Chinas zuerst ins Händlerverzeichnis",
+          "paragraphs": [
+            "SEKAs [weltweites Händlerverzeichnis](https://www.sekabikes.com/en/seka-global-dealer/) nennt Läden in Europa und Nordamerika, und die Website verlinkt einen offiziellen Onlineshop. Ein Händlerangebot kann Anpassung, Montage und Garantieabwicklung enthalten; vergleichen Sie es mit einem Importangebot für denselben Rahmen, dieselbe Größe und dasselbe Cockpit und rechnen Sie die Kosten aus dem Leitfaden für [Europa](/blog/buy-chinese-bikes-europe/) oder [die USA und Kanada](/blog/buy-chinese-bikes-us-canada/) hinzu."
           ]
         },
         {
           "id": "history",
           "heading": "Alte Händlerberichte im ursprünglichen Kontext lesen",
           "paragraphs": [
-            "Ein [Exceed-Käufer im Dezember 2022](https://chinertown.com/index.php?topic=3643.15) berichtete von etwa sechseinhalb Monaten Wartezeit bei einem bestimmten Wiederverkäufer. Ein [US-Besitzer ohne RDC im Februar 2024](https://chinertown.com/index.php?topic=4757.0) beschrieb gute Garantieerfahrungen. Unterschiedliche Modelle, Jahre und Verkäufer liefern Fragen zu Lieferung und Service, keine Gesamtnote für SEKA.",
-            "Fragen Sie, was im Shop liegt, beim Distributor zugeteilt ist oder noch produziert werden muss. Das ist für Ihren Termin relevanter als historische Beiträge."
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "Was hat der Händler tatsächlich?",
-          "paragraphs": [
-            "Lassen Sie einen Bestandszustand und eine Versandschätzung nennen, auch für das Cockpit. „Bestellbar“ und „bereit für die Werkstatt“ sind unterschiedliche Zusagen.",
-            "Ein hypothetisches Beispiel: Der Händler antwortet „Rahmen auf Lager“, muss Ihr gewünschtes Cockpit aber noch beim Hersteller bestellen. Damit sind weder ein vollständiges Paket für den Aufbau noch dessen Versandtermin bestätigt. Fragen Sie Rahmen und Cockpit getrennt ab und lassen Sie den Termin nennen, zu dem beides in der Werkstatt sein kann. Die [Checkliste von Produktion bis Lieferung](/de/blog/bike-preorders-and-production-windows/) trennt diesen Termin von der Ankunft bei Ihnen. Das Beispiel beschreibt keinen tatsächlichen SEKA-Bestand."
-          ],
-          "bullets": [
-            "Jetzt im Shop: genaue Rahmenversion, Größe und enthaltenes Cockpit nennen.",
-            "Dem Händler zugeteilt: erwartete Ankunft und Reservierung für Sie bestätigen.",
-            "Fabrikbestellung: Produktionsbeginn, geschätzten Versand und Änderungsmöglichkeiten erfragen.",
-            "Jeder Weg: Änderungen an Revision, Lenkerbreite, Vorbaulänge oder Sattelstütze nur mit Ihrer Freigabe."
-          ]
-        },
-        {
-          "id": "support",
-          "heading": "Service als konkreten Angebotsbestandteil festhalten",
-          "paragraphs": [
-            "Holen Sie aktuelle Garantiebedingungen beim tatsächlichen Verkäufer ein. Notieren Sie Ansprechpartner, Nachweise, Rückgabeziel sowie enthaltene Arbeit und Transport. Ein naher Händler hilft besonders bei klaren Zuständigkeiten.",
-            "Fragen Sie nach Schaltauge, Steuersatzteilen und proprietären Cockpitteilen. Ist ein Ersatz günstig und lokal schwer beschaffbar, fragen Sie die Werkstatt nach einer Mitbestellung.",
-            "Wählen Sie einen Weg mit eindeutigem Rahmen, glaubwürdigem Lieferplan und benanntem Service zu akzeptablen Gesamtkosten. Ein schöner Rahmen verdient einen übersichtlichen Kaufablauf."
+            "Ein [Exceed-Käufer im Dezember 2022](https://chinertown.com/index.php?topic=3643.15) berichtete von etwa sechseinhalb Monaten Wartezeit bei einem bestimmten Wiederverkäufer. Ein [US-Besitzer ohne RDC im Februar 2024](https://chinertown.com/index.php?topic=4757.0) beschrieb gute Garantieerfahrungen. Unterschiedliche Modelle, Jahre und Verkäufer liefern Fragen zu Lieferung und Service, keine Gesamtnote für SEKA."
           ]
         }
       ]
