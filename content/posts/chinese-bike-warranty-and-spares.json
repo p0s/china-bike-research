@@ -2,7 +2,7 @@
   "slug": "chinese-bike-warranty-and-spares",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-05",
   "researched_at": "2026-09-22",
   "image_id": "chinese-bike-warranty-and-spares-unique-mascot-cover",
   "model_ids": [
@@ -26,214 +26,247 @@
   ],
   "translations": {
     "en": {
-      "title": "Chinese bike warranties and spare parts: the questions behind the headline",
-      "description": "Separate frame warranty, unused returns, crash replacement and spare-part orders; find the real shipping, labor and claim costs before buying.",
-      "intro": "Before buying, ask four separate questions: how a manufacturing-defect claim, an unused return, crash replacement and a paid spare-part order are handled. A warranty period alone does not identify the route, the compatible part or who pays the other costs.",
+      "title": "Chinese bike warranties compared: lifetime to two years, and the conditions that decide them",
+      "description": "The frame warranties of X-LAB, Tavelo, Elves, Winspace, ICAN and LightCarbon side by side from their own policy pages: length, who is covered, when the clock starts, second owners, shipping and crashes.",
+      "intro": "Frame warranties from Chinese brands run from two years to lifetime, and the conditions matter as much as the length. X-LAB's lifetime cover needs registration within 90 days; Tavelo and Elves cover only the original buyer; Winspace's three years start when the frame arrives, LightCarbon's two years when it ships; and LightCarbon pays shipping on a warranty replacement only in the first six months. X-LAB is the only one of the six that states a term for a second owner.",
       "sections": [
         {
           "id": "terms",
-          "heading": "Separate four different kinds of help",
+          "heading": "Six brands' terms side by side",
           "paragraphs": [
-            "A headline warranty period answers only one question. Read the actual seller’s policy for the frame and country, then ask where a claim goes and what evidence it needs. Winspace publishes [warranty](https://www.winspace.cc/pages/warranty) and [return terms](https://www.winspace.cc/pages/return-policy) separately; LightCarbon’s [warranty page](https://www.lightcarbon.com/warranty_d10) also discusses crash replacement. These are different remedies.",
-            "Save the policy you were shown with the invoice. Local consumer rights may also apply; this guide is a buying checklist, not a legal ruling about any one transaction."
+            "These are the terms on each brand's own policy page on the date shown. A dealer's invoice can add to them, and the brand's page is the place to check for changes:"
           ],
           "worksheet": {
-            "caption": "Four requests that need four answers",
+            "caption": "Frame warranties on the brands' policy pages",
             "columns": [
-              "Request",
-              "What to ask the seller"
+              "Brand (page checked)",
+              "Frame",
+              "Who is covered",
+              "Shipping, labor and crashes"
             ],
             "rows": [
               [
-                "Manufacturing defect",
-                "Who assesses it? What proof and return route?"
+                "X-LAB (3 Nov 2026)",
+                "Lifetime if registered within 90 days, otherwise 2 years; bars, stems, seatposts, alloy wheels and paint 2 years",
+                "Original owner; a second owner gets 2 years on frame and fork",
+                "Labor, shipping and service fees may apply; crashes and competitive use excluded"
               ],
               [
-                "Unused return or wrong choice",
-                "What condition, authorization, timing and carriage?"
+                "Tavelo (23 Sep 2026)",
+                "Lifetime on the frameset; paint and decals 1 year",
+                "Original purchaser from Tavelo or an authorized dealer",
+                "Not stated"
               ],
               [
-                "Crash replacement",
-                "Is a discount offered, for whom and on what item?"
+                "Elves (23 Sep 2026)",
+                "5 years on frame defects; parts 1 year",
+                "Original owner, not transferable, with proof of purchase",
+                "Not stated"
               ],
               [
-                "Spare-part purchase",
-                "Exact part reference, price and dispatch route?"
+                "Winspace (22 Oct 2026)",
+                "Framesets 3 years, wheelsets 2 years, from arrival at the buyer",
+                "Original buyer, not transferable",
+                "Not stated; unused items returnable within 14 days"
+              ],
+              [
+                "ICAN, GRARO page (1 Sep 2026)",
+                "2 years",
+                "Not stated",
+                "Not stated"
+              ],
+              [
+                "LightCarbon (5 Nov 2026)",
+                "2 years on all carbon parts, from shipment",
+                "Crash discount for the first buyer only",
+                "LightCarbon pays shipping in the first 6 months; duty, tax and labor never; one-time 10% crash discount"
               ]
             ]
           }
         },
         {
-          "id": "costs",
-          "heading": "The replacement frame is only one line of the cost",
+          "id": "choose",
+          "heading": "What the differences change",
           "paragraphs": [
-            "A replacement frame may be supplied without charge while you still face return postage, new-frame shipping, border handling and workshop labor to move the components. Ask about each line before buying. Ask whether the seller first wants photographs, a complete bike or a bare frame.",
-            "LightCarbon’s [warranty page](https://www.lightcarbon.com/warranty_d10) and [older after-sales page](https://www.lightcarbon.com/after-sale-service_n9) were recorded during this guide’s original research with different category and shipping wording. The older page could not be rechecked for this release. Ask the seller to identify the terms for your exact invoice; do not combine the most generous clauses from different pages. Never mail a component to an old address without current authorization."
+            "Resale. X-LAB states a second-owner term of two years on frame and fork. [Elves](https://my.elvesbike.com/pages/warranty) and [Winspace](https://www.winspace.cc/pages/warranty) say their cover does not transfer and [Tavelo](https://tavelo.cc/pages/lifetime-warranty) covers the original purchaser, so a second owner of those frames has no warranty under these policies. The [used-bike guide](/blog/used-chinese-carbon-bike/) applies this to second-hand prices.",
+            "The clock and the shipping. [LightCarbon](https://www.lightcarbon.com/warranty_d10) counts two years from the day the package ships, Winspace from arrival, so a slow delivery uses up part of LightCarbon's term. LightCarbon pays shipping for a replacement only within six months and never pays duty, tax or workshop labor, and [X-LAB](https://xds.co/en-intl/pages/warranty) says labor, shipping and service fees may apply: a free replacement frame can still cost a return shipment, import charges and a rebuild.",
+            "Registration, racing and crashes. X-LAB's lifetime term needs registration within 90 days, and its exclusions include competitive use unless otherwise specified. LightCarbon offers its first buyer a one-time 10% discount on a crash replacement within two years; X-LAB excludes crash damage, and the other pages checked here do not mention crash replacement. ICAN's [GRARO page](https://icancycling.com/products/gravel-bike-frame-graro) gives only the two-year length."
           ]
         },
         {
           "id": "spares",
-          "heading": "Make a small-parts plan",
+          "heading": "Spare parts are a purchase, not a claim",
           "paragraphs": [
-            "Ask how to buy the exact hanger, seatpost clamp or wedge, headset cover, spacers and proprietary cockpit hardware. Record part numbers where available and keep a link to the current ordering route.",
-            "Suppose a seller replies “we can sell you a replacement hanger” after you report damage. That answers a spare-part request, not whether a frame claim is accepted or the frame is safe. LightCarbon’s warranty page lists hangers among wear parts, separately from its manufacturing-defect coverage. Ask for the exact compatible part and delivered quote, and ask separately whether the reported damage needs frame assessment. A part offer leaves that second question open.",
-            "Discuss sensible spares with your mechanic. A spare hanger may be useful, while buying every imaginable part can waste money and still miss the one you need. Match the plan to the frame and the riding you do.",
-            "Do not assume a near-looking part is interchangeable. Have the manufacturer or qualified assembler confirm replacements, particularly for load-bearing or steering components.",
-            "Use the [spare-parts shipping checklist](/blog/replacement-parts-shipping-cost/) for the delivered quote and the [pre-service evidence guide](/blog/warranty-evidence-before-service/) before authorizing assessment or work."
-          ]
-        },
-        {
-          "id": "claim",
-          "heading": "Prepare a claim that can be understood quickly",
-          "paragraphs": [
-            "Keep the invoice, model and serial details, delivery record, assembly information and clear photographs. When a problem arises, explain when it appeared, what you observed and what action you have already taken, without guessing a technical cause.",
-            "Use one issue per paragraph and request the next specific step: assessment, replacement part, return authorization or another stated remedy. Preserve the correspondence and track any relevant payment-provider deadlines.",
-            "If you suspect a structural problem, stop riding and obtain an appropriate assessment. Efficient paperwork helps the process; it does not make an uncertain component safe. The best support plan combines clear responsibility, available parts and a workshop that knows the bike."
+            "When you buy, ask for the part numbers of the hanger, seatpost clamp or wedge, headset cover and any proprietary cockpit hardware, and keep the ordering route. A seller who offers to sell you a part has not accepted a warranty claim; Winspace's [return policy](https://www.winspace.cc/pages/return-policy) and its warranty, for example, are separate documents. Use the [spare-parts shipping checklist](/blog/replacement-parts-shipping-cost/) for a delivered quote.",
+            "If you suspect structural damage, stop riding until the frame has been assessed. The [pre-service evidence guide](/blog/warranty-evidence-before-service/) lists what to photograph and keep before anyone works on it."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "中国自行车保修与备件：宣传年限背后要问什么",
-      "description": "把车架保修、未使用退货、摔车折价换购与备件购买分开，买车前问清运输、工时和索赔流程。",
-      "intro": "买车前分开问四件事：制造缺陷索赔、未使用退货、摔车折价换购和付费购买备件分别怎么处理。保修年限本身不能说明走哪个流程、哪件配件兼容，以及其他费用由谁承担。",
+      "title": "中国自行车保修条款对比：从终身到两年，以及真正起作用的条件",
+      "description": "根据各品牌自己的保修页面，并列比较 X-LAB、Tavelo、Elves、Winspace、ICAN 和 LightCarbon 的车架保修：时长、适用对象、起算时间、二手车主、运费和撞车政策。",
+      "intro": "中国品牌的车架保修从两年到终身不等，而条件和时长同样重要。X-LAB 的终身保修要求在 90 天内注册；Tavelo 和 Elves 只保首任买家；Winspace 的三年从车架到货起算，LightCarbon 的两年从发货起算；而保修更换的运费，LightCarbon 只在前六个月承担。六个品牌中，只有 X-LAB 写明了二手车主的保修。",
       "sections": [
         {
           "id": "terms",
-          "heading": "分开看四类支持",
+          "heading": "六个品牌的条款并列比较",
           "paragraphs": [
-            "保修宣传年限只回答一个问题。应阅读实际卖家适用于该车架及国家的政策，再问索赔送到哪里、需要哪些证据。Winspace 分别公布[保修](https://www.winspace.cc/pages/warranty)与[退货条件](https://www.winspace.cc/pages/return-policy)；LightCarbon 的[保修页](https://www.lightcarbon.com/warranty_d10)还讨论摔车折价换购。这些属于不同处理方式。",
-            "把付款时看到的条款与发票保存。本地消费者权利也可能适用；这是一张购车核对表，并非对某笔交易的法律裁定。"
+            "以下是各品牌自己的保修页面在所注日期的条款。经销商的发票可能另有补充，条款若有变化，以品牌页面为准："
           ],
           "worksheet": {
-            "caption": "四种需求，要分别得到答案",
+            "caption": "各品牌保修页面上的车架保修",
             "columns": [
-              "需求",
-              "问卖家什么"
+              "品牌（核查日期）",
+              "车架",
+              "适用对象",
+              "运费、工时和撞车"
             ],
             "rows": [
               [
-                "制造缺陷",
-                "谁评估？需要哪些凭证，退回哪里？"
+                "X-LAB（2026-11-03）",
+                "90 天内注册为终身，否则两年；车把、把立、座管、铝合金轮组和涂装两年",
+                "首任车主；二手车主享有车架和前叉两年",
+                "可能收取工时、运费和服务费；撞车和比赛使用除外"
               ],
               [
-                "未使用退货或选错",
-                "成色、授权、期限、运费要求是什么？"
+                "Tavelo（2026-09-23）",
+                "车架组终身；涂装和贴标一年",
+                "通过官网或授权经销商购买的首任买家",
+                "未说明"
               ],
               [
-                "摔车折价换购",
-                "是否提供？适用谁和哪件商品？"
+                "Elves（2026-09-23）",
+                "车架缺陷五年；零件一年",
+                "首任车主，不可转让，需购买凭证",
+                "未说明"
               ],
               [
-                "购买备件",
-                "准确料号、价格和发货方式？"
+                "Winspace（2026-10-22）",
+                "车架组三年，轮组两年，从到货起算",
+                "首任买家，不可转让",
+                "未说明；未使用商品 14 天内可退"
+              ],
+              [
+                "ICAN，GRARO 页面（2026-09-01）",
+                "两年",
+                "未说明",
+                "未说明"
+              ],
+              [
+                "LightCarbon（2026-11-05）",
+                "全部碳纤维产品两年，从发货起算",
+                "撞车折扣仅限首任买家",
+                "前六个月由 LightCarbon 承担运费；关税、税费和工时一律不包；撞车更换一次性九折"
               ]
             ]
           }
         },
         {
-          "id": "costs",
-          "heading": "替换车架只是费用中的一行",
+          "id": "choose",
+          "heading": "这些差别意味着什么",
           "paragraphs": [
-            "即使厂家免费提供替换车架，旧架退运、新架寄送、边境处理和车店移装工时仍可能由你承担。购买前逐项问清，再问卖家初步评估需要照片、整车还是裸架。",
-            "本指南最初研究时记录的 LightCarbon [保修页](https://www.lightcarbon.com/warranty_d10)与[较早售后页](https://www.lightcarbon.com/after-sale-service_n9)，对部分类别及运输条件的表述不同。本次发布未能重新核实较早页面。请卖家明确准确发票适用的条款，别把不同页面最宽松的句子拼在一起。没有当前退货授权，别按旧地址寄件。"
+            "转售。X-LAB 写明二手车主享有车架和前叉两年保修。[Elves](https://my.elvesbike.com/pages/warranty) 和 [Winspace](https://www.winspace.cc/pages/warranty) 都说保修不可转让，[Tavelo](https://tavelo.cc/pages/lifetime-warranty) 只保首任买家，所以这些车架的二手车主在这些条款下没有保修。[二手车指南](/blog/used-chinese-carbon-bike/)讨论了这对二手价格的影响。",
+            "起算时间和运费。[LightCarbon](https://www.lightcarbon.com/warranty_d10) 的两年从包裹发出之日算起，Winspace 从到货算起，所以运输越慢，LightCarbon 的保修期就被用掉越多。LightCarbon 只在六个月内承担更换的运费，关税、税费和车店工时一概不包；[X-LAB](https://xds.co/en-intl/pages/warranty) 也说可能收取工时、运费和服务费。即使换来的车架免费，寄回、进口税费和重新组装仍可能要花钱。",
+            "注册、比赛和撞车。X-LAB 的终身保修要求 90 天内注册，除外条款包括比赛使用（另有说明者除外）。LightCarbon 给首任买家两年内一次撞车更换九折；X-LAB 不保撞车损坏，这里核查的其他页面没有提到撞车更换。ICAN 的 [GRARO 页面](https://icancycling.com/products/gravel-bike-frame-graro)只写了两年的期限。"
           ]
         },
         {
           "id": "spares",
-          "heading": "给小配件做个计划",
+          "heading": "买配件不等于保修索赔",
           "paragraphs": [
-            "问准确尾钩、座管夹或楔块、碗组上盖、垫圈及把组专用硬件怎么买。有料号就记录，并保留当前订购渠道。",
-            "假设你报告损伤后，卖家回复“可以卖给你一个替换尾钩”。这回答的是备件购买问题，不能说明车架索赔已受理，更不能证明车架安全。LightCarbon 保修页把尾钩列入磨损件，与制造缺陷保障分开说明。应询问准确兼容的配件及到手报价，同时另问这次损伤是否需要检查车架。愿意提供配件，并没有回答后一个问题。",
-            "和技师讨论合理备件。备用尾钩可能有用，但所有想得到的都买一遍，也可能花钱却仍漏掉真正需要的。按车架和骑行方式安排。",
-            "别假设长得像的配件能互换，尤其承重和转向部件，应由厂家或合格装配者确认替换。",
-            "到手报价可按[备件运输费用清单](/zh/blog/replacement-parts-shipping-cost/)逐项确认；授权检查或维修前，先看[售后服务前的证据指南](/zh/blog/warranty-evidence-before-service/)。"
-          ]
-        },
-        {
-          "id": "claim",
-          "heading": "准备一份能快速看懂的索赔说明",
-          "paragraphs": [
-            "保留发票、型号与序列信息、交付记录、装配资料及清晰照片。出问题时，说明何时出现、观察到什么、已经做过什么，不要先猜技术原因。",
-            "一段写一个问题，并明确请求下一步：评估、补件、退货授权或其他补救。保存往来，注意相关支付平台时限。",
-            "怀疑结构问题时停止骑行，取得适当评估。材料清楚有助流程，却不能让不确定部件变安全。好的售后方案，需要责任明确、配件可得，以及了解这辆车的技师。"
+            "购买时就问清挂耳、座管夹或楔块、碗组盖以及专用车把配件的零件编号，并保存订购渠道。卖家愿意卖给你一个零件，并不等于接受了保修索赔；例如 Winspace 的[退货政策](https://www.winspace.cc/pages/return-policy)和保修条款就是两份不同的文件。配件的到手报价可参考[配件运费清单](/blog/replacement-parts-shipping-cost/)。",
+            "如果怀疑车架结构受损，在检测之前不要再骑。[送修前取证指南](/blog/warranty-evidence-before-service/)列出了在任何人动手之前应拍照和保存的内容。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Garantie und Ersatzteile bei chinesischen Fahrrädern: Was hinter der Zusage zählt",
-      "description": "Rahmengarantie, unbenutzte Rückgabe, Unfallersatz und Teilebestellung trennen; tatsächliche Versand-, Arbeits- und Reklamationskosten vor Kauf klären.",
-      "intro": "Klären Sie vor dem Kauf vier getrennte Abläufe: Reklamation eines Fertigungsfehlers, unbenutzte Rückgabe, Unfallersatz und bezahlte Ersatzteilbestellung. Die Garantiedauer allein sagt nicht, welcher Ablauf gilt, welches Teil passt und wer weitere Kosten trägt.",
+      "title": "Garantien chinesischer Fahrradmarken im Vergleich: lebenslang bis zwei Jahre – und die Bedingungen, die zählen",
+      "description": "Die Rahmengarantien von X-LAB, Tavelo, Elves, Winspace, ICAN und LightCarbon nebeneinander, nach den Garantieseiten der Marken: Dauer, wer abgedeckt ist, wann die Frist beginnt, Zweitbesitzer, Versand und Stürze.",
+      "intro": "Rahmengarantien chinesischer Marken reichen von zwei Jahren bis lebenslang, und die Bedingungen zählen so viel wie die Dauer. X-LABs lebenslange Garantie verlangt eine Registrierung binnen 90 Tagen; Tavelo und Elves decken nur den Erstkäufer; Winspaces drei Jahre beginnen mit der Ankunft des Rahmens, LightCarbons zwei Jahre mit dem Versand; und den Versand eines Garantieersatzes zahlt LightCarbon nur in den ersten sechs Monaten. Nur X-LAB nennt eine Frist für Zweitbesitzer.",
       "sections": [
         {
           "id": "terms",
-          "heading": "Vier Arten von Hilfe trennen",
+          "heading": "Die Bedingungen von sechs Marken nebeneinander",
           "paragraphs": [
-            "Die Garantiedauer beantwortet nur eine Frage. Lesen Sie die Verkäuferbedingungen für Rahmen und Land und fragen Sie nach Reklamationsziel und Nachweisen. Winspace trennt [Garantie](https://www.winspace.cc/pages/warranty) und [Rückgabe](https://www.winspace.cc/pages/return-policy); LightCarbons [Garantieseite](https://www.lightcarbon.com/warranty_d10) behandelt auch Unfallersatz. Das sind unterschiedliche Leistungen.",
-            "Speichern Sie die gezeigten Bedingungen zur Rechnung. Auch lokale Verbraucherrechte können gelten; dieser Leitfaden ist eine Kaufcheckliste, kein Rechtsurteil zu einem Kauf."
+            "Das sind die Bedingungen auf der Garantieseite jeder Marke zum genannten Datum. Eine Händlerrechnung kann sie ergänzen; ob sie sich geändert haben, zeigt die Seite der Marke:"
           ],
           "worksheet": {
-            "caption": "Vier Anliegen brauchen vier Antworten",
+            "caption": "Rahmengarantien auf den Garantieseiten der Marken",
             "columns": [
-              "Anliegen",
-              "Frage an den Verkäufer"
+              "Marke (Seite geprüft)",
+              "Rahmen",
+              "Wer abgedeckt ist",
+              "Versand, Arbeit und Stürze"
             ],
             "rows": [
               [
-                "Fertigungsfehler",
-                "Wer prüft? Welche Nachweise und welcher Rückgabeweg?"
+                "X-LAB (3. Nov. 2026)",
+                "Lebenslang bei Registrierung binnen 90 Tagen, sonst 2 Jahre; Lenker, Vorbau, Sattelstütze, Aluminiumlaufräder und Lack 2 Jahre",
+                "Erstbesitzer; Zweitbesitzer erhalten 2 Jahre auf Rahmen und Gabel",
+                "Arbeits-, Versand- und Servicegebühren möglich; Stürze und Renneinsatz ausgeschlossen"
               ],
               [
-                "Unbenutzte Rückgabe oder Fehlwahl",
-                "Zustand, Genehmigung, Frist und Transportkosten?"
+                "Tavelo (23. Sep. 2026)",
+                "Lebenslang auf das Rahmenset; Lack und Decals 1 Jahr",
+                "Erstkäufer bei Tavelo oder einem autorisierten Händler",
+                "Nicht angegeben"
               ],
               [
-                "Unfallersatz",
-                "Rabatt für wen und welchen Artikel?"
+                "Elves (23. Sep. 2026)",
+                "5 Jahre auf Rahmenmängel; Teile 1 Jahr",
+                "Erstbesitzer, nicht übertragbar, mit Kaufnachweis",
+                "Nicht angegeben"
               ],
               [
-                "Ersatzteilkauf",
-                "Genaue Teilenummer, Preis und Versandweg?"
+                "Winspace (22. Okt. 2026)",
+                "Rahmensets 3 Jahre, Laufräder 2 Jahre, ab Ankunft beim Käufer",
+                "Erstkäufer, nicht übertragbar",
+                "Nicht angegeben; unbenutzte Ware binnen 14 Tagen rückgabefähig"
+              ],
+              [
+                "ICAN, GRARO-Seite (1. Sep. 2026)",
+                "2 Jahre",
+                "Nicht angegeben",
+                "Nicht angegeben"
+              ],
+              [
+                "LightCarbon (5. Nov. 2026)",
+                "2 Jahre auf alle Carbonteile, ab Versand",
+                "Crash-Rabatt nur für den Erstkäufer",
+                "Versand zahlt LightCarbon nur in den ersten 6 Monaten; Zoll, Steuern und Arbeit nie; einmalig 10 % Crash-Rabatt"
               ]
             ]
           }
         },
         {
-          "id": "costs",
-          "heading": "Der Ersatzrahmen ist nur eine Kostenposition",
+          "id": "choose",
+          "heading": "Was die Unterschiede bedeuten",
           "paragraphs": [
-            "Auch bei kostenlosem Rahmen können Rückporto, Ersatzversand, Grenzabwicklung und Umbauarbeit anfallen. Fragen Sie jede Position vor Kauf ab. Klären Sie, ob zuerst Fotos, ein komplettes Rad oder ein nackter Rahmen verlangt werden.",
-            "Bei der ursprünglichen Recherche dieses Leitfadens wurden auf LightCarbons [Garantieseite](https://www.lightcarbon.com/warranty_d10) und [älterer Serviceseite](https://www.lightcarbon.com/after-sale-service_n9) unterschiedliche Angaben zu Kategorien und Versand festgehalten. Die ältere Seite ließ sich für diese Veröffentlichung nicht erneut prüfen. Lassen Sie die Bedingungen für Ihre genaue Rechnung benennen, statt günstige Klauseln verschiedener Seiten zu kombinieren. Versenden Sie Teile nur mit aktueller Genehmigung und bestätigter Adresse."
+            "Wiederverkauf. X-LAB nennt für Zweitbesitzer zwei Jahre auf Rahmen und Gabel. [Elves](https://my.elvesbike.com/pages/warranty) und [Winspace](https://www.winspace.cc/pages/warranty) schließen eine Übertragung aus, und [Tavelo](https://tavelo.cc/pages/lifetime-warranty) deckt den Erstkäufer; ein Zweitbesitzer dieser Rahmen hat nach diesen Bedingungen also keine Garantie. Der [Leitfaden zu gebrauchten Rädern](/blog/used-chinese-carbon-bike/) überträgt das auf Gebrauchtpreise.",
+            "Frist und Versand. [LightCarbon](https://www.lightcarbon.com/warranty_d10) zählt die zwei Jahre ab dem Versandtag, Winspace ab der Ankunft; eine langsame Lieferung kostet bei LightCarbon also einen Teil der Frist. LightCarbon zahlt den Versand eines Ersatzteils nur binnen sechs Monaten und nie Zoll, Steuern oder Werkstattarbeit, und [X-LAB](https://xds.co/en-intl/pages/warranty) behält sich Arbeits-, Versand- und Servicegebühren vor: Auch ein kostenloser Ersatzrahmen kann Rückversand, Einfuhrabgaben und einen Neuaufbau kosten.",
+            "Registrierung, Rennen und Stürze. X-LABs lebenslange Garantie verlangt die Registrierung binnen 90 Tagen, und die Ausschlüsse nennen Renneinsatz, sofern nicht anders angegeben. LightCarbon gewährt dem Erstkäufer innerhalb von zwei Jahren einmalig 10 % Rabatt auf einen Crash-Ersatz; X-LAB schließt Sturzschäden aus, und die übrigen hier geprüften Seiten erwähnen keinen Crash-Ersatz. ICANs [GRARO-Seite](https://icancycling.com/products/gravel-bike-frame-graro) nennt nur die Dauer von zwei Jahren."
           ]
         },
         {
           "id": "spares",
-          "heading": "Einen Kleinteileplan erstellen",
+          "heading": "Ersatzteile sind ein Kauf, kein Garantiefall",
           "paragraphs": [
-            "Fragen Sie nach genauem Schaltauge, Sattelstützenklemme oder Keil, Lagerabdeckung, Spacern und proprietären Cockpitteilen. Notieren Sie Teilenummern und aktuelle Bestelllinks.",
-            "Angenommen, Sie melden einen Schaden und der Verkäufer antwortet: „Wir können Ihnen ein Ersatzschaltauge verkaufen.“ Das beantwortet eine Teileanfrage; es bestätigt weder die Annahme einer Rahmenreklamation noch einen sicheren Rahmen. LightCarbons Garantieseite nennt Schaltaugen unter Verschleißteilen, getrennt von der Abdeckung von Fertigungsfehlern. Fragen Sie nach dem genau passenden Teil und dem Liefergesamtpreis sowie gesondert nach einer nötigen Rahmenprüfung. Das Teileangebot lässt diese zweite Frage offen.",
-            "Besprechen Sie sinnvolle Reserveteile mit der Werkstatt. Ein Schaltauge kann helfen; alle denkbaren Teile zu kaufen kann teuer und trotzdem unvollständig sein. Passen Sie den Plan an Rahmen und Einsatz an.",
-            "Ähnlich aussehende Teile sind nicht automatisch austauschbar. Lassen Sie Ersatz besonders an tragenden und lenkenden Komponenten vom Hersteller oder qualifizierten Monteur bestätigen.",
-            "Nutzen Sie die [Checkliste für Ersatzteilversandkosten](/de/blog/replacement-parts-shipping-cost/) für den Liefergesamtpreis und den [Nachweisleitfaden vor Servicearbeiten](/de/blog/warranty-evidence-before-service/), bevor Sie Prüfung oder Arbeiten freigeben."
-          ]
-        },
-        {
-          "id": "claim",
-          "heading": "Eine verständliche Reklamation vorbereiten",
-          "paragraphs": [
-            "Bewahren Sie Rechnung, Modell- und Serienangaben, Lieferung, Montageinformationen und klare Fotos. Beschreiben Sie beim Problem Zeitpunkt, Beobachtung und bisherige Schritte, ohne eine Ursache zu erraten.",
-            "Ein Problem pro Absatz und ein konkreter nächster Schritt: Prüfung, Ersatzteil, Rückgabegenehmigung oder andere Lösung. Korrespondenz sichern und Fristen des Zahlungsanbieters beachten.",
-            "Bei vermutetem Strukturproblem nicht weiterfahren und eine geeignete Prüfung einholen. Gute Unterlagen machen ein fragliches Teil nicht sicher. Ein guter Serviceplan verbindet klare Zuständigkeit, verfügbare Teile und eine vertraute Werkstatt."
+            "Fragen Sie beim Kauf nach den Teilenummern von Schaltauge, Sattelstützenklemme oder Klemmkeil, Steuersatzabdeckung und proprietären Cockpitteilen und notieren Sie den Bestellweg. Ein Verkäufer, der Ihnen ein Teil verkaufen will, hat damit keinen Garantiefall anerkannt; Winspaces [Rückgaberegeln](https://www.winspace.cc/pages/return-policy) und die Garantie sind zum Beispiel getrennte Dokumente. Für ein Angebot bis zur Haustür hilft die [Checkliste zu Ersatzteilversand](/blog/replacement-parts-shipping-cost/).",
+            "Wenn Sie einen Strukturschaden vermuten, fahren Sie nicht weiter, bis der Rahmen geprüft ist. Der [Leitfaden zu Beweisen vor dem Service](/blog/warranty-evidence-before-service/) zeigt, was Sie fotografieren und aufbewahren sollten, bevor jemand daran arbeitet."
           ]
         }
       ]
     }
   },
   "editorial_references": [
+    "https://xds.co/en-intl/pages/warranty",
+    "https://tavelo.cc/pages/lifetime-warranty",
+    "https://my.elvesbike.com/pages/warranty",
     "https://www.winspace.cc/pages/warranty",
-    "https://www.lightcarbon.com/warranty_d10",
-    "https://www.lightcarbon.com/after-sale-service_n9",
-    "https://www.winspace.cc/pages/return-policy"
+    "https://www.winspace.cc/pages/return-policy",
+    "https://icancycling.com/products/gravel-bike-frame-graro",
+    "https://www.lightcarbon.com/warranty_d10"
   ]
 }

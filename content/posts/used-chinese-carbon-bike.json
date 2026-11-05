@@ -5,7 +5,7 @@
   "series_order": 11,
   "image_id": "used-chinese-carbon-bike-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-26",
+  "dateModified": "2026-11-05",
   "researched_at": "2026-10-04",
   "model_ids": [
     "twitter-v3-rs-sensah"
@@ -17,7 +17,8 @@
   "editorial_references": [
     "https://www.trekbikes.com/ca/en_CA/carbon_care/",
     "https://www.cannondale.com/-/media/files/manual-uploads/manuals/012_OMS_F_126709_EN.pdf",
-    "https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike"
+    "https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike",
+    "https://xds.co/en-intl/pages/warranty"
   ],
   "photo_sections": [
     {
@@ -29,9 +30,9 @@
   ],
   "translations": {
     "en": {
-      "title": "Buying a used Chinese carbon bike: check the history before the bargain",
-      "description": "Questions to ask before buying a used Chinese carbon bike: ownership, exact build, fit, damage history, expert assessment and the full service bill.",
-      "intro": "Fresh bar tape and a tempting price can make a used carbon bike feel like a bargain before you have even seen it. Slow down for the boring questions. Model, history, fit and replacement parts decide whether the purchase makes sense; the shiny bits can wait.",
+      "title": "Buying a used Chinese carbon bike: usually no warranty, so price the risk",
+      "description": "Which Chinese brands' frame warranties pass to a second owner (X-LAB two years; Elves, Winspace and Tavelo none), what a crack would cost to replace new, and the identity and damage checks to make before paying.",
+      "intro": "Most Chinese frame warranties end with the first owner. Elves and Winspace say their cover does not transfer, and Tavelo's lifetime term covers the original purchaser; X-LAB is the exception in our records, with two years on frame and fork for a second owner. A used Chinese carbon frame is therefore usually uninsured: its price has to cover that risk, and its history matters more than its paint.",
       "sections": [
         {
           "id": "identity",
@@ -40,37 +41,7 @@
             "Ask for the frame serial, purchase documentation, model year or revision, and clear photographs of the frame and fitted parts. Ask the seller to explain their ownership, record the agreed included parts and check available bike-registration or stolen-bike records. You need information about this bike, without collecting unrelated personal details.",
             "A “V3” listing, for example, still needs a build check. Our [Twitter Gravel V3 record](/models/twitter-v3-rs-sensah/) carries dated build evidence, while the [regional US storefront](https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike) lists separate builds. The Shimano 105 bike pictured below is a regional reference image; it does not verify a second-hand seller’s parts or frame generation.",
             "Compare the exact frame size and cockpit with a bike that fits you. Ask about cut or replaced parts and check the relevant manuals before assuming you can change the position. Our [frame-sizing guide](/blog/chinese-bike-frame-sizing/) gives you a practical comparison worksheet."
-          ],
-          "worksheet": {
-            "caption": "Four questions before travelling to see the bike",
-            "columns": [
-              "Ask about",
-              "Question for the seller",
-              "What you need next"
-            ],
-            "rows": [
-              [
-                "Identity and ownership",
-                "Which revision is it, and how did you acquire it?",
-                "Match the serial, documents, actual bike and included parts."
-              ],
-              [
-                "Damage history",
-                "Any crashes, impacts, repairs or unexplained noises?",
-                "History and repair records for a qualified assessment."
-              ],
-              [
-                "Fit",
-                "What size is the frame, and which parts have been cut or changed?",
-                "Exact measurements and the relevant adjustment limits."
-              ],
-              [
-                "Service and spares",
-                "What needs work, and are any original parts missing?",
-                "Quotes and a confirmed source for essential replacement parts."
-              ]
-            ]
-          }
+          ]
         },
         {
           "id": "condition",
@@ -83,19 +54,18 @@
         },
         {
           "id": "total",
-          "heading": "Compare the complete cost, then negotiate",
+          "heading": "Price the bike as uninsured unless the warranty transfers",
           "paragraphs": [
-            "Write down the purchase price, assessment, needed service, worn consumables, fit changes and missing hardware. Get quotes before negotiating. Ask the relevant manufacturer or seller whether any warranty transfers to you and which documents a claim would need; do not budget around cover that has not been confirmed.",
-            "For example, a cheaper bike needing a chain, cassette and a proprietary hanger may cost more to put into use than a more expensive, recently serviced bike. Use actual quotes for that comparison, and assess each bike’s condition separately. If a crucial part cannot be identified or sourced, pause the purchase.",
-            "Our [first-carbon-bike budget guide](/blog/first-carbon-bike-budget/) helps you keep setup and ownership costs in the same calculation. Set your walk-away conditions before the conversation: unclear ownership, unsuitable fit, unresolved structural concerns or essential parts you cannot obtain. Negotiate the complete cost once those questions have proper answers."
+            "Of the brands whose terms we checked, only X-LAB passes cover to a second owner: two years on frame and fork on its [warranty page](https://xds.co/en-intl/pages/warranty) on 3 November 2026. That cover depends on the bike having been bought from an authorized X-LAB seller, so ask for the original invoice. Elves and Winspace exclude transfer, Tavelo covers the original purchaser, and LightCarbon's crash discount is for the first buyer only; the [warranty comparison](/blog/chinese-bike-warranty-and-spares/) has the full terms.",
+            "Without cover, a crack means buying a new frame. A new [Winspace T1550](/models/missing-china-price-winspace-t1550/) frameset was US$1,900 and an [Elves Falath EVO](/models/missing-china-price-elves-falath-evo/) US$1,100 on 17 August 2026, before shipping and import charges. Weigh the saving on a used bike against that amount and the assessment, service and missing parts it still needs; the [first-carbon-bike budget guide](/blog/first-carbon-bike-budget/) keeps those costs in one calculation."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "买二手中国碳车：先查来历，再看便宜多少",
-      "description": "买二手中国碳纤维自行车前，问清车架代次、来源、尺码和损伤经历，再核算专业评估、保养与补齐零件的费用。",
-      "intro": "换上新把带、拍几张漂亮照片，二手碳车就很容易显得划算。先把好看的部分放一放：它是哪一代、经历过什么、是否合身、关键零件能不能补齐，才决定这笔交易值不值得。",
+      "title": "买二手中国碳纤维车：通常没有保修，所以要把风险算进价格",
+      "description": "哪些中国品牌的车架保修能转给二手车主（X-LAB 两年；Elves、Winspace 和 Tavelo 不能），车架开裂换新要花多少，以及付款前要核对的身份和损伤问题。",
+      "intro": "大多数中国品牌的车架保修到首任车主为止。Elves 和 Winspace 都说保修不可转让，Tavelo 的终身保修只保首任买家；在我们的记录里，X-LAB 是例外，二手车主享有车架和前叉两年保修。因此，二手中国碳纤维车架通常没有保修：价格必须覆盖这一风险，车的来历也比漆面重要。",
       "sections": [
         {
           "id": "identity",
@@ -104,37 +74,7 @@
             "索取车架序列号、购买凭证、年份或版本，以及车架和实装零件的清晰照片。请卖家说明车辆来源，写清约定包含的零件；有可用的车辆登记或失窃记录时，也应核查。需要的是这辆车的信息，不必收集无关的个人资料。",
             "卖家只写“V3”，还不足以确认配置。我们的 [Twitter Gravel V3 记录](/models/twitter-v3-rs-sensah/)保留了带日期的配置证据，[美国地区店铺](https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike)也列有不同配置。下方 Shimano 105 整车照片是地区版参考图，不能证明某辆二手车的实装零件或车架代次。",
             "把具体车架尺码和把组尺寸，与一辆你骑着合身的车对照。问清哪些零件截短或换过，再按相关说明书确认调整范围，不能默认买回来就能改成合适的姿势。[车架尺码指南](/blog/chinese-bike-frame-sizing/)里有可直接填写的对照表。"
-          ],
-          "worksheet": {
-            "caption": "出发看车前，先问清这四件事",
-            "columns": [
-              "问什么",
-              "给卖家的问题",
-              "接下来需要什么"
-            ],
-            "rows": [
-              [
-                "车型与来源",
-                "是哪一代？这辆车是怎么来的？",
-                "对照序列号、凭证、实车与约定零件。"
-              ],
-              [
-                "损伤经历",
-                "有过摔车、碰撞、维修或不明异响吗？",
-                "整理经历和维修记录，供专业人员评估。"
-              ],
-              [
-                "是否合身",
-                "车架多大？哪些零件截短或换过？",
-                "准确尺寸和相关零件允许的调整范围。"
-              ],
-              [
-                "保养与备件",
-                "还有什么需要修？原装零件缺了哪些？",
-                "维修报价，以及关键替换件的可靠来源。"
-              ]
-            ]
-          }
+          ]
         },
         {
           "id": "condition",
@@ -147,19 +87,18 @@
         },
         {
           "id": "total",
-          "heading": "算完整费用，再谈价格",
+          "heading": "除非保修可转让，否则按无保修来定价",
           "paragraphs": [
-            "把车价、评估费、必要保养、磨损耗材、适配改动和缺失的专用零件都列出来，议价前先拿到报价。向相关厂家或卖家确认保修是否能转给你，以及索赔需要哪些文件；尚未确认的保修，不要当成已有保障。",
-            "比如，一辆便宜车还要换链条、飞轮，再找专用尾钩，整备后可能比一辆价格更高、刚做过保养的车还贵。要用实际报价比较，也不能因此认定其中任何一辆车结构完好。关键零件确认不了或买不到，就先暂停交易。",
-            "[第一辆碳车预算指南](/blog/first-carbon-bike-budget/)能帮你把装车和后续费用放进同一张账单。谈价前，先定好放弃条件：来源不清、尺码不合、结构仍有疑问，或关键零件无法补齐。把这些问题问明白，再围绕完整费用议价。"
+            "在我们核查过条款的品牌中，只有 X-LAB 把保修延续给二手车主：其[保修页面](https://xds.co/en-intl/pages/warranty)在 2026 年 11 月 3 日写明车架和前叉两年。这项保修以车辆购自 X-LAB 授权卖家为前提，所以要向卖家索取原始发票。Elves 和 Winspace 不允许转让，Tavelo 只保首任买家，LightCarbon 的撞车折扣也只给首任买家；完整条款见[保修对比](/blog/chinese-bike-warranty-and-spares/)。",
+            "没有保修时，车架开裂就意味着买新车架。2026 年 8 月 17 日，新的 [Winspace T1550](/models/missing-china-price-winspace-t1550/) 车架组售价 1,900 美元，[Elves Falath EVO](/models/missing-china-price-elves-falath-evo/) 1,100 美元，均不含运费和进口税费。把二手车省下的钱与这笔金额，以及检测、保养和缺失零件的费用放在一起比较；[第一辆碳车预算指南](/blog/first-carbon-bike-budget/)能把这些成本放进同一笔账。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Gebrauchtes chinesisches Carbonrad: Erst die Geschichte, dann der Preis",
-      "description": "Vor dem Gebrauchtkauf: Herkunft, genaue Ausstattung, Passform, Schäden, fachkundige Prüfung und vollständige Kosten eines chinesischen Carbonrads klären.",
-      "intro": "Der Lack glänzt, das Lenkerband ist neu und der Preis verlockend. Da wirkt ein gebrauchtes Carbonrad schnell wie ein Schnäppchen. Kläre zuerst die weniger hübschen Fragen: Modell, Vorgeschichte, Passform und Ersatzteile. Sie entscheiden, ob der Kauf sinnvoll ist.",
+      "title": "Gebrauchtes chinesisches Carbonrad kaufen: meist ohne Garantie, also das Risiko einpreisen",
+      "description": "Welche Rahmengarantien chinesischer Marken auf einen Zweitbesitzer übergehen (X-LAB zwei Jahre; Elves, Winspace und Tavelo keine), was ein Riss als Neurahmen kostet und welche Identitäts- und Schadensprüfungen vor dem Bezahlen nötig sind.",
+      "intro": "Die meisten Rahmengarantien chinesischer Marken enden beim Erstbesitzer. Elves und Winspace schließen eine Übertragung aus, und Tavelos lebenslange Garantie gilt für den Erstkäufer; X-LAB ist in unseren Unterlagen die Ausnahme, mit zwei Jahren auf Rahmen und Gabel für einen Zweitbesitzer. Ein gebrauchter chinesischer Carbonrahmen ist deshalb meist ohne Garantie: Sein Preis muss dieses Risiko tragen, und seine Geschichte zählt mehr als der Lack.",
       "sections": [
         {
           "id": "identity",
@@ -168,37 +107,7 @@
             "Frage nach Rahmennummer, Kaufbeleg, Modelljahr oder Version und klaren Fotos des Rahmens und der montierten Teile. Lass dir erklären, wie der Verkäufer das Rad erworben hat, und halte die vereinbarten Teile fest. Prüfe verfügbare Fahrrad- oder Diebstahlregister. Es geht um dieses Rad; unnötige persönliche Unterlagen brauchst du dafür nicht.",
             "Auch eine Anzeige mit der Bezeichnung „V3“ braucht einen Abgleich der Ausstattung. Unser [Twitter-Gravel-V3-Eintrag](/models/twitter-v3-rs-sensah/) enthält datierte Belege; der [regionale US-Shop](https://twitterbikeusa.com/products/gravel-v3-twitter-carbon-gravel-bike) führt mehrere Aufbauten. Das Shimano-105-Rad unten ist ein regionales Referenzfoto. Es belegt weder die Teile noch die Rahmengeneration eines angebotenen gebrauchten Rads.",
             "Vergleiche die genaue Rahmengröße und das Cockpit mit einem Rad, das dir passt. Frage nach gekürzten oder ausgetauschten Teilen und prüfe die passenden Anleitungen, bevor du davon ausgehst, dass sich die Sitzposition passend einstellen lässt. Unser [Rahmengrößen-Ratgeber](/blog/chinese-bike-frame-sizing/) enthält eine praktische Vergleichstabelle."
-          ],
-          "worksheet": {
-            "caption": "Vier Fragen vor der Fahrt zur Besichtigung",
-            "columns": [
-              "Thema",
-              "Frage an den Verkäufer",
-              "Was du anschließend brauchst"
-            ],
-            "rows": [
-              [
-                "Modell und Herkunft",
-                "Welche Version ist es, und wie hast du das Rad erworben?",
-                "Rahmennummer, Belege, tatsächliches Rad und enthaltene Teile abgleichen."
-              ],
-              [
-                "Schadensgeschichte",
-                "Gab es Stürze, Stöße, Reparaturen oder ungeklärte Geräusche?",
-                "Vorgeschichte und Reparaturbelege für eine fachkundige Beurteilung."
-              ],
-              [
-                "Passform",
-                "Welche Rahmengröße, und welche Teile wurden gekürzt oder ersetzt?",
-                "Genaue Maße und zulässige Einstellbereiche."
-              ],
-              [
-                "Wartung und Ersatzteile",
-                "Was muss gemacht werden, und welche Originalteile fehlen?",
-                "Kostenvoranschläge und eine Bezugsquelle für nötige Ersatzteile."
-              ]
-            ]
-          }
+          ]
         },
         {
           "id": "condition",
@@ -211,11 +120,10 @@
         },
         {
           "id": "total",
-          "heading": "Die vollständigen Kosten vergleichen und dann verhandeln",
+          "heading": "Ohne übertragbare Garantie wie ein ungesichertes Rad bepreisen",
           "paragraphs": [
-            "Notiere Kaufpreis, Untersuchung, nötige Wartung, verschlissene Teile, Anpassungen und fehlende Befestigungsteile. Hole vor dem Verhandeln Angebote ein. Kläre beim zuständigen Hersteller oder Verkäufer, ob eine Garantie auf dich übergeht und welche Belege nötig wären. Rechne erst mit einer Garantie, wenn sie dir bestätigt wurde.",
-            "Ein günstigeres Rad, das Kette, Kassette und ein spezielles Schaltauge braucht, kann am Ende mehr kosten als ein teureres, frisch gewartetes Rad. Vergleiche dafür echte Angebote; daraus folgt noch keine Aussage zur strukturellen Unversehrtheit. Lässt sich ein wichtiges Teil nicht bestimmen oder beschaffen, warte mit dem Kauf.",
-            "Unser [Budget-Ratgeber fürs erste Carbonrad](/blog/first-carbon-bike-budget/) hilft dir, Aufbau und Folgekosten zusammenzurechnen. Lege vor dem Gespräch fest, wann du aussteigst: ungeklärte Herkunft, unpassende Größe, offene Zweifel am Rahmen oder fehlende wichtige Ersatzteile. Verhandle über die Gesamtkosten, wenn diese Fragen ordentlich geklärt sind."
+            "Von den Marken, deren Bedingungen wir geprüft haben, überträgt nur X-LAB Garantie auf einen Zweitbesitzer: zwei Jahre auf Rahmen und Gabel laut [Garantieseite](https://xds.co/en-intl/pages/warranty) vom 3. November 2026. Diese Garantie setzt voraus, dass das Rad bei einem autorisierten X-LAB-Verkäufer gekauft wurde; verlangen Sie also die Originalrechnung. Elves und Winspace schließen eine Übertragung aus, Tavelo deckt den Erstkäufer, und LightCarbons Crash-Rabatt gilt nur für den Erstkäufer; die vollständigen Bedingungen stehen im [Garantievergleich](/blog/chinese-bike-warranty-and-spares/).",
+            "Ohne Garantie bedeutet ein Riss einen neuen Rahmen. Ein neues [Winspace-T1550](/models/missing-china-price-winspace-t1550/)-Rahmenset kostete am 17. August 2026 1.900 US-Dollar und ein [Elves Falath EVO](/models/missing-china-price-elves-falath-evo/) 1.100 US-Dollar, jeweils ohne Versand und Einfuhrabgaben. Wägen Sie die Ersparnis beim Gebrauchtrad gegen diesen Betrag und gegen Prüfung, Service und fehlende Teile ab; der [Budgetleitfaden fürs erste Carbonrad](/blog/first-carbon-bike-budget/) hält diese Kosten in einer Rechnung zusammen."
           ]
         }
       ]
