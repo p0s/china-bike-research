@@ -1217,3 +1217,13 @@ patterns.push(
   [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} ожидают исследования Xiaohongshu`],
   [/^(\d+) not yet checked$/, (_, n) => `${n} ещё не проверено`]
 );
+// Disclosed commission store links (2026-11-06).
+Object.assign(ru, {
+  "Store option:": "Вариант в магазине:",
+  "Price varies by finish.": "Цена зависит от покраски.",
+  "Made to order.": "Изготавливается под заказ.",
+  "Listed in stock.": "По данным магазина, в наличии.",
+  "Shipping and duties depend on your country.": "Доставка и пошлины зависят от страны.",
+  "We may earn a commission from purchases through this link. It does not affect our comparisons.": "Мы можем получить комиссию с покупок по этой ссылке. На наши сравнения это не влияет.",
+  "7-piece set: shifters, front and rear derailleurs, hydraulic brakes and charger. The store does not state the lever material.": "Комплект из 7 предметов: манетки, передний и задний переключатели, гидравлические тормоза и зарядное устройство. Материал рычагов магазин не указывает."
+});

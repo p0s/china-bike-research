@@ -26,7 +26,7 @@ export const zh = {
   "Current T47 Gravel V3 carbon chassis with internal routing, integrated carbon cockpit and hidden seatpost clamp. The storefront monocoque claim accompanies a BB86 listing; no exact T47 lay-up or molding protocol is published.": "当前 T47 Gravel V3 碳纤维车架采用内走线、一体式碳纤维把组及隐藏式座管夹。店铺的单体成型主张对应的是 BB86 商品条目；未公布目标 T47 版本的铺层或成型工艺。",
   "No independent exact-current-platform stiffness or deflection result was found; seller response and bottom-bracket-flex descriptions are not treated as measured evidence": "未找到针对当前目标平台的独立刚性或变形测试结果；卖家对响应感及中轴区域形变的描述不视为实测证据。",
   "The official factory-store page lists the V3 25yr RS-24S with Sensah RS 2×12 at US$1,289.99 and offers Add to bag with US/EU shipping estimates of 17-35 business days; Shenzhen manufacturer contact also provides a direct inquiry route. This establishes an international route only. A current Tmall-indexed Gravel V3 family listing identifies the TWITTER flagship seller in Shenzhen, but does not expose the retained RS/Sensah 2×12 option or its availability; direct access to the mainland manufacturer page timed out. Confirm the exact mainland SKU, stock and checkout before treating it as orderable in China.": "官方工厂店页面列出 V3 25yr RS-24S，搭载 Sensah RS 2×12，售价 US$1,289.99，并提供“Add to bag”按钮及发往美国／欧盟的 17–35 个工作日配送预估；深圳制造商的联系方式也提供直接询价渠道。这只能确立国际购买渠道。当前天猫索引中的 Gravel V3 系列商品条目指向深圳的 TWITTER 旗舰店卖家，但未展示本站保留的 RS/Sensah 2×12 选项或其供货情况；直接访问大陆制造商页面时超时。在将其视为可在中国购买之前，须核对目标大陆 SKU、库存及结算流程。",
-  "The official US store currently lists the WheelTop EDS TX 2×12 build in Holographic, size L/54 cm, at US$1,750 with Add to bag and a US three-day delivery claim. This is a US route only. Shenzhen manufacturer contact also provides a direct inquiry route. A current Tmall-indexed Gravel V3 family listing identifies the TWITTER flagship seller in Shenzhen, but does not expose the retained WheelTop EDS TX 2×12 option or its availability; the mainland manufacturer page index lists WheelTop but direct access timed out and showed no purchase control. Mainland stock and checkout remain unverified.": "官方美国商店当前列出 WheelTop EDS TX 2×12 配置，Holographic 涂装、L/54 cm 尺码，售价 US$1,750，提供“Add to bag”按钮，并宣称在美国三日送达。这仅是美国购买渠道。深圳制造商的联系方式也提供直接询价渠道。当前天猫索引中的 Gravel V3 系列商品条目指向深圳的 TWITTER 旗舰店卖家，但未展示本站保留的 WheelTop EDS TX 2×12 选项或其供货情况；大陆制造商页面的索引列出 WheelTop，但直接访问时超时，且未显示购买控件。大陆库存及结算流程仍未核实。",
+  "The official US store listed the WheelTop EDS TX 2×12 build in Holographic, size L/54 cm, at US$1,750 on 2026-09-24, with Add to bag and a US three-day delivery claim. This is a US route only. Shenzhen manufacturer contact also provides a direct inquiry route. A current Tmall-indexed Gravel V3 family listing identifies the TWITTER flagship seller in Shenzhen, but does not expose the retained WheelTop EDS TX 2×12 option or its availability; the mainland manufacturer page index lists WheelTop but direct access timed out and showed no purchase control. Mainland stock and checkout remain unverified.": "官方美国商店于 2026-09-24 列出 WheelTop EDS TX 2×12 配置，Holographic 涂装、L/54 cm 尺码，售价 US$1,750，提供“Add to bag”按钮，并宣称在美国三日送达。这仅是美国购买渠道。深圳制造商的联系方式也提供直接询价渠道。当前天猫索引中的 Gravel V3 系列商品条目指向深圳的 TWITTER 旗舰店卖家，但未展示本站保留的 WheelTop EDS TX 2×12 选项或其供货情况；大陆制造商页面的索引列出 WheelTop，但直接访问时超时，且未显示购买控件。大陆库存及结算流程仍未核实。",
   "Required build parts": "装车所需部件",
   "All images": "全部图片",
   "Scroll image views or use arrow keys, Home and End.": "横向滚动图片，或使用方向键、Home 和 End 键。",
@@ -1841,4 +1841,20 @@ Object.assign(zh, {
   "Xiaohongshu research pending": "小红书调研待完成",
   "Checked": "已核查",
   "A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.": "尚未核查的轮胎也可能有很多车主，只是其反馈还没有逐一核对。每款已核查的轮胎都在详情中列出核查过的来源。"
+});
+// Disclosed commission store links (2026-11-06).
+Object.assign(zh, {
+  "Store option:": "店铺选项：",
+  "Price varies by finish.": "价格因涂装而异。",
+  "Made to order.": "下单后生产。",
+  "Listed in stock.": "店铺标示有货。",
+  "Shipping and duties depend on your country.": "运费和关税取决于收货国家。",
+  "We may earn a commission from purchases through this link. It does not affect our comparisons.": "通过此链接购买，我们可能获得佣金；这不影响我们的比较。",
+  "The store lists three T10 Pro - 2rd builds; the retained price on this profile is not matched to one of them.": "该店列出三种 T10 Pro - 2rd 配置；本资料保留的价格未对应其中任何一种。",
+  "The store lists five X7 builds; the retained prices on this profile are not matched to one of them.": "该店列出五种 X7 配置；本资料保留的价格未对应其中任何一种。",
+  "7-piece set: shifters, front and rear derailleurs, hydraulic brakes and charger. The store does not state the lever material.": "7 件套：变速手柄、前拨、后拨、液压刹车和充电器。店铺未说明手柄材质。",
+  "Store links": "店铺链接",
+  "Some model pages and component rows link to an online store that pays us a commission on purchases made through those links. Each link is marked where it appears. A link is added only where the store's own page offers that exact model and build, or the exact model for a research profile that covers several builds. It shows the store's price in its own currency with the date we checked it; that is not a China price or a delivered total.": "部分车型页面和零部件条目链接到一家在线商店；通过这些链接购买时，该店会向我们支付佣金。每个链接在出现处都有标注。只有当该店自己的页面提供完全相同的车型和配置时才会添加链接；若研究资料涵盖多种配置，则要求车型完全相同。链接旁显示该店以其自身货币标示的价格和我们的核对日期；这不是中国价格，也不是到手总价。",
+  "Store links do not change which bikes are listed, their order, catalog prices, verdicts or buying checks. Source citations stay separate from store links.": "店铺链接不会改变收录哪些车型、排序、目录价格、评语或购买前核对事项。来源引用与店铺链接分开列出。",
+  "Store links marked with a commission notice carry the store's referral code. If you follow one, the store and its referral service can record the visit and any purchase to credit the commission; their own privacy terms apply on their site. This site adds no script for these links and does not count clicks on them.": "带佣金说明的店铺链接包含该店的推荐代码。打开后，该店及其推荐服务可记录这次访问和任何购买，用于计算佣金；其网站适用其自身的隐私条款。本站不为这些链接添加任何脚本，也不统计对它们的点击。"
 });

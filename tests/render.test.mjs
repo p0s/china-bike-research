@@ -1157,7 +1157,8 @@ test('model decision panel links the exact purchase route instead of a broad ava
   const product = products.find(item => item.variant.id === 'twitter-v3-wheeltop-eds');
   const detail = renderModel(homeContext, product);
   const panel = detail.match(/<dl class="model-facts">[\s\S]*?<\/dl>/)[0];
-  assert.match(panel, /Where to buy<\/dt><dd><a href="#model-purchase-route">Purchase route and checks<\/a>/);
+  // A disclosed store link for the exact build may precede the purchase-route link.
+  assert.match(panel, /Where to buy<\/dt><dd><span class="shop-link">[\s\S]*?<\/span><a href="#model-purchase-route">Purchase route and checks<\/a><\/dd>/);
   assert.match(detail, /id="model-purchase-route"><strong>Purchase route<\/strong> The official US store/);
   assert.match(detail, /Mainland(?: China)? stock and checkout remain unverified/);
   assert.doesNotMatch(panel, /Domestic sales in mainland China/);

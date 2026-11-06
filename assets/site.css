@@ -1417,6 +1417,13 @@ html:has([data-analytics-banner]){overflow-x:clip}
 .model-summary .model-price .price-state { color: var(--muted); font-size: var(--fs-sm); -webkit-line-clamp: 3; }
 .model-price-links { display: flex; flex-wrap: wrap; gap: 4px 10px; color: var(--muted); font-size: var(--fs-sm); }
 .model-price-links a { color: var(--accent); font-weight: 650; text-decoration: none; }
+/* A disclosed commission store link: one per exact record, never in catalog rows or comparisons. */
+.shop-link { display: grid; gap: 3px; margin: 0 0 8px; font-weight: 400; }
+.shop-link-offer { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.shop-link-offer a { display: inline-flex; align-items: center; min-height: 24px; color: var(--accent); font-weight: 650; }
+.shop-link-offer strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+.shop-link-details, .shop-link-disclosure { color: var(--muted); font-size: var(--fs-sm); line-height: 1.45; }
+.shop-link-option { color: var(--ink); }
 .model-summary .model-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
 .model-summary .model-actions .primary-button { background: var(--accent); color: var(--surface); }
 .model-summary .model-compare-button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
