@@ -1207,3 +1207,13 @@ patterns.push(
   [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} a la espera de investigación en Xiaohongshu`],
   [/^(\d+) not yet checked$/, (_, n) => `${n} aún sin revisar`]
 );
+// Disclosed commission store links (2026-11-06).
+Object.assign(es, {
+  "Store option:": "Opción en la tienda:",
+  "Price varies by finish.": "El precio varía según el acabado.",
+  "Made to order.": "Se fabrica por encargo.",
+  "Listed in stock.": "En stock según la tienda.",
+  "Shipping and duties depend on your country.": "El envío y los aranceles dependen de tu país.",
+  "We may earn a commission from purchases through this link. It does not affect our comparisons.": "Podemos ganar una comisión por las compras hechas con este enlace. No afecta a nuestras comparaciones.",
+  "7-piece set: shifters, front and rear derailleurs, hydraulic brakes and charger. The store does not state the lever material.": "Juego de 7 piezas: mandos, desviador delantero, cambio trasero, frenos hidráulicos y cargador. La tienda no indica el material de las manetas."
+});

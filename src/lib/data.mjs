@@ -12,6 +12,7 @@ import { validateMountApproval } from './mount-evidence.mjs';
 import { validateOpinionCollection } from './opinions.mjs';
 import { normalizeCatalogSearch } from '../../assets/catalog-search.js';
 import { validateTires } from './tires.mjs';
+import { validateShoppingLinks } from './shopping-links.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -268,6 +269,7 @@ export function loadDataset() {
     tires: loadDirectory('tires'),
     tireCoverage: loadDirectory('tire-coverage'),
     tireImages: loadDirectory('tire-images'),
+    shoppingLinks: loadDirectory('shopping-links'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -640,6 +642,7 @@ export function validateDataset(data = loadDataset()) {
 
   errors.push(...validateResearchAttempts(data.researchAttempts, data));
   errors.push(...validateTires(data, sourceIds));
+  errors.push(...validateShoppingLinks(data));
 
   for (const brand of data.brands) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);
