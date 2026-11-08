@@ -460,6 +460,67 @@
         "zh-Hans": "厂家车型图片；图上的 57C 胎容标注不是货架或挡泥板认可，图片未展示载货配置。",
         "de": "Herstellerbild; die aufgedruckte 57C-Angabe gibt weder Träger noch Schutzbleche frei. Kein beladener Aufbau ist abgebildet."
       }
+    },
+    {
+      "id": "elves-mori-aerox-official-embed",
+      "model_ids": [
+        "elves-mori-aerox-frameset"
+      ],
+      "name": "Elves Mori AeroX",
+      "alt": {
+        "en": "Elves Mori AeroX gravel frameset in orange-red and lavender grey with fork, seatpost and integrated drop handlebar",
+        "zh-Hans": "橙红与薰衣草灰配色的 Elves Mori AeroX 砾石车架组，含前叉、座管和一体式弯把",
+        "de": "Elves-Mori-AeroX-Gravelrahmenset in Orangerot und Lavendelgrau mit Gabel, Sattelstütze und integriertem Rennlenker"
+      },
+      "note": {
+        "en": "Official Elves photo of the Mori AeroX frameset in Blazing Orange & Wistaria, shown from Elves's website. The integrated handlebar in the photo costs extra.",
+        "zh-Hans": "Elves 官方 Mori AeroX 车架组照片（Blazing Orange & Wistaria 涂装），直接从 Elves 官网加载。照片中的一体把需另外付费。",
+        "de": "Offizielles Elves-Foto des Mori-AeroX-Rahmensets in Blazing Orange & Wistaria, direkt von der Elves-Website geladen. Der abgebildete integrierte Lenker kostet extra."
+      },
+      "external": {
+        "source": {
+          "source_id": "elves-mori-aerox-technical-2026-08-25",
+          "url": "https://elvesbike.com/more.php?id=188&lm=47",
+          "accessed_at": "2026-11-08",
+          "type": "official-product-page"
+        },
+        "image": {
+          "platform_id": "elves-mori-aerox",
+          "hosting": {
+            "mode": "remote",
+            "remote_url": "https://elvesbike.com/attach/202412/1734998874937741323.jpg"
+          },
+          "width": 1300,
+          "height": 667,
+          "source_media_sha256": "31704d5aea66fdb28948466c656dcbda5b6f4ee550be19980d949fb552188ddf",
+          "source_media_bytes": 183148,
+          "subject_accuracy": "exact-model",
+          "credit": "ELVESBIKE — official product photo",
+          "rights": {
+            "status": "official-page-embed",
+            "copyright_holder": "ELVESBIKE",
+            "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no licence is asserted. No embedding prohibition was identified in the limited 8 November 2026 terms read; no reuse grant or licence was established.",
+            "removal_route": "https://github.com/p0s/china-bike-research/issues",
+            "terms_source_id": "elves-terms-recheck-2026-10-22"
+          },
+          "privacy_review": {
+            "reviewed_at": "2026-11-08",
+            "embedded_metadata": "reviewed-nonpersonal-editor-ids",
+            "visual": "no-faces-plates-accounts-locations"
+          },
+          "reviewed_at": "2026-11-08",
+          "observation": {
+            "observed_at": "2026-11-08",
+            "http_status": 200,
+            "redirects": 0,
+            "content_type": "image/jpeg",
+            "same_host_as_page": true,
+            "set_cookie_observed": false,
+            "terms_read": "No embedding prohibition was identified in the limited 8 November 2026 terms read; no reuse grant or licence was established.",
+            "note": "Observations of 2026-11-08 only; they do not guarantee later bytes, headers, cookies or hosts."
+          }
+        }
+      }
     }
   ],
   "images": [
