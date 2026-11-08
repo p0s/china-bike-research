@@ -5,7 +5,7 @@
   "series_order": 22,
   "image_id": "comparing-two-geometry-charts-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-10",
+  "dateModified": "2026-11-08",
   "researched_at": "2026-10-04",
   "model_ids": [
     "lightcarbon-lcr018-d",
@@ -15,7 +15,8 @@
     "lightcarbon-lcr018-d-official-2026-08-29",
     "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
     "incolor-speedster-official-2026-08-29",
-    "incolor-speedster-brochure-2026-08-29"
+    "incolor-speedster-brochure-2026-08-29",
+    "lightcarbon-catalog-v5-road-recheck-2026-10-11"
   ],
   "editorial_references": [],
   "photo_sections": [
@@ -29,112 +30,298 @@
   ],
   "translations": {
     "en": {
-      "title": "Comparing two geometry charts: align the evidence before the numbers",
-      "description": "A method for comparing bike geometry across brands without mixing units, model revisions or incompatible measurement conventions.",
-      "intro": "Two tidy geometry charts can produce a very untidy comparison. Before subtracting stack or reach, make sure both tables describe the frames you can actually buy and measure the same things. A spreadsheet cannot repair the wrong source.",
+      "title": "Comparing two geometry charts: match stack and reach together, not the size label",
+      "description": "INCOLOR's Speedster SR 54 and LightCarbon's LCR018-D 540 share 383 mm of reach, but the LCR018-D is 29 mm taller. The size LightCarbon lists for the same riders, the 520, comes within about 2 mm of a Speedster SR 54 carrying 13 mm of spacers.",
+      "intro": "A size label is a name, not a measurement. INCOLOR's Speedster SR 54 and LightCarbon's LCR018-D 540 print the same 383 mm reach, yet the LCR018-D's head tube ends 29 mm higher. Compare stack and reach as a pair, and only after both charts are confirmed to describe the frames you can buy and to measure the same things.",
       "sections": [
         {
           "id": "source",
           "heading": "Identify the chart, not just the brand",
           "paragraphs": [
-            "Record model, revision, chart date or access date, size labels and source URL. Keep the original diagram. A current web table and an older PDF may both be genuine and still describe different revisions. Do not average conflicting values to make the disagreement disappear."
+            "Record model, revision, chart date or access date, size labels and source URL, and keep the original diagram. A current web table and an older PDF may both be genuine and still describe different revisions: LightCarbon’s LCR018-D product table and its own 2026–2027 catalog disagree on the standover tyre basis and on the size-580 front centre ([when a chart does not add up](/blog/when-geometry-chart-does-not-add-up/)). The comparison below uses INCOLOR’s Speedster SR table as checked on August 29, 2026 and the LCR018-D product table observed on October 3, 2026."
           ]
         },
         {
           "id": "normalise",
           "heading": "Normalize units and references",
           "paragraphs": [
-            "Convert centimetres to millimetres where necessary: 38.0 cm is 380 mm. Distinguish actual and effective top-tube length, frame stack and contact-point height, and any stated tire basis for standover. A size “54” should remain a label until the manufacturer explains what it means.",
-            "If one chart omits a dimension, leave the comparison blank. Deriving it may require angles or reference definitions that the table does not establish. A precise-looking result can be less honest than an empty cell."
+            "Convert centimetres to millimetres where necessary: 38.0 cm is 380 mm. Distinguish actual and effective top-tube length, frame stack and handlebar height, and the tyre basis of any standover figure; LightCarbon’s two documents state 700C×32C and 700×38C for the same standover heights, so those figures are not comparable even with each other. If one chart omits a dimension, leave the cell blank rather than deriving it from angles the table does not define.",
+            "Treat a size label as a name. INCOLOR lists its Speedster SR 54 for riders of 172–178 cm; LightCarbon lists the LCR018-D 540 for 180–186 cm and the 520 for 173–179 cm, both as rough references. Head-tube length is a poor shortcut too: the LCR018-D 520’s head tube is only 1.9 mm longer than the Speedster SR 54’s, yet its stack is 12 mm higher, because stack also includes the fork, the lower headset and the bottom-bracket drop (78 mm against 75 mm)."
           ]
         },
         {
           "id": "catalog",
-          "heading": "Respect the catalog’s warnings",
+          "heading": "Speedster SR 54 against three LCR018-D sizes",
           "paragraphs": [
-            "Compare the [LightCarbon LCR018-D](/models/lightcarbon-lcr018-d/) and [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) only using the exact geometry records and their qualifications. The catalog preserves source conflicts instead of resolving them by guesswork. A dimension unsuitable for a derived fit calculation should stay out of that calculation."
-          ]
+            "No LCR018-D size matches the [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) 54 on both numbers. The [LCR018-D](/models/lightcarbon-lcr018-d/) 540 has the same reach but 29 mm more stack; the 500 nearly the same stack but 12 mm less reach. The 520, listed for the same riders, is 12 mm taller and 6 mm shorter.",
+            "Spacers turn that into a choice. At the Speedster SR 54’s 72° head angle, 12.6 mm of spacers raise its bar 12 mm and move it 3.9 mm back, leaving it 2.1 mm longer than an LCR018-D 520 with the same stem and bar. Matching the 540’s height would take 30.5 mm of spacers and leave the Speedster 9.4 mm shorter. So a rider who needs a low front end gets it only from the Speedster SR, while one who wants the 520’s height can have it on the Speedster with about 13 mm of spacers, if INCOLOR’s cockpit allows that stack ([spacer limits on aero cockpits](/blog/spacer-stack-and-aero-cockpits/)). These figures stop at the top of the head tube; headset covers and cockpit dimensions differ between the frames and come on top."
+          ],
+          "worksheet": {
+            "caption": "Maker charts: INCOLOR Speedster SR 54 (checked August 29, 2026) and LightCarbon LCR018-D (observed October 3, 2026)",
+            "columns": [
+              "Measurement",
+              "Speedster SR 54",
+              "LCR018-D 500",
+              "LCR018-D 520",
+              "LCR018-D 540"
+            ],
+            "rows": [
+              [
+                "Maker's rider height",
+                "172–178 cm",
+                "166–172 cm",
+                "173–179 cm",
+                "180–186 cm"
+              ],
+              [
+                "Stack",
+                "540 mm",
+                "538.1 mm",
+                "552 mm",
+                "569 mm"
+              ],
+              [
+                "Reach",
+                "383 mm",
+                "371 mm",
+                "377 mm",
+                "383 mm"
+              ],
+              [
+                "Head tube",
+                "135.1 mm",
+                "125 mm",
+                "137 mm",
+                "157 mm"
+              ],
+              [
+                "Head / seat angle",
+                "72° / 74°",
+                "71.3° / 74.5°",
+                "72° / 74°",
+                "72° / 73.7°"
+              ],
+              [
+                "Front centre",
+                "591.3 mm",
+                "589.5 mm",
+                "589.8 mm",
+                "601.6 mm"
+              ],
+              [
+                "Wheelbase",
+                "984.6 mm",
+                "992 mm",
+                "992.2 mm",
+                "1004.8 mm"
+              ]
+            ]
+          }
         },
         {
           "id": "finish",
           "heading": "Finish with differences and open questions",
           "paragraphs": [
-            "Make a short table of reliable differences, then a separate list of unresolved items. Compare the complete cockpit arrangements against your intended position. Send the remaining precise questions to the manufacturer. “Which revision is this chart?” is more answerable than “Will this bike fit me?”",
+            "Keep the reliable differences in a short table like this one and list the open items separately: here, LightCarbon’s standover basis, its size-580 front centre, and the 500’s front centre and wheelbase, which run about 4 mm longer than its other cells give. Then compare complete cockpits against the position you ride and send the remaining precise questions to the maker. “Which revision is this chart?” is more answerable than “Will this bike fit me?”",
             "Use our [stack and reach guide](/blog/stack-reach-vs-frame-size/) to identify the reference points, and the [unknown-spec checklist](/blog/choosing-bike-when-specs-unknown/) to handle missing answers."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "对比两张几何表：先统一资料，再比较数字",
-      "description": "跨品牌比较几何的方法，避免混用单位、车型版本和不同测量定义。",
-      "intro": "两张整齐的几何表，也可能产生非常混乱的对比。做stack或reach差值之前，先确认它们描述的是实际可以买到的车架，测量定义也相同。表格无法修复错误的来源。",
+      "title": "比较两张几何表：堆高和前伸量要一起对齐，别只看尺码标签",
+      "description": "INCOLOR Speedster SR 54码与LightCarbon LCR018-D 540码前伸量同为383毫米，但LCR018-D高出29毫米。LightCarbon为相同身高骑手标注的是520码；Speedster SR 54码加13毫米垫圈后，与它相差约2毫米。",
+      "intro": "尺码标签只是名字，不是尺寸。INCOLOR Speedster SR 54码与LightCarbon LCR018-D 540码印着同样383毫米的前伸量，但LCR018-D的头管顶端高出29毫米。应把堆高和前伸量作为一对来比较，而且要先确认两张表描述的是你能买到的车架，量的也是同样的东西。",
       "sections": [
         {
           "id": "source",
           "heading": "确认图表身份，而不只是品牌",
           "paragraphs": [
-            "记录车型、版本、图表日期或访问日期、尺码标签和来源网址，并保存原示意图。当前网页与较早PDF可能都是真实资料，却对应不同版本。不要把冲突数值取平均，让分歧看起来消失。"
+            "记录车型、版本、图表日期或访问日期、尺码标签和来源网址，并保存原示意图。当前网页与较早PDF可能都是真实资料，却对应不同版本：LightCarbon的LCR018-D产品表与其2026—2027目录，在跨高的轮胎基准和580码前轴距上就不一致（见[几何表对不上时](/zh/blog/when-geometry-chart-does-not-add-up/)）。下面的比较使用2026年8月29日查看的INCOLOR Speedster SR几何表，以及2026年10月3日查看的LCR018-D产品表。"
           ]
         },
         {
           "id": "normalise",
           "heading": "统一单位与参考点",
           "paragraphs": [
-            "需要时将厘米转换为毫米，例如38.0厘米等于380毫米。区分实际与有效上管长、车架stack与接触点高度，并保留跨高对应的轮胎基准。“54码”在厂家解释其含义之前，应只视为标签。",
-            "若一张表缺少某个尺寸，比较栏应留空。推导可能需要图表没有明确的角度或参考定义。看起来很精确的结果，有时反而不如一个空白诚实。"
+            "需要时将厘米转换为毫米，例如38.0厘米等于380毫米。区分实际与有效上管长、车架堆高与车把高度，并核对每个跨高数值的轮胎基准：LightCarbon两份文件对同一组跨高数值分别标注700C×32C和700×38C，这些数字连彼此都无法直接比较。若一张表缺少某个尺寸，比较栏应留空，不要用表中没有定义的角度去推导。",
+            "把尺码标签当作名字。INCOLOR把Speedster SR 54码标给身高172–178厘米的骑手；LightCarbon把LCR018-D 540码标给180–186厘米，520码标给173–179厘米，两者都只作参考。头管长度也不是可靠的捷径：LCR018-D 520码的头管只比Speedster SR 54码长1.9毫米，堆高却高出12毫米，因为堆高还包含前叉、下碗组和中轴下沉量（78毫米对75毫米）。"
           ]
         },
         {
           "id": "catalog",
-          "heading": "保留目录中的警示条件",
+          "heading": "Speedster SR 54码对比LCR018-D的三个尺码",
           "paragraphs": [
-            "比较[LightCarbon LCR018-D](/models/lightcarbon-lcr018-d/)与[INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/)时，只使用准确几何记录，并保留限制。目录保留来源冲突，不会靠猜测消除。某个尺寸如果不适合用于推导适配，就应留在该计算之外。"
-          ]
+            "LCR018-D没有哪个尺码能在两项数字上同时对上[INCOLOR Speedster SR](/zh/models/incolor-speedster-sr-frameset/) 54码。[LCR018-D](/zh/models/lightcarbon-lcr018-d/) 540码前伸量相同，但堆高多29毫米；500码堆高几乎相同，前伸量却短12毫米。标给相同身高骑手的520码，则高12毫米、短6毫米。",
+            "垫圈让这变成一个选择。按Speedster SR 54码72°的头管角度，加12.6毫米垫圈可把车把抬高12毫米，同时后移3.9毫米，此时它比使用同样把立和车把的LCR018-D 520码仍长2.1毫米。若要达到540码的高度，需要30.5毫米垫圈，Speedster反而会短9.4毫米。因此，需要低前端的骑手只能从Speedster SR得到；想要520码那种高度的骑手，可以在Speedster上加约13毫米垫圈实现，前提是INCOLOR的把组允许这么高的垫圈（见[气动把组的垫圈堆叠](/zh/blog/spacer-stack-and-aero-cockpits/)）。这些数字只算到头管顶端；两款车架的碗组盖和把组尺寸不同，还要另外加上。"
+          ],
+          "worksheet": {
+            "caption": "厂家几何表：INCOLOR Speedster SR 54码（2026年8月29日查看）与LightCarbon LCR018-D（2026年10月3日查看）",
+            "columns": [
+              "尺寸项目",
+              "Speedster SR 54码",
+              "LCR018-D 500码",
+              "LCR018-D 520码",
+              "LCR018-D 540码"
+            ],
+            "rows": [
+              [
+                "厂家参考身高",
+                "172–178厘米",
+                "166–172厘米",
+                "173–179厘米",
+                "180–186厘米"
+              ],
+              [
+                "堆高",
+                "540毫米",
+                "538.1毫米",
+                "552毫米",
+                "569毫米"
+              ],
+              [
+                "前伸量",
+                "383毫米",
+                "371毫米",
+                "377毫米",
+                "383毫米"
+              ],
+              [
+                "头管长度",
+                "135.1毫米",
+                "125毫米",
+                "137毫米",
+                "157毫米"
+              ],
+              [
+                "头管角度／座管角度",
+                "72°／74°",
+                "71.3°／74.5°",
+                "72°／74°",
+                "72°／73.7°"
+              ],
+              [
+                "前轴距",
+                "591.3毫米",
+                "589.5毫米",
+                "589.8毫米",
+                "601.6毫米"
+              ],
+              [
+                "轴距",
+                "984.6毫米",
+                "992毫米",
+                "992.2毫米",
+                "1004.8毫米"
+              ]
+            ]
+          }
         },
         {
           "id": "finish",
           "heading": "把差异与待确认问题一起列出",
           "paragraphs": [
-            "用短表列出可靠差值，再另列未解决项目，把完整把组配置与目标骑姿对照。最后向厂家发送具体问题。“这张表对应哪个版本？”比“这辆车适合我吗？”更容易得到有效回答。",
-            "先按[stack与reach指南](/blog/stack-reach-vs-frame-size/)确认参考点；资料仍缺失时，可用[规格未明选车清单](/blog/choosing-bike-when-specs-unknown/)整理需要确认的问题。"
+            "把可靠差值放进像上面这样的短表，再另列未解决项目：在这里，是LightCarbon的跨高轮胎基准、580码前轴距，以及500码的前轴距和轴距——它们比该尺码其他格算出的结果长约4毫米。然后把完整把组配置与你目前的骑姿对照，再向厂家发送剩下的具体问题。“这张表对应哪个版本？”比“这辆车适合我吗？”更容易得到有效回答。",
+            "先按[stack与reach指南](/zh/blog/stack-reach-vs-frame-size/)确认参考点；资料仍缺失时，可用[规格未明选车清单](/zh/blog/choosing-bike-when-specs-unknown/)整理需要确认的问题。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Zwei Geometrietabellen vergleichen: Erst die Grundlagen angleichen",
-      "description": "Vergleiche Geometrien ohne Einheiten, Modellrevisionen oder Messdefinitionen zu vermischen.",
-      "intro": "Zwei ordentliche Geometrietabellen können einen unordentlichen Vergleich ergeben. Prüfe vor Stack- und Reach-Differenzen, ob beide Tabellen die kaufbaren Rahmen und dieselben Messpunkte beschreiben. Eine Tabelle repariert keine falsche Quelle.",
+      "title": "Zwei Geometrietabellen vergleichen: Stack und Reach gemeinsam abgleichen, nicht die Größenbezeichnung",
+      "description": "INCOLORs Speedster SR 54 und LightCarbons LCR018-D 540 haben beide 383 mm Reach, doch der LCR018-D baut 29 mm höher. Die Größe, die LightCarbon für dieselben Körpergrößen nennt, die 520, erreicht ein Speedster SR 54 mit 13 mm Spacern bis auf etwa 2 mm.",
+      "intro": "Eine Größenbezeichnung ist ein Name, kein Maß. INCOLORs Speedster SR 54 und LightCarbons LCR018-D 540 nennen denselben Reach von 383 mm, doch das Steuerrohr des LCR018-D endet 29 mm höher. Vergleiche Stack und Reach als Paar – und erst, wenn feststeht, dass beide Tabellen die kaufbaren Rahmen beschreiben und dasselbe messen.",
       "sections": [
         {
           "id": "source",
           "heading": "Die Tabelle identifizieren, nicht nur die Marke",
           "paragraphs": [
-            "Notiere Modell, Revision, Tabellen- oder Abrufdatum, Größenbezeichnungen und URL; behalte die Zeichnung. Aktuelle Webseite und altes PDF können echt sein und unterschiedliche Revisionen beschreiben. Widersprüche werden durch Mittelwerte nicht gelöst."
+            "Notiere Modell, Revision, Tabellen- oder Abrufdatum, Größenlabels und Quell-URL und bewahre die Originalzeichnung auf. Eine aktuelle Webtabelle und ein älteres PDF können beide echt sein und dennoch verschiedene Revisionen beschreiben: LightCarbons LCR018-D-Produkttabelle und sein eigener Katalog 2026–2027 widersprechen sich beim Reifenbezug des Überstands und beim Front-Center der Größe 580 ([wenn eine Tabelle nicht aufgeht](/de/blog/when-geometry-chart-does-not-add-up/)). Der Vergleich unten nutzt INCOLORs Speedster-SR-Tabelle, geprüft am 29. August 2026, und die am 3. Oktober 2026 erfasste LCR018-D-Produkttabelle."
           ]
         },
         {
           "id": "normalise",
-          "heading": "Einheiten und Bezugspunkte angleichen",
+          "heading": "Einheiten und Bezugspunkte vereinheitlichen",
           "paragraphs": [
-            "Wandle nötigenfalls Zentimeter in Millimeter um: 38,0 cm sind 380 mm. Trenne tatsächliche und effektive Oberrohrlänge, Rahmen-Stack und Griffhöhe sowie Reifenbezüge der Überstandshöhe. „54“ bleibt ein Etikett, bis die Herstellerdefinition klar ist.",
-            "Fehlt ein Maß, lasse das Vergleichsfeld offen. Eine Ableitung kann Winkel oder Bezugsdefinitionen benötigen, die nicht belegt sind. Eine präzise wirkende Zahl ist dann weniger ehrlich als eine leere Zelle."
+            "Rechne bei Bedarf Zentimeter in Millimeter um: 38,0 cm sind 380 mm. Unterscheide tatsächliches und effektives Oberrohr, Rahmen-Stack und Lenkerhöhe sowie den Reifenbezug jedes Überstandswerts; LightCarbons zwei Dokumente nennen für dieselben Überstandshöhen 700C×32C und 700×38C, sodass diese Werte nicht einmal untereinander vergleichbar sind. Fehlt ein Maß in einer Tabelle, lass das Feld leer, statt es aus Winkeln abzuleiten, die die Tabelle nicht definiert.",
+            "Behandle eine Größenbezeichnung als Namen. INCOLOR nennt den Speedster SR 54 für 172–178 cm Körpergröße, LightCarbon den LCR018-D 540 für 180–186 cm und den 520 für 173–179 cm, beides als grobe Referenz. Auch die Steuerrohrlänge ist eine schlechte Abkürzung: Das Steuerrohr des LCR018-D 520 ist nur 1,9 mm länger als das des Speedster SR 54, sein Stack aber 12 mm höher, weil der Stack auch Gabel, unteren Steuersatz und Tretlagerabsenkung enthält (78 mm gegenüber 75 mm)."
           ]
         },
         {
           "id": "catalog",
-          "heading": "Die Hinweise im Katalog respektieren",
+          "heading": "Speedster SR 54 gegen drei LCR018-D-Größen",
           "paragraphs": [
-            "Vergleiche [LightCarbon LCR018-D](/models/lightcarbon-lcr018-d/) und [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/) anhand ihrer genauen Datensätze und Einschränkungen. Der Katalog bewahrt Quellenkonflikte. Ein für abgeleitete Passformrechnungen ungeeignetes Maß bleibt außerhalb der Rechnung."
-          ]
+            "Keine LCR018-D-Größe trifft den [INCOLOR Speedster SR](/de/models/incolor-speedster-sr-frameset/) 54 bei beiden Werten. Der [LCR018-D](/de/models/lightcarbon-lcr018-d/) 540 hat denselben Reach, aber 29 mm mehr Stack; der 500 fast denselben Stack, aber 12 mm weniger Reach. Der 520, für dieselben Körpergrößen angegeben, ist 12 mm höher und 6 mm kürzer.",
+            "Spacer machen daraus eine Wahl. Beim Steuerrohrwinkel des Speedster SR 54 von 72° heben 12,6 mm Spacer den Lenker um 12 mm und versetzen ihn 3,9 mm nach hinten; er liegt dann noch 2,1 mm weiter vorn als bei einem LCR018-D 520 mit gleichem Vorbau und Lenker. Die Höhe des 540 bräuchte 30,5 mm Spacer und ließe den Speedster 9,4 mm kürzer. Wer eine tiefe Front braucht, bekommt sie also nur beim Speedster SR; wer die Höhe des 520 möchte, erreicht sie am Speedster mit rund 13 mm Spacern, sofern INCOLORs Cockpit diesen Stapel erlaubt ([Spacer an Aero-Cockpits](/de/blog/spacer-stack-and-aero-cockpits/)). Die Werte enden an der Oberkante des Steuerrohrs; Steuersatzabdeckungen und Cockpitmaße unterscheiden sich zwischen den Rahmen und kommen hinzu."
+          ],
+          "worksheet": {
+            "caption": "Herstellertabellen: INCOLOR Speedster SR 54 (geprüft am 29. August 2026) und LightCarbon LCR018-D (erfasst am 3. Oktober 2026)",
+            "columns": [
+              "Maß",
+              "Speedster SR 54",
+              "LCR018-D 500",
+              "LCR018-D 520",
+              "LCR018-D 540"
+            ],
+            "rows": [
+              [
+                "Körpergröße laut Hersteller",
+                "172–178 cm",
+                "166–172 cm",
+                "173–179 cm",
+                "180–186 cm"
+              ],
+              [
+                "Stack",
+                "540 mm",
+                "538,1 mm",
+                "552 mm",
+                "569 mm"
+              ],
+              [
+                "Reach",
+                "383 mm",
+                "371 mm",
+                "377 mm",
+                "383 mm"
+              ],
+              [
+                "Steuerrohr",
+                "135,1 mm",
+                "125 mm",
+                "137 mm",
+                "157 mm"
+              ],
+              [
+                "Steuerrohr-/Sitzrohrwinkel",
+                "72° / 74°",
+                "71,3° / 74,5°",
+                "72° / 74°",
+                "72° / 73,7°"
+              ],
+              [
+                "Front-Center",
+                "591,3 mm",
+                "589,5 mm",
+                "589,8 mm",
+                "601,6 mm"
+              ],
+              [
+                "Radstand",
+                "984,6 mm",
+                "992 mm",
+                "992,2 mm",
+                "1004,8 mm"
+              ]
+            ]
+          }
         },
         {
           "id": "finish",
-          "heading": "Unterschiede und offene Fragen festhalten",
+          "heading": "Mit Unterschieden und offenen Fragen abschließen",
           "paragraphs": [
-            "Liste belastbare Unterschiede und offene Fragen getrennt. Vergleiche vollständige Cockpits mit deiner Zielposition und schicke konkrete Restfragen an den Hersteller. „Welche Revision zeigt diese Tabelle?“ ist leichter zu beantworten als „Passt mir dieses Rad?“.",
-            "Die [Stack-und-Reach-Erklärung](/blog/stack-reach-vs-frame-size/) hilft bei den Bezugspunkten; mit der [Checkliste für ungeklärte Angaben](/blog/choosing-bike-when-specs-unknown/) ordnest du fehlende Antworten ein."
+            "Halte die belastbaren Unterschiede in einer kurzen Tabelle wie dieser fest und liste offene Punkte getrennt: hier LightCarbons Reifenbezug des Überstands, das Front-Center der Größe 580 sowie Front-Center und Radstand des 500, die etwa 4 mm länger sind, als seine übrigen Felder ergeben. Vergleiche dann komplette Cockpits mit deiner gefahrenen Position und schick die verbleibenden präzisen Fragen an den Hersteller. „Welche Revision zeigt diese Tabelle?“ lässt sich besser beantworten als „Passt mir das Rad?“",
+            "Die Bezugspunkte erklärt unser [Stack-und-Reach-Leitfaden](/de/blog/stack-reach-vs-frame-size/); für fehlende Antworten hilft die [Checkliste bei unbekannten Spezifikationen](/de/blog/choosing-bike-when-specs-unknown/)."
           ]
         }
       ]
