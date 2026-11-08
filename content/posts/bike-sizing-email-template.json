@@ -5,7 +5,7 @@
   "series_order": 93,
   "image_id": "bike-sizing-email-template-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-22",
+  "dateModified": "2026-11-08",
   "researched_at": "2026-10-04",
   "model_ids": [
     "ican-graro-frameset",
@@ -15,7 +15,14 @@
     "ican-graro-official",
     "ican-graro-official-2026-08-27",
     "lightcarbon-lcr018-d-official-2026-08-29",
-    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
+    "incolor-speedster-official-2026-08-29",
+    "yoeleo-altera-g21-current-2026-08-27",
+    "twitter-v3-wireless-official-2026-08-25",
+    "incolor-voyager-official-2026-08-25",
+    "winspace-g5-official",
+    "lightcarbon-lcg071s-official-2026-08-16",
+    "sava-gelaro-s4-official-2026-08-16"
   ],
   "editorial_references": [
     "https://bikefit.com/blogs/bikefit-blog/what-to-expect-in-a-bike-fit",
@@ -33,8 +40,8 @@
   "translations": {
     "en": {
       "title": "A sizing email that gets more than a height-chart answer",
-      "description": "Send reference-bike measurements, contact-point targets and component constraints to get a documented, buildable frame-size answer.",
-      "intro": "“I am 178 cm; which size?” is easy to answer quickly and hard to answer well. Give the seller the position you want to reproduce or the fit target you have established. Ask it to show the actual setup behind the suggested size.",
+      "description": "At 178 cm, four of eight makers’ height charts in our catalog name two sizes, and the frames they suggest run from 540 to 608.9 mm of stack. Send reference measurements and contact-point targets, and ask for the stack, reach and cockpit behind the suggested size.",
+      "intro": "“I am 178 cm; which size?” is easy to answer quickly and hard to answer well. Eight makers’ height charts in our catalog answer it with frames from 540 to 608.9 mm of stack, and four of them name two sizes at that height. Give the seller the position you want to reproduce or the fit target you have established, and ask it to show the actual setup behind the suggested size.",
       "sections": [
         {
           "id": "prepare",
@@ -56,17 +63,85 @@
           "heading": "Read the reply as a build proposal",
           "paragraphs": [
             "For a [GRARO](/models/ican-graro-frameset/) or [LCR018-D](/models/lightcarbon-lcr018-d/), check the reply against the exact current geometry and supplied cockpit options. A recommended size without the needed component arrangement leaves the fit question partly unanswered. Do not average conflicting charts or assume a longer stem repairs every size mismatch.",
-            "The [LCR018-D manufacturer chart](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html) itself treats body-height ranges as a reference that varies with body proportions. Consider a hypothetical reply: “Size 52, standard cockpit.” It gives a size label but leaves the stem length, bar dimensions, spacers and achievable contact points unspecified. Ask for those details against your reference measurements; until they are resolved, the reply is not a complete build proposal.",
+            "The [LCR018-D manufacturer chart](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html) itself treats body-height ranges as a reference that varies with body proportions, and makers’ charts disagree with each other. For a 178 cm rider, the eight charts below point to frames from 540 to 608.9 mm of stack; four of them name two sizes, 17 to 28 mm apart in stack. A reply such as “Size 52, standard cockpit” only restates a chart. Ask for the stack and reach of the proposed size and for the stem length, bar dimensions and spacers that reach your reference position; until they are resolved, the reply is not a complete build proposal.",
             "Keep the written proposal and have your fitter/assembler review unresolved points before ordering. A seller recommendation is useful evidence, not a guarantee of comfort for your body. The strongest answer is one you can build within the limits and assess against a clear position target.",
             "Prepare the measurements with the [remote-fit reference sheet](/blog/bike-fit-without-test-ride/), then use the [frame-sizing worksheet](/blog/chinese-bike-frame-sizing/) to compare the proposed setup. Keep an unanswered item as a question instead of filling it with an assumption."
-          ]
+          ],
+          "worksheet": {
+            "caption": "What eight makers’ height charts suggest for a 178 cm rider, as recorded in our catalog",
+            "columns": [
+              "Frame",
+              "Size at 178 cm (chart range)",
+              "Stack",
+              "Reach",
+              "Chart checked"
+            ],
+            "rows": [
+              [
+                "INCOLOR Speedster SR",
+                "54 (172–178 cm) or 56 (177–183 cm)",
+                "540 or 560 mm",
+                "383 or 390 mm",
+                "August 29, 2026"
+              ],
+              [
+                "YOELEO Altera G21",
+                "52 (172–180 cm) or 54 (177–185 cm)",
+                "549 or 566 mm",
+                "379 or 383 mm",
+                "September 1, 2026"
+              ],
+              [
+                "Twitter Gravel V3",
+                "51 (175–185 cm)",
+                "550 mm",
+                "385 mm",
+                "August 25, 2026"
+              ],
+              [
+                "LightCarbon LCR018-D",
+                "520 (173–179 cm)",
+                "552 mm",
+                "377 mm",
+                "October 3, 2026"
+              ],
+              [
+                "INCOLOR Voyager",
+                "54 (172–178 cm) or 57 (177–186 cm)",
+                "555 or 580 mm",
+                "385 or 397 mm",
+                "August 25, 2026"
+              ],
+              [
+                "Winspace G5",
+                "M (171–179 cm)",
+                "561 mm",
+                "383 mm",
+                "September 1, 2026"
+              ],
+              [
+                "LightCarbon LCG071S Pro",
+                "520 (173–179 cm)",
+                "563.4 mm",
+                "377.5 mm",
+                "August 16, 2026"
+              ],
+              [
+                "SAVA Gelaro",
+                "510 (172–180 cm) or 535 (178–186 cm)",
+                "580.6 or 608.9 mm",
+                "380 or 390 mm",
+                "August 16, 2026"
+              ]
+            ]
+          }
         }
       ]
     },
     "zh-Hans": {
       "title": "选码邮件怎么写，才能得到身高表以外的答复？",
-      "description": "发送参考车测量方法、接触点目标和部件限制，让卖家说明建议尺码所需的具体装配方案。",
-      "intro": "“我身高178厘米，该买什么尺码？”很容易得到快速答复，却未必能解决问题。把希望保留的骑姿或已确定的适配目标告诉卖家，并请对方说明建议尺码背后的具体配置。",
+      "description": "身高178厘米时，我们目录里八家厂商的身高表中有四家给出两个尺码，建议车架的stack从540到608.9毫米。把参考测量和接触点目标发给卖家，并请对方说明建议尺码的stack、reach和把组配置。",
+      "intro": "“我身高178厘米，该买什么尺码？”很容易得到快速答复，却未必能解决问题。我们目录里八家厂商的身高表，对这个问题给出的车架stack从540到608.9毫米不等，其中四家在这个身高给出两个尺码。把希望保留的骑姿或已确定的适配目标告诉卖家，并请对方说明建议尺码背后的具体配置。",
       "sections": [
         {
           "id": "prepare",
@@ -88,17 +163,85 @@
           "heading": "把回复当作一份装配方案来读",
           "paragraphs": [
             "对于[GRARO](/zh/models/ican-graro-frameset/)或[LCR018-D](/zh/models/lightcarbon-lcr018-d/)，要用准确版本的当前几何表和实际供货把组核对回复。只给出尺码，没有说明实现目标所需的部件配置，适配问题仍未回答完整。不要把互相矛盾的几何数据取平均，也不要假定更长的把立能解决所有尺码错配。",
-            "[LCR018-D厂家几何表](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html)也明确把身高范围作为参考，并说明身体比例会影响选择。假设卖家回复：“52码，标准把组。”这给出了尺码，却没有说明把立长度、车把尺寸、垫圈和可实现的接触点位置。请对方按你的参考测量补充这些信息；问题未解决前，这还不是完整的装配方案。",
+            "[LCR018-D厂家几何表](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html)也明确把身高范围作为参考，并说明身体比例会影响选择；而且各家身高表彼此并不一致。对身高178厘米的骑手，下表八张身高表指向的车架stack从540到608.9毫米；其中四家给出两个尺码，两者stack相差17至28毫米。“52码，标准把组”这样的回复只是复述身高表。请对方说明建议尺码的stack和reach，以及达到你参考位置所需的把立长度、车把尺寸和垫圈；这些问题未解决前，这还不是完整的装配方案。",
             "保存书面方案，并在订货前请适配师或装配人员审核未解问题。卖家建议是有用依据，但不能保证你的身体一定舒适。更有用的答复，是在规定限制内能够装配，并可与明确的骑姿目标核对。",
             "先用[远程适配记录表](/zh/blog/bike-fit-without-test-ride/)准备测量，再用[车架选码表](/zh/blog/chinese-bike-frame-sizing/)比较建议配置。未回答的项目仍是待问问题，不应自行补成已知答案。"
-          ]
+          ],
+          "worksheet": {
+            "caption": "八家厂商的身高表给178厘米骑手的建议（按目录记录）",
+            "columns": [
+              "车架",
+              "178厘米对应尺码（身高范围）",
+              "Stack",
+              "Reach",
+              "几何表查看日期"
+            ],
+            "rows": [
+              [
+                "INCOLOR Speedster SR",
+                "54码（172–178厘米）或56码（177–183厘米）",
+                "540或560毫米",
+                "383或390毫米",
+                "2026年8月29日"
+              ],
+              [
+                "YOELEO Altera G21",
+                "52码（172–180厘米）或54码（177–185厘米）",
+                "549或566毫米",
+                "379或383毫米",
+                "2026年9月1日"
+              ],
+              [
+                "Twitter Gravel V3",
+                "51码（175–185厘米）",
+                "550毫米",
+                "385毫米",
+                "2026年8月25日"
+              ],
+              [
+                "LightCarbon LCR018-D",
+                "520码（173–179厘米）",
+                "552毫米",
+                "377毫米",
+                "2026年10月3日"
+              ],
+              [
+                "INCOLOR Voyager",
+                "54码（172–178厘米）或57码（177–186厘米）",
+                "555或580毫米",
+                "385或397毫米",
+                "2026年8月25日"
+              ],
+              [
+                "Winspace G5",
+                "M码（171–179厘米）",
+                "561毫米",
+                "383毫米",
+                "2026年9月1日"
+              ],
+              [
+                "LightCarbon LCG071S Pro",
+                "520码（173–179厘米）",
+                "563.4毫米",
+                "377.5毫米",
+                "2026年8月16日"
+              ],
+              [
+                "SAVA Gelaro",
+                "510码（172–180厘米）或535码（178–186厘米）",
+                "580.6或608.9毫米",
+                "380或390毫米",
+                "2026年8月16日"
+              ]
+            ]
+          }
         }
       ]
     },
     "de": {
       "title": "Eine Größenanfrage für mehr als eine Körpergrößentabelle",
-      "description": "Sende Referenzmaße, Messmethode und Positionsziele. Lass den Verkäufer die Bauteile und Grenzen hinter seiner Größenempfehlung erklären.",
-      "intro": "„Ich bin 178 cm, welche Größe?“ lässt sich schnell beantworten, aber nicht unbedingt gut. Beschreibe die Position, die du übernehmen möchtest, oder ein bereits ermitteltes Fit-Ziel. Lass dir den konkreten Aufbau hinter der Größenempfehlung zeigen.",
+      "description": "Bei 178 cm nennen vier von acht Hersteller-Größentabellen in unserem Katalog zwei Größen, und die vorgeschlagenen Rahmen reichen von 540 bis 608,9 mm Stack. Sende Referenzmaße und Positionsziele und frag nach Stack, Reach und Cockpit hinter der vorgeschlagenen Größe.",
+      "intro": "„Ich bin 178 cm, welche Größe?“ lässt sich schnell beantworten, aber nicht unbedingt gut. Acht Hersteller-Größentabellen in unserem Katalog beantworten die Frage mit Rahmen von 540 bis 608,9 mm Stack, und vier davon nennen bei dieser Körpergröße zwei Größen. Beschreibe die Position, die du übernehmen möchtest, oder ein bereits ermitteltes Fit-Ziel. Lass dir den konkreten Aufbau hinter der Größenempfehlung zeigen.",
       "sections": [
         {
           "id": "prepare",
@@ -120,10 +263,78 @@
           "heading": "Die Antwort als Aufbauvorschlag prüfen",
           "paragraphs": [
             "Gleiche die Antwort für [GRARO](/de/models/ican-graro-frameset/) oder [LCR018-D](/de/models/lightcarbon-lcr018-d/) mit der aktuellen Geometrie der genauen Version und den tatsächlich lieferbaren Cockpitoptionen ab. Ohne die nötige Bauteilkombination bleibt die Größenempfehlung unvollständig. Bilde keinen Mittelwert aus widersprüchlichen Tabellen und erwarte nicht, dass ein längerer Vorbau jede falsche Rahmengröße ausgleicht.",
-            "Die [LCR018-D-Herstellertabelle](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html) bezeichnet die Körpergrößenbereiche selbst als Orientierung, die von den Körperproportionen abhängt. Angenommen, die Antwort lautet: „Größe 52, Standardcockpit.“ Sie nennt eine Größe, lässt aber Vorbaulänge, Lenkermaße, Spacer und erreichbare Kontaktpunkte offen. Frage diese Angaben anhand deiner Referenzmaße nach. Bis dahin ist die Antwort kein vollständiger Aufbauvorschlag.",
+            "Die [LCR018-D-Herstellertabelle](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html) bezeichnet die Körpergrößenbereiche selbst als Orientierung, die von den Körperproportionen abhängt, und die Tabellen verschiedener Hersteller widersprechen sich. Für 178 cm verweisen die acht Tabellen unten auf Rahmen mit 540 bis 608,9 mm Stack; vier nennen zwei Größen, die 17 bis 28 mm im Stack auseinanderliegen. Eine Antwort wie „Größe 52, Standardcockpit“ wiederholt nur eine Tabelle. Frag nach Stack und Reach der vorgeschlagenen Größe sowie nach Vorbaulänge, Lenkermaßen und Spacern, mit denen deine Referenzposition erreicht wird. Bis dahin ist die Antwort kein vollständiger Aufbauvorschlag.",
             "Bewahre den schriftlichen Vorschlag auf und lass offene Punkte vor der Bestellung von Fitter oder Werkstatt prüfen. Die Verkäuferempfehlung hilft, garantiert aber keine bequeme Position für deinen Körper. Eine brauchbare Antwort lässt sich innerhalb der Grenzen umsetzen und an einem klaren Positionsziel prüfen.",
             "Bereite die Maße mit dem [Referenzblatt für den Fernkauf](/de/blog/bike-fit-without-test-ride/) vor und vergleiche den Vorschlag mit dem [Arbeitsblatt zur Rahmengröße](/de/blog/chinese-bike-frame-sizing/). Halte eine offene Angabe als Frage fest, statt sie durch eine Annahme zu ersetzen."
-          ]
+          ],
+          "worksheet": {
+            "caption": "Was acht Hersteller-Größentabellen für 178 cm vorschlagen, wie in unserem Katalog erfasst",
+            "columns": [
+              "Rahmen",
+              "Größe bei 178 cm (Körpergrößenbereich)",
+              "Stack",
+              "Reach",
+              "Tabelle geprüft"
+            ],
+            "rows": [
+              [
+                "INCOLOR Speedster SR",
+                "54 (172–178 cm) oder 56 (177–183 cm)",
+                "540 oder 560 mm",
+                "383 oder 390 mm",
+                "29. August 2026"
+              ],
+              [
+                "YOELEO Altera G21",
+                "52 (172–180 cm) oder 54 (177–185 cm)",
+                "549 oder 566 mm",
+                "379 oder 383 mm",
+                "1. September 2026"
+              ],
+              [
+                "Twitter Gravel V3",
+                "51 (175–185 cm)",
+                "550 mm",
+                "385 mm",
+                "25. August 2026"
+              ],
+              [
+                "LightCarbon LCR018-D",
+                "520 (173–179 cm)",
+                "552 mm",
+                "377 mm",
+                "3. Oktober 2026"
+              ],
+              [
+                "INCOLOR Voyager",
+                "54 (172–178 cm) oder 57 (177–186 cm)",
+                "555 oder 580 mm",
+                "385 oder 397 mm",
+                "25. August 2026"
+              ],
+              [
+                "Winspace G5",
+                "M (171–179 cm)",
+                "561 mm",
+                "383 mm",
+                "1. September 2026"
+              ],
+              [
+                "LightCarbon LCG071S Pro",
+                "520 (173–179 cm)",
+                "563,4 mm",
+                "377,5 mm",
+                "16. August 2026"
+              ],
+              [
+                "SAVA Gelaro",
+                "510 (172–180 cm) oder 535 (178–186 cm)",
+                "580,6 oder 608,9 mm",
+                "380 oder 390 mm",
+                "16. August 2026"
+              ]
+            ]
+          }
         }
       ]
     }
