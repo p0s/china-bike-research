@@ -246,8 +246,16 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
         if (header) header.hidden = true;
       }
       if (image.hasAttribute('data-blog-bike-image')) {
+        const figure = image.closest('[data-blog-photo]');
+        // A maker-hosted photo that fails is omitted with its caption; local photos show the status line.
+        if (image.hasAttribute('data-blog-remote')) {
+          const group = figure?.parentElement;
+          figure?.remove();
+          if (group?.classList.contains('blog-model-photos') && !group.children.length) group.remove();
+          return;
+        }
         image.closest('.blog-photo-scene')?.classList.add('is-unavailable');
-        const status = image.closest('[data-blog-photo]')?.querySelector('[data-blog-photo-status]');
+        const status = figure?.querySelector('[data-blog-photo-status]');
         if (status) status.hidden = false;
       }
     };
