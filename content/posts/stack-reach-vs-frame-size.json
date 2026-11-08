@@ -5,14 +5,23 @@
   "series_order": 21,
   "image_id": "stack-reach-vs-frame-size-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-10",
+  "dateModified": "2026-11-08",
   "researched_at": "2026-10-04",
   "model_ids": [
     "lightcarbon-lcr018-d"
   ],
   "source_ids": [
     "lightcarbon-lcr018-d-official-2026-08-29",
-    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
+    "elves-falath-pro-official-2026-08-17",
+    "incolor-speedster-official-2026-08-29",
+    "elves-mori-aerox-technical-2026-08-25",
+    "twitter-cyclone-gen3-et-usa-2026-08-17",
+    "sava-a7l-official-global-2026-08-17",
+    "incolor-voyager-official-2026-08-25",
+    "seka-exaero-gr-official-2026-08-27",
+    "yoeleo-altera-g21-current-2026-08-27",
+    "twitter-v3-wireless-official-2026-08-25"
   ],
   "editorial_references": [
     "https://www.canyon.com/en-gb/blog-content/road-cycling-news/road-bike-geometry-explained/b19102022.html"
@@ -27,9 +36,9 @@
   ],
   "translations": {
     "en": {
-      "title": "Stack and reach explained: why two size-54 frames can fit differently",
-      "description": "Read frame stack and reach as coordinates, compare an illustrative pair and keep cockpit fit separate from the frame-size label.",
-      "intro": "A size label is a manufacturer’s name for a size. Stack and reach give you more useful comparison points—provided the chart is reliable and its reference is clear. They still describe only the frame, so keep the cockpit in the calculation.",
+      "title": "Stack and reach: ten frames labelled 54 differ by up to 35 mm in stack",
+      "description": "Read stack and reach as coordinates. Across ten catalog frames labelled 54 or 540, stack runs from 536.6 to 572 mm and reach from 380.8 to 398 mm, and the makers that give rider heights list their 54s for riders from 172 to 195 cm.",
+      "intro": "A size label is a maker’s name for a size, not a measurement. Ten frames in our catalog are labelled 54 or 540: their stack runs from 536.6 to 572 mm and their reach from 380.8 to 398 mm. Stack and reach make such frames comparable, provided the chart is reliable and its reference is clear. They still describe only the frame, so keep the cockpit in the calculation.",
       "sections": [
         {
           "id": "coordinates",
@@ -40,32 +49,101 @@
         },
         {
           "id": "example",
-          "heading": "Subtract before making a fit claim",
+          "heading": "Ten frames labelled 54, side by side",
           "paragraphs": [
-            "In this made-up pair, frame B’s reference point is 20 mm higher and 5 mm nearer horizontally. That is a useful frame comparison. It does not mean the finished hoods will be exactly 20 mm higher and 5 mm nearer, because the two cockpit packages may differ."
+            "Subtract before trusting a label. Twitter’s Gravel V3 54 ends 17 mm higher and 10 mm farther forward than INCOLOR’s Voyager 54, about one full size step in either chart: the Voyager gains 16 mm of stack and 10 mm of reach from its 51 to its 54. The makers list them for riders of 185–195 cm and 172–178 cm. For a 176 cm rider, INCOLOR’s chart points to the Voyager 54 and Twitter’s to the Gravel V3 51, and those two frames are 5 mm apart in stack with identical reach.",
+            "Road frames spread just as far. LightCarbon’s [LCR018-D](/models/lightcarbon-lcr018-d/) 540 sits 32.4 mm higher than Elves’s Falath Pro Disc 54 at almost the same reach (383 against 380.8 mm), and Twitter’s Cyclone Gen 3 ET 540 reaches 15 mm farther than INCOLOR’s Speedster SR 54. These are frame coordinates, not fit results: two cockpit packages can move your hands differently."
           ],
           "worksheet": {
-            "caption": "Illustrative frame coordinates, not product measurements",
+            "caption": "Frames labelled 54 or 540: the makers’ charts as recorded in our catalog",
             "columns": [
-              "Frame",
+              "Frame and size",
+              "Use",
               "Stack",
-              "Reach"
+              "Reach",
+              "Maker’s rider height",
+              "Chart checked"
             ],
             "rows": [
               [
-                "A",
-                "560 mm",
-                "380 mm"
+                "Elves Falath Pro Disc 54",
+                "Aero road",
+                "536.6 mm",
+                "380.8 mm",
+                "not given",
+                "August 30, 2026"
               ],
               [
-                "B",
-                "580 mm",
-                "375 mm"
+                "INCOLOR Speedster SR 54",
+                "Aero road, wide tyres",
+                "540 mm",
+                "383 mm",
+                "172–178 cm",
+                "August 29, 2026"
               ],
               [
-                "B minus A",
-                "20 mm higher",
-                "5 mm shorter"
+                "Elves Mori AeroX 54",
+                "Gravel race",
+                "550 mm",
+                "391 mm",
+                "not given",
+                "August 25, 2026"
+              ],
+              [
+                "Twitter Cyclone Gen 3 ET 540",
+                "Aero road",
+                "554 mm",
+                "398 mm",
+                "not given",
+                "September 1, 2026"
+              ],
+              [
+                "SAVA A7L 540",
+                "Road",
+                "554.5 mm",
+                "387 mm",
+                "not given",
+                "August 17, 2026"
+              ],
+              [
+                "INCOLOR Voyager 54",
+                "Gravel",
+                "555 mm",
+                "385 mm",
+                "172–178 cm",
+                "August 25, 2026"
+              ],
+              [
+                "SEKA ExAero GR 54",
+                "Gravel race",
+                "559 mm",
+                "381 mm",
+                "not given",
+                "August 28, 2026"
+              ],
+              [
+                "YOELEO Altera G21 54",
+                "Adventure gravel",
+                "566 mm",
+                "383 mm",
+                "177–185 cm",
+                "September 1, 2026"
+              ],
+              [
+                "LightCarbon LCR018-D 540",
+                "Aero endurance road",
+                "569 mm",
+                "383 mm",
+                "180–186 cm",
+                "October 3, 2026"
+              ],
+              [
+                "Twitter Gravel V3 54",
+                "Gravel",
+                "572 mm",
+                "395 mm",
+                "185–195 cm",
+                "August 25, 2026"
               ]
             ]
           }
@@ -81,16 +159,16 @@
           "id": "reliable",
           "heading": "Use a chart that deserves the calculation",
           "paragraphs": [
-            "The [LightCarbon LCR018-D record](/models/lightcarbon-lcr018-d/) includes dated geometry evidence and qualifications. Respect those limits. A number transcribed from a different revision or an internally inconsistent chart cannot become a precise fit recommendation. When comparing candidates, keep the original chart, units and reference notes beside the subtraction.",
+            "The [LightCarbon LCR018-D record](/models/lightcarbon-lcr018-d/) includes dated geometry evidence and qualifications; its size-580 front centre does not match the table’s other cells, as the [geometry-chart check](/blog/when-geometry-chart-does-not-add-up/) shows. A number transcribed from a different revision or an internally inconsistent chart cannot become a precise fit recommendation. When comparing candidates, keep the original chart, units and reference notes beside the subtraction.",
             "For a repeatable reference, use our [contact-point sheet for ordering without a test ride](/blog/bike-fit-without-test-ride/). If the seller cannot identify the chart or revision, work through [what to do when specifications are missing](/blog/choosing-bike-when-specs-unknown/) before choosing a size."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "Stack与Reach怎么读？为什么两个54码不一定一样合适",
-      "description": "把stack和reach读作坐标，用假设车架对比说明，并把把组适配与尺码标签分开。",
-      "intro": "尺码标签是厂家给一个尺寸起的名字。只要图表可靠、参考点明确，stack与reach就能提供更有用的比较坐标。但它们依然只描述车架，把组还要另外算。",
+      "title": "Stack与Reach：十款标为54码的车架，stack最多相差35毫米",
+      "description": "把stack和reach读作坐标。目录里十款标为54或540码的车架，stack从536.6到572毫米，reach从380.8到398毫米；标注了身高的厂家，把各自的54码推荐给172到195厘米的骑手。",
+      "intro": "尺码标签是厂家给一个尺寸起的名字，不是尺寸本身。我们目录中有十款车架标为54或540码：stack从536.6到572毫米，reach从380.8到398毫米。只要图表可靠、参考点明确，stack与reach就能让这些车架相互比较。但它们依然只描述车架，把组还要另外算。",
       "sections": [
         {
           "id": "coordinates",
@@ -101,32 +179,101 @@
         },
         {
           "id": "example",
-          "heading": "先做差，再谈适配",
+          "heading": "十款54码车架并排比较",
           "paragraphs": [
-            "在这组假设数据里，B车架参考点高20毫米，水平方向近5毫米。这是有用的车架对比，但不代表装好后的手变一定也高20、近5，因为两套把组可能不同。"
+            "先做差，再相信标签。Twitter Gravel V3的54码，头管顶部比INCOLOR Voyager的54码高17毫米、向前多10毫米，约等于两张表里整整一个尺码的差距：Voyager从51码到54码，stack增加16毫米，reach增加10毫米。两家厂商分别把它们推荐给185–195厘米和172–178厘米的骑手。身高176厘米的骑手，按INCOLOR的表应选Voyager 54码，按Twitter的表应选Gravel V3 51码，而这两款车架的stack只差5毫米，reach完全相同。",
+            "公路车架的差距同样大。LightCarbon [LCR018-D](/zh/models/lightcarbon-lcr018-d/) 540码比Elves Falath Pro Disc 54码高32.4毫米，reach却几乎相同（383对380.8毫米）；Twitter Cyclone Gen 3 ET 540码的reach比INCOLOR Speedster SR 54码长15毫米。这些都是车架坐标，不是适配结果：两套把组可能让双手落在不同位置。"
           ],
           "worksheet": {
-            "caption": "假设车架坐标，不是产品实测值",
+            "caption": "标为54或540码的车架：目录记录的厂家几何表",
             "columns": [
-              "车架",
+              "车架与尺码",
+              "用途",
               "Stack",
-              "Reach"
+              "Reach",
+              "厂家推荐身高",
+              "几何表查看日期"
             ],
             "rows": [
               [
-                "A",
-                "560毫米",
-                "380毫米"
+                "Elves Falath Pro Disc 54码",
+                "气动公路",
+                "536.6毫米",
+                "380.8毫米",
+                "未标注",
+                "2026年8月30日"
               ],
               [
-                "B",
-                "580毫米",
-                "375毫米"
+                "INCOLOR Speedster SR 54码",
+                "气动公路，宽胎",
+                "540毫米",
+                "383毫米",
+                "172–178厘米",
+                "2026年8月29日"
               ],
               [
-                "B减A",
-                "高20毫米",
-                "短5毫米"
+                "Elves Mori AeroX 54码",
+                "竞赛砾石",
+                "550毫米",
+                "391毫米",
+                "未标注",
+                "2026年8月25日"
+              ],
+              [
+                "Twitter Cyclone Gen 3 ET 54码0",
+                "气动公路",
+                "554毫米",
+                "398毫米",
+                "未标注",
+                "2026年9月1日"
+              ],
+              [
+                "SAVA A7L 54码0",
+                "公路",
+                "554.5毫米",
+                "387毫米",
+                "未标注",
+                "2026年8月17日"
+              ],
+              [
+                "INCOLOR Voyager 54码",
+                "砾石",
+                "555毫米",
+                "385毫米",
+                "172–178厘米",
+                "2026年8月25日"
+              ],
+              [
+                "SEKA ExAero GR 54码",
+                "竞赛砾石",
+                "559毫米",
+                "381毫米",
+                "未标注",
+                "2026年8月28日"
+              ],
+              [
+                "YOELEO Altera G21 54码",
+                "探险砾石",
+                "566毫米",
+                "383毫米",
+                "177–185厘米",
+                "2026年9月1日"
+              ],
+              [
+                "LightCarbon LCR018-D 54码0",
+                "气动耐力公路",
+                "569毫米",
+                "383毫米",
+                "180–186厘米",
+                "2026年10月3日"
+              ],
+              [
+                "Twitter Gravel V3 54码",
+                "砾石",
+                "572毫米",
+                "395毫米",
+                "185–195厘米",
+                "2026年8月25日"
               ]
             ]
           }
@@ -142,16 +289,16 @@
           "id": "reliable",
           "heading": "只用可靠图表来计算",
           "paragraphs": [
-            "[LightCarbon LCR018-D记录](/models/lightcarbon-lcr018-d/)包含带日期的几何证据与限制，应保留这些条件。来自不同版本，或内部不一致图表的数字，不能变成精确适配建议。对比候选时，把原图、单位和参考点说明放在差值计算旁边。",
+            "[LightCarbon LCR018-D记录](/zh/models/lightcarbon-lcr018-d/)包含带日期的几何证据与限制；正如[几何表验算](/zh/blog/when-geometry-chart-does-not-add-up/)所示，其580码前轴距与表中其他格子对不上。来自不同版本，或内部不一致图表的数字，不能变成精确适配建议。对比候选时，把原图、单位和参考点说明放在差值计算旁边。",
             "想留下可重复对照的记录，可以用[无法试骑时的接触点记录表](/blog/bike-fit-without-test-ride/)。如果卖家说不清图表或版本，先看[规格不明时该怎么判断](/blog/choosing-bike-when-specs-unknown/)，再决定尺码。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Stack und Reach erklärt: Warum zweimal Größe 54 nicht gleich passt",
-      "description": "Lies Stack und Reach als Koordinaten und trenne Rahmenvergleich, Cockpitposition und Größenetikett.",
-      "intro": "Ein Größenetikett ist der Name, den der Hersteller einer Größe gibt. Stack und Reach liefern nützlichere Vergleichspunkte, wenn Tabelle und Bezug klar sind. Sie beschreiben trotzdem den Rahmen; das Cockpit bleibt Teil der Rechnung.",
+      "title": "Stack und Reach: zehn Rahmen der Größe 54 unterscheiden sich um bis zu 35 mm im Stack",
+      "description": "Lies Stack und Reach als Koordinaten. Bei zehn Katalograhmen mit der Bezeichnung 54 oder 540 reicht der Stack von 536,6 bis 572 mm und der Reach von 380,8 bis 398 mm, und die Hersteller mit Körpergrößenangabe nennen ihre 54er für 172 bis 195 cm.",
+      "intro": "Ein Größenetikett ist der Name, den der Hersteller einer Größe gibt, kein Maß. Zehn Rahmen in unserem Katalog heißen 54 oder 540: Ihr Stack reicht von 536,6 bis 572 mm, ihr Reach von 380,8 bis 398 mm. Stack und Reach machen solche Rahmen vergleichbar, wenn Tabelle und Bezug klar sind. Sie beschreiben trotzdem nur den Rahmen; das Cockpit bleibt Teil der Rechnung.",
       "sections": [
         {
           "id": "coordinates",
@@ -162,32 +309,101 @@
         },
         {
           "id": "example",
-          "heading": "Erst subtrahieren, dann Passform beurteilen",
+          "heading": "Zehn Rahmen der Größe 54 im Vergleich",
           "paragraphs": [
-            "Im erfundenen Beispiel liegt Bs Bezugspunkt 20 mm höher und horizontal 5 mm näher. Das hilft beim Rahmenvergleich. Die fertigen Bremsgriffe müssen nicht genauso versetzt sein, weil sich die Cockpitpakete unterscheiden können."
+            "Erst subtrahieren, dann dem Etikett trauen. Twitters Gravel V3 in 54 endet 17 mm höher und 10 mm weiter vorn als INCOLORs Voyager in 54, etwa ein ganzer Größenschritt in beiden Tabellen: Der Voyager gewinnt von 51 auf 54 16 mm Stack und 10 mm Reach. Die Hersteller nennen die beiden für 185–195 cm und 172–178 cm Körpergröße. Für 176 cm verweist INCOLORs Tabelle auf den Voyager 54 und Twitters auf den Gravel V3 51, und diese beiden Rahmen liegen im Stack 5 mm auseinander, bei gleichem Reach.",
+            "Rennräder streuen genauso weit. LightCarbons [LCR018-D](/de/models/lightcarbon-lcr018-d/) 540 liegt 32,4 mm höher als Elves’ Falath Pro Disc 54, bei fast gleichem Reach (383 gegenüber 380,8 mm), und Twitters Cyclone Gen 3 ET 540 reicht 15 mm weiter als INCOLORs Speedster SR 54. Das sind Rahmenkoordinaten, keine Passformergebnisse: Zwei Cockpitpakete können deine Hände unterschiedlich platzieren."
           ],
           "worksheet": {
-            "caption": "Beispielkoordinaten, keine Produktmessungen",
+            "caption": "Rahmen der Größe 54 oder 540: Herstellertabellen, wie in unserem Katalog erfasst",
             "columns": [
-              "Rahmen",
+              "Rahmen und Größe",
+              "Einsatz",
               "Stack",
-              "Reach"
+              "Reach",
+              "Körpergröße laut Hersteller",
+              "Tabelle geprüft"
             ],
             "rows": [
               [
-                "A",
-                "560 mm",
-                "380 mm"
+                "Elves Falath Pro Disc 54",
+                "Aero-Rennrad",
+                "536,6 mm",
+                "380,8 mm",
+                "keine Angabe",
+                "30. August 2026"
               ],
               [
-                "B",
-                "580 mm",
-                "375 mm"
+                "INCOLOR Speedster SR 54",
+                "Aero-Rennrad, breite Reifen",
+                "540 mm",
+                "383 mm",
+                "172–178 cm",
+                "29. August 2026"
               ],
               [
-                "B minus A",
-                "20 mm höher",
-                "5 mm kürzer"
+                "Elves Mori AeroX 54",
+                "Gravel-Race",
+                "550 mm",
+                "391 mm",
+                "keine Angabe",
+                "25. August 2026"
+              ],
+              [
+                "Twitter Cyclone Gen 3 ET 540",
+                "Aero-Rennrad",
+                "554 mm",
+                "398 mm",
+                "keine Angabe",
+                "1. September 2026"
+              ],
+              [
+                "SAVA A7L 540",
+                "Rennrad",
+                "554,5 mm",
+                "387 mm",
+                "keine Angabe",
+                "17. August 2026"
+              ],
+              [
+                "INCOLOR Voyager 54",
+                "Gravel",
+                "555 mm",
+                "385 mm",
+                "172–178 cm",
+                "25. August 2026"
+              ],
+              [
+                "SEKA ExAero GR 54",
+                "Gravel-Race",
+                "559 mm",
+                "381 mm",
+                "keine Angabe",
+                "28. August 2026"
+              ],
+              [
+                "YOELEO Altera G21 54",
+                "Adventure-Gravel",
+                "566 mm",
+                "383 mm",
+                "177–185 cm",
+                "1. September 2026"
+              ],
+              [
+                "LightCarbon LCR018-D 540",
+                "Aero-Endurance-Rennrad",
+                "569 mm",
+                "383 mm",
+                "180–186 cm",
+                "3. Oktober 2026"
+              ],
+              [
+                "Twitter Gravel V3 54",
+                "Gravel",
+                "572 mm",
+                "395 mm",
+                "185–195 cm",
+                "25. August 2026"
               ]
             ]
           }
@@ -203,7 +419,7 @@
           "id": "reliable",
           "heading": "Nur mit einer belastbaren Tabelle rechnen",
           "paragraphs": [
-            "Der [LightCarbon-LCR018-D-Eintrag](/models/lightcarbon-lcr018-d/) enthält datierte Geometrie und Einschränkungen. Respektiere sie. Daten anderer Revisionen oder widersprüchlicher Tabellen ergeben keine präzise Passformempfehlung. Behalte Originaltabelle, Einheiten und Bezugsnotizen neben der Differenzrechnung.",
+            "Der [LightCarbon-LCR018-D-Eintrag](/de/models/lightcarbon-lcr018-d/) enthält datierte Geometrie und Einschränkungen; sein Front-Center der Größe 580 passt nicht zu den übrigen Feldern der Tabelle, wie die [Geometrie-Prüfung](/de/blog/when-geometry-chart-does-not-add-up/) zeigt. Daten anderer Revisionen oder widersprüchlicher Tabellen ergeben keine präzise Passformempfehlung. Behalte Originaltabelle, Einheiten und Bezugsnotizen neben der Differenzrechnung.",
             "Als wiederholbare Referenz hilft unser [Kontaktpunktblatt für die Bestellung ohne Probefahrt](/blog/bike-fit-without-test-ride/). Kann der Verkäufer Tabelle oder Revision nicht zuordnen, kläre zuerst [den Umgang mit fehlenden Spezifikationen](/blog/choosing-bike-when-specs-unknown/), bevor du eine Größe auswählst."
           ]
         }
