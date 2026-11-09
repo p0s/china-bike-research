@@ -5,14 +5,20 @@
   "series_order": 29,
   "image_id": "toe-overlap-small-gravel-bike-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-12",
+  "dateModified": "2026-11-09",
   "researched_at": "2026-10-04",
   "model_ids": [
     "ican-graro-frameset"
   ],
   "source_ids": [
     "ican-graro-official",
-    "ican-graro-official-2026-08-27"
+    "ican-graro-official-2026-08-27",
+    "incolor-voyager-official-2026-08-25",
+    "ican-graro-manufacturer-geometry-chart-2026-09-22",
+    "twitter-v3-wireless-official-2026-08-25",
+    "sava-gelaro-s4-official-2026-08-16",
+    "seka-exaero-gr-official-2026-08-27",
+    "lightcarbon-lcg071s-official-2026-08-16"
   ],
   "editorial_references": [
     "https://icancycling.com/products/gravel-bike-frame-graro"
@@ -27,24 +33,110 @@
   ],
   "translations": {
     "en": {
-      "title": "Toe overlap on a small gravel bike: check the complete setup",
-      "description": "Assess shoe-to-front-wheel clearance with the intended tire, crank, shoe position and mudguard, rather than frame size alone.",
-      "intro": "The frame fits on paper; the shoe and turning front wheel may still need a separate check. Toe overlap is an interaction between several parts, so investigate the actual small-frame build before ordering.",
+      "title": "Toe overlap on a small gravel bike: 62 to 78 mm of shoe room, and how to check yours",
+      "description": "With 170 mm cranks and 700 × 40 mm tyres, the smallest sizes of six makers’ gravel frames leave an estimated 62 to 78 mm between the pedal axle and the front tyre. Measure how far your shoe reaches past the pedal axle and compare.",
+      "intro": "A small gravel frame can fit on paper while your shoe still meets the front tyre in a tight turn. The frame’s share of that is calculable: from the front centre and bottom-bracket drop in the maker’s chart, the smallest sizes below leave an estimated 62 to 78 mm in front of the pedal axle with 170 mm cranks and 700 × 40 mm tyres. Your share is how far your shoe reaches past the axle.",
       "sections": [
         {
           "id": "inputs",
-          "heading": "List the parts that determine the space",
+          "heading": "Work out the room in front of your pedal",
           "paragraphs": [
-            "Record frame size and revision, front wheel/tire package, crank length, pedal/shoe arrangement and any guard. Front-centre data helps describe the frame but does not alone answer whether your shoe meets the tire. A stock photo with another crank or tire is not an assessment of your intended setup."
+            "With the crank level and forward, the pedal axle sits one crank length ahead of the bottom bracket. At that height the front tyre’s rear edge sits at the horizontal front centre minus √(tyre radius² − BB drop²); most charts print front centre as the straight line from bottom bracket to front axle, so the horizontal value is √(front centre² − BB drop²). What is left after the crank length is the room your shoe can use. A 700 × 40 mm tyre has an outer radius of about 351 mm (311 mm to the bead seat plus 40 mm), a 650B × 47 mm tyre about 339 mm.",
+            "Measure your own shoe with the cleat where you ride it: the distance from the pedal axle, at the cleat’s centre, to the tip of the shoe. If that number is larger than the room, the toe can touch the tyre when you steer at low speed. Shorter cranks add room one for one, a smaller tyre adds room, and a mudguard takes some away."
           ]
         },
         {
           "id": "example",
-          "heading": "Tire clearance answers a different question",
+          "heading": "What the smallest sizes leave",
           "paragraphs": [
-            "The current [ICAN GRARO product page](https://icancycling.com/products/gravel-bike-frame-graro) lists a maximum tire size of 700C × 45 mm. That describes the manufacturer’s tire limit for the listed frame; it does not establish clearance between your shoe and the turning front wheel. Confirm the exact GRARO generation and size, then assess the complete build. The product photo below identifies the frame, not a tested shoe–wheel combination.",
+            "The table combines each maker’s chart with that arithmetic, so read it as an estimate within a few millimetres: shoe angle, cleat float and the tyre’s real height all move the result. The iCAN GRARO 46 and INCOLOR Voyager 45 leave about 62 mm, Twitter’s Gravel V3 45 about 71 mm, and with 165 mm cranks every figure grows by 5 mm. The current [ICAN GRARO product page](https://icancycling.com/products/gravel-bike-frame-graro) allows tyres up to 700 × 45 mm; at that width the GRARO 46’s room shrinks to about 57 mm.",
             "A smaller nominal tire, different crank or different shoe arrangement also changes other riding requirements. Do not move cleats or alter fit solely to make an unresolved frame choice appear acceptable. A different wheel size needs approval for that exact frame."
-          ]
+          ],
+          "worksheet": {
+            "caption": "Estimated room in front of the pedal axle with 170 mm cranks, smallest gravel sizes (maker charts)",
+            "columns": [
+              "Frame and size",
+              "Maker’s rider height",
+              "Front centre / BB drop",
+              "700 × 40 mm tyre",
+              "650B × 47 mm tyre",
+              "Chart checked"
+            ],
+            "rows": [
+              [
+                "iCAN GRARO 46",
+                "not given",
+                "580 / 71 mm",
+                "62 mm",
+                "74 mm",
+                "September 22, 2026"
+              ],
+              [
+                "INCOLOR Voyager 45",
+                "155–162 cm",
+                "580 / 74 mm",
+                "62 mm",
+                "74 mm",
+                "August 25, 2026"
+              ],
+              [
+                "SAVA Gelaro 470",
+                "under 166 cm",
+                "582.2 / 75 mm",
+                "64 mm",
+                "77 mm",
+                "August 16, 2026"
+              ],
+              [
+                "SEKA ExAero GR 49",
+                "not given",
+                "587 / 74 mm",
+                "69 mm",
+                "81 mm",
+                "August 28, 2026"
+              ],
+              [
+                "INCOLOR Voyager 48",
+                "162–168 cm",
+                "588 / 74 mm",
+                "70 mm",
+                "83 mm",
+                "August 25, 2026"
+              ],
+              [
+                "Twitter Gravel V3 45",
+                "150–165 cm",
+                "589 / 74 mm",
+                "71 mm",
+                "84 mm",
+                "August 25, 2026"
+              ],
+              [
+                "LightCarbon LCG071S Pro 490",
+                "165–172 cm",
+                "593.8 / 70 mm",
+                "76 mm",
+                "88 mm",
+                "August 16, 2026"
+              ],
+              [
+                "iCAN GRARO 49",
+                "not given",
+                "595 / 71 mm",
+                "77 mm",
+                "89 mm",
+                "September 22, 2026"
+              ],
+              [
+                "Twitter Gravel V3 48",
+                "165–175 cm",
+                "596 / 74 mm",
+                "78 mm",
+                "91 mm",
+                "August 25, 2026"
+              ]
+            ]
+          }
         },
         {
           "id": "assessment",
@@ -59,24 +151,110 @@
       ]
     },
     "zh-Hans": {
-      "title": "小尺码砾石车的鞋尖重叠：检查完整配置",
-      "description": "用目标轮胎、曲柄、鞋位和挡泥板评估鞋与前轮空间，而不是只看车架尺码。",
-      "intro": "车架在纸面上合适，鞋与转向前轮之间仍可能需要单独检查。鞋尖重叠是多个部件共同作用的结果，下单前应调查真实的小尺码配置。",
+      "title": "小尺码砾石车的鞋尖重叠：车架留给鞋尖62到78毫米，以及如何核对你的鞋",
+      "description": "使用170毫米曲柄和700 × 40毫米轮胎时，六家厂商砾石车架的最小尺码，在踏板轴与前轮之间估计留出62到78毫米。量一量你的鞋尖超出踏板轴多少，再作比较。",
+      "intro": "小尺码砾石车在纸面上合适，急转弯时鞋尖仍可能碰到前轮。车架这一部分可以计算：根据厂家几何表的前轴距和中轴下沉量，下列最小尺码在使用170毫米曲柄和700 × 40毫米轮胎时，踏板轴前方估计还有62到78毫米。你自己的那一部分，是鞋尖超出踏板轴多少。",
       "sections": [
         {
           "id": "inputs",
-          "heading": "列出决定空间的部件",
+          "heading": "算出踏板前方还有多少空间",
           "paragraphs": [
-            "记录车架尺码与版本、前轮与轮胎组合、曲柄长度、脚踏与鞋的安排，以及挡泥板。前轴距有助于描述车架，但无法单独回答你的鞋是否碰胎。使用不同曲柄或轮胎的宣传照，不是对计划配置的评估。"
+            "曲柄水平朝前时，踏板轴位于中轴前方一个曲柄长度处。在这个高度上，前轮胎后缘位于水平前轴距减去 √（轮胎半径² − 中轴下沉量²）的位置；多数几何表把前轴距标为中轴到前轴的直线距离，因此水平值是 √（前轴距² − 中轴下沉量²）。减去曲柄长度后剩下的，就是鞋尖可用的空间。700 × 40毫米轮胎的外半径约351毫米（胎圈座半径311毫米加40毫米），650B × 47毫米轮胎约339毫米。",
+            "按你实际骑行时的锁片位置量自己的鞋：从踏板轴（锁片中心）到鞋尖的距离。如果这个数字大于上述空间，低速转向时鞋尖可能碰到轮胎。曲柄缩短多少，空间就增加多少；轮胎变小也会增加空间，挡泥板则会占掉一部分。"
           ]
         },
         {
           "id": "example",
-          "heading": "容胎量回答的是另一个问题",
+          "heading": "最小尺码留出多少空间",
           "paragraphs": [
-            "当前[ICAN GRARO产品页](https://icancycling.com/products/gravel-bike-frame-graro)列出的最大轮胎规格为700C × 45 mm。这是厂家对所列车架的轮胎上限说明，不代表你的鞋与转向前轮之间有足够空间。先确认具体GRARO代际与尺码，再评估完整配置。下方产品照用于识别车架，并非经过测试的鞋轮组合。",
+            "下表把各厂家几何表与上述计算结合，应视为误差在几毫米内的估算：鞋的角度、锁片浮动和轮胎实际高度都会影响结果。iCAN GRARO 46码和 INCOLOR Voyager 45码约留62毫米，Twitter Gravel V3 45码约71毫米；换用165毫米曲柄，每个数字都增加5毫米。当前的 [ICAN GRARO 产品页](https://icancycling.com/products/gravel-bike-frame-graro)允许最宽700 × 45毫米的轮胎；用到这个宽度时，GRARO 46码的空间缩小到约57毫米。",
             "较小标称轮胎、不同曲柄或不同鞋位，也会影响其他骑行需求。不要只为让未解决的车架选择看似可行，就随意移动锁片或改变适配。改用其他轮径也需要针对这款车架的认可。"
-          ]
+          ],
+          "worksheet": {
+            "caption": "使用170毫米曲柄时踏板轴前方的估算空间，砾石车最小尺码（厂家几何表）",
+            "columns": [
+              "车架与尺码",
+              "厂家推荐身高",
+              "前轴距 / 中轴下沉量",
+              "700 × 40毫米轮胎",
+              "650B × 47毫米轮胎",
+              "几何表查看日期"
+            ],
+            "rows": [
+              [
+                "iCAN GRARO 46码",
+                "未标注",
+                "580 / 71毫米",
+                "62毫米",
+                "74毫米",
+                "2026年9月22日"
+              ],
+              [
+                "INCOLOR Voyager 45码",
+                "155–162厘米",
+                "580 / 74毫米",
+                "62毫米",
+                "74毫米",
+                "2026年8月25日"
+              ],
+              [
+                "SAVA Gelaro 470码",
+                "166厘米以下",
+                "582.2 / 75毫米",
+                "64毫米",
+                "77毫米",
+                "2026年8月16日"
+              ],
+              [
+                "SEKA ExAero GR 49码",
+                "未标注",
+                "587 / 74毫米",
+                "69毫米",
+                "81毫米",
+                "2026年8月28日"
+              ],
+              [
+                "INCOLOR Voyager 48码",
+                "162–168厘米",
+                "588 / 74毫米",
+                "70毫米",
+                "83毫米",
+                "2026年8月25日"
+              ],
+              [
+                "Twitter Gravel V3 45码",
+                "150–165厘米",
+                "589 / 74毫米",
+                "71毫米",
+                "84毫米",
+                "2026年8月25日"
+              ],
+              [
+                "LightCarbon LCG071S Pro 490码",
+                "165–172厘米",
+                "593.8 / 70毫米",
+                "76毫米",
+                "88毫米",
+                "2026年8月16日"
+              ],
+              [
+                "iCAN GRARO 49码",
+                "未标注",
+                "595 / 71毫米",
+                "77毫米",
+                "89毫米",
+                "2026年9月22日"
+              ],
+              [
+                "Twitter Gravel V3 48码",
+                "165–175厘米",
+                "596 / 74毫米",
+                "78毫米",
+                "91毫米",
+                "2026年8月25日"
+              ]
+            ]
+          }
         },
         {
           "id": "assessment",
@@ -91,24 +269,110 @@
       ]
     },
     "de": {
-      "title": "Zehenüberlappung am kleinen Gravelbike: Den ganzen Aufbau prüfen",
-      "description": "Prüfe Schuhfreiheit mit Reifen, Kurbel, Schuhposition und Schutzblech statt allein mit der Rahmengröße.",
-      "intro": "Der Rahmen passt auf Papier; Schuh und eingeschlagenes Vorderrad brauchen trotzdem eine eigene Prüfung. Zehenüberlappung entsteht im Zusammenspiel mehrerer Teile. Prüfe den tatsächlichen kleinen Aufbau vor dem Kauf.",
+      "title": "Fußüberschneidung am kleinen Gravelbike: 62 bis 78 mm Platz für den Schuh – und wie du deinen prüfst",
+      "description": "Mit 170-mm-Kurbeln und 700 × 40-mm-Reifen lassen die kleinsten Größen der Gravelrahmen von sechs Herstellern geschätzt 62 bis 78 mm zwischen Pedalachse und Vorderreifen. Miss, wie weit dein Schuh über die Pedalachse reicht, und vergleiche.",
+      "intro": "Ein kleiner Gravelrahmen kann auf dem Papier passen, während der Schuh in einer engen Kurve trotzdem den Vorderreifen berührt. Der Anteil des Rahmens lässt sich berechnen: Aus Front-Center und Tretlagerabsenkung der Herstellertabelle lassen die kleinsten Größen unten mit 170-mm-Kurbeln und 700 × 40-mm-Reifen geschätzt 62 bis 78 mm vor der Pedalachse. Dein Anteil ist, wie weit dein Schuh über die Achse hinausreicht.",
       "sections": [
         {
           "id": "inputs",
-          "heading": "Die maßgeblichen Teile auflisten",
+          "heading": "Den Platz vor dem Pedal ausrechnen",
           "paragraphs": [
-            "Notiere Größe und Revision, Vorderrad/Reifen, Kurbellänge, Pedal/Schuh und Schutzblech. Front-Center beschreibt den Rahmen, beantwortet aber nicht allein den Schuhkontakt. Ein Foto mit anderer Kurbel oder anderem Reifen beurteilt deinen Aufbau nicht."
+            "Steht die Kurbel waagerecht nach vorn, liegt die Pedalachse eine Kurbellänge vor dem Tretlager. In dieser Höhe liegt die Hinterkante des Vorderreifens beim horizontalen Front-Center minus √(Reifenradius² − Tretlagerabsenkung²); die meisten Tabellen geben das Front-Center als gerade Linie vom Tretlager zur Vorderachse an, horizontal sind es also √(Front-Center² − Tretlagerabsenkung²). Was nach Abzug der Kurbellänge bleibt, ist der Platz für den Schuh. Ein 700 × 40-mm-Reifen hat einen Außenradius von etwa 351 mm (311 mm bis zum Felgensitz plus 40 mm), ein 650B × 47-mm-Reifen etwa 339 mm.",
+            "Miss deinen Schuh mit dem Cleat in Fahrposition: den Abstand von der Pedalachse, also der Cleat-Mitte, bis zur Schuhspitze. Ist diese Zahl größer als der Platz, kann die Spitze beim langsamen Lenken den Reifen berühren. Kürzere Kurbeln bringen Millimeter für Millimeter Platz, ein kleinerer Reifen ebenfalls, ein Schutzblech kostet etwas."
           ]
         },
         {
           "id": "example",
-          "heading": "Reifenfreiheit beantwortet eine andere Frage",
+          "heading": "Was die kleinsten Größen lassen",
           "paragraphs": [
-            "Die aktuelle [ICAN-GRARO-Produktseite](https://icancycling.com/products/gravel-bike-frame-graro) nennt 700C × 45 mm als maximale Reifengröße. Das ist die Reifenbegrenzung des Herstellers für den aufgeführten Rahmen; sie belegt keinen Freiraum zwischen deinem Schuh und dem eingeschlagenen Vorderrad. Bestätige zunächst GRARO-Generation und Größe und lass dann den vollständigen Aufbau beurteilen. Das Produktfoto unten identifiziert den Rahmen, keine getestete Schuh-Laufrad-Kombination.",
+            "Die Tabelle verbindet die Herstellertabellen mit dieser Rechnung; lies sie als Schätzung auf wenige Millimeter: Schuhwinkel, Cleat-Spiel und die tatsächliche Reifenhöhe verschieben das Ergebnis. iCAN GRARO 46 und INCOLOR Voyager 45 lassen etwa 62 mm, Twitters Gravel V3 45 etwa 71 mm, und mit 165-mm-Kurbeln wächst jeder Wert um 5 mm. Die aktuelle [ICAN-GRARO-Produktseite](https://icancycling.com/products/gravel-bike-frame-graro) erlaubt Reifen bis 700 × 45 mm; in dieser Breite schrumpft der Platz beim GRARO 46 auf etwa 57 mm.",
             "Andere Reifen, Kurbeln oder Schuhstellungen verändern weitere Anforderungen. Verschiebe Cleats oder Passform nicht nur, um eine ungeklärte Rahmenwahl passend erscheinen zu lassen. Eine andere Laufradgröße braucht eine Freigabe für genau diesen Rahmen."
-          ]
+          ],
+          "worksheet": {
+            "caption": "Geschätzter Platz vor der Pedalachse mit 170-mm-Kurbeln, kleinste Gravelgrößen (Herstellertabellen)",
+            "columns": [
+              "Rahmen und Größe",
+              "Körpergröße laut Hersteller",
+              "Front-Center / Tretlagerabsenkung",
+              "700 × 40-mm-Reifen",
+              "650B × 47-mm-Reifen",
+              "Tabelle geprüft"
+            ],
+            "rows": [
+              [
+                "iCAN GRARO 46",
+                "keine Angabe",
+                "580 / 71 mm",
+                "62 mm",
+                "74 mm",
+                "22. September 2026"
+              ],
+              [
+                "INCOLOR Voyager 45",
+                "155–162 cm",
+                "580 / 74 mm",
+                "62 mm",
+                "74 mm",
+                "25. August 2026"
+              ],
+              [
+                "SAVA Gelaro 470",
+                "unter 166 cm",
+                "582,2 / 75 mm",
+                "64 mm",
+                "77 mm",
+                "16. August 2026"
+              ],
+              [
+                "SEKA ExAero GR 49",
+                "keine Angabe",
+                "587 / 74 mm",
+                "69 mm",
+                "81 mm",
+                "28. August 2026"
+              ],
+              [
+                "INCOLOR Voyager 48",
+                "162–168 cm",
+                "588 / 74 mm",
+                "70 mm",
+                "83 mm",
+                "25. August 2026"
+              ],
+              [
+                "Twitter Gravel V3 45",
+                "150–165 cm",
+                "589 / 74 mm",
+                "71 mm",
+                "84 mm",
+                "25. August 2026"
+              ],
+              [
+                "LightCarbon LCG071S Pro 490",
+                "165–172 cm",
+                "593,8 / 70 mm",
+                "76 mm",
+                "88 mm",
+                "16. August 2026"
+              ],
+              [
+                "iCAN GRARO 49",
+                "keine Angabe",
+                "595 / 71 mm",
+                "77 mm",
+                "89 mm",
+                "22. September 2026"
+              ],
+              [
+                "Twitter Gravel V3 48",
+                "165–175 cm",
+                "596 / 74 mm",
+                "78 mm",
+                "91 mm",
+                "25. August 2026"
+              ]
+            ]
+          }
         },
         {
           "id": "assessment",
