@@ -2,7 +2,7 @@
   "slug": "buy-dengfu-frame",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-09",
   "researched_at": "2026-09-22",
   "image_id": "buy-dengfu-frame-unique-mascot-cover",
   "model_ids": [],
@@ -20,150 +20,324 @@
   ],
   "translations": {
     "en": {
-      "title": "Buying a Dengfu frame: a precise quote matters more than a tempting starting price",
-      "description": "Order a Dengfu R20 or other frame directly: get an exact quote, approve substitutions, check the package and separate current terms from old owner stories.",
-      "intro": "Dengfu’s R20 page identifies the gravel frame; it does not turn a model name into a delivered frameset package. A direct inquiry is most useful when the manufacturer answers one complete configuration.",
+      "title": "Buying a Dengfu R20: the geometry is published, the price and tyre clearance are not",
+      "description": "Dengfu’s R20 drawing lists four sizes; the 54 has 573 mm stack, 382 mm reach, 436 mm chainstays and an 80 mm bottom-bracket drop. Price, weight and tyre clearance come only with a quote, and the two-year warranty covers the carbon frame but not its paint.",
+      "intro": "Dengfu, a Shenzhen frame maker, sells the R20 gravel frame by inquiry through its factory site; its online shop did not list it when we searched on 9 November 2026. The R20 page publishes a geometry drawing for four sizes and no price, weight, material or tyre clearance. Read as millimetres, the drawing describes a frame with a higher front than catalog rivals of the same reach, long 436 mm chainstays and a low bottom bracket. Dengfu’s warranty gives two years on the carbon frame to original buyers who bought from Dengfu Sports Equipment Co., Ltd., excludes paint damage and leaves the shipping to you.",
       "sections": [
         {
           "id": "inquiry",
-          "heading": "Identify the exact frame on the manufacturer’s site",
+          "heading": "What Dengfu publishes about the R20",
           "paragraphs": [
-            "Begin at Dengfu’s [manufacturer site](https://m.dengfubikes.com/about/) and the exact [R20 product page](https://www.dengfubikes.com/Road-Frame/R20.html). The R20 page describes a customizable gravel frame but does not show a complete, destination-specific checkout. Use the site’s current contact route for a quote rather than a payment address from an old thread.",
-            "Send model and revision, size, finish, destination and intended cockpit. Request the current geometry, assembly information and all package contents. Have your assembler check the proposed interfaces; do not fill a missing R20 fact from another Dengfu frame."
+            "Dengfu’s [R20 product page](https://www.dengfubikes.com/Road-Frame/R20.html), read on 9 November 2026, shows the R20 as its gravel frame beside the R12, R18 and R22 disc road frames, says the frame can be customised and asks for an inquiry instead of showing a price. Dengfu’s [online shop](https://www.dengfubike.com/) sells complete road bikes, other framesets and e-bikes, but none of the 25 results of a search there for “R20” was this frame. The price arrives only with a quote.",
+            "The page states no frame weight, material or maximum tyre width, and no bottom-bracket, axle or seatpost standard. Dengfu’s [FAQ](https://dengfubikes.com/faq/) says all its carbon bikes use Toray T700/T800 fibre from Japan and that every product is tested after production to ISO 4210 requirements raised by 30 percent before it leaves the factory. That is a brand-wide claim without a published test report, not an R20 specification; the [fibre-grade guide](/blog/carbon-fiber-t700-t800-claims/) explains what such labels can and cannot tell you."
           ]
         },
         {
-          "id": "stock",
-          "heading": "Make substitutions opt-in",
+          "id": "geometry",
+          "heading": "A higher front and longer stays than rivals of the same reach",
           "paragraphs": [
-            "Ask separately whether the frame, cockpit, seatpost and frame-specific hardware are ready. If the desired cockpit is unavailable, choose among waiting, an approved alternative and cancellation under the seller’s terms. A 10 mm stem change is a fit decision, not a packing convenience.",
-            "Put this exact sentence on the confirmation: “Do not replace the frame revision, size, finish or cockpit dimensions without asking me first.” Then have the quoted parts checked together before paying."
+            "The drawing on the R20 page, headed “R20 Gravel Geometry R7”, is the only specification Dengfu publishes for this frame, and it prints no units. Read as millimetres, its stack, top tube and wheelbase recompute from the other lengths and angles to within half a millimetre in every size. That supports the millimetre reading, but it is our calculation, not Dengfu’s statement, and Dengfu does not say what “R7” stands for. Have both confirmed for the size you order; the [R20 research record](/models/dengfu-gravel/) keeps the full transcription with its source.",
+            "All four sizes share 436 mm chainstays, an 80 mm bottom-bracket drop, a 399 mm fork length and 55 mm of fork offset. Against catalog gravel frames with almost the same reach, the 54 sits high: 573 mm of stack at 382 mm reach, where the [INCOLOR Voyager](/models/incolor-voyager-frameset/) 54 has 555 mm and the [Twitter Gravel V3](/models/twitter-v3-rs-sensah/) 51 has 550 mm, both at 385 mm reach. That is 18 to 23 mm more bar height before any spacers, about the same as the [BXT-055](/models/bxt-055-frameset/) 56 with 575 mm at 385 mm. The R20’s chainstays are also longer and its bottom bracket lower than on those three frames, which have 415–426 mm stays and 69–74 mm drops.",
+            "Long stays and a low bottom bracket generally trade quick steering for stability, and the lower bottom bracket leaves a little less pedal clearance over rocks and ruts. The R20 suits a rider who wants a higher front without a tall spacer stack; a rider after a low, racy front will find it in the Twitter or INCOLOR numbers instead. The [stack and reach guide](/blog/stack-reach-vs-frame-size/) shows how to set these figures against your current bike.",
+            "Small riders get more toe room from the 47 than its size suggests. With 170 mm cranks, the method in the [toe-overlap guide](/blog/toe-overlap-small-gravel-bike/) leaves about 78 mm between the pedal axle and a 700 × 40 mm tyre, or 91 mm with 650B × 47, at the top of the 62–78 mm we found for six makers’ smallest gravel sizes. Both figures assume the R20 takes those tyres, which Dengfu does not publish."
           ],
-          "bullets": [
-            "Available now: identify physical location and the complete ready-to-ship package.",
-            "Needs production or paint: obtain a separate completion and dispatch estimate.",
-            "Proposed substitution: compare fit and price, then approve or decline in writing."
+          "worksheet": {
+            "caption": "Dengfu R20 geometry from the maker’s drawing (read 9 November 2026; no units printed, read as mm)",
+            "columns": [
+              "Size",
+              "Stack",
+              "Reach",
+              "Head tube",
+              "Top tube",
+              "Head angle",
+              "Seat angle",
+              "Wheelbase"
+            ],
+            "rows": [
+              [
+                "47/XS",
+                "535",
+                "366",
+                "105",
+                "514",
+                "70°",
+                "74.5°",
+                "1,018.5"
+              ],
+              [
+                "51/S",
+                "551",
+                "373",
+                "120",
+                "531",
+                "70.5°",
+                "74°",
+                "1,027"
+              ],
+              [
+                "54/M",
+                "573",
+                "382",
+                "140",
+                "552",
+                "71.25°",
+                "73.5°",
+                "1,036"
+              ],
+              [
+                "57/L",
+                "598.5",
+                "395",
+                "165",
+                "572",
+                "71.75°",
+                "73.5°",
+                "1,052.5"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "heading": "What the quote has to settle",
+          "paragraphs": [
+            "Ask first for the largest approved 700C and 650B tyre widths, with and without mudguards, because they decide how much gravel the R20 can take on. Then ask for the bottom-bracket, axle and seatpost standards by name, the headset and cable-routing parts, and the frame weight with its size, finish and what the figure includes; those answers decide which of your parts carry over.",
+            "Have the frame, fork, seatpost, headset parts and paint priced separately, with shipping to your address and the import charges the seller will or will not handle. Compare quotes only when they cover the same package; the [frameset order checklist](/blog/chinese-frameset-order-checklist/) has the general routine, and the [substitutions guide](/blog/bike-order-component-substitutions/) covers agreed part changes."
+          ]
+        },
+        {
+          "id": "warranty",
+          "heading": "Two years on the frame, not on the paint",
+          "paragraphs": [
+            "Dengfu publishes its warranty on the online shop, not the factory site. The shop’s [warranty page](https://www.dengfubike.com/pages/warranty) names Dengfu Sports Equipment Co., Ltd. and the same Shenzhen phone number as the factory site’s [about page](https://m.dengfubikes.com/about/). Read on 9 November 2026, it covers the carbon frame for two years from purchase, for the original purchaser of a Dengfu bike bought from that company; Dengfu repairs the frame or replaces it with one that is at least functionally equivalent.",
+            "Excluded are the headset, derailleur hanger, tyres, brake pads and “paint damage, fading or changes in color”, as well as crashes, misuse, neglect, excessive load and modifications such as engravings or lacquering. The buyer pays the shipping for returning or replacing an item, and a claim starts with Dengfu’s warranty staff and a return authorization, with proof of purchase. There is no crash-replacement discount.",
+            "Two clauses matter for an R20 order. Paint damage, fading and colour change stay with you, which weighs more on a custom finish you paid extra for. And the cover names bikes bought from Dengfu Sports Equipment Co., Ltd.; if you order through anyone else, have that seller state in writing who handles a frame claim. The [warranty comparison](/blog/chinese-bike-warranty-and-spares/) sets these terms beside those of other Chinese brands."
           ]
         },
         {
           "id": "owners",
-          "heading": "Use a dated order report for the questions it raises",
+          "heading": "Owner evidence is old and concerns another model",
           "paragraphs": [
-            "A [December 2020 forum post](https://chinertown.com/index.php/topic,2.315.html) says a German buyer ordered a Dengfu R12 from China while getting a different brand’s frame from a Spanish warehouse. It documents an old route, not delivery of today’s R20, an import charge or a present-day warranty result. The buyer described the other brand’s warehouse order as a preorder, not stock available at the time.",
-            "For R20, ask for the current seller’s invoice, dispatch plan and support terms. An appealing owner build of another model is inspiration; the exact quote will decide whether this project is workable."
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "Ask for one invoice that answers the whole order",
-          "paragraphs": [
-            "Request separate prices for the frame package, selected finish, any extra parts, shipping and the seller’s handling of import charges. Ask when production begins, when dispatch is expected and how a delay will be communicated.",
-            "Consider a hypothetical reply: “R20 frame and fork, custom paint.” It still says nothing about the seatpost, headset pieces or axles. Mark each as included, separately priced or not supplied; do not turn an unmentioned part into a free inclusion because it appears in a photo. Compare delivered totals only after both quotes answer the same package list, using the [order-substitution checklist](/blog/bike-order-component-substitutions/) to record any agreed changes.",
-            "Get the exact model’s warranty and damage-on-arrival process in writing, including the return destination and transport responsibility. Brand-level wording alone may leave important frame-specific details unresolved.",
-            "Have the final component list reviewed before paying, and compare the finished build cost with alternatives. The attraction of factory ordering is control over the project; clear specifications are what make that control real.",
-            "The [spares-and-warranty guide](/blog/chinese-bike-warranty-and-spares/) separates paid parts from defect claims and return requests."
+            "The only buyer report we found is a [December 2020 forum post](https://chinertown.com/index.php/topic,2.315.html) by a German buyer who ordered a Dengfu R12 from China. It shows that direct orders to Germany were possible then; it says nothing about the R20’s delivery time, import charges or how a warranty claim goes today. Our search of 50 source areas on 30 August 2026, from forums and owner build logs to YouTube and Bilibili, found no independent R20 report with its price, weight or tyre clearance."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "Dengfu 车架购买指南：准确报价比起价更重要",
-      "description": "Dengfu R20 等车架如何直购：取得准确报价、约定替换件、核对套餐，并区分当前条款与老车主经历。",
-      "intro": "Dengfu 的 R20 页面能辨认砾石车架，却不能把一个型号自动变成送到家的完整车架套餐。直询厂家时，最好一次把整套配置问清。",
+      "title": "买 Dengfu R20：几何图已公开，价格和最大胎宽要靠询价",
+      "description": "Dengfu 的 R20 几何图列出四个尺码；54码 stack 573毫米、reach 382毫米，后下叉436毫米，中轴下沉量80毫米。价格、重量和最大胎宽只能从报价中得到；两年保修只覆盖碳纤维车架，不包括涂装。",
+      "intro": "Dengfu 是深圳的车架厂，R20 砾石车架只在工厂网站上接受询价；2026年11月9日我们在它的网店里没有找到 R20。R20 页面公开了一张四个尺码的几何图，却没有价格、重量、材料和最大胎宽。按毫米理解，这张图描述的车架比目录里同 reach 的对手车头更高，后下叉长达436毫米，中轴也更低。Dengfu 为从 Dengfu Sports Equipment Co., Ltd. 购车的原始买家提供两年碳纤维车架保修，但不保涂装损伤，运费也由你承担。",
       "sections": [
         {
           "id": "inquiry",
-          "heading": "先在厂家网站确认准确车架",
+          "heading": "Dengfu 公开了 R20 的哪些信息",
           "paragraphs": [
-            "从 Dengfu [厂家网站](https://m.dengfubikes.com/about/)和准确的 [R20 商品页](https://www.dengfubikes.com/Road-Frame/R20.html)开始。R20 页面介绍可定制的砾石车架，却没有针对目的地的完整结算报价。通过网站当前联系渠道询价，别用老帖子里的收款地址。",
-            "写清型号与版本、尺码、颜色、目的地和目标把组，索取当前几何、装配资料及全部套餐内容。请装配者检查接口；R20 缺失的规格不能拿另一款 Dengfu 车架补。"
+            "2026年11月9日读取的 Dengfu [R20 商品页](https://www.dengfubikes.com/Road-Frame/R20.html)把 R20 列为砾石车架，与 R12、R18 和 R22 碟刹公路车架并列，只写了车架可以定制，并请买家询价，没有标价。Dengfu 的[网店](https://www.dengfubike.com/)卖整车、其他车架和电助力车，但在店内搜索“R20”得到的25个结果里没有这款车架。价格只能从报价里得到。",
+            "页面没有写车架重量、材料和最大胎宽，也没有写中轴、轮轴和座管规格。Dengfu 的[常见问题页](https://dengfubikes.com/faq/)称旗下碳纤维车全部使用日本东丽 T700/T800 碳纤维，每件产品出厂前都要通过在 ISO 4210 基础上提高30%要求的测试。这是没有公开测试报告的品牌级说法，不是 R20 的规格；[碳纤维等级指南](/blog/carbon-fiber-t700-t800-claims/)解释了这类标签能说明什么、不能说明什么。"
           ]
         },
         {
-          "id": "stock",
-          "heading": "替换配置必须先获得同意",
+          "id": "geometry",
+          "heading": "车头更高、后下叉更长：与同 reach 车架对比",
           "paragraphs": [
-            "分别问车架、把组、座管及专用硬件是否已备好。首选把组缺货时，可以在等待、认可替代件、按条款取消之间选择。把立长度差 10 mm 是骑姿适配决定，不是装箱方便。",
-            "可在确认单写明：“未经我同意，不得替换车架版本、尺码、颜色或把组尺寸。”付款前再请装配者检查整套报价。"
+            "R20 页面上的几何图标题为“R20 Gravel Geometry R7”，是 Dengfu 为这款车架公开的唯一规格，图中没有标注单位。按毫米理解，每个尺码的 stack、上管长和轴距都能由其他长度和角度推算回来，误差不到半毫米。这支持毫米的读法，但这是我们的计算，不是 Dengfu 的说明；Dengfu 也没有解释“R7”指什么。下单时请针对你的尺码确认这两点；[R20 研究记录](/models/dengfu-gravel/)保存了完整转录和来源。",
+            "四个尺码的后下叉都是436毫米，中轴下沉量80毫米，前叉长度399毫米，前叉偏移量55毫米。与目录里 reach 几乎相同的砾石车架相比，54码的车头偏高：reach 382毫米时 stack 为573毫米，而 [INCOLOR Voyager](/models/incolor-voyager-frameset/) 54码和 [Twitter Gravel V3](/models/twitter-v3-rs-sensah/) 51码在 reach 385毫米时，stack 分别为555和550毫米。也就是说，不加垫圈时车把就高出18到23毫米，与56码 [BXT-055](/models/bxt-055-frameset/) 的575毫米（reach 385毫米）相当。R20 的后下叉也比这三款更长、中轴更低：它们的后下叉为415–426毫米，中轴下沉量为69–74毫米。",
+            "后下叉长、中轴低，通常意味着用灵敏的转向换取稳定；中轴较低也会让踏板在碎石和车辙上方少一点离地空间。R20 适合想要较高车头、又不想加一摞垫圈的骑手；想要低而激进车头的骑手，应该看 Twitter 或 INCOLOR 的数字。[stack 与 reach 指南](/blog/stack-reach-vs-frame-size/)说明如何把这些数字与你现在的车对照。",
+            "小个子骑手从47码得到的鞋尖空间比尺码看起来更多。按[鞋尖重叠指南](/blog/toe-overlap-small-gravel-bike/)的方法，用170毫米曲柄时，踏板轴与700 × 40毫米轮胎之间约有78毫米，换成650B × 47毫米轮胎约有91毫米，处在我们为六家厂商最小砾石尺码算出的62到78毫米的上端。这两个数字都假设 R20 能装下这些轮胎，而 Dengfu 没有公布最大胎宽。"
           ],
-          "bullets": [
-            "已有现货：写明实物地点，以及整套可发部件。",
-            "仍需生产或喷漆：分别取得完成与发货估计。",
-            "建议替换：比较骑姿适配与价格后，书面同意或拒绝。"
+          "worksheet": {
+            "caption": "Dengfu R20 几何（厂家几何图，2026年11月9日读取；图中未标单位，按毫米理解）",
+            "columns": [
+              "尺码",
+              "stack",
+              "reach",
+              "头管长",
+              "上管长",
+              "头管角",
+              "座管角",
+              "轴距"
+            ],
+            "rows": [
+              [
+                "47/XS",
+                "535",
+                "366",
+                "105",
+                "514",
+                "70°",
+                "74.5°",
+                "1018.5"
+              ],
+              [
+                "51/S",
+                "551",
+                "373",
+                "120",
+                "531",
+                "70.5°",
+                "74°",
+                "1027"
+              ],
+              [
+                "54/M",
+                "573",
+                "382",
+                "140",
+                "552",
+                "71.25°",
+                "73.5°",
+                "1036"
+              ],
+              [
+                "57/L",
+                "598.5",
+                "395",
+                "165",
+                "572",
+                "71.75°",
+                "73.5°",
+                "1052.5"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "heading": "报价要回答什么",
+          "paragraphs": [
+            "先问 Dengfu 允许的最大700C和650B胎宽，以及装挡泥板时是否不同，因为这决定 R20 能应付多少砾石路。再请对方写明中轴、轮轴和座管的具体规格、耳机和走线部件，以及车架重量对应的尺码、涂装和包含的部件；这些答案决定你现有的零件能否沿用。",
+            "请把车架、前叉、座管、耳机部件和涂装分别报价，并写明寄到你地址的运费，以及卖家会处理、不会处理哪些进口费用。只有当几份报价覆盖相同的套件时才去比较；[车架下单核对表](/blog/chinese-frameset-order-checklist/)列出一般流程，[同级替换指南](/blog/bike-order-component-substitutions/)讲约定好的零件更换。"
+          ]
+        },
+        {
+          "id": "warranty",
+          "heading": "车架保修两年，涂装不在其内",
+          "paragraphs": [
+            "Dengfu 把保修条款放在网店上，而不是工厂网站。网店的[保修页](https://www.dengfubike.com/pages/warranty)写明公司为 Dengfu Sports Equipment Co., Ltd.，电话与工厂网站[关于我们](https://m.dengfubikes.com/about/)页面上的深圳号码相同。2026年11月9日读取时，条款规定：从该公司购买 Dengfu 自行车的原始买家，碳纤维车架自购买之日起保修两年；Dengfu 会维修车架，或换成功能至少相当的新品。",
+            "不在保修范围内的有耳机、尾钩、轮胎、刹车片，以及“涂装损伤、褪色或变色”；碰撞、误用、疏于保养、超载，以及刻字、上漆等改装造成的损坏同样不保。退回或更换的运费由买家承担；索赔要先联系 Dengfu 的保修人员，取得退货授权，并提供购买凭证。条款里没有碰撞换架优惠。",
+            "对 R20 订单来说，有两条最要紧。涂装损伤、褪色和变色由你自己承担，这对多花钱做的定制涂装影响更大。保修写明的是从 Dengfu Sports Equipment Co., Ltd. 购买的自行车；如果通过其他卖家下单，请对方书面说明车架索赔由谁处理。[保修条款对比](/blog/chinese-bike-warranty-and-spares/)把这些条款与其他中国品牌并列比较。"
           ]
         },
         {
           "id": "owners",
-          "heading": "从有日期的订购记录里提炼问题",
+          "heading": "车主证据既旧，又是另一款车",
           "paragraphs": [
-            "[2020 年 12 月论坛帖](https://chinertown.com/index.php/topic,2.315.html)中，德国买家称 Dengfu R12 从中国订购，另一品牌车架从西班牙仓购买。这只记录老购买路径，不能证明今天 R20 的交付、进口费用或保修结果。买家还说明，另一品牌的仓库订单是预订，当时并无现货。",
-            "买 R20 时，应取得当前卖家的发票、发货安排与售后条款。另一型号的漂亮装车能提供灵感，真正决定项目是否可行的仍是准确报价。"
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "让一张报价单回答整笔订单",
-          "paragraphs": [
-            "分别列出车架套餐、所选涂装、额外配件、运费及卖家如何处理进口费用。问生产何时开始、预计何时发货，以及延误怎样通知。",
-            "假设回复只写“R20 车架、前叉和定制涂装”，却没提座管、碗组部件或桶轴。逐项标明包含、另计价或不提供，别因为照片中出现某件零件，就把未提及的项目当成免费附送。两份报价回答同一份套餐清单后，再比较到手总额；约定变更可按[订单替换件清单](/zh/blog/bike-order-component-substitutions/)记录。",
-            "书面取得具体型号保修与到货损坏流程，包括退货地点和运输责任。只有品牌层面的文字，可能仍不能解决型号相关问题。",
-            "付款前让装配者复核最终清单，再用完成后的总成本与其他方案比较。厂家订购的吸引力在于掌控项目，而明确规格才让这种掌控真正成立。",
-            "[备件与保修指南](/zh/blog/chinese-bike-warranty-and-spares/)将付费买件、缺陷索赔和退货请求分开说明。"
+            "我们找到的唯一买家记录，是一篇[2020年12月的论坛帖](https://chinertown.com/index.php/topic,2.315.html)：一位德国买家从中国订购了 Dengfu R12。它说明当时可以直接订购并寄到德国，却说明不了今天 R20 的交期、进口费用或保修处理。2026年8月30日，我们在论坛、车主装车记录、YouTube 和哔哩哔哩等50个来源区域搜索，没有找到任何给出价格、重量或胎宽的独立 R20 报告。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Dengfu kaufen: Ein genaues Angebot zählt mehr als der Einstiegspreis",
-      "description": "Dengfu R20 oder andere Rahmen direkt bestellen: genaues Angebot, vereinbarte Austauschteile, Paketprüfung und aktuelle Bedingungen statt alter Besitzerberichte.",
-      "intro": "Die R20-Seite identifiziert den Gravelrahmen, nennt aber kein vollständiges, zu Ihnen geliefertes Rahmenpaket. Eine Direktanfrage hilft, wenn der Hersteller den gesamten gewünschten Lieferumfang bestätigt.",
+      "title": "Dengfu R20 kaufen: Die Geometrie ist veröffentlicht, Preis und Reifenfreiheit nicht",
+      "description": "Dengfus R20-Zeichnung nennt vier Größen; die 54 hat 573 mm Stack, 382 mm Reach, 436 mm Kettenstreben und 80 mm Tretlagerabsenkung. Preis, Gewicht und Reifenfreiheit gibt es nur mit einem Angebot, und die zweijährige Garantie deckt den Carbonrahmen, nicht den Lack.",
+      "intro": "Dengfu, ein Rahmenhersteller aus Shenzhen, verkauft den R20-Gravelrahmen auf Anfrage über seine Werksseite; im Onlineshop fanden wir ihn am 9. November 2026 nicht. Die R20-Seite zeigt eine Geometriezeichnung für vier Größen, aber weder Preis noch Gewicht, Material oder Reifenfreiheit. In Millimetern gelesen beschreibt sie einen Rahmen mit höherer Front als Katalograhmen mit gleichem Reach, langen 436-mm-Kettenstreben und tiefem Tretlager. Dengfus Garantie gibt Erstkäufern, die bei Dengfu Sports Equipment Co., Ltd. gekauft haben, zwei Jahre auf den Carbonrahmen, schließt Lackschäden aus und überlässt Ihnen die Versandkosten.",
       "sections": [
         {
           "id": "inquiry",
-          "heading": "Den genauen Rahmen auf der Herstellerseite identifizieren",
+          "heading": "Was Dengfu über den R20 veröffentlicht",
           "paragraphs": [
-            "Beginnen Sie bei der [Herstellerseite](https://m.dengfubikes.com/about/) und der [R20-Produktseite](https://www.dengfubikes.com/Road-Frame/R20.html). Sie beschreibt einen anpassbaren Gravelrahmen, keinen vollständigen Kaufabschluss für Ihr Ziel. Nutzen Sie aktuelle Kontakte statt Zahlungsadressen alter Threads.",
-            "Senden Sie Modell, Revision, Größe, Lackierung, Ziel und Cockpitwunsch. Fordern Sie Geometrie, Montageinformationen und vollständigen Paketumfang an. Lassen Sie Schnittstellen prüfen; ergänzen Sie fehlende R20-Fakten nicht aus anderen Dengfu-Modellen."
+            "Dengfus [R20-Produktseite](https://www.dengfubikes.com/Road-Frame/R20.html), gelesen am 9. November 2026, führt den R20 als Gravelrahmen neben den Disc-Straßenrahmen R12, R18 und R22, nennt ihn anpassbar und bittet um eine Anfrage, statt einen Preis zu zeigen. Dengfus [Onlineshop](https://www.dengfubike.com/) verkauft Kompletträder, andere Rahmensets und E-Bikes, doch keiner der 25 Treffer einer Suche nach „R20“ war dieser Rahmen. Den Preis gibt es nur mit einem Angebot.",
+            "Die Seite nennt weder Rahmengewicht noch Material oder maximale Reifenbreite, auch keinen Tretlager-, Achs- oder Sattelstützenstandard. Laut Dengfus [FAQ](https://dengfubikes.com/faq/) verwenden alle Carbonräder der Marke japanische Toray-T700/T800-Fasern, und jedes Produkt wird vor der Auslieferung nach ISO 4210 mit um 30 Prozent erhöhten Anforderungen geprüft. Das ist eine markenweite Aussage ohne veröffentlichten Prüfbericht, keine R20-Spezifikation; der [Ratgeber zu Faserbezeichnungen](/blog/carbon-fiber-t700-t800-claims/) erklärt, was solche Etiketten aussagen und was nicht."
           ]
         },
         {
-          "id": "stock",
-          "heading": "Austauschteile nur nach Zustimmung",
+          "id": "geometry",
+          "heading": "Höhere Front und längere Kettenstreben als Rahmen mit gleichem Reach",
           "paragraphs": [
-            "Fragen Sie getrennt nach Rahmen, Cockpit, Sattelstütze und modellspezifischen Kleinteilen. Fehlt das Cockpit, wählen Sie zwischen Warten, freigegebener Alternative und Storno nach Verkäuferbedingungen. Eine um 10 mm andere Vorbaulänge ist eine Passformentscheidung.",
-            "Ergänzen Sie die Bestätigung um: „Rahmenrevision, Größe, Lackierung oder Cockpitmaße bitte nur nach meiner Zustimmung ersetzen.“ Lassen Sie die Teile gemeinsam vor Zahlung prüfen."
+            "Die Zeichnung auf der R20-Seite mit dem Titel „R20 Gravel Geometry R7“ ist die einzige Spezifikation, die Dengfu für diesen Rahmen veröffentlicht, und sie nennt keine Einheiten. In Millimetern gelesen lassen sich Stack, Oberrohr und Radstand in jeder Größe auf einen halben Millimeter genau aus den übrigen Längen und Winkeln nachrechnen. Das stützt die Millimeter-Lesart, ist aber unsere Rechnung und keine Angabe von Dengfu; was „R7“ bedeutet, sagt Dengfu nicht. Lassen Sie beides für Ihre Größe bestätigen; der [R20-Rechercheeintrag](/models/dengfu-gravel/) enthält die vollständige Übertragung mit Quelle.",
+            "Alle vier Größen haben 436 mm lange Kettenstreben, 80 mm Tretlagerabsenkung, 399 mm Gabellänge und 55 mm Gabelvorlauf. Im Vergleich mit Gravelrahmen aus dem Katalog bei fast gleichem Reach liegt die 54 hoch: 573 mm Stack bei 382 mm Reach, während der [INCOLOR Voyager](/models/incolor-voyager-frameset/) in 54 auf 555 mm und das [Twitter Gravel V3](/models/twitter-v3-rs-sensah/) in 51 auf 550 mm kommen, beide bei 385 mm Reach. Das sind 18 bis 23 mm mehr Lenkerhöhe ohne Spacer, etwa so viel wie beim [BXT-055](/models/bxt-055-frameset/) in 56 mit 575 mm bei 385 mm. Auch sind die Kettenstreben des R20 länger und sein Tretlager tiefer als bei diesen drei Rahmen mit 415–426 mm Streben und 69–74 mm Absenkung.",
+            "Lange Kettenstreben und ein tiefes Tretlager tauschen in der Regel spontanes Lenkverhalten gegen Laufruhe, und das tiefere Tretlager lässt über Steinen und Spurrillen etwas weniger Pedalfreiheit. Der R20 passt, wenn Sie eine höhere Front ohne hohen Spacerturm wollen; wer eine tiefe, sportliche Front sucht, findet sie eher in den Zahlen von Twitter oder INCOLOR. Der [Stack-und-Reach-Ratgeber](/blog/stack-reach-vs-frame-size/) zeigt, wie Sie diese Werte neben Ihr jetziges Rad legen.",
+            "Bei kleiner Körpergröße bietet die 47 mehr Platz für den Schuh, als ihre Größe vermuten lässt. Mit 170-mm-Kurbeln ergibt die Methode aus dem [Ratgeber zur Fußüberschneidung](/blog/toe-overlap-small-gravel-bike/) etwa 78 mm zwischen Pedalachse und einem 700 × 40-mm-Reifen, mit 650B × 47 etwa 91 mm – am oberen Ende der 62 bis 78 mm, die wir für die kleinsten Gravelgrößen von sechs Herstellern ermittelt haben. Beide Werte setzen voraus, dass der R20 diese Reifen aufnimmt, was Dengfu nicht veröffentlicht."
           ],
-          "bullets": [
-            "Sofort verfügbar: tatsächlichen Ort und vollständiges versandbereites Paket nennen.",
-            "Produktion oder Lackierung nötig: getrennte Fertigstellungs- und Versandschätzung einholen.",
-            "Vorgeschlagener Ersatz: Passform und Preis vergleichen und schriftlich zustimmen oder ablehnen."
+          "worksheet": {
+            "caption": "Dengfu-R20-Geometrie laut Herstellerzeichnung (gelesen am 9. November 2026; ohne Einheiten, als mm gelesen)",
+            "columns": [
+              "Größe",
+              "Stack",
+              "Reach",
+              "Steuerrohr",
+              "Oberrohr",
+              "Steuerrohrwinkel",
+              "Sitzrohrwinkel",
+              "Radstand"
+            ],
+            "rows": [
+              [
+                "47/XS",
+                "535",
+                "366",
+                "105",
+                "514",
+                "70°",
+                "74,5°",
+                "1.018,5"
+              ],
+              [
+                "51/S",
+                "551",
+                "373",
+                "120",
+                "531",
+                "70,5°",
+                "74°",
+                "1.027"
+              ],
+              [
+                "54/M",
+                "573",
+                "382",
+                "140",
+                "552",
+                "71,25°",
+                "73,5°",
+                "1.036"
+              ],
+              [
+                "57/L",
+                "598,5",
+                "395",
+                "165",
+                "572",
+                "71,75°",
+                "73,5°",
+                "1.052,5"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "heading": "Was das Angebot klären muss",
+          "paragraphs": [
+            "Fragen Sie zuerst nach den größten freigegebenen 700C- und 650B-Reifenbreiten, mit und ohne Schutzbleche, denn davon hängt ab, wie viel Gravel der R20 verträgt. Fragen Sie dann nach Tretlager-, Achs- und Sattelstützenstandard mit Namen, nach Steuersatz- und Leitungsführungsteilen sowie nach dem Rahmengewicht mit Größe, Lackierung und dem, was die Angabe einschließt; diese Antworten entscheiden, welche Ihrer Teile weiterpassen.",
+            "Lassen Sie Rahmen, Gabel, Sattelstütze, Steuersatzteile und Lackierung einzeln bepreisen, dazu den Versand an Ihre Adresse und die Einfuhrabgaben, die der Verkäufer übernimmt oder nicht. Vergleichen Sie Angebote erst, wenn sie dasselbe Paket abdecken; die [Bestell-Checkliste für Rahmensets](/blog/chinese-frameset-order-checklist/) beschreibt den allgemeinen Ablauf, der [Ratgeber zu gleichwertigen Bauteilen](/blog/bike-order-component-substitutions/) vereinbarte Teiletausche."
+          ]
+        },
+        {
+          "id": "warranty",
+          "heading": "Zwei Jahre auf den Rahmen, nicht auf den Lack",
+          "paragraphs": [
+            "Dengfu veröffentlicht seine Garantie im Onlineshop, nicht auf der Werksseite. Die [Garantieseite](https://www.dengfubike.com/pages/warranty) des Shops nennt Dengfu Sports Equipment Co., Ltd. und dieselbe Telefonnummer in Shenzhen wie die [Über-uns-Seite](https://m.dengfubikes.com/about/) der Werksseite. Am 9. November 2026 gab sie Erstkäufern eines Dengfu-Rads, das bei dieser Firma gekauft wurde, zwei Jahre ab Kauf auf den Carbonrahmen; Dengfu repariert den Rahmen oder ersetzt ihn durch einen mindestens funktional gleichwertigen.",
+            "Ausgeschlossen sind Steuersatz, Schaltauge, Reifen, Bremsbeläge sowie Lackschäden, Ausbleichen und Farbveränderungen, außerdem Schäden durch Stürze, Fehlgebrauch, Vernachlässigung, Überlastung und Veränderungen wie Gravuren oder Lackierungen. Den Versand für Rücksendung oder Ersatz zahlt der Käufer; ein Garantiefall beginnt beim Garantieteam von Dengfu mit einer Rücksendegenehmigung und dem Kaufbeleg. Einen Crash-Ersatz-Rabatt gibt es nicht.",
+            "Für eine R20-Bestellung zählen zwei Klauseln. Lackschäden, Ausbleichen und Farbveränderungen bleiben bei Ihnen, was bei einer aufpreispflichtigen Wunschlackierung schwerer wiegt. Und die Garantie nennt Räder, die bei Dengfu Sports Equipment Co., Ltd. gekauft wurden; bestellen Sie über einen anderen Verkäufer, lassen Sie sich schriftlich bestätigen, wer einen Rahmenfall abwickelt. Der [Garantievergleich](/blog/chinese-bike-warranty-and-spares/) stellt diese Bedingungen neben die anderer chinesischer Marken."
           ]
         },
         {
           "id": "owners",
-          "heading": "Datierte Bestellberichte liefern Fragen",
+          "heading": "Die Besitzerberichte sind alt und betreffen ein anderes Modell",
           "paragraphs": [
-            "Ein [Forenbeitrag vom Dezember 2020](https://chinertown.com/index.php/topic,2.315.html) beschreibt einen deutschen Käufer mit Dengfu R12 aus China und einem anderen Rahmen aus einem spanischen Lager. Das ist ein alter Kaufweg, kein Beleg für heutige R20-Lieferung, Importkosten oder Garantie. Die Lagerbestellung der anderen Marke war laut Käufer eine Vorbestellung; damals war sie nicht vorrätig.",
-            "Fordern Sie für das R20 aktuelle Rechnung, Versandplan und Servicebedingungen an. Ein attraktiver Aufbau eines anderen Modells inspiriert; das genaue Angebot entscheidet die Machbarkeit."
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "Eine Rechnung soll die gesamte Bestellung beantworten",
-          "paragraphs": [
-            "Fordern Sie Einzelpreise für Rahmenpaket, Lackierung, Extras, Versand und Importabgaben an. Fragen Sie nach Produktionsbeginn, geschätztem Versand und Kommunikation bei Verzögerungen.",
-            "Angenommen, die Antwort lautet nur „R20-Rahmen und Gabel, Wunschlackierung“. Sattelstütze, Steuersatzteile und Achsen bleiben unerwähnt. Halten Sie für jedes Teil fest: enthalten, zusätzlich berechnet oder nicht geliefert. Ein Foto macht ein unerwähntes Teil nicht zur kostenlosen Zugabe. Vergleichen Sie Liefergesamtpreise erst bei derselben Stückliste und dokumentieren Sie Änderungen mit der [Checkliste für Austauschteile](/de/blog/bike-order-component-substitutions/).",
-            "Lassen Sie Garantie und Vorgehen bei Ankunftsschäden für das genaue Modell schriftlich bestätigen, einschließlich Rückgabeziel und Transportkosten. Allgemeine Markenbedingungen können wichtige Details offenlassen.",
-            "Lassen Sie die abschließende Teileliste vor Zahlung prüfen und vergleichen Sie den fertigen Aufbau mit Alternativen. Klare Spezifikationen machen die gewünschte Kontrolle einer Fabrikbestellung möglich.",
-            "Der [Leitfaden zu Ersatzteilen und Garantie](/de/blog/chinese-bike-warranty-and-spares/) trennt Teilekauf, Mängelreklamation und Rückgabe."
+            "Der einzige Käuferbericht, den wir fanden, ist ein [Forumsbeitrag vom Dezember 2020](https://chinertown.com/index.php/topic,2.315.html): Ein Käufer aus Deutschland bestellte einen Dengfu R12 direkt in China. Er zeigt, dass Direktbestellungen nach Deutschland damals möglich waren, sagt aber nichts über Lieferzeit, Einfuhrabgaben oder Garantieabwicklung beim heutigen R20. Unsere Suche in 50 Quellenbereichen vom 30. August 2026, von Foren und Aufbauberichten bis zu YouTube und Bilibili, fand keinen unabhängigen R20-Bericht mit Preis, Gewicht oder Reifenfreiheit."
           ]
         }
       ]
     }
   },
   "editorial_references": [
-    "https://m.dengfubikes.com/about/",
     "https://www.dengfubikes.com/Road-Frame/R20.html",
+    "https://dengfubikes.com/faq/",
+    "https://www.dengfubike.com/",
+    "https://www.dengfubike.com/pages/warranty",
+    "https://m.dengfubikes.com/about/",
     "https://chinertown.com/index.php/topic,2.315.html"
   ]
 }
