@@ -9,6 +9,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','.wrangler','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/buy-x-lab-bike-mascot-cover-ee68647ce8-640-a08f112d28.avif', 'a08f112d28bd19c2d446af91f16d624095fcbb030c8818dc6ac0f8f5db0fb1ec'],
+  ['assets/blog/buy-x-lab-bike-mascot-cover-ee68647ce8-1600-9afaf03106.avif', '9afaf03106f7f0eebcfc3edef0d02c7125a305bfaad3fb1d0e632539bd66fd34'],
+  ['assets/blog/buy-x-lab-bike-mascot-cover-ee68647ce8-1200-154d06bcf4.jpg', '154d06bcf4380120e485d1ba0186a3472a886cfe2260faa1969525ec0216351a'],
   ['assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-640-6dbcd9df2e.avif', '6dbcd9df2e9c9d0fbf24453a428846f0d2515029c2ab68841c25a46ffab28e87'],
   ['assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-1600-661ede1a48.avif', '661ede1a48b1eb843b711dbe7530b7b821a16408ee772b42b705421f63a2fbf1'],
   ['assets/blog/belt-drive-commuter-repair-plan-mascot-cover-156a3ef821-1200-ed55732080.jpg', 'ed55732080fe00496f661a531a06aa04ac00fbc9ea1da620de7cb20ff1b0ec67'],

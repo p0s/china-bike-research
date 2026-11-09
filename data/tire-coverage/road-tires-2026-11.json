@@ -29,6 +29,11 @@
       "summary": "Web searches for ZC Rubber/ARISUN, JILUER, Innova and CARNOS; company pages for Panaracer, IRC and Hutchinson."
     },
     {
+      "name": "Entry-level re-check",
+      "checked_at": "2026-11-01",
+      "summary": "Road tires earlier excluded only for being entry-level were re-checked: official Schwalbe pages (Europe and North America) and the Pirelli catalogue, US retailer pages for the ARISUN Rapide, CST C1406 and Pirelli P4 Sport, web searches for CST C1761, C1720 and C1777, and XHS searches for the Chaoyang Viper and CST C1761, which found no exact-model post."
+    },
+    {
       "name": "Budget all-season pass",
       "checked_at": "2026-11-01",
       "summary": "22 exact-model XHS searches for the cheap Chinese and Taiwanese tires (ARISUN STORM R1, Chaoyang Falcon, Cobra, Chinese knot and Mini Shark, JILUER Chaser and Chaser Pro, CST C3045, C3045N, C1922, C1808, CRD06 and C1406, Kenda K925 and K1092, Innova 3029 and smiley, Maxxis Pursuer) with 39 posts and their comments opened in one sequential browser lane. Owner wet-road reports were found only for the STORM R1 (conflicting), CST C3045 (one favourable), Kenda K925 (one unfavourable) and an unidentified JILUER Chaser-family tire; no exact-model post was found for the C3045N or CRD06. Ten shop listings were re-read for one-tire or pair wording, including local OCR of the sellers' description images: the Chaoyang, ARISUN and JILUER listings do not state it, and the run stopped at a security check on a Taobao listing without a retry."
@@ -297,14 +302,16 @@
     {
       "brand_id": "chaoyang",
       "name": "H-457 Mini Shark (迷你鲨)",
-      "disposition": "excluded",
-      "reason": "Entry-level training tire sold mainly in non-folding form for about CNY 60; outside the performance-road comparison."
+      "disposition": "included",
+      "reason": "Mainland Taobao listing and the official Chaoyang account post; re-checked 2026-11-01 under the entry-level rule.",
+      "record_id": "chaoyang-h-457"
     },
     {
       "brand_id": "chaoyang",
       "name": "H-479 Viper",
-      "disposition": "excluded",
-      "reason": "Entry-level 60 TPI folding tire about 335 g at 28 mm in a retailer listing; outside the performance-road comparison."
+      "disposition": "included",
+      "reason": "Mainland Taobao listing (700x25C); no specifications or owner post found.",
+      "record_id": "chaoyang-h-479"
     },
     {
       "brand_id": "chaoyang",
@@ -335,8 +342,9 @@
     {
       "brand_id": "arisun",
       "name": "Rapide",
-      "disposition": "excluded",
-      "reason": "Entry-level 30/60 TPI export tire; not found in China-market road discussions."
+      "disposition": "included",
+      "reason": "US retailer listings (25 and 32 mm folding); not found in mainland marketplaces or XHS.",
+      "record_id": "arisun-rapide"
     },
     {
       "brand_id": "jiluer",
@@ -450,9 +458,28 @@
     },
     {
       "brand_id": "cst",
-      "name": "C1406, Sprint, 狂飙 and C1720/C1761/C1777 entry tires",
+      "name": "C1406 Czar",
+      "disposition": "included",
+      "reason": "US retailer listing and XHS owner posts.",
+      "record_id": "cst-c1406"
+    },
+    {
+      "brand_id": "cst",
+      "name": "C1777",
       "disposition": "excluded",
-      "reason": "Entry-level training and commuting clinchers sold in many unnamed variants; outside the performance-road comparison."
+      "reason": "A 700x45C reflective urban and e-bike tire in a European retailer listing (checked 2026-11-01); outside both width groups."
+    },
+    {
+      "brand_id": "cst",
+      "name": "C1761",
+      "disposition": "unresolved",
+      "reason": "One XHS owner (2025-09-13) calls it a 60 TPI version of the C3045 about CNY 20 cheaper; no maker page, retailer listing or exact-model XHS post was found on 2026-11-01, and the Taobao route stopped at a security check."
+    },
+    {
+      "brand_id": "cst",
+      "name": "Sprint, 狂飙 and C1720",
+      "disposition": "unresolved",
+      "reason": "Names seen in Taobao listings during discovery; no maker page, size table or owner post confirmed a road model on 2026-11-01, and the Taobao route stopped at a security check."
     },
     {
       "brand_id": "cst",
@@ -868,8 +895,9 @@
     {
       "brand_id": "pirelli",
       "name": "P4 Sport",
-      "disposition": "excluded",
-      "reason": "Durability-focused 26 TPI clincher; entry-level tires are outside this comparison."
+      "disposition": "included",
+      "reason": "Official Pirelli catalogue and a US retailer listing.",
+      "record_id": "pirelli-p4-sport"
     },
     {
       "brand_id": "pirelli",
@@ -1015,9 +1043,16 @@
     },
     {
       "brand_id": "schwalbe",
-      "name": "Lugano II and Lugano II Endurance",
+      "name": "Lugano II",
+      "disposition": "included",
+      "reason": "Official Schwalbe pages for Europe and North America.",
+      "record_id": "schwalbe-lugano-ii"
+    },
+    {
+      "brand_id": "schwalbe",
+      "name": "Lugano II Endurance",
       "disposition": "excluded",
-      "reason": "Schwalbe North America calls them an entry-level racing tire and a sportive city tire."
+      "reason": "Schwalbe North America calls it a sportive city tire."
     },
     {
       "brand_id": "schwalbe",

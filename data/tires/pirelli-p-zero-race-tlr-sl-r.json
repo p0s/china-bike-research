@@ -87,8 +87,226 @@
     "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01",
     "pirelli-road-range-gb-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01"
+    "pirelli-p-zero-race-tlr-rs-tmall-retail-2026-11-01",
+    "sigma-sports-pirelli-p-zero-race-tlr-sl-r-reviews",
+    "brr-comments-pirelli-p-zero-race-tlr-sl-r",
+    "brr-comments-pirelli-p-zero-race-tlr-rs-30",
+    "brr-comments-pirelli-p-zero-race-tlr-sl-r-30"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "pirelli-p-zero-race-tlr-sl-r-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "P ZERO Race TLR SL-R sidewall as pictured in Pirelli's catalogue.",
+    "credit": "Pirelli",
+    "alt": "Close-up of a Pirelli P ZERO Race TLR SL-R road tire sidewall with red SL-R logo",
+    "remote_url": "https://tyre24.pirelli.com/dynamic_engine/velo/assets/images/products/p_zero_race_tlr_sl-r_1.jpg",
+    "width": 1248,
+    "height": 1156,
+    "source_media_sha256": "d5c799dbedd53e3ed6c6bcc622fa571e7be2e7f4224a2ffdcb863d60165a6735",
+    "source_media_bytes": 331029,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Pirelli",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-tlr-sl-r-reviews"
+        ],
+        "published_at": "2026-07-02",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Really fast, much lighter and easier to fit than the TLR RS; the owner accepts a short life for race speed."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-tlr-sl-r-reviews"
+        ],
+        "published_at": "2026-06-16",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "About 250 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Rides very nicely in 28 and 30 mm, but a couple of punctures from small cuts in 200 miles of familiar roads; would still buy again."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-05-20",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "A super-fast combination with deep wheels, with impressive speed and grip; a worthy upgrade from the RS."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-05-14",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Very fast on a race bike, with welcome grip on steep descents."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r",
+          "brr-comments-pirelli-p-zero-race-tlr-rs-30"
+        ],
+        "published_at": "2026-06-17",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Feels fast and corners really well, but rode very harshly until the owner set pressures well below the maker's calculator."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-05-11",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "About three months",
+        "codes": {
+          "punctures": "unfavourable"
+        },
+        "summary": "Three punctures in the first week, all sealed, and another on the rear about three months later; not on a par with the GP5000 S TR."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-06-28",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "130 km",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Three punctures in one 130 km ride and no difference felt from the RS, so the owner went back to it."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-05-07",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A few hundred miles",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "One on the front for a few hundred miles; the owner loves it and bought a second."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r-30"
+        ],
+        "published_at": "2026-08-23",
+        "width_mm": 30,
+        "setup": "tubeless",
+        "exposure": "Under 500 miles",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Four of six 30 mm tires were binned within 500 miles: sealant would not close small holes and plugs failed."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r-30"
+        ],
+        "published_at": "2026-08-12",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Four rides",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Four punctures in four rides; they sealed, but the owner cannot trust them."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r-30"
+        ],
+        "published_at": "2026-07-16",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Some hundreds of km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Feels amazing over some hundreds of kilometres, but punctures are hard to self-seal on the thin casing and one needed a plug."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-rs-30"
+        ],
+        "published_at": "2026-06-18",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "unfavourable"
+        },
+        "summary": "One of the harshest-riding tires the owner has tried, tolerable only below about 55 psi with inserts on wide rims."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "The Team Edition page has no written review"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 10,
+        "note": "28 and 30 mm test pages plus owners on the TLR RS 30 mm test"
+      }
+    ]
+  }
 }

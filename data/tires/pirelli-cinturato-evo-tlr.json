@@ -82,8 +82,85 @@
     "Wet performance is a maker claim; no independent wet test found."
   ],
   "source_ids": [
-    "pirelli-cinturato-evo-official-2026-11-01"
+    "pirelli-cinturato-evo-official-2026-11-01",
+    "sigma-sports-cinturato-evo-tlr-reviews"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "pirelli-cinturato-evo-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Full view of the Cinturato EVO TLR from Pirelli's catalogue; one photo covers every width.",
+    "credit": "Pirelli",
+    "alt": "Pirelli Cinturato EVO TLR tire shown as a full ring",
+    "remote_url": "https://tyre24.pirelli.com/dynamic_engine/velo/assets/images/products/cinturato_evo_2.jpg",
+    "width": 1248,
+    "height": 1156,
+    "source_media_sha256": "565fab46ec624438be190741eeb2a603d7bd53649f66fbbd43216789055d8b7e",
+    "source_media_bytes": 488927,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Pirelli",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the 40 mm test page's reader comments are now read as well.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-cinturato-evo-tlr-reviews"
+        ],
+        "published_at": "2026-10-06",
+        "width_mm": 30,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "unfavourable",
+          "punctures": "favourable"
+        },
+        "summary": "Very hard to fit, then felt slow, numb and heavy-steering compared with the owner's Vittoria Corsa Pro; no puncture, but the owner sold them and cannot recommend them."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-cinturato-evo-tlr-reviews"
+        ],
+        "published_at": "2026-04-16",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "100 miles",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Performed at a very high level over the first 100 miles."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "Two of 4 written reviews never got the tire mounted"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "Nine comments on the 28 and 40 mm test pages, none first-hand"
+      }
+    ]
+  }
 }

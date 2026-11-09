@@ -669,6 +669,7 @@ export const es = {
   "Shipping destination": "Destino del envío",
   "Shop staff compare the Elite Drive G36 with Zipp 303 XPLR, Hunt 40 Limitless and Secret Wheels gravel wheelsets. It is comparative opinion, not a laboratory test.": "El personal de una tienda compara las Elite Drive G36 con las ruedas gravel Zipp 303 XPLR, Hunt 40 Limitless y Secret Wheels. Es una opinión comparativa, no una prueba de laboratorio.",
   "Show the focused list": "Mostrar la lista principal",
+  "Show fewer": "Mostrar menos",
   "Size 54, unpainted, excluding paint and metal hardware": "Talla 54, sin pintar, sin pintura ni tornillería metálica",
   "Skip to content": "Saltar al contenido",
   "Slick-tire limits; 1× small-knob limit: 36C.": "Límites para neumáticos lisos; límite para taco pequeño en 1×: 36C.",
@@ -860,6 +861,7 @@ const t = (value) => translateSpanish(value);
 const cap = (value) => value.charAt(0).toUpperCase() + value.slice(1);
 const patterns = [
   [/^Show (\d+) more models?$/, (_, n) => n === '1' ? 'Mostrar 1 modelo más' : `Mostrar ${n} modelos más`],
+  [/^Show (\d+) more tires$/, (_, n) => `Mostrar ${n} neumáticos más`],
   [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${t(value)} — ${t(label)}`],
   [/^(.+) — filter catalog to this brand$/, (_, name) => `${name} — filtrar el catálogo por esta marca`],
   [/^(.+) — remove brand filter$/, (_, name) => `${name} — quitar el filtro de marca`],
@@ -1091,7 +1093,19 @@ Object.assign(es, {
   "Owner wet reports conflict": "Las opiniones en mojado se contradicen",
   "Owner wet reports are unfavourable": "Las opiniones en mojado son desfavorables",
   "No owner wet report found": "No se encontraron opiniones en mojado",
-  "No durability or fit problem report found": "No se encontraron informes de problemas de durabilidad o de ajuste"
+  "No durability or fit problem report found": "No se encontraron informes de problemas de durabilidad o de ajuste",
+  "Maker photo": "Foto del fabricante",
+  "Retailer photo": "Foto del minorista",
+  "Photo from an XHS post": "Foto de una publicación de XHS",
+  "Loaded from the maker’s website": "Cargada desde el sitio del fabricante",
+  "Loaded from the retailer’s website": "Cargada desde el sitio del minorista",
+  "Loaded from the original XHS post": "Cargada desde la publicación original de XHS",
+  "Original source": "Fuente original",
+  "Product photos": "Fotos de productos",
+  "Component photos": "Fotos de componentes",
+  "Photo": "Foto",
+  "Photos": "Fotos",
+  "Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.": "Las fotos se cargan desde la página de producto del propio fabricante o minorista, o desde la publicación pública original; este sitio no guarda copias."
 });
 
 // Road tire reference (2026-11-01)
@@ -1105,6 +1119,8 @@ patterns.push(
   [/^wet (\d+)$/, (_, n) => `mojado ${n}`],
   [/^also (.+)$/, (_, list) => `también ${list}`],
   [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${n === '1' ? 'opinión de propietario' : 'opiniones de propietarios'}, sin prueba de laboratorio`],
+  [/^(\d+) maker · (\d+) retailer · (\d+) XHS post · (\d+) without a photo$/, (_, a, b, c, d) => `${a} del fabricante · ${b} de minorista · ${c} de publicaciones de XHS · ${d} sin foto`],
+  [/^(\d+) photos$/, (_, n) => `${n} fotos`],
   [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} por neumático`],
   [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} en el anuncio, sin indicar si es uno o un par`],
   [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${n === '1' ? 'informe' : 'informes'} de ${{ 'bulging or casing failure': 'abultamientos o fallos de carcasa', cracking: 'grietas', 'fast wear': 'desgaste rápido', 'frequent punctures': 'pinchazos frecuentes', 'bead or rim-fit problems': 'problemas de talón o de ajuste en la llanta' }[issue]}`],
@@ -1114,3 +1130,90 @@ patterns.push(
   [/^(\d+) excluded$/, (_, n) => n === '1' ? '1 excluido' : `${n} excluidos`],
   [/^(\d+) unresolved$/, (_, n) => `${n} sin resolver`]
 );
+
+// Tire owner ratings (2026-11-03).
+Object.assign(es, {
+  "Owners": "Propietarios",
+  "Owner ratings": "Valoraciones de propietarios",
+  "Not rated yet": "Aún sin valoración",
+  "No eligible owner report found": "No se encontró ninguna opinión de propietario válida",
+  "fewer than 5 per aspect": "menos de 5 por aspecto",
+  "Overall verdict": "Valoración general",
+  "Wet grip": "Agarre en mojado",
+  "Grip, dry or not stated": "Agarre, en seco o sin indicar",
+  "Speed feel": "Sensación de velocidad",
+  "Puncture resistance": "Resistencia a pinchazos",
+  "Tread life": "Duración de la banda",
+  "Casing durability": "Durabilidad de la carcasa",
+  "Favourable": "Favorable",
+  "Mostly favourable": "Mayormente favorable",
+  "Mostly unfavourable": "Mayormente desfavorable",
+  "Unfavourable": "Desfavorable",
+  "limited evidence": "evidencia limitada",
+  "moderate evidence": "evidencia moderada",
+  "larger sample": "muestra más amplia",
+  "Not rated": "Sin valoración",
+  "No owner report": "Sin opiniones de propietarios",
+  "Aspect": "Aspecto",
+  "Rating": "Valoración",
+  "Coded": "Codificado",
+  "Tube or tubeless": "Cámara o tubeless",
+  "not stated": "sin indicar",
+  "tubeless": "tubeless",
+  "inner tube": "cámara",
+  "favourable": "favorable",
+  "mixed": "mixta",
+  "unfavourable": "desfavorable",
+  "Post notes": "Notas de publicaciones",
+  "Whole-post summaries, not checked owner by owner and not counted in owner ratings.": "Resúmenes de publicaciones completas, no revisados propietario por propietario y no incluidos en las valoraciones de propietarios.",
+  "Editorial coding of first-hand public reports, not star ratings given by owners. An aspect is rated only when at least 5 owners describe it; 5 is an entry threshold, not proof. Public reports are self-selected, sources differ between tires, and width, pressure, setup and roads vary between owners.": "Codificación editorial de opiniones públicas de primera mano, no valoraciones con estrellas de los propietarios. Un aspecto solo se valora cuando al menos 5 propietarios lo describen; 5 es un umbral de entrada, no una prueba. Las opiniones públicas son autoseleccionadas, las fuentes varían de un neumático a otro, y la anchura, la presión, el montaje y las carreteras varían entre propietarios.",
+  "Each coded row is one owner of the exact tire and construction who describes their own riding. Seller and brand copy, questions, hearsay, repeats and reports that do not name the construction are left out, and an owner counts once however often they post. Each aspect is coded favourable, mixed or unfavourable; wet grip needs wet riding, and grip covers dry or unstated conditions. An aspect is rated only with at least 5 owners: the share favourable, with mixed counted as half, reads as Favourable from 85%, Mostly favourable from 65%, Mixed above 35%, Mostly unfavourable above 15%, otherwise Unfavourable. Evidence depth is limited for 5–9 owners, moderate for 10–19 and a larger sample from 20; it describes how much was found, not statistical confidence. Ratings describe the widths owners reported and never another width.": "Cada fila codificada corresponde a un propietario del neumático y la construcción exactos que describe su propio uso. Se excluyen los textos de vendedores y marcas, las preguntas, los rumores, las repeticiones y las opiniones que no indican la construcción, y cada propietario cuenta una vez aunque publique varias veces. Cada aspecto se codifica como favorable, mixto o desfavorable; el agarre en mojado exige haber rodado en mojado, y el agarre cubre condiciones secas o sin indicar. Un aspecto solo se valora con al menos 5 propietarios: la proporción favorable, contando las mixtas como media, se lee como Favorable desde el 85 %, Mayormente favorable desde el 65 %, Mixta por encima del 35 %, Mayormente desfavorable por encima del 15 % y, si no, Desfavorable. La profundidad de la evidencia es limitada con 5–9 propietarios, moderada con 10–19 y una muestra más amplia desde 20; describe cuánto se encontró, no una confianza estadística. Las valoraciones describen las anchuras que indicaron los propietarios y nunca otra anchura.",
+  "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "Breves paráfrasis de publicaciones públicas completas registradas antes de la codificación propietario por propietario. Describen el neumático de un ciclista, no son pruebas y no cuentan en las valoraciones de propietarios.",
+  "Most owners coded": "Más propietarios codificados",
+  "no aspect rated yet": "aún ningún aspecto valorado",
+});
+patterns.push(
+  [/^(\d+) owners?$/, (_, n) => n === '1' ? '1 propietario' : `${n} propietarios`],
+  [/^(\d+) more rated$/, (_, n) => n === '1' ? '1 más valorado' : `${n} más valorados`],
+  [/^(\d+) (favourable|mixed|unfavourable)$/, (_, n, code) => `${n} ${{ favourable: n === '1' ? 'favorable' : 'favorables', mixed: n === '1' ? 'mixta' : 'mixtas', unfavourable: n === '1' ? 'desfavorable' : 'desfavorables' }[code]}`],
+  [/^(not stated|inner tube|tubeless) ×(\d+)$/, (_, label, n) => `${t(label)} ×${n}`],
+  [/^Owner ratings: (.+)$/, (_, name) => `Valoraciones de propietarios: ${name}`],
+  [/^Coded owner reports \((\d+)\)$/, (_, n) => `Opiniones de propietarios codificadas (${n})`],
+  [/^(\d+) with a rated aspect$/, (_, n) => `${n} con un aspecto valorado`],
+  [/^(\d+) coded below the threshold$/, (_, n) => `${n} codificados por debajo del umbral`],
+  [/^(\d+) not yet coded$/, (_, n) => `${n} aún sin codificar`]
+);
+
+// Tire owner checked-source ledger (2026-11-03).
+Object.assign(es, {
+  "Xiaohongshu posts": "Publicaciones de Xiaohongshu",
+  "Sigma Sports reviews": "Opiniones de Sigma Sports",
+  "bike-components reviews": "Opiniones de bike-components",
+  "BRR reader comments": "Comentarios de lectores de BRR",
+  "no eligible review": "ninguna opinión válida",
+  "not listed": "no está a la venta",
+  "access blocked": "acceso bloqueado",
+  "pending": "pendiente",
+  "Review sources blocked": "Fuentes de opiniones bloqueadas",
+  "Xiaohongshu research pending": "Investigación en Xiaohongshu pendiente",
+  "Checked": "Revisado",
+  "A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.": "Un neumático sin revisar puede tener muchos propietarios; sus opiniones aún no se han revisado propietario por propietario. Cada neumático revisado indica en sus detalles las fuentes revisadas."
+});
+patterns.push(
+  [/^(\d+) counted$/, (_, n) => n === '1' ? '1 contado' : `${n} contados`],
+  [/^(\d+) below the threshold$/, (_, n) => `${n} por debajo del umbral`],
+  [/^(\d+) with no eligible owner found$/, (_, n) => `${n} sin propietarios válidos`],
+  [/^(\d+) access blocked$/, (_, n) => `${n} con acceso bloqueado`],
+  [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} a la espera de investigación en Xiaohongshu`],
+  [/^(\d+) not yet checked$/, (_, n) => `${n} aún sin revisar`]
+);
+// Disclosed commission store links (2026-11-06).
+Object.assign(es, {
+  "Store option:": "Opción en la tienda:",
+  "Price varies by finish.": "El precio varía según el acabado.",
+  "Made to order.": "Se fabrica por encargo.",
+  "Listed in stock.": "En stock según la tienda.",
+  "Shipping and duties depend on your country.": "El envío y los aranceles dependen de tu país.",
+  "We may earn a commission from purchases through this link. It does not affect our comparisons.": "Podemos ganar una comisión por las compras hechas con este enlace. No afecta a nuestras comparaciones.",
+  "7-piece set: shifters, front and rear derailleurs, hydraulic brakes and charger. The store does not state the lever material.": "Juego de 7 piezas: mandos, desviador delantero, cambio trasero, frenos hidráulicos y cargador. La tienda no indica el material de las manetas."
+});

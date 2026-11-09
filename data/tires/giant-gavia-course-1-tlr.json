@@ -87,8 +87,103 @@
   "source_ids": [
     "giant-gavia-course-1-tubeless-tyre-2020-gb-official-2026-11-01",
     "giant-gavia-course-1-bicycle-tire-2020-us-official-2026-11-01",
-    "bikeradar-giant-founder-2026-02-17"
+    "bikeradar-giant-founder-2026-02-17",
+    "xhs-giant-gavia-course-1-visible-line",
+    "xhs-cadex-race-gc-wear-2025-07-13",
+    "xhs-cadex-race-gc-sidewall-2025-04-06"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "giant-gavia-course-1-tubeless-tyre-2020-gb-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Gavia Course 1 Tubeless as pictured on Giant's product page.",
+    "credit": "Giant",
+    "alt": "Giant Gavia Course 1 tubeless road tire shown as a full ring",
+    "remote_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_675%2Cq_80%2Cw_900/hr8fxtmdppehchmcrue5/GAVIA-COURSE-1-1.jpg",
+    "thumb_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_180%2Cq_80%2Cw_240/hr8fxtmdppehchmcrue5/GAVIA-COURSE-1-1.jpg",
+    "width": 900,
+    "height": 675,
+    "source_media_sha256": "8945d676048260d5e4f8a152c8ab5bf4650a2a8ee8d242094fd23010e22ee474",
+    "source_media_bytes": 43525,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Giant",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this exact model; shop and promotional posts, questions, mounting-only impressions, generic praise and reports about other models were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-giant-gavia-course-1-visible-line"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Over 6,000 km",
+        "codes": {
+          "overall": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Built to be ridden hard: the owner's rear lasted over 6,000 km before the tread peeled."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-wear-2025-07-13"
+        ],
+        "published_at": "2025-07-15",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 12,000 km",
+        "codes": {
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "About 12,000 km without a puncture, though heavier than the Course 0."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-sidewall-2025-04-06"
+        ],
+        "published_at": "2025-04-07",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Suits the owner better than a race tire: cheap and thick, only heavy."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 3,
+        "note": "One owner reply plus two owners in CADEX threads; a mounting-only report and generic praise are not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

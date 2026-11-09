@@ -80,5 +80,56 @@
     "bicycle-rolling-resistance-road-table-2026-11-01"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "cadex-race-25-tubeless-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "CADEX Race Tubeless as pictured on CADEX's product page.",
+    "credit": "CADEX",
+    "alt": "CADEX Race tubeless road tire standing upright at an angle",
+    "remote_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_675%2Cq_80%2Cw_900/usrm2ladxt7qlnwdhk4t/1_CADEX_Race_Tire_angle.jpg",
+    "thumb_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_180%2Cq_80%2Cw_240/usrm2ladxt7qlnwdhk4t/1_CADEX_Race_Tire_angle.jpg",
+    "width": 900,
+    "height": 675,
+    "source_media_sha256": "8af653460fb2458831b0fed27d6e8c9935ba6354067a8c7fb809e4683fcbe7bf",
+    "source_media_bytes": 38217,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "CADEX",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and every Bicycle Rolling Resistance reader comment on this tire's test pages. Counted only owners who describe their own riding of this exact model and, where it is sold in more than one construction or generation, say which; seller and shop posts, questions, unmounted impressions and reports about other models were left out.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "Shop marketing and questions only; a cracked 25 mm CADEX tubeless tire was not identified as this model"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "One comment, not first-hand"
+      }
+    ]
+  }
 }

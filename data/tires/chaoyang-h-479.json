@@ -1,0 +1,91 @@
+{
+  "id": "chaoyang-h-479",
+  "maker": "Chaoyang",
+  "name": "H-479 Viper",
+  "aliases": [
+    "蝰蛇",
+    "朝阳蝰蛇"
+  ],
+  "origin": {
+    "group": "mainland-china",
+    "country": "Mainland China",
+    "basis": "Chaoyang is the bicycle-tire brand of ZC Rubber (Zhongce)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The listing does not state the factory."
+  },
+  "use": "training",
+  "positioning": "Chaoyang's entry-level road clincher, sold alongside the H-486 Cobra.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": null,
+  "compound": null,
+  "protection": null,
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "No weight is given in the listing.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "One mainland Taobao shop listing; an XHS search on 2026-11-01 found no exact-model post."
+  },
+  "price_observations": [
+    {
+      "amount": 56,
+      "currency": "CNY",
+      "market": "骑点单车 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Shop price on 2026-11-01 for the 700x25C option; the listing does not say one tire or a pair.",
+      "source_id": "chaoyang-h-486-taobao-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "Only one shop listing was found; casing, weight and pressure limits are not published.",
+    "No owner report, wet-road evidence or lab test was found."
+  ],
+  "source_ids": [
+    "chaoyang-h-486-taobao-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model; questions, seller and maker replies, unmounted impressions and reports about other models were left out.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "Two searches; no exact-model owner post"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
+}

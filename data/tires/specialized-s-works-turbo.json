@@ -73,12 +73,69 @@
     }
   ],
   "caveats": [
-    "No independent lab test of this construction found; the lab-tested S-Works Turbo TLR is a different tire.",
+    "Bicycle Rolling Resistance's 2023 test of this tire in 26 mm is not recorded here; the lab-tested S-Works Turbo TLR is a different tire.",
     "Specialized gives a pressure range per size; the upper value is shown."
   ],
   "source_ids": [
-    "specialized-s-works-turbo-t2t5-official-2026-11-01"
+    "specialized-s-works-turbo-t2t5-official-2026-11-01",
+    "bike-components-specialized-s-works-turbo-t2-t5-reviews",
+    "brr-comments-specialized-turbo-t2-t5"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-specialized-s-works-turbo-t2-t5-reviews"
+        ],
+        "published_at": "2024-06-27",
+        "width_mm": 28,
+        "setup": "inner-tube",
+        "exposure": "About 500 and 700 km",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "grip": "favourable",
+          "wet": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Fast, agile and comfortable with good grip in corners and in the wet, but each rear tire flatted with tread cuts after about 500 and 700 km, so the owner is going back to the GP5000."
+      },
+      {
+        "source_ids": [
+          "brr-comments-specialized-turbo-t2-t5"
+        ],
+        "published_at": "2023-05-02",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "unfavourable"
+        },
+        "summary": "Felt so slow that the owner took them off straight away and went back to a GP5000 TR."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed",
+        "note": "Only the earlier 2Bliss Ready version is listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One of 2 written reviews gives no riding detail"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "2023 test page"
+      }
+    ]
+  }
 }

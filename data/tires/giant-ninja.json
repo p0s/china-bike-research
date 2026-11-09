@@ -64,8 +64,60 @@
   ],
   "source_ids": [
     "giant-ninja-tmall-2026-11-01",
-    "bikeradar-giant-founder-2026-02-17"
+    "bikeradar-giant-founder-2026-02-17",
+    "xhs-giant-ninja-dealer-2025-02-10"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "public-post",
+    "source_id": "xhs-giant-ninja-dealer-2025-02-10",
+    "subject_accuracy": "exact-model",
+    "shown": "Giant's product image of the Ninja folding road tire, posted by a Giant dealer.",
+    "credit": "Xiaohongshu public post (Giant dealer)",
+    "alt": "Giant Ninja puncture-resistant folding road tire shown as a full ring",
+    "remote_url": "https://sns-img-qc.xhscdn.com/1040g2sg31dn1de4n0u705oljvtj6dagilfofgng!nd_dft_wlteh_webp_3",
+    "thumb_url": "https://sns-img-qc.xhscdn.com/1040g2sg31dn1de4n0u705oljvtj6dagilfofgng!nc_n_webp_prv_1",
+    "width": 1080,
+    "height": 1311,
+    "source_media_sha256": "b1c4c37c0837e5130ed8b8e4e494926848474b831d9533f069b0f0b7232825ca",
+    "source_media_bytes": 25856,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "public-post-embed",
+      "copyright_holder": "Giant (product image posted by a dealer)",
+      "usage_note": "A photo from a public Xiaohongshu post, shown from Xiaohongshu with a link to the original post; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this exact model; shop and promotional posts, questions, mounting-only impressions, generic praise and reports about other models were left out.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "Two shop marketing posts and questions only"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

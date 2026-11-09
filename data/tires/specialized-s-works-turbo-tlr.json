@@ -54,9 +54,9 @@
   "community": [],
   "availability": {
     "cn": "unverified",
-    "eu": "unverified",
+    "eu": "authorized-retail",
     "na": "official-store",
-    "note": "Sold by Specialized's US store; Specialized dealers in other regions were not checked in this pass."
+    "note": "Sold by Specialized's US store; Specialized's UK site lists a GBP price and a store finder. Mainland China sellers were not checked."
   },
   "price_observations": [
     {
@@ -70,6 +70,18 @@
       "conditions": "Official store price on 2026-11-01; one tire; shipping and tax at checkout.",
       "source_id": "specialized-s-works-turbo-tlr-official-2026-11-01",
       "width_mm": 28
+    },
+    {
+      "amount": 60,
+      "currency": "GBP",
+      "market": "Specialized (UK)",
+      "region": "eu",
+      "price_type": "official-list",
+      "package": "single",
+      "observed_at": "2026-11-01",
+      "conditions": "UK list price on 2026-11-01; the page offers a store finder.",
+      "source_id": "specialized-gb-s-works-turbo-tlr-2026-11-01",
+      "width_mm": 28
     }
   ],
   "caveats": [
@@ -78,8 +90,116 @@
   ],
   "source_ids": [
     "specialized-s-works-turbo-tlr-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "specialized-gb-s-works-turbo-tlr-2026-11-01",
+    "sigma-sports-specialized-s-works-turbo-tlr-reviews",
+    "brr-comments-specialized-turbo-tlr"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "specialized-s-works-turbo-tlr-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "700x28C black S-Works Turbo TLR as shown in Specialized's product photo.",
+    "credit": "Specialized",
+    "alt": "Specialized S-Works Turbo TLR road tire with black sidewalls, standing upright",
+    "remote_url": "https://resources.specialized.com/image/00025-270_TIRE_SW-TURBO-TLR-700X28C-BLACK_HERO-SQUARE?q=75&w=900&fit=max&fm=webp",
+    "thumb_url": "https://resources.specialized.com/image/00025-270_TIRE_SW-TURBO-TLR-700X28C-BLACK_HERO-SQUARE?q=75&w=240&fit=max&fm=webp",
+    "width": 900,
+    "height": 900,
+    "source_media_sha256": "2745e02991aac0f1f2e454096caab7c8a6245b13d2f99c30c3416809b5704f96",
+    "source_media_bytes": 22120,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Specialized",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. The previous 2Bliss Ready generation is not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-specialized-s-works-turbo-tlr-reviews"
+        ],
+        "published_at": "2026-05-21",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 200 miles",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Very happy after about 200 miles: rolls well with no punctures yet."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-specialized-s-works-turbo-tlr-reviews"
+        ],
+        "published_at": "2026-03-25",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Excellent puncture protection and grip; a true all-season training tire that rolls smoothly and fast enough."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-specialized-s-works-turbo-tlr-reviews"
+        ],
+        "published_at": "2025-09-25",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "grip": "favourable"
+        },
+        "summary": "Very grippy, but rolling resistance lets it down a little against rival tires, and it is expensive."
+      },
+      {
+        "source_ids": [
+          "brr-comments-specialized-turbo-tlr"
+        ],
+        "published_at": "2025-08-09",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "favourable"
+        },
+        "summary": "Tested extensively in 28 mm: marginally faster than the previous generation but narrower, with a thin, exposed sidewall and inconsistent batches; too expensive for what it is."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 3
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Two listings with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "28 mm test page; a measurement report is not counted"
+      }
+    ]
+  }
 }

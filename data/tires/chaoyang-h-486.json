@@ -43,14 +43,7 @@
   "weight_basis": "No weight is given in the listing.",
   "tests": [],
   "wet_notes": [],
-  "community": [
-    {
-      "source_id": "xhs-budget-road-tire-comparison-2025-07-16",
-      "stance": "mixed",
-      "published_at": "2025-07-16",
-      "summary": "A commenter found it puncture-resistant but slow-rolling."
-    }
-  ],
+  "community": [],
   "availability": {
     "cn": "retail",
     "eu": "unverified",
@@ -77,8 +70,128 @@
   ],
   "source_ids": [
     "chaoyang-h-486-taobao-2026-11-01",
-    "xhs-budget-road-tire-comparison-2025-07-16"
+    "xhs-budget-road-tire-comparison-2025-07-16",
+    "xhs-chaoyang-h486-boxes-2023-12-01",
+    "xhs-chaoyang-h486-cracks-2025-02-23"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "public-post",
+    "source_id": "xhs-chaoyang-h486-boxes-2023-12-01",
+    "subject_accuracy": "exact-model",
+    "shown": "H-486 Cobra tires in their retail boxes, labelled H-486, COBRA and 700x23C, in an owner's post; the 25C and 28C versions are not shown.",
+    "credit": "Xiaohongshu public post",
+    "alt": "Chaoyang H-486 Cobra road tires in labelled 700x23C retail boxes",
+    "remote_url": "https://sns-img-qc.xhscdn.com/1040g2sg30s53lqk92k6g5p2qsdt4mltggcpdkpg!nd_dft_wlteh_webp_3",
+    "thumb_url": "https://sns-img-qc.xhscdn.com/1040g2sg30s53lqk92k6g5p2qsdt4mltggcpdkpg!nc_n_webp_prv_1",
+    "width": 1080,
+    "height": 1920,
+    "source_media_sha256": "8b478fde3ceaeb2a870a9a99f831b8528fe0fa63d7dbfc5076cd1c6632a7e43e",
+    "source_media_bytes": 153542,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "public-post-embed",
+      "copyright_holder": "The post's author (not named here)",
+      "usage_note": "A photo from a public Xiaohongshu post, shown from Xiaohongshu with a link to the original post; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model; questions, seller and maker replies, unmounted impressions and reports about other models were left out. An unmounted first impression and a mounting video are not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-chaoyang-h486-boxes-2023-12-01"
+        ],
+        "published_at": "2024-10-04",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "casing": "unfavourable"
+        },
+        "summary": "Very good in use; of two tires, one was still going at 2,000 km and the other's sidewall failed after 100 km."
+      },
+      {
+        "source_ids": [
+          "xhs-chaoyang-h486-boxes-2023-12-01"
+        ],
+        "published_at": "2025-09-19",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "casing": "unfavourable"
+        },
+        "summary": "The sidewalls are very thin and ruined three inner tubes."
+      },
+      {
+        "source_ids": [
+          "xhs-chaoyang-h486-cracks-2025-02-23"
+        ],
+        "published_at": "2025-02-23",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Under 600 km in five months",
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "Both tires cracked all the way around after under 600 km and a winter in storage."
+      },
+      {
+        "source_ids": [
+          "xhs-chaoyang-h486-cracks-2025-02-23"
+        ],
+        "published_at": "2025-02-22",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "A tire bought in March 2024 had cracked by September and was scrapped."
+      },
+      {
+        "source_ids": [
+          "xhs-budget-road-tire-comparison-2025-07-16"
+        ],
+        "published_at": "2025-07-17",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "punctures": "favourable",
+          "speed": "unfavourable"
+        },
+        "summary": "Finds its puncture protection good but its rolling resistance far too high."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 5,
+        "note": "Four posts; a claimed maker reply is not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

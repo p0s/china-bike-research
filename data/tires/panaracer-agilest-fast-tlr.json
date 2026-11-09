@@ -24,7 +24,7 @@
       "etrto": "25-622",
       "weight_g": 255,
       "max_psi": 115,
-      "max_bar": 8.0
+      "max_bar": 8
     },
     {
       "width_mm": 28,
@@ -38,7 +38,7 @@
       "etrto": "30-622",
       "weight_g": 295,
       "max_psi": 85,
-      "max_bar": 6.0
+      "max_bar": 6
     }
   ],
   "weight_claim_type": "official",
@@ -63,10 +63,23 @@
   "availability": {
     "cn": "unverified",
     "eu": "unverified",
-    "na": "unverified",
-    "note": "Listed on Panaracer's global site but not in Panaracer USA's road collection on 2026-11-01; regional retail availability not verified."
+    "na": "retail",
+    "note": "Listed on Panaracer's global site; a US retailer takes online orders for the 28 mm (possibly preorder) on 2026-11-01. Not in Panaracer USA's road collection; European and mainland China sellers not verified."
   },
-  "price_observations": [],
+  "price_observations": [
+    {
+      "amount": 119.99,
+      "currency": "USD",
+      "market": "Pro Bike Supply (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer price on 2026-11-01 for the 28 mm; the page does not say one tire or a pair, and the order may be a preorder.",
+      "source_id": "probikesupply-panaracer-agilest-fast-tlr-2026-11-01",
+      "width_mm": 28
+    }
+  ],
   "caveats": [
     "No official price found; Panaracer USA did not list it on 2026-11-01.",
     "Hookless compatibility is not stated."
@@ -74,8 +87,55 @@
   "source_ids": [
     "panaracer-agilest-fast-tlr-official-2026-11-01",
     "panaracer-company-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "probikesupply-panaracer-agilest-fast-tlr-2026-11-01"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "panaracer-agilest-fast-tlr-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Agilest Fast TLR as pictured on Panaracer's global product page.",
+    "credit": "Panaracer",
+    "alt": "Panaracer Agilest Fast TLR road tire with sidewall logo",
+    "remote_url": "https://panaracer.com/wp/wp-content/uploads/2024/06/fast_tlr_top.png",
+    "width": 1226,
+    "height": 774,
+    "source_media_sha256": "cdbddc255665f96fecbf1075360a47c9adbb977c5ae54c6f3b76396de9be4c25",
+    "source_media_bytes": 206092,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Panaracer",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "9 comments, none first-hand about this tire"
+      }
+    ]
+  }
 }

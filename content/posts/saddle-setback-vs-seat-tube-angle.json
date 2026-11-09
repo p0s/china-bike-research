@@ -5,14 +5,18 @@
   "series_order": 27,
   "image_id": "saddle-setback-vs-seat-tube-angle-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-26",
+  "dateModified": "2026-11-08",
   "researched_at": "2026-10-04",
   "model_ids": [
     "incolor-speedster-sr-frameset"
   ],
   "source_ids": [
     "incolor-speedster-official-2026-08-29",
-    "incolor-speedster-brochure-2026-08-29"
+    "incolor-speedster-brochure-2026-08-29",
+    "elves-falath-pro-official-2026-08-17",
+    "elves-falath-pro-disc-bikeinsights-2026-08-30",
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-lcr018-d-official-recheck-2026-10-22"
   ],
   "editorial_references": [],
   "photo_sections": [
@@ -25,94 +29,199 @@
   ],
   "translations": {
     "en": {
-      "title": "Seat-tube angle and saddle setback: why the chart is only a start",
-      "description": "Use a simple hypothetical geometry calculation to understand seat angle, then check actual post offset, saddle rails and manufacturer references.",
-      "intro": "A steeper seat-tube angle does not force every rider to sit farther forward. The seatpost, saddle rails and measurement convention also affect the finished position. Compare the position you need and the approved range that can reach it.",
+      "title": "Seat angle and saddle setback: one degree moves the seat line about 13 mm",
+      "description": "With the saddle 700 mm above the bottom bracket, each degree of seat-tube angle moves the seat-tube line about 13 mm. Real charts differ by up to 1.5° between neighbouring sizes and 1.3° between three brands' 54s; the post and rails must close the gap.",
+      "intro": "Seat-tube angle sets where the seat tube puts the saddle clamp before the post and rails adjust it. With the saddle 700 mm above the bottom bracket, each degree moves that line about 13 mm, so a size change or a brand change can use up a setback post's whole adjustment. Start from the position you already ride, then check that the new frame's post and rails can reach it.",
       "sections": [
         {
           "id": "geometry",
-          "heading": "A small angle difference can matter",
+          "heading": "What a degree is worth on real charts",
           "paragraphs": [
-            "Consider a purely illustrative straight seat-tube line through the bottom-bracket centre. At a vertical reference height of 700 mm, 73° gives roughly 214 mm of horizontal setback; 74° gives roughly 201 mm. The calculation uses setback = height / tan(angle), so the difference is about 13 mm. These are invented frame examples, not product fit results.",
-            "Here, 700 mm means vertical height above the bottom bracket, not a saddle-height measurement along the seat tube. The steeper line is about 13 mm farther forward at that height; this does not tell you to move a real saddle by 13 mm."
-          ]
+            "The seat-tube line sits height ÷ tan(seat angle) behind the bottom bracket. At 700 mm of vertical height, a saddle height of about 728 mm along a 74° seat tube, 74° puts it 200.7 mm back and 73° 214.0 mm: 13.3 mm for one degree. The rate is about 12 mm per degree at 650 mm and 14 mm at 750 mm.",
+            "Neighbouring sizes rarely differ by a whole degree, but some do. INCOLOR’s Speedster SR goes from 74.5° at size 51 to 74° at 54 and 73.75° at 56, shifts of 3 to 7 mm. Elves’s chart for the [Falath Pro Disc](/models/elves-falath-r7170/) jumps from 75° at size 54 to 73.5° at 56: about 20 mm at 700 mm, more than the 15 mm between a zero-offset and a 15 mm-offset post. Brands differ as much: three frames labelled 54 or 540 sit 17 mm apart."
+          ],
+          "worksheet": {
+            "caption": "Seat-tube line behind the bottom bracket at 700 mm height (maker charts)",
+            "columns": [
+              "Frame and size",
+              "Seat angle",
+              "Line behind the bottom bracket",
+              "Chart checked"
+            ],
+            "rows": [
+              [
+                "Elves Falath Pro Disc 54",
+                "75°",
+                "187.6 mm",
+                "August 30, 2026"
+              ],
+              [
+                "INCOLOR Speedster SR 54",
+                "74°",
+                "200.7 mm",
+                "August 29, 2026"
+              ],
+              [
+                "LightCarbon LCR018-D 540",
+                "73.7°",
+                "204.7 mm",
+                "October 3, 2026"
+              ],
+              [
+                "Elves Falath Pro Disc 56",
+                "73.5°",
+                "207.3 mm",
+                "August 30, 2026"
+              ]
+            ]
+          }
         },
         {
           "id": "real-position",
-          "heading": "Add the real post and saddle",
+          "heading": "The post and rails close the gap",
           "paragraphs": [
-            "A real frame may use an effective angle, an offset tube or a manufacturer-specific reference. The post’s offset and the saddle’s rail position change the final saddle location. Use the exact drawing and supported adjustment limits rather than applying the simple example to every frame.",
-            "On an [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/), confirm the actual supplied post and available alternatives. A frame angle alone does not establish whether your existing saddle position is attainable within the rail and post limits."
+            "The frame angle only places the clamp line; the post’s offset and the saddle’s rail position finish the job. LightCarbon’s [LCR018-D page](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html), rechecked October 22, 2026, offers a zero- or 15 mm-offset post and a clamp for 7×7 mm alloy and 7×9 mm carbon rails; [seatpost offset and saddle rails](/blog/seatpost-offset-and-saddle-rails/) covers confirming the option on the order. A nominal 15 mm offset does not move every saddle reference point exactly 15 mm, and some charts print an effective rather than an actual angle, so take exact figures from the maker’s drawing.",
+            "On the [INCOLOR Speedster SR](/models/incolor-speedster-sr-frameset/), confirm the supplied post and its alternatives before ordering. A frame 1° steeper than your current one needs about 13 mm more setback from post and rails to keep the saddle where it was."
           ]
         },
         {
           "id": "fit",
-          "heading": "Reach the saddle position first",
+          "heading": "Start from the saddle position you ride",
           "paragraphs": [
-            "Record your known saddle position and ask the assembler to check the proposed combination. Do not slide the saddle outside its clamp markings to compensate for cockpit reach. Resolve saddle position and front-end fit as related but separate requirements.",
-            "Use the [saddle-position record from your old bike](/blog/saddle-height-marking-before-new-bike/) as the target. Then check [stem length with an integrated handlebar](/blog/stem-length-with-integrated-handlebar/) against the front-end position you need."
+            "Use the [saddle-position record from your old bike](/blog/saddle-height-marking-before-new-bike/) as the target and subtract the seat-line difference: from a 73.5° frame to a 75° one, the line moves about 20 mm forward at 700 mm, and the post and rails must supply those 20 mm inside their marked range. If they cannot, change the size or the post before choosing paint.",
+            "Do not slide the saddle outside its clamp markings to fix cockpit reach; that changes the setback you just matched. Resolve the front end separately with [stem length with an integrated handlebar](/blog/stem-length-with-integrated-handlebar/)."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "座管角与坐垫后移：为什么几何表只是起点",
-      "description": "用假设几何计算理解座管角，再核对实际座管后飘、坐垫导轨和厂家参考定义。",
-      "intro": "更陡的座管角，并不强迫所有骑手都坐得更靠前。座管、坐垫导轨和测量定义，也会影响最终位置。应比较你需要的姿势，以及能够实现它的认可调节范围。",
+      "title": "座管角与坐垫后移：每差1度，座管线约移动13毫米",
+      "description": "坐垫位于中轴上方700毫米时，座管角每差1度，座管线约移动13毫米。实际几何表中，相邻尺码可相差1.5°，三个品牌的54码之间相差1.3°，这段差距要靠座管和坐垫导轨补上。",
+      "intro": "座管角决定座管把坐垫夹持位置放在哪里，之后才轮到座管后飘和坐垫导轨调整。坐垫位于中轴上方700毫米时，座管角每差1度，这条线约移动13毫米，因此换尺码或换品牌，就可能用完一根后飘座管的全部调节量。先以你现在骑行的位置为起点，再检查新车架的座管和导轨能否达到。",
       "sections": [
         {
           "id": "geometry",
-          "heading": "小角度差也可能有影响",
+          "heading": "在实际几何表上，1度值多少",
           "paragraphs": [
-            "考虑一条经过中轴中心的假设直座管线。在垂直参考高度700毫米时，73°对应约214毫米水平后移，74°约201毫米。计算为“后移=高度÷tan角度”，差值约13毫米。这是虚构车架示例，不是产品适配结果。",
-            "这里的700毫米是中轴上方的垂直高度，不是沿座管测量的坐垫高度。在同一高度，更陡的参考线约靠前13毫米；这不代表实际坐垫也应该前移13毫米。"
-          ]
+            "座管线位于中轴后方的距离＝高度÷tan（座管角）。在垂直高度700毫米处（沿74°座管约为728毫米座高），74°对应200.7毫米，73°对应214.0毫米：1度相差13.3毫米。在650毫米高度约为每度12毫米，750毫米约为14毫米。",
+            "相邻尺码的座管角很少相差整整1度，但也有例外。INCOLOR Speedster SR从51码的74.5°变为54码的74°、56码的73.75°，位移为3至7毫米。Elves的[Falath Pro Disc](/zh/models/elves-falath-r7170/)几何表则从54码的75°跳到56码的73.5°，在700毫米高度约相差20毫米，超过零后飘与15毫米后飘座管之间的15毫米。不同品牌之间差距相近：三款标为54或540码的车架相差17毫米。"
+          ],
+          "worksheet": {
+            "caption": "700毫米高度处座管线位于中轴后方的距离（厂家几何表）",
+            "columns": [
+              "车架与尺码",
+              "座管角",
+              "座管线距中轴",
+              "几何表查看日期"
+            ],
+            "rows": [
+              [
+                "Elves Falath Pro Disc 54码",
+                "75°",
+                "187.6毫米",
+                "2026年8月30日"
+              ],
+              [
+                "INCOLOR Speedster SR 54码",
+                "74°",
+                "200.7毫米",
+                "2026年8月29日"
+              ],
+              [
+                "LightCarbon LCR018-D 540码",
+                "73.7°",
+                "204.7毫米",
+                "2026年10月3日"
+              ],
+              [
+                "Elves Falath Pro Disc 56码",
+                "73.5°",
+                "207.3毫米",
+                "2026年8月30日"
+              ]
+            ]
+          }
         },
         {
           "id": "real-position",
-          "heading": "加入实际座管与坐垫",
+          "heading": "由座管与导轨补足差距",
           "paragraphs": [
-            "实际车架可能采用有效角度、偏置管型或厂家专用参考定义。座管后飘和坐垫导轨位置，也会改变最终坐垫位置。应使用准确图纸和允许调节范围，不要把简化示例套到所有车架。",
-            "以[INCOLOR Speedster SR](/zh/models/incolor-speedster-sr-frameset/)为例，应确认实际附带座管与替代选项。单看车架角度，无法判断现有坐垫位置能否在导轨和座管限制内实现。"
+            "车架角度只决定夹持线的位置，座管后飘和坐垫导轨位置才决定最终结果。LightCarbon的[LCR018-D页面](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html)在2026年10月22日复查时，提供零后飘或15毫米后飘座管，以及兼容7×7毫米铝导轨和7×9毫米碳导轨的夹具；如何在订单上确认选项，见[座管后飘与坐垫导轨](/zh/blog/seatpost-offset-and-saddle-rails/)。标称15毫米后飘，并不会让坐垫上每个参考点都正好移动15毫米；有些几何表印的是有效角度而非实际角度，精确数字应以厂家图纸为准。",
+            "购买[INCOLOR Speedster SR](/zh/models/incolor-speedster-sr-frameset/)前，应确认附带座管与替代选项。换成比现在陡1度的车架，座管和导轨需要多提供约13毫米后移，坐垫才能留在原处。"
           ]
         },
         {
           "id": "fit",
-          "heading": "先实现坐垫位置",
+          "heading": "从你现在骑行的坐垫位置出发",
           "paragraphs": [
-            "记录已知坐垫位置，并请装车者检查计划组合。不要为了补偿把组前伸，把坐垫移出夹持标记范围。坐垫位置与前端适配相互关联，但应分别满足要求。",
-            "把[旧车的坐垫位置记录](/zh/blog/saddle-height-marking-before-new-bike/)作为核对目标，再结合所需的前端位置，检查[一体把的把立长度](/zh/blog/stem-length-with-integrated-handlebar/)。"
+            "以[旧车的坐垫位置记录](/zh/blog/saddle-height-marking-before-new-bike/)为目标，再减去座管线的差距：从73.5°换到75°的车架，700毫米高度处的座管线前移约20毫米，座管和导轨必须在标记范围内补足这20毫米。做不到时，应在选颜色之前改尺码或换座管。",
+            "不要为了弥补把组前伸，把坐垫移出夹持标记范围；那会改变你刚对齐的后移量。前端位置应另行解决，见[一体把的把立长度](/zh/blog/stem-length-with-integrated-handlebar/)。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Sitzrohrwinkel und Sattelversatz: Warum die Tabelle nur der Anfang ist",
-      "description": "Verstehe Sitzwinkel mit einer Beispielrechnung und prüfe Stützenversatz, Sattelschienen und Messbezüge.",
-      "intro": "Ein steilerer Sitzwinkel zwingt nicht jeden Fahrer weiter nach vorn. Stütze, Sattelschienen und Messdefinition bestimmen die fertige Position mit. Vergleiche deinen Bedarf mit dem freigegebenen Bereich, der ihn erreichen kann.",
+      "title": "Sitzwinkel und Sattelversatz: Ein Grad verschiebt die Sitzrohrlinie um etwa 13 mm",
+      "description": "Liegt der Sattel 700 mm über dem Tretlager, verschiebt jedes Grad Sitzrohrwinkel die Sitzrohrlinie um etwa 13 mm. Echte Tabellen weichen zwischen Nachbargrößen um bis zu 1,5° ab und zwischen den 54ern dreier Marken um 1,3°; Stütze und Schienen müssen die Lücke schließen.",
+      "intro": "Der Sitzrohrwinkel bestimmt, wo das Sitzrohr die Sattelklemmung platziert, bevor Stütze und Schienen nachstellen. Liegt der Sattel 700 mm über dem Tretlager, verschiebt jedes Grad diese Linie um etwa 13 mm – ein Größen- oder Markenwechsel kann so den ganzen Verstellbereich einer gekröpften Stütze aufbrauchen. Geh von deiner gefahrenen Position aus und prüfe dann, ob Stütze und Schienen des neuen Rahmens sie erreichen.",
       "sections": [
         {
           "id": "geometry",
-          "heading": "Ein kleiner Winkelunterschied kann zählen",
+          "heading": "Was ein Grad in echten Tabellen ausmacht",
           "paragraphs": [
-            "Betrachte beispielhaft eine gerade Sitzrohrlinie durchs Tretlagerzentrum. Bei 700 mm vertikaler Bezugshöhe ergeben 73° etwa 214 mm horizontalen Versatz, 74° etwa 201 mm. Es gilt Versatz = Höhe / tan(Winkel), also rund 13 mm Unterschied. Das sind erfundene Rahmenbeispiele, keine Produkt-Fit-Ergebnisse.",
-            "Die 700 mm bezeichnen hier die vertikale Höhe über dem Tretlager, keine entlang des Sitzrohrs gemessene Sattelhöhe. Die steilere Linie liegt dort rund 13 mm weiter vorn; daraus folgt keine Anweisung, einen echten Sattel um 13 mm zu verschieben."
-          ]
+            "Die Sitzrohrlinie liegt Höhe / tan(Sitzrohrwinkel) hinter dem Tretlager. Bei 700 mm vertikaler Höhe, also etwa 728 mm Sattelhöhe entlang eines 74°-Sitzrohrs, liegt sie bei 74° 200,7 mm und bei 73° 214,0 mm zurück: 13,3 mm für ein Grad. Bei 650 mm sind es etwa 12 mm pro Grad, bei 750 mm etwa 14 mm.",
+            "Zwischen Nachbargrößen ändert sich der Winkel selten um ein ganzes Grad, manchmal aber doch. INCOLORs Speedster SR geht von 74,5° in Größe 51 auf 74° in 54 und 73,75° in 56, Verschiebungen von 3 bis 7 mm. Elves’ Tabelle für den [Falath Pro Disc](/de/models/elves-falath-r7170/) springt von 75° in Größe 54 auf 73,5° in 56: etwa 20 mm bei 700 mm, mehr als die 15 mm zwischen einer Stütze ohne und einer mit 15 mm Versatz. Zwischen Marken ist die Spanne ähnlich: Drei Rahmen mit der Bezeichnung 54 oder 540 liegen 17 mm auseinander."
+          ],
+          "worksheet": {
+            "caption": "Sitzrohrlinie hinter dem Tretlager bei 700 mm Höhe (Herstellertabellen)",
+            "columns": [
+              "Rahmen und Größe",
+              "Sitzrohrwinkel",
+              "Linie hinter dem Tretlager",
+              "Tabelle geprüft"
+            ],
+            "rows": [
+              [
+                "Elves Falath Pro Disc 54",
+                "75°",
+                "187,6 mm",
+                "30. August 2026"
+              ],
+              [
+                "INCOLOR Speedster SR 54",
+                "74°",
+                "200,7 mm",
+                "29. August 2026"
+              ],
+              [
+                "LightCarbon LCR018-D 540",
+                "73,7°",
+                "204,7 mm",
+                "3. Oktober 2026"
+              ],
+              [
+                "Elves Falath Pro Disc 56",
+                "73,5°",
+                "207,3 mm",
+                "30. August 2026"
+              ]
+            ]
+          }
         },
         {
           "id": "real-position",
-          "heading": "Stütze und Sattel ergänzen",
+          "heading": "Stütze und Schienen schließen die Lücke",
           "paragraphs": [
-            "Ein echter Rahmen kann einen effektiven Winkel, versetztes Rohr oder eigenen Bezug verwenden. Stützenversatz und Schienenposition verändern den Sattelpunkt. Nutze Zeichnung und erlaubte Einstellgrenzen statt die einfache Rechnung auf jeden Rahmen zu übertragen.",
-            "Prüfe beim [INCOLOR Speedster SR](/de/models/incolor-speedster-sr-frameset/) die gelieferte Stütze und Alternativen. Der Rahmenwinkel allein belegt nicht, ob deine Position innerhalb der Schienen- und Stützengrenzen erreichbar ist."
+            "Der Rahmenwinkel legt nur die Klemmlinie fest; Stützenversatz und Schienenposition bestimmen den Rest. LightCarbons [LCR018-D-Seite](https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html) nennt bei der Nachprüfung am 22. Oktober 2026 eine Stütze ohne oder mit 15 mm Versatz und eine Klemmung für 7×7-mm-Alu- und 7×9-mm-Carbonschienen; wie du die Option in der Bestellung bestätigst, zeigt [Stützenversatz und Sattelschienen](/de/blog/seatpost-offset-and-saddle-rails/). Ein nomineller Versatz von 15 mm verschiebt nicht jeden Bezugspunkt des Sattels um genau 15 mm, und manche Tabellen drucken einen effektiven statt des tatsächlichen Winkels; genaue Werte liefert die Herstellerzeichnung.",
+            "Prüfe beim [INCOLOR Speedster SR](/de/models/incolor-speedster-sr-frameset/) vor der Bestellung die gelieferte Stütze und ihre Alternativen. Ein Rahmen, der 1° steiler ist als dein jetziger, braucht etwa 13 mm mehr Versatz aus Stütze und Schienen, damit der Sattel bleibt, wo er war."
           ]
         },
         {
           "id": "fit",
-          "heading": "Zuerst die Sattelposition erreichen",
+          "heading": "Von deiner gefahrenen Sattelposition ausgehen",
           "paragraphs": [
-            "Dokumentiere die bekannte Sattelposition und lass die Kombination prüfen. Verschiebe den Sattel nicht über Klemmmarkierungen hinaus, um Cockpit-Reach auszugleichen. Sattelposition und Vorderbau sind verbundene, aber getrennt zu lösende Anforderungen.",
-            "Nutze die [dokumentierte Sattelposition des alten Rads](/de/blog/saddle-height-marking-before-new-bike/) als Vergleichsziel. Prüfe anschließend die [Vorbaulänge am integrierten Lenker](/de/blog/stem-length-with-integrated-handlebar/) für die gewünschte Position vorn."
+            "Nimm die [dokumentierte Sattelposition des alten Rads](/de/blog/saddle-height-marking-before-new-bike/) als Ziel und zieh die Differenz der Sitzrohrlinie ab: Von einem 73,5°- zu einem 75°-Rahmen wandert die Linie bei 700 mm etwa 20 mm nach vorn, und Stütze und Schienen müssen diese 20 mm innerhalb ihrer Markierungen liefern. Gelingt das nicht, ändere Größe oder Stütze, bevor du die Lackierung wählst.",
+            "Verschiebe den Sattel nicht über die Klemmmarkierungen hinaus, um die Cockpit-Reichweite auszugleichen; damit änderst du den eben abgeglichenen Versatz. Löse die Front getrennt, mit der [Vorbaulänge am integrierten Lenker](/de/blog/stem-length-with-integrated-handlebar/)."
           ]
         }
       ]

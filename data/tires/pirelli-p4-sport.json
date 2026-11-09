@@ -1,0 +1,123 @@
+{
+  "id": "pirelli-p4-sport",
+  "maker": "Pirelli",
+  "name": "P4 Sport",
+  "origin": {
+    "group": "international",
+    "country": "Italy",
+    "basis": "Italian tire maker; Pirelli says the P ZERO Race range is made at its plant in Italy near its Milan headquarters."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The P4 Sport page does not state where it is made."
+  },
+  "use": "endurance",
+  "positioning": "Pirelli's durability-first 26 TPI road clincher for long distances.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "26 TPI",
+  "compound": "PRO Compound",
+  "protection": "TechBELT Road nylon layer",
+  "sizes": [
+    {
+      "width_mm": 24,
+      "etrto": "24-622",
+      "weight_g": 290
+    },
+    {
+      "width_mm": 26,
+      "etrto": "26-622",
+      "weight_g": 320
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": 330
+    },
+    {
+      "width_mm": 32,
+      "etrto": "32-622",
+      "weight_g": 350
+    }
+  ],
+  "weight_claim_type": "official",
+  "weight_basis": "Pirelli claims per size.",
+  "pressure_note": "Pirelli gives no pressure on the product page; a US retailer lists 87-125 psi for the 28 mm.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "retail",
+    "note": "Found at a US retailer (in-store pickup only on 2026-11-01); European and mainland China sellers were not verified for this line."
+  },
+  "price_observations": [
+    {
+      "amount": 46.9,
+      "currency": "USD",
+      "market": "Cahaba Cycles (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer list price on 2026-11-01 for the 28 mm folding tire; in-store pickup only, and the page does not say one tire or a pair.",
+      "source_id": "cahaba-pirelli-p4-sport-2026-11-01",
+      "width_mm": 28
+    }
+  ],
+  "caveats": [
+    "A heavy, low-TPI casing chosen for durability rather than speed; no lab test found.",
+    "Pirelli does not state tubeless compatibility or a pressure limit; treat it as a tube-type clincher and follow the sidewall."
+  ],
+  "source_ids": [
+    "pirelli-p4-sport-official-2026-11-01",
+    "cahaba-pirelli-p4-sport-2026-11-01"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "pirelli-p4-sport-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Full view of the P4 Sport from Pirelli's catalogue; one photo covers every width.",
+    "credit": "Pirelli",
+    "alt": "Pirelli P4 Sport road tire shown as a full ring",
+    "remote_url": "https://tyre24.pirelli.com/dynamic_engine/velo/assets/images/products/p4_sport_3.jpg",
+    "width": 2496,
+    "height": 2312,
+    "source_media_sha256": "28e36c24b5f45e6d37ce0c37cdbaee98b0d186c50942d5a64f2917b8f6111481",
+    "source_media_bytes": 320492,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Pirelli",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
+  }
+}

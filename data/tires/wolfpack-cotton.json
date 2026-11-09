@@ -50,7 +50,7 @@
   ],
   "price_observations": [
     {
-      "amount": 25.0,
+      "amount": 25,
       "currency": "EUR",
       "market": "Wolfpack web shop",
       "region": "eu",
@@ -64,8 +64,54 @@
   ],
   "source_ids": [
     "wolfpack-road-category-2026-11-01",
-    "wolfpack-impressum-2026-11-01"
+    "wolfpack-impressum-2026-11-01",
+    "wolfpack-cotton-product-2026-11-02"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "wolfpack-cotton-product-2026-11-02",
+    "subject_accuracy": "exact-model",
+    "shown": "Tan-wall Cotton as pictured on Wolfpack's product page.",
+    "credit": "Wolfpack Tires",
+    "alt": "Wolfpack Cotton road tire with tan sidewalls on a light background",
+    "remote_url": "https://wolfpack-tires.com/wp-content/uploads/2019/04/Wolfpack_Race_Cotton_1_as-1024x576.png",
+    "thumb_url": "https://wolfpack-tires.com/wp-content/uploads/2019/04/Wolfpack_Race_Cotton_1_as-600x338.png",
+    "width": 1024,
+    "height": 576,
+    "source_media_sha256": "2f83504117a50bbd33f095703288fbcf04606034f617989da519b16da8e1a50f",
+    "source_media_bytes": 183237,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Wolfpack Tires",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
+  }
 }

@@ -103,8 +103,240 @@
   ],
   "source_ids": [
     "enve-ses-road-tire-official-2026-11-01",
-    "enve-about-official-2026-11-01"
+    "enve-about-official-2026-11-01",
+    "sigma-sports-enve-ses-road-tire-reviews",
+    "brr-comments-enve-ses-road-tire",
+    "brr-comments-enve-raceday"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "enve-ses-road-tire-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "25 mm black SES Road Tire mounted on a wheel, from ENVE's product page.",
+    "credit": "ENVE",
+    "alt": "ENVE SES road tire in 25 mm mounted on a carbon wheel, sidewall logo visible",
+    "remote_url": "https://enve.com/cdn/shop/products/SESBlackTire25_Side_2.png?width=900",
+    "thumb_url": "https://enve.com/cdn/shop/products/SESBlackTire25_Side_2.png?width=240",
+    "width": 900,
+    "height": 600,
+    "source_media_sha256": "49dcce51ed1761488a72568ef1eefe81c60aebd539f6922aecfeed13c2f1936c",
+    "source_media_bytes": 198069,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "ENVE",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2024-05-12",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A second pair after the first never let the owner down."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2024-02-04",
+        "width_mm": 31,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A smooth ride in 31 mm, and easy to fit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2023-03-18",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Impressive over a good few rides, though hard to seat tubeless."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2021-10-23",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A couple of weeks",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Fast and comfortable, but the front tire gave way on a shallow pothole within a couple of weeks."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2021-10-22",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Under 100 km each",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Two tires each suffered a fatal puncture within 100 km, so the owner went back to another brand with tubes."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2021-09-06",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 400 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "mixed",
+          "punctures": "favourable"
+        },
+        "summary": "Rolls really well and the tread resists cuts over about 400 km, but the thin sidewalls deform in fast, loaded corners; 8/10."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2021-08-09",
+        "width_mm": 29,
+        "setup": "tubeless",
+        "exposure": "One ride",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Punctured on the first ride; the sealant did not hold and the bead unseated."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2021-07-28",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "An Ironman bike course",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Great performance through an Ironman bike course in terrible conditions without a puncture."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2021-06-12",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "500 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Noticeably smoother than the tires it replaced, and undamaged after a 500-mile tour on gritty, potholed roads."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2021-03-05",
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "About four months",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Four winter months: very quick, plenty of grip on cold tarmac and not a single puncture."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-enve-ses-road-tire-reviews"
+        ],
+        "published_at": "2020-10-28",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "250 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "mixed",
+          "punctures": "favourable"
+        },
+        "summary": "No stone cuts after 250 km of autumn riding; rolls smoothly, though not quite as smoothly as the GP5000 TL."
+      },
+      {
+        "source_ids": [
+          "brr-comments-enve-ses-road-tire"
+        ],
+        "published_at": "2020-12-10",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Leaked air through the sidewall moulding, and a very small puncture would not seal with sealant."
+      },
+      {
+        "source_ids": [
+          "brr-comments-enve-raceday"
+        ],
+        "published_at": "2024-06-05",
+        "width_mm": 31,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Great in 31 mm on an ultra-distance race."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 11,
+        "note": "Three of 14 written reviews describe only fitting or looks"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "25 and 35 mm test pages plus an owner on the SES Raceday test"
+      }
+    ]
+  }
 }

@@ -110,8 +110,277 @@
     "michelin-pro5-tlr-competition-line-official-2026-11-01",
     "michelin-road-range-gb-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "michelin-pro5-tlr-tmall-2026-11-01"
+    "michelin-pro5-tlr-tmall-2026-11-01",
+    "bike-components-michelin-pro5-tlr-reviews",
+    "brr-comments-michelin-pro-5-28",
+    "brr-comments-michelin-pro-5-32",
+    "brr-comments-michelin-pro-5-35",
+    "brr-comments-michelin-pro-5-40"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "michelin-pro5-tlr-competition-line-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "28 mm Pro5 TLR as pictured on Michelin's product page.",
+    "credit": "Michelin",
+    "alt": "Michelin Pro5 TLR road tire standing upright at an angle",
+    "remote_url": "https://dxm.contentcenter.michelin.com/api/wedia/dam/transform/b98rpyxf61b4x11imawjk5bobh/bi-164_3528701399010_tire_michelin_pro-5-tlr_28-x-622_a_main_1-30_nopad.webp?height=500",
+    "width": 2000,
+    "height": 2000,
+    "source_media_sha256": "748b7a2d4d5925690df6d740d61a51c90cbc9a283f426e0bdd50d84fdadc2954",
+    "source_media_bytes": 72514,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Michelin",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the first check of Bicycle Rolling Resistance's index missed this tire's test pages; their reader comments are now read. Comments on a TLR test page count for this tire unless the owner names another version; a report of no grip on wet singletrack is not coded as wet road grip.",
+    "reports": [
+      {
+        "source_ids": [
+          "bike-components-michelin-pro5-tlr-reviews"
+        ],
+        "published_at": "2026-08-30",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Easy to mount, pleasant and fun to ride (transparent-sidewall colour option)."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-28"
+        ],
+        "published_at": "2025-12-10",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Very pleased with the 32 mm so far: it rides as well as the GP5000 TR it replaced, though it was very tight to fit."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-28"
+        ],
+        "published_at": "2025-12-05",
+        "width_mm": 30,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "mixed"
+        },
+        "summary": "Likes how the 30 mm rides and finds it good value at sale prices; its one puncture so far sealed eventually."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-32",
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2026-04-17",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Loves the 32 and 35 mm on winter wheels: very good handling and grip, not slow, an all-rounder between the GP5000 S TR and the GP5000 All Season."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-32"
+        ],
+        "published_at": "2026-04-16",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "unfavourable"
+        },
+        "summary": "A good tire that gives confidence and is stable on descents, but it feels noticeably slower than the 28 mm GP5000 on the owner's other wheelset."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-32"
+        ],
+        "published_at": "2026-04-22",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About a year",
+        "codes": {
+          "overall": "favourable",
+          "speed": "mixed",
+          "grip": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "About a year of road riding: very good grip and durability and tread wear that looks good so far, perhaps a little slower than the GP5000s it replaced."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-40"
+        ],
+        "published_at": "2026-07-10",
+        "width_mm": 40,
+        "setup": "tubeless",
+        "exposure": "A couple of months",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Nothing but excellent over a couple of months of commuting, group rides and rough bikepacking trails: fast, cheaper than most and easy to set up tubeless."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-40"
+        ],
+        "published_at": "2026-07-15",
+        "width_mm": 35,
+        "setup": null,
+        "exposure": "A few thousand km",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Great on the road and on dry terrain over a few thousand km, though it has no grip on wet singletrack."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-40"
+        ],
+        "published_at": "2026-07-12",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "One ride",
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "After one ride, impressed by how quick and comfortable it was off road; on wide rims it measured too wide for the owner's frame."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-07-04",
+        "width_mm": 35,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "First rides put it near the top of the 35 mm tires the owner has used: smooth, fast-feeling, consistent and confident in corners, with the easiest setup and best air retention."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-06-07",
+        "width_mm": 35,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Fun, fast and stable; corners well and handles a little gravel without damage."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-07-07",
+        "width_mm": 35,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Very fast and smooth on the road and comfortable on light gravel; a major improvement on the 35 mm GravelKing slicks it replaced."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-11-17",
+        "width_mm": 35,
+        "setup": null,
+        "exposure": "About 500 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Very pleased after about 500 km on an all-road bike: fast, stable and absorbs bumps very well."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-11-02",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "mixed",
+          "wear": "favourable"
+        },
+        "summary": "Good value and suited to autumn riding; rolls acceptably and wears little."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-06-28",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "The 32 mm rolls very well."
+      },
+      {
+        "source_ids": [
+          "brr-comments-michelin-pro-5-35"
+        ],
+        "published_at": "2025-06-21",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "One ride",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Pretty good on a first ride, though the owner was not yet confident cornering on it."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed",
+        "note": "Only the earlier Pro4 is listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 15,
+        "note": "28, 32, 35 and 40 mm test pages"
+      }
+    ]
+  }
 }

@@ -21,7 +21,7 @@
       "measured_width_mm": 30,
       "measured_weight_g": 239,
       "setup": "tubeless",
-      "rr_w": 12.0,
+      "rr_w": 12,
       "rr_psi": 72,
       "wet_grip": 77,
       "puncture_tread": 51
@@ -100,8 +100,65 @@
   "source_ids": [
     "tufo-comtura-prima-official-2026-11-01",
     "tufo-contact-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "brr-comments-tufo-comtura-prima-tr-32",
+    "brr-comments-tufo-comtura-prima-tr",
+    "brr-comments-enve-ses-road-tire-35"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "brr-comments-tufo-comtura-prima-tr-32",
+          "brr-comments-tufo-comtura-prima-tr",
+          "brr-comments-enve-ses-road-tire-35"
+        ],
+        "published_at": "2026-04-28",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "exposure": "2,500-3,000 km",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "grip": "favourable",
+          "wear": "unfavourable",
+          "punctures": "mixed"
+        },
+        "summary": "Impressive weight, speed, grip and suppleness, but the 28 mm wore to the indicator in about 2,500-3,000 km and two tires took sidewall cuts; the tread itself resisted punctures."
+      },
+      {
+        "source_ids": [
+          "brr-comments-tufo-comtura-prima-tr"
+        ],
+        "published_at": "2023-09-13",
+        "width_mm": null,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Very hard to seat tubeless, but after the Schwalbe One on tubes the owner feels as if they have wings."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "28 and 32 mm test pages, plus an owner on the ENVE SES Road Tire test"
+      }
+    ]
+  }
 }

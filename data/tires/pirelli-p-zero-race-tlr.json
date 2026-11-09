@@ -96,10 +96,23 @@
   "availability": {
     "cn": "unverified",
     "eu": "authorized-retail",
-    "na": "unverified",
-    "note": "Listed in Pirelli's UK catalogue with a dealer finder; no mainland China listing was checked for this line; North American availability not verified in this pass."
+    "na": "retail",
+    "note": "Listed in Pirelli's UK catalogue with a dealer finder and stocked by a US retailer on 2026-11-01; no mainland China listing was checked for this line."
   },
-  "price_observations": [],
+  "price_observations": [
+    {
+      "amount": 109.9,
+      "currency": "USD",
+      "market": "Cahaba Cycles (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Retailer price on 2026-11-01 for the 28 mm black tire with local stock; the page does not state one tire or a pair.",
+      "source_id": "cahaba-pirelli-p-zero-race-tlr-2026-11-01",
+      "width_mm": 28
+    }
+  ],
   "caveats": [
     "Hookless compatibility and maximum pressure are not stated on the product page; follow the rim maker.",
     "About 35 g heavier than the 5000 S TR at 28 mm, with more measured tread protection."
@@ -107,8 +120,189 @@
   "source_ids": [
     "pirelli-p-zero-race-tlr-official-2026-11-01",
     "pirelli-road-range-gb-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "cahaba-pirelli-p-zero-race-tlr-2026-11-01",
+    "brr-comments-pirelli-p-zero-race-tlr-28",
+    "brr-comments-continental-aero-111",
+    "brr-comments-pirelli-p-zero-race-tlr-32",
+    "brr-comments-pirelli-p-zero-race-tlr-35",
+    "brr-comments-pirelli-p-zero-race-tlr-4s-32",
+    "brr-comments-goodyear-eagle-f1-r"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "pirelli-p-zero-race-tlr-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "P ZERO Race TLR sidewall as pictured in Pirelli's catalogue; one photo covers every width.",
+    "credit": "Pirelli",
+    "alt": "Close-up of a Pirelli P ZERO Race TLR road tire sidewall",
+    "remote_url": "https://tyre24.pirelli.com/dynamic_engine/velo/assets/images/products/p_zero_race_tlr_1.jpg",
+    "width": 1248,
+    "height": 1156,
+    "source_media_sha256": "59483280ab6c6c9a6b73500389c14d374118eca2783c8d2e73dcb3bde0275ee6",
+    "source_media_bytes": 95647,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Pirelli",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire. Corrected on 2026-11-04: the 32, 35 and 40 mm test pages' reader comments are now read as well.",
+    "reports": [
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-28"
+        ],
+        "published_at": "2023-11-17",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A couple of short rides",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Much more supple than the first version of the tire, smooth and quiet so far."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-28"
+        ],
+        "published_at": "2023-08-16",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Fast, grippy and fairly puncture resistant; among the best road tires the owner has used, if a little heavy."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-28"
+        ],
+        "published_at": "2023-10-07",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 4,000 km in six months",
+        "codes": {
+          "overall": "mixed",
+          "speed": "unfavourable",
+          "wear": "mixed"
+        },
+        "summary": "The front shows wear and the rear is squaring off; harder and less comfortable than a GP5000 and not as fast, but the owner switched for fewer punctures."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-aero-111"
+        ],
+        "published_at": "2024-08-21",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "The owner's regular tire, with the best balance of durability, puncture resistance and speed; holds pressure well tubeless."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-32"
+        ],
+        "published_at": "2024-05-28",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Ridden in 28 mm for a while: the best race tire for real-world use the owner has tried."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-35"
+        ],
+        "published_at": "2025-04-02",
+        "width_mm": 35,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Perfect on a fastpacking trip: comfortable, grippy and quick enough to keep up with the owner's usual groups."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-35"
+        ],
+        "published_at": "2025-04-15",
+        "width_mm": 35,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "speed": "unfavourable"
+        },
+        "summary": "Heavy and stodgy as a commuter tire, with a noticeable speed and comfort penalty in 35 mm; the owner calls it a failed experiment."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-4s-32",
+          "brr-comments-pirelli-p-zero-race-tlr-35"
+        ],
+        "published_at": "2024-10-22",
+        "width_mm": 30,
+        "setup": "tubeless",
+        "exposure": "About 3,000 km",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Noticeably faster than the 4S, far more comfortable than the Corsa Pro in 30 mm, holds air and no puncture in about 3,000 km."
+      },
+      {
+        "source_ids": [
+          "brr-comments-goodyear-eagle-f1-r"
+        ],
+        "published_at": "2023-11-06",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Preferred to the Eagle F1 SuperSport R after riding both, and holds air as well or better."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed",
+        "note": "Its listings' reviews predate the SpeedCORE generation or cover the Classic edition"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 9,
+        "note": "28, 30, 32, 35 and 40 mm test pages plus owners on the Aero 111, TLR 4S and Eagle F1 R tests"
+      }
+    ]
+  }
 }

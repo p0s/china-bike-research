@@ -81,8 +81,72 @@
   "source_ids": [
     "silca-protocol-rcr-official-2026-11-01",
     "silca-about-official-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "brr-comments-silca-protocol-rcr-38"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "silca-protocol-rcr-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Protocol RCR side view as pictured on SILCA's product page.",
+    "credit": "SILCA",
+    "alt": "SILCA Protocol RCR tubeless road tire side view with sidewall label",
+    "remote_url": "https://silca.cc/cdn/shop/files/RCRSQUARESide.png?width=900",
+    "thumb_url": "https://silca.cc/cdn/shop/files/RCRSQUARESide.png?width=240",
+    "width": 900,
+    "height": 900,
+    "source_media_sha256": "390b74caf3dd174a1db1cbcaf4b2dc46190e3074e0e623fc752de91f6d11bc31",
+    "source_media_bytes": 291397,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "SILCA",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: the 38 mm test page's reader comments are now read as well.",
+    "reports": [
+      {
+        "source_ids": [
+          "brr-comments-silca-protocol-rcr-38"
+        ],
+        "published_at": "2026-10-28",
+        "width_mm": 38,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "mixed",
+          "punctures": "unfavourable"
+        },
+        "summary": "Likes the 38 mm but it is not the right tire for this owner: puncture protection is not great, and it did worse than a 40 mm Pirelli on mixed hardpack rides."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed",
+        "note": "Only Protocol RCG gravel tires are listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "29 and 38 mm test pages; one of 43 comments is first-hand"
+      }
+    ]
+  }
 }

@@ -5,14 +5,16 @@
   "series_order": 33,
   "image_id": "when-geometry-chart-does-not-add-up-unique-mascot-cover",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-22",
+  "dateModified": "2026-11-08",
   "researched_at": "2026-10-04",
   "model_ids": [
     "lightcarbon-lcr018-d"
   ],
   "source_ids": [
     "lightcarbon-lcr018-d-official-2026-08-29",
-    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03"
+    "lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
+    "lightcarbon-catalog-v5-road-recheck-2026-10-11",
+    "lightcarbon-lcr018-d-official-recheck-2026-10-22"
   ],
   "editorial_references": [
     "https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html",
@@ -29,100 +31,262 @@
   ],
   "translations": {
     "en": {
-      "title": "When a bike geometry chart does not add up",
-      "description": "Resolve conflicting sizes, measuring conventions and chart revisions before a geometry calculator turns uncertain inputs into precise advice.",
-      "intro": "A calculator can return a beautifully precise answer from the wrong chart. That is the problem with unresolved geometry: extra decimal places make the uncertainty harder to see. Before calculating a stem or frame size, establish which drawing actually describes the frame being sold.",
+      "title": "When a bike geometry chart does not add up, its own numbers show which cell is wrong",
+      "description": "Front centre and wheelbase follow from stack, reach, head angle, fork offset, bottom-bracket drop and chainstay. On LightCarbon's LCR018-D table that arithmetic reproduces three sizes to 0.1 mm and finds a size-580 front centre 10 mm short.",
+      "intro": "A geometry chart's cells are not independent. Front centre and wheelbase follow from stack, reach, head angle, fork offset, bottom-bracket drop and chainstay, so a minute of arithmetic shows which cell to question before a calculator turns a misprint into precise advice. On LightCarbon's LCR018-D table it reproduces three sizes to 0.1 mm and isolates one cell that is 10 mm out.",
       "sections": [
         {
           "id": "mismatch",
-          "heading": "Find the kind of disagreement",
+          "heading": "Recompute the cells that depend on the others",
           "paragraphs": [
-            "Put the documents side by side and mark the disputed cells. Is the difference a changed frame revision, a size label, a measurement convention or a transcription error? Keep those possibilities open until evidence selects one. Do not average conflicting stack values: the result might describe neither frame.",
-            "Wheelbase, front-centre and chainstay figures also need their dimension lines. A diagonal distance and its horizontal projection cannot be added as if they were the same measurement. A suspicious sum is a reason to inspect the drawing, not proof that the manufacturer made an error."
+            "Measured horizontally, the front axle sits reach + (stack − BB drop) ÷ tan(head angle) + fork offset ÷ sin(head angle) ahead of the bottom bracket. Most charts print front centre as the straight line from the bottom bracket to the front axle, which is √(horizontal² + BB drop²). Wheelbase is the horizontal front centre plus the rear centre, √(chainstay² − BB drop²), because chainstay is a straight-line length too.",
+            "Take LightCarbon's LCR018-D in size 540: 383 + (569 − 76) ÷ tan 72° + 51 ÷ sin 72° = 383 + 160.2 + 53.6 = 596.8 mm, or 601.6 mm on the diagonal, which is the printed front centre. Adding √(415² − 76²) = 408.0 mm gives a 1004.8 mm wheelbase, also as printed. Cells that agree within a millimetre describe one frame. A bigger gap means one cell is wrong, uses the other convention (diagonal or horizontal) or comes from another revision. Do not average conflicting values: the result might describe neither frame."
           ]
         },
         {
           "id": "example",
-          "heading": "A changed reference can look like a changed frame",
+          "heading": "Four LCR018-D cells to question before you calculate",
           "paragraphs": [
-            "The [LightCarbon LCR018-D record](/models/lightcarbon-lcr018-d/) preserves qualifications around conflicting geometry evidence. One concrete document difference is the standover reference: LightCarbon’s 2026–2027 catalog (V5, checked October 11, 2026) labels it with a 700×38C basis, while the product table observed October 3, 2026 labels it 700C×32C, as it still did on October 22, 2026. That alone is enough to stop a direct comparison of those standover figures.",
-            "A newer page may clarify a drawing, but its date does not identify your particular frame. Obtain the current size-labelled diagram and ask which production revision it covers. Keep the older document as history instead of silently replacing its meaning.",
-            "The same product table, observed October 3 and again October 22, 2026, also prints the size-560 wheelbase as “1006.3 +mm”, without explaining the plus sign. Entering 1006.3 into a calculator would quietly turn unresolved notation into a confirmed input. Ask what the sign means before using that cell; it does not establish a measured wheelbase."
-          ]
+            "The [LightCarbon LCR018-D record](/models/lightcarbon-lcr018-d/) keeps these conflicts with their sources. The first is the standover reference: LightCarbon’s 2026–2027 catalog (V5, checked October 11, 2026) labels it with a 700×38C basis, while the product table observed October 3, 2026 labels it 700C×32C, as it still did on October 22, 2026. Arithmetic cannot settle a tyre basis, and standover figures on different bases are not comparable.",
+            "The product table observed on October 3, 2026 prints the size-580 front centre as 606.4 mm. Its own stack, reach, head angle, fork offset and BB drop give 616.4 mm, the figure the V5 catalog prints, and its own 1020.3 mm wheelbase fits 616.4 but not 606.4, which would give 1010.2 mm. The 606.4 is very probably a misprint; LightCarbon has not confirmed which value is correct.",
+            "The same product table, observed October 3 and again October 22, 2026, prints the size-560 wheelbase as “1006.3 +mm”. The digits fit: the column’s other cells give 598.3 + 408.0 = 1006.3 mm. Only the plus sign is unexplained, so ask what it means before treating the cell as settled.",
+            "The two smallest sizes do not add up either. Their printed front centre and wheelbase agree with each other but are 3.7 to 3.8 mm longer than stack, reach, head angle and fork offset give. The table cannot show which cell is out, so query the 470 and 500 before using their reach or front centre in a fit or toe-overlap calculation."
+          ],
+          "worksheet": {
+            "caption": "LCR018-D product table (observed October 3, 2026) against its own arithmetic",
+            "columns": [
+              "Size",
+              "Front centre, printed (mm)",
+              "Front centre from the other cells (mm)",
+              "Wheelbase, printed (mm)",
+              "Wheelbase from the other cells (mm)"
+            ],
+            "rows": [
+              [
+                "470",
+                "580.9",
+                "577.2",
+                "983.3",
+                "979.5"
+              ],
+              [
+                "500",
+                "589.5",
+                "585.8",
+                "992",
+                "988.2"
+              ],
+              [
+                "520",
+                "589.8",
+                "589.8",
+                "992.2",
+                "992.2"
+              ],
+              [
+                "540",
+                "601.6",
+                "601.6",
+                "1004.8",
+                "1004.8"
+              ],
+              [
+                "560",
+                "603.1",
+                "603.1",
+                "1006.3 +",
+                "1006.3"
+              ],
+              [
+                "580",
+                "606.4",
+                "616.4",
+                "1020.3",
+                "1020.3"
+              ]
+            ]
+          }
         },
         {
           "id": "resolve",
-          "heading": "Ask one question the seller can answer",
+          "heading": "Ask the question the arithmetic points to",
           "paragraphs": [
-            "Send both diagrams with the disputed dimensions highlighted: “For the frame revision and size in this order, which drawing is authoritative, and what are the measurement endpoints for these values?” Request a corrected size-specific drawing if necessary. A reply that the frame is “comfortable” does not resolve a numerical mismatch.",
-            "Until the answer is usable, leave the affected fit calculation open. Compare candidates with clear inputs, or take the documents to a fitter. A question mark is more useful than an exact recommendation for a frame that the numbers have not yet identified.",
-            "For the general comparison method, use [comparing two geometry charts](/blog/comparing-two-geometry-charts/). The [standover and bag-space guide](/blog/standover-bikepacking-bags/) separates that dimension from the space a packed bike actually needs."
+            "Send the highlighted table with one precise question: “Your LCR018-D table prints the size-580 front centre as 606.4 mm, but its stack, reach, head angle, fork offset and wheelbase give 616.4 mm, as in your V5 catalog. Which value applies to the frames you ship now, and what does the plus sign after the size-560 wheelbase mean?” A reply that the frame is “comfortable” does not resolve a numerical mismatch.",
+            "Until the answer is usable, leave the affected calculation open: front centre decides [toe overlap](/blog/toe-overlap-small-gravel-bike/), and wheelbase enters handling comparisons. To put two makers’ charts side by side, use [comparing two geometry charts](/blog/comparing-two-geometry-charts/); the [standover and bag-space guide](/blog/standover-bikepacking-bags/) separates that dimension from the space a packed bike actually needs."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "自行车几何表对不上时，怎么办",
-      "description": "先解决尺码、测量定义和图表版本冲突，再让几何计算器给出适配建议。",
-      "intro": "计算器能用错误图表算出漂亮而精确的答案。这正是未解决几何问题的麻烦：小数越多，不确定性越不容易看见。计算把立或车架尺码之前，先确认哪张图真正描述了正在出售的车架。",
+      "title": "自行车几何表对不上时，用表里其他数字找出错的那一格",
+      "description": "前轴距和轴距可以由堆高、前伸量、头管角度、前叉偏移量、中轴下沉量和后下叉长度算出。用这套算法核对LightCarbon LCR018-D的几何表，有三个尺码误差不超过0.1毫米，580码的前轴距却少了10毫米。",
+      "intro": "几何表上的数字并不互相独立。前轴距和轴距由堆高、前伸量、头管角度、前叉偏移量、中轴下沉量和后下叉长度决定，花一分钟验算，就能在计算器把印刷错误变成“精确建议”之前，找出该追问的那一格。用它核对LightCarbon LCR018-D的几何表，有三个尺码的结果与印刷值相差不超过0.1毫米，只有一格差了10毫米。",
       "sections": [
         {
           "id": "mismatch",
-          "heading": "先找出冲突属于哪一类",
+          "heading": "验算由其他尺寸决定的格子",
           "paragraphs": [
-            "把文件并排放，标出争议单元格。差别来自车架版本变化、尺码标签、测量定义，还是录入错误？证据明确前，应保留这些可能性。不要将冲突堆高取平均，结果可能不属于任何一款车架。",
-            "轴距、前轴距与后下叉长度，还需要对应尺寸线。斜线距离与它的水平投影不能视为同一种测量相加。可疑总和说明值得检查图纸，并不能直接证明厂家算错。"
+            "按水平距离计算，前轴位于中轴前方：前伸量 +（堆高 − 中轴下沉量）÷ tan（头管角度）+ 前叉偏移量 ÷ sin（头管角度）。多数几何表把前轴距标为中轴到前轴的直线距离，即 √（水平距离² + 中轴下沉量²）。轴距等于水平前轴距加后中心距 √（后下叉长度² − 中轴下沉量²），因为后下叉长度同样是直线长度。",
+            "以LightCarbon LCR018-D的540码为例：383 +（569 − 76）÷ tan 72° + 51 ÷ sin 72° = 383 + 160.2 + 53.6 = 596.8毫米，换成直线距离是601.6毫米，正是表上印的前轴距。再加上 √（415² − 76²）= 408.0毫米，轴距为1004.8毫米，也与印刷值一致。各格相差不超过1毫米，说明它们描述的是同一副车架；差距更大，则说明其中一格有误、用了另一种量法（直线或水平），或者来自另一个版本。不要把冲突数值取平均，结果可能不属于任何一款车架。"
           ]
         },
         {
           "id": "example",
-          "heading": "参考基准变化，看起来也像车架变了",
+          "heading": "LCR018-D在计算前要追问的四格",
           "paragraphs": [
-            "[LightCarbon LCR018-D记录](/zh/models/lightcarbon-lcr018-d/)保留了几何证据冲突的限定。其中一项具体文件差异是跨高基准：2026—2027目录（V5，2026年10月11日查看）以700×38C标注，2026年10月3日查看的产品表则标为700C×32C，10月22日复查时仍是如此。仅这一点，就足以停止直接比较两份表的跨高数值。",
-            "新页面可能澄清图纸，但页面较新，并不能识别你那一支具体车架。应取得当前带尺码的图纸，并确认覆盖哪个生产版本。旧文件应作为历史保留，不要悄悄改变它原本含义。",
-            "同一产品表在2026年10月3日及10月22日查看时，还把560码轴距写成“1006.3 +mm”，没有解释加号含义。直接向计算器输入1006.3，会悄悄把未解决的记号变成已确认的输入。使用这一格之前，应先问清加号含义；它并不能证明实测轴距。"
-          ]
+            "[LightCarbon LCR018-D记录](/zh/models/lightcarbon-lcr018-d/)连同来源保留了这些冲突。第一格是跨高基准：2026—2027目录（V5，2026年10月11日查看）以700×38C标注，2026年10月3日查看的产品表则标为700C×32C，10月22日复查时仍是如此。轮胎基准无法靠计算判断，不同基准下的跨高数值不能直接比较。",
+            "2026年10月3日查看的产品表把580码前轴距印为606.4毫米。用同一张表的堆高、前伸量、头管角度、前叉偏移量和中轴下沉量计算，得到616.4毫米，正是V5目录印的数字；表上1020.3毫米的轴距也只与616.4吻合，若用606.4，轴距会是1010.2毫米。606.4很可能是印刷错误，但LightCarbon尚未确认哪个数值正确。",
+            "同一产品表在2026年10月3日及10月22日查看时，还把560码轴距写成“1006.3 +mm”。数字本身吻合：这一列其他格子算出 598.3 + 408.0 = 1006.3毫米。只有加号没有解释，把这一格当作确定值之前，应先问清含义。",
+            "最小的两个尺码也对不上。470和500码印出的前轴距与轴距彼此一致，却比由堆高、前伸量、头管角度和前叉偏移量算出的结果长3.7至3.8毫米。表本身无法说明哪一格有误，因此在把这两个尺码的前伸量或前轴距用于适配或鞋尖重叠计算之前，应先向厂家确认。"
+          ],
+          "worksheet": {
+            "caption": "LCR018-D产品表（2026年10月3日查看）与其自身验算",
+            "columns": [
+              "尺码",
+              "前轴距印刷值（毫米）",
+              "由其他格算出的前轴距（毫米）",
+              "轴距印刷值（毫米）",
+              "由其他格算出的轴距（毫米）"
+            ],
+            "rows": [
+              [
+                "470",
+                "580.9",
+                "577.2",
+                "983.3",
+                "979.5"
+              ],
+              [
+                "500",
+                "589.5",
+                "585.8",
+                "992",
+                "988.2"
+              ],
+              [
+                "520",
+                "589.8",
+                "589.8",
+                "992.2",
+                "992.2"
+              ],
+              [
+                "540",
+                "601.6",
+                "601.6",
+                "1004.8",
+                "1004.8"
+              ],
+              [
+                "560",
+                "603.1",
+                "603.1",
+                "1006.3 +",
+                "1006.3"
+              ],
+              [
+                "580",
+                "606.4",
+                "616.4",
+                "1020.3",
+                "1020.3"
+              ]
+            ]
+          }
         },
         {
           "id": "resolve",
-          "heading": "问一个卖家能够明确回答的问题",
+          "heading": "问一个验算指向的问题",
           "paragraphs": [
-            "把两张图连同突出标记的争议尺寸一起发送：“就本订单的车架版本与尺码而言，以哪张图为准？这些数值的测量起止点是什么？”必要时索取针对该尺码的修正版图纸。“骑起来舒服”的答复，解决不了数字冲突。",
-            "在答复可用之前，先搁置受影响的适配计算。可以比较输入明确的候选车架，或把资料带给适配师。对数字尚未识别清楚的车架，一个问号比精确建议更有用。",
-            "一般的对照方法可看[如何比较两份几何表](/zh/blog/comparing-two-geometry-charts/)；[跨高与车架包空间指南](/zh/blog/standover-bikepacking-bags/)则把这个尺寸与满载自行车实际需要的空间分开。"
+            "把标出争议格的表格连同一个具体问题发给厂家：“贵司LCR018-D几何表把580码前轴距印为606.4毫米，但按表中的堆高、前伸量、头管角度、前叉偏移量和轴距计算是616.4毫米，与V5目录一致。目前出货的车架以哪个数值为准？560码轴距后面的加号是什么意思？”“骑起来舒服”的答复，解决不了数字冲突。",
+            "在得到可用答复之前，先搁置受影响的计算：前轴距决定[鞋尖重叠](/zh/blog/toe-overlap-small-gravel-bike/)，轴距则影响操控比较。要把两家厂商的几何表并排比较，可看[如何比较两份几何表](/zh/blog/comparing-two-geometry-charts/)；[跨高与车架包空间指南](/zh/blog/standover-bikepacking-bags/)则把这个尺寸与满载自行车实际需要的空间分开。"
           ]
         }
       ]
     },
     "de": {
-      "title": "Wenn eine Fahrrad-Geometrietabelle nicht zusammenpasst",
-      "description": "Kläre Größen, Messdefinitionen und Revisionen, bevor ein Rechner aus unsicheren Daten scheinbar präzise Empfehlungen macht.",
-      "intro": "Ein Rechner liefert auch aus einer falschen Tabelle ein hübsch präzises Ergebnis. Bei ungeklärter Geometrie verstecken zusätzliche Nachkommastellen die Unsicherheit. Kläre vor Vorbau- oder Größenberechnungen, welche Zeichnung den angebotenen Rahmen beschreibt.",
+      "title": "Wenn eine Geometrietabelle nicht aufgeht, zeigen ihre eigenen Zahlen das falsche Feld",
+      "description": "Front-Center und Radstand folgen aus Stack, Reach, Steuerrohrwinkel, Gabelvorlauf, Tretlagerabsenkung und Kettenstrebe. Bei LightCarbons LCR018-D-Tabelle trifft diese Rechnung drei Größen auf 0,1 mm und findet ein 10 mm zu kurzes Front-Center in Größe 580.",
+      "intro": "Die Felder einer Geometrietabelle sind nicht unabhängig. Front-Center und Radstand folgen aus Stack, Reach, Steuerrohrwinkel, Gabelvorlauf, Tretlagerabsenkung und Kettenstrebe. Eine Minute Rechnen zeigt deshalb, welches Feld du hinterfragen musst, bevor ein Rechner aus einem Druckfehler eine präzise Empfehlung macht. Bei LightCarbons LCR018-D-Tabelle trifft die Rechnung drei Größen auf 0,1 mm und findet ein Feld, das um 10 mm abweicht.",
       "sections": [
         {
           "id": "mismatch",
-          "heading": "Die Art des Widerspruchs bestimmen",
+          "heading": "Die abhängigen Felder nachrechnen",
           "paragraphs": [
-            "Lege die Dokumente nebeneinander und markiere strittige Felder. Geht es um Revision, Größenbezeichnung, Messdefinition oder Übertragungsfehler? Halte diese Möglichkeiten offen, bis Belege eine klären. Gemittelte Stack-Werte können am Ende zu keinem der beiden Rahmen gehören.",
-            "Radstand, Front-Center und Hinterbaulänge brauchen eindeutige Maßlinien. Eine diagonale Länge und ihre horizontale Projektion sind nicht gleichartig addierbar. Eine auffällige Summe ist Anlass zur Zeichnungsprüfung, noch kein Beweis für einen Herstellerfehler."
+            "Horizontal gemessen liegt die Vorderachse um Reach + (Stack − Tretlagerabsenkung) / tan(Steuerrohrwinkel) + Gabelvorlauf / sin(Steuerrohrwinkel) vor dem Tretlager. Die meisten Tabellen geben das Front-Center als gerade Linie vom Tretlager zur Vorderachse an, also √(horizontal² + Tretlagerabsenkung²). Der Radstand ist das horizontale Front-Center plus das hintere Maß √(Kettenstrebe² − Tretlagerabsenkung²), denn auch die Kettenstrebe ist eine gerade Länge.",
+            "Beispiel LightCarbon LCR018-D in Größe 540: 383 + (569 − 76) / tan 72° + 51 / sin 72° = 383 + 160,2 + 53,6 = 596,8 mm, diagonal 601,6 mm – genau das gedruckte Front-Center. Mit √(415² − 76²) = 408,0 mm ergibt sich ein Radstand von 1004,8 mm, ebenfalls wie gedruckt. Stimmen die Felder auf einen Millimeter überein, beschreiben sie einen Rahmen. Eine größere Lücke heißt: Ein Feld ist falsch, nutzt die andere Konvention (diagonal oder horizontal) oder stammt aus einer anderen Revision. Mittle widersprüchliche Werte nicht; das Ergebnis passt womöglich zu keinem der beiden Rahmen."
           ]
         },
         {
           "id": "example",
-          "heading": "Ein anderer Bezug kann wie ein anderer Rahmen aussehen",
+          "heading": "Vier LCR018-D-Felder, die du vor dem Rechnen klären solltest",
           "paragraphs": [
-            "Der [LightCarbon-LCR018-D-Eintrag](/de/models/lightcarbon-lcr018-d/) bewahrt Einschränkungen widersprüchlicher Geometriebelege. Ein konkreter Unterschied betrifft den Überstand: Der Katalog 2026–2027 (V5, geprüft am 11. Oktober 2026) nennt 700×38C, die am 3. Oktober 2026 erfasste Produkttabelle 700C×32C, wie auch noch am 22. Oktober 2026. Schon deshalb sind die Überstandswerte nicht unmittelbar vergleichbar.",
-            "Eine neuere Seite kann etwas klären; ihr Datum identifiziert aber nicht deinen konkreten Rahmen. Fordere die aktuelle Zeichnung mit Größenlabels und zugehöriger Produktionsrevision an. Bewahre die alte Unterlage als historischen Beleg, statt ihre Bedeutung still zu ändern.",
-            "Dieselbe Produkttabelle, erfasst am 3. und erneut am 22. Oktober 2026, schreibt den Radstand der Größe 560 außerdem als „1006.3 +mm“, ohne das Pluszeichen zu erklären. Wer 1006,3 in einen Rechner eingibt, macht aus ungeklärter Schreibweise stillschweigend eine bestätigte Eingabe. Kläre zuerst die Bedeutung des Zeichens; die Zelle belegt keinen gemessenen Radstand."
-          ]
+            "Der [LightCarbon-LCR018-D-Eintrag](/de/models/lightcarbon-lcr018-d/) bewahrt diese Widersprüche mit ihren Quellen. Das erste Feld ist der Bezug des Überstands: Der Katalog 2026–2027 (V5, geprüft am 11. Oktober 2026) nennt 700×38C, die am 3. Oktober 2026 erfasste Produkttabelle 700C×32C, wie auch noch am 22. Oktober 2026. Eine Reifenbasis lässt sich nicht errechnen, und Überstandswerte auf verschiedener Basis sind nicht vergleichbar.",
+            "Die am 3. Oktober 2026 erfasste Produkttabelle druckt das Front-Center der Größe 580 mit 606,4 mm. Ihre eigenen Werte für Stack, Reach, Steuerrohrwinkel, Gabelvorlauf und Tretlagerabsenkung ergeben 616,4 mm – den Wert im V5-Katalog –, und ihr eigener Radstand von 1020,3 mm passt zu 616,4, nicht zu 606,4, das 1010,2 mm ergäbe. 606,4 ist sehr wahrscheinlich ein Druckfehler; LightCarbon hat nicht bestätigt, welcher Wert stimmt.",
+            "Dieselbe Produkttabelle, erfasst am 3. und erneut am 22. Oktober 2026, schreibt den Radstand der Größe 560 als „1006.3 +mm“. Die Ziffern passen: Die übrigen Felder der Spalte ergeben 598,3 + 408,0 = 1006,3 mm. Nur das Pluszeichen ist ungeklärt; frag nach seiner Bedeutung, bevor du das Feld als gesichert behandelst.",
+            "Auch die beiden kleinsten Größen gehen nicht auf. Ihr gedrucktes Front-Center und ihr Radstand stimmen untereinander überein, sind aber 3,7 bis 3,8 mm länger, als Stack, Reach, Steuerrohrwinkel und Gabelvorlauf ergeben. Welches Feld abweicht, zeigt die Tabelle nicht; kläre die Größen 470 und 500, bevor du ihren Reach oder ihr Front-Center für eine Fit- oder Zehenüberlappungsrechnung nutzt."
+          ],
+          "worksheet": {
+            "caption": "LCR018-D-Produkttabelle (erfasst am 3. Oktober 2026) gegen ihre eigene Rechnung",
+            "columns": [
+              "Größe",
+              "Front-Center gedruckt (mm)",
+              "Front-Center aus den übrigen Feldern (mm)",
+              "Radstand gedruckt (mm)",
+              "Radstand aus den übrigen Feldern (mm)"
+            ],
+            "rows": [
+              [
+                "470",
+                "580,9",
+                "577,2",
+                "983,3",
+                "979,5"
+              ],
+              [
+                "500",
+                "589,5",
+                "585,8",
+                "992",
+                "988,2"
+              ],
+              [
+                "520",
+                "589,8",
+                "589,8",
+                "992,2",
+                "992,2"
+              ],
+              [
+                "540",
+                "601,6",
+                "601,6",
+                "1004,8",
+                "1004,8"
+              ],
+              [
+                "560",
+                "603,1",
+                "603,1",
+                "1006,3 +",
+                "1006,3"
+              ],
+              [
+                "580",
+                "606,4",
+                "616,4",
+                "1020,3",
+                "1020,3"
+              ]
+            ]
+          }
         },
         {
           "id": "resolve",
-          "heading": "Eine konkret beantwortbare Frage stellen",
+          "heading": "Die Frage stellen, auf die die Rechnung zeigt",
           "paragraphs": [
-            "Sende beide Zeichnungen mit markierten Streitpunkten: „Welche Zeichnung gilt für Revision und Größe meiner Bestellung, und zwischen welchen Punkten werden diese Werte gemessen?“ Bitte nötigenfalls um eine korrigierte Größenzeichnung. „Der Rahmen ist komfortabel“ löst keinen Zahlenwiderspruch.",
-            "Lass die betroffene Fit-Berechnung offen, bis die Antwort belastbar ist. Vergleiche Kandidaten mit klaren Daten oder besprich die Unterlagen mit einem Fitter. Ein Fragezeichen hilft mehr als eine exakte Empfehlung für einen noch nicht eindeutig beschriebenen Rahmen.",
-            "Die allgemeine Methode erklärt der [Vergleich zweier Geometrietabellen](/de/blog/comparing-two-geometry-charts/). Der [Leitfaden zu Überstand und Rahmentaschen](/de/blog/standover-bikepacking-bags/) trennt dieses Maß vom tatsächlichen Platzbedarf eines beladenen Rads."
+            "Schick die markierte Tabelle mit einer präzisen Frage: „Ihre LCR018-D-Tabelle nennt für Größe 580 ein Front-Center von 606,4 mm, Stack, Reach, Steuerrohrwinkel, Gabelvorlauf und Radstand ergeben aber 616,4 mm wie in Ihrem V5-Katalog. Welcher Wert gilt für die aktuell ausgelieferten Rahmen, und was bedeutet das Pluszeichen hinter dem Radstand der Größe 560?“ „Der Rahmen ist komfortabel“ löst keinen Zahlenwiderspruch.",
+            "Lass die betroffene Rechnung offen, bis die Antwort belastbar ist: Das Front-Center entscheidet über [Zehenüberlappung](/de/blog/toe-overlap-small-gravel-bike/), der Radstand fließt in Vergleiche des Fahrverhaltens ein. Wie du die Tabellen zweier Hersteller nebeneinanderlegst, zeigt der [Vergleich zweier Geometrietabellen](/de/blog/comparing-two-geometry-charts/). Der [Leitfaden zu Überstand und Rahmentaschen](/de/blog/standover-bikepacking-bags/) trennt dieses Maß vom tatsächlichen Platzbedarf eines beladenen Rads."
           ]
         }
       ]

@@ -74,8 +74,125 @@
   ],
   "source_ids": [
     "giant-gavia-course-0-tubeless-tyre-2020-gb-official-2026-11-01",
-    "bikeradar-giant-founder-2026-02-17"
+    "bikeradar-giant-founder-2026-02-17",
+    "xhs-giant-gavia-course-0-cracked",
+    "xhs-cadex-race-gc-wear-2025-07-13"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "giant-gavia-course-0-tubeless-tyre-2020-gb-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Gavia Course 0 Tubeless as pictured on Giant's product page.",
+    "credit": "Giant",
+    "alt": "Giant Gavia Course 0 tubeless road tire shown as a full ring",
+    "remote_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_675%2Cq_80%2Cw_900/gbl9x6cvmi4lzlu11i2c/GAVIA-COURSE-0-1.jpg",
+    "thumb_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_180%2Cq_80%2Cw_240/gbl9x6cvmi4lzlu11i2c/GAVIA-COURSE-0-1.jpg",
+    "width": 900,
+    "height": 675,
+    "source_media_sha256": "40979407c522fc41e5dbda37e8710c8a574090c4dd35eab1f3883c19dc11dafc",
+    "source_media_bytes": 42245,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Giant",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this exact model; shop and promotional posts, questions, mounting-only impressions, generic praise and reports about other models were left out. A commenter who may represent a shop is not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-giant-gavia-course-0-cracked"
+        ],
+        "width_mm": null,
+        "setup": "tubeless",
+        "exposure": "Three months",
+        "codes": {
+          "overall": "unfavourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "After three months on a hookless wheelset: a dull road feel, poor value at the shop price and two cuts after the tire caught in a gravel gap."
+      },
+      {
+        "source_ids": [
+          "xhs-giant-gavia-course-0-cracked"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Good value and long-lasting in the owner's riding."
+      },
+      {
+        "source_ids": [
+          "xhs-giant-gavia-course-0-cracked"
+        ],
+        "width_mm": 30,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Switched to the 30 mm and finds the ride much more comfortable."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-wear-2025-07-13"
+        ],
+        "published_at": "2025-07-15",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Over 5,000 km",
+        "codes": {
+          "punctures": "mixed"
+        },
+        "summary": "Occasional punctures began after 5,000 km; still the owner's current tire."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-wear-2025-07-13"
+        ],
+        "published_at": "2025-07-14",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "casing": "favourable"
+        },
+        "summary": "Now the owner's only choice of stock tire: tough and long-lasting, and much lighter than the Course 1."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 5,
+        "note": "Two posts plus two owners in a CADEX thread; a shop advert is not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

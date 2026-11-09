@@ -58,8 +58,60 @@
     "Owner reports of bulging in a 2025 batch of an unnamed JILUER tubeless tire are not attributed to this model."
   ],
   "source_ids": [
-    "jiluer-chaser-listing-taobao-2026-11-01"
+    "jiluer-chaser-listing-taobao-2026-11-01",
+    "xhs-jiluer-chaser-pro-tlr-2025-09-25"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "public-post",
+    "source_id": "xhs-jiluer-chaser-pro-tlr-2025-09-25",
+    "subject_accuracy": "exact-model",
+    "shown": "A Chaser Pro tubeless-ready tire beside its retail box, labelled CHASER PRO, TUBELESS READY, RS3 and 700X28C; the sidewall reads CHASER PRO TR.",
+    "credit": "Xiaohongshu public post",
+    "alt": "JILUER Chaser Pro tubeless-ready road tire beside its labelled 700x28C retail box",
+    "remote_url": "https://sns-img-qc.xhscdn.com/notes_pre_post/1040g3k031mroj4sfl86g5oq981g65q8ume48v00!nd_dft_wlteh_webp_3",
+    "thumb_url": "https://sns-img-qc.xhscdn.com/notes_pre_post/1040g3k031mroj4sfl86g5oq981g65q8ume48v00!nc_n_webp_prv_1",
+    "width": 1080,
+    "height": 1080,
+    "source_media_sha256": "c9bd89ef8ed96894f3dabc9fed71a8b80b93857b1be3ca43966290406bad0af6",
+    "source_media_bytes": 189764,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "public-post-embed",
+      "copyright_holder": "The post's author (not named here)",
+      "usage_note": "A photo from a public Xiaohongshu post, shown from Xiaohongshu with a link to the original post; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model and, where the model is sold in more than one construction, say which; seller replies, questions, unmounted impressions and reports about other models were left out.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "The tubeless reports do not name the model"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

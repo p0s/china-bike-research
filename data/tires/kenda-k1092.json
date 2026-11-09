@@ -65,8 +65,60 @@
     "TPI and pressure come from shop option labels; weights are not published."
   ],
   "source_ids": [
-    "kenda-k925-k1092-taobao-2026-11-01"
+    "kenda-k925-k1092-taobao-2026-11-01",
+    "xhs-kenda-k1092-boxes-2024-12-17"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "public-post",
+    "source_id": "xhs-kenda-k1092-boxes-2024-12-17",
+    "subject_accuracy": "exact-model",
+    "shown": "K1092 tires in their retail boxes, labelled Kountach Elite, 700 x 28C K1092, folding bead, 60 TPI, in an owner's post.",
+    "credit": "Xiaohongshu public post",
+    "alt": "Kenda K1092 Kountach Elite road tires in labelled retail boxes",
+    "remote_url": "https://sns-img-qc.xhscdn.com/1040g2sg31bgplmqk0c8g4bpj63ouaf4vb5lrgfg!nd_dft_wlteh_webp_3",
+    "thumb_url": "https://sns-img-qc.xhscdn.com/1040g2sg31bgplmqk0c8g4bpj63ouaf4vb5lrgfg!nc_n_webp_prv_1",
+    "width": 1080,
+    "height": 1080,
+    "source_media_sha256": "f830d1249a05e182cb0b962611dfc9108d997cd1efe3eccfd78391c249f33f23",
+    "source_media_bytes": 131246,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "public-post-embed",
+      "copyright_holder": "The post's author (not named here)",
+      "usage_note": "A photo from a public Xiaohongshu post, shown from Xiaohongshu with a link to the original post; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model and, where the model is sold in more than one construction, say which; seller replies, questions, unmounted impressions and reports about other models were left out.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "An unridden purchase post and passing mentions only"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

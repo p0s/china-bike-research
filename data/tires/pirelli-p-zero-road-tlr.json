@@ -70,8 +70,72 @@
   ],
   "source_ids": [
     "pirelli-p-zero-road-tlr-official-2026-11-01",
-    "pirelli-road-range-gb-2026-11-01"
+    "pirelli-road-range-gb-2026-11-01",
+    "sigma-sports-pirelli-p-zero-road-tlr-reviews"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "pirelli-p-zero-road-tlr-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "P ZERO Road TLR sidewall as pictured in Pirelli's catalogue; one photo covers every width.",
+    "credit": "Pirelli",
+    "alt": "Close-up of a Pirelli P ZERO Road TLR road tire sidewall",
+    "remote_url": "https://tyre24.pirelli.com/dynamic_engine/velo/assets/images/products/p_zero_road_tlr_1.jpg",
+    "width": 1248,
+    "height": 1156,
+    "source_media_sha256": "c652798f6c08c08d6888b7b9d78f72e013dc5d30a92cc06b6563d316d63e779f",
+    "source_media_bytes": 80468,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Pirelli",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-road-tlr-reviews"
+        ],
+        "published_at": "2025-08-01",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Light and fast without giving up grip."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "Three of 4 written reviews describe only fitting or a purchase; a separate tube-type P ZERO clincher listing is not counted"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "Only the tube-type P ZERO Road was tested"
+      }
+    ]
+  }
 }
