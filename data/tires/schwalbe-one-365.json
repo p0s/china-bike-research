@@ -35,14 +35,14 @@
       "etrto": "25-622",
       "weight_g": 300,
       "max_psi": 130,
-      "max_bar": 9.0
+      "max_bar": 9
     },
     {
       "width_mm": 28,
       "etrto": "28-622",
       "weight_g": 320,
       "max_psi": 115,
-      "max_bar": 8.0
+      "max_bar": 8
     },
     {
       "width_mm": 32,
@@ -73,8 +73,99 @@
   "source_ids": [
     "schwalbe-one-365-official-2026-11-01",
     "schwalbe-north-america-road-tires-2026-11-01",
-    "schwalbe-legal-notice-2026-11-01"
+    "schwalbe-legal-notice-2026-11-01",
+    "sigma-sports-schwalbe-one-365-reviews"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-schwalbe-one-365-reviews"
+        ],
+        "published_at": "2025-11-24",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A good winter tire with a comfortable ride at 80 psi."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-schwalbe-one-365-reviews"
+        ],
+        "published_at": "2025-08-21",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable",
+          "grip": "mixed"
+        },
+        "summary": "Fitted easily with tubes; a bit squirmy in corners compared with the Durano it replaced, but much lighter."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-schwalbe-one-365-reviews"
+        ],
+        "published_at": "2024-08-28",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "speed": "mixed"
+        },
+        "summary": "Seems very tough, but rolls with a bit more resistance than the owner hoped."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-schwalbe-one-365-reviews"
+        ],
+        "published_at": "2024-06-30",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "1,000 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Brilliant on a 1,000-mile loaded tour at about 55 psi: smooth, with no punctures and no obvious wear."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-schwalbe-one-365-reviews"
+        ],
+        "published_at": "2024-04-18",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "A comfortable all-rounder even in 25 mm, with good wet grip and enough speed through a very rainy spell."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 5,
+        "note": "One of 6 written reviews is from before fitting"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
+  }
 }

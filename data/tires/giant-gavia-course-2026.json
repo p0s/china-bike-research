@@ -75,5 +75,56 @@
     "bikeradar-giant-founder-2026-02-17"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "giant-gavia-course-2026-gb-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "2026 Gavia Course as pictured on Giant's product page.",
+    "credit": "Giant",
+    "alt": "Giant Gavia Course 2026 tubeless road tire shown as a full ring",
+    "remote_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_675%2Cq_80%2Cw_900/lhdt3ft2uhwakmqcydfe/Gavia-Course-Tire-340000335340000336-2.jpg",
+    "thumb_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_180%2Cq_80%2Cw_240/lhdt3ft2uhwakmqcydfe/Gavia-Course-Tire-340000335340000336-2.jpg",
+    "width": 900,
+    "height": 675,
+    "source_media_sha256": "8e2cf26c9a611e2e607314a5e2924b92de289555f7b4199a5fab183a0ced8f65",
+    "source_media_bytes": 15888,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Giant",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this exact model; shop and promotional posts, questions, mounting-only impressions, generic praise and reports about other models were left out.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "A technical unboxing and mounting post only; earlier Course 0 reports are not transferred"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

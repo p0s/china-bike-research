@@ -225,7 +225,9 @@ test('every referenced model has an attributable photo and shared trims are expl
     for (const photo of postPhotos(post)) {
       const resolved = resolveBlogPhoto(ctx, photo.id);
       assert.ok(photo.alt.en && photo.alt['zh-Hans'] && photo.note.en && photo.note['zh-Hans']);
-      assert.equal(resolved.image.hosting.mode, 'local');
+      // One reviewed maker-hosted photo is admitted; every other inline photo stays a local copy.
+      if (photo.id === 'elves-mori-aerox-official-embed') assert.equal(resolved.image.hosting.mode, 'remote');
+      else assert.equal(resolved.image.hosting.mode, 'local');
       const targetIds = resolved.image.candidate_id ? [resolved.image.candidate_id]
         : data.variants.filter((variant) => variant.platform_id === resolved.image.platform_id).map((variant) => variant.id);
       for (const id of photo.model_ids) assert.ok(targetIds.includes(id), 'Photo must match the actual model platform');

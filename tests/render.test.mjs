@@ -214,6 +214,23 @@ test('products without verified photos omit the image region and social placehol
   assert.doesNotMatch(renderImageSources(context), /project-placeholder|Project-owned product image placeholders|assets\/images\/placeholders/);
 });
 
+test('image credits list each model once and keep every photo with its credit and source', () => {
+  const credits = renderImageSources(homeContext);
+  const products = credits.slice(credits.indexOf('<h2 class="credit-section-title">Product photos</h2>'), credits.indexOf('<h2 class="credit-section-title">Component photos</h2>'));
+  const headings = [...products.matchAll(/<article><h3><a href="([^"]+)">/g)].map((match) => match[1]);
+  const catalogIds = new Set(candidates.map((entry) => entry.candidate.id));
+  const shown = data.images.filter((image) => image.media_type !== 'project-placeholder' && image.buyer_visibility !== 'omit' && (!image.candidate_id || catalogIds.has(image.candidate_id)));
+
+  assert.doesNotMatch(products, /\?scope=all/);
+  assert.equal(new Set(headings).size, headings.length);
+  assert.equal((products.match(/<img /g) ?? []).length, shown.length);
+  assert.ok(headings.length < shown.length);
+  for (const group of products.match(/<li><div class="credit-thumbs">[\s\S]*?<\/li>/g)) {
+    const photos = (group.match(/<img /g) ?? []).length;
+    assert.match(group, photos > 1 ? new RegExp(` · ${photos} photos`) : /<p>(?![^<]* photos)/);
+  }
+});
+
 test('homepage omits developer-facing dashboards and legacy sections', () => {
   assert.doesNotMatch(html, /decision-ready configurations/i);
   assert.doesNotMatch(html, /Current quick picks/i);
@@ -258,7 +275,7 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(quickDetail, /Shimano Ultegra R8170 Di2 2×12/);
   assert.match(quickDetail, /Buying context/);
   assert.match(quickDetail, /About Quick/);
-  assert.match(quickDetail, /Price record and sources/);
+  assert.match(quickDetail, /<h2 id="price-records-title">Price history<\/h2>[\s\S]*<h2 id="source-records-title">Sources<\/h2>/);
   assert.match(quickDetail, /property="og:type" content="product"/);
   assert.match(quickDetail, /"@type":"Thing"/);
   assert.doesNotMatch(quickDetail, /"@type":"Product"/);
@@ -501,7 +518,7 @@ test('superseded published bikes show availability instead of a historical price
   assert.match(detail, /<strong>Not sold new<\/strong>/);
   assert.match(detail, /Superseded by 2025 Gravel V3/);
   assert.match(detail, /Historical price for a superseded model/);
-  assert.match(detail, /¥3,991[\s\S]*Historical listing option · Historical price for a superseded model/);
+  assert.match(detail, /¥3,991[\s\S]*Historical listing option<span>Historical price for a superseded model<\/span>/);
   assert.doesNotMatch(detail, /The recorded complete-bike price is ¥3,991/);
 });
 
@@ -621,7 +638,7 @@ test('category-specific details stay accessible while price state is visible', (
   assert.doesNotMatch(html, /Why Best value|class="pick-flag"|class="verify-flag"/);
   const valueModel = renderModel({ data, products, base: '' }, products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds'));
   assert.match(valueModel, /Wireless electronic hydraulic 2×12, carbon frame\/fork\/cockpit, and T47/);
-  assert.match(valueModel, /<summary>Value assessment<\/summary>/);
+  assert.match(valueModel, /<div class="value-assessment"><h3>Value assessment<\/h3>/);
 });
 
 test('model evidence labels claims, source roles, confidence, and inaccessible snapshots', () => {
@@ -636,7 +653,7 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   }, product);
   assert.match(detail, /<dt>Weight<\/dt><dd>9\.9 kg/);
   assert.match(detail, /Each source is labelled by what it supports/);
-  assert.match(detail, /Twitter Bike USA · Regional distributor storefront · Image/);
+  assert.match(detail, /Twitter Bike USA · Regional distributor storefront<\/span><span>Image: /);
   assert.match(detail, /Regional US distributor source/);
   assert.match(detail, /Historical source annotation:/);
   assert.match(detail, /Image: High/);
@@ -645,7 +662,7 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   assert.doesNotMatch(detail, /The short version/);
   assert.match(detail, /¥4,951/);
   assert.match(detail, /Best for:<\/strong> electronic shifting value, budget performance, drop-bar gravel/);
-  assert.match(detail, /<section class="detail-section specification-snapshot"[^>]*>[\s\S]*Specifications and evidence/);
+  assert.match(detail, /<section class="detail-section specification-snapshot"[^>]*><h2 id="specification-snapshot-title">Specifications<\/h2>/);
   assert.match(detail, /Ride and buying context/);
   assert.match(detail, /About Twitter/i);
   assert.doesNotMatch(detail, /Ask the seller in Chinese|seller-message/);
@@ -839,7 +856,7 @@ test('model pages pair visible breadcrumbs with source and freshness context', (
   assert.match(detail, /data-catalog-back/);
   assert.match(detail, /Evidence reviewed through <time datetime="2026-09-25">/);
   assert.match(detail, /href="#source-records">View sources<\/a>/);
-  assert.match(detail, /<details class="detail-panel" id="source-records" open>/);
+  assert.match(detail, /<section class="model-sources" id="source-records"/);
 });
 
 test('methodology visibly supports its Dataset and DataDownload schema', () => {
@@ -893,7 +910,7 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   const publishedDetail = renderModel(context, publishedFrame);
   assert.match(publishedDetail, /data-model-frame-price-low="3987" data-model-frame-price-high="3987" data-model-default-allowance="6000"/);
   assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,987/);
-  assert.match(publishedDetail, /data-evidence-href="#source-records"/);
+  assert.match(publishedDetail, /data-evidence-href="#price-records"/);
   assert.match(publishedDetail, /Included package/);
   assert.doesNotMatch(publishedDetail, /<dt>Drivetrain<\/dt>/);
 
@@ -943,7 +960,7 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
   }, product);
   assert.match(detail, /current exact model manufacturer evidence/);
   assert.match(detail, /Promotion-conditional price/);
-  assert.match(detail, /Specifications and evidence/);
+  assert.match(detail, /<h2 id="specification-snapshot-title">Specifications<\/h2>/);
   assert.match(detail, /700C carbon wheelset, 24H/);
   assert.match(detail, /5 sizes \(440–560\) · stack 509\.3–580\.5 mm · reach 358\.4–390\.3 mm/);
   assert.match(detail, /Current exact SAVA global-direct storefront lists US\$1,699.*add-to-cart/);
@@ -1140,8 +1157,9 @@ test('model decision panel links the exact purchase route instead of a broad ava
   const product = products.find(item => item.variant.id === 'twitter-v3-wheeltop-eds');
   const detail = renderModel(homeContext, product);
   const panel = detail.match(/<dl class="model-facts">[\s\S]*?<\/dl>/)[0];
-  assert.match(panel, /Where to buy<\/dt><dd><a href="#model-purchase-route">Purchase route and checks<\/a>/);
-  assert.match(detail, /id="model-purchase-route">The official US store/);
+  // A disclosed store link for the exact build may precede the purchase-route link.
+  assert.match(panel, /Where to buy<\/dt><dd><span class="shop-link">[\s\S]*?<\/span><a href="#model-purchase-route">Purchase route and checks<\/a><\/dd>/);
+  assert.match(detail, /id="model-purchase-route"><strong>Purchase route<\/strong> The official US store/);
   assert.match(detail, /Mainland(?: China)? stock and checkout remain unverified/);
   assert.doesNotMatch(panel, /Domestic sales in mainland China/);
   assert.doesNotMatch(detail, /unpublished\. frame;/);

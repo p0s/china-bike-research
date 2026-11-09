@@ -68,8 +68,93 @@
     "maxxis-high-road-gen-2-official-2026-11-01",
     "maxxis-road-range-us-2026-11-01",
     "maxxis-how-we-began-2026-11-01",
-    "maxxis-high-road-gen3-international-2026-11-01"
+    "maxxis-high-road-gen3-international-2026-11-01",
+    "xhs-maxxis-high-road-28c-retired-2025-06-11",
+    "xhs-maxxis-high-road-gen2-front-sl-rear"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "maxxis-high-road-gen-2-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Maxxis render of the High Road on its US product page; Maxxis shows this render for the clincher and TR versions, and the construction is not visible.",
+    "credit": "Maxxis",
+    "alt": "Maxxis High Road road tire render with sidewall logo",
+    "remote_url": "https://www.maxxis.com/us/wp-content/uploads/sites/13/2021/03/high_road_rough-2_Camera_1-scaled.jpg",
+    "width": 2560,
+    "height": 1920,
+    "source_media_sha256": "6bf86812601e075bb9da747677233972ca914f88dac30d743e9a02edf2d1b5dd",
+    "source_media_bytes": 306221,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Maxxis",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and every Bicycle Rolling Resistance reader comment on this tire's test pages. Counted only owners who describe their own riding of this exact model and, where it is sold in more than one construction or generation, say which; seller and shop posts, questions, unmounted impressions and reports about other models were left out. High Road SL reports are a separate model and are not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-maxxis-high-road-28c-retired-2025-06-11"
+        ],
+        "published_at": "2025-06-11",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Over half a year",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "wet": "mixed",
+          "speed": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "Light and very grippy in the dry, with usable grip in the rain and good on mountain descents, but slow-rolling on the flat; the casing tore in several places after over half a year of rough roads."
+      },
+      {
+        "source_ids": [
+          "xhs-maxxis-high-road-gen2-front-sl-rear"
+        ],
+        "width_mm": 32,
+        "setup": null,
+        "exposure": "2,000 km",
+        "codes": {
+          "wear": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "A 32 mm second-generation front: no flat or puncture in 2,000 km and the wear marker still clear."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "Two owner posts"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "Only the 2019 first generation was tested"
+      }
+    ]
+  }
 }

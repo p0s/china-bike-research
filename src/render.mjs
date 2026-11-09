@@ -8,13 +8,14 @@ import { candidateIndexable } from './lib/indexing.mjs';
 import { productLinkContext } from './lib/analytics-context.mjs';
 import { clockLabel, renderVideoEntries, timestampUrl } from './lib/videos.mjs';
 import { opinionAggregate } from './lib/opinions.mjs';
+import { shoppingLinksHtml } from './lib/shopping-links.mjs';
 import { DESTINATION_GROUPS, PRICE_CURRENCIES, convertPrice, countryName, regionalPrice } from '../assets/regional-prices.js';
 import { priceDisplay, pricePopoverLines } from '../assets/price-display.js';
 import { clearanceParts, weightParts, normalizeSpeeds, catalogClearance, unsupportedTireLayouts } from '../assets/catalog-format.js';
 import { priceEvidence, evidencePriceBounds } from './lib/price-evidence.mjs';
 import { chinaPriceBasis, latestExchangeRates } from './lib/regional-prices.mjs';
 import { candidateShiftingClass, variantShiftingClass } from './lib/shifting.mjs';
-import { WET_WIDTHS, budgetShortlist, comparableRollingTest, headlineTest, measuredWetGrip, referenceSize, sizeInRange, sizeLabel, tireGroups, tireShortlists } from './lib/tires.mjs';
+import { OWNER_ASPECTS, OWNER_CODES, OWNER_RATING_MIN, WET_WIDTHS, budgetShortlist, comparableRollingTest, headlineTest, measuredWetGrip, ownerCheckStatus, ownerRatings, referenceSize, sizeInRange, sizeLabel, tireGroups, tireShortlists } from './lib/tires.mjs';
 import {
   categoryLabel,
   categoryFamily,
@@ -226,14 +227,15 @@ function modelGalleryFigure(ctx, entry, renderImage, fallbackAlt) {
     // note so changing the selected view preserves the audited media scope.
     return [translate(original, ctx.locale), images.length === 1 ? translate(count, ctx.locale) : ''].filter(Boolean).join(' · ');
   };
-  const sourceLink = (image, index, attributes = '') => sourceUrl(image, index)
-    ? `<a href="${escapeAttr(sourceUrl(image, index))}" rel="noreferrer"${attributes}>source</a>`
-    : attributes ? `<a href="#" rel="noreferrer"${attributes} hidden>source</a>` : '';
-  const primary = images[0];
-  const selected = `<figure class="model-figure"><span class="product-image hero-image">${renderImage(primary, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><figcaption aria-live="polite"><span data-localized-caption data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span> ${sourceLink(primary, 0, ' data-gallery-source-link')}${imageScope(primary, true)}</figcaption></figure>`;
-  const thumbs = images.map((image, index) => `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'))}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? fallbackAlt)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(sourceUrl(image, index) ?? '')}" data-gallery-note="${escapeAttr(image.display_note ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${renderImage(image, { className: 'gallery-thumb-image', decorative: true })}</button>`).join('');
-  const all = images.map((image, index) => `<li><figure><a href="${escapeAttr(imageUrl(ctx, image))}" aria-label="${escapeAttr(image.alt ?? fallbackAlt)}">${renderImage(image, {})}</a><figcaption><span data-localized-caption>${escapeHtml(caption(image, index))}</span> ${sourceLink(image, index)}${imageScope(image)}</figcaption></figure></li>`).join('');
-  return `<div class="model-gallery" data-image-gallery>${selected}${images.length > 1 ? `<p class="gallery-rail-hint">Scroll image views or use arrow keys, Home and End.</p><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div>` : ''}<details class="gallery-all" data-gallery-all><summary><span>All images</span> (${images.length})</summary><ol class="gallery-all-images">${all}</ol></details></div>`;
+  const sourceLink = (image, index) => sourceUrl(image, index)
+    ? `<a href="${escapeAttr(sourceUrl(image, index))}" rel="noreferrer">source</a>`
+    : '';
+  // One slideshow: every view is a slide with its own caption, source and scope note,
+  // reachable by swiping, by the thumbnail links (fragment navigation works without
+  // JavaScript) or by the keyboard, so no second "all images" list repeats it.
+  const slides = images.map((image, index) => `<figure class="model-figure gallery-slide" id="gallery-view-${index + 1}" data-gallery-slide${images.length > 1 ? ` aria-label="${escapeAttr(translate(`Image ${index + 1} of ${images.length}`, ctx.locale))}"` : ''}><span class="product-image hero-image">${renderImage(image, { hero: index === 0, className: 'gallery-hero-image', galleryHero: true })}</span><figcaption><span data-localized-caption data-image-caption-status>${escapeHtml(caption(image, index))}</span> ${sourceLink(image, index)}${imageScope(image)}</figcaption></figure>`).join('');
+  const thumbs = images.map((image, index) => `<a class="gallery-thumb" href="#gallery-view-${index + 1}" aria-label="${escapeAttr(`Show ${image.label ?? `product image ${index + 1}`} — ${accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative')}`)}"${index === 0 ? ' aria-current="true"' : ''} data-gallery-thumb${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${renderImage(image, { className: 'gallery-thumb-image', decorative: true })}</a>`).join('');
+  return `<div class="model-gallery" data-image-gallery><div class="gallery-track" data-gallery-track${images.length > 1 ? ` role="region" aria-roledescription="${escapeAttr(translate('slideshow', ctx.locale))}" aria-label="${escapeAttr(translate('Product images', ctx.locale))}" tabindex="0"` : ''}>${slides}</div>${images.length > 1 ? `<p class="sr-only" id="gallery-rail-hint">${escapeHtml(translate('Swipe or scroll the photos, or use the arrow keys, Home and End on the thumbnails.', ctx.locale))}</p><div class="model-gallery-strip" role="group" aria-label="${escapeAttr(translate('Product image views', ctx.locale))}" aria-describedby="gallery-rail-hint">${thumbs}</div>` : ''}</div>`;
 }
 
 function candidateGalleryFigure(ctx, entry) {
@@ -452,9 +454,21 @@ function clearancePopoverLines(product) {
   ].filter(Boolean);
 }
 
-function clearanceEvidence(ctx, product) {
-  const lines = clearanceTooltipLines(product).filter(Boolean);
-  return lines.length ? `<details class="detail-panel" id="tire-clearance-evidence"><summary>Tire clearance evidence</summary><div class="detail-panel-body">${lines.map((line) => `<p>${escapeHtml(line)}</p>`).join('')}${clearanceFieldReportNote(product)}</div></details>` : '';
+// Fit and frame evidence points stay visible as one compact list grouped by topic; the
+// decision panel's info buttons link to each group.
+function modelEvidencePoints(product) {
+  const groups = [
+    ['tire-clearance-evidence', 'Tire clearance', clearanceTooltipLines(product).filter(Boolean), clearanceFieldReportNote(product)],
+    ['frame-evidence', 'Frame', frameTooltipLines(product).filter(Boolean), '']
+  ].filter(([, , lines]) => lines.length);
+  if (!groups.length) return '';
+  return `<section class="model-evidence" aria-labelledby="model-evidence-title"><h2 id="model-evidence-title">Fit and frame evidence</h2><dl class="evidence-points">${groups.map(([id, label, lines, extra]) => `<div id="${id}"><dt>${escapeHtml(label)}</dt><dd><ul>${lines.map((line) => `<li>${escapeHtml(line)}</li>`).join('')}</ul>${extra}</dd></div>`).join('')}</dl></section>`;
+}
+
+// Price records read as one dated table: newest first, amount, type and status, conditions.
+function priceHistoryTable(rows) {
+  if (!rows.length) return '';
+  return `<table class="price-history"><thead><tr><th scope="col">Observed</th><th scope="col">Price</th><th scope="col">Type</th><th scope="col">Conditions</th></tr></thead><tbody>${rows.map((row) => `<tr><td class="price-history-date" data-label="Observed">${row.date ? `<time datetime="${escapeAttr(row.date)}">${escapeHtml(row.date)}</time>` : escapeHtml('Date not recorded')}</td><td class="price-history-amount" data-label="Price">${escapeHtml(row.amount)}</td><td class="price-history-type" data-label="Type">${row.type.map((part, index) => index ? `<span>${escapeHtml(part)}</span>` : escapeHtml(part)).join('')}</td><td class="price-history-conditions" data-label="Conditions">${escapeHtml(row.conditions || '—')}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function clearanceFieldReportNote(product) {
@@ -703,7 +717,8 @@ function recommendationFor(ctx, product) {
 
 function recommendationNotes(recommendation) {
   if (!recommendation) return '';
-  return `<details class="detail-panel"><summary>Value assessment</summary><div class="detail-panel-body">${[recommendation.price_label, recommendation.reason, recommendation.caveat].filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join('')}</div></details>`;
+  const lines = [recommendation.price_label, recommendation.reason, recommendation.caveat].filter(Boolean);
+  return lines.length ? `<div class="value-assessment"><h3>Value assessment</h3>${lines.map((line) => `<p>${escapeHtml(line)}</p>`).join('')}</div>` : '';
 }
 
 function bestForLabel(product) {
@@ -759,7 +774,7 @@ function catalogPriceCell(ctx, summary) {
     sort: Number.isFinite(projection.display.low) && !summary.priceUnavailable ? projection.display.low : '',
     filter: Number.isFinite(projection.high) ? projection.high : '',
     // Unknown prices stay a quiet dash, like every other unrecorded cell.
-    html: `<div class="catalog-cell price-cell" role="cell">${summary.priceDetails || summary.priceDate ? `<button type="button" class="metric-main price-button" data-calculated-price data-price-details="${escapeAttr(summary.priceDate ?? '')}" data-evidence-href="${escapeAttr(`${summary.url}#source-records`)}" data-evidence-label="Full price record and conditions" aria-expanded="false">${escapeHtml(shown.headline)}</button>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${!shown.basis || (shown.tone === 'unknown' && !summary.priceState) ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
+    html: `<div class="catalog-cell price-cell" role="cell">${summary.priceDetails || summary.priceDate ? `<button type="button" class="metric-main price-button" data-calculated-price data-price-details="${escapeAttr(summary.priceDate ?? '')}" data-evidence-href="${escapeAttr(`${summary.url}#price-records`)}" data-evidence-label="Full price record and conditions" aria-expanded="false">${escapeHtml(shown.headline)}</button>` : `<span class="metric-main" data-calculated-price>${escapeHtml(shown.headline)}</span>`}${!shown.basis || (shown.tone === 'unknown' && !summary.priceState) ? '' : `<span class="metric-sub price-state${tone}">${escapeHtml(shown.basis)}</span>`}</div>`
   };
 }
 
@@ -1247,15 +1262,23 @@ function candidateSourceList(ctx, entry) {
     ? `<p class="source-direct-link">Direct candidate link: <a href="${escapeAttr(directUrl)}" rel="noreferrer">open recorded source</a></p>`
     : '';
   if (!sources.size && !directLink) return '<p class="source-intro">No public source link is recorded yet.</p>';
-  return `<div class="source-list"><p class="source-intro">These sources support this model page; individual claims retain the confidence of their cited source.</p>${directLink}${[...sources.values()].map((source) => {
-    const sourceUrl = buyerFacingSourceUrl(ctx, source);
+  return `<p class="source-intro">These sources support this model page; individual claims retain the confidence of their cited source.</p>${directLink}<ol class="source-list" data-source-list>${[...sources.values()].map((source) => {
     const confidence = ['identity', 'specification', 'price']
       .filter((key) => source.reliability?.[key])
       .map((key) => `${sentenceLabel(key)}: ${confidenceLabel(source.reliability[key])}`)
       .join(' · ');
-    const unavailable = source.url ? '' : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))}</span>${confidence ? `<span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>` : `<span>Accessed ${escapeHtml(source.accessed_at)}</span>`}${unavailable}${sourceAuthorityNote(source)}${source.notes ? `<p>${source.classification_history ? '<strong>Historical source annotation:</strong> ' : ''}${escapeHtml(candidatePublicText(source.notes))}</p>` : ''}</div>`;
-  }).join('')}</div>`;
+    return sourceListItem(ctx, source, confidence ? `${confidence} · accessed ${source.accessed_at}` : `Accessed ${source.accessed_at}`, source.notes ? candidatePublicText(source.notes) : '');
+  }).join('')}</ol>`;
+}
+
+// One compact reference per source: linked title, one metadata line (publisher and type,
+// then each supported role with its confidence and the access date), then its annotation.
+function sourceListItem(ctx, source, confidence, notes) {
+  const sourceUrl = buyerFacingSourceUrl(ctx, source);
+  const unavailable = source.url ? '' : source.type === 'project-asset'
+    ? '<span class="source-local">Project-owned local asset</span>'
+    : '<span class="source-unavailable">Archived evidence; no public link</span>';
+  return `<li class="source-item" id="source-${escapeAttr(source.id)}"><p class="source-title">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}</p><p class="source-meta"><span>${escapeHtml([source.publisher, sentenceLabel(source.type)].filter(Boolean).join(' · '))}</span><span>${escapeHtml(confidence)}</span>${unavailable}</p>${sourceAuthorityNote(source)}${notes ? `<p class="source-note" data-source-note>${source.classification_history ? '<strong>Historical source annotation:</strong> ' : ''}${escapeHtml(notes)}</p>` : ''}</li>`;
 }
 
 function sourceUsages(ctx, product) {
@@ -1286,15 +1309,8 @@ function productOutboundAttribute(source) {
 
 function sourceList(ctx, product) {
   const usages = sourceUsages(ctx, product);
-  return `<div class="source-list"><p class="source-intro">Each source is labelled by what it supports. Confidence applies only to that role.</p>${usages.map(({ source, roles }) => {
-    const sourceUrl = buyerFacingSourceUrl(ctx, source);
-    const roleLabels = roles.map(({ role }) => role).join(' · ');
-    const confidence = roles.map(({ role, reliabilityKey }) => `${role}: ${confidenceLabel(source.reliability?.[reliabilityKey])}`).join(' · ');
-    const unavailable = source.url ? '' : source.type === 'project-asset'
-      ? '<span class="source-local">Project-owned local asset</span>'
-      : '<span class="source-unavailable">Archived evidence; no public link</span>';
-    return `<div class="source-item">${sourceUrl ? `<a href="${escapeAttr(sourceUrl)}" rel="noreferrer"${productOutboundAttribute(source)}>${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${sourceAuthorityNote(source)}${source.notes ? `<p>${source.classification_history ? '<strong>Historical source annotation:</strong> ' : ''}${escapeHtml(source.notes)}</p>` : ''}</div>`;
-  }).join('')}</div>`;
+  // Each role carries its own confidence, so the role list is not repeated separately.
+  return `<p class="source-intro">Each source is labelled by what it supports. Confidence applies only to that role.</p><ol class="source-list" data-source-list>${usages.map(({ source, roles }) => sourceListItem(ctx, source, `${roles.map(({ role, reliabilityKey }) => `${role}: ${confidenceLabel(source.reliability?.[reliabilityKey])}`).join(' · ')} · accessed ${source.accessed_at}`, source.notes ?? '')).join('')}</ol>`;
 }
 
 // The first two players embed lazily; further videos load only when requested.
@@ -1609,10 +1625,13 @@ export function renderModel(ctx, product) {
     ['Weight', Object.values(weightParts(weightLabel(product), variant.kind, weightBasisDescription(product))).filter(Boolean).join(' · '), weightBasisDescription(product) ? infoTip('Weight basis', [weightBasisDescription(product)], { 'data-evidence-href': '#specification-snapshot-title' }) : ''],
     ['Frame standard', frameStandard(product), ''],
     ...(geometrySummary(platform) ? [['Fit range', geometrySummary(platform), '']] : []),
-    ['Where to buy', variant.purchase_route ? '' : availabilityLabel(platform.china_availability), variant.purchase_route ? '<a href="#model-purchase-route">Purchase route and checks</a>' : '']
+    ['Where to buy', variant.purchase_route ? '' : availabilityLabel(platform.china_availability), `${shoppingLinksHtml(ctx.data, 'variant', variant.id)}${variant.purchase_route ? '<a href="#model-purchase-route">Purchase route and checks</a>' : ''}`]
   ];
   const verifyItems = (variant.editorial.caveats ?? []).map((item) => translate(String(item).trim().replace(/[.;]+$/, ''), ctx.locale)).filter(Boolean);
   const specificationRows = publishedSpecificationRows(product);
+  // Purchase-route wording sits with the price history; fit and frame evidence follow it.
+  const purchaseRoute = specificationRows.find(([label]) => label === 'Purchase route')?.[1] ?? '';
+  const evidencePoints = modelEvidencePoints(product);
   const storyTitle = 'Overview';
   const reviewByline = variant.editorial.review
     ? `<p class="evidence-context" data-review-basis="source-research"><a href="${url(ctx.base, '/methodology/')}">Chinese Bikes</a><span>${reviewBasisNotice}</span></p>`
@@ -1621,24 +1640,22 @@ export function renderModel(ctx, product) {
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
   const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a></div><h1>${escapeHtml(variant.name)}</h1><p class="model-subline">${escapeHtml([...productCategories(product).map(categoryLabel), !/frameset/i.test(variant.name) && variant.kind === 'frameset' ? 'frameset' : ''].filter(Boolean).join(' · '))}</p>${aliasLine(aliasNames(platform, variant), 'p', 'model-subline model-aliases', variant.alias_note ?? platform.alias_note ?? '')}</header><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
-    <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', pricePopoverLines(summary), { 'data-evidence-href': '#source-records', 'data-evidence-label': 'Full price record and conditions' })}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#source-records">All price records</a>${goodBuyThreshold ? `<span>${variant.kind === 'frameset' ? 'Frameset' : 'Complete-bike'} good-buy reference: below ${escapeHtml(formatCny(goodBuyThreshold))}</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
+    <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', pricePopoverLines(summary), { 'data-evidence-href': '#price-records', 'data-evidence-label': 'Full price record and conditions' })}<span class="price-state ${priceTone}">${escapeHtml(priceSubline)}</span><span class="model-price-links"><a href="#price-records">All price records</a>${goodBuyThreshold ? `<span>${variant.kind === 'frameset' ? 'Frameset' : 'Complete-bike'} good-buy reference: below ${escapeHtml(formatCny(goodBuyThreshold))}</span>` : ''}</span></div><div class="model-actions"><button class="primary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="secondary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
   </div>
-  <nav class="model-sections" aria-label="On this page"><a href="#model-story-title">Brief</a><a href="#specification-snapshot-title">Specifications &amp; evidence</a>${verifyItems.length ? '<a href="#buying-checks">Buying checks</a>' : ''}${platform.frame.geometry?.sizes?.length ? '<a href="#model-geometry-title">Geometry</a>' : ''}<a href="#buying-context-title">Ride and buying context</a>${product.opinions?.opinions?.length ? '<a href="#opinions">Opinions</a>' : ''}${videos?.some((video) => video.provider === 'youtube') ? '<a href="#model-videos">Videos</a>' : ''}<a href="#source-records">Price records &amp; sources</a></nav>
+  <nav class="model-sections" aria-label="On this page"><a href="#model-story-title">Brief</a>${verifyItems.length ? '<a href="#buying-checks-title">Buying checks</a>' : ''}<a href="#specification-snapshot-title">Specifications</a><a href="#price-records-title">Prices</a>${evidencePoints ? '<a href="#model-evidence-title">Fit &amp; frame evidence</a>' : ''}${platform.frame.geometry?.sizes?.length ? '<a href="#model-geometry-title">Geometry</a>' : ''}<a href="#buying-context-title">Ride and buying context</a>${product.opinions?.opinions?.length ? '<a href="#opinions">Opinions</a>' : ''}${videos?.some((video) => video.provider === 'youtube') ? '<a href="#model-videos">Videos</a>' : ''}<a href="#source-records-title">Sources</a></nav>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
-    <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p>${bestFor ? `<p><strong>${escapeHtml(translate('Best for', ctx.locale))}:</strong> ${escapeHtml(bestFor)}</p>` : ''}</section>
-    ${verifyItems.length ? `<details class="detail-panel" id="buying-checks" open><summary>Buying checks (${verifyItems.length})</summary><div class="detail-panel-body"><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></details>` : ''}
-
-    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd${label === 'Purchase route' ? ' id="model-purchase-route"' : ''}>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div>${metric.kind === 'discipline' ? '' : `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div>`}${metric.details.length ? `<div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' '))}</dd></div>` : ''}<div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div></dl></section>
-    ${clearanceEvidence(ctx, product)}
-    <details class="detail-panel" id="frame-evidence"><summary>Frame evidence</summary><div class="detail-panel-body">${frameTooltipLines(product).filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join('')}</div></details>
+    <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p>${bestFor ? `<p><strong>${escapeHtml(translate('Best for', ctx.locale))}:</strong> ${escapeHtml(bestFor)}</p>` : ''}${recommendationNotes(recommendationFor(ctx, product))}</section>
+    ${verifyItems.length ? `<section class="buying-checks" id="buying-checks" aria-labelledby="buying-checks-title"><h2 id="buying-checks-title">Buying checks</h2><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : ''}
+    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications</h2><dl class="detail-list">${specificationRows.filter(([label]) => label !== 'Purchase route').map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div>${metric.kind === 'discipline' ? '' : `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div>`}${metric.details.length ? `<div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' '))}</dd></div>` : ''}<div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div></dl></section>
+    <section class="model-prices" id="price-records" aria-labelledby="price-records-title"><h2 id="price-records-title">Price history</h2>${priceHistoryTable(prices.map((price) => ({ date: price.observed_at, amount: exactPriceLabel(price), type: [sentenceLabel(price.price_type), priceStatusLabel(price.status)].filter(Boolean), conditions: price.conditions })))}${purchaseRoute ? `<p class="purchase-route" id="model-purchase-route"><strong>Purchase route</strong> ${escapeHtml(purchaseRoute)}</p>` : ''}</section>
+    ${evidencePoints}
     ${structuredGeometry(platform.frame.geometry, product.sources)}${platform.frame.geometry?.sizes?.length ? `<p class="model-geometry-link"><a href="${url(ctx.base,'/geometry/')}?a=${escapeAttr(platform.id)}">Compare this geometry ↗</a></p>` : ''}<section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p></section>
-    ${recommendationNotes(recommendationFor(ctx, product))}
     ${relatedArticleLinks(ctx, variant.id)}
     ${brandStory(brand)}
     ${opinionSection(ctx, product.opinions)}
     ${videoContext(videos)}
-    <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(exactPriceLabel(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
+    <section class="model-sources" id="source-records" aria-labelledby="source-records-title"><h2 id="source-records-title">Sources</h2>${sourceList(ctx, product)}</section>
   </div></div></section>`;
   return page(ctx, {
     title: ctx.locale === 'zh-Hans' ? `${modelName}：价格与规格` : `${modelName} — price & specifications`,
@@ -1714,7 +1731,9 @@ function brandStory(brand) {
   if (!brand) return '';
   const profile = brand.profile ?? {};
   const paragraph = profile.summary ?? brand.manufacturing?.summary ?? '';
-  return `<section class="brand-story" aria-labelledby="about-${escapeAttr(brand.id)}-title"><h2 id="about-${escapeAttr(brand.id)}-title">About ${escapeHtml(brand.name)}</h2><p>${escapeHtml(paragraph)}</p>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">${escapeHtml(brand.website_label ?? `Visit the official ${brand.name} website`)}</a>` : ''}</section>`;
+  // A brand without a summary or website gets no empty "About" heading.
+  if (!paragraph && !brand.website) return '';
+  return `<section class="brand-story" aria-labelledby="about-${escapeAttr(brand.id)}-title"><h2 id="about-${escapeAttr(brand.id)}-title">About ${escapeHtml(brand.name)}</h2>${paragraph ? `<p>${escapeHtml(paragraph)}</p>` : ''}${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">${escapeHtml(brand.website_label ?? `Visit the official ${brand.name} website`)}</a>` : ''}</section>`;
 }
 
 /** A retained twin record for the same trim stays reachable from this page; its own evidence is not merged here. */
@@ -1799,25 +1818,31 @@ export function renderCandidateModel(ctx, entry) {
   const reviewedThrough = candidateEvidenceDate(ctx, entry);
   const candidateHeroImage = imageUrl(ctx, entry.image);
   const imageFigure = candidateGalleryFigure(ctx, entry);
+  const storeLinks = shoppingLinksHtml(ctx.data, 'candidate', candidate.id);
   const storyTitle = 'Overview';
   const body = `<section class="model-page candidate-model-page"><div class="page">${breadcrumbs(ctx, pageTitle, [], { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<header class="model-identity"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1>${aliasLine(aliasNames(candidate), 'p', 'model-subline model-aliases', candidate.alias_note ?? '')}</header><div class="model-grid${imageFigure ? '' : ' has-no-image'}">
     ${imageFigure}
-    <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div>${facts.filter(([label]) => ['Frame weight', 'Complete weight', 'Tire clearance', 'Bottom bracket', 'Sizes'].includes(label)).slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}</dl></div>
+    <div class="model-summary"><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div>${facts.filter(([label]) => ['Frame weight', 'Complete weight', 'Tire clearance', 'Bottom bracket', 'Sizes'].includes(label)).slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${storeLinks ? `<div><dt>Where to buy</dt><dd>${storeLinks}</dd></div>` : ''}</dl></div>
   </div>
   <div class="model-content">
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(pageCopy?.opening ?? reason)}</p>${ctx.locale !== 'en' && ctx.locale ? `<details class="original-research"><summary>${ctx.locale === 'de' ? 'Originale Recherchehinweise (Englisch)' : '原始研究说明（英文）'}</summary><p lang="en" data-original-language>${escapeHtml(originalReason)}</p></details>` : ''}<p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${entry.kind === 'frameset' ? `<p class="package-evidence">${escapeHtml(candidatePackageFacts(entry, ctx.locale))}</p>` : ''}</section>
     ${candidate.geometry_evidence ? `<p class="geometry-evidence-warning" role="note">${escapeHtml(translate(candidate.geometry_evidence.note, ctx.locale))}</p>` : ''}
     ${candidateIdentityNote(ctx, candidate)}
-    ${candidateAlternativeBuilds(entry)}
-    <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.filter(fact => !isGeometryTableFact(fact)).map(([label, value]) => `<div><dt>${escapeHtml(label.replaceAll('_', ' '))}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
-    ${candidateGeometry(facts)}<section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
+    <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2>${ctx.locale === 'de' ? `<p>${escapeHtml(candidateGermanBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>Offene Fragen im Original (Englisch)</summary><p lang="en" data-original-language>${escapeHtml(missing.join('; '))}</p></details>` : ''}` : ctx.locale === 'zh-Hans' ? `<p>${escapeHtml(candidateChineseBuyingContext(entry))}</p>${missing.length ? `<details class="original-research"><summary>待核实事项原文（英文）</summary><p lang="en" data-original-language>${escapeHtml(missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; '))}</p></details>` : ''}` : `<p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p>`}</section>
     ${pageCopy ? `<section class="model-reading model-buyer-checks" aria-labelledby="model-buyer-checks-title"><h2 id="model-buyer-checks-title">${ctx.locale === 'zh-Hans' ? '购买前核对' : ctx.locale === 'de' ? 'Vor dem Kauf' : 'Buyer checks'}</h2><p>${escapeHtml(pageCopy.buyer_checks)}</p><p><a href="${url(ctx.base, pageCopy.guide_path)}">${escapeHtml(pageCopy.guide_text)}</a></p></section>` : ''}
+    <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.filter(fact => !isGeometryTableFact(fact)).map(([label, value]) => `<div><dt>${escapeHtml(label.replaceAll('_', ' '))}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
+    ${candidateAlternativeBuilds(entry)}
+    <section class="model-prices" id="price-records" aria-labelledby="price-records-title"><h2 id="price-records-title">Price history</h2>${entry.price || candidate.prior_price_observations?.length ? priceHistoryTable([
+      ...(entry.price ? [{ date: entry.price.observed_at, amount: formatPrice(entry.price), type: [candidatePriceRecordLabel(entry)], conditions: [entry.price.original_currency ? `${entry.price.original_amount} ${entry.price.original_currency} · ${entry.price.conversion_rate_cny_per_original_unit} CNY/${entry.price.original_currency} · ${entry.price.conversion_rate_date}` : '', entry.price.price_basis, entry.price.conditions].filter(Boolean).join(' · ') }] : []),
+      ...(candidate.prior_price_observations ?? []).map((prior) => ({ date: prior.observed_at, amount: formatPrice(prior), type: ['Historical reference', prior.price_type === 'official-conflict' ? 'Official price conflict' : ''].filter(Boolean), conditions: prior.price_basis ?? '' }))
+    ]) : '<p class="source-intro">A current price is not recorded.</p>'}</section>
+    ${candidateGeometry(facts)}
     ${relatedArticleLinks(ctx, candidate.id)}
     ${brandStory(brand)}
     ${opinionSection(ctx, entry.opinions)}
     ${videoContext(entry.videos)}
-    <details class="detail-panel" id="source-records" open><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span><p>${escapeHtml([entry.price.original_currency ? `${entry.price.original_amount} ${entry.price.original_currency} · ${entry.price.conversion_rate_cny_per_original_unit} CNY/${entry.price.original_currency} · ${entry.price.conversion_rate_date}` : '', entry.price.price_basis, entry.price.conditions].filter(Boolean).join(' · '))}</p></div>${(candidate.prior_price_observations ?? []).map((prior) => `<div><strong>${escapeHtml(formatPrice(prior))}</strong><span>${escapeHtml(prior.observed_at)} · Historical reference${prior.price_type === 'official-conflict' ? ' · Official price conflict' : ''}</span><p>${escapeHtml(prior.price_basis ?? '')}</p></div>`).join('')}</div>` : ''}${candidateSourceList(ctx, entry)}</div></details>
+    <section class="model-sources" id="source-records" aria-labelledby="source-records-title"><h2 id="source-records-title">Sources</h2>${candidateSourceList(ctx, entry)}</section>
   </div></div></section>`;
   return page(ctx, {
     title: pageCopy?.title ?? (ctx.locale === 'zh-Hans' ? `${pageTitle}：${entry.kind === 'frameset' ? '车架组' : '整车配置'}研究与来源` : `${pageTitle} — ${entry.kind === 'frameset' ? 'frameset' : 'bike build'} research`),
@@ -2324,14 +2349,14 @@ function groupsetSourceLinks(sourceIds, sourcesById) {
     : `<span>${escapeHtml(source.title)}</span>`).join('');
 }
 
-function groupsetDetailPanel(groupset, sourcesById) {
+function groupsetDetailPanel(groupset, sourcesById, storeLinks = '') {
   const priceRecords = (groupset.price_observations ?? []).length
     ? `<section><h3>Captured packages</h3><div class="price-records">${groupset.price_observations.map((observation) => `<div><strong>${escapeHtml(observation.option_label_zh ?? sentenceLabel(observation.price_type))} · ${escapeHtml(observationAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('')}</div></section>`
     : '';
   const imageNote = groupset.image
     ? `<span class="groupset-image-credit">Image: ${escapeHtml(groupset.image.credit)} · ${escapeHtml(groupset.image.subject_accuracy === 'featured-variant' ? `${groupset.image.featured_variant} shown` : 'exact family')}</span>`
     : '';
-  return `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><p class="groupset-use-case">${escapeHtml(groupset.use_case)}</p><div class="groupset-detail-grid"><section><h3>Fit</h3><dl><div><dt>Freehub</dt><dd>${escapeHtml(groupset.compatibility.freehub)}</dd></div><div><dt>Hanger</dt><dd>${escapeHtml(groupset.compatibility.hanger)}</dd></div><div><dt>Frame</dt><dd>${escapeHtml(groupset.compatibility.frame)}</dd></div><div><dt>Brake fluid</dt><dd>${escapeHtml(groupset.compatibility.brake_fluid)}</dd></div></dl></section><section><h3>Power & controls</h3><dl><div><dt>Architecture</dt><dd>${escapeHtml(groupset.architecture)}</dd></div><div><dt>Battery</dt><dd>${escapeHtml(groupset.battery)}</dd></div><div><dt>Controls</dt><dd>${escapeHtml(groupset.controls_and_app)}</dd></div></dl></section><section><h3>Package & weight</h3><dl><div><dt>Package</dt><dd>${escapeHtml(groupset.package_summary)}</dd></div><div><dt>Weight</dt><dd>${escapeHtml(groupset.weight.note)}</dd></div></dl></section></div><div class="groupset-detail-lower">${priceRecords}<section><h3>Confirm before buying</h3><ul>${groupset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(groupset.source_ids, sourcesById)}</span>${imageNote}</div></div></details>`;
+  return `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><p class="groupset-use-case">${escapeHtml(groupset.use_case)}</p><div class="groupset-detail-grid"><section><h3>Fit</h3><dl><div><dt>Freehub</dt><dd>${escapeHtml(groupset.compatibility.freehub)}</dd></div><div><dt>Hanger</dt><dd>${escapeHtml(groupset.compatibility.hanger)}</dd></div><div><dt>Frame</dt><dd>${escapeHtml(groupset.compatibility.frame)}</dd></div><div><dt>Brake fluid</dt><dd>${escapeHtml(groupset.compatibility.brake_fluid)}</dd></div></dl></section><section><h3>Power & controls</h3><dl><div><dt>Architecture</dt><dd>${escapeHtml(groupset.architecture)}</dd></div><div><dt>Battery</dt><dd>${escapeHtml(groupset.battery)}</dd></div><div><dt>Controls</dt><dd>${escapeHtml(groupset.controls_and_app)}</dd></div></dl></section><section><h3>Package & weight</h3><dl><div><dt>Package</dt><dd>${escapeHtml(groupset.package_summary)}</dd></div><div><dt>Weight</dt><dd>${escapeHtml(groupset.weight.note)}</dd></div></dl></section></div><div class="groupset-detail-lower">${priceRecords}${storeLinks ? `<section><h3>Where to buy</h3>${storeLinks}</section>` : ''}<section><h3>Confirm before buying</h3><ul>${groupset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(groupset.source_ids, sourcesById)}</span>${imageNote}</div></div></details>`;
 }
 
 function groupsetRows(ctx, groupset, sourcesById) {
@@ -2346,7 +2371,7 @@ function groupsetRows(ctx, groupset, sourcesById) {
     <td data-label="Gearing" data-column="gearing"><strong>${escapeHtml(`${groupset.shifting.chainrings} · ${groupset.shifting.cassette_speeds}`)}</strong>${maxRear ? `<span>${escapeHtml(maxRear)}</span>` : ''}</td>
     <td data-label="Setup" data-column="setup"><strong>${escapeHtml(groupsetSetupLabel(groupset))}</strong><span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
     <td data-label="Price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}${groupsetOfficialPrice(groupset) ? `<span class="groupset-official-price">${escapeHtml(groupsetOfficialPrice(groupset))}</span>` : ''}${!price && !groupsetOfficialPrice(groupset) ? '<span class="groupset-no-price">No dated price</span>' : ''}</td>
-  </tr><tr class="groupset-detail-row"><td colspan="5">${groupsetDetailPanel(groupset, sourcesById)}</td></tr></tbody>`;
+  </tr><tr class="groupset-detail-row"><td colspan="5">${groupsetDetailPanel(groupset, sourcesById, shoppingLinksHtml(ctx.data, 'groupset', groupset.id))}</td></tr></tbody>`;
 }
 
 function adjacentPriceLabel(source) {
@@ -2561,7 +2586,38 @@ const tirePackageLabels = { single: 'Per tire', pair: 'Per pair', unstated: 'Sin
 const tireDispositionLabels = { included: 'In comparison', excluded: 'Excluded', unresolved: 'Unresolved' };
 const tireWeightBasisLabels = { official: 'Maker claim', 'seller claim': 'Seller claim', measured: 'Lab measured', 'community report': 'Owner-measured' };
 const tireStanceLabels = { positive: 'Positive', mixed: 'Mixed', negative: 'Negative' };
+const tireOwnerAspectLabels = { overall: 'Overall verdict', wet: 'Wet grip', grip: 'Grip, dry or not stated', speed: 'Speed feel', punctures: 'Puncture resistance', wear: 'Tread life', casing: 'Casing durability' };
+const tireOwnerBandLabels = { favourable: 'Favourable', 'mostly-favourable': 'Mostly favourable', mixed: 'Mixed', 'mostly-unfavourable': 'Mostly unfavourable', unfavourable: 'Unfavourable' };
+const tireOwnerDepthLabels = { limited: 'limited evidence', moderate: 'moderate evidence', larger: 'larger sample' };
+const tireOwnerSetupLabels = { tubeless: 'tubeless', 'inner-tube': 'inner tube' };
+const tireOwnersLabel = (n) => `${n} ${n === 1 ? 'owner' : 'owners'}`;
+const tireOwnerRouteLabels = { xiaohongshu: 'Xiaohongshu posts', 'sigma-sports': 'Sigma Sports reviews', 'bike-components': 'bike-components reviews', 'brr-comments': 'BRR reader comments' };
+const tireOwnerOutcomeLabels = { none: 'no eligible review', 'not-listed': 'not listed', blocked: 'access blocked', pending: 'pending' };
+const tireOwnerStatusLines = { none: 'No eligible owner report found', blocked: 'Review sources blocked', pending: 'Xiaohongshu research pending' };
 const tireWetKindLabels = { measured: 'Measured', official: 'Maker claim', 'seller claim': 'Seller claim', 'community report': 'Owner report' };
+const tireImageKindLabels = { official: 'Maker photo', retailer: 'Retailer photo', 'public-post': 'Photo from an XHS post' };
+const tireImageHostLabels = { official: 'Loaded from the maker’s website', retailer: 'Loaded from the retailer’s website', 'public-post': 'Loaded from the original XHS post' };
+
+// An exact-model photo stays on its owner's server and loads lazily without sending this
+// page's address; a failed load hides it (site.js), and a missing photo has no placeholder.
+function tireImageTag(image, src, extra = '') {
+  return `<img src="${escapeAttr(src)}" alt="${escapeAttr(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-product-image${extra}>`;
+}
+
+// The row thumbnail is not a link, so a long table adds no extra tab stops; the detail
+// photo carries the source link and credit.
+function tireThumbHtml(tire) {
+  const image = tire.image;
+  if (!image) return '';
+  return `<span class="product-image groupset-image tire-image">${tireImageTag(image, image.thumb_url ?? image.remote_url)}</span>`;
+}
+
+function tirePhotoHtml(tire, sourcesById) {
+  const image = tire.image;
+  if (!image) return '';
+  const source = sourcesById.get(image.source_id);
+  return `<figure class="tire-photo">${tireImageTag(image, image.remote_url)}<figcaption><strong>${escapeHtml(tireImageKindLabels[image.kind])}</strong> <span>${escapeHtml(image.credit)}</span> <span>${escapeHtml(tireImageHostLabels[image.kind])}</span><span class="tire-photo-shown">${escapeHtml(image.shown)}</span>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml('Original source')}</a>` : ''}</figcaption></figure>`;
+}
 
 function tireAmount(observation, { exact = false } = {}) {
   const symbol = { USD: 'US$', CNY: '¥', EUR: '€', GBP: '£', CAD: 'CA$', JPY: 'JP¥' }[observation.currency] ?? `${observation.currency} `;
@@ -2579,6 +2635,37 @@ function tireTestLine(test) {
 function tirePressure(size) {
   if (!Number.isFinite(size.max_psi)) return 'Not stated';
   return `${size.max_psi} psi${Number.isFinite(size.max_bar) ? ` / ${size.max_bar} bar` : ''}`;
+}
+
+// Owner ratings (2026-11-03). The cell leads with the first rated aspect (overall verdict
+// first) and its owner count; a tire that was never coded shows the quiet unknown dash.
+function tireOwnerCell(summary, status) {
+  if (!summary.coded) return '<td data-label="Owners" data-column="owners" data-unknown><strong>—</strong></td>';
+  const lead = summary.rated[0];
+  if (!lead) return `<td data-label="Owners" data-column="owners"><strong>${escapeHtml('Not rated yet')}</strong><span>${escapeHtml(summary.owners ? `${tireOwnersLabel(summary.owners)} · fewer than ${OWNER_RATING_MIN} per aspect` : tireOwnerStatusLines[status])}</span></td>`;
+  const more = summary.rated.length - 1;
+  return `<td data-label="Owners" data-column="owners"><strong>${escapeHtml(tireOwnerBandLabels[summary.aspects[lead].rating.band])}</strong><span>${escapeHtml([tireOwnerAspectLabels[lead], tireOwnersLabel(summary.aspects[lead].n), more ? `${more} more rated` : ''].filter(Boolean).join(' · '))}</span></td>`;
+}
+
+// Every aspect keeps its own row: a rating only from at least five owners, otherwise its
+// count, and no report at all stays unknown rather than zero.
+function tireOwnerSection(tire, summary, sourcesById) {
+  if (!summary.coded) return '';
+  const tally = (pairs, label) => pairs.map(([value, count]) => `${value === null ? 'not stated' : label(value)} ×${count}`).join(' · ');
+  const rows = OWNER_ASPECTS.map((aspect) => {
+    const { counts, n, rating } = summary.aspects[aspect];
+    const split = OWNER_CODES.filter((code) => counts[code]).map((code) => `${counts[code]} ${code}`).join(' · ');
+    return `<tr><th scope="row">${escapeHtml(tireOwnerAspectLabels[aspect])}</th><td>${rating ? `<strong>${escapeHtml(tireOwnerBandLabels[rating.band])}</strong> <span>${escapeHtml(tireOwnerDepthLabels[rating.depth])}</span>` : `<span>${escapeHtml(n ? 'Not rated' : 'No owner report')}</span>`}</td><td>${n ? `${escapeHtml(tireOwnersLabel(n))} <span>${escapeHtml(split)}</span>` : '—'}</td></tr>`;
+  }).join('');
+  const reports = tire.owner_evidence.reports.map((report) => {
+    const links = report.source_ids.map((id) => sourcesById.get(id)).filter((source) => source?.url).map((source) => `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>`).join(' ');
+    const codes = Object.entries(report.codes).map(([aspect, code]) => `<span class="tire-owner-code tire-owner-${escapeAttr(code)}"><span>${escapeHtml(tireOwnerAspectLabels[aspect])}</span> <em>${escapeHtml(code)}</em></span>`).join(' ');
+    const basis = [Number.isFinite(report.width_mm) ? `${report.width_mm} mm` : '', report.setup ? tireOwnerSetupLabels[report.setup] : '', report.published_at ?? '', report.exposure ?? ''].filter(Boolean).join(' · ');
+    return `<li><p class="tire-owner-codes">${codes}${basis ? ` <span class="tire-owner-basis">${escapeHtml(basis)}</span>` : ''}</p><p>${escapeHtml(report.summary)} ${links}</p></li>`;
+  }).join('');
+  const checks = (tire.owner_evidence.checks ?? []).map((check) => `<span class="tire-owner-code"><span>${escapeHtml(tireOwnerRouteLabels[check.route])}</span> <em>${escapeHtml(check.outcome === 'counted' ? `${check.owners} counted` : tireOwnerOutcomeLabels[check.outcome])}</em>${check.note ? ` <span class="tire-owner-basis">${escapeHtml(check.note)}</span>` : ''}</span>`).join(' ');
+  const table = summary.owners ? `<div class="tire-size-table tire-owner-table" role="region" aria-label="${escapeAttr(`Owner ratings: ${tire.maker} ${tire.name}`)}" tabindex="0"><table><thead><tr><th scope="col">Aspect</th><th scope="col">Rating</th><th scope="col">Owners</th></tr></thead><tbody>${rows}</tbody></table></div>` : '';
+  return `<section class="tire-owner-ratings"><h3>Owner ratings</h3>${table}<dl class="tire-owner-coverage"><div><dt>Checked</dt><dd class="tire-owner-codes"><span>${escapeHtml(tire.owner_evidence.coded_at)}</span>${checks ? ` ${checks}` : ''}</dd></div>${summary.owners ? `<div><dt>Widths</dt><dd>${escapeHtml(tally(summary.widths, (width) => `${width} mm`))}</dd></div><div><dt>Tube or tubeless</dt><dd>${escapeHtml(tally(summary.setups, (setup) => tireOwnerSetupLabels[setup]))}</dd></div>` : ''}</dl><p>${escapeHtml(tire.owner_evidence.screening_note)}</p><p class="tire-owner-method">${escapeHtml(`Editorial coding of first-hand public reports, not star ratings given by owners. An aspect is rated only when at least ${OWNER_RATING_MIN} owners describe it; ${OWNER_RATING_MIN} is an entry threshold, not proof. Public reports are self-selected, sources differ between tires, and width, pressure, setup and roads vary between owners.`)}</p>${reports ? `<details class="tire-owner-list"><summary>${escapeHtml(`Coded owner reports (${summary.owners})`)}</summary><ul>${reports}</ul></details>` : ''}</section>`;
 }
 
 function tireRows(ctx, tire, sourcesById, rates) {
@@ -2611,29 +2698,38 @@ function tireRows(ctx, tire, sourcesById, rates) {
     return `<li><strong>${escapeHtml(tireWetKindLabels[note.kind])}:</strong> ${note.stance ? `<em>${escapeHtml(tireStanceLabels[note.stance])}</em> · ` : ''}${escapeHtml(note.summary)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
   });
   const wet = wetNotes.length || wetGrip !== null ? `<section><h3>Wet-weather evidence</h3><ul>${wetGrip !== null ? `<li><strong>${escapeHtml(tireWetKindLabels.measured)}:</strong> ${escapeHtml(`static wet grip ${wetGrip} (friction coefficient × 100) on Bicycle Rolling Resistance's wet drum. It is not a braking-distance or cornering result.`)}</li>` : ''}${wetNotes.join('')}</ul></section>` : '';
-  const owners = (tire.community ?? []).length ? `<section><h3>Owner reports</h3><ul>${tire.community.map((report) => {
+  // Whole-post notes predate owner-by-owner coding; they stay visible but never count.
+  const ownerSummary = ownerRatings(tire);
+  const owners = `${tireOwnerSection(tire, ownerSummary, sourcesById)}${(tire.community ?? []).length ? `<section><h3>Post notes</h3><p class="tire-owner-method">${escapeHtml('Whole-post summaries, not checked owner by owner and not counted in owner ratings.')}</p><ul>${tire.community.map((report) => {
     const source = sourcesById.get(report.source_id);
     return `<li><strong>${escapeHtml(tireStanceLabels[report.stance])}</strong> · ${escapeHtml(report.published_at)}: ${escapeHtml(report.summary)}${source?.url ? ` <a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.publisher)}</a>` : ''}</li>`;
-  }).join('')}</ul></section>` : '';
+  }).join('')}</ul></section>` : ''}`;
   const routes = `<dl>${['cn', 'eu', 'na'].map((region) => `<div><dt>${escapeHtml(tireRegionLabels[region])}</dt><dd>${escapeHtml(tireAvailabilityLabels[tire.availability[region]])}</dd></div>`).join('')}</dl>${tire.availability.note ? `<p>${escapeHtml(tire.availability.note)}</p>` : ''}`;
   const prices = (tire.price_observations ?? []).map((observation) => `<div><strong>${escapeHtml(tireAmount(observation, { exact: true }))}</strong><span>${escapeHtml([observation.market, observation.width_mm ? `${observation.width_mm} mm` : '', tirePackageLabels[observation.package], observation.observed_at].filter(Boolean).join(' · '))}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('');
   const sourceIds = [...new Map((tire.source_ids ?? []).map((id) => [sourcesById.get(id)?.url ?? id, id])).values()];
-  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body">${sizes}<div class="groupset-detail-grid">${construction}${tests}${wet}</div><div class="groupset-detail-lower">${owners}<section><h3>Where to buy</h3>${routes}${prices ? `<div class="price-records">${prices}</div>` : ''}</section><section><h3>Confirm before buying</h3><ul>${tire.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(sourceIds, sourcesById)}</span></div></div></details>`;
+  const details = `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body">${tirePhotoHtml(tire, sourcesById)}${sizes}<div class="groupset-detail-grid">${construction}${tests}${wet}</div><div class="groupset-detail-lower">${owners}<section><h3>Where to buy</h3>${routes}${prices ? `<div class="price-records">${prices}</div>` : ''}</section><section><h3>Confirm before buying</h3><ul>${tire.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(sourceIds, sourcesById)}</span>${tire.image ? `<span class="groupset-image-credit"><span>Photo</span> ${escapeHtml(tire.image.credit)}</span>` : ''}</div></div></details>`;
   const usd = headline && rates ? convertPrice(headline.amount, headline.currency, 'USD', rates) : null;
-  const sortData = ` data-groups="${escapeAttr(Object.entries(groups).filter(([, value]) => value).map(([key]) => key).join(' '))}" data-origin="${escapeAttr(tire.origin.group)}" data-construction="${escapeAttr(tire.construction)}"${Number.isFinite(reference?.weight_g) ? ` data-weight="${reference.weight_g}"` : ''}${comparable ? ` data-rr="${comparable.rr_w}"` : ''}${wetGrip !== null ? ` data-wet="${wetGrip}"` : ''}${Number.isFinite(usd) ? ` data-price-usd="${Math.round(usd)}"` : ''}`;
+  const sortData = ` data-groups="${escapeAttr(Object.entries(groups).filter(([, value]) => value).map(([key]) => key).join(' '))}" data-origin="${escapeAttr(tire.origin.group)}" data-construction="${escapeAttr(tire.construction)}"${Number.isFinite(reference?.weight_g) ? ` data-weight="${reference.weight_g}"` : ''}${comparable ? ` data-rr="${comparable.rr_w}"` : ''}${wetGrip !== null ? ` data-wet="${wetGrip}"` : ''}${Number.isFinite(usd) ? ` data-price-usd="${Math.round(usd)}"` : ''}${ownerSummary.owners ? ` data-owners="${ownerSummary.owners}"` : ''}`;
   const aliases = tire.aliases?.length ? `<span class="tire-aliases"><span>Also known as</span> ${escapeHtml(tire.aliases.join(', '))}</span>` : '';
   return `<tbody class="groupset-entry tire-entry" id="${escapeAttr(tire.id)}" data-tire-entry${sortData}><tr class="groupset-summary-row">
-    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(tire.name)}</strong><span>${escapeHtml(`${tire.maker} · ${tireOriginLabels[tire.origin.group] === 'International' ? tire.origin.country : tireOriginLabels[tire.origin.group]}`)}</span>${aliases}</span></div></th>
+    <th scope="row"><div class="groupset-identity${tire.image ? ' has-image' : ''}">${tireThumbHtml(tire)}<span class="groupset-name"><strong>${escapeHtml(tire.name)}</strong><span>${escapeHtml(`${tire.maker} · ${tireOriginLabels[tire.origin.group] === 'International' ? tire.origin.country : tireOriginLabels[tire.origin.group]}`)}</span>${aliases}</span></div></th>
     <td data-label="Use" data-column="best"><strong>${escapeHtml(tireUseLabels[tire.use])}</strong><span>${escapeHtml(`${tireConstructionLabels[tire.construction]} · ${tireHooklessLabels[tire.hookless]}`)}</span></td>
     <td data-label="Widths" data-column="widths"><strong>${escapeHtml(scoped.length ? `${scoped.join(' · ')} mm` : '—')}</strong><span>${escapeHtml([groupHint, others.length ? `also ${others.join(', ')} mm` : ''].filter(Boolean).join(' · '))}</span></td>
-    <td data-label="Weight" data-column="weight"><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${sizeLabel(reference)} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
-    <td data-label="Lab test" data-column="tests"><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
-    <td data-label="Price" data-column="price"><strong>${escapeHtml(headline ? tireAmount(headline) : '—')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
-  </tr><tr class="groupset-detail-row"><td colspan="6">${details}</td></tr></tbody>`;
+    <td data-label="Weight" data-column="weight"${Number.isFinite(reference?.weight_g) ? '' : ' data-unknown'}><strong>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${reference.weight_g} g` : '—')}</strong><span>${escapeHtml(Number.isFinite(reference?.weight_g) ? `${sizeLabel(reference)} mm · ${tireWeightBasisLabels[tire.weight_claim_type]}` : '')}</span></td>
+    <td data-label="Lab test" data-column="tests"${test ? '' : ' data-unknown'}><strong>${escapeHtml(test ? [Number.isFinite(test.rr_w) ? `${test.rr_w} W` : '', Number.isFinite(test.wet_grip) ? `wet ${test.wet_grip}` : ''].filter(Boolean).join(' · ') : '—')}</strong><span>${escapeHtml(test ? `BRR ${test.width_mm} mm${Number.isFinite(test.rr_psi) ? ` · ${test.rr_psi} psi` : ''}${Number.isFinite(test.puncture_tread) ? ` · tread ${test.puncture_tread}` : ''}` : '')}</span></td>
+    <td data-label="Price" data-column="price"${headline ? '' : ' data-unknown'}><strong>${escapeHtml(headline ? tireAmount(headline) : '—')}</strong><span>${escapeHtml(headline ? `${headline.market} · ${headline.observed_at}` : '')}</span></td>
+    ${tireOwnerCell(ownerSummary, ownerCheckStatus(tire))}
+  </tr><tr class="groupset-detail-row"><td colspan="7">${details}</td></tr></tbody>`;
+}
+
+// Long starting-point lists show five entries; the rest open in place and work without JavaScript.
+function tireCollapsedList(entries, visible = 5) {
+  if (entries.length <= visible + 1) return `<ol>${entries.join('')}</ol>`;
+  return `<ol>${entries.slice(0, visible).join('')}</ol><details class="tire-shortlist-more"><summary><span class="when-closed">${escapeHtml(`Show ${entries.length - visible} more tires`)}</span><span class="when-open">${escapeHtml('Show fewer')}</span></summary><ol start="${visible + 1}">${entries.slice(visible).join('')}</ol></details>`;
 }
 
 function tireShortlistItems(items, line) {
-  return `<ol>${items.map((item) => `<li><a href="#${escapeAttr(item.tire.id)}">${escapeHtml(`${item.tire.maker} ${item.tire.name}`)}</a> <span>${escapeHtml(line(item))}</span></li>`).join('')}</ol>`;
+  return tireCollapsedList(items.map((item) => `<li><a href="#${escapeAttr(item.tire.id)}">${escapeHtml(`${item.tire.maker} ${item.tire.name}`)}</a> <span>${escapeHtml(line(item))}</span></li>`));
 }
 
 function tireShortlistBlock(title, criteria, items, line) {
@@ -2670,16 +2766,39 @@ function tireBudgetHtml({ qualifying, unverified }) {
   };
   const groups = ['mainland-china', 'taiwan'].map((group) => {
     const rows = qualifying.filter((item) => item.tire.origin.group === group);
-    return `<div class="tire-shortlist"><h4>${escapeHtml(tireOriginLabels[group])}</h4>${rows.length ? `<ol>${rows.map((item) => entry(item, { verified: true })).join('')}</ol>` : `<p class="tire-criteria">${escapeHtml('No verified one-tire price within the budget yet.')}</p>`}</div>`;
+    return `<div class="tire-shortlist"><h4>${escapeHtml(tireOriginLabels[group])}</h4>${rows.length ? tireCollapsedList(rows.map((item) => entry(item, { verified: true }))) : `<p class="tire-criteria">${escapeHtml('No verified one-tire price within the budget yet.')}</p>`}</div>`;
   }).join('');
   const verdict = qualifying.some((item) => item.allSeason)
     ? 'Tires marked as a supported all-season choice meet both evidence thresholds. Others may still be good; the evidence found is thinner or conflicting.'
     : 'None of these tires has enough wet-road evidence to be called a proven all-season choice yet. The lists show what owners report, so you can weigh price against the known risks.';
-  const pending = unverified.length ? `<div class="tire-shortlist tire-budget-unverified"><h4>${escapeHtml('Listed at CNY 250 or less, but one tire or pair is not stated')}</h4><p class="tire-criteria">${escapeHtml('These listings do not establish a one-tire price, so they are not budget choices until a listing states one tire.')}</p><ol>${unverified.map((item) => entry(item, { verified: false })).join('')}</ol></div>` : '';
+  const pending = unverified.length ? `<div class="tire-shortlist tire-budget-unverified"><h4>${escapeHtml('Listed at CNY 250 or less, but one tire or pair is not stated')}</h4><p class="tire-criteria">${escapeHtml('These listings do not establish a one-tire price, so they are not budget choices until a listing states one tire.')}</p>${tireCollapsedList(unverified.map((item) => entry(item, { verified: false })))}</div>` : '';
   return `<div class="tire-budget" id="budget"><h3>Budget all-season: up to CNY 250 per tire</h3><p class="tire-budget-verdict"><strong>${escapeHtml(verdict)}</strong></p><p class="tire-criteria">${escapeHtml('Mainland China and Taiwan brands in 25–35 mm with a dated price of CNY 250 or less for one tire, before shipping. A supported all-season choice needs measured wet grip of at least 80, or at least two favourable first-hand wet reports with none against, and fewer than two reports of bulging or casing failure. Tread pattern, four-season marketing and seller copy are not wet evidence. Confidence: a lab test is strongest, agreeing owner reports are moderate, and one report or conflicting reports are weak. Ordered by wet evidence, then fewer casing reports, then price.')}</p><div class="tire-budget-grid">${groups}</div>${pending}</div>`;
 }
 
-function tireCoverageHtml(ledger, tiresById) {
+// Photo coverage: counts by photo kind and every tire without one, with the reason.
+function tireImageCoverageHtml(imageLedger, tiresById) {
+  if (!imageLedger) return '';
+  const entries = imageLedger.entries ?? [];
+  const count = (status) => entries.filter((entry) => entry.status === status).length;
+  const missing = entries.filter((entry) => entry.status === 'missing' && tiresById.has(entry.tire_id));
+  const list = missing.length ? `<ul>${missing.map((entry) => {
+    const tire = tiresById.get(entry.tire_id);
+    return `<li><a href="#${escapeAttr(tire.id)}">${escapeHtml(`${tire.maker} ${tire.name}`)}</a> ${escapeHtml(entry.reason)}</li>`;
+  }).join('')}</ul>` : '';
+  return `<h3>Photos</h3><p><strong>${escapeHtml(`${count('official')} maker · ${count('retailer')} retailer · ${count('public-post')} XHS post · ${count('missing')} without a photo`)}</strong></p><p>${escapeHtml("Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.")} <span>${escapeHtml(`reviewed ${imageLedger.as_of}`)}</span></p>${list}`;
+}
+
+// Owner-rating coverage: how many tires were coded owner by owner and how many reached a
+// rating. Uncoded tires are research still to do, not tires without owners.
+function tireOwnerCoverageHtml(tires) {
+  const summaries = tires.map((tire) => ({ tire, summary: ownerRatings(tire), status: ownerCheckStatus(tire) }));
+  const count = (status) => summaries.filter((item) => item.status === status).length;
+  const withOwners = summaries.filter((item) => item.summary.owners);
+  const list = withOwners.length ? `<ul>${withOwners.map(({ tire, summary }) => `<li><a href="#${escapeAttr(tire.id)}">${escapeHtml(`${tire.maker} ${tire.name}`)}</a> ${escapeHtml([tireOwnersLabel(summary.owners), ...(summary.rated.length ? summary.rated.map((aspect) => tireOwnerAspectLabels[aspect]) : ['no aspect rated yet'])].join(' · '))}</li>`).join('')}</ul>` : '';
+  return `<h3>Owner ratings</h3><p><strong>${escapeHtml(`${count('rated')} with a rated aspect · ${count('below')} below the threshold · ${count('none')} with no eligible owner found · ${count('blocked')} access blocked · ${count('pending')} awaiting Xiaohongshu research · ${count('unchecked')} not yet checked`)}</strong></p><p>${escapeHtml('A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.')}</p>${list}`;
+}
+
+function tireCoverageHtml(ledger, tiresById, imageLedger = null) {
   if (!ledger) return '';
   const candidates = ledger.candidates ?? [];
   const count = (disposition) => candidates.filter((candidate) => candidate.disposition === disposition).length;
@@ -2697,7 +2816,7 @@ function tireCoverageHtml(ledger, tiresById) {
     }).join('')}</div>`;
   }).join('');
   const routes = (ledger.routes ?? []).map((route) => `<li><strong>${escapeHtml(route.name)}</strong> · ${escapeHtml(route.checked_at)}: ${escapeHtml(route.summary)}</li>`).join('');
-  return `<details class="reference-guide tire-coverage" id="coverage"><summary>${escapeHtml(`Coverage: ${candidates.length} candidates from ${brands.length} brands, as of ${ledger.as_of}`)}</summary><div><p><strong>${escapeHtml(`${count('included')} included · ${count('excluded')} excluded · ${count('unresolved')} unresolved`)}</strong></p><p>${escapeHtml(ledger.scope_note)}</p><h3>Discovery routes</h3><ul>${routes}</ul><h3>Candidates by brand origin</h3>${byGroup}</div></details>`;
+  return `<details class="reference-guide tire-coverage" id="coverage"><summary>${escapeHtml(`Coverage: ${candidates.length} candidates from ${brands.length} brands, as of ${ledger.as_of}`)}</summary><div><p><strong>${escapeHtml(`${count('included')} included · ${count('excluded')} excluded · ${count('unresolved')} unresolved`)}</strong></p><p>${escapeHtml(ledger.scope_note)}</p><h3>Discovery routes</h3><ul>${routes}</ul><h3>Candidates by brand origin</h3>${byGroup}${tireImageCoverageHtml(imageLedger, tiresById)}${tireOwnerCoverageHtml([...tiresById.values()])}</div></details>`;
 }
 
 export function renderTires(ctx) {
@@ -2709,6 +2828,7 @@ export function renderTires(ctx) {
   const tiresById = new Map(tires.map((tire) => [tire.id, tire]));
   const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
   const ledger = [...(ctx.data.tireCoverage ?? [])].sort((a, b) => b.as_of.localeCompare(a.as_of))[0] ?? null;
+  const imageLedger = [...(ctx.data.tireImages ?? [])].sort((a, b) => b.as_of.localeCompare(a.as_of))[0] ?? null;
   const rates = [...(ctx.data.exchangeRates ?? [])].sort((a, b) => b.rate_date.localeCompare(a.rate_date))[0] ?? null;
   const reviewed = latestDate(tires.map((tire) => tire.reviewed_at), ledger?.as_of ?? '');
   const brandCount = new Set(tires.map((tire) => tire.maker)).size;
@@ -2723,13 +2843,13 @@ export function renderTires(ctx) {
     tireShortlistBlock('Highest measured wet grip', 'Static wet grip of at least 80 on Bicycle Rolling Resistance\'s wet drum, tested width shown in the row.', lists.wetGrip, ({ grip }) => `wet grip ${grip}`),
     tireShortlistBlock('All-season constructions with a wet-grip test', 'Maker all-season or four-season lines with a measured wet-grip score, highest first.', lists.allSeason, ({ grip }) => `wet grip ${grip}`)
   ].join('')}<p class="tire-wet-note">Wet grip here is tire traction on a wet test drum. It is not a braking-distance or cornering certification, and rim-brake pads, rims and rotors are separate. Lower pressure, clean rims and earlier braking matter as much as the tire.</p></div></div>${tireBudgetHtml(budgetShortlist(tires))}<p class="tire-shortlist-note">Each list follows only its stated criteria. A tire missing from a list may simply lack a lab test; missing evidence is not a negative result. No list promises that a tire fits your frame or rim.</p></section>`;
-  const toolbar = `<div class="wheels-toolbar tires-toolbar" data-tires-toolbar hidden><div class="segmented" role="group" aria-label="Width group"><button type="button" data-tires-group="" aria-pressed="true">All</button><button type="button" data-tires-group="road" aria-pressed="false">Road 25–35 mm</button><button type="button" data-tires-group="wet" aria-pressed="false">Wet 20–40 mm</button></div><label class="sort-control"><span>Origin</span><select data-tires-origin><option value="">All origins</option><option value="mainland-china">Mainland China</option><option value="taiwan">Taiwan</option><option value="international">International</option></select></label><label class="sort-control"><span>Type</span><select data-tires-construction><option value="">All types</option><option value="tubeless-ready">Tubeless-ready</option><option value="tube-type">Tube-type clincher</option></select></label><label class="sort-control"><span>Sort</span><select data-tires-sort><option value="">Origin, then maker</option><option value="rr">Lowest rolling resistance (BRR 28–30 mm)</option><option value="wet">Highest wet grip (BRR)</option><option value="weight">Lightest at the reference size</option><option value="price">Price: low to high (US$ equivalent)</option></select></label><p class="wheels-status" data-tires-status role="status" aria-live="polite"></p></div>`;
+  const toolbar = `<div class="wheels-toolbar tires-toolbar" data-tires-toolbar hidden><div class="segmented" role="group" aria-label="Width group"><button type="button" data-tires-group="" aria-pressed="true">All</button><button type="button" data-tires-group="road" aria-pressed="false">Road 25–35 mm</button><button type="button" data-tires-group="wet" aria-pressed="false">Wet 20–40 mm</button></div><label class="sort-control"><span>Origin</span><select data-tires-origin><option value="">All origins</option><option value="mainland-china">Mainland China</option><option value="taiwan">Taiwan</option><option value="international">International</option></select></label><label class="sort-control"><span>Type</span><select data-tires-construction><option value="">All types</option><option value="tubeless-ready">Tubeless-ready</option><option value="tube-type">Tube-type clincher</option></select></label><label class="sort-control"><span>Sort</span><select data-tires-sort><option value="">Origin, then maker</option><option value="rr">Lowest rolling resistance (BRR 28–30 mm)</option><option value="wet">Highest wet grip (BRR)</option><option value="weight">Lightest at the reference size</option><option value="price">Price: low to high (US$ equivalent)</option><option value="owners">Most owners coded</option></select></label><p class="wheels-status" data-tires-status role="status" aria-live="polite"></p></div>`;
   const originalNotes = ctx.locale === 'zh-Hans'
     ? '<p class="locale-evidence-note">本页提供中文导航与规格标签；型号、来源标题以及详细的测试、车主反馈和价格备注保留原文。</p>'
     : ctx.locale === 'de' ? '<p class="locale-evidence-note">Originale Quellentitel sowie detaillierte Test-, Besitzer- und Preisnotizen bleiben in ihrer Ausgangssprache.</p>' : '';
-  const html = `${originalNotes}<p class="groupset-table-note"><span>${tires.length} tires · ${brandCount} brands · reviewed ${escapeHtml(reviewed)}</span> Widths are in millimetres (25C = 25 mm). Open a row for sizes, pressure limits, lab tests, owner reports, prices and sources.</p>${shortlists}${toolbar}<div class="reference-table-wrap groupset-table-wrap tire-table-wrap" data-tires-root><table class="reference-table groupset-comparison tire-comparison"><caption class="sr-only">Road tires compared</caption><thead><tr><th>Tire</th><th>Use</th><th>Widths</th><th>Weight</th><th>Lab test</th><th>Price</th></tr></thead>${tires.map((tire) => tireRows(ctx, tire, sourcesById, rates)).join('')}</table></div>
-  <details class="reference-guide"><summary>How tire fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Widths and groups</dt><dd>Nominal 700C widths in millimetres. Road lists tires sold in at least one 25–35 mm width; Wet lists tires with a 20–40 mm width and recorded wet-traction evidence.</dd></div><div><dt>Weight</dt><dd>The maker's or seller's claim at 28 mm, or the nearest recorded width. Lab-measured weights stay in the test notes.</dd></div><div><dt>Lab test</dt><dd>Bicycle Rolling Resistance's public figures: rolling resistance for one tire at 29 km/h and 42.5 kg (80 psi for 25–27 mm, 72 psi for 28–30 mm measured width), static wet grip and tread puncture points. Only tests in the same width band are comparable; tubeless tests use sealant and tube-type tests a butyl tube.</dd></div><div><dt>Wet weather</dt><dd>Measured wet grip, maker claims and owner reports are kept apart. Puncture protection is not evidence of wet grip, and tire grip does not describe rim, pad or rotor braking.</dd></div><div><dt>Hookless</dt><dd>Approved only when the maker says so; otherwise the status is shown as published. Check the rim maker's tire list and pressure limit as well.</dd></div><div><dt>Origin</dt><dd>Brand origin is where the brand is based. Made in is shown only when a source states it.</dd></div><div><dt>Price</dt><dd>A dated observation in its original currency with its store and package basis. It is not a delivered price; price sorting converts to US dollars with the dated ECB rate only to order rows.</dd></div><div><dt>Owner reports</dt><dd>Short paraphrases of public first-hand posts. They describe one rider's tire and are not tests.</dd></div><div><dt>Not stated</dt><dd>The source does not publish the value. It is not a negative finding.</dd></div></dl><p>No tire on this page is approved for a particular frame or rim. Check your frame's tire clearance on its model page and your rim's tire and pressure limits before buying.</p></div></details>
-  ${tireCoverageHtml(ledger, tiresById)}`;
+  const html = `${originalNotes}<p class="groupset-table-note"><span>${tires.length} tires · ${brandCount} brands · reviewed ${escapeHtml(reviewed)}</span> Widths are in millimetres (25C = 25 mm). Open a row for sizes, pressure limits, lab tests, owner reports, prices and sources.</p>${shortlists}${toolbar}<div class="reference-table-wrap groupset-table-wrap tire-table-wrap" data-tires-root><table class="reference-table groupset-comparison tire-comparison"><caption class="sr-only">Road tires compared</caption><thead><tr><th>Tire</th><th>Use</th><th>Widths</th><th>Weight</th><th>Lab test</th><th>Price</th><th>Owners</th></tr></thead>${tires.map((tire) => tireRows(ctx, tire, sourcesById, rates)).join('')}</table></div>
+  <details class="reference-guide"><summary>How tire fields are recorded</summary><div><dl class="detail-list package-basis"><div><dt>Widths and groups</dt><dd>Nominal 700C widths in millimetres. Road lists tires sold in at least one 25–35 mm width; Wet lists tires with a 20–40 mm width and recorded wet-traction evidence.</dd></div><div><dt>Weight</dt><dd>The maker's or seller's claim at 28 mm, or the nearest recorded width. Lab-measured weights stay in the test notes.</dd></div><div><dt>Lab test</dt><dd>Bicycle Rolling Resistance's public figures: rolling resistance for one tire at 29 km/h and 42.5 kg (80 psi for 25–27 mm, 72 psi for 28–30 mm measured width), static wet grip and tread puncture points. Only tests in the same width band are comparable; tubeless tests use sealant and tube-type tests a butyl tube.</dd></div><div><dt>Wet weather</dt><dd>Measured wet grip, maker claims and owner reports are kept apart. Puncture protection is not evidence of wet grip, and tire grip does not describe rim, pad or rotor braking.</dd></div><div><dt>Hookless</dt><dd>Approved only when the maker says so; otherwise the status is shown as published. Check the rim maker's tire list and pressure limit as well.</dd></div><div><dt>Origin</dt><dd>Brand origin is where the brand is based. Made in is shown only when a source states it.</dd></div><div><dt>Price</dt><dd>A dated observation in its original currency with its store and package basis. It is not a delivered price; price sorting converts to US dollars with the dated ECB rate only to order rows.</dd></div><div><dt>Owner ratings</dt><dd>${escapeHtml(`Each coded row is one owner of the exact tire and construction who describes their own riding. Seller and brand copy, questions, hearsay, repeats and reports that do not name the construction are left out, and an owner counts once however often they post. Each aspect is coded favourable, mixed or unfavourable; wet grip needs wet riding, and grip covers dry or unstated conditions. An aspect is rated only with at least ${OWNER_RATING_MIN} owners: the share favourable, with mixed counted as half, reads as Favourable from 85%, Mostly favourable from 65%, Mixed above 35%, Mostly unfavourable above 15%, otherwise Unfavourable. Evidence depth is limited for 5–9 owners, moderate for 10–19 and a larger sample from 20; it describes how much was found, not statistical confidence. Ratings describe the widths owners reported and never another width.`)}</dd></div><div><dt>Post notes</dt><dd>Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.</dd></div><div><dt>Not stated</dt><dd>The source does not publish the value. It is not a negative finding.</dd></div></dl><p>No tire on this page is approved for a particular frame or rim. Check your frame's tire clearance on its model page and your rim's tire and pressure limits before buying.</p></div></details>
+  ${tireCoverageHtml(ledger, tiresById, imageLedger)}`;
   return prosePage(ctx, {
     title,
     desc,
@@ -2759,7 +2879,7 @@ export function renderMethodology(ctx) {
     { name: 'Catalog CSV', encodingFormat: 'text/csv', path: '/data/catalog.csv' },
     { name: 'Source records JSON', encodingFormat: 'application/json', path: '/data/sources.json' }
   ];
-  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2 id="opinion-summaries">Owner and reviewer opinions</h2><p>Model pages may list brief paraphrases of substantive exact-model opinions from owners, reviewers and test riders on ride, fit, build, weight, compatibility, faults and support. Each links its public source and keeps the configuration, date and any supplied-product or affiliate relationship. Brand and seller material can appear but is never counted. One person or publication counts once per model; repeat comments and syndicated copies are marked and counted once. Each opinion's overall stance is classified as positive, mixed or negative from what its author wrote; no star ratings are invented.</p><p>With at least 21 independent opinions on one exact model, the page shows an opinion sentiment summary: the share of positive opinions with mixed ones counted as half, on a 0–100 scale, with its 95% Wilson interval and the number of opinions behind it. It describes sentiment about that model only. It is not a quality score, recommendation or cross-model ranking, and it never feeds sorting, filters or structured data. Below 21 opinions the collection is shown without a summary.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2 id="store-links">Store links</h2><p>Some model pages and component rows link to an online store that pays us a commission on purchases made through those links. Each link is marked where it appears. A link is added only where the store's own page offers that exact model and build, or the exact model for a research profile that covers several builds. It shows the store's price in its own currency with the date we checked it; that is not a China price or a delivered total.</p><p>Store links do not change which bikes are listed, their order, catalog prices, verdicts or buying checks. Source citations stay separate from store links.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2 id="opinion-summaries">Owner and reviewer opinions</h2><p>Model pages may list brief paraphrases of substantive exact-model opinions from owners, reviewers and test riders on ride, fit, build, weight, compatibility, faults and support. Each links its public source and keeps the configuration, date and any supplied-product or affiliate relationship. Brand and seller material can appear but is never counted. One person or publication counts once per model; repeat comments and syndicated copies are marked and counted once. Each opinion's overall stance is classified as positive, mixed or negative from what its author wrote; no star ratings are invented.</p><p>With at least 21 independent opinions on one exact model, the page shows an opinion sentiment summary: the share of positive opinions with mixed ones counted as half, on a 0–100 scale, with its 95% Wilson interval and the number of opinions behind it. It describes sentiment about that model only. It is not a quality score, recommendation or cross-model ranking, and it never feeds sorting, filters or structured data. Below 21 opinions the collection is shown without a summary.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
   return prosePage(ctx, {
     title: 'Methodology',
     desc: methodologyDescription,
@@ -2792,13 +2912,14 @@ export function renderPrivacy(ctx) {
     <p>To check delivery, the analytics script reports once per page that it started, and our server counts whether each server event for Google was skipped because no session was stored, received, refused, or left uncertain. These technical counts carry no visitor or page details. Each delivery to our collector has a random one-time event ID, held briefly in memory, so a retry is not counted twice.</p>
     <p>Do Not Track, Global Privacy Control, and the opt-out below suppress both analytics streams. Opting out clears our GA ID cookies and the Google tag cookies we set on this host.</p>
     <p>Google processes analytics data outside your region. Its recipient and privacy information, contact options, and rights tools are described in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Allowing optional analytics includes this transfer. Advertising consent remains denied.</p>
-    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets, except maker photos that the carbon-wheel reference and image credits show from the maker's website; your browser then contacts that website without sending this page's address. Model pages and the carbon-wheel reference embed a <code>youtube-nocookie.com</code> player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.</p>
+    <h2>External media</h2><p>Displayed product photos load from this site's Cloudflare-hosted assets, except maker photos that the carbon-wheel reference, some blog guides and the image credits show from the maker's website, and road-tire photos, which load from the maker's or retailer's website or from Xiaohongshu. Your browser then contacts that website. It does not send this page's address, but the website receives your IP address and browser details, and any cookies your browser allows for it. Model pages and the carbon-wheel reference embed a <code>youtube-nocookie.com</code> player that may contact YouTube when the page loads or the video comes into view. Articles contact YouTube only when you load a video or follow its watch link. Videos do not autoplay.</p>
+    <h2 id="store-links">Store links</h2><p>Store links marked with a commission notice carry the store's referral code. If you follow one, the store and its referral service can record the visit and any purchase to credit the commission; their own privacy terms apply on their site. This site adds no script for these links and does not count clicks on them.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
 }
 
 export function renderImagePolicy(ctx) {
-  const html = `<h2>Product images</h2><p>Displayed product photos are optimized copies served by this site. Where a maker's terms do not permit a copy, a component reference shows the maker's own photo from the maker's website instead, and no copy is stored here. When a source image is unavailable or its model cannot be verified, we leave the photo out. Original sources and owners stay credited.</p><h2>Accuracy and privacy</h2><p>A photo may show a different color, region, or component build; the catalog labels material differences. Hosted copies have embedded metadata removed and are checked for visible personal identifiers.</p><h2>Corrections</h2><p>Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> for a broken image, credit correction, removal request, or better exact-model photo. Please keep private contact details out of public issues.</p><p><a href="${url(ctx.base, '/image-sources/')}">Browse image sources and credits.</a></p>`;
+  const html = `<h2>Product images</h2><p>Displayed product photos are optimized copies served by this site. Where a maker's terms do not permit a copy, a component reference shows the maker's own photo from the maker's website instead, and no copy is stored here. Road-tire photos load from the maker's or retailer's own product page or, when neither shows the exact tire, from the original public post on Xiaohongshu, always linked to that page. When a source image is unavailable or its model cannot be verified, we leave the photo out. Original sources and owners stay credited.</p><h2>Accuracy and privacy</h2><p>A photo may show a different color, region, or component build; the catalog labels material differences. Hosted copies have embedded metadata removed and are checked for visible personal identifiers.</p><h2>Corrections</h2><p>Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> for a broken image, credit correction, removal request, or better exact-model photo. Please keep private contact details out of public issues.</p><p><a href="${url(ctx.base, '/image-sources/')}">Browse image sources and credits.</a></p>`;
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 
@@ -2809,13 +2930,30 @@ function componentCredits(ctx, sources) {
     ...(ctx.data.wheelsets ?? []).filter((item) => wheelsetImageSrc(ctx, item.image)).map((item) => ({ item, path: '/carbon-wheels/' }))
   ];
   if (!entries.length) return '';
-  return `<h2 class="credit-section-title">Component photos</h2><div class="credit-list">${entries.map(({ item, path }) => {
-    const source = sources.get(item.image.source_id);
+  return `<h2 class="credit-section-title">Component photos</h2>${creditList(entries.map(({ item, path }) => {
     const remote = !item.image.local_path;
     const card = item.image.variants?.find((variant) => variant.purpose === 'card') ?? { url: item.image.local_path, width: item.image.width, height: item.image.height };
-    const visual = `<img src="${escapeAttr(remote ? item.image.remote_url : url(ctx.base, card.url))}" alt="${escapeAttr(item.image.alt)}" width="${card.width}" height="${card.height}" loading="lazy" decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}>`;
-    return `<article><a class="credit-image" href="${url(ctx.base, path)}#${escapeAttr(item.id)}">${visual}</a><div><h3>${escapeHtml(`${item.maker} ${item.name}`)}</h3><p>${escapeHtml(item.image.credit)} · ${escapeHtml(accuracyLabel(item.image.subject_accuracy))}${remote ? ` · ${escapeHtml('Loaded from the maker’s website')}` : ''}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`;
-  }).join('')}</div>`;
+    return {
+      label: `${item.maker} ${item.name}`,
+      href: `${url(ctx.base, path)}#${item.id}`,
+      line: [item.image.credit, accuracyLabel(item.image.subject_accuracy), ...(remote ? ['Loaded from the maker’s website'] : [])],
+      sourceUrl: sources.get(item.image.source_id)?.url ?? '',
+      visual: `<img src="${escapeAttr(remote ? item.image.remote_url : url(ctx.base, card.url))}" alt="${escapeAttr(item.image.alt)}" width="${card.width}" height="${card.height}" loading="lazy" decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}>`
+    };
+  }))}`;
+}
+
+// One entry per model: photos that share a credit, exactness label and original source form one line under their thumbnails.
+function creditList(entries) {
+  const models = new Map();
+  for (const entry of entries) {
+    if (!models.has(entry.href)) models.set(entry.href, { label: entry.label, href: entry.href, groups: new Map() });
+    const groups = models.get(entry.href).groups;
+    const key = [...entry.line, entry.sourceUrl].join('\n');
+    if (!groups.has(key)) groups.set(key, { line: entry.line, sourceUrl: entry.sourceUrl, visuals: [] });
+    groups.get(key).visuals.push(entry.visual);
+  }
+  return `<div class="credit-list">${[...models.values()].map(({ label, href, groups }) => `<article><h3><a href="${escapeAttr(href)}">${escapeHtml(label)}</a></h3><ul>${[...groups.values()].map(({ line, sourceUrl, visuals }) => `<li><div class="credit-thumbs">${visuals.join('')}</div><p>${escapeHtml([...line, ...(visuals.length > 1 ? [`${visuals.length} photos`] : [])].join(' · '))}${sourceUrl ? ` · <a href="${escapeAttr(sourceUrl)}" rel="noreferrer">Original source</a>` : ''}</p></li>`).join('')}</ul></article>`).join('')}</div>`;
 }
 
 export function renderImageSources(ctx) {
@@ -2825,16 +2963,17 @@ export function renderImageSources(ctx) {
   const firstProductByPlatform = new Map();
   for (const product of ctx.products) if (!firstProductByPlatform.has(product.platform.id)) firstProductByPlatform.set(product.platform.id, product);
   const candidatesById = new Map(joinCatalogCandidates(ctx.data).map((entry) => [entry.candidate.id, entry]));
-  const entries = ctx.data.images.filter((image) => image.buyer_visibility !== 'omit' && imageUrl(ctx, image)).map((image) => {
+  // Photos of profiles merged into another record are not shown anywhere, so they get no credit entry.
+  const entries = ctx.data.images.filter((image) => image.buyer_visibility !== 'omit' && imageUrl(ctx, image) && (!image.candidate_id || candidatesById.has(image.candidate_id))).map((image) => {
     const source = sources.get(image.source_id);
     if (image.candidate_id) {
       const candidate = candidatesById.get(image.candidate_id);
       return {
         image,
         source,
-        label: candidate?.candidate.name ?? image.candidate_id,
-        href: candidate ? url(ctx.base, `/models/${candidate.candidate.id}/`) : `${url(ctx.base, '/')}?scope=all&q=${encodeURIComponent(image.candidate_id)}#catalog`,
-        visual: candidate ? candidateImageElement(ctx, { ...candidate, image }) : ''
+        label: candidate.candidate.name,
+        href: url(ctx.base, `/models/${candidate.candidate.id}/`),
+        visual: candidateImageElement(ctx, { ...candidate, image })
       };
     }
     const platform = platforms.get(image.platform_id);
@@ -2848,7 +2987,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${image.source_media_page_url ?? source?.url ? `<a href="${escapeAttr(image.source_media_page_url ?? source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>${componentCredits(ctx, sources)}`;
+  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<h2 class="credit-section-title">Product photos</h2>${creditList(entries.map(({ image, source, label, href, visual }) => ({ label, href, line: [image.credit, accuracyLabel(image.subject_accuracy)], sourceUrl: image.source_media_page_url ?? source?.url ?? '', visual })))}${componentCredits(ctx, sources)}`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

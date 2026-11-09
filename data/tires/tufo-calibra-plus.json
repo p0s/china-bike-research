@@ -35,21 +35,21 @@
       "etrto": "23-622",
       "weight_g": 180,
       "max_psi": 145,
-      "max_bar": 10.0
+      "max_bar": 10
     },
     {
       "width_mm": 25,
       "etrto": "25-622",
       "weight_g": 210,
       "max_psi": 130,
-      "max_bar": 9.0
+      "max_bar": 9
     },
     {
       "width_mm": 28,
       "etrto": "28-622",
       "weight_g": 235,
       "max_psi": 115,
-      "max_bar": 8.0
+      "max_bar": 8
     }
   ],
   "caveats": [
@@ -75,5 +75,50 @@
     "tufo-contact-official-2026-11-01"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "tufo-calibra-plus1-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "23 mm black Calibra Plus clincher as pictured on Tufo's product page.",
+    "credit": "Tufo",
+    "alt": "Tufo Calibra Plus road tire with black sidewall, angled view",
+    "remote_url": "https://www.tufo.com/r/21/68103/product/product-detail/calibra-plus-23-k-k.jpg",
+    "thumb_url": "https://www.tufo.com/r/106/68103/product/product-detail/calibra-plus-23-k-k.jpg",
+    "width": 1038,
+    "height": 1200,
+    "source_media_sha256": "fc5d0e732854b6f3baff0b7f6ce065b27d76a37a741d1ec3be4faf57cb817e6b",
+    "source_media_bytes": 311324,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Tufo",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
+  }
 }

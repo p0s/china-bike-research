@@ -123,8 +123,196 @@
   "source_ids": [
     "vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01",
     "bicycle-rolling-resistance-road-table-2026-11-01",
-    "vittoria-corsa-pro-control-tmall-2026-11-01"
+    "vittoria-corsa-pro-control-tmall-2026-11-01",
+    "sigma-sports-corsa-pro-control-tlr-reviews",
+    "bike-components-corsa-pro-control-tlr-reviews",
+    "brr-comments-vittoria-corsa-pro-control-tlr",
+    "brr-comments-vittoria-corsa-pro-control-34",
+    "brr-comments-vittoria-corsa-pro-tlr"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "vittoria-corsa-pro-control-tubeless-ready-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Tan-wall Corsa PRO Control TLR render from Vittoria's product page; the file name labels it as the 38-42 mm version.",
+    "credit": "Vittoria",
+    "alt": "Vittoria Corsa PRO Control TLR tire render with tan sidewalls and red logo",
+    "remote_url": "https://int.vittoria.com/cdn/shop/files/corsa-pro-control-38-42-01.webp?width=900",
+    "thumb_url": "https://int.vittoria.com/cdn/shop/files/corsa-pro-control-38-42-01.webp?width=240",
+    "width": 900,
+    "height": 900,
+    "source_media_sha256": "7166c8c216eae41cfeb97b3f7ec8f80e51b7b3a5e799d16e4b99f5bcea10f8a2",
+    "source_media_bytes": 504914,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Vittoria",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, mounting-only impressions and repeats were left out. Corrected on 2026-11-03: this tire's wider gravel-section and colour-option test pages on Bicycle Rolling Resistance are now read as well.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2026-07-19",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Excellent grip, very smooth and surprisingly fast."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2026-05-19",
+        "width_mm": 42,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "High comfort on poor roads without giving up speed; about as fast as a 40 mm Schwalbe G-One RS Pro and slightly more supple."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2023-09-13",
+        "width_mm": 28,
+        "setup": "inner-tube",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Comfortable at lower pressure with supple sidewalls and no puncture so far; hard to fit on the owner's rims."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2023-07-09",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Rolls smoothly and fast at 80 psi and feels very sure in corners."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2023-06-25",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "mixed"
+        },
+        "summary": "Does a splendid job on rough UK roads; not slow, but slower than a GP5000 S TR or the regular Corsa Pro."
+      },
+      {
+        "source_ids": [
+          "bike-components-corsa-pro-control-tlr-reviews"
+        ],
+        "published_at": "2025-09-29",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "punctures": "favourable"
+        },
+        "summary": "Supple sidewalls with a thick tread; no flat so far."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-control-tlr"
+        ],
+        "published_at": "2023-07-11",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 40 miles, then a few more rides",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable"
+        },
+        "summary": "Feels faster than its lab result and has a great road feel, but the owner regrets not choosing the regular Corsa Pro after its puncture-test result."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-control-34"
+        ],
+        "published_at": "2024-08-31",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "Having ridden the 32 mm and a knobby mountain-bike tire, the owner finds this tire far faster in practice than the test suggests."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-control-34"
+        ],
+        "published_at": "2024-08-31",
+        "width_mm": 34,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable"
+        },
+        "summary": "Ridden back to back with a 28 mm GP5000, the 34 mm felt no slower, but it measures barely 31 mm, so the owner plans to replace it."
+      },
+      {
+        "source_ids": [
+          "brr-comments-vittoria-corsa-pro-tlr"
+        ],
+        "published_at": "2023-07-03",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "grip": "favourable"
+        },
+        "summary": "Owns both versions in 28 mm: the Pro Control is middling but grips very well, so it stays on climbing wheels."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 5,
+        "note": "One of 6 written reviews only repeats other reviews"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "Two of 3 written reviews describe only mounting or a first impression"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 4,
+        "note": "28 mm road and 34, 38 and 42 mm gravel test pages"
+      }
+    ]
+  }
 }

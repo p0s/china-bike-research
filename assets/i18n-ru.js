@@ -668,6 +668,7 @@ export const ru = {
   "Shipping destination": "Страна доставки",
   "Shop staff compare the Elite Drive G36 with Zipp 303 XPLR, Hunt 40 Limitless and Secret Wheels gravel wheelsets. It is comparative opinion, not a laboratory test.": "Сотрудники магазина сравнивают Elite Drive G36 с гревел-колёсами Zipp 303 XPLR, Hunt 40 Limitless и Secret Wheels. Это сравнительное мнение, а не лабораторный тест.",
   "Show the focused list": "Показать основной список",
+  "Show fewer": "Свернуть",
   "Size 54, unpainted, excluding paint and metal hardware": "Размер 54, без покраски, без краски и металлического крепежа",
   "Skip to content": "Перейти к содержимому",
   "Slick-tire limits; 1× small-knob limit: 36C.": "Ограничения для слик-покрышек; для 1× с мелким протектором — 36C.",
@@ -868,6 +869,7 @@ const plural = (count, one, few, many) => {
 };
 const patterns = [
   [/^Show (\d+) more models?$/, (_, n) => `Показать ещё ${n} ${plural(n, 'модель', 'модели', 'моделей')}`],
+  [/^Show (\d+) more tires$/, (_, n) => `Показать ещё ${n} ${plural(n, 'шину', 'шины', 'шин')}`],
   [/^(.+?) — (Tire clearance details|Weight basis|Frame details)$/, (_, value, label) => `${t(value)} — ${t(label)}`],
   [/^(.+) — filter catalog to this brand$/, (_, name) => `${name} — показать в каталоге только этот бренд`],
   [/^(.+) — remove brand filter$/, (_, name) => `${name} — снять фильтр бренда`],
@@ -1100,7 +1102,19 @@ Object.assign(ru, {
   "Owner wet reports conflict": "Отзывы о мокрой дороге противоречат друг другу",
   "Owner wet reports are unfavourable": "Отзывы о мокрой дороге отрицательные",
   "No owner wet report found": "Отзывы о мокрой дороге не найдены",
-  "No durability or fit problem report found": "Сообщений о проблемах с долговечностью или посадкой не найдено"
+  "No durability or fit problem report found": "Сообщений о проблемах с долговечностью или посадкой не найдено",
+  "Maker photo": "Фото производителя",
+  "Retailer photo": "Фото продавца",
+  "Photo from an XHS post": "Фото из публикации XHS",
+  "Loaded from the maker’s website": "Загружено с сайта производителя",
+  "Loaded from the retailer’s website": "Загружено с сайта продавца",
+  "Loaded from the original XHS post": "Загружено из исходной публикации XHS",
+  "Original source": "Исходный источник",
+  "Product photos": "Фото продуктов",
+  "Component photos": "Фото компонентов",
+  "Photo": "Фото",
+  "Photos": "Фото",
+  "Photos load from the maker's or retailer's own product page or from the original public post; this site stores no copy.": "Фото загружаются со страницы товара самого производителя или продавца либо из исходной публичной публикации; этот сайт не хранит копий."
 });
 
 // Road tire reference (2026-11-01)
@@ -1114,6 +1128,8 @@ patterns.push(
   [/^wet (\d+)$/, (_, n) => `мокро ${n}`],
   [/^also (.+)$/, (_, list) => `также ${list}`],
   [/^(\d+) owner reports?, no lab test found$/, (_, n) => `${n} ${plural(n, 'отзыв', 'отзыва', 'отзывов')} владельцев, лабораторный тест не найден`],
+  [/^(\d+) maker · (\d+) retailer · (\d+) XHS post · (\d+) without a photo$/, (_, a, b, c, d) => `производитель: ${a} · продавец: ${b} · публикации XHS: ${c} · без фото: ${d}`],
+  [/^(\d+) photos$/, (_, n) => `${n} фото`],
   [/^(¥[\d,.]+) per tire$/, (_, price) => `${price} за шину`],
   [/^(¥[\d,.]+) listing, one tire or pair not stated$/, (_, price) => `${price} в объявлении, не указано, за одну шину или за пару`],
   [/^(\d+) reports? of (bulging or casing failure|cracking|fast wear|frequent punctures|bead or rim-fit problems)$/, (_, n, issue) => `${n} ${plural(n, 'сообщение', 'сообщения', 'сообщений')} о ${{ 'bulging or casing failure': 'вздутиях или повреждении каркаса', cracking: 'трещинах', 'fast wear': 'быстром износе', 'frequent punctures': 'частых проколах', 'bead or rim-fit problems': 'проблемах с бортом или посадкой на обод' }[issue]}`],
@@ -1123,3 +1139,91 @@ patterns.push(
   [/^(\d+) excluded$/, (_, n) => `${n} ${plural(n, 'исключена', 'исключены', 'исключено')}`],
   [/^(\d+) unresolved$/, (_, n) => `${n} не решено`]
 );
+
+// Tire owner ratings (2026-11-03).
+Object.assign(ru, {
+  "Owners": "Владельцы",
+  "Owner ratings": "Оценки владельцев",
+  "Not rated yet": "Пока без оценки",
+  "No eligible owner report found": "Подходящих отзывов владельцев не найдено",
+  "fewer than 5 per aspect": "меньше 5 по каждому аспекту",
+  "Overall verdict": "Общая оценка",
+  "Wet grip": "Сцепление на мокром",
+  "Grip, dry or not stated": "Сцепление: сухо или не указано",
+  "Speed feel": "Ощущение скорости",
+  "Puncture resistance": "Защита от проколов",
+  "Tread life": "Ресурс протектора",
+  "Casing durability": "Прочность каркаса",
+  "Favourable": "Положительная",
+  "Mostly favourable": "Скорее положительная",
+  "Mostly unfavourable": "Скорее отрицательная",
+  "Unfavourable": "Отрицательная",
+  "limited evidence": "ограниченные данные",
+  "moderate evidence": "умеренный объём данных",
+  "larger sample": "более крупная выборка",
+  "Not rated": "Без оценки",
+  "No owner report": "Нет отзывов владельцев",
+  "Aspect": "Аспект",
+  "Rating": "Оценка",
+  "Coded": "Закодировано",
+  "Tube or tubeless": "С камерой или бескамерно",
+  "not stated": "не указано",
+  "tubeless": "бескамерно",
+  "inner tube": "с камерой",
+  "favourable": "положительно",
+  "mixed": "смешанно",
+  "unfavourable": "отрицательно",
+  "Post notes": "Заметки по публикациям",
+  "Whole-post summaries, not checked owner by owner and not counted in owner ratings.": "Сводки целых публикаций, не проверенные по отдельным владельцам и не учитываемые в оценках владельцев.",
+  "Editorial coding of first-hand public reports, not star ratings given by owners. An aspect is rated only when at least 5 owners describe it; 5 is an entry threshold, not proof. Public reports are self-selected, sources differ between tires, and width, pressure, setup and roads vary between owners.": "Редакционная кодировка публичных отзывов из первых рук, а не звёздные оценки владельцев. Аспект оценивается, только если его описывают не менее 5 владельцев; 5 — это порог включения, а не доказательство. Публичные отзывы самоотобраны, источники у разных шин различаются, а ширина, давление, способ установки и дороги у владельцев различаются.",
+  "Each coded row is one owner of the exact tire and construction who describes their own riding. Seller and brand copy, questions, hearsay, repeats and reports that do not name the construction are left out, and an owner counts once however often they post. Each aspect is coded favourable, mixed or unfavourable; wet grip needs wet riding, and grip covers dry or unstated conditions. An aspect is rated only with at least 5 owners: the share favourable, with mixed counted as half, reads as Favourable from 85%, Mostly favourable from 65%, Mixed above 35%, Mostly unfavourable above 15%, otherwise Unfavourable. Evidence depth is limited for 5–9 owners, moderate for 10–19 and a larger sample from 20; it describes how much was found, not statistical confidence. Ratings describe the widths owners reported and never another width.": "Каждая закодированная строка — один владелец именно этой шины и конструкции, описывающий собственные поездки. Тексты продавцов и брендов, вопросы, слухи, повторы и отзывы без указания конструкции не учитываются, а владелец считается один раз, сколько бы он ни писал. Каждый аспект кодируется как положительный, смешанный или отрицательный; для сцепления на мокром нужны поездки по мокрой дороге, а сцепление охватывает сухие или неуказанные условия. Аспект оценивается только при наличии не менее 5 владельцев: доля положительных, где смешанные считаются за половину, читается как «Положительная» от 85 %, «Скорее положительная» от 65 %, «Смешанный» выше 35 %, «Скорее отрицательная» выше 15 %, иначе «Отрицательная». Объём данных ограничен при 5–9 владельцах, умеренный при 10–19, а от 20 это более крупная выборка; это показывает, сколько найдено, а не статистическую достоверность. Оценки относятся к ширинам, которые указали владельцы, и никогда — к другой ширине.",
+  "Short paraphrases of whole public posts recorded before owner-by-owner coding. They describe one rider's tire, are not tests and do not count in owner ratings.": "Краткие пересказы целых публичных постов, записанные до кодирования по отдельным владельцам. Они описывают шину одного райдера, не являются тестами и не учитываются в оценках владельцев.",
+  "Most owners coded": "Больше всего закодированных владельцев",
+  "no aspect rated yet": "пока ни один аспект не оценён",
+});
+patterns.push(
+  [/^(\d+) owners?$/, (_, n) => `${n} ${plural(n, 'владелец', 'владельца', 'владельцев')}`],
+  [/^(\d+) more rated$/, (_, n) => `ещё ${n} с оценкой`],
+  [/^(\d+) (favourable|mixed|unfavourable)$/, (_, n, code) => `${n} ${{ favourable: 'положительно', mixed: 'смешанно', unfavourable: 'отрицательно' }[code]}`],
+  [/^(not stated|inner tube|tubeless) ×(\d+)$/, (_, label, n) => `${t(label)} ×${n}`],
+  [/^(\d+) mm ×(\d+)$/, (_, width, n) => `${width} мм ×${n}`],
+  [/^Owner ratings: (.+)$/, (_, name) => `Оценки владельцев: ${name}`],
+  [/^Coded owner reports \((\d+)\)$/, (_, n) => `Закодированные отзывы владельцев (${n})`],
+  [/^(\d+) with a rated aspect$/, (_, n) => `${n} с оценённым аспектом`],
+  [/^(\d+) coded below the threshold$/, (_, n) => `${n} закодировано ниже порога`],
+  [/^(\d+) not yet coded$/, (_, n) => `${n} ещё не закодировано`]
+);
+
+// Tire owner checked-source ledger (2026-11-03).
+Object.assign(ru, {
+  "Xiaohongshu posts": "Посты Xiaohongshu",
+  "Sigma Sports reviews": "Отзывы Sigma Sports",
+  "bike-components reviews": "Отзывы bike-components",
+  "BRR reader comments": "Комментарии читателей BRR",
+  "no eligible review": "нет подходящих отзывов",
+  "not listed": "нет в продаже",
+  "access blocked": "доступ заблокирован",
+  "pending": "ожидается",
+  "Review sources blocked": "Источники отзывов недоступны",
+  "Xiaohongshu research pending": "Ожидается исследование Xiaohongshu",
+  "Checked": "Проверено",
+  "A tire that has not been checked may still have many owners; its reports have not been checked owner by owner yet. Each checked tire lists the sources checked in its row details.": "У непроверенной шины может быть много владельцев; просто их отзывы ещё не проверены по отдельности. Для каждой проверенной шины в деталях указаны проверенные источники."
+});
+patterns.push(
+  [/^(\d+) counted$/, (_, n) => `учтено: ${n}`],
+  [/^(\d+) below the threshold$/, (_, n) => `${n} ниже порога`],
+  [/^(\d+) with no eligible owner found$/, (_, n) => `${n} без подходящих владельцев`],
+  [/^(\d+) access blocked$/, (_, n) => `${n} с заблокированным доступом`],
+  [/^(\d+) awaiting Xiaohongshu research$/, (_, n) => `${n} ожидают исследования Xiaohongshu`],
+  [/^(\d+) not yet checked$/, (_, n) => `${n} ещё не проверено`]
+);
+// Disclosed commission store links (2026-11-06).
+Object.assign(ru, {
+  "Store option:": "Вариант в магазине:",
+  "Price varies by finish.": "Цена зависит от покраски.",
+  "Made to order.": "Изготавливается под заказ.",
+  "Listed in stock.": "По данным магазина, в наличии.",
+  "Shipping and duties depend on your country.": "Доставка и пошлины зависят от страны.",
+  "We may earn a commission from purchases through this link. It does not affect our comparisons.": "Мы можем получить комиссию с покупок по этой ссылке. На наши сравнения это не влияет.",
+  "7-piece set: shifters, front and rear derailleurs, hydraulic brakes and charger. The store does not state the lever material.": "Комплект из 7 предметов: манетки, передний и задний переключатели, гидравлические тормоза и зарядное устройство. Материал рычагов магазин не указывает."
+});

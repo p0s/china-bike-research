@@ -43,12 +43,13 @@ test('reviewed image caveats and gallery descriptions translate through the real
  for(const locale of ['zh-Hans','de']){
   const result=localizeHtml(html,{locale,base:'',siteUrl:ctx.siteUrl});
   for(const text of ['Frameset view 1',product.image.display_note,'Manufacturer sample complete build. The pictured drivetrain, size, weight and sale package are unverified; it does not establish the retained mainland configuration.'])assert.notEqual(translate(text,locale),text);
-  assert.match(result,/data-gallery-note-text/);assert.doesNotMatch(result,/data-gallery-note="Official frameset/);
+  assert.match(result,/<p class="image-scope">/);assert.doesNotMatch(result,/<p class="image-scope">Official frameset/);
   assert.doesNotMatch(result,/data-gallery-alt="LCG071S-PRO — Frameset view/);
   assert.doesNotMatch(result,/aria-label="Show Frameset view/);
  }
  const script=fs.readFileSync(new URL('../assets/site.js',import.meta.url),'utf8');
- assert.match(script,/note.textContent = button.dataset.galleryNote/);
+ // Each slide carries its own scope note; nothing swaps note text between views.
+ assert.doesNotMatch(script,/dataset\.galleryNote/);assert.match(html,/<p class="image-scope">[^<]+<\/p>/);
 });
 
 test('image-quality corrections never excuse visible images, lost prior evidence or unrelated protection loss',()=>{

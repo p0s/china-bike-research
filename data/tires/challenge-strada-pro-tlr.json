@@ -99,5 +99,53 @@
     "bicycle-rolling-resistance-road-table-2026-11-01"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "challenge-strada-pro-handmade-tlr-2026-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "28 mm tan-wall Strada Pro TLR, the store's photo for that option.",
+    "credit": "Challenge",
+    "alt": "Challenge Strada Pro TLR road tire with tan sidewalls",
+    "remote_url": "https://us.challengetires.com/cdn/shop/files/Strada_PRO_HTLR_28_Tan.jpg?width=900",
+    "thumb_url": "https://us.challengetires.com/cdn/shop/files/Strada_PRO_HTLR_28_Tan.jpg?width=240",
+    "width": 900,
+    "height": 720,
+    "source_media_sha256": "895507938479ba07df591af1dcd269c0af2e6451f37ffb296448b802e1050f16",
+    "source_media_bytes": 78511,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Challenge",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. Reviews of the earlier Strada Pro H-TLR are not counted.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "none",
+        "note": "Reviews on these listings predate the 2026 update"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Reviews on these listings predate the 2026 update"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "none",
+        "note": "2026 test page, 2 comments, none first-hand; the 2022 test was of the earlier version"
+      }
+    ]
+  }
 }

@@ -42,14 +42,7 @@
   "weight_basis": "The shop listing gives no weights.",
   "tests": [],
   "wet_notes": [],
-  "community": [
-    {
-      "source_id": "xhs-budget-road-tire-comparison-2025-07-16",
-      "stance": "mixed",
-      "published_at": "2025-07-16",
-      "summary": "Owner weighed a 28C at 220 g and ranked its grip below the Goodyear F1, Rubino Pro and ARISUN STORM R1 but above the Innova smiley tire."
-    }
-  ],
+  "community": [],
   "availability": {
     "cn": "retail",
     "eu": "unverified",
@@ -76,8 +69,60 @@
   ],
   "source_ids": [
     "innova-3029-taobao-2026-11-01",
-    "xhs-budget-road-tire-comparison-2025-07-16"
+    "xhs-budget-road-tire-comparison-2025-07-16",
+    "xhs-innova-3029-30c-weights"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model and, where the model is sold in more than one construction, say which; seller replies, questions, unmounted impressions and reports about other models were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-budget-road-tire-comparison-2025-07-16"
+        ],
+        "published_at": "2025-07-16",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "speed": "favourable",
+          "grip": "unfavourable"
+        },
+        "summary": "In an uncontrolled five-tire comparison it tied for second in rolling but was fourth of five for grip."
+      },
+      {
+        "source_ids": [
+          "xhs-innova-3029-30c-weights"
+        ],
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "speed": "unfavourable"
+        },
+        "summary": "Riding the 28 mm, the owner finds its rolling resistance a little high."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "Three posts; an unmounted weigh-in is not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

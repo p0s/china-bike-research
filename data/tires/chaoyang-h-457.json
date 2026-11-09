@@ -1,0 +1,138 @@
+{
+  "id": "chaoyang-h-457",
+  "maker": "Chaoyang",
+  "name": "H-457 Mini Shark",
+  "aliases": [
+    "迷你鲨",
+    "朝阳迷你鲨"
+  ],
+  "origin": {
+    "group": "mainland-china",
+    "country": "Mainland China",
+    "basis": "Chaoyang is the bicycle-tire brand of ZC Rubber (Zhongce)."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "Neither the listing nor the official post states the factory."
+  },
+  "use": "training",
+  "positioning": "Chaoyang's entry road tire with a shark-skin puncture layer, an upgrade of the original-equipment tires on domestic road bikes.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI (official post)",
+  "compound": null,
+  "protection": "Shark-skin puncture layer",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null,
+      "note": "Skin-wall and black non-folding versions."
+    },
+    {
+      "width_mm": 28,
+      "etrto": "28-622",
+      "weight_g": null,
+      "note": "Black non-folding version."
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "No weight is given in the listing or the official post.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [],
+  "availability": {
+    "cn": "retail",
+    "eu": "unverified",
+    "na": "unverified",
+    "note": "Sold by mainland Taobao shops; no official-store listing was read for this model."
+  },
+  "price_observations": [
+    {
+      "amount": 60,
+      "currency": "CNY",
+      "market": "骑点单车 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Shop price on 2026-11-01 for the black non-folding 700x25C and 700x28C options; the listing does not say one tire or a pair.",
+      "source_id": "chaoyang-h-486-taobao-2026-11-01",
+      "width_mm": 28
+    },
+    {
+      "amount": 71,
+      "currency": "CNY",
+      "market": "骑点单车 (Taobao shop)",
+      "region": "cn",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Shop price on 2026-11-01 for the 700x25C skin-wall option; one tire or a pair not stated.",
+      "source_id": "chaoyang-h-486-taobao-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "Weights, pressure limits and the casing of each version are not published in the listing.",
+    "No owner report or wet-road evidence was found; the official post is a maker claim.",
+    "Chaoyang places it for daily training and leisure, below the H-496 Falcon."
+  ],
+  "source_ids": [
+    "chaoyang-h-486-taobao-2026-11-01",
+    "xhs-chaoyang-mini-shark-launch-2024-04-11"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "public-post",
+    "source_id": "xhs-chaoyang-mini-shark-launch-2024-04-11",
+    "subject_accuracy": "exact-model",
+    "shown": "Chaoyang's launch poster for the H-457 Mini Shark, with the tire and its 700x25C and 28C weights for the 60 and 30 TPI versions.",
+    "credit": "Chaoyang (official XHS account)",
+    "alt": "Chaoyang Mini Shark H-457 poster showing the road tire and its size and weight table",
+    "remote_url": "https://sns-img-qc.xhscdn.com/1040g008311ef96ti6q005ol6orl6tbn6hi22fm0!nd_dft_wlteh_webp_3",
+    "thumb_url": "https://sns-img-qc.xhscdn.com/1040g008311ef96ti6q005ol6orl6tbn6hi22fm0!nc_n_webp_prv_1",
+    "width": 1080,
+    "height": 1439,
+    "source_media_sha256": "62b7d32b7c02999f45b1a89da236e28d18ab176fcca53e98237546fcd70b918b",
+    "source_media_bytes": 209666,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "public-post-embed",
+      "copyright_holder": "Chaoyang (ZC Rubber)",
+      "usage_note": "A photo from a public Xiaohongshu post, shown from Xiaohongshu with a link to the original post; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model; questions, seller and maker replies, unmounted impressions and reports about other models were left out.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "none",
+        "note": "An official launch post with questions only"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
+}

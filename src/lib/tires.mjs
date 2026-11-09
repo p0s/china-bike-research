@@ -20,6 +20,27 @@ export const TIRE_ISSUES = ['casing', 'cracking', 'wear', 'punctures', 'fit'];
 // Budget all-season starting point (2026-11-01): a dated one-tire price before shipping.
 export const BUDGET_CNY_PER_TIRE = 250;
 
+// Owner ratings (2026-11-03): editorial coding of first-hand public reports, one row per
+// distinct owner of the exact tire record. Each aspect is rated only from its own sample of
+// at least OWNER_RATING_MIN owners; five is an entry threshold, not proof.
+export const OWNER_ASPECTS = ['overall', 'wet', 'grip', 'speed', 'punctures', 'wear', 'casing'];
+export const OWNER_CODES = ['favourable', 'mixed', 'unfavourable'];
+export const OWNER_SETUPS = ['tubeless', 'inner-tube'];
+export const OWNER_RATING_MIN = 5;
+// Per-tire checked-source ledger (2026-11-03): each route a tire was checked on and its
+// outcome. Pending marks a route still waiting for research, such as the Xiaohongshu lane.
+export const OWNER_ROUTES = ['xiaohongshu', 'sigma-sports', 'bike-components', 'brr-comments'];
+export const OWNER_CHECK_OUTCOMES = ['counted', 'none', 'not-listed', 'blocked', 'pending'];
+export const OWNER_STATUSES = ['rated', 'below', 'none', 'blocked', 'pending', 'unchecked'];
+// Share = (favourable + mixed / 2) / owners, mapped to five symmetric word bands.
+const OWNER_BANDS = [
+  [(share) => share >= 0.85, 'favourable'],
+  [(share) => share >= 0.65, 'mostly-favourable'],
+  [(share) => share > 0.35, 'mixed'],
+  [(share) => share > 0.15, 'mostly-unfavourable'],
+  [() => true, 'unfavourable']
+];
+
 // The two requested width groups. Road: 25–35 mm. Wet weather: 20–40 mm with recorded
 // wet-traction evidence. Rim-brake or pad braking is never part of tire evidence.
 export const ROAD_WIDTHS = { min: 25, max: 35 };
@@ -62,6 +83,7 @@ export function measuredWetGrip(tire) {
 export function wetEvidenceKinds(tire) {
   const kinds = new Set((tire.wet_notes ?? []).map((note) => note.kind));
   if (measuredWetGrip(tire) !== null) kinds.add('measured');
+  if ((tire.owner_evidence?.reports ?? []).some((report) => report.codes?.wet)) kinds.add('community report');
   return TIRE_EVIDENCE_KINDS.filter((kind) => kinds.has(kind));
 }
 
@@ -107,7 +129,7 @@ export function tireShortlists(tires) {
   const protective = rolling.filter((item) => Number.isFinite(item.test.puncture_tread))
     .sort((a, b) => b.test.puncture_tread - a.test.puncture_tread || a.test.rr_w - b.test.rr_w).slice(0, 5);
   const chinese = road.filter((tire) => tire.origin.group !== 'international')
-    .map((tire) => ({ tire, reports: (tire.community ?? []).length, tested: (tire.tests ?? []).length }))
+    .map((tire) => ({ tire, reports: (tire.owner_evidence?.reports ?? []).length + (tire.community ?? []).length, tested: (tire.tests ?? []).length }))
     .filter((item) => item.tested || item.reports >= 2)
     .sort((a, b) => b.tested - a.tested || b.reports - a.reports || a.tire.id.localeCompare(b.tire.id));
   const gripScored = wet.map((tire) => ({ tire, grip: measuredWetGrip(tire) })).filter((item) => item.grip !== null);
@@ -163,13 +185,123 @@ export function budgetShortlist(tires) {
   return { qualifying, unverified };
 }
 
+// Owner-rating counts and bands. Evidence depth describes how much was found, not statistical
+// confidence: public reports are self-selected, and width, pressure, setup and roads vary.
+export function ownerRating(counts) {
+  const n = counts.favourable + counts.mixed + counts.unfavourable;
+  if (n < OWNER_RATING_MIN) return null;
+  const share = (counts.favourable + counts.mixed / 2) / n;
+  return { band: OWNER_BANDS.find(([test]) => test(share))[1], depth: n >= 20 ? 'larger' : n >= 10 ? 'moderate' : 'limited' };
+}
+
+export function ownerRatings(tire) {
+  const reports = tire.owner_evidence?.reports ?? [];
+  const aspects = Object.fromEntries(OWNER_ASPECTS.map((aspect) => {
+    const counts = Object.fromEntries(OWNER_CODES.map((code) => [code, reports.filter((report) => report.codes?.[aspect] === code).length]));
+    return [aspect, { counts, n: counts.favourable + counts.mixed + counts.unfavourable, rating: ownerRating(counts) }];
+  }));
+  const tally = (values) => [...values.reduce((map, value) => map.set(value, (map.get(value) ?? 0) + 1), new Map())];
+  return {
+    coded: Boolean(tire.owner_evidence),
+    owners: reports.length,
+    aspects,
+    rated: OWNER_ASPECTS.filter((aspect) => aspects[aspect].rating),
+    widths: tally(reports.map((report) => report.width_mm ?? null)).sort((a, b) => (a[0] ?? 999) - (b[0] ?? 999)),
+    setups: tally(reports.map((report) => report.setup ?? null)).sort((a, b) => (a[0] === null) - (b[0] === null) || String(a[0]).localeCompare(String(b[0])))
+  };
+}
+
+// Research status: rated, owners below the threshold, checked with no eligible owner, every
+// checked route blocked, waiting for a pending route, or not yet checked at all.
+export function ownerCheckStatus(tire) {
+  if (!tire.owner_evidence) return 'unchecked';
+  const summary = ownerRatings(tire);
+  if (summary.rated.length) return 'rated';
+  if (summary.owners) return 'below';
+  const checks = tire.owner_evidence.checks ?? [];
+  if (checks.some((check) => check.outcome === 'pending')) return 'pending';
+  if (checks.length && checks.every((check) => check.outcome === 'blocked')) return 'blocked';
+  return 'none';
+}
+
 const sizeKey = (size) => `${sizeLabel(size)}|${size.bead ?? ''}`;
+
+// Tire photos (2026-11-02). A third-party photo stays on its owner's server: the maker's or
+// retailer's own product page, or the original public post. No copy enters Git.
+export const TIRE_IMAGE_KINDS = { official: 'official-page-embed', retailer: 'retailer-page-embed', 'public-post': 'public-post-embed' };
+export const TIRE_IMAGE_STATUSES = [...Object.keys(TIRE_IMAGE_KINDS), 'missing'];
+const TIRE_IMAGE_SOURCE_TYPES = {
+  official: /^(manufacturer-[a-z-]+|official-marketplace-listing)$/,
+  retailer: /^(retailer-product-page|marketplace-product-page)$/,
+  'public-post': /^public-community-post$/
+};
+// A photo loads from its source page's own host or that site's reviewed media host.
+export const TIRE_MEDIA_HOSTS = {
+  'www.trekbikes.com': ['media.trekbikes.com'],
+  'www.giant-bicycles.com': ['images2.giant-bicycles.com'],
+  'www.cadex-cycling.com': ['images2.giant-bicycles.com'],
+  'www.enve.com': ['enve.com'],
+  'www.michelin.co.uk': ['dxm.contentcenter.michelin.com'],
+  'www.pirelli.com': ['tyre24.pirelli.com'],
+  'www.specialized.com': ['resources.specialized.com'],
+  // Unsigned XHS CDN form of a post's own image (the signed feed URLs expire).
+  'www.xiaohongshu.com': ['sns-img-qc.xhscdn.com']
+};
+// Only resizing parameters may follow an image file URL; tracking or session parameters never do.
+const RESIZE_PARAMS = new Set(['width', 'height', 'w', 'h', 'q', 'fm', 'fit', 'crop']);
+
+function plainImageUrl(value) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:' || url.hash || url.username || url.password) return null;
+    if ([...url.searchParams.keys()].some((key) => !RESIZE_PARAMS.has(key))) return null;
+    return url;
+  } catch { return null; }
+}
+
+export function validateTireImage(tire, sources, label) {
+  const errors = [];
+  const image = tire.image;
+  if (!image || typeof image !== 'object' || Array.isArray(image)) return [`${label}: image must be an object`];
+  for (const field of ['source_id', 'subject_accuracy', 'shown', 'credit', 'alt', 'remote_url', 'reviewed_at', 'source_media_sha256']) {
+    if (!nonEmpty(image[field])) errors.push(`${label}: missing image.${field}`);
+  }
+  if (!Object.hasOwn(TIRE_IMAGE_KINDS, image.kind)) errors.push(`${label}: invalid image.kind`);
+  if (image.subject_accuracy !== 'exact-model') errors.push(`${label}: tire photos must show the exact model`);
+  const source = sources.get(image.source_id);
+  if (!source || !(tire.source_ids ?? []).includes(image.source_id)) errors.push(`${label}: image source must be a listed source`);
+  else if (!TIRE_IMAGE_SOURCE_TYPES[image.kind]?.test(source.type)) errors.push(`${label}: image source type does not match its kind`);
+  if (image.kind === 'public-post' && !/^https:\/\/www\.xiaohongshu\.com\/explore\/[0-9a-f]{24}$/.test(source?.url ?? '')) errors.push(`${label}: a public-post photo needs a canonical XHS post link`);
+  const remote = plainImageUrl(image.remote_url);
+  if (!remote) errors.push(`${label}: image.remote_url must be an HTTPS file URL with resizing parameters only`);
+  let pageHost = '';
+  try { pageHost = new URL(source?.url ?? '').hostname; } catch { /* reported above */ }
+  if (remote && remote.hostname !== pageHost && !(TIRE_MEDIA_HOSTS[pageHost] ?? []).includes(remote.hostname)) errors.push(`${label}: image must load from its source page's host or reviewed media host`);
+  if (image.thumb_url !== undefined) {
+    // A resized copy keeps the file name, or changes only a WordPress size suffix or an XHS
+    // style suffix (for example !nc_n_webp_prv_1) on the same original.
+    const thumb = plainImageUrl(image.thumb_url);
+    const original = (url) => url.pathname.split('/').pop().replace(/![a-z0-9_]+$/i, '').replace(/-\d+x\d+(?=\.[a-z0-9]+$)/i, '');
+    if (!thumb || !remote || thumb.hostname !== remote.hostname || original(thumb) !== original(remote)) errors.push(`${label}: image.thumb_url must be a resized copy of the same file on the same host`);
+  }
+  if (!/^[a-f0-9]{64}$/.test(image.source_media_sha256 ?? '') || !Number.isInteger(image.source_media_bytes) || image.source_media_bytes < 1) errors.push(`${label}: image needs the reviewed file's hash and size`);
+  if (!Number.isInteger(image.width) || image.width < 120 || !Number.isInteger(image.height) || image.height < 120) errors.push(`${label}: image needs reviewed dimensions of at least 120 px`);
+  if (nonEmpty(image.alt) && image.alt.trim().length < 15) errors.push(`${label}: image.alt is too short`);
+  if (!isDate(image.reviewed_at)) errors.push(`${label}: invalid image.reviewed_at`);
+  const rights = image.rights ?? {};
+  if (rights.status !== TIRE_IMAGE_KINDS[image.kind] || ['copyright_holder', 'usage_note', 'removal_route'].some((field) => !nonEmpty(rights[field]))) errors.push(`${label}: incomplete image rights record`);
+  if (rights.terms_source_id !== undefined && !sources.has(rights.terms_source_id)) errors.push(`${label}: unknown image terms source`);
+  const privacy = image.privacy_review ?? {};
+  if (!['none-found', 'technical-only'].includes(privacy.embedded_metadata) || privacy.visual !== 'no-faces-plates-accounts-locations' || !isDate(privacy.reviewed_at)) errors.push(`${label}: incomplete image privacy review`);
+  return errors;
+}
 
 export function validateTires(data, sourceIds) {
   const errors = [];
   const tires = data.tires ?? [];
   const ids = new Set(tires.map((tire) => tire.id));
   const otherIds = new Set([...(data.buildParts ?? []), ...(data.wheelsets ?? [])].map((record) => record.id));
+  const sources = new Map((data.sources ?? []).map((source) => [source.id, source]));
   const listed = (tire, id) => sourceIds.has(id) && (tire.source_ids ?? []).includes(id);
   for (const tire of tires) {
     const label = `tire ${tire.id}`;
@@ -233,6 +365,39 @@ export function validateTires(data, sourceIds) {
       if (!listed(tire, report.source_id) || !nonEmpty(report.summary) || !TIRE_STANCES.includes(report.stance) || !isDate(report.published_at)) errors.push(`${label}: owner reports need a listed source, summary, stance and date`);
       if (report.issues !== undefined && (!Array.isArray(report.issues) || !report.issues.length || report.issues.some((issue) => !TIRE_ISSUES.includes(issue)) || new Set(report.issues).size !== report.issues.length)) errors.push(`${label}: owner report issues must be distinct known issues`);
     }
+    // Owner ratings: one row per distinct owner, coded per aspect. A post is either coded owner
+    // by owner or kept as a whole-post note, never both. Rows carry no names or account data.
+    if (tire.owner_evidence !== undefined) {
+      const evidence = tire.owner_evidence ?? {};
+      if (!isDate(evidence.coded_at) || !nonEmpty(evidence.screening_note) || !Array.isArray(evidence.reports)) errors.push(`${label}: owner evidence needs a coding date, screening note and reports`);
+      const posts = new Set((tire.community ?? []).map((report) => report.source_id));
+      for (const report of evidence.reports ?? []) {
+        const codes = Object.entries(report.codes ?? {});
+        if (!Array.isArray(report.source_ids) || !report.source_ids.length || report.source_ids.some((id) => !listed(tire, id))) errors.push(`${label}: owner rows need listed sources`);
+        if (!codes.length || codes.some(([aspect, code]) => !OWNER_ASPECTS.includes(aspect) || !OWNER_CODES.includes(code))) errors.push(`${label}: owner rows need known aspect codes`);
+        if (!nonEmpty(report.summary) || /https?:|www\.|@/i.test(`${report.summary} ${report.exposure ?? ''}`)) errors.push(`${label}: owner rows need a summary without links or handles`);
+        if (report.width_mm !== null && !inRange(report.width_mm, 18, 50)) errors.push(`${label}: owner row width must be a width or null`);
+        if (report.setup !== null && !OWNER_SETUPS.includes(report.setup)) errors.push(`${label}: owner row setup must be tubeless, inner-tube or null`);
+        if (report.setup === 'tubeless' && tire.construction === 'tube-type') errors.push(`${label}: a tube-type tire cannot have a tubeless owner row`);
+        if (report.published_at !== undefined && !isDate(report.published_at)) errors.push(`${label}: owner row date must be a full date`);
+        if ((report.source_ids ?? []).some((id) => posts.has(id))) errors.push(`${label}: a post is either coded owner by owner or kept as a post note`);
+      }
+      // The checked-source ledger names each route once with its outcome; only a counted
+      // route carries an owner count, and it cannot exceed the coded rows.
+      if (evidence.checks !== undefined) {
+        if (!Array.isArray(evidence.checks)) errors.push(`${label}: owner checks must be an array`);
+        const routes = new Set();
+        for (const check of Array.isArray(evidence.checks) ? evidence.checks : []) {
+          if (!OWNER_ROUTES.includes(check.route) || routes.has(check.route)) errors.push(`${label}: owner checks need distinct known routes`);
+          routes.add(check.route);
+          if (!OWNER_CHECK_OUTCOMES.includes(check.outcome)) errors.push(`${label}: invalid owner check outcome`);
+          const counted = check.outcome === 'counted';
+          if (counted !== (check.owners !== undefined) || (counted && (!Number.isInteger(check.owners) || check.owners < 1 || check.owners > (evidence.reports ?? []).length))) errors.push(`${label}: only a counted route carries an owner count within the coded rows`);
+          if (check.note !== undefined && (!nonEmpty(check.note) || /https?:|www\.|@/i.test(check.note))) errors.push(`${label}: owner check notes must be plain text`);
+        }
+        if ((evidence.reports ?? []).length && !(evidence.checks ?? []).some((check) => check.outcome === 'counted')) errors.push(`${label}: coded rows need a counted route`);
+      }
+    }
     const availability = tire.availability ?? {};
     for (const region of TIRE_REGIONS) if (!TIRE_AVAILABILITY.includes(availability[region])) errors.push(`${label}: invalid availability.${region}`);
     if (!Array.isArray(tire.price_observations)) errors.push(`${label}: price_observations must be an array`);
@@ -247,6 +412,24 @@ export function validateTires(data, sourceIds) {
     for (const id of tire.source_ids ?? []) if (!sourceIds.has(id)) errors.push(`${label}: missing source ${id}`);
     if (!Array.isArray(tire.source_ids) || !tire.source_ids.length) errors.push(`${label}: source_ids must not be empty`);
     if (!isDate(tire.reviewed_at)) errors.push(`${label}: invalid reviewed_at`);
+    if (tire.image !== undefined) errors.push(...validateTireImage(tire, sources, label));
+  }
+  // The image ledger lists every published tire once with its photo status or the reason it has none.
+  for (const ledger of data.tireImages ?? []) {
+    const label = `tire image ledger ${ledger.id}`;
+    if (!isDate(ledger.as_of)) errors.push(`${label}: invalid as_of`);
+    const entries = new Map();
+    for (const entry of ledger.entries ?? []) {
+      if (entries.has(entry.tire_id)) errors.push(`${label}: duplicate entry ${entry.tire_id}`);
+      entries.set(entry.tire_id, entry);
+      if (!ids.has(entry.tire_id)) errors.push(`${label}: unknown tire ${entry.tire_id}`);
+      if (!TIRE_IMAGE_STATUSES.includes(entry.status) || !nonEmpty(entry.reason)) errors.push(`${label}: ${entry.tire_id} needs a status and reason`);
+    }
+    for (const tire of tires) {
+      const entry = entries.get(tire.id);
+      if (!entry) errors.push(`${label}: tire ${tire.id} is missing`);
+      else if (entry.status !== (tire.image?.kind ?? 'missing')) errors.push(`${label}: ${tire.id} status does not match its record`);
+    }
   }
   // The coverage ledger records every discovered candidate's disposition and reason.
   for (const ledger of data.tireCoverage ?? []) {

@@ -21,6 +21,8 @@ const SITE_EVENTS_ACTION_ROUTE = '/site-events/action';
 const SITE_EVENTS_ENGAGEMENT_ROUTE = '/site-events/engagement';
 const CATALOG_DOCUMENT_PATHS = new Set(['/', '/zh/', '/de/']);
 const HOME_DOCUMENT_PATHS = new Set(['/', '/zh/', '/de/', '/es/', '/ru/']);
+// Homepages point agents at the site guide and the AI Catalog / ARD manifest of its skills.
+const HOME_LINKS = ['</llms.txt>; rel="describedby"; type="text/plain"', '</.well-known/ard.json>; rel="ard"', '</.well-known/ai-catalog.json>; rel="ai-catalog"'];
 const CUSTOMER_ACTION_IDS = new Set(['product_outbound_click']);
 // Browser module signals. Cached modules send no signal header: page_engaged.
 const PAGE_SIGNALS = { bootstrap: null, visible: 'page_visible', engaged: 'page_engaged' };
@@ -646,7 +648,7 @@ export async function handleRequest(request, env = {}, ctx = {}) {
   if (markdownPath && (response.status === 200 || response.status === 304)) {
     appendVary(response.headers, 'Accept');
     response.headers.append('link', `<${markdownPath}>; rel="alternate"; type="text/markdown"`);
-    if (HOME_DOCUMENT_PATHS.has(url.pathname)) response.headers.append('link', '</llms.txt>; rel="describedby"; type="text/plain"');
+    if (HOME_DOCUMENT_PATHS.has(url.pathname)) for (const link of HOME_LINKS) response.headers.append('link', link);
   }
   if (response.status === 200 && (response.headers.get('content-type') ?? '').toLowerCase().startsWith('text/html')) {
     const payload = analyticsPayload(request, url);

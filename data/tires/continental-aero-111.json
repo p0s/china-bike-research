@@ -25,7 +25,7 @@
       "etrto": "26-622",
       "weight_g": 245,
       "max_psi": 102,
-      "max_bar": 7.0,
+      "max_bar": 7,
       "note": "Hookless 73 psi; rim 13-22 mm"
     },
     {
@@ -33,7 +33,7 @@
       "etrto": "29-622",
       "weight_g": 275,
       "max_psi": 102,
-      "max_bar": 7.0,
+      "max_bar": 7,
       "note": "Hookless 73 psi; rim 16-25 mm"
     },
     {
@@ -85,8 +85,112 @@
     "continental-aero-111-official-2026-11-01",
     "continental-road-range-us-2026-11-01",
     "continental-road-range-de-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-aero-111-reviews",
+    "brr-comments-continental-aero-111",
+    "brr-comments-pirelli-p-zero-race-tlr-sl-r"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "continental-aero-111-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Black Aero 111 as pictured on Continental's product page; the same picture covers every width.",
+    "credit": "Continental",
+    "alt": "Continental Aero 111 road tire with black sidewall, angled product view",
+    "remote_url": "https://www.continental-tires.com/adobe/dynamicmedia/deliver/dm-aid--ed632b45-bb33-4101-8893-78a79e2cfa78/Continental__AERO-111__ProductPicture__30.png?width=900",
+    "thumb_url": "https://www.continental-tires.com/adobe/dynamicmedia/deliver/dm-aid--ed632b45-bb33-4101-8893-78a79e2cfa78/Continental__AERO-111__ProductPicture__30.png?width=240",
+    "width": 900,
+    "height": 900,
+    "source_media_sha256": "5ca1aaf5acf813e978a4a159c72605887cdb00030e6d39c15eae5c953cf327b1",
+    "source_media_bytes": 379285,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Continental",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-aero-111-reviews"
+        ],
+        "published_at": "2026-05-26",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A quality tire that rides well; a bit tight to fit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-aero-111-reviews"
+        ],
+        "published_at": "2025-08-23",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About a month",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Easy to fit and seems fast after a month."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-aero-111"
+        ],
+        "published_at": "2024-08-12",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Awesome performance, but less puncture resistant than the GP5000 All Season, with more punctures in the wet."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-tlr-sl-r"
+        ],
+        "published_at": "2026-05-13",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Made a deep front wheel easy to handle even in strong crosswinds, so the owner is reluctant to switch."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 2
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 2,
+        "note": "26 and 29 mm test pages (40 comments), plus an owner on the P ZERO Race TLR SL-R test"
+      }
+    ]
+  }
 }

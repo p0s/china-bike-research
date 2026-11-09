@@ -65,8 +65,71 @@
   ],
   "source_ids": [
     "veloflex-clincher-tire-corsa-evo-black-sidewall-official-2026-11-01",
-    "veloflex-about-official-2026-11-01"
+    "veloflex-about-official-2026-11-01",
+    "brr-comments-veloflex-corsa-evo-tlr"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "veloflex-clincher-tire-corsa-evo-black-sidewall-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Black Corsa EVO open tubular as pictured on Veloflex's product page.",
+    "credit": "Veloflex",
+    "alt": "Veloflex Corsa EVO open tubular road tire with black sidewall and printed logo",
+    "remote_url": "https://www.veloflex.it/media/catalog/product/cache/e2c5be30faaa220453228ae3c361f07e/c/e/ceb_3.jpg",
+    "width": 500,
+    "height": 362,
+    "source_media_sha256": "8c61ffb39be3625611b6566097a1562cfb507ef8e084c1f3fb559cee4a433cc3",
+    "source_media_bytes": 13608,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Veloflex",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "brr-comments-veloflex-corsa-evo-tlr"
+        ],
+        "published_at": "2023-06-22",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Thousands of miles",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "mixed"
+        },
+        "summary": "Thousands of miles in 28 mm, compared back to back with the GP5000: no noticeable speed difference but less road buzz; the second puncture on the rear damaged the casing."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "An owner on the Corsa Evo TLR test"
+      }
+    ]
+  }
 }

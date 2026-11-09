@@ -68,8 +68,75 @@
   "source_ids": [
     "maxxis-pursuer-official-2026-11-01",
     "maxxis-road-range-us-2026-11-01",
-    "maxxis-how-we-began-2026-11-01"
+    "maxxis-how-we-began-2026-11-01",
+    "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "maxxis-pursuer-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Maxxis render of the Pursuer on its US product page.",
+    "credit": "Maxxis",
+    "alt": "Maxxis Pursuer road tire render with sidewall logo",
+    "remote_url": "https://www.maxxis.com/us/wp-content/uploads/sites/13/2021/01/pursuer_rough_Camera_1-scaled.jpg",
+    "width": 2560,
+    "height": 1920,
+    "source_media_sha256": "47bd08b79f2dc5d3c9cca0ebc8b51414f78b66999b24cae524ba3682a97a0d7d",
+    "source_media_bytes": 295991,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Maxxis",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and every Bicycle Rolling Resistance reader comment on this tire's test pages. Counted only owners who describe their own riding of this exact model and, where it is sold in more than one construction or generation, say which; seller and shop posts, questions, unmounted impressions and reports about other models were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-maxxis-pursuer-stock-to-gp4s-2025-05-30"
+        ],
+        "published_at": "2025-05-30",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "1,500 km",
+        "codes": {
+          "speed": "unfavourable"
+        },
+        "summary": "The bike's stock tire for 1,500 km; the Grand Prix 4-Season fitted afterwards felt clearly faster and easier."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One owner post; a sale listing is not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Only wired versions are listed, with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

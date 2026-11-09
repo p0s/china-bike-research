@@ -61,5 +61,49 @@
     "rene-herse-stampede-pass-official-2026-11-01"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "rene-herse-stampede-pass-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "700C x 32 tan-wall Stampede Pass as pictured on Rene Herse's product page.",
+    "credit": "Rene Herse Cycles",
+    "alt": "Rene Herse Stampede Pass 700C x 32 tire with tan sidewalls and printed size",
+    "remote_url": "https://www.renehersecycles.com/wp-content/uploads/2015/05/Stampede_1582.jpg",
+    "width": 800,
+    "height": 800,
+    "source_media_sha256": "6d3a7d70f55ed9c142b88e9477dbbeb8ee8613cb8419ab6f25f1d1a32021508e",
+    "source_media_bytes": 36716,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Rene Herse Cycles",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
+  }
 }

@@ -64,8 +64,117 @@
   ],
   "source_ids": [
     "cadex-race-gc-official-2026-11-01",
-    "bikeradar-giant-founder-2026-02-17"
+    "bikeradar-giant-founder-2026-02-17",
+    "xhs-cadex-race-gc-wear-2025-07-13",
+    "xhs-cadex-race-gc-sidewall-2025-04-06",
+    "xhs-cadex-race-gc-2024-06-23"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "cadex-race-gc-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "CADEX Race GC as pictured on CADEX's product page.",
+    "credit": "CADEX",
+    "alt": "CADEX Race GC tubeless road tire shown as a full ring",
+    "remote_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_675%2Cq_80%2Cw_900/kreazp05f3sqdms3cgha/CADEXRaceGCtire1.jpg",
+    "thumb_url": "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_180%2Cq_80%2Cw_240/kreazp05f3sqdms3cgha/CADEXRaceGCtire1.jpg",
+    "width": 900,
+    "height": 675,
+    "source_media_sha256": "d246c99a4ecafb0dcdbb57e48b4250f0060a920201384290147867ffddb72aee",
+    "source_media_bytes": 29657,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "CADEX",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components review lists and every Bicycle Rolling Resistance reader comment on this tire's test pages. Counted only owners who describe their own riding of this exact model and, where it is sold in more than one construction or generation, say which; seller and shop posts, questions, unmounted impressions and reports about other models were left out. A post naming only \"CADEX Race\" without a width is not attributed to this tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-wear-2025-07-13",
+          "xhs-cadex-race-gc-sidewall-2025-04-06"
+        ],
+        "published_at": "2025-04-06",
+        "width_mm": 28,
+        "setup": "tubeless",
+        "exposure": "About 4,350 km",
+        "codes": {
+          "overall": "unfavourable",
+          "grip": "favourable",
+          "wear": "unfavourable",
+          "casing": "unfavourable"
+        },
+        "summary": "Corners well, but a sidewall was cut within the first weeks, the tread wore to the casing by 4,000 km, the sidewall cracked and it bulged 350 km later."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-2024-06-23"
+        ],
+        "published_at": "2025-05-17",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed"
+        },
+        "summary": "Calls it acceptable and has since switched to a Michelin Power Cup."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-sidewall-2025-04-06"
+        ],
+        "published_at": "2025-04-07",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "casing": "unfavourable"
+        },
+        "summary": "Its sidewall is not robust; the owner also cut one and had to replace it."
+      },
+      {
+        "source_ids": [
+          "xhs-cadex-race-gc-sidewall-2025-04-06"
+        ],
+        "published_at": "2025-04-07",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable"
+        },
+        "summary": "A race tire that is very picky about road surfaces; the owner gave it up for a cheaper, thicker tire."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 4,
+        "note": "Three posts; one owner posted twice; a shop post and its replies are not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

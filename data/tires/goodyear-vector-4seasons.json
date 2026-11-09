@@ -80,5 +80,51 @@
     "bicycle-retailer-goodyear-premium-line-2018"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "goodyear-vector-4seasons-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Goodyear's cutaway render of the tube-type Vector 4Seasons; one render covers every width.",
+    "credit": "Goodyear",
+    "alt": "Goodyear Vector 4Seasons tube-type road tire render with a cutaway showing the casing and protection layer",
+    "remote_url": "https://goodyearbike.com/cdn/shop/files/Vector-4Seasons-TubeType-1500px_39_d708afd3-848b-40b7-bdcb-704a149eb37d.png?width=900",
+    "thumb_url": "https://goodyearbike.com/cdn/shop/files/Vector-4Seasons-TubeType-1500px_39_d708afd3-848b-40b7-bdcb-704a149eb37d.png?width=240",
+    "width": 900,
+    "height": 600,
+    "source_media_sha256": "fd7b6b82eeb363273d3ea2cbf4a344e1c88dec8c9f91f3ab42ff72f25c212eea",
+    "source_media_bytes": 325927,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Goodyear",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed",
+        "note": "Only the TLR version is listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
+  }
 }

@@ -24,7 +24,7 @@
       "etrto": "25-622",
       "weight_g": 240,
       "max_psi": 115,
-      "max_bar": 8.0
+      "max_bar": 8
     },
     {
       "width_mm": 28,
@@ -38,7 +38,7 @@
       "etrto": "30-622",
       "weight_g": 290,
       "max_psi": 85,
-      "max_bar": 6.0
+      "max_bar": 6
     },
     {
       "width_mm": 32,
@@ -82,5 +82,51 @@
     "panaracer-company-official-2026-11-01"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "panaracer-usa-agilest-duro-tlr-folding-road-tire-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "700x28 black Agilest Duro TLR (part RF728TR-AGD-B) as pictured on Panaracer USA's product page.",
+    "credit": "Panaracer",
+    "alt": "Panaracer Agilest Duro TLR road tire mounted on a rim",
+    "remote_url": "https://www.panaracerusa.com/cdn/shop/files/RF728TR-AGD-B.jpg?width=900",
+    "thumb_url": "https://www.panaracerusa.com/cdn/shop/files/RF728TR-AGD-B.jpg?width=240",
+    "width": 900,
+    "height": 900,
+    "source_media_sha256": "e8e2874fcfdb025d9d5d04aa37670d277cf5b3b8f1f14d1a9d2daca5864ca8aa",
+    "source_media_bytes": 30351,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Panaracer",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Listed with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed"
+      }
+    ]
+  }
 }

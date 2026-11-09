@@ -142,7 +142,8 @@ test('catalog and shortlist previews share uncropped paint while preserving link
   assert.match(script, /\.catalog-row \.product-image-link, \.curated-group \.product-image-link/);
   assert.match(styles, /\.product-image:has\(\.product-image-link\.is-previewing\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
   assert.match(styles, /\.model-figure\.is-unavailable,[\s\S]*?\.gallery-thumb\[hidden\] \{ display: none; \}/);
-  assert.match(styles, /\.model-grid\.has-no-image \{[^}]*grid-template-columns: minmax\(0, 760px\);[^}]*justify-content: center;/);
+  // A photo-less decision panel aligns with the content column below it.
+  assert.match(styles, /\.model-grid\.has-no-image \{[^}]*grid-template-columns: minmax\(0, 760px\);[^}]*justify-content: start;/);
   assert.match(styles, /\.catalog-product\.has-no-image, \.catalog-product:not\(:has\(\.product-image\)\) \{ grid-template-columns: minmax\(0, 1fr\); \}/);
   assert.doesNotMatch(styles, /^\s*\.selection-actions \.text-button \{ display: none; \}/m);
 });
@@ -154,18 +155,23 @@ test('failed product photos are hidden without substituting a placeholder', () =
   assert.doesNotMatch(script, /showing project placeholder|dataset\.completeBikeFallback|dataset\.framesetFallback/);
 });
 
-test('product galleries are explicit, keyboard-operable, and motion-safe', () => {
+test('product galleries are one swipeable, keyboard-operable and motion-safe slideshow', () => {
   assert.match(script, /document\.querySelectorAll\('\[data-image-gallery\]'\)/);
-  assert.match(script, /const caption = gallery\.querySelector\('\[data-image-caption-status\]\[data-gallery-caption\]'\)/);
-  assert.match(script, /const selectImage = \(button\) =>/);
-  assert.match(script, /button\.addEventListener\('click', \(\) => selectImage\(button\)\)/);
+  // Thumbnails are fragment links; with JavaScript they select the slide in place.
+  assert.match(script, /thumb\.addEventListener\('click', \(event\) => \{[\s\S]*?event\.preventDefault\(\);\s*show\(thumb\);/);
+  assert.match(script, /track\.scrollTo\(\{ left: slide\.offsetLeft, behavior: reduceMotion\.matches \? 'instant' : 'smooth' \}\)/);
+  // Swiping or scrolling the photos updates the selected thumbnail.
+  assert.match(script, /track\.addEventListener\('scroll', syncFromScroll, \{ passive: true \}\)/);
   assert.match(script, /ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1/);
   assert.match(script, /event\.key === 'Home'/);
   assert.match(script, /event\.key === 'End'/);
-  assert.doesNotMatch(script, /fallbackApplied|dataset\.fallback/);
+  // A failed view hides only its own slide and thumbnail.
+  assert.match(script, /if \(slide instanceof HTMLElement\) slide\.hidden = true;/);
+  assert.doesNotMatch(script, /fallbackApplied|dataset\.fallback|data-gallery-all/);
+  assert.match(styles, /\.gallery-track \{[^}]*scroll-snap-type: x mandatory/);
+  assert.match(styles, /\.gallery-slide \{[^}]*scroll-snap-align: start/);
   assert.match(styles, /\.model-gallery-strip \{[^}]*grid-auto-flow: column;[^}]*overflow-x: auto/);
-  assert.match(styles, /\.gallery-hero-image\.is-switching \{[^}]*opacity: \.18/);
-  assert.match(styles, /\.gallery-thumb\[aria-pressed="true"\]/);
+  assert.match(styles, /\.gallery-thumb\[aria-current="true"\]/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
 });
 

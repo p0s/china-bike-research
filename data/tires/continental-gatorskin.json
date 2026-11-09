@@ -60,8 +60,438 @@
   "source_ids": [
     "continental-gatorskin-official-2026-11-01",
     "continental-road-range-us-2026-11-01",
-    "continental-road-range-de-2026-11-01"
+    "continental-road-range-de-2026-11-01",
+    "sigma-sports-gatorskin-reviews",
+    "bike-components-gatorskin-reviews",
+    "brr-comments-continental-gatorskin-2015"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "continental-road-range-us-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "Black Gatorskin with its yellow sidewall logo, as pictured on Continental's US road-tire range page; the same picture covers every width, and the folding and wire-bead versions are not distinguished.",
+    "credit": "Continental",
+    "alt": "Continental Gatorskin road tire with its yellow sidewall logo",
+    "remote_url": "https://www.continental-tires.com/adobe/dynamicmedia/deliver/dm-aid--349d4fcb-068d-4071-bc15-71294e859d65/Continental_Gatorskin_ProductPicture_30.png?width=900",
+    "thumb_url": "https://www.continental-tires.com/adobe/dynamicmedia/deliver/dm-aid--349d4fcb-068d-4071-bc15-71294e859d65/Continental_Gatorskin_ProductPicture_30.png?width=240",
+    "width": 900,
+    "height": 900,
+    "source_media_sha256": "320c8c7edd3e5ab308006925d5c632746d3f90fc791c6664b3fa36e4eeded6e8",
+    "source_media_bytes": 508407,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Continental",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "none-found",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Coded on 2026-11-03 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list in a browser (the newest 15 per page when more exist; bundle pages that add inner tubes are not read), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Colour options on the same product page count as the same tire.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2026-05-11",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Great for commuting and avoiding punctures."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2026-05-07",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Many years",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Used for many years with good puncture resistance."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2026-01-23",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Rolls well and no more punctures since switching back to them."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2026-01-06",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Bulletproof so far as a winter tire, but very hard to fit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2025-04-13",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A few years",
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Served well on a fixed-gear commuter for a few years."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2025-01-04",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Trouble-free winter riding through hedge cuttings, flint and grit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2024-11-02",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "speed": "unfavourable",
+          "punctures": "favourable"
+        },
+        "summary": "No puncture yet, but do not expect them to feel quick."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2024-10-10",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "500 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "grip": "favourable",
+          "wet": "favourable"
+        },
+        "summary": "Puncture-free over the first 500 miles of road and some gravel, with good grip in the wet too."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2024-09-21",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "For a commuter: good puncture resistance, and they roll and grip well."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2023-11-25",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Years",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Very puncture-proof and long-lasting over years of use."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2023-11-08",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Suits the owner's winter riding."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2023-10-31",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Six years",
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "wear": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Grippy, long-lasting and very puncture resistant on winter and touring bikes; the last pair was replaced only after six years."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2023-10-30",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Five weeks",
+        "codes": {
+          "overall": "mixed",
+          "punctures": "unfavourable"
+        },
+        "summary": "Two punctures in five weeks of central London commuting."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-gatorskin-reviews"
+        ],
+        "published_at": "2023-09-20",
+        "width_mm": 32,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "A comfortable upgrade in 32 mm, and not too tight to fit."
+      },
+      {
+        "source_ids": [
+          "bike-components-gatorskin-reviews"
+        ],
+        "published_at": "2026-08-14",
+        "width_mm": 25,
+        "setup": null,
+        "exposure": "At least 8,000 km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "Excellent puncture protection and long life, at least 8,000 km on the rear, including gravel."
+      },
+      {
+        "source_ids": [
+          "bike-components-gatorskin-reviews"
+        ],
+        "published_at": "2023-04-23",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "A good compromise of weight and puncture protection for city riding."
+      },
+      {
+        "source_ids": [
+          "bike-components-gatorskin-reviews"
+        ],
+        "published_at": "2022-10-07",
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Over 4,000 km",
+        "codes": {
+          "overall": "favourable",
+          "wear": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Over 4,000 km on rough roads with the wear markers less than half gone, and it rolls better with time."
+      },
+      {
+        "source_ids": [
+          "bike-components-gatorskin-reviews"
+        ],
+        "published_at": "2021-03-31",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "wear": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "A fixed-gear rider's favourite: fast, very long-lasting and never punctured."
+      },
+      {
+        "source_ids": [
+          "bike-components-gatorskin-reviews"
+        ],
+        "published_at": "2020-01-22",
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "No problems with winter grit and debris; a top training tire."
+      },
+      {
+        "source_ids": [
+          "bike-components-gatorskin-reviews"
+        ],
+        "published_at": "2019-10-29",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "The first pair ran to the end without a flat on very poor surfaces."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-gatorskin-2015"
+        ],
+        "published_at": "2015-04-21",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "wet": "unfavourable"
+        },
+        "summary": "Treacherous in the cold and wet, losing grip several times."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-gatorskin-2015"
+        ],
+        "published_at": "2015-04-29",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "punctures": "unfavourable"
+        },
+        "summary": "Punctured more often than the owner's Duranos, especially once worn, and cut easily in the wet."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-gatorskin-2015"
+        ],
+        "published_at": "2016-10-11",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "1,000 km",
+        "codes": {
+          "overall": "mixed",
+          "casing": "unfavourable"
+        },
+        "summary": "Tough and long-lasting as a training tire, but the front sidewall blew out after 1,000 km."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-gatorskin-2015"
+        ],
+        "published_at": "2017-02-13",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "6,000-8,000 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "About 6,000 miles on the rear, half of it loaded touring, with only a couple of flats; the front was still going at 8,000 miles."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-gatorskin-2015"
+        ],
+        "published_at": "2026-07-04",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "punctures": "favourable",
+          "speed": "unfavourable"
+        },
+        "summary": "A thorn never got through the tread, but the tires feel wooden compared with faster tires."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-gatorskin-2015"
+        ],
+        "published_at": "2019-10-22",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "4,500 miles",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "wear": "favourable"
+        },
+        "summary": "4,500 miles on the first pair with only three flats, two of them once worn."
+      },
+      {
+        "source_ids": [
+          "brr-comments-continental-gatorskin-2015"
+        ],
+        "published_at": "2017-12-03",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable",
+          "wet": "unfavourable"
+        },
+        "summary": "A harsh ride, and the rear slid under power in cold, wet conditions."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 14,
+        "note": "Newest 15 of 47 written reviews; one covers delivery only"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 6,
+        "note": "All 8 written reviews; 2 give no riding verdict"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 7,
+        "note": "2015 test page, comments 2015-2026"
+      }
+    ]
+  }
 }

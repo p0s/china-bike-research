@@ -32,17 +32,7 @@
   "weight_basis": "No weight is given in the listing.",
   "tests": [],
   "wet_notes": [],
-  "community": [
-    {
-      "source_id": "xhs-cst-crd06-tubeless-2025-07-19",
-      "stance": "negative",
-      "published_at": "2025-07-19",
-      "summary": "A commenter said the loose bead came off the rim on a descent; the author advised staying under 80 psi on rims up to 22 mm internal.",
-      "issues": [
-        "fit"
-      ]
-    }
-  ],
+  "community": [],
   "availability": {
     "cn": "retail",
     "eu": "unverified",
@@ -73,5 +63,44 @@
     "xhs-cst-crd06-tubeless-2025-07-19"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model; questions, seller and maker replies, unmounted impressions and reports about other models were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-cst-crd06-tubeless-2025-07-19"
+        ],
+        "published_at": "2025-07-28",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "unfavourable"
+        },
+        "summary": "Reported the bead coming off the rim on a descent; rim, pressure and size were not stated."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "One post; the publisher's replies are not counted"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

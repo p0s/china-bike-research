@@ -39,25 +39,10 @@
   "wet_notes": [],
   "community": [
     {
-      "source_id": "xhs-budget-clincher-comparison-2025-05-30",
-      "stance": "positive",
-      "published_at": "2025-05-30",
-      "summary": "Owner weighed a 28C at 260 g and rated it the most puncture- and wear-resistant of four budget clinchers."
-    },
-    {
       "source_id": "xhs-chaoyang-falcon-one-year-2026-04-13",
       "stance": "positive",
       "published_at": "2026-04-13",
       "summary": "A commenter says a C1808 bought for CNY 70 lasted 15,000 km with fewer cracks than a pricier race tire, worn mostly by steep descents."
-    },
-    {
-      "source_id": "xhs-cst-c1808-owners-2025-03-23",
-      "stance": "mixed",
-      "published_at": "2025-03-23",
-      "summary": "Owners split on punctures: one year without a puncture as an original-equipment tire, but five flats in one month and two flats for others; loud but easy to fit.",
-      "issues": [
-        "punctures"
-      ]
     }
   ],
   "availability": {
@@ -91,5 +76,107 @@
     "xhs-cst-c1808-owners-2025-03-23"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model; questions, seller and maker replies, unmounted impressions and reports about other models were left out. Puncture and wear rankings that one owner inferred from materials are not counted as observed.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-budget-clincher-comparison-2025-05-30"
+        ],
+        "published_at": "2025-05-30",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "In an uncontrolled four-tire comparison of budget clinchers at 85/90 psi it ranked second for rolling and grip; no puncture occurred, so its protection was not observed."
+      },
+      {
+        "source_ids": [
+          "xhs-cst-c1808-owners-2025-03-23"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "mixed",
+          "punctures": "favourable"
+        },
+        "summary": "After buying it: average overall and noisy, but its puncture protection is fine."
+      },
+      {
+        "source_ids": [
+          "xhs-cst-c1808-owners-2025-03-23"
+        ],
+        "published_at": "2025-03-24",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Fine in use so far, though not yet ridden on rough roads."
+      },
+      {
+        "source_ids": [
+          "xhs-cst-c1808-owners-2025-03-23"
+        ],
+        "published_at": "2025-10-02",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About a year",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "The bike's original tire: some small wear pits and a pinch cut on the side after a year, but never a flat."
+      },
+      {
+        "source_ids": [
+          "xhs-cst-c1808-owners-2025-03-23"
+        ],
+        "published_at": "2025-03-23",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "punctures": "unfavourable"
+        },
+        "summary": "Reported one flat at the front and one at the rear."
+      },
+      {
+        "source_ids": [
+          "xhs-cst-c1808-owners-2025-03-23"
+        ],
+        "published_at": "2025-03-23",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "punctures": "unfavourable"
+        },
+        "summary": "Easy to remove, but punctures easily: five flats in its worst month."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 6,
+        "note": "Two posts"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

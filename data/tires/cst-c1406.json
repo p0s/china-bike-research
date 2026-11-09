@@ -1,0 +1,142 @@
+{
+  "id": "cst-c1406",
+  "maker": "CST",
+  "name": "C1406 Czar",
+  "aliases": [
+    "CST Czar",
+    "正新 C1406"
+  ],
+  "origin": {
+    "group": "taiwan",
+    "country": "Taiwan",
+    "basis": "CST is the Cheng Shin (正新) brand of Taiwan's Cheng Shin Rubber; China listings give the brand as CST/正新."
+  },
+  "manufacturing": {
+    "country": null,
+    "basis": "The retailer page does not state the factory."
+  },
+  "use": "training",
+  "positioning": "CST's low-cost wire-bead slick road clincher with an EPS puncture layer.",
+  "construction": "tube-type",
+  "hookless": "not-stated",
+  "casing": "60 TPI",
+  "compound": "Dual compound",
+  "protection": "EPS puncture layer",
+  "sizes": [
+    {
+      "width_mm": 25,
+      "etrto": "25-622",
+      "weight_g": null,
+      "max_psi": 120
+    }
+  ],
+  "weight_claim_type": "seller claim",
+  "weight_basis": "The retailer gives both 310 g and 240 g for the 25 mm, so no weight is recorded.",
+  "tests": [],
+  "wet_notes": [],
+  "community": [
+    {
+      "source_id": "xhs-cst-c1406-cheap-slick-2025-11-26",
+      "stance": "mixed",
+      "published_at": "2025-11-26",
+      "summary": "A short owner video calls it an interesting cheap slick; commenters mention about CNY 20 and marked 25C and 28C wire-bead versions."
+    }
+  ],
+  "availability": {
+    "cn": "unverified",
+    "eu": "unverified",
+    "na": "retail",
+    "note": "Listed by a US retailer; owners mention Taobao prices, but no mainland listing was read because the Taobao route stopped at a security check on 2026-11-01."
+  },
+  "price_observations": [
+    {
+      "amount": 19.99,
+      "currency": "USD",
+      "market": "FI Performance (US)",
+      "region": "na",
+      "price_type": "retail-listing",
+      "package": "unstated",
+      "observed_at": "2026-11-01",
+      "conditions": "Regular retailer price on 2026-11-01 for the 25 mm (sale price US$15.99); the page does not tie the price to its single or pair option.",
+      "source_id": "fiperformance-cst-c1406-2026-11-01",
+      "width_mm": 25
+    }
+  ],
+  "caveats": [
+    "A heavy-duty entry tire for wear and commuting rather than speed; the retailer weight is inconsistent.",
+    "Owners mention a 28 mm wire-bead version, which no maker or shop page confirmed."
+  ],
+  "source_ids": [
+    "fiperformance-cst-c1406-2026-11-01",
+    "xhs-cst-c3045-high-road-gsr-2025-08-10",
+    "xhs-cst-c1406-cheap-slick-2025-11-26"
+  ],
+  "status": "current",
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "retailer",
+    "source_id": "fiperformance-cst-c1406-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "CST Czar (C1406) render with a casing cutaway, from a US retailer's product page; the bead type is not visible.",
+    "credit": "FI Performance (retailer)",
+    "alt": "CST Czar C1406 road tire render with a cutaway showing the casing",
+    "remote_url": "https://fiperformance.com/cdn/shop/files/czar_c1406.png?width=900",
+    "thumb_url": "https://fiperformance.com/cdn/shop/files/czar_c1406.png?width=240",
+    "width": 800,
+    "height": 800,
+    "source_media_sha256": "b1a8c18edc87490b1e0a1418dc18a71827a4d7771c9fb70e9016566fc71dceb9",
+    "source_media_bytes": 285470,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "retailer-page-embed",
+      "copyright_holder": "Not stated on the retailer page",
+      "usage_note": "The retailer's product photo, shown from the retailer's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model; questions, seller and maker replies, unmounted impressions and reports about other models were left out.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-cst-c3045-high-road-gsr-2025-08-10"
+        ],
+        "published_at": "2025-08-10",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 10 km",
+        "codes": {
+          "speed": "unfavourable"
+        },
+        "summary": "After about 10 km of commuting it felt more sluggish than a Continental GSR."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 1,
+        "note": "Two posts; a video post has no written report"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
+}

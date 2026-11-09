@@ -2,7 +2,7 @@
   "slug": "buy-ican-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-05",
   "researched_at": "2026-09-22",
   "image_id": "buy-ican-bike-unique-mascot-cover",
   "model_ids": [
@@ -11,7 +11,7 @@
   "source_ids": [],
   "photo_sections": [
     {
-      "section_id": "stock",
+      "section_id": "range",
       "ids": [
         "ican-graro"
       ]
@@ -19,242 +19,130 @@
   ],
   "translations": {
     "en": {
-      "title": "Buying an ICAN bike or frame: check the warehouse, not just the price",
-      "description": "Buy an ICAN GRARO or another frame with the correct regional stock, exact included parts and a written China-shipping alternative if local stock runs out.",
-      "intro": "The same ICAN product can look like a local purchase and turn into a factory shipment when your size is unavailable. That can still work well—provided the change is agreed before you pay, with the price and timetable attached.",
+      "title": "ICAN gravel frames: GRARO or GRA04, and what the China-warehouse box leaves out",
+      "description": "ICAN's GRARO (US$899, 45 mm tires, gravel gearing only) and budget GRA04 (50 mm, quote only) compared, the fork bolts and seatpost offset its China-warehouse package omits by default, and how a warehouse switch changed one order.",
+      "intro": "ICAN's current gravel framesets are the GRARO, a race frame listed at US$899 with free shipping on ICAN's store in September 2026, and the budget GRA04, sold by quote from ICAN's factory site, which takes wider 50 mm tires. Both use a threaded T47 bottom bracket. Before ordering a GRARO from the China warehouse, note two defaults ICAN introduced on 17 November 2025: the fork ships without its mount bolts and the seatpost with zero offset, unless your order note asks otherwise.",
       "sections": [
         {
-          "id": "stock",
-          "heading": "Ask where this exact item is sitting",
+          "id": "range",
+          "heading": "GRARO or GRA04",
           "paragraphs": [
-            "ICAN’s [GRARO EU product page](https://icancycling.com/products/graro-eu) is a concrete European frameset offer. The brand also lists selected [US-warehouse wheel products](https://icancycling.com/collections/carbon-disc-wheels-usa). A warehouse label applies to the listed item and option, not to every ICAN frame or to a Canadian address.",
-            "Ask which exact SKU, size and finish are physically in the warehouse now. For a frameset, get a separate included-parts list. If regional stock is gone, request a new China-dispatch quote before accepting the change; the time, import charges and return route may all move.",
-            "If a GRARO EU option is marked pre-order, the EU warehouse heading does not establish an immediate dispatch date. Keep the selected size and finish beside the readiness answer. A switch to China dispatch changes the quote you need to evaluate, even when the product name stays the same."
+            "Both are gravel frames with a threaded T47 shell. These are the differences that decide most orders:"
           ],
-          "worksheet": {
-            "caption": "If ICAN offers a warehouse switch",
-            "columns": [
-              "Item",
-              "Regional-stock order",
-              "China-dispatch alternative"
-            ],
-            "rows": [
-              [
-                "Exact SKU, size and finish",
-                "Confirm",
-                "Confirm"
-              ],
-              [
-                "Physical dispatch location",
-                "Confirm",
-                "Confirm"
-              ],
-              [
-                "Included headset, axles, hanger and post",
-                "List",
-                "List"
-              ],
-              [
-                "Payable total and import-charge handling",
-                "Written quote",
-                "New written quote"
-              ],
-              [
-                "Dispatch date and return address",
-                "Written answer",
-                "New written answer"
-              ]
-            ]
-          }
+          "bullets": [
+            "[GRARO](/models/ican-graro-frameset/): race gravel. 45 mm tires; 1,073 g ± 20 g for a painted size-52 frame in gloss finish, fork 470 g; five sizes from 49 to 58. ICAN specifies 160 mm front and 140 mm rear rotors and gravel groupsets only, with chainrings no larger than 48-31T double or 42T single. US$899 with free shipping on 25 September 2026, including fork, seatpost, bearings, thru-axles and hanger.",
+            "[GRA04](/models/ican-gra04-frameset/): budget gravel. 50 mm tires; 1,100 g ± 50 g for a size-M frame in matte UD finish. ICAN's factory site showed a quote form but no price on 24 September 2026; our August 2026 reference range was ¥3,800–5,200."
+          ]
         },
         {
-          "id": "owner",
-          "heading": "A GRARO order shows why the warehouse question matters",
+          "id": "package",
+          "heading": "What the China-warehouse box leaves out",
           "paragraphs": [
-            "That switch happened to a [GRARO buyer posting in June 2025](https://chinertown.com/index.php?topic=4766.135). Their frame arrived roughly four and a half weeks after an EU-stock shortage sent the order through China. The owner liked the value and also reported that the supplied top-cap arrangement needed attention during assembly.",
-            "This is one build, not a forecast or a fault rate. It gives you two concrete checks: confirm where your order starts, and let the assembler inspect the headset pieces before altering anything."
+            "ICAN's GRARO page, read on 22 October 2026, says that since 17 November 2025 China-warehouse frames ship with the fork's mount bolts left out and a 0 mm offset seatpost, unless an order note asks for the bolts or the 15 mm offset. An integrated handlebar adds the bar and spacers; a separate stem adds spacers and a top cap. Put the bolts, offset and cockpit you need into the order note: a [June 2025 GRARO owner](https://chinertown.com/index.php?topic=4766.135) found that the supplied top-cap arrangement needed attention during assembly."
+          ]
+        },
+        {
+          "id": "stock",
+          "heading": "The warehouse decides the wait",
+          "paragraphs": [
+            "ICAN sells the GRARO from more than one stock: an [EU product page](https://icancycling.com/products/graro-eu) and a [ready-to-ship page](https://icanwheels.com/products/ready-to-ship-graro-frame) with a China-warehouse option. The June 2025 owner's EU-stock order ran short and was shipped from China instead; the frame arrived about four and a half weeks later. If the order moves warehouse, the delivery time, import charges and return address move with it, so get the new total before accepting the switch. The [ordering checklist](/blog/chinese-frameset-order-checklist/) covers the rest of the routine."
           ]
         },
         {
           "id": "returns",
-          "heading": "Compare the cost of changing your mind",
+          "heading": "Two-year warranty, and what a return can cost",
           "paragraphs": [
-            "Ask the seller for the current return policy covering the exact shop and item: unused condition, custom-paint exclusions, return authorization and who pays carriage. Save it with the order instead of assuming two regional storefronts operate identically.",
-            "A [historical A9 return discussion](https://chinertown.com/index.php?topic=3027.165) described staged refunds and currency-conversion loss. That old account cannot define today’s ICAN policy, but it highlights costs that a headline refund amount may hide.",
-            "For an arrival problem, document the packaging and the issue before the bike is built, then ask for the agreed remedy. Do not modify a suspect component merely to see whether it can be made to work; involve the seller and a qualified mechanic."
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "A useful ICAN quote has six answers",
-          "paragraphs": [
-            "Keep the quote short enough to check: exact item; included hardware; actual warehouse; total delivered cost; dispatch estimate; and the return or warranty contact. If one answer changes, update the total before paying.",
-            "Compare that finished purchase with a local complete bike or another frameset build using the [itemized builder](/build/). Add labor and missing components, and preserve unknown amounts as unknown. Regional stock is valuable when it solves a real problem—not simply because the badge looks reassuring.",
-            "Use the [frameset order checklist](/blog/chinese-frameset-order-checklist/) to turn unresolved package or fit details into questions about the [exact GRARO record](/models/ican-graro-frameset/)."
+            "The GRARO store page listed a two-year warranty on 1 September 2026. A [historical return discussion about ICAN's A9](https://chinertown.com/index.php?topic=3027.165) described staged refunds and a currency-conversion loss. It is an old account, not today's policy, but it shows how a refund can arrive smaller than the price paid."
           ]
         }
       ]
     },
     "zh-Hans": {
-      "title": "买 ICAN 整车或车架：不只看价格，还要查发货仓",
-      "description": "购买 ICAN GRARO 等车架时，核对区域仓实物、内含配件；若当地缺货，先取得中国发货的书面替代报价。",
-      "intro": "同一款 ICAN 产品，看起来是本地购买，缺尺码后却可能变成厂家跨境发货。这仍可能是合适的方案，前提是付款前讲清变化、价格和时间。",
+      "title": "ICAN 砾石车架：GRARO 还是 GRA04，以及国内仓发货默认不带什么",
+      "description": "对比 ICAN 的 GRARO（899 美元、45 毫米胎宽、仅限砾石套件）和入门款 GRA04（50 毫米、仅询价），说明国内仓默认不附带的前叉螺丝和座管后移量，以及换仓如何改变了一笔订单。",
+      "intro": "ICAN 目前的砾石车架组有两款：GRARO 是竞赛车架，2026 年 9 月 ICAN 官网标价 899 美元、包邮；入门款 GRA04 在 ICAN 工厂网站上只能询价，可装更宽的 50 毫米轮胎。两款都用 T47 螺纹中轴。从国内仓订 GRARO 之前，要注意 ICAN 自 2025 年 11 月 17 日起的两项默认设置：前叉不带安装螺丝，座管为零后移，除非订单备注另行要求。",
       "sections": [
         {
-          "id": "stock",
-          "heading": "问的是这一件货在哪里",
+          "id": "range",
+          "heading": "GRARO 还是 GRA04",
           "paragraphs": [
-            "ICAN 的 [GRARO EU 页面](https://icancycling.com/products/graro-eu)是明确的欧洲车架商品；品牌也列有部分[美国仓轮组](https://icancycling.com/collections/carbon-disc-wheels-usa)。仓库标签只属于列出的商品和选项，不代表所有 ICAN 车架，也不自动覆盖加拿大地址。",
-            "问准确货号、尺码和颜色的实物此刻在哪个仓。车架还应另列内含配件。区域仓缺货，就先索取中国直发的新报价，再决定是否接受；时间、进口费用与退货地都可能改变。",
-            "如果 GRARO EU 的具体选项标为预订，欧盟仓标题并不能证明可以立即发货。应把尺码、颜色与是否现货的答复写在一起。即使产品名称没变，改从中国发货后，也要按新的报价重新判断。"
+            "两款都是 T47 螺纹中轴的砾石车架。决定大多数订单的差别如下："
           ],
-          "worksheet": {
-            "caption": "ICAN 提议换发货仓时",
-            "columns": [
-              "项目",
-              "区域仓订单",
-              "中国直发替代方案"
-            ],
-            "rows": [
-              [
-                "准确货号、尺码、颜色",
-                "确认",
-                "确认"
-              ],
-              [
-                "实际起运地",
-                "确认",
-                "确认"
-              ],
-              [
-                "碗组、桶轴、尾钩、座管",
-                "列清单",
-                "列清单"
-              ],
-              [
-                "总支付额与进口费用处理",
-                "书面报价",
-                "重新书面报价"
-              ],
-              [
-                "发货日和退货地址",
-                "书面答复",
-                "重新书面答复"
-              ]
-            ]
-          }
+          "bullets": [
+            "[GRARO](/models/ican-graro-frameset/)：竞赛砾石。最大胎宽 45 毫米；52 码亮光涂装车架 1,073 克 ± 20 克，前叉 470 克；49 至 58 共五个尺码。ICAN 规定前碟 160 毫米、后碟 140 毫米，只能装砾石套件，牙盘最大为双盘 48-31T 或单盘 42T。2026 年 9 月 25 日标价 899 美元、包邮，含前叉、座管、轴承、桶轴和挂耳。",
+            "[GRA04](/models/ican-gra04-frameset/)：入门砾石。最大胎宽 50 毫米；M 码哑光 UD 车架 1,100 克 ± 50 克。2026 年 9 月 24 日，ICAN 工厂网站只有询价表，没有标价；我们 2026 年 8 月记录的参考价为 3,800–5,200 元。"
+          ]
         },
         {
-          "id": "owner",
-          "heading": "GRARO 订单说明了仓库问题的重要性",
+          "id": "package",
+          "heading": "国内仓发货默认不带什么",
           "paragraphs": [
-            "[2025 年 6 月 GRARO 买家](https://chinertown.com/index.php?topic=4766.135)遇到了这样的换仓：欧盟缺货，订单改从中国发，约四周半到达。车主认可性价比，也报告碗组上盖的装配配合需要处理。",
-            "这是一辆车的经历，不是交期预测或故障率。它带来两项具体检查：确认订单从哪里开始运输，并请装配者在修改任何部件前核对碗组零件。"
+            "ICAN 的 GRARO 页面（2026 年 10 月 22 日读取）写明：自 2025 年 11 月 17 日起，国内仓发出的车架，前叉默认不带安装螺丝，座管默认为 0 毫米后移；需要螺丝或 15 毫米后移，须在订单备注中注明。选一体把会附带车把和垫圈；另配把立会附带垫圈和顶盖。把需要的螺丝、后移量和车把写进订单备注：一位 [2025 年 6 月的 GRARO 车主](https://chinertown.com/index.php?topic=4766.135)在组装时发现随附的顶盖组合需要调整。"
+          ]
+        },
+        {
+          "id": "stock",
+          "heading": "发货仓决定等待时间",
+          "paragraphs": [
+            "ICAN 的 GRARO 有不止一个库存来源：[欧盟商品页](https://icancycling.com/products/graro-eu)，以及带国内仓选项的[现货页](https://icanwheels.com/products/ready-to-ship-graro-frame)。上述 2025 年 6 月的车主下单时欧盟仓缺货，改由国内发货，车架约四周半后到达。订单一旦换仓，到货时间、进口税费和退货地址都会随之改变，所以接受换仓前先拿到新的总价。其余订购流程见[订购清单](/blog/chinese-frameset-order-checklist/)。"
           ]
         },
         {
           "id": "returns",
-          "heading": "把改变主意的成本也问清",
+          "heading": "两年保修，以及退货可能的损失",
           "paragraphs": [
-            "向具体商城索取适用于该商品的当前退货条款：未使用要求、定制涂装排除项、退货授权及运费责任。随订单保存，不要假设两个区域站做法相同。",
-            "[历史 A9 退货讨论](https://chinertown.com/index.php?topic=3027.165)提到分阶段退款和汇兑损失。老经历不能定义今天 ICAN 的政策，却提醒人们：标称退款金额可能没有反映全部成本。",
-            "到货有问题时，先在装车前记录包装与问题，再协商补救。不要为了“试试能否装上”修改可疑部件；应让卖家和合格技师参与判断。"
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "一份有用的 ICAN 报价应回答六件事",
-          "paragraphs": [
-            "让报价简明到可以逐项核对：具体商品、内含配件、实际仓库、到手总额、预计发货、退货或保修联系人。任一答案变化，都应付款前更新总额。",
-            "用[逐项装车工具](/zh/build/)与本地整车或其他车架方案比较，补上工时和缺件，未知金额保留为未知。区域库存的价值，在于解决真实问题，而不只是标签看着放心。",
-            "用[车架下单核对表](/zh/blog/chinese-frameset-order-checklist/)整理未解决的配件或适配问题，并对照[具体 GRARO 资料](/zh/models/ican-graro-frameset/)。"
+            "2026 年 9 月 1 日，GRARO 商品页列明保修两年。一则关于 ICAN A9 的[早期退货讨论](https://chinertown.com/index.php?topic=3027.165)提到分期退款和汇率损失。这是旧案例，不代表现行政策，但说明退款到账金额可能少于实付价格。"
           ]
         }
       ]
     },
     "de": {
-      "title": "ICAN-Rad oder -Rahmen kaufen: Lagerort statt nur Preis prüfen",
-      "description": "ICAN GRARO oder einen anderen Rahmen mit bestätigtem regionalem Bestand, genauem Paketumfang und schriftlicher China-Versandalternative bestellen.",
-      "intro": "Dasselbe ICAN-Produkt kann lokal angeboten wirken und bei fehlender Größe aus China versendet werden. Das kann funktionieren, wenn die Änderung vor der Zahlung mit Preis und Termin vereinbart wird.",
+      "title": "ICAN-Gravelrahmen: GRARO oder GRA04 – und was im Paket aus dem China-Lager fehlt",
+      "description": "ICANs GRARO (899 US-Dollar, 45-mm-Reifen, nur Gravel-Übersetzungen) und das günstige GRA04 (50 mm, nur auf Anfrage) im Vergleich, die Gabelschrauben und den Stützenversatz, die das Paket aus dem China-Lager standardmäßig weglässt, und wie ein Lagerwechsel eine Bestellung veränderte.",
+      "intro": "ICANs aktuelle Gravel-Rahmensets sind das GRARO, ein Rennrahmen, den ICANs Shop im September 2026 für 899 US-Dollar mit kostenlosem Versand anbot, und das günstige GRA04, das die Fabrikseite nur auf Anfrage verkauft und das breitere 50-mm-Reifen aufnimmt. Beide haben ein T47-Gewindetretlager. Wer ein GRARO aus dem China-Lager bestellt, sollte zwei Voreinstellungen kennen, die ICAN am 17. November 2025 eingeführt hat: Die Gabel kommt ohne Montageschrauben und die Sattelstütze ohne Versatz, sofern die Bestellnotiz nichts anderes verlangt.",
       "sections": [
         {
-          "id": "stock",
-          "heading": "Wo liegt genau dieser Artikel?",
+          "id": "range",
+          "heading": "GRARO oder GRA04",
           "paragraphs": [
-            "ICANs [GRARO-EU-Produktseite](https://icancycling.com/products/graro-eu) ist ein konkretes europäisches Rahmensetangebot. Die Marke führt auch ausgewählte [Laufräder im US-Lager](https://icancycling.com/collections/carbon-disc-wheels-usa). Ein Lagerhinweis gilt für den Artikel und die Option, nicht für jeden Rahmen oder eine kanadische Adresse.",
-            "Fragen Sie, welche Artikelnummer, Größe und Lackierung jetzt im Lager liegen. Fordern Sie für ein Rahmenset eine separate Teileliste. Ist regionaler Bestand weg, verlangen Sie ein neues China-Versandangebot vor der Zustimmung; Frist, Importabgaben und Rückgabeweg können sich ändern.",
-            "Ist eine GRARO-EU-Option als Vorbestellung markiert, belegt die Lagerüberschrift keinen sofortigen Versand. Halten Sie Größe und Lackierung zusammen mit der Bestandsauskunft fest. Ein Wechsel zum Versand aus China verlangt eine neue Angebotsprüfung, auch wenn der Produktname gleich bleibt."
+            "Beide sind Gravelrahmen mit T47-Gewindegehäuse. Diese Unterschiede entscheiden die meisten Bestellungen:"
           ],
-          "worksheet": {
-            "caption": "Wenn ICAN einen Lagerwechsel anbietet",
-            "columns": [
-              "Punkt",
-              "Bestellung aus regionalem Bestand",
-              "Alternative aus China"
-            ],
-            "rows": [
-              [
-                "Artikelnummer, Größe und Lackierung",
-                "Bestätigen",
-                "Bestätigen"
-              ],
-              [
-                "Tatsächlicher Versandort",
-                "Bestätigen",
-                "Bestätigen"
-              ],
-              [
-                "Enthaltener Steuersatz, Achsen, Schaltauge und Stütze",
-                "Auflisten",
-                "Auflisten"
-              ],
-              [
-                "Gesamtbetrag und Importabgaben",
-                "Schriftliches Angebot",
-                "Neues schriftliches Angebot"
-              ],
-              [
-                "Versanddatum und Rücksendeadresse",
-                "Schriftliche Antwort",
-                "Neue schriftliche Antwort"
-              ]
-            ]
-          }
+          "bullets": [
+            "[GRARO](/models/ican-graro-frameset/): Race-Gravel. 45-mm-Reifen; 1.073 g ± 20 g für einen lackierten Rahmen in Größe 52 mit Glanzfinish, Gabel 470 g; fünf Größen von 49 bis 58. ICAN gibt 160-mm-Scheiben vorne und 140 mm hinten vor und nur Gravel-Gruppen, mit Kettenblättern bis höchstens 48-31 Zähne zweifach oder 42 Zähne einfach. 899 US-Dollar mit kostenlosem Versand am 25. September 2026, inklusive Gabel, Sattelstütze, Lager, Steckachsen und Schaltauge.",
+            "[GRA04](/models/ican-gra04-frameset/): günstiger Gravelrahmen. 50-mm-Reifen; 1.100 g ± 50 g für einen Rahmen in Größe M mit mattem UD-Finish. ICANs Fabrikseite zeigte am 24. September 2026 nur ein Anfrageformular, keinen Preis; unser Referenzbereich vom August 2026 lag bei 3.800 bis 5.200 Yuan."
+          ]
         },
         {
-          "id": "owner",
-          "heading": "Eine GRARO-Bestellung zeigt die Bedeutung des Lagers",
+          "id": "package",
+          "heading": "Was im Paket aus dem China-Lager fehlt",
           "paragraphs": [
-            "Ein [GRARO-Käufer im Juni 2025](https://chinertown.com/index.php?topic=4766.135) erlebte diesen Wechsel. Nach fehlendem EU-Bestand kam der Rahmen aus China nach ungefähr viereinhalb Wochen. Der Besitzer lobte den Gegenwert und berichtete zugleich von Montagebedarf an der mitgelieferten oberen Steuersatzabdeckung.",
-            "Das ist ein einzelner Aufbau, keine Prognose oder Fehlerquote. Prüfen Sie den Startort Ihrer Bestellung und lassen Sie den Steuersatz vor Veränderungen durch die montierende Person prüfen."
+            "Laut ICANs GRARO-Seite, gelesen am 22. Oktober 2026, verlassen Rahmen aus dem China-Lager seit dem 17. November 2025 das Werk ohne die Montageschrauben der Gabel und mit einer Sattelstütze ohne Versatz, außer die Bestellnotiz verlangt die Schrauben oder 15 mm Versatz. Ein integrierter Lenker bringt Lenker und Spacer mit, ein separater Vorbau Spacer und eine Abdeckkappe. Schreiben Sie Schrauben, Versatz und Cockpit in die Bestellnotiz: Ein [GRARO-Besitzer im Juni 2025](https://chinertown.com/index.php?topic=4766.135) stellte beim Aufbau fest, dass die mitgelieferte Abdeckkappen-Lösung nachgearbeitet werden musste."
+          ]
+        },
+        {
+          "id": "stock",
+          "heading": "Das Lager bestimmt die Wartezeit",
+          "paragraphs": [
+            "ICAN verkauft das GRARO aus mehr als einem Lager: über eine [EU-Produktseite](https://icancycling.com/products/graro-eu) und eine [Sofort-lieferbar-Seite](https://icanwheels.com/products/ready-to-ship-graro-frame) mit China-Lager-Option. Bei dem Besitzer vom Juni 2025 reichte der EU-Bestand nicht, die Bestellung kam stattdessen aus China; der Rahmen traf rund viereinhalb Wochen später ein. Wechselt das Lager, ändern sich Lieferzeit, Einfuhrabgaben und Rücksendeadresse mit, also lassen Sie sich vor der Zustimmung die neue Gesamtsumme nennen. Den übrigen Ablauf deckt die [Bestell-Checkliste](/blog/chinese-frameset-order-checklist/) ab."
           ]
         },
         {
           "id": "returns",
-          "heading": "Kosten einer Rückgabe vergleichen",
+          "heading": "Zwei Jahre Garantie und was eine Rückgabe kosten kann",
           "paragraphs": [
-            "Fordern Sie die aktuelle Rückgaberichtlinie für Shop und Artikel an: unbenutzter Zustand, Ausschlüsse bei Sonderlackierung, Genehmigung und Versandkosten. Speichern Sie sie zur Bestellung, statt gleiche Bedingungen regionaler Shops anzunehmen.",
-            "Eine [ältere A9-Rückgabediskussion](https://chinertown.com/index.php?topic=3027.165) beschrieb gestaffelte Erstattungen und Wechselkursverluste. Das definiert keine heutige ICAN-Richtlinie, zeigt aber mögliche Kosten hinter einer Erstattungssumme.",
-            "Dokumentieren Sie bei Ankunftsproblemen Verpackung und Schaden vor dem Aufbau und fragen Sie nach der vereinbarten Lösung. Verändern Sie ein fragliches Bauteil nicht zum Ausprobieren; beziehen Sie Verkäufer und eine qualifizierte Werkstatt ein."
-          ]
-        },
-        {
-          "id": "quote",
-          "heading": "Ein brauchbares ICAN-Angebot hat sechs Antworten",
-          "paragraphs": [
-            "Halten Sie das Angebot prüfbar: genauer Artikel, Kleinteile, tatsächliches Lager, Liefergesamtpreis, Versandschätzung und Rückgabe- oder Garantiekontakt. Ändert sich eine Antwort, aktualisieren Sie die Summe vor der Zahlung.",
-            "Vergleichen Sie den fertigen Kauf mit einem lokalen Komplettrad oder anderen Rahmenaufbau im [Aufbauplaner](/de/build/). Ergänzen Sie Arbeit und fehlende Teile; offene Beträge bleiben unbekannt. Regionaler Bestand ist wertvoll, wenn er ein konkretes Problem löst.",
-            "Nutzen Sie die [Checkliste zur Rahmenbestellung](/de/blog/chinese-frameset-order-checklist/) für offene Paket- und Passungsfragen zum [genauen GRARO-Eintrag](/de/models/ican-graro-frameset/)."
+            "Die GRARO-Shopseite nannte am 1. September 2026 eine Garantie von zwei Jahren. Eine [ältere Diskussion über eine Rückgabe des ICAN A9](https://chinertown.com/index.php?topic=3027.165) beschrieb gestaffelte Erstattungen und einen Verlust durch Währungsumrechnung. Das ist ein alter Bericht, keine heutige Regel, zeigt aber, dass eine Erstattung kleiner ausfallen kann als der gezahlte Preis."
           ]
         }
       ]
     }
   },
   "editorial_references": [
-    "https://icancycling.com/",
-    "https://icancycling.com/collections/carbon-disc-wheels-usa",
+    "https://icancycling.com/products/gravel-bike-frame-graro",
+    "https://icanwheels.com/products/graro",
+    "https://icanwheels.com/products/ready-to-ship-graro-frame",
+    "https://icancycling.com/products/graro-eu",
+    "https://www.icanbikes.com/Products-list/full-carbon-racing-gravel-frame-gra04/",
     "https://chinertown.com/index.php?topic=4766.135",
-    "https://chinertown.com/index.php?topic=3027.165",
-    "https://icancycling.com/products/graro-eu"
+    "https://chinertown.com/index.php?topic=3027.165"
   ]
 }

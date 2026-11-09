@@ -54,22 +54,6 @@
   ],
   "community": [
     {
-      "source_id": "xhs-kenda-k925-vs-gsr-2026-05-14",
-      "stance": "positive",
-      "published_at": "2026-05-14",
-      "summary": "Owner: about 255 g at 28C and 29.4 mm wide on a 23 mm rim, light, fast-feeling and easy to fit; a dry paved-road training tire."
-    },
-    {
-      "source_id": "xhs-kenda-k925-question-2026-05-11",
-      "stance": "mixed",
-      "published_at": "2026-05-11",
-      "summary": "Owner: low rolling resistance and good feel, but slippery in the wet and only modest puncture resistance; commenters report about 5,000 km of wear and beads that crack easily.",
-      "issues": [
-        "wear",
-        "cracking"
-      ]
-    },
-    {
       "source_id": "xhs-kenda-k925-20c-2025-12-29",
       "stance": "negative",
       "published_at": "2025-12-29",
@@ -106,8 +90,130 @@
     "kenda-k925-k1092-taobao-2026-11-01",
     "xhs-kenda-k925-question-2026-05-11",
     "xhs-kenda-k925-vs-gsr-2026-05-14",
-    "xhs-kenda-k925-20c-2025-12-29"
+    "xhs-kenda-k925-20c-2025-12-29",
+    "xhs-budget-clincher-test-irc-k925-2025-05-16"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "public-post",
+    "source_id": "xhs-kenda-k925-vs-gsr-2026-05-14",
+    "subject_accuracy": "exact-model",
+    "shown": "K925 tires in their retail boxes, labelled Kaliente, 700x28C K925, folding bead, 120 TPI, in an owner's post.",
+    "credit": "Xiaohongshu public post",
+    "alt": "Kenda K925 Kaliente road tires in labelled retail boxes",
+    "remote_url": "https://sns-img-qc.xhscdn.com/1040g2sg320585smp48i05nnq0r0g8stklmatop8!nd_dft_wlteh_webp_3",
+    "thumb_url": "https://sns-img-qc.xhscdn.com/1040g2sg320585smp48i05nnq0r0g8stklmatop8!nc_n_webp_prv_1",
+    "width": 1080,
+    "height": 1440,
+    "source_media_sha256": "ba7f5a261dd1881dc3ba5fe818f0c2121ce564bb13ff599c210db90407a4c3c0",
+    "source_media_bytes": 104202,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "public-post-embed",
+      "copyright_holder": "The post's author (not named here)",
+      "usage_note": "A photo from a public Xiaohongshu post, shown from Xiaohongshu with a link to the original post; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-03",
+    "screening_note": "Checked on 2026-11-03: keyed Xiaohongshu evidence from bounded searches (the first 16-20 result cards of each query, opened exact posts and their visible comments; not exhaustive), coded owner by owner, plus the Sigma Sports and bike-components catalogues and Bicycle Rolling Resistance's test index. Counted only owners who describe their own riding of this model and, where the model is sold in more than one construction, say which; seller replies, questions, unmounted impressions and reports about other models were left out. One owner's report that it is slippery in the wet is a single wet report.",
+    "reports": [
+      {
+        "source_ids": [
+          "xhs-kenda-k925-question-2026-05-11",
+          "xhs-kenda-k925-vs-gsr-2026-05-14"
+        ],
+        "width_mm": 25,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "punctures": "unfavourable",
+          "wet": "unfavourable"
+        },
+        "summary": "Rides the 25 mm and bought more: low rolling resistance and good road feel, but not very puncture resistant and fairly slippery when wet."
+      },
+      {
+        "source_ids": [
+          "xhs-kenda-k925-question-2026-05-11"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "speed": "favourable"
+        },
+        "summary": "Narrower than a Continental GSR, rolls easily and is easy to fit."
+      },
+      {
+        "source_ids": [
+          "xhs-kenda-k925-question-2026-05-11"
+        ],
+        "width_mm": null,
+        "setup": null,
+        "exposure": "About 5,000 km",
+        "codes": {
+          "overall": "favourable",
+          "wear": "unfavourable",
+          "punctures": "favourable"
+        },
+        "summary": "Good road feel and cheap; puncture protection is acceptable, but it needs replacing at about 5,000 km for a light rider."
+      },
+      {
+        "source_ids": [
+          "xhs-kenda-k925-question-2026-05-11"
+        ],
+        "width_mm": 28,
+        "setup": null,
+        "exposure": "Over a year",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable",
+          "casing": "unfavourable"
+        },
+        "summary": "No flat in over a year on a touring bike and easy to fit, but the bead area cracks easily."
+      },
+      {
+        "source_ids": [
+          "xhs-budget-clincher-test-irc-k925-2025-05-16"
+        ],
+        "published_at": "2025-05-16",
+        "width_mm": 28,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "unfavourable"
+        },
+        "summary": "In an uncontrolled four-tire comparison it tied for the lowest rolling resistance but had the least grip; the owner liked riding it."
+      }
+    ],
+    "checks": [
+      {
+        "route": "xiaohongshu",
+        "outcome": "counted",
+        "owners": 5,
+        "note": "Three posts; one owner posted twice"
+      },
+      {
+        "route": "sigma-sports",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "bike-components",
+        "outcome": "not-listed"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "No test page"
+      }
+    ]
+  }
 }

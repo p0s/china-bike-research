@@ -186,10 +186,16 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     image.dataset.imageFailureReady = 'true';
     const hideUnavailable = () => {
       if (image.hasAttribute('data-gallery-hero')) {
-        image.hidden = true;
-        image.closest('.model-figure')?.classList.add('is-unavailable');
-        const caption = image.closest('[data-image-gallery]')?.querySelector('[data-image-caption-status][data-gallery-caption]');
-        if (caption) caption.textContent = translate('Source image unavailable. Choose another view or open the source.', locale);
+        // A failed view hides only its own slide and thumbnail; the other views stay usable.
+        const gallery = image.closest('[data-image-gallery]');
+        const slide = image.closest('[data-gallery-slide]');
+        if (slide instanceof HTMLElement) slide.hidden = true;
+        gallery?.querySelectorAll(`[data-gallery-thumb][href="#${slide?.id ?? ''}"]`).forEach((thumb) => { thumb.hidden = true; });
+        if (gallery instanceof HTMLElement && ![...gallery.querySelectorAll('[data-gallery-slide]')].some((item) => !item.hidden)) {
+          gallery.hidden = true;
+          gallery.closest('.model-grid')?.classList.add('has-no-image');
+        }
+        gallery?.dispatchEvent(new Event('gallery-change'));
         return;
       }
       if (image.dataset.imageFailureHandled === 'true') return;
@@ -214,26 +220,23 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       const container = image.closest('.product-image');
       if (container instanceof HTMLElement) {
         container.closest('.catalog-product')?.classList.add('has-no-image');
+        container.closest('.groupset-identity')?.classList.remove('has-image');
         container.remove();
+      }
+      // A reference-row detail photo leaves no empty caption or photo credit behind.
+      const tirePhoto = image.closest('.tire-photo');
+      if (tirePhoto instanceof HTMLElement) {
+        tirePhoto.closest('.tire-entry')?.querySelector('.groupset-image-credit')?.remove();
+        tirePhoto.remove();
       }
       const comparison = image.closest('.compare-product-head');
       if (comparison instanceof HTMLElement) comparison.classList.add('has-no-image');
       image.remove();
     };
     image.addEventListener('error', hideUnavailable);
-    if (image.hasAttribute('data-gallery-hero')) image.addEventListener('load', () => {
-      if (!image.naturalWidth) return;
-      image.hidden = false;
-      image.closest('.model-figure')?.classList.remove('is-unavailable');
-      image.closest('.model-grid')?.classList.remove('has-no-image');
-      const gallery = image.closest('[data-image-gallery]');
-      const selected = gallery?.querySelector('[data-gallery-thumb][aria-pressed="true"]');
-      const caption = gallery?.querySelector('[data-image-caption-status][data-gallery-caption]');
-      if (caption && selected) caption.textContent = selected.dataset.galleryCaption ?? '';
-    });
     if (image.complete && image.currentSrc && image.naturalWidth === 0) hideUnavailable();
   }
-  document.querySelectorAll('[data-product-image], .product-image img, .gallery-thumb img, .gallery-all-images img, .credit-image img').forEach(enableImageFailureHandling);
+  document.querySelectorAll('[data-product-image], .product-image img, .gallery-thumb img, .credit-thumbs img').forEach(enableImageFailureHandling);
 
   document.querySelectorAll('[data-blog-header-image], [data-blog-bike-image], [data-blog-mascot]').forEach((image) => {
     const hideUnavailable = () => {
@@ -243,8 +246,16 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
         if (header) header.hidden = true;
       }
       if (image.hasAttribute('data-blog-bike-image')) {
+        const figure = image.closest('[data-blog-photo]');
+        // A maker-hosted photo that fails is omitted with its caption; local photos show the status line.
+        if (image.hasAttribute('data-blog-remote')) {
+          const group = figure?.parentElement;
+          figure?.remove();
+          if (group?.classList.contains('blog-model-photos') && !group.children.length) group.remove();
+          return;
+        }
         image.closest('.blog-photo-scene')?.classList.add('is-unavailable');
-        const status = image.closest('[data-blog-photo]')?.querySelector('[data-blog-photo-status]');
+        const status = figure?.querySelector('[data-blog-photo-status]');
         if (status) status.hidden = false;
       }
     };
@@ -252,56 +263,106 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     if (image.complete && image.currentSrc && !image.naturalWidth) hideUnavailable();
   });
 
+  // Model galleries are one slideshow. Thumbnails are fragment links (usable without
+  // JavaScript); here they select a slide in place, swiping updates the selection, and
+  // arrow keys, Home and End move between available views.
   document.querySelectorAll('[data-image-gallery]').forEach((gallery) => {
-    const hero = gallery.querySelector('[data-gallery-hero]');
-    const caption = gallery.querySelector('[data-image-caption-status][data-gallery-caption]');
-    const sourceLink = gallery.querySelector('[data-gallery-source-link]');
-    const note = gallery.querySelector('[data-gallery-note-text]');
-    const buttons = [...gallery.querySelectorAll('[data-gallery-thumb]')];
-    if (!(hero instanceof HTMLImageElement) || !buttons.length) return;
-
-    const selectImage = (button) => {
-      if (!(button instanceof HTMLButtonElement) || button.hidden) return;
-      if (button.getAttribute('aria-pressed') === 'true' && !hero.hidden) return;
-      const nextSrc = button.dataset.gallerySrc;
-      if (!nextSrc) return;
-      // One synchronous selection: rapid clicks cannot enqueue stale images.
-      hero.removeAttribute('srcset');
-      hero.removeAttribute('sizes');
-      hero.alt = button.dataset.galleryAlt ?? '';
-      if (button.dataset.galleryRemote === 'true') hero.referrerPolicy = 'no-referrer';
-      else hero.removeAttribute('referrerpolicy');
-      if (caption instanceof HTMLElement) caption.textContent = button.dataset.galleryCaption ?? '';
-      if (note instanceof HTMLElement) {
-        note.textContent = button.dataset.galleryNote ?? '';
-        note.hidden = !note.textContent;
-      }
-      if (sourceLink instanceof HTMLAnchorElement) {
-        const href = button.dataset.gallerySource;
-        sourceLink.hidden = !href;
-        if (href) sourceLink.href = href;
-      }
-      buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-      button.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
-      hero.src = nextSrc;
+    const track = gallery.querySelector('[data-gallery-track]');
+    const strip = gallery.querySelector('.model-gallery-strip');
+    const thumbs = [...gallery.querySelectorAll('[data-gallery-thumb]')];
+    if (!(track instanceof HTMLElement) || !thumbs.length) return;
+    const slideOf = (thumb) => {
+      try { return document.getElementById(decodeURIComponent(thumb.hash.slice(1))); } catch { return null; }
     };
-
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => selectImage(button));
-      button.addEventListener('keydown', (event) => {
-        const visible = buttons.filter((item) => !item.hidden && !item.disabled);
-        const index = visible.indexOf(button);
-        if (index < 0 || !visible.length) return;
+    const available = () => thumbs.filter((thumb) => !thumb.hidden && slideOf(thumb) instanceof HTMLElement && !slideOf(thumb).hidden);
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let selected = thumbs.find((thumb) => thumb.getAttribute('aria-current') === 'true') ?? thumbs[0];
+    // With JavaScript the photo area takes the current slide's height, so a short caption
+    // does not inherit the blank space of the longest one.
+    const fit = () => {
+      const slide = slideOf(selected);
+      if (slide instanceof HTMLElement && !slide.hidden) track.style.height = `${slide.offsetHeight}px`;
+    };
+    const mark = (thumb) => {
+      selected = thumb;
+      thumbs.forEach((item) => (item === thumb ? item.setAttribute('aria-current', 'true') : item.removeAttribute('aria-current')));
+      // Keep the chosen thumbnail visible inside its rail without scrolling the page.
+      if (strip instanceof HTMLElement) {
+        const left = thumb.offsetLeft;
+        if (left < strip.scrollLeft || left + thumb.offsetWidth > strip.scrollLeft + strip.clientWidth) strip.scrollTo({ left: Math.max(0, left - (strip.clientWidth - thumb.offsetWidth) / 2), behavior: 'instant' });
+      }
+      fit();
+    };
+    const show = (thumb) => {
+      const slide = slideOf(thumb);
+      if (!(slide instanceof HTMLElement) || slide.hidden || thumb.hidden) return;
+      mark(thumb);
+      // The newest selection always wins: each call replaces the previous scroll target.
+      track.scrollTo({ left: slide.offsetLeft, behavior: reduceMotion.matches ? 'instant' : 'smooth' });
+    };
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', (event) => {
+        if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        show(thumb);
+      });
+      thumb.addEventListener('keydown', (event) => {
+        const visible = available();
+        const index = visible.indexOf(thumb);
+        if (index < 0) return;
         const offsets = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
-        let nextIndex;
-        if (event.key === 'Home') nextIndex = 0;
-        else if (event.key === 'End') nextIndex = visible.length - 1;
-        else if (offsets[event.key] !== undefined) nextIndex = (index + offsets[event.key] + visible.length) % visible.length;
+        let next;
+        if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = visible.length - 1;
+        else if (offsets[event.key] !== undefined) next = (index + offsets[event.key] + visible.length) % visible.length;
         else return;
         event.preventDefault();
-        visible[nextIndex].focus();
-        selectImage(visible[nextIndex]);
+        visible[next].focus();
+        show(visible[next]);
       });
+    });
+    let frame = 0;
+    const syncFromScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        let best = null;
+        let distance = Infinity;
+        for (const thumb of available()) {
+          const gap = Math.abs(slideOf(thumb).offsetLeft - track.scrollLeft);
+          if (gap < distance) { distance = gap; best = thumb; }
+        }
+        if (best && best !== selected) mark(best);
+      });
+    };
+    track.addEventListener('scroll', syncFromScroll, { passive: true });
+    if (!reduceMotion.matches) track.classList.add('fits-current');
+    fit();
+    // Image loads and text wrapping change slide heights; refit the current slide only.
+    if (typeof ResizeObserver !== 'undefined') {
+      const observer = new ResizeObserver(() => fit());
+      gallery.querySelectorAll('[data-gallery-slide]').forEach((slide) => observer.observe(slide));
+    }
+    gallery.addEventListener('gallery-change', () => {
+      if (selected.hidden) { const next = available()[0]; if (next) show(next); } else syncFromScroll();
+    });
+  });
+
+  // Long source annotations start as two lines with a toggle; without JavaScript they stay whole.
+  document.querySelectorAll('[data-source-list]').forEach((list) => {
+    list.classList.add('is-compact');
+    list.querySelectorAll('[data-source-note]').forEach((note) => {
+      if (note.scrollHeight <= note.clientHeight + 2) return;
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'text-button source-note-toggle';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = translate('Show full note', locale);
+      toggle.addEventListener('click', () => {
+        const open = note.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.textContent = translate(open ? 'Show less' : 'Show full note', locale);
+      });
+      note.after(toggle);
     });
   });
 
@@ -2506,7 +2567,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       const button = element('button', 'price-button', item.price);
       button.type = 'button';
       button.dataset.priceDetails = item.id;
-      button.dataset.evidenceHref = `${item.url}#source-records`;
+      button.dataset.evidenceHref = `${item.url}#price-records`;
       button.dataset.evidenceLabel = 'Full price record and conditions';
       button.setAttribute('aria-expanded', 'false');
       cell.firstElementChild.replaceWith(button);

@@ -50,7 +50,7 @@
       "measured_width_mm": 27,
       "measured_weight_g": 233,
       "setup": "butyl-tube",
-      "rr_w": 14.0,
+      "rr_w": 14,
       "rr_psi": 80,
       "wet_grip": 73,
       "puncture_tread": 50
@@ -77,8 +77,161 @@
   "source_ids": [
     "pirelli-p-zero-race-4s-official-2026-11-01",
     "pirelli-road-range-gb-2026-11-01",
-    "bicycle-rolling-resistance-road-table-2026-11-01"
+    "bicycle-rolling-resistance-road-table-2026-11-01",
+    "sigma-sports-pirelli-p-zero-race-4s-reviews",
+    "brr-comments-pirelli-p-zero-race-4s"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "image": {
+    "kind": "official",
+    "source_id": "pirelli-p-zero-race-4s-official-2026-11-01",
+    "subject_accuracy": "exact-model",
+    "shown": "P ZERO Race 4S tube-type sidewall as pictured in Pirelli's catalogue; one photo covers every width.",
+    "credit": "Pirelli",
+    "alt": "Close-up of a Pirelli P ZERO Race 4S tube-type road tire sidewall",
+    "remote_url": "https://tyre24.pirelli.com/dynamic_engine/velo/assets/images/products/p_zero_race_4s_1.jpg",
+    "width": 1248,
+    "height": 1156,
+    "source_media_sha256": "886eed007423b2ef98fbc6674a356a216f8b946fed382dcb3dff8baa9b59c051",
+    "source_media_bytes": 125389,
+    "reviewed_at": "2026-11-02",
+    "rights": {
+      "status": "official-page-embed",
+      "copyright_holder": "Pirelli",
+      "usage_note": "The maker's own product photo, shown from the maker's website; no copy is stored or redistributed by this project, and no license is asserted.",
+      "removal_route": "https://github.com/p0s/china-bike-research/issues"
+    },
+    "privacy_review": {
+      "reviewed_at": "2026-11-02",
+      "embedded_metadata": "technical-only",
+      "visual": "no-faces-plates-accounts-locations"
+    }
+  },
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other. A 4S owner on the P ZERO Race TLR test who does not state the construction is not counted.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-4s-reviews"
+        ],
+        "published_at": "2026-09-01",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "A couple of rides",
+        "codes": {
+          "overall": "favourable",
+          "speed": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Fast and grippy over a couple of rides, and easy to fit."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-4s-reviews"
+        ],
+        "published_at": "2024-11-06",
+        "width_mm": null,
+        "setup": "inner-tube",
+        "exposure": "Six rides",
+        "codes": {
+          "overall": "mixed",
+          "speed": "favourable",
+          "wet": "favourable",
+          "punctures": "unfavourable"
+        },
+        "summary": "Rolls well with amazing grip in wet weather, but five of six rides with TPU tubes ended in punctures on debris-strewn lanes."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-4s-reviews"
+        ],
+        "published_at": "2024-09-29",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable"
+        },
+        "summary": "Happy in all conditions, with the grip of the Corsa Pro and better endurance."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-4s-reviews"
+        ],
+        "published_at": "2024-08-19",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Loads of grip, rolls nicely and seems to be holding up well."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-4s-reviews"
+        ],
+        "published_at": "2024-06-20",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable",
+          "grip": "favourable",
+          "speed": "favourable"
+        },
+        "summary": "Easy to fit, with top-end rolling and grip."
+      },
+      {
+        "source_ids": [
+          "sigma-sports-pirelli-p-zero-race-4s-reviews"
+        ],
+        "published_at": "2023-08-24",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "1,500 km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Performed superbly over a 1,500 km end-to-end ride with no punctures."
+      },
+      {
+        "source_ids": [
+          "brr-comments-pirelli-p-zero-race-4s"
+        ],
+        "published_at": "2022-10-17",
+        "width_mm": null,
+        "setup": null,
+        "exposure": "Six months",
+        "codes": {
+          "overall": "favourable",
+          "wet": "favourable",
+          "grip": "favourable",
+          "speed": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Six months in very wet mountains: grippy, quite fast and no flats, with surprisingly good cut resistance; less supple than a Corsa but much tougher."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 6
+      },
+      {
+        "route": "bike-components",
+        "outcome": "none",
+        "note": "Two listings with no written review"
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "counted",
+        "owners": 1
+      }
+    ]
+  }
 }

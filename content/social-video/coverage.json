@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "frozen_on": "2026-10-29",
+  "frozen_on": "2026-11-03",
   "note": "Canonical public routes, their languages and preview-still SHA-256 when the clips were last authored. A route whose still is unchanged must keep its clip; new or changed stills use the fallback until authored. /404.html publishes no clip.",
   "totals": {
-    "routes": 474,
-    "pages": 1432,
-    "image_specific_clips": 350,
-    "routes_with_image_clip": 367,
+    "routes": 475,
+    "pages": 1435,
+    "image_specific_clips": 351,
+    "routes_with_image_clip": 368,
     "routes_with_fallback": 106
   },
   "routes": {
@@ -38,6 +38,7 @@
     "/blog/buy-tavelo-bike/": {"kind":"post","locales":["de","en","zh-Hans"],"source":"65d8c55da6e454a6044fb2be22003e352123073f60dc9881a7789ec7df69e13c"},
     "/blog/buy-velobuild-frame/": {"kind":"post","locales":["de","en","zh-Hans"],"source":"b90fb6eea5679cc0ba01eec1e0a5d5083a862d04cac08dc7106bf543934a6685"},
     "/blog/buy-winspace-bike/": {"kind":"post","locales":["de","en","zh-Hans"],"source":"bdcca380d1b353c3ca0f233056b13a3416de293b2769d5ae4e034c4ae4394341"},
+    "/blog/buy-x-lab-bike/": {"kind":"post","locales":["de","en","zh-Hans"],"source":"154d06bcf4380120e485d1ba0186a3472a886cfe2260faa1969525ec0216351a"},
     "/blog/buy-yoeleo-bike/": {"kind":"post","locales":["de","en","zh-Hans"],"source":"8f645021f10c34aed2fbe891604221fc1845c7514c9c97fc96819ec02f438d7c"},
     "/blog/buying-a-groupset-for-frame-build/": {"kind":"post","locales":["de","en","zh-Hans"],"source":"f7539575986fe8a39328c01b2922e278978d0c4c7fa6d454e1d985f45df471e9"},
     "/blog/buying-headset-bearings/": {"kind":"post","locales":["de","en","zh-Hans"],"source":"e168717425960708137eb3899d3a3345f477fc58b458a90d938b1a51d98a6b87"},

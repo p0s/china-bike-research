@@ -68,8 +68,59 @@
     "Hookless compatibility and maximum pressure are not stated on the product page."
   ],
   "source_ids": [
-    "specialized-mondo-tlr-endurance-tire-official-2026-11-01"
+    "specialized-mondo-tlr-endurance-tire-official-2026-11-01",
+    "sigma-sports-specialized-mondo-tlr-reviews",
+    "bike-components-specialized-mondo-tlr-reviews"
   ],
   "status": "current",
-  "reviewed_at": "2026-11-01"
+  "reviewed_at": "2026-11-01",
+  "owner_evidence": {
+    "coded_at": "2026-11-04",
+    "screening_note": "Coded on 2026-11-04 from a fixed source set: the written reviews on the Sigma Sports and bike-components product pages, read in full through each page's own review list (the newest 15 per page when more exist), every reader comment on Bicycle Rolling Resistance's test pages for this tire, and owner comments in coded Xiaohongshu threads. Counted only owners who describe their own riding; star-only ratings, reviews without riding detail, mounting-only impressions and repeats were left out. Comments on one construction's test page count for that construction unless the owner names the other.",
+    "reports": [
+      {
+        "source_ids": [
+          "sigma-sports-specialized-mondo-tlr-reviews"
+        ],
+        "published_at": "2026-08-21",
+        "width_mm": null,
+        "setup": null,
+        "codes": {
+          "overall": "favourable"
+        },
+        "summary": "Good quality, easy to set up and repair, with good puncture resistance."
+      },
+      {
+        "source_ids": [
+          "bike-components-specialized-mondo-tlr-reviews"
+        ],
+        "published_at": "2026-09-28",
+        "width_mm": 32,
+        "setup": null,
+        "exposure": "Brevets of 200-1,000 km",
+        "codes": {
+          "overall": "favourable",
+          "punctures": "favourable"
+        },
+        "summary": "Carried the owner through brevets of 200 to 1,000 km without a puncture or problem."
+      }
+    ],
+    "checks": [
+      {
+        "route": "sigma-sports",
+        "outcome": "counted",
+        "owners": 1
+      },
+      {
+        "route": "bike-components",
+        "outcome": "counted",
+        "owners": 1
+      },
+      {
+        "route": "brr-comments",
+        "outcome": "not-listed",
+        "note": "Only the S-Works Mondo, a different tire, was tested"
+      }
+    ]
+  }
 }
