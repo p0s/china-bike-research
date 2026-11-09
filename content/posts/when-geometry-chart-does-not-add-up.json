@@ -120,7 +120,7 @@
     "zh-Hans": {
       "title": "自行车几何表对不上时，用表里其他数字找出错的那一格",
       "description": "前轴距和轴距可以由堆高、前伸量、头管角度、前叉偏移量、中轴下沉量和后下叉长度算出。用这套算法核对LightCarbon LCR018-D的几何表，有三个尺码误差不超过0.1毫米，580码的前轴距却少了10毫米。",
-      "intro": "几何表上的数字并不互相独立。前轴距和轴距由堆高、前伸量、头管角度、前叉偏移量、中轴下沉量和后下叉长度决定，花一分钟验算，就能在计算器把印刷错误变成“精确建议”之前，找出该追问的那一格。用它核对LightCarbon LCR018-D的几何表，有三个尺码的结果与印刷值相差不超过0.1毫米，只有一格差了10毫米。",
+      "intro": "几何表上的数字并不互相独立。前轴距和轴距由堆高（stack）、前伸量（reach）、头管角度、前叉偏移量、中轴下沉量和后下叉长度决定，花一分钟验算，就能在计算器把印刷错误变成“精确建议”之前，找出该追问的那一格。用它核对LightCarbon LCR018-D的几何表，有三个尺码的结果与印刷值相差不超过0.1毫米，只有一格差了10毫米。",
       "sections": [
         {
           "id": "mismatch",
@@ -224,7 +224,7 @@
             "Der [LightCarbon-LCR018-D-Eintrag](/de/models/lightcarbon-lcr018-d/) bewahrt diese Widersprüche mit ihren Quellen. Das erste Feld ist der Bezug des Überstands: Der Katalog 2026–2027 (V5, geprüft am 11. Oktober 2026) nennt 700×38C, die am 3. Oktober 2026 erfasste Produkttabelle 700C×32C, wie auch noch am 22. Oktober 2026. Eine Reifenbasis lässt sich nicht errechnen, und Überstandswerte auf verschiedener Basis sind nicht vergleichbar.",
             "Die am 3. Oktober 2026 erfasste Produkttabelle druckt das Front-Center der Größe 580 mit 606,4 mm. Ihre eigenen Werte für Stack, Reach, Steuerrohrwinkel, Gabelvorlauf und Tretlagerabsenkung ergeben 616,4 mm – den Wert im V5-Katalog –, und ihr eigener Radstand von 1020,3 mm passt zu 616,4, nicht zu 606,4, das 1010,2 mm ergäbe. 606,4 ist sehr wahrscheinlich ein Druckfehler; LightCarbon hat nicht bestätigt, welcher Wert stimmt.",
             "Dieselbe Produkttabelle, erfasst am 3. und erneut am 22. Oktober 2026, schreibt den Radstand der Größe 560 als „1006.3 +mm“. Die Ziffern passen: Die übrigen Felder der Spalte ergeben 598,3 + 408,0 = 1006,3 mm. Nur das Pluszeichen ist ungeklärt; frag nach seiner Bedeutung, bevor du das Feld als gesichert behandelst.",
-            "Auch die beiden kleinsten Größen gehen nicht auf. Ihr gedrucktes Front-Center und ihr Radstand stimmen untereinander überein, sind aber 3,7 bis 3,8 mm länger, als Stack, Reach, Steuerrohrwinkel und Gabelvorlauf ergeben. Welches Feld abweicht, zeigt die Tabelle nicht; kläre die Größen 470 und 500, bevor du ihren Reach oder ihr Front-Center für eine Fit- oder Zehenüberlappungsrechnung nutzt."
+            "Auch die beiden kleinsten Größen gehen nicht auf. Ihr gedrucktes Front-Center und ihr Radstand stimmen untereinander überein, sind aber 3,7 bis 3,8 mm länger, als Stack, Reach, Steuerrohrwinkel und Gabelvorlauf ergeben. Welches Feld abweicht, zeigt die Tabelle nicht; kläre die Größen 470 und 500, bevor du ihren Reach oder ihr Front-Center für eine Fit- oder Fußüberschneidungsrechnung nutzt."
           ],
           "worksheet": {
             "caption": "LCR018-D-Produkttabelle (erfasst am 3. Oktober 2026) gegen ihre eigene Rechnung",
@@ -286,7 +286,7 @@
           "heading": "Die Frage stellen, auf die die Rechnung zeigt",
           "paragraphs": [
             "Schick die markierte Tabelle mit einer präzisen Frage: „Ihre LCR018-D-Tabelle nennt für Größe 580 ein Front-Center von 606,4 mm, Stack, Reach, Steuerrohrwinkel, Gabelvorlauf und Radstand ergeben aber 616,4 mm wie in Ihrem V5-Katalog. Welcher Wert gilt für die aktuell ausgelieferten Rahmen, und was bedeutet das Pluszeichen hinter dem Radstand der Größe 560?“ „Der Rahmen ist komfortabel“ löst keinen Zahlenwiderspruch.",
-            "Lass die betroffene Rechnung offen, bis die Antwort belastbar ist: Das Front-Center entscheidet über [Zehenüberlappung](/de/blog/toe-overlap-small-gravel-bike/), der Radstand fließt in Vergleiche des Fahrverhaltens ein. Wie du die Tabellen zweier Hersteller nebeneinanderlegst, zeigt der [Vergleich zweier Geometrietabellen](/de/blog/comparing-two-geometry-charts/). Der [Leitfaden zu Überstand und Rahmentaschen](/de/blog/standover-bikepacking-bags/) trennt dieses Maß vom tatsächlichen Platzbedarf eines beladenen Rads."
+            "Lass die betroffene Rechnung offen, bis die Antwort belastbar ist: Das Front-Center entscheidet über [Fußüberschneidung](/de/blog/toe-overlap-small-gravel-bike/), der Radstand fließt in Vergleiche des Fahrverhaltens ein. Wie du die Tabellen zweier Hersteller nebeneinanderlegst, zeigt der [Vergleich zweier Geometrietabellen](/de/blog/comparing-two-geometry-charts/). Der [Leitfaden zu Überstand und Rahmentaschen](/de/blog/standover-bikepacking-bags/) trennt dieses Maß vom tatsächlichen Platzbedarf eines beladenen Rads."
           ]
         }
       ]
