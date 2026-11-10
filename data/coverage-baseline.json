@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04",
+  "updated_at": "2026-11-10",
   "catalog_metrics": {
     "records": {
       "brands": 43,
@@ -8,7 +8,7 @@
       "variants": 42,
       "prices": 84,
       "exchangeRates": 1,
-      "sources": 2288,
+      "sources": 2290,
       "images": 916,
       "videos": 276,
       "opinions": 13,
@@ -587,6 +587,7 @@
       "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30",
       "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06",
       "cyclistshub-lcr018-d-owner-2026-08-29",
+      "cyclistshub-lcr018-d-owner-recheck-2026-11-10",
       "cyctrac-r18-photo-source-2026-10-03",
       "de-rosa-838-launch-current-2026-09-23",
       "de-rosa-838-model-current-2026-09-23",
@@ -1120,6 +1121,7 @@
       "lightcarbon-lcr018-d-official-2026-08-29",
       "lightcarbon-lcr018-d-official-recheck-2026-10-22",
       "lightcarbon-lcr018-d-official-recheck-2026-10-25",
+      "lightcarbon-lcr018-d-package-recheck-2026-11-10",
       "lightcarbon-lcr018-d-package-review-2026-10-11",
       "lightcarbon-lcr018-d-xianyu-2026-08-29",
       "lightcarbon-lcr0x-d-enrichment-2026-10-03",
@@ -14434,6 +14436,18 @@
         "type",
         "url"
       ],
+      "cyclistshub-lcr018-d-owner-recheck-2026-11-10": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "cyctrac-r18-photo-source-2026-10-03": [
         "accessed_at",
         "language",
@@ -21122,6 +21136,18 @@
         "url"
       ],
       "lightcarbon-lcr018-d-official-recheck-2026-10-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr018-d-package-recheck-2026-11-10": [
         "accessed_at",
         "language",
         "notes",
@@ -135092,6 +135118,7 @@
       "cyclingnews-uci-legal-road-wheels-wind-tunnel-2026-07-30": [],
       "cyclistshub-best-chinese-carbon-road-wheels-2026-07-06": [],
       "cyclistshub-lcr018-d-owner-2026-08-29": [],
+      "cyclistshub-lcr018-d-owner-recheck-2026-11-10": [],
       "cyctrac-r18-photo-source-2026-10-03": [],
       "de-rosa-838-launch-current-2026-09-23": [],
       "de-rosa-838-model-current-2026-09-23": [],
@@ -135657,6 +135684,7 @@
       "lightcarbon-lcr018-d-official-2026-08-29": [],
       "lightcarbon-lcr018-d-official-recheck-2026-10-22": [],
       "lightcarbon-lcr018-d-official-recheck-2026-10-25": [],
+      "lightcarbon-lcr018-d-package-recheck-2026-11-10": [],
       "lightcarbon-lcr018-d-package-review-2026-10-11": [],
       "lightcarbon-lcr018-d-xianyu-2026-08-29": [],
       "lightcarbon-lcr0x-d-enrichment-2026-10-03": [],
@@ -144874,12 +144902,14 @@
       "lightcarbon-lcr018-d": [
         "model_id=lightcarbon-lcr018-d",
         "source_ids=cyclistshub-lcr018-d-owner-2026-08-29",
+        "source_ids=cyclistshub-lcr018-d-owner-recheck-2026-11-10",
         "source_ids=lightcarbon-catalog-v5-road-recheck-2026-10-11",
         "source_ids=lightcarbon-lcr018-d-complete-geometry-recheck-2026-10-03",
         "source_ids=lightcarbon-lcr018-d-gallery-complete-2026-10-03",
         "source_ids=lightcarbon-lcr018-d-official-2026-08-29",
         "source_ids=lightcarbon-lcr018-d-official-recheck-2026-10-22",
         "source_ids=lightcarbon-lcr018-d-official-recheck-2026-10-25",
+        "source_ids=lightcarbon-lcr018-d-package-recheck-2026-11-10",
         "source_ids=lightcarbon-lcr018-d-package-review-2026-10-11",
         "source_ids=lightcarbon-lcr018-d-xianyu-2026-08-29",
         "source_ids=usd-cny-central-parity-2026-07-31",
@@ -156780,6 +156810,14 @@
         "specification": 2
       }
     },
+    "cyclistshub-lcr018-d-owner-recheck-2026-11-10": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
+      }
+    },
     "cyctrac-r18-photo-source-2026-10-03": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -161110,6 +161148,14 @@
       }
     },
     "lightcarbon-lcr018-d-official-recheck-2026-10-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr018-d-package-recheck-2026-11-10": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
