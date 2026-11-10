@@ -1,6 +1,7 @@
 import { translate } from '../../assets/i18n.js';
 import fs from 'node:fs';
 import { escapeAttr, escapeHtml, url } from './html.mjs';
+import { localizedCredit } from './i18n.mjs';
 
 const manifest = JSON.parse(fs.readFileSync(new URL('../../content/blog-images.json', import.meta.url), 'utf8'));
 export const editorialImages = manifest.images;
@@ -122,7 +123,7 @@ function renderPhoto(ctx, photo, image, modelIds) {
     ? ` srcset="${escapeAttr(variants.map((variant) => `${url(ctx.base, variant.url)} ${variant.width}w`).join(', '))}" sizes="(max-width: 760px) calc(100vw - 48px), 760px"`
     : '';
   const remoteAttributes = remote ? ` width="${photo.image.width}" height="${photo.image.height}" data-blog-remote` : '';
-  return `<figure class="editorial-figure blog-model-photo" data-blog-photo="${photo.id}"><div class="blog-photo-scene"><img class="blog-bike-photo" data-blog-bike-image src="${escapeAttr(source)}"${srcset}${remoteAttributes} alt="${escapeAttr(photo.alt[locale] ?? translate(photo.alt.en, locale))}" referrerpolicy="no-referrer" loading="lazy" decoding="async">${mascot(ctx, image)}</div><figcaption><strong>${escapeHtml(photo.name)}</strong>${links ? ` · ${links}` : ''}<span class="blog-photo-note">${escapeHtml(photo.note[locale] ?? translate(photo.note.en, locale))}</span><a href="${escapeAttr(photo.source.url)}" rel="noreferrer">${escapeHtml(photo.image.credit)}</a><span class="blog-photo-status" data-blog-photo-status hidden>${zh ? '照片暂时无法加载，可打开来源查看。' : 'Photo unavailable; open the source to view it.'}</span></figcaption></figure>`;
+  return `<figure class="editorial-figure blog-model-photo" data-blog-photo="${photo.id}"><div class="blog-photo-scene"><img class="blog-bike-photo" data-blog-bike-image src="${escapeAttr(source)}"${srcset}${remoteAttributes} alt="${escapeAttr(photo.alt[locale] ?? translate(photo.alt.en, locale))}" referrerpolicy="no-referrer" loading="lazy" decoding="async">${mascot(ctx, image)}</div><figcaption><strong>${escapeHtml(photo.name)}</strong>${links ? ` · ${links}` : ''}<span class="blog-photo-note">${escapeHtml(photo.note[locale] ?? translate(photo.note.en, locale))}</span><a href="${escapeAttr(photo.source.url)}" rel="noreferrer">${escapeHtml(localizedCredit(photo.image.credit, locale))}</a><span class="blog-photo-status" data-blog-photo-status hidden>${zh ? '照片暂时无法加载，可打开来源查看。' : 'Photo unavailable; open the source to view it.'}</span></figcaption></figure>`;
 }
 
 export function renderEditorialImage(ctx, id, { card = false, banner = false, href = '' } = {}) {
@@ -149,5 +150,5 @@ export function renderEditorialCredits(ctx) {
     : de ? 'Die Blog-Titelbilder sind thematische Illustrationen, in denen der Rote Panda Räder fährt, vermisst und aufbaut. In den Artikeln verlinken Modellfotos auf ihre Hersteller- oder Händlerquellen. Die meisten sind hier ausgelieferte optimierte Kopien; ein Foto, dessen Bildunterschrift sagt, dass es direkt von der Website des Herstellers geladen wird, lädt von dieser Website, wie die Datenschutzseite erklärt. Bildunterschriften nennen Unterschiede zwischen dem abgebildeten Aufbau und dem Vergleich im Artikel. Der Rote Panda ist das illustrierte Maskottchen von Chinese Bikes.'
     : 'The blog covers are themed illustrations featuring the red panda riding, measuring and building bikes. Inside each article, model photos link to their manufacturer or retailer sources. Most are optimized copies served here; a photo whose caption says it is shown from the maker’s website loads directly from that site, as the privacy page explains. Captions identify any differences between the pictured build and the article’s comparison. The red panda is the Chinese Bikes illustrated mascot.';
   const remoteNote = zh ? '直接从官网加载' : de ? 'direkt von der Herstellerwebsite geladen' : 'shown from the maker’s website';
-  return `<section id="editorial-illustrations"><h2>${heading}</h2><p>${text}</p><ul>${blogPhotos.map((item) => { const photo = resolveBlogPhoto(ctx, item.id); return `<li>${escapeHtml(photo.name)} — <a href="${escapeAttr(photo.source.url)}" rel="noreferrer">${escapeHtml(photo.image.credit)}</a>${photo.image.hosting.mode === 'remote' ? ` (${remoteNote})` : ''}</li>`; }).join('')}</ul></section>`;
+  return `<section id="editorial-illustrations"><h2>${heading}</h2><p>${text}</p><ul>${blogPhotos.map((item) => { const photo = resolveBlogPhoto(ctx, item.id); return `<li>${escapeHtml(photo.name)} — <a href="${escapeAttr(photo.source.url)}" rel="noreferrer">${escapeHtml(localizedCredit(photo.image.credit, ctx.locale))}</a>${photo.image.hosting.mode === 'remote' ? ` (${remoteNote})` : ''}</li>`; }).join('')}</ul></section>`;
 }
