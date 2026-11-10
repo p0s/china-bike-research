@@ -1641,8 +1641,13 @@ export function validateVideoEvidence(video, isDate) {
     else for (const item of video.takeaways) {
       if (!isObject(item) || !TAKEAWAY_KINDS.has(item.kind) || typeof item.text !== 'string' || item.text.trim().length < 20 || item.text.length > 320
         || (item.at_seconds !== undefined && (!Number.isFinite(item.at_seconds) || item.at_seconds < 0))
-        || Object.keys(item).some((key) => !['kind', 'at_seconds', 'text'].includes(key))) errors.push(`${where}: invalid takeaway`);
+        || Object.keys(item).some((key) => !['kind', 'at_seconds', 'text', 'text_i18n'].includes(key))) errors.push(`${where}: invalid takeaway`);
+      // Reviewed translations come for both page languages and for every point of a video, so no
+      // localized page mixes translated and English takeaways.
+      else if (item.text_i18n !== undefined && (!isObject(item.text_i18n) || Object.keys(item.text_i18n).sort().join() !== 'de,zh-Hans'
+        || Object.values(item.text_i18n).some((value) => typeof value !== 'string' || value.trim().length < 8 || value.length > 320))) errors.push(`${where}: invalid takeaway translation`);
     }
+    if (Array.isArray(video.takeaways) && video.takeaways.some((item) => item?.text_i18n) && !video.takeaways.every((item) => item?.text_i18n)) errors.push(`${where}: translate all takeaways or none`);
   }
   return errors;
 }

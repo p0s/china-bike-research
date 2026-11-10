@@ -106,7 +106,17 @@
         "properties": {
           "kind": {"enum": ["measured", "fit", "build", "ride", "quality", "support", "price", "claim"]},
           "at_seconds": {"type": "number", "minimum": 0},
-          "text": {"type": "string", "minLength": 20, "maxLength": 320}
+          "text": {"type": "string", "minLength": 20, "maxLength": 320},
+          "text_i18n": {
+            "description": "Reviewed translations of the English text, shown on Chinese and German article pages; when used, every takeaway of the video carries both.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["zh-Hans", "de"],
+            "properties": {
+              "zh-Hans": {"type": "string", "minLength": 8, "maxLength": 320},
+              "de": {"type": "string", "minLength": 8, "maxLength": 320}
+            }
+          }
         }
       }
     },
