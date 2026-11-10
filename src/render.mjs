@@ -1,6 +1,7 @@
 import { initialBuildPresentation, buildBaseFactRows, formatBuildYuan, formatBuildWeight } from '../assets/builder-presentation.js';
 import { structuredGeometry, candidateGeometry, isGeometryTableFact } from './lib/model-geometry.mjs';
 import { translate } from '../assets/i18n.js';
+import { localizedCredit } from './lib/i18n.mjs';
 import { relatedArticleLinks } from './lib/posts.mjs';
 import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { reviewBasisNotice } from './lib/editorial-review.mjs';
@@ -220,7 +221,7 @@ function modelGalleryFigure(ctx, entry, renderImage, fallbackAlt) {
   if (!images.length) return '';
   const sourceUrl = (image, index) => image.source_media_page_url ?? (index === 0 ? entry.imageSource : image.source)?.url;
   const caption = (image, index) => {
-    const credit = imageCredit(image);
+    const credit = localizedCredit(imageCredit(image), ctx.locale);
     const count = `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`;
     const original = [credit, accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'), images.length > 1 ? count : ''].filter(Boolean).join(' · ');
     // Translate each caption once. Qualifications remain a separate visible
@@ -2987,7 +2988,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<h2 class="credit-section-title">Product photos</h2>${creditList(entries.map(({ image, source, label, href, visual }) => ({ label, href, line: [image.credit, accuracyLabel(image.subject_accuracy)], sourceUrl: image.source_media_page_url ?? source?.url ?? '', visual })))}${componentCredits(ctx, sources)}`;
+  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<h2 class="credit-section-title">Product photos</h2>${creditList(entries.map(({ image, source, label, href, visual }) => ({ label, href, line: [localizedCredit(image.credit, ctx.locale), accuracyLabel(image.subject_accuracy)], sourceUrl: image.source_media_page_url ?? source?.url ?? '', visual })))}${componentCredits(ctx, sources)}`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

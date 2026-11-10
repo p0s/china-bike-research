@@ -33,6 +33,57 @@ function clarifyMainland(value) {
     .replace(/\bnon-mainland\b(?![-\s]+Chin(?:a|ese)\b)/gi, (match) => match[0] === 'N' ? 'Outside mainland China' : 'outside mainland China')
     .replace(/\bmainland\b(?![-\s]+Chin(?:a|ese)\b)/gi, (match) => `${match} China`);
 }
+// Credits name the rights holder exactly as recorded. On Chinese pages only the
+// label words around the holder are translated, at build time; the browser
+// dictionaries are unchanged.
+const ZH_CREDIT_KINDS = new Map([
+  ['Manufacturer image', '制造商图片'], ['Product image', '产品图片'], ['Product detail', '产品细节图'],
+  ['Component detail', '部件细节图'], ['Frameset image', '车架组图片'], ['Product reference image', '产品参考图'],
+  ['Frame detail', '车架细节图'], ['Technical image', '技术图'], ['Geometry chart', '几何表'],
+  ['Geometry graphic', '几何示意图'], ['Tire-clearance graphic', '轮胎间隙示意图'],
+]);
+const ZH_XHS_POSTS = new Map([
+  ['dealer', '经销商帖子'], ['owner', '车主帖子'], ['seller', '卖家帖子'], ['product', '产品帖子'],
+  ['community', '社区帖子'], ['builder', '装车帖子'], ['workshop', '车店帖子'], ['seller listing', '卖家商品页'],
+  ['community roundup', '社区汇总'],
+]);
+const ZH_CREDIT_SOURCES = new Map([
+  ['public marketplace listing mirror', '公开商城页镜像'], ['the TWITTER marketplace listing', 'TWITTER 商城页'],
+  ['the Alibaba supplier index', '阿里巴巴供应商索引'], ['an authorized Trek retailer', 'Trek 授权零售商'],
+  ['JD marketplace listing', '京东商城商品页'], ['什么值得买 product index', '什么值得买商品索引'],
+  ['Original XHS post creator', '小红书原帖作者'], ['XHS post', '小红书帖子'],
+  ['product photo by the brand', '产品照片由品牌提供'], ['Official TWITTER / 骓特 XHS post', 'TWITTER / 骓特官方小红书帖子'],
+  ['Authorized Voicevelo dealer post', 'Voicevelo 授权经销商帖子'],
+]);
+const ZH_CREDIT_SUFFIXES = new Map([
+  ['on XHS', '（小红书）'], ['official XHS account', ' 官方小红书账号'], ['official flagship store', ' 官方旗舰店'], ['official store', ' 官方店'],
+]);
+function zhCreditHolder(holder) {
+  if (ZH_CREDIT_SOURCES.has(holder)) return ZH_CREDIT_SOURCES.get(holder);
+  const post = holder.match(/^XHS (.+?)(?: post)?$/);
+  if (post && ZH_XHS_POSTS.has(post[1])) return `小红书${ZH_XHS_POSTS.get(post[1])}`;
+  for (const [suffix, zh] of ZH_CREDIT_SUFFIXES) if (holder.endsWith(` ${suffix}`)) return `${holder.slice(0, -suffix.length - 1)}${zh}`;
+  return holder.replace(/; embedded by (.+)$/, '；由 $1 转载');
+}
+export function localizedCredit(credit, locale) {
+  if (locale !== 'zh-Hans' || typeof credit !== 'string') return credit;
+  const kind = credit.match(/^(.+?) © (.+)$/);
+  if (kind && ZH_CREDIT_KINDS.has(kind[1])) return `${ZH_CREDIT_KINDS.get(kind[1])} © ${zhCreditHolder(kind[2])}`;
+  const via = credit.match(/^(Product image|Product detail) via (.+)$/);
+  if (via) {
+    const holder = zhCreditHolder(via[2]);
+    return `${ZH_CREDIT_KINDS.get(via[1])}，来自${/^\p{Script=Han}/u.test(holder) ? '' : ' '}${holder}`;
+  }
+  const see = credit.match(/^(.+); see (the linked )?source$/);
+  if (see) return `${zhCreditHolder(see[1])}；见${see[2] ? '所链' : ''}来源`;
+  const parts = credit.split('; ');
+  if (parts.length === 2 && parts.every((part) => zhCreditHolder(part) !== part)) return parts.map(zhCreditHolder).join('；');
+  const xhs = credit.match(/^XHS · (.+)$/);
+  if (xhs) return `小红书 · ${xhs[1]}`;
+  const official = credit.match(/^(.+) — official product photo$/);
+  if (official) return `${official[1]} — 官方产品照片`;
+  return zhCreditHolder(credit);
+}
 const displayPayloadKeys = new Set(['priceDetails', 'verdict', 'categoryMetricDetails', 'caveats', 'availability', 'priceState', 'priceNote', 'drivetrain', 'weightBasis', 'tireClearanceLabel', 'tireClearanceNote', 'forkCaliperNote', 'geometryWarning', 'note', 'frame', 'categoryMetric', 'categoryMetricLabel', 'type', 'category', 'manufacturing', 'mounts', 'internalFrameStorage', 'drivetrainSubline', 'bestFor']);
 function clarifyDisplayPayload(value, key = '', locale = 'en') {
   if (Array.isArray(value)) return value.map((item) => clarifyDisplayPayload(item, key, locale));
