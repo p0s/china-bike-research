@@ -28,13 +28,13 @@ A November 2026 review of all published guides found too much diligence presente
 
 **Give the best available answer, then its limit once.** When a maker, standard or official page publishes the value the reader needs, report it with its source and date. "Use a calculator" or "follow the manufacturer" is acceptable only next to what the calculator or manufacturer actually says. State a boundary once, where it changes what the reader does. Remove ritual disclaimers such as "this is not a recommendation" or "a photograph cannot establish"; general method caveats belong on the methodology page. Name a specific unknown instead of hedging everything.
 
-**Use the catalog as evidence.** Mention a catalog model only with the fact that answers the article's question, such as its clearance with mudguards, its stack in the size discussed or its dated price. Prefer a comparison of real records to an invented example; label any hypothetical case and use it only when no real record fits.
+**Use the catalog as evidence.** Mention a catalog model only with the fact that answers the article's question, such as its clearance with mudguards, its stack in the size discussed or its dated price. Prefer a comparison of real records to an invented example; label any hypothetical case and use it only when no real record fits. Read the model page before writing about a model: its records often answer the article's question.
 
 **Brand guides are brand intelligence.** A brand guide must give what a buyer would otherwise spend hours assembling: the current range and what separates the models, with dated catalog prices; decisive specifications such as tyre clearance, weight with its basis, frame material and cockpit; exact warranty, crash and return terms; real purchase routes and delivered-cost evidence by region; and labelled reviewer or owner evidence about strengths and problems. Say which rider each model suits and which it does not, from that evidence. General ordering steps stay in the shared checklist.
 
 **Titles promise the answer.** A title states the decision or the finding, not a chore. Avoid "check X before Y" formulas. The description summarizes the answer.
 
-**One decision, one page.** Before writing, find pages on the same decision. Extend, merge or cross-link instead of adding a thinner sibling. Merging published URLs needs a reviewable redirect proposal; until then, trim the duplicated passages and link the stronger page.
+**One decision, one page.** Before writing, find pages on the same decision. Extend, merge or cross-link instead of adding a thinner sibling. Merging published URLs needs a reviewable redirect proposal; until then, trim the duplicated passages and link the stronger page. A shared method lives on one page and is linked; a page that only applies it to another model is not a separate article.
 
 **Media are evidence.** Use a photo or video only where it shows the exact thing discussed, and say in the caption what it shows and how it differs from the discussed build. Each new third-party photo needs its own use basis: documented reusable rights for a local copy, or a remote official-page embed under the media contract in `SPEC.md`. Otherwise omit it.
 
@@ -50,7 +50,7 @@ Show the reasoning behind advice. Separate manufacturer limits, dated listings, 
 
 ## Three separate reviews
 
-First read each edition as a reader: does the opening earn attention, does the argument move, do examples earn their space, and is the next step useful? Then apply the reader-value test: say what each section lets the reader decide or do, delete sentences a competent buyer would assume, and compare neighboring articles for repeated ideas and phrases. Leave a strong section alone rather than rewriting it for novelty. Then check clarity, voice, consequence, evidence, specificity and tone. Remove sentences that add no information or pleasure.
+First read each edition as a reader: does the opening earn attention, does the argument move, do examples earn their space, and is the next step useful? Then apply the reader-value test: say what each section lets the reader decide or do, delete sentences a competent buyer would assume, and compare neighboring articles for repeated ideas and phrases. Leave a strong section alone rather than rewriting it for novelty. When rewriting or merging, put the concrete findings first; a weak page often hides its best fact. Then check clarity, voice, consequence, evidence, specificity and tone. Remove sentences that add no information or pleasure.
 
 Only then check search presentation: the title and description accurately promise the page's answer; headings describe its real sections; links help the reader continue; relevant photos have accurate captions; structured data, dates, canonical and language alternatives match the published page. SEO cannot compensate for a weak article, and no ranking result is promised.
 
