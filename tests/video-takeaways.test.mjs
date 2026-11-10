@@ -47,6 +47,19 @@ test('takeaways render below the player with kind, timestamp and English-origina
   assert.doesNotMatch(renderVideoEntries([video({ transcript, takeaways: [takeaway] })], { article: true, takeaways: false }), /video-takeaways/);
 });
 
+test('localized pages use reviewed takeaway translations while English output stays unchanged', () => {
+  const translated = { ...takeaway, text_i18n: { 'zh-Hans': '涂装后的54码车架连同配件重910克。', de: 'Der lackierte Rahmen in Größe 54 wog mit Kleinteilen 910 g.' } };
+  const plain = video({ transcript, takeaways: [takeaway] });
+  const localized = video({ transcript, takeaways: [translated] });
+  assert.equal(renderVideoEntries([localized]), renderVideoEntries([plain]));
+  assert.match(renderVideoEntries([localized], { locale: 'zh-Hans' }), /<span>涂装后的54码车架连同配件重910克。<\/span><\/li>/);
+  assert.match(renderVideoEntries([localized], { locale: 'de' }), /<span>Der lackierte Rahmen in Größe 54 wog mit Kleinteilen 910 g\.<\/span><\/li>/);
+  assert.match(renderVideoEntries([plain], { locale: 'de' }), /<span data-original-language lang="en">The painted size 54/);
+  assert.deepEqual(validateVideoEvidence(localized, isDate), []);
+  assert.match(validateVideoEvidence(video({ transcript, takeaways: [{ ...takeaway, text_i18n: { de: 'Nur die deutsche Fassung.' } }] }), isDate).join(), /invalid takeaway translation/);
+  assert.match(validateVideoEvidence(video({ transcript, takeaways: [translated, takeaway] }), isDate).join(), /translate all takeaways or none/);
+});
+
 test('clearance field reports must cite a transcript-checked video of the same platform', () => {
   const platform = { id: 'frame-a', tire_clearance: { field_reports: [{ video_id: 'creator-frame-build', at_seconds: 60, configuration: 'Size 54 frame with 2× drivetrain', short: 'Owner: 35 mm tight', summary: 'A 35 mm tire rubbed the front derailleur on this build.' }] } };
   const withTranscript = { variants: [], videos: [video({ transcript })] };

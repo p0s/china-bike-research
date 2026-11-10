@@ -41,7 +41,7 @@ for (const locale of ['en', 'zh-Hans', 'de']) for (const base of ['', '/china-bi
         assert.ok(html.includes(escapeHtml(video.title)));
         assert.ok(html.includes(escapeHtml(translate(video.disclosure, locale))));
         assert.ok(html.includes(`class="video-fallback" href="${video.url}"`));
-        for (const takeaway of video.takeaways ?? []) assert.ok(html.includes(escapeHtml(takeaway.text)), 'Reviewed highlights stay readable before player activation');
+        for (const takeaway of video.takeaways ?? []) assert.ok(html.includes(escapeHtml(locale !== 'en' && takeaway.text_i18n?.[locale] ? takeaway.text_i18n[locale] : takeaway.text)), 'Reviewed highlights stay readable before player activation');
         assert.match(html.slice(embed, html.indexOf('</div>', embed)), /class="video-load-button" type="button" aria-label="[^"]+" hidden/);
         assert.match(html, /data-original-language lang="en"/);
       }
