@@ -1,4 +1,4 @@
-import { translate } from './i18n.js';
+import { translate } from './i18n-core.js';
 
 // Carbon wheels: filter, sort and an optional gallery re-arrange the same table
 // rows. The table stays the default and the page works without this script.

@@ -32,10 +32,11 @@ export function analyticsConsentAllowed(request) {
   return hasAnalyticsConsent(request) || !needsAnalyticsConsent(request);
 }
 
-export function analyticsScriptPolicy(allowed, nonce = '') {
+export function analyticsScriptPolicy(allowed, nonce = '', origin = 'https://chinesebikes.xyz') {
   // Cloudflare injects /sitedelivery/ before site code. Block that bootstrap;
   // only our nonce-bearing loader may start, after the privacy decision and defaults.
-  const sources = [allowed && nonce ? `'nonce-${nonce}'` : "'unsafe-inline'", 'https://chinesebikes.xyz/assets/'];
+  // Site scripts load from the serving origin's /assets/, so local Wrangler previews work too.
+  const sources = [allowed && nonce ? `'nonce-${nonce}'` : "'unsafe-inline'", `${origin}/assets/`];
   if (allowed) sources.push('https://www.googletagmanager.com/gtag/js', 'https://www.googletagmanager.com/debug/');
   return `script-src ${sources.join(' ')}; object-src 'none'; base-uri 'self'`;
 }

@@ -166,6 +166,11 @@ function comparisonImageFields(ctx, image) {
   } : {};
 }
 
+// An exact-configuration claim stands only for the builds an image names; without one it shows the frame platform.
+function creditAccuracy(image) {
+  return image.subject_accuracy === 'exact-variant' && image.platform_id && !image.variant_ids?.length ? 'exact-platform' : image.subject_accuracy;
+}
+
 function accuracyLabel(accuracy) {
   return {
     'exact-variant': 'Exact configuration shown',
@@ -312,14 +317,20 @@ function relationshipLabel(value) {
   });
 }
 
-function availabilityLabel(value) {
+// Missing storage evidence stays unknown rather than reading as No.
+function storageLabel(value) {
+  return value === true ? 'Yes' : value === false ? 'No' : null;
+}
+
+// A superseded status names the record's own recorded successor, never another model's.
+function availabilityLabel(value, record) {
   return sentenceLabel(value, {
     'direct-brand': 'brand direct',
     'direct-factory': 'factory direct',
     'mainland-and-direct': 'retail and direct sales in mainland China',
     'mainland-domestic': 'domestic sales in mainland China',
     'mainland-marketplace-observed': 'observed on mainland China marketplaces',
-    'discontinued-superseded': 'discontinued; superseded by the 2025 Gravel V3',
+    'discontinued-superseded': `discontinued; superseded by the ${successorLabel(record)}`,
     'preorder-direct': 'direct preorder'
   });
 }
@@ -467,9 +478,10 @@ function modelEvidencePoints(product) {
 }
 
 // Price records read as one dated table: newest first, amount, type and status, conditions.
+// The status shows on its own line; a hidden separator keeps text, Markdown and screen readers from running them together.
 function priceHistoryTable(rows) {
   if (!rows.length) return '';
-  return `<table class="price-history"><thead><tr><th scope="col">Observed</th><th scope="col">Price</th><th scope="col">Type</th><th scope="col">Conditions</th></tr></thead><tbody>${rows.map((row) => `<tr><td class="price-history-date" data-label="Observed">${row.date ? `<time datetime="${escapeAttr(row.date)}">${escapeHtml(row.date)}</time>` : escapeHtml('Date not recorded')}</td><td class="price-history-amount" data-label="Price">${escapeHtml(row.amount)}</td><td class="price-history-type" data-label="Type">${row.type.map((part, index) => index ? `<span>${escapeHtml(part)}</span>` : escapeHtml(part)).join('')}</td><td class="price-history-conditions" data-label="Conditions">${escapeHtml(row.conditions || '—')}</td></tr>`).join('')}</tbody></table>`;
+  return `<table class="price-history"><thead><tr><th scope="col">Observed</th><th scope="col">Price</th><th scope="col">Type</th><th scope="col">Conditions</th></tr></thead><tbody>${rows.map((row) => `<tr><td class="price-history-date" data-label="Observed">${row.date ? `<time datetime="${escapeAttr(row.date)}">${escapeHtml(row.date)}</time>` : escapeHtml('Date not recorded')}</td><td class="price-history-amount" data-label="Price">${escapeHtml(row.amount)}</td><td class="price-history-type" data-label="Type">${row.type.map((part, index) => index ? `<span class="sr-only"> · </span><span>${escapeHtml(part)}</span>` : escapeHtml(part)).join('')}</td><td class="price-history-conditions" data-label="Conditions">${escapeHtml(row.conditions || '—')}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function clearanceFieldReportNote(product) {
@@ -800,12 +812,14 @@ function aliasLine(names, tag, className, note = '') {
   return note ? `${line}<${tag} class="model-subline alias-note">${escapeHtml(note)}</${tag}>` : line;
 }
 
-function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
-  const { variant, platform, brand, allInPrice } = product;
+// Search text travels in the cacheable catalog payload, not in every row's markup:
+// catalog search already needs that payload, and the homepage HTML stays within budget.
+function publishedSearchText(ctx, product) {
+  const { variant, platform, brand } = product;
   const metric = categoryMetric(platform);
   const tireClearance = publishedTireClearance(product);
   const aliases = aliasNames(platform, variant);
-  const searchable = [
+  return [
     brand.name,
     brand.name_zh,
     ...(brand.aliases ?? []),
@@ -822,6 +836,13 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
     tireClearance.value,
     ...(variant.editorial.best_for ?? [])
   ].filter(Boolean).map((value) => String(value).toLowerCase()).filter((value, index, all) => all.indexOf(value) === index).join(' ');
+}
+
+function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
+  const { variant, platform, brand, allInPrice } = product;
+  const metric = categoryMetric(platform);
+  const tireClearance = publishedTireClearance(product);
+  const aliases = aliasNames(platform, variant);
   const brandLabel = brandDisplayLabel(brand);
   const framesetData = variant.kind === 'frameset'
     ? ` data-frame-price-low="${allInPrice.frameLow}" data-frame-price-high="${allInPrice.frameHigh}"`
@@ -831,7 +852,7 @@ function productRow(ctx, product, summary = comparisonSummary(ctx, product)) {
   const drivetrain = variant.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: drivetrainLabel(ctx, product), sub: drivetrainSubline(ctx, product) });
-  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(membershipFamilies(productCategories(product)).join('|'))}" data-category="${escapeAttr(productCategories(product).join('|'))}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
+  return `<div class="catalog-row" role="row" data-product-row data-stage="published" data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(membershipFamilies(productCategories(product)).join('|'))}" data-category="${escapeAttr(productCategories(product).join('|'))}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${price.sort}" data-price-filter="${price.filter}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
     <div class="catalog-product" role="rowheader">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
@@ -975,15 +996,17 @@ function candidateFrameWeight(entry) {
     ? null : entry.candidate.facts?.frame_weight_g ?? null;
 }
 
-function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entry)) {
+function brandManufacturingLabel(brand) {
+  const manufacturing = brand?.manufacturing;
+  return manufacturing?.relationship ? `${relationshipLabel(manufacturing.relationship)} · ${confidenceLabel(manufacturing.confidence)} confidence` : '';
+}
+
+function candidateSearchText(entry) {
   const { candidate, brand } = entry;
-  const metric = candidateMetric(entry);
-  const tireClearance = candidateTireClearance(entry);
   const facts = candidate.facts ?? {};
-  const aliases = aliasNames(candidate);
-  const searchable = [
+  return [
     candidate.name,
-    ...aliases,
+    ...aliasNames(candidate),
     brand?.name,
     brand?.name_zh,
     ...(brand?.aliases ?? []),
@@ -992,6 +1015,14 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
     facts.bottom_bracket,
     ...entry.categories.map(categoryLabel)
   ].filter(Boolean).join(' ').toLowerCase();
+}
+
+function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entry)) {
+  const { candidate, brand } = entry;
+  const metric = candidateMetric(entry);
+  const tireClearance = candidateTireClearance(entry);
+  const facts = candidate.facts ?? {};
+  const aliases = aliasNames(candidate);
   const detailUrl = url(ctx.base, `/models/${candidate.id}/`);
   const sourceName = `<a href="${detailUrl}" data-model-link>${escapeHtml(candidate.name)}</a>`;
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
@@ -1016,7 +1047,7 @@ function candidateRow(ctx, entry, summary = candidateComparisonSummary(ctx, entr
   const drivetrain = entry.kind === 'frameset'
     ? catalogCell('drivetrain', 'Drivetrain', { main: 'frame only' }, { muted: true })
     : catalogCell('drivetrain', 'Drivetrain', { main: facts.drivetrain ?? '—' }, { clamp: true });
-  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(membershipFamilies(entry.categories).join('|'))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
+  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(membershipFamilies(entry.categories).join('|'))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${price.sort}" data-price-filter="${price.filter}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}"${tireClearanceData} data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(entry.id)}" aria-label="Select ${escapeAttr(candidate.name)} for comparison"><span aria-hidden="true"></span></label></div>
     <div class="catalog-product" role="rowheader">
       ${candidateImage(ctx, entry)}
@@ -1092,10 +1123,10 @@ function comparisonSummary(ctx, product) {
     frame: frameStandard(product),
     frameSearch: [product.platform.frame.material, frameMaterialLabel(product), frameStandard(product)].filter(Boolean).join(' '),
     category: `${productCategories(product).map(categoryLabel).join(' · ')} · ${product.platform.handlebar}-bar`,
-    internalFrameStorage: product.platform.internal_storage ? 'Yes' : 'No',
+    ...(storageLabel(product.platform.internal_storage) ? { internalFrameStorage: storageLabel(product.platform.internal_storage) } : {}),
     mounts: product.platform.mounts?.join(', ') || 'None recorded',
-    manufacturing: `${relationshipLabel(product.brand.manufacturing.relationship)} · ${confidenceLabel(product.brand.manufacturing.confidence)} confidence`,
-    availability: availabilityLabel(product.platform.china_availability),
+    manufacturing: brandManufacturingLabel(product.brand),
+    availability: availabilityLabel(product.platform.china_availability, product.platform),
     bestFor: (ctx.locale === 'de' ? product.variant.editorial.best_for?.map((item) => translate(item, 'de')).join(', ') : bestForLabel(product).replaceAll(' · ', ', ')) || 'Not specified beyond category',
     verdict: product.variant.editorial.verdict,
     caveats: product.variant.editorial.caveats?.map((item) => ctx.locale === 'de' ? translate(item.trim().replace(/[.;]+$/, ''), 'de') : item).join('; ') || 'None recorded'
@@ -1167,19 +1198,24 @@ function candidateComparisonSummary(ctx, entry) {
     ...(frame ? { frame } : {}),
     frameSearch: [facts.frame, facts.frame_material, facts.bottom_bracket].filter(Boolean).join(' '),
     category: entry.categories.map(categoryLabel).join(' · ') || '—',
-    ...(entry.candidate.manufacturing ? { manufacturing: entry.candidate.manufacturing } : {})
+    // The comparison row is the brand relationship for every row; a profile's own frame note stays in Frame.
+    ...(brandManufacturingLabel(entry.brand) ? { manufacturing: brandManufacturingLabel(entry.brand) } : {})
   };
 }
 
+// Whole words only, keeping the original capitalization: "reseller" and a mid-sentence
+// "does not verify" stay as written; only an instruction that starts a clause is reworded.
 function candidatePublicText(value) {
+  const keepCase = (replacement) => (match) => /^[A-Z]/.test(match)
+    ? `${replacement[0].toUpperCase()}${replacement.slice(1)}`
+    : `${replacement[0].toLowerCase()}${replacement.slice(1)}`;
   return String(value ?? '')
-    .replace(/seller\/authenticity and final checkout price/gi, 'Authenticity, final checkout price, and purchase terms')
-    .replace(/current seller/gi, 'Current purchase route')
-    .replace(/written by seller/gi, 'stated by the purchase source')
-    .replace(/seller photo/gi, 'listing photo')
-    .replace(/seller/gi, 'purchase source')
-    .replace(/;\s*verify\s+/gi, '; ')
-    .replace(/\bverify\s+/gi, 'Confirm ')
+    .replace(/\bseller\/authenticity and final checkout price\b/gi, keepCase('authenticity, final checkout price, and purchase terms'))
+    .replace(/\bwritten by seller\b/gi, keepCase('stated by the purchase source'))
+    .replace(/\bseller photo\b/gi, keepCase('listing photo'))
+    .replace(/\bsellers\b/gi, keepCase('purchase sources'))
+    .replace(/\bseller\b/gi, keepCase('purchase source'))
+    .replace(/(^|[.;!?]\s*)verify\b/gi, (match, lead) => `${lead}${/[.!?]|^$/.test(lead.trim()) ? 'Confirm' : 'confirm'}`)
     .trim();
 }
 
@@ -1485,7 +1521,7 @@ function priceSettings(ctx) {
       <div class="settings-head"><h2 id="price-settings-title">Prices &amp; builds</h2><button class="icon-button" type="button" aria-label="Close price settings" data-settings-close>×</button></div>
       <p class="settings-sub">Applies to the catalog and comparison. Your choices stay on this device.</p>
       <div class="price-preferences" hidden data-price-preferences>
-        <div class="price-destination-control"><label class="settings-field"><span>Ship to <small data-destination-suggestion hidden>suggested</small></span><select data-ship-country aria-label="Shipping destination"><option value="">Choose destination</option>${Object.entries(DESTINATION_GROUPS).map(([group, countries]) => `<optgroup label="${group}">${countries.map((code) => [code, countryName(code, ctx.locale ?? 'en')]).sort((a, b) => a[1].localeCompare(b[1], ctx.locale ?? 'en')).map(([code, name]) => `<option value="${code}">${escapeHtml(name)}</option>`).join('')}</optgroup>`).join('')}</select></label>${infoTip('Delivered price and China comparison', ['Delivered-price sorting and budgets require complete delivered totals. China-price sorting is separate and excludes shipping and import charges.', 'Where a seller documents a complete delivered total for your destination, the row shows it first. ≈ marks an estimate; a listing alone is not a delivery total.', 'China prices use domestic observations, never converted overseas listings.', 'Country, timezone and language only suggest a destination. Choose where you want delivery; language and currency stay independent.'])}</div>
+        <div class="price-destination-control"><label class="settings-field"><span>Ship to <small data-destination-suggestion hidden>suggested</small></span><select data-ship-country aria-label="Shipping destination"><option value="">Choose destination</option>${Object.entries(DESTINATION_GROUPS).map(([group, countries]) => `<optgroup label="${group}">${countries.map((code) => [code, countryName(code, ctx.locale ?? 'en')]).sort((a, b) => a[1].localeCompare(b[1], ctx.locale ?? 'en')).map(([code, name]) => `<option value="${code}">${escapeHtml(name)}</option>`).join('')}</optgroup>`).join('')}</select></label>${infoTip('Delivered price and China comparison', ['Rows sort by the price they show. Budgets use complete delivered totals, or converted China prices when you choose them.', 'Where a seller documents a complete delivered total for your destination, the row shows it first. ≈ marks an estimate; a listing alone is not a delivery total.', 'China prices use domestic observations, never converted overseas listings.', 'Country, timezone and language only suggest a destination. Choose where you want delivery; language and currency stay independent.'])}</div>
         <label class="settings-field currency-control"><span>Display currency</span><select data-display-currency aria-label="Display currency">${PRICE_CURRENCIES.map((currency) => `<option value="${currency}">${currency}</option>`).join('')}</select></label>
         <label class="settings-field delivery-area-control" hidden data-delivery-area-control><span>US delivery area</span><select data-delivery-area aria-label="US delivery area"><option value="">Choose area</option><option value="contiguous">Contiguous US</option><option value="remote">Alaska / Hawaii / territories</option></select></label>
       </div>
@@ -1528,6 +1564,7 @@ export function renderHome(ctx) {
       <section class="rail-section rail-refine" aria-labelledby="refine-title"><h2 class="rail-label" id="refine-title">Refine</h2>
         <div class="segmented" role="group" aria-label="Product type" data-type-control><button type="button" data-type-value="" aria-pressed="true">All</button><button type="button" data-type-value="complete-bike" aria-pressed="false">Complete</button><button type="button" data-type-value="frameset" aria-pressed="false">Frame build</button></div>
         <label class="field"><span data-price-budget-label>Max full-bike price</span><span class="number-with-unit prefix"><span data-price-currency>CNY</span><input name="max-price" type="number" min="0" max="1000000" step="any" inputmode="decimal" placeholder="Any" data-filter-price></span><small class="field-help" data-price-budget-help>China price. Frame builds include your plan.</small></label>
+        <label class="filter-check" data-reference-budget-control hidden><input type="checkbox" data-filter-reference-budget><span>Use China prices for this budget</span></label>
         <label class="field"><span>Min tire clearance</span><span class="number-with-unit"><input id="catalog-tire-min" name="min-tire-clearance" type="number" min="0" max="100" step="1" inputmode="decimal" placeholder="Any" data-filter-tire aria-label="Minimum tire clearance"><span>mm</span></span></label>
         <label class="field"><span>Tire fit for</span><select data-filter-tire-layout aria-label="Tire clearance drivetrain"><option value="">Any drivetrain</option><option value="single">1× drivetrain</option><option value="double">2× drivetrain</option></select></label>
         <label class="filter-check"><input type="checkbox" data-filter-tire-unknown disabled><span>Also show unknown clearance</span></label>
@@ -1591,8 +1628,8 @@ export function renderHome(ctx) {
 
 export function catalogSummaries(ctx) {
   return [
-    ...ctx.products.map((product) => comparisonSummary(ctx, product)),
-    ...(ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data)).map((entry) => candidateComparisonSummary(ctx, entry))
+    ...ctx.products.map((product) => ({ ...comparisonSummary(ctx, product), search: publishedSearchText(ctx, product) })),
+    ...(ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data)).map((entry) => ({ ...candidateComparisonSummary(ctx, entry), search: candidateSearchText(entry) }))
   ];
 }
 
@@ -1626,7 +1663,7 @@ export function renderModel(ctx, product) {
     ['Weight', Object.values(weightParts(weightLabel(product), variant.kind, weightBasisDescription(product))).filter(Boolean).join(' · '), weightBasisDescription(product) ? infoTip('Weight basis', [weightBasisDescription(product)], { 'data-evidence-href': '#specification-snapshot-title' }) : ''],
     ['Frame standard', frameStandard(product), ''],
     ...(geometrySummary(platform) ? [['Fit range', geometrySummary(platform), '']] : []),
-    ['Where to buy', variant.purchase_route ? '' : availabilityLabel(platform.china_availability), `${shoppingLinksHtml(ctx.data, 'variant', variant.id)}${variant.purchase_route ? '<a href="#model-purchase-route">Purchase route and checks</a>' : ''}`]
+    ['Where to buy', variant.purchase_route ? '' : availabilityLabel(platform.china_availability, platform), `${shoppingLinksHtml(ctx.data, 'variant', variant.id)}${variant.purchase_route ? '<a href="#model-purchase-route">Purchase route and checks</a>' : ''}`]
   ];
   const verifyItems = (variant.editorial.caveats ?? []).map((item) => translate(String(item).trim().replace(/[.;]+$/, ''), ctx.locale)).filter(Boolean);
   const specificationRows = publishedSpecificationRows(product);
@@ -1648,7 +1685,7 @@ export function renderModel(ctx, product) {
     ${ctx.locale === 'zh-Hans' ? '<p class="locale-evidence-note">本页提供中文导航、概要与规格标签；型号、来源标题及尚未逐条翻译的详细研究和报价备注保留原文。请结合原始来源核对具体配置与条件。</p>' : ctx.locale === 'de' ? '<p class="locale-evidence-note">Navigation, Zusammenfassungen und Spezifikationslabels sind auf Deutsch. Offizielle Modellnamen, Quellentitel und detaillierte Originalbelege bleiben in ihrer Ausgangssprache. Prüfen Sie Ausstattung und Bedingungen anhand der verlinkten Quellen.</p>' : ''}
     <section class="model-story"${variant.editorial.review ? ' id="editorial-review"' : ''} aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2>${reviewByline}<p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p>${bestFor ? `<p><strong>${escapeHtml(translate('Best for', ctx.locale))}:</strong> ${escapeHtml(bestFor)}</p>` : ''}${recommendationNotes(recommendationFor(ctx, product))}</section>
     ${verifyItems.length ? `<section class="buying-checks" id="buying-checks" aria-labelledby="buying-checks-title"><h2 id="buying-checks-title">Buying checks</h2><ul>${verifyItems.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : ''}
-    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications</h2><dl class="detail-list">${specificationRows.filter(([label]) => label !== 'Purchase route').map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div>${metric.kind === 'discipline' ? '' : `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div>`}${metric.details.length ? `<div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' '))}</dd></div>` : ''}<div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div></dl></section>
+    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications</h2><dl class="detail-list">${specificationRows.filter(([label]) => label !== 'Purchase route').map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div>${metric.kind === 'discipline' ? '' : `<div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div>`}${metric.details.length ? `<div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' '))}</dd></div>` : ''}<div><dt>Internal frame storage</dt><dd>${storageLabel(platform.internal_storage) ?? 'Not recorded'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div></dl></section>
     <section class="model-prices" id="price-records" aria-labelledby="price-records-title"><h2 id="price-records-title">Price history</h2>${priceHistoryTable(prices.map((price) => ({ date: price.observed_at, amount: exactPriceLabel(price), type: [sentenceLabel(price.price_type), priceStatusLabel(price.status)].filter(Boolean), conditions: price.conditions })))}${purchaseRoute ? `<p class="purchase-route" id="model-purchase-route"><strong>Purchase route</strong> ${escapeHtml(purchaseRoute)}</p>` : ''}</section>
     ${evidencePoints}
     ${structuredGeometry(platform.frame.geometry, product.sources)}${platform.frame.geometry?.sizes?.length ? `<p class="model-geometry-link"><a href="${url(ctx.base,'/geometry/')}?a=${escapeAttr(platform.id)}">Compare this geometry ↗</a></p>` : ''}<section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths, ctx.locale))}</p></section>
@@ -2880,7 +2917,7 @@ export function renderMethodology(ctx) {
     { name: 'Catalog CSV', encodingFormat: 'text/csv', path: '/data/catalog.csv' },
     { name: 'Source records JSON', encodingFormat: 'application/json', path: '/data/sources.json' }
   ];
-  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2 id="store-links">Store links</h2><p>Some model pages and component rows link to an online store that pays us a commission on purchases made through those links. Each link is marked where it appears. A link is added only where the store's own page offers that exact model and build, or the exact model for a research profile that covers several builds. It shows the store's price in its own currency with the date we checked it; that is not a China price or a delivered total.</p><p>Store links do not change which bikes are listed, their order, catalog prices, verdicts or buying checks. Source citations stay separate from store links.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2 id="opinion-summaries">Owner and reviewer opinions</h2><p>Model pages may list brief paraphrases of substantive exact-model opinions from owners, reviewers and test riders on ride, fit, build, weight, compatibility, faults and support. Each links its public source and keeps the configuration, date and any supplied-product or affiliate relationship. Brand and seller material can appear but is never counted. One person or publication counts once per model; repeat comments and syndicated copies are marked and counted once. Each opinion's overall stance is classified as positive, mixed or negative from what its author wrote; no star ratings are invented.</p><p>With at least 21 independent opinions on one exact model, the page shows an opinion sentiment summary: the share of positive opinions with mixed ones counted as half, on a 0–100 scale, with its 95% Wilson interval and the number of opinions behind it. It describes sentiment about that model only. It is not a quality score, recommendation or cross-model ranking, and it never feeds sorting, filters or structured data. Below 21 opinions the collection is shown without a summary.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  const html = `<h2>Dataset and freshness</h2><p>The generated catalog dataset was last updated <time datetime="${escapeAttr(datasetDate)}">${escapeHtml(datasetDate)}</time>; the catalog-wide review date is <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Neither date claims that every price is current: each price keeps its own observation date, market, status, and conditions.</p><ul class="dataset-downloads"><li><a href="${url(ctx.base, '/data/catalog.json')}">Catalog JSON</a></li><li><a href="${url(ctx.base, '/data/catalog.csv')}">Catalog CSV</a></li><li><a href="${url(ctx.base, '/data/sources.json')}">Source records JSON</a></li></ul><p>The structured dataset is available under <a href="${license}" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges. Every row sorts by the amount it shows. Outside China, a budget uses delivered totals, or converted China prices and China build estimates when you choose them; a Reference estimate or Build reference never enters a budget. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.</p><h2 id="store-links">Store links</h2><p>Some model pages and component rows link to an online store that pays us a commission on purchases made through those links. Each link is marked where it appears. A link is added only where the store's own page offers that exact model and build, or the exact model for a research profile that covers several builds. It shows the store's price in its own currency with the date we checked it; that is not a China price or a delivered total.</p><p>Store links do not change which bikes are listed, their order, catalog prices, verdicts or buying checks. Source citations stay separate from store links.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2 id="opinion-summaries">Owner and reviewer opinions</h2><p>Model pages may list brief paraphrases of substantive exact-model opinions from owners, reviewers and test riders on ride, fit, build, weight, compatibility, faults and support. Each links its public source and keeps the configuration, date and any supplied-product or affiliate relationship. Brand and seller material can appear but is never counted. One person or publication counts once per model; repeat comments and syndicated copies are marked and counted once. Each opinion's overall stance is classified as positive, mixed or negative from what its author wrote; no star ratings are invented.</p><p>With at least 21 independent opinions on one exact model, the page shows an opinion sentiment summary: the share of positive opinions with mixed ones counted as half, on a 0–100 scale, with its 95% Wilson interval and the number of opinions behind it. It describes sentiment about that model only. It is not a quality score, recommendation or cross-model ranking, and it never feeds sorting, filters or structured data. Below 21 opinions the collection is shown without a summary.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
   return prosePage(ctx, {
     title: 'Methodology',
     desc: methodologyDescription,
@@ -2988,7 +3025,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<h2 class="credit-section-title">Product photos</h2>${creditList(entries.map(({ image, source, label, href, visual }) => ({ label, href, line: [localizedCredit(image.credit, ctx.locale), accuracyLabel(image.subject_accuracy)], sourceUrl: image.source_media_page_url ?? source?.url ?? '', visual })))}${componentCredits(ctx, sources)}`;
+  const html = `<p><a href="${url(ctx.base, '/image-policy/')}">How product images are checked and corrected</a></p>${renderEditorialCredits(ctx)}<h2 class="credit-section-title">Product photos</h2>${creditList(entries.map(({ image, source, label, href, visual }) => ({ label, href, line: [localizedCredit(image.credit, ctx.locale), accuracyLabel(creditAccuracy(image))], sourceUrl: image.source_media_page_url ?? source?.url ?? '', visual })))}${componentCredits(ctx, sources)}`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

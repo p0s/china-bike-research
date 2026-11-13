@@ -152,3 +152,41 @@ test('two retained records for one Cyclone R7120 trim link each other without lo
     assert.ok(validateDataset(copy).some(error => error.includes('same_identity_as')));
   }
 });
+
+test('candidate identity is an explicit field, never inferred from wording', () => {
+  // "LightCarbon … complete bike" once matched a generic-name pattern through its brand name.
+  for (const id of ['lightcarbon-speed7-complete', 'phoenix-700c-carbon-e-road']) assert.equal(find(id).identifiableModel, true, id);
+  // Records whose own status says the exact model is unresolved are unresolved, whatever the name says.
+  const summaries = catalogSummaries(context);
+  for (const id of ['gito-wave', 'java-lampo-carbon-road', 'my-way-custom-carbon-frame']) {
+    const entry = find(id);
+    assert.equal(entry.identifiableModel, false, id);
+    assert.equal(candidateIndexable(entry), false, id);
+    assert.equal(summaries.find(item => item.id === entry.id).priceUnavailable, true, id);
+  }
+  const fixture = structuredClone(data);
+  const lead = fixture.candidates.find(item => item.id === 'lightcarbon-speed7-complete');
+  lead.model_identity = 'unresolved';
+  assert.equal(joinCatalogCandidates(fixture).find(entry => entry.candidate.id === lead.id).identifiableModel, false);
+  lead.model_identity = 'maybe';
+  assert.ok(validateDataset(fixture).some(error => error.includes('lightcarbon-speed7-complete: invalid model_identity')));
+  // A status that already says the model is unknown cannot be overridden as identified.
+  const queued = fixture.candidates.find(item => item.status === 'needs-exact-model');
+  queued.model_identity = 'identified';
+  assert.ok(validateDataset(fixture).some(error => error.includes(`${queued.id}: model_identity contradicts status`)));
+  // Wording that sounds unresolved needs an explicit decision rather than a guess.
+  delete fixture.candidates.find(item => item.id === 'gito-wave').model_identity;
+  assert.ok(validateDataset(fixture).some(error => error.includes('gito-wave: name or status reads as an unresolved model')));
+});
+
+test('buyer-facing rewording of research notes keeps whole words and sentence case', () => {
+  const page = id => renderCandidateModel(context, find(id)).replace(/<[^>]+>/g, ' ').replace(/&#039;/g, "'").replace(/\s+/g, ' ');
+  const robin = page('pardus-robin-sport-pes');
+  assert.match(robin, /reseller and modified-owner weights/);
+  assert.doesNotMatch(robin, /repurchase source/);
+  // An ordinary verb stays; only an instruction that starts a clause becomes "confirm".
+  assert.match(page('west-biking-sl-one'), /does not provide R7120 component codes, verify a current R7170 Di2 option/);
+  assert.match(page('cycletrack-time-tt'), /the photograph does not verify retained selected drivetrain/);
+  assert.match(page('evolve-cima-road'), /subject to policy conditions; confirm the transaction channel and exclusions/);
+  assert.doesNotMatch(page('de-rosa-idol'), /[a-z,] Confirm /);
+});

@@ -518,7 +518,7 @@ test('superseded published bikes show availability instead of a historical price
   assert.match(detail, /<strong>Not sold new<\/strong>/);
   assert.match(detail, /Superseded by 2025 Gravel V3/);
   assert.match(detail, /Historical price for a superseded model/);
-  assert.match(detail, /¥3,991[\s\S]*Historical listing option<span>Historical price for a superseded model<\/span>/);
+  assert.match(detail, /¥3,991[\s\S]*Historical listing option<span class="sr-only"> · <\/span><span>Historical price for a superseded model<\/span>/);
   assert.doesNotMatch(detail, /The recorded complete-bike price is ¥3,991/);
 });
 

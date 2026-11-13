@@ -6,7 +6,7 @@ import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
 import { validateImageHealthCheck } from './image-health.mjs';
 import { editorialReviewIssues } from './editorial-review.mjs';
-import { priceEvidence } from './price-evidence.mjs';
+import { priceEvidence, latestPriceFirst } from './price-evidence.mjs';
 import { validateRegionalPricing } from './regional-prices.mjs';
 import { validateMountApproval } from './mount-evidence.mjs';
 import { validateOpinionCollection } from './opinions.mjs';
@@ -658,6 +658,8 @@ export function validateDataset(data = loadDataset()) {
     if (!categorySet.has(platform.category)) errors.push(`platform ${platform.id}: unsupported category ${platform.category}`);
     if (!['drop', 'flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
     if (!isDate(platform.last_reviewed)) errors.push(`platform ${platform.id}: invalid last_reviewed`);
+    // Omitted storage stays unknown; a recorded answer is a yes or no.
+    if (platform.internal_storage !== undefined && typeof platform.internal_storage !== 'boolean') errors.push(`platform ${platform.id}: internal_storage must be true or false when recorded`);
     for (const key of ['material', 'fork_material', 'material_grade', 'claimed_fiber', 'construction', 'stiffness_evidence']) {
       if (platform.frame?.[key] !== undefined && (typeof platform.frame[key] !== 'string' || !platform.frame[key].trim())) errors.push(`platform ${platform.id}: invalid frame.${key}`);
     }
@@ -785,6 +787,13 @@ export function validateDataset(data = loadDataset()) {
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
     if (candidate.reference_price_kind !== undefined && !['official', 'observed'].includes(candidate.reference_price_kind)) errors.push(`candidate ${candidate.id}: invalid reference_price_kind`);
+    if (candidate.model_identity !== undefined && !['identified', 'unresolved'].includes(candidate.model_identity)) errors.push(`candidate ${candidate.id}: invalid model_identity`);
+    if (candidate.model_identity === 'identified' && UNRESOLVED_IDENTITY_STATUSES.includes(candidate.status)) errors.push(`candidate ${candidate.id}: model_identity contradicts status ${candidate.status}`);
+    // Wording is never the decision, but wording that sounds unresolved needs one.
+    if (candidate.model_identity === undefined && !UNRESOLVED_IDENTITY_STATUSES.includes(candidate.status)
+      && /\bgeneric\b|model[ -]unclear|title[ -]mismatch|model[ -]unresolved|identity[ -]unresolved/i.test(`${candidate.name} ${candidate.status}`)) {
+      errors.push(`candidate ${candidate.id}: name or status reads as an unresolved model; set model_identity explicitly`);
+    }
     if (candidate.comparison_eligibility !== undefined) {
       const eligibility = candidate.comparison_eligibility;
       if (!isObject(eligibility) || !['complete_weight', 'frame_weight', 'price', 'builder_base'].every((key) => eligibility[key] === undefined || typeof eligibility[key] === 'boolean') ||
@@ -1391,7 +1400,7 @@ export function joinProducts(data = loadDataset()) {
     if (!platform) throw new Error(`Missing platform ${variant.platform_id}`);
     const brand = brands.get(platform.brand_id);
     if (!brand) throw new Error(`Missing brand ${platform.brand_id}`);
-    const prices = data.prices.filter((price) => price.variant_id === variant.id && !price.market_ids).sort((a, b) => b.observed_at.localeCompare(a.observed_at));
+    const prices = data.prices.filter((price) => price.variant_id === variant.id && !price.market_ids).sort(latestPriceFirst);
     const latestPrice = prices[0];
     const platformImages = data.images.filter((image) => image.platform_id === platform.id && image.buyer_visibility !== 'omit');
     const selectedImage = choosePrimaryImage(platformImages, variant.id);
@@ -1443,6 +1452,14 @@ export function joinProducts(data = loadDataset()) {
       sources: [...sourceIds].map((id) => sources.get(id)).filter(Boolean)
     };
   }).sort((a, b) => a.allInPrice.midpoint - b.allInPrice.midpoint);
+}
+
+const UNRESOLVED_IDENTITY_STATUSES = ['research-queue', 'needs-exact-model'];
+
+// Identity is an explicit editorial field, never inferred from the record's name.
+export function candidateModelIdentity(candidate) {
+  if (UNRESOLVED_IDENTITY_STATUSES.includes(candidate.status)) return 'unresolved';
+  return candidate.model_identity ?? 'identified';
 }
 
 function candidateBrand(candidate, brands) {
@@ -1526,8 +1543,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         .sort(featuredVideoOrder);
       const opinions = (data.opinions ?? []).find((collection) => collection.target?.candidate_id === candidate.id) ?? null;
       const priority = candidate.research_priority;
-      const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
-        !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
+      const hasIdentifiableModel = candidateModelIdentity(candidate) === 'identified';
       const builderEligible = hasIdentifiableModel && candidate.comparison_eligibility?.builder_base !== false;
       return {
         id: `candidate-${candidate.id}`,

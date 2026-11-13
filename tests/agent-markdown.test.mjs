@@ -106,6 +106,13 @@ test('every model profile keeps its robots policy, dated evidence, popover lines
   }
 });
 
+test('price-history type and status stay separate words in Markdown', () => {
+  const product = products.find((item) => item.variant.id === 'sava-a7l-r7100');
+  const markdown = pageMarkdown(renderModel(ctx, product), { canonical: `${siteUrl}/models/sava-a7l-r7100/`, lastmod: '2026-10-29' });
+  assert.match(markdown, /Observed search card · Promotion-conditional price/);
+  assert.doesNotMatch(markdown, /cardPromotion/);
+});
+
 test('catalog Markdown lists every localized row with its model link, and leads after Partial profiles', () => {
   const html = '<!doctype html><html lang="zh-Hans"><head><title>Chinese Bikes</title><meta name="description" content="Catalog"><meta name="robots" content="index,follow,max-image-preview:large"></head><body><main id="content"><header class="catalog-header"><h1>对比</h1><p class="catalog-scope">价格说明 <a href="/zh/methodology/">资料来源说明</a></p></header></main></body></html>';
   for (const locale of ['en', 'zh-Hans', 'de', 'es', 'ru']) {

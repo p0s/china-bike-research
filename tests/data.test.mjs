@@ -2045,7 +2045,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.prices.length, 84);
   assert.equal(data.prices.filter((price) => !price.market_ids).length, 79);
   assert.equal(data.prices.filter((price) => price.market_ids).length, 5);
-  assert.equal(data.exchangeRates.length, 1);
+  assert.equal(data.exchangeRates.length, 2);
   assert.ok(data.images.length >= 213);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);

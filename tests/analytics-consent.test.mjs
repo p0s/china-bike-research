@@ -23,6 +23,14 @@ function request(path = '/', country = 'FR', init = {}) {
   return req;
 }
 
+test('site scripts are allowed from the serving origin, so a local Wrangler preview runs them', async () => {
+  assert.match(analyticsScriptPolicy(false), /'unsafe-inline' https:\/\/chinesebikes\.xyz\/assets\/;/);
+  const response = await handleRequest(new Request('http://localhost:8787/'), env, { waitUntil() {} });
+  const policy = response.headers.get('content-security-policy');
+  assert.match(policy, /script-src 'unsafe-inline' http:\/\/localhost:8787\/assets\/;/);
+  assert.doesNotMatch(policy, /chinesebikes\.xyz|sitedelivery/);
+});
+
 test('trusted location requires a choice only in the policy regions; unknown locations default to allow', () => {
   for (const country of CONSENT_COUNTRIES) {
     assert.equal(needsAnalyticsConsent(request('/', country)), true, country);

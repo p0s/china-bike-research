@@ -1,4 +1,4 @@
-import { translate } from './i18n.js';
+import { translate } from './i18n-core.js';
 import { numberOrNull, restoreBuildState } from './state-utils.js';
 
 export function buildCompatibilityMessages(base, covered, selectedPart, selections) {

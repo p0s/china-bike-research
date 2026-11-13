@@ -544,7 +544,7 @@ function choiceResponse(request, url, optOut, env) {
   const language = url.searchParams.get('lang');
   const german = language === 'de', chinese = language === 'zh';
   const response = htmlResponse(chinese ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>分析偏好已保存</h1><p>${optOut ? '此浏览器现已不参与可选的页面分析。' : '此浏览器现已参与可选的页面分析。'}</p><p>浏览器发出 Do Not Track 或 Global Privacy Control 信号时，我们仍会遵守。</p><p><a href="/zh/privacy/">返回隐私页面</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : german ? `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analyseauswahl gespeichert</h1><p>${optOut ? 'Dieser Browser ist jetzt von der optionalen Seitenanalyse ausgeschlossen.' : 'Dieser Browser nimmt jetzt an der optionalen Seitenanalyse teil.'}</p><p>Do Not Track und Global Privacy Control werden weiterhin beachtet.</p><p><a href="/de/privacy/">Zurück zum Datenschutz</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>` : `<main${optOut ? ' data-analytics-cleared' : ''}><h1>Analytics preference saved</h1><p>This browser is now ${action} optional page analytics.</p><p>DNT and Global Privacy Control remain honored when present.</p><p><a href="/privacy/">Return to the privacy page</a></p></main><script type="module" src="/assets/analytics-choice.js"></script>`, 200, {
-    'set-cookie': cookie, 'content-security-policy': analyticsScriptPolicy(false)
+    'set-cookie': cookie, 'content-security-policy': analyticsScriptPolicy(false, '', url.origin)
   }, german ? 'de' : chinese ? 'zh-Hans' : 'en');
   response.headers.append('set-cookie', optOut
     ? `${CONSENT_COOKIE}=; ${expiry}`
@@ -614,7 +614,7 @@ export async function handleRequest(request, env = {}, ctx = {}) {
     const allowed = firstPartyAnalyticsAllowed && ga4Configured(env);
     const nonce = allowed ? crypto.randomUUID().replaceAll('-', '') : '';
     response = responseWithHeaders(response, {
-      'content-security-policy': analyticsScriptPolicy(allowed, nonce),
+      'content-security-policy': analyticsScriptPolicy(allowed, nonce, url.origin),
       ...(eligible ? { 'cache-control': 'private, no-store' } : {})
     });
     if (eligible && !allowed && ga4Configured(env)

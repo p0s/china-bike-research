@@ -44,6 +44,23 @@ for (const locale of INTERFACE_LOCALES) test(`${locale} pages are self-canonical
   assert.equal(model.includes(`hreflang="${locale}"`), false);
 });
 
+test('each page loads only its own dictionary, ahead of the site modules', async () => {
+  const ctx = { data, base: '', siteUrl, repositoryUrl: 'https://github.com/p0s/china-bike-research' };
+  const files = { en: null, 'zh-Hans': 'i18n-zh.js', de: 'i18n-de.js', es: 'i18n-es.js', ru: 'i18n-ru.js' };
+  for (const [locale, file] of Object.entries(files)) {
+    const html = layout({ ...ctx, locale, path: '/', title: 'Bikes', description: 'Compare bikes', body: '<h1>Bikes</h1>' });
+    const dictionaries = [...html.matchAll(/\/assets\/(i18n(?:-[a-z]+)?\.js)/g)].map(([, name]) => name);
+    assert.deepEqual(dictionaries, file ? [file] : [], locale);
+    if (file) assert.ok(html.indexOf(`/assets/${file}`) < html.indexOf('/assets/site.js'), `${locale} dictionary registers first`);
+  }
+  // Visitor modules import the dictionary-free core; only the build/test entry bundles every language.
+  const { readdir, readFile } = await import('node:fs/promises');
+  const assets = new URL('../assets/', import.meta.url);
+  for (const name of (await readdir(assets)).filter((item) => item.endsWith('.js') && item !== 'i18n.js')) {
+    assert.doesNotMatch(await readFile(new URL(name, assets), 'utf8'), /from '\.\/i18n(?:-zh|-de)?\.js'/, name);
+  }
+});
+
 test('interface dictionaries translate navigation, controls and dynamic statuses', () => {
   const samples = ['Bikes', 'Components', 'Tools', 'Groupsets', 'Carbon wheels', 'Geometry', 'Build planner', 'Compare', 'Differences only', 'Gallery', 'Table'];
   for (const [locale, dictionary] of [['es', es], ['ru', ru]]) {

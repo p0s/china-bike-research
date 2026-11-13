@@ -89,6 +89,14 @@ export function selectRegionalOffer(offers, productId, country, kind, asOf) {
     && (offer.countries ? offer.countries.includes(country) : offer.markets.includes(marketForCountry(country))))
     .sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id))[0] ?? null;
 }
+// The upper bound a strict budget compares. Buying in China it is the complete China total;
+// elsewhere the delivered total, unless the buyer chooses a China-price reference budget, which
+// uses the same complete China total wherever a row shows no delivered total. Starting, partial,
+// conditional-only and reference-only amounts never qualify.
+export function budgetHigh(projection, { chinaReference = false } = {}) {
+  const high = chinaReference && projection.display.basis !== 'delivered' ? projection.chinaTotal.high : projection.high;
+  return Number.isFinite(high) ? high : null;
+}
 export function chinaDifference(deliveredLow, deliveredHigh, chinaLow, chinaHigh) {
   if (![deliveredLow, deliveredHigh, chinaLow, chinaHigh].every(Number.isFinite) || deliveredLow <= 0 || deliveredHigh < deliveredLow || chinaHigh < chinaLow) return null;
   return { low: (1 - chinaHigh / deliveredLow) * 100, high: (1 - chinaLow / deliveredHigh) * 100 };

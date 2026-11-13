@@ -1,4 +1,4 @@
-import { registerTranslator } from './i18n.js';
+import { registerTranslator } from './i18n-core.js';
 import { isMeasure, localizeMeasures } from './i18n-format.js';
 // Interface translations for the core interactive routes. Keys are exact English
 // display text, never data IDs. Model verdicts, detailed evidence, source titles and
@@ -109,6 +109,10 @@ export const ru = {
   "Brands": "Бренды",
   "Breadcrumb": "Навигационная цепочка",
   "Budget filters require complete delivered totals.": "Для бюджетных фильтров нужны полные суммы с доставкой.",
+  "Use China prices for this budget": "Использовать цены в Китае для этого бюджета",
+  "Max China-reference price": "Макс. цена (ориентир по Китаю)",
+  "Delivered totals where recorded; otherwise China prices and build estimates converted at the ECB rate, without shipping or import charges.": "Суммы с доставкой, если они известны; иначе цены в Китае и оценки сборки по курсу ЕЦБ, без доставки и ввозных платежей.",
+  "China-price reference": "ориентир по цене в Китае",
   "Build a bike": "Собрать велосипед",
   "Build link copied.": "Ссылка на сборку скопирована.",
   "Build map": "Схема сборки",
@@ -256,9 +260,9 @@ export const ru = {
   "Delivered": "С доставкой",
   "Delivered price": "Цена с доставкой",
   "Delivered price and China comparison": "Цена с доставкой и сравнение с Китаем",
-  "Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.": "Сначала суммы с доставкой; иначе ориентиры по Китаю без доставки и ввозных платежей. Для бюджетных фильтров нужны суммы с доставкой.",
+  "Delivered totals first; otherwise China references, excluding shipping and import charges. Budgets use delivered totals unless you choose China prices.": "Сначала суммы с доставкой; иначе ориентиры по Китаю без доставки и ввозных платежей. Бюджет учитывает суммы с доставкой, если вы не выберете цены в Китае.",
   "Delivered, seller estimate": "С доставкой, оценка продавца",
-  "Delivered-price sorting and budgets require complete delivered totals. China-price sorting is separate and excludes shipping and import charges.": "Для сортировки и бюджета по цене с доставкой нужны полные суммы с доставкой. Цена в Китае указана отдельно, без доставки и ввозных платежей.",
+  "Rows sort by the price they show. Budgets use complete delivered totals, or converted China prices when you choose them.": "Строки сортируются по показанной цене. Бюджет использует полные суммы с доставкой или, если вы выберете, пересчитанные цены в Китае.",
   "Delivery policy": "Условия доставки",
   "Depends on the chosen 10-12-speed 11-46T cassette": "Зависит от выбранной кассеты 11-46T на 10–12 скоростей",
   "Depends on the chosen 10-13-speed cassette and exact QED/PES generation": "Зависит от выбранной кассеты на 10–13 скоростей и точного поколения QED/PES",
@@ -510,7 +514,7 @@ export const ru = {
   "No comparable price": "Нет сопоставимой цены",
   "No conflict in the recorded checks.": "В учтённых проверках конфликтов нет.",
   "No dated price": "Нет датированной цены",
-  "No delivered totals are recorded for this destination yet, so a budget here matches no bike.": "Для этого направления пока нет итоговых цен с доставкой, поэтому бюджет здесь не подходит ни одному велосипеду.",
+  "No delivered totals are recorded for this destination yet. Use China prices to set a reference budget.": "Для этого направления пока нет итоговых цен с доставкой. Используйте цены в Китае, чтобы задать ориентировочный бюджет.",
   "No electronic wire route; verify XDR wheel and DUB/crank compatibility": "Без каналов для проводов электроники; проверьте колесо XDR и совместимость DUB/шатунов",
   "No internal battery or electronic wire route; verify front-derailleur mount for 2x": "Без внутренней батареи и каналов для проводов; для 2x проверьте крепление переднего переключателя",
   "No internal electronic wire route; verify cage clearance and selected hanger version": "Без внутреннего канала для проводов электроники; проверьте зазор лапки и выбранную версию крепления",

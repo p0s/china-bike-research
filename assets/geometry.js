@@ -2,6 +2,7 @@ import { defaultGeometryState, geometryKeys, readGeometryState, writeGeometrySta
 import { geometryCopy } from './geometry-copy.js';
 import { comparisonView, nearbyView, provenance, sizeChips } from './geometry-view.js';
 import { bindHistoryInput, copyText } from './state-utils.js';
+import { PRICE_CURRENCIES } from './regional-prices.js';
 
 const root = document.querySelector('[data-geometry-tool]');
 if (root) {
@@ -39,7 +40,7 @@ if (root) {
   }
   function carryShoppingContext() {
     const params = new URLSearchParams(location.search);
-    const allowed = { ship: /^[A-Z]{2}$/, currency: /^(CNY|USD|EUR|GBP)$/, area: /^(contiguous|remote)$/ };
+    const allowed = { ship: /^[A-Z]{2}$/, currency: new RegExp(`^(?:${PRICE_CURRENCIES.join('|')})$`), area: /^(contiguous|remote)$/ };
     for (const link of root.querySelectorAll('a[href]')) {
       const target = new URL(link.href);
       if (target.origin !== location.origin || !/\/(?:models\/|build\/|$)/.test(target.pathname)) continue;

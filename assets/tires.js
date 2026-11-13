@@ -1,4 +1,4 @@
-import { translate } from './i18n.js';
+import { translate } from './i18n-core.js';
 
 // Road tires: width group, origin and type filters plus sorting re-arrange the same
 // table rows. The table and its details work without this script.
