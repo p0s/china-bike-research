@@ -1,9 +1,9 @@
 import { normalizeMaterialSearch, createCatalogSearchIndex, compileCatalogQuery, scoreCatalogSearch } from './catalog-search.js';
 import { initArticleVideos } from './article-video.js';
-import { translate } from './i18n.js';
+import { translate } from './i18n-core.js';
 import { moveSelectionId } from './compare-state.js';
-import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, countryName } from './regional-prices.js';
-import { priceDisplay, deliveredLine, pricePopoverLines, compactPriceBasis } from './price-display.js';
+import { PRICE_MARKETS, PRICE_CURRENCIES, resolveDestination, validCountry, defaultCurrency, convertPrice, formatMoneyRange, formatRequestedBudget, regionalPrice, budgetHigh, countryName } from './regional-prices.js';
+import { priceDisplay, deliveredLine, pricePopoverLines, compactPriceBasis, priceAgeLabel } from './price-display.js';
 import { clearanceParts, weightParts, catalogClearance } from './catalog-format.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, isExplicitBuildUrl, copyText, bindHistoryInput, regionalHold, regionalHoldBlocks, writeRegionalHold, BUDGET_KEYS, buildCurrencies, moneyInputParam } from './state-utils.js';
 import { createActionDispatcher } from './action-dispatch.js';
@@ -1045,7 +1045,8 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     const item = byId.get(row.dataset.id);
     if (item) item.priceState = row.querySelector('.price-state')?.textContent ?? item.priceState;
   });
-  const searchIndex = new Map(rows.map((row) => [row, createCatalogSearchIndex(row.dataset.search)]));
+  // Search text comes from the catalog payload so every row's markup stays compact.
+  const searchIndex = new Map(rows.map((row) => [row, createCatalogSearchIndex(byId.get(row.dataset.id)?.search)]));
   const searchScores = new Map();
   let scoredQuery = null;
   let searchTerms = [];
@@ -1095,6 +1096,9 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
   const publishedFilter = catalogRoot.querySelector('[data-filter-published]');
   const listingFilter = document.querySelector('[data-filter-listing]');
   const listingFilterControl = document.querySelector('[data-listing-filter-control]');
+  // Outside China a budget may opt into converted China prices; it is labelled as such everywhere.
+  const referenceBudget = catalogRoot.querySelector('[data-filter-reference-budget]');
+  const referenceBudgetControl = catalogRoot.querySelector('[data-reference-budget-control]');
   const shiftingFilter = catalogRoot.querySelector('[data-filter-shifting]');
   const shiftingChips = [...catalogRoot.querySelectorAll('[data-shifting-chip]')];
   const shiftingValues = new Set(shiftingChips.map((chip) => chip.dataset.shiftingChip));
@@ -1306,16 +1310,21 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     const heading = sortHeadingByKey.get('price')?.querySelector('span');
     if (heading) heading.textContent = `${translate('Price', locale)} · ${currency}`;
     const domestic = activeCountry === 'CN';
+    if (referenceBudgetControl instanceof HTMLElement) referenceBudgetControl.hidden = domestic;
+    if (domestic && referenceBudget instanceof HTMLInputElement) referenceBudget.checked = false;
+    const reference = referenceBudgetActive();
     const budgetLabel = catalogRoot.querySelector('[data-price-budget-label]');
-    if (budgetLabel) budgetLabel.textContent = translate(domestic ? 'Max full-bike price' : 'Max delivered price', locale);
+    if (budgetLabel) budgetLabel.textContent = translate(domestic ? 'Max full-bike price' : reference ? 'Max China-reference price' : 'Max delivered price', locale);
     const budgetHelp = catalogRoot.querySelector('[data-price-budget-help]');
-    if (budgetHelp) budgetHelp.textContent = translate(domestic ? 'China price. Frame builds include your plan.' : 'Budget filters require complete delivered totals.', locale);
+    if (budgetHelp) budgetHelp.textContent = translate(domestic ? 'China price. Frame builds include your plan.'
+      : reference ? 'Delivered totals where recorded; otherwise China prices and build estimates converted at the ECB rate, without shipping or import charges.'
+        : 'Budget filters require complete delivered totals.', locale);
     const sortButton = sortHeadingByKey.get('price');
     if (sortButton) sortButton.title = translate('Sort by the price shown in each row; unknown prices stay last.', locale);
     catalogRoot.querySelector('[data-price-currency]').textContent = currency;
     const note = document.querySelector('[data-price-region-note]');
     note.hidden = false;
-    note.textContent = `${translate(domestic ? 'Buying in China. Prices keep their observation dates and conditions. References are not used for budgets.' : 'Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.', locale)} `;
+    note.textContent = `${translate(domestic ? 'Buying in China. Prices keep their observation dates and conditions. References are not used for budgets.' : 'Delivered totals first; otherwise China references, excluding shipping and import charges. Budgets use delivered totals unless you choose China prices.', locale)} `;
     const exchangeSource = document.createElement('a');
     exchangeSource.href = regionalData.rates.source;
     exchangeSource.rel = 'noreferrer';
@@ -1358,7 +1367,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       // price or labelled reference); budgets still require complete delivered totals.
       row.dataset.priceSort = Number.isFinite(projection.display.low) ? String(projection.display.low) : '';
       row.dataset.priceSortHigh = Number.isFinite(projection.display.high) ? String(projection.display.high) : '';
-      row.dataset.priceFilter = Number.isFinite(projection.high) ? String(projection.high) : '';
+      row.dataset.priceFilter = String(budgetHigh(projection, { chinaReference: reference }) ?? '');
       row.dataset.hasListing = String(Boolean(offer));
       const shown = priceDisplay(projection, {
         currency, allowance: currentBuildAllowance, locale, today, translate,
@@ -1387,7 +1396,9 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       // Popover lines add only what the row does not already say.
       const exact = china && (china.low % 1 || (china.high ?? china.low) % 1)
         ? `${translate('Recorded amount', locale)}: ${formatMoneyRange(china.low, china.high ?? china.low, 'CNY', locale, { exact: true })}` : '';
+      // The shown price's own age, once it is older than 90 days; dates stay in the lines above.
       const lines = [
+        shown.stale ? translate(priceAgeLabel(shown.date, today), locale) : '',
         exact,
         ...(projection.difference ? [translate('China difference = (delivered total − China equivalent) ÷ delivered total. It is a market price gap, not an importing saving.', locale)] : []),
         ...(projection.frame ? [translate('The build estimate uses the China allowance, not a verified regional build cost.', locale)] : []),
@@ -1429,8 +1440,8 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       item.priceDetails = [details, ...lines].filter(Boolean).join(' ');
     });
     // A strict delivered budget matches nothing where no delivered total is recorded; say so instead of silently emptying the list.
-    const budgetable = domestic || rows.some((row) => row.dataset.priceFilter !== '');
-    if (!budgetable && budgetHelp) budgetHelp.textContent = translate('No delivered totals are recorded for this destination yet, so a budget here matches no bike.', locale);
+    const budgetable = domestic || reference || rows.some((row) => row.dataset.priceFilter !== '');
+    if (!budgetable && budgetHelp) budgetHelp.textContent = translate('No delivered totals are recorded for this destination yet. Use China prices to set a reference budget.', locale);
     if (price instanceof HTMLInputElement) price.disabled = !budgetable && !price.value;
     catalogRoot.dataset.activeShipCountry = activeCountry || 'unknown';
     catalogRoot.dataset.activePriceCurrency = currency;
@@ -1520,6 +1531,10 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     });
   }
 
+  function referenceBudgetActive() {
+    return Boolean(regionalData) && activeCountry !== 'CN' && referenceBudget instanceof HTMLInputElement && referenceBudget.checked;
+  }
+
   function updateFilterUrl(mode = 'replace') {
     const next = new URL(location.href);
     setParam(next, 'q', search?.value.trim());
@@ -1527,6 +1542,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     setParam(next, 'brand', activeBrand);
     setParam(next, 'max', price?.value);
     setParam(next, 'maxCurrency', price?.value ? priceCurrency() : '');
+    setParam(next, 'maxBasis', price?.value && referenceBudgetActive() ? 'china' : '');
     next.searchParams.delete('market');
     setParam(next, 'ship', activeCountry || 'unknown');
     setParam(next, 'currency', activeCurrency);
@@ -1842,6 +1858,10 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     if (key === 'family' && category) category.value = '';
     if (key === 'type') setType('', { update: false });
     if (key === 'brand') setBrand('', { update: false });
+    if (key === 'price' && referenceBudget instanceof HTMLInputElement && referenceBudget.checked) {
+      referenceBudget.checked = false;
+      updateRegionalPrices();
+    }
     if (key === 'price' && heldRegional) heldRegional.limit = null;
     if (key === 'listing' && heldRegional) heldRegional.listing = false;
   }
@@ -1857,7 +1877,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     if (category?.value) chips.push(['family', categoryChipLabel(category.value)]);
     if (activeType) chips.push(['type', translate(activeType === 'frameset' ? 'Frame build' : 'Complete', locale)]);
     if (activeBrand) chips.push(['brand', brandLabels.get(activeBrand) ?? activeBrand]);
-    if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}${heldRegional?.destination ? ` · ${translate('not checked', locale)}` : ''}`]);
+    if (price?.value) chips.push(['price', `${translate('Price', locale)} ≤ ${formatMoneyRange(Number(price.value), Number(price.value), priceCurrency(), locale)}${referenceBudgetActive() ? ` · ${translate('China-price reference', locale)}` : ''}${heldRegional?.destination ? ` · ${translate('not checked', locale)}` : ''}`]);
     else if (heldRegional?.limit) chips.push(['price', `${translate('Price', locale)} ≤ ${formatRequestedBudget(heldRegional.limit.amount, heldRegional.limit.currency, locale)} · ${translate('not checked', locale)}`]);
     if (tire?.value) chips.push(['tire', `Tire ≥ ${tire.value} mm`]);
     if (tireLayout?.value) chips.push(['tire-layout', tireLayout.value === 'single' ? 'Tire fit: 1×' : 'Tire fit: 2×']);
@@ -2070,6 +2090,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     const requestedSort = params.get('sort') ?? defaultSort;
     const requestedPublished = params.get('published') === '1';
     const requestedListing = params.get('listing') === '1';
+    const requestedReferenceBudget = params.get('maxBasis') === 'china' && Boolean(requestedPrice);
     const requestedBuildAllowance = params.get('build') ?? String(defaultBuildAllowance);
     const requestedBuildPreset = validSelectValue(buildPreset, params.get('buildPreset') ?? defaultBuildPreset, defaultBuildPreset);
     allModelsVisible = params.get('scope') === 'all';
@@ -2088,6 +2109,8 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     if (frameFilter) frameFilter.value = params.get('frameFact') ?? '';
     if (category) category.value = validCategory(requestedCategory);
     if (publishedFilter instanceof HTMLInputElement) publishedFilter.checked = requestedPublished;
+    // The budget basis is set before prices are projected; it applies only outside China.
+    if (referenceBudget instanceof HTMLInputElement) referenceBudget.checked = requestedReferenceBudget && Boolean(regionalData) && activeCountry !== 'CN';
     updateFramesetPrices(requestedBuildAllowance, { presetId: requestedBuildPreset });
     // The listing filter exists only for a chosen non-China destination.
     if (listingFilter instanceof HTMLInputElement) listingFilter.checked = requestedListing && Boolean(regionalData) && activeCountry !== 'CN' && Boolean(activeCountry);
@@ -2111,6 +2134,7 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
       requestedBrand !== activeBrand ||
       requestedType !== activeType ||
       requestedListing !== Boolean(listingFilter?.checked) ||
+      (params.get('maxBasis') ?? '') !== (price?.value && referenceBudgetActive() ? 'china' : '') ||
       Boolean(legacyShifting) || (params.get('shifting') ?? '') !== requestedShifting ||
       requestedBuildAllowance !== String(currentBuildAllowance) ||
       (params.get('buildPreset') ?? defaultBuildPreset) !== currentBuildPreset ||
@@ -2127,6 +2151,10 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
   const typedInputs = [search, price, tire, completeWeight, frameWeight, drivetrainFilter, frameFilter, categoryMinimum];
   typedInputs.forEach((element) => bindHistoryInput(element, (historyMode) => updateCatalog({ historyMode })));
   [sort, tireUnknown, publishedFilter, listingFilter].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
+  referenceBudget?.addEventListener('change', () => {
+    updateRegionalPrices();
+    updateCatalog({ historyMode: 'push' });
+  });
   // The header search filters this catalog in place instead of reloading it.
   search?.closest('form')?.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -3430,9 +3458,10 @@ const deliveryPreferenceStorageKey = 'china-bikes-delivery-preference-v1';
     render({ historyMode: 'push' });
   });
 
+  // History navigation shows a past state; it saves it only when the visitor already owns the draft.
   addEventListener('popstate', () => {
     state = restoreBuildState(data, new URLSearchParams(location.search), {}, { allowStored: false });
-    render();
+    render({ persistState: draftOwned });
   });
 
   // Opening a shared link shows its state without overwriting the visitor's saved draft until they edit.

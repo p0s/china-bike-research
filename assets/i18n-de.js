@@ -1,16 +1,17 @@
 import { translateImageText } from './image-i18n.js';
+import { registerTranslator } from './i18n-core.js';
 // German display vocabulary; identifiers, quotations and source URLs stay unchanged.
 export const de = {
   "Best match": "Beste Treffer",
   "Close match": "Ähnlicher Treffer",
   "Prices exclude shipping and import unless marked Delivered.": "Versand und Einfuhrkosten nur bei Liefergesamtpreisen enthalten.",
   "Purchase route and checks": "Kaufweg und Prüfpunkte",
-  "Published first, then China price": "Veröffentlicht zuerst, dann China-Preis",
-  "China price: low to high": "China-Preis: aufsteigend",
-  "China price: high to low": "China-Preis: absteigend",
   "Budget filters require complete delivered totals.": "Budgetfilter benötigen vollständige Liefergesamtpreise.",
-  "No delivered totals in these results. Choose China price to compare references.": "Für diese Ergebnisse fehlen Liefergesamtpreise. China-Preis zum Vergleich der Referenzen wählen.",
-  "Delivered-price sorting and budgets require complete delivered totals. China-price sorting is separate and excludes shipping and import charges.": "Lieferpreissortierung und Budgets benötigen vollständige Liefergesamtpreise. Die separate China-Preissortierung schließt Versand und Einfuhrkosten aus.",
+  "Use China prices for this budget": "China-Preise für dieses Budget verwenden",
+  "Max China-reference price": "Höchstpreis (China-Referenz)",
+  "Delivered totals where recorded; otherwise China prices and build estimates converted at the ECB rate, without shipping or import charges.": "Gesamtpreise mit Lieferung, wo dokumentiert; sonst China-Preise und Aufbauschätzungen zum EZB-Kurs umgerechnet, ohne Versand- und Einfuhrkosten.",
+  "China-price reference": "China-Preis-Referenz",
+  "Rows sort by the price they show. Budgets use complete delivered totals, or converted China prices when you choose them.": "Zeilen werden nach dem angezeigten Preis sortiert. Budgets nutzen vollständige Liefergesamtpreise oder, wenn Sie es wählen, umgerechnete China-Preise.",
   "Where a seller documents a complete delivered total for your destination, the row shows it first.": "Ein dokumentierter vollständiger Liefergesamtpreis für Ihr Ziel wird zuerst angezeigt.",
   "Static default preview": "Statische Vorschau der Standardkonfiguration",
   "Editing ready": "Bearbeitung bereit",
@@ -77,8 +78,8 @@ export const de = {
   "Sort by delivered totals; reference estimates follow.": "Nach Gesamtpreisen mit Lieferung sortieren; Referenzschätzungen folgen danach.",
   "Sort by China totals; reference estimates follow.": "Nach China-Gesamtpreisen sortieren; Referenzschätzungen folgen danach.",
   "Buying in China. Prices retain their observation dates and conditions. Reference estimates are excluded from budget filters.": "Kauf in China. Preise behalten ihr Beobachtungsdatum und ihre Bedingungen. Referenzschätzungen werden beim Budgetfilter ausgeschlossen.",
-  "Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.": "Gesamtpreise mit Lieferung zuerst, sonst China-Richtwerte ohne Versand- und Einfuhrkosten. Budgetfilter berücksichtigen nur Gesamtpreise mit Lieferung.",
-  "Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges and do not enter delivered-price budgets or sorting. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.": "Lieferland und Anzeigewährung werden unabhängig gewählt. Vorrang hat ein belegter Gesamtpreis mit Lieferung oder eine vom Verkäufer gestützte Lieferschätzung. Sonst wird ein in China beobachteter Preis in die gewählte Währung umgerechnet; darunter steht der Yuan-Betrag. Ohne Beleg für einen China-Preis heißt der Katalogwert Referenzschätzung. Planungswerte für Rahmenaufbauten heißen China-Aufbauschätzung oder Aufbau-Richtwert. Diese Richtwerte enthalten keine Versand- oder Einfuhrkosten und zählen nicht für Budgetfilter oder Sortierung nach Gesamtpreisen mit Lieferung. Der Prozentwert vergleicht denselben Komplettaufbau mit seinem Gesamtpreis mit Lieferung. Datum, Bedingungen und Originalangebote bleiben in den Preisdetails.",
+  "Delivered totals first; otherwise China references, excluding shipping and import charges. Budgets use delivered totals unless you choose China prices.": "Gesamtpreise mit Lieferung zuerst, sonst China-Richtwerte ohne Versand- und Einfuhrkosten. Budgets nutzen Gesamtpreise mit Lieferung, außer Sie wählen China-Preise.",
+  "Choose a shipping destination and an independent display currency. The main price prioritizes a documented delivered total or seller-supported delivery estimate. Otherwise it shows a domestic China price converted into the selected currency, with yuan underneath. Without domestic evidence, the catalog amount is labelled Reference estimate; frameset planning totals are labelled China build estimate or Build reference. These references exclude shipping and import charges. Every row sorts by the amount it shows. Outside China, a budget uses delivered totals, or converted China prices and China build estimates when you choose them; a Reference estimate or Build reference never enters a budget. The percentage compares the same complete build against its delivered total. Dates, conditions and native quotes remain in the price details.": "Lieferland und Anzeigewährung werden unabhängig gewählt. Vorrang hat ein belegter Gesamtpreis mit Lieferung oder eine vom Verkäufer gestützte Lieferschätzung. Sonst wird ein in China beobachteter Preis in die gewählte Währung umgerechnet; darunter steht der Yuan-Betrag. Ohne Beleg für einen China-Preis heißt der Katalogwert Referenzschätzung. Planungswerte für Rahmenaufbauten heißen China-Aufbauschätzung oder Aufbau-Richtwert. Diese Richtwerte enthalten keine Versand- oder Einfuhrkosten. Jede Zeile wird nach dem angezeigten Betrag sortiert. Außerhalb Chinas nutzt ein Budget Gesamtpreise mit Lieferung oder, wenn Sie es wählen, umgerechnete China-Preise und China-Aufbauschätzungen; eine Referenzschätzung oder ein Aufbau-Richtwert zählt nie für ein Budget. Der Prozentwert vergleicht denselben Komplettaufbau mit seinem Gesamtpreis mit Lieferung. Datum, Bedingungen und Originalangebote bleiben in den Preisdetails.",
 
   "Ship to": "Lieferung nach",
   "Shipping destination": "Lieferziel",
@@ -1784,6 +1785,7 @@ export function translateGerman(value) {
   if (text.includes(' · ')) return pad(text.split(' · ').map(t).join(' · '));
   return value;
 }
+registerTranslator('de', translateGerman);
 
 // Reviewed qualifiers for exact-build and source-authority corrections.
 Object.assign(de, {
@@ -2265,7 +2267,7 @@ Object.assign(de, {
   "Sale price": "Aktionspreis",
   "Check fit in the Build planner": "Passform im Aufbauplaner prüfen",
   "Your quote ¥": "Ihr Angebot ¥",
-  "No delivered totals are recorded for this destination yet, so a budget here matches no bike.": "Für dieses Ziel sind noch keine Lieferpreise erfasst, daher passt hier kein Budget zu einem Rad.",
+  "No delivered totals are recorded for this destination yet. Use China prices to set a reference budget.": "Für dieses Ziel sind noch keine Lieferpreise erfasst. Mit China-Preisen lässt sich ein Referenzbudget setzen.",
   "Freehub and rotor fit for these wheelsets is checked in the Build planner.": "Freilauf- und Bremsscheibenkompatibilität dieser Laufradsätze wird im Aufbauplaner geprüft.",
   "Open the Build planner": "Aufbauplaner öffnen",
   "Official direct store": "Offizieller Direktshop",

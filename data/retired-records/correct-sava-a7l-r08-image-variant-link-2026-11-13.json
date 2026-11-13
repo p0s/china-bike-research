@@ -1,0 +1,17 @@
+{
+  "id": "correct-sava-a7l-r08-image-variant-link-2026-11-13",
+  "record_type": "images",
+  "record_id": "sava-a7l-r08-2026-exact-primary-image",
+  "action": "retire",
+  "protected_item": {
+    "kind": "relationship",
+    "value": "variant_ids=sava-a7l-r7100"
+  },
+  "reason": "The photo shows SAVA's R08-R7120-24S storefront build. The recorded 2026-09-24 and 2026-09-25 rechecks call that a different build from the A7L R7100 variant and leave the trim mapping unresolved, so the photo may not be presented as this exact configuration. A live recheck on 2026-11-13 was rate-limited and not retried. The photo stays as a same-platform image with its source, credit and quality protection.",
+  "evidence_source_ids": [
+    "sava-a7l-r08-storefront-live-recheck-2026-09-25",
+    "sava-a7l-r7100-official-recheck-2026-09-24",
+    "sava-a7l-r08-r7120-recheck-2026-09-24"
+  ],
+  "reviewed_at": "2026-11-13"
+}

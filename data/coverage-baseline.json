@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-10",
+  "updated_at": "2026-11-13",
   "catalog_metrics": {
     "records": {
       "brands": 43,
       "platforms": 39,
       "variants": 42,
       "prices": 84,
-      "exchangeRates": 1,
-      "sources": 2290,
+      "exchangeRates": 2,
+      "sources": 2291,
       "images": 916,
       "videos": 276,
       "opinions": 13,
@@ -261,7 +261,8 @@
       "yoeleo-altera-g21-global-official-2026-09-25"
     ],
     "exchangeRates": [
-      "ecb-2026-10-01"
+      "ecb-2026-10-01",
+      "ecb-2026-11-12"
     ],
     "sources": [
       "99bikes-innova-story-2026-11-01",
@@ -622,6 +623,7 @@
       "ecb-reference-rates-2026-09-22",
       "ecb-reference-rates-2026-09-23",
       "ecb-reference-rates-2026-10-01",
+      "ecb-reference-rates-2026-11-12",
       "elitewheels-drive-50d-ii-official-2026-10-20",
       "elitewheels-drive-50d-ii-official-2026-10-26",
       "elitewheels-drive-g36-official-2026-10-20",
@@ -10520,6 +10522,17 @@
         "per_eur.USD",
         "rate_date",
         "source_id"
+      ],
+      "ecb-2026-11-12": [
+        "accessed_at",
+        "per_eur.CAD",
+        "per_eur.CNY",
+        "per_eur.EUR",
+        "per_eur.GBP",
+        "per_eur.MXN",
+        "per_eur.USD",
+        "rate_date",
+        "source_id"
       ]
     },
     "sources": {
@@ -14848,6 +14861,17 @@
         "url"
       ],
       "ecb-reference-rates-2026-10-01": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "title",
+        "type",
+        "url"
+      ],
+      "ecb-reference-rates-2026-11-12": [
         "accessed_at",
         "language",
         "notes",
@@ -64399,6 +64423,7 @@
       ],
       "sava-a7l-r08-2026-exact-primary-image": [
         "alt",
+        "audit_corrections",
         "credit",
         "display_note",
         "editorial_quotation.no_license_asserted",
@@ -88313,6 +88338,7 @@
         "facts.identity_source_status",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -89464,6 +89490,7 @@
         "facts.stiffness_evidence",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -89898,6 +89925,7 @@
         "facts.stiffness_evidence",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -89950,6 +89978,7 @@
         "facts.stiffness_evidence",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -91521,6 +91550,7 @@
         "facts.wheels",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_price.amount_cny",
         "observed_price.currency",
@@ -91660,6 +91690,7 @@
         "facts.frame_material",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -91682,6 +91713,7 @@
         "facts.frame_material",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -92903,6 +92935,7 @@
         "category",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -92927,6 +92960,7 @@
         "facts.storage",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -93526,6 +93560,7 @@
         "facts.frame_material",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -95736,6 +95771,7 @@
         "category",
         "last_reviewed",
         "model_id",
+        "model_identity",
         "name",
         "observed_at",
         "observed_price.amount_cny",
@@ -134792,6 +134828,9 @@
     "exchangeRates": {
       "ecb-2026-10-01": [
         "source_id=ecb-reference-rates-2026-10-01"
+      ],
+      "ecb-2026-11-12": [
+        "source_id=ecb-reference-rates-2026-11-12"
       ]
     },
     "sources": {
@@ -135153,6 +135192,7 @@
       "ecb-reference-rates-2026-09-22": [],
       "ecb-reference-rates-2026-09-23": [],
       "ecb-reference-rates-2026-10-01": [],
+      "ecb-reference-rates-2026-11-12": [],
       "elitewheels-drive-50d-ii-official-2026-10-20": [],
       "elitewheels-drive-50d-ii-official-2026-10-26": [],
       "elitewheels-drive-g36-official-2026-10-20": [],
@@ -157086,6 +157126,13 @@
       }
     },
     "ecb-reference-rates-2026-10-01": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3
+      }
+    },
+    "ecb-reference-rates-2026-11-12": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,

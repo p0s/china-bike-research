@@ -159,8 +159,8 @@ export function bindHistoryInput(input, update) {
   addEventListener('popstate', () => { editing = false; });
 }
 
-const REGIONAL_KEYS = ['ship', 'market', 'currency', 'area', 'listing', 'max', 'maxCurrency'];
-export const BUDGET_KEYS = ['max', 'maxCurrency'];
+const REGIONAL_KEYS = ['ship', 'market', 'currency', 'area', 'listing', 'max', 'maxCurrency', 'maxBasis'];
+export const BUDGET_KEYS = ['max', 'maxCurrency', 'maxBasis'];
 
 /**
  * Without the regional payload only China CNY prices are known. Keep the link's own delivery

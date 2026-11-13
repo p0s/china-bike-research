@@ -22,3 +22,6 @@ jobs:
         env:
           COVERAGE_BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: npm run check
+      # The project-path build above has its own allowance; production deploys the root build.
+      - name: Build production shape
+        run: npm run build:cloudflare

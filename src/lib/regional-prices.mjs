@@ -1,4 +1,4 @@
-import { priceEvidence, evidencePriceBounds } from './price-evidence.mjs';
+import { priceEvidence, evidencePriceBounds, latestPriceFirst } from './price-evidence.mjs';
 import { PRICE_MARKETS, PRICE_CURRENCIES, validCountry } from '../../assets/regional-prices.js';
 import { productLinkContext } from './analytics-context.mjs';
 
@@ -10,7 +10,7 @@ export function chinaPriceBasis(prices, asOf = new Date().toISOString().slice(0,
     && (!item.original_currency || item.original_currency === 'CNY')
     && ['CNY', undefined].includes(item.currency)
     && Number.isFinite(item.amount_cny ?? item.low_cny) && Number.isFinite(item.amount_cny ?? item.high_cny))
-    .sort((a, b) => b.observed_at.localeCompare(a.observed_at))[0];
+    .sort(latestPriceFirst)[0];
   if (!price) return null;
   const evidence = priceEvidence(price);
   return { id: price.id ?? null, ...evidencePriceBounds(price),

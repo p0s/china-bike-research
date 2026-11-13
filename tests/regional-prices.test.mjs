@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { resolveDestination, convertPrice, regionalPrice, selectRegionalOffer, formatMoneyRange, chinaDifference, DESTINATION_GROUPS } from '../assets/regional-prices.js';
+import { resolveDestination, convertPrice, regionalPrice, selectRegionalOffer, formatMoneyRange, chinaDifference, budgetHigh, DESTINATION_GROUPS } from '../assets/regional-prices.js';
 import { chinaPriceBasis, regionalPricePayload, validateRegionalPricing } from '../src/lib/regional-prices.mjs';
 import { loadDataset, joinProducts } from '../src/lib/data.mjs';
+import { latestPriceFirst } from '../src/lib/price-evidence.mjs';
 const data = loadDataset();
 const payload = regionalPricePayload(data, '2026-10-03');
 const product = joinProducts(data).find((item) => item.variant.id === 'sava-gelaro-s4-grx400');
@@ -40,6 +41,19 @@ test('display currency uses dated cross-rates independently of destination', () 
   assert.equal(convertPrice(100, 'ZZZ', 'EUR', payload.rates), null);
   assert.match(formatMoneyRange(1000, 1200, 'EUR', 'de', { approximate: true }), /^≈ .*€.*–.*€/);
 });
+test('same-day observations choose the higher ceiling whatever their file order', () => {
+  const lower = { id: 'b-lower', variant_id: 'x', observed_at: '2026-08-08', currency: 'CNY', amount_cny: 4567 };
+  const higher = { id: 'a-higher', variant_id: 'x', observed_at: '2026-08-08', currency: 'CNY', amount_cny: 4599 };
+  for (const order of [[lower, higher], [higher, lower]]) {
+    assert.deepEqual([...order].sort(latestPriceFirst).map((price) => price.id), ['a-higher', 'b-lower']);
+    assert.equal(chinaPriceBasis(order, '2026-10-03').low, 4599);
+  }
+  const reordered = { ...data, prices: [...data.prices].reverse() };
+  for (const dataset of [data, reordered]) {
+    assert.equal(joinProducts(dataset).find((item) => item.variant.id === 'sava-a7l-r7100').latestPrice.amount_cny, 4599);
+  }
+});
+
 test('China basis selects a genuine domestic observation, not the latest foreign conversion', () => {
   assert.equal(product.latestPrice.amount_cny, 12089);
   assert.equal(bike.chinaPrice.low, 7999);
@@ -134,6 +148,23 @@ test('frameset fallback shows the complete planning amount while keeping the fra
   assert.equal(domestic.display.low, convertPrice(12000, 'CNY', 'EUR', payload.rates));
   assert.equal(domestic.low, null);
   assert.equal(domestic.difference, null);
+});
+test('an explicit China-price reference budget uses complete China totals, never references or starting prices', () => {
+  const germany = regionalPrice(bike, preferences('DE', 'EUR'), payload);
+  assert.equal(budgetHigh(germany), null, 'a delivered budget still needs a delivered total');
+  assert.equal(budgetHigh(germany, { chinaReference: true }), convertPrice(7999, 'CNY', 'EUR', payload.rates));
+  const delivered = regionalPrice(bike, preferences('US', 'USD', 'contiguous'), payload);
+  assert.equal(budgetHigh(delivered, { chinaReference: true }), delivered.high, 'a shown delivered total stays the budget amount');
+  for (const item of [{ ...bike, chinaPrice: null }, { ...bike, priceUnavailable: true },
+    { ...bike, chinaPrice: { ...bike.chinaPrice, starting: true } }, { ...bike, chinaPrice: { ...bike.chinaPrice, partial: true } }]) {
+    assert.equal(budgetHigh(regionalPrice(item, preferences('DE', 'EUR'), payload), { chinaReference: true }), null);
+  }
+  const frame = { id: 'winspace-g5-frameset', estimated: true, frameLow: 14756, frameHigh: 14756, chinaPrice: { ...bike.chinaPrice, low: 5000, high: 5500 } };
+  const build = budgetHigh(regionalPrice(frame, preferences('DE', 'EUR'), payload, 7000), { chinaReference: true });
+  assert.ok(Math.abs(build - convertPrice(12500, 'CNY', 'EUR', payload.rates)) < 1e-9, 'frame builds include the plan allowance');
+  // Buying in China, the option changes nothing.
+  const china = regionalPrice(bike, preferences('CN', 'CNY'), payload);
+  assert.equal(budgetHigh(china, { chinaReference: true }), budgetHigh(china));
 });
 test('unavailable evidence remains empty even when the record has a numeric reference', () => {
   const result = regionalPrice({ ...bike, priceUnavailable: true }, preferences('DE', 'EUR'), payload);

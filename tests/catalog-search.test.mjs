@@ -2,7 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createCatalogSearchIndex, compileCatalogQuery, scoreCatalogSearch, matchesCatalogSearch } from '../assets/catalog-search.js';
 import { loadDataset, joinProducts } from '../src/lib/data.mjs';
-import { renderHome } from '../src/render.mjs';
+import { renderHome, catalogSummaries } from '../src/render.mjs';
+
+// Every rendered row searches the key its catalog payload entry carries.
+const searchRows = (ctx) => {
+  const search = new Map(catalogSummaries(ctx).map((item) => [item.id, item.search]));
+  return [...renderHome(ctx).matchAll(/data-product-row[^>]*data-id="([^"]+)"[^>]*data-brand="([^"]*)"/g)]
+    .map(([, id, brand]) => ({ id, brand, text: search.get(id), index: createCatalogSearchIndex(search.get(id)) }));
+};
 
 const matches = (text, query) => matchesCatalogSearch(createCatalogSearchIndex(text), query);
 const score = (text, query) => scoreCatalogSearch(createCatalogSearchIndex(text), compileCatalogQuery(query));
@@ -87,9 +94,7 @@ test('verified alternate names find the one existing entry in every language', (
   const data = loadDataset();
   const products = joinProducts(data);
   for (const locale of ['en', 'zh-Hans', 'de']) {
-    const html = renderHome({ data, products, locale });
-    const rows = [...html.matchAll(/data-product-row[^>]*data-id="([^"]+)"[^>]*data-search="([^"]*)"/g)]
-      .map(([, id, text]) => ({ id, index: createCatalogSearchIndex(text) }));
+    const rows = searchRows({ data, products, locale });
     const find = (query) => rows.filter((row) => matchesCatalogSearch(row.index, query)).map((row) => row.id);
     for (const query of ['SUPG2', 'supg2 sport', 'SUP G2', 'Super Sport Gen2', 'Super Sport Gen 2', 'pardus supg2', '瑞豹 SUPG2']) {
       assert.deepEqual(find(query), ['pardus-super-sport-gen2-egr'], `${locale}: ${query}`);
@@ -107,13 +112,21 @@ test('verified alternate names find the one existing entry in every language', (
   }
 });
 
+test('search keys travel in the catalog payload instead of every homepage row', () => {
+  const data = loadDataset();
+  const ctx = { data, products: joinProducts(data), locale: 'en' };
+  assert.doesNotMatch(renderHome(ctx), /data-product-row[^>]*\sdata-search=/);
+  const rows = searchRows(ctx);
+  assert.ok(rows.length > 100);
+  for (const row of rows) assert.ok(row.text?.trim(), `${row.id} has a search key`);
+});
+
 test('brand aliases reach the search key of every row for that brand', () => {
   const data = loadDataset();
   const brands = data.brands.map((brand) => brand.id === 'pardus' ? { ...brand, aliases: ['Ruibao Cycle'] } : brand);
   const aliased = { ...data, brands };
-  const html = renderHome({ data: aliased, products: joinProducts(aliased), locale: 'en' });
-  const ids = [...html.matchAll(/data-product-row[^>]*data-id="([^"]+)"[^>]*data-brand="pardus"[^>]*data-search="([^"]*)"/g)]
-    .filter(([, , text]) => matchesCatalogSearch(createCatalogSearchIndex(text), 'ruibao')).map(([, id]) => id);
+  const ids = searchRows({ data: aliased, products: joinProducts(aliased), locale: 'en' })
+    .filter((row) => row.brand === 'pardus' && matchesCatalogSearch(row.index, 'ruibao')).map((row) => row.id);
   assert.ok(ids.includes('pardus-super-sport-gen2-egr'));
   assert.ok(ids.includes('candidate-pardus-spark'));
 });
@@ -122,9 +135,7 @@ test('general fuzzy queries and punctuation work on real catalog entries in ever
   const data = loadDataset();
   const products = joinProducts(data);
   for (const locale of ['en', 'zh-Hans', 'de']) {
-    const html = renderHome({ data, products, locale });
-    const rows = [...html.matchAll(/data-product-row[^>]*data-id="([^"]+)"[^>]*data-search="([^"]*)"/g)]
-      .map(([, id, text]) => ({ id, index: createCatalogSearchIndex(text) }));
+    const rows = searchRows({ data, products, locale });
     const find = (query) => rows.filter((row) => matchesCatalogSearch(row.index, query)).map((row) => row.id);
     const expected = find('x-lab');
     assert.ok(expected.includes('candidate-xlab-rs9'), locale);

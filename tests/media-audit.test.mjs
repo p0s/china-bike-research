@@ -67,3 +67,18 @@ test('image-quality corrections never excuse visible images, lost prior evidence
   }
  }
 });
+
+test('SAVA A7L R7100 keeps its storefront photo without calling it this exact build',async()=>{
+ const {renderImageSources}=await import('../src/render.mjs');
+ const p=products.find(p=>p.variant.id==='sava-a7l-r7100');
+ assert.equal(p.image.id,'sava-a7l-r08-2026-exact-primary-image');
+ assert.equal(p.image.display_accuracy,'same-platform');
+ const page=renderModel(ctx,p);
+ assert.ok(page.includes('Same frame platform; components may differ'));
+ assert.ok(!page.includes('Exact configuration shown'));
+ const credits=renderImageSources(ctx);
+ const entry=credits.slice(credits.indexOf('SAVA A7L R7100'));
+ assert.ok(entry.indexOf('Exact frame platform')>=0&&entry.indexOf('Exact frame platform')<entry.indexOf('</li>'),'credit line shows the frame platform');
+ // The retired link is a scoped, evidence-backed correction; coverage still protects the photo itself.
+ assert.deepEqual(validateCoverage(data,createCoverageSnapshot(data)).filter(x=>x.includes('sava-a7l')),[]);
+});

@@ -18,3 +18,12 @@ export function evidencePriceBounds(price) {
   const low = price.amount_cny ?? price.low_cny ?? null;
   return { low, high: priceEvidence(price).starting ? null : price.amount_cny ?? price.high_cny ?? low };
 }
+
+// Newest observation first. Same-day observations of one record put the higher yuan ceiling
+// first, so a file name never chooses a headline and a budget is never understated; then by ID.
+export function latestPriceFirst(a, b) {
+  const ceiling = (price) => price.amount_cny ?? price.high_cny ?? price.low_cny ?? 0;
+  return String(b.observed_at ?? '').localeCompare(String(a.observed_at ?? ''))
+    || ceiling(b) - ceiling(a)
+    || String(a.id ?? '').localeCompare(String(b.id ?? ''));
+}

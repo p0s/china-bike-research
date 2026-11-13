@@ -1,4 +1,4 @@
-import { registerTranslator } from './i18n.js';
+import { registerTranslator } from './i18n-core.js';
 import { isMeasure, localizeMeasures } from './i18n-format.js';
 // Interface translations for the core interactive routes. Keys are exact English
 // display text, never data IDs. Model verdicts, detailed evidence, source titles and
@@ -109,6 +109,10 @@ export const es = {
   "Brands": "Marcas",
   "Breadcrumb": "Ruta de navegación",
   "Budget filters require complete delivered totals.": "Los filtros de presupuesto requieren totales entregados completos.",
+  "Use China prices for this budget": "Usar precios de China para este presupuesto",
+  "Max China-reference price": "Precio máximo (referencia China)",
+  "Delivered totals where recorded; otherwise China prices and build estimates converted at the ECB rate, without shipping or import charges.": "Totales entregados cuando constan; si no, precios de China y estimaciones de montaje convertidos al tipo del BCE, sin envío ni gastos de importación.",
+  "China-price reference": "referencia de precio en China",
   "Build a bike": "Montar una bicicleta",
   "Build link copied.": "Enlace del montaje copiado.",
   "Build map": "Mapa del montaje",
@@ -256,9 +260,9 @@ export const es = {
   "Delivered": "Entregado",
   "Delivered price": "Precio entregado",
   "Delivered price and China comparison": "Precio entregado y comparación con China",
-  "Delivered totals first; otherwise China references, excluding shipping and import charges. Budget filters require delivered totals.": "Primero totales entregados; si no, referencias de China sin envío ni gastos de importación. Los filtros de presupuesto requieren totales entregados.",
+  "Delivered totals first; otherwise China references, excluding shipping and import charges. Budgets use delivered totals unless you choose China prices.": "Primero totales entregados; si no, referencias de China sin envío ni gastos de importación. Los presupuestos usan totales entregados salvo que elijas precios de China.",
   "Delivered, seller estimate": "Entregado, estimación del vendedor",
-  "Delivered-price sorting and budgets require complete delivered totals. China-price sorting is separate and excludes shipping and import charges.": "Los presupuestos de precio entregado requieren totales entregados completos. El precio en China excluye envío y gastos de importación.",
+  "Rows sort by the price they show. Budgets use complete delivered totals, or converted China prices when you choose them.": "Las filas se ordenan por el precio que muestran. Los presupuestos usan totales entregados completos o, si lo eliges, precios de China convertidos.",
   "Delivery policy": "Política de envío",
   "Depends on the chosen 10-12-speed 11-46T cassette": "Depende del cassette 11-46T de 10 a 12 velocidades elegido",
   "Depends on the chosen 10-13-speed cassette and exact QED/PES generation": "Depende del cassette de 10 a 13 velocidades elegido y de la generación exacta QED/PES",
@@ -511,7 +515,7 @@ export const es = {
   "No comparable price": "Sin precio comparable",
   "No conflict in the recorded checks.": "Sin conflictos en las comprobaciones registradas.",
   "No dated price": "Sin precio fechado",
-  "No delivered totals are recorded for this destination yet, so a budget here matches no bike.": "Aún no hay totales con entrega para este destino, así que un presupuesto aquí no coincide con ninguna bicicleta.",
+  "No delivered totals are recorded for this destination yet. Use China prices to set a reference budget.": "Aún no hay totales con entrega para este destino. Usa precios de China para fijar un presupuesto de referencia.",
   "No electronic wire route; verify XDR wheel and DUB/crank compatibility": "Sin paso de cable electrónico; verifica la rueda XDR y la compatibilidad DUB/bielas",
   "No internal battery or electronic wire route; verify front-derailleur mount for 2x": "Sin batería interna ni paso de cable electrónico; verifica el anclaje del desviador delantero en 2x",
   "No internal electronic wire route; verify cage clearance and selected hanger version": "Sin paso interno de cable electrónico; verifica la holgura de la jaula y la versión de patilla elegida",

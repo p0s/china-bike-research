@@ -97,3 +97,16 @@ test('the one existing publisher gates POST on successful production deployment 
   assert.ok(workflow.indexOf('- name: Restore IndexNow') < workflow.indexOf('- name: Snapshot IndexNow'));
   assert.ok(workflow.indexOf('- name: Snapshot IndexNow') < workflow.indexOf('- name: Deploy Worker'));
 });
+
+test('local Wrangler scripts use the exact version the deployment workflow pins', () => {
+  const workflow = fs.readFileSync(new URL('../.github/workflows/deploy-cloudflare.yml', import.meta.url), 'utf8');
+  const pinned = /wranglerVersion: '([0-9]+\.[0-9]+\.[0-9]+)'/.exec(workflow)?.[1];
+  assert.ok(pinned);
+  const scripts = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8')).scripts;
+  const calls = Object.values(scripts).flatMap((script) => [...script.matchAll(/npx (wrangler\S*)/g)].map(([, name]) => name));
+  assert.ok(calls.length >= 2);
+  for (const call of calls) assert.equal(call, `wrangler@${pinned}`);
+  // The public validation lane also builds the production shape that deployment ships.
+  const validate = fs.readFileSync(new URL('../.github/workflows/validate.yml', import.meta.url), 'utf8');
+  assert.match(validate, /run: npm run build:cloudflare/);
+});

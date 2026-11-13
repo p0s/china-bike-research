@@ -294,6 +294,8 @@ test('bike builder persists shareable state and avoids package double counting',
   assert.match(script, /customPriceField\.hidden = false/);
   // Opening a shared link must not overwrite the saved draft until the visitor edits.
   assert.match(script, /render\(\{ persistState: !isExplicitBuildUrl\(data, new URLSearchParams\(location\.search\)\) \}\)/);
+  // Back/Forward through an unedited shared link restores the view without saving it over the draft.
+  assert.match(script, /addEventListener\('popstate', \(\) => \{\s*state = restoreBuildState\(data, new URLSearchParams\(location\.search\), \{\}, \{ allowStored: false \}\);\s*render\(\{ persistState: draftOwned \}\);/);
   assert.match(script, /if \(persistState\) \{\s*persist\(\);\s*draftOwned = true;/);
   assert.match(script, /customWeightField\.hidden = !needsWeightInput/);
   assert.match(script, /removedWeightField\.hidden = !needsRemovedWeight/);

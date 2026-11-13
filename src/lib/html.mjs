@@ -5,6 +5,8 @@ export function escapeHtml(value='') {
   return String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
 }
 export const escapeAttr = escapeHtml;
+// Each non-English page loads only its own dictionary before the site modules run.
+const DICTIONARY_FILES = { 'zh-Hans': 'zh' };
 export function safeJson(value) { return JSON.stringify(value).replaceAll('<','\\u003c'); }
 export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
@@ -146,7 +148,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   </aside>
   <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>
   <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
-  ${interfaceOnly ? `<script type="module" src="${url(base,`/assets/i18n-${locale}.js`)}"></script>` : ''}
+  ${locale !== 'en' ? `<script type="module" src="${url(base,`/assets/i18n-${DICTIONARY_FILES[locale] ?? locale}.js`)}"></script>` : ''}
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
   ${modules.map(path => `<script type="module" src="${url(base,path)}"></script>`).join("\n  ")}
   ${path.endsWith('/404.html') ? '' : `<script type="module" src="${url(base,'/assets/site-interaction.js')}"></script><script type="module" data-ga4-page src="${url(base,'/assets/ga4.js')}"></script>`}
