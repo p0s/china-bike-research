@@ -2553,3 +2553,23 @@ Object.assign(de, {
   "Store links do not change which bikes are listed, their order, catalog prices, verdicts or buying checks. Source citations stay separate from store links.": "Shop-Links ändern weder, welche Räder gelistet sind, noch ihre Reihenfolge, Katalogpreise, Fazits oder Kaufprüfungen. Quellenangaben bleiben von Shop-Links getrennt.",
   "Store links marked with a commission notice carry the store's referral code. If you follow one, the store and its referral service can record the visit and any purchase to credit the commission; their own privacy terms apply on their site. This site adds no script for these links and does not count clicks on them.": "Shop-Links mit Provisionshinweis enthalten den Empfehlungscode des Shops. Wenn Sie einem folgen, können der Shop und sein Empfehlungsdienst den Besuch und einen Kauf erfassen, um die Provision zuzuordnen; auf deren Website gelten deren Datenschutzbestimmungen. Diese Website fügt für diese Links kein Skript hinzu und zählt keine Klicks darauf."
 });
+
+// Operator and terms (2026-11-17).
+Object.assign(de, {
+  "Terms": "Nutzungsbedingungen",
+  "Who operates Chinese Bikes and the terms for using its research.": "Wer Chinese Bikes betreibt und welche Bedingungen für die Nutzung der Recherche gelten.",
+  "Operator": "Betreiber",
+  "Chinese Bikes is operated by Plomsen LLC, a Missouri limited liability company. Plomsen LLC is responsible for the personal data this site processes, as described on this page. Effective 17 November 2026.": "Chinese Bikes wird von der Plomsen LLC betrieben, einer Limited Liability Company aus Missouri (USA). Die Plomsen LLC ist für die auf dieser Seite beschriebene Verarbeitung personenbezogener Daten verantwortlich. Gültig ab 17. November 2026.",
+  "For privacy questions or requests, open an issue on": "Für Fragen oder Anliegen zum Datenschutz eröffnen Sie ein Issue auf",
+  ". Issues are public, so leave out personal details.": ". Issues sind öffentlich; lassen Sie persönliche Angaben weg.",
+  "Chinese Bikes is operated by Plomsen LLC, a Missouri limited liability company. These terms apply when you use this site. Effective 17 November 2026.": "Chinese Bikes wird von der Plomsen LLC betrieben, einer Limited Liability Company aus Missouri (USA). Diese Bedingungen gelten für die Nutzung dieser Website. Gültig ab 17. November 2026.",
+  "Research, not offers or advice": "Recherche, kein Angebot und keine Beratung",
+  "The catalog, prices and guides are independent research for comparing bikes, not offers or professional advice. Prices are dated observations or labelled estimates, not live offers, and exclude shipping and import unless marked Delivered. Specifications and availability can change, and missing facts stay unknown. Confirm price, fit, compatibility and seller terms with the seller before you buy. The site is provided as is, without warranty, to the extent the law allows.": "Katalog, Preise und Ratgeber sind unabhängige Recherche zum Vergleichen von Rädern, keine Angebote und keine fachliche Beratung. Preise sind datierte Beobachtungen oder gekennzeichnete Schätzungen, keine aktuellen Angebote; Versand und Einfuhrkosten sind nur bei Liefergesamtpreisen enthalten. Spezifikationen und Verfügbarkeit können sich ändern; fehlende Angaben bleiben unbekannt. Prüfen Sie Preis, Passform, Kompatibilität und Verkaufsbedingungen vor dem Kauf beim Verkäufer. Die Website wird, soweit gesetzlich zulässig, ohne Gewähr bereitgestellt.",
+  "Purchases and store links": "Käufe und Shop-Links",
+  "This site sells nothing and takes no payments. A purchase is between you and the seller, under the seller's terms. Some store links earn a commission; each is marked where it appears and does not affect our comparisons.": "Diese Website verkauft nichts und nimmt keine Zahlungen entgegen. Ein Kauf kommt zwischen Ihnen und dem Verkäufer zu dessen Bedingungen zustande. Einige Shop-Links bringen uns eine Provision; jeder ist dort gekennzeichnet, wo er erscheint, und beeinflusst unsere Vergleiche nicht.",
+  "Content and rights": "Inhalte und Rechte",
+  "Brand names and trademarks belong to their owners.": "Markennamen und Marken gehören ihren jeweiligen Inhabern.",
+  "Corrections and removal": "Korrekturen und Entfernung",
+  "To report an error or request a correction, credit change or removal, open an issue on": "Um einen Fehler zu melden oder eine Korrektur, geänderte Quellenangabe oder Entfernung zu beantragen, eröffnen Sie ein Issue auf",
+  "If these terms change, this page shows the new effective date.": "Ändern sich diese Bedingungen, zeigt diese Seite das neue Gültigkeitsdatum."
+});

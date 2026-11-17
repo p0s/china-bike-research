@@ -1851,3 +1851,23 @@ Object.assign(zh, {
   "Store links do not change which bikes are listed, their order, catalog prices, verdicts or buying checks. Source citations stay separate from store links.": "店铺链接不会改变收录哪些车型、排序、目录价格、评语或购买前核对事项。来源引用与店铺链接分开列出。",
   "Store links marked with a commission notice carry the store's referral code. If you follow one, the store and its referral service can record the visit and any purchase to credit the commission; their own privacy terms apply on their site. This site adds no script for these links and does not count clicks on them.": "带佣金说明的店铺链接包含该店的推荐代码。打开后，该店及其推荐服务可记录这次访问和任何购买，用于计算佣金；其网站适用其自身的隐私条款。本站不为这些链接添加任何脚本，也不统计对它们的点击。"
 });
+
+// Operator and terms (2026-11-17).
+Object.assign(zh, {
+  "Terms": "使用条款",
+  "Who operates Chinese Bikes and the terms for using its research.": "Chinese Bikes 的运营方，以及使用本站研究资料的条款。",
+  "Operator": "运营方",
+  "Chinese Bikes is operated by Plomsen LLC, a Missouri limited liability company. Plomsen LLC is responsible for the personal data this site processes, as described on this page. Effective 17 November 2026.": "Chinese Bikes 由 Plomsen LLC（美国密苏里州有限责任公司）运营。Plomsen LLC 负责本页所述的本站个人数据处理。自 2026 年 11 月 17 日起生效。",
+  "For privacy questions or requests, open an issue on": "如有隐私问题或请求，请在",
+  ". Issues are public, so leave out personal details.": " 上提交问题。问题是公开的，请勿填写个人信息。",
+  "Chinese Bikes is operated by Plomsen LLC, a Missouri limited liability company. These terms apply when you use this site. Effective 17 November 2026.": "Chinese Bikes 由 Plomsen LLC（美国密苏里州有限责任公司）运营。使用本站即适用本条款。自 2026 年 11 月 17 日起生效。",
+  "Research, not offers or advice": "研究资料，不是报价或建议",
+  "The catalog, prices and guides are independent research for comparing bikes, not offers or professional advice. Prices are dated observations or labelled estimates, not live offers, and exclude shipping and import unless marked Delivered. Specifications and availability can change, and missing facts stay unknown. Confirm price, fit, compatibility and seller terms with the seller before you buy. The site is provided as is, without warranty, to the extent the law allows.": "目录、价格和指南是用于比较车型的独立研究资料，不是报价或专业建议。价格是带日期的观察记录或标注的估算，不是实时报价；除标注到手总价外，不含运费和进口费用。规格和供货情况可能变化，缺失的信息保持未知。购买前请向卖家确认价格、尺寸适配、兼容性和销售条款。在法律允许的范围内，本站按现状提供，不作任何保证。",
+  "Purchases and store links": "购买与店铺链接",
+  "This site sells nothing and takes no payments. A purchase is between you and the seller, under the seller's terms. Some store links earn a commission; each is marked where it appears and does not affect our comparisons.": "本站不销售任何商品，也不收取任何款项。购买是你与卖家之间的交易，适用卖家的条款。部分店铺链接会带来佣金；每个此类链接在出现处都有标注，且不影响我们的比较。",
+  "Content and rights": "内容与权利",
+  "Brand names and trademarks belong to their owners.": "品牌名称和商标归各自所有者所有。",
+  "Corrections and removal": "更正与移除",
+  "To report an error or request a correction, credit change or removal, open an issue on": "如需报告错误，或请求更正、修改署名或移除内容，请在",
+  "If these terms change, this page shows the new effective date.": "条款如有变更，本页会显示新的生效日期。"
+});

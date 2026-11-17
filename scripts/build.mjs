@@ -35,6 +35,7 @@ import {
   renderLandingPage,
   renderMethodology,
   renderPrivacy,
+  renderTerms,
   renderImagePolicy,
   renderImageSources,
   render404
@@ -180,7 +181,7 @@ for (const product of products) addLocalized(`/models/${product.variant.id}/`, (
 for (const candidate of candidates) addLocalized(`/models/${candidate.candidate.id}/`, (localized) => renderCandidateModel(localized, candidate), candidateIndexable(candidate), { lastmod: candidateLastmod(candidate) });
 for (const [route, render] of [
   ['/geometry/', renderGeometryTool], ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets], ['/carbon-wheels/', renderCarbonWheels], ['/tires/', renderTires],
-  ['/privacy/', renderPrivacy], ['/image-policy/', renderImagePolicy], ['/image-sources/', renderImageSources]
+  ['/privacy/', renderPrivacy], ['/terms/', renderTerms], ['/image-policy/', renderImagePolicy], ['/image-sources/', renderImageSources]
 ]) addLocalized(route, render, true, { lastmod: siteLastmod });
 addLocalized('/blog/', (localized) => renderBlogIndex(localized, posts), true, { lastmod: latestDate(posts.map((post) => postLastmod(ctx, post)), siteLastmod) });
 for (const post of posts) addLocalized(`/blog/${post.slug}/`, (localized) => renderPost(localized, post, posts), true, { lastmod: postLastmod(ctx, post) });

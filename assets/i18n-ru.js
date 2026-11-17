@@ -580,6 +580,7 @@ export const ru = {
   "Primary": "Основное меню",
   "Prior Spark Sport QED/105 platform reference: HS-EPS+ carbon; exact 2026 Gen3/PES construction remains unproven": "Ориентир по прежней платформе Spark Sport QED/105: карбон HS-EPS+; точная конструкция Gen3/PES 2026 года не подтверждена",
   "Privacy": "Конфиденциальность",
+  "Terms": "Условия",
   "Product supplied": "Продукт предоставлен",
   "Product type": "Тип товара",
   "Profile coverage": "Полнота карточек",

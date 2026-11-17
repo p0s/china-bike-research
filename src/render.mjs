@@ -2937,8 +2937,14 @@ export function renderMethodology(ctx) {
   });
 }
 
+// Plomsen LLC operates the site; the Terms and Privacy pages name it with one effective date.
+const OPERATOR_STATEMENT = 'Chinese Bikes is operated by Plomsen LLC, a Missouri limited liability company.';
+const LEGAL_EFFECTIVE = 'Effective 17 November 2026.';
+
 export function renderPrivacy(ctx) {
-  const html = `<h2>Site behavior</h2><p>No accounts, ads, newsletter, or payments. Your comparison and build choices stay in your browser; a shared build link may include them in its URL.</p>
+  const html = `<h2 id="operator">Operator</h2><p>${OPERATOR_STATEMENT} Plomsen LLC is responsible for the personal data this site processes, as described on this page. ${LEGAL_EFFECTIVE}</p>
+    <p>For privacy questions or requests, open an issue on <a href="${ctx.repositoryUrl}/issues">GitHub</a>. Issues are public, so leave out personal details.</p>
+    <h2>Site behavior</h2><p>No accounts, ads, newsletter, or payments. Your comparison and build choices stay in your browser; a shared build link may include them in its URL.</p>
     <p>Your manual shipping destination, currency and delivery-area choices stay in browser storage and shared catalog links. Country, timezone and language may suggest a destination but are not saved as location data. No address, GPS permission or third-party location/rate request is needed. Shopping choices do not change analytics consent.</p>
     <h2 id="analytics">Optional analytics</h2>
     <p>Where prior consent is required, optional analytics stays off until you choose Allow analytics. Elsewhere it runs by default. You can allow or withdraw it here at any time; no account is needed. Your choice is remembered in a necessary preference cookie for up to six months when allowing, or one year when declining.</p>
@@ -2954,6 +2960,16 @@ export function renderPrivacy(ctx) {
     <h2 id="store-links">Store links</h2><p>Store links marked with a commission notice carry the store's referral code. If you follow one, the store and its referral service can record the visit and any purchase to credit the commission; their own privacy terms apply on their site. This site adds no script for these links and does not count clicks on them.</p>
     <h2>Contributions</h2><p>GitHub issues and pull requests are public. Remove personal details from images and links before posting; use an issue to request a correction or removal.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'Page and action counts, privacy choices, and external media.', path: '/privacy/', html });
+}
+
+export function renderTerms(ctx) {
+  const html = `<h2>Operator</h2><p>${OPERATOR_STATEMENT} These terms apply when you use this site. ${LEGAL_EFFECTIVE}</p>
+    <h2>Research, not offers or advice</h2><p>The catalog, prices and guides are independent research for comparing bikes, not offers or professional advice. Prices are dated observations or labelled estimates, not live offers, and exclude shipping and import unless marked Delivered. Specifications and availability can change, and missing facts stay unknown. Confirm price, fit, compatibility and seller terms with the seller before you buy. The site is provided as is, without warranty, to the extent the law allows.</p>
+    <h2>Purchases and store links</h2><p>This site sells nothing and takes no payments. A purchase is between you and the seller, under the seller's terms. Some store links earn a commission; each is marked where it appears and does not affect our comparisons.</p>
+    <h2>Content and rights</h2><p>The structured dataset is available under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noreferrer">CC BY 4.0</a>. Product images and linked third-party material retain their separate rights and provenance.</p><p>Brand names and trademarks belong to their owners.</p>
+    <h2>Corrections and removal</h2><p>To report an error or request a correction, credit change or removal, open an issue on <a href="${ctx.repositoryUrl}/issues">GitHub</a>. Issues are public, so leave out personal details.</p>
+    <p>If these terms change, this page shows the new effective date.</p>`;
+  return prosePage(ctx, { title: 'Terms', desc: 'Who operates Chinese Bikes and the terms for using its research.', path: '/terms/', html });
 }
 
 export function renderImagePolicy(ctx) {

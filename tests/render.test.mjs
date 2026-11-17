@@ -8,7 +8,7 @@ import { priceEvidenceLines } from '../assets/price-display.js';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
 import { loadPosts } from '../src/lib/posts.mjs';
 import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
-import { renderHome, catalogSummaries, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderMethodology, renderPrivacy } from '../src/render.mjs';
+import { renderHome, catalogSummaries, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderMethodology, renderPrivacy, renderTerms } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -1030,6 +1030,40 @@ test('model videos embed YouTube directly without autoplay and retain disclosure
   assert.match(imagePolicy, /Displayed product photos are optimized copies served by this site/);
   assert.match(imagePolicy, /When a source image is unavailable or its model cannot be verified, we leave the photo out/);
   assert.match(imagePolicy, /Browse image sources and credits/);
+});
+
+test('privacy and terms name the operator and keep the existing disclosures', () => {
+  const context = { data, products, base: '', repositoryUrl: 'https://github.com/example/china-bike-research', siteUrl: 'https://chinesebikes.xyz' };
+  const operator = 'Chinese Bikes is operated by Plomsen LLC, a Missouri limited liability company.';
+  const issues = 'href="https://github.com/example/china-bike-research/issues"';
+  const privacy = renderPrivacy(context);
+  assert.ok(privacy.includes(`<h2 id="operator">Operator</h2><p>${operator} Plomsen LLC is responsible for the personal data this site processes`));
+  assert.match(privacy, /Effective 17 November 2026\./);
+  assert.ok(privacy.includes(issues));
+  assert.match(privacy, /<h2 id="analytics">Optional analytics<\/h2>/);
+  assert.match(privacy, /<h2 id="store-links">Store links<\/h2>/);
+  assert.match(privacy, /No accounts, ads, newsletter, or payments/);
+
+  const terms = renderTerms(context);
+  assert.match(terms, /<h1>Terms<\/h1>/);
+  assert.ok(terms.includes(`${operator} These terms apply when you use this site. Effective 17 November 2026.`));
+  assert.match(terms, /This site sells nothing and takes no payments/);
+  assert.match(terms, /Some store links earn a commission/);
+  assert.match(terms, /Product images and linked third-party material retain their separate rights and provenance/);
+  assert.ok(terms.includes(issues));
+  assert.doesNotMatch(terms, /owned by Plomsen|Plomsen LLC owns|© Plomsen/i);
+  for (const page of [privacy, terms]) assert.ok(page.includes('<a href="/privacy/#analytics">Privacy</a>\n        <a href="/terms/">Terms</a>'));
+
+  for (const [locale, prefix, words] of [
+    ['zh-Hans', '/zh', ['<h1>使用条款</h1>', 'Plomsen LLC（美国密苏里州有限责任公司）运营', '自 2026 年 11 月 17 日起生效', '问题是公开的']],
+    ['de', '/de', ['<h1>Nutzungsbedingungen</h1>', 'von der Plomsen LLC betrieben', 'Gültig ab 17. November 2026', 'ohne Gewähr']]
+  ]) {
+    const localizedTerms = renderTerms({ ...context, locale });
+    for (const word of words) assert.ok(localizedTerms.includes(word), `${locale}: ${word}`);
+    assert.ok(localizedTerms.includes(`href="${prefix}/terms/"`), `${locale}: localized footer link`);
+    assert.doesNotMatch(localizedTerms, /These terms apply|Issues are public|Effective 17 November/, locale);
+    assert.doesNotMatch(renderPrivacy({ ...context, locale }), /is operated by Plomsen|For privacy questions/, locale);
+  }
 });
 
 test('candidate videos render as disclosed context with timestamp links', () => {

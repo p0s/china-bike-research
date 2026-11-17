@@ -24,7 +24,7 @@ export function availableLocalePath(route = '/', locale = 'en') {
   return localesForRoute(route).includes(locale) ? localePath(route, locale) : route;
 }
 export function isPagePath(route) {
-  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de|es|ru)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|carbon-wheels|tires|privacy|image-policy|image-sources|blog)(?:\/|$)/.test(route);
+  return route === '/' || route === '/404.html' || /^\/(?:(?:zh|de|es|ru)\/)?(?:models|brands|prices|complete-bikes|framesets|methodology|build|geometry|electronic-shifting|carbon-wheels|tires|privacy|terms|image-policy|image-sources|blog)(?:\/|$)/.test(route);
 }
 function escape(value) { return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'); }
 function decode(value) { return value.replaceAll('&quot;', '"').replaceAll('&#039;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&'); }

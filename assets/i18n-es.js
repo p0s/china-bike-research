@@ -581,6 +581,7 @@ export const es = {
   "Primary": "Principal",
   "Prior Spark Sport QED/105 platform reference: HS-EPS+ carbon; exact 2026 Gen3/PES construction remains unproven": "Referencia de la plataforma anterior Spark Sport QED/105: carbono HS-EPS+; la construcción exacta Gen3/PES de 2026 no está demostrada",
   "Privacy": "Privacidad",
+  "Terms": "Términos",
   "Product supplied": "Producto cedido",
   "Product type": "Tipo de producto",
   "Profile coverage": "Cobertura de las fichas",
