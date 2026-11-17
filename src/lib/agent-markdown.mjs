@@ -440,7 +440,8 @@ const LLMS_SECTIONS = [
   ['Optional', [
     ['Image credits', '/image-sources/'],
     ['Image policy', '/image-policy/'],
-    ['Privacy', '/privacy/']
+    ['Privacy', '/privacy/'],
+    ['Terms', '/terms/']
   ]]
 ];
 

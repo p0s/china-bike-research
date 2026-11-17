@@ -49,7 +49,7 @@ function fixture(t,mode='',base='',siteUrl='https://example.invalid') {
  }
  export const catalogSummaries=()=>[];
  export const renderModel=()=>'<html>Bike</html>';
- export const renderCandidateModel=renderModel,renderBikeBuilder=renderModel,renderElectronicGroupsets=renderModel,renderCarbonWheels=renderModel,renderTires=renderModel,renderLandingPage=renderModel,renderMethodology=renderModel,renderPrivacy=renderModel,renderImagePolicy=renderModel,renderImageSources=renderModel,render404=renderModel;
+ export const renderCandidateModel=renderModel,renderBikeBuilder=renderModel,renderElectronicGroupsets=renderModel,renderCarbonWheels=renderModel,renderTires=renderModel,renderLandingPage=renderModel,renderMethodology=renderModel,renderPrivacy=renderModel,renderTerms=renderModel,renderImagePolicy=renderModel,renderImageSources=renderModel,render404=renderModel;
  `);
  const result=spawnSync(process.execPath,[path.join(root,'scripts/build.mjs')],{encoding:'utf8',env:{...process.env,FAIL_BUILD:mode,GITHUB_ACTIONS:'false',GITHUB_REPOSITORY:'',PUBLIC_BASE_PATH:base,PUBLIC_SITE_URL:siteUrl}});
  return{root,result};

@@ -131,6 +131,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
         <a href="${url(base,'/geometry/')}">Geometry comparison</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
         <a href="${url(base,'/privacy/')}#analytics">Privacy</a>
+        <a href="${url(base,'/terms/')}">Terms</a>
         <a href="${url(base,'/data/catalog.json')}">Data</a>
         <a href="${repositoryUrl}">GitHub</a>
         <a href="${repositoryUrl}/issues">Add or correct a bike</a>
